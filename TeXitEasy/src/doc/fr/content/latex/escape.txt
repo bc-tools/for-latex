@@ -1,0 +1,32 @@
+﻿this::
+    date = 2015-06-03
+
+
+=============================================
+Gestion des caractères spéciaux dans un texte
+=============================================
+
+Dans le langage ¨latex, certains caractères ont une signification comme
+par exemple latex::``%`` qui indique un commentaire, ou latex::``\`` qui
+suivi d'un texte permet d'indiquer une commande.
+Comment obtenir alors un texte où apparaissent ces caractères ? Il suffit
+d'utiliser la fonction ``escape`` comme dans le code suivant.
+
+pyterm::
+    >>> from mistool.latex_use import escape
+    >>> onetext = "\OH/ & ..."
+    >>> print(escape(onetext))
+    \textbackslash{}OH/ \& ...
+    >>> print(escape(text = onetext, mode = "math"))
+    \backslash{}OH/ \& ...
+
+
+Notez que par défaut, la fonction ``escape`` se place dans un contexte de type texte.
+
+
+
+
+
+Par contre, l'exemple ci-dessous produira ``\backslash{}OH/ \& etc``
+qui utilise latex::``\backslash`` au lieu latex::``\textbackslash``. On obtiendra
+dans ce cas `\OH/ & etc` dans le document produit par ¨latex.

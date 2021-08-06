@@ -1,0 +1,17 @@
+﻿this::
+    date = 2015-06-04
+
+
+============================================================
+Mettre à jour la liste des packages automatiquement reconnus
+============================================================
+
+Quand des packages personnels sont ajoutés localement à votre distribution ¨latex, il faut rafraichir la liste des packages automatiquement reconnus. L'utilisation de ``latex_use.refresh()`` permet de faire cela.
+
+
+info::
+    Si vous installez vos packages via la fonction ``install`` présentée précédemment, ``refresh`` est automatiquement appelée. Il en va de même avec l'emploi de la fonction ``remove``.
+
+
+info::
+    ``refresh`` dispose d'un argument optionnel ``aboutlatex`` qui est tout simplement la valeur renvoyée par la fonction ``about`` (renseignez ``aboutlatex`` est utile si l'on a déjà utilisé précédemment dans notre programme pour éviter des recherches inutiles et coûteuses en terme de temps).

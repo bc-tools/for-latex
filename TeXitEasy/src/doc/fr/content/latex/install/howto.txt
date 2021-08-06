@@ -1,0 +1,98 @@
+﻿this::
+    date = 2015-06-04
+
+
+=================================================
+Une installation simplifiée des packages "maison"
+=================================================
+
+warning::
+    Les fonctionnalités présentées dans cette section ne peuvent être utilisées qu'en mode "Super Utilisateur".
+
+
+Imaginons que nous ayons un paquet nommé latex::``lyxam`` stocké dans un dossier ayant le chemin path::``/Users/projetmbc/latex/lyxam`` et dont la structure est la suivante.
+
+dir::
+    + lyxam
+        + change_log
+            + 2012
+                * 02.txt
+                * 03.txt
+                * 04.txt
+                * 10.txt
+            * todo.txt
+        * lyxam.sty
+        + config
+            * settings.tex
+            + lang
+                * en.tex
+                * fr.tex
+                + special
+                    * fr.config
+                + standard
+                    * en.config
+                    * fr.config
+            + style
+                * apmep.tex
+                * default.tex
+
+
+Vous pouvez facilement installer ce paquet localement dans votre distribution ¨latex en faisant comme ci-dessous.
+
+pyterm::
+    >>> from mistool.os_use import PPath
+    >>> from mistool.latex_use import install
+    >>> package = PPath("/Users/projetmbc/latex/lyxam")
+    >>> install(package)
+    Starting installation of the package locally.
+        * Deletion of the old << lyxam >> package in the local LaTeX directory.
+        * Creation of a new << lyxam >> package in the local LaTeX directory.
+            + Adding the new file << lyxam.sty >>
+            + Adding the new file << change_log/todo.txt >>
+            + Adding the new file << change_log/2012/02.txt >>
+            + Adding the new file << change_log/2012/03.txt >>
+            + Adding the new file << change_log/2012/04.txt >>
+            + Adding the new file << change_log/2012/10.txt >>
+            + Adding the new file << config/settings.tex >>
+            + Adding the new file << config/lang/en.tex >>
+            + Adding the new file << config/lang/fr.tex >>
+            + Adding the new file << config/lang/special/fr.config >>
+            + Adding the new file << config/lang/standard/en.config >>
+            + Adding the new file << config/lang/standard/fr.config >>
+            + Adding the new file << config/style/apmep.tex >>
+            + Adding the new file << config/style/default.tex >>
+        * Refreshing the list of LaTeX packages.
+
+
+Dans cet exemple, nous avons utilisé certains paramètres par défaut .
+
+    1 ) ``regpath = "file :: **"`` demande de copier tous les fichiers
+    ((
+        Se reporter si besoin à cf::``?/regpath.txt``.
+    )).
+
+    2 ) ``name = ""`` demande d'utiliser le même nom pour le paquet ¨latex et le dossier.
+
+    3 ) ``clean = True`` sert à supprimer d'abord une éventuelle ancienne version     (c'est le cas dans notre exemple) .
+
+
+Supposons maintenant que nous ne voulons pas installer les fichiers de type path::``TXT``. L'utilisation de "regptahs" comme nous le faisons ci-dessous facilite beaucoup les choses.
+
+pyterm::
+    >>> from mistool.os_use import PPath
+    >>> from mistool.latex_use import install
+    >>> package = PPath("/Users/projetmbc/latex/lyxam")
+    >>> install(ppath = package, regpath = "file not::**.txt")
+    Starting installation of the package locally.
+        * Deletion of the old << lyxam >> package in the local LaTeX directory.
+        * Creation of a new << lyxam >> package in the local LaTeX directory.
+            + Adding the new file << lyxam.sty >>
+            + Adding the new file << config/settings.tex >>
+            + Adding the new file << config/lang/en.tex >>
+            + Adding the new file << config/lang/fr.tex >>
+            + Adding the new file << config/lang/special/fr.config >>
+            + Adding the new file << config/lang/standard/en.config >>
+            + Adding the new file << config/lang/standard/fr.config >>
+            + Adding the new file << config/style/apmep.tex >>
+            + Adding the new file << config/style/default.tex >>
+        * Refreshing the list of LaTeX packages.

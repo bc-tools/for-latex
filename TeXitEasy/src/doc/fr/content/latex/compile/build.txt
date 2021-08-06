@@ -1,0 +1,75 @@
+this::
+    date = 2015-06-04
+
+
+======================
+Comment compile-t-on ?
+======================
+
+Pour le moment la classe ```Build`` ne dispose que de la méthode de compilation
+``pdf()`` qui produit bien entendu un fichier ¨pdf. Pour voir comment cela
+fonctionne, considérons un fichier path::``file.tex`` de chemin complet
+path::``/Users/projetmbc/latex/file.tex`` et ayant le contenu suivant.
+
+latex::
+    \documentclass[11pt, oneside]{article}
+
+    \begin{document}
+
+    \section{Un petit test}
+
+    Une formule toute simple : $E = mc^2$.
+
+    \end{document}
+
+
+Dans les lignes ci-dessus, nous avons utilisé la classe ``term_use.DirView`` afin
+de voir les nouveaux fichiers créés par ¨latex (les points de suspension
+term::``[...]`` indique quelques lignes non reproduites ici). Quant à la classe
+``os_use.PPath``, c'est elle qui sert à définir le fichier à compiler.
+
+pyterm::
+    >>> from mistool.os_use import PPath
+    >>> from mistool.latex_use import Build
+    >>> from mistool.term_use import DirView
+    >>> latexfile = PPath("/Users/projetmbc/latex/file.tex")
+    >>> print(DirView(latexfile.parent).ascii)
+    + latex
+        * file.tex
+    >>> builder = Build(latexfile)
+    >>> builder.pdf()
+    # -- Start of the compilation -- #
+
+    This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded
+    format=pdflatex)
+     restricted \write18 enabled.
+    entering extended mode
+
+    [...]
+
+    Output written on file.pdf (1 page, 36666 bytes).
+    Transcript written on file.log.
+
+    # -- End of the compilation -- #
+    >>> print(DirView(latexfile.parent).ascii)
+    + latex
+        * file.aux
+        * file.log
+        * file.pdf
+        * file.tex
+
+
+info::
+    Par défaut, les ¨infos renvoyées par ¨latex sont affichées (il vaut mieux car
+    certaines compilations sont longues). Ceci étant, si cela ne vous intéresse
+    pas, il suffit d'utiliser ``Build(ppath = latexfile, showinfos = False)``, ou
+    bien de faire le ¨chgt l'attribut ``builder.showinfos = False`` avant de
+    faire appel à ``builder.pdf()``.
+
+
+info::
+    Certains documents ¨latex nécessitent plusieurs compilations successives.
+    Vous pouvez changer momentanément le nombre de compilations. Pour compiler
+    par exemple trois fois, il suffit d'utiliser ``Build(ppath = latexfile,
+    repeat = 3)``, ou bien de faire le ¨chgt d'attribut ``builder.repeat = 3``
+    avant de faire un ou plusieurs appels à ``builder.pdf()``.

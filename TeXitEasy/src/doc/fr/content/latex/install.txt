@@ -1,0 +1,11 @@
+﻿abrev::
+    content = /install
+
+
+==========================================
+Installer localement des packages "maison"
+==========================================
+
+content::
+    ¨content/localdir.txt
+    ¨content/howto.txt
