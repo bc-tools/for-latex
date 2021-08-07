@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 ###
-# This file proposes functions to escape aither a etxte to be used in 
-# a ¨latex content, or to prepare a ¨latex source code to be used in 
-# a f-string. 
+# This file proposes two escaping functions. 
+#     1) The 1st one escape a text to be used in a ¨latex content.
+#     2) The 2nd one prepare a ¨latex source code to be used in a f-string. 
 ###
 
 

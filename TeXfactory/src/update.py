@@ -138,7 +138,7 @@ if __name__ == "__main__":
 #     style    = _ in speaker.spk_interface.ALL_GLOBAL_STYLES; 
 #                a global style for the output.     
     speaker = Speaker(
-        logfile = MONOREPO / f"{MONOREPO.name}.tns.log",
+        logfile = MONOREPO / f"{MONOREPO.name}.texfactory.log",
         style   = GLOBAL_STYLE_COLOR,
         # style   = GLOBAL_STYLE_BW
     )

@@ -1,9 +1,11 @@
 [tool.poetry]
-name = "texiteasy"
-version = "0.0.0-beta"
-description = "This project contains tools to work with LaTeX."
-authors = ["Christophe BAL"]
-license = "GNU License Version 3"
+name         = "texiteasy"
+version      = "0.0.0-beta"
+description  = "This project contains tools to work with LaTeX."
+authors      = ["Christophe BAL"]
+maintainers  = ["Christophe BAL"]
+license      = "GNU License Version 3"
+repository   = "https://github.com/projetmbc/tools-for-latex/tree/master/TeXitEasy"
 
 [tool.poetry.dependencies]
 python = "^3.8"

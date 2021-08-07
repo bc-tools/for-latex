@@ -15,6 +15,8 @@ PROJECT_NAME = THIS_DIR.name.lower()
 PROJECT_SRC       = THIS_DIR / 'src'
 PROJECT_FINAL_DIR = THIS_DIR / PROJECT_NAME
 
+README_SRC   = THIS_DIR / 'README.md'
+README_FIANL = PROJECT_FINAL_DIR / 'README.md'
 
 # --------------------------------- #
 # -- RESET THE PROJECT FINAL DIR -- #
@@ -69,3 +71,6 @@ for onepath in recwalk(PROJECT_SRC):
     finalpath = PROJECT_FINAL_DIR / onepath.relative_to(PROJECT_SRC)
 
     copy(onepath, finalpath)
+
+
+copy(README_SRC, README_FIANL)
