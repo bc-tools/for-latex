@@ -1,0 +1,5 @@
+==
+??
+==
+
+**First version version::``0.0.0-beta``:** ???  this project builds and updates the packages of the ¨tlatex series. At this stage, the "agregating" packages, ¨latex classes and ¨macroenvsign are not yet supported. 

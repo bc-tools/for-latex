@@ -1,5 +1,5 @@
-The `Python` module `TeXitEasy`
-===============================
+The `Python` module `TeXfactory`
+================================
 
 
 > **I beg your pardon for my english...**
@@ -7,14 +7,10 @@ The `Python` module `TeXitEasy`
 > English is not my native language, so be nice if you notice misunderstandings, misspellings, or grammatical errors in my documents and codes.
 
 
-About `TeXitEasy`
------------------
+About `TeXfactory`
+------------------
 
-This modules proposes some `Python` tools to work with `LaTeX`.
-
-
-<!-- :tutorial-START: -->
-<!-- :tutorial-END: -->
+This module allows to code `LaTeX` projects using small units of codes. The final product will be produced automatically.
 
 
 <!-- :version-START: -->

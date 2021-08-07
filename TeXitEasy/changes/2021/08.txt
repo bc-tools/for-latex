@@ -1,5 +1,5 @@
 ==
-??
+07
 ==
 
-**First version version::``0.0.0-beta``:** this project proposes some tools to easy the workflow with ¨latex ad co.
+**First version version::``0.0.0-beta``:** this project proposes some tools to work with ¨latex: for the moment, just escaping functionalities are available.

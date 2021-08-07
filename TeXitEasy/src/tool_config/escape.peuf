@@ -1,0 +1,14 @@
+// Sources :
+//    * The page 7 in "The Comprehensive LATEX Symbol List" of Scott Pakin.
+//    * http://www.grappa.univ-lille3.fr/FAQ-LaTeX/21.26.html
+
+math-n-text::
+    { }
+    _ $
+    &
+    % #
+
+backslash::
+    ascii = \
+    text  = \textbackslash{}
+    math  = \backslash{}

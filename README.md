@@ -1,17 +1,15 @@
-About `typensee-latex`
-======================
+The monorepo `tools-for-latex`
+==============================
+
+> **I beg your pardon for my english...**
+>
+> English is not my native language, so be nice if you notice misunderstandings, misspellings, or grammatical errors in my documents and codes.
 
 
-I beg your pardon for my english...
-===================================
+About `tools-for-latex`
+-----------------------
 
-English is not my native language, so be nice if you notice misunderstandings, misspellings, or grammatical errors in my documents and codes.
-
-
-About
-=====
-
-This monorepo contains a series of tools to write `LaTeX` documents efficiently in a semantic way.
+This monorepo contains a series of tools to create `LaTeX` codes or documents.
 
 
 <!-- :monorepo-content-START: -->
