@@ -2,7 +2,7 @@
 name = "texiteasy"
 version = "0.0.0-beta"
 description = "This project contains tools to work with LaTeX."
-authors = ["Christophe BAL <projetmbc@gmail.com>"]
+authors = ["Christophe BAL"]
 license = "GNU License Version 3"
 
 [tool.poetry.dependencies]
