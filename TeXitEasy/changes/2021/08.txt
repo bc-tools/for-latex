@@ -2,4 +2,5 @@
 07
 ==
 
-**First version version::``0.0.0-beta``:** this project proposes some tools to work with ¨latex: for the moment, just escaping functionalities are available.
+**First version version::``0.0.1-beta``:** this project proposes some tools to work with ¨latex: for the moment, just escaping functionalities are available (the strange first number version comes from a rigid behavior of ¨pypi).
+
