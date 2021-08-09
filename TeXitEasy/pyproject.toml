@@ -2,6 +2,7 @@
 name         = "texiteasy"
 version      = "0.0.0-beta"
 description  = "This project contains tools to work with LaTeX."
+readme       = "README.md"
 authors      = ["Christophe BAL"]
 maintainers  = ["Christophe BAL"]
 license      = "GNU License Version 3"

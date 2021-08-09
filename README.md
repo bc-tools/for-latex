@@ -9,8 +9,7 @@ The monorepo `tools-for-latex`
 About `tools-for-latex`
 -----------------------
 
-This monorepo contains a series of tools to create `LaTeX` codes or documents.
-
+This monorepo contains series of tools to use easily `LaTeX` for creating codes or documents.
 
 <!-- :monorepo-content-START: -->
 <!-- :monorepo-content-END: -->
