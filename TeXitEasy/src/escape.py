@@ -81,22 +81,19 @@ def escape(
     i    = 0
 
     while(i < imax):
+        if text[i] in toescape:
+            escaped_text += '\\' + text[i]
+            i            += 1
+            continue
+
         nothingfound = True
 
-        for onechar in toescape:
-            if text[i] == onechar:
-                escaped_text += '\\' + onechar
-                i            += 1
+        for onechar, latexcode in tolatexify:
+            if text[i:].startswith(onechar):
+                escaped_text += latexcode
+                i            += len(onechar)
                 nothingfound  = False
                 break
-
-        if nothingfound:
-            for onechar, latexcode in tolatexify:
-                if text[i:].startswith(onechar):
-                    escaped_text += latexcode
-                    i            += len(onechar)
-                    nothingfound  = False
-                    break
 
         if nothingfound:
             escaped_text += text[i]
@@ -120,7 +117,7 @@ def escape(
 #                regarding to the value of ``mode``.
 #
 # Here is an example of use where latex::``<:PYVAR_FOR_FSTRING:>`` is used instead 
-# of ``{PYVAR_FOR_FSTRING}`` as this must be done for f-strings.
+# of ``{PYVAR_FOR_FSTRING}`` as this must normally be done for f-strings.
 #
 # term-python::
 #     >>> from escape import fstringit

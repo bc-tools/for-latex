@@ -1,4 +1,11 @@
 ==
+10
+==
+
+**Factorization:** some simplifications made in the code of the function ``escape``.
+
+
+==
 07
 ==
 
