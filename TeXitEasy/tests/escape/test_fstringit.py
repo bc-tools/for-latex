@@ -14,34 +14,18 @@ MODULE_DIR = addfindsrc(
     project = 'TeXitEasy',
 )
 
-from src.escape import fstringit as FSTRINGIT_FUNCTION
-
-
-# ----------------------- #
-# -- DATAS FOR TESTING -- #
-# ----------------------- #
-
-THE_DATAS_FOR_TESTING = build_datas_block(__file__)
-
-@fixture(scope="module")
-def orpyste_fix_block(request):
-    THE_DATAS_FOR_TESTING.build()
-
-    def remove_extras():
-        THE_DATAS_FOR_TESTING.remove_extras()
-
-    request.addfinalizer(remove_extras)
+from src.escape import fstringit
 
 
 # --------------------- #
 # -- GOOD FSTRINGIFY -- #
 # --------------------- #
 
-def test_latex_use_fstringit(orpyste_fix_block):
-    tests = THE_DATAS_FOR_TESTING.mydict("std nosep nonb")
+def test_latex_use_fstringit(peuf_fixture):
+    tests = peuf_fixture(__file__)
 
-    for testname, infos in tests.items():
-        answer_found  = FSTRINGIT_FUNCTION(code = infos['source'])
-        answer_wanted = infos['fstring']
+    for infos in tests.values():
+        found  = fstringit(code = infos['source'])
+        wanted = infos['fstring']
 
-        assert answer_wanted == answer_found
+        assert wanted == found
