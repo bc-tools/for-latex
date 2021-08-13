@@ -22,9 +22,9 @@ from src.escape import fstringit
 # --------------------- #
 
 def test_latex_use_fstringit(peuf_fixture):
-    tests = peuf_fixture(__file__)
+    datas = peuf_fixture(__file__)
 
-    for infos in tests.values():
+    for infos in datas.values():
         found  = fstringit(code = infos['source'])
         wanted = infos['fstring']
 

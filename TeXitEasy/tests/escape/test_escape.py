@@ -20,9 +20,9 @@ from src.escape import escape
 # ------------------- #
 
 def test_latex_use_escape(peuf_fixture):
-    tests = peuf_fixture(__file__)
+    datas = peuf_fixture(__file__)
 
-    for testname, infos in tests.items():
+    for infos in datas.values():
         source  = infos['source']
 
         for mode in ['text', 'math']:
