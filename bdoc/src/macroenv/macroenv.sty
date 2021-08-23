@@ -4,8 +4,8 @@
 
 %%%
 % prototype::
-%     arg = #1 ;
-%           the name of a package
+%     arg = #1 : the name of a package
+%        @ :arg:
 %
 % ``\docpack{mypack}`` prints verb::``mypack``.
 %
@@ -19,8 +19,8 @@
 
 %%%
 % prototype::
-%     arg = #1 ;
-%           the name of a macro
+%     arg = #1 : the name of a macro
+%        @ :arg:
 %
 % ``\docenv{mymacro}`` prints verb::``\mymacro``.
 %%%
@@ -31,8 +31,7 @@
 
 %%%
 % prototype::
-%     arg = #1 ;
-%           the name of an environment
+%     #1 : the name of an environment
 %
 % ``\docenv{myenv}`` prints verb::``\begin{myenv} ... \end{myenv}`` where
 % the spaces are secable.
@@ -47,10 +46,8 @@
 
 %%%
 % prototype::
-%     arg = #1 ;
-%           a prefix of a word
-%     arg = #2 ;
-%           the remaining part of the word
+%     #1 : a prefix of a word
+%     #2 : the remaining part of the word
 %
 % ``\docprewhy{pre}{fix}`` prints something like verb::``pre``-fix.
 %%%
@@ -61,8 +58,7 @@
 
 %%%
 % prototype::
-%     arg = #1 ;
-%           just a prefix
+%     #1 : just a prefix
 %
 % ``\docpre{pre}`` only prints verb::``pre``. This can be useful in 
 % a case like ``\docpre{pre} comes from \docprewhy{pre}{fix}`` which
@@ -72,4 +68,3 @@
 \NewDocumentCommand{ \docpre }{ m }{%
     \texttt{#1}%
 }
-

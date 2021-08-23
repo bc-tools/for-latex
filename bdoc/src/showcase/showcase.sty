@@ -23,8 +23,7 @@
 
 %%%
 % prototype::
-%     arg = #1 ;
-%           a text
+%     #1 : a text
 %
 % This macro adds two horizontal rules on both sides of the text. The final
 % output is centered.
@@ -53,10 +52,11 @@
 
 %%%
 % prototype::
-%     opt = #1 (\bdoc@trans@real@output@start) ;
-%           the text indicating the begin of the real render
-%     opt = #2 (\bdoc@trans@real@output@end) ;
-%           the text indicating the end of the real render
+%     #1 : the text indicating the begin of the real render
+%        @ :opt:
+%     
+%     #2 : the text indicating the end of the real render
+%        @ :opt:
 %
 % This environment adds a page-width cyan stripe in the background of 
 % the content of the environment.

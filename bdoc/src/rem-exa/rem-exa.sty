@@ -23,10 +23,8 @@
 
 %%%
 % prototype::
-%     arg = #1 ;
-%           a text
-%     arg = #2 ;
-%           a text that can be empty
+%     #1 : a text
+%     #2 : a text that can be empty
 %
 % This macro outputs the macro ``\paragraph`` with one of the following content.
 %
@@ -51,9 +49,10 @@
 
 %%%
 % prototype::
-%     star = true
-%     opt  = #1 ;
-%           a descriptive title
+%     :meta: star
+%
+%     #1 : a descriptive title
+%        @ :opt:
 %
 % Here are the different uses of the macros ``\docexa`` and ``\docexa*``.
 %
@@ -77,5 +76,3 @@
         \@docexa@abstract{\bdoc@trans@exa@title{}~\thebdoc@cnt@exa}{#2}%
     }%
 }
-
-
