@@ -44,15 +44,13 @@ PLACEHOLDERS_F_STRING = {
 
 ###
 # prototype::
-#     arg = ; // See Python typing...
-#           the text to be escaped.
-#     arg = _ in ["text" , "math"] ( MODE_TEXT ) ; // See Python typing...
-#           the ¨latex mode where the text will be used.
+#     text : the text to be escaped.
+#     mode : the ¨latex mode where the text will be used.
+#          @ :in: ["text" , "math"]
 #
-#     :return: = ; // See Python typing...
-#                the text with all specific ¨latex characters escaped so as
-#                to be used verbatim in either a math formula or a text 
-#                regarding to the value of ``mode``.
+#     :return: the text with all specific ¨latex characters escaped so as
+#              to be used verbatim in either a math formula or a text 
+#              regarding to the value of ``mode``.
 #
 # Here are two examples of use.
 #
@@ -68,7 +66,7 @@ PLACEHOLDERS_F_STRING = {
 def escape(
     text: str,
     mode: str = MODE_TEXT
-):
+) -> str:
     if not mode in CHARS_TO_ESCAPE:
         raise ValueError("unknown mode.")
 
@@ -108,13 +106,11 @@ def escape(
 
 ###
 # prototype::
-#     arg = ; // See Python typing...
-#           the ¨latex source to transform to a f-string.
+#     code : the ¨latex source to transform to a f-string.
 #
-#     :return: = ; // See Python typing...
-#                the source with all specific ¨latex characters escaped so as
-#                to be used verbatim in either a math formula or a text 
-#                regarding to the value of ``mode``.
+#     :return: the source with all specific ¨latex characters escaped so as
+#              to be used verbatim in either a math formula or a text 
+#              regarding to the value of ``mode``.
 #
 # Here is an example of use where latex::``<:PYVAR_FOR_FSTRING:>`` is used instead 
 # of ``{PYVAR_FOR_FSTRING}`` as this must normally be done for f-strings.
@@ -134,7 +130,7 @@ def escape(
 #     }}
 ###
 
-def fstringit(code: str):
+def fstringit(code: str) -> str:
     for brace in '{}':
         code = code.replace(brace, brace*2)
 
