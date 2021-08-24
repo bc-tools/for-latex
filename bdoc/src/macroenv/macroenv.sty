@@ -4,7 +4,7 @@
 
 %%%
 % prototype::
-%     arg = #1 : the name of a package
+%     #1 : the name of a package
 %        @ :arg:
 %
 % ``\docpack{mypack}`` prints verb::``mypack``.
@@ -13,19 +13,23 @@
 %     This macro is more semantic than useful.
 %%%
 
-\NewDocumentCommand{ \docpack }{ m }{%
-\texttt{#1}%
+\NewDocumentCommand{ \docpack }{
+	m
+}{%
+    \texttt{#1}%
 }
 
 %%%
 % prototype::
-%     arg = #1 : the name of a macro
+%     #1 : the name of a macro
 %        @ :arg:
 %
 % ``\docenv{mymacro}`` prints verb::``\mymacro``.
 %%%
 
-\NewDocumentCommand{ \docmacro }{ m }{%
+\NewDocumentCommand{ \docmacro }{
+	m
+}{%
     \texttt{\textbackslash{}#1}%
 }
 
@@ -37,7 +41,9 @@
 % the spaces are secable.
 %%%
 
-\NewDocumentCommand{ \docenv }{ m }{%
+\NewDocumentCommand{ \docenv }{
+	m
+}{%
     \texttt{\textbackslash{}begin\{#1\} \!...\! \textbackslash{}end\{#1\}}%
 }
 
@@ -52,7 +58,10 @@
 % ``\docprewhy{pre}{fix}`` prints something like verb::``pre``-fix.
 %%%
 
-\NewDocumentCommand{ \docprewhy }{ mm }{%
+\NewDocumentCommand{ \docprewhy }{
+	m
+	m
+}{%
     \textbf{\docpre{#1}}-#2%
 }
 
@@ -65,6 +74,8 @@
 % prints: verb::``pre`` comes from verb::``pre``-fix.
 %%%
 
-\NewDocumentCommand{ \docpre }{ m }{%
+\NewDocumentCommand{ \docpre }{
+	m
+}{%
     \texttt{#1}%
 }

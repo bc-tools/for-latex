@@ -33,7 +33,9 @@
 % a basic parsing of the date argument.
 %%%
 
-\NewDocumentCommand{ \l_bdoc_good_date } { m } {
+\NewDocumentCommand{ \l_bdoc_good_date } {
+	m
+} {
 	\seq_set_split:Nnn \l_bdoc_date_parts_seq { - } { #1 }
     \seq_pop:NN \l_bdoc_date_parts_seq \l_bdoc_date_year_str
     \seq_pop:NN \l_bdoc_date_parts_seq \l_bdoc_date_month_str
@@ -50,7 +52,12 @@
 % This macro factorizes the printing of the changes in the right margin.
 %%%
 
-\NewDocumentCommand{ \l_bdoc_new_change_margin }{ mmmm }{
+\NewDocumentCommand{ \l_bdoc_new_change_margin }{
+	m
+	m
+	m
+	m
+}{
     \marginnote{
         \color{#1}
         \scriptsize
@@ -100,7 +107,11 @@
 %     chosen when loading the package.
 %%%
 
-\NewDocumentCommand{ \docversion } {O{blue}mm }{
+\NewDocumentCommand{ \docversion } {
+	O{blue}
+	m
+	m
+}{
 	\l_bdoc_new_change_margin { #1 }      % Color
 	                          { #3 }      % Date
 	                          { #2 }      % Version
@@ -116,7 +127,10 @@
 %
 % This macro is similar to ``\docversion`` except that it just prints a date.
 %%%
-\NewDocumentCommand{ \docnew } {O{blue}m }{
+\NewDocumentCommand{ \docnew } {
+	O{blue}
+	m
+}{
 	\l_bdoc_new_change_margin { #1 }      % Color
 	                          { #2 }      % Date
 	                          {}          % Version
@@ -150,7 +164,10 @@
 %        the title.
 %%%
 
-\NewDocumentEnvironment{ doctopic }{ mO{i} }{
+\NewDocumentEnvironment{ doctopic }{
+	m
+	O{i}
+}{
     \medskip
     
     \textbf{

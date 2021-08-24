@@ -10,7 +10,9 @@
 % **"Something"**.
 %%%
     
-\NewDocumentCommand{ \docquote }{ m }{%
+\NewDocumentCommand{ \docquote }{
+	m
+}{%
     \og \emph{#1} \fg%
 }
 
@@ -19,9 +21,9 @@
 
 %%%
 % prototype::
-%     :meta: star
-%
 %     #1 : a text to explain
+%
+%     :meta: star
 %
 % For example, if the language chosen is French, we have the following 
 % outputs.
@@ -37,7 +39,10 @@
 %        **"Something" et "Another thing" en anglais**.
 %%%
 
-\NewDocumentCommand{ \docinEN }{sm}{%
+\NewDocumentCommand{ \docinEN }{
+	s
+	m
+}{%
     \docquote{#2}%
     \IfBooleanF{#1}{% No star used.
         \ \bdoc@trans@in@EN{}%

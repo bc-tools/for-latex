@@ -124,8 +124,10 @@
 %     is translated to the language chosen at the loading of the package.
 %%%
 
-\NewDocumentCommand{ \inputdoclatexafter }
-                   { O{\bdoc@trans@code@after@output}m }{
+\NewDocumentCommand{ \inputdoclatexafter }{
+	O{\bdoc@trans@code@after@output}
+	m
+}{
     \begin{center}
         \input{#2}
     \end{center}
@@ -147,8 +149,10 @@
 % code is before the centered output.
 %%%
 
-\NewDocumentCommand{ \inputdoclatexbefore }
-                   { O{\bdoc@trans@output@after@code}m }{
+\NewDocumentCommand{ \inputdoclatexbefore }{
+	O{\bdoc@trans@output@after@code}
+	m
+}{
     \inputdoclatexalone{#2}
     \vspace{-.75em}
     \begin{center}
@@ -170,8 +174,10 @@
 % is put inside an environment ``docshowcase`` instead of being centered.
 %%%
 
-\NewDocumentCommand{ \inputdoclatexreal }
-                   { O{\bdoc@trans@colon{\bdoc@trans@this@gives}}m }{
+\NewDocumentCommand{ \inputdoclatexreal }{
+	O{\bdoc@trans@colon{\bdoc@trans@this@gives}}
+	m
+}{
     \inputdoclatexalone{#2}
     
     #1

@@ -38,7 +38,10 @@
 %     example.
 %%%
 
-\NewDocumentCommand{ \@docexa@abstract } { mm }{%
+\NewDocumentCommand{ \@docexa@abstract } {
+	m
+	m
+}{%
     \paragraph{%
         #1%
         \tl_if_empty:nF { #2 }{ ~ -- ~ #2 }%
@@ -49,10 +52,10 @@
 
 %%%
 % prototype::
-%     :meta: star
-%
 %     #1 : a descriptive title
 %        @ :opt:
+%
+%     :meta: star
 %
 % Here are the different uses of the macros ``\docexa`` and ``\docexa*``.
 %
@@ -68,7 +71,10 @@
 %        the value `N`` of the counter ``bdoc@cnt@exa``.
 %%%
 
-\NewDocumentCommand{ \docexa }{sO{}}{%
+\NewDocumentCommand{ \docexa }{
+	s
+	O{}
+}{%
     \IfBooleanTF{#1}{% Star used
         \@docexa@abstract{\bdoc@trans@exa@title}{#2}%
     }{               % No star used.
