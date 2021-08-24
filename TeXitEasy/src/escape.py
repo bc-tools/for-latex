@@ -18,15 +18,15 @@ MODE_TEXT = "text"
 # -- ESCAPE - AUTO CODE - START -- #
 
 CHARS_TO_ESCAPE = {
-    'text': "{}_$&%#",
-    'math': "{}_$&%#" 
+    MODE_TEXT: "{}_$&%#",
+    MODE_MATH: "{}_$&%#" 
 }
 
 CHARS_TO_LATEXIFY = {
-    'text': {
+    MODE_TEXT: {
         "\\": "\\textbackslash{}"
     },
-    'math': {
+    MODE_MATH: {
         "\\": "\\backslash{}"
     }
 }
@@ -37,6 +37,7 @@ PLACEHOLDERS_F_STRING = {
     '<:': '{',
     ':>': '}',
 }
+
 
 # -------------------------- #
 # -- ESCAPING LATEX CHARS -- #
@@ -57,8 +58,7 @@ def escape(
     text: str,
     mode: str = MODE_TEXT
 ) -> str:
-    if not mode in CHARS_TO_ESCAPE:
-        raise ValueError("unknown mode.")
+    assert mode in CHARS_TO_ESCAPE, "unknown mode."
 
     tolatexify = CHARS_TO_LATEXIFY[mode].items()
     toescape   = CHARS_TO_ESCAPE[mode]
