@@ -10,4 +10,4 @@ The `Python` module `TeXitEasy`
 About `TeXitEasy`
 -----------------
 
-This modules proposes some `Python` tools to work with `LaTeX`.
+This module proposes some `Python` tools to work with `LaTeX`.
