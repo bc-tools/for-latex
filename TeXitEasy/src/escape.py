@@ -46,21 +46,11 @@ PLACEHOLDERS_F_STRING = {
 # prototype::
 #     text : the text to be escaped.
 #     mode : the ¨latex mode where the text will be used.
-#          @ :in: ["text" , "math"]
+#          @ :in: [MODE_MATH, MODE_TEXT]
 #
 #     :return: the text with all specific ¨latex characters escaped so as
 #              to be used verbatim in either a math formula or a text 
 #              regarding to the value of ``mode``.
-#
-# Here are two examples of use.
-#
-# term-python::
-#     >>> from texiteasy.escape import escape, MODE_MATH
-#     >>> txt = "\OH/ & ..."
-#     >>> print(escape(txt))
-#     \textbackslash{}OH/ \& ...
-#     >>> print(escape(text = txt, mode = MODE_MATH))
-#     \backslash{}OH/ \& ...
 ###
 
 def escape(
@@ -106,28 +96,11 @@ def escape(
 
 ###
 # prototype::
-#     code : the ¨latex source to transform to a f-string.
+#     code : the ¨latex source to transform to a f-string template.
 #
 #     :return: the source with all specific ¨latex characters escaped so as
 #              to be used verbatim in either a math formula or a text 
 #              regarding to the value of ``mode``.
-#
-# Here is an example of use where latex::``<:PYVAR_FOR_FSTRING:>`` is used instead 
-# of ``{PYVAR_FOR_FSTRING}`` as this must normally be done for f-strings.
-#
-# term-python::
-#     >>> from escape import fstringit
-#     >>> texcode = r'''
-#     \NewDocumentCommand{ \fictivenv }
-#                     { O{abc}m }{
-#         \onemacro{<:PYVAR_FOR_FSTRING:>}{#2}
-#     }
-#     '''.strip()
-#     >>> print(fstringit(texcode))
-#     \NewDocumentCommand{{ \fictivenv }}
-#                     {{ O{{abc}}m }}{{
-#         \onemacro{{{PYVAR_FOR_FSTRING}}}{{#2}}
-#     }}
 ###
 
 def fstringit(code: str) -> str:

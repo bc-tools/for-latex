@@ -1,0 +1,11 @@
+tool_*/
+tools_*/
+
+tool_*.*
+tools_*.*
+
+test_*/
+tests_*/
+
+test_*.*
+tests_*.*

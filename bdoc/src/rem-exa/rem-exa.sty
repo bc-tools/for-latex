@@ -71,7 +71,7 @@
 \NewDocumentCommand{ \docexa }{sO{}}{%
     \IfBooleanTF{#1}{% Star used
         \@docexa@abstract{\bdoc@trans@exa@title}{#2}%
-    }{% No star used.
+    }{               % No star used.
         \refstepcounter{bdoc@cnt@exa}%
         \@docexa@abstract{\bdoc@trans@exa@title{}~\thebdoc@cnt@exa}{#2}%
     }%
