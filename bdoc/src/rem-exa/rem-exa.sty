@@ -14,7 +14,7 @@
 
 %%%
 % For the titles of the examples, we define a counter ``bdoc@cnt@exa``
-% which is reset when at least a verb::``subsubsection`` is opened. 
+% which is reset when at least a verb::``subsubsection`` is opened.
 %%%
 
 \newcounter{bdoc@cnt@exa}[subsubsection]
@@ -30,17 +30,17 @@
 %
 %     1) If the 2nd argument is empty, the content is just the 1st argument.
 %
-%     2) If the 2nd argument is not empty, the content is the 1st and 2nd 
+%     2) If the 2nd argument is not empty, the content is the 1st and 2nd
 %        arguments separated by a dash ``--``.
 %
 % info::
-%     This macro comes from a factorization of the code used to title the 
+%     This macro comes from a factorization of the code used to title the
 %     example.
 %%%
 
 \NewDocumentCommand{ \@docexa@abstract } {
-	m
-	m
+    m
+    m
 }{%
     \paragraph{%
         #1%
@@ -53,27 +53,24 @@
 %%%
 % prototype::
 %     #1 : a descriptive title
-%        @ :opt:
-%
-%     :meta: star
 %
 % Here are the different uses of the macros ``\docexa`` and ``\docexa*``.
 %
-%     1) ``\docexa`` or ``\docexa[]`` produces something like 
+%     1) ``\docexa`` or ``\docexa[]`` produces something like
 %        ``\paragraph{Example N}``
-%        where ``N``is the value of the counter ``bdoc@cnt@exa``. 
+%        where ``N``is the value of the counter ``bdoc@cnt@exa``.
 %
-%     2) ``\docexa[One description]`` produces something like 
+%     2) ``\docexa[One description]`` produces something like
 %        ``\paragraph{Example N -- One description}``
-%        where ``N`` is as above. 
+%        where ``N`` is as above.
 %
-%     3) ``\docexa*`` does a similar job except that it doesn't print 
+%     3) ``\docexa*`` does a similar job except that it doesn't print
 %        the value `N`` of the counter ``bdoc@cnt@exa``.
 %%%
 
 \NewDocumentCommand{ \docexa }{
-	s
-	O{}
+    s
+    O{}
 }{%
     \IfBooleanTF{#1}{% Star used
         \@docexa@abstract{\bdoc@trans@exa@title}{#2}%

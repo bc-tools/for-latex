@@ -5,7 +5,6 @@
 %%%
 % prototype::
 %     #1 : the name of a package
-%        @ :arg:
 %
 % ``\docpack{mypack}`` prints verb::``mypack``.
 %
@@ -14,7 +13,7 @@
 %%%
 
 \NewDocumentCommand{ \docpack }{
-	m
+    m
 }{%
     \texttt{#1}%
 }
@@ -22,13 +21,12 @@
 %%%
 % prototype::
 %     #1 : the name of a macro
-%        @ :arg:
 %
 % ``\docenv{mymacro}`` prints verb::``\mymacro``.
 %%%
 
 \NewDocumentCommand{ \docmacro }{
-	m
+    m
 }{%
     \texttt{\textbackslash{}#1}%
 }
@@ -42,7 +40,7 @@
 %%%
 
 \NewDocumentCommand{ \docenv }{
-	m
+    m
 }{%
     \texttt{\textbackslash{}begin\{#1\} \!...\! \textbackslash{}end\{#1\}}%
 }
@@ -59,8 +57,8 @@
 %%%
 
 \NewDocumentCommand{ \docprewhy }{
-	m
-	m
+    m
+    m
 }{%
     \textbf{\docpre{#1}}-#2%
 }
@@ -69,13 +67,13 @@
 % prototype::
 %     #1 : just a prefix
 %
-% ``\docpre{pre}`` only prints verb::``pre``. This can be useful in 
+% ``\docpre{pre}`` only prints verb::``pre``. This can be useful in
 % a case like ``\docpre{pre} comes from \docprewhy{pre}{fix}`` which
 % prints: verb::``pre`` comes from verb::``pre``-fix.
 %%%
 
 \NewDocumentCommand{ \docpre }{
-	m
+    m
 }{%
     \texttt{#1}%
 }

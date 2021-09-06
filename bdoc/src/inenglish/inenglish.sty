@@ -9,9 +9,9 @@
 % For example, ``\docquote{Something}`` prints something like
 % **"Something"**.
 %%%
-    
+
 \NewDocumentCommand{ \docquote }{
-	m
+    m
 }{%
     \og \emph{#1} \fg%
 }
@@ -23,25 +23,23 @@
 % prototype::
 %     #1 : a text to explain
 %
-%     :meta: star
-%
-% For example, if the language chosen is French, we have the following 
+% For example, if the language chosen is French, we have the following
 % outputs.
 %
 %     1) ``\docinEN{Something}`` prints something like
 %        **"Something" en anglais**.
 %
-%     2) ``\docinEN*{Something}`` just prints something like 
-%        **"Something"**. 
-%        This can be useful in a case like 
-%        ``\docinEN*{Something} et \docinEN{Another thing}`` 
-%        which gives 
+%     2) ``\docinEN*{Something}`` just prints something like
+%        **"Something"**.
+%        This can be useful in a case like
+%        ``\docinEN*{Something} et \docinEN{Another thing}``
+%        which gives
 %        **"Something" et "Another thing" en anglais**.
 %%%
 
 \NewDocumentCommand{ \docinEN }{
-	s
-	m
+    s
+    m
 }{%
     \docquote{#2}%
     \IfBooleanF{#1}{% No star used.
