@@ -55,7 +55,7 @@
 
 \subsection{Codes importés}
 
-Pour les codes suivants, on considère un fichier \verb+examples/listing-xyz.tex+ dont le chemin est donné relativement au document présent.
+Pour les codes suivants, on considère un fichier \verb+examples/listing/xyz.tex+ dont le chemin est donné relativement au document présent.
 Le contenu de ce fichier est l'unique ligne \docilatex|$x y z = 1$| .
 
 \medskip
@@ -74,12 +74,12 @@ Notez que les 1\ieres{} macros sont nommées de façon similaire aux environneme
 \docexa[Face à face]
 
 \begin{doclatex-alone}
-\inputdoclatex{examples/listing-xyz.tex}
+\inputdoclatex{examples/listing/xyz.tex}
 \end{doclatex-alone}
 
 Ceci produit la mise en forme suivante.
 
-\inputdoclatex{examples/listing-xyz.tex}
+\inputdoclatex{examples/listing/xyz.tex}
 
 
 % ------------------ %
@@ -89,7 +89,7 @@ Ceci produit la mise en forme suivante.
 
 \docmacro{inputdoclatexflat} produit un code à plat comme ci-dessous.
 
-\inputdoclatexflat{examples/listing-xyz.tex}
+\inputdoclatexflat{examples/listing/xyz.tex}
 
 
 % ------------------ %
@@ -100,7 +100,7 @@ Ceci produit la mise en forme suivante.
 
 \docmacro{inputdoclatexalone} sert à n'avoir que le code comme ci-après.
 
-\inputdoclatexalone{examples/listing-xyz.tex}
+\inputdoclatexalone{examples/listing/xyz.tex}
 
 % ------------------ %
 
@@ -113,7 +113,7 @@ Le rendu suivant est obtenu en utilisant \docmacro{inputdoclatexbefore}.
 \medskip
 
 \begin{docshowcase}
-    \inputdoclatexbefore{examples/listing-xyz.tex}
+    \inputdoclatexbefore{examples/listing/xyz.tex}
 \end{docshowcase}
 
 \bigskip
@@ -125,7 +125,7 @@ Ainsi \docilatex|\inputdoclatexbefore[Voici ce que cela donne.]{...}| aboutit au
 
 \begin{docshowcase}[Début du rendu réel \docquote{personnalisé}]%
                    [Fin du rendu réel \docquote{personnalisé}]
-    \inputdoclatexbefore[Voici ce que cela donne.]{examples/listing-xyz.tex}
+    \inputdoclatexbefore[Voici ce que cela donne.]{examples/listing/xyz.tex}
 \end{docshowcase}
 
 
@@ -143,7 +143,7 @@ similaire au précédent, est obtenu en appellant \docmacro{inputdoclatexafter} 
 \medskip
 
 \begin{docshowcase}
-    \inputdoclatexafter{examples/listing-xyz.tex}
+    \inputdoclatexafter{examples/listing/xyz.tex}
 \end{docshowcase}
 
 \bigskip
@@ -154,7 +154,7 @@ Via \docilatex|\inputdoclatexafter[Cette formule se tape comme suit.]{...}| , on
 
 \begin{docshowcase}[Début du rendu réel \docquote{personnalisé}]%
                    [Fin du rendu réel \docquote{personnalisé}]
-    \inputdoclatexafter[Cette formule se tape comme suit.]{examples/listing-xyz.tex}
+    \inputdoclatexafter[Cette formule se tape comme suit.]{examples/listing/xyz.tex}
 \end{docshowcase}
 
 
@@ -168,7 +168,7 @@ Pour un code et son rendu réel non centré, on utilisera \docmacro{inputdoclate
 \medskip
 
 \begin{bdoc-extra-showcase}
-    \inputdoclatexreal{examples/listing-xyz.tex}
+    \inputdoclatexreal{examples/listing/xyz.tex}
 \end{bdoc-extra-showcase}
 
 \bigskip
@@ -179,7 +179,7 @@ Là aussi le texte par défaut peut être \docquote{personnalisé}. Par exemple,
 
 \begin{bdoc-extra-showcase}[Début du rendu \docquote{personnalisé} dans cette doc.]%
                            [Fin du rendu \docquote{personnalisé} dans cette doc.]
-    \inputdoclatexreal[On obtient le rendu réel ci-après.]{examples/listing-xyz.tex}
+    \inputdoclatexreal[On obtient le rendu réel ci-après.]{examples/listing/xyz.tex}
 \end{bdoc-extra-showcase}
 
 \end{document}

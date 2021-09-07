@@ -1,18 +1,3 @@
-The `Python` module `TeXfactory`
-================================
-
-
-> **I beg your pardon for my english...**
->
-> English is not my native language, so be nice if you notice misunderstandings, misspellings, or grammatical errors in my documents and codes.
-
-
-About `TeXfactory`
-------------------
-
-This module proposes `Python` tools to automate the production of a TeX project from a source directory using a standarized workflow (the idea is to code easily small parts of the project).
-
-
 Standarized workflow
 --------------------
 
@@ -24,22 +9,18 @@ Standarized workflow
 ~~~
 + bdoc
     +src
-        + macroenv
-            + macroenv.sty
-            + macroenv-FR.tex
-            + macroenv-FR.tex
         + version-n-change
             + version-n-change.sty
             + version-n-change-FR.tex
-            + version-n-change-FR.tex
+            + version-n-change-FR.pdf
             + examples
-                + logchange
+                + version-n-change
                     + version.tex
                     + new.tex
                     + topic.tex
         + intro
             + intro-FR.tex
-            + intro-FR.tex
+            + intro-FR.pdf
         + LICENSE.txt
         + main
             + 01-lang-FR.tex
@@ -67,7 +48,7 @@ Standarized workflow
         + bdoc-FR.tex
         + bdoc-FR.pdf
         + examples
-            + logchange
+            + version-n-change
                 + version.tex
                 + new.tex
                 + topic.tex
@@ -84,6 +65,5 @@ Standarized workflow
 toc::
     + intro
     + main
-    + macroenv
     + version-n-change
 ~~~
