@@ -1,3 +1,10 @@
 toc::
     + prologue
     + workflow
+    + coc
+    + coc-dirtree
+    + coc-order
+    + coc-sty
+    + coc-doc
+    + coc-path
+    + build
