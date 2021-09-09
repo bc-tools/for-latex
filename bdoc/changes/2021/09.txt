@@ -1,0 +1,8 @@
+==
+09
+==
+
+**New minor version version::``0.3.0-beta``:** see the changes below.
+
+
+**API changes:** the macro ``\docilatex`` has been renamed ``\docinlatex``.
