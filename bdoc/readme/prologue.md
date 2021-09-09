@@ -1,5 +1,5 @@
-The `Python` module `TeXfactory`
-================================
+The `LaTeX` package `bdoc`
+==========================
 
 
 > **I beg your pardon for my english...**
@@ -10,4 +10,4 @@ The `Python` module `TeXfactory`
 About `bcdoc`
 -------------
 
-This package proposes some macros to write human documentations of `LaTeX` packages with a tutorial flavour.
+This package proposes some macros to write human documentations of `LaTeX` packages with a tutorial-like flavour.
