@@ -31,9 +31,6 @@ project = TeXProject(
 
         test_*/
         test_*.*
-
-        *-FR.pdf
-        *-EN.pdf
     ''',
     usegit = True
 )
@@ -48,4 +45,9 @@ for f in project.lof_sty_src:
 print('--- TEX ---')
 
 for f in project.lof_tex_src:
+    print(f)
+
+print('--- ABOUT ---')
+
+for f in project.lof_about:
     print(f)
