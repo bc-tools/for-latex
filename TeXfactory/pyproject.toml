@@ -1,0 +1,19 @@
+[tool.poetry]
+name        = "texfactory"
+version     = "0.0.0-beta"
+description = 'This project automates the production of a TeX project from a source directory using a standarized workflow.'
+readme       = "README.md"
+authors      = ["Christophe BAL"]
+maintainers  = ["Christophe BAL"]
+license      = "GNU License Version 3"
+repository   = "https://github.com/projetmbc/tools-for-latex/tree/master/TeXfactory"
+
+[tool.poetry.dependencies]
+python   = "^3.8"
+src2prod = "^0.0.6-beta.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires      = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
