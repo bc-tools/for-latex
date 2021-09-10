@@ -21,7 +21,7 @@ from src import *
 
 PROJECT_DIR = Path("/Users/projetmbc/Google Drive/git[NEW]/coding/tools/for-latex") / 'bdoc'
 
-project = Project(
+project = TeXProject(
     project = PROJECT_DIR,
     source  = PROJECT_DIR / 'src',
     target  = '',
@@ -40,14 +40,12 @@ project = Project(
 
 project.build()
 
-print('---')
+print('--- STY ---')
 
-for f in project.lof:
-    relpath = f.relative_to(PROJECT_DIR / 'src')
+for f in project.lof_sty_src:
+    print(f)
 
-    if (
-        len(relpath.parents) - 1 == 1
-        and
-        relpath.suffix in ['.sty', '.tex']
-    ):
-        print(relpath)
+print('--- TEX ---')
+
+for f in project.lof_tex_src:
+    print(f)
