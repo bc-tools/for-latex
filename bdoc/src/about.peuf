@@ -1,3 +1,6 @@
+extra::
+    doc-header = common-doc.tex
+
 toc::
     + intro
     + main
