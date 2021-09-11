@@ -31,7 +31,7 @@ project = TeXProject(
     ignore  = MONOREPO_DIR / 'ignore-for-prod.txt',
     usegit  = True,
     # readme  = 'README.md',
-    # readme  = 'readme',
+    readme  = 'readme',
 )
 
 project.build()
