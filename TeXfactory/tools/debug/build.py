@@ -2,6 +2,8 @@
 
 from cbdevtools import *
 
+projectname = 'bdoc'
+
 
 # ------------------------------------ #
 # -- MODULES IMPORTED FROM SOURCES! -- #
@@ -19,35 +21,17 @@ MODULE_DIR = addfindsrc(
 
 from src import *
 
-PROJECT_DIR = Path("/Users/projetmbc/Google Drive/git[NEW]/coding/tools/for-latex") / 'bdoc'
+MONOREPO_DIR = MODULE_DIR.parent
+PROJECT_DIR  = Path(projectname)
 
 project = TeXProject(
-    project = PROJECT_DIR,
-    source  = PROJECT_DIR / 'src',
-    target  = '',
-    ignore  = '''
-        tool_*/
-        tool_*.*
-
-        test_*/
-        test_*.*
-    ''',
-    usegit = True
+    project = MONOREPO_DIR / PROJECT_DIR,
+    source  = 'src',
+    target  = projectname.lower(),
+    ignore  = MONOREPO_DIR / 'ignore-for-prod.txt',
+    usegit  = True,
+    # readme  = 'README.md',
+    # readme  = 'readme',
 )
 
 project.build()
-
-print('--- STY ---')
-
-for f in project.lof_sty_src:
-    print(f)
-
-print('--- TEX ---')
-
-for f in project.lof_tex_src:
-    print(f)
-
-print('--- ABOUT ---')
-
-for f in project.lof_about:
-    print(f)
