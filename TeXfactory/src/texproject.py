@@ -271,7 +271,7 @@ class TeXProject(Project):
 
             self.recipe(
                 {VAR_STEP_INFO:
-                    f'Changes for the doc sorted.',
+                    f'Changes: files sorted.',
                 VAR_LEVEL: 1}
             )
 
@@ -301,11 +301,6 @@ class TeXProject(Project):
 # This method resets everything with a personalized main title.
 ###
     def reset(self) -> None:
-        self.problems.reset()
-
-        self.recipe(
-            FORLOG,
-                {VAR_TITLE:
-                    f'"{self.project.name}": '
-                     'SOURCE --[[ TeXfactory ]]--> FINAL PRODUCT'},
+        super().reset(
+            kind = 'SOURCE --[[ TeXfactory ]]--> FINAL PRODUCT'
         )

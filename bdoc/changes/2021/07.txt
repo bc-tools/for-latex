@@ -44,7 +44,7 @@
 14
 ==
 
-**New minor version version::``0.1)0-beta``:** see all the changes below and before this date.
+**New minor version version::``0.1.0-beta``:** see all the changes below and before this date.
 
 
 **Dates and version numbers:** the macro ``\docversion`` prints now the date with the format of the language loaded with ¨bdoc.
