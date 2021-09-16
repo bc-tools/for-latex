@@ -40,9 +40,9 @@ The macro ``\docilatex`` has been added to display inline ¨latex codes (verb::`
 For showcases, the text indicating the start and the end of a showcase can be customized.
 
 
---------
-:update:
---------
+---------
+:updates:
+---------
 
 [[:api:]]
 The option of the ¨env ``doctopic`` must be put after the title now.
@@ -71,13 +71,13 @@ The macro ``\docquote`` uses ``\og`` and ``\fg`` that come from ``\usepackage[fr
 ------
 
 [[:api:]]
-For the date and the number of a version, the macro ``\docversion`` prints now the date with the format of the language loaded with ¨bdoc.
-
-[[:api:]]
-For ¨latex examples and their output, the macros ``\inputdoclatexafter``, ``\inputdoclatexbefore`` and ``\inputdoclatexreal`` have now an optional argument to change the explaining text.
+The macros ``\inputdoclatexafter``, ``\inputdoclatexbefore`` and ``\inputdoclatexreal`` have now an optional argument to change the explaining text.
 
 [[:format:]]
-For showcases, the strip contains also now the focusing rules, and it uses a blue color instead of a green one.
+The macro ``\docversion`` prints now the date with the format of the language loaded with ¨bdoc.
+
+[[:format:]]
+For the showcases, the strip contains now also the focusing rules, and this strip uses a blue color instead of a green one.
 
 
 --------
@@ -95,12 +95,17 @@ All the ¨tech ¨docus in the ¨src have been written.
 13
 ==
 
-------
-:news:
-------
+-----
+:new:
+-----
 
 [[:api:]]
 The macros ``\docexa`` and ``\docexa*`` work with an optional argument instead of a mandatory one: this allows to only type ``\docexa`` or ``\docexa*`` without any curly braces.
+
+
+---------
+:updates:
+---------
 
 [[:format:]]
 The printing of codes has been enhanced.
@@ -128,10 +133,10 @@ The source of the ¨env for ¨latex codes has been factorized.
 ==
 
 -----
-:add:
+:new:
 -----
 
-[[:news:]]
+[[:api:]]
 The package can be loaded by **indicating the language to use** (only the French and the English are supported at this time).
 
 
@@ -159,7 +164,7 @@ The resbonsabilities of the package have been minimized: the user has to manage 
 The preferred coding language will be ¨latex3 (some more advanced and optional features will be coded in ¨lua).
 
 [[:flow:]]
-The code is now developed like other independent packages of the ¨tns series (it remains to build the automatic tools and then we will be ready to publish a version of ¨bcode for users).
+The code is now developed like other independent packages of the ¨tns series (it remains to build the automatic tools and then we will be ready to publish a version of ¨bdoc for users).
 
 
 // ---------- //
@@ -170,16 +175,8 @@ The code is now developed like other independent packages of the ¨tns series (i
 ==
 
 --------
-:fordev:
+:breaks:
 --------
-
-[[Preparing a public version]]
-The project has be named ¨bdoc for "Basic ¨Docu".
-
-
--------
-:break:
--------
 
 [[:api:]]
 The macro ``\signprewhy`` has been removed. It will be proposed by the package ¨macroenvsign (this is more logical).
@@ -188,12 +185,20 @@ The macro ``\signprewhy`` has been removed. It will be proposed by the package �
 The ¨env ``remark`` has been renamed ``docremark``.
 
 
------
-:add:
------
+------
+:news:
+------
 
-[[:news:]]
+[[:api:]]
 Two new macros ``\docpack`` and ``\docquote`` have been added.
+
+
+--------
+:fordev:
+--------
+
+[[Preparing a public version]]
+The project has be named ¨bdoc for "Basic ¨Docu".
 
 
 // ---------- //
