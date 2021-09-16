@@ -1,8 +1,10 @@
 ==
-09
+09  (0.3.0-beta)
 ==
 
-**New minor version version::``0.3.0-beta``:** see the important change below.
+-------
+:break:
+-------
 
-
-**API changes:** the macro ``\docilatex`` has been renamed ``\docinlatex``.
+[[:api:]]
+Macro ``\docilatex``: it has been renamed ``\docinlatex``.

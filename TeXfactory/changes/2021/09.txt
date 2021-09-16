@@ -1,5 +1,5 @@
 ==
-??
+??  (0.0.0-beta)
 ==
 
-**First version version::``0.0.0-beta``:** this project automates the production of a ¨tex project from a ¨src ¨dir using a standarized workflow (the idea is to code easily small parts of the project).
+This project automates the production of a ¨tex project from a ¨src ¨dir using a standarized workflow (the idea is to code easily small parts of the project).

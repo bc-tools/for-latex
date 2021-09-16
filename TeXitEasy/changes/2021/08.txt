@@ -2,19 +2,34 @@
 24
 ==
 
-**path::``README.md``:** little tutorials have been added.
+-----
+:new:
+-----
+
+[[:doc:]]
+path::``README.md`` contains little tutorials.
+
+
+// ---------- //
 
 
 ==
 10
 ==
 
-**Factorization:** some simplifications made in the code of the function ``escape``.
+--------
+:fordev:
+--------
+
+[[:facto:]]
+Function ``escape``: some simplifications have been made in the source code.
+
+
+// ---------- //
 
 
 ==
-07
+07  (0.0.1-beta)
 ==
 
-**First version version::``0.0.1-beta``:** this project proposes some tools to work with ¨latex: for the moment, just escaping functionalities are available (the strange first number version comes from a rigid behavior of ¨pypi).
-
+This project proposes some tools to work with ¨latex: for the moment, just escaping functionalities are available (the strange first number version comes from a rigid behavior of ¨pypi).

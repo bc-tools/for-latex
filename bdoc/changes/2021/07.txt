@@ -2,10 +2,15 @@
 19
 ==
 
-**A tiny factorization:** instead of using the ``most`` option in  ``\RequirePackage[most]{tcolorbox}``, we have added the library ``skins`` via ``\tcbuselibrary``.
+--------
+:fordev:
+--------
 
+[[:facto:]]
+Instead of using the ``most`` option in  ``\RequirePackage[most]{tcolorbox}``, we just add the library ``skins`` via ``\tcbuselibrary``.
 
-**A mini bug fixed:** the ugly hack for french quotes was a partial copy of some part of the ``babel`` package source code.
+[[:bug:]]
+The ugly hack for french quotes was a partial copy of some part of the ``babel`` package source code.
 
     1) Right quote: ``\ignorespaces`` has been added at the end.
 
@@ -14,59 +19,91 @@
     1) Better unbreakable spacing: ``\kern.25em`` replaces ``\,``.
 
 
-==
-15
-==
-
-**New minor version version::``0.2.0-beta``:** see the important changes below.
-
-
-**New features.**
-
-    1) The new macro ``\docnew`` can be used to indicate the date of something new.
-
-    1) The option of the environment ``doctopic`` must be put after the title now.
-
-
-**Codes:** the macro ``\docilatex`` has been added to display inline ¨latex codes (verb::``i`` is for "inline").
-
-
-**Formatting.**
-
-    1) Showcases: the text indicating the start and the end of a showcase can be customized.
-
-    1) Decorations: the macro ``\docsep`` produces a more "symmetrical" vertical spacing.
-
-    1) Quoting: the macro ``\docquote`` uses ``\og`` and ``\fg`` that come from ``\usepackage[french]{babel}`` but the problem is that ``babel`` is no longer loaded automatically. So now, if necessary, we define our version of ``\og`` and ``\fg`` via ``\providecommand`` (for French, we just mimic the code of babel and for English we define the expected double quotes).
+// ---------- //
 
 
 ==
-14
+15  (0.2.0-beta)
 ==
 
-**New minor version version::``0.1.0-beta``:** see all the changes below and before this date.
+------
+:news:
+------
+
+[[:api:]]
+The new macro ``\docnew`` can be used to indicate the date of something new.
+
+[[:api:]]
+The macro ``\docilatex`` has been added to display inline ¨latex codes (verb::``i`` is for "inline").
+
+[[:api:]]
+For showcases, the text indicating the start and the end of a showcase can be customized.
 
 
-**Dates and version numbers:** the macro ``\docversion`` prints now the date with the format of the language loaded with ¨bdoc.
+--------
+:update:
+--------
+
+[[:api:]]
+The option of the ¨env ``doctopic`` must be put after the title now.
+
+[[:format:]]
+Decorations: the macro ``\docsep`` produces a more "symmetrical" vertical spacing.
 
 
-**A ¨latex example and its output:** the macros ``\inputdoclatexafter``, ``\inputdoclatexbefore`` and ``\inputdoclatexreal`` have now an optional argument to change the explaining text.
+--------
+:fordev:
+--------
+
+[[:tech:]]
+The macro ``\docquote`` uses ``\og`` and ``\fg`` that come from ``\usepackage[french]{babel}`` but the problem is that ``babel`` is no longer loaded automatically. So now, if necessary, we define our version of ``\og`` and ``\fg`` via ``\providecommand`` (for French, we just mimic the code of babel and for English we define the expected double quotes).
 
 
-**Showcases:** the strip contains now the focusing rules, and it uses a blue color instead of a green one.
+// ---------- //
 
 
-**Technical ¨doc:** all the technical ¨docs have been written.
+==
+14  (0.1.0-beta)
+==
+
+------
+:news:
+------
+
+[[:api:]]
+For the date and the number of a version, the macro ``\docversion`` prints now the date with the format of the language loaded with ¨bdoc.
+
+[[:api:]]
+For ¨latex examples and their output, the macros ``\inputdoclatexafter``, ``\inputdoclatexbefore`` and ``\inputdoclatexreal`` have now an optional argument to change the explaining text.
+
+[[:format:]]
+For showcases, the strip contains also now the focusing rules, and it uses a blue color instead of a green one.
+
+
+--------
+:fordev:
+--------
+
+[[:tech:]]
+All the ¨tech ¨docus in the ¨src have been written.
+
+
+// ---------- //
 
 
 ==
 13
 ==
 
-**Examples:** the macros ``\docexa`` and ``\docexa*`` works with an optional argument (this allows to just type ``\docexa`` or ``\docexa*`` with any curly braces).
+------
+:news:
+------
 
+[[:api:]]
+The macros ``\docexa`` and ``\docexa*`` work with an optional argument instead of a mandatory one: this allows to only type ``\docexa`` or ``\docexa*`` without any curly braces.
 
-**Printing codes with their output.**
+[[:format:]]
+The printing of codes has been enhanced.
 
     1) The frame uses tiny rounded corners for a smoother output and a shadow because it is so cute...
 
@@ -75,60 +112,110 @@
     1) The back color has been changed to a light yellow.
 
 
-**Backstage:** the code defining the ¨latex code environment has been factorized.
+--------
+:fordev:
+--------
+
+[[:tech:]]
+The source of the ¨env for ¨latex codes has been factorized.
+
+
+// ---------- //
 
 
 ==
 12
 ==
 
-**Different languages:** the package can be loaded by indicating the language to use (only the French and the English are supported for the moment).
+-----
+:add:
+-----
+
+[[:news:]]
+The package can be loaded by **indicating the language to use** (only the French and the English are supported at this time).
 
 
-**Showcases:** the rulers are automatically set to obtain the same global width before and after the rendering.
+--------
+:update:
+--------
+
+[[:format:]]
+For showcases, the rulers are automatically set to obtain the same global width before and after the rendering.
 
 
-**Minimize the resbonsabilities:** the user has to manage alone imports like ``\usepackage[utf8]{inputenc}`` and ``\usepackage[french]{babel, varioref}`` (but the automatic tools will do it when generating ¨docs for the ¨tns series).
+-------
+:break:
+-------
+
+[[:api:]]
+The resbonsabilities of the package have been minimized: the user has to manage alone imports like ``\usepackage[utf8]{inputenc}`` and ``\usepackage[french]{babel, varioref}`` (but the automatic tools will do it when generating ¨docs for the ¨tns series).
 
 
-**Machinery in backstage.**
+--------
+:fordev:
+--------
 
-    1) For the technical stuffs, the preferred coding language will be ¨latex3 (some more advanced and optional features will be coded in ¨lua).
+[[:tech:]]
+The preferred coding language will be ¨latex3 (some more advanced and optional features will be coded in ¨lua).
 
-    1) The code is now developed like other independent packages of the ¨tns series (it remains to build the automatic tools and then we will be ready to publish a version of ¨bcode for users).
+[[:flow:]]
+The code is now developed like other independent packages of the ¨tns series (it remains to build the automatic tools and then we will be ready to publish a version of ¨bcode for users).
+
+
+// ---------- //
 
 
 ==
 08
 ==
 
-**Preparing a public version:** the project has be named ¨bdoc for "Basic Documentation".
+--------
+:fordev:
+--------
+
+[[Preparing a public version]]
+The project has be named ¨bdoc for "Basic ¨Docu".
 
 
-**Some changes.**
+-------
+:break:
+-------
 
-    1) The macro ``\signprewhy`` has been removed.
-       It will be proposed by the package ¨macroenvsign (this is more logical).
+[[:api:]]
+The macro ``\signprewhy`` has been removed. It will be proposed by the package ¨macroenvsign (this is more logical).
 
-    1) The environment ``remark`` has been renamed ``docremark``.
+[[:api:]]
+The ¨env ``remark`` has been renamed ``docremark``.
 
 
-**Some new features.**
+-----
+:add:
+-----
 
-    1) A macro ``\docpack`` has been added.
+[[:news:]]
+Two new macros ``\docpack`` and ``\docquote`` have been added.
 
-    1) A macro ``\docquote`` has been added.
+
+// ---------- //
 
 
 ==
 06
 ==
 
-**One change for the environment ``doctopic``:** the single option ``ml`` (multiline) has been renamed to ``t`` (title).
+-------
+:break:
+-------
+
+[[:api:]]
+¨env ``doctopic``: the single option ``ml`` (multiline) has been renamed to ``t`` (title).
+
+
+// ---------- //
 
 
 ==
-05
+05  (0.0.0-beta)
 ==
 
-**First version version::``0.0.0-beta``:** this project is only usefull for the documentations of the ¨tns packages.
+This project is only useful for the ¨docus of the ¨tns packages.
