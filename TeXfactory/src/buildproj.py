@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# TODO  NELLE ORGA !!!!
+
 # TODO gestion about vs auto
 
 
