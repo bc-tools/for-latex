@@ -66,12 +66,17 @@ The macro ``\docquote`` uses ``\og`` and ``\fg`` that come from ``\usepackage[fr
 14  (0.1.0-beta)
 ==
 
-------
-:news:
-------
+-----
+:new:
+-----
 
 [[:api:]]
 The macros ``\inputdoclatexafter``, ``\inputdoclatexbefore`` and ``\inputdoclatexreal`` have now an optional argument to change the explaining text.
+
+
+---------
+:updates:
+---------
 
 [[:format:]]
 The macro ``\docversion`` prints now the date with the format of the language loaded with ¨bdoc.
@@ -103,9 +108,9 @@ All the ¨tech ¨docus in the ¨src have been written.
 The macros ``\docexa`` and ``\docexa*`` work with an optional argument instead of a mandatory one: this allows to only type ``\docexa`` or ``\docexa*`` without any curly braces.
 
 
----------
-:updates:
----------
+--------
+:update:
+--------
 
 [[:format:]]
 The printing of codes has been enhanced.

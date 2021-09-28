@@ -25,8 +25,8 @@
 % prototype::
 %     #1 : a text
 %
-% This macro adds two horizontal rules on both sides of the text. The final
-% output is centered.
+%     :action: this macro adds two horizontal rules on both sides of the text.
+%              The final output is centered.
 %%%
 
 \NewDocumentCommand{ \docruler }{
@@ -57,12 +57,13 @@
 %     #1 : the text indicating the begin of the real render
 %     #2 : the text indicating the end of the real render
 %
-% This environment adds a page-width cyan stripe in the background of
-% the content of the environment.
+%     :action: this environment adds a page-width cyan stripe in the background
+%              of the content of the environment.
 %
-% The stripe is preceded and followed by centered materials produced by
-% the macro ``\docruler`` such as to stress the start and the end of
-% the content.
+% note::
+%     The stripe is preceded and followed by centered materials produced by
+%     the macro ``\docruler`` such as to stress the start and the end of
+%     the content.
 %%%
 
 \NewDocumentEnvironment{ docshowcase }{

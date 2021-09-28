@@ -49,7 +49,7 @@ class TeXProject(BuildProj):
 #     safemode     : ``True`` asks to never remove a none empty target folder
 #                    contrary to ``False``.
 #
-# info::
+# note::
 #     The argument ``safemode`` is here to leave the responsability of
 #     removing a none empty folder to the user (my lawyers forced me to
 #     add this feature).

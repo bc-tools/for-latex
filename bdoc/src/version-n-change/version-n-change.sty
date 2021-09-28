@@ -28,9 +28,9 @@
 % prototype::
 %     #1 : a date YYYY-MM-DD
 %
-% This macro set the string values of ``\l_bdoc_date_year_str``,
-% ``\l_bdoc_date_month_str`` and ``\l_bdoc_date_day_str`` using
-% a basic parsing of the date argument.
+%     :action: this macro set the string values of ``\l_bdoc_date_year_str``,
+%              ``\l_bdoc_date_month_str`` and ``\l_bdoc_date_day_str`` using
+%              a basic parsing of the date argument.
 %%%
 
 \NewDocumentCommand{ \l_bdoc_good_date } {
@@ -47,9 +47,10 @@
 %     #1 : a color
 %     #2 : the first material (a date)
 %     #3 : the second material (a version number)
-%     #4 : the last negative spacing
+%     #4 : the last negative vertical spacing
 %
-% This macro factorizes the printing of the changes in the right margin.
+%     :action: this macro factorizes the printing of the changes in
+%              the left margin.
 %%%
 
 \NewDocumentCommand{ \l_bdoc_new_change_margin }{
@@ -77,7 +78,7 @@
         \vspace{1pt}
 
         \par
-        #3
+            #3
         \par
 
         \vspace{#4}
@@ -92,18 +93,20 @@
 %     #2 : a version number
 %     #3 : a date YYYY-MM-DD
 %
-% This macro prints a margin note showing a version number upon a date, and
-% the optional argument is used to colorized all this text.
+%     :action: this macro prints a margin note showing a version number
+%              upon a date, and the optional argument is used to colorized
+%              all this text.
 %
-% The version number must look like ``maj.min.bug`` or  ``maj.min.bug-extra``
-% with three integers ``maj``, ``min``, ``bug`` and an optional ``extra``
-% equal to ``alpha``, ``beta`` or ``rc`` for "release candidate".
+% warning::
+%     The date must use the english formatting like ``2021-07-14``. This allows
+%     to parse the date such as to display it following the standard convention
+%     of the language chosen when loading the package.
 %
-% The date must use the english formatting like ``2021-07-14`` for example.
-%
-% info::
-%     The date displayed will follow the standard convention of the language
-%     chosen when loading the package.
+% note::
+%     The version number must look like ``maj.min.bug`` or
+%     ``maj.min.bug-extra`` with three integers ``maj``, ``min``, ``bug``
+%     and an optional ``extra`` equal to ``alpha``, ``beta`` or ``rc``
+%     for "release candidate".
 %%%
 
 \NewDocumentCommand{ \docversion } {
@@ -114,7 +117,7 @@
     \l_bdoc_new_change_margin { #1 }      % Color
                               { #3 }      % Date
                               { #2 }      % Version
-                              { -6.25pt } % Last negative spacing
+                              { -6.25pt } % Last negative vertical spacing
 }
 
 
@@ -123,7 +126,8 @@
 %     #1 : a color
 %     #2 : a date YYYY-MM-DD
 %
-% This macro is similar to ``\docversion`` except that it just prints a date.
+%     :action: this macro is similar to ``\docversion`` except that it just
+%              prints a date.
 %%%
 \NewDocumentCommand{ \docnew } {
     O{blue}
@@ -149,8 +153,8 @@
 %     #2 : the kind of title
 %        @ #2 in ["i", "t"]
 %
-% The content of this environment gives some ¨infos about specific changes
-% achieved in a new version (no special formatting is applied).
+%     :action: this environment prints some ¨infos about specific changes
+%              achieved in a new version (no special formatting is applied).
 %
 % The argument is a title and the option allows two kinds of formatting.
 % Here is what is available.
