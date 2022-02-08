@@ -96,7 +96,7 @@ def escape(
 
 ###
 # prototype::
-#     code : the ¨latex source to transform to a f-string template.
+#     code : the ¨latex source to transform into a f-string template.
 #
 #     :return: the source with all specific ¨latex characters escaped so as
 #              to be used verbatim in either a math formula or a text
