@@ -19,7 +19,6 @@
 % note::
 %     Be careful of the ``i`` for "inline".
 %%%
-
 \newmintinline[docinlatex]{latex}{}
 
 
@@ -48,7 +47,6 @@
 % Sources
 %    * https://tex.stackexchange.com/a/604821/6880
 %    * https://tex.stackexchange.com/a/327983/6880
-
 \tcbset{
     bdoc_tcb_style_latex_code/.style={
         minted language = latex,
@@ -78,6 +76,7 @@
     listing side text,
 }
 
+
 \newtcbinputlisting{\inputdoclatex}[2][]{
     listing file = {#2},
     bdoc_tcb_style_latex_code,
@@ -89,6 +88,7 @@
     bdoc_tcb_style_latex_code,
 }
 
+
 \newtcbinputlisting{\inputdoclatexflat}[2][]{
     listing file = {#2},
     bdoc_tcb_style_latex_code,
@@ -99,6 +99,7 @@
     bdoc_tcb_style_latex_code,
     listing only,
 }
+
 
 \newtcbinputlisting{\inputdoclatexalone}[2][]{
     listing file = {#2},
@@ -122,7 +123,6 @@
 %     The default descriptive text between the ¨latex code and its output
 %     is translated to the language chosen at the loading of the package.
 %%%
-
 \NewDocumentCommand{ \inputdoclatexafter }{
     O{\bdoc@trans@code@after@output}
     m
@@ -138,6 +138,7 @@
     \inputdoclatexalone{#2}
 }
 
+
 %%%
 % prototype::
 %     #1 : a one-line descriptive text
@@ -146,7 +147,6 @@
 % This macro is similar to ``\inputdoclatexafter`` except that the ¨latex
 % code is before the centered output.
 %%%
-
 \NewDocumentCommand{ \inputdoclatexbefore }{
     O{\bdoc@trans@output@after@code}
     m
@@ -162,6 +162,7 @@
     \end{center}
 }
 
+
 %%%
 % prototype::
 %     #1 : a one-line descriptive text
@@ -170,7 +171,6 @@
 % This macro is similar to ``\inputdoclatexbefore`` except that the output
 % is put inside an environment ``docshowcase`` instead of being centered.
 %%%
-
 \NewDocumentCommand{ \inputdoclatexreal }{
     O{\bdoc@trans@colon{\bdoc@trans@this@gives}}
     m

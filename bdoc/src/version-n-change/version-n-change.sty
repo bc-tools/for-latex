@@ -16,7 +16,6 @@
 % ``\l_bdoc_date_month_str`` and ``\l_bdoc_date_day_str`` are used to obtain
 % the good formatting of dates regarding to the language wanted.
 %%%
-
 \seq_new:N \l_bdoc_date_parts_seq
 
 \str_new:N \l_bdoc_date_year_str
@@ -32,7 +31,6 @@
 %              ``\l_bdoc_date_month_str`` and ``\l_bdoc_date_day_str`` using
 %              a basic parsing of the date argument.
 %%%
-
 \NewDocumentCommand{ \l_bdoc_good_date } {
     m
 } {
@@ -41,6 +39,7 @@
     \seq_pop:NN \l_bdoc_date_parts_seq \l_bdoc_date_month_str
     \seq_pop:NN \l_bdoc_date_parts_seq \l_bdoc_date_day_str
 }
+
 
 %%%
 % prototype::
@@ -52,7 +51,6 @@
 %     :action: this macro factorizes the printing of the changes in
 %              the left margin.
 %%%
-
 \NewDocumentCommand{ \l_bdoc_new_change_margin }{
     m
     m
@@ -108,7 +106,6 @@
 %     and an optional ``extra`` equal to ``alpha``, ``beta`` or ``rc``
 %     for "release candidate".
 %%%
-
 \NewDocumentCommand{ \docversion } {
     O{blue}
     m
@@ -164,7 +161,6 @@
 %     2) ``t`` for "title" asks to put the content in a new line below
 %        the title.
 %%%
-
 \NewDocumentEnvironment{ doctopic }{
     m
     O{i}

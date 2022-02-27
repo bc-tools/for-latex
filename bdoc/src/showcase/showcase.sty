@@ -17,9 +17,9 @@
 % the macro ``\docruler`` to calculate the width of the two rules drawn
 % by this macro.
 %%%
-
 \box_new:N \l_bdoc_tmpa_box
 \dim_new:N \l_bdoc_rule_dim
+
 
 %%%
 % prototype::
@@ -28,7 +28,6 @@
 %     :action: this macro adds two horizontal rules on both sides of the text.
 %              The final output is centered.
 %%%
-
 \NewDocumentCommand{ \docruler }{
     m
 }{
@@ -52,6 +51,7 @@
     }
 }
 
+
 %%%
 % prototype::
 %     #1 : the text indicating the begin of the real render
@@ -65,7 +65,6 @@
 %     the macro ``\docruler`` such as to stress the start and the end of
 %     the content.
 %%%
-
 \NewDocumentEnvironment{ docshowcase }{
     O{\bdoc@trans@real@output@start}
     O{\bdoc@trans@real@output@end}

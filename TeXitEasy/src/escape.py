@@ -53,7 +53,6 @@ PLACEHOLDERS_F_STRING = {
 #              to be used verbatim in either a math formula or a text
 #              regarding to the value of ``mode``.
 ###
-
 def escape(
     text: str,
     mode: str = MODE_TEXT
@@ -102,7 +101,6 @@ def escape(
 #              to be used verbatim in either a math formula or a text
 #              regarding to the value of ``mode``.
 ###
-
 def fstringit(code: str) -> str:
     for brace in '{}':
         code = code.replace(brace, brace*2)

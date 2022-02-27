@@ -11,12 +11,12 @@
 % note::
 %     This macro is more semantic than useful.
 %%%
-
 \NewDocumentCommand{ \docpack }{
     m
 }{%
     \texttt{#1}%
 }
+
 
 %%%
 % prototype::
@@ -24,12 +24,12 @@
 %
 % ``\docenv{mymacro}`` prints verb::``\mymacro``.
 %%%
-
 \NewDocumentCommand{ \docmacro }{
     m
 }{%
     \texttt{\textbackslash{}#1}%
 }
+
 
 %%%
 % prototype::
@@ -38,7 +38,6 @@
 % ``\docenv{myenv}`` prints verb::``\begin{myenv} ... \end{myenv}`` where
 % the spaces are secable.
 %%%
-
 \NewDocumentCommand{ \docenv }{
     m
 }{%
@@ -55,13 +54,13 @@
 %
 % ``\docprewhy{pre}{fix}`` prints something like verb::``pre``-fix.
 %%%
-
 \NewDocumentCommand{ \docprewhy }{
     m
     m
 }{%
     \textbf{\docpre{#1}}-#2%
 }
+
 
 %%%
 % prototype::
@@ -71,7 +70,6 @@
 % a case like ``\docpre{pre} comes from \docprewhy{pre}{fix}`` which
 % prints: verb::``pre`` comes from verb::``pre``-fix.
 %%%
-
 \NewDocumentCommand{ \docpre }{
     m
 }{%

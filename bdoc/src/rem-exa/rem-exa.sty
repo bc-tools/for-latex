@@ -16,7 +16,6 @@
 % For the titles of the examples, we define a counter ``bdoc@cnt@exa``
 % which is reset when at least a verb::``subsubsection`` is opened.
 %%%
-
 \newcounter{bdoc@cnt@exa}[subsubsection]
 
 \ExplSyntaxOn
@@ -37,7 +36,6 @@
 %     This macro comes from a factorization of the code used to title the
 %     example.
 %%%
-
 \NewDocumentCommand{ \@docexa@abstract } {
     m
     m
@@ -48,7 +46,6 @@
     }%
 }
 
-\ExplSyntaxOff
 
 %%%
 % prototype::
@@ -67,7 +64,6 @@
 %     3) ``\docexa*`` does a similar job except that it doesn't print
 %        the value `N`` of the counter ``bdoc@cnt@exa``.
 %%%
-
 \NewDocumentCommand{ \docexa }{
     s
     O{}
@@ -79,3 +75,5 @@
         \@docexa@abstract{\bdoc@trans@exa@title{}~\thebdoc@cnt@exa}{#2}%
     }%
 }
+
+\ExplSyntaxOff
