@@ -1,6 +1,6 @@
 toc::
     * main.sty
-    * lang-FR.tex
-    * formatting-geo-FR.tex
-    * formatting-title-n-toc-FR.tex
-    * formatting-link-FR.tex
+    * lang.tex
+    * formatting-geo.tex
+    * formatting-title-n-toc.tex
+    * formatting-link.tex

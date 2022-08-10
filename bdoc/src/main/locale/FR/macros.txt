@@ -1,0 +1,7 @@
+// #1: a text before a colon.
+colon = #1~:
+
+// #1: year.
+// #2: month.
+// #3: day.
+date = #3/#2/#1

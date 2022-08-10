@@ -52,12 +52,13 @@
 
 \subsection{Codes \docquote{en ligne}}
 
-La macro \docmacro{docinlatex} permet de taper du code en ligne via un usage similaire à \docmacro{verb} comme dans les deux exemples suivants.
+La macro \docmacro{docinlatex} permet de taper du code en ligne via un usage similaire à \docmacro{verb}.
+Voici deux exemples d'utilisation.
 
 \begin{enumerate}
     \item \docinlatex+\docinlatex|$a^b = c$|+ produit \docinlatex|$a^b = c$| .
 
-    \item \docinlatex+\docinlatex|$a^b = c$|+ vient de \docinlatex#\docinlatex+\docinlatex|$a^b = c$|+# .
+    \item \docinlatex+\docinlatex|$a^b = c$|+ vient de \docinlatex#\docinlatex+\docinlatex|$a^b = c$|+# lui-même obtenu via \docinlatex@\docinlatex#\docinlatex+\docinlatex|$a^b = c$|+#@ , etc.
 \end{enumerate}
 
 
