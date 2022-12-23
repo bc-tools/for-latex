@@ -4,8 +4,6 @@
 % -- DATE TO TEST - START -- %
 % -------------------------- %
 
-\newcommand\doclang {fr}
-
 \newcommand\docyear {2021}
 \newcommand\docmonth{09}
 \newcommand\docday  {09}
@@ -13,7 +11,6 @@
 % ------------------------ %
 % -- DATE TO TEST - END -- %
 % ------------------------ %
-
 
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel, varioref}
@@ -35,7 +32,7 @@
     \rule\linewidth{1pt}
     
     \vspace{-1em}
-    \section*{Test : \docyear-\docmonth-\docday \quad [lang = \doclang]}
+    \section*{Test : \docyear-\docmonth-\docday}
     
     \vspace{-.75em}
     \rule\linewidth{1pt}
@@ -43,6 +40,6 @@
 
 \bigskip
 
-\input{\doclang/\docyear/\docmonth/\docday}
+\input{\docyear/\docmonth/\docday}
 
 \end{document}

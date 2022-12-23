@@ -1,7 +1,0 @@
-general::
-    monorepo = python
-    desc     = This project contains tools to work with ¨latex.
-    author   = Christophe BAL
-    licence  = gnu 3
-    need     = bash    ;
-               python3 ;
