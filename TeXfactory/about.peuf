@@ -1,0 +1,8 @@
+general::
+    monorepo = python
+    desc     = This project contains the tools used to build
+               the packages of the ¨tnslatex series.
+    author   = Christophe BAL
+    licence  = gnu 3
+    need     = bash    ;
+               python3 ;
