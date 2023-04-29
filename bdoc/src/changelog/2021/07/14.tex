@@ -1,0 +1,67 @@
+\begin{bdoctopic}{Différentes langues}
+    choix de la langue prise en compte par \bdocpack{bdoc}
+    (seulement le français et l'anglais sont proposés pour le moment).
+\end{bdoctopic}
+
+
+% -------------------- %
+
+
+\begin{bdoctopic}{Codes \LaTeX\ et leur rendus}
+    \bdocmacro{inputbdoclatexafter},
+    \bdocmacro{inputbdoclatexbefore}
+    et
+    \bdocmacro{inputbdoclatexreal}
+    ont un argument optionnel pour changer le texte explicatif.
+\end{bdoctopic}
+
+
+% -------------------- %
+
+
+\begin{bdoctopic}{Rendus réels}
+    dorénavant la bande colorée contiendra aussi les lignes démarcatrices.
+\end{bdoctopic}
+
+
+% -------------------- %
+
+
+\begin{bdoctopic}{Indiquer des changements}[t]
+    \begin{itemize}
+        \item \bdocenv{bdoctopic} : 
+              l'option \texttt{ml} a été renommée \texttt{t}.
+
+        \item \bdocmacro{bdocversion} :
+              la date respecte le format de la langue gérée par \bdocpack{bdoc}.
+    \end{itemize}
+\end{bdoctopic}
+
+
+% -------------------- %
+
+
+\begin{bdoctopic}{Structurer}[t]
+    \begin{itemize}
+        \item \bdocmacro{signprewhy} :
+              suppression de cette macro
+              \footnote{
+                  La fonctionnalité que proposait cette macro sera disponible via le package \bdocpack{macroenvsign}.
+              }.
+
+        \item \bdocmacro{bdocexa} et \bdocmacro{bdocexa*} :
+              un éventuel titre s'indique via un argument optionnel maintenant.
+              Il n'est donc plus besoin de toujours mettre des accolades.
+
+        \item \bdocenv{bdocremark}
+              est à utiliser à la place de l'ancien
+              \bdocenv{remark}.
+
+        \item \bdocmacro{bdocpack} :
+              nouvelle macro pour indiquer un package.
+
+        \item \bdocmacro{bdocquote} :
+              nouvelle macro mettant entre des guillemets.
+    \end{itemize}
+\end{bdoctopic}
+

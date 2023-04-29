@@ -18,52 +18,52 @@
 
 \section{Changements}
 
-\docexa[Expliquer]
+\bdocexa[Expliquer]
 
-\inputdoclatexreal{examples/version-n-change/topic.tex}
+\inputbdoclatexreal{examples/version-n-change/topic.tex}
 
 
-\begin{docrem}
-    La valeur par défaut de l'argument optionnel de \docenv{doctopic} est \texttt{i} pour \docprewhy{i}{nline} soit \docinEN{en ligne}.
-\end{docrem}
+\begin{bdocrem}
+    La valeur par défaut de l'argument optionnel de \bdocenv{doctopic} est \texttt{i} pour \bdocprewhy{i}{nline} soit \bdocinEN{en ligne}.
+\end{bdocrem}
 
 
 % ------------------ %
 
 
-\docexa[Nouveautés]
+\bdocexa[Nouveautés]
 
-Dans la documentation il est utile d'indiquer la date d'une nouveauté récente. Ceci se fait facilement via la macro \docmacro{docnew} comme dans l'exemple suivant où la date doit être donnée au format anglais \texttt{AAAA-MM-JJ}.
+Dans la documentation il est utile d'indiquer la date d'une nouveauté récente. Ceci se fait facilement via la macro \bdocmacro{docnew} comme dans l'exemple suivant où la date doit être donnée au format anglais \texttt{AAAA-MM-JJ}.
 
-\inputdoclatexreal{examples/version-n-change/new.tex}
+\inputbdoclatexreal{examples/version-n-change/new.tex}
 
 
-\begin{docrem}
+\begin{bdocrem}
     Deux compilations au minimum sont nécessaires.
-\end{docrem}
+\end{bdocrem}
 
 
 % ------------------ %
 
 
-\docexa[Numéro et date d'une version]
+\bdocexa[Numéro et date d'une version]
 
 L'exemple suivant montre une macro plus complète que la précédente mais avec un fonctionnement similaire
 \footnote{
-    La macro \docmacro{docnew} a été conçue pour la documentation elle-même et \docmacro{docversion} juste pour l'historique des changements.
+    La macro \bdocmacro{docnew} a été conçue pour la documentation elle-même et \bdocmacro{docversion} juste pour l'historique des changements.
 }.
 
-\inputdoclatexreal{examples/version-n-change/version.tex}
+\inputbdoclatexreal{examples/version-n-change/version.tex}
 
 
-\begin{docrem}
+\begin{bdocrem}
     \leavevmode
 
     \begin{enumerate}
-        \item Le numéro de version sera du type \texttt{maj.min.bug} ou \texttt{maj.min.bug-extra} avec trois entiers \texttt{maj}, \texttt{min}, \texttt{bug} et un optionnel \texttt{extra} égal à \texttt{alpha}, \texttt{beta} ou \texttt{rc} pour \docquote{release candidate}.
+        \item Le numéro de version sera du type \texttt{maj.min.bug} ou \texttt{maj.min.bug-extra} avec trois entiers \texttt{maj}, \texttt{min}, \texttt{bug} et un optionnel \texttt{extra} égal à \texttt{alpha}, \texttt{beta} ou \texttt{rc} pour \bdocquote{release candidate}.
 
         \item Noter dans le rendu final le format français \texttt{JJ/MM/AAAA} de la date alors que dans le code celle-ci doit être donnée au format anglais \texttt{AAAA-MM-JJ}.
     \end{enumerate}
-\end{docrem}
+\end{bdocrem}
 
 \end{document}

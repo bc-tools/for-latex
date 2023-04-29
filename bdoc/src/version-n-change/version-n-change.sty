@@ -106,7 +106,7 @@
 %     and an optional ``extra`` equal to ``alpha``, ``beta`` or ``rc``
 %     for "release candidate".
 %%%
-\NewDocumentCommand{ \docversion } {
+\NewDocumentCommand{ \bdocversion } {
     O{blue}
     m
     m
@@ -123,10 +123,10 @@
 %     #1 : a color
 %     #2 : a date YYYY-MM-DD
 %
-%     :action: this macro is similar to ``\docversion`` except that it just
+%     :action: this macro is similar to ``\bdocversion`` except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{ \docnew } {
+\NewDocumentCommand{ \bdocnew } {
     O{blue}
     m
 }{
@@ -161,7 +161,7 @@
 %     2) ``t`` for "title" asks to put the content in a new line below
 %        the title.
 %%%
-\NewDocumentEnvironment{ doctopic }{
+\NewDocumentEnvironment{ bdoctopic }{
     m
     O{i}
 }{

@@ -6,12 +6,12 @@
 % prototype::
 %     #1 : the name of a package
 %
-% ``\docpack{mypack}`` prints verb::``mypack``.
+% ``\bdocpack{mypack}`` prints verb::``mypack``.
 %
 % note::
 %     This macro is more semantic than useful.
 %%%
-\NewDocumentCommand{ \docpack }{
+\NewDocumentCommand{ \bdocpack }{
     m
 }{%
     \texttt{#1}%
@@ -22,9 +22,9 @@
 % prototype::
 %     #1 : the name of a macro
 %
-% ``\docenv{mymacro}`` prints verb::``\mymacro``.
+% ``\bdocenv{mymacro}`` prints verb::``\mymacro``.
 %%%
-\NewDocumentCommand{ \docmacro }{
+\NewDocumentCommand{ \bdocmacro }{
     m
 }{%
     \texttt{\textbackslash{}#1}%
@@ -35,10 +35,10 @@
 % prototype::
 %     #1 : the name of an environment
 %
-% ``\docenv{myenv}`` prints verb::``\begin{myenv} ... \end{myenv}`` where
+% ``\bdocenv{myenv}`` prints verb::``\begin{myenv} ... \end{myenv}`` where
 % the spaces are secable.
 %%%
-\NewDocumentCommand{ \docenv }{
+\NewDocumentCommand{ \bdocenv }{
     m
 }{%
     \texttt{\textbackslash{}begin\{#1\} \!...\! \textbackslash{}end\{#1\}}%
@@ -52,13 +52,13 @@
 %     #1 : a prefix of a word
 %     #2 : the remaining part of the word
 %
-% ``\docprewhy{pre}{fix}`` prints something like verb::``pre``-fix.
+% ``\bdocprewhy{pre}{fix}`` prints something like verb::``pre``-fix.
 %%%
-\NewDocumentCommand{ \docprewhy }{
+\NewDocumentCommand{ \bdocprewhy }{
     m
     m
 }{%
-    \textbf{\docpre{#1}}-#2%
+    \textbf{\bdocpre{#1}}-#2%
 }
 
 
@@ -66,11 +66,11 @@
 % prototype::
 %     #1 : just a prefix
 %
-% ``\docpre{pre}`` only prints verb::``pre``. This can be useful in
-% a case like ``\docpre{pre} comes from \docprewhy{pre}{fix}`` which
+% ``\bdocpre{pre}`` only prints verb::``pre``. This can be useful in
+% a case like ``\bdocpre{pre} comes from \bdocprewhy{pre}{fix}`` which
 % prints: verb::``pre`` comes from verb::``pre``-fix.
 %%%
-\NewDocumentCommand{ \docpre }{
+\NewDocumentCommand{ \bdocpre }{
     m
 }{%
     \texttt{#1}%

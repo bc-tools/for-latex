@@ -20,44 +20,44 @@
 
 Il peut être utile de montrer un rendu réel directement dans un document. Ceci se tape comme suit.
 
-\begin{doclatex-alone}
-\begin{docshowcase}
+\begin{bdoclatex-alone}
+\begin{bdocshowcase}
     \bfseries Un peu de code \LaTeX.
 
     \bigskip
 
     \itshape Fin de la démo.
-\end{docshowcase}
-\end{doclatex-alone}
+\end{bdocshowcase}
+\end{bdoclatex-alone}
 
 On obtient alors le rendu suivant
 \footnote{
-    La bande est créée sans effort grâce au package \docpack{clrstrip}.
+    La bande est créée sans effort grâce au package \bdocpack{clrstrip}.
 }.
 
 \medskip
 
-\begin{docshowcase}
+\begin{bdocshowcase}
     \bfseries Un peu de code \LaTeX.
 
     \bigskip
 
     \itshape Fin de la démo.
-\end{docshowcase}
+\end{bdocshowcase}
 
 
 \bigskip
 
 
-Il faut savoir qu'en coulisse la macro \docmacro{docruler} est utilisée.
+Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
 
-\begin{doclatex-flat}
-\docruler{Un pseudo-titre décoré}
-\end{doclatex-flat}
+\begin{bdoclatex-flat}
+\bdocruler{Un pseudo-titre décoré}
+\end{bdoclatex-flat}
 
 
 \begin{docrem}
-    Les textes utilisés pour délimiter le rendu s'adaptent à la langue choisie lors du chargement du package \docpack{bdoc}.
+    Les textes utilisés pour délimiter le rendu s'adaptent à la langue choisie lors du chargement du package \bdocpack{bdoc}.
 \end{docrem}
 
 
@@ -67,20 +67,20 @@ Il faut savoir qu'en coulisse la macro \docmacro{docruler} est utilisée.
 
 C'est assez simple à faire.
 
-\begin{doclatex-alone}
-\begin{docshowcase}[Mon début]%
+\begin{bdoclatex-alone}
+\begin{bdocshowcase}[Mon début]%
                    [Ma fin]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
-\end{docshowcase}
-\end{doclatex-alone}
+\end{bdocshowcase}
+\end{bdoclatex-alone}
 
 On obtient alors ce qui suit.
 
 \medskip
 
-\begin{docshowcase}[Mon début]%
+\begin{bdocshowcase}[Mon début]%
                    [Ma fin]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
-\end{docshowcase}
+\end{bdocshowcase}
 
 \end{document}

@@ -50,20 +50,20 @@
 
 \section{Cas d'utilisation en \LaTeX}
 
-\subsection{Codes \docquote{en ligne}}
+\subsection{Codes \bdocquote{en ligne}}
 
-La macro \docmacro{docinlatex} permet de taper du code en ligne via un usage similaire à \docmacro{verb}.
+La macro \bdocmacro{bdocinlatex} permet de taper du code en ligne via un usage similaire à \bdocmacro{verb}.
 Voici deux exemples d'utilisation.
 
 \begin{enumerate}
-    \item \docinlatex+\docinlatex|$a^b = c$|+ produit \docinlatex|$a^b = c$| .
+    \item \bdocinlatex+\bdocinlatex|$a^b = c$|+ produit \bdocinlatex|$a^b = c$| .
 
-    \item \docinlatex+\docinlatex|$a^b = c$|+ vient de \docinlatex#\docinlatex+\docinlatex|$a^b = c$|+# lui-même obtenu via \docinlatex@\docinlatex#\docinlatex+\docinlatex|$a^b = c$|+#@ , etc.
+    \item \bdocinlatex+\bdocinlatex|$a^b = c$|+ vient de \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+# lui-même obtenu via \bdocinlatex@\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#@ , etc.
 \end{enumerate}
 
 
 \begin{docrem}
-    Le nom de la macro \docmacro{docinlatex} vient de \docquote{\docprewhy{in}{line} \LaTeX} soit \docinEN{\LaTeX\ en ligne}.
+    Le nom de la macro \bdocmacro{bdocinlatex} vient de \bdocquote{\bdocprewhy{in}{line} \LaTeX} soit \bdocinEN{\LaTeX\ en ligne}.
 \end{docrem}
 
 
@@ -78,17 +78,17 @@ Voici deux exemples d'utilisation.
 
 \docexa[Face à face]
 
-\begin{doclatex-alone}
-\begin{doclatex}
+\begin{bdoclatex-alone}
+\begin{bdoclatex}
     $A = B + C$
-\end{doclatex}
-\end{doclatex-alone}
+\end{bdoclatex}
+\end{bdoclatex-alone}
 
 Ceci donne :
 
-\begin{doclatex}
+\begin{bdoclatex}
     $A = B + C$
-\end{doclatex}
+\end{bdoclatex}
 
 
 % ------------------ %
@@ -96,15 +96,15 @@ Ceci donne :
 
 \docexa[À la suite]
 
-Via \docenv{doclatex-flat}, on obtient un code à plat
+Via \bdocenv{bdoclatex-flat}, on obtient un code à plat
 \footnote{
-    Le suffixe \docpre{flat} signifie \docinEN{plat}.
+    Le suffixe \bdocpre{flat} signifie \bdocinEN{plat}.
 }
 comme ci-dessous.
 
-\begin{doclatex-flat}
+\begin{bdoclatex-flat}
     $A = B + C$
-\end{doclatex-flat}
+\end{bdoclatex-flat}
 
 
 % ------------------ %
@@ -112,14 +112,14 @@ comme ci-dessous.
 
 \docexa[Juste le code]
 
-\docenv{doclatex-alone} affiche le code seul
+\bdocenv{bdoclatex-alone} affiche le code seul
 \footnote{
-    Le suffixe \docpre{alone} signifie \docinEN{seul}.
+    Le suffixe \bdocpre{alone} signifie \bdocinEN{seul}.
 }
 comme ci-après.
 
-\begin{doclatex-alone}
+\begin{bdoclatex-alone}
     $A = B + C$
-\end{doclatex-alone}
+\end{bdoclatex-alone}
 
 \end{document}

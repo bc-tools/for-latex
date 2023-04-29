@@ -6,10 +6,10 @@
 % prototype::
 %     #1 : a text to quote
 %
-% For example, ``\docquote{Something}`` prints something like
+% For example, ``\bdocquote{Something}`` prints something like
 % **"Something"**.
 %%%
-\NewDocumentCommand{ \docquote }{
+\NewDocumentCommand{ \bdocquote }{
     m
 }{%
     \og \emph{#1} \fg%
@@ -27,21 +27,21 @@
 % For example, if the language chosen is French, we have the following
 % outputs.
 %
-%     1) ``\docinEN{Something}`` prints something like
+%     1) ``\bdocinEN{Something}`` prints something like
 %        **"Something" en anglais**.
 %
-%     2) ``\docinEN*{Something}`` just prints something like
+%     2) ``\bdocinEN*{Something}`` just prints something like
 %        **"Something"**.
 %        This can be useful in a case like
-%        ``\docinEN*{Something} et \docinEN{Another thing}``
+%        ``\bdocinEN*{Something} et \bdocinEN{Another thing}``
 %        which gives
 %        **"Something" et "Another thing" en anglais**.
 %%%
-\NewDocumentCommand{ \docinEN }{
+\NewDocumentCommand{ \bdocinEN }{
     s
     m
 }{%
-    \docquote{#2}%
+    \bdocquote{#2}%
     \IfBooleanF{#1}{% No star used.
         \ \bdoc@trans@in@EN{}%
     }%

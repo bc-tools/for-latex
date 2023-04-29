@@ -1,0 +1,12 @@
+extra:
+  doc-header = common-doc.tex
+
+toc:
+  - intro
+  - main
+  - macroenv
+  - showcase
+  - listing
+  - rem-exa
+  - version-n-change
+  - deco

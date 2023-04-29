@@ -13,13 +13,13 @@
 % -- LATEX EXAMPLES - INLINE -- %
 
 %%%
-% The macro ``\docilatex`` is just built via ``\newmintinline`` proposed
+% The macro ``bdocinlatex`` is just built via ``\newmintinline`` proposed
 % by the package ``minted``.
 %
 % note::
 %     Be careful of the ``i`` for "inline".
 %%%
-\newmintinline[docinlatex]{latex}{}
+\newmintinline[bdocinlatex]{latex}{}
 
 
 % -- LATEX EXAMPLES - MULTILINE -- %
@@ -28,20 +28,20 @@
 % The following environments to display multiline code are defined easily
 % with ``\newtcblisting``.
 %
-%     1) ``doclatex`` prints side by side the ¨latex code on the left and
+%     1) ``bdoclatex`` prints side by side the ¨latex code on the left and
 %        its output on the right inside the same frame.
 %
-%     2) ``doclatex-flat`` prints the ¨latex code above its output inside
+%     2) ``bdoclatex-flat`` prints the ¨latex code above its output inside
 %        the same frame.
 %
-%     3) ``doclatex-alone`` prints only the ¨latex code inside a frame.
+%     3) ``bdoclatex-alone`` prints only the ¨latex code inside a frame.
 %
 % Thanks to ``\newtcbinputlisting``, there are also the following macros
 % with similar features but for imported files.
 %
-%     1) ``\inputdoclatex``
-%     2) ``\inputdoclatexflat``
-%     3) ``\inputdoclatexalone``
+%     1) ``\inputbdoclatex``
+%     2) ``\inputbdoclatexflat``
+%     3) ``\inputbdoclatexalone``
 %%%
 
 % Sources
@@ -71,37 +71,37 @@
 }
 
 
-\newtcblisting{doclatex}{%
+\newtcblisting{bdoclatex}{%
     bdoc_tcb_style_latex_code,
     listing side text,
 }
 
 
-\newtcbinputlisting{\inputdoclatex}[2][]{
+\newtcbinputlisting{\inputbdoclatex}[2][]{
     listing file = {#2},
     bdoc_tcb_style_latex_code,
     listing side text,
 }
 
 
-\newtcblisting{doclatex-flat}{
+\newtcblisting{bdoclatex-flat}{
     bdoc_tcb_style_latex_code,
 }
 
 
-\newtcbinputlisting{\inputdoclatexflat}[2][]{
+\newtcbinputlisting{\inputbdoclatexflat}[2][]{
     listing file = {#2},
     bdoc_tcb_style_latex_code,
 }
 
 
-\newtcblisting{doclatex-alone}{
+\newtcblisting{bdoclatex-alone}{
     bdoc_tcb_style_latex_code,
     listing only,
 }
 
 
-\newtcbinputlisting{\inputdoclatexalone}[2][]{
+\newtcbinputlisting{\inputbdoclatexalone}[2][]{
     listing file = {#2},
     bdoc_tcb_style_latex_code,
     listing only,
@@ -123,7 +123,7 @@
 %     The default descriptive text between the ¨latex code and its output
 %     is translated to the language chosen at the loading of the package.
 %%%
-\NewDocumentCommand{ \inputdoclatexafter }{
+\NewDocumentCommand{ \inputbdoclatexafter }{
     O{\bdoc@trans@code@after@output}
     m
 }{
@@ -135,7 +135,7 @@
 
     #1
 
-    \inputdoclatexalone{#2}
+    \inputbdoclatexalone{#2}
 }
 
 
@@ -144,14 +144,14 @@
 %     #1 : a one-line descriptive text
 %     #2 : a path of a file
 %
-% This macro is similar to ``\inputdoclatexafter`` except that the ¨latex
+% This macro is similar to ``\inputbdoclatexafter`` except that the ¨latex
 % code is before the centered output.
 %%%
-\NewDocumentCommand{ \inputdoclatexbefore }{
+\NewDocumentCommand{ \inputbdoclatexbefore }{
     O{\bdoc@trans@output@after@code}
     m
 }{
-    \inputdoclatexalone{#2}
+    \inputbdoclatexalone{#2}
     \vspace{-.75em}
     \begin{center}
         \textit{\footnotesize #1}
@@ -168,18 +168,18 @@
 %     #1 : a one-line descriptive text
 %     #2 : a path of a file
 %
-% This macro is similar to ``\inputdoclatexbefore`` except that the output
-% is put inside an environment ``docshowcase`` instead of being centered.
+% This macro is similar to ``\inputbdoclatexbefore`` except that the output
+% is put inside an environment ``bdocshowcase`` instead of being centered.
 %%%
-\NewDocumentCommand{ \inputdoclatexreal }{
+\NewDocumentCommand{ \inputbdoclatexreal }{
     O{\bdoc@trans@colon{\bdoc@trans@this@gives}}
     m
 }{
-    \inputdoclatexalone{#2}
+    \inputbdoclatexalone{#2}
 
     #1
 
-    \begin{docshowcase}
+    \begin{bdocshowcase}
         \input{#2}
-    \end{docshowcase}
+    \end{bdocshowcase}
 }
