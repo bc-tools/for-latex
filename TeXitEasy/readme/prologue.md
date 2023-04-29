@@ -6,8 +6,4 @@ The `Python` module `TeXitEasy`
 >
 > English is not my native language, so be nice if you notice misunderstandings, misspellings, or grammatical errors in my documents and codes.
 
-
-About `TeXitEasy`
------------------
-
-This module proposes some `Python` tools to work with `LaTeX`.
+This document is a short tutorial showing the most useful features without being exhaustive.
