@@ -31,9 +31,7 @@
 %              ``\l_bdoc_date_month_str`` and ``\l_bdoc_date_day_str`` using
 %              a basic parsing of the date argument.
 %%%
-\NewDocumentCommand{ \l_bdoc_good_date } {
-    m
-} {
+\NewDocumentCommand{ \l_bdoc_good_date } { m } {
     \seq_set_split:Nnn \l_bdoc_date_parts_seq { - } { #1 }
     \seq_pop:NN \l_bdoc_date_parts_seq \l_bdoc_date_year_str
     \seq_pop:NN \l_bdoc_date_parts_seq \l_bdoc_date_month_str
@@ -51,12 +49,7 @@
 %     :action: this macro factorizes the printing of the changes in
 %              the left margin.
 %%%
-\NewDocumentCommand{ \l_bdoc_new_change_margin }{
-    m
-    m
-    m
-    m
-}{
+\NewDocumentCommand{ \l_bdoc_new_change_margin } { m m m m } {
     \marginnote{
         \color{#1}
         \scriptsize
@@ -106,11 +99,7 @@
 %     and an optional ``extra`` equal to ``alpha``, ``beta`` or ``rc``
 %     for "release candidate".
 %%%
-\NewDocumentCommand{ \bdocversion } {
-    O{blue}
-    m
-    m
-}{
+\NewDocumentCommand{ \bdocversion } { O{blue} m m } {
     \l_bdoc_new_change_margin { #1 }      % Color
                               { #3 }      % Date
                               { #2 }      % Version
@@ -126,10 +115,7 @@
 %     :action: this macro is similar to ``\bdocversion`` except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{ \bdocnew } {
-    O{blue}
-    m
-}{
+\NewDocumentCommand{ \bdocnew } { O{blue} m } {
     \l_bdoc_new_change_margin { #1 }      % Color
                               { #2 }      % Date
                               {}          % Version
@@ -161,10 +147,7 @@
 %     2) ``t`` for "title" asks to put the content in a new line below
 %        the title.
 %%%
-\NewDocumentEnvironment{ bdoctopic }{
-    m
-    O{i}
-}{
+\NewDocumentEnvironment{ bdoctopic }{ m O{i} } {
     \medskip
 
     \textbf{

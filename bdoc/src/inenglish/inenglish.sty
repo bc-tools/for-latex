@@ -9,9 +9,7 @@
 % For example, ``\bdocquote{Something}`` prints something like
 % **"Something"**.
 %%%
-\NewDocumentCommand{ \bdocquote }{
-    m
-}{%
+\NewDocumentCommand{ \bdocquote } { m } {%
     \og \emph{#1} \fg%
 }
 
@@ -37,10 +35,7 @@
 %        which gives
 %        **"Something" et "Another thing" en anglais**.
 %%%
-\NewDocumentCommand{ \bdocinEN }{
-    s
-    m
-}{%
+\NewDocumentCommand{ \bdocinEN } { s m } {%
     \bdocquote{#2}%
     \IfBooleanF{#1}{% No star used.
         \ \bdoc@trans@in@EN{}%

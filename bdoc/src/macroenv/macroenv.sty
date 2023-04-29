@@ -11,9 +11,7 @@
 % note::
 %     This macro is more semantic than useful.
 %%%
-\NewDocumentCommand{ \bdocpack }{
-    m
-}{%
+\NewDocumentCommand{ \bdocpack } { m } {%
     \texttt{#1}%
 }
 
@@ -24,9 +22,7 @@
 %
 % ``\bdocenv{mymacro}`` prints verb::``\mymacro``.
 %%%
-\NewDocumentCommand{ \bdocmacro }{
-    m
-}{%
+\NewDocumentCommand{ \bdocmacro } { m } {%
     \texttt{\textbackslash{}#1}%
 }
 
@@ -35,12 +31,10 @@
 % prototype::
 %     #1 : the name of an environment
 %
-% ``\bdocenv{myenv}`` prints verb::``\begin{myenv} ... \end{myenv}`` where
-% the spaces are secable.
+% ``\bdocenv{myenv}`` prints verb::``\begin{myenv} ... \end{myenv}``
+% where the spaces are secable.
 %%%
-\NewDocumentCommand{ \bdocenv }{
-    m
-}{%
+\NewDocumentCommand{ \bdocenv } { m } {%
     \texttt{\textbackslash{}begin\{#1\} \!...\! \textbackslash{}end\{#1\}}%
 }
 
@@ -54,11 +48,8 @@
 %
 % ``\bdocprewhy{pre}{fix}`` prints something like verb::``pre``-fix.
 %%%
-\NewDocumentCommand{ \bdocprewhy }{
-    m
-    m
-}{%
-    \textbf{\bdocpre{#1}}-#2%
+\NewDocumentCommand{ \bdocprewhy } { m m } {%
+    \textbf{\bdocpre{#1}}$\cdot$#2%
 }
 
 
@@ -70,8 +61,6 @@
 % a case like ``\bdocpre{pre} comes from \bdocprewhy{pre}{fix}`` which
 % prints: verb::``pre`` comes from verb::``pre``-fix.
 %%%
-\NewDocumentCommand{ \bdocpre }{
-    m
-}{%
+\NewDocumentCommand{ \bdocpre } { m } {%
     \texttt{#1}%
 }
