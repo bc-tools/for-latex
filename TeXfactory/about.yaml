@@ -6,5 +6,5 @@ general:
   licence : gnu 3
   lang    :
     - doc : fr
-  need    :
+  require :
     - python3

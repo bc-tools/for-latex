@@ -1,5 +1,5 @@
-extra:
-  doc-header = common-doc.tex
+doc:
+  header: doc-header.tex
 
 toc:
   - intro

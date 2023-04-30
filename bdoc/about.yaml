@@ -1,9 +1,9 @@
 general:
-  desc    : This package proposes tools for writing "human friendly"
+  desc   : This package proposes tools for writing "human friendly"
             documentations of ¨latex packages.
-  author  : Christophe BAL
-  licence : gnu 3
-  lang    :
-    - doc : fr
-  need    :
-    - latex2e
+  author : Christophe BAL
+  licence: gnu 3
+  lang   :
+    - doc: fr
+  require:
+    - latex

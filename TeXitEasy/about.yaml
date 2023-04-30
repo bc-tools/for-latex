@@ -1,8 +1,8 @@
 general:
-  desc    : This project contains tools to work with ¨latex.
-  author  : Christophe BAL
-  licence : gnu 3
-  lang    :
-    - doc : fr
-  need    :
+  desc   : This project contains tools to work with ¨latex.
+  author : Christophe BAL
+  licence: gnu 3
+  lang   :
+    - doc: fr
+  require:
     - python3

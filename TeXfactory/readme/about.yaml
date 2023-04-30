@@ -1,3 +1,8 @@
 toc:
   - prologue
   - about
+  - coc:
+    - main
+    - dirtree
+    - about-project
+    - about-final-code
