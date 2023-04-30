@@ -1,0 +1,10 @@
+general:
+  desc    : This project automates the production of
+            a TeX project from a source directory
+            using a standarized workflow.
+  author  : Christophe BAL
+  licence : gnu 3
+  lang    :
+    - doc : fr
+  need    :
+    - python3
