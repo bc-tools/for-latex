@@ -1,11 +1,11 @@
-### The fictive source files
+### The fictive source folder
 
 In the following sections, we will consider a project named `FictivePack` with the following source folder where some `Python` and `Lua` files are used by the final package, and some images are needed to document the package.
 
 ~~~
 + FictivePack
     * about.yaml
-    * VERSIONS.yaml
+    * versions.yaml
     + src
         * about.yaml
         * doc-header.tex

@@ -1,0 +1,11 @@
+# A reverse history is provided, in case a human reads this file,
+# but also because the first item in the list gives the latest version.
+
+2023-04-29: 0.4.0-beta
+
+2021:
+  09-09: 0.3.0-beta
+  07:
+    - 15: 0.2.0-beta
+    - 14: 0.1.0-beta
+    - 05: 0.0.0-beta
