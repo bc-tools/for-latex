@@ -1,42 +1,21 @@
 ### Some `about.yaml` files in each sub-folder
 
-?????
-
-Here is the part of the implementations in our source code.
+In the source folder, there is the following sub-folder.
 
 ~~~
-+ src
-    + intro
-        * intro.tex
-    + other-tools
-        * config.sty
-        * config.tex
-        * other.sty
-        * other.tex
-        * utils.py
-        + images
-            * screenshot.png
-    + some-tools
-        * about.yaml
-        * optional.tex
-        * mandatory.tex
-        * some.sty
-        + utils
-            * config.lua
-            * analyzer.lua
-        + locale
-            * EN.sty
-            * FR.sty
-    + ...
++ init-tools
+    * about.yaml
+    * optional.tex
+    * mandatory.tex
+    * some.sty
+    * utils.lua
+    + locale
+        * EN.sty
+        * FR.sty
 ~~~
 
 
-
-
-
-
-`src/some-tools/about.yaml`
-
+The use of the `about.yaml` with the following content asks to treat the files in a given order.
 
 ~~~yaml
 toc:
@@ -46,21 +25,4 @@ toc:
 ~~~
 
 
-pour  -tools sty et tex auto si indiqué via toc
-
-~~~
-+ other-tools
-    * config.sty
-    * config.tex
-    * other.sty
-    * other.tex
-    * utils.py
-    + images
-~~~
-`src/other-tools/about.yaml`
-
-~~~yaml
-toc:
-  - config.*
-  - other.*
-~~~
+> ***NOTE.*** *We will see that the utility file `utils.lua`, as well as those in the `locale` folder, which are all used by `some.sty`, will all be automatically added to the final project by `TeXfactory`.*

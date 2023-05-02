@@ -1,6 +1,6 @@
 ### The fictive source folder
 
-In the following sections, we will consider a project named `FictivePack` with the following source folder where some `Python` and `Lua` files are used by the final package, and some images are needed to document the package.
+In the following sections, we will consider a project named `FictivePack` with the following source folder where one `Lua` file is used by the final package, and some translations are defined inside one folder `locale`.
 
 ~~~
 + FictivePack
@@ -8,29 +8,18 @@ In the following sections, we will consider a project named `FictivePack` with t
     * versions.yaml
     + src
         * about.yaml
-        * doc-header.tex
         + changelog [...]
-        + intro
-            * intro.tex
-        + other-tools
-            * config.sty
-            * config.tex
-            * other.sty
-            * other.tex
-            * utils.py
-            + images
-                * screenshot.png
-        + some-tools
+        + init-tools
             * about.yaml
             * optional.tex
             * mandatory.tex
             * some.sty
-            + utils
-                * config.lua
-                * analyzer.lua
+            * utils.lua
             + locale
                 * EN.sty
                 * FR.sty
+        + intro
+            * intro.tex
     + ...
 ~~~
 
@@ -38,4 +27,4 @@ In the following sections, we will consider a project named `FictivePack` with t
 > ***WARNING 1.*** *The `FictivePack` project folder cannot use in its development cycle a folder named `fictivepack` because it is overwritten every time `TeXfactory` is called.*
 
 
-> ***WARNING 2.*** *The subfolder `changelog` has a special meaning that we will explain later.*
+> ***WARNING 2.*** *The files `FictivePack/about.yaml` and `FictivePack/versions.yaml`, and the subfolder `changelog` have a special meaning that we will explain later.*

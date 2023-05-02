@@ -1,6 +1,6 @@
 ### One `about.yaml` file for the project
 
-Let's start with the important `FictivePack/about.yaml` file which gives information about the project. This file uses the `YAML` syntax; the content below is very expressive, except perhaps for the key `require` which simply indicates the coding languages required to make the package works where the key `name` can be omitted if you just want to use the lower case like with our fictive example.
+Let's start with the important `FictivePack/about.yaml` file which gives informations about the project. This file uses the `YAML` syntax; the content below is very expressive, except perhaps for the key `require` which simply indicates the coding languages required to make the package works.
 
 ~~~yaml
 general:
@@ -13,8 +13,10 @@ general:
   require:
     - latex
     - lualatex
-    - python
 ~~~
+
+
+> ***NOTE.*** *The `name` key can be omitted if you just want to use a lowercase package name like in our fictitious example.*
 
 
 Sometimes a pure `LaTeX` package proposes optional extra features based on additional languages. In this case, the key `optional` allows to indicate that additional languages.
@@ -28,7 +30,7 @@ general:
   require:
     - latex
   # Some extra features available if Python,
-  # and/or LuaLaTeX cane be used.
+  # and/or LuaLaTeX can be used.
   optional:
     - lualatex
     - python
