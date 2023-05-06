@@ -1,18 +1,16 @@
 ### The fictive source folder
 
-In the following sections, we will consider a project named `FictivePack` with the following source folder where one `Lua` file is used by the final package, and some translations are defined inside one folder `locale`.
+In the following sections, we will consider a project named `MockProject` with the following source folder where one `Lua` file is used by the final package, and some translations are defined inside one folder `locale`.
 
 ~~~
-+ FictivePack
++ MockProject
     * about.yaml
     * versions.yaml
     + src
         * about.yaml
-        + changelog [...]
         + init-tools
-            * about.yaml
-            * optional.tex
-            * mandatory.tex
+            * 01-mandatory.tex
+            * 02-optional.tex
             * some.sty
             * utils.lua
             + locale
@@ -24,7 +22,7 @@ In the following sections, we will consider a project named `FictivePack` with t
 ~~~
 
 
-> ***WARNING 1.*** *The `FictivePack` project folder cannot use in its development cycle a folder named `fictivepack` because it is overwritten every time `TeXfactory` is called.*
+> ***NOTE.*** *The file `MockProject/about.yaml` has a special use that will be explained later.*
 
 
-> ***WARNING 2.*** *The files `FictivePack/about.yaml` and `FictivePack/versions.yaml`, and the subfolder `changelog` have a special meaning that we will explain later.*
+> ***WARNING.*** *You cannot use the `changelog` subfolder for your code because it is a very special subfolder: see the documentation for more information.*

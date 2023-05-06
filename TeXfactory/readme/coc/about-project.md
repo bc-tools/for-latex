@@ -1,10 +1,10 @@
-### One `about.yaml` file for the project
+### The `about.yaml` file of the project
 
-Let's start with the important `FictivePack/about.yaml` file which gives informations about the project. This file uses the `YAML` syntax; the content below is very expressive, except perhaps for the key `require` which simply indicates the coding languages required to make the package works.
+Thanks to the `MockProject/about.yaml` file, we can give important informations about the project. The content below is very expressive, except perhaps for the key `require` which simply indicates the coding languages required to make the package works (this file uses the `YAML` syntax).
 
 ~~~yaml
 general:
-  name   : fictivepack
+  name   : mockproject
   desc   : This package proposes fictive tools.
   author : Christophe BAL
   licence: gnu 3
