@@ -10,7 +10,7 @@
 -------
 
 [[:api:]]
-The `bdoc` prefix is used instead of the `doc` prefix.
+The `bdoc` prefix is used instead of `doc`.
 
 
 --------

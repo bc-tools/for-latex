@@ -2,8 +2,22 @@
 for-latex (monorepo) - ROADMAP
 ====================
 
+This file is a roadmap, in the short term.
+
+
+-----------
+ALWAYS DONE
+-----------
+
+    1) Nothing at this time.
+
+
 ----------
 NEXT STEPS
 ----------
 
-    1) ???
+    1) TeXfactory: needed to build bdoc and co
+
+    1) bdoc: new version to build and publish
+
+    1) macroenvsign: new version to build and publish

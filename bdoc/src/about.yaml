@@ -1,5 +1,5 @@
 doc:
-  header: doc-header.tex
+  header: doc-header.txt
 
 toc:
   - intro

@@ -1,6 +1,4 @@
-\input{../common-doc.tex}
-
-% USING OTHER TOOLS %
+\input{../doc-header.txt}
 
 \usepackage[lang = FR]{../main/main}
 \usepackage{../macroenv/macroenv}
@@ -8,12 +6,10 @@
 \usepackage{../showcase/showcase}
 \usepackage{../rem-exa/rem-exa}
 
-% TESTING LOCAL IMPLEMENTATION %
-
 \usepackage{listing}
 
 
-% == EXTRAS == %
+% == NEEDED == %
 
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
@@ -62,9 +58,9 @@ Voici deux exemples d'utilisation.
 \end{enumerate}
 
 
-\begin{docrem}
+\begin{bdocrem}
     Le nom de la macro \bdocmacro{bdocinlatex} vient de \bdocquote{\bdocprewhy{in}{line} \LaTeX} soit \bdocinEN{\LaTeX\ en ligne}.
-\end{docrem}
+\end{bdocrem}
 
 
 % ------------------ %
@@ -76,7 +72,7 @@ Voici deux exemples d'utilisation.
 % ------------------ %
 
 
-\docexa[Face à face]
+\bdocexa[Face à face]
 
 \begin{bdoclatex-alone}
 \begin{bdoclatex}
@@ -94,7 +90,7 @@ Ceci donne :
 % ------------------ %
 
 
-\docexa[À la suite]
+\bdocexa[À la suite]
 
 Via \bdocenv{bdoclatex-flat}, on obtient un code à plat
 \footnote{
@@ -110,7 +106,7 @@ comme ci-dessous.
 % ------------------ %
 
 
-\docexa[Juste le code]
+\bdocexa[Juste le code]
 
 \bdocenv{bdoclatex-alone} affiche le code seul
 \footnote{

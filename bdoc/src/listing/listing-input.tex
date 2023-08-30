@@ -1,6 +1,4 @@
-\input{../common-doc.tex}
-
-% USING OTHER TOOLS %
+\input{../doc-header.txt}
 
 \usepackage[lang = FR]{../main/main}
 \usepackage{../macroenv/macroenv}
@@ -8,12 +6,10 @@
 \usepackage{../showcase/showcase}
 \usepackage{../rem-exa/rem-exa}
 
-% TESTING LOCAL IMPLEMENTATION %
-
 \usepackage{listing}
 
 
-% == EXTRAS == %
+% == NEEDED == %
 
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
@@ -60,15 +56,15 @@ Le contenu de ce fichier est l'unique ligne \bdocinlatex|$x y z = 1$| .
 Notez que les 1\ieres{} macros sont nommées de façon similaire aux environnements précédents en ajoutant le préfixe \bdocpre{input} tout en ignorant les tirets.
 
 
-\begin{docrem}
-    Il faut savoir que les macros imprimant automatiquement du texte tiennent code de la langue choisie lors du chargement du package \bdocpack{bdoc}.
-\end{docrem}
+\begin{bdocrem}
+    Il faut savoir que les macros imprimant automatiquement du texte tiennent compte de la langue choisie lors du chargement du package \bdocpack{bdoc}.
+\end{bdocrem}
 
 
 % ------------------ %
 
 
-\docexa[Face à face]
+\bdocexa[Face à face]
 
 \begin{bdoclatex-alone}
 \inputbdoclatex{examples/listing/xyz.tex}
@@ -82,7 +78,7 @@ Ceci produit la mise en forme suivante.
 % ------------------ %
 
 
-\docexa[À la suite]
+\bdocexa[À la suite]
 
 \bdocmacro{inputbdoclatexflat} produit un code à plat comme ci-dessous.
 
@@ -92,7 +88,7 @@ Ceci produit la mise en forme suivante.
 % ------------------ %
 
 
-\docexa[Juste le code]
+\bdocexa[Juste le code]
 
 
 \bdocmacro{inputbdoclatexalone} sert à n'avoir que le code comme ci-après.
@@ -103,7 +99,7 @@ Ceci produit la mise en forme suivante.
 
 
 %\newpage
-\docexa[Code suivi du rendu centré]
+\bdocexa[Code suivi du rendu centré]
 
 Le rendu suivant est obtenu en utilisant \bdocmacro{inputbdoclatexbefore}.
 
@@ -129,7 +125,7 @@ Ainsi \bdocinlatex|\inputbdoclatexbefore[Voici ce que cela donne.]{...}| aboutit
 % ------------------ %
 
 
-\docexa[Rendu centré suivi du code] \label{output-centered}
+\bdocexa[Rendu centré suivi du code] \label{output-centered}
 
 Le rendu suivant
 \footnote{
@@ -158,7 +154,7 @@ Via \bdocinlatex|\inputbdoclatexafter[Cette formule se tape comme suit.]{...}| ,
 % ------------------ %
 
 
-\docexa[Code importé et son rendu réel]
+\bdocexa[Code importé et son rendu réel]
 
 Pour un code et son rendu réel non centré, on utilisera \bdocmacro{inputbdoclatexreal} qui va produire ce qui suit
 
