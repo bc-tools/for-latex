@@ -1,0 +1,10 @@
+general:
+  desc   : This package proposes tools for writing pure technical
+           documentations of ¨latex packages and saving signatures
+           of macros and environments in a file.
+  author : Christophe BAL
+  licence: gnu 3
+  lang   :
+    - doc: fr
+  require:
+    - latex

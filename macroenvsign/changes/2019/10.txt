@@ -1,0 +1,5 @@
+==
+16  (0.0.0-beta)
+==
+
+The package \macroenvsign proposes tools for writing technical user documentations of macros and environments of \latex packages. Each signature is exported such as to be used by external tools.
