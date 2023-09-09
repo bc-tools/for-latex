@@ -115,7 +115,7 @@
 %     :action: this macro is similar to ``\bdocversion`` except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{ \bdocnew } { O{blue} m } {
+\NewDocumentCommand{ \bdocdate } { O{blue} m } {
     \l_bdoc_new_change_margin { #1 }      % Color
                               { #2 }      % Date
                               {}          % Version
@@ -126,15 +126,23 @@
 
 % -- CHANGE LOG - TOPIC -- %
 
-\msg_set:nnnn { bdoc } { unknown-topic-style }
-    { Unknown \ topic \ style }
-    { Styles \ supported: \ [t]-itle \ and \ [i]-nline. }
+%%%   ?????
+%
+%%%   ?????
+\msg_set:nnnn { bdoc } { topic-missing-title }
+    { Missing \ title. }
+    { One \ single \ title \ must \ be \ indicated. }
 
 %%%
+% ?
+%%%
+
+\str_new:N \l_bdoc_topic_title_str
+
+%%%   ?????
 % prototype::
-%     #1 : the title
-%     #2 : the kind of title
-%        @ #2 in ["i", "t"]
+%     #1 : the title inside []
+%     #2 : the title inside <>
 %
 %     :action: this environment prints some ¨infos about specific changes
 %              achieved in a new version (no special formatting is applied).
@@ -147,22 +155,26 @@
 %     2) ``t`` for "title" asks to put the content in a new line below
 %        the title.
 %%%
-\NewDocumentEnvironment{ bdoctopic }{ m O{i} } {
+\NewDocumentEnvironment{ bdoctopic }{O{} D<>{} }{
+    \IfBlankT{#1#2}{
+        \msg_fatal:nn { bdoc } { topic-missing-title }
+    }
+
+    \IfBlankTF{#1}{
+        \str_set:Nn \l_bdoc_topic_title_str {#2}
+    }{
+        \str_set:Nn \l_bdoc_topic_title_str {#1}
+    }
+
     \medskip
 
     \textbf{
-        \textsc{#1}
+        \textsc{\str_use:N \l_bdoc_topic_title_str}
 
-        \str_case_e:nnF { #2 } {
-            { t }{
-                .
-                \smallskip
-            }
-            { i }{
-                \ :
-            }
+        \IfBlankTF{#1}{
+            .
         }{
-            \msg_fatal:nn { bdoc } { unknown-topic-style }
+            \bdoc@trans@colon@space :
         }
     }%
 }{}

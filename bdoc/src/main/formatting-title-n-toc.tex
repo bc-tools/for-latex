@@ -6,7 +6,7 @@
 
 % TESTING LOCAL IMPLEMENTATION % 
 
-\usepackage[lang = FR]{main}
+\usepackage[lang = fr]{main}
 
 
 \begin{document}
@@ -15,15 +15,16 @@
 
 \subsection{Titre et table des matières}
 
-En coulisse les packages \bdocpack{titlesec}, \bdocpack{tocbasic} et \bdocpack{bookmark} sont chargés. Les réglages retenus sont les suivants où la redéfinition de \bdocmacro{thechapter} n'est faite que pour les packages agrégateurs (dont les documentations sont de type livre).
+En coulisse les packages \bdocpack{titlesec}, \bdocpack{tocbasic} et \bdocpack{bookmark} sont chargés. Les réglages retenus sont les suivants où la redéfinition de \bdocmacro{thechapter} n'est utile que pour des packages agrégateurs (dont les documentations sont de type livre).
 
 \begin{bdoclatex-alone}
 \RequirePackage[numbered]{bookmark}
 \RequirePackage[raggedright]{titlesec}
 
 % ...
-
-%\renewcommand\thechapter{\Alph{chapter}.} 
+\ifcsundef{chapter}%
+          {}%
+          {\renewcommand\thechapter{\Alph{chapter}.}}
 \renewcommand\thesection{\Roman{section}.}
 \renewcommand\thesubsection{\arabic{subsection}.}
 \renewcommand\thesubsubsection{\roman{subsubsection}.}

@@ -6,3 +6,4 @@ code_after_output = Le rendu précédent a été obtenu
 output_after_code = Rendu du code précédent
 
 exa_title = Exemple
+rmk_title = Remarque

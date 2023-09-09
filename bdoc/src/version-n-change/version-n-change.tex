@@ -1,6 +1,6 @@
 \input{../doc-header.txt}
 
-\usepackage[lang = FR]{../main/main}
+\usepackage[lang = fr]{../main/main}
 \usepackage{../macroenv/macroenv}
 \usepackage{../inenglish/inenglish}
 \usepackage{../showcase/showcase}
@@ -14,51 +14,42 @@
 
 \section{Changements}
 
-\bdocexa[Expliquer]
+\begin{bdocexa}[Expliquer dans le journal]
+	Pour fournir des explications efficaces dans l'historique des changements, \bdocpack{bdoc} propose de procéder suit.
 
-\inputbdoclatexreal{examples/version-n-change/topic.tex}
-
-
-\begin{bdocrem}
-    La valeur par défaut de l'argument optionnel de \bdocenv{doctopic} est \texttt{i} pour \bdocprewhy{i}{nline} soit \bdocinEN{en ligne}.
-\end{bdocrem}
+    \inputbdoclatexreal{examples/version-n-change/topic.tex}
+\end{bdocexa}
 
 
 % ------------------ %
 
 
-\bdocexa[Nouveautés]
+\begin{bdocexa}[Dater des nouveautés]
+    Pour indiquer la date d'une nouveauté, il suffit d'employer la macro \bdocmacro{bdocdate} comme dans l'exemple suivant où la date doit être donnée au format anglais \texttt{AAAA-MM-JJ}.
 
-Dans la documentation il est utile d'indiquer la date d'une nouveauté récente. Ceci se fait facilement via la macro \bdocmacro{docnew} comme dans l'exemple suivant où la date doit être donnée au format anglais \texttt{AAAA-MM-JJ}.
-
-\inputbdoclatexreal{examples/version-n-change/new.tex}
-
-
-\begin{bdocrem}
-    Deux compilations au minimum sont nécessaires.
-\end{bdocrem}
+    \inputbdoclatexreal{examples/version-n-change/new.tex}
+\end{bdocexa}
 
 
 % ------------------ %
 
 
-\bdocexa[Numéro et date d'une version]
+\begin{bdocexa}[Versionner et dater des nouveautés]
+	L'exemple suivant montre une macro plus complète que la précédente.
 
-L'exemple suivant montre une macro plus complète que la précédente mais avec un fonctionnement similaire
-\footnote{
-    La macro \bdocmacro{docnew} a été conçue pour la documentation elle-même et \bdocmacro{docversion} juste pour l'historique des changements.
-}.
-
-\inputbdoclatexreal{examples/version-n-change/version.tex}
+	\inputbdoclatexreal{examples/version-n-change/version.tex}
+\end{bdocexa}
 
 
 \begin{bdocrem}
     \leavevmode
 
     \begin{enumerate}
-        \item Le numéro de version sera du type \texttt{maj.min.bug} ou \texttt{maj.min.bug-extra} avec trois entiers \texttt{maj}, \texttt{min}, \texttt{bug} et un optionnel \texttt{extra} égal à \texttt{alpha}, \texttt{beta} ou \texttt{rc} pour \bdocquote{release candidate}.
+        \item Les macros \bdocmacro{bdocdate} et \bdocmacro{bdocversion} nécessitent deux compilations.
 
-        \item Noter dans le rendu final le format français \texttt{JJ/MM/AAAA} de la date alors que dans le code celle-ci doit être donnée au format anglais \texttt{AAAA-MM-JJ}.
+        \item Comme la langue indiquée pour cette documentation est le français, la date dans le rendu final est au format \texttt{JJ/MM/AAAA} alors que dans le code celle-ci devra toujours être donnée au format anglais \texttt{AAAA-MM-JJ}.
+
+        \item Le numéro de version sera du type \texttt{maj.min.bug} ou \texttt{maj.min.bug-extra} avec trois entiers \texttt{maj}, \texttt{min}, \texttt{bug} et un optionnel \texttt{extra} égal à \texttt{alpha}, \texttt{beta} ou \texttt{rc} pour \bdocquote{release candidate}.
     \end{enumerate}
 \end{bdocrem}
 

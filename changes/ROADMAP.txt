@@ -16,8 +16,8 @@ ALWAYS DONE
 NEXT STEPS
 ----------
 
-    1) TeXfactory: needed to build bdoc and co
+    1) bdoc: new version to build and publish (preparing tools for TeXfactory)
 
-    1) bdoc: new version to build and publish
+    1) TeXfactory: needed to build bdoc and co + rebuild of bdoc as a test
 
     1) macroenvsign: new version to build and publish

@@ -29,22 +29,22 @@
 
 \msg_set:nnnn { bdoc } { options-unknown-lang }
     { Unknown ~ language. }
-    { Languages ~ supported: ~ [FR]-ench ~ and ~ [EN]-glish. }
+    { Languages ~ supported: ~ [fr]-ench ~ and ~ [en]-glish. }
 
 
 % -- OPTIONS - KEYS & VALUES -- %
 
 \keys_define:nn { bdoc } {
     lang .choices:nn =
-        { FR, EN }
+        { fr, en }
         {
             \tl_set:Nn \l_bdoc_opt_lang { \tl_use:N \l_keys_choice_tl }
         },
-    lang .initial:n = EN,
+    lang .initial:n = en,
     lang / unknown .code:n =
         \msg_error:nnxxx { bdoc } { options-unknown-lang }
             { lang }             % Name of choice key
-            { FR, EN }           % Valid choices
+            { fr, en }           % Valid choices
             { \exp_not:n {#1} }  % Invalid choice given
 }
 
@@ -80,7 +80,9 @@
 
 % -- SETTINGS - TOC & Co. -- %
 
-%\renewcommand\thechapter{\Alph{chapter}.}
+\ifcsundef{chapter}%
+          {}%
+          {\renewcommand\thechapter{\Alph{chapter}.}}
 \renewcommand\thesection{\Roman{section}.}
 \renewcommand\thesubsection{\arabic{subsection}.}
 \renewcommand\thesubsubsection{\roman{subsubsection}.}

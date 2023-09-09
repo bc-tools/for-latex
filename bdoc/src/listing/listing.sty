@@ -172,7 +172,7 @@
 % is put inside an environment ``bdocshowcase`` instead of being centered.
 %%%
 \NewDocumentCommand{ \inputbdoclatexreal }{
-    O{\bdoc@trans@colon{\bdoc@trans@this@gives}}
+    O{\bdoc@trans@this@gives \bdoc@trans@colon@space :}
     m
 }{
     \inputbdoclatexalone{#2}
