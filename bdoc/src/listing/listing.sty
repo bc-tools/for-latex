@@ -1,10 +1,9 @@
 % == PACKAGES == %
 
-\RequirePackage{tcolorbox}
-
 % We use the big machinery of the package ``tcolorbox`` and its library
 % ``minted`` to colorize the ¨latex codes.
 
+\RequirePackage{tcolorbox}
 \tcbuselibrary{minted, breakable, skins}
 
 
@@ -172,7 +171,7 @@
 % is put inside an environment ``bdocshowcase`` instead of being centered.
 %%%
 \NewDocumentCommand{ \inputbdoclatexreal }{
-    O{\bdoc@trans@this@gives \bdoc@trans@colon@space :}
+    O{\bdoc@trans@this@gives \bdoc@colon}
     m
 }{
     \inputbdoclatexalone{#2}

@@ -1,3 +1,10 @@
+% == PACKAGES == %
+
+% We delguate quoting to the package ``csquotes'' which takes care
+% of locale settings.
+\RequirePackage{csquotes}
+
+
 % == TOOLS == %
 
 % -- EXPLAIN - QUOTING -- %
@@ -10,7 +17,7 @@
 % **"Something"**.
 %%%
 \NewDocumentCommand{ \bdocquote } { m } {%
-    \og \emph{#1} \fg%
+    \enquote{\emph{#1}}%
 }
 
 

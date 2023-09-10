@@ -1,6 +1,6 @@
 \input{../doc-header.txt}
 
-\usepackage[lang = FR]{../main/main}
+\usepackage[lang = french]{../main/main}
 \usepackage{../macroenv/macroenv}
 \usepackage{../inenglish/inenglish}
 \usepackage{../showcase/showcase}
@@ -64,115 +64,119 @@ Notez que les 1\ieres{} macros sont nommées de façon similaire aux environneme
 % ------------------ %
 
 
-\bdocexa[Face à face]
+\begin{bdocexa}[Face à face]
+	\leavevmode
 
-\begin{bdoclatex-alone}
+	\begin{bdoclatex-alone}
 \inputbdoclatex{examples/listing/xyz.tex}
-\end{bdoclatex-alone}
+	\end{bdoclatex-alone}
 
-Ceci produit la mise en forme suivante.
+	Ceci produit la mise en forme suivante.
 
-\inputbdoclatex{examples/listing/xyz.tex}
+	\inputbdoclatex{examples/listing/xyz.tex}
+\end{bdocexa}
 
 
 % ------------------ %
 
 
-\bdocexa[À la suite]
+\begin{bdocexa}[À la suite]
+	\bdocmacro{inputbdoclatexflat} produit un code à plat comme ci-dessous.
 
-\bdocmacro{inputbdoclatexflat} produit un code à plat comme ci-dessous.
-
-\inputbdoclatexflat{examples/listing/xyz.tex}
+	\inputbdoclatexflat{examples/listing/xyz.tex}
+\end{bdocexa}
 
 
 % ------------------ %
 
 
-\bdocexa[Juste le code]
+\begin{bdocexa}[Juste le code]
+	\bdocmacro{inputbdoclatexalone} sert à n'avoir que le code comme ci-après.
 
+	\inputbdoclatexalone{examples/listing/xyz.tex}
+\end{bdocexa}
 
-\bdocmacro{inputbdoclatexalone} sert à n'avoir que le code comme ci-après.
-
-\inputbdoclatexalone{examples/listing/xyz.tex}
 
 % ------------------ %
 
 
 %\newpage
-\bdocexa[Code suivi du rendu centré]
 
-Le rendu suivant est obtenu en utilisant \bdocmacro{inputbdoclatexbefore}.
+\begin{bdocexa}[Code suivi du rendu centré]
+	Le rendu suivant est obtenu en utilisant \bdocmacro{inputbdoclatexbefore}.
 
-\medskip
+	\medskip
 
-\begin{bdocshowcase}
-    \inputbdoclatexbefore{examples/listing/xyz.tex}
-\end{bdocshowcase}
+	\begin{bdocshowcase}
+    	\inputbdoclatexbefore{examples/listing/xyz.tex}
+	\end{bdocshowcase}
 
-\bigskip
+	\bigskip
 
-Il est possible de changer le texte entre le code et son rendu via un argument optionnel.
-Ainsi \bdocinlatex|\inputbdoclatexbefore[Voici ce que cela donne.]{...}| aboutit au résultat suivant.
+	Il est possible de changer le texte entre le code et son rendu via un argument optionnel.
+	Ainsi \bdocinlatex|\inputbdoclatexbefore[Voici ce que cela donne.]{...}| aboutit au résultat suivant.
 
-\medskip
+	\medskip
 
-\begin{bdocshowcase}[Début du rendu réel \bdocquote{personnalisé}]%
-                   [Fin du rendu réel \bdocquote{personnalisé}]
-    \inputbdoclatexbefore[Voici ce que cela donne.]{examples/listing/xyz.tex}
-\end{bdocshowcase}
-
-
-% ------------------ %
-
-
-\bdocexa[Rendu centré suivi du code] \label{output-centered}
-
-Le rendu suivant
-\footnote{
-    Il faut savoir que le 1\ier{} espace vertical disgracieux vient de l'emploi de \bdocenv{center} en coulisse.
-},
-similaire au précédent, est obtenu en appellant \bdocmacro{inputbdoclatexafter} au lieu de \bdocmacro{inputbdoclatexbefore}.
-
-\medskip
-
-\begin{bdocshowcase}
-    \inputbdoclatexafter{examples/listing/xyz.tex}
-\end{bdocshowcase}
-
-\bigskip
-
-Via \bdocinlatex|\inputbdoclatexafter[Cette formule se tape comme suit.]{...}| , on obtient le résultat ci-après.
-
-\medskip
-
-\begin{bdocshowcase}[Début du rendu réel \bdocquote{personnalisé}]%
-                   [Fin du rendu réel \bdocquote{personnalisé}]
-    \inputbdoclatexafter[Cette formule se tape comme suit.]{examples/listing/xyz.tex}
-\end{bdocshowcase}
+	\begin{bdocshowcase}[Début du rendu réel \bdocquote{personnalisé}]%
+    	               [Fin du rendu réel \bdocquote{personnalisé}]
+    	\inputbdoclatexbefore[Voici ce que cela donne.]{examples/listing/xyz.tex}
+	\end{bdocshowcase}
+\end{bdocexa}
 
 
 % ------------------ %
 
 
-\bdocexa[Code importé et son rendu réel]
+\begin{bdocexa}[Rendu centré suivi du code] \label{output-centered}
+ 	Le rendu suivant
+	\footnote{
+    	Il faut savoir que le 1\ier{} espace vertical disgracieux vient de l'emploi de \bdocenv{center} en coulisse.
+	},
+	similaire au précédent, est obtenu en appellant
+	\bdocmacro{inputbdoclatexafter} au lieu de \bdocmacro{inputbdoclatexbefore}.
 
-Pour un code et son rendu réel non centré, on utilisera \bdocmacro{inputbdoclatexreal} qui va produire ce qui suit
+	\medskip
 
-\medskip
+	\begin{bdocshowcase}
+    	\inputbdoclatexafter{examples/listing/xyz.tex}
+	\end{bdocshowcase}
 
-\begin{bdoc-extra-showcase}
-    \inputbdoclatexreal{examples/listing/xyz.tex}
-\end{bdoc-extra-showcase}
+	\bigskip
 
-\bigskip
+	Via \bdocinlatex|\inputbdoclatexafter[Cette formule se tape comme suit.]{...}| , on obtient le résultat ci-après.
 
-Là aussi le texte par défaut peut être \bdocquote{personnalisé}. Par exemple, ce qui suit a été obtenu via \bdocinlatex|\inputbdoclatexreal[On obtient le rendu réel ci-après.]{...}| .
+	\medskip
 
-\medskip
+	\begin{bdocshowcase}[Début du rendu réel \bdocquote{personnalisé}]%
+        	            [Fin du rendu réel \bdocquote{personnalisé}]
+    	\inputbdoclatexafter[Cette formule se tape comme suit.]{examples/listing/xyz.tex}
+	\end{bdocshowcase}
+\end{bdocexa}
 
-\begin{bdoc-extra-showcase}[Début du rendu \bdocquote{personnalisé} dans cette doc.]%
-                           [Fin du rendu \bdocquote{personnalisé} dans cette doc.]
-    \inputbdoclatexreal[On obtient le rendu réel ci-après.]{examples/listing/xyz.tex}
-\end{bdoc-extra-showcase}
+
+% ------------------ %
+
+
+\begin{bdocexa}[Code importé et son rendu réel]
+	Pour un code et son rendu réel non centré, on utilisera \bdocmacro{inputbdoclatexreal} qui va produire ce qui suit
+
+	\medskip
+
+	\begin{bdoc-extra-showcase}
+    	\inputbdoclatexreal{examples/listing/xyz.tex}
+	\end{bdoc-extra-showcase}
+
+	\bigskip
+
+	Là aussi le texte par défaut peut être \bdocquote{personnalisé}. Par exemple, ce qui suit a été obtenu via \bdocinlatex|\inputbdoclatexreal[On obtient le rendu réel ci-après.]{...}| .
+
+	\medskip
+
+	\begin{bdoc-extra-showcase}[Début du rendu \bdocquote{personnalisé} dans cette doc.]%
+    	                       [Fin du rendu \bdocquote{personnalisé} dans cette doc.]
+    	\inputbdoclatexreal[On obtient le rendu réel ci-après.]{examples/listing/xyz.tex}
+	\end{bdoc-extra-showcase}
+\end{bdocexa}
 
 \end{document}

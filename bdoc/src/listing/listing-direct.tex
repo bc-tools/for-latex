@@ -1,6 +1,6 @@
 \input{../doc-header.txt}
 
-\usepackage[lang = FR]{../main/main}
+\usepackage[lang = french]{../main/main}
 \usepackage{../macroenv/macroenv}
 \usepackage{../inenglish/inenglish}
 \usepackage{../showcase/showcase}
@@ -54,7 +54,7 @@ Voici deux exemples d'utilisation.
 \begin{enumerate}
     \item \bdocinlatex+\bdocinlatex|$a^b = c$|+ produit \bdocinlatex|$a^b = c$| .
 
-    \item \bdocinlatex+\bdocinlatex|$a^b = c$|+ vient de \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+# lui-même obtenu via \bdocinlatex@\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#@ , etc.
+    \item \bdocinlatex+\bdocinlatex|$a^b = c$|+ vient de \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+# obtenu via \bdocinlatex@\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#@ ... etc.
 \end{enumerate}
 
 
@@ -72,50 +72,52 @@ Voici deux exemples d'utilisation.
 % ------------------ %
 
 
-\bdocexa[Face à face]
+\begin{bdocexa}[Face à face]
+	\leavevmode
 
-\begin{bdoclatex-alone}
+	\begin{bdoclatex-alone}
 \begin{bdoclatex}
     $A = B + C$
 \end{bdoclatex}
-\end{bdoclatex-alone}
+	\end{bdoclatex-alone}
 
-Ceci donne :
+	Ceci donne :
 
-\begin{bdoclatex}
-    $A = B + C$
-\end{bdoclatex}
+	\begin{bdoclatex}
+		$A = B + C$
+	\end{bdoclatex}
+\end{bdocexa}
 
 
 % ------------------ %
 
 
-\bdocexa[À la suite]
+\begin{bdocexa}[À la suite]
+	Via \bdocenv{bdoclatex-flat}, on obtient un code à plat
+	\footnote{
+    	Le suffixe \bdocpre{flat} signifie \bdocinEN{plat}.
+	}
+	comme ci-dessous.
 
-Via \bdocenv{bdoclatex-flat}, on obtient un code à plat
-\footnote{
-    Le suffixe \bdocpre{flat} signifie \bdocinEN{plat}.
-}
-comme ci-dessous.
-
-\begin{bdoclatex-flat}
-    $A = B + C$
-\end{bdoclatex-flat}
+	\begin{bdoclatex-flat}
+		$A = B + C$
+	\end{bdoclatex-flat}
+\end{bdocexa}
 
 
 % ------------------ %
 
 
-\bdocexa[Juste le code]
+\begin{bdocexa}[Juste le code]
+	\bdocenv{bdoclatex-alone} affiche le code seul
+	\footnote{
+    	Le suffixe \bdocpre{alone} signifie \bdocinEN{seul}.
+	}
+	comme ci-après.
 
-\bdocenv{bdoclatex-alone} affiche le code seul
-\footnote{
-    Le suffixe \bdocpre{alone} signifie \bdocinEN{seul}.
-}
-comme ci-après.
-
-\begin{bdoclatex-alone}
-    $A = B + C$
-\end{bdoclatex-alone}
+	\begin{bdoclatex-alone}
+    	$A = B + C$
+	\end{bdoclatex-alone}
+\end{bdocexa}
 
 \end{document}

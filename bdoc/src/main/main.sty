@@ -29,22 +29,27 @@
 
 \msg_set:nnnn { bdoc } { options-unknown-lang }
     { Unknown ~ language. }
-    { Languages ~ supported: ~ [fr]-ench ~ and ~ [en]-glish. }
+    { See ~ the ~ documentation ~ for ~ the ~ supported languages. }
 
 
 % -- OPTIONS - KEYS & VALUES -- %
 
+\str_new:N  \l_bdoc_opt_lang_str
+\bool_new:N \l_bdoc_opt_lang_unused_bool
+
+\bool_set_true:N \l_bdoc_opt_lang_unused_bool
+
 \keys_define:nn { bdoc } {
     lang .choices:nn =
-        { fr, en }
+        { french, english }
         {
-            \tl_set:Nn \l_bdoc_opt_lang { \tl_use:N \l_keys_choice_tl }
+            \tl_set:Nn \l_bdoc_opt_lang_str { \tl_use:N \l_keys_choice_tl }
         },
-    lang .initial:n = en,
+    lang .initial:n = english,
     lang / unknown .code:n =
         \msg_error:nnxxx { bdoc } { options-unknown-lang }
             { lang }             % Name of choice key
-            { fr, en }           % Valid choices
+            { french, english }  % Valid choices
             { \exp_not:n {#1} }  % Invalid choice given
 }
 
@@ -54,9 +59,18 @@
 \ProcessKeysPackageOptions{ bdoc }
 
 
-% -- OPTIONS - IMPORT THE WANTED TRANSLATIONS -- %
+% -- OPTIONS - LOCALE -- %
 
-\input{../main/locale/\l_bdoc_opt_lang.sty}
+\NewDocumentCommand{\bdoc@colon}{}{:}
+
+\@ifpackageloaded{babel}{
+% Cf : and sopacing
+    \iflanguage{french}{
+        \RenewDocumentCommand{\bdoc@colon}{}{\babelshorthand{:}}
+    }{}
+}{}
+
+\input{../main/locale/\l_bdoc_opt_lang_str.sty}
 
 
 % == TOOLS == %
@@ -64,7 +78,7 @@
 % -- SETTINGS - GENERAL -- %
 
 \setlength{\parindent}{0cm}
-% \setlist{noitemsep}  Utile ???
+% \setlist{noitemsep}  Is it useful ?
 
 
 % -- SETTINGS - LINKS -- %

@@ -137,7 +137,7 @@
 % ?
 %%%
 
-\str_new:N \l_bdoc_topic_title_str
+\tl_new:N \l_bdoc_topic_title_tl
 
 %%%   ?????
 % prototype::
@@ -161,20 +161,20 @@
     }
 
     \IfBlankTF{#1}{
-        \str_set:Nn \l_bdoc_topic_title_str {#2}
+        \tl_set:Nn \l_bdoc_topic_title_tl {#2}
     }{
-        \str_set:Nn \l_bdoc_topic_title_str {#1}
+        \tl_set:Nn \l_bdoc_topic_title_tl {#1}
     }
 
     \medskip
 
     \textbf{
-        \textsc{\str_use:N \l_bdoc_topic_title_str}
+        \textsc{\tl_use:N \l_bdoc_topic_title_tl}
 
         \IfBlankTF{#1}{
             .
         }{
-            \bdoc@trans@colon@space :
+            \bdoc@colon{}
         }
     }%
 }{}
