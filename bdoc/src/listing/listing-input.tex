@@ -8,13 +8,40 @@
 
 \usepackage{listing}
 
+% WARNING! 
+% 
+% We don't need to include the lines below because this is done before
+% by the file ``listing-direct.tex``.
+
+\newtcblisting{bdoc-doc-latex-alone}{%
+    minted language = latex,
+    breakable,
+% Code and output
+    colback = yellow!5,
+% Frame
+    colframe = darkgray,
+    shadow   = {.75mm}{-.75mm}{0mm}{black!30},
+%        sharp corners, % OLD STYLE !
+    arc    = .75mm,
+    left   = 1mm, right = 1mm,
+    bottom = 1mm, top   = 1mm,
+% Separating line
+    enhanced,
+    segmentation style = {
+        gray,
+        dash pattern = {on 5pt off 2.5pt},
+        line width   = 1.25pt
+    },
+    listing only
+}
+
 
 % == NEEDED == %
 
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
 
-\NewDocumentCommand{ \bdocextraruler }{ m }{%
+\NewDocumentCommand{ \bdocdocextraruler }{ m }{%
     \par
     {
         \centering
@@ -29,15 +56,15 @@
     }
 }
 
-\NewDocumentEnvironment{ bdoc-extra-showcase }
+\NewDocumentEnvironment{ bdoc-doc-showcase }
                        { O{ Début du rendu dans cette doc. }
                          O{ Fin du rendu dans cette doc. } }{
     \begin{colorstrip}{green!5}
-        \bdocextraruler{#1}
+        \bdocdocextraruler{#1}
         \smallskip
 }{
         \smallskip
-        \bdocextraruler{#2}
+        \bdocdocextraruler{#2}
     \end{colorstrip}
 }
 
@@ -49,16 +76,11 @@
 \subsection{Codes importés}
 
 Pour les codes suivants, on considère un fichier \verb+examples/listing/xyz.tex+ dont le chemin est donné relativement au document présent.
-Le contenu de ce fichier est l'unique ligne \bdocinlatex|$x y z = 1$| .
+Le contenu de ce fichier se réduit à l'unique ligne \bdocinlatex|$x y z = 1$| .
 
 \medskip
 
-Notez que les 1\ieres{} macros sont nommées de façon similaire aux environnements précédents en ajoutant le préfixe \bdocpre{input} tout en ignorant les tirets.
-
-
-\begin{bdocrem}
-    Il faut savoir que les macros imprimant automatiquement du texte tiennent compte de la langue choisie lors du chargement du package \bdocpack{bdoc}.
-\end{bdocrem}
+Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semblable à l'environnement \bdocenv{bdoclatex} excepté que l'on fournit le chemin d'un fichier.
 
 
 % ------------------ %
@@ -67,13 +89,13 @@ Notez que les 1\ieres{} macros sont nommées de façon similaire aux environneme
 \begin{bdocexa}[Face à face]
 	\leavevmode
 
-	\begin{bdoclatex-alone}
-\inputbdoclatex{examples/listing/xyz.tex}
-	\end{bdoclatex-alone}
+	\begin{bdoc-doc-latex-alone}
+\bdoclatexinput[sbs]{examples/listing/xyz.tex}
+	\end{bdoc-doc-latex-alone}
 
 	Ceci produit la mise en forme suivante.
 
-	\inputbdoclatex{examples/listing/xyz.tex}
+	\bdoclatexinput[sbs]{examples/listing/xyz.tex}
 \end{bdocexa}
 
 
@@ -81,9 +103,15 @@ Notez que les 1\ieres{} macros sont nommées de façon similaire aux environneme
 
 
 \begin{bdocexa}[À la suite]
-	\bdocmacro{inputbdoclatexflat} produit un code à plat comme ci-dessous.
+	\leavevmode
 
-	\inputbdoclatexflat{examples/listing/xyz.tex}
+	\begin{bdoc-doc-latex-alone}
+\bdoclatexinput{examples/listing/xyz.tex}
+	\end{bdoc-doc-latex-alone}
+
+	Ceci produit la mise en forme suivante où l'option employée par défaut est \bdocinlatex#std#.
+
+	\bdoclatexinput{examples/listing/xyz.tex}
 \end{bdocexa}
 
 
@@ -91,36 +119,42 @@ Notez que les 1\ieres{} macros sont nommées de façon similaire aux environneme
 
 
 \begin{bdocexa}[Juste le code]
-	\bdocmacro{inputbdoclatexalone} sert à n'avoir que le code comme ci-après.
+	\leavevmode
 
-	\inputbdoclatexalone{examples/listing/xyz.tex}
+	\begin{bdoc-doc-latex-alone}
+\bdoclatexinput[code]{examples/listing/xyz.tex}
+	\end{bdoc-doc-latex-alone}
+
+	Ceci produit la mise en forme suivante.
+
+	\bdoclatexinput[code]{examples/listing/xyz.tex}
 \end{bdocexa}
 
 
 % ------------------ %
 
 
-%\newpage
+\subsection{Codes importés mis en situation}
 
 \begin{bdocexa}[Code suivi du rendu centré]
-	Le rendu suivant est obtenu en utilisant \bdocmacro{inputbdoclatexbefore}.
+	Le rendu suivant est obtenu en utilisant \bdocinlatex+\bdoclatexshow{examples/listing/xyz.tex}+ où une option est employée par défaut, à savoir \bdocinlatex+co+ pour \bdocquote{\bdocprewhy{c}{ode} and \bdocprewhy{o}{utput}} soit \bdocinEN{code et production}.
 
 	\medskip
 
 	\begin{bdocshowcase}
-    	\inputbdoclatexbefore{examples/listing/xyz.tex}
+    	\bdoclatexshow{examples/listing/xyz.tex}
 	\end{bdocshowcase}
 
 	\bigskip
 
-	Il est possible de changer le texte entre le code et son rendu via un argument optionnel.
-	Ainsi \bdocinlatex|\inputbdoclatexbefore[Voici ce que cela donne.]{...}| aboutit au résultat suivant.
+	Il est possible de changer le texte entre le code et son rendu via un argument optionnel entre chevrons.
+	Ainsi \bdocinlatex|\bdoclatexshow<Voici ce que cela donne.>{...}| aboutit au résultat suivant.
 
 	\medskip
 
-	\begin{bdocshowcase}[Début du rendu réel \bdocquote{personnalisé}]%
-    	               [Fin du rendu réel \bdocquote{personnalisé}]
-    	\inputbdoclatexbefore[Voici ce que cela donne.]{examples/listing/xyz.tex}
+	\begin{bdocshowcase}<Début du rendu réel \bdocquote{personnalisé}>%
+    	                <Fin du rendu réel \bdocquote{personnalisé}>
+    	\bdoclatexshow<Voici ce que cela donne.>{examples/listing/xyz.tex}
 	\end{bdocshowcase}
 \end{bdocexa}
 
@@ -133,24 +167,23 @@ Notez que les 1\ieres{} macros sont nommées de façon similaire aux environneme
 	\footnote{
     	Il faut savoir que le 1\ier{} espace vertical disgracieux vient de l'emploi de \bdocenv{center} en coulisse.
 	},
-	similaire au précédent, est obtenu en appellant
-	\bdocmacro{inputbdoclatexafter} au lieu de \bdocmacro{inputbdoclatexbefore}.
+	similaire au précédent, est obtenu via \bdocinlatex+\bdoclatexshow[oc]{examples/listing/xyz.tex}+.
 
 	\medskip
 
 	\begin{bdocshowcase}
-    	\inputbdoclatexafter{examples/listing/xyz.tex}
+    	\bdoclatexshow[oc]{examples/listing/xyz.tex}
 	\end{bdocshowcase}
 
 	\bigskip
 
-	Via \bdocinlatex|\inputbdoclatexafter[Cette formule se tape comme suit.]{...}| , on obtient le résultat ci-après.
+	Via \bdocinlatex|\bdoclatexshow[oc]<Cette formule se tape comme suit.>{...}| , on obtient le résultat ci-après.
 
 	\medskip
 
-	\begin{bdocshowcase}[Début du rendu réel \bdocquote{personnalisé}]%
-        	            [Fin du rendu réel \bdocquote{personnalisé}]
-    	\inputbdoclatexafter[Cette formule se tape comme suit.]{examples/listing/xyz.tex}
+	\begin{bdocshowcase}<Début du rendu réel \bdocquote{personnalisé}>%
+        	            <Fin du rendu réel \bdocquote{personnalisé}>
+    	\bdoclatexshow[oc]<Cette formule se tape comme suit.>{examples/listing/xyz.tex}
 	\end{bdocshowcase}
 \end{bdocexa}
 
@@ -159,24 +192,29 @@ Notez que les 1\ieres{} macros sont nommées de façon similaire aux environneme
 
 
 \begin{bdocexa}[Code importé et son rendu réel]
-	Pour un code et son rendu réel non centré, on utilisera \bdocmacro{inputbdoclatexreal} qui va produire ce qui suit
+	Pour un code et son rendu réel non centré, on utilisera \bdocinlatex+\bdoclatexshow[real]{examples/listing/xyz.tex}+ qui délimite mieux ce que produit le code (c'est très utile pour un document qui ne sera pas imprimé).
 
 	\medskip
 
-	\begin{bdoc-extra-showcase}
-    	\inputbdoclatexreal{examples/listing/xyz.tex}
-	\end{bdoc-extra-showcase}
+	\begin{bdoc-doc-showcase}
+    	\bdoclatexshow[real]{examples/listing/xyz.tex}
+	\end{bdoc-doc-showcase}
 
 	\bigskip
 
-	Là aussi le texte par défaut peut être \bdocquote{personnalisé}. Par exemple, ce qui suit a été obtenu via \bdocinlatex|\inputbdoclatexreal[On obtient le rendu réel ci-après.]{...}| .
+	Là aussi le texte par défaut peut être \bdocquote{personnalisé}. Par exemple, ce qui suit a été obtenu via \bdocinlatex|\bdoclatexshow[real]<On obtient le rendu réel ci-après.>{...}| .
 
 	\medskip
 
-	\begin{bdoc-extra-showcase}[Début du rendu \bdocquote{personnalisé} dans cette doc.]%
-    	                       [Fin du rendu \bdocquote{personnalisé} dans cette doc.]
-    	\inputbdoclatexreal[On obtient le rendu réel ci-après.]{examples/listing/xyz.tex}
-	\end{bdoc-extra-showcase}
+	\begin{bdoc-doc-showcase}[Début du rendu \bdocquote{personnalisé} dans cette doc.]%
+    	                     [Fin du rendu \bdocquote{personnalisé} dans cette doc.]
+    	\bdoclatexshow[real]<On obtient le rendu réel ci-après.>{examples/listing/xyz.tex}
+	\end{bdoc-doc-showcase}
 \end{bdocexa}
+%
+%
+%\begin{bdocrem}
+%    Toutes les macros imprimant automatiquement du texte tiennent compte de la langue choisie lors du chargement du package \bdocpack{bdoc}.
+%\end{bdocrem}
 
 \end{document}

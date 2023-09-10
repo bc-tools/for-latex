@@ -27,7 +27,7 @@
 
 % -- OPTIONS - MESSAGES -- %
 
-\msg_set:nnnn { bdoc } { options-unknown-lang }
+\msg_set:nnnn { bdoc } { package-option-lang-unknown }
     { Unknown ~ language. }
     { See ~ the ~ documentation ~ for ~ the ~ supported languages. }
 
@@ -47,7 +47,7 @@
         },
     lang .initial:n = english,
     lang / unknown .code:n =
-        \msg_error:nnxxx { bdoc } { options-unknown-lang }
+        \msg_error:nnxxx { bdoc } { package-option-lang-unknown }
             { lang }             % Name of choice key
             { french, english }  % Valid choices
             { \exp_not:n {#1} }  % Invalid choice given

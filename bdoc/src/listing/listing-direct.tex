@@ -11,34 +11,26 @@
 
 % == NEEDED == %
 
-% Source.
-%    * https://tex.stackexchange.com/a/604698/6880
-
-\NewDocumentCommand{ \bdocextraruler }{ m }{%
-    \par
-    {
-        \centering
-        \color{green!50!black}%
-        \leavevmode
-        \kern.075\linewidth
-        \leaders\hrule height3.25pt\hfill\kern0pt
-        \footnotesize\itshape\bfseries\space\ignorespaces#1\unskip\space
-        \leaders\hrule height3.25pt\hfill\kern0pt
-        \kern.075\linewidth
-        \par
-    }
-}
-
-\NewDocumentEnvironment{ bdoc-extra-showcase }
-                       { O{ Début du rendu dans cette doc. }
-                         O{ Fin du rendu dans cette doc. } }{
-    \begin{colorstrip}{green!5}
-        \bdocextraruler{#1}
-        \smallskip
-}{
-        \smallskip
-        \bdocextraruler{#2}
-    \end{colorstrip}
+\newtcblisting{bdoc-doc-latex-alone}{%
+    minted language = latex,
+    breakable,
+% Code and output
+    colback = yellow!5,
+% Frame
+    colframe = darkgray,
+    shadow   = {.75mm}{-.75mm}{0mm}{black!30},
+%        sharp corners, % OLD STYLE !
+    arc    = .75mm,
+    left   = 1mm, right = 1mm,
+    bottom = 1mm, top   = 1mm,
+% Separating line
+    enhanced,
+    segmentation style = {
+        gray,
+        dash pattern = {on 5pt off 2.5pt},
+        line width   = 1.25pt
+    },
+    listing only
 }
 
 
@@ -73,17 +65,17 @@ Voici deux exemples d'utilisation.
 
 
 \begin{bdocexa}[Face à face]
-	\leavevmode
+	Dans le code suivant, l'option \bdocinlatex#sbs# est pour \bdocquote{\bdocprewhy{s}{ide} \bdocprewhy{b}{y} \bdocprewhy{s}{ide}} soit \bdocinEN{côte à côte}.
 
-	\begin{bdoclatex-alone}
-\begin{bdoclatex}
+	\begin{bdoc-doc-latex-alone}
+\begin{bdoclatex}[sbGs]
     $A = B + C$
 \end{bdoclatex}
-	\end{bdoclatex-alone}
+	\end{bdoc-doc-latex-alone}
 
 	Ceci donne :
 
-	\begin{bdoclatex}
+	\begin{bdoclatex}[sbs]
 		$A = B + C$
 	\end{bdoclatex}
 \end{bdocexa}
@@ -93,31 +85,47 @@ Voici deux exemples d'utilisation.
 
 
 \begin{bdocexa}[À la suite]
-	Via \bdocenv{bdoclatex-flat}, on obtient un code à plat
+	L'environnement \bdocenv{bdoclatex} choisit par défaut l'option \bdocinlatex#std#
 	\footnote{
-    	Le suffixe \bdocpre{flat} signifie \bdocinEN{plat}.
+    	\bdocinlatex{std} fait référence au comportement \bdocquote{standard} de \bdocpack{tcolorbox} vis à vis de la librairie \bdocpack{minted}.
 	}
-	comme ci-dessous.
+	et produit le résultat suivant.
 
-	\begin{bdoclatex-flat}
+	\begin{bdoclatex}
 		$A = B + C$
-	\end{bdoclatex-flat}
-\end{bdocexa}
+	\end{bdoclatex}
+\end{bdocexa}	
 
 
 % ------------------ %
 
 
 \begin{bdocexa}[Juste le code]
-	\bdocenv{bdoclatex-alone} affiche le code seul
-	\footnote{
-    	Le suffixe \bdocpre{alone} signifie \bdocinEN{seul}.
-	}
-	comme ci-après.
+	Afficher le code seul comme ci-après s'obtient via l'option \bdocinlatex#code# de l'environnement \bdocenv{bdoclatex}.
 
-	\begin{bdoclatex-alone}
+	\begin{bdoclatex}[code]
     	$A = B + C$
-	\end{bdoclatex-alone}
+	\end{bdoclatex}
 \end{bdocexa}
+
+
+% ------------------ %
+
+
+\begin{bdocrem}	
+	Si le code commence par un crochet ouvrant, dans le cas de l'option par défaut, il faudra l'indiquer. Voici un cas d'usage.
+
+	\begin{bdoc-doc-latex-alone}
+\begin{bdoclatex}[std]
+    [étrange...]
+\end{bdoclatex}
+	\end{bdoc-doc-latex-alone}
+
+	Ceci donne :
+	
+    \begin{bdoclatex}[std]
+        [étrange...]
+    \end{bdoclatex}
+\end{bdocrem}
 
 \end{document}

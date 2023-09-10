@@ -18,7 +18,7 @@
 
 Il peut être utile de montrer un rendu réel directement dans un document. Ceci se tape comme suit.
 
-\begin{bdoclatex-alone}
+\begin{bdoclatex}[code]
 \begin{bdocshowcase}
     \bfseries Un peu de code \LaTeX.
 
@@ -26,7 +26,7 @@ Il peut être utile de montrer un rendu réel directement dans un document. Ceci
 
     \itshape Fin de la démo.
 \end{bdocshowcase}
-\end{bdoclatex-alone}
+\end{bdoclatex}
 
 On obtient alors le rendu suivant
 \footnote{
@@ -49,9 +49,9 @@ On obtient alors le rendu suivant
 
 Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
 
-\begin{bdoclatex-flat}
+\begin{bdoclatex}[std]
 \bdocruler{Un pseudo-titre décoré}
-\end{bdoclatex-flat}
+\end{bdoclatex}
 
 
 \begin{bdocrem}
@@ -65,19 +65,19 @@ Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
 
 C'est assez simple à faire.
 
-\begin{bdoclatex-alone}
-\begin{bdocshowcase}[Mon début]%
-                    [Ma fin]
+\begin{bdoclatex}[code]
+\begin{bdocshowcase}<Mon début>%
+                    <Ma fin>
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 \end{bdocshowcase}
-\end{bdoclatex-alone}
+\end{bdoclatex}
 
 On obtient alors ce qui suit.
 
 \medskip
 
-\begin{bdocshowcase}[Mon début]%
-                   [Ma fin]
+\begin{bdocshowcase}<Mon début>%
+                    <Ma fin>
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 \end{bdocshowcase}
 
