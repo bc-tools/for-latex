@@ -1,9 +1,5 @@
-real_output_start = Start of the real output
-real_output_end   = End of the real output
-
-code_after_output = The preceding output has been obtained
-                    via the following code
-output_after_code = Output of the preceding code
+latex_show_start = Start of the real output
+latex_show_end   = End of the real output
 
 exa_title = Example
 rmk_title = Remark

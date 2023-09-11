@@ -1,4 +1,4 @@
-\input{../doc-header.txt}
+\input{../doc-header.tex}
 
 \usepackage[lang = french]{../main/main}
 \usepackage{../macroenv/macroenv}
@@ -8,8 +8,8 @@
 
 \usepackage{listing}
 
-% WARNING! 
-% 
+% WARNING!
+%
 % We don't need to include the lines below because this is done before
 % by the file ``listing-direct.tex``.
 
@@ -134,87 +134,39 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 % ------------------ %
 
 
-\subsection{Codes importés mis en situation} \label{bdoc-latexshow}
+\subsection{Codes importés et mis en situation} \label{bdoc-latexshow}
 
-\begin{bdocexa}[Code suivi du rendu centré]
-	Le rendu suivant est obtenu en utilisant \bdocinlatex+\bdoclatexshow{examples/listing/xyz.tex}+ où une option est employée par défaut, à savoir \bdocinlatex+co+ pour \bdocquote{\bdocprewhy{c}{ode} and \bdocprewhy{o}{utput}} soit \bdocinEN{code et production}.
-
-	\medskip
-
-	\begin{bdocshowcase}
-    	\bdoclatexshow{examples/listing/xyz.tex}
-	\end{bdocshowcase}
-
-	\bigskip
-
-	Il est possible de changer le texte entre le code et son rendu via un argument optionnel entre chevrons.
-	Ainsi \bdocinlatex|\bdoclatexshow<Voici ce que cela donne.>{...}| aboutit au résultat suivant.
-
-	\medskip
-
-	\begin{bdocshowcase}<Début du rendu réel \bdocquote{personnalisé}>%
-    	                <Fin du rendu réel \bdocquote{personnalisé}>
-    	\bdoclatexshow<Voici ce que cela donne.>{examples/listing/xyz.tex}
-	\end{bdocshowcase}
-\end{bdocexa}
-
-
-% ------------------ %
-
-
-\begin{bdocexa}[Rendu centré suivi du code] \label{output-centered}
- 	Le rendu suivant
-	\footnote{
-    	Il faut savoir que le 1\ier{} espace vertical disgracieux vient de l'emploi de \bdocenv{center} en coulisse.
-	},
-	similaire au précédent, est obtenu via \bdocinlatex+\bdoclatexshow[oc]{examples/listing/xyz.tex}+.
-
-	\medskip
-
-	\begin{bdocshowcase}
-    	\bdoclatexshow[oc]{examples/listing/xyz.tex}
-	\end{bdocshowcase}
-
-	\bigskip
-
-	Via \bdocinlatex|\bdoclatexshow[oc]<Cette formule se tape comme suit.>{...}| , on obtient le résultat ci-après.
-
-	\medskip
-
-	\begin{bdocshowcase}<Début du rendu réel \bdocquote{personnalisé}>%
-        	            <Fin du rendu réel \bdocquote{personnalisé}>
-    	\bdoclatexshow[oc]<Cette formule se tape comme suit.>{examples/listing/xyz.tex}
-	\end{bdocshowcase}
-\end{bdocexa}
-
-
-% ------------------ %
-
-
-\begin{bdocexa}[Code importé et son rendu réel]
-	Pour un code et son rendu réel non centré, on utilisera \bdocinlatex+\bdoclatexshow[real]{examples/listing/xyz.tex}+ qui délimite mieux ce que produit le code (c'est très utile pour un document qui ne sera pas imprimé).
+\begin{bdocexa}[Showcase]
+	Ce qui suit a été obtenu via la macro \bdocmacro{bdoclatexshow} en tapant \bdocinlatex+\bdoclatexshow{examples/listing/xyz.tex}+. 
 
 	\medskip
 
 	\begin{bdoc-doc-showcase}
-    	\bdoclatexshow[real]{examples/listing/xyz.tex}
+    	\bdoclatexshow{examples/listing/xyz.tex}
 	\end{bdoc-doc-showcase}
+\end{bdocexa}
 
-	\bigskip
 
-	Là aussi le texte par défaut peut être \bdocquote{personnalisé}. Par exemple, ce qui suit a été obtenu via \bdocinlatex|\bdoclatexshow[real]<On obtient le rendu réel ci-après.>{...}| .
+% ------------------ %
+
+
+\begin{bdocexa}[Changer le texte explicatif]
+	Pour obtenir ce qui suit avec un texte personnalisé, il suffit d'employer \bdocinlatex|\bdoclatexshow[Voici le rendu réel.]{...}|.
 
 	\medskip
 
 	\begin{bdoc-doc-showcase}[Début du rendu \bdocquote{personnalisé} dans cette doc.]%
-    	                     [Fin du rendu \bdocquote{personnalisé} dans cette doc.]
-    	\bdoclatexshow[real]<On obtient le rendu réel ci-après.>{examples/listing/xyz.tex}
+	    	                 [Fin du rendu \bdocquote{personnalisé} dans cette doc.]
+    	\bdoclatexshow[Voici le rendu réel.]{examples/listing/xyz.tex}
 	\end{bdoc-doc-showcase}
 \end{bdocexa}
-%
-%
-%\begin{bdocrem}
-%    Toutes les macros imprimant automatiquement du texte tiennent compte de la langue choisie lors du chargement du package \bdocpack{bdoc}.
-%\end{bdocrem}
+
+
+% ------------------ %
+
+
+\begin{bdocrem}
+    Le text imprimé par défaut tient compte de la langue choisie lors du chargement du package \bdocpack{bdoc}.
+\end{bdocrem}
 
 \end{document}

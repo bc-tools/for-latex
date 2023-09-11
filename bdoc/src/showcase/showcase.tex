@@ -1,4 +1,4 @@
-\input{../doc-header.txt}
+\input{../doc-header.tex}
 
 \usepackage[lang = french]{../main/main}
 \usepackage{../macroenv/macroenv}
@@ -14,74 +14,56 @@
 
 \section{Un rendu en situation réelle}
 
-\bdocexa[Avec les textes par défaut]
+\begin{bdocexa}[Avec les textes par défaut] 
+    Il peut être utile de montrer un rendu réel directement dans un document.
+    Ceci se tape comme suit.
+    
+    \bdoclatexinput[code]{examples/showcase/default.tex}
+    
+	On obtient alors le rendu suivant
+	\footnote{
+    	La bande est créée sans effort grâce au package \bdocpack{clrstrip}.
+	}.
 
-Il peut être utile de montrer un rendu réel directement dans un document. Ceci se tape comme suit.
-
-\begin{bdoclatex}[code]
-\begin{bdocshowcase}
-    \bfseries Un peu de code \LaTeX.
-
-    \bigskip
-
-    \itshape Fin de la démo.
-\end{bdocshowcase}
-\end{bdoclatex}
-
-On obtient alors le rendu suivant
-\footnote{
-    La bande est créée sans effort grâce au package \bdocpack{clrstrip}.
-}.
-
-\medskip
-
-\begin{bdocshowcase}
-    \bfseries Un peu de code \LaTeX.
-
-    \bigskip
-
-    \itshape Fin de la démo.
-\end{bdocshowcase}
-
-
-\bigskip
-
-
-Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
-
-\begin{bdoclatex}[std]
-\bdocruler{Un pseudo-titre décoré}
-\end{bdoclatex}
+	\medskip
+	
+	\input{examples/showcase/default.tex}
+\end{bdocexa}
 
 
 \begin{bdocrem}
-    Les textes utilisés pour délimiter le rendu s'adaptent à la langue choisie lors du chargement du package \bdocpack{bdoc}.
+	\leavevmode
+	
+	\begin{itemize}
+	    \item Voir la section \ref{bdoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
+	    
+	    \item Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
+	\end{itemize}
+
+    \begin{bdoclatex}[std]
+	    \bdocruler{Un pseudo-titre décoré}
+	\end{bdoclatex}
 \end{bdocrem}
 
 
 % ------------------ %
 
-\bdocexa[Changer les textes par défaut]
 
-C'est assez simple à faire
-\footnote{
-    L'utilisation de chevrons permet l'emploi d'option entre crochets : voir la section \ref{bdoc-latexshow} pour une mise en situation de cette idée.
-}.
+\begin{bdocexa}[Changer les textes par défaut]
+	\leavevmode
 
-\begin{bdoclatex}[code]
-\begin{bdocshowcase}<Mon début>%
-                    <Ma fin>
-    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
-\end{bdocshowcase}
-\end{bdoclatex}
+	\bdoclatexinput[code]{examples/showcase/text-changed.tex}
 
-On obtient alors ce qui suit.
+	On obtient alors ce qui suit.
 
-\medskip
+	\medskip
+	
+	\input{examples/showcase/text-changed.tex}
+\end{bdocexa}
 
-\begin{bdocshowcase}<Mon début>%
-                    <Ma fin>
-    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
-\end{bdocshowcase}
+
+\begin{bdocrem}
+    Les textes utilisés par défaut  pour délimiter le rendu s'adaptent à la langue choisie lors du chargement du package \bdocpack{bdoc}.
+\end{bdocrem}
 
 \end{document}

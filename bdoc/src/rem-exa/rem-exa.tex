@@ -1,4 +1,4 @@
-\input{../doc-header.txt}
+\input{../doc-header.tex}
 
 \usepackage[lang = french]{../main/main}
 \usepackage{../macroenv/macroenv}
@@ -19,7 +19,7 @@ Tout se passe via l'environnement \bdocenv{bdocrem} comme dans l'ex\-emple suiva
 	La mise en forme provient du package \bdocpack{amsthm}.
 }.
 
-\begin{bdoclatex}
+\begin{bdoclatex}[sbs]
     \begin{bdocrem}
         Juste une remarque...
     \end{bdocrem}
@@ -32,7 +32,7 @@ Tout se passe via l'environnement \bdocenv{bdocrem} comme dans l'ex\-emple suiva
 
 Il peut parfois être utile de revenir à la ligne dès le début du contenu. Voici comment faire (cette astuce reste valable pour les environnements présentés dans la section suivante).
 
-\begin{bdoclatex}
+\begin{bdoclatex}[sbs]
     \begin{bdocrem}
         \leavevmode 
 	 	  
@@ -60,7 +60,7 @@ Il peut parfois être utile de revenir à la ligne dès le début du contenu. Vo
 
 L'environnement \bdocenv{docexa} et sa version étoilée permettent de proposer des exemples. Voici les différents emplois possibles.
 
-\inputbdoclatexreal{examples/rem-exa/exa.tex}
+\bdoclatexshow{examples/rem-exa/exa.tex}
 
 
 \begin{bdocrem}

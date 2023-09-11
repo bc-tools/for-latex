@@ -45,12 +45,12 @@
 
 \ExplSyntaxOn
 
-\NewDocumentCommand{\bdoc@latex@listing@formatting}{m}{
+\NewExpandableDocumentCommand{\bdoc@latex@listing@formatting}{m}{
     \str_case:nnF { #1 } {
         {sbs}{listing ~ side ~ text}
         {code}{listing ~ only}
         {std}{listing ~ and ~ text } % What to add here ?
-    } { }
+    } { bdoclatex ~ bad ~ option ~ "#1"}
 }
 
 \ExplSyntaxOff
@@ -93,74 +93,6 @@
 }
 
 
-
-\ExplSyntaxOn
-
-\NewDocumentCommand{\bdoclatexshow}{O{co}}{
-    \str_case:nnF { #1 } {
-        {co}{\bdoc@latex@show@code@text}
-        {oc}{\bdoc@latex@show@text@code}
-        {real}{\bdoc@latex@show@code@real}
-    } { }
-}
-
-\ExplSyntaxOff
-
-%%%
-% prototype::
-%     #1 : a one-line descriptive text
-%     #2 : a path of a file
-%
-% This macro inputs directly the content a file inside an environment
-% ``center`` and then displays the ¨latex source code of the file.
-%
-% A one-line descriptive text is put between the output and its ¨latex
-% source code.
-%
-% note::
-%     The default descriptive text between the ¨latex code and its output
-%     is translated to the language chosen at the loading of the package.
-%%%
-\NewDocumentCommand{ \bdoc@latex@show@text@code }{
-    D<>{\bdoc@trans@code@after@output}
-    m
-}{
-    \begin{center}
-        \input{#2}
-    \end{center}
-
-    \vspace{-.5em}
-
-    #1
-
-    \bdoclatexinput[code]{#2}
-}
-
-
-%%%
-% prototype::
-%     #1 : a one-line descriptive text
-%     #2 : a path of a file
-%
-% This macro is similar to ``\inputbdoclatexafter`` except that the ¨latex
-% code is before the centered output.
-%%%
-\NewDocumentCommand{ \bdoc@latex@show@code@text }{
-    D<>{\bdoc@trans@output@after@code}
-    m
-}{
-    \bdoclatexinput[code]{#2}
-    \vspace{-.75em}
-    \begin{center}
-        \textit{\footnotesize #1}
-
-        \medskip
-
-        \input{#2}
-    \end{center}
-}
-
-
 %%%
 % prototype::
 %     #1 : a one-line descriptive text
@@ -169,8 +101,8 @@
 % This macro is similar to ``\inputbdoclatexbefore`` except that the output
 % is put inside an environment ``bdocshowcase`` instead of being centered.
 %%%
-\NewDocumentCommand{ \bdoc@latex@show@code@real }{
-    D<>{\bdoc@trans@this@gives \bdoc@colon}
+\NewDocumentCommand{ \bdoclatexshow }{
+    O{\bdoc@trans@this@gives \bdoc@colon}
     m
 }{
     \bdoclatexinput[code]{#2}

@@ -64,8 +64,8 @@
 %     the content.
 %%%
 \NewDocumentEnvironment{ bdocshowcase } {
-    D<>{\bdoc@trans@real@output@start}
-    D<>{\bdoc@trans@real@output@end}
+    O{\bdoc@trans@latex@show@start}
+    O{\bdoc@trans@latex@show@end}
 } {
     \begin{colorstrip}{cyan!5}
         \bdocruler{#1}

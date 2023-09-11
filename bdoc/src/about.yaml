@@ -1,13 +1,16 @@
-doc:
-  header: doc-header.txt
+texfacto:
+  doc:
+    header : doc-header.tex
+    options:
+      - lang = french
 
 toc:
-  - intro
-  - main
-  - macroenv
-  - inenglish
-  - showcase
-  - listing
-  - rem-exa
-  - version-n-change
-  - deco
+  - intro/
+  - main/
+  - macroenv/
+  - inenglish/
+  - showcase/
+  - listing/
+  - rem-exa/
+  - version-n-change/
+  - deco/

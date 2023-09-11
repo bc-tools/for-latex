@@ -1,0 +1,53 @@
+// ---------- //
+
+
+==
+????  (0.5.0-beta)
+==
+
+-------
+:XXX:
+-------
+
+[[:YYY:]]
+ZZZ
+
+
+
+
+
+changements de version car
+
+    ---> bdocruler bouger de .75 pt
+
+    ---> \begin{center} à virer : paser via \par{centering ...}
+
+
+
+    ---> nouveau API simplifié pour latex code, pour direct on passa par des styles, c'est tellement simple
+
+
+    ---> si babel chargé, on définit la langue en fonction sauf si mise en option, et on utilise \babelshorthand{:} dans les trads via une bête macro
+          \bdoc@colon
+
+    ---> plus \og et \fg, on délègue à csquotes!!!!
+
+    ---> lang = FR devient lang = fr + ajout de l'exopace devant le double-point qui dépend de la langue
+    ---> chgt de \thechapter si besoin
+    ---> datataion des rqyirepackage !!
+    ---> \bdocexa devient un env à la amsthm comme remaruqe car c'est plus logique
+
+    ---> bdocnew devient bdocdate
+
+    ---> on détrourne arg optionnel
+
+        \begin{doctopic}[Un court changement]  via :
+            ajout de \docmacro{unemacro}.
+        \end{doctopic}
+
+        \begin{doctopic}<Plusieurs changements> via .
+            \begin{itemize}
+                \item Modification de \docmacro{uneautremacro}.
+                \item Création de \docenv{unenv}.
+            \end{itemize}
+        \end{doctopic}
