@@ -1,35 +1,35 @@
 % == PACKAGES == %
 
-% We delguate quoting to the package ``csquotes'' which takes care
-% of locale settings.
-\RequirePackage{csquotes}
+% We delegate the management of quoting to the `csquotes' package,
+% which takes care of the linguistic parameters.
+\RequirePackage{csquotes}[2022-09-14]
 
 
 % == TOOLS == %
 
-% -- EXPLAIN - QUOTING -- %
+% -- QUOTING -- %
 
 %%%
 % prototype::
-%     #1 : a text to quote
+%     #1 : a text to quote.
 %
 % For example, ``\bdocquote{Something}`` prints something like
 % **"Something"**.
 %%%
-\NewDocumentCommand{ \bdocquote } { m } {%
-    \enquote{\emph{#1}}%
+\NewDocumentCommand{\bdocquote}{m}{%
+  \enquote{\emph{#1}}%
 }
 
 
-% -- EXPLAIN - ABOUT ENGLISH NAMES -- %
+% -- ABOUT ENGLISH NAMES -- %
 
 %%%
 % prototype::
-%     #1 : a text to explain
+%     #1 : an english text to explain in another language.
 %
 %     :extra: this macro has a star version.
 %
-% For example, if the language chosen is ``fr`` for French, we have
+% For example, if the language chosen is ``french``, we have
 % the following outputs.
 %
 %     1) ``\bdocinEN{Something}`` prints
@@ -42,9 +42,9 @@
 %        which gives
 %        **"Something" et "Another thing" en anglais**.
 %%%
-\NewDocumentCommand{ \bdocinEN } { s m } {%
-    \bdocquote{#2}%
-    \IfBooleanF{#1}{% No star used.
-        \ \bdoc@trans@in@EN{}%
-    }%
+\NewDocumentCommand{\bdocinEN}{s m}{%
+  \bdocquote{#2}%
+  \IfBooleanF{#1}{% No star used.
+    \ \bdoc@trans@in@EN{}%
+  }%
 }

@@ -1,102 +1,106 @@
 % == PACKAGES == %
 
-\RequirePackage{l3keys2e}
+\RequirePackage{l3keys2e}[2023-08-29]
 
 \RequirePackage[
-    top            = 2.5cm,
-    bottom         = 2.5cm,
-    left           = 2.5cm,
-    right          = 2.5cm,
-    marginparwidth = 2cm,
-    marginparsep   = 2mm,
-    heightrounded
-]{geometry}
+  top            = 2.5cm,
+  bottom         = 2.5cm,
+  left           = 2.5cm,
+  right          = 2.5cm,
+  marginparwidth = 2cm,
+  marginparsep   = 2mm,
+  heightrounded
+]{geometry}[2020-01-02]
 
-\RequirePackage[numbered]{bookmark}
-\RequirePackage[raggedright]{titlesec}
-\RequirePackage{tocbasic}[2020/07/22]
+\RequirePackage[raggedright]{titlesec}[2021-07-05]
+\RequirePackage{tocbasic}
 
-\RequirePackage{pgf}
-\RequirePackage{hyperref}
+\RequirePackage{xcolor}[2022-06-12]
+\RequirePackage{hyperref}[2023-02-07]
 
 
 % == OPTIONS == %
 
-\ProvidesExplPackage{main}{}{}{}
+% -- MAIN KEYS -- %
 
+\ExplSyntaxOn
 
-% -- OPTIONS - MESSAGES -- %
+% :: MESSAGES :: %
 
 \msg_set:nnnn { bdoc } { package-option-lang-unknown }
-    { Unknown ~ language. }
-    { See ~ the ~ documentation ~ for ~ the ~ supported languages. }
+  { Unknown ~ language. }
+  { See ~ the ~ documentation ~ for ~ the ~ supported languages. }
 
 
-% -- OPTIONS - KEYS & VALUES -- %
+% :: SETTING THE KEYS :: %
 
 \str_new:N  \l_bdoc_opt_lang_str
-\bool_new:N \l_bdoc_opt_lang_unused_bool
-
-\bool_set_true:N \l_bdoc_opt_lang_unused_bool
 
 \keys_define:nn { bdoc } {
-    lang .choices:nn =
-        { french, english }
-        {
-            \tl_set:Nn \l_bdoc_opt_lang_str { \tl_use:N \l_keys_choice_tl }
-        },
-    lang .initial:n = english,
-    lang / unknown .code:n =
-        \msg_error:nnxxx { bdoc } { package-option-lang-unknown }
-            { lang }             % Name of choice key
-            { french, english }  % Valid choices
-            { \exp_not:n {#1} }  % Invalid choice given
+  lang .choices:nn =
+    { french, english }
+    {
+      \tl_set:Nn \l_bdoc_opt_lang_str { \tl_use:N \l_keys_choice_tl }
+    },
+  lang .initial:n = english,
+  lang / unknown .code:n =
+    \msg_error:nnxxx { bdoc } { package-option-lang-unknown }
+      { lang }             % Name of choice key
+      { french, english }  % Valid choices
+      { \exp_not:n {#1} }  % Invalid choice given
 }
 
 
-% -- OPTIONS - KEYS FROM THE LOADING OF THE PACKAGE -- %
+% :: LOADING THE KEYS :: %
 
 \ProcessKeysPackageOptions{ bdoc }
 
-
-% -- OPTIONS - LOCALE -- %
-
-\NewDocumentCommand{\bdoc@colon}{}{:}
-
-\@ifpackageloaded{babel}{
-% Cf : and sopacing
-    \iflanguage{french}{
-        \RenewDocumentCommand{\bdoc@colon}{}{\babelshorthand{:}}
-    }{}
-}{}
-
-\input{../main/locale/\l_bdoc_opt_lang_str.sty}
+\ExplSyntaxOff
 
 
 % == TOOLS == %
 
-% -- SETTINGS - GENERAL -- %
+% -- LOCALE SETTINGS -- %
+
+\ExplSyntaxOn
+
+\NewDocumentCommand{\bdoc@colon}{}{:}
+
+% We must tkae care of the colons, babel and spacing.
+\@ifpackageloaded{babel}{
+  \iflanguage{french}{
+    \RenewDocumentCommand{\bdoc@colon}{}{\babelshorthand{:}}
+  }{}
+}{}
+
+\input{../main/locale/\l_bdoc_opt_lang_str.sty}
+
+\ExplSyntaxOff
+
+
+% -- GENERAL SETTINGS -- %
 
 \setlength{\parindent}{0cm}
 % \setlist{noitemsep}  Is it useful ?
 
 
-% -- SETTINGS - LINKS -- %
+% -- LINKS -- %
 
 \hypersetup{
-    colorlinks,
-    citecolor = orange!75!black,
-    filecolor = orange!75!black,
-    linkcolor = orange!75!black,
-    urlcolor  = orange!75!black
+  colorlinks,
+  citecolor = orange!75!black,
+  filecolor = orange!75!black,
+  linkcolor = orange!75!black,
+  urlcolor  = orange!75!black
 }
 
 
-% -- SETTINGS - TOC & Co. -- %
+% -- TOC & Co. -- %
 
 \ifcsundef{chapter}%
           {}%
           {\renewcommand\thechapter{\Alph{chapter}.}}
+
 \renewcommand\thesection{\Roman{section}.}
 \renewcommand\thesubsection{\arabic{subsection}.}
 \renewcommand\thesubsubsection{\roman{subsubsection}.}
@@ -112,22 +116,22 @@
               {0.5em}
 
 % Source
-%    * https://tex.stackexchange.com/a/558025/6880
+%  * https://tex.stackexchange.com/a/558025/6880
 \DeclareTOCStyleEntries[
-    raggedentrytext,
-    linefill = \hfill,
-    indent   = 0pt,
-    dynindent,
-    numwidth = 0pt,
-    numsep   = 1ex,
-    dynnumwidth
+  raggedentrytext,
+  linefill = \hfill,
+  indent   = 0pt,
+  dynindent,
+  numwidth = 0pt,
+  numsep   = 1ex,
+  dynnumwidth
 ]{tocline}{
-    chapter,
-    section,
-    subsection,
-    subsubsection,
-    paragraph,
-    subparagraph
+  chapter,
+  section,
+  subsection,
+  subsubsection,
+  paragraph,
+  subparagraph
 }
 
 \DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}

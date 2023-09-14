@@ -46,50 +46,50 @@
 \ExplSyntaxOn
 
 \NewExpandableDocumentCommand{\bdoc@latex@listing@formatting}{m}{
-    \str_case:nnF { #1 } {
-        {sbs}{listing ~ side ~ text}
-        {code}{listing ~ only}
-        {std}{listing ~ and ~ text } % What to add here ?
-    } { bdoclatex ~ bad ~ option ~ "#1"}
+  \str_case:nnF{#1}{
+    {sbs}{listing ~ side ~ text}
+    {code}{listing ~ only}
+    {std}{listing ~ and ~ text}
+  }{bdoclatex ~ bad ~ option ~ "#1"}
 }
 
 \ExplSyntaxOff
 
 % Sources
-%    * https://tex.stackexchange.com/a/604821/6880
-%    * https://tex.stackexchange.com/a/327983/6880
+%  * https://tex.stackexchange.com/a/604821/6880
+%  * https://tex.stackexchange.com/a/327983/6880
 \tcbset{
-    bdoc_tcb_style_latex_code/.style = {
-        minted language = latex,
-        breakable,
+  bdoc_tcb_style_latex_code/.style = {
+    minted language = latex,
+    breakable,
 % Code and output
-        colback = yellow!5,
+    colback = yellow!5,
 % Frame
-        colframe = darkgray,
-        shadow   = {.75mm}{-.75mm}{0mm}{black!30},
-%        sharp corners, % OLD STYLE !
-        arc    = .75mm,
-        left   = 1mm, right = 1mm,
-        bottom = 1mm, top   = 1mm,
+    colframe = darkgray,
+    shadow   = {.75mm}{-.75mm}{0mm}{black!30},
+%    sharp corners, % OLD STYLE !
+    arc  = .75mm,
+    left   = 1mm, right = 1mm,
+    bottom = 1mm, top   = 1mm,
 % Separating line
-        enhanced,
-        segmentation style = {
-            gray,
-            dash pattern = {on 5pt off 2.5pt},
-            line width   = 1.25pt
-        },
-        #1
+    enhanced,
+    segmentation style = {
+      gray,
+      dash pattern = {on 5pt off 2.5pt},
+      line width   = 1.25pt
     },
+    #1
+  },
 }
 
 \newtcblisting{bdoclatex}[1][std]{%
-    bdoc_tcb_style_latex_code = \bdoc@latex@listing@formatting{#1}
+  bdoc_tcb_style_latex_code = \bdoc@latex@listing@formatting{#1}
 }
 
 
 \newtcbinputlisting{\bdoclatexinput}[2][std]{
-    listing file = {#2},
-    bdoc_tcb_style_latex_code = \bdoc@latex@listing@formatting{#1}
+  listing file = {#2},
+  bdoc_tcb_style_latex_code = \bdoc@latex@listing@formatting{#1}
 }
 
 
@@ -102,14 +102,25 @@
 % is put inside an environment ``bdocshowcase`` instead of being centered.
 %%%
 \NewDocumentCommand{ \bdoclatexshow }{
-    O{\bdoc@trans@this@gives \bdoc@colon}
-    m
+  s
+  D<>{\bdoc@trans@this@gives \bdoc@colon}
+  O{\bdoc@trans@latex@show@start}
+  O{\bdoc@trans@latex@show@end}
+  m
 }{
-    \bdoclatexinput[code]{#2}
+  \bdoclatexinput[code]{#5}
 
-    #1
+  #2
 
-    \begin{bdocshowcase}
-        \input{#2}
+  \IfBooleanTF{#1}{
+    \medskip
+
+    \begin{bdocshowcase*}[#3][#4]
+      \input{#5}
+    \end{bdocshowcase*}
+  }{
+    \begin{bdocshowcase}[#3][#4]
+      \input{#5}
     \end{bdocshowcase}
+  }
 }

@@ -14,6 +14,8 @@
 
 \section{Un rendu en situation réelle}
 
+\subsection{Avec une bande colorée}
+
 \begin{bdocexa}[Avec les textes par défaut] 
     Il peut être utile de montrer un rendu réel directement dans un document.
     Ceci se tape comme suit.
@@ -41,7 +43,7 @@
 	\end{itemize}
 
     \begin{bdoclatex}[std]
-	    \bdocruler{Un pseudo-titre décoré}
+	    \bdocruler{Un pseudo-titre décoré}{red}
 	\end{bdoclatex}
 \end{bdocrem}
 
@@ -49,21 +51,98 @@
 % ------------------ %
 
 
-\begin{bdocexa}[Changer les textes par défaut]
+\begin{bdocexa}[Changer la couleur et/ou les textes par défaut]
 	\leavevmode
 
-	\bdoclatexinput[code]{examples/showcase/text-changed.tex}
+	\bdoclatexinput[code]{examples/showcase/customised.tex}
 
-	On obtient alors ce qui suit.
+	Ceci produira ce qui suit.
 
 	\medskip
 	
-	\input{examples/showcase/text-changed.tex}
+	\input{examples/showcase/customised.tex}
 \end{bdocexa}
 
 
 \begin{bdocrem}
     Les textes utilisés par défaut  pour délimiter le rendu s'adaptent à la langue choisie lors du chargement du package \bdocpack{bdoc}.
 \end{bdocrem}
+
+
+% ------------------ %
+
+
+\subsection{Sans bande colorée}
+
+\begin{bdocexa}
+	La version étoilée de l'environnement \bdocinlatex{bdocshowcase} ne fait pas appel à \bdocpack{clrstrip} pour ajouter une bande colorée.
+	Voici un exemple d'utilisation.
+
+	\bdoclatexinput[code]{examples/showcase/no-clrstrip.tex}
+
+	Ceci produira ce qui suit.
+
+	\medskip
+	
+	\input{examples/showcase/no-clrstrip.tex}
+\end{bdocexa}
+
+
+% ------------------ %
+
+
+\begin{bdocexa}[Changer la couleur et/ou les textes par défaut]
+	\leavevmode
+
+	\bdoclatexinput[code]{examples/showcase/no-clrstrip-customised.tex}
+
+	Ceci produira ce qui suit.
+
+	\medskip
+	
+	\input{examples/showcase/no-clrstrip-customised.tex}
+\end{bdocexa}
+
+
+% ------------------ %
+
+
+%\subsection{Échanger les rôles}
+%
+%\begin{bdocexa}[Modification locale]
+%    Considérons le code suivant.
+%    
+%    \bdoclatexinput[code]{examples/showcase/blabla.tex}
+%    
+%    \medskip
+%    
+%    Par défaut, on obtient le rendu ci-après.
+%    
+%    \input{examples/showcase/blabla.tex}
+%    
+%    \medskip
+%    
+%    Il est possible d'échanger les comportements via \bdocinlatex+\BdocSwitchShowcase{}+. Ceci produit alors le résultat suivant.
+%    
+%    \BdocSwitchShowcase{}
+%    	\input{examples/showcase/blabla.tex}
+%    \BdocSwitchShowcase{}
+%    
+%    \medskip
+%    
+%    En réutilisant \bdocinlatex+\BdocSwitchShowcase{}+ , on revient au comportement par défaut.
+%    
+%% DEBUG.
+%    \input{examples/showcase/blabla.tex}
+%\end{bdocexa}
+%
+%
+%% ------------------ %
+%
+%
+%\begin{bdocexa}[Modification dès le début]
+%	Le package \bdocpack{bdoc} dispode de l'option booléenne \bdocinlatex+switchshowcase+ qui sert à lancer \bdocinlatex+\BdocSwitchShowcase{}+ avant toute production de contenu par \LaTeX.
+%\end{bdocexa}
+
 
 \end{document}

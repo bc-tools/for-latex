@@ -31,11 +31,11 @@
 %              ``\l_bdoc_date_month_str`` and ``\l_bdoc_date_day_str`` using
 %              a basic parsing of the date argument.
 %%%
-\NewDocumentCommand{ \l_bdoc_good_date } { m } {
-    \seq_set_split:Nnn \l_bdoc_date_parts_seq { - } { #1 }
-    \seq_pop:NN \l_bdoc_date_parts_seq \l_bdoc_date_year_str
-    \seq_pop:NN \l_bdoc_date_parts_seq \l_bdoc_date_month_str
-    \seq_pop:NN \l_bdoc_date_parts_seq \l_bdoc_date_day_str
+\NewDocumentCommand{\l_bdoc_good_date}{m}{
+  \seq_set_split:Nnn \l_bdoc_date_parts_seq { - } { #1 }
+  \seq_pop:NN \l_bdoc_date_parts_seq \l_bdoc_date_year_str
+  \seq_pop:NN \l_bdoc_date_parts_seq \l_bdoc_date_month_str
+  \seq_pop:NN \l_bdoc_date_parts_seq \l_bdoc_date_day_str
 }
 
 
@@ -49,32 +49,32 @@
 %     :action: this macro factorizes the printing of the changes in
 %              the left margin.
 %%%
-\NewDocumentCommand{ \l_bdoc_new_change_margin } { m m m m } {
-    \marginnote{
-        \color{#1}
-        \scriptsize
-        \centering
-        \vspace{0pt}
-        \rule{1.65cm}{.95pt}
-        \vspace{-2.9pt}
+\NewDocumentCommand{\l_bdoc_new_change_margin}{m m m m}{
+  \marginnote{
+    \color{#1}
+    \scriptsize
+    \centering
+    \vspace{0pt}
+    \rule{1.65cm}{.95pt}
+    \vspace{-2.9pt}
 
-        \par
-            \l_bdoc_good_date{ #2 }
+    \par
+      \l_bdoc_good_date{ #2 }
 
-            \bdoc@trans@date{\l_bdoc_date_year_str}
-                            {\l_bdoc_date_month_str}
-                            {\l_bdoc_date_day_str}
-        \par
+      \bdoc@trans@date{\l_bdoc_date_year_str}
+                      {\l_bdoc_date_month_str}
+                      {\l_bdoc_date_day_str}
+    \par
 
-        \vspace{1pt}
+    \vspace{1pt}
 
-        \par
-            #3
-        \par
+    \par
+      #3
+    \par
 
-        \vspace{#4}
-        \rule{1.65cm}{.95pt}
-    }[-.345cm]
+    \vspace{#4}
+    \rule{1.65cm}{.95pt}
+  }[-.345cm]
 }
 
 
@@ -100,10 +100,10 @@
 %     for "release candidate".
 %%%
 \NewDocumentCommand{ \bdocversion } { O{blue} m m } {
-    \l_bdoc_new_change_margin { #1 }      % Color
-                              { #3 }      % Date
-                              { #2 }      % Version
-                              { -6.25pt } % Last negative vertical spacing
+  \l_bdoc_new_change_margin{ #1 }    % Color
+                           { #3 }    % Date
+                           { #2 }    % Version
+                           { -6.25pt } % Last negative vertical spacing
 }
 
 
@@ -116,10 +116,10 @@
 %              prints a date.
 %%%
 \NewDocumentCommand{ \bdocdate } { O{blue} m } {
-    \l_bdoc_new_change_margin { #1 }      % Color
-                              { #2 }      % Date
-                              {}          % Version
-                              { -5.35pt } % Last negative spacing
+  \l_bdoc_new_change_margin { #1 }      % Color
+                            { #2 }      % Date
+                            {}          % Version
+                            { -5.35pt } % Last negative spacing
 }
 
 
@@ -130,8 +130,8 @@
 %
 %%%   ?????
 \msg_set:nnnn { bdoc } { topic-missing-title }
-    { Missing \ title. }
-    { One \ single \ title \ must \ be \ indicated. }
+  { Missing \ title. }
+  { One \ single \ title \ must \ be \ indicated. }
 
 %%%
 % ?
@@ -156,27 +156,27 @@
 %        the title.
 %%%
 \NewDocumentEnvironment{ bdoctopic }{O{} D<>{} }{
-    \IfBlankT{#1#2}{
-        \msg_fatal:nn { bdoc } { topic-missing-title }
-    }
+  \IfBlankT{#1#2}{
+    \msg_fatal:nn { bdoc } { topic-missing-title }
+  }
+
+  \IfBlankTF{#1}{
+    \tl_set:Nn \l_bdoc_topic_title_tl {#2}
+  }{
+    \tl_set:Nn \l_bdoc_topic_title_tl {#1}
+  }
+
+  \medskip
+
+  \textbf{
+    \textsc{\tl_use:N \l_bdoc_topic_title_tl}
 
     \IfBlankTF{#1}{
-        \tl_set:Nn \l_bdoc_topic_title_tl {#2}
+      .
     }{
-        \tl_set:Nn \l_bdoc_topic_title_tl {#1}
+      \bdoc@colon{}
     }
-
-    \medskip
-
-    \textbf{
-        \textsc{\tl_use:N \l_bdoc_topic_title_tl}
-
-        \IfBlankTF{#1}{
-            .
-        }{
-            \bdoc@colon{}
-        }
-    }%
+  }%
 }{}
 
 \ExplSyntaxOff

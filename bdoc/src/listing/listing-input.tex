@@ -166,7 +166,32 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 
 \begin{bdocrem}
-    Le text imprimé par défaut tient compte de la langue choisie lors du chargement du package \bdocpack{bdoc}.
+    Le texte imprimé par défaut tient compte de la langue choisie lors du chargement du package \bdocpack{bdoc}.
 \end{bdocrem}
+
+
+% ------------------ %
+
+
+\begin{bdocexa}[Les options disponibles]
+	La version étoilée de la macro \bdocmacro{bdocshowcase} n'ajoutera pas une bande colorée pour le rendu réel.
+	De plus, on peut changer les textes encadrant le rendu réel via deux arguments optionnels (ceci fonctionne pour les versions étoilées et non étoilées).
+	Voici un exemple illustrant ce qui précède.
+
+	\medskip
+	
+	\bdoclatexinput[code]{examples/listing/latexshow-options.tex}
+	
+	\medskip
+	
+	Ceci va produire ce qui suit.
+	
+	\medskip
+
+	\begin{bdoc-doc-showcase}[Début du rendu \bdocquote{personnalisé} dans cette doc.]%
+	    	                 [Fin du rendu \bdocquote{personnalisé} dans cette doc.]
+    	\input{examples/listing/latexshow-options.tex}
+	\end{bdoc-doc-showcase}
+\end{bdocexa}
 
 \end{document}

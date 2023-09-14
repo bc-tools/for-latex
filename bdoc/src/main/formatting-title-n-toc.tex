@@ -15,16 +15,16 @@
 
 \subsection{Titre et table des matières}
 
-En coulisse les packages \bdocpack{titlesec}, \bdocpack{tocbasic} et \bdocpack{bookmark} sont chargés. Les réglages retenus sont les suivants où la redéfinition de \bdocmacro{thechapter} n'est utile que pour des packages agrégateurs (dont les documentations sont de type livre).
+Les packages \bdocpack{titlesec}, \bdocpack{tocbasic} et \bdocpack{bookmark} sont réglés comme suit où la redéfinition de \bdocmacro{thechapter} n'est utile que pour des packages agrégateurs (dont les documentations sont de type livre).
 
 \begin{bdoclatex}[code]
-\RequirePackage[numbered]{bookmark}
 \RequirePackage[raggedright]{titlesec}
 
 % ...
 \ifcsundef{chapter}%
           {}%
           {\renewcommand\thechapter{\Alph{chapter}.}}
+
 \renewcommand\thesection{\Roman{section}.}
 \renewcommand\thesubsection{\arabic{subsection}.}
 \renewcommand\thesubsubsection{\roman{subsubsection}.}
