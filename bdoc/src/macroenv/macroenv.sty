@@ -39,7 +39,7 @@
 }
 
 
-% -- EXPLAIN PREFIXES & SUFFIXES -- %
+% -- EXPLAINING PREFIXES & SUFFIXES -- %
 
 %%%
 % prototype::
@@ -49,8 +49,17 @@
 % ``\bdocprewhy{pre}{fix}`` prints something like verb::``pre``-fix.
 %%%
 \NewDocumentCommand{\bdocprewhy}{m m}{%
-  \textbf{\bdocpre{#1}}$\cdot$#2%
+  \textbf{\bdocpre{#1}}\kern.5pt\textperiodcentered\kern.5pt#2%
 }
+
+% TODO - NEW API: bdocprewhy
+% \ExplSyntaxOn
+% \NewDocumentCommand{\bdocprewhy}{m}{%
+%   \tl_set:Nn \l_tmpa_tl { #1 }
+%   \tl_replace_all:Nnn \l_tmpa_tl { . } { \kern.5pt\textperiodcentered\kern.5pt }
+%   \tl_use:N \l_tmpa_tl
+% }
+% \ExplSyntaxOff
 
 
 %%%

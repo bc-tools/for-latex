@@ -12,16 +12,16 @@
   heightrounded
 ]{geometry}[2020-01-02]
 
-\RequirePackage[raggedright]{titlesec}[2021-07-05]
+\RequirePackage[raggedright]{titlesec}[2021/07/05]
 \RequirePackage{tocbasic}
 
-\RequirePackage{xcolor}[2022-06-12]
+\RequirePackage{xcolor}[2022/06/12]
 \RequirePackage{hyperref}[2023-02-07]
 
 
 % == OPTIONS == %
 
-% -- MAIN KEYS -- %
+% -- LOCALE LANG -- %
 
 \ExplSyntaxOn
 
@@ -34,13 +34,14 @@
 
 % :: SETTING THE KEYS :: %
 
-\str_new:N  \l_bdoc_opt_lang_str
+\str_new:N \l_bdoc_opt_lang_str
 
 \keys_define:nn { bdoc } {
   lang .choices:nn =
     { french, english }
     {
-      \tl_set:Nn \l_bdoc_opt_lang_str { \tl_use:N \l_keys_choice_tl }
+      \tl_set:Nn \l_bdoc_opt_lang_str
+                 { \tl_use:N \l_keys_choice_tl }
     },
   lang .initial:n = english,
   lang / unknown .code:n =
@@ -49,9 +50,6 @@
       { french, english }  % Valid choices
       { \exp_not:n {#1} }  % Invalid choice given
 }
-
-
-% :: LOADING THE KEYS :: %
 
 \ProcessKeysPackageOptions{ bdoc }
 
@@ -62,8 +60,6 @@
 
 % -- LOCALE SETTINGS -- %
 
-\ExplSyntaxOn
-
 \NewDocumentCommand{\bdoc@colon}{}{:}
 
 % We must tkae care of the colons, babel and spacing.
@@ -72,6 +68,8 @@
     \RenewDocumentCommand{\bdoc@colon}{}{\babelshorthand{:}}
   }{}
 }{}
+
+\ExplSyntaxOn
 
 \input{../main/locale/\l_bdoc_opt_lang_str.sty}
 

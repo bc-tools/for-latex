@@ -1,65 +1,58 @@
 % == PACKAGES == %
 
-% We use the big machinery of the package ``tcolorbox`` and its library
-% ``minted`` to colorize the ¨latex codes.
-
-\RequirePackage{tcolorbox}
+\RequirePackage{tcolorbox}[2023/06/19]
 \tcbuselibrary{minted, breakable, skins}
 
 
 % == TOOLS == %
 
-% -- LATEX EXAMPLES - INLINE -- %
+% -- LATEX EXAMPLES -- %
+
+% :: INLINE SHORT LATEX CODE :: %
 
 %%%
-% The macro ``bdocinlatex`` is just built via ``\newmintinline`` proposed
-% by the package ``minted``.
-%
-% note::
-%     Be careful of the ``i`` for "inline".
+% See the \doc of the macro ``\newmintinline`` from the package ``minted``
+% to have \infos about the macro ``bdocinlatex``.
 %%%
 \newmintinline[bdocinlatex]{latex}{}
 
 
-% -- LATEX EXAMPLES - MULTILINE -- %
-
-%%%
-% The following environments to display multiline code are defined easily
-% with ``\newtcblisting``.
-%
-%     1) ``bdoclatex`` prints side by side the ¨latex code on the left and
-%        its output on the right inside the same frame.
-%
-%     2) ``bdoclatex-flat`` prints the ¨latex code above its output inside
-%        the same frame.
-%
-%     3) ``bdoclatex-alone`` prints only the ¨latex code inside a frame.
-%
-% Thanks to ``\newtcbinputlisting``, there are also the following macros
-% with similar features but for imported files.
-%
-%     1) ``\inputbdoclatex``
-%     2) ``\inputbdoclatexflat``
-%     3) ``\inputbdoclatexalone``
-%%%
+% :: SHORTCUTS FOR TCOLORBOX LISTING FORMATING :: %
 
 \ExplSyntaxOn
 
-\NewExpandableDocumentCommand{\bdoc@latex@listing@formatting}{m}{
-  \str_case:nnF{#1}{
-    {sbs}{listing ~ side ~ text}
-    {code}{listing ~ only}
-    {std}{listing ~ and ~ text}
-  }{bdoclatex ~ bad ~ option ~ "#1"}
+%%%
+% In the following easy-to-understand macro, we use one fictive ``tcolorbox``
+% style such as to indicate an unknown ``bdoc`` style to the user.
+% For example, this can give one message similar to the following one.
+%
+% term::
+%     Package pgfkeys Error: I do not know the key '/tcb/bdoclatex bad option
+%     "NOT-A-STYLE"' and I am going to ignore it. Perhaps you misspelled it.
+%
+%     See the pgfkeys package documentation for explanation.
+%%%
+\NewExpandableDocumentCommand{\bdoc@latex@listing@formating}{m}{
+  \str_case:nnF { #1 } {
+    { sbs  } { listing ~ side ~ text }
+    { code } { listing ~ only }
+    { std  } { listing ~ and ~ text }
+  } { bdoclatex ~ bad ~ option ~ "#1" }
 }
 
 \ExplSyntaxOff
 
-% Sources
-%  * https://tex.stackexchange.com/a/604821/6880
-%  * https://tex.stackexchange.com/a/327983/6880
+
+% :: THE TCOLORBOX LISTING STYLE :: %
+
+%%%
+% note::
+%     The settings used come from the following sources.
+%         * https://tex.stackexchange.com/a/604821/6880
+%         * https://tex.stackexchange.com/a/327983/6880
+%%%
 \tcbset{
-  bdoc_tcb_style_latex_code/.style = {
+  bdoclatex_tcbstyle/.style = {
     minted language = latex,
     breakable,
 % Code and output
@@ -67,10 +60,11 @@
 % Frame
     colframe = darkgray,
     shadow   = {.75mm}{-.75mm}{0mm}{black!30},
-%    sharp corners, % OLD STYLE !
-    arc  = .75mm,
-    left   = 1mm, right = 1mm,
-    bottom = 1mm, top   = 1mm,
+    arc      = .75mm,
+    left     = 1mm, right = 1mm,
+    bottom   = 1mm, top   = 1mm,
+% We can use  ``sharp corners'' to obtain an "old school" style.
+%
 % Separating line
     enhanced,
     segmentation style = {
@@ -82,26 +76,61 @@
   },
 }
 
-\newtcblisting{bdoclatex}[1][std]{%
-  bdoc_tcb_style_latex_code = \bdoc@latex@listing@formatting{#1}
-}
 
-
-\newtcbinputlisting{\bdoclatexinput}[2][std]{
-  listing file = {#2},
-  bdoc_tcb_style_latex_code = \bdoc@latex@listing@formatting{#1}
-}
-
+% :: TCOLORBOX LISTING ENVIRONMENT :: %
 
 %%%
 % prototype::
-%     #1 : a one-line descriptive text
-%     #2 : a path of a file
+%     #1 : the style to be used (code only, code and output side by side,
+%          or the standard style corresponding to the code followed by
+%          its output)
+%        @ #1 in [code, sbs, std]
 %
-% This macro is similar to ``\inputbdoclatexbefore`` except that the output
-% is put inside an environment ``bdocshowcase`` instead of being centered.
+% note::
+%     See the \doc of the macro ``\newtcblisting`` from the package
+%     ``tcolorbox`` to have \infos about the environment ``bdoclatex``.
 %%%
-\NewDocumentCommand{ \bdoclatexshow }{
+\newtcblisting{bdoclatex}[1][std]{%
+  bdoclatex_tcbstyle = \bdoc@latex@listing@formating{#1}
+}
+
+
+% :: TCOLORBOX IMPORTED LISTING MACRO :: %
+
+%%%
+% prototype::
+%     #1 : :see: \newtcblisting{bdoclatex}.
+%     #2 : the path of the file to input and format.
+%
+% note::
+%     See the \doc of the macro ``\newtcbinputlisting`` from the package
+%     ``tcolorbox`` to have more \infos about the macro ``\bdoclatexinput``.
+%%%
+\newtcbinputlisting{\bdoclatexinput}[2][std]{
+  listing file = {#2},
+  bdoclatex_tcbstyle = \bdoc@latex@listing@formating{#1}
+}
+
+
+% :: SHOWCASE :: %
+
+%%%
+% prototype::
+%     #2 : a one-line description printed between the code and its focused
+%          output
+%     #3 : the text before the real output
+%     #4 : the text after the real output
+%     #5 : a path of a file
+%
+% This macro shows one \src code followed by its output, this last one beeing
+% focused by the texts ``#3`` and ``#4`` decorated by one rule; the \src code
+% and its ouput are se^rated by the text ``#2``.
+%
+% warning::
+%     It is not possible to change the color of the colored stripe and/or
+%     the decorated texts printed around the real output.
+%%%
+\NewDocumentCommand{\bdoclatexshow}{
   s
   D<>{\bdoc@trans@this@gives \bdoc@colon}
   O{\bdoc@trans@latex@show@start}

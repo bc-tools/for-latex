@@ -20,10 +20,12 @@
 % See the \doc of the macro ``\newtheorem`` from the package ``amsthm``
 % to have \infos about the environment ``bdocexa``.
 %%%
-\newtheorem{bdocexa}{\bdoc@trans@exa@title}[subsubsection]
+\newtheorem{bdocexa}{\bdoc@trans@exa@title}%
+                    [subsubsection]
 
 %%%
-% We redefine the counter associated to the environment ``bdocexa``.
+% We redefine the counter associated to the environment ``bdocexa``
+% to obtain only one single arabic number.
 %%%
 \renewcommand{\thebdocexa}{\arabic{bdocexa}}
 
