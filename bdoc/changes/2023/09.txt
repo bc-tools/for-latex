@@ -28,7 +28,7 @@ Some simplifications have been made.
 
     1) Regarding the changelog...
 
-        + The ``doctopic`` \env now works with two types of optional delimited \args instead of one optional type suchas to simplify the \api.
+        + The ``bdoctopic`` \env now works with two types of optional delimited \args instead of one optional type suchas to simplify the \api.
 
         + The macro ``\bdocnew`` has been renamed ``\bdocdate``.
 
