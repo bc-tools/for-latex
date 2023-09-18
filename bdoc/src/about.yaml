@@ -1,8 +1,7 @@
 texfacto:
   doc:
-    header : doc-header.tex
-    options:
-      - lang = french
+    header: doc-header.tex
+    lang  : french
 
 toc:
   - intro/
@@ -11,6 +10,6 @@ toc:
   - inenglish/
   - showcase/
   - listing/
-  - rem-exa/
+  - focus/
   - version-n-change/
   - deco/

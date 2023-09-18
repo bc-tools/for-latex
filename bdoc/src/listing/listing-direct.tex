@@ -4,7 +4,9 @@
 \usepackage{../macroenv/macroenv}
 \usepackage{../inenglish/inenglish}
 \usepackage{../showcase/showcase}
-\usepackage{../rem-exa/rem-exa}
+\usepackage{../focus/focus}
+
+% TESTING LOCAL IMPLEMENTATION %
 
 \usepackage{listing}
 
@@ -48,6 +50,14 @@ Voici deux exemples d'utilisation.
 
     \item \bdocinlatex+\bdocinlatex|$a^b = c$|+ vient de \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+# obtenu via \bdocinlatex@\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#@ ... etc.
 \end{enumerate}
+
+
+\begin{bdocinfo}
+    La macro \bdocmacro{bdocinlatex} est utilisable dans une note de pied de page. En voici la preuve
+    \footnote{
+    	\bdocinlatex+$minted = TOP$+ a été tapé \bdocinlatex|\bdocinlatex+$minted = TOP$+| dans cette note de bas de page..
+    }.
+\end{bdocinfo}
 
 
 \begin{bdocrem}
@@ -98,10 +108,10 @@ Voici deux exemples d'utilisation.
 % ------------------ %
 
 
-\begin{bdocrem}	
+\begin{bdocwarning}	
 	Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut. Voici un cas d'usage.
 	
 	\bdoclatexshow*<Ceci permet d'obtenir ce qui est attendu :>{examples/listing/strange.tex}
-\end{bdocrem}
+\end{bdocwarning}
 
 \end{document}

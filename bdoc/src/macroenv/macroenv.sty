@@ -39,7 +39,18 @@
 }
 
 
-% -- EXPLAINING PREFIXES & SUFFIXES -- %
+% -- EXPLAINING PREFIXES -- %
+
+\ExplSyntaxOn
+
+% :: MESSAGES :: %
+
+\msg_set:nnnn { bdoc } { prefixwhy-bad-format }
+{ Bad ~ format, ~ something ~ like ~ ``pre.fix`` ~ expected. }
+{ You ~ must ~ use ~ one ~ single ~ point. }
+
+
+% :: PREFIX FROM... :: %
 
 %%%
 % prototype::
@@ -48,19 +59,30 @@
 %
 % ``\bdocprewhy{pre}{fix}`` prints something like verb::``pre``-fix.
 %%%
-\NewDocumentCommand{\bdocprewhy}{m m}{%
-  \textbf{\bdocpre{#1}}\kern.5pt\textperiodcentered\kern.5pt#2%
+\NewDocumentCommand{\bdocprewhy}{m}{%
+%   \textbf{\bdocpre{#1}}\kern.5pt\textperiodcentered\kern.5pt#2%
+% Do we have 2 parts?
+  \seq_set_split:Nnn \l_tmpa_seq { . } { #1 }
+
+  \int_set:Nn \l_tmpa_int
+              {\int_eval:n {\seq_count:N \l_tmpa_seq}}
+
+  \if_int_compare:w \l_tmpa_int = 2
+  \else:
+    \msg_error:nn { bdoc } { prefixwhy-bad-format }
+  \fi:
+
+% Let's go.
+  \seq_pop:NN \l_tmpa_seq \l_tmpa_tl
+  \seq_pop:NN \l_tmpa_seq \l_tmpb_tl
+
+  \textbf{\bdocpre{\tl_use:N \l_tmpa_tl}\kern.5pt\textperiodcentered\kern.5pt{\tl_use:N \l_tmpb_tl}}
 }
 
-% TODO - NEW API: bdocprewhy
-% \ExplSyntaxOn
-% \NewDocumentCommand{\bdocprewhy}{m}{%
-%   \tl_set:Nn \l_tmpa_tl { #1 }
-%   \tl_replace_all:Nnn \l_tmpa_tl { . } { \kern.5pt\textperiodcentered\kern.5pt }
-%   \tl_use:N \l_tmpa_tl
-% }
-% \ExplSyntaxOff
+\ExplSyntaxOff
 
+
+% :: JUST ONE PREFIX :: %
 
 %%%
 % prototype::

@@ -5,7 +5,9 @@
 \usepackage{../inenglish/inenglish}
 \usepackage{../showcase/showcase}
 \usepackage{../listing/listing}
-\usepackage{../rem-exa/rem-exa}
+\usepackage{../focus/focus}
+
+% TESTING LOCAL IMPLEMENTATION %
 
 \usepackage{version-n-change}
 
@@ -41,7 +43,7 @@
 \end{bdocexa}
 
 
-\begin{bdocrem}
+\begin{bdocinfo}
     \leavevmode
 
     \begin{enumerate}
@@ -51,6 +53,11 @@
 
         \item Le numéro de version sera du type \texttt{maj.min.bug} ou \texttt{maj.min.bug-extra} avec trois entiers \texttt{maj}, \texttt{min}, \texttt{bug} et un optionnel \texttt{extra} égal à \texttt{alpha}, \texttt{beta} ou \texttt{rc} pour \bdocquote{release candidate}.
     \end{enumerate}
-\end{bdocrem}
+\end{bdocinfo}
+
+
+\begin{bdocwarning}
+	Seule une validation syntaxique des dates et des numérotations de version est faite.
+\end{bdocwarning}
 
 \end{document}

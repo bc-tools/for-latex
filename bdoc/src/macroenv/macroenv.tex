@@ -2,7 +2,7 @@
 
 \usepackage[lang = french]{../main/main}
 \usepackage{../listing/listing}
-\usepackage{../rem-exa/rem-exa}
+\usepackage{../focus/focus}
 
 % TESTING LOCAL IMPLEMENTATION %
 
@@ -28,7 +28,7 @@ Voici ce qu'il est possible de taper de façon sémantique.
     L'intérêt des macros précédentes vis à vis de l'usage de \bdocmacro{bdocinlatex} est l'absence de coloration.
     De plus, la macro \bdocmacro{bdocenv} demande juste de taper le nom de l'environnement
     \footnote{
-        De plus, \bdocenv{cetenv} utilise des espaces pour autoriser des retours à la ligne si besoin.
+        De plus, \bdocinlatex{\bdocenv{monenv}} produit \bdocenv{monenv} avec des espaces afin d'autoriser des retours à la ligne si besoin.
     }.
 \end{bdocrem}
 
@@ -36,17 +36,21 @@ Voici ce qu'il est possible de taper de façon sémantique.
 % -------------------- %
 
 
-\section{Expliquer les préfixes ou les suffixes}
+\section{Origine d'un préfixe ou d'un suffixe}
 
-Pour expliquer les noms retenus rien de tel que d'indiquer et expliciter les courts préfixes et suffixes retenus.
+Pour expliquer les noms retenus, rien de tel que d'indiquer et expliciter les courts préfixes et suffixes retenus. Ceci se fait facilement comme suit. 
 
 \begin{bdoclatex}[sbs]
 \bdocpre{sup} est relatif à...
 
-\bdocprewhy{sup}{erbe} signifie...
+\bdocprewhy{sup.erbe} signifie...
 
-\emph{\bdocprewhy{sup}{erbe} vient de...}
+\emph{\bdocprewhy{sup.er} pour...}
 \end{bdoclatex}
 
+
+\begin{bdocrem}
+	Le choix du point pour scinder un mot permet d'utiliser des mots avec un tiret comme dans \bdocinlatex+\bdocprewhy{ca.sse-brique}+ qui donne \bdocprewhy{ca.sse-brique}.
+\end{bdocrem}
 
 \end{document}

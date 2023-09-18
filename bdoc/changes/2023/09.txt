@@ -1,0 +1,69 @@
+// ---------- //
+
+
+==
+18  (0.5.0-beta)
+==
+
+-------
+:break:
+-------
+
+[[:api:]]
+Some simplifications have been made.
+
+    1) The \lang name follows the ``babel`` package conventions: for example, ``lang = french`` must be used instead of the previous ``lang = FR``.
+
+    1) Regarding the listings...
+
+        + Just one \env ``bdoclatex`` and one macro ``\bdoclatexinput`` are proposed to display codes. The output can be changed using just one optional \arg.
+
+        + The environment ``bdoclatexshow`` works with special delimited optional \args suchas to simplify the \api.
+
+    1) The ``bdocprewhy`` macro has been rewritten.
+
+        + You have to type ``\bdocprewhy{pre.fix}`` instead of the previous ``\bdocprewhy{pre}{fix}``.
+
+        + ``\cdot`` has been replaced by ``\textperiodcentered`` with small spaces around it.
+
+    1) Regarding the changelog...
+
+        + The ``doctopic`` \env now works with two types of optional delimited \args instead of one optional type suchas to simplify the \api.
+
+        + The macro ``\bdocnew`` has been renamed ``\bdocdate``.
+
+
+------
+:news:
+------
+
+[[:api:]]
+Here are the new features.
+
+    1) Two environments ``bdocwarning`` and ``bdocinfo`` have been added: this allows to focus some content more precisely.
+
+    1) The new environments ``bdoclatexshow*`` and ``bdocshowcase*`` work without the ``clrstrip`` package.
+
+    1) If the ``babel`` package is loaded with the ``french`` \lang, we use ``\babelshorthand{:}`` to obtain a well spaced colon in texts.
+
+    1) The ``csquotes`` package is used to manage properly the quoting. This package takes care of locale settings.
+
+
+--------
+:fordev:
+--------
+
+[[:doc:]]
+The \tech \docs in the \src have been updated.
+
+
+[[:api:]]
+A few things to know...
+
+    1) The package ``xcolor`` is loaded instead of ``pgf``, this last on was used only for colors (keys are now managed with \latex3).
+
+    1) The setting of ``\thechapter`` is made only if it is necessary.
+
+    1) All the ``\RequirePackage`` indicate one date.
+
+    1) The ``bdocexa`` \env is now made using an ``amsthm`` \env like the ``bdocrem`` \env.
