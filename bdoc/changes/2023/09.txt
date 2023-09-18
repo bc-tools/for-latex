@@ -2,7 +2,7 @@
 
 
 ==
-18  (0.5.2-beta)
+18  (0.5.1-beta)
 ==
 
 -----
@@ -10,14 +10,14 @@
 -----
 
 [[:api:]]
-Showcase: the new ``\bdocdarkcolor`` and ``\bdocbackcolor`` macros externalise the transformations made to the color used with the ``bdocshowcase`` and ``bdocshowcase*`` environments.
+Showcase: the new ``\bdocdarkcolor`` and ``\bdocbackcolor`` macros externalise the transformations made to the color indicated to the ``bdocshowcase`` and ``bdocshowcase*`` environments.
 
 
 // ---------- //
 
 
 ==
-18  (0.5.1-beta)
+18
 ==
 
 --------
