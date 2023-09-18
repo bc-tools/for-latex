@@ -2,6 +2,44 @@
 
 
 ==
+18  (0.5.2-beta)
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+Showcase: the new ``\bdocdarkcolor`` and ``\bdocbackcolor`` macros externalise the transformations made to the color used with the ``bdocshowcase`` and ``bdocshowcase*`` environments.
+
+
+// ---------- //
+
+
+==
+18  (0.5.1-beta)
+==
+
+--------
+:update:
+--------
+
+[[:api:]]
+Showcase: the change made to the colour previously implemented in the ``bdocshowcase`` environment has been moved to the ``bdocshowcase*`` environment.
+
+
+[[:doc:]]
+Two things done.
+
+    1) The latest changes for users were missing...
+
+    1) A warning has been added about a weakness in the ``clrstrip`` package.
+
+
+// ---------- //
+
+
+==
 18  (0.5.0-beta)
 ==
 

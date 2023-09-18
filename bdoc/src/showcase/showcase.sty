@@ -50,27 +50,23 @@
 
 %%%
 % prototype::
-%     #1 : the text before the real output
-%     #2 : the text after the real output
-%     #3 : the color of the colored stripe and also the decorated texts
-%          printed corresponding to the two first arguments.
+%     #1 : one color following the ``xcolor`` format.
 %
-%     :action: this environment adds a page-width colored stripe in the
-%              background of the environment content processed by \latex.
-%              This stripe is preceded and followed by centered materials
-%              produced by the macro ``\bdocruler`` such as to stress the
-%              start and the end of the content.
+%     :return: a darker version of color ``#1``.
 %%%
-\NewDocumentEnvironment{bdocshowcase}{
-  O{\bdoc@trans@latex@show@start}
-  O{\bdoc@trans@latex@show@end}
-  D<>{cyan}
-}{
-  \begin{colorstrip}{#3!5}
-    \begin{bdocshowcase*}[#1][#2]<#3!50!black>
-}{
-    \end{bdocshowcase*}
-  \end{colorstrip}
+\NewExpandableDocumentCommand{\bdocdarkcolor}{m}{%
+  #1!50!black%
+}
+
+
+%%%
+% prototype::
+%     #1 : one color following the ``xcolor`` format.
+%
+%     :return: a transparent version of color `#1`.
+%%%
+\NewExpandableDocumentCommand{\bdocbackcolor}{m}{%
+  #1!5%
 }
 
 
@@ -78,21 +74,53 @@
 % prototype::
 %     #1 : the text before the real output
 %     #2 : the text after the real output
-%     #3 : the color of the decorated texts printed corresponding to
-%          the two first arguments.
+%     #3 : one color following the ``xcolor`` format.
+%          This color is used to set the one for the decorated texts printed corresponding tothe two first arguments.
 %
 %     :action: this environment just adds its content processed by \latex
 %              between centered materials produced by the macro ``\bdocruler``
 %              such as to stress the start and the end of the content.
+%
+%     :see: macro.bdocdarkcolor
 %%%
 \NewDocumentEnvironment{bdocshowcase*}{
   O{\bdoc@trans@latex@show@start}
   O{\bdoc@trans@latex@show@end}
-  D<>{gray!70!black}
+  D<>{lightgray}
 }{
-  \bdocruler{#1}{#3}
+  \bdocruler{#1}{\bdocdarkcolor{#3}}
   \medskip
 }{
   \medskip
-  \bdocruler{#2}{#3}
+  \bdocruler{#2}{\bdocdarkcolor{#3}}
+}
+
+
+%%%
+% prototype::
+%     #1 : the text before the real output
+%     #2 : the text after the real output
+%     #3 : the color following the ``xcolor`` format.
+%          This color is used to set the ones of the stripe and the decorated
+%          texts printed (see the two first arguments).
+%
+%     :action: this environment adds a page-width colored stripe in the
+%              background of the environment content processed by \latex.
+%              This stripe is preceded and followed by centered materials
+%              produced by the macro ``\bdocruler`` such as to stress the
+%              start and the end of the content.
+%
+%     :see: env.bdocshowcase*   ,
+%           macro.bdocbackcolor ,
+%%%
+\NewDocumentEnvironment{bdocshowcase}{
+  O{\bdoc@trans@latex@show@start}
+  O{\bdoc@trans@latex@show@end}
+  D<>{cyan}
+}{
+  \begin{colorstrip}{\bdocbackcolor{#3}}
+    \begin{bdocshowcase*}[#1][#2]<#3>
+}{
+    \end{bdocshowcase*}
+  \end{colorstrip}
 }

@@ -11,31 +11,6 @@
 \usepackage{listing}
 
 
-% == NEEDED == %
-
-\newtcblisting{bdoc-doc-latex-alone}{%
-    minted language = latex,
-    breakable,
-% Code and output
-    colback = yellow!5,
-% Frame
-    colframe = darkgray,
-    shadow   = {.75mm}{-.75mm}{0mm}{black!30},
-%        sharp corners, % OLD STYLE !
-    arc    = .75mm,
-    left   = 1mm, right = 1mm,
-    bottom = 1mm, top   = 1mm,
-% Separating line
-    enhanced,
-    segmentation style = {
-        gray,
-        dash pattern = {on 5pt off 2.5pt},
-        line width   = 1.25pt
-    },
-    listing only
-}
-
-
 \begin{document}
 
 \section{Cas d'utilisation en \LaTeX}
@@ -61,7 +36,7 @@ Voici deux exemples d'utilisation.
 
 
 \begin{bdocrem}
-    Le nom de la macro \bdocmacro{bdocinlatex} vient de \bdocquote{\bdocprewhy{in}{line} \LaTeX} soit \bdocinEN{\LaTeX\ en ligne}.
+    Le nom de la macro \bdocmacro{bdocinlatex} vient de \bdocquote{\bdocprewhy{in.line} \LaTeX} soit \bdocinEN{\LaTeX\ en ligne}.
 \end{bdocrem}
 
 
@@ -71,7 +46,7 @@ Voici deux exemples d'utilisation.
 \subsection{Codes tapés directement}
 
 \begin{bdocexa}[Face à face]
-	Dans le code suivant, l'option \bdocinlatex#sbs# est pour \bdocquote{\bdocprewhy{s}{ide} \bdocprewhy{b}{y} \bdocprewhy{s}{ide}} soit \bdocinEN{côte à côte}.
+	Dans le code suivant, l'option \bdocinlatex#sbs# est pour \bdocquote{\bdocprewhy{s.ide} \bdocprewhy{b.y} \bdocprewhy{s.ide}} soit \bdocinEN{côte à côte}.
 	
 	\bdoclatexshow{examples/listing/ABC.tex}
 \end{bdocexa}
