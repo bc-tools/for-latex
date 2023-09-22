@@ -114,42 +114,28 @@
 
 % :: SHOWCASE :: %
 
+\ExplSyntaxOn
+
 %%%
 % prototype::
-%     #2 : a one-line description printed between the code and its focused
-%          output
-%     #3 : the text before the real output
-%     #4 : the text after the real output
-%     #5 : a path of a file
+%     #1 : the key-value options supported by the \env ``bdocshowcase`` plus one to the one-line description printed between the code and its focused output
+%     #2 : the path of a file
 %
-% This macro shows one \src code followed by its output, this last one beeing
-% focused by the texts ``#3`` and ``#4`` decorated by one rule; the \src code
-% and its ouput are se^rated by the text ``#2``.
-%
-% warning::
-%     It is not possible to change the color of the colored stripe and/or
-%     the decorated texts printed around the real output.
+%     :see: env.bdocshowcase ,
+%           macro.bdoclatexinput
 %%%
-\NewDocumentCommand{\bdoclatexshow}{
-  s
-  D<>{\bdoc@trans@this@gives \bdoc@colon}
-  O{\bdoc@trans@latex@show@start}
-  O{\bdoc@trans@latex@show@end}
-  m
-}{
-  \bdoclatexinput[code]{#5}
+\NewDocumentCommand{\bdoclatexshow}{ O{} m }{
+  \group_begin:
+    \keys_set:nn { bdoc/showcase } { #1 }
 
-  #2
+    \bdoclatexinput[code]{#2}
 
-  \IfBooleanTF{#1}{
-    \medskip
+    \tl_use:N \l_bdoc_listing_input_tl
 
-    \begin{bdocshowcase*}[#3][#4]
-      \input{#5}
-    \end{bdocshowcase*}
-  }{
-    \begin{bdocshowcase}[#3][#4]
-      \input{#5}
+    \begin{bdocshowcase}[#1]
+      \input{#2}
     \end{bdocshowcase}
-  }
+  \group_end:
 }
+
+\ExplSyntaxOff

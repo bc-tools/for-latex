@@ -12,7 +12,7 @@
 
 \begin{document}
 
-\section{Un rendu en situation réelle}
+\section{Un rendu en situation réelle} \label{bdoc-showcase}
 
 \subsection{Avec une bande colorée}
 
@@ -33,99 +33,106 @@
 \end{bdocexa}
 
 
-%\begin{bdocrem}
-%	Voir la section \ref{bdoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
-%\end{bdocrem}
-%
-%
-%\begin{bdocinfo}
-%	Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
-%
-%    \begin{bdoclatex}[std]
-%    	\bdocruler{Un pseudo-titre décoré}{red}
-%	\end{bdoclatex}
-%\end{bdocinfo}
-%
-%
-%% ------------------ %
-%
-%
-%\begin{bdocexa}[Changer la couleur et/ou les textes par défaut]
-%	\leavevmode
-%
-%	\bdoclatexinput[code]{examples/showcase/customized.tex}
-%
-%	Ceci produira ce qui suit.
-%
-%	\medskip
-%
-%	\input{examples/showcase/customized.tex}
-%\end{bdocexa}
-%
-%
-%\begin{bdocinfo}
-%    \leavevmode
-%
-%    \begin{itemize}
-%    	\item Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \bdocpack{bdoc}.
-%
-%    	\item Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \bdocmacro{bdocbackcolor} et \bdocmacro{bdocdarkcolor} sont utilisées pour créer, à partir de la couleur proposée à \bdocenv{bdocshowcase}, celle du fond et celle des titres respectivement.
-%	          Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
-%
-%		      \begin{bdoclatex}[code]
-%\NewExpandableDocumentCommand{\bdocbackcolor}{m}{%
-%    #1!5%
-%}
-%
-%\NewExpandableDocumentCommand{\bdocdarkcolor}{m}{%
-%    #1!50!black%
-%}
-%		      \end{bdoclatex}
-%    \end{itemize}
-%\end{bdocinfo}
-%
-%
-%% ------------------ %
-%
-%
-%\begin{bdocwarning}
-%    Lorsque le rendu de \bdocenv{bdocshowcase} est en bas de page, on n'obtient pas forcément quelque chose d'acceptable.
-%    Une parade possible est de faire appel à \bdocenv{bdocshowcase*} qui est présenté dans la section suivante.
-%\end{bdocwarning}
-%
-%
-%% ------------------ %
-%
-%
-%\subsection{Sans bande colorée}
-%
-%\begin{bdocexa}
-%	La version étoilée de l'environnement \bdocinlatex{bdocshowcase} ne fait pas appel à \bdocpack{clrstrip} pour ajouter une bande colorée.
-%	Voici un exemple d'utilisation.
-%
-%	\bdoclatexinput[code]{examples/showcase/no-clrstrip.tex}
-%
-%	Ceci produira ce qui suit.
-%
-%	\medskip
-%
-%	\input{examples/showcase/no-clrstrip.tex}
-%\end{bdocexa}
-%
-%
-%% ------------------ %
-%
-%
-%\begin{bdocexa}[Changer la couleur et/ou les textes par défaut]
-%	\leavevmode
-%
-%	\bdoclatexinput[code]{examples/showcase/no-clrstrip-customized.tex}
-%
-%	Ceci produira ce qui suit.
-%
-%	\medskip
-%
-%	\input{examples/showcase/no-clrstrip-customized.tex}
-%\end{bdocexa}
+\begin{bdocrem}
+	Voir la section \ref{bdoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
+\end{bdocrem}
+
+
+\begin{bdocinfo}
+	Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
+
+    \begin{bdoclatex}[std]
+    	\bdocruler{Un pseudo-titre décoré}{red}
+	\end{bdoclatex}
+\end{bdocinfo}
+
+
+% ------------------ %
+
+
+\begin{bdocexa}[Changer la couleur et/ou les textes par défaut]
+	\leavevmode
+
+	\bdoclatexinput[code]{examples/showcase/customized.tex}
+
+	Ceci produira ce qui suit.
+
+	\medskip
+
+	\input{examples/showcase/customized.tex}
+\end{bdocexa}
+
+
+\begin{bdocinfo}
+    \leavevmode
+
+    \begin{itemize}
+    	\item Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \bdocpack{bdoc}.
+
+    	\item Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \bdocmacro{bdocbackcolor} et \bdocmacro{bdocdarkcolor} sont utilisées pour créer, à partir de la couleur proposée à \bdocenv{bdocshowcase}, celle du fond et celle des titres respectivement.
+	          Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
+
+		      \begin{bdoclatex}[code]
+\NewExpandableDocumentCommand{\bdocbackcolor}{m}{#1!5}
+
+\NewExpandableDocumentCommand{\bdocdarkcolor}{m}{#1!50!black}
+		      \end{bdoclatex}
+    \end{itemize}
+\end{bdocinfo}
+
+
+% ------------------ %
+
+
+\begin{bdocwarning}
+    Avec la mise en forme par défaut, si le code \LaTeX\ commence par un crochet ouvrant, il faudra indiquer explicitement une option vide comme dans l'exemple suivant.
+
+	\bdoclatexinput[code]{examples/showcase/hook.tex}
+
+	Ceci produira ce qui suit.
+
+	\medskip
+
+	\input{examples/showcase/hook.tex}
+\end{bdocwarning}
+
+
+% ------------------ %
+
+
+\section{Sans bande colorée}
+
+Le rendu de \bdocenv{bdocshowcase} avec une bande colorée peut parfois ne pas être acceptable malgré le travail fait par \bdocpack{clrstrip}.
+Voyons comment contourner ce type de limitation.
+
+\begin{bdocexa}
+	L'option booléenne \bdocinlatex{nostripe} sert à ne pas employer \bdocpack{clrstrip}.
+	Voici un exemple d'utilisation.
+
+	\bdoclatexinput[code]{examples/showcase/no-clrstrip.tex}
+
+	Ceci produira ce qui suit.
+
+	\medskip
+
+	\input{examples/showcase/no-clrstrip.tex}
+\end{bdocexa}
+
+
+% ------------------ %
+
+
+\begin{bdocexa}[Changer la couleur et/ou les textes par défaut]
+	\leavevmode
+
+	\bdoclatexinput[code]{examples/showcase/no-clrstrip-customized.tex}
+
+	Ceci produira ce qui suit.
+
+	\medskip
+
+	\input{examples/showcase/no-clrstrip-customized.tex}
+\end{bdocexa}
 
 \end{document}
+

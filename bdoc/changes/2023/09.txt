@@ -2,7 +2,7 @@
 
 
 ==
-22
+22   OK sauf doc tech et changeloge à venir, on attend gestin date pour nelle versin et enfin unit test
 ==
 
 --------
@@ -11,6 +11,25 @@
 
 [[:api:]]
 Showcase: ``\bdocbackcolor`` becomes ``\bdoclightcolor``.
+
+\bdoclatexshow* dégage et nouveau \bdoclatexshow au dessus di nouveau bdocshowcase
+
+\begin{bdocshowcase*}[Mon début]    %
+                     [Ma fin à moi] %
+                     <green>        % Toujours la couleur après les titres !
+    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+\end{bdocshowcase*}
+
+DEVIENT
+
+\begin{bdocshowcase}[
+    nostripe,
+    before = Mon début,%
+    after  = Ma fin à moi,%
+    color  = green,%
+]
+    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+\end{bdocshowcase}
 
 
 --------

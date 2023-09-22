@@ -7,6 +7,8 @@
 
 % -- LATEX SHOWCASE -- %
 
+% :: TEXT INSIDE A RULE :: %
+
 \ExplSyntaxOn
 
 %%%
@@ -48,6 +50,8 @@
 \ExplSyntaxOff
 
 
+% :: COLOR TRANSFORMATIONS :: %
+
 %%%
 % prototype::
 %     #1 : one color following the ``xcolor`` format.
@@ -70,18 +74,18 @@
 }
 
 
+% :: INTERNAL ENVIRONMENTS :: %
+
 %%%
 % prototype::
 %     #1 : the text before the real output
 %     #2 : the text after the real output
 %     #3 : one color following the ``xcolor`` format.
-%          This color is used to set the one for the decorated texts printed corresponding tothe two first arguments.
+%          This color is used to set the one for the decorated texts printed corresponding to the two first arguments.
 %
 %     :action: this environment just adds its content processed by \latex
 %              between centered materials produced by the macro ``\bdocruler``
 %              such as to stress the start and the end of the content.
-%
-%     :see: macro.bdocdarkcolor
 %%%
 \NewDocumentEnvironment{bdoc@showcase@basic}{m m m}{
   \bdocruler{#1}{\bdocdarkcolor{#3}}
@@ -93,37 +97,21 @@
 
 
 %%%
-% ???? clés
+% prototype::
+%     #1 : the text before the real output
+%     #2 : the text after the real output
+%     #3 : the color following the ``xcolor`` format.
+%          This color is used to set the ones of the stripe and the decorated
+%          texts printed (see the two first arguments).
+%
+%     :action: this environment adds a page-width colored stripe in the
+%              background of the environment content processed by \latex.
+%              This stripe is preceded and followed by centered materials
+%              produced by the macro ``\bdocruler`` such as to stress the
+%              start and the end of the content.
 %%%
 
-\ExplSyntaxOn
-
-\ExplSyntaxOff
-
-
-% %%%
-% % prototype::
-% %     #1 : the text before the real output
-% %     #2 : the text after the real output
-% %     #3 : the color following the ``xcolor`` format.
-% %          This color is used to set the ones of the stripe and the decorated
-% %          texts printed (see the two first arguments).
-% %
-% %     :action: this environment adds a page-width colored stripe in the
-% %              background of the environment content processed by \latex.
-% %              This stripe is preceded and followed by centered materials
-% %              produced by the macro ``\bdocruler`` such as to stress the
-% %              start and the end of the content.
-% %
-% %     :see: env.bdoc@showcase@basic   ,
-% %           macro.bdoclightcolor ,
-% %%%
-
-\NewDocumentEnvironment{bdocshowcase}{
-  O{\bdoc@trans@latex@show@start}
-  O{\bdoc@trans@latex@show@end}
-  D<>{cyan}
-}{
+\NewDocumentEnvironment{bdoc@showcase@colorstrip}{m m m}{
   \begin{colorstrip}{\bdoclightcolor{#3}}
     \begin{bdoc@showcase@basic}{#1}{#2}{#3}
 }{
@@ -132,14 +120,82 @@
 }
 
 
-% \NewDocumentEnvironment{bdocshowcase}{
-%   O{\bdoc@trans@latex@show@start}
-%   O{\bdoc@trans@latex@show@end}
-%   D<>{cyan}
-% }{
-%   \begin{colorstrip}{\bdoclightcolor{#3}}
-%     \begin{bdoc@showcase@basic}[#1][#2]<#3>
-% }{
-%     \end{bdoc@showcase@basic}
-%   \end{colorstrip}
-% }
+% :: KEYS FOR SHOWCASE ENV. :: %
+
+%%%
+%
+%%%
+
+\ExplSyntaxOn
+
+\tl_new:N   \l_bdoc_showcase_before_tl
+\tl_new:N   \l_bdoc_showcase_after_tl
+\tl_new:N   \l_bdoc_showcase_color_tl
+\bool_new:N \l_bdoc_showcase_nostripe_bool
+
+\tl_new:N   \l_bdoc_listing_input_tl
+
+\keys_define:nn { bdoc/showcase } {
+% For showcase and LaTeX listing inputs.
+  before   .tl_set:N   = \l_bdoc_showcase_before_tl,
+  before   .initial:n  = \bdoc@trans@latex@show@start,
+  before   .groups:n   = { showcase-listing-input },
+  after    .tl_set:N   = \l_bdoc_showcase_after_tl,
+  after    .initial:n  = \bdoc@trans@latex@show@end,
+  after    .groups:n   = { showcase-listing-input },
+  color    .tl_set:N   = \l_bdoc_showcase_color_tl,
+  color    .initial:n  = cyan,
+  color    .groups:n   = { showcase-listing-input },
+  nostripe .bool_set:N = \l_bdoc_showcase_nostripe_bool,
+  nostripe .initial:n  = false,
+  nostripe .groups:n   = { showcase-listing-input },
+% Just for LaTeX listing inputs.
+  explain  .tl_set:N   = \l_bdoc_listing_input_tl,
+  explain  .initial:n  = { \bdoc@trans@this@gives \bdoc@colon },
+  explain  .groups:n   = { listing-input },
+}
+
+
+% :: THE SHOWCASE ENV. :: %
+
+% %%%  ????
+% % prototype::
+% %     #1 : tkeyval arg.
+% %
+% %     :action: ??? this environment adds a page-width colored stripe in the
+% %              background of the environment content processed by \latex.
+% %              This stripe is preceded and followed by centered materials
+% %              produced by the macro ``\bdocruler`` such as to stress the
+% %              start and the end of the content.
+% %
+% %     :see: env.bdoc@showcase@basic ,
+% %           env.bdoc@showcase@colorstrip
+% %%%
+
+\NewDocumentEnvironment{bdocshowcase}{ O{} }{
+  \group_begin:
+    \keys_set_groups:nnn { bdoc/showcase }
+                         { showcase-listing-input }
+                         { #1 }
+
+    \bool_if:NTF \l_bdoc_showcase_nostripe_bool {
+      \begin{bdoc@showcase@basic}%
+        { \tl_use:N \l_bdoc_showcase_before_tl }%
+        { \tl_use:N \l_bdoc_showcase_after_tl }%
+        { \tl_use:N \l_bdoc_showcase_color_tl }
+    }{
+      \begin{bdoc@showcase@colorstrip}%
+        { \tl_use:N \l_bdoc_showcase_before_tl }%
+        { \tl_use:N \l_bdoc_showcase_after_tl }%
+        { \tl_use:N \l_bdoc_showcase_color_tl }
+    }
+}{
+    \bool_if:NTF \l_bdoc_showcase_nostripe_bool {
+      \end{bdoc@showcase@basic}
+    }{
+      \end{bdoc@showcase@colorstrip}
+    }
+  \group_end:
+}
+
+\ExplSyntaxOff

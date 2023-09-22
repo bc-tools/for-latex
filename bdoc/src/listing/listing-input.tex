@@ -154,13 +154,13 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 
 \begin{bdocexa}[Changer le texte explicatif]
-	Pour obtenir ce qui suit avec un texte personnalisé, il suffit d'employer \bdocinlatex|\bdoclatexshow<Voici le rendu réel.>{...}|.
+	Pour obtenir ce qui suit avec un texte personnalisé, il suffit d'employer \bdocinlatex|\bdoclatexshow[explain = Voici le rendu réel.]{...}|.
 
 	\medskip
 
 	\begin{bdoc-doc-showcase}[Début du rendu \bdocquote{personnalisé} dans cette doc.]%
 	    	                 [Fin du rendu \bdocquote{personnalisé} dans cette doc.]
-    	\bdoclatexshow<Voici le rendu réel.>{examples/listing/xyz.tex}
+    	\bdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}
 	\end{bdoc-doc-showcase}
 \end{bdocexa}
 
@@ -177,9 +177,8 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 
 \begin{bdocexa}[Les options disponibles]
-	La version étoilée de la macro \bdocmacro{bdocshowcase} n'ajoutera pas une bande colorée pour le rendu réel.
-	De plus, on peut changer les textes encadrant le rendu réel via deux arguments optionnels (ceci fonctionne pour les versions étoilées et non étoilées).
-	Voici un exemple illustrant ce qui précède.
+	En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de \bdocenv{bdocshowcase}, voir \ref{bdoc-showcase}.
+	Voici un exemple illustrant ceci.
 
 	\medskip
 	
