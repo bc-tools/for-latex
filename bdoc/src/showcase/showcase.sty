@@ -65,7 +65,7 @@
 %
 %     :return: a transparent version of color `#1`.
 %%%
-\NewExpandableDocumentCommand{\bdocbackcolor}{m}{%
+\NewExpandableDocumentCommand{\bdoclightcolor}{m}{%
   #1!5%
 }
 
@@ -83,11 +83,7 @@
 %
 %     :see: macro.bdocdarkcolor
 %%%
-\NewDocumentEnvironment{bdocshowcase*}{
-  O{\bdoc@trans@latex@show@start}
-  O{\bdoc@trans@latex@show@end}
-  D<>{lightgray}
-}{
+\NewDocumentEnvironment{bdoc@showcase@basic}{m m m}{
   \bdocruler{#1}{\bdocdarkcolor{#3}}
   \medskip
 }{
@@ -97,30 +93,53 @@
 
 
 %%%
-% prototype::
-%     #1 : the text before the real output
-%     #2 : the text after the real output
-%     #3 : the color following the ``xcolor`` format.
-%          This color is used to set the ones of the stripe and the decorated
-%          texts printed (see the two first arguments).
-%
-%     :action: this environment adds a page-width colored stripe in the
-%              background of the environment content processed by \latex.
-%              This stripe is preceded and followed by centered materials
-%              produced by the macro ``\bdocruler`` such as to stress the
-%              start and the end of the content.
-%
-%     :see: env.bdocshowcase*   ,
-%           macro.bdocbackcolor ,
+% ???? clés
 %%%
+
+\ExplSyntaxOn
+
+\ExplSyntaxOff
+
+
+% %%%
+% % prototype::
+% %     #1 : the text before the real output
+% %     #2 : the text after the real output
+% %     #3 : the color following the ``xcolor`` format.
+% %          This color is used to set the ones of the stripe and the decorated
+% %          texts printed (see the two first arguments).
+% %
+% %     :action: this environment adds a page-width colored stripe in the
+% %              background of the environment content processed by \latex.
+% %              This stripe is preceded and followed by centered materials
+% %              produced by the macro ``\bdocruler`` such as to stress the
+% %              start and the end of the content.
+% %
+% %     :see: env.bdoc@showcase@basic   ,
+% %           macro.bdoclightcolor ,
+% %%%
+
 \NewDocumentEnvironment{bdocshowcase}{
   O{\bdoc@trans@latex@show@start}
   O{\bdoc@trans@latex@show@end}
   D<>{cyan}
 }{
-  \begin{colorstrip}{\bdocbackcolor{#3}}
-    \begin{bdocshowcase*}[#1][#2]<#3>
+  \begin{colorstrip}{\bdoclightcolor{#3}}
+    \begin{bdoc@showcase@basic}{#1}{#2}{#3}
 }{
-    \end{bdocshowcase*}
+    \end{bdoc@showcase@basic}
   \end{colorstrip}
 }
+
+
+% \NewDocumentEnvironment{bdocshowcase}{
+%   O{\bdoc@trans@latex@show@start}
+%   O{\bdoc@trans@latex@show@end}
+%   D<>{cyan}
+% }{
+%   \begin{colorstrip}{\bdoclightcolor{#3}}
+%     \begin{bdoc@showcase@basic}[#1][#2]<#3>
+% }{
+%     \end{bdoc@showcase@basic}
+%   \end{colorstrip}
+% }

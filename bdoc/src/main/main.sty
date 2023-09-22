@@ -1,7 +1,5 @@
 % == PACKAGES == %
 
-\RequirePackage{l3keys2e}[2023-08-29]
-
 \RequirePackage[
   top            = 2.5cm,
   bottom         = 2.5cm,
@@ -51,7 +49,7 @@
       { \exp_not:n {#1} }  % Invalid choice given
 }
 
-\ProcessKeysPackageOptions{ bdoc }
+\ProcessKeyOptions[bdoc]
 
 \ExplSyntaxOff
 
@@ -62,7 +60,7 @@
 
 \NewDocumentCommand{\bdoc@colon}{}{:}
 
-% We must tkae care of the colons, babel and spacing.
+% We must take care of the colons, babel and spacing.
 \@ifpackageloaded{babel}{
   \iflanguage{french}{
     \RenewDocumentCommand{\bdoc@colon}{}{\babelshorthand{:}}
@@ -79,7 +77,6 @@
 % -- GENERAL SETTINGS -- %
 
 \setlength{\parindent}{0cm}
-% \setlist{noitemsep}  Is it useful ?
 
 
 % -- LINKS -- %

@@ -1,10 +1,12 @@
 from src2prod import *
 
+PROJECT_DIR = Path(__file__).parent
+TARGET_DIR  = PROJECT_DIR.parent / PROJECT_DIR.name.lower()
 
 project = Project(
-    project = Path(__file__).parent,
+    project = PROJECT_DIR,
     source  = Path('src'),
-    target  = Path('bdoc'),
+    target  = TARGET_DIR,
     usegit  = True,
     readme  = Path('README.md'),
     # ignore = '',
@@ -12,6 +14,11 @@ project = Project(
 
 project.build()
 
-for f in project.lof:
-    if f.suffix == ".yaml":
-        print(f)
+allfiles = [f for f in project.lof]
+allfiles.sort()
+
+for f in allfiles:
+    print(f)
+
+    # if f.suffix == ".yaml":
+    #     print(f)

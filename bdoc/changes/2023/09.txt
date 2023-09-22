@@ -2,6 +2,29 @@
 
 
 ==
+22
+==
+
+--------
+:fordev:
+--------
+
+[[:api:]]
+Showcase: ``\bdocbackcolor`` becomes ``\bdoclightcolor``.
+
+
+--------
+:fordev:
+--------
+
+[[:api:]]
+Package options: the ``l3keys2e`` obsolete dependency has been removed.
+
+
+// ---------- //
+
+
+==
 18  (0.5.1-beta)
 ==
 
