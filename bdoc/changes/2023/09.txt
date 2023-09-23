@@ -2,7 +2,7 @@
 
 
 ==
-23
+23  (0.6.0-beta)
 ==
 
 -------
@@ -31,7 +31,7 @@ Showcase.
 [[:api:]]
 Showcase.
 
-    1) The \env ``bdoclatexshow`` offers a key-val option for defining the output: there's more to write, but the interface is easier to remember. This involves deleting the star \env ``bdoclatexshow*``.
+    1) The \env ``bdoclatexshow`` offers a key-val option for defining the output: there's more things to write, but the interface is easier to remember. This change implies deleting the star \env ``bdoclatexshow*``.
 
     1) Similarly, the macro ``\bdoclatexshow*`` has been removed because ``\bdoclatexshow`` offers now a key-value option for modifying certain parameters.
 

@@ -141,15 +141,23 @@ Voyons comment contourner ce type de limitation.
 \subsection{En important le code \LaTeX}
 
 \begin{bdocexa*}
-	Pour obtenir des rendus semblables à ceux vus ci-dessus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \bdocmacro{bdocshowcaseinput} dont l'option reprend la syntaxe de celle de \bdocenv{bdocshowcase} et l'argument obligatoire donne le chemin du fichier.
+	Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \bdocmacro{bdocshowcaseinput} dont l'option reprend la syntaxe de celle de \bdocenv{bdocshowcase} et l'argument obligatoire donne le chemin du fichier.
 	
-	\smallskip
+	\medskip
 	
 	Ce qui suit a été obtenu via \bdocinlatex+\bdocshowcaseinput{examples/external.tex}+.
 	
 	\medskip
 	
 	\bdocshowcaseinput{examples/showcase/external.tex}
+	
+	\medskip
+	
+	Via \bdocinlatex+\bdocshowcaseinput[color = orange]{examples/external.tex}+ , on change la coloration comme suit.
+	
+	\medskip
+	
+	\bdocshowcaseinput[color = orange]{examples/showcase/external.tex}
 \end{bdocexa*}
 
 \end{document}
