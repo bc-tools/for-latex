@@ -2,34 +2,40 @@
 
 
 ==
-22   OK sauf doc tech et changeloge à venir, on attend gestin date pour nelle versin et enfin unit test
+23
 ==
 
---------
-:fordev:
---------
+-------
+:break:
+-------
 
 [[:api:]]
-Showcase: ``\bdocbackcolor`` becomes ``\bdoclightcolor``.
+Showcase.
 
-\bdoclatexshow* dégage et nouveau \bdoclatexshow au dessus di nouveau bdocshowcase
+    1) The new ``\bdocshowcaseinput`` allows to import a \latex file for a showcase.
 
-\begin{bdocshowcase*}[Mon début]    %
-                     [Ma fin à moi] %
-                     <green>        % Toujours la couleur après les titres !
-    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
-\end{bdocshowcase*}
+    1) The unknown key options are not longer allowed with the \env ``bdoclatexshow`` and the macro ``\bdoclatexshow``.
 
-DEVIENT
 
-\begin{bdocshowcase}[
-    nostripe,
-    before = Mon début,%
-    after  = Ma fin à moi,%
-    color  = green,%
-]
-    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
-\end{bdocshowcase}
+// ---------- //
+
+
+==
+22
+==
+
+-------
+:break:
+-------
+
+[[:api:]]
+Showcase.
+
+    1) The \env ``bdoclatexshow`` offers a key-val option for defining the output: there's more to write, but the interface is easier to remember. This involves deleting the star \env ``bdoclatexshow*``.
+
+    1) Similarly, the macro ``\bdoclatexshow*`` has been removed because ``\bdoclatexshow`` offers now a key-value option for modifying certain parameters.
+
+    1) ``\bdocbackcolor`` becomes ``\bdoclightcolor``.
 
 
 --------

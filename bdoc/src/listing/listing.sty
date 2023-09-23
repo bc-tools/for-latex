@@ -112,29 +112,48 @@
 }
 
 
-% :: SHOWCASE :: %
+% -- LATEX REAL USE CASES -- %
 
 \ExplSyntaxOn
 
+% :: SETTING SOME KEYS :: %
+
+\tl_new:N \l_bdoc_listing_input_tl
+
 %%%
 % prototype::
-%     #1 : the key-value options supported by the \env ``bdocshowcase`` plus one to the one-line description printed between the code and its focused output
+%     :see: macro.bdoclatexshow
+%
+% We define the key-val options that will be exposed by ``\bdoclatexshow``.
+%%%
+\keys_define:nn { bdoc/latexshow } {
+  explain .tl_set:N   = \l_bdoc_listing_explain_tl,
+  explain .initial:n  = { \bdoc@trans@this@gives \bdoc@colon },
+}
+
+
+% :: LATEXSHOW MACRO :: %
+
+%%%
+% prototype::
+%     #1 : the key-value options supported by the ``bdocshowcase`` \env,
+%          plus one allowing you to change the description of a line
+%          printed between the code and its focused output.
 %     #2 : the path of a file
 %
 %     :see: env.bdocshowcase ,
 %           macro.bdoclatexinput
 %%%
-\NewDocumentCommand{\bdoclatexshow}{ O{} m }{
+\NewDocumentCommand{\bdoclatexshow}{O{} m}{
+% Source: https://tex.stackexchange.com/a/696700/6880
   \group_begin:
-    \keys_set:nn { bdoc/showcase } { #1 }
+    \keys_set_known:nnN { bdoc/latexshow } { #1 } \l_tmpa_tl
 
     \bdoclatexinput[code]{#2}
 
-    \tl_use:N \l_bdoc_listing_input_tl
+    \tl_use:N \l_bdoc_listing_explain_tl
 
-    \begin{bdocshowcase}[#1]
-      \input{#2}
-    \end{bdocshowcase}
+    \exp_last_unbraced:NNV \bdocshowcaseinput [\l_tmpa_tl] {#2}
   \group_end:
 }
 

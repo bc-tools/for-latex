@@ -100,7 +100,7 @@
 % ------------------ %
 
 
-\section{Sans bande colorée}
+\subsection{Sans bande colorée}
 
 Le rendu de \bdocenv{bdocshowcase} avec une bande colorée peut parfois ne pas être acceptable malgré le travail fait par \bdocpack{clrstrip}.
 Voyons comment contourner ce type de limitation.
@@ -133,6 +133,24 @@ Voyons comment contourner ce type de limitation.
 
 	\input{examples/showcase/no-clrstrip-customized.tex}
 \end{bdocexa}
+
+
+% ------------------ %
+
+
+\subsection{En important le code \LaTeX}
+
+\begin{bdocexa*}
+	Pour obtenir des rendus semblables à ceux vus ci-dessus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \bdocmacro{bdocshowcaseinput} dont l'option reprend la syntaxe de celle de \bdocenv{bdocshowcase} et l'argument obligatoire donne le chemin du fichier.
+	
+	\smallskip
+	
+	Ce qui suit a été obtenu via \bdocinlatex+\bdocshowcaseinput{examples/external.tex}+.
+	
+	\medskip
+	
+	\bdocshowcaseinput{examples/showcase/external.tex}
+\end{bdocexa*}
 
 \end{document}
 

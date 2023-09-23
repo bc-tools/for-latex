@@ -5,7 +5,7 @@
 
 % == TOOLS == %
 
-% -- LATEX SHOWCASE -- %
+% -- GENERAL FORMATTING -- %
 
 % :: TEXT INSIDE A RULE :: %
 
@@ -120,63 +120,54 @@
 }
 
 
-% :: KEYS FOR SHOWCASE ENV. :: %
-
-%%%
-%
-%%%
-
 \ExplSyntaxOn
+
+% :: SETTING SOME KEYS :: %
 
 \tl_new:N   \l_bdoc_showcase_before_tl
 \tl_new:N   \l_bdoc_showcase_after_tl
 \tl_new:N   \l_bdoc_showcase_color_tl
 \bool_new:N \l_bdoc_showcase_nostripe_bool
 
-\tl_new:N   \l_bdoc_listing_input_tl
-
+%%%
+% prototype::
+%     :see: env.bdocshowcase
+%
+% We define the key-val options that will be exposed by the \env
+% ``bdocshowcase``.
+%%%
 \keys_define:nn { bdoc/showcase } {
-% For showcase and LaTeX listing inputs.
-  before   .tl_set:N   = \l_bdoc_showcase_before_tl,
-  before   .initial:n  = \bdoc@trans@latex@show@start,
-  before   .groups:n   = { showcase-listing-input },
-  after    .tl_set:N   = \l_bdoc_showcase_after_tl,
-  after    .initial:n  = \bdoc@trans@latex@show@end,
-  after    .groups:n   = { showcase-listing-input },
+% Texts.
+  before .tl_set:N   = \l_bdoc_showcase_before_tl,
+  before .initial:n  = \bdoc@trans@latex@show@start,
+  after  .tl_set:N   = \l_bdoc_showcase_after_tl,
+  after  .initial:n  = \bdoc@trans@latex@show@end,
+% Decorations.
   color    .tl_set:N   = \l_bdoc_showcase_color_tl,
   color    .initial:n  = cyan,
-  color    .groups:n   = { showcase-listing-input },
   nostripe .bool_set:N = \l_bdoc_showcase_nostripe_bool,
   nostripe .initial:n  = false,
-  nostripe .groups:n   = { showcase-listing-input },
-% Just for LaTeX listing inputs.
-  explain  .tl_set:N   = \l_bdoc_listing_input_tl,
-  explain  .initial:n  = { \bdoc@trans@this@gives \bdoc@colon },
-  explain  .groups:n   = { listing-input },
 }
 
 
-% :: THE SHOWCASE ENV. :: %
+% :: SHOWCASE ENV. :: %
 
-% %%%  ????
-% % prototype::
-% %     #1 : tkeyval arg.
-% %
-% %     :action: ??? this environment adds a page-width colored stripe in the
-% %              background of the environment content processed by \latex.
-% %              This stripe is preceded and followed by centered materials
-% %              produced by the macro ``\bdocruler`` such as to stress the
-% %              start and the end of the content.
-% %
-% %     :see: env.bdoc@showcase@basic ,
-% %           env.bdoc@showcase@colorstrip
-% %%%
-
-\NewDocumentEnvironment{bdocshowcase}{ O{} }{
+% prototype::
+%     #1 : the key-value options.
+%
+%     :action: this \env formats \latex code, given as an argument,
+%              by framing it with texts decorated by ``\bdocruler``,
+%              in order to clearly identify a rendering used as an
+%              example.
+%              It is also possible to have a coloured strip the width
+%              of the page in the background of the content.
+%
+%     :see: env.bdoc@showcase@basic ,
+%           env.bdoc@showcase@colorstrip
+%%%
+\NewDocumentEnvironment{bdocshowcase}{O{}}{
   \group_begin:
-    \keys_set_groups:nnn { bdoc/showcase }
-                         { showcase-listing-input }
-                         { #1 }
+    \keys_set:nn { bdoc/showcase } { #1 }
 
     \bool_if:NTF \l_bdoc_showcase_nostripe_bool {
       \begin{bdoc@showcase@basic}%
@@ -195,6 +186,26 @@
     }{
       \end{bdoc@showcase@colorstrip}
     }
+  \group_end:
+}
+
+
+% :: SHOWCASE MACRO :: %
+
+%%%
+% prototype::
+%     #1 : the key-value options supported by the ``bdocshowcase`` \env.
+%     #2 : the path of a file
+%
+%     :see: env.bdocshowcase
+%%%
+\NewDocumentCommand{\bdocshowcaseinput}{O{} m}{
+  \group_begin:
+    \keys_set_known:nnN { bdoc/latexshow } { #1 } \l_tmpa_tl
+
+    \exp_last_unbraced:NNV \bdocshowcase [\l_tmpa_tl]
+      \input{#2}
+    \endbdocshowcase
   \group_end:
 }
 

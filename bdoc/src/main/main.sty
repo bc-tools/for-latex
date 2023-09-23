@@ -23,17 +23,20 @@
 
 \ExplSyntaxOn
 
-% :: MESSAGES :: %
+% :: SOME MESSAGES :: %
 
 \msg_set:nnnn { bdoc } { package-option-lang-unknown }
   { Unknown ~ language. }
-  { See ~ the ~ documentation ~ for ~ the ~ supported languages. }
+  { See ~ the ~ documentation ~ for ~ the ~ supported ~ languages. }
 
 
-% :: SETTING THE KEYS :: %
+% :: SETTING SOME KEYS :: %
 
 \str_new:N \l_bdoc_opt_lang_str
 
+%%%
+% We define the key-val options that will be exposed by the package.
+%%%
 \keys_define:nn { bdoc } {
   lang .choices:nn =
     { french, english }
