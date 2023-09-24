@@ -9,55 +9,6 @@
 
 \ExplSyntaxOn
 
-% :: MESSAGES :: %
-
-\msg_set:nnnn { bdoc } { date-bad-nb-of-minus }
-  { Illegal ~ date ~ with ~ a ~ bad ~ number ~ of ~ minus. }
-  { Use ~ the ~ format ~ YYYY-MM-DD. }
-
-% \msg_set:nnnn { bdoc } { date-not-in-calendar }
-%   { Date ~ not ~ in ~ the ~ calendar. }
-%   { }
-
-
-% :: DATE LIKE TYPE :: %
-
-%%%
-% We used well-named variables to obtain the good formatting of dates
-% regarding to the language wanted.
-%%%
-\str_new:N \l_bdoc_date_year_str
-\str_new:N \l_bdoc_date_month_str
-\str_new:N \l_bdoc_date_day_str
-
-
-%%%
-% prototype::
-%     #1 : a date in the format ``YYYY-MM-DD``
-%
-%     :action: this macro set the string values of ``\l_bdoc_date_year_str``,
-%              ``\l_bdoc_date_month_str`` and ``\l_bdoc_date_day_str`` without
-%              checking the vailidity of the date ``#1''.
-%%%
-\NewDocumentCommand{\bdoc@set@date@vars}{m}{
-% Do we have 3 parts?
-  \seq_set_split:Nnn \l_tmpa_seq { - } { #1 }
-
-  \int_set:Nn \l_tmpa_int
-              {\int_eval:n {\seq_count:N \l_tmpa_seq}}
-
-  \if_int_compare:w \l_tmpa_int = 3
-  \else:
-    \msg_error:nn { bdoc } { date-bad-nb-of-minus }
-  \fi:
-
-% Let's get the 3 parts of the date.
-  \seq_pop:NN \l_tmpa_seq \l_bdoc_date_year_str
-  \seq_pop:NN \l_tmpa_seq \l_bdoc_date_month_str
-  \seq_pop:NN \l_tmpa_seq \l_bdoc_date_day_str
-}
-
-
 % :: MARGIN NOTE :: %
 
 \reversemarginpar{}
@@ -83,11 +34,7 @@
     \vspace{-2.9pt}
 
     \par
-      \bdoc@set@date@vars{#2}
-
-      \bdoc@trans@date{\l_bdoc_date_year_str}
-                      {\l_bdoc_date_month_str}
-                      {\l_bdoc_date_day_str}
+      \__bdoc_translate_date:n #2 \q_stop
     \par
 
     \vspace{1pt}
@@ -99,6 +46,20 @@
     \vspace{#4}
     \rule{1.65cm}{.95pt}
   }[-.345cm]
+}
+
+
+%%%
+% prototype::
+%     :action: this function extracts year, month and day in a date in
+%              the format ``YYYY-MM-DD`` without checking the validity
+%              of the date, and then it calls ``\bdoc@trans@date`` to
+%              use the format expected for the date.
+%%%
+\cs_new:Npn \__bdoc_translate_date:n #1 - #2 - #3 \q_stop {
+    \bdoc@trans@date{#1}
+                    {#2}
+                    {#3}
 }
 
 
