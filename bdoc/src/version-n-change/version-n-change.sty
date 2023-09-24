@@ -5,9 +5,20 @@
 
 % == TOOLS == %
 
-% -- CHANGES - FOCUS IT --%
+% -- CHANGES - WHEN? --%
 
 \ExplSyntaxOn
+
+% :: MESSAGES :: %
+
+\msg_set:nnnn { bdoc } { date-bad-format  }
+  { Bad ~ format ~ for ~ a ~ date. }
+  { Use ~ YYYY-MM-DD. }
+
+% \msg_set:nnnn { bdoc } { date-not-in-calendar }
+%   { Date ~ not ~ in ~ the ~ calendar. }
+%   { }
+
 
 % :: MARGIN NOTE :: %
 
@@ -20,8 +31,10 @@
 %     #3 : the second material (a version number)
 %     #4 : the last negative vertical spacing for the 2nd rule
 %
-%     :action: this macro factorizes the printing of the changes in
-%              the left margin.
+%     :action: this macro factorizes the printing of the changes
+%              in the left margin.
+%
+%     :see: \__bdoc_translate_date:n
 %%%
 \NewDocumentCommand{\bdoc@new@change@margin}{m m m m}{
   \marginnote{
@@ -34,7 +47,7 @@
     \vspace{-2.9pt}
 
     \par
-      \__bdoc_translate_date:n #2 \q_stop
+      \__bdoc_translate_date:n { #2 }
     \par
 
     \vspace{1pt}
@@ -51,19 +64,36 @@
 
 %%%
 % prototype::
-%     :action: this function extracts year, month and day in a date in
-%              the format ``YYYY-MM-DD`` without checking the validity
-%              of the date, and then it calls ``\bdoc@trans@date`` to
-%              use the format expected for the date.
+%     :action: this function checks if we have something like
+%              ``YYYY-MM-DD`` and then it calls the function
+%              ``\__bdoc_translate_date_process:w`` to finish
+%              the job.
+%
+%     :see: \__bdoc_translate_date_process:w
 %%%
-\cs_new:Npn \__bdoc_translate_date:n #1 - #2 - #3 \q_stop {
+\cs_new:Nn \__bdoc_translate_date:n {
+  \regex_match:nnTF { \A \d{1,4} \- \d{2} \- \d{2} \Z } { #1 }{
+    \__bdoc_translate_date_process:w #1 \q_stop
+  }{
+    \msg_error:nn { bdoc } { date-bad-format  }
+  }
+}
+
+
+%%%
+% prototype::
+%     :action: this function extracts year, month and day in something
+%              like ``YYYY-MM-DD`` and then it calls ``\bdoc@trans@date``
+%              to use the format expected for a "localised" date.
+%%%
+\cs_new:Npn \__bdoc_translate_date_process:w #1 - #2 - #3 \q_stop {
     \bdoc@trans@date{#1}
                     {#2}
                     {#3}
 }
 
 
-% :: VERSION AND DATE - NEWTHING :: %
+% :: VERSION AND DATE :: %
 
 %%%
 % prototype::
@@ -94,7 +124,7 @@
 }
 
 
-% :: DATE - NEWTHING :: %
+% :: DATE :: %
 
 %%%
 % prototype::
