@@ -18,7 +18,7 @@ allfiles = [f for f in project.lof]
 allfiles.sort()
 
 for f in allfiles:
-    print(f)
+    print(f.name)
 
     # if f.suffix == ".yaml":
     #     print(f)
