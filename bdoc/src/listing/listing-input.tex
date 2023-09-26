@@ -62,13 +62,13 @@
 \NewDocumentEnvironment{ bdoc-doc-showcase }
                        { O{ Début du rendu dans cette doc. }
                          O{ Fin du rendu dans cette doc. } }{
-    \begin{colorstrip}{green!5}
+%    \begin{colorstrip}{green!5}
         \bdocdocextraruler{#1}
         \smallskip
 }{
         \smallskip
         \bdocdocextraruler{#2}
-    \end{colorstrip}
+%    \end{colorstrip}
 }
 
 
@@ -160,8 +160,7 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
 
 	\medskip
 
-	\begin{bdoc-doc-showcase}[Début du rendu \bdocquote{personnalisé} dans cette doc.]%
-	    	                 [Fin du rendu \bdocquote{personnalisé} dans cette doc.]
+	\begin{bdoc-doc-showcase}
     	\bdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}
 	\end{bdoc-doc-showcase}
 \end{bdocexa}
@@ -192,8 +191,7 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
 	
 	\medskip
 
-	\begin{bdoc-doc-showcase}[Début du rendu \bdocquote{personnalisé} dans cette doc.]%
-	    	                 [Fin du rendu \bdocquote{personnalisé} dans cette doc.]
+	\begin{bdoc-doc-showcase}
     	\input{examples/listing/latexshow-options.tex}
 	\end{bdoc-doc-showcase}
 \end{bdocexa}
