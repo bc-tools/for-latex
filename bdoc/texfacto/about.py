@@ -1,6 +1,7 @@
 from yaml import safe_load
 
-def buildtoc(
+
+def buildlof_sorted(
     source,
     allfiles
 ):

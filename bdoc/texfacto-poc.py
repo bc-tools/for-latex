@@ -7,9 +7,9 @@ SOURCE_DIR  = PROJECT_DIR / Path('src')
 TARGET_DIR  = PROJECT_DIR.parent / PROJECT_DIR.name.lower()
 
 
-# ------------------ #
-# -- FILES TO USE -- #
-# ------------------ #
+# ----------------------- #
+# -- ALL USEFULL FILES -- #
+# ----------------------- #
 
 allfiles = buildlof(
     project = PROJECT_DIR,
@@ -19,11 +19,11 @@ allfiles = buildlof(
 )
 
 
-# -------------------- #
-# -- SORT THE FILES -- #
-# -------------------- #
+# ------------------------------ #
+# -- ONLY SOURCE FILES SORTED -- #
+# ------------------------------ #
 
-allfiles_sorted = buildtoc(
+allfiles_sorted = buildlof_sorted(
     source   = SOURCE_DIR,
     allfiles = allfiles
 )

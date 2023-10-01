@@ -1,7 +1,6 @@
 texfacto:
   doc:
     header: doc-header.tex
-    lang  : french
 
 toc:
   - intro/
