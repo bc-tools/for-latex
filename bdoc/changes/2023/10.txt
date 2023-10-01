@@ -1,0 +1,13 @@
+// ---------- //
+
+
+==
+01
+==
+
+--------
+:fordev:
+--------
+
+[[:tech:]]
+\latexmk and a trick are used to avoid unwanted \pdf changes to be found by term::``git -a``. The command used comes from cf::``this post; https://tex.stackexchange.com/a/391541/6880``.
