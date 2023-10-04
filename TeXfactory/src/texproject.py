@@ -33,7 +33,7 @@ ALL_LANGS = [
 # ------------------------ #
 
 ###
-# This class specializes the class ``Project`` from the package ``src2prod``
+# This class specializes the class ''Project'' from the package ''src2prod''
 # such as to transform a TeXfactory source project into a standard (La)TeX
 # project to distribute.
 ###
@@ -42,15 +42,15 @@ class TeXProject(BuildProj):
 
 ###
 # prototype::
-#     opensession  : ``True`` is to reset eveything and open the communication
-#                    and ``False`` starts directly the work.
-#     closesession : ``True`` is to close the communication and
-#                    ``False`` otherwise.
-#     safemode     : ``True`` asks to never remove a none empty target folder
-#                    contrary to ``False``.
+#     opensession  : ''True'' is to reset eveything and open the communication
+#                    and ''False'' starts directly the work.
+#     closesession : ''True'' is to close the communication and
+#                    ''False'' otherwise.
+#     safemode     : ''True'' asks to never remove a none empty target folder
+#                    contrary to ''False''.
 #
 # note::
-#     The argument ``safemode`` is here to leave the responsability of
+#     The argument ''safemode'' is here to leave the responsability of
 #     removing a none empty folder to the user (my lawyers forced me to
 #     add this feature).
 ###

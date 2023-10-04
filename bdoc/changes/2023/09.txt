@@ -18,7 +18,7 @@ Changelog: explanations about the fact that the dates are not validated (just th
 --------
 
 [[:tech:]]
-Dates for changelog: we use one regex for the good numbers of minus, and a useful ``...:w #1 - #2 - #3 \q_stop`` to extract the hyphenated parts.
+Dates for changelog: we use one regex for the good numbers of minus, and a useful ''...:w #1 - #2 - #3 \q_stop'' to extract the hyphenated parts.
 
 
 // ---------- //
@@ -35,9 +35,9 @@ Dates for changelog: we use one regex for the good numbers of minus, and a usefu
 [[:api:]]
 Showcase.
 
-    1) The new ``\bdocshowcaseinput`` allows to import a \latex file for a showcase.
+    1) The new ''\bdocshowcaseinput'' allows to import a \latex file for a showcase.
 
-    1) The unknown key options are not longer allowed with the \env ``bdoclatexshow`` and the macro ``\bdoclatexshow``.
+    1) The unknown key options are not longer allowed with the \env ''bdoclatexshow'' and the macro ''\bdoclatexshow''.
 
 
 // ---------- //
@@ -54,11 +54,11 @@ Showcase.
 [[:api:]]
 Showcase.
 
-    1) The \env ``bdoclatexshow`` offers a key-val option for defining the output: there's more things to write, but the interface is easier to remember. This change implies deleting the star \env ``bdoclatexshow*``.
+    1) The \env ''bdoclatexshow'' offers a key-val option for defining the output: there's more things to write, but the interface is easier to remember. This change implies deleting the star \env ''bdoclatexshow*''.
 
-    1) Similarly, the macro ``\bdoclatexshow*`` has been removed because ``\bdoclatexshow`` offers now a key-value option for modifying certain parameters.
+    1) Similarly, the macro ''\bdoclatexshow*'' has been removed because ''\bdoclatexshow'' offers now a key-value option for modifying certain parameters.
 
-    1) ``\bdocbackcolor`` becomes ``\bdoclightcolor``.
+    1) ''\bdocbackcolor'' becomes ''\bdoclightcolor''.
 
 
 --------
@@ -66,7 +66,7 @@ Showcase.
 --------
 
 [[:api:]]
-Package options: the ``l3keys2e`` obsolete dependency has been removed.
+Package options: the ''l3keys2e'' obsolete dependency has been removed.
 
 
 // ---------- //
@@ -81,7 +81,7 @@ Package options: the ``l3keys2e`` obsolete dependency has been removed.
 -----
 
 [[:api:]]
-Showcase: the new ``\bdocdarkcolor`` and ``\bdocbackcolor`` macros externalise the transformations made to the color indicated to the ``bdocshowcase`` and ``bdocshowcase*`` environments.
+Showcase: the new ''\bdocdarkcolor'' and ''\bdocbackcolor'' macros externalise the transformations made to the color indicated to the ''bdocshowcase'' and ''bdocshowcase*'' environments.
 
 
 // ---------- //
@@ -96,7 +96,7 @@ Showcase: the new ``\bdocdarkcolor`` and ``\bdocbackcolor`` macros externalise t
 --------
 
 [[:api:]]
-Showcase: the change made to the colour previously implemented in the ``bdocshowcase`` environment has been moved to the ``bdocshowcase*`` environment.
+Showcase: the change made to the colour previously implemented in the ''bdocshowcase'' environment has been moved to the ''bdocshowcase*'' environment.
 
 
 [[:doc:]]
@@ -104,7 +104,7 @@ Two things done.
 
     1) The latest changes for users were missing...
 
-    1) A warning has been added about a weakness in the ``clrstrip`` package.
+    1) A warning has been added about a weakness in the ''clrstrip'' package.
 
 
 // ---------- //
@@ -121,25 +121,25 @@ Two things done.
 [[:api:]]
 Some simplifications have been made.
 
-    1) The \lang name follows the ``babel`` package conventions: for example, ``lang = french`` must be used instead of the previous ``lang = FR``.
+    1) The \lang name follows the ''babel'' package conventions: for example, ''lang = french'' must be used instead of the previous ''lang = FR''.
 
     1) Regarding the listings...
 
-        + Just one \env ``bdoclatex`` and one macro ``\bdoclatexinput`` are proposed to display codes. The output can be changed using just one optional \arg.
+        + Just one \env ''bdoclatex'' and one macro ''\bdoclatexinput'' are proposed to display codes. The output can be changed using just one optional \arg.
 
-        + The environment ``bdoclatexshow`` works with special delimited optional \args suchas to simplify the \api.
+        + The environment ''bdoclatexshow'' works with special delimited optional \args suchas to simplify the \api.
 
-    1) The ``bdocprewhy`` macro has been rewritten.
+    1) The ''bdocprewhy'' macro has been rewritten.
 
-        + You have to type ``\bdocprewhy{pre.fix}`` instead of the previous ``\bdocprewhy{pre}{fix}``.
+        + You have to type ''\bdocprewhy{pre.fix}'' instead of the previous ''\bdocprewhy{pre}{fix}''.
 
-        + ``\cdot`` has been replaced by ``\textperiodcentered`` with small spaces around it.
+        + ''\cdot'' has been replaced by ''\textperiodcentered'' with small spaces around it.
 
     1) Regarding the changelog...
 
-        + The ``bdoctopic`` \env now works with two types of optional delimited \args instead of one optional type suchas to simplify the \api.
+        + The ''bdoctopic'' \env now works with two types of optional delimited \args instead of one optional type suchas to simplify the \api.
 
-        + The macro ``\bdocnew`` has been renamed ``\bdocdate``.
+        + The macro ''\bdocnew'' has been renamed ''\bdocdate''.
 
 
 ------
@@ -149,13 +149,13 @@ Some simplifications have been made.
 [[:api:]]
 Here are the new features.
 
-    1) Two environments ``bdocwarning`` and ``bdocinfo`` have been added: this allows to focus some content more precisely.
+    1) Two environments ''bdocwarning'' and ''bdocinfo'' have been added: this allows to focus some content more precisely.
 
-    1) The new environments ``bdoclatexshow*`` and ``bdocshowcase*`` work without the ``clrstrip`` package.
+    1) The new environments ''bdoclatexshow*'' and ''bdocshowcase*'' work without the ''clrstrip'' package.
 
-    1) If the ``babel`` package is loaded with the ``french`` \lang, we use ``\babelshorthand{:}`` to obtain a well spaced colon in texts.
+    1) If the ''babel'' package is loaded with the ''french'' \lang, we use ''\babelshorthand{:}'' to obtain a well spaced colon in texts.
 
-    1) The ``csquotes`` package is used to manage properly the quoting. This package takes care of locale settings.
+    1) The ''csquotes'' package is used to manage properly the quoting. This package takes care of locale settings.
 
 
 --------
@@ -169,10 +169,10 @@ The \tech \docs in the \src have been updated.
 [[:api:]]
 A few things to know...
 
-    1) The package ``xcolor`` is loaded instead of ``pgf``, this last on was used only for colors (keys are now managed with \latex3).
+    1) The package ''xcolor'' is loaded instead of ''pgf'', this last on was used only for colors (keys are now managed with \latex3).
 
-    1) The setting of ``\thechapter`` is made only if it is necessary.
+    1) The setting of ''\thechapter'' is made only if it is necessary.
 
-    1) All the ``\RequirePackage`` indicate one date.
+    1) All the ''\RequirePackage'' indicate one date.
 
-    1) The ``bdocexa`` \env is now made using an ``amsthm`` \env like the ``bdocrem`` \env.
+    1) The ''bdocexa'' \env is now made using an ''amsthm'' \env like the ''bdocrem'' \env.

@@ -20,6 +20,6 @@ The `bdoc` prefix is used instead of `doc`.
 [[:update:]]
 Here are the new things done.
 
-    1) Migration from path::``about.peuf`` files to path::``about.yaml`` files.
+    1) Migration from path::''about.peuf'' files to path::''about.yaml'' files.
 
     1) The \tnstex \specs for the \archi are applied.

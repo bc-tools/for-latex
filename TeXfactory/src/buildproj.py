@@ -31,7 +31,7 @@ ALL_LANGS = [
 # ------------------------ #
 
 ###
-# This class specializes the class ``Project`` from the package ``src2prod``
+# This class specializes the class ''Project'' from the package ''src2prod''
 # such as to transform a TeXfactory source project into a standard (La)TeX
 # project to distribute.
 ###
@@ -59,10 +59,10 @@ class BuildProj(Project):
 
 ###
 # prototype::
-#     opensession  : ``True`` is to reset eveything and open the communication
-#                    and ``False`` starts directly the work.
-#     closesession : ``True`` is to close the communication and
-#                    ``False`` otherwise.
+#     opensession  : ''True'' is to reset eveything and open the communication
+#                    and ''False'' starts directly the work.
+#     closesession : ''True'' is to close the communication and
+#                    ''False'' otherwise.
 #
 #
 # This method is the great bandleader building the lists of files to use to update
@@ -110,29 +110,29 @@ class BuildProj(Project):
             self._close_one_session(timer_title = 'build')
 
 ###
-# This method build four lists stored in the dictionary ``self._lof_catego`` and
-# also the set ``self._src_dirs``.
+# This method build four lists stored in the dictionary ''self._lof_catego'' and
+# also the set ''self._src_dirs''.
 #
 #     1) A list of about.peuf fiiles found inside the source dir or a direct
 #        subfolder of the source dir.
 #
-#     1) A list of the ``STY`` files to use to make the main single ``STY`` file
+#     1) A list of the ''STY'' files to use to make the main single ''STY'' file
 #        of the final product.
 #
-#     1) A list of the ``TEX`` files to use to make the doc of the final product.
+#     1) A list of the ''TEX'' files to use to make the doc of the final product.
 #
-#     1) A list of the ``PDF`` files to ignore because they are just the result
-#        of the (La)TeX compilation of ``TEX`` files write to documentate the
+#     1) A list of the ''PDF'' files to ignore because they are just the result
+#        of the (La)TeX compilation of ''TEX'' files write to documentate the
 #        project during its development (see the preceding item).
 #
 #     1) A list of the files to copy "directly" in the folder of the final product.
 #
-#     1) An additional set ``self._src_dirs`` contains the direct subfolders
-#        containing the ``STY`` and ``TEX`` files needed to build the final product
+#     1) An additional set ''self._src_dirs'' contains the direct subfolders
+#        containing the ''STY'' and ''TEX'' files needed to build the final product
 #        and its docu.
 ###
     def build_lof_catego(self) -> None:
-# Let ``src2prod.Project`` do the main work.
+# Let ''src2prod.Project'' do the main work.
         super().build(
             opensession  = False,
             closesession = False,
@@ -213,8 +213,8 @@ class BuildProj(Project):
 # prototype::
 #     path : just a path
 #
-#     :return: ``True`` if the path points to a ¨tex file used to indicate a change
-#              about a new version, and ``False`` otherwise.
+#     :return: ''True'' if the path points to a ¨tex file used to indicate a change
+#              about a new version, and ''False'' otherwise.
 ###
     def is_info_change(self, path: Path) -> bool:
         parents = list(path.parents)
@@ -229,8 +229,8 @@ class BuildProj(Project):
 # prototype::
 #     path : just a path
 #
-#     :return: ``True`` if the path points to a ¨pdf file used in the source
-#              dir to write a part of the final ¨docu, and ``False`` otherwise.
+#     :return: ''True'' if the path points to a ¨pdf file used in the source
+#              dir to write a part of the final ¨docu, and ''False'' otherwise.
 ###
     def pdf_to_ignore(self, path: Path) -> bool:
         pathname = path.name
@@ -242,8 +242,8 @@ class BuildProj(Project):
         return False
 
 ###
-# This method sorts the lists of changes, of ``STY`` files and ``TEX`` files
-# such as to obtain easily the good docu and final main ``STY`` file.
+# This method sorts the lists of changes, of ''STY'' files and ''TEX'' files
+# such as to obtain easily the good docu and final main ''STY'' file.
 ###
     def sort_spe_lofs(self) -> None:
 # Let's talk a little...
@@ -264,9 +264,9 @@ class BuildProj(Project):
                 VAR_LEVEL: 1}
             )
 
-# Sort the list of ``STY`` and ``TEX`` files.
+# Sort the list of ''STY'' and ''TEX'' files.
 #
-# We just have to take care of ``about.peuf`` files.
+# We just have to take care of ''about.peuf'' files.
         print(self.source)
         exit()
 
@@ -275,7 +275,7 @@ class BuildProj(Project):
 ###
 # prototype::
 #     folder : the path of a folder to "sort" by taking care of a possible
-#              ``about.peuf`` file.
+#              ''about.peuf'' file.
 #
 #     :return:
 ###

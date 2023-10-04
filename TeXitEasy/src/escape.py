@@ -51,7 +51,7 @@ PLACEHOLDERS_F_STRING = {
 #
 #     :return: the text with all specific ¨latex characters escaped so as
 #              to be used verbatim in either a math formula or a text
-#              regarding to the value of ``mode``.
+#              regarding to the value of ''mode''.
 ###
 def escape(
     text: str,
@@ -99,7 +99,7 @@ def escape(
 #
 #     :return: the source with all specific ¨latex characters escaped so as
 #              to be used verbatim in either a math formula or a text
-#              regarding to the value of ``mode``.
+#              regarding to the value of ''mode''.
 ###
 def fstringit(code: str) -> str:
     for brace in '{}':

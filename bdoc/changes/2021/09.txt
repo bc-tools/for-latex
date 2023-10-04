@@ -10,4 +10,4 @@
 -------
 
 [[:api:]]
-Macro ``\docilatex``: it has been renamed ``\docinlatex``.
+Macro ''\docilatex'': it has been renamed ''\docinlatex''.

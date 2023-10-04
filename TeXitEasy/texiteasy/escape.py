@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 ###
-# This file proposes two escaping functions. 
+# This file proposes two escaping functions.
 #     1) The 1st one escape a text to be used in a ¨latex content.
-#     2) The 2nd one prepare a ¨latex source code to be used in a f-string. 
+#     2) The 2nd one prepare a ¨latex source code to be used in a f-string.
 ###
 
 
@@ -19,7 +19,7 @@ MODE_TEXT = "text"
 
 CHARS_TO_ESCAPE = {
     'text': "{}_$&%#",
-    'math': "{}_$&%#" 
+    'math': "{}_$&%#"
 }
 
 CHARS_TO_LATEXIFY = {
@@ -49,8 +49,8 @@ PLACEHOLDERS_F_STRING = {
 #          @ :in: [MODE_MATH, MODE_TEXT]
 #
 #     :return: the text with all specific ¨latex characters escaped so as
-#              to be used verbatim in either a math formula or a text 
-#              regarding to the value of ``mode``.
+#              to be used verbatim in either a math formula or a text
+#              regarding to the value of ''mode''.
 ###
 
 def escape(
@@ -99,8 +99,8 @@ def escape(
 #     code : the ¨latex source to transform to a f-string template.
 #
 #     :return: the source with all specific ¨latex characters escaped so as
-#              to be used verbatim in either a math formula or a text 
-#              regarding to the value of ``mode``.
+#              to be used verbatim in either a math formula or a text
+#              regarding to the value of ''mode''.
 ###
 
 def fstringit(code: str) -> str:

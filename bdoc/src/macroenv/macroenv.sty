@@ -6,7 +6,7 @@
 % prototype::
 %     #1 : the name of a package
 %
-% ``\bdocpack{mypack}`` prints verb::``mypack``.
+% ''\bdocpack{mypack}'' prints verb::''mypack''.
 %
 % note::
 %     This macro is more semantic than useful.
@@ -20,7 +20,7 @@
 % prototype::
 %     #1 : the name of a macro
 %
-% ``\bdocenv{mymacro}`` prints verb::``\mymacro``.
+% ''\bdocenv{mymacro}'' prints verb::''\mymacro''.
 %%%
 \NewDocumentCommand{\bdocmacro}{m}{%
   \texttt{\textbackslash{}#1}%
@@ -31,7 +31,7 @@
 % prototype::
 %     #1 : the name of an environment
 %
-% ``\bdocenv{myenv}`` prints verb::``\begin{myenv} ... \end{myenv}``
+% ''\bdocenv{myenv}'' prints verb::''\begin{myenv} ... \end{myenv}''
 % where the spaces are secable.
 %%%
 \NewDocumentCommand{\bdocenv}{m}{%
@@ -46,7 +46,7 @@
 % :: MESSAGES :: %
 
 \msg_set:nnnn { bdoc } { prefixwhy-bad-format }
-{ Bad ~ format, ~ something ~ like ~ ``pre.fix`` ~ expected. }
+{ Bad ~ format, ~ something ~ like ~ ''pre.fix'' ~ expected. }
 { You ~ must ~ use ~ one ~ single ~ point. }
 
 
@@ -57,7 +57,7 @@
 %     #1 : a prefix of a word
 %     #2 : the remaining part of the word
 %
-% ``\bdocprewhy{pre}{fix}`` prints something like verb::``pre``-fix.
+% ''\bdocprewhy{pre}{fix}'' prints something like verb::''pre''-fix.
 %%%
 \NewDocumentCommand{\bdocprewhy}{m}{%
 %   \textbf{\bdocpre{#1}}\kern.5pt\textperiodcentered\kern.5pt#2%
@@ -88,9 +88,9 @@
 % prototype::
 %     #1 : just a prefix
 %
-% ``\bdocpre{pre}`` only prints verb::``pre``. This can be useful in
-% a case like ``\bdocpre{pre} comes from \bdocprewhy{pre}{fix}`` which
-% prints: verb::``pre`` comes from verb::``pre``-fix.
+% ''\bdocpre{pre}'' only prints verb::''pre''. This can be useful in
+% a case like ''\bdocpre{pre} comes from \bdocprewhy{pre}{fix}'' which
+% prints: verb::''pre'' comes from verb::''pre''-fix.
 %
 % note::
 %     This macro is more semantic than useful.

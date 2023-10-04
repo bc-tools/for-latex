@@ -10,16 +10,16 @@
 --------
 
 [[:facto:]]
-Instead of using the ``most`` option in  ``\RequirePackage[most]{tcolorbox}``, we just add the library ``skins`` via ``\tcbuselibrary``.
+Instead of using the ''most'' option in  ''\RequirePackage[most]{tcolorbox}'', we just add the library ''skins'' via ''\tcbuselibrary''.
 
 [[:bug:]]
-The ugly hack for french quotes was a partial copy of some part of the ``babel`` package source code.
+The ugly hack for french quotes was a partial copy of some part of the ''babel'' package source code.
 
-    1) Right quote: ``\ignorespaces`` has been added at the end.
+    1) Right quote: ''\ignorespaces'' has been added at the end.
 
-    1) Left quote: ``\ifdim\lastskip>\z@\unskip\fi`` starts the definition.
+    1) Left quote: ''\ifdim\lastskip>\z@\unskip\fi'' starts the definition.
 
-    1) Better unbreakable spacing: ``\kern.25em`` replaces ``\,``.
+    1) Better unbreakable spacing: ''\kern.25em'' replaces ''\,''.
 
 
 // ---------- //
@@ -34,10 +34,10 @@ The ugly hack for french quotes was a partial copy of some part of the ``babel``
 ------
 
 [[:api:]]
-The new macro ``\docnew`` can be used to indicate the date of something new.
+The new macro ''\docnew'' can be used to indicate the date of something new.
 
 [[:api:]]
-The macro ``\docilatex`` has been added to display inline \latex codes (verb::``i`` is for "inline").
+The macro ''\docilatex'' has been added to display inline \latex codes (verb::''i'' is for "inline").
 
 [[:api:]]
 For showcases, the text indicating the start and the end of a showcase can be customized.
@@ -48,10 +48,10 @@ For showcases, the text indicating the start and the end of a showcase can be cu
 ---------
 
 [[:api:]]
-The option of the \env ``doctopic`` must be put after the title now.
+The option of the \env ''doctopic'' must be put after the title now.
 
 [[:format:]]
-Decorations: the macro ``\docsep`` produces a more "symmetrical" vertical spacing.
+Decorations: the macro ''\docsep'' produces a more "symmetrical" vertical spacing.
 
 
 --------
@@ -59,7 +59,7 @@ Decorations: the macro ``\docsep`` produces a more "symmetrical" vertical spacin
 --------
 
 [[:tech:]]
-The macro ``\docquote`` uses ``\og`` and ``\fg`` that come from ``\usepackage[french]{babel}`` but the problem is that ``babel`` is no longer loaded automatically. So now, if necessary, we define our version of ``\og`` and ``\fg`` via ``\providecommand`` (for French, we just mimic the code of babel and for English we define the expected double quotes).
+The macro ''\docquote'' uses ''\og'' and ''\fg'' that come from ''\usepackage[french]{babel}'' but the problem is that ''babel'' is no longer loaded automatically. So now, if necessary, we define our version of ''\og'' and ''\fg'' via ''\providecommand'' (for French, we just mimic the code of babel and for English we define the expected double quotes).
 
 
 // ---------- //
@@ -74,7 +74,7 @@ The macro ``\docquote`` uses ``\og`` and ``\fg`` that come from ``\usepackage[fr
 -----
 
 [[:api:]]
-The macros ``\inputdoclatexafter``, ``\inputdoclatexbefore`` and ``\inputdoclatexreal`` have now an optional argument to change the explaining text.
+The macros ''\inputdoclatexafter'', ''\inputdoclatexbefore'' and ''\inputdoclatexreal'' have now an optional argument to change the explaining text.
 
 
 ---------
@@ -82,7 +82,7 @@ The macros ``\inputdoclatexafter``, ``\inputdoclatexbefore`` and ``\inputdoclate
 ---------
 
 [[:format:]]
-The macro ``\docversion`` prints now the date with the format of the language loaded with \bdoc.
+The macro ''\docversion'' prints now the date with the format of the language loaded with \bdoc.
 
 [[:format:]]
 For the showcases, the strip contains now also the focusing rules, and this strip uses a blue color instead of a green one.
@@ -108,7 +108,7 @@ All the \tech \docus in the \src have been written.
 -----
 
 [[:api:]]
-The macros ``\docexa`` and ``\docexa*`` work with an optional argument instead of a mandatory one: this allows to only type ``\docexa`` or ``\docexa*`` without any curly braces.
+The macros ''\docexa'' and ''\docexa*'' work with an optional argument instead of a mandatory one: this allows to only type ''\docexa'' or ''\docexa*'' without any curly braces.
 
 
 --------
@@ -161,7 +161,7 @@ For showcases, the rulers are automatically set to obtain the same global width 
 -------
 
 [[:api:]]
-The resbonsabilities of the package have been minimized: the user has to manage alone imports like ``\usepackage[utf8]{inputenc}`` and ``\usepackage[french]{babel, varioref}`` (but the automatic tools will do it when generating \docs for the \tns series).
+The resbonsabilities of the package have been minimized: the user has to manage alone imports like ''\usepackage[utf8]{inputenc}'' and ''\usepackage[french]{babel, varioref}'' (but the automatic tools will do it when generating \docs for the \tns series).
 
 
 --------
@@ -187,10 +187,10 @@ The code is now developed like other independent packages of the \tns series (it
 --------
 
 [[:api:]]
-The macro ``\signprewhy`` has been removed. It will be proposed by the package \macroenvsign (this is more logical).
+The macro ''\signprewhy'' has been removed. It will be proposed by the package \macroenvsign (this is more logical).
 
 [[:api:]]
-The \env ``remark`` has been renamed ``docremark``.
+The \env ''remark'' has been renamed ''docremark''.
 
 
 ------
@@ -198,7 +198,7 @@ The \env ``remark`` has been renamed ``docremark``.
 ------
 
 [[:api:]]
-Two new macros ``\docpack`` and ``\docquote`` have been added.
+Two new macros ''\docpack'' and ''\docquote'' have been added.
 
 
 --------
@@ -221,7 +221,7 @@ The project has be named \bdoc for "Basic \Docu".
 -------
 
 [[:api:]]
-\env ``doctopic``: the single option ``ml`` (multiline) has been renamed to ``t`` (title).
+\env ''doctopic'': the single option ''ml'' (multiline) has been renamed to ''t'' (title).
 
 
 // ---------- //

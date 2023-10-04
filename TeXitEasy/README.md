@@ -45,7 +45,7 @@ Math mode:
 
 ### For `Python`...
 
-Working together with `LaTeX` templates for f-strings is very boring because of the curly braces. The function `texiteasy.escape.fstringit` simplifies this as you can see in the following code. Note that `<:PYVAR_FOR_FSTRING:>` is used instead of ``{PYVAR_FOR_FSTRING}`` as this must normally be done in f-strings.
+Working together with `LaTeX` templates for f-strings is very boring because of the curly braces. The function `texiteasy.escape.fstringit` simplifies this as you can see in the following code. Note that `<:PYVAR_FOR_FSTRING:>` is used instead of ''{PYVAR_FOR_FSTRING}'' as this must normally be done in f-strings.
 
 ~~~python
 from texiteasy.escape import fstringit

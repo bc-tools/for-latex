@@ -25,7 +25,7 @@ The formatting macros have now options to choose the kind of signature.
 --------
 
 [[:format:]]
-verb::``[1 Option] (5 Arguments)`` has been replaced by verb::``[#opt]{#1..#5}``.
+verb::''[1 Option] (5 Arguments)'' has been replaced by verb::''[#opt]{#1..#5}''.
 
 
 ------
@@ -33,7 +33,7 @@ verb::``[1 Option] (5 Arguments)`` has been replaced by verb::``[#opt]{#1..#5}``
 ------
 
 [[:api:]]
-``\IDope`` has been added for the macros with neither options, nor arguments.
+''\IDope'' has been added for the macros with neither options, nor arguments.
 
 
 [[:format:]]

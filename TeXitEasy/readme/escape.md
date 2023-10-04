@@ -30,7 +30,7 @@ Math mode:
 
 ### For `Python`...
 
-Working together with `LaTeX` templates and `f-strings` is qucikly a nightmare because of the curly braces. The function `texiteasy.escape.fstringit` simplifies this as you can see in the following code. Note that the `LaTeX` code needs no adaptation, and that `<:PYVAR_FOR_F_STRING:>` is used instead of ``{PYVAR_FOR_F_STRING}`` as this must normally be done in `f-strings`.
+Working together with `LaTeX` templates and `f-strings` is qucikly a nightmare because of the curly braces. The function `texiteasy.escape.fstringit` simplifies this as you can see in the following code. Note that the `LaTeX` code needs no adaptation, and that `<:PYVAR_FOR_F_STRING:>` is used instead of ''{PYVAR_FOR_F_STRING}'' as this must normally be done in `f-strings`.
 
 ~~~python
 from texiteasy.escape import fstringit
@@ -55,4 +55,3 @@ Launched in a terminal, the preceding script prints the following output.
     \onemacro{TEST}{#2}
 }
 ~~~
- 

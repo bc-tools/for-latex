@@ -11,8 +11,8 @@
 % :: INLINE SHORT LATEX CODE :: %
 
 %%%
-% See the \doc of the macro ``\newmintinline`` from the package ``minted``
-% to have \infos about the macro ``bdocinlatex``.
+% See the \doc of the macro ''\newmintinline'' from the package ''minted''
+% to have \infos about the macro ''bdocinlatex''.
 %%%
 \newmintinline[bdocinlatex]{latex}{}
 
@@ -22,8 +22,8 @@
 \ExplSyntaxOn
 
 %%%
-% In the following easy-to-understand macro, we use one fictive ``tcolorbox``
-% style such as to indicate an unknown ``bdoc`` style to the user.
+% In the following easy-to-understand macro, we use one fictive ''tcolorbox''
+% style such as to indicate an unknown ''bdoc'' style to the user.
 % For example, this can give one message similar to the following one.
 %
 % term::
@@ -63,7 +63,7 @@
     arc      = .75mm,
     left     = 1mm, right = 1mm,
     bottom   = 1mm, top   = 1mm,
-% We can use  ``sharp corners'' to obtain an "old school" style.
+% We can use  ''sharp corners'' to obtain an "old school" style.
 %
 % Separating line
     enhanced,
@@ -87,8 +87,8 @@
 %        @ #1 in [code, sbs, std]
 %
 % note::
-%     See the \doc of the macro ``\newtcblisting`` from the package
-%     ``tcolorbox`` to have \infos about the environment ``bdoclatex``.
+%     See the \doc of the macro ''\newtcblisting'' from the package
+%     ''tcolorbox'' to have \infos about the environment ''bdoclatex''.
 %%%
 \newtcblisting{bdoclatex}[1][std]{%
   bdoclatex_tcbstyle = \bdoc@latex@listing@formating{#1}
@@ -103,8 +103,8 @@
 %     #2 : the path of the file to input and format.
 %
 % note::
-%     See the \doc of the macro ``\newtcbinputlisting`` from the package
-%     ``tcolorbox`` to have more \infos about the macro ``\bdoclatexinput``.
+%     See the \doc of the macro ''\newtcbinputlisting'' from the package
+%     ''tcolorbox'' to have more \infos about the macro ''\bdoclatexinput''.
 %%%
 \newtcbinputlisting{\bdoclatexinput}[2][std]{
   listing file = {#2},
@@ -124,7 +124,7 @@
 % prototype::
 %     :see: macro.bdoclatexshow
 %
-% We define the key-val options that will be exposed by ``\bdoclatexshow``.
+% We define the key-val options that will be exposed by ''\bdoclatexshow''.
 %%%
 \keys_define:nn { bdoc/latexshow } {
   explain .tl_set:N   = \l_bdoc_listing_explain_tl,
@@ -136,7 +136,7 @@
 
 %%%
 % prototype::
-%     #1 : the key-value options supported by the ``bdocshowcase`` \env,
+%     #1 : the key-value options supported by the ''bdocshowcase'' \env,
 %          plus one allowing you to change the description of a line
 %          printed between the code and its focused output.
 %     #2 : the path of a file

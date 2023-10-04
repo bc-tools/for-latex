@@ -10,7 +10,7 @@
 -----
 
 [[:doc:]]
-path::``README.md`` contains little tutorials.
+path::''README.md'' contains little tutorials.
 
 
 // ---------- //
@@ -25,7 +25,7 @@ path::``README.md`` contains little tutorials.
 --------
 
 [[:facto:]]
-Function ``escape``: some simplifications have been made in the source code.
+Function ''escape'': some simplifications have been made in the source code.
 
 
 // ---------- //
