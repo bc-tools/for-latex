@@ -1,7 +1,7 @@
 from yaml import safe_load
 
 
-def buildlof_sorted(
+def build_lof_sorted(
     source,
     allfiles
 ):

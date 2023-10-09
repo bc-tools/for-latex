@@ -10,4 +10,4 @@
 --------
 
 [[:tech:]]
-Avoid unwanted \pdf changes to be found by term::''git -a'': a tricky call of \latexmk will be used. See cf::''this post; https://tex.stackexchange.com/a/391541/6880''.
+Avoid unwanted \pdf changes to be found by term::''git -a'': a "tricky" call of \latexmk will be used. See cf::''this post; https://tex.stackexchange.com/a/391541/6880''.

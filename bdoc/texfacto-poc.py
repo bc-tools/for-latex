@@ -11,7 +11,7 @@ TARGET_DIR  = PROJECT_DIR.parent / PROJECT_DIR.name.lower()
 # -- ALL USEFULL FILES -- #
 # ----------------------- #
 
-allfiles = buildlof(
+allfiles = build_tree(
     project = PROJECT_DIR,
     source  = Path('src'),
     target  = TARGET_DIR,
@@ -19,11 +19,29 @@ allfiles = buildlof(
 )
 
 
+# ----------------------------------- #
+# -- LET'S REMOVE UNUSED PDF FILES -- #
+# ----------------------------------- #
+
+for directdir, content in allfiles[TAG_DIR].items():
+    subfiles = content[TAG_FILE]
+
+    for directsubfile in subfiles:
+        if directsubfile.suffix == '.tex':
+            pdf_unused = directsubfile.parent / f"{directsubfile.stem}.pdf"
+
+            if pdf_unused in subfiles:
+                subfiles.remove(pdf_unused)
+
+
 # ------------------------------ #
 # -- ONLY SOURCE FILES SORTED -- #
 # ------------------------------ #
 
-allfiles_sorted = buildlof_sorted(
+from pprint import pprint;pprint(allfiles)
+exit()
+
+allfiles_sorted = build_tree_sorted(
     source   = SOURCE_DIR,
     allfiles = allfiles
 )
