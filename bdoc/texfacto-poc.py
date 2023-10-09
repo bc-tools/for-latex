@@ -61,14 +61,13 @@ treeview = build_tree(
 for directdir, content in treeview[TAG_DIR].items():
     subfiles = content[TAG_FILE]
 
-    for directsubfile in subfiles:
+# We need to work on a copy.
+    for directsubfile in subfiles[:]:
         if directsubfile.suffix == '.tex':
             pdf_unused = directsubfile.parent / f"{directsubfile.stem}.pdf"
 
             if pdf_unused in subfiles:
                 subfiles.remove(pdf_unused)
-
-    content[TAG_FILE] = subfiles
 
 
 # ------------------------------ #
