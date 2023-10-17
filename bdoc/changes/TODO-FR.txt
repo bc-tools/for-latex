@@ -1,0 +1,100 @@
+====
+bdoc - TODO
+====
+
+
+> ---------------------------- <
+
+texfacto
+
+    ---> gestion d'un README avant le about : cf nettoyage du src !!!!
+
+    ---> gestion des about
+
+    ---> resource : clarifier que ce qui est vu comme resource ne pas pas être au niveau des stys !!! Cf doc de tns_latex et aussi texfacto
+
+    ---> fichier sty vide : ignorer mais info log
+
+
+> ---------------------------- <
+
+pour rc-1
+
+    ---> latex3 strict pour showcase et listinginput
+
+    ---> on fait une clase finalement car il y ad es choix esthétique
+
+
+> ---------------------------- <
+
+ajout de enumitem dans main avec gestion des listes à la francaise : on vire di doc-header
+
+\usepackage{enumitem}
+\frenchsetup{StandardItemLabels=true}
+
+
+> ---------------------------- <
+
+pour local avant CTAN
+
+    ---> construction "à la main" (cf premiers package tns + texfacto à faire)
+
+    ---> une fois un seul sty fait, on passe à l3build tests unitaires !!!
+
+
+> ---------------------------- <
+
+bdocdate
+et
+bdocversion
+
+    --> option pour vérifie la date et pas juste la syntaxe
+        indiquer que ce choix vient de ce que j'utilise ourtils qui ajoute ces macros automatiquement pour moi donc les dates sont forcément bonnes.
+
+    --> intérpet d'option c'est que régalable globalement valeur par défaut : le faire comme cela on aura aussi une option et un setter global à coder
+
+
+> ---------------------------- <
+
+une fois macroenvsign ok, ajouter les fiches technqiues "utilisateurs" !!!
+
+
+> ---------------------------- <
+
+translatyion in contrbution workflow implemnted !!!
+
+
+> ---------------------------- <
+
+lang de babel si possible ????
+
+
+> ---------------------------- <
+
+a warning will tell to the user to load babel in case this has not been done.
+
+
+> ---------------------------- <
+
+\RequirePackage[numbered]{bookmark} ???
+
+
+> ---------------------------- <
+
+mise en place d'un package de type CSS (bdoc sert de test !)
+
+    ---> créer un package tnsstyle : on utilise des noms sémantiques et non des couleurs, penser aussi aux style de traits ou autre...
+
+    ---> gére emph note, warning...etc
+
+    ---> faire un truc modulable comme cela d'autres peuvent contribuer
+
++
+
+scinder en deux mais tout livrer ensemble !
+
+    ---> class pour une mef perso : police, marge
+
+    ---> pack pour le reste
+
+    ---> gestion noir & blanc par défaut et garder ancennes couleurs car sympa !

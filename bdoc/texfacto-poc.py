@@ -11,10 +11,14 @@ TARGET_DIR  = PROJECT_DIR.parent / PROJECT_DIR.name.lower()
 # -- DEBUG TOOLS -- #
 # ----------------- #
 
-def debug_treeview(treeview):
+def debug_treeview(
+    source,
+    treeview
+):
+    print(f"+ {source}")
     _recu_debug_treeview(
         treeview = treeview,
-        depth = 0
+        depth = 1
     )
 
     exit()
@@ -24,7 +28,7 @@ def _recu_debug_treeview(
     depth
 ):
     tab    = "  " * depth
-    depth += 2
+    depth += 1
 
     for kind, content in treeview.items():
         if kind == TAG_FILE:
@@ -41,7 +45,6 @@ def _recu_debug_treeview(
                 )
 
 
-
 # ----------------------- #
 # -- ALL USEFULL FILES -- #
 # ----------------------- #
@@ -51,6 +54,17 @@ treeview = build_tree(
     source  = Path('src'),
     target  = TARGET_DIR,
     readme  = Path('README.md'),
+    ignore = """
+test_*/
+tests_*/
+test_*.*
+tests_*.*
+
+tool_*/
+tools_*/
+tool_*.*
+tools_*.*
+"""
 )
 
 
@@ -61,7 +75,7 @@ treeview = build_tree(
 for directdir, content in treeview[TAG_DIR].items():
     subfiles = content[TAG_FILE]
 
-# We need to work on a copy.
+# We need to work on a copy of ''subfiles''.
     for directsubfile in subfiles[:]:
         if directsubfile.suffix == '.tex':
             pdf_unused = directsubfile.parent / f"{directsubfile.stem}.pdf"
@@ -74,7 +88,7 @@ for directdir, content in treeview[TAG_DIR].items():
 # -- ONLY SOURCE FILES SORTED -- #
 # ------------------------------ #
 
-debug_treeview(treeview)
+debug_treeview(SOURCE_DIR, treeview)
 
 
 allfiles_sorted = build_tree_sorted(
