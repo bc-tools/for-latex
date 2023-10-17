@@ -1,4 +1,5 @@
 general:
+  acronym: macro env-ironment sign-ature
   desc   : This package proposes tools for writing pure technical
            documentations of ¨latex packages and saving signatures
            of macros and environments in a file.

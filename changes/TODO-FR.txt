@@ -1,0 +1,29 @@
+====================
+Monoreop ''for-dev'' - TODO
+====================
+
+
+> ---------------------------- <
+
+third-party-imports  /cbdevtools
+
+
+> ---------------------------- <
+
+oneproject/build-project.bash
+
+    ---> suaver
+    ---> poetry à la fin!
+         long mais fonctionnel :
+         pip list --outdated | grep jinjang
+
+
+> ---------------------------- <
+
+monorepo.bash
+
+    ---> on centralise les bash généraux dans un seul TOUT SIMPLEMNT !!!
+
+    ---> permet de commander test sur tout ou juste un projet de
+
+    ---> faire version "intelligente" qui ne touche qu git a si deamndé

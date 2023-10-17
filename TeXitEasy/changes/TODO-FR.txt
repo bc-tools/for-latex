@@ -1,0 +1,36 @@
+================
+TeXitEasy - TODO
+================
+
+
+> ---------------------------- <
+
+orPyste dead ===> YAML used!
+
+
+
+> ---------------------------- <
+
+ne bosser qu'avec du python natif en coulisse : dépendnac plus permise maintenant
+
+
+> ---------------------------- <
+
+compilation bien plus fine ???
+
+    --> latexmk seul ??? , lualatex, ...
+    --> --shelleescpae, ...
+
+le plus simple est de passer via la commande à lancer
+
+
+> ---------------------------- <
+
+crérer pacj utilitaire latex : qui par exemple permet d'avoitr les fichiers utilisés par un doc pour la compile : on commence ç casser misstol
+
+    ---> on passe via --recorder pour le difhiers nécessaires
+
+
+> ---------------------------- <
+
+regpath en plus du match si cela fait sens...
