@@ -2,10 +2,17 @@
 bdoc - TODO
 ====
 
+---
+NOW
+---
 
 > ---------------------------- <
 
 texfacto
+
+    ---> construction "à la main" (cf premiers package tns + texfacto à faire)
+
+    ---> une fois un seul sty fait, on passe à l3build tests unitaires !!!
 
     ---> gestion d'un README avant le about : cf nettoyage du src !!!!
 
@@ -16,13 +23,19 @@ texfacto
     ---> fichier sty vide : ignorer mais info log
 
 
+-----
+LATER
+-----
+
 > ---------------------------- <
 
 pour rc-1
 
     ---> latex3 strict pour showcase et listinginput
 
-    ---> on fait une clase finalement car il y ad es choix esthétique
+    ---> classe + package car il y a des choix esthétique
+         + class pour une mef perso : police, marge
+         + pack pour le reste
 
 
 > ---------------------------- <
@@ -31,15 +44,6 @@ ajout de enumitem dans main avec gestion des listes à la francaise : on vire di
 
 \usepackage{enumitem}
 \frenchsetup{StandardItemLabels=true}
-
-
-> ---------------------------- <
-
-pour local avant CTAN
-
-    ---> construction "à la main" (cf premiers package tns + texfacto à faire)
-
-    ---> une fois un seul sty fait, on passe à l3build tests unitaires !!!
 
 
 > ---------------------------- <
@@ -76,7 +80,7 @@ a warning will tell to the user to load babel in case this has not been done.
 
 > ---------------------------- <
 
-\RequirePackage[numbered]{bookmark} ???
+\RequirePackage[numbered]{bookmark} utile ???
 
 
 > ---------------------------- <
@@ -92,9 +96,5 @@ mise en place d'un package de type CSS (bdoc sert de test !)
 +
 
 scinder en deux mais tout livrer ensemble !
-
-    ---> class pour une mef perso : police, marge
-
-    ---> pack pour le reste
 
     ---> gestion noir & blanc par défaut et garder ancennes couleurs car sympa !
