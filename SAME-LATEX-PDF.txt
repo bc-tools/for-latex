@@ -1,1 +1,1 @@
-SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex MYTEXFILE.tex
+SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex MY_TEX_FILE.tex
