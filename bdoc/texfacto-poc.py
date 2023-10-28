@@ -1,10 +1,13 @@
 from src2prod import *
 
-from texfacto import *
+from texfacto_POC import *
 
 PROJECT_DIR = Path(__file__).parent
 SOURCE_DIR  = PROJECT_DIR / Path('src')
 TARGET_DIR  = PROJECT_DIR.parent / PROJECT_DIR.name.lower()
+
+DEBUG = False
+# DEBUG = True
 
 
 # ----------------- #
@@ -13,7 +16,7 @@ TARGET_DIR  = PROJECT_DIR.parent / PROJECT_DIR.name.lower()
 
 def debug_treeview(
     source,
-    treeview
+    treeview,
 ):
     print(f"+ {source}")
     _recu_debug_treeview(
@@ -21,7 +24,9 @@ def debug_treeview(
         depth = 1
     )
 
-    exit()
+    if DEBUG:
+        exit()
+
 
 def _recu_debug_treeview(
     treeview,
@@ -88,8 +93,11 @@ for directdir, content in treeview[TAG_DIR].items():
 # -- ONLY SOURCE FILES SORTED -- #
 # ------------------------------ #
 
-debug_treeview(SOURCE_DIR, treeview)
+# debug_treeview(SOURCE_DIR, treeview)
 
+# from pprint import pprint;pprint(treeview);exit()
+for k in treeview[TAG_DIR]:print(k.name)
+exit()
 
 allfiles_sorted = build_tree_sorted(
     source   = SOURCE_DIR,
