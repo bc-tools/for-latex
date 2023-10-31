@@ -3,5 +3,5 @@ latex_show_end   = End of the real output
 
 exa_title     = Example
 rmk_title     = Remark
-info_title    = Info
+note_title    = Note
 warning_title = Warning
