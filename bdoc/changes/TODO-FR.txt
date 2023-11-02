@@ -6,6 +6,9 @@ bdoc - TODO
 NOW
 ---
 
+
+recompiler tous les PDFs ::: bash afin de vérifier que tout fonctionne
+
 > ---------------------------- <
 
 texfacto

@@ -11,34 +11,6 @@
 \usepackage{listing}
 
 
-% WARNING!
-%
-% We don't need to include the lines below because this is done before
-% by the file ''listing-direct.tex''.
-
-\newtcblisting{bdoc-doc-latex-alone}{%
-    minted language = latex,
-    breakable,
-% Code and output
-    colback = yellow!5,
-% Frame
-    colframe = darkgray,
-    shadow   = {.75mm}{-.75mm}{0mm}{black!30},
-%        sharp corners, % OLD STYLE !
-    arc    = .75mm,
-    left   = 1mm, right = 1mm,
-    bottom = 1mm, top   = 1mm,
-% Separating line
-    enhanced,
-    segmentation style = {
-        gray,
-        dash pattern = {on 5pt off 2.5pt},
-        line width   = 1.25pt
-    },
-    listing only
-}
-
-
 % == NEEDED == %
 
 % Source.
@@ -91,10 +63,10 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 \begin{bdocexa}[Face à face]
 	\leavevmode
-
-	\begin{bdoc-doc-latex-alone}
+	
+	\begin{bdoclatex}[code]
 \bdoclatexinput[sbs]{examples/listing/xyz.tex}
-	\end{bdoc-doc-latex-alone}
+	\end{bdoclatex}
 
 	Ceci produit la mise en forme suivante.
 
@@ -107,10 +79,10 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 \begin{bdocexa}[À la suite]
 	\leavevmode
-
-	\begin{bdoc-doc-latex-alone}
+	
+	\begin{bdoclatex}[code]
 \bdoclatexinput{examples/listing/xyz.tex}
-	\end{bdoc-doc-latex-alone}
+	\end{bdoclatex}
 
 	Ceci produit la mise en forme suivante où l'option employée par défaut est \bdocinlatex#std#.
 
@@ -123,10 +95,10 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 \begin{bdocexa}[Juste le code]
 	\leavevmode
-
-	\begin{bdoc-doc-latex-alone}
+	
+	\begin{bdoclatex}[code]
 \bdoclatexinput[code]{examples/listing/xyz.tex}
-	\end{bdoc-doc-latex-alone}
+	\end{bdoclatex}
 
 	Ceci produit la mise en forme suivante.
 

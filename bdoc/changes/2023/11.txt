@@ -2,6 +2,21 @@
 
 
 ==
+02  (0.7.1-beta)
+==
+
+-----
+:fix:
+-----
+
+[[:api:]]
+Focusing: the use of verbatim content was no longer possible with the latest version of the \env ''bdocexa''.
+
+
+// ---------- //
+
+
+==
 02  (0.7.0-beta)
 ==
 

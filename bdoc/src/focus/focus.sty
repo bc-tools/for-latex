@@ -38,24 +38,30 @@
   { Unknown ~ rafters ~ option. }
   { See ~ the ~ documentation ~ for ~ the ~ supported ~ options. }
 
-\NewDocumentEnvironment{bdocexa}{D<>{nb} O{} +b}{
+\NewDocumentEnvironment{bdocexa}{D<>{nb} O{}}{
   \str_case:nnF { #1 } {
     { nb   } {
       \begin{@@bdocexa@nb}[#2]
-	    #3
-      \end{@@bdocexa@nb}
     }
     { nonb } {
       \begin{@@bdocexa@no@nb}[#2]
-  	    #3
-      \end{@@bdocexa@no@nb}
     }
   }{
     \msg_error:nn { bdoc } { env-bdocexa-unknown-option }
   }
-}{}
+}{
+  \str_case:nnF { #1 } {
+    { nb   } {
+      \end{@@bdocexa@nb}
+    }
+    { nonb } {
+      \end{@@bdocexa@no@nb}
+    }
+  }{}
+}
 
 \ExplSyntaxOff
+
 
 
 % :: REMARK :: %
