@@ -23,14 +23,6 @@ texfacto
     ---> fichier sty vide : ignorer mais info log
 
 
-> ---------------------------- <
-
-bdoc
-
-
-    ---> bdocexa* devient ???
-
-
 
 -----
 LATER
@@ -45,6 +37,15 @@ pour rc-1
     ---> classe + package car il y a des choix esthétique
          + class pour une mef perso : police, marge
          + pack pour le reste
+
+
+> ---------------------------- <
+
+focus
+
+    ---> nonb as a package option
+
+    ---> code auto  mêm si c'est fixé a priori
 
 
 > ---------------------------- <

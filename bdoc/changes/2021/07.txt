@@ -221,7 +221,7 @@ The project has be named \bdoc for "Basic \Docu".
 -------
 
 [[:api:]]
-\env ''doctopic'': the single option ''ml'' (multiline) has been renamed to ''t'' (title).
+\Env ''doctopic'': the single option ''ml'' (multiline) has been renamed to ''t'' (title).
 
 
 // ---------- //
