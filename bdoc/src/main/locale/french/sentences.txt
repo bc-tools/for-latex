@@ -4,7 +4,7 @@ latex_show_end   = Fin du rendu réel
 exa_title  = Exemple
 rmk_title  = Remarque
 note_title = Note
-note_tip   = Conseil
+note_tip   = Astuce
 
 important_title = Important
 caution_title   = Caution

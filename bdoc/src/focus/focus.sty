@@ -32,11 +32,24 @@
 
 % :: EXAMPLE - PUBLIC VERSIONS :: %
 
-\NewDocumentEnvironment{bdocexa}{D<>{nb} O{} b}{
-\begin{@@bdocexa@nb}[#2]
-	#3
-\end{@@bdocexa@nb}
+\ExplSyntaxOn
+
+
+
+\NewDocumentEnvironment{bdocexa}{D<>{nb} O{} +b}{
+  \str_if_eq:nnTF { #1 }{ nb }{
+    \begin{@@bdocexa@nb}[#2]
+	  #3
+    \end{@@bdocexa@nb}
+  }{
+    \begin{@@bdocexa@no@nb}[#2]
+	  #3
+    \end{@@bdocexa@no@nb}
+  }
 }{}
+
+\ExplSyntaxOff
+
 
 % :: REMARK :: %
 

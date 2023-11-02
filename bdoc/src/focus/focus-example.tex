@@ -30,24 +30,35 @@
 
 \subsection{Des exemples}
 
-Des exemples numérotés, ou non, s'indiquent via les environnements \bdocenv{bdocexa} et  \bdocenv{bdocexa*} respectivement. Voici différents emplois possibles.
+Des exemples numérotés, ou non, s'indiquent via l'environnement \bdocenv{bdocexa} qui propose deux arguments optionnels.
+
+\begin{enumerate}	
+	\item Le 1\ier{} argument entre chevrons \verb#<...># peut prendre au choix les valeurs \verb#nb# pour numéroter, valeur par défaut, \verb#nonb# pour ne pas numéroter.
+
+	\item Le 2\ieme{} argument entre crochets \verb#[...]# sert à ajouter un mini-titre.
+\end{enumerate}
+
+
+Voici différents emplois possibles.
 
 \bdoclatexinput[sbs]{examples/focus/exa.tex}
 
 
-%% ------------------ %
-%
-%
-%Il peut parfois être utile de revenir à la ligne dès le début du contenu. Voici comment faire (cette astuce reste valable pour les environnements présentés dans les sous-sections suivantes). Noter au passage que la numérotation suit celle de l'exemple précédent comme souhaité.
-%
-%\bdoclatexinput[sbs]{examples/focus/exa-leavevmode.tex}
-%
-%
-%% ------------------ %
-%
-%
-%\begin{bdocnote}
-%	La numérotation des exemples est remise à zéro dès qu'une section  de niveau au moins égale à une \bdocinlatex|\subsubsection| est ouverte.
-%\end{bdocnote}
+% ------------------ %
+
+
+\begin{bdocimportant}
+	La numérotation des exemples est remise à zéro dès qu'une section  de niveau au moins égale à une \bdocinlatex|\subsubsection| est ouverte.
+\end{bdocimportant}
+
+
+% ------------------ %
+
+
+\begin{bdoctip}
+	Il peut parfois être utile de revenir à la ligne dès le début du contenu. Voici comment faire (ce tour de passe-passe reste valable pour les environnements présentés dans les sous-sections suivantes). Noter au passage que la numérotation suit celle de l'exemple précédent comme souhaité.
+
+	\bdoclatexinput[sbs]{examples/focus/exa-leavevmode.tex}
+\end{bdoctip}
 
 \end{document}
