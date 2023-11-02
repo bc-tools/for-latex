@@ -36,11 +36,7 @@ fi
 # --------------------- #
 
 function nocompile {
-    echo ""
-    echo "-- COMPILE FAILES --"
-    echo "See ''$1''."
     open "$1"
-    exit 1
 }
 
 cd "$TARGET"
@@ -52,10 +48,12 @@ for f in */*.tex; do
 
     if [ ! "$fdir" = "changelog" ]
     then
-        SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -silent -shell-escape -pdflatex "$TARGET/$f"
-        # || nocompile "$TARGET/$f"
+        echo "-- NEW TEX FILE --"
+        echo "$f"
+        echo ""
+        SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -quiet -pdf -pdflatex="pdflatex --interaction=nonstopmode --halt-on-error --shell-escape  %O %S" "$TARGET/$f" || nocompile "$TARGET/$f"
 
-        # exit 0
+        # latexmk -c "$TARGET/$f"
     fi
 
 
