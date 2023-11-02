@@ -1,0 +1,21 @@
+// ---------- //
+
+
+==
+02  (0.7.0-beta)
+==
+
+--------
+:update:
+--------
+
+[[:api:]]
+Showcase : a full list of \envs has been build by following the choices made by cf::''asciidoctor ; https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions''.
+
+    * ''bdocexample''
+    * ''bdocremark''
+    * ''bdoctip''
+    * ''bdocnote''
+    * ''bdocimportant''
+    * ''bdoccaution''
+    * ''bdocwarning''

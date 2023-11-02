@@ -1,7 +1,11 @@
 latex_show_start = Début du rendu réel
 latex_show_end   = Fin du rendu réel
 
-exa_title     = Exemple
-rmk_title     = Remarque
-note_title    = Note
-warning_title = Avertissement
+exa_title  = Exemple
+rmk_title  = Remarque
+note_title = Note
+note_tip   = Conseil
+
+important_title = Important
+caution_title   = Caution
+warning_title   = Danger

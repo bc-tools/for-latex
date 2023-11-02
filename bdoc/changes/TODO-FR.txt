@@ -27,13 +27,8 @@ texfacto
 
 bdoc
 
-    ---> env à la Admonitions
 
-            + NOTE = NOTE
-            + TIP = CONSEIL
-            + IMPORTANT
-            + CAUTION = ATTENTION pour conseiller au lecteur d'agir avec prudence (c'est-à-dire d'être prudent).
-            + WARNING = AVERTISSEMENT pour informer le lecteur d'un danger, d'un préjudice ou de conséquences qui existent.
+    ---> bdocexa* devient ???
 
 
 
