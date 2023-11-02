@@ -13,6 +13,14 @@
 Focusing: the use of verbatim content was no longer possible with the latest version of the \env ''bdocexa''.
 
 
+--------
+:fordev:
+--------
+
+[[:tech:]]
+Avoid unwanted \pdf changes: a \bash file added (but later the job will be done by \texfacto).
+
+
 // ---------- //
 
 
