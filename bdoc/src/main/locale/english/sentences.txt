@@ -4,8 +4,8 @@ latex_show_end   = End of the real output
 exa_title  = Example
 rmk_title  = Remark
 note_title = Note
-note_tip   = Tip
+tip_title   = Tip
 
 important_title = Important
 caution_title   = Caution
-warning_title   = Warning
+warn_title      = Warning

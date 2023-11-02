@@ -2,31 +2,19 @@
 
 
 ==
-02  (0.7.0-beta)   ????
+02  (0.7.0-beta)
 ==
 
 -------
 :break:
 -------
 
-[[:api:]]     ????
+[[:api:]]
 Focusing.
 
     1) The \env ''bdocexa*'' has been removed
 
-    1) The \env ''bdocexa'' has a boolean option ''nonb'' for not numbering an example locally.
-
-
---------
-:update:
---------
-
-[[:doc:]]     ????
-All new versions form the version::''0.5.0-beta'' one have been indicated in the user manual (this \infos were missing).
-
-    ??? 0.5.0-beta
-    ??? 0.6.0-beta
-    ??? 0.7.0-beta
+    1) The \env ''bdocexa'' has a "choice" option ''nb/nonb'' for numbering or not an example locally.
 
 
 // ---------- //
@@ -45,9 +33,9 @@ Focusing: a full list of \envs has been build by following the choices made by c
 
     1) Unchanged.
 
-        * ''bdocexample''
-        * ''bdocremark''
-        * ''bdocwarning''
+        * ''bdocexa''
+        * ''bdocrem''
+        * ''bdocwarn''
 
     1) Added.
 

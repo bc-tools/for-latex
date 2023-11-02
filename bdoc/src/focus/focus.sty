@@ -11,13 +11,13 @@
 
 %%%
 % See the \doc of the macro ''\newtheorem'' from the package ''amsthm''
-% to have \infos about the environment ''bdocexa''.
+% to have \infos about the environment ''@@bdocexa@nb''.
 %%%
 \newtheorem{@@bdocexa@nb}{\bdoc@trans@exa@title}%
                     [subsubsection]
 
 %%%
-% We redefine the counter associated to the environment ''bdocexa''
+% We redefine the counter associated to the environment ''@@bdocexa@nb''
 % to obtain only one single arabic number.
 %%%
 \renewcommand{\the@@bdocexa@nb}{\arabic{@@bdocexa@nb}}
@@ -25,26 +25,33 @@
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocexa*''.
+% to have \infos about the environment ''@@bdocexa@no@nb''.
 %%%
 \newtheorem*{@@bdocexa@no@nb}{\bdoc@trans@exa@title}
 
 
-% :: EXAMPLE - PUBLIC VERSIONS :: %
+% :: EXAMPLE - PUBLIC VERSION :: %
 
 \ExplSyntaxOn
 
-
+\msg_set:nnnn { bdoc } { env-bdocexa-unknown-option }
+  { Unknown ~ rafters ~ option. }
+  { See ~ the ~ documentation ~ for ~ the ~ supported ~ options. }
 
 \NewDocumentEnvironment{bdocexa}{D<>{nb} O{} +b}{
-  \str_if_eq:nnTF { #1 }{ nb }{
-    \begin{@@bdocexa@nb}[#2]
-	  #3
-    \end{@@bdocexa@nb}
+  \str_case:nnF { #1 } {
+    { nb   } {
+      \begin{@@bdocexa@nb}[#2]
+	    #3
+      \end{@@bdocexa@nb}
+    }
+    { nonb } {
+      \begin{@@bdocexa@no@nb}[#2]
+  	    #3
+      \end{@@bdocexa@no@nb}
+    }
   }{
-    \begin{@@bdocexa@no@nb}[#2]
-	  #3
-    \end{@@bdocexa@no@nb}
+    \msg_error:nn { bdoc } { env-bdocexa-unknown-option }
   }
 }{}
 
@@ -64,7 +71,7 @@
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocrem''.
+% to have \infos about the environment ''bdocimportant''.
 %%%
 \newtheorem*{bdocimportant}{\bdoc@trans@important@title}
 
@@ -73,7 +80,7 @@
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocinfo''.
+% to have \infos about the environment ''bdocnote''.
 %%%
 \newtheorem*{bdocnote}{\bdoc@trans@note@title}
 
@@ -82,7 +89,7 @@
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocinfo''.
+% to have \infos about the environment ''bdoctip''.
 %%%
 \newtheorem*{bdoctip}{\bdoc@trans@tip@title}
 
@@ -101,6 +108,6 @@
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocwarning''.
+% to have \infos about the environment ''bdocwarn''.
 %%%
-\newtheorem*{bdocwarning}{\bdoc@trans@warning@title}
+\newtheorem*{bdocwarn}{\bdoc@trans@warn@title}

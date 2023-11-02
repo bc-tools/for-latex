@@ -27,12 +27,12 @@ Voici deux exemples d'utilisation.
 \end{enumerate}
 
 
-\begin{bdocinfo}
+\begin{bdocimportant}
     La macro \bdocmacro{bdocinlatex} est utilisable dans une note de pied de page. En voici la preuve
     \footnote{
     	\bdocinlatex+$minted = TOP$+ a été tapé \bdocinlatex|\bdocinlatex+$minted = TOP$+| dans cette note de bas de page..
     }.
-\end{bdocinfo}
+\end{bdocimportant}
 
 
 \begin{bdocrem}
@@ -83,11 +83,11 @@ Voici deux exemples d'utilisation.
 % ------------------ %
 
 
-\begin{bdocwarning}
+\begin{bdocwarn}
 	Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut. Voici un cas d'usage.
 
 	\bdoclatexshow[explain = Ceci permet d'obtenir ce qui est attendu :]
 	              {examples/listing/strange.tex}
-\end{bdocwarning}
+\end{bdocwarn}
 
 \end{document}
