@@ -58,7 +58,6 @@ Focusing: a full list of \envs has been build by following the choices made by c
 
         * ''bdocexa''
         * ''bdocrem''
-        * ''bdocwarn''
 
     1) Added.
 
@@ -66,3 +65,4 @@ Focusing: a full list of \envs has been build by following the choices made by c
         * ''bdocnote'' instead of ''bdocinfo''.
         * ''bdocimportant''
         * ''bdoccaution''
+        * ''bdocwarn'' instead of ''bdocwarning''.
