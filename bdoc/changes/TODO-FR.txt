@@ -46,6 +46,8 @@ focus
 
     ---> nonb as a package option
 
+    ---> "choice" option ''nb/nonb'' poir tous les cas mais en choissisant de numéroté que les exemples par défaut
+
     ---> code auto  mêm si c'est fixé a priori
 
 
