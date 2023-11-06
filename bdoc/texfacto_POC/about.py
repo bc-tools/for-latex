@@ -1,5 +1,9 @@
 from yaml import safe_load
 
+import natsort
+
+
+TAG_ABOUT_FILE = "about.yaml"
 
 def build_lof_sorted(
     source,
