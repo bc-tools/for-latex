@@ -2,6 +2,21 @@
 
 
 ==
+08  (0.8.0-beta)
+==
+
+--------
+:fordev:
+--------
+
+[[:tech:]]
+\ctan like flat \struct for resources.
+
+
+// ---------- //
+
+
+==
 02  (0.7.1-beta)
 ==
 
