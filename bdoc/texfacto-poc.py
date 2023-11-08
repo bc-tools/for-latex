@@ -93,18 +93,13 @@ for directdir, content in treeview[TAG_DIR].items():
 # -- ONLY SOURCE FILES SORTED -- #
 # ------------------------------ #
 
-# debug_treeview(SOURCE_DIR, treeview)
-# from pprint import pprint;pprint(treeview);exit()
+# debug_treeview(SOURCE_DIR, treeview);exit()
+# from pprint import pprint;pprint(list(treeview[TAG_DIR].keys()));exit()
 
-for p in treeview[TAG_FILE]:
-    if p.name == TAG_ABOUT_FILE:
-        with p.open(
-            encoding='utf8',
-            mode='r',
-        ) as f:
-            about_cfg = safe_load(f)
-
-        print(about_cfg)
+build_project(
+    source   = SOURCE_DIR,
+    treeview = treeview
+)
 
 # for k in treeview[TAG_DIR]:print(k.name)
 exit()
