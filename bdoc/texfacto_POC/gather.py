@@ -13,6 +13,8 @@ TAG_TOC  = "toc"
 TAG_ABOUT_FILE = "about.yaml"
 TAG_TEMP_DOC   = ".tmpdoc"
 
+TAG_CFG_EXT = "cfg"
+
 
 def dirs2analyze(
     source,
@@ -99,6 +101,7 @@ def emptydir(folder):
 
     folder.mkdir(parents = True)
 
+TODO
 
 def build_project(
     source  ,
@@ -125,8 +128,18 @@ FINAL PRODUCT "{projectname}"
     emptydir(tmpdocfolder)
 
     src2dest = {
-        'sty': projectfolder / f"{projectname}.sty",
-        'tex': tmpdocfolder / f"{projectname}-doc.tex",
+        'sty': (
+            "code",
+            projectfolder / f"{projectname}.sty",
+        ),
+        'tex': (
+            "doc",
+            tmpdocfolder / f"{projectname}-doc.tex",
+        ),
+        'cfg': (
+            "config",
+            None,
+        ),
     }
 
     filesadded = defaultdict(list)
@@ -134,26 +147,23 @@ FINAL PRODUCT "{projectname}"
     for onedir in sorteddirs:
         print(f'+ Working in {onedir}')
 
-        content = treeview[TAG_DIR][onedir]
+        contentdir = treeview[TAG_DIR][onedir]
 
         sortedfiles = files2analyze(
             onedir   = onedir,
-            allfiles = list(content[TAG_FILE])
+            allfiles = list(contentdir[TAG_FILE])
         )
 
-        for onefile in sortedfiles:
-            ext = onefile.suffix[1:]
-            destfile = src2dest[ext]
+        for srcfile in sortedfiles:
+            ext = srcfile.suffix[1:]
+            kind, destfile = src2dest[ext]
 
             print(
                 f'   * [{ext.upper()}] '
-                f'Adding content file from {onefile.name}'
-                 '\n'
-                f'   *       '
-                f'                      to {destfile.name}'
+                f'kind.title() file {srcfile.name}'
             )
 
-            with onefile.open(
+            with srcfile.open(
                 encoding = "utf-8",
                 mode = "r"
             ) as f:
@@ -165,3 +175,18 @@ FINAL PRODUCT "{projectname}"
             ) as f:
                 f.write('\n')
                 f.write(content)
+
+
+        for srcfile in contentdir[TAG_FILE]:
+            if srcfile.suffix[1:] == TAG_CFG_EXT:
+                destfile = projectfolder / srcfile.name
+
+                print(
+                    f'   * [{TAG_CFG_EXT.upper()}] '
+                    f'Config file {srcfile.name}'
+                )
+
+                destfile.write_text(
+                    encoding = "utf-8",
+                    data = srcfile.read_text()
+                )
