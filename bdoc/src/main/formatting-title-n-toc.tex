@@ -1,10 +1,10 @@
-\input{../doc-header.tex}
+\input{../doc-header.cfg}
 
 \usepackage{../macroenv/macroenv}
 \usepackage{../listing/listing}
 \usepackage{../inenglish/inenglish}
 
-% TESTING LOCAL IMPLEMENTATION % 
+% TESTING LOCAL IMPLEMENTATION %
 
 \usepackage[lang = french]{main}
 
@@ -29,14 +29,14 @@ Les packages \bdocpack{titlesec}, \bdocpack{tocbasic} et \bdocpack{bookmark} son
 \renewcommand\thesubsection{\arabic{subsection}.}
 \renewcommand\thesubsubsection{\roman{subsubsection}.}
 
-\titleformat{\paragraph}[hang]% 
-            {\normalfont\normalsize\bfseries}% 
-            {\theparagraph}{1em}% 
+\titleformat{\paragraph}[hang]%
+            {\normalfont\normalsize\bfseries}%
+            {\theparagraph}{1em}%
             {}
 
-\titlespacing*{\paragraph}% 
-              {0pt}% 
-              {3.25ex plus 1ex minus .2ex}% 
+\titlespacing*{\paragraph}%
+              {0pt}%
+              {3.25ex plus 1ex minus .2ex}%
               {0.5em}
 
 % Source
@@ -62,4 +62,3 @@ Les packages \bdocpack{titlesec}, \bdocpack{tocbasic} et \bdocpack{bookmark} son
 \end{bdoclatex}
 
 \end{document}
-

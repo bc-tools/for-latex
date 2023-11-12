@@ -1,4 +1,4 @@
-\input{../doc-header.tex}
+\input{../doc-header.cfg}
 
 \usepackage[lang = french]{../main/main}
 \usepackage{../macroenv/macroenv}
@@ -11,7 +11,7 @@
 \usepackage{listing}
 
 
-% == NEEDED == %
+% == FORDOC == %
 
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
@@ -63,7 +63,7 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 \begin{bdocexa}[Face à face]
 	\leavevmode
-	
+
 	\begin{bdoclatex}[code]
 \bdoclatexinput[sbs]{examples/listing/xyz.tex}
 	\end{bdoclatex}
@@ -79,7 +79,7 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 \begin{bdocexa}[À la suite]
 	\leavevmode
-	
+
 	\begin{bdoclatex}[code]
 \bdoclatexinput{examples/listing/xyz.tex}
 	\end{bdoclatex}
@@ -95,7 +95,7 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 \begin{bdocexa}[Juste le code]
 	\leavevmode
-	
+
 	\begin{bdoclatex}[code]
 \bdoclatexinput[code]{examples/listing/xyz.tex}
 	\end{bdoclatex}

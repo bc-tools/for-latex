@@ -2,6 +2,21 @@
 
 
 ==
+08  (0.9.0-beta)
+==
+
+--------
+:fordev:
+--------
+
+[[:tech:]]
+Use of path::''doc-header.cfg'' instead of path::''doc-header.tex''.
+
+
+// ---------- //
+
+
+==
 08  (0.8.0-beta)
 ==
 
