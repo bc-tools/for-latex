@@ -2,6 +2,21 @@
 
 
 ==
+12  (0.10.1-beta)
+==
+
+--------
+:update:
+--------
+
+[[:doc:]]
+\Intro: use of a section rather than a sub one.
+
+
+// ---------- //
+
+
+==
 12  (0.10.0-beta)
 ==
 
