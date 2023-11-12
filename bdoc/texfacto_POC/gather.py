@@ -12,6 +12,7 @@ TAG_TOC  = "toc"
 
 TAG_ABOUT_FILE = "about.yaml"
 TAG_TEMP_DOC   = ".tmpdoc"
+TAG_TEMP_SRC   = ".tmpsrc"
 
 TAG_CFG_EXT = "cfg"
 
@@ -101,14 +102,19 @@ def emptydir(folder):
 
     folder.mkdir(parents = True)
 
-TODO
+
+def prepare(ext, srcfile, ):
+    ...
+
+
 
 def build_project(
     source  ,
     treeview
 ):
-    projectname  = source.parent.name
+    projectname   = source.parent.name
     projectfolder = source.parent / projectname
+    tmpsrcfolder  = projectfolder / TAG_TEMP_SRC
     tmpdocfolder  = source.parent / TAG_TEMP_DOC
 
     sorteddirs = dirs2analyze(
@@ -126,6 +132,10 @@ FINAL PRODUCT "{projectname}"
 
     emptydir(projectfolder)
     emptydir(tmpdocfolder)
+
+
+
+    TODO
 
     src2dest = {
         'sty': (
