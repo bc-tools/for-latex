@@ -15,8 +15,8 @@ TAG_ABOUT_FILE = "about.yaml"
 TAG_STY = "sty"
 TAG_TEX = "tex"
 
-TAG_CFG_STY = "sty"
-TAG_CFG_TEX = "tex"
+TAG_CFG_STY = "cfg.sty"
+TAG_CFG_TEX = "cfg.tex"
 
 
 def dirs2analyze(
@@ -117,6 +117,21 @@ def emptydir(folder):
     folder.mkdir(parents = True)
 
 
+def copyfromto(srcfile, destfile, mode="w"):
+    with srcfile.open(
+        encoding = "utf-8",
+        mode = "r"
+    ) as f:
+        content = f.read()
+
+    with destfile.open(
+        encoding = "utf-8",
+        mode = mode
+    ) as f:
+        f.write('\n')
+        f.write(content)
+
+
 def prepare(ext, srcfile, ):
     ...
 
@@ -166,6 +181,11 @@ FINAL PRODUCT "{projectname}"
         for srcfile in resources:
             print(
                 f'   * [RES] Copying {srcfile.name}'
+            )
+
+            copyfromto(
+                srcfile  = srcfile,
+                destfile = projectfolder_TEMP / srcfile.name
             )
 
     TODO
