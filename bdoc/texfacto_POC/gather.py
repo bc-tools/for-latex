@@ -291,7 +291,7 @@ def adddocsubdir(source, tmpdir, dirview, firstcall=True):
         if firstcall:
             print(f'   * [RES-DOC] Copying {relpath}/')
 
-        destdir = tmpdir / "FR" / relpath
+        destdir = tmpdir / relpath
 
         if not destdir.is_dir():
             destdir.mkdir(parents = True)
@@ -300,7 +300,6 @@ def adddocsubdir(source, tmpdir, dirview, firstcall=True):
             copyfromto(srcfile, destdir / srcfile.name)
 
         adddocsubdir(source, tmpdir, dircontent[TAG_DIR], firstcall=False)
-
 
 
 EXTRACT_FROM = {
@@ -368,3 +367,64 @@ FINAL PRODUCT "{projectname}"
             )
 
         adddocsubdir(onedir, projectfolder_TEMP, contentdir[TAG_DIR])
+
+
+    codefile = projectfolder_TEMP / f"{projectname}.sty"
+    code     = ''
+
+    for tmpfile in [
+        ".tmp_pack_import.sty",
+        ".tmp_pack_options.sty",
+        ".tmp_pack_src.sty",
+    ]:
+        with (projectfolder_TEMP / tmpfile).open(
+            encoding = "utf-8",
+            mode = "r"
+        ) as f:
+            code += f.read()
+
+    code = code.strip()
+    code += "\n"
+
+    with codefile.open(
+        encoding = "utf-8",
+        mode = "a"
+    ) as f:
+        f.write(code)
+
+
+    codefile = projectfolder_TEMP / f"{projectname}-FR.tex"
+    code     = r"""
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[french]{babel, varioref}
+
+\usepackage{enumitem}
+\frenchsetup{StandardItemLabels=true}
+    """.strip() + '\n'*3
+
+    for tmpfile in [
+        ".tmp_fordoc.tex",
+        ".tmp_thedoc.tex",
+    ]:
+        if tmpfile == ".tmp_thedoc.tex":
+            code += "\\begin{document}\n"
+
+        with (projectfolder_TEMP / tmpfile).open(
+            encoding = "utf-8",
+            mode = "r"
+        ) as f:
+            code += f.read()
+
+
+    code = code.strip()
+    code += "\n\\end{document}\n"
+
+    with codefile.open(
+        encoding = "utf-8",
+        mode = "a"
+    ) as f:
+        f.write(code)
