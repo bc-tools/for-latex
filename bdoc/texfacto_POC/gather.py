@@ -404,7 +404,9 @@ FINAL PRODUCT "{projectname}"
 
 \usepackage{enumitem}
 \frenchsetup{StandardItemLabels=true}
-    """.strip() + '\n'*3
+    """.strip() + f"""
+\\usepackage{{{projectname}}}
+    """.rstrip() + '\n'*3
 
     for tmpfile in [
         ".tmp_fordoc.tex",
