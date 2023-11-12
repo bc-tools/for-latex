@@ -12,7 +12,6 @@ TAG_TOC  = "toc"
 
 TAG_ABOUT_FILE = "about.yaml"
 TAG_TEMP_DOC   = ".tmpdoc"
-TAG_TEMP_SRC   = ".tmpsrc"
 
 TAG_CFG_EXT = "cfg"
 
@@ -93,12 +92,12 @@ def files2analyze(
 
 def emptydir(folder):
     if folder.is_dir():
-        print(f'+ Cleaning the content of the final product folder src/{folder.name}')
+        print(f'+ Cleaning src/{folder.name}')
 
         rmtree(folder)
 
     else:
-        print(f'+ Creation of the final product folder {folder.name}')
+        print(f'+ Creation of {folder.name}')
 
     folder.mkdir(parents = True)
 
@@ -112,9 +111,10 @@ def build_project(
     source  ,
     treeview
 ):
-    projectname   = source.parent.name
+    projectname = source.parent.name
+
     projectfolder = source.parent / projectname
-    tmpsrcfolder  = projectfolder / TAG_TEMP_SRC
+    tmpsrcfolder  = source.parent / f".{projectname}"
     tmpdocfolder  = source.parent / TAG_TEMP_DOC
 
     sorteddirs = dirs2analyze(
@@ -130,10 +130,25 @@ FINAL PRODUCT "{projectname}"
 --------------{extradeco}
     """)
 
-    emptydir(projectfolder)
+    emptydir(tmpsrcfolder)
     emptydir(tmpdocfolder)
 
+    for onedir in sorteddirs:
+        print(f'+ Working in src/{onedir.relative_to(source)}')
 
+        contentdir = treeview[TAG_DIR][onedir]
+
+        sortedfiles = files2analyze(
+            onedir   = onedir,
+            allfiles = list(contentdir[TAG_FILE])
+        )
+
+        for srcfile in sortedfiles:
+            ext = srcfile.suffix[1:]
+
+            print(
+                f'   * [{ext.upper()}] Analyzing {srcfile.name}'
+            )
 
     TODO
 
