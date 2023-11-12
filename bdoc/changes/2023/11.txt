@@ -2,7 +2,22 @@
 
 
 ==
-08  (0.9.0-beta)
+12  (0.10.0-beta)
+==
+
+--------
+:fordev:
+--------
+
+[[:tech:]]
+Use of path::''doc-header.cfg.tex'' instead of path::''doc-header.cfg''. It this a joke?
+
+
+// ---------- //
+
+
+==
+12  (0.9.0-beta)
 ==
 
 --------

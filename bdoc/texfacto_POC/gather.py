@@ -11,7 +11,6 @@ TAG_DIR  = "dir"
 TAG_TOC  = "toc"
 
 TAG_ABOUT_FILE = "about.yaml"
-TAG_TEMP_DOC   = ".tmpdoc"
 
 TAG_CFG_EXT = "cfg"
 
@@ -113,9 +112,8 @@ def build_project(
 ):
     projectname = source.parent.name
 
-    projectfolder = source.parent / projectname
-    tmpsrcfolder  = source.parent / f".{projectname}"
-    tmpdocfolder  = source.parent / TAG_TEMP_DOC
+    projectfolder      = source.parent / projectname
+    projectfolder_TEMP = source.parent / f".{projectname}"
 
     sorteddirs = dirs2analyze(
         source  = source,
@@ -130,8 +128,7 @@ FINAL PRODUCT "{projectname}"
 --------------{extradeco}
     """)
 
-    emptydir(tmpsrcfolder)
-    emptydir(tmpdocfolder)
+    emptydir(projectfolder_TEMP)
 
     for onedir in sorteddirs:
         print(f'+ Working in src/{onedir.relative_to(source)}')

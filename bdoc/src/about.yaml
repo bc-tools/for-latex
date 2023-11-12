@@ -1,6 +1,6 @@
 texfacto:
   doc:
-    header: doc-header.cfg
+    header: doc-header.cfg.tex
 
 toc:
   - intro/
