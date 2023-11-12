@@ -288,7 +288,8 @@ def adddocsubdir(source, tmpdir, dirview, firstcall=True):
 
         relpath = onedir.relative_to(source)
 
-        print(f'   * [RES-DOC] Copying {relpath}/')
+        if firstcall:
+            print(f'   * [RES-DOC] Copying {relpath}/')
 
         destdir = tmpdir / "FR" / relpath
 
@@ -297,6 +298,8 @@ def adddocsubdir(source, tmpdir, dirview, firstcall=True):
 
         for srcfile in dircontent[TAG_FILE]:
             copyfromto(srcfile, destdir / srcfile.name)
+
+        adddocsubdir(source, tmpdir, dircontent[TAG_DIR], firstcall=False)
 
 
 
