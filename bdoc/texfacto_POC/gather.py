@@ -132,10 +132,183 @@ def copyfromto(srcfile, destfile, mode="w"):
         f.write(content)
 
 
-def prepare(ext, srcfile, ):
-    ...
+def addcontentto(content, destfile):
+    with destfile.open(
+        encoding = "utf-8",
+        mode = "a"
+    ) as f:
+        f.write(content)
 
 
+def extractfrom_STY(srcfile):
+    with srcfile.open(
+        encoding = "utf-8",
+        mode = "r"
+    ) as f:
+        content = f.read()
+
+    pack_import  = []
+    pack_options = []
+    pack_src     = []
+
+    store_import  = "import"
+    store_options = "options"
+    store_src     = "src"
+    store_ignore  = "ignore"
+    store_in      = store_ignore
+
+    for oneline in content.split('\n'):
+        shortline = oneline.strip()
+
+        if shortline == '% == PACKAGES == %':
+            store_in = store_import
+            continue
+
+        if shortline == '% == OPTIONS == %':
+            store_in = store_options
+            continue
+
+        if shortline == '% == TOOLS == %':
+            store_in = store_src
+            continue
+
+        if store_in == store_import:
+            pack_import.append(oneline)
+
+        elif store_in == store_options:
+            pack_options.append(oneline)
+
+        elif store_in == store_src:
+            pack_src.append(oneline)
+
+    pack_import = '\n'.join(pack_import)
+    pack_import = pack_import.strip()
+
+    pack_options = '\n'.join(pack_options)
+    pack_options = pack_options.strip()
+
+    pack_src = '\n'.join(pack_src)
+    pack_src = pack_src.strip()
+
+    return pack_import, pack_options, pack_src
+
+
+def prepare_STY(tmpdir, pack_import, pack_options, pack_src):
+    if pack_import:
+        pack_import += '\n'*3
+
+        addcontentto(
+            content  = pack_import,
+            destfile = tmpdir / '.tmp_pack_import.sty'
+        )
+
+    if pack_options:
+        pack_options += '\n'*3
+
+        addcontentto(
+            content  = pack_options,
+            destfile = tmpdir / '.tmp_pack_options.sty'
+        )
+
+    if pack_src:
+        pack_src += '\n'*3
+
+        addcontentto(
+            content  = pack_src,
+            destfile = tmpdir / '.tmp_pack_src.sty'
+        )
+
+
+def extractfrom_TEX(srcfile):
+    with srcfile.open(
+        encoding = "utf-8",
+        mode = "r"
+    ) as f:
+        content = f.read()
+
+    fordoc = []
+    thedoc = []
+
+    store_fordoc = "fordoc"
+    store_thedoc = "thedoc"
+    store_ignore = "ignore"
+    store_in     = store_ignore
+
+    for oneline in content.split('\n'):
+        shortline = oneline.strip()
+
+        if shortline == '% == FORDOC == %':
+            store_in = store_fordoc
+            continue
+
+        if shortline == '\\begin{document}':
+            store_in = store_thedoc
+            continue
+
+        if shortline == '\\end{document}':
+            break
+
+        if store_in == store_fordoc:
+            fordoc.append(oneline)
+
+        elif store_in == store_thedoc:
+            thedoc.append(oneline)
+
+    fordoc = '\n'.join(fordoc)
+    fordoc = fordoc.strip()
+
+    thedoc = '\n'.join(thedoc)
+    thedoc = thedoc.strip()
+
+    return fordoc, thedoc
+
+
+def prepare_TEX(tmpdir, fordoc, thedoc):
+    if fordoc:
+        fordoc += '\n'*3
+
+        addcontentto(
+            content  = fordoc,
+            destfile = tmpdir / '.tmp_fordoc.tex'
+        )
+
+    if thedoc:
+        thedoc += '\n'*3
+
+        addcontentto(
+            content  = thedoc,
+            destfile = tmpdir / '.tmp_thedoc.tex'
+        )
+
+
+def adddocsubdir(source, tmpdir, dirview, firstcall=True):
+    for onedir, dircontent in dirview.items():
+        if firstcall and onedir.name == "locale":
+            continue
+
+        relpath = onedir.relative_to(source)
+
+        print(f'   * [RES-DOC] Copying {relpath}/')
+
+        destdir = tmpdir / "FR" / relpath
+
+        if not destdir.is_dir():
+            destdir.mkdir(parents = True)
+
+        for srcfile in dircontent[TAG_FILE]:
+            copyfromto(srcfile, destdir / srcfile.name)
+
+
+
+EXTRACT_FROM = {
+    TAG_STY: extractfrom_STY,
+    TAG_TEX: extractfrom_TEX
+}
+
+PREPARE = {
+    TAG_STY: prepare_STY,
+    TAG_TEX: prepare_TEX
+}
 
 def build_project(
     source  ,
@@ -178,9 +351,12 @@ FINAL PRODUCT "{projectname}"
                 f'   * [{ext.upper()}] Analyzing {srcfile.name}'
             )
 
+            pieces = EXTRACT_FROM[ext](srcfile)
+            PREPARE[ext](projectfolder_TEMP, *pieces)
+
         for srcfile in resources:
             print(
-                f'   * [RES] Copying {srcfile.name}'
+                f'   * [RES-SRC] Copying {srcfile.name}'
             )
 
             copyfromto(
@@ -188,68 +364,4 @@ FINAL PRODUCT "{projectname}"
                 destfile = projectfolder_TEMP / srcfile.name
             )
 
-    TODO
-
-    src2dest = {
-        'sty': (
-            "code",
-            projectfolder / f"{projectname}.sty",
-        ),
-        'tex': (
-            "doc",
-            tmpdocfolder / f"{projectname}-doc.tex",
-        ),
-        'cfg': (
-            "config",
-            None,
-        ),
-    }
-
-    filesadded = defaultdict(list)
-
-    for onedir in sorteddirs:
-        print(f'+ Working in {onedir}')
-
-        contentdir = treeview[TAG_DIR][onedir]
-
-        sorted2analyze = files2analyze(
-            onedir   = onedir,
-            allfiles = list(contentdir[TAG_FILE])
-        )
-
-        for srcfile in sorted2analyze:
-            ext = srcfile.suffix[1:]
-            kind, destfile = src2dest[ext]
-
-            print(
-                f'   * [{ext.upper()}] '
-                f'kind.title() file {srcfile.name}'
-            )
-
-            with srcfile.open(
-                encoding = "utf-8",
-                mode = "r"
-            ) as f:
-                content = f.read()
-
-            with destfile.open(
-                encoding = "utf-8",
-                mode = "a"
-            ) as f:
-                f.write('\n')
-                f.write(content)
-
-
-        for srcfile in contentdir[TAG_FILE]:
-            if srcfile.suffix[1:] == TAG_CFG_EXT:
-                destfile = projectfolder / srcfile.name
-
-                print(
-                    f'   * [{TAG_CFG_EXT.upper()}] '
-                    f'Config file {srcfile.name}'
-                )
-
-                destfile.write_text(
-                    encoding = "utf-8",
-                    data = srcfile.read_text()
-                )
+        adddocsubdir(onedir, projectfolder_TEMP, contentdir[TAG_DIR])
