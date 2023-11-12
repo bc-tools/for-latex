@@ -10,7 +10,7 @@
 --------
 
 [[:tech:]]
-Use of path::''doc-header.cfg.tex'' instead of path::''doc-header.cfg''. It this a joke?
+Use of path::''doc-header.cfg.tex'' instead of path::''doc-header.cfg''. It this a joke? No, that's the way that \texfacto likes it.
 
 
 // ---------- //

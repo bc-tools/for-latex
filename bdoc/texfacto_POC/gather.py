@@ -12,7 +12,11 @@ TAG_TOC  = "toc"
 
 TAG_ABOUT_FILE = "about.yaml"
 
-TAG_CFG_EXT = "cfg"
+TAG_STY = "sty"
+TAG_TEX = "tex"
+
+TAG_CFG_STY = "sty"
+TAG_CFG_TEX = "tex"
 
 
 def dirs2analyze(
@@ -61,7 +65,7 @@ def files2analyze(
     files_about = onedir / "about.yaml"
 
     if not files_about.is_file():
-        sortedfiles = None
+        sorted2analyze = None
 
     else:
         with files_about.open(
@@ -70,23 +74,35 @@ def files2analyze(
         ) as f:
             about_cfg = safe_load(f)
 
-        sortedfiles = about_cfg.get(TAG_TOC, None)
+        sorted2analyze = about_cfg.get(TAG_TOC, None)
 
-    if sortedfiles is None:
-        sortedfiles = natsorted(allfiles)
+    if sorted2analyze is None:
+        sorted2analyze = natsorted(
+            p
+            for p in allfiles
+            if p.suffix[1:] in [TAG_STY,TAG_TEX]
+            and not p.suffix[1:] in [TAG_CFG_STY,TAG_CFG_TEX]
+        )
 
     else:
-        for i, p in enumerate(sortedfiles):
+        for i, p in enumerate(sorted2analyze):
             fp = onedir / p
 
             if not fp.is_file():
                 TODO_PB
 
-            sortedfiles[i] = fp
+            sorted2analyze[i] = fp
+
+    resources = [
+        p
+        for p in allfiles
+        if not p in sorted2analyze
+           and p.name != TAG_ABOUT_FILE
+    ]
 
     # print([p.name for p in sorting])
 
-    return sortedfiles
+    return sorted2analyze, resources
 
 
 def emptydir(folder):
@@ -135,16 +151,21 @@ FINAL PRODUCT "{projectname}"
 
         contentdir = treeview[TAG_DIR][onedir]
 
-        sortedfiles = files2analyze(
+        sorted2analyze, resources = files2analyze(
             onedir   = onedir,
             allfiles = list(contentdir[TAG_FILE])
         )
 
-        for srcfile in sortedfiles:
+        for srcfile in sorted2analyze:
             ext = srcfile.suffix[1:]
 
             print(
                 f'   * [{ext.upper()}] Analyzing {srcfile.name}'
+            )
+
+        for srcfile in resources:
+            print(
+                f'   * [RES] Copying {srcfile.name}'
             )
 
     TODO
@@ -171,12 +192,12 @@ FINAL PRODUCT "{projectname}"
 
         contentdir = treeview[TAG_DIR][onedir]
 
-        sortedfiles = files2analyze(
+        sorted2analyze = files2analyze(
             onedir   = onedir,
             allfiles = list(contentdir[TAG_FILE])
         )
 
-        for srcfile in sortedfiles:
+        for srcfile in sorted2analyze:
             ext = srcfile.suffix[1:]
             kind, destfile = src2dest[ext]
 
