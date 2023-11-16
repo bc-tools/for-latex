@@ -1,6 +1,7 @@
 texfacto:
   doc:
-    header: doc-header.cfg.tex
+    pack:
+      preamble: preamble.cfg.tex
 
 toc:
   - intro/
