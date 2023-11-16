@@ -193,7 +193,7 @@ def extractfrom_STY(srcfile):
     return pack_import, pack_options, pack_src
 
 
-def prepare_STY(tmpdir, pack_import, pack_options, pack_src):
+def prepare_STY(curdir, tmpdir, pack_import, pack_options, pack_src):
     if pack_import:
         pack_import += '\n'*3
 
@@ -211,6 +211,11 @@ def prepare_STY(tmpdir, pack_import, pack_options, pack_src):
         )
 
     if pack_src:
+        pack_src = pack_src.replace(
+            f"\\input{{../{curdir.name}/",
+             "\\input{"
+        )
+
         pack_src += '\n'*3
 
         addcontentto(
@@ -263,7 +268,7 @@ def extractfrom_TEX(srcfile):
     return fordoc, thedoc
 
 
-def prepare_TEX(tmpdir, fordoc, thedoc):
+def prepare_TEX(curdir, tmpdir, fordoc, thedoc):
     if fordoc:
         fordoc += '\n'*3
 
@@ -354,7 +359,7 @@ FINAL PRODUCT "{projectname}"
             )
 
             pieces = EXTRACT_FROM[ext](srcfile)
-            PREPARE[ext](projectfolder_TEMP, *pieces)
+            PREPARE[ext](onedir, projectfolder_TEMP, *pieces)
 
         for srcfile in resources:
             print(
@@ -405,7 +410,9 @@ FINAL PRODUCT "{projectname}"
 \usepackage{enumitem}
 \frenchsetup{StandardItemLabels=true}
     """.strip() + f"""
-\\usepackage{{{projectname}}}
+
+% Package developped.
+\\usepackage[lang = french]{{{projectname}}}
     """.rstrip() + '\n'*3
 
     for tmpfile in [

@@ -10,7 +10,11 @@
 --------
 
 [[:update:]]
-\texfacto: new way to use a preamble, and not an header.
+\texfacto, the \poc.
+
+    1) Management of dangerous relative imports.
+
+    1) New way to use a preamble, and not an header.
 
 
 // ---------- //
