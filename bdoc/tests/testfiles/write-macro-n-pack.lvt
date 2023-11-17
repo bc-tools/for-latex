@@ -5,7 +5,11 @@
 \begin{document}
 \START
 
+onepack
+
 \bdocpack{onepack}
+
+onemacro
 
 \bdocmacro{onemacro}
 

@@ -6,11 +6,11 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbackslash' on input line ....
 [1
-] (test1.aux)
+] (write-macro-n-pack.aux)
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-Package rerunfilecheck Warning: File `test1.out' has changed.
+Package rerunfilecheck Warning: File `write-macro-n-pack.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
-Package rerunfilecheck Info: Checksums for `test1.out':
+Package rerunfilecheck Info: Checksums for `write-macro-n-pack.out':
 (rerunfilecheck)             Before: <no file>
 (rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
