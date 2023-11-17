@@ -128,7 +128,6 @@ def copyfromto(srcfile, destfile, mode="w"):
         encoding = "utf-8",
         mode = mode
     ) as f:
-        f.write('\n')
         f.write(content)
 
 
