@@ -342,7 +342,7 @@ FINAL PRODUCT "{projectname}"
     emptydir(projectfolder_TEMP)
 
     for onedir in sorteddirs:
-        print(f'+ Working in src/{onedir.relative_to(source)}')
+        print(f'+ Working in src/{onedir.relative_to(source)}/')
 
         contentdir = treeview[TAG_DIR][onedir]
 
