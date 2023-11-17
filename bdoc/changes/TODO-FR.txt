@@ -11,6 +11,8 @@ NOW
 
 texfacto
 
+    ---> titre manquant pour la doc
+
     ---> construction "à la main" (cf premiers package tns + texfacto à faire)
 
     ---> une fois un seul sty fait, on passe à l3build tests unitaires !!!
