@@ -13,4 +13,6 @@ onemacro
 
 \bdocmacro{onemacro}
 
+\showoutput
+
 \end{document}
