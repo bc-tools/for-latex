@@ -1,0 +1,3 @@
+module = "bdoc"
+
+sourcefiles={"../bdoc/*"}
