@@ -19,6 +19,8 @@ This monorepo contains series of tools to use easily `LaTeX` for creating codes 
 <!-- :version-END: -->
 
 
+<!-- ADMONITIONS
+
 > [!NOTE]
 > Highlights information that users should take into account, even when skimming.
 
@@ -33,3 +35,5 @@ This monorepo contains series of tools to use easily `LaTeX` for creating codes 
 
 > [!CAUTION]
 > Negative potential consequences of an action.
+
+-->
