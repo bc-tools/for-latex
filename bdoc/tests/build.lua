@@ -1,3 +1,0 @@
-module = "bdoc"
-
-sourcefiles={"../bdoc/*"}
