@@ -10,21 +10,15 @@ The following groups list the files included in the development repository of th
 Files listed with a ‘†’ marker are included in the TDS but not CTAN files, and files listed
 with ‘‡’ are included in both.
 
-### Text files
+### Source files
 
-Plain text files included as documentation or metadata.
+These are source files for a number of purposes, including the `unpack` process which
+generates the installation files of the package. Additional files included here will also
+be installed for processing such as testing.
 
-* README.md 
-
-### Checking-specific support files
-
-Support files for checking the test suite.
-
-* .DS_Store 
-* bdoc-FR.pdf 
-* bdoc-locale-english.cfg.sty 
-* bdoc-locale-french.cfg.sty 
-* bdoc.sty 
+* bdoc-locale-english.cfg.sty ‡
+* bdoc-locale-french.cfg.sty ‡
+* bdoc.sty ‡
 
 
 ## TDS manifest
@@ -32,7 +26,28 @@ Support files for checking the test suite.
 The following groups list the files included in the TeX Directory Structure used to install
 the package into a TeX distribution.
 
+### TeX files (TDS)
+
+All files included in the `bdoc/tex` directory.
+
+* bdoc-locale-english.cfg.sty 
+* bdoc-locale-french.cfg.sty 
+* bdoc.sty 
+
+### Doc files (TDS)
+
+All files included in the `bdoc/doc` directory.
+
+* bdoc-FR.pdf 
+
 
 ## CTAN manifest
 
 The following group lists the files included in the CTAN package.
+
+### CTAN files
+
+* bdoc-FR.pdf 
+* bdoc-locale-english.cfg.sty 
+* bdoc-locale-french.cfg.sty 
+* bdoc.sty 
