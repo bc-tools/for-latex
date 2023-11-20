@@ -1,3 +1,8 @@
 module = "bdoc"
 
-sourcefiles = {"*.sty"}
+sourcefiles      = {"*.sty"}
+typesetdemofiles = {"demos/*.tex"}
+
+
+checkopts = "-interaction=nonstopmode --shell-escape"
+typesetopts = checkopts
