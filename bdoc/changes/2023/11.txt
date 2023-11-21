@@ -1,3 +1,19 @@
+==
+21  (0.11.0-beta)
+==
+
+--------
+:update:
+--------
+
+[[:api:]]
+''\bdocenv'': options with delimiters can be indicated.
+
+
+[[:doc:]]
+Use of ''\bdocenv'' with options where it is useful.
+
+
 // ---------- //
 
 

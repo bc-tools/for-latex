@@ -20,19 +20,31 @@
 \subsection{Codes \bdocquote{en ligne}}
 
 La macro \bdocmacro{bdocinlatex} permet de taper du code en ligne via un usage similaire à \bdocmacro{verb}.
-Voici deux exemples d'utilisation.
+Voici des exemples d'utilisation.
+\begin{itemize}
+    \item \bdocinlatex+\bdocinlatex|$a^b = c$|+
+          produit le résultat suivant.
 
-\begin{enumerate}
-    \item \bdocinlatex+\bdocinlatex|$a^b = c$|+ produit \bdocinlatex|$a^b = c$| .
+          \bdocinlatex|$a^b = c$|
 
-    \item \bdocinlatex+\bdocinlatex|$a^b = c$|+ vient de \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+# obtenu via \bdocinlatex@\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#@ ... etc.
-\end{enumerate}
+    \item \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#
+          aboutit au rendu ci-après.
+
+          \bdocinlatex+\bdocinlatex|$a^b = c$|+
+
+    \item \bdocinlatex£\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#£
+          donne ce qui suit.
+
+          \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#
+
+    \item ... \emph{etc.}
+\end{itemize}
 
 
 \begin{bdocimportant}
     La macro \bdocmacro{bdocinlatex} est utilisable dans une note de pied de page. En voici la preuve
     \footnote{
-    	\bdocinlatex+$minted = TOP$+ a été tapé \bdocinlatex|\bdocinlatex+$minted = TOP$+| dans cette note de bas de page..
+        \bdocinlatex+$minted = TOP$+ a été tapé \bdocinlatex|\bdocinlatex+$minted = TOP$+| dans cette note de bas de page..
     }.
 \end{bdocimportant}
 
@@ -48,9 +60,9 @@ Voici deux exemples d'utilisation.
 \subsection{Codes tapés directement}
 
 \begin{bdocexa}[Face à face]
-	Dans le code suivant, l'option \bdocinlatex#sbs# est pour \bdocquote{\bdocprewhy{s.ide} \bdocprewhy{b.y} \bdocprewhy{s.ide}} soit \bdocinEN{côte à côte}.
+    Dans le code suivant, l'option \bdocinlatex#sbs# est pour \bdocquote{\bdocprewhy{s.ide} \bdocprewhy{b.y} \bdocprewhy{s.ide}} soit \bdocinEN{côte à côte}.
 
-	\bdoclatexshow{examples/listing/ABC.tex}
+    \bdoclatexshow{examples/listing/ABC.tex}
 \end{bdocexa}
 
 
@@ -58,15 +70,15 @@ Voici deux exemples d'utilisation.
 
 
 \begin{bdocexa}[À la suite]
-	L'environnement \bdocenv{bdoclatex} choisit par défaut l'option \bdocinlatex#std#
-	\footnote{
-    	\bdocinlatex{std} fait référence au comportement \bdocquote{standard} de \bdocpack{tcolorbox} vis à vis de la librairie \bdocpack{minted}.
-	}
-	et produit le résultat suivant.
+    L'option par défaut est l'option \bdocinlatex#std#
+    \footnote{
+        \bdocinlatex{std} fait référence au comportement \bdocquote{standard} de \bdocpack{tcolorbox} vis à vis de la librairie \bdocpack{minted}.
+    },
+    et \bdocenv{bdoclatex} produit le résultat suivant.
 
-	\begin{bdoclatex}
-		$A = B + C$
-	\end{bdoclatex}
+    \begin{bdoclatex}
+        $A = B + C$
+    \end{bdoclatex}
 \end{bdocexa}
 
 
@@ -74,11 +86,11 @@ Voici deux exemples d'utilisation.
 
 
 \begin{bdocexa}[Juste le code]
-	Afficher le code seul comme ci-après s'obtient via l'option \bdocinlatex#code# de l'environnement \bdocenv{bdoclatex}.
+    Afficher le code seul comme ci-après s'obtient via l'option \bdocinlatex#code#, donc \bdocenv[{[code]}]{bdoclatex} donnera juste ce qui suit.
 
-	\begin{bdoclatex}[code]
-    	$A = B + C$
-	\end{bdoclatex}
+    \begin{bdoclatex}[code]
+        $A = B + C$
+    \end{bdoclatex}
 \end{bdocexa}
 
 
@@ -86,10 +98,10 @@ Voici deux exemples d'utilisation.
 
 
 \begin{bdocwarn}
-	Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut. Voici un cas d'usage.
+    Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut. Voici un cas d'usage.
 
-	\bdoclatexshow[explain = Ceci permet d'obtenir ce qui est attendu :]
-	              {examples/listing/strange.tex}
+    \bdoclatexshow[explain = Ceci permet d'obtenir ce qui est attendu :]
+                  {examples/listing/strange.tex}
 \end{bdocwarn}
 
 \end{document}

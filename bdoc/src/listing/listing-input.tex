@@ -53,7 +53,9 @@
 \subsection{Codes importés}
 
 Pour les codes suivants, on considère un fichier \verb+examples/listing/xyz.tex+ dont le chemin est donné relativement au document présent.
-Le contenu de ce fichier se réduit à l'unique ligne \bdocinlatex|$x y z = 1$| .
+Le contenu de ce fichier est le suivant.
+
+\bdoclatexinput[code]{examples/listing/xyz.tex}
 
 \medskip
 
@@ -64,15 +66,15 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 
 \begin{bdocexa}[Face à face]
-	\leavevmode
+    \leavevmode
 
-	\begin{bdoclatex}[code]
+    \begin{bdoclatex}[code]
 \bdoclatexinput[sbs]{examples/listing/xyz.tex}
-	\end{bdoclatex}
+    \end{bdoclatex}
 
-	Ceci produit la mise en forme suivante.
+    Ceci produit la mise en forme suivante.
 
-	\bdoclatexinput[sbs]{examples/listing/xyz.tex}
+    \bdoclatexinput[sbs]{examples/listing/xyz.tex}
 \end{bdocexa}
 
 
@@ -80,15 +82,15 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 
 \begin{bdocexa}[À la suite]
-	\leavevmode
+    \leavevmode
 
-	\begin{bdoclatex}[code]
+    \begin{bdoclatex}[code]
 \bdoclatexinput{examples/listing/xyz.tex}
-	\end{bdoclatex}
+    \end{bdoclatex}
 
-	Ceci produit la mise en forme suivante où l'option employée par défaut est \bdocinlatex#std#.
+    Ceci produit la mise en forme suivante où l'option employée par défaut est \bdocinlatex#std#.
 
-	\bdoclatexinput{examples/listing/xyz.tex}
+    \bdoclatexinput{examples/listing/xyz.tex}
 \end{bdocexa}
 
 
@@ -96,15 +98,15 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 
 \begin{bdocexa}[Juste le code]
-	\leavevmode
+    \leavevmode
 
-	\begin{bdoclatex}[code]
+    \begin{bdoclatex}[code]
 \bdoclatexinput[code]{examples/listing/xyz.tex}
-	\end{bdoclatex}
+    \end{bdoclatex}
 
-	Ceci produit la mise en forme suivante.
+    Ceci produit la mise en forme suivante.
 
-	\bdoclatexinput[code]{examples/listing/xyz.tex}
+    \bdoclatexinput[code]{examples/listing/xyz.tex}
 \end{bdocexa}
 
 
@@ -116,13 +118,13 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 Ce qui suit est utile pour des exemples plus sophistiqués.
 
 \begin{bdocexa}[Showcase]
-	Ce qui suit a été obtenu via la macro \bdocmacro{bdoclatexshow} en tapant \bdocinlatex+\bdoclatexshow{examples/listing/xyz.tex}+.
+    Ce qui suit a été obtenu via la macro \bdocmacro{bdoclatexshow} en tapant \bdocinlatex+\bdoclatexshow{examples/listing/xyz.tex}+.
 
-	\medskip
+    \medskip
 
-	\begin{bdoc-doc-showcase}
-    	\bdoclatexshow{examples/listing/xyz.tex}
-	\end{bdoc-doc-showcase}
+    \begin{bdoc-doc-showcase}
+        \bdoclatexshow{examples/listing/xyz.tex}
+    \end{bdoc-doc-showcase}
 \end{bdocexa}
 
 
@@ -130,13 +132,13 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
 
 
 \begin{bdocexa}[Changer le texte explicatif]
-	Pour obtenir ce qui suit avec un texte personnalisé, il suffit d'employer \bdocinlatex|\bdoclatexshow[explain = Voici le rendu réel.]{...}|.
+    Pour obtenir ce qui suit avec un texte personnalisé, il suffit d'employer \bdocinlatex|\bdoclatexshow[explain = Voici le rendu réel.]{...}|.
 
-	\medskip
+    \medskip
 
-	\begin{bdoc-doc-showcase}
-    	\bdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}
-	\end{bdoc-doc-showcase}
+    \begin{bdoc-doc-showcase}
+        \bdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}
+    \end{bdoc-doc-showcase}
 \end{bdocexa}
 
 
@@ -152,22 +154,22 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
 
 
 \begin{bdocexa}[Les options disponibles]
-	En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de \bdocenv{bdocshowcase}, voir \ref{bdoc-showcase}.
-	Voici un exemple illustrant ceci.
+    En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de \bdocenv{bdocshowcase}, voir \ref{bdoc-showcase}.
+    Voici un exemple illustrant ceci.
 
-	\medskip
+    \medskip
 
-	\bdoclatexinput[code]{examples/listing/latexshow-options.tex}
+    \bdoclatexinput[code]{examples/listing/latexshow-options.tex}
 
-	\medskip
+    \medskip
 
-	Ceci va produire ce qui suit.
+    Ceci va produire ce qui suit.
 
-	\medskip
+    \medskip
 
-	\begin{bdoc-doc-showcase}
-    	\input{examples/listing/latexshow-options.tex}
-	\end{bdoc-doc-showcase}
+    \begin{bdoc-doc-showcase}
+        \input{examples/listing/latexshow-options.tex}
+    \end{bdoc-doc-showcase}
 \end{bdocexa}
 
 \end{document}

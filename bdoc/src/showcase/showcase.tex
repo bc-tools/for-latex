@@ -24,28 +24,28 @@
 
     \bdoclatexinput[code]{examples/showcase/default.tex}
 
-	On obtient alors le rendu suivant
-	\footnote{
-    	La bande est créée sans effort grâce au package \bdocpack{clrstrip}.
-	}.
+    On obtient alors le rendu suivant
+    \footnote{
+        La bande est créée sans effort grâce au package \bdocpack{clrstrip}.
+    }.
 
-	\medskip
+    \medskip
 
-	\input{examples/showcase/default.tex}
+    \input{examples/showcase/default.tex}
 \end{bdocexa}
 
 
 \begin{bdocrem}
-	Voir la section \ref{bdoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
+    Voir la section \ref{bdoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
 \end{bdocrem}
 
 
 \begin{bdocnote}
-	Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
+    Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
 
     \begin{bdoclatex}[std]
-    	\bdocruler{Un pseudo-titre décoré}{red}
-	\end{bdoclatex}
+        \bdocruler{Un pseudo-titre décoré}{red}
+    \end{bdoclatex}
 \end{bdocnote}
 
 
@@ -53,15 +53,15 @@
 
 
 \begin{bdocexa}[Changer la couleur et/ou les textes par défaut]
-	\leavevmode
+    \leavevmode
 
-	\bdoclatexinput[code]{examples/showcase/customized.tex}
+    \bdoclatexinput[code]{examples/showcase/customized.tex}
 
-	Ceci produira ce qui suit.
+    Ceci produira ce qui suit.
 
-	\medskip
+    \medskip
 
-	\input{examples/showcase/customized.tex}
+    \input{examples/showcase/customized.tex}
 \end{bdocexa}
 
 
@@ -69,16 +69,16 @@
     \leavevmode
 
     \begin{itemize}
-    	\item Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \bdocpack{bdoc}.
+        \item Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \bdocpack{bdoc}.
 
-    	\item Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \bdocmacro{bdocbackcolor} et \bdocmacro{bdocdarkcolor} sont utilisées pour créer, à partir de la couleur proposée à \bdocenv{bdocshowcase}, celle du fond et celle des titres respectivement.
-	          Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
+        \item Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \bdocmacro{bdocbackcolor} et \bdocmacro{bdocdarkcolor} sont utilisées pour créer, à partir de la couleur proposée à \bdocenv{bdocshowcase}, celle du fond et celle des titres respectivement.
+              Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
 
-		      \begin{bdoclatex}[code]
+              \begin{bdoclatex}[code]
 \NewExpandableDocumentCommand{\bdocbackcolor}{m}{#1!5}
 
 \NewExpandableDocumentCommand{\bdocdarkcolor}{m}{#1!50!black}
-		      \end{bdoclatex}
+              \end{bdoclatex}
     \end{itemize}
 \end{bdocnote}
 
@@ -89,13 +89,13 @@
 \begin{bdocwarn}
     Avec la mise en forme par défaut, si le code \LaTeX\ commence par un crochet ouvrant, il faudra indiquer explicitement une option vide comme dans l'exemple suivant.
 
-	\bdoclatexinput[code]{examples/showcase/hook.tex}
+    \bdoclatexinput[code]{examples/showcase/hook.tex}
 
-	Ceci produira ce qui suit.
+    Ceci produira ce qui suit.
 
-	\medskip
+    \medskip
 
-	\input{examples/showcase/hook.tex}
+    \input{examples/showcase/hook.tex}
 \end{bdocwarn}
 
 
@@ -108,16 +108,16 @@ Le rendu de \bdocenv{bdocshowcase} avec une bande colorée peut parfois ne pas �
 Voyons comment contourner ce type de limitation.
 
 \begin{bdocexa}
-	L'option booléenne \bdocinlatex{nostripe} sert à ne pas employer \bdocpack{clrstrip}.
-	Voici un exemple d'utilisation.
+    L'option booléenne \bdocinlatex{nostripe} sert à ne pas employer \bdocpack{clrstrip}.
+    Voici un exemple d'utilisation.
 
-	\bdoclatexinput[code]{examples/showcase/no-clrstrip.tex}
+    \bdoclatexinput[code]{examples/showcase/no-clrstrip.tex}
 
-	Ceci produira ce qui suit.
+    Ceci produira ce qui suit.
 
-	\medskip
+    \medskip
 
-	\input{examples/showcase/no-clrstrip.tex}
+    \input{examples/showcase/no-clrstrip.tex}
 \end{bdocexa}
 
 
@@ -125,15 +125,15 @@ Voyons comment contourner ce type de limitation.
 
 
 \begin{bdocexa}[Changer la couleur et/ou les textes par défaut]
-	\leavevmode
+    \leavevmode
 
-	\bdoclatexinput[code]{examples/showcase/no-clrstrip-customized.tex}
+    \bdoclatexinput[code]{examples/showcase/no-clrstrip-customized.tex}
 
-	Ceci produira ce qui suit.
+    Ceci produira ce qui suit.
 
-	\medskip
+    \medskip
 
-	\input{examples/showcase/no-clrstrip-customized.tex}
+    \input{examples/showcase/no-clrstrip-customized.tex}
 \end{bdocexa}
 
 
@@ -143,23 +143,23 @@ Voyons comment contourner ce type de limitation.
 \subsection{En important le code \LaTeX}
 
 \begin{bdocexa}<nonb>
-	Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \bdocmacro{bdocshowcaseinput} dont l'option reprend la syntaxe de celle de \bdocenv{bdocshowcase} et l'argument obligatoire donne le chemin du fichier.
+    Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \bdocmacro{bdocshowcaseinput} dont l'option reprend la syntaxe de celle de \bdocenv{bdocshowcase} et l'argument obligatoire donne le chemin du fichier.
 
-	\medskip
+    \medskip
 
-	Ce qui suit a été obtenu via \bdocinlatex+\bdocshowcaseinput{examples/external.tex}+.
+    Ce qui suit a été obtenu via \bdocinlatex+\bdocshowcaseinput{examples/external.tex}+.
 
-	\medskip
+    \medskip
 
-	\bdocshowcaseinput{examples/showcase/external.tex}
+    \bdocshowcaseinput{examples/showcase/external.tex}
 
-	\medskip
+    \medskip
 
-	Via \bdocinlatex+\bdocshowcaseinput[color = orange]{examples/external.tex}+ , on change la coloration comme suit.
+    Via \bdocinlatex+\bdocshowcaseinput[color = orange]{examples/external.tex}+ , on change la coloration comme suit.
 
-	\medskip
+    \medskip
 
-	\bdocshowcaseinput[color = orange]{examples/showcase/external.tex}
+    \bdocshowcaseinput[color = orange]{examples/showcase/external.tex}
 \end{bdocexa}
 
 \end{document}

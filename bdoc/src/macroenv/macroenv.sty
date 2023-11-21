@@ -29,13 +29,16 @@
 
 %%%
 % prototype::
-%     #1 : the name of an environment
+%     #1 : hard typed options with the good delimiters
+%     #2 : the name of an environment
 %
 % ''\bdocenv{myenv}'' prints verb::''\begin{myenv} ... \end{myenv}''
 % where the spaces are secable.
 %%%
-\NewDocumentCommand{\bdocenv}{m}{%
-  \texttt{\textbackslash{}begin\{#1\} \!...\! \textbackslash{}end\{#1\}}%
+\NewDocumentCommand{\bdocenv}{O{}m}{%
+  \texttt{\textbackslash{}begin\{#2\}#1 %
+          \!...\! %
+          \textbackslash{}end\{#2\}}%
 }
 
 
@@ -57,7 +60,7 @@
 %     #1 : a prefix of a word
 %     #2 : the remaining part of the word
 %
-% ''\bdocprewhy{pre}{fix}'' prints something like verb::''pre''-fix.
+% ''\bdocprewhy{pre.fix}'' prints something like verb::''pre''.fix.
 %%%
 \NewDocumentCommand{\bdocprewhy}{m}{%
 %   \textbf{\bdocpre{#1}}\kern.5pt\textperiodcentered\kern.5pt#2%

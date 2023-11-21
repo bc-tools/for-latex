@@ -4,7 +4,6 @@ texfacto:
       preamble: preamble.cfg.tex
 
 toc:
-  - intro/
   - main/
   - macroenv/
   - inenglish/
