@@ -44,19 +44,6 @@
 
 
 \begin{document}
-\section{Introduction}
-
-Le package \bdocpack{bdoc}
-\footnote{
-    Le nom vient de \bdocquote{\bdocprewhy{b.asic} \bdocprewhy{doc.umentation}} qui ne nécessite aucune traduction.
-}
-facilite la saisie sémantique de documentations de packages \LaTeX\ avec un rendu sobre pour une lecture sur écran
-\footnote{
-    L'idée est de produire un fichier \texttt{PDF} efficace à parcourir pour des besoins ponctuels. C'est généralement ce que l'on attend d'une documentation liée au codage.
-},
-mais pratique pour les utilisateurs (ce package propose, ou impose, un style de mise en forme, mais il n'a pas pour vocation à être transformé en une classe).
-
-
 \section{Choisir la langue au chargement du package}
 
 La présente documentation utilise le français via \bdocinlatex|\usepackage[lang = french]{bdoc}| .
@@ -77,13 +64,13 @@ Le package \bdocpack{geometry} est chargé avec les réglages suivants.
 
 \begin{bdoclatex}[code]
 \RequirePackage[
-    top            = 2.5cm,
-    bottom         = 2.5cm,
-    left           = 2.5cm,
-    right          = 2.5cm,
-    marginparwidth = 2cm,
-    marginparsep   = 2mm,
-    heightrounded
+  top            = 2.5cm,
+  bottom         = 2.5cm,
+  left           = 2.5cm,
+  right          = 2.5cm,
+  marginparwidth = 2cm,
+  marginparsep   = 2mm,
+  heightrounded
 ]{geometry}
 \end{bdoclatex}
 
@@ -119,20 +106,20 @@ Les packages \bdocpack{titlesec}, \bdocpack{tocbasic} et \bdocpack{bookmark} son
 % Source
 %    * https://tex.stackexchange.com/a/558025/6880
 \DeclareTOCStyleEntries[
-    raggedentrytext,
-    linefill = \hfill,
-    indent   = 0pt,
-    dynindent,
-    numwidth = 0pt,
-    numsep   = 1ex,
-    dynnumwidth
+  raggedentrytext,
+  linefill = \hfill,
+  indent   = 0pt,
+  dynindent,
+  numwidth = 0pt,
+  numsep   = 1ex,
+  dynnumwidth
 ]{tocline}{
-    chapter,
-    section,
-    subsection,
-    subsubsection,
-    paragraph,
-    subparagraph
+  chapter,
+  section,
+  subsection,
+  subsubsection,
+  paragraph,
+  subparagraph
 }
 
 \DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
@@ -143,15 +130,15 @@ Les packages \bdocpack{titlesec}, \bdocpack{tocbasic} et \bdocpack{bookmark} son
 
 \subsection{Liens dynamiques}
 
-Les packages \bdocpack{hyperref} et  \bdocpack{hyperref} sont aussi importés en coulisse avec les réglages ci-dessous.
+Les packages \bdocpack{hyperref} et \bdocpack{hyperref} sont aussi importés en coulisse avec les réglages ci-dessous.
 
 \begin{bdoclatex}[code]
 \hypersetup{
-    colorlinks,
-    citecolor = orange!75!black,
-    filecolor = orange!75!black,
-    linkcolor = orange!75!black,
-    urlcolor  = orange!75!black
+  colorlinks,
+  citecolor = orange!75!black,
+  filecolor = orange!75!black,
+  linkcolor = orange!75!black,
+  urlcolor  = orange!75!black
 }
 \end{bdoclatex}
 
@@ -166,6 +153,10 @@ Voici ce qu'il est possible de taper de façon sémantique.
 \bdocmacro{unemacro} permet de...
 
 \bdocenv{env} sert à...
+
+On a aussi :
+
+\bdocenv[{[opt1]<opt2>}]{env}
 \end{bdoclatex}
 
 
@@ -174,7 +165,12 @@ Voici ce qu'il est possible de taper de façon sémantique.
     De plus, la macro \bdocmacro{bdocenv} demande juste de taper le nom de l'environnement
     \footnote{
         De plus, \bdocinlatex{\bdocenv{monenv}} produit \bdocenv{monenv} avec des espaces afin d'autoriser des retours à la ligne si besoin.
-    }.
+    }
+    avec des éventuelles options en tapant les bons délimiteurs
+    \footnote{
+        Se souvenir que tout est possible ou presque dorénavant.
+    }
+    à la main.
 \end{bdocrem}
 
 
@@ -195,7 +191,7 @@ Pour expliquer les noms retenus, rien de tel que d'indiquer et expliciter les co
 
 
 \begin{bdocrem}
-	Le choix du point pour scinder un mot permet d'utiliser des mots avec un tiret comme dans \bdocinlatex+\bdocprewhy{ca.sse-brique}+ qui donne \bdocprewhy{ca.sse-brique}.
+    Le choix du point pour scinder un mot permet d'utiliser des mots avec un tiret comme dans \bdocinlatex+\bdocprewhy{ca.sse-brique}+ qui donne \bdocprewhy{ca.sse-brique}.
 \end{bdocrem}
 
 
@@ -221,28 +217,28 @@ La macro \bdocmacro{bdocinEN} et sa version étoilée s'appuient sur \bdocmacro{
 
     \bdoclatexinput[code]{examples/showcase/default.tex}
 
-	On obtient alors le rendu suivant
-	\footnote{
-    	La bande est créée sans effort grâce au package \bdocpack{clrstrip}.
-	}.
+    On obtient alors le rendu suivant
+    \footnote{
+        La bande est créée sans effort grâce au package \bdocpack{clrstrip}.
+    }.
 
-	\medskip
+    \medskip
 
-	\input{examples/showcase/default.tex}
+    \input{examples/showcase/default.tex}
 \end{bdocexa}
 
 
 \begin{bdocrem}
-	Voir la section \ref{bdoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
+    Voir la section \ref{bdoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
 \end{bdocrem}
 
 
 \begin{bdocnote}
-	Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
+    Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
 
     \begin{bdoclatex}[std]
-    	\bdocruler{Un pseudo-titre décoré}{red}
-	\end{bdoclatex}
+        \bdocruler{Un pseudo-titre décoré}{red}
+    \end{bdoclatex}
 \end{bdocnote}
 
 
@@ -250,15 +246,15 @@ La macro \bdocmacro{bdocinEN} et sa version étoilée s'appuient sur \bdocmacro{
 
 
 \begin{bdocexa}[Changer la couleur et/ou les textes par défaut]
-	\leavevmode
+    \leavevmode
 
-	\bdoclatexinput[code]{examples/showcase/customized.tex}
+    \bdoclatexinput[code]{examples/showcase/customized.tex}
 
-	Ceci produira ce qui suit.
+    Ceci produira ce qui suit.
 
-	\medskip
+    \medskip
 
-	\input{examples/showcase/customized.tex}
+    \input{examples/showcase/customized.tex}
 \end{bdocexa}
 
 
@@ -266,16 +262,16 @@ La macro \bdocmacro{bdocinEN} et sa version étoilée s'appuient sur \bdocmacro{
     \leavevmode
 
     \begin{itemize}
-    	\item Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \bdocpack{bdoc}.
+        \item Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \bdocpack{bdoc}.
 
-    	\item Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \bdocmacro{bdocbackcolor} et \bdocmacro{bdocdarkcolor} sont utilisées pour créer, à partir de la couleur proposée à \bdocenv{bdocshowcase}, celle du fond et celle des titres respectivement.
-	          Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
+        \item Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \bdocmacro{bdocbackcolor} et \bdocmacro{bdocdarkcolor} sont utilisées pour créer, à partir de la couleur proposée à \bdocenv{bdocshowcase}, celle du fond et celle des titres respectivement.
+              Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
 
-		      \begin{bdoclatex}[code]
+              \begin{bdoclatex}[code]
 \NewExpandableDocumentCommand{\bdocbackcolor}{m}{#1!5}
 
 \NewExpandableDocumentCommand{\bdocdarkcolor}{m}{#1!50!black}
-		      \end{bdoclatex}
+              \end{bdoclatex}
     \end{itemize}
 \end{bdocnote}
 
@@ -286,13 +282,13 @@ La macro \bdocmacro{bdocinEN} et sa version étoilée s'appuient sur \bdocmacro{
 \begin{bdocwarn}
     Avec la mise en forme par défaut, si le code \LaTeX\ commence par un crochet ouvrant, il faudra indiquer explicitement une option vide comme dans l'exemple suivant.
 
-	\bdoclatexinput[code]{examples/showcase/hook.tex}
+    \bdoclatexinput[code]{examples/showcase/hook.tex}
 
-	Ceci produira ce qui suit.
+    Ceci produira ce qui suit.
 
-	\medskip
+    \medskip
 
-	\input{examples/showcase/hook.tex}
+    \input{examples/showcase/hook.tex}
 \end{bdocwarn}
 
 
@@ -305,16 +301,16 @@ Le rendu de \bdocenv{bdocshowcase} avec une bande colorée peut parfois ne pas �
 Voyons comment contourner ce type de limitation.
 
 \begin{bdocexa}
-	L'option booléenne \bdocinlatex{nostripe} sert à ne pas employer \bdocpack{clrstrip}.
-	Voici un exemple d'utilisation.
+    L'option booléenne \bdocinlatex{nostripe} sert à ne pas employer \bdocpack{clrstrip}.
+    Voici un exemple d'utilisation.
 
-	\bdoclatexinput[code]{examples/showcase/no-clrstrip.tex}
+    \bdoclatexinput[code]{examples/showcase/no-clrstrip.tex}
 
-	Ceci produira ce qui suit.
+    Ceci produira ce qui suit.
 
-	\medskip
+    \medskip
 
-	\input{examples/showcase/no-clrstrip.tex}
+    \input{examples/showcase/no-clrstrip.tex}
 \end{bdocexa}
 
 
@@ -322,15 +318,15 @@ Voyons comment contourner ce type de limitation.
 
 
 \begin{bdocexa}[Changer la couleur et/ou les textes par défaut]
-	\leavevmode
+    \leavevmode
 
-	\bdoclatexinput[code]{examples/showcase/no-clrstrip-customized.tex}
+    \bdoclatexinput[code]{examples/showcase/no-clrstrip-customized.tex}
 
-	Ceci produira ce qui suit.
+    Ceci produira ce qui suit.
 
-	\medskip
+    \medskip
 
-	\input{examples/showcase/no-clrstrip-customized.tex}
+    \input{examples/showcase/no-clrstrip-customized.tex}
 \end{bdocexa}
 
 
@@ -340,23 +336,23 @@ Voyons comment contourner ce type de limitation.
 \subsection{En important le code \LaTeX}
 
 \begin{bdocexa}<nonb>
-	Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \bdocmacro{bdocshowcaseinput} dont l'option reprend la syntaxe de celle de \bdocenv{bdocshowcase} et l'argument obligatoire donne le chemin du fichier.
+    Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \bdocmacro{bdocshowcaseinput} dont l'option reprend la syntaxe de celle de \bdocenv{bdocshowcase} et l'argument obligatoire donne le chemin du fichier.
 
-	\medskip
+    \medskip
 
-	Ce qui suit a été obtenu via \bdocinlatex+\bdocshowcaseinput{examples/external.tex}+.
+    Ce qui suit a été obtenu via \bdocinlatex+\bdocshowcaseinput{examples/external.tex}+.
 
-	\medskip
+    \medskip
 
-	\bdocshowcaseinput{examples/showcase/external.tex}
+    \bdocshowcaseinput{examples/showcase/external.tex}
 
-	\medskip
+    \medskip
 
-	Via \bdocinlatex+\bdocshowcaseinput[color = orange]{examples/external.tex}+ , on change la coloration comme suit.
+    Via \bdocinlatex+\bdocshowcaseinput[color = orange]{examples/external.tex}+ , on change la coloration comme suit.
 
-	\medskip
+    \medskip
 
-	\bdocshowcaseinput[color = orange]{examples/showcase/external.tex}
+    \bdocshowcaseinput[color = orange]{examples/showcase/external.tex}
 \end{bdocexa}
 
 
@@ -365,19 +361,31 @@ Voyons comment contourner ce type de limitation.
 \subsection{Codes \bdocquote{en ligne}}
 
 La macro \bdocmacro{bdocinlatex} permet de taper du code en ligne via un usage similaire à \bdocmacro{verb}.
-Voici deux exemples d'utilisation.
+Voici des exemples d'utilisation.
+\begin{itemize}
+    \item \bdocinlatex+\bdocinlatex|$a^b = c$|+
+          produit le résultat suivant.
 
-\begin{enumerate}
-    \item \bdocinlatex+\bdocinlatex|$a^b = c$|+ produit \bdocinlatex|$a^b = c$| .
+          \bdocinlatex|$a^b = c$|
 
-    \item \bdocinlatex+\bdocinlatex|$a^b = c$|+ vient de \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+# obtenu via \bdocinlatex@\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#@ ... etc.
-\end{enumerate}
+    \item \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#
+          aboutit au rendu ci-après.
+
+          \bdocinlatex+\bdocinlatex|$a^b = c$|+
+
+    \item \bdocinlatex£\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#£
+          donne ce qui suit.
+
+          \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#
+
+    \item ... \emph{etc.}
+\end{itemize}
 
 
 \begin{bdocimportant}
     La macro \bdocmacro{bdocinlatex} est utilisable dans une note de pied de page. En voici la preuve
     \footnote{
-    	\bdocinlatex+$minted = TOP$+ a été tapé \bdocinlatex|\bdocinlatex+$minted = TOP$+| dans cette note de bas de page..
+        \bdocinlatex+$minted = TOP$+ a été tapé \bdocinlatex|\bdocinlatex+$minted = TOP$+| dans cette note de bas de page..
     }.
 \end{bdocimportant}
 
@@ -393,9 +401,9 @@ Voici deux exemples d'utilisation.
 \subsection{Codes tapés directement}
 
 \begin{bdocexa}[Face à face]
-	Dans le code suivant, l'option \bdocinlatex#sbs# est pour \bdocquote{\bdocprewhy{s.ide} \bdocprewhy{b.y} \bdocprewhy{s.ide}} soit \bdocinEN{côte à côte}.
+    Dans le code suivant, l'option \bdocinlatex#sbs# est pour \bdocquote{\bdocprewhy{s.ide} \bdocprewhy{b.y} \bdocprewhy{s.ide}} soit \bdocinEN{côte à côte}.
 
-	\bdoclatexshow{examples/listing/ABC.tex}
+    \bdoclatexshow{examples/listing/ABC.tex}
 \end{bdocexa}
 
 
@@ -403,15 +411,15 @@ Voici deux exemples d'utilisation.
 
 
 \begin{bdocexa}[À la suite]
-	L'environnement \bdocenv{bdoclatex} choisit par défaut l'option \bdocinlatex#std#
-	\footnote{
-    	\bdocinlatex{std} fait référence au comportement \bdocquote{standard} de \bdocpack{tcolorbox} vis à vis de la librairie \bdocpack{minted}.
-	}
-	et produit le résultat suivant.
+    L'option par défaut est l'option \bdocinlatex#std#
+    \footnote{
+        \bdocinlatex{std} fait référence au comportement \bdocquote{standard} de \bdocpack{tcolorbox} vis à vis de la librairie \bdocpack{minted}.
+    },
+    et \bdocenv{bdoclatex} produit le résultat suivant.
 
-	\begin{bdoclatex}
-		$A = B + C$
-	\end{bdoclatex}
+    \begin{bdoclatex}
+        $A = B + C$
+    \end{bdoclatex}
 \end{bdocexa}
 
 
@@ -419,11 +427,11 @@ Voici deux exemples d'utilisation.
 
 
 \begin{bdocexa}[Juste le code]
-	Afficher le code seul comme ci-après s'obtient via l'option \bdocinlatex#code# de l'environnement \bdocenv{bdoclatex}.
+    Afficher le code seul comme ci-après s'obtient via l'option \bdocinlatex#code#, donc \bdocenv[{[code]}]{bdoclatex} donnera juste ce qui suit.
 
-	\begin{bdoclatex}[code]
-    	$A = B + C$
-	\end{bdoclatex}
+    \begin{bdoclatex}[code]
+        $A = B + C$
+    \end{bdoclatex}
 \end{bdocexa}
 
 
@@ -431,10 +439,10 @@ Voici deux exemples d'utilisation.
 
 
 \begin{bdocwarn}
-	Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut. Voici un cas d'usage.
+    Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut. Voici un cas d'usage.
 
-	\bdoclatexshow[explain = Ceci permet d'obtenir ce qui est attendu :]
-	              {examples/listing/strange.tex}
+    \bdoclatexshow[explain = Ceci permet d'obtenir ce qui est attendu :]
+                  {examples/listing/strange.tex}
 \end{bdocwarn}
 
 
@@ -443,7 +451,9 @@ Voici deux exemples d'utilisation.
 \subsection{Codes importés}
 
 Pour les codes suivants, on considère un fichier \verb+examples/listing/xyz.tex+ dont le chemin est donné relativement au document présent.
-Le contenu de ce fichier se réduit à l'unique ligne \bdocinlatex|$x y z = 1$| .
+Le contenu de ce fichier est le suivant.
+
+\bdoclatexinput[code]{examples/listing/xyz.tex}
 
 \medskip
 
@@ -454,15 +464,15 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 
 \begin{bdocexa}[Face à face]
-	\leavevmode
+    \leavevmode
 
-	\begin{bdoclatex}[code]
+    \begin{bdoclatex}[code]
 \bdoclatexinput[sbs]{examples/listing/xyz.tex}
-	\end{bdoclatex}
+    \end{bdoclatex}
 
-	Ceci produit la mise en forme suivante.
+    Ceci produit la mise en forme suivante.
 
-	\bdoclatexinput[sbs]{examples/listing/xyz.tex}
+    \bdoclatexinput[sbs]{examples/listing/xyz.tex}
 \end{bdocexa}
 
 
@@ -470,15 +480,15 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 
 \begin{bdocexa}[À la suite]
-	\leavevmode
+    \leavevmode
 
-	\begin{bdoclatex}[code]
+    \begin{bdoclatex}[code]
 \bdoclatexinput{examples/listing/xyz.tex}
-	\end{bdoclatex}
+    \end{bdoclatex}
 
-	Ceci produit la mise en forme suivante où l'option employée par défaut est \bdocinlatex#std#.
+    Ceci produit la mise en forme suivante où l'option employée par défaut est \bdocinlatex#std#.
 
-	\bdoclatexinput{examples/listing/xyz.tex}
+    \bdoclatexinput{examples/listing/xyz.tex}
 \end{bdocexa}
 
 
@@ -486,15 +496,15 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 
 
 \begin{bdocexa}[Juste le code]
-	\leavevmode
+    \leavevmode
 
-	\begin{bdoclatex}[code]
+    \begin{bdoclatex}[code]
 \bdoclatexinput[code]{examples/listing/xyz.tex}
-	\end{bdoclatex}
+    \end{bdoclatex}
 
-	Ceci produit la mise en forme suivante.
+    Ceci produit la mise en forme suivante.
 
-	\bdoclatexinput[code]{examples/listing/xyz.tex}
+    \bdoclatexinput[code]{examples/listing/xyz.tex}
 \end{bdocexa}
 
 
@@ -506,13 +516,13 @@ Noter ci-après que la macro \bdocmacro{bdoclatexinput} s'utilise de façon semb
 Ce qui suit est utile pour des exemples plus sophistiqués.
 
 \begin{bdocexa}[Showcase]
-	Ce qui suit a été obtenu via la macro \bdocmacro{bdoclatexshow} en tapant \bdocinlatex+\bdoclatexshow{examples/listing/xyz.tex}+.
+    Ce qui suit a été obtenu via la macro \bdocmacro{bdoclatexshow} en tapant \bdocinlatex+\bdoclatexshow{examples/listing/xyz.tex}+.
 
-	\medskip
+    \medskip
 
-	\begin{bdoc-doc-showcase}
-    	\bdoclatexshow{examples/listing/xyz.tex}
-	\end{bdoc-doc-showcase}
+    \begin{bdoc-doc-showcase}
+        \bdoclatexshow{examples/listing/xyz.tex}
+    \end{bdoc-doc-showcase}
 \end{bdocexa}
 
 
@@ -520,13 +530,13 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
 
 
 \begin{bdocexa}[Changer le texte explicatif]
-	Pour obtenir ce qui suit avec un texte personnalisé, il suffit d'employer \bdocinlatex|\bdoclatexshow[explain = Voici le rendu réel.]{...}|.
+    Pour obtenir ce qui suit avec un texte personnalisé, il suffit d'employer \bdocinlatex|\bdoclatexshow[explain = Voici le rendu réel.]{...}|.
 
-	\medskip
+    \medskip
 
-	\begin{bdoc-doc-showcase}
-    	\bdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}
-	\end{bdoc-doc-showcase}
+    \begin{bdoc-doc-showcase}
+        \bdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}
+    \end{bdoc-doc-showcase}
 \end{bdocexa}
 
 
@@ -542,34 +552,34 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
 
 
 \begin{bdocexa}[Les options disponibles]
-	En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de \bdocenv{bdocshowcase}, voir \ref{bdoc-showcase}.
-	Voici un exemple illustrant ceci.
+    En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de \bdocenv{bdocshowcase}, voir \ref{bdoc-showcase}.
+    Voici un exemple illustrant ceci.
 
-	\medskip
+    \medskip
 
-	\bdoclatexinput[code]{examples/listing/latexshow-options.tex}
+    \bdoclatexinput[code]{examples/listing/latexshow-options.tex}
 
-	\medskip
+    \medskip
 
-	Ceci va produire ce qui suit.
+    Ceci va produire ce qui suit.
 
-	\medskip
+    \medskip
 
-	\begin{bdoc-doc-showcase}
-    	\input{examples/listing/latexshow-options.tex}
-	\end{bdoc-doc-showcase}
+    \begin{bdoc-doc-showcase}
+        \input{examples/listing/latexshow-options.tex}
+    \end{bdoc-doc-showcase}
 \end{bdocexa}
 
 
 \section{Mettre en avant du contenu}
 
 \begin{bdocnote}
-	Les environnements présentés dans cette section
-	\footnote{
-		La mise en forme provient du package \bdocpack{amsthm}.
-	}
-	ajoutent un court titre indiquant le type d'informations fournies.
-	Ce court texte sera toujours traduit dans la langue indiquée lors du chargement du package \bdocpack{bdoc}.
+    Les environnements présentés dans cette section
+    \footnote{
+        La mise en forme provient du package \bdocpack{amsthm}.
+    }
+    ajoutent un court titre indiquant le type d'informations fournies.
+    Ce court texte sera toujours traduit dans la langue indiquée lors du chargement du package \bdocpack{bdoc}.
 \end{bdocnote}
 
 
@@ -581,9 +591,9 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
 Des exemples numérotés, ou non, s'indiquent via l'environnement \bdocenv{bdocexa} qui propose deux arguments optionnels.
 
 \begin{enumerate}
-	\item Le 1\ier{} argument entre chevrons \verb#<...># peut prendre au choix les valeurs \verb#nb# pour numéroter, valeur par défaut, \verb#nonb# pour ne pas numéroter.
+    \item Le 1\ier{} argument entre chevrons \verb#<...># peut prendre au choix les valeurs \verb#nb# pour numéroter, valeur par défaut, \verb#nonb# pour ne pas numéroter.
 
-	\item Le 2\ieme{} argument entre crochets \verb#[...]# sert à ajouter un mini-titre.
+    \item Le 2\ieme{} argument entre crochets \verb#[...]# sert à ajouter un mini-titre.
 \end{enumerate}
 
 
@@ -596,7 +606,7 @@ Voici différents emplois possibles.
 
 
 \begin{bdocimportant}
-	La numérotation des exemples est remise à zéro dès qu'une section  de niveau au moins égale à une \bdocinlatex|\subsubsection| est ouverte.
+    La numérotation des exemples est remise à zéro dès qu'une section  de niveau au moins égale à une \bdocinlatex|\subsubsection| est ouverte.
 \end{bdocimportant}
 
 
@@ -604,9 +614,9 @@ Voici différents emplois possibles.
 
 
 \begin{bdoctip}
-	Il peut parfois être utile de revenir à la ligne dès le début du contenu. Voici comment faire (ce tour de passe-passe reste valable pour les environnements présentés dans les sous-sections suivantes). Noter au passage que la numérotation suit celle de l'exemple précédent comme souhaité.
+    Il peut parfois être utile de revenir à la ligne dès le début du contenu. Voici comment faire (ce tour de passe-passe reste valable pour les environnements présentés dans les sous-sections suivantes). Noter au passage que la numérotation suit celle de l'exemple précédent comme souhaité.
 
-	\bdoclatexinput[sbs]{examples/focus/exa-leavevmode.tex}
+    \bdoclatexinput[sbs]{examples/focus/exa-leavevmode.tex}
 \end{bdoctip}
 
 
@@ -667,7 +677,7 @@ L'environnement \bdocenv{bdocwarn} sert à avertir l'utilisateur d'un piège à 
 \section{Changements}
 
 \begin{bdocexa}[Expliquer dans le journal]
-	Pour fournir des explications efficaces dans l'historique des changements, \bdocpack{bdoc} propose de procéder comme suit.
+    Pour fournir des explications efficaces dans l'historique des changements, \bdocpack{bdoc} propose de procéder comme suit.
 
     \bdoclatexshow{examples/version-n-change/topic.tex}
 \end{bdocexa}
@@ -687,9 +697,9 @@ L'environnement \bdocenv{bdocwarn} sert à avertir l'utilisateur d'un piège à 
 
 
 \begin{bdocexa}[Versionner et dater des nouveautés]
-	L'exemple suivant montre une macro plus complète que la précédente, à savoir \bdocmacro{bdocversion}.
+    L'exemple suivant montre une macro plus complète que la précédente, à savoir \bdocmacro{bdocversion}.
 
-	\bdoclatexshow{examples/version-n-change/versioning.tex}
+    \bdoclatexshow{examples/version-n-change/versioning.tex}
 \end{bdocexa}
 
 
@@ -707,14 +717,14 @@ L'environnement \bdocenv{bdocwarn} sert à avertir l'utilisateur d'un piège à 
 
 
 \begin{bdocwarn}
-	Seul l'emploi du format \bdocinlatex+YYYY-MM-DD+ est vérifié
-	\footnote{
-		Techniquement, vérifier la validité d'une date, via \LaTeX3, ne présente pas de difficulté.
-	},
-	et ceci est un choix ! Pourquoi cela ? Tout simplement car dater et versionner des explications doit se faire de façon semi-automatisée afin d'éviter tout bug humain
-	\footnote{
-		L'auteur de \bdocpack{bdoc} est entrain de mettre en place un ensemble d'outils permettant une telle semi-automatisation.
-	}.
+    Seul l'emploi du format \bdocinlatex+YYYY-MM-DD+ est vérifié
+    \footnote{
+        Techniquement, vérifier la validité d'une date, via \LaTeX3, ne présente pas de difficulté.
+    },
+    et ceci est un choix ! Pourquoi cela ? Tout simplement car dater et versionner des explications doit se faire de façon semi-automatisée afin d'éviter tout bug humain
+    \footnote{
+        L'auteur de \bdocpack{bdoc} est entrain de mettre en place un ensemble d'outils permettant une telle semi-automatisation.
+    }.
 \end{bdocwarn}
 
 

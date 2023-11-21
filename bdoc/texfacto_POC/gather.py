@@ -397,7 +397,7 @@ FINAL PRODUCT "{projectname}"
         f.write(code)
 
 
-    codefile = projectfolder_TEMP / f"{projectname}-FR.tex"
+    codefile = projectfolder_TEMP / f"{projectname}-fr.tex"
     code     = r"""
 \documentclass[12pt, a4paper]{article}
 
