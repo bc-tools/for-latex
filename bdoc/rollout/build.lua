@@ -6,7 +6,7 @@ sourcefiles = {"*.sty"}
 
 
 typesetfiles     = {"*.tex"}
-typesetsourcefiles = {"examples/**"}
+typesetsourcefiles = {"*/**"}
 
 checkopts   = "-interaction=nonstopmode --shell-escape"
 -- checkopts   = "-interaction=batchmode --shell-escape"
