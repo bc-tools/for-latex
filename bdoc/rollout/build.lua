@@ -1,9 +1,12 @@
 module = "bdoc"
 
-sourcefiles = {"code/*.sty"}
+docfiledir = "doc"
+sourcefiledir = "code"
+sourcefiles = {"*.sty"}
 
-typesetfiles     = {"doc/*.tex"}
-typesetsuppfiles = {"doc/*/*"}
+
+typesetfiles     = {"*.tex"}
+typesetsourcefiles = {"examples/**"}
 
 checkopts   = "-interaction=nonstopmode --shell-escape"
 -- checkopts   = "-interaction=batchmode --shell-escape"
