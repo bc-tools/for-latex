@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 
 \input{../preamble.cfg.tex}
 
@@ -70,11 +70,10 @@ Voici des exemples d'utilisation.
 
 
 \begin{bdocexa}[À la suite]
-    L'option par défaut est l'option \bdocinlatex#std#
+    \bdocenv{bdoclatex} produit le résultat suivant qui correspond à l'option par défaut \bdocinlatex#std#
     \footnote{
         \bdocinlatex{std} fait référence au comportement \bdocquote{standard} de \bdocpack{tcolorbox} vis à vis de la librairie \bdocpack{minted}.
-    },
-    et \bdocenv{bdoclatex} produit le résultat suivant.
+    }.
 
     \begin{bdoclatex}
         $A = B + C$

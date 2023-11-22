@@ -399,7 +399,7 @@ FINAL PRODUCT "{projectname}"
 
     codefile = projectfolder_TEMP / f"{projectname}-fr.tex"
     code     = r"""
-\documentclass[12pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}

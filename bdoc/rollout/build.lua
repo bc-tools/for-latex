@@ -1,7 +1,7 @@
 module = "bdoc"
 
 sourcefiledir = "code"
-sourcefiles   = {"*.sty", "*.pdf"}
+sourcefiles   = {"*.sty"}
 
 checkopts   = "-interaction=nonstopmode --shell-escape"
 -- checkopts   = "-interaction=batchmode --shell-escape"
