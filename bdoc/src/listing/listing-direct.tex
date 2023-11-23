@@ -22,27 +22,31 @@
 La macro \bdocmacro{bdocinlatex} permet de taper du code en ligne via un usage similaire à \bdocmacro{verb}.
 Voici des exemples d'utilisation.
 \begin{itemize}
-    \item \bdocinlatex+\bdocinlatex|$a^b = c$|+
-          produit le résultat suivant.
+    \item \bdocinlatex|$a^b = c$| s'obtient via le code suivant.
+		  \begin{center}
+		  		\bdocinlatex+\bdocinlatex|$a^b = c$|+
+		  \end{center}
 
-          \bdocinlatex|$a^b = c$|
 
-    \item \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#
-          aboutit au rendu ci-après.
+    \item \bdocinlatex+\bdocinlatex|$a^b = c$|+ s'obtient via le code suivant.
+		  \begin{center}
+		  		\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#
+		  \end{center}
+          
 
-          \bdocinlatex+\bdocinlatex|$a^b = c$|+
-
-    \item \bdocinlatex£\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#£
-          donne ce qui suit.
-
-          \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#
-
-    \item ... \emph{etc.}
+    \item \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+# s'obtient via le code suivant.
+		  \begin{center}
+		  		\bdocinlatex£\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#£
+				
+				\medskip
+				
+				... \emph{etc.}
+		  \end{center}
 \end{itemize}
 
 
 \begin{bdocimportant}
-    La macro \bdocmacro{bdocinlatex} est utilisable dans une note de pied de page. En voici la preuve
+    La macro \bdocmacro{bdocinlatex} s'utilise dans une note de pied de page : voir le bas de cette page
     \footnote{
         \bdocinlatex+$minted = TOP$+ a été tapé \bdocinlatex|\bdocinlatex+$minted = TOP$+| dans cette note de bas de page..
     }.

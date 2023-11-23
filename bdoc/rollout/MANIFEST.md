@@ -20,18 +20,21 @@ be installed for processing such as testing.
 * bdoc-locale-french.cfg.sty 
 * bdoc.sty 
 
-### Documentation files
-
-These files form part of the documentation but are not typeset. Generally they will be
-additional input files for the typeset documentation files listed above.
-
-* bdoc-fr.pdf 
-
 ### Text files
 
 Plain text files included as documentation or metadata.
 
+* MANIFEST.md 
 * README.md 
+
+### Derived files
+
+The files created by ‘unpacking’ the package sources. This typically includes
+`.sty` and `.cls` files created from DocStrip `.dtx` files.
+
+* bdoc-locale-english.cfg.sty 
+* bdoc-locale-french.cfg.sty 
+* bdoc.sty 
 
 
 ## TDS manifest

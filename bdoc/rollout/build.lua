@@ -3,8 +3,12 @@ module = "bdoc"
 sourcefiledir = "code"
 sourcefiles   = {"*.sty"}
 
+flatten = false
+flattentds = false
+
 docfiledir = "doc"
-docfiles   = {"*.pdf"}
+typesetfiles = {"bdoc-fr.tex"}
+-- typesetsourcefiles = {"**/*"}
 
 checkopts   = "-interaction=nonstopmode --shell-escape"
 -- checkopts   = "-interaction=batchmode --shell-escape"
