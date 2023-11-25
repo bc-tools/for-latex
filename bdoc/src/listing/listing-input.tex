@@ -52,8 +52,7 @@
 
 \subsection{Codes importés}
 
-Pour les codes suivants, on considère un fichier \verb+examples/listing/xyz.tex+ dont le chemin est donné relativement au document présent.
-Le contenu de ce fichier est le suivant.
+Pour les codes suivants, on considère un fichier \verb+xyz.tex+ avec le contenu suivant, et ayant relativement au présent document le chemin \verb+examples/listing/xyz.tex+ .
 
 \bdoclatexinput[code]{examples/listing/xyz.tex}
 
@@ -101,7 +100,7 @@ La macro \bdocmacro{bdoclatexinput} , présentée ci-après, s'utilise comme l'e
     \leavevmode
 
     \begin{bdoclatex}[code]
-\bdoclatexinput[code]{examples/listing/xyz.tex}
+\bdoclatexinput[code]xyz.tex}
     \end{bdoclatex}
 
     Ceci produit la mise en forme suivante.
@@ -132,7 +131,7 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
 
 
 \begin{bdocexa}[Changer le texte explicatif]
-    Pour obtenir ce qui suit avec un texte personnalisé, il suffit d'employer \bdocinlatex|\bdoclatexshow[explain = Voici le rendu réel.]{...}|.
+    Pour obtenir ce qui suit avec un texte personnalisé, il suffit d'employer \bdocinlatex|\bdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}|.
 
     \medskip
 
