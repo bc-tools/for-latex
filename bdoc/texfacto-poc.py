@@ -1,119 +1,121 @@
+import re
+
 from src2prod import *
 
 from texfacto_POC import *
 
 PROJECT_DIR = Path(__file__).parent
-SOURCE_DIR  = PROJECT_DIR / Path('src')
-TARGET_DIR  = PROJECT_DIR.parent / PROJECT_DIR.name.lower()
+SOURCE_DIR  = PROJECT_DIR / 'src'
+ROLLOUT_DIR = PROJECT_DIR / "rollout"
 
-DEBUG = False
-# DEBUG = True
-
-
-# ----------------- #
-# -- DEBUG TOOLS -- #
-# ----------------- #
-
-def debug_treeview(
-    source,
-    treeview,
-):
-    print(f"+ {source}")
-    _recu_debug_treeview(
-        treeview = treeview,
-        depth = 1
-    )
-
-    if DEBUG:
-        exit()
+PATTERNS = [
+    re.compile(r"^([^%\\]*)(.*)(\\" + macroname + ")(\[.*\][\t ]*\n?[\t ]*)?{(.*)}(.*)$")
+    for macroname in [
+        'input',
+        'bdoclatexshow',
+        'bdoclatexinput',
+        'bdocshowcaseinput',
+    ]
+]
+# DEBUG = False
+# # DEBUG = True
 
 
-def _recu_debug_treeview(
-    treeview,
-    depth
-):
-    tab    = "  " * depth
-    depth += 1
+# # ----------------- #
+# # -- DEBUG TOOLS -- #
+# # ----------------- #
 
-    for kind, content in treeview.items():
-        if kind == TAG_FILE:
-            for onefile in content:
-                print(f"{tab}* {onefile.name}")
+# def debug_treeview(
+#     source,
+#     treeview,
+# ):
+#     print(f"+ {source}")
+#     _recu_debug_treeview(
+#         treeview = treeview,
+#         depth = 1
+#     )
 
-        else:
-            for onedir, subtree in content.items():
-                print(f"{tab}+ {onedir.name}")
-
-                _recu_debug_treeview(
-                    treeview = subtree,
-                    depth    = depth
-                )
+#     if DEBUG:
+#         exit()
 
 
-# ----------------------- #
-# -- ALL USEFULL FILES -- #
-# ----------------------- #
+# def _recu_debug_treeview(
+#     treeview,
+#     depth
+# ):
+#     tab    = "  " * depth
+#     depth += 1
 
-treeview = build_tree(
-    project = PROJECT_DIR,
-    source  = Path('src'),
-    target  = TARGET_DIR,
-    readme  = Path('README.md'),
-    ignore = """
-test_*/
-tests_*/
-test_*.*
-tests_*.*
+#     for kind, content in treeview.items():
+#         if kind == TAG_FILE:
+#             for onefile in content:
+#                 print(f"{tab}* {onefile.name}")
 
-tool_*/
-tools_*/
-tool_*.*
-tools_*.*
-"""
+#         else:
+#             for onedir, subtree in content.items():
+#                 print(f"{tab}+ {onedir.name}")
+
+#                 _recu_debug_treeview(
+#                     treeview = subtree,
+#                     depth    = depth
+#                 )
+
+
+# # ----------------------- #
+# # -- ALL USEFULL FILES -- #
+# # ----------------------- #
+
+# treeview = build_tree(
+#     project = PROJECT_DIR,
+#     source  = Path('src'),
+#     target  = TARGET_DIR,
+#     readme  = Path('README.md'),
+#     ignore = """
+# test_*/
+# tests_*/
+# test_*.*
+# tests_*.*
+
+# tool_*/
+# tools_*/
+# tool_*.*
+# tools_*.*
+# """
+# )
+
+
+# # --------------------------------- #
+# # -- IGNORE THE UNUSED PDF FILES -- #
+# # --------------------------------- #
+
+# for directdir, content in treeview[TAG_DIR].items():
+#     subfiles = content[TAG_FILE]
+
+# # We need to work on a copy of ''subfiles''.
+#     for directsubfile in subfiles[:]:
+#         if directsubfile.suffix == '.tex':
+#             pdf_unused = directsubfile.parent / f"{directsubfile.stem}.pdf"
+
+#             if pdf_unused in subfiles:
+#                 subfiles.remove(pdf_unused)
+
+
+# # ------------------------------ #
+# # -- ONLY SOURCE FILES SORTED -- #
+# # ------------------------------ #
+
+# # debug_treeview(SOURCE_DIR, treeview);exit()
+# # from pprint import pprint;pprint(list(treeview[TAG_DIR].keys()));exit()
+
+# tmpdir = build_tmp_proj(
+#     source   = SOURCE_DIR,
+#     treeview = treeview
+# )
+
+tmpdir = Path("/Users/projetmbc/Mon Drive/git[NEW]-G-Drive/coding/bc-tools/for-latex/bdoc/.bdoc")
+
+build_rollout_proj(
+    patterns   = PATTERNS,
+    tmpdir     = tmpdir,
+    rolloutdir = ROLLOUT_DIR,
 )
-
-
-# --------------------------------- #
-# -- IGNORE THE UNUSED PDF FILES -- #
-# --------------------------------- #
-
-for directdir, content in treeview[TAG_DIR].items():
-    subfiles = content[TAG_FILE]
-
-# We need to work on a copy of ''subfiles''.
-    for directsubfile in subfiles[:]:
-        if directsubfile.suffix == '.tex':
-            pdf_unused = directsubfile.parent / f"{directsubfile.stem}.pdf"
-
-            if pdf_unused in subfiles:
-                subfiles.remove(pdf_unused)
-
-
-# ------------------------------ #
-# -- ONLY SOURCE FILES SORTED -- #
-# ------------------------------ #
-
-# debug_treeview(SOURCE_DIR, treeview);exit()
-# from pprint import pprint;pprint(list(treeview[TAG_DIR].keys()));exit()
-
-build_project(
-    source   = SOURCE_DIR,
-    treeview = treeview
-)
-
-# for k in treeview[TAG_DIR]:print(k.name)
-exit()
-
-allfiles_sorted = build_tree_sorted(
-    source   = SOURCE_DIR,
-    allfiles = treeview
-)
-
-
-# -------------------- #
-# -- XXXXXX -- #
-# -------------------- #
-
-for f in treeview:
-    if f.suffix == ".sty":
-        print(f.name)

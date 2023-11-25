@@ -316,7 +316,7 @@ PREPARE = {
     TAG_TEX: prepare_TEX
 }
 
-def build_project(
+def build_tmp_proj(
     source  ,
     treeview
 ):
@@ -436,3 +436,6 @@ FINAL PRODUCT "{projectname}"
         mode = "a"
     ) as f:
         f.write(code)
+
+
+    return projectfolder_TEMP

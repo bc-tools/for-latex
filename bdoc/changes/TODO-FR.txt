@@ -11,7 +11,13 @@ NOW
 
 texfacto
 
-    ---> abstract
+    ---> on passe via
+
+    \begin{filecontents*}{...}
+        ...
+    \end{filecontents*}
+
+    pour les ressources
 
     ---> produire un fichier compilable: on passe de la structa arbo à une strucplate et en ajoutant l'extenasion exadoc afin de ne pas être traité par l3build...
 
