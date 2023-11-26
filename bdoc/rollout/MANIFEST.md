@@ -24,7 +24,6 @@ be installed for processing such as testing.
 
 Plain text files included as documentation or metadata.
 
-* MANIFEST.md ‡
 * README.md ‡
 
 ### Derived files

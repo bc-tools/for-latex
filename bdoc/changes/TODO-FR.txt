@@ -7,10 +7,11 @@ NOW
 ---
 
 
-
 > ---------------------------- <
 
 ajout de bdoccls en plus de bdocpack
+
+bdocenv : on vire option car fausse bonne idée, si besoin n pass via bdoclatex
 
 bdoctopic
 
