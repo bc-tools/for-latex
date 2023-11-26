@@ -41,20 +41,16 @@ function nocompile {
 
 cd "$TARGET"
 
-for f in */*.tex; do
+for f in */*.tex
+do
     fdir=$(dirname "$f")
 
     cd "$TARGET/$fdir"
 
-    if [ ! "$fdir" = "changelog" ]
-    then
-        echo "-- NEW TEX FILE --"
-        echo "$f"
-        echo ""
-        SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -quiet -pdf -pdflatex="pdflatex --interaction=nonstopmode --halt-on-error --shell-escape  %O %S" "$TARGET/$f" || nocompile "$TARGET/$f"
+    echo "-- NEW TEX FILE --"
+    echo "$f"
+    echo ""
+    SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -quiet -pdf -pdflatex="pdflatex --interaction=nonstopmode --halt-on-error --shell-escape  %O %S" "$TARGET/$f" || nocompile "$TARGET/$f"
 
-        # latexmk -c "$TARGET/$f"
-    fi
-
-
-done
+    # latexmk -c "$TARGET/$f"
+done # for f in */*.tex;
