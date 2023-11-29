@@ -18,18 +18,11 @@
 
 \section{Changements}
 
-\begin{bdocexa}[Expliquer dans le journal]
-    Pour fournir des explications efficaces dans l'historique des changements, \bdocpack{bdoc} propose de procéder comme suit.
-
-    \bdoclatexshow{examples/version-n-change/topic.tex}
-\end{bdocexa}
-
-
-% ------------------ %
+\subsection{À quel moment ?}
 
 
 \begin{bdocexa}[Dater des nouveautés]
-    Pour indiquer la date d'une nouveauté, il suffit d'employer la macro \bdocmacro{bdocdate} comme dans l'exemple suivant où la date doit être donnée au format anglais \texttt{AAAA-MM-JJ}.
+    Dater une nouveauté se fait via la macro \bdocmacro{bdocdate} comme dans l'exemple suivant où la date doit être donnée au format anglais \texttt{AAAA-MM-JJ}.
 
     \bdoclatexshow{examples/version-n-change/dating.tex}
 \end{bdocexa}
@@ -39,7 +32,7 @@
 
 
 \begin{bdocexa}[Versionner et dater des nouveautés]
-    L'exemple suivant montre une macro plus complète que la précédente, à savoir \bdocmacro{bdocversion}.
+    Associer un numéro de version à une nouveauté se fait via la macro \bdocmacro{bdocversion}, la couleur et la date étant des arguments optionnels.
 
     \bdoclatexshow{examples/version-n-change/versioning.tex}
 \end{bdocexa}
@@ -52,14 +45,12 @@
         \item Les macros \bdocmacro{bdocdate} et \bdocmacro{bdocversion} nécessitent deux compilations.
 
         \item Comme la langue indiquée pour cette documentation est le français, la date dans le rendu final est au format \texttt{JJ/MM/AAAA} alors que dans le code celle-ci devra toujours être donnée au format anglais \texttt{AAAA-MM-JJ}.
-
-        \item Le numéro de version sera du type \texttt{maj.min.bug} ou \texttt{maj.min.bug-extra} avec trois entiers \texttt{maj}, \texttt{min}, \texttt{bug} et un optionnel \texttt{extra} égal à \texttt{alpha}, \texttt{beta} ou \texttt{rc} pour \bdocquote{release candidate}.
     \end{enumerate}
 \end{bdocimportant}
 
 
 \begin{bdocwarn}
-    Seul l'emploi du format \bdocinlatex+YYYY-MM-DD+ est vérifié
+    Seul l'emploi du format numérique \bdocinlatex+YYYY-MM-DD+ est vérifié
     \footnote{
         Techniquement, vérifier la validité d'une date, via \LaTeX3, ne présente pas de difficulté.
     },

@@ -1,0 +1,56 @@
+\documentclass[10pt, a4paper]{article}
+
+\input{../preamble.cfg.tex}
+
+\usepackage[lang = french]{../main/main}
+\usepackage{../macroenv/macroenv}
+\usepackage{../inenglish/inenglish}
+\usepackage{../showcase/showcase}
+\usepackage{../listing/listing}
+\usepackage{../focus/focus}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{version-n-change}
+
+
+\begin{document}
+
+%\section{Changements}
+
+\subsection{Quoi de neuf ?}
+
+Pour fournir des explications efficaces dans l'historique des changements, \bdocpack{bdoc} propose différents environnements pour indiquer rapidement et clairement ce qui a été fait
+\footnote{
+	L'utilisateur n'a pas besoin de tous les détails techniques.
+}.
+
+
+\begin{bdocexa}[Nouveautés]
+    XXX
+
+    \bdoclatexshow{examples/version-n-change/new.tex}
+\end{bdocexa}
+
+
+\begin{bdocexa}[Mises à jour]
+    XXX
+
+    \bdoclatexshow{examples/version-n-change/update.tex}
+\end{bdocexa}
+
+
+\begin{bdocexa}[Réparations]
+    XXX
+
+    \bdoclatexshow{examples/version-n-change/fix.tex}
+\end{bdocexa}
+
+
+\begin{bdocexa}[Sujets aux choix]
+    XXX
+
+    \bdoclatexshow{examples/version-n-change/topic.tex}
+\end{bdocexa}
+
+\end{document}

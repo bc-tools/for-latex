@@ -46,9 +46,11 @@
     \rule{1.65cm}{.95pt}
     \vspace{-2.9pt}
 
-    \par
-      \__bdoc_translate_date:n { #2 }
-    \par
+    \IfBlankTF{#2}{}{
+      \par
+        \__bdoc_translate_date:n { #2 }
+      \par
+    }
 
     \vspace{1pt}
 
@@ -75,7 +77,7 @@
   \regex_match:nnTF { \A \d{1,4} \- \d{2} \- \d{2} \Z } { #1 }{
     \__bdoc_translate_date_process:w #1 \q_stop
   }{
-    \msg_error:nn { bdoc } { date-bad-format  }
+    \msg_error:nn { bdoc } { date-bad-format }
   }
 }
 
@@ -116,11 +118,11 @@
 %     and an optional ''extra'' equal to ''alpha'', ''beta'' or ''rc''
 %     for "release candidate".
 %%%
-\NewDocumentCommand{\bdocversion}{O{blue} m m}{
+\NewDocumentCommand{\bdocversion}{O{blue} m O{}}{
   \bdoc@new@change@margin{#1}      % Color
                          {#3}      % Date
                          {#2}      % Version
-                         {-6.25pt} % Last negative vertical spacing
+                         {-4.25pt} % Last negative vertical spacing
 }
 
 
@@ -153,12 +155,9 @@
 
 % :: TOPIC ENVIRONMENT :: %
 
-\tl_new:N \l_bdoc_topic_title_tl
-
 %%%
 % prototype::
 %     #1 : a title that will be followed by a colon.
-%     #2 : a title that will be followed by a point.
 %
 %     :action: this environment prints some ¨infos about specific changes
 %              achieved in a new version (no special formatting is applied).
@@ -166,31 +165,69 @@
 % warning::
 %     Either ''#1'' or ''#2'' can be used.
 %%%
-\NewDocumentEnvironment{bdoctopic}{
-  O{}
-  D<>{}
-}{
-  \IfBlankT{#1#2}{
+\NewDocumentEnvironment{bdoctopic}{ m }{
+  \IfBlankT{#1}{
     \msg_fatal:nn { bdoc } { changes-topic-missing-title }
   }
 
-  \IfBlankTF{#1}{
-    \tl_set:Nn \l_bdoc_topic_title_tl {#2}
-  }{
-    \tl_set:Nn \l_bdoc_topic_title_tl {#1}
+  \textbf{
+    \textsc{#1.}
   }
 
-  \medskip
+  \begin{itemize}
+}{
+  \end{itemize}
+}
 
+
+% :: NEW ENVIRONMENT :: %
+
+%%%
+% prototype::
+%     :action: this environment ???
+%%%
+\NewDocumentEnvironment{bdocnew}{}{
   \textbf{
-    \textsc{\tl_use:N \l_bdoc_topic_title_tl}
+    \textsc{\bdoc@trans@chges@new.}
+  }
 
-    \IfBlankTF{#1}{
-      .
-    }{
-      \bdoc@colon{}
-    }
-  }%
-}{}
+  \begin{itemize}
+}{
+  \end{itemize}
+}
+
+
+% :: UPDATE ENVIRONMENT :: %
+
+%%%
+% prototype::
+%     :action: this environment ???
+%%%
+\NewDocumentEnvironment{bdocupdate}{}{
+  \textbf{
+    \textsc{\bdoc@trans@chges@update.}
+  }
+
+  \begin{itemize}
+}{
+  \end{itemize}
+}
+
+
+% :: FIX ENVIRONMENT :: %
+
+%%%
+% prototype::
+%     :action: this environment ???
+%%%
+\NewDocumentEnvironment{bdocfix}{}{
+  \textbf{
+    \textsc{\bdoc@trans@chges@fix.}
+  }
+
+  \begin{itemize}
+}{
+  \end{itemize}
+}
 
 \ExplSyntaxOff

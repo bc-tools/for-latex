@@ -15,7 +15,17 @@
 
 ?? focus : tout numérotable mais seul exemple est numéroté par défaut
 
-?? version-n-change : on change tout pout passer via fix n co car bien plus utile au ffibal !!!!!
+?? version-n-change : on change syst de redac des chgts pour passer via fix n co car bien plus utile au ffibal !!!!!
+
+    new
+    update
+    fix
+
+    bdoctopic juste pour titre au choix mais mode liste imposée!!!
+    en fait abstraction des trois autres
+
+
+\bdocversion --> date devient optionnel
 
 
 // ---------- //
