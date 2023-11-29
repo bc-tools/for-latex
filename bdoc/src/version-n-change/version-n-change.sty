@@ -187,13 +187,9 @@
 %     :action: this environment ???
 %%%
 \NewDocumentEnvironment{bdocnew}{}{
-  \textbf{
-    \textsc{\bdoc@trans@chges@new.}
-  }
-
-  \begin{itemize}
+  \begin{bdoctopic}{\bdoc@trans@chges@new}
 }{
-  \end{itemize}
+  \end{bdoctopic}
 }
 
 
@@ -204,13 +200,9 @@
 %     :action: this environment ???
 %%%
 \NewDocumentEnvironment{bdocupdate}{}{
-  \textbf{
-    \textsc{\bdoc@trans@chges@update.}
-  }
-
-  \begin{itemize}
+  \begin{bdoctopic}{\bdoc@trans@chges@update}
 }{
-  \end{itemize}
+  \end{bdoctopic}
 }
 
 
@@ -221,13 +213,9 @@
 %     :action: this environment ???
 %%%
 \NewDocumentEnvironment{bdocfix}{}{
-  \textbf{
-    \textsc{\bdoc@trans@chges@fix.}
-  }
-
-  \begin{itemize}
+  \begin{bdoctopic}{\bdoc@trans@chges@fix}
 }{
-  \end{itemize}
+  \end{bdoctopic}
 }
 
 \ExplSyntaxOff
