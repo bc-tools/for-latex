@@ -20,14 +20,14 @@
 \RequirePackage{csquotes}[2022-09-14]
 
 
-\RequirePackage{amsthm}[2017/09]
-
-
 \RequirePackage{clrstrip}[2021-08-28]
 
 
 \RequirePackage{tcolorbox}[2023/06/19]
 \tcbuselibrary{minted, breakable, skins}
+
+
+\RequirePackage{amsthm}[2017/09]
 
 
 \RequirePackage{marginnote}[2023-09-07]
@@ -147,13 +147,114 @@
 \DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
 
 
+% -- NAMES OF PACKAGES, MACROS & ENVIRONMENTS -- %
+
+%%%
+% prototype::
+%     #1 : the name of a package
+%
+% ''\bdocpack{mypack}'' prints verb::''mypack''.
+%
+% note::
+%     This macro is more semantic than useful.
+%%%
+\NewDocumentCommand{\bdocpack}{m}{%
+  \texttt{#1}%
+}
+
+
+%%%
+% prototype::
+%     #1 : the name of a macro
+%
+% ''\bdocenv{mymacro}'' prints verb::''\mymacro''.
+%%%
+\NewDocumentCommand{\bdocmacro}{m}{%
+  \texttt{\textbackslash{}#1}%
+}
+
+
+%%%
+% prototype::
+%     #1 : the name of an environment
+%
+% ''\bdocenv{myenv}'' prints verb::''\begin{myenv} ... \end{myenv}''
+% where the spaces are secable.
+%%%
+\NewDocumentCommand{\bdocenv}{m}{%
+  \texttt{\textbackslash{}begin\{#1\} \!...\! \textbackslash{}end\{#1\}}%
+}
+
+
+% -- EXPLAINING PREFIXES -- %
+
+\ExplSyntaxOn
+
+% :: MESSAGES :: %
+
+\msg_set:nnnn { bdoc } { prefixwhy-bad-format }
+{ Bad ~ format, ~ something ~ like ~ ''pre.fix'' ~ expected. }
+{ You ~ must ~ use ~ one ~ single ~ point. }
+
+
+% :: PREFIX FROM... :: %
+
+%%%
+% prototype::
+%     #1 : a prefix of a word
+%     #2 : the remaining part of the word
+%
+% ''\bdocprewhy{pre}{fix}'' prints something like verb::''pre''-fix.
+%%%
+\NewDocumentCommand{\bdocprewhy}{m}{%
+%   \textbf{\bdocpre{#1}}\kern.5pt\textperiodcentered\kern.5pt#2%
+% Do we have 2 parts?
+  \seq_set_split:Nnn \l_tmpa_seq { . } { #1 }
+
+  \int_set:Nn \l_tmpa_int
+              {\int_eval:n {\seq_count:N \l_tmpa_seq}}
+
+  \if_int_compare:w \l_tmpa_int = 2
+  \else:
+    \msg_error:nn { bdoc } { prefixwhy-bad-format }
+  \fi:
+
+% Let's go.
+  \seq_pop:NN \l_tmpa_seq \l_tmpa_tl
+  \seq_pop:NN \l_tmpa_seq \l_tmpb_tl
+
+  \textbf{\bdocpre{\tl_use:N \l_tmpa_tl}\kern.5pt\textperiodcentered\kern.5pt{\tl_use:N \l_tmpb_tl}}
+}
+
+\ExplSyntaxOff
+
+
+% :: JUST ONE PREFIX :: %
+
+%%%
+% prototype::
+%     #1 : just a prefix
+%
+% ''\bdocpre{pre}'' only prints verb::''pre''. This can be useful in
+% a case like ''\bdocpre{pre} comes from \bdocprewhy{pre}{fix}'' which
+% prints: verb::''pre'' comes from verb::''pre''-fix.
+%
+% note::
+%     This macro is more semantic than useful.
+%%%
+\NewDocumentCommand{\bdocpre}{m}{%
+  \texttt{#1}%
+}
+
+
 % -- QUOTING -- %
 
 %%%
 % prototype::
 %     #1 : a text to quote.
 %
-% For example, ''\bdocquote{Something}'' prints something like **"Something"**.
+% For example, ''\bdocquote{Something}'' prints something like
+% **"Something"**.
 %%%
 \NewDocumentCommand{\bdocquote}{m}{%
   \enquote{\emph{#1}}%
@@ -186,227 +287,6 @@
   \IfBooleanF{#1}{% No star used.
     \ \bdoc@trans@in@EN{}%
   }%
-}
-
-
-% -- FOCUS ON SOME CONTENT -- %
-
-% :: EXAMPLE - HIDDEN VERSIONS :: %
-
-%%%
-% See the \doc of the macro ''\newtheorem'' from the package ''amsthm''
-% to have \infos about the environment ''@@bdocexa@nb''.
-%%%
-\newtheorem{@@bdocexa@nb}{\bdoc@trans@exa@title}%
-                         [subsubsection]
-
-%%%
-% We redefine the counter associated to the environment ''@@bdocexa@nb''
-% to obtain only one single arabic number.
-%%%
-\renewcommand{\the@@bdocexa@nb}{\arabic{@@bdocexa@nb}}
-
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''@@bdocexa@no@nb''.
-%%%
-\newtheorem*{@@bdocexa@no@nb}{\bdoc@trans@exa@title}
-
-
-% :: EXAMPLE - PUBLIC VERSION :: %
-
-\ExplSyntaxOn
-
-\msg_set:nnnn { bdoc } { env-bdocexa-unknown-option }
-  { Unknown ~ rafters ~ option. }
-  { See ~ the ~ documentation ~ for ~ the ~ supported ~ options. }
-
-\NewDocumentEnvironment{bdocexa}{D<>{nb} O{}}{
-  \str_case:nnF { #1 } {
-    { nb   } {
-      \begin{@@bdocexa@nb}[#2]
-    }
-    { nonb } {
-      \begin{@@bdocexa@no@nb}[#2]
-    }
-  }{
-    \msg_error:nn { bdoc } { env-bdocexa-unknown-option }
-  }
-}{
-  \str_case:nnF { #1 } {
-    { nb   } {
-      \end{@@bdocexa@nb}
-    }
-    { nonb } {
-      \end{@@bdocexa@no@nb}
-    }
-  }{}
-}
-
-\ExplSyntaxOff
-
-
-% :: REMARK :: %
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocrem''.
-%%%
-\newtheorem*{bdocrem}{\bdoc@trans@rmk@title}
-
-
-% :: IMPORTANT :: %
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocimportant''.
-%%%
-\newtheorem*{bdocimportant}{\bdoc@trans@important@title}
-
-
-% :: NOTE :: %
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocnote''.
-%%%
-\newtheorem*{bdocnote}{\bdoc@trans@note@title}
-
-
-% :: TIP :: %
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdoctip''.
-%%%
-\newtheorem*{bdoctip}{\bdoc@trans@tip@title}
-
-
-% :: CUATION :: %
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdoccaution''.
-%%%
-\newtheorem*{bdoccaution}{\bdoc@trans@caution@title}
-
-
-% :: WARNING :: %
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocwarn''.
-%%%
-\newtheorem*{bdocwarn}{\bdoc@trans@warn@title}
-
-
-% -- NAMES OF PACKAGES, MACROS & ENVIRONMENTS -- %
-
-%%%
-% prototype::
-%     #1 : the name of a class
-%
-%     :action: ''\bdoccls{myclass}'' prints verb::''myclass''.
-%%%
-\NewDocumentCommand{\bdoccls}{m}{%
-  \texttt{#1}%
-}
-
-
-%%%
-% prototype::
-%     #1 : the name of a package
-%
-%     :action:''\bdocpack{mypack}'' prints verb::''mypack''.
-%%%
-\NewDocumentCommand{\bdocpack}{m}{%
-  \texttt{#1}%
-}
-
-
-%%%
-% prototype::
-%     #1 : the name of a macro
-%
-%     :action: ''\bdocenv{mymacro}'' prints verb::''\mymacro''.
-%%%
-\NewDocumentCommand{\bdocmacro}{m}{%
-  \texttt{\textbackslash{}#1}%
-}
-
-
-%%%
-% prototype::
-%     #1 : hard typed options with the good delimiters
-%     #2 : the name of an environment
-%
-%     :action: ''\bdocenv{myenv}'' prints verb::''\begin{myenv} ... \end{myenv}''
-%              or something like verb::''\begin{myenv}<opt1> ... \end{myenv}'',
-%              the spaces being secable.
-%%%
-\NewDocumentCommand{\bdocenv}{O{}m}{%
-  \texttt{\textbackslash{}begin\{#2\}#1 %
-          \!...\! %
-          \textbackslash{}end\{#2\}}%
-}
-
-
-% -- EXPLAINING PREFIXES -- %
-
-\ExplSyntaxOn
-
-% :: MESSAGES :: %
-
-\msg_set:nnnn { bdoc } { prefixwhy-bad-format }
-{ Bad ~ format, ~ something ~ like ~ ''pre.fix'' ~ expected. }
-{ You ~ must ~ use ~ one ~ single ~ point. }
-
-
-% :: PREFIX FROM... :: %
-
-%%%
-% prototype::
-%     #1 : a prefix and a suffix separated by one colon.
-%
-%     :action: ''\bdocprewhy{pre.fix}'' prints verb::''pre''.fix.
-%%%
-\NewDocumentCommand{\bdocprewhy}{m}{%
-% Do we have 2 parts?
-  \seq_set_split:Nnn \l_tmpa_seq { . } { #1 }
-
-  \int_set:Nn \l_tmpa_int
-              {\int_eval:n {\seq_count:N \l_tmpa_seq}}
-
-  \if_int_compare:w \l_tmpa_int = 2
-  \else:
-    \msg_error:nn { bdoc } { prefixwhy-bad-format }
-  \fi:
-
-% Let's go.
-  \seq_pop:NN \l_tmpa_seq \l_tmpa_tl
-  \seq_pop:NN \l_tmpa_seq \l_tmpb_tl
-
-  \textbf{\bdocpre{\tl_use:N \l_tmpa_tl}\kern.5pt\textperiodcentered\kern.5pt{\tl_use:N \l_tmpb_tl}}
-}
-
-\ExplSyntaxOff
-
-
-% :: JUST ONE PREFIX :: %
-
-%%%
-% prototype::
-%     #1 : just a prefix
-%
-%     :action: ''\bdocpre{pre}'' only prints verb::''pre''.
-%              This can be useful in a case like
-%              ''\bdocpre{pre} comes from \bdocprewhy{pre}{fix}''
-%              which prints:
-%              verb::''pre'' comes from verb::''pre''-fix.
-%%%
-\NewDocumentCommand{\bdocpre}{m}{%
-  \texttt{#1}%
 }
 
 
@@ -461,7 +341,7 @@
 % prototype::
 %     #1 : one color following the ''xcolor'' format.
 %
-%     :return: a "darker" version of the color ''#1''.
+%     :return: a darker version of color ''#1''.
 %%%
 \NewExpandableDocumentCommand{\bdocdarkcolor}{m}{%
   #1!50!black%
@@ -472,7 +352,7 @@
 % prototype::
 %     #1 : one color following the ''xcolor'' format.
 %
-%     :return: a "transparent" version of the color `#1`.
+%     :return: a transparent version of color `#1`.
 %%%
 \NewExpandableDocumentCommand{\bdoclightcolor}{m}{%
   #1!5%
@@ -486,8 +366,7 @@
 %     #1 : the text before the real output
 %     #2 : the text after the real output
 %     #3 : one color following the ''xcolor'' format.
-%          This color is used to set the one for the decorated texts printed
-%          corresponding to the two first arguments.
+%          This color is used to set the one for the decorated texts printed corresponding to the two first arguments.
 %
 %     :action: this environment just adds its content processed by \latex
 %              between centered materials produced by the macro ''\bdocruler''
@@ -535,7 +414,6 @@
 \tl_new:N   \l_bdoc_showcase_color_tl
 \bool_new:N \l_bdoc_showcase_nostripe_bool
 
-
 %%%
 % prototype::
 %     :see: env.bdocshowcase
@@ -566,7 +444,7 @@
 %              by framing it with texts decorated by ''\bdocruler'',
 %              in order to clearly identify a rendering used as an
 %              example.
-%              It is also possible to have a coloured strip of the width
+%              It is also possible to have a coloured strip the width
 %              of the page in the background of the content.
 %
 %     :see: env.bdoc@showcase@basic ,
@@ -645,7 +523,7 @@
 %
 %     See the pgfkeys package documentation for explanation.
 %%%
-\NewExpandableDocumentCommand{\bdoc@latex@listing@formating}{ m }{
+\NewExpandableDocumentCommand{\bdoc@latex@listing@formating}{m}{
   \str_case:nnF { #1 } {
     { sbs  } { listing ~ side ~ text }
     { code } { listing ~ only }
@@ -758,6 +636,7 @@
 %           macro.bdoclatexinput
 %%%
 \NewDocumentCommand{\bdoclatexshow}{O{} m}{
+% Source: https://tex.stackexchange.com/a/696700/6880
   \group_begin:
     \keys_set_known:nnN { bdoc/latexshow } { #1 } \l_tmpa_tl
 
@@ -765,12 +644,125 @@
 
     \tl_use:N \l_bdoc_listing_explain_tl
 
-% Source: https://tex.stackexchange.com/a/696700/6880
     \exp_last_unbraced:NNV \bdocshowcaseinput [\l_tmpa_tl] {#2}
   \group_end:
 }
 
 \ExplSyntaxOff
+
+
+% -- FOCUS SOME CONTENT -- %
+
+% :: EXAMPLE - HIDDEN VERSIONS :: %
+
+%%%
+% See the \doc of the macro ''\newtheorem'' from the package ''amsthm''
+% to have \infos about the environment ''@@bdocexa@nb''.
+%%%
+\newtheorem{@@bdocexa@nb}{\bdoc@trans@exa@title}%
+                    [subsubsection]
+
+%%%
+% We redefine the counter associated to the environment ''@@bdocexa@nb''
+% to obtain only one single arabic number.
+%%%
+\renewcommand{\the@@bdocexa@nb}{\arabic{@@bdocexa@nb}}
+
+
+%%%
+% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
+% to have \infos about the environment ''@@bdocexa@no@nb''.
+%%%
+\newtheorem*{@@bdocexa@no@nb}{\bdoc@trans@exa@title}
+
+
+% :: EXAMPLE - PUBLIC VERSION :: %
+
+\ExplSyntaxOn
+
+\msg_set:nnnn { bdoc } { env-bdocexa-unknown-option }
+  { Unknown ~ rafters ~ option. }
+  { See ~ the ~ documentation ~ for ~ the ~ supported ~ options. }
+
+\NewDocumentEnvironment{bdocexa}{D<>{nb} O{}}{
+  \str_case:nnF { #1 } {
+    { nb   } {
+      \begin{@@bdocexa@nb}[#2]
+    }
+    { nonb } {
+      \begin{@@bdocexa@no@nb}[#2]
+    }
+  }{
+    \msg_error:nn { bdoc } { env-bdocexa-unknown-option }
+  }
+}{
+  \str_case:nnF { #1 } {
+    { nb   } {
+      \end{@@bdocexa@nb}
+    }
+    { nonb } {
+      \end{@@bdocexa@no@nb}
+    }
+  }{}
+}
+
+\ExplSyntaxOff
+
+
+
+% :: REMARK :: %
+
+%%%
+% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
+% to have \infos about the environment ''bdocrem''.
+%%%
+\newtheorem*{bdocrem}{\bdoc@trans@rmk@title}
+
+
+% :: IMPORTANT :: %
+
+%%%
+% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
+% to have \infos about the environment ''bdocimportant''.
+%%%
+\newtheorem*{bdocimportant}{\bdoc@trans@important@title}
+
+
+% :: NOTE :: %
+
+%%%
+% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
+% to have \infos about the environment ''bdocnote''.
+%%%
+\newtheorem*{bdocnote}{\bdoc@trans@note@title}
+
+
+% :: TIP :: %
+
+%%%
+% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
+% to have \infos about the environment ''bdoctip''.
+%%%
+\newtheorem*{bdoctip}{\bdoc@trans@tip@title}
+
+
+% :: CUATION :: %
+
+%%%
+% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
+% to have \infos about the environment ''bdoccaution''.
+%%%
+\newtheorem*{bdoccaution}{\bdoc@trans@caution@title}
+
+
+
+% :: WARNING :: %
+
+%%%
+% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
+% to have \infos about the environment ''bdocwarn''.
+%%%
+\newtheorem*{bdocwarn}{\bdoc@trans@warn@title}
 
 
 % -- CHANGES - WHEN? --%
@@ -783,6 +775,10 @@
   { Bad ~ format ~ for ~ a ~ date. }
   { Use ~ YYYY-MM-DD. }
 
+% \msg_set:nnnn { bdoc } { date-not-in-calendar }
+%   { Date ~ not ~ in ~ the ~ calendar. }
+%   { }
+
 
 % :: MARGIN NOTE :: %
 
@@ -791,8 +787,8 @@
 %%%
 % prototype::
 %     #1 : the color of the margin note
-%     #2 : the first material (a date or nothing)
-%     #3 : the second material (a version number or nothing)
+%     #2 : the first material (a date)
+%     #3 : the second material (a version number)
 %     #4 : the last negative vertical spacing for the 2nd rule
 %
 %     :action: this macro factorizes the printing of the changes
@@ -810,11 +806,9 @@
     \rule{1.65cm}{.95pt}
     \vspace{-2.9pt}
 
-    \IfBlankTF{#2}{}{
-      \par
-        \__bdoc_translate_date:n { #2 }
-      \par
-    }
+    \par
+      \__bdoc_translate_date:n { #2 }
+    \par
 
     \vspace{1pt}
 
@@ -841,7 +835,7 @@
   \regex_match:nnTF { \A \d{1,4} \- \d{2} \- \d{2} \Z } { #1 }{
     \__bdoc_translate_date_process:w #1 \q_stop
   }{
-    \msg_error:nn { bdoc } { date-bad-format }
+    \msg_error:nn { bdoc } { date-bad-format  }
   }
 }
 
@@ -868,19 +862,25 @@
 %     #3 : a date ''YYYY-MM-DD''
 %
 %     :action: this macro prints a margin note showing a version number
-%              below a date, and the optional argument is used to colorize
+%              upon a date, and the optional argument is used to colorized
 %              all this text.
 %
 % warning::
-%     The date must use an english formatting like ''2021-07-14''. This allows
+%     The date must use the english formatting like ''2021-07-14''. This allows
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
+%
+% note::
+%     The version number must look like ''maj.min.bug'' or
+%     ''maj.min.bug-extra'' with three integers ''maj'', ''min'', ''bug''
+%     and an optional ''extra'' equal to ''alpha'', ''beta'' or ''rc''
+%     for "release candidate".
 %%%
-\NewDocumentCommand{\bdocversion}{O{blue} m O{}}{
+\NewDocumentCommand{\bdocversion}{O{blue} m m}{
   \bdoc@new@change@margin{#1}      % Color
                          {#3}      % Date
                          {#2}      % Version
-                         {-4.25pt} % Last negative vertical spacing
+                         {-6.25pt} % Last negative vertical spacing
 }
 
 
@@ -902,7 +902,7 @@
 }
 
 
-% -- CHANGES - WHAT?
+% -- EXPLAIN SOMETHING NEW -- %
 
 % :: MESSAGES :: %
 
@@ -911,76 +911,47 @@
   { One ~ single ~ title ~ must ~ be ~ indicated. }
 
 
-% :: CHANGES - TOPIC :: %
+% :: TOPIC ENVIRONMENT :: %
+
+\tl_new:N \l_bdoc_topic_title_tl
 
 %%%
 % prototype::
 %     #1 : a title that will be followed by a colon.
+%     #2 : a title that will be followed by a point.
 %
 %     :action: this environment prints some ¨infos about specific changes
 %              achieved in a new version (no special formatting is applied).
+%
+% warning::
+%     Either ''#1'' or ''#2'' can be used.
 %%%
-\NewDocumentEnvironment{bdoctopic}{ m }{
-  \IfBlankT{#1}{
+\NewDocumentEnvironment{bdoctopic}{
+  O{}
+  D<>{}
+}{
+  \IfBlankT{#1#2}{
     \msg_fatal:nn { bdoc } { changes-topic-missing-title }
   }
 
-  \textbf{
-    \textsc{#1.}
+  \IfBlankTF{#1}{
+    \tl_set:Nn \l_bdoc_topic_title_tl {#2}
+  }{
+    \tl_set:Nn \l_bdoc_topic_title_tl {#1}
   }
 
-  \begin{itemize}
-}{
-  \end{itemize}
-}
+  \medskip
 
+  \textbf{
+    \textsc{\tl_use:N \l_bdoc_topic_title_tl}
 
-% :: CHANGES - NEW THINGS :: %
-
-%%%
-% prototype::
-%     :see: env.bdoctopic
-%
-%     :action: similar to the \env ''bdoctopic'' with the title "New"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{bdocnew}{}{
-  \begin{bdoctopic}{\bdoc@trans@chges@new}
-}{
-  \end{bdoctopic}
-}
-
-
-% :: CHANGES - UPDATE :: %
-
-%%%
-% prototype::
-%     :see: env.bdoctopic
-%
-%     :action: similar to the \env ''bdoctopic'' with the title "Update"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{bdocupdate}{}{
-  \begin{bdoctopic}{\bdoc@trans@chges@update}
-}{
-  \end{bdoctopic}
-}
-
-
-% :: CHANGES - FIX :: %
-
-%%%
-% prototype::
-%     :see: env.bdoctopic
-%
-%     :action: similar to the \env ''bdoctopic'' with the title "Fix"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{bdocfix}{}{
-  \begin{bdoctopic}{\bdoc@trans@chges@fix}
-}{
-  \end{bdoctopic}
-}
+    \IfBlankTF{#1}{
+      .
+    }{
+      \bdoc@colon{}
+    }
+  }%
+}{}
 
 \ExplSyntaxOff
 
@@ -990,8 +961,8 @@
 %%%
 % prototype::
 %     :action: this macro draws a centered horizontal rule with a height
-%              of qty::''0.75 pt'', and a width equal to half of the current
-%              text width.
+%              of quantity::''0.75 pt'', and a width equal to half of
+%              the current text width.
 %              Extra vertical spaces are added above and below the rule.
 %%%
 \NewDocumentCommand{\bdocsep}{}{
