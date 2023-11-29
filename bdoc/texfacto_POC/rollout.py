@@ -47,6 +47,16 @@ def build_rollout_proj(patterns, tmpdir, rolloutdir):
 
         headcontents = []
 
+        if resources:
+            headcontents.append(
+"""
+% -------------------- %
+% -- RESOURCES USED -- %
+% -------------------- %
+"""
+                )
+
+
         for rfile, rname in resources.items():
             with (tmpdir / rfile).open("r") as f:
                 headcontents.append(
@@ -59,6 +69,15 @@ f"""
 
         headcontents = "\n".join(headcontents)
 
-        finaltex = headcontents + '\n'*2 + destfile.read_text()
+        if headcontents:
+            headcontents += """
+
+% ------------------------ %
+% -- SOURCE FOR THE DOC -- %
+% ------------------------ %
+
+"""
+
+        finaltex = headcontents + destfile.read_text()
 
         destfile.write_text(data = finaltex)

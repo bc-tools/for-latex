@@ -419,7 +419,33 @@ FINAL PRODUCT "{projectname}"
         ".tmp_thedoc.tex",
     ]:
         if tmpfile == ".tmp_thedoc.tex":
-            code += "\\begin{document}\n"
+            code += r"""
+\begin{document}
+
+\title{Le package \texttt{bdoc} - Documenter simplement un projet}
+\author{Christophe BAL}
+\date{29 Nov. 2023}
+
+\maketitle
+
+\begin{abstract}
+Le package \bdocpack{bdoc}
+\footnote{
+    Le nom vient de \bdocquote{\bdocprewhy{b.asic} \bdocprewhy{doc.umentation}} qui ne nécessite aucune traduction.
+}
+est sans aucune prétention.
+Son but est de faciliter la saisie sémantique de documentations de packages et de classes \LaTeX\ avec un rendu sobre pour une lecture sur écran
+\footnote{
+    L'idée est de produire un fichier \texttt{PDF} efficace à parcourir pour des besoins ponctuels. C'est généralement ce que l'on attend d'une documentation liée au codage.
+}.
+
+
+\begin{bdocnote}
+ 	Ce package propose, ou impose, un style de mise en forme.
+	Dans un avenir plus ou moins proche, \bdocpack{bdoc} sera sûrement éclaté en une classe et un package.
+\end{bdocnote}
+\end{abstract}
+"""
 
         with (projectfolder_TEMP / tmpfile).open(
             encoding = "utf-8",

@@ -1,4 +1,9 @@
 
+% -------------------- %
+% -- RESOURCES USED -- %
+% -------------------- %
+
+
 \begin{filecontents*}{examples-showcase-default.tex}
 \begin{bdocshowcase}
     \bfseries Un peu de code \LaTeX.
@@ -11,7 +16,7 @@
 
 
 \begin{filecontents*}{examples-showcase-customized.tex}
-\begin{bdocshowcase}[before = Mon début,
+\begin{bdocshowcase}[before = Mon début,   
                      after  = Ma fin à moi,
                      color  = red]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
@@ -62,7 +67,11 @@ $x y z = 1$
 
 
 \begin{filecontents*}{examples-listing-latexshow-options.tex}
-XXX
+\bdoclatexshow[explain = Ce qui vient est coloré...,
+               before  = Rendu ci-après.,
+               after   = Rendu fini.,
+               color   = orange]
+               {examples/listing/xyz.tex}
 \end{filecontents*}
 
 
@@ -90,8 +99,8 @@ Bla, bla, bla...
 
 \begin{filecontents*}{examples-focus-exa-leavevmode.tex}
 \begin{bdocexa}
-    \leavevmode
-
+    \leavevmode 
+	 	  
     \begin{enumerate}
         \item Point 1.
 
@@ -229,6 +238,10 @@ bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 \end{filecontents*}
 
 
+% ------------------------ %
+% -- SOURCE FOR THE DOC -- %
+% ------------------------ %
+
 \documentclass[10pt, a4paper]{article}
 
 \usepackage[utf8]{inputenc}
@@ -274,7 +287,19 @@ bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 }
 
 
+
 \begin{document}
+
+\title{Le package \texttt{bdoc} - Documenter simplemnt}
+\author{Christophe BAL}
+\date{29 Nov. 2023}
+\version{1.0.0}
+
+\maketitle
+
+\begin{abstract}
+	OK ?
+\end{abstract}
 \section{Choisir la langue au chargement du package}
 
 La présente documentation utilise le français via \bdocinlatex|\usepackage[lang = french]{bdoc}| .
@@ -405,6 +430,11 @@ On a aussi :
 \end{bdocrem}
 
 
+\begin{bdocwarn}
+    L'argument optionnel de la macro \bdocmacro{bdocenv} est copié-collé lors du rendu. Ceci peut donc parfois nécessiter d'utiliser des accolades protectrices comme dans l'exemple précédent. 
+\end{bdocwarn}
+
+
 % -------------------- %
 
 
@@ -500,7 +530,6 @@ La macro \bdocmacro{bdocinEN} et sa version étoilée s'appuient sur \bdocmacro{
 
               \begin{bdoclatex}[code]
 \NewExpandableDocumentCommand{\bdocbackcolor}{m}{#1!5}
-
 \NewExpandableDocumentCommand{\bdocdarkcolor}{m}{#1!50!black}
               \end{bdoclatex}
     \end{itemize}
@@ -528,8 +557,8 @@ La macro \bdocmacro{bdocinEN} et sa version étoilée s'appuient sur \bdocmacro{
 
 \subsection{Sans bande colorée}
 
-Le rendu de \bdocenv{bdocshowcase} avec une bande colorée peut parfois ne pas être acceptable malgré le travail fait par \bdocpack{clrstrip}.
-Voyons comment contourner ce type de limitation.
+Le rendu de \bdocenv{bdocshowcase} avec une bande colorée peut ne pas vous convenir, ou parfois ne pas être acceptable malgré le travail fait par \bdocpack{clrstrip}.
+Voyons donc comment ne pas utiliser une bande colorée.
 
 \begin{bdocexa}
     L'option booléenne \bdocinlatex{nostripe} sert à ne pas employer \bdocpack{clrstrip}.
@@ -571,7 +600,7 @@ Voyons comment contourner ce type de limitation.
 
     \medskip
 
-    Ce qui suit a été obtenu via \bdocinlatex+\bdocshowcaseinput{examples/external.tex}+.
+    Ce qui suit a été obtenu via \bdocinlatex+\bdocshowcaseinput{external.tex}+.
 
     \medskip
 
@@ -579,7 +608,7 @@ Voyons comment contourner ce type de limitation.
 
     \medskip
 
-    Via \bdocinlatex+\bdocshowcaseinput[color = orange]{examples/external.tex}+ , on change la coloration comme suit.
+    Via \bdocinlatex+\bdocshowcaseinput[color = orange]{external.tex}+ , on change la coloration comme suit.
 
     \medskip
 
@@ -604,14 +633,14 @@ Voici des exemples d'utilisation.
 		  \begin{center}
 		  		\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#
 		  \end{center}
-
+          
 
     \item \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+# s'obtient via le code suivant.
 		  \begin{center}
 		  		\bdocinlatex£\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#£
-
+				
 				\medskip
-
+				
 				... \emph{etc.}
 		  \end{center}
 \end{itemize}
@@ -675,8 +704,8 @@ Voici des exemples d'utilisation.
 \begin{bdocwarn}
     Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut. Voici un cas d'usage.
 
-    % \bdoclatexshow[explain = Ceci permet d'obtenir ce qui est attendu :]
-    %               {examples/listing/strange.tex}
+    \bdoclatexshow[explain = Ceci permet d'obtenir ce qui est attendu :]
+                  {examples/listing/strange.tex}
 \end{bdocwarn}
 
 
@@ -684,8 +713,7 @@ Voici des exemples d'utilisation.
 
 \subsection{Codes importés}
 
-Pour les codes suivants, on considère un fichier \verb+examples/listing/xyz.tex+ dont le chemin est donné relativement au document présent.
-Le contenu de ce fichier est le suivant.
+Pour les codes suivants, on considère un fichier \verb+xyz.tex+ avec le contenu suivant, et ayant relativement au présent document le chemin \verb+examples/listing/xyz.tex+ .
 
 \bdoclatexinput[code]{examples-listing-xyz.tex}
 
@@ -733,7 +761,7 @@ La macro \bdocmacro{bdoclatexinput} , présentée ci-après, s'utilise comme l'e
     \leavevmode
 
     \begin{bdoclatex}[code]
-\bdoclatexinput[code]{examples-listing-xyz.tex}
+\bdoclatexinput[code]xyz.tex}
     \end{bdoclatex}
 
     Ceci produit la mise en forme suivante.
@@ -764,7 +792,7 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
 
 
 \begin{bdocexa}[Changer le texte explicatif]
-    Pour obtenir ce qui suit avec un texte personnalisé, il suffit d'employer \bdocinlatex|\bdoclatexshow[explain = Voici le rendu réel.]{...}|.
+    Pour obtenir ce qui suit avec un texte personnalisé, il suffit d'employer \bdocinlatex|\bdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}|.
 
     \medskip
 
