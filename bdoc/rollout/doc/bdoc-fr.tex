@@ -313,18 +313,6 @@ Son but est de faciliter la saisie sémantique de documentations de packages et 
 	Dans un avenir plus ou moins proche, \bdocpack{bdoc} sera sûrement éclaté en une classe et un package.
 \end{bdocnote}
 \end{abstract}
-\section{Choisir la langue au chargement du package}
-
-La présente documentation utilise le français via \bdocinlatex|\usepackage[lang = french]{bdoc}| .
-Pour le moment, on a juste deux choix où la convention de nommage suit celle de \bdocpack{babel}.
-
-\begin{enumerate}
-    \item \bdocinlatex|english| est la valeur par défaut.
-
-    \item \bdocinlatex|french| est pour \bdocinEN{français}.
-\end{enumerate}
-
-
 \section{Mises en forme générales imposées}
 
 \subsection{Géométrie de la page}
@@ -412,6 +400,30 @@ Les packages \bdocpack{hyperref} et \bdocpack{hyperref} sont aussi importés en 
 \end{bdoclatex}
 
 
+\section{Choisir la langue au chargement du package}
+
+La présente documentation utilise le français via \bdocinlatex|\usepackage[lang = french]{bdoc}| .
+Pour le moment, on a juste deux choix où la convention de nommage suit celle de \bdocpack{babel}.
+
+\begin{enumerate}
+    \item \bdocinlatex|english| est la valeur par défaut.
+
+    \item \bdocinlatex|french| est pour \bdocinEN{français}.
+\end{enumerate}
+
+
+\section{Cela veut dire quoi en \bdocquote{angliche}}
+
+Penser aux non-anglophones est bien, même si ces derniers se font de plus en plus rares.
+
+\begin{bdoclatex}
+Cool et top signifient \bdocinEN*{cool} et \bdocinEN{top}.
+\end{bdoclatex}
+
+
+La macro \bdocmacro{bdocinEN} et sa version étoilée s'appuient sur \bdocmacro{bdocquote} : par exemple, \bdocquote{sémantique} s'obtient via \bdocinlatex|\bdocquote{sémantique}| .
+
+
 \section{Indiquer des packages, des macros ou des environnements}
 
 Voici ce qu'il est possible de taper de façon sémantique.
@@ -467,18 +479,6 @@ Pour expliquer les noms retenus, rien de tel que d'indiquer et expliciter les co
 \begin{bdocrem}
     Le choix du point pour scinder un mot permet d'utiliser des mots avec un tiret comme dans \bdocinlatex+\bdocprewhy{ca.sse-brique}+ qui donne \bdocprewhy{ca.sse-brique}.
 \end{bdocrem}
-
-
-\section{Cela veut dire quoi en \bdocquote{angliche}}
-
-Penser aux non-anglophones est bien, même si ces derniers se font de plus en plus rares.
-
-\begin{bdoclatex}
-Cool et top signifient \bdocinEN*{cool} et \bdocinEN{top}.
-\end{bdoclatex}
-
-
-La macro \bdocmacro{bdocinEN} et sa version étoilée s'appuient sur \bdocmacro{bdocquote} : par exemple, \bdocquote{sémantique} s'obtient via \bdocinlatex|\bdocquote{sémantique}| .
 
 
 \section{Un rendu en situation réelle} \label{bdoc-showcase}

@@ -6,9 +6,9 @@ texfacto:
 toc:
   - main/
   - inenglish/
+  - focus/
   - macroenv/
   - showcase/
   - listing/
-  - focus/
   - version-n-change/
   - deco/
