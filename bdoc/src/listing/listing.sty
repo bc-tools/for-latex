@@ -145,7 +145,6 @@
 %           macro.bdoclatexinput
 %%%
 \NewDocumentCommand{\bdoclatexshow}{O{} m}{
-% Source: https://tex.stackexchange.com/a/696700/6880
   \group_begin:
     \keys_set_known:nnN { bdoc/latexshow } { #1 } \l_tmpa_tl
 
@@ -153,6 +152,7 @@
 
     \tl_use:N \l_bdoc_listing_explain_tl
 
+% Source: https://tex.stackexchange.com/a/696700/6880
     \exp_last_unbraced:NNV \bdocshowcaseinput [\l_tmpa_tl] {#2}
   \group_end:
 }

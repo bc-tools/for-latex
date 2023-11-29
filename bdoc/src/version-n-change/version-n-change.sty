@@ -15,10 +15,6 @@
   { Bad ~ format ~ for ~ a ~ date. }
   { Use ~ YYYY-MM-DD. }
 
-% \msg_set:nnnn { bdoc } { date-not-in-calendar }
-%   { Date ~ not ~ in ~ the ~ calendar. }
-%   { }
-
 
 % :: MARGIN NOTE :: %
 
@@ -27,8 +23,8 @@
 %%%
 % prototype::
 %     #1 : the color of the margin note
-%     #2 : the first material (a date)
-%     #3 : the second material (a version number)
+%     #2 : the first material (a date or nothing)
+%     #3 : the second material (a version number or nothing)
 %     #4 : the last negative vertical spacing for the 2nd rule
 %
 %     :action: this macro factorizes the printing of the changes
@@ -104,19 +100,13 @@
 %     #3 : a date ''YYYY-MM-DD''
 %
 %     :action: this macro prints a margin note showing a version number
-%              upon a date, and the optional argument is used to colorized
+%              below a date, and the optional argument is used to colorize
 %              all this text.
 %
 % warning::
-%     The date must use the english formatting like ''2021-07-14''. This allows
+%     The date must use an english formatting like ''2021-07-14''. This allows
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
-%
-% note::
-%     The version number must look like ''maj.min.bug'' or
-%     ''maj.min.bug-extra'' with three integers ''maj'', ''min'', ''bug''
-%     and an optional ''extra'' equal to ''alpha'', ''beta'' or ''rc''
-%     for "release candidate".
 %%%
 \NewDocumentCommand{\bdocversion}{O{blue} m O{}}{
   \bdoc@new@change@margin{#1}      % Color
@@ -144,7 +134,7 @@
 }
 
 
-% -- EXPLAIN SOMETHING NEW -- %
+% -- CHANGES - WHAT?
 
 % :: MESSAGES :: %
 
@@ -153,7 +143,7 @@
   { One ~ single ~ title ~ must ~ be ~ indicated. }
 
 
-% :: TOPIC ENVIRONMENT :: %
+% :: CHANGES - TOPIC :: %
 
 %%%
 % prototype::
@@ -161,9 +151,6 @@
 %
 %     :action: this environment prints some ¨infos about specific changes
 %              achieved in a new version (no special formatting is applied).
-%
-% warning::
-%     Either ''#1'' or ''#2'' can be used.
 %%%
 \NewDocumentEnvironment{bdoctopic}{ m }{
   \IfBlankT{#1}{
@@ -180,11 +167,14 @@
 }
 
 
-% :: NEW ENVIRONMENT :: %
+% :: CHANGES - NEW THINGS :: %
 
 %%%
 % prototype::
-%     :action: this environment ???
+%     :see: env.bdoctopic
+%
+%     :action: similar to the \env ''bdoctopic'' with the title "New"
+%              translated into the good language.
 %%%
 \NewDocumentEnvironment{bdocnew}{}{
   \begin{bdoctopic}{\bdoc@trans@chges@new}
@@ -193,11 +183,14 @@
 }
 
 
-% :: UPDATE ENVIRONMENT :: %
+% :: CHANGES - UPDATE :: %
 
 %%%
 % prototype::
-%     :action: this environment ???
+%     :see: env.bdoctopic
+%
+%     :action: similar to the \env ''bdoctopic'' with the title "Update"
+%              translated into the good language.
 %%%
 \NewDocumentEnvironment{bdocupdate}{}{
   \begin{bdoctopic}{\bdoc@trans@chges@update}
@@ -206,11 +199,14 @@
 }
 
 
-% :: FIX ENVIRONMENT :: %
+% :: CHANGES - FIX :: %
 
 %%%
 % prototype::
-%     :action: this environment ???
+%     :see: env.bdoctopic
+%
+%     :action: similar to the \env ''bdoctopic'' with the title "Fix"
+%              translated into the good language.
 %%%
 \NewDocumentEnvironment{bdocfix}{}{
   \begin{bdoctopic}{\bdoc@trans@chges@fix}

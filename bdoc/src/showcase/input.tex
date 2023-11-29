@@ -1,0 +1,39 @@
+\documentclass[10pt, a4paper]{article}
+
+\input{../preamble.cfg.tex}
+
+\usepackage[lang = french]{../main/main}
+\usepackage{../macroenv/macroenv}
+\usepackage{../listing/listing}
+\usepackage{../focus/focus}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{showcase}
+
+
+\begin{document}
+
+%\section{Un rendu en situation réelle} \label{bdoc-showcase}
+
+\subsection{En important le code \LaTeX}
+
+Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \bdocmacro{bdocshowcaseinput} dont l'option reprend la syntaxe de celle de \bdocenv{bdocshowcase} et l'argument obligatoire correspond au chemin du fichier.
+
+\begin{bdocexa}<nonb>
+    Ce qui suit a été obtenu via \bdocinlatex+\bdocshowcaseinput{external.tex}+.
+
+    \medskip
+
+    \bdocshowcaseinput{examples/showcase/external.tex}
+
+    \medskip
+
+    Quant à \bdocinlatex+\bdocshowcaseinput[color = orange]{external.tex}+ , ceci produira le changement de couleur observable ci-après.
+
+    \medskip
+
+    \bdocshowcaseinput[color = orange]{examples/showcase/external.tex}
+\end{bdocexa}
+
+\end{document}

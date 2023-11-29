@@ -1,0 +1,99 @@
+\documentclass[10pt, a4paper]{article}
+
+\input{../preamble.cfg.tex}
+
+\usepackage[lang = french]{../main/main}
+\usepackage{../macroenv/macroenv}
+\usepackage{../listing/listing}
+\usepackage{../focus/focus}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{showcase}
+
+
+\begin{document}
+
+\section{Un rendu en situation réelle} \label{bdoc-showcase}
+
+\subsection{Avec une bande colorée}
+
+\begin{bdocexa}[Avec les textes par défaut]
+    Il peut être utile de montrer un rendu réel directement dans un document, typiquement lorsque l'on fait une démo.
+    Ceci se tape comme suit.
+
+    \bdoclatexinput[code]{examples/showcase/default.tex}
+
+    On obtient alors le rendu suivant
+    \footnote{
+        La bande est créée sans effort grâce au package \bdocpack{clrstrip}.
+    }.
+
+    \medskip
+
+    \input{examples/showcase/default.tex}
+\end{bdocexa}
+
+
+\begin{bdocrem}
+    Voir la section \ref{bdoc-latexshow} page \pageref{bdoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
+\end{bdocrem}
+
+\begin{bdocnote}
+    Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \bdocpack{bdoc}.
+\end{bdocnote}
+
+
+% ------------------ %
+
+
+\begin{bdocexa}[Changer la couleur et/ou les textes par défaut]
+    \leavevmode
+
+    \bdoclatexinput[code]{examples/showcase/customized.tex}
+
+    Ceci produira ce qui suit.
+
+    \medskip
+
+    \input{examples/showcase/customized.tex}
+\end{bdocexa}
+
+
+\begin{bdocnote}
+    Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \bdocmacro{bdocbackcolor} et \bdocmacro{bdocdarkcolor} sont utilisées pour créer celles du fond et des titres respectivement à partir de la couleur proposée à \bdocenv{bdocshowcase}.
+	Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
+
+	\begin{bdoclatex}[code]
+\NewExpandableDocumentCommand{\bdocbackcolor}{m}{#1!5}
+\NewExpandableDocumentCommand{\bdocdarkcolor}{m}{#1!50!black}
+	\end{bdoclatex}
+\end{bdocnote}
+
+
+% ------------------ %
+
+
+\begin{bdocwarn}
+    Avec la mise en forme par défaut, si le code \LaTeX\ commence par un crochet ouvrant, il faudra indiquer explicitement une option vide comme dans l'exemple suivant.
+
+    \bdoclatexinput[code]{examples/showcase/hook.tex}
+
+    Ceci produira ce qui suit.
+
+    \medskip
+
+    \input{examples/showcase/hook.tex}
+\end{bdocwarn}
+
+
+\begin{bdocnote}
+    Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
+
+    \begin{bdoclatex}[std]
+        \bdocruler{Un pseudo-titre décoré}{red}
+    \end{bdoclatex}
+\end{bdocnote}
+
+
+\end{document}

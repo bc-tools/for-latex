@@ -56,7 +56,7 @@
 % prototype::
 %     #1 : one color following the ''xcolor'' format.
 %
-%     :return: a darker version of color ''#1''.
+%     :return: a "darker" version of the color ''#1''.
 %%%
 \NewExpandableDocumentCommand{\bdocdarkcolor}{m}{%
   #1!50!black%
@@ -67,7 +67,7 @@
 % prototype::
 %     #1 : one color following the ''xcolor'' format.
 %
-%     :return: a transparent version of color `#1`.
+%     :return: a "transparent" version of the color `#1`.
 %%%
 \NewExpandableDocumentCommand{\bdoclightcolor}{m}{%
   #1!5%
@@ -81,7 +81,8 @@
 %     #1 : the text before the real output
 %     #2 : the text after the real output
 %     #3 : one color following the ''xcolor'' format.
-%          This color is used to set the one for the decorated texts printed corresponding to the two first arguments.
+%          This color is used to set the one for the decorated texts printed
+%          corresponding to the two first arguments.
 %
 %     :action: this environment just adds its content processed by \latex
 %              between centered materials produced by the macro ''\bdocruler''
@@ -160,7 +161,7 @@
 %              by framing it with texts decorated by ''\bdocruler'',
 %              in order to clearly identify a rendering used as an
 %              example.
-%              It is also possible to have a coloured strip the width
+%              It is also possible to have a coloured strip of the width
 %              of the page in the background of the content.
 %
 %     :see: env.bdoc@showcase@basic ,

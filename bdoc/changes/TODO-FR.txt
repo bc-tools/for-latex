@@ -9,27 +9,15 @@ NOW
 
 > ---------------------------- <
 
-ajout de bdoccls en plus de bdocpack
+focus
 
-bdocenv : on vire option car fausse bonne idée, si besoin n pass via bdoclatex
-
-bdoctopic
-
-    ---> on vire car pas efficace : on propose à la pace truc equivalent a fix, update, new ...
-         Voir comment interagir avec ka date !
+    ---> tout numérotable mais seul exemple est numéroté par défaut
+         besoin de passre via xtempalte !!!
 
 
 > ---------------------------- <
 
 texfacto
-
-    ---> on passe via
-
-    \begin{filecontents*}{...}
-        ...
-    \end{filecontents*}
-
-    pour les ressources
 
     ---> produire un fichier compilable: on passe de la structa arbo à une strucplate et en ajoutant l'extenasion exadoc afin de ne pas être traité par l3build...
 

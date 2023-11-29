@@ -16,13 +16,13 @@
 
 \begin{document}
 
-\section{Changements}
+\section{Indiquer les changements}
 
 \subsection{À quel moment ?}
 
 
 \begin{bdocexa}[Dater des nouveautés]
-    Dater une nouveauté se fait via la macro \bdocmacro{bdocdate} comme dans l'exemple suivant où la date doit être donnée au format anglais \texttt{AAAA-MM-JJ}.
+    La macro \bdocmacro{bdocdate} permet d'indiquer une date dans la marge comme dans l'exemple suivant.
 
     \bdoclatexshow{examples/version-n-change/dating.tex}
 \end{bdocexa}
@@ -44,7 +44,7 @@
     \begin{enumerate}
         \item Les macros \bdocmacro{bdocdate} et \bdocmacro{bdocversion} nécessitent deux compilations.
 
-        \item Comme la langue indiquée pour cette documentation est le français, la date dans le rendu final est au format \texttt{JJ/MM/AAAA} alors que dans le code celle-ci devra toujours être donnée au format anglais \texttt{AAAA-MM-JJ}.
+        \item Comme la langue indiquée pour cette documentation est le français, la date dans le rendu final est au format \texttt{JJ/MM/AAAA} alors que dans le code celle-ci devra toujours être saisie au format anglais \texttt{AAAA-MM-JJ}.
     \end{enumerate}
 \end{bdocimportant}
 
@@ -54,10 +54,10 @@
     \footnote{
         Techniquement, vérifier la validité d'une date, via \LaTeX3, ne présente pas de difficulté.
     },
-    et ceci est un choix ! Pourquoi cela ? Tout simplement car dater et versionner des explications doit se faire de façon semi-automatisée afin d'éviter tout bug humain
-    \footnote{
-        L'auteur de \bdocpack{bdoc} est entrain de mettre en place un ensemble d'outils permettant une telle semi-automatisation.
-    }.
+    et ceci est un choix ! Pourquoi cela ? Tout simplement car dater et versionner des explications devrait se faire de façon semi-automatisée afin d'éviter tout bug humain.
+%    \footnote{
+%        L'auteur de \bdocpack{bdoc} est entrain de mettre en place un ensemble d'outils permettant une telle semi-automatisation.
+%    }.
 \end{bdocwarn}
 
 \end{document}

@@ -11,10 +11,9 @@
 
 [[:api:]]
 
+??? code src à repdrende mef + prototype
+
 \bdoccls ajouté
-
-
-?? focus : tout numérotable mais seul exemple est numéroté par défaut
 
 
 version-n-change :
