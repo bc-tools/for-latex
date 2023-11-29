@@ -32,7 +32,7 @@
 %
 %     See the pgfkeys package documentation for explanation.
 %%%
-\NewExpandableDocumentCommand{\bdoc@latex@listing@formating}{m}{
+\NewExpandableDocumentCommand{\bdoc@latex@listing@formating}{ m }{
   \str_case:nnF { #1 } {
     { sbs  } { listing ~ side ~ text }
     { code } { listing ~ only }
