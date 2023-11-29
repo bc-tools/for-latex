@@ -5,6 +5,11 @@ TeXfactory - TODO
 
 > ---------------------------- <
 
+partir du poc de bdoc
+
+
+> ---------------------------- <
+
 syst de commentaire magique qui remplace date et version par ceelle en cours de construction
 
 
