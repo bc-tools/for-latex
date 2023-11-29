@@ -52,7 +52,7 @@
 
 \subsection{Codes importés}
 
-Pour les codes suivants, on considère un fichier \verb+xyz.tex+ avec le contenu suivant, et ayant relativement au présent document le chemin \verb+examples/listing/xyz.tex+ .
+Pour les codes suivants, on considère un fichier \verb+xyz.tex+ avec le contenu suivant, et ayant le chemin relatif \verb+examples/listing/xyz.tex+ vis à vis de ce document.
 
 \bdoclatexinput[code]{examples/listing/xyz.tex}
 
@@ -127,11 +127,16 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
 \end{bdocexa}
 
 
+\begin{bdocnote}
+    Le texte imprimé par défaut tient compte de la langue choisie lors du chargement du package \bdocpack{bdoc}.
+\end{bdocnote}
+
+
 % ------------------ %
 
 
 \begin{bdocexa}[Changer le texte explicatif]
-    Pour obtenir ce qui suit avec un texte personnalisé, il suffit d'employer \bdocinlatex|\bdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}|.
+    Via la clé \bdocinlatex|explain|, on peut utiliser un texte personnalisé. Ainsi, \bdocinlatex|\bdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}| produira ce qui suit.
 
     \medskip
 
@@ -139,14 +144,6 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
         \bdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}
     \end{bdoc-doc-showcase}
 \end{bdocexa}
-
-
-% ------------------ %
-
-
-\begin{bdocnote}
-    Le texte imprimé par défaut tient compte de la langue choisie lors du chargement du package \bdocpack{bdoc}.
-\end{bdocnote}
 
 
 % ------------------ %

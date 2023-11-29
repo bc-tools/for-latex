@@ -2,6 +2,26 @@
 
 
 ==
+29  (0.0.0-beta.14) ????
+==
+
+--------
+:new:
+--------
+
+[[:api:]]
+
+\bdoccls ajouté
+
+?? focus : tout numérotable mais seul exemple est numéroté par défaut
+
+?? version-n-change : on change tout pout passer via fix n co car bien plus utile au ffibal !!!!!
+
+
+// ---------- //
+
+
+==
 21
 ==
 

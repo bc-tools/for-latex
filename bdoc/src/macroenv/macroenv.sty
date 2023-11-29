@@ -11,6 +11,20 @@
 % note::
 %     This macro is more semantic than useful.
 %%%
+\NewDocumentCommand{\bdoccls}{m}{%
+  \texttt{#1}%
+}
+
+
+%%%
+% prototype::
+%     #1 : the name of a package
+%
+% ''\bdocpack{mypack}'' prints verb::''mypack''.
+%
+% note::
+%     This macro is more semantic than useful.
+%%%
 \NewDocumentCommand{\bdocpack}{m}{%
   \texttt{#1}%
 }

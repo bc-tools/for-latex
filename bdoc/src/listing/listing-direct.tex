@@ -17,9 +17,13 @@
 
 \section{Cas d'utilisation en \LaTeX}
 
-\subsection{Codes \bdocquote{en ligne}}
+\subsection{Codes \bdocquote{en ligne}} \label{bdoc-listing-inline}
 
-La macro \bdocmacro{bdocinlatex} permet de taper du code en ligne via un usage similaire à \bdocmacro{verb}.
+La macro \bdocmacro{bdocinlatex}
+\footnote{
+	Le nom de la macro \bdocmacro{bdocinlatex} vient de \bdocquote{\bdocprewhy{in.line} \LaTeX} soit \bdocinEN{\LaTeX\ en ligne}.
+}
+permet de taper du code en ligne via un usage similaire à \bdocmacro{verb}.
 Voici des exemples d'utilisation.
 \begin{itemize}
     \item \bdocinlatex|$a^b = c$| s'obtient via le code suivant.
@@ -53,11 +57,6 @@ Voici des exemples d'utilisation.
 \end{bdocimportant}
 
 
-\begin{bdocrem}
-    Le nom de la macro \bdocmacro{bdocinlatex} vient de \bdocquote{\bdocprewhy{in.line} \LaTeX} soit \bdocinEN{\LaTeX\ en ligne}.
-\end{bdocrem}
-
-
 % ------------------ %
 
 
@@ -89,7 +88,7 @@ Voici des exemples d'utilisation.
 
 
 \begin{bdocexa}[Juste le code]
-    Afficher le code seul comme ci-après s'obtient via l'option \bdocinlatex#code#, donc \bdocenv[{[code]}]{bdoclatex} donnera juste ce qui suit.
+    Afficher juste le code comme ci-après s'obtient via l'option \bdocinlatex#code#, donc \bdocenv[{[code]}]{bdoclatex} donnera juste ce qui suit.
 
     \begin{bdoclatex}[code]
         $A = B + C$
