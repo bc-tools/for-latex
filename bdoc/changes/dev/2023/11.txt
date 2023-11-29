@@ -13,10 +13,11 @@
 
 \bdoccls ajouté
 
+
 ?? focus : tout numérotable mais seul exemple est numéroté par défaut
 
-?? version-n-change : on change syst de redac des chgts pour passer via fix n co car bien plus utile au ffibal !!!!!
 
+version-n-change :
     new
     update
     fix
