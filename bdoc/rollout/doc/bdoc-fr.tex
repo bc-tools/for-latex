@@ -4,77 +4,6 @@
 % -------------------- %
 
 
-\begin{filecontents*}{examples-showcase-default.tex}
-\begin{bdocshowcase}
-    \bfseries Un peu de code \LaTeX.
-
-    \bigskip
-
-    \emph{\large Fin de l'affreuse démo.}
-\end{bdocshowcase}
-\end{filecontents*}
-
-
-\begin{filecontents*}{examples-showcase-customized.tex}
-\begin{bdocshowcase}[before = Mon début,   
-                     after  = Ma fin à moi,
-                     color  = red]
-    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
-\end{bdocshowcase}
-\end{filecontents*}
-
-
-\begin{filecontents*}{examples-showcase-hook.tex}
-\begin{bdocshowcase}[]
-    [Cela fonctionne...]
-\end{bdocshowcase}
-\end{filecontents*}
-
-
-\begin{filecontents*}{examples-showcase-no-clrstrip.tex}
-\begin{bdocshowcase}[nostripe]
-    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
-\end{bdocshowcase}
-\end{filecontents*}
-
-
-\begin{filecontents*}{examples-showcase-no-clrstrip-customized.tex}
-\begin{bdocshowcase}[nostripe,
-                     before = Mon début,
-                     after  = Ma fin à moi,
-                     color  = green]
-    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
-\end{bdocshowcase}
-\end{filecontents*}
-
-
-\begin{filecontents*}{examples-showcase-external.tex}
-Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
-\end{filecontents*}
-
-
-\begin{filecontents*}{examples-listing-ABC.tex}
-\begin{bdoclatex}[sbs]
-    $A = B + C$
-\end{bdoclatex}
-\end{filecontents*}
-
-
-\begin{filecontents*}{examples-listing-xyz.tex}
-% Juste une démo.
-$x y z = 1$
-\end{filecontents*}
-
-
-\begin{filecontents*}{examples-listing-latexshow-options.tex}
-\bdoclatexshow[explain = Ce qui vient est coloré...,
-               before  = Rendu ci-après.,
-               after   = Rendu fini.,
-               color   = orange]
-               {examples/listing/xyz.tex}
-\end{filecontents*}
-
-
 \begin{filecontents*}{examples-focus-exa.tex}
 Bla, bla, bla...
 
@@ -180,6 +109,77 @@ Bla, bla, bla...
     Utile ?
 \end{bdocwarn}
 
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-showcase-default.tex}
+\begin{bdocshowcase}
+    \bfseries Un peu de code \LaTeX.
+
+    \bigskip
+
+    \emph{\large Fin de l'affreuse démo.}
+\end{bdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-showcase-customized.tex}
+\begin{bdocshowcase}[before = Mon début,   
+                     after  = Ma fin à moi,
+                     color  = red]
+    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+\end{bdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-showcase-hook.tex}
+\begin{bdocshowcase}[]
+    [Cela fonctionne...]
+\end{bdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-showcase-no-clrstrip.tex}
+\begin{bdocshowcase}[nostripe]
+    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+\end{bdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-showcase-no-clrstrip-customized.tex}
+\begin{bdocshowcase}[nostripe,
+                     before = Mon début,
+                     after  = Ma fin à moi,
+                     color  = green]
+    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+\end{bdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-showcase-external.tex}
+Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-listing-ABC.tex}
+\begin{bdoclatex}[sbs]
+    $A = B + C$
+\end{bdoclatex}
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-listing-xyz.tex}
+% Juste une démo.
+$x y z = 1$
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-listing-latexshow-options.tex}
+\bdoclatexshow[explain = Ce qui vient est coloré...,
+               before  = Rendu ci-après.,
+               after   = Rendu fini.,
+               color   = orange]
+               {examples/listing/xyz.tex}
 \end{filecontents*}
 
 
@@ -422,6 +422,109 @@ Cool et top signifient \bdocinEN*{cool} et \bdocinEN{top}.
 
 
 La macro \bdocmacro{bdocinEN} et sa version étoilée s'appuient sur \bdocmacro{bdocquote} : par exemple, \bdocquote{sémantique} s'obtient via \bdocinlatex|\bdocquote{sémantique}| .
+
+
+\section{Mettre en avant du contenu}
+
+\begin{bdocnote}
+    Les environnements présentés dans cette section
+    \footnote{
+        La mise en forme provient du package \bdocpack{amsthm}.
+    }
+    ajoutent un court titre indiquant le type d'informations fournies.
+    Ce court texte sera toujours traduit dans la langue indiquée lors du chargement du package \bdocpack{bdoc}.
+\end{bdocnote}
+
+
+% ------------------ %
+
+
+\subsection{Des exemples}
+
+Des exemples numérotés, ou non, s'indiquent via l'environnement \bdocenv{bdocexa} qui propose deux arguments optionnels.
+
+\begin{enumerate}
+    \item Le 1\ier{} argument entre chevrons \verb#<...># peut prendre au choix les valeurs \verb#nb# pour numéroter, valeur par défaut, \verb#nonb# pour ne pas numéroter.
+
+    \item Le 2\ieme{} argument entre crochets \verb#[...]# sert à ajouter un mini-titre.
+\end{enumerate}
+
+
+Voici différents emplois possibles.
+
+\bdoclatexinput[sbs]{examples-focus-exa.tex}
+
+
+% ------------------ %
+
+
+\begin{bdocimportant}
+    La numérotation des exemples est remise à zéro dès qu'une section  de niveau au moins égale à une \bdocinlatex|\subsubsection| est ouverte.
+\end{bdocimportant}
+
+
+% ------------------ %
+
+
+\begin{bdoctip}
+    Il peut parfois être utile de revenir à la ligne dès le début du contenu. Voici comment faire (ce tour de passe-passe reste valable pour les environnements présentés dans les sous-sections suivantes). Noter au passage que la numérotation suit celle de l'exemple précédent comme souhaité.
+
+    \bdoclatexinput[sbs]{examples-focus-exa-leavevmode.tex}
+\end{bdoctip}
+
+
+%\section{Mettre en avant du contenu}
+
+\subsection{Des remarques}
+
+Tout se passe via l'environnement \bdocenv{bdocrem} comme dans l'exemple suivant.
+
+\bdoclatexinput[sbs]{examples-focus-rmk.tex}
+
+
+%\section{Mettre en avant du contenu}
+
+\subsection{Une astuce}
+
+L'environnement \bdocenv{bdoctip} sert à donner des astuces. Voici comment l'employer.
+
+\bdoclatexinput[sbs]{examples-focus-tip.tex}
+
+
+%\section{Mettre en avant du contenu}
+
+\subsection{Note informative}
+
+L'environnement \bdocenv{bdocnote} sert à mettre en avant des informations utiles. Voici comment l'utiliser.
+
+\bdoclatexinput[sbs]{examples-focus-note.tex}
+
+
+%\section{Mettre en avant du contenu}
+
+\subsection{Un truc important}
+
+L'environnement \bdocenv{bdocimportant} permet d'indiquer quelque chose d'important mais sans danger.
+
+\bdoclatexinput[sbs]{examples-focus-important.tex}
+
+
+%\section{Mettre en avant du contenu}
+
+\subsection{Avertir d'un point très délicat}
+
+L'environnement \bdocenv{bdoccaution} sert à indiquer un point délicat à  l'utilisateur. Voici comment l'employer.
+
+\bdoclatexinput[sbs]{examples-focus-caution.tex}
+
+
+%\section{Mettre en avant du contenu}
+
+\subsection{Avertir d'un danger}
+
+L'environnement \bdocenv{bdocwarn} sert à avertir l'utilisateur d'un piège à éviter. Voici comment l'employer.
+
+\bdoclatexinput[sbs]{examples-focus-warn.tex}
 
 
 \section{Indiquer des packages, des macros ou des environnements}
@@ -844,109 +947,6 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
         \input{examples-listing-latexshow-options.tex}
     \end{bdoc-doc-showcase}
 \end{bdocexa}
-
-
-\section{Mettre en avant du contenu}
-
-\begin{bdocnote}
-    Les environnements présentés dans cette section
-    \footnote{
-        La mise en forme provient du package \bdocpack{amsthm}.
-    }
-    ajoutent un court titre indiquant le type d'informations fournies.
-    Ce court texte sera toujours traduit dans la langue indiquée lors du chargement du package \bdocpack{bdoc}.
-\end{bdocnote}
-
-
-% ------------------ %
-
-
-\subsection{Des exemples}
-
-Des exemples numérotés, ou non, s'indiquent via l'environnement \bdocenv{bdocexa} qui propose deux arguments optionnels.
-
-\begin{enumerate}
-    \item Le 1\ier{} argument entre chevrons \verb#<...># peut prendre au choix les valeurs \verb#nb# pour numéroter, valeur par défaut, \verb#nonb# pour ne pas numéroter.
-
-    \item Le 2\ieme{} argument entre crochets \verb#[...]# sert à ajouter un mini-titre.
-\end{enumerate}
-
-
-Voici différents emplois possibles.
-
-\bdoclatexinput[sbs]{examples-focus-exa.tex}
-
-
-% ------------------ %
-
-
-\begin{bdocimportant}
-    La numérotation des exemples est remise à zéro dès qu'une section  de niveau au moins égale à une \bdocinlatex|\subsubsection| est ouverte.
-\end{bdocimportant}
-
-
-% ------------------ %
-
-
-\begin{bdoctip}
-    Il peut parfois être utile de revenir à la ligne dès le début du contenu. Voici comment faire (ce tour de passe-passe reste valable pour les environnements présentés dans les sous-sections suivantes). Noter au passage que la numérotation suit celle de l'exemple précédent comme souhaité.
-
-    \bdoclatexinput[sbs]{examples-focus-exa-leavevmode.tex}
-\end{bdoctip}
-
-
-%\section{Mettre en avant du contenu}
-
-\subsection{Des remarques}
-
-Tout se passe via l'environnement \bdocenv{bdocrem} comme dans l'exemple suivant.
-
-\bdoclatexinput[sbs]{examples-focus-rmk.tex}
-
-
-%\section{Mettre en avant du contenu}
-
-\subsection{Une astuce}
-
-L'environnement \bdocenv{bdoctip} sert à donner des astuces. Voici comment l'employer.
-
-\bdoclatexinput[sbs]{examples-focus-tip.tex}
-
-
-%\section{Mettre en avant du contenu}
-
-\subsection{Note informative}
-
-L'environnement \bdocenv{bdocnote} sert à mettre en avant des informations utiles. Voici comment l'utiliser.
-
-\bdoclatexinput[sbs]{examples-focus-note.tex}
-
-
-%\section{Mettre en avant du contenu}
-
-\subsection{Un truc important}
-
-L'environnement \bdocenv{bdocimportant} permet d'indiquer quelque chose d'important mais sans danger.
-
-\bdoclatexinput[sbs]{examples-focus-important.tex}
-
-
-%\section{Mettre en avant du contenu}
-
-\subsection{Avertir d'un point très délicat}
-
-L'environnement \bdocenv{bdoccaution} sert à indiquer un point délicat à  l'utilisateur. Voici comment l'employer.
-
-\bdoclatexinput[sbs]{examples-focus-caution.tex}
-
-
-%\section{Mettre en avant du contenu}
-
-\subsection{Avertir d'un danger}
-
-L'environnement \bdocenv{bdocwarn} sert à avertir l'utilisateur d'un piège à éviter. Voici comment l'employer.
-
-\bdoclatexinput[sbs]{examples-focus-warn.tex}
 
 
 \section{Changements}
