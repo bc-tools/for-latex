@@ -5,8 +5,8 @@ texfacto:
 
 toc:
   - main/
-  - macroenv/
   - inenglish/
+  - macroenv/
   - showcase/
   - listing/
   - focus/
