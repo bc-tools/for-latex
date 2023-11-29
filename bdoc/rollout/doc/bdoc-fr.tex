@@ -168,6 +168,13 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \end{filecontents*}
 
 
+\begin{filecontents*}{examples-listing-strange.tex}
+\begin{bdoclatex}[std]
+    [Étrange... Ou pas !]
+\end{bdoclatex}
+\end{filecontents*}
+
+
 \begin{filecontents*}{examples-listing-xyz.tex}
 % Juste une démo.
 $x y z = 1$
@@ -179,7 +186,7 @@ $x y z = 1$
                before  = Rendu ci-après.,
                after   = Rendu fini.,
                color   = orange]
-               {examples/listing/xyz.tex}
+               {examples-listing-xyz.tex}
 \end{filecontents*}
 
 
@@ -848,8 +855,7 @@ Voici des exemples d'utilisation.
 \begin{bdocwarn}
     Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut. Voici un cas d'usage.
 
-    \bdoclatexshow[explain = Ceci permet d'obtenir ce qui est attendu :]
-                  {examples/listing/strange.tex}
+    \bdoclatexshow[explain = Ceci permet d'obtenir ce qui est attendu :]{examples-listing-strange.tex}
 \end{bdocwarn}
 
 
