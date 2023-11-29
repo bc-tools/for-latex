@@ -424,7 +424,7 @@ FINAL PRODUCT "{projectname}"
 
 \title{Le package \texttt{bdoc} - Documenter simplement un projet}
 \author{Christophe BAL}
-\date{29 Nov. 2023}
+\date{29 Nov. 2023 - Version 1.0.0}
 
 \maketitle
 
@@ -455,7 +455,15 @@ Son but est de faciliter la saisie sémantique de documentations de packages et 
 
 
     code = code.strip()
-    code += "\n\\end{document}\n"
+    code += r"""
+\section{Historique}
+
+\bdocversion{1.0.0}[2023-11-29]
+
+Première version publique du projet.
+
+\end{document}
+"""
 
     with codefile.open(
         encoding = "utf-8",

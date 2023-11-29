@@ -1,3 +1,277 @@
+
+% -------------------- %
+% -- RESOURCES USED -- %
+% -------------------- %
+
+
+\begin{filecontents*}{examples-focus-exa.tex}
+Bla, bla, bla...
+
+\begin{bdocexa}
+    Ble, ble, ble...
+\end{bdocexa}
+
+\begin{bdocexa}[Magnifique]
+    Bli, bli, bli...
+\end{bdocexa}
+
+\begin{bdocexa}<nonb>
+    Blo, blo, blo...
+\end{bdocexa}
+
+\begin{bdocexa}<nonb>[Superbe]
+    Blu, blu, blu...
+\end{bdocexa}
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-focus-exa-leavevmode.tex}
+\begin{bdocexa}
+    \leavevmode 
+	 	  
+    \begin{enumerate}
+        \item Point 1.
+
+        \item Point 2.
+    \end{enumerate}
+\end{bdocexa}
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-focus-rmk.tex}
+\begin{bdocrem}
+    Juste une remarque...
+\end{bdocrem}
+
+\begin{bdocrem}[Mini titre]
+    Utile ?
+\end{bdocrem}
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-focus-tip.tex}
+\begin{bdoctip}
+    Une astuce.
+\end{bdoctip}
+
+\begin{bdoctip}[Mini titre]
+    Utile ?
+\end{bdoctip}
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-focus-note.tex}
+\begin{bdocnote}
+    Un truc utile à vous dire...
+\end{bdocnote}
+
+\begin{bdocnote}[Mini titre]
+    Utile ?
+\end{bdocnote}
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-focus-important.tex}
+\begin{bdocimportant}
+    Un truc important sans danger.
+\end{bdocimportant}
+
+\begin{bdocimportant}[Mini titre]
+    Utile ?
+\end{bdocimportant}
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-focus-caution.tex}
+\begin{bdoccaution}
+    Prudence, prudence...
+\end{bdoccaution}
+
+\begin{bdoccaution}[Mini titre]
+    Utile ?
+\end{bdoccaution}
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-focus-warn.tex}
+\begin{bdocwarn}
+    Evitez les dangers...
+\end{bdocwarn}
+
+\begin{bdocwarn}[Mini titre]
+    Utile ?
+\end{bdocwarn}
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-showcase-default.tex}
+\begin{bdocshowcase}
+    \bfseries Un peu de code \LaTeX.
+
+    \bigskip
+
+    \emph{\large Fin de l'affreuse démo.}
+\end{bdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-showcase-customized.tex}
+\begin{bdocshowcase}[before = Mon début,   
+                     after  = Ma fin à moi,
+                     color  = red]
+    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+\end{bdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-showcase-hook.tex}
+\begin{bdocshowcase}[]
+    [Cela fonctionne...]
+\end{bdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-showcase-no-clrstrip.tex}
+\begin{bdocshowcase}[nostripe]
+    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+\end{bdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-showcase-no-clrstrip-customized.tex}
+\begin{bdocshowcase}[nostripe,
+                     before = Mon début,
+                     after  = Ma fin à moi,
+                     color  = green]
+    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+\end{bdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-showcase-external.tex}
+Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-listing-ABC.tex}
+\begin{bdoclatex}[sbs]
+    $A = B + C$
+\end{bdoclatex}
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-listing-strange.tex}
+\begin{bdoclatex}[std]
+    [Étrange... Ou pas !]
+\end{bdoclatex}
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-listing-xyz.tex}
+% Juste une démo.
+$x y z = 1$
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-listing-latexshow-options.tex}
+\bdoclatexshow[explain = Ce qui vient est coloré...,
+               before  = Rendu ci-après.,
+               after   = Rendu fini.,
+               color   = orange]
+               {examples-listing-xyz.tex}
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-version-n-change-dating.tex}
+Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+
+\medskip % ATTENTION ! Ceci évite le chevauchement.
+
+\bdocdate{2023-09-24}
+
+Ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
+
+\medskip % ATTENTION ! Ceci évite le chevauchement.
+
+\bdocdate[gray]{2020-05-08}
+
+Bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli...
+
+Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
+
+Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-version-n-change-versioning.tex}
+\bdocversion[red]{10.2.0-beta}[2021-07-05]
+
+Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+
+\bigskip % ATTENTION ! Ceci évite le chevauchement.
+
+\bdocversion{10.2.0-alpha}
+
+Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla,
+bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla,
+bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla,
+bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-version-n-change-new.tex}
+\begin{bdocnew}
+    \item Info 1...
+    \item Info 2...
+\end{bdocnew}
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-version-n-change-update.tex}
+\begin{bdocupdate}
+    \item Info 1...
+    \item Info 2...
+\end{bdocupdate}
+
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-version-n-change-fix.tex}
+\begin{bdocfix}
+    \item Info 1...
+    \item Info 2...
+\end{bdocfix}
+
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-version-n-change-topic.tex}
+\begin{bdoctopic}{Des changements inclassables}
+% Ici le point s'impose.
+    \item Info 1...
+    \item Info 2...
+\end{bdoctopic}
+
+\end{filecontents*}
+
+
+% ------------------------ %
+% -- SOURCE FOR THE DOC -- %
+% ------------------------ %
+
 \documentclass[10pt, a4paper]{article}
 
 \usepackage[utf8]{inputenc}
@@ -637,7 +911,7 @@ La macro \bdocmacro{bdoclatexinput} , présentée ci-après, s'utilise comme l'e
     \leavevmode
 
     \begin{bdoclatex}[code]
-\bdoclatexinput[code]{xyz.tex}
+\bdoclatexinput[code]{examples-listing-xyz.tex}
     \end{bdoclatex}
 
     Ceci produit la mise en forme suivante.
@@ -652,7 +926,7 @@ La macro \bdocmacro{bdoclatexinput} , présentée ci-après, s'utilise comme l'e
 \subsection{Codes importés et mis en situation} \label{bdoc-latexshow}
 
 \begin{bdocexa}[Showcase]
-    Ce qui suit s'obtient via \bdocinlatex+\bdoclatexshow{examples/listing/xyz.tex}+.
+    Ce qui suit s'obtient via \bdocinlatex+\bdoclatexshow{examples-listing-xyz.tex}+.
 
     \medskip
 
@@ -671,7 +945,7 @@ La macro \bdocmacro{bdoclatexinput} , présentée ci-après, s'utilise comme l'e
 
 
 \begin{bdocexa}[Changer le texte explicatif]
-    Via la clé \bdocinlatex|explain|, on peut utiliser un texte personnalisé. Ainsi, \bdocinlatex|\bdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}| produira ce qui suit.
+    Via la clé \bdocinlatex|explain|, on peut utiliser un texte personnalisé. Ainsi, \bdocinlatex|\bdoclatexshow[explain = Voici le rendu réel.]{examples-listing-xyz.tex}| produira ce qui suit.
 
     \medskip
 
@@ -817,4 +1091,10 @@ Blo, blo, blo...
 Blu, blu, blu...
 
 \end{bdoclatex}
+\section{Historique}
+
+\bdocversion{1.0.0}[2023-11-29]
+
+Première version publique du projet.
+
 \end{document}

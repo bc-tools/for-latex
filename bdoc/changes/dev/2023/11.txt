@@ -2,30 +2,31 @@
 
 
 ==
-29  (0.0.0-beta.14) ????
+29  (0.0.0-rc.1)
 ==
 
---------
+-----
 :new:
+-----
+
+[[:api:]]
+Here are the new features.
+
+    1) Macro ''\bdoccls'' added to write a class name.
+
+    1) Writing the change log.
+
+        * The ''bdoctopic'' \env become an itemize-like one with a mandatory title.
+
+        * Specialized versions for new features, updates or fixes.
+
+
+--------
+:update:
 --------
 
 [[:api:]]
-
-??? code src à repdrende mef + prototype
-
-\bdoccls ajouté
-
-
-version-n-change :
-    new
-    update
-    fix
-
-    bdoctopic juste pour titre au choix mais mode liste imposée!!!
-    en fait abstraction des trois autres
-
-
-\bdocversion --> date devient optionnel
+''\bdocversion'': the date becomes optional.
 
 
 // ---------- //
