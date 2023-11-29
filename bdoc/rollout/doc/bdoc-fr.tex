@@ -28,8 +28,8 @@ Bla, bla, bla...
 
 \begin{filecontents*}{examples-focus-exa-leavevmode.tex}
 \begin{bdocexa}
-    \leavevmode 
-	 	  
+    \leavevmode
+
     \begin{enumerate}
         \item Point 1.
 
@@ -124,7 +124,7 @@ Bla, bla, bla...
 
 
 \begin{filecontents*}{examples-showcase-customized.tex}
-\begin{bdocshowcase}[before = Mon début,   
+\begin{bdocshowcase}[before = Mon début,
                      after  = Ma fin à moi,
                      color  = red]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
@@ -183,32 +183,16 @@ $x y z = 1$
 \end{filecontents*}
 
 
-\begin{filecontents*}{examples-version-n-change-topic.tex}
-\begin{bdoctopic}[Un court changement accentué]
-    ajout de \bdocmacro{unemacro}.
-\end{bdoctopic}
-
-\begin{bdoctopic}<Lister plusieurs changements>
-% Ici le point s'impose.
-    \begin{itemize}
-        \item Modification de \bdocmacro{vieillemacro}.
-        \item Création de \bdocenv{unenv}.
-    \end{itemize}
-\end{bdoctopic}
-
-\end{filecontents*}
-
-
 \begin{filecontents*}{examples-version-n-change-dating.tex}
 Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 
-\medskip
+\medskip % ATTENTION ! Ceci évite le chevauchement.
 
 \bdocdate{2023-09-24}
 
 Ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
-\medskip
+\medskip % ATTENTION ! Ceci évite le chevauchement.
 
 \bdocdate[gray]{2020-05-08}
 
@@ -222,18 +206,57 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 
 
 \begin{filecontents*}{examples-version-n-change-versioning.tex}
-\bdocversion[red]{10.2.0-beta}{2021-07-05}
+\bdocversion[red]{10.2.0-beta}[2021-07-05]
 
 Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 
 \bigskip % ATTENTION ! Ceci évite le chevauchement.
 
-\bdocversion{10.2.0-alpha}{2021-06-15}
+\bdocversion{10.2.0-alpha}
 
 Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla,
 bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla,
 bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla,
 bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-version-n-change-new.tex}
+\begin{bdocnew}
+    \item Info 1...
+    \item Info 2...
+\end{bdocnew}
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-version-n-change-update.tex}
+\begin{bdocupdate}
+    \item Info 1...
+    \item Info 2...
+\end{bdocupdate}
+
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-version-n-change-fix.tex}
+\begin{bdocfix}
+    \item Info 1...
+    \item Info 2...
+\end{bdocfix}
+
+
+\end{filecontents*}
+
+
+\begin{filecontents*}{examples-version-n-change-topic.tex}
+\begin{bdoctopic}{Des changements inclassables}
+% Ici le point s'impose.
+    \item Info 1...
+    \item Info 2...
+\end{bdoctopic}
 
 \end{filecontents*}
 
@@ -336,7 +359,7 @@ Le package \bdocpack{geometry} est chargé avec les réglages suivants.
 
 \subsection{Titre et table des matières}
 
-Les packages \bdocpack{titlesec}, \bdocpack{tocbasic} et \bdocpack{bookmark} sont réglés comme suit.
+Les packages \bdocpack{titlesec} et \bdocpack{tocbasic} sont réglés comme suit.
 
 \begin{bdoclatex}[code]
 \RequirePackage[raggedright]{titlesec}
@@ -430,7 +453,7 @@ La macro \bdocmacro{bdocinEN} et sa version étoilée s'appuient sur \bdocmacro{
 
 
 \begin{bdocnote}
-	Le texte \bdocquote{en anglais} est traduit dans la langue indiquée lors de l'importation de \bdocpack{bdco}.
+	Le texte \bdocquote{en anglais} est traduit dans la langue indiquée lors de l'importation de \bdocpack{bdoc}.
 \end{bdocnote}
 
 
@@ -454,7 +477,7 @@ La macro \bdocmacro{bdocinEN} et sa version étoilée s'appuient sur \bdocmacro{
 Des exemples numérotés, ou non, s'indiquent via l'environnement \bdocenv{bdocexa} qui propose deux arguments optionnels.
 
 \begin{enumerate}
-    \item Le 1\ier{} argument entre chevrons \verb#<...># peut prendre au choix les valeurs \verb#nb# pour numéroter, valeur par défaut, \verb#nonb# pour ne pas numéroter.
+    \item Le 1\ier{} argument entre chevrons \verb#<...># peut prendre au choix les valeurs \verb#nb# pour numéroter, réglage par défaut, et \verb#nonb# pour ne pas numéroter.
 
     \item Le 2\ieme{} argument entre crochets \verb#[...]# sert à ajouter un mini-titre.
 \end{enumerate}
@@ -571,7 +594,7 @@ On a aussi :
 
 
 \begin{bdocwarn}
-    L'argument optionnel de la macro \bdocmacro{bdocenv} est copié-collé lors du rendu. Ceci peut donc parfois nécessiter d'utiliser des accolades protectrices comme dans l'exemple précédent. 
+    L'argument optionnel de la macro \bdocmacro{bdocenv} est copié-collé lors du rendu. Ceci peut donc parfois nécessiter d'utiliser des accolades protectrices comme dans l'exemple précédent.
 \end{bdocwarn}
 
 
@@ -601,7 +624,7 @@ Pour expliquer les noms retenus, rien de tel que d'indiquer et expliciter les co
 \subsection{Avec une bande colorée}
 
 \begin{bdocexa}[Avec les textes par défaut]
-    Il peut être utile de montrer un rendu réel directement dans un document, typiquement lorsque l'on faite une démo.
+    Il peut être utile de montrer un rendu réel directement dans un document, typiquement lorsque l'on fait une démo.
     Ceci se tape comme suit.
 
     \bdoclatexinput[code]{examples-showcase-default.tex}
@@ -621,13 +644,8 @@ Pour expliquer les noms retenus, rien de tel que d'indiquer et expliciter les co
     Voir la section \ref{bdoc-latexshow} page \pageref{bdoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
 \end{bdocrem}
 
-
 \begin{bdocnote}
-    Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
-
-    \begin{bdoclatex}[std]
-        \bdocruler{Un pseudo-titre décoré}{red}
-    \end{bdoclatex}
+    Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \bdocpack{bdoc}.
 \end{bdocnote}
 
 
@@ -648,19 +666,13 @@ Pour expliquer les noms retenus, rien de tel que d'indiquer et expliciter les co
 
 
 \begin{bdocnote}
-    \leavevmode
+    Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \bdocmacro{bdocbackcolor} et \bdocmacro{bdocdarkcolor} sont utilisées pour créer celles du fond et des titres respectivement à partir de la couleur proposée à \bdocenv{bdocshowcase}.
+	Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
 
-    \begin{itemize}
-        \item Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \bdocpack{bdoc}.
-
-        \item Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \bdocmacro{bdocbackcolor} et \bdocmacro{bdocdarkcolor} sont utilisées pour créer, à partir de la couleur proposée à \bdocenv{bdocshowcase}, celle du fond et celle des titres respectivement.
-              Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
-
-              \begin{bdoclatex}[code]
+	\begin{bdoclatex}[code]
 \NewExpandableDocumentCommand{\bdocbackcolor}{m}{#1!5}
 \NewExpandableDocumentCommand{\bdocdarkcolor}{m}{#1!50!black}
-              \end{bdoclatex}
-    \end{itemize}
+	\end{bdoclatex}
 \end{bdocnote}
 
 
@@ -680,16 +692,24 @@ Pour expliquer les noms retenus, rien de tel que d'indiquer et expliciter les co
 \end{bdocwarn}
 
 
-% ------------------ %
+\begin{bdocnote}
+    Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
 
+    \begin{bdoclatex}[std]
+        \bdocruler{Un pseudo-titre décoré}{red}
+    \end{bdoclatex}
+\end{bdocnote}
+
+
+%\section{Un rendu en situation réelle} \label{bdoc-showcase}
 
 \subsection{Sans bande colorée}
 
-Le rendu de \bdocenv{bdocshowcase} avec une bande colorée peut ne pas vous convenir, ou parfois ne pas être acceptable malgré le travail fait par \bdocpack{clrstrip}.
-Voyons donc comment ne pas utiliser une bande colorée.
+Le rendu de \bdocenv{bdocshowcase} avec une bande colorée peut ne pas convenir, ou parfois ne pas être acceptable malgré le travail fait par \bdocpack{clrstrip}.
+Il est possible de ne pas utiliser une bande colorée comme nous allons le voir de suite.
 
 \begin{bdocexa}
-    L'option booléenne \bdocinlatex{nostripe} sert à ne pas employer \bdocpack{clrstrip}.
+    L'option booléenne \bdocinlatex{nostripe} demande de ne pas faire appel à \bdocpack{clrstrip}.
     Voici un exemple d'utilisation.
 
     \bdoclatexinput[code]{examples-showcase-no-clrstrip.tex}
@@ -718,16 +738,13 @@ Voyons donc comment ne pas utiliser une bande colorée.
 \end{bdocexa}
 
 
-% ------------------ %
-
+%\section{Un rendu en situation réelle} \label{bdoc-showcase}
 
 \subsection{En important le code \LaTeX}
 
+Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \bdocmacro{bdocshowcaseinput} dont l'option reprend la syntaxe de celle de \bdocenv{bdocshowcase} et l'argument obligatoire correspond au chemin du fichier.
+
 \begin{bdocexa}<nonb>
-    Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \bdocmacro{bdocshowcaseinput} dont l'option reprend la syntaxe de celle de \bdocenv{bdocshowcase} et l'argument obligatoire donne le chemin du fichier.
-
-    \medskip
-
     Ce qui suit a été obtenu via \bdocinlatex+\bdocshowcaseinput{external.tex}+.
 
     \medskip
@@ -736,7 +753,7 @@ Voyons donc comment ne pas utiliser une bande colorée.
 
     \medskip
 
-    Via \bdocinlatex+\bdocshowcaseinput[color = orange]{external.tex}+ , on change la coloration comme suit.
+    Quant à \bdocinlatex+\bdocshowcaseinput[color = orange]{external.tex}+ , ceci produira le changement de couleur observable ci-après.
 
     \medskip
 
@@ -765,25 +782,25 @@ Voici des exemples d'utilisation.
 		  \begin{center}
 		  		\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#
 		  \end{center}
-          
+
 
     \item \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+# s'obtient via le code suivant.
 		  \begin{center}
 		  		\bdocinlatex£\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#£
-				
+
 				\medskip
-				
+
 				... \emph{etc.}
 		  \end{center}
 \end{itemize}
 
 
-\begin{bdocimportant}
-    La macro \bdocmacro{bdocinlatex} s'utilise dans une note de pied de page : voir le bas de cette page
+\begin{bdocnote}
+    La macro \bdocmacro{bdocinlatex} est utilisable dans une note de pied de page : voir le bas de cette page
     \footnote{
         \bdocinlatex+$minted = TOP$+ a été tapé \bdocinlatex|\bdocinlatex+$minted = TOP$+| dans cette note de bas de page..
     }.
-\end{bdocimportant}
+\end{bdocnote}
 
 
 % ------------------ %
@@ -902,8 +919,6 @@ La macro \bdocmacro{bdoclatexinput} , présentée ci-après, s'utilise comme l'e
 
 \subsection{Codes importés et mis en situation} \label{bdoc-latexshow}
 
-Ce qui suit est utile pour des exemples plus sophistiqués.
-
 \begin{bdocexa}[Showcase]
     Ce qui suit s'obtient via \bdocinlatex+\bdoclatexshow{examples/listing/xyz.tex}+.
 
@@ -916,7 +931,7 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
 
 
 \begin{bdocnote}
-    Le texte imprimé par défaut tient compte de la langue choisie lors du chargement du package \bdocpack{bdoc}.
+    Les textes par défaut tiennent compte de la langue choisie lors du chargement du package \bdocpack{bdoc}.
 \end{bdocnote}
 
 
@@ -957,20 +972,13 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
 \end{bdocexa}
 
 
-\section{Changements}
+\section{Indiquer les changements}
 
-\begin{bdocexa}[Expliquer dans le journal]
-    Pour fournir des explications efficaces dans l'historique des changements, \bdocpack{bdoc} propose de procéder comme suit.
-
-    \bdoclatexshow{examples-version-n-change-topic.tex}
-\end{bdocexa}
-
-
-% ------------------ %
+\subsection{À quel moment ?}
 
 
 \begin{bdocexa}[Dater des nouveautés]
-    Pour indiquer la date d'une nouveauté, il suffit d'employer la macro \bdocmacro{bdocdate} comme dans l'exemple suivant où la date doit être donnée au format anglais \texttt{AAAA-MM-JJ}.
+    La macro \bdocmacro{bdocdate} permet d'indiquer une date dans la marge comme dans l'exemple suivant.
 
     \bdoclatexshow{examples-version-n-change-dating.tex}
 \end{bdocexa}
@@ -980,7 +988,7 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
 
 
 \begin{bdocexa}[Versionner et dater des nouveautés]
-    L'exemple suivant montre une macro plus complète que la précédente, à savoir \bdocmacro{bdocversion}.
+    Associer un numéro de version à une nouveauté se fait via la macro \bdocmacro{bdocversion}, la couleur et la date étant des arguments optionnels.
 
     \bdoclatexshow{examples-version-n-change-versioning.tex}
 \end{bdocexa}
@@ -992,23 +1000,68 @@ Ce qui suit est utile pour des exemples plus sophistiqués.
     \begin{enumerate}
         \item Les macros \bdocmacro{bdocdate} et \bdocmacro{bdocversion} nécessitent deux compilations.
 
-        \item Comme la langue indiquée pour cette documentation est le français, la date dans le rendu final est au format \texttt{JJ/MM/AAAA} alors que dans le code celle-ci devra toujours être donnée au format anglais \texttt{AAAA-MM-JJ}.
-
-        \item Le numéro de version sera du type \texttt{maj.min.bug} ou \texttt{maj.min.bug-extra} avec trois entiers \texttt{maj}, \texttt{min}, \texttt{bug} et un optionnel \texttt{extra} égal à \texttt{alpha}, \texttt{beta} ou \texttt{rc} pour \bdocquote{release candidate}.
+        \item Comme la langue indiquée pour cette documentation est le français, la date dans le rendu final est au format \texttt{JJ/MM/AAAA} alors que dans le code celle-ci devra toujours être saisie au format anglais \texttt{AAAA-MM-JJ}.
     \end{enumerate}
 \end{bdocimportant}
 
 
 \begin{bdocwarn}
-    Seul l'emploi du format \bdocinlatex+YYYY-MM-DD+ est vérifié
+    Seul l'emploi du format numérique \bdocinlatex+YYYY-MM-DD+ est vérifié
     \footnote{
         Techniquement, vérifier la validité d'une date, via \LaTeX3, ne présente pas de difficulté.
     },
-    et ceci est un choix ! Pourquoi cela ? Tout simplement car dater et versionner des explications doit se faire de façon semi-automatisée afin d'éviter tout bug humain
-    \footnote{
-        L'auteur de \bdocpack{bdoc} est entrain de mettre en place un ensemble d'outils permettant une telle semi-automatisation.
-    }.
+    et ceci est un choix ! Pourquoi cela ? Tout simplement car dater et versionner des explications devrait se faire de façon semi-automatisée afin d'éviter tout bug humain.
+%    \footnote{
+%        L'auteur de \bdocpack{bdoc} est entrain de mettre en place un ensemble d'outils permettant une telle semi-automatisation.
+%    }.
 \end{bdocwarn}
+
+
+%\section{Indiquer les changements}
+
+\subsection{Quoi de neuf ?}
+
+Pour fournir des explications efficaces dans l'historique des changements, \bdocpack{bdoc} propose différents environnements pour indiquer rapidement et clairement ce qui a été fait
+\footnote{
+	L'utilisateur n'a pas besoin de tous les détails techniques.
+}.
+
+
+\begin{bdocexa}[Pour les nouveautés]
+	\leavevmode
+
+    \bdoclatexshow{examples-version-n-change-new.tex}
+\end{bdocexa}
+
+
+% ------------------ %
+
+
+\begin{bdocexa}[Pour les mises à jour]
+	\leavevmode
+
+    \bdoclatexshow{examples-version-n-change-update.tex}
+\end{bdocexa}
+
+
+% ------------------ %
+
+
+\begin{bdocexa}[Pour les réparations]
+	\leavevmode
+
+    \bdoclatexshow{examples-version-n-change-fix.tex}
+\end{bdocexa}
+
+
+% ------------------ %
+
+
+\begin{bdocexa}[Thématiques aux choix]
+	\leavevmode
+
+    \bdoclatexshow{examples-version-n-change-topic.tex}
+\end{bdocexa}
 
 
 \section{Décorations}
