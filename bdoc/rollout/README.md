@@ -10,10 +10,10 @@ The `LaTeX` package `bdoc`
 About `bcdoc`
 -------------
 
-This package proposes some macros to write human documentations of `LaTeX` packages with a tutorial-like flavour.
+This package proposes some macros and environments to write semantically human-friendly documentations of `LaTeX` packages and classes with a tutorial-like flavour.
 
 
 Where is the documentation?
 ---------------------------
 
-At this time, there is only one French documentation writing with a tutorial-like flavor.
+At this time, there is only one French documentation writing with a tutorial-like flavor : look at the folder `rollout/doc`.

@@ -1,3 +1,7 @@
+-- Source.
+--     * https://www.latex-project.org/news/2019/04/16/l3build-upload/
+--     * https://ctan.org/help/submit
+
 module = "bdoc"
 
 sourcefiledir = "code"
@@ -17,18 +21,15 @@ typesetopts = checkopts
 
 uploadconfig = {
     author      = "Christophe BAL",
-    -- license     = "lppl1.3c",
+    uploader    = "Christophe BAL",
+    email       = "projetmbc@gmail.com",
+    license     = "GPLv3",
+    pkg         = "bdoc",
+    version     = "1.0.0 [2023-11-29]",
     summary     = 'This package proposes tools for writing "human friendly" documentations of LaTeX packages.',
     topic       = {"doc", "dev"},
-    -- ctanPath    = "/macros/latex/contrib/l3build",
-    repository  = "https://github.com/bc-tools/for-latex.git",
-    -- bugtracker  = "https://github.com/latex3/l3build/issues",
-    -- update      = true,
---     description = [[
---   The build system supports testing and building (La)TeX code, on
---   Linux, macOS, and Windows systems. The package offers:
---   * A unit testing system for (La)TeX code;
---   * A system for typesetting package documentation; and
---   * An automated process for creating CTAN releases.
---     ]]
+    ctanPath    = "/macros/latex/contrib/bdoc",
+    repository  = "https://github.com/bc-tools/for-latex",
+    bugtracker  = "https://github.com/bc-tools/for-latex/issues",
+    note        = [[Uploaded automatically by l3build...]]
 }
