@@ -3,6 +3,7 @@
 --     * https://ctan.org/help/submit
 --     * https://ctan.org/license
 --     * https://ctan.org/topics/highscore
+--     * https://ctan.org/incoming
 
 module = "bdoc"
 
