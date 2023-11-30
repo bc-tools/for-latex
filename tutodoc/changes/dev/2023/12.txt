@@ -1,0 +1,14 @@
+// ---------- //
+
+
+==
+01
+==
+
+--------
+:update:
+--------
+
+\ctan forces us to change the name of the \proj wich becomes \tutodoc.
+
+??? upadte doc ? aj aussi de specs avec example bdoc

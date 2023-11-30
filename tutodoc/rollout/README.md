@@ -1,16 +1,12 @@
-The `LaTeX` package `bdoc`
-==========================
+The `LaTeX` package `tutodoc`
+=============================
 
-
-> **I beg your pardon for my english...**
->
-> English is not my native language, so be nice if you notice misunderstandings, misspellings, or grammatical errors in my documents and codes.
-
-
-About `bcdoc`
--------------
+About `tutodoc`
+---------------
 
 This package proposes some macros and environments to write semantically human-friendly documentations of `LaTeX` packages and classes with a tutorial-like flavour.
+
+> `tutodoc` comes from *"tutorial-like documentation"*.
 
 
 Where is the documentation?
