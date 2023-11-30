@@ -26,6 +26,7 @@ uploadconfig = {
     license     = "GPLv3",
     pkg         = "bdoc",
     version     = "1.0.0 [2023-11-29]",
+    update      = false,
     summary     = 'This package proposes tools for writing "human friendly" documentations of LaTeX packages.',
     topic       = {"doc", "dev"},
     ctanPath    = "/macros/latex/contrib/bdoc",
