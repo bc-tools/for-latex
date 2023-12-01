@@ -12,9 +12,9 @@
 
 %%%
 % See the \doc of the macro ''\newmintinline'' from the package ''minted''
-% to have \infos about the macro ''bdocinlatex''.
+% to have \infos about the macro ''tdocinlatex''.
 %%%
-\newmintinline[bdocinlatex]{latex}{}
+\newmintinline[tdocinlatex]{latex}{}
 
 
 % :: SHORTCUTS FOR TCOLORBOX LISTING FORMATING :: %
@@ -23,21 +23,21 @@
 
 %%%
 % In the following easy-to-understand macro, we use one fictive ''tcolorbox''
-% style such as to indicate an unknown ''bdoc'' style to the user.
+% style such as to indicate an unknown ''tdoc'' style to the user.
 % For example, this can give one message similar to the following one.
 %
 % term::
-%     Package pgfkeys Error: I do not know the key '/tcb/bdoclatex bad option
+%     Package pgfkeys Error: I do not know the key '/tcb/tdoclatex bad option
 %     "NOT-A-STYLE"' and I am going to ignore it. Perhaps you misspelled it.
 %
 %     See the pgfkeys package documentation for explanation.
 %%%
-\NewExpandableDocumentCommand{\bdoc@latex@listing@formating}{ m }{
+\NewExpandableDocumentCommand{\tdoc@latex@listing@formating}{ m }{
   \str_case:nnF { #1 } {
     { sbs  } { listing ~ side ~ text }
     { code } { listing ~ only }
     { std  } { listing ~ and ~ text }
-  } { bdoclatex ~ bad ~ option ~ "#1" }
+  } { tdoclatex ~ bad ~ option ~ "#1" }
 }
 
 \ExplSyntaxOff
@@ -52,7 +52,7 @@
 %         * https://tex.stackexchange.com/a/327983/6880
 %%%
 \tcbset{
-  bdoclatex_tcbstyle/.style = {
+  tdoclatex_tcbstyle/.style = {
     minted language = latex,
     breakable,
 % Code and output
@@ -88,10 +88,10 @@
 %
 % note::
 %     See the \doc of the macro ''\newtcblisting'' from the package
-%     ''tcolorbox'' to have \infos about the environment ''bdoclatex''.
+%     ''tcolorbox'' to have \infos about the environment ''tdoclatex''.
 %%%
-\newtcblisting{bdoclatex}[1][std]{%
-  bdoclatex_tcbstyle = \bdoc@latex@listing@formating{#1}
+\newtcblisting{tdoclatex}[1][std]{%
+  tdoclatex_tcbstyle = \tdoc@latex@listing@formating{#1}
 }
 
 
@@ -99,16 +99,16 @@
 
 %%%
 % prototype::
-%     #1 : :see: \newtcblisting{bdoclatex}.
+%     #1 : :see: \newtcblisting{tdoclatex}.
 %     #2 : the path of the file to input and format.
 %
 % note::
 %     See the \doc of the macro ''\newtcbinputlisting'' from the package
-%     ''tcolorbox'' to have more \infos about the macro ''\bdoclatexinput''.
+%     ''tcolorbox'' to have more \infos about the macro ''\tdoclatexinput''.
 %%%
-\newtcbinputlisting{\bdoclatexinput}[2][std]{
+\newtcbinputlisting{\tdoclatexinput}[2][std]{
   listing file = {#2},
-  bdoclatex_tcbstyle = \bdoc@latex@listing@formating{#1}
+  tdoclatex_tcbstyle = \tdoc@latex@listing@formating{#1}
 }
 
 
@@ -118,17 +118,17 @@
 
 % :: SETTING SOME KEYS :: %
 
-\tl_new:N \l_bdoc_listing_input_tl
+\tl_new:N \l_tdoc_listing_explain_tl
 
 %%%
 % prototype::
-%     :see: macro.bdoclatexshow
+%     :see: macro.tdoclatexshow
 %
-% We define the key-val options that will be exposed by ''\bdoclatexshow''.
+% We define the key-val options that will be exposed by ''\tdoclatexshow''.
 %%%
-\keys_define:nn { bdoc/latexshow } {
-  explain .tl_set:N   = \l_bdoc_listing_explain_tl,
-  explain .initial:n  = { \bdoc@trans@this@gives \bdoc@colon },
+\keys_define:nn { tdoc/latexshow } {
+  explain .tl_set:N   = \l_tdoc_listing_explain_tl,
+  explain .initial:n  = { \tdoc@trans@this@gives \tdoc@colon },
 }
 
 
@@ -136,24 +136,24 @@
 
 %%%
 % prototype::
-%     #1 : the key-value options supported by the ''bdocshowcase'' \env,
+%     #1 : the key-value options supported by the ''tdocshowcase'' \env,
 %          plus one allowing you to change the description of a line
 %          printed between the code and its focused output.
 %     #2 : the path of a file
 %
-%     :see: env.bdocshowcase ,
-%           macro.bdoclatexinput
+%     :see: env.tdocshowcase ,
+%           macro.tdoclatexinput
 %%%
-\NewDocumentCommand{\bdoclatexshow}{O{} m}{
+\NewDocumentCommand{\tdoclatexshow}{O{} m}{
   \group_begin:
-    \keys_set_known:nnN { bdoc/latexshow } { #1 } \l_tmpa_tl
+    \keys_set_known:nnN { tdoc/latexshow } { #1 } \l_tmpa_tl
 
-    \bdoclatexinput[code]{#2}
+    \tdoclatexinput[code]{#2}
 
-    \tl_use:N \l_bdoc_listing_explain_tl
+    \tl_use:N \l_tdoc_listing_explain_tl
 
 % Source: https://tex.stackexchange.com/a/696700/6880
-    \exp_last_unbraced:NNV \bdocshowcaseinput [\l_tmpa_tl] {#2}
+    \exp_last_unbraced:NNV \tdocshowcaseinput [\l_tmpa_tl] {#2}
   \group_end:
 }
 

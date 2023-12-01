@@ -17,38 +17,38 @@
 
 Voici ce qu'il est possible de taper de façon sémantique.
 
-\begin{bdoclatex}[sbs]
-\bdoccls{maclasse} sert à...
+\begin{tdoclatex}[sbs]
+\tdoccls{maclasse} sert à...
 
-\bdocpack{monpackage} est pour...
+\tdocpack{monpackage} est pour...
 
-\bdocmacro{unemacro} permet de...
+\tdocmacro{unemacro} permet de...
 
-\bdocenv{env} produit...
+\tdocenv{env} produit...
 
 On a aussi :
 
-\bdocenv[{[opt1]<opt2>}]{env}
-\end{bdoclatex}
+\tdocenv[{[opt1]<opt2>}]{env}
+\end{tdoclatex}
 
 
-\begin{bdocrem}
-    L'intérêt des macros précédentes vis à vis de l'usage de \bdocmacro{bdocinlatex}, voir la section \ref{bdoc-listing-inline} page \pageref{bdoc-listing-inline}, est l'absence de coloration.
-    De plus, la macro \bdocmacro{bdocenv} demande juste de taper le nom de l'environnement
+\begin{tdocrem}
+    L'intérêt des macros précédentes vis à vis de l'usage de \tdocmacro{tdocinlatex}, voir la section \ref{tdoc-listing-inline} page \pageref{tdoc-listing-inline}, est l'absence de coloration.
+    De plus, la macro \tdocmacro{tdocenv} demande juste de taper le nom de l'environnement
     \footnote{
-        De plus, \bdocinlatex{\bdocenv{monenv}} produit \bdocenv{monenv} avec des espaces afin d'autoriser des retours à la ligne si besoin.
+        De plus, \tdocinlatex{\tdocenv{monenv}} produit \tdocenv{monenv} avec des espaces afin d'autoriser des retours à la ligne si besoin.
     }
     avec des éventuelles options en tapant les bons délimiteurs
     \footnote{
         Se souvenir que tout est possible ou presque dorénavant.
     }
     à la main.
-\end{bdocrem}
+\end{tdocrem}
 
 
-\begin{bdocwarn}
-    L'argument optionnel de la macro \bdocmacro{bdocenv} est copié-collé lors du rendu. Ceci peut donc parfois nécessiter d'utiliser des accolades protectrices comme dans l'exemple précédent. 
-\end{bdocwarn}
+\begin{tdocwarn}
+    L'argument optionnel de la macro \tdocmacro{tdocenv} est copié-collé lors du rendu. Ceci peut donc parfois nécessiter d'utiliser des accolades protectrices comme dans l'exemple précédent. 
+\end{tdocwarn}
 
 
 % -------------------- %
@@ -58,17 +58,17 @@ On a aussi :
 
 Pour expliquer les noms retenus, rien de tel que d'indiquer et expliciter les courts préfixes et suffixes employés. Ceci se fait facilement comme suit.
 
-\begin{bdoclatex}[sbs]
-\bdocpre{sup} est relatif à...
+\begin{tdoclatex}[sbs]
+\tdocpre{sup} est relatif à...
 
-\bdocprewhy{sup.erbe} signifie...
+\tdocprewhy{sup.erbe} signifie...
 
-\emph{\bdocprewhy{sup.er} pour...}
-\end{bdoclatex}
+\emph{\tdocprewhy{sup.er} pour...}
+\end{tdoclatex}
 
 
-\begin{bdocrem}
-    Le choix du point pour scinder un mot permet d'utiliser des mots avec un tiret comme dans \bdocinlatex+\bdocprewhy{ca.sse-brique}+ qui donne \bdocprewhy{ca.sse-brique}.
-\end{bdocrem}
+\begin{tdocrem}
+    Le choix du point pour scinder un mot permet d'utiliser des mots avec un tiret comme dans \tdocinlatex+\tdocprewhy{ca.sse-brique}+ qui donne \tdocprewhy{ca.sse-brique}.
+\end{tdocrem}
 
 \end{document}

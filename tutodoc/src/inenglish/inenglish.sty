@@ -13,9 +13,9 @@
 % prototype::
 %     #1 : a text to quote.
 %
-% For example, ''\bdocquote{Something}'' prints something like **"Something"**.
+% For example, ''\tdocquote{Something}'' prints something like **"Something"**.
 %%%
-\NewDocumentCommand{\bdocquote}{m}{%
+\NewDocumentCommand{\tdocquote}{m}{%
   \enquote{\emph{#1}}%
 }
 
@@ -31,19 +31,19 @@
 % For example, if the language chosen is ''french'', we have
 % the following outputs.
 %
-%     1) ''\bdocinEN{Something}'' prints
+%     1) ''\tdocinEN{Something}'' prints
 %        **"Something" en anglais**.
 %
-%     2) ''\bdocinEN*{Something}'' just prints
+%     2) ''\tdocinEN*{Something}'' just prints
 %        **"Something"**.
 %        This can be useful in a case like
-%        ''\bdocinEN*{Something} et \bdocinEN{Another thing}''
+%        ''\tdocinEN*{Something} et \tdocinEN{Another thing}''
 %        which gives
 %        **"Something" et "Another thing" en anglais**.
 %%%
-\NewDocumentCommand{\bdocinEN}{s m}{%
-  \bdocquote{#2}%
+\NewDocumentCommand{\tdocinEN}{s m}{%
+  \tdocquote{#2}%
   \IfBooleanF{#1}{% No star used.
-    \ \bdoc@trans@in@EN{}%
+    \ \tdoc@trans@in@EN{}%
   }%
 }

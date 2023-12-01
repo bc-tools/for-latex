@@ -18,7 +18,7 @@
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
 
-\NewDocumentCommand{ \bdocdocextraruler }{ m }{%
+\NewDocumentCommand{ \tdocdocextraruler }{ m }{%
     \par
     {
         \centering
@@ -33,15 +33,15 @@
     }
 }
 
-\NewDocumentEnvironment{ bdoc-doc-showcase }
+\NewDocumentEnvironment{ tdoc-doc-showcase }
                        { O{ Début du rendu dans cette doc. }
                          O{ Fin du rendu dans cette doc. } }{
 %    \begin{colorstrip}{green!5}
-        \bdocdocextraruler{#1}
+        \tdocdocextraruler{#1}
         \smallskip
 }{
         \smallskip
-        \bdocdocextraruler{#2}
+        \tdocdocextraruler{#2}
 %    \end{colorstrip}
 }
 
@@ -54,106 +54,106 @@
 
 Pour les codes suivants, on considère un fichier \verb+xyz.tex+ avec le contenu suivant, et ayant le chemin relatif \verb+examples-listing-xyz.tex+ vis à vis de ce document.
 
-\bdoclatexinput[code]{examples/listing/xyz.tex}
+\tdoclatexinput[code]{examples/listing/xyz.tex}
 
 \medskip
 
-La macro \bdocmacro{bdoclatexinput} , présentée ci-après, s'utilise comme l'environnement \bdocenv{bdoclatex} excepté que l'on fournit le chemin d'un fichier.
+La macro \tdocmacro{tdoclatexinput} , présentée ci-après, s'utilise comme l'environnement \tdocenv{tdoclatex} excepté que l'on fournit le chemin d'un fichier.
 
 
 % ------------------ %
 
 
-\begin{bdocexa}[Face à face]
+\begin{tdocexa}[Face à face]
     \leavevmode
 
-    \begin{bdoclatex}[code]
-\bdoclatexinput[sbs]{examples/listing/xyz.tex}
-    \end{bdoclatex}
+    \begin{tdoclatex}[code]
+\tdoclatexinput[sbs]{examples/listing/xyz.tex}
+    \end{tdoclatex}
 
     Ceci produit la mise en forme suivante.
 
-    \bdoclatexinput[sbs]{examples/listing/xyz.tex}
-\end{bdocexa}
+    \tdoclatexinput[sbs]{examples/listing/xyz.tex}
+\end{tdocexa}
 
 
 % ------------------ %
 
 
-\begin{bdocexa}[À la suite]
+\begin{tdocexa}[À la suite]
     \leavevmode
 
-    \begin{bdoclatex}[code]
-\bdoclatexinput{examples/listing/xyz.tex}
-    \end{bdoclatex}
+    \begin{tdoclatex}[code]
+\tdoclatexinput{examples/listing/xyz.tex}
+    \end{tdoclatex}
 
-    Ceci produit la mise en forme suivante où l'option employée par défaut est \bdocinlatex#std#.
+    Ceci produit la mise en forme suivante où l'option employée par défaut est \tdocinlatex#std#.
 
-    \bdoclatexinput{examples/listing/xyz.tex}
-\end{bdocexa}
+    \tdoclatexinput{examples/listing/xyz.tex}
+\end{tdocexa}
 
 
 % ------------------ %
 
 
-\begin{bdocexa}[Juste le code]
+\begin{tdocexa}[Juste le code]
     \leavevmode
 
-    \begin{bdoclatex}[code]
-\bdoclatexinput[code]{examples/listing/xyz.tex}
-    \end{bdoclatex}
+    \begin{tdoclatex}[code]
+\tdoclatexinput[code]{examples/listing/xyz.tex}
+    \end{tdoclatex}
 
     Ceci produit la mise en forme suivante.
 
-    \bdoclatexinput[code]{examples/listing/xyz.tex}
-\end{bdocexa}
+    \tdoclatexinput[code]{examples/listing/xyz.tex}
+\end{tdocexa}
 
 
 % ------------------ %
 
 
-\subsection{Codes importés et mis en situation} \label{bdoc-latexshow}
+\subsection{Codes importés et mis en situation} \label{tdoc-latexshow}
 
-\begin{bdocexa}[Showcase]
-    Ce qui suit s'obtient via \bdocinlatex+\bdoclatexshow{examples/listing/xyz.tex}+.
+\begin{tdocexa}[Showcase]
+    Ce qui suit s'obtient via \tdocinlatex+\tdoclatexshow{examples/listing/xyz.tex}+.
 
     \medskip
 
-    \begin{bdoc-doc-showcase}
-        \bdoclatexshow{examples/listing/xyz.tex}
-    \end{bdoc-doc-showcase}
-\end{bdocexa}
+    \begin{tdoc-doc-showcase}
+        \tdoclatexshow{examples/listing/xyz.tex}
+    \end{tdoc-doc-showcase}
+\end{tdocexa}
 
 
-\begin{bdocnote}
-    Les textes par défaut tiennent compte de la langue choisie lors du chargement du package \bdocpack{bdoc}.
-\end{bdocnote}
+\begin{tdocnote}
+    Les textes par défaut tiennent compte de la langue choisie lors du chargement du package \tdocpack{tdoc}.
+\end{tdocnote}
 
 
 % ------------------ %
 
 
-\begin{bdocexa}[Changer le texte explicatif]
-    Via la clé \bdocinlatex|explain|, on peut utiliser un texte personnalisé. Ainsi, \bdocinlatex|\bdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}| produira ce qui suit.
+\begin{tdocexa}[Changer le texte explicatif]
+    Via la clé \tdocinlatex|explain|, on peut utiliser un texte personnalisé. Ainsi, \tdocinlatex|\tdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}| produira ce qui suit.
 
     \medskip
 
-    \begin{bdoc-doc-showcase}
-        \bdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}
-    \end{bdoc-doc-showcase}
-\end{bdocexa}
+    \begin{tdoc-doc-showcase}
+        \tdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}
+    \end{tdoc-doc-showcase}
+\end{tdocexa}
 
 
 % ------------------ %
 
 
-\begin{bdocexa}[Les options disponibles]
-    En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de \bdocenv{bdocshowcase}, voir \ref{bdoc-showcase}.
+\begin{tdocexa}[Les options disponibles]
+    En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de \tdocenv{tdocshowcase}, voir \ref{tdoc-showcase}.
     Voici un exemple illustrant ceci.
 
     \medskip
 
-    \bdoclatexinput[code]{examples/listing/latexshow-options.tex}
+    \tdoclatexinput[code]{examples/listing/latexshow-options.tex}
 
     \medskip
 
@@ -161,9 +161,9 @@ La macro \bdocmacro{bdoclatexinput} , présentée ci-après, s'utilise comme l'e
 
     \medskip
 
-    \begin{bdoc-doc-showcase}
+    \begin{tdoc-doc-showcase}
         \input{examples/listing/latexshow-options.tex}
-    \end{bdoc-doc-showcase}
-\end{bdocexa}
+    \end{tdoc-doc-showcase}
+\end{tdocexa}
 
 \end{document}

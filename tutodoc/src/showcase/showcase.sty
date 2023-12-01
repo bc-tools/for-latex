@@ -24,7 +24,7 @@
 %     cf::''this post ;
 %           https://tex.stackexchange.com/a/604708/6880''.
 %%%
-\NewDocumentCommand{\bdocruler}{m m}{
+\NewDocumentCommand{\tdocruler}{m m}{
   \par
   {
     \centering
@@ -58,7 +58,7 @@
 %
 %     :return: a "darker" version of the color ''#1''.
 %%%
-\NewExpandableDocumentCommand{\bdocdarkcolor}{m}{%
+\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{%
   #1!50!black%
 }
 
@@ -69,7 +69,7 @@
 %
 %     :return: a "transparent" version of the color `#1`.
 %%%
-\NewExpandableDocumentCommand{\bdoclightcolor}{m}{%
+\NewExpandableDocumentCommand{\tdoclightcolor}{m}{%
   #1!5%
 }
 
@@ -85,15 +85,15 @@
 %          corresponding to the two first arguments.
 %
 %     :action: this environment just adds its content processed by \latex
-%              between centered materials produced by the macro ''\bdocruler''
+%              between centered materials produced by the macro ''\tdocruler''
 %              such as to stress the start and the end of the content.
 %%%
-\NewDocumentEnvironment{bdoc@showcase@basic}{m m m}{
-  \bdocruler{#1}{\bdocdarkcolor{#3}}
+\NewDocumentEnvironment{tdoc@showcase@basic}{m m m}{
+  \tdocruler{#1}{\tdocdarkcolor{#3}}
   \medskip
 }{
   \medskip
-  \bdocruler{#2}{\bdocdarkcolor{#3}}
+  \tdocruler{#2}{\tdocdarkcolor{#3}}
 }
 
 
@@ -108,15 +108,15 @@
 %     :action: this environment adds a page-width colored stripe in the
 %              background of the environment content processed by \latex.
 %              This stripe is preceded and followed by centered materials
-%              produced by the macro ''\bdocruler'' such as to stress the
+%              produced by the macro ''\tdocruler'' such as to stress the
 %              start and the end of the content.
 %%%
 
-\NewDocumentEnvironment{bdoc@showcase@colorstrip}{m m m}{
-  \begin{colorstrip}{\bdoclightcolor{#3}}
-    \begin{bdoc@showcase@basic}{#1}{#2}{#3}
+\NewDocumentEnvironment{tdoc@showcase@colorstrip}{m m m}{
+  \begin{colorstrip}{\tdoclightcolor{#3}}
+    \begin{tdoc@showcase@basic}{#1}{#2}{#3}
 }{
-    \end{bdoc@showcase@basic}
+    \end{tdoc@showcase@basic}
   \end{colorstrip}
 }
 
@@ -125,29 +125,29 @@
 
 % :: SETTING SOME KEYS :: %
 
-\tl_new:N   \l_bdoc_showcase_before_tl
-\tl_new:N   \l_bdoc_showcase_after_tl
-\tl_new:N   \l_bdoc_showcase_color_tl
-\bool_new:N \l_bdoc_showcase_nostripe_bool
+\tl_new:N   \l_tdoc_showcase_before_tl
+\tl_new:N   \l_tdoc_showcase_after_tl
+\tl_new:N   \l_tdoc_showcase_color_tl
+\bool_new:N \l_tdoc_showcase_nostripe_bool
 
 
 %%%
 % prototype::
-%     :see: env.bdocshowcase
+%     :see: env.tdocshowcase
 %
 % We define the key-val options that will be exposed by the \env
-% ''bdocshowcase''.
+% ''tdocshowcase''.
 %%%
-\keys_define:nn { bdoc/showcase } {
+\keys_define:nn { tdoc/showcase } {
 % Texts.
-  before .tl_set:N   = \l_bdoc_showcase_before_tl,
-  before .initial:n  = \bdoc@trans@latex@show@start,
-  after  .tl_set:N   = \l_bdoc_showcase_after_tl,
-  after  .initial:n  = \bdoc@trans@latex@show@end,
+  before .tl_set:N   = \l_tdoc_showcase_before_tl,
+  before .initial:n  = \tdoc@trans@latex@show@start,
+  after  .tl_set:N   = \l_tdoc_showcase_after_tl,
+  after  .initial:n  = \tdoc@trans@latex@show@end,
 % Decorations.
-  color    .tl_set:N   = \l_bdoc_showcase_color_tl,
+  color    .tl_set:N   = \l_tdoc_showcase_color_tl,
   color    .initial:n  = cyan,
-  nostripe .bool_set:N = \l_bdoc_showcase_nostripe_bool,
+  nostripe .bool_set:N = \l_tdoc_showcase_nostripe_bool,
   nostripe .initial:n  = false,
 }
 
@@ -158,35 +158,35 @@
 %     #1 : the key-value options.
 %
 %     :action: this \env formats \latex code, given as an argument,
-%              by framing it with texts decorated by ''\bdocruler'',
+%              by framing it with texts decorated by ''\tdocruler'',
 %              in order to clearly identify a rendering used as an
 %              example.
 %              It is also possible to have a coloured strip of the width
 %              of the page in the background of the content.
 %
-%     :see: env.bdoc@showcase@basic ,
-%           env.bdoc@showcase@colorstrip
+%     :see: env.tdoc@showcase@basic ,
+%           env.tdoc@showcase@colorstrip
 %%%
-\NewDocumentEnvironment{bdocshowcase}{O{}}{
+\NewDocumentEnvironment{tdocshowcase}{O{}}{
   \group_begin:
-    \keys_set:nn { bdoc/showcase } { #1 }
+    \keys_set:nn { tdoc/showcase } { #1 }
 
-    \bool_if:NTF \l_bdoc_showcase_nostripe_bool {
-      \begin{bdoc@showcase@basic}%
-        { \tl_use:N \l_bdoc_showcase_before_tl }%
-        { \tl_use:N \l_bdoc_showcase_after_tl }%
-        { \tl_use:N \l_bdoc_showcase_color_tl }
+    \bool_if:NTF \l_tdoc_showcase_nostripe_bool {
+      \begin{tdoc@showcase@basic}%
+        { \tl_use:N \l_tdoc_showcase_before_tl }%
+        { \tl_use:N \l_tdoc_showcase_after_tl }%
+        { \tl_use:N \l_tdoc_showcase_color_tl }
     }{
-      \begin{bdoc@showcase@colorstrip}%
-        { \tl_use:N \l_bdoc_showcase_before_tl }%
-        { \tl_use:N \l_bdoc_showcase_after_tl }%
-        { \tl_use:N \l_bdoc_showcase_color_tl }
+      \begin{tdoc@showcase@colorstrip}%
+        { \tl_use:N \l_tdoc_showcase_before_tl }%
+        { \tl_use:N \l_tdoc_showcase_after_tl }%
+        { \tl_use:N \l_tdoc_showcase_color_tl }
     }
 }{
-    \bool_if:NTF \l_bdoc_showcase_nostripe_bool {
-      \end{bdoc@showcase@basic}
+    \bool_if:NTF \l_tdoc_showcase_nostripe_bool {
+      \end{tdoc@showcase@basic}
     }{
-      \end{bdoc@showcase@colorstrip}
+      \end{tdoc@showcase@colorstrip}
     }
   \group_end:
 }
@@ -196,18 +196,18 @@
 
 %%%
 % prototype::
-%     #1 : the key-value options supported by the ''bdocshowcase'' \env.
+%     #1 : the key-value options supported by the ''tdocshowcase'' \env.
 %     #2 : the path of a file
 %
-%     :see: env.bdocshowcase
+%     :see: env.tdocshowcase
 %%%
-\NewDocumentCommand{\bdocshowcaseinput}{O{} m}{
+\NewDocumentCommand{\tdocshowcaseinput}{O{} m}{
   \group_begin:
-    \keys_set_known:nnN { bdoc/latexshow } { #1 } \l_tmpa_tl
+    \keys_set_known:nnN { tdoc/latexshow } { #1 } \l_tmpa_tl
 
-    \exp_last_unbraced:NNV \bdocshowcase [\l_tmpa_tl]
+    \exp_last_unbraced:NNV \tdocshowcase [\l_tmpa_tl]
       \input{#2}
-    \endbdocshowcase
+    \endtdocshowcase
   \group_end:
 }
 

@@ -14,86 +14,86 @@
 
 \begin{document}
 
-\section{Un rendu en situation réelle} \label{bdoc-showcase}
+\section{Un rendu en situation réelle} \label{tdoc-showcase}
 
 \subsection{Avec une bande colorée}
 
-\begin{bdocexa}[Avec les textes par défaut]
+\begin{tdocexa}[Avec les textes par défaut]
     Il peut être utile de montrer un rendu réel directement dans un document, typiquement lorsque l'on fait une démo.
     Ceci se tape comme suit.
 
-    \bdoclatexinput[code]{examples/showcase/default.tex}
+    \tdoclatexinput[code]{examples/showcase/default.tex}
 
     On obtient alors le rendu suivant
     \footnote{
-        La bande est créée sans effort grâce au package \bdocpack{clrstrip}.
+        La bande est créée sans effort grâce au package \tdocpack{clrstrip}.
     }.
 
     \medskip
 
     \input{examples/showcase/default.tex}
-\end{bdocexa}
+\end{tdocexa}
 
 
-\begin{bdocrem}
-    Voir la section \ref{bdoc-latexshow} page \pageref{bdoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
-\end{bdocrem}
+\begin{tdocrem}
+    Voir la section \ref{tdoc-latexshow} page \pageref{tdoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
+\end{tdocrem}
 
-\begin{bdocnote}
-    Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \bdocpack{bdoc}.
-\end{bdocnote}
+\begin{tdocnote}
+    Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \tdocpack{tdoc}.
+\end{tdocnote}
 
 
 % ------------------ %
 
 
-\begin{bdocexa}[Changer la couleur et/ou les textes par défaut]
+\begin{tdocexa}[Changer la couleur et/ou les textes par défaut]
     \leavevmode
 
-    \bdoclatexinput[code]{examples/showcase/customized.tex}
+    \tdoclatexinput[code]{examples/showcase/customized.tex}
 
     Ceci produira ce qui suit.
 
     \medskip
 
     \input{examples/showcase/customized.tex}
-\end{bdocexa}
+\end{tdocexa}
 
 
-\begin{bdocnote}
-    Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \bdocmacro{bdocbackcolor} et \bdocmacro{bdocdarkcolor} sont utilisées pour créer celles du fond et des titres respectivement à partir de la couleur proposée à \bdocenv{bdocshowcase}.
+\begin{tdocnote}
+    Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor} sont utilisées pour créer celles du fond et des titres respectivement à partir de la couleur proposée à \tdocenv{tdocshowcase}.
 	Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
 
-	\begin{bdoclatex}[code]
-\NewExpandableDocumentCommand{\bdocbackcolor}{m}{#1!5}
-\NewExpandableDocumentCommand{\bdocdarkcolor}{m}{#1!50!black}
-	\end{bdoclatex}
-\end{bdocnote}
+	\begin{tdoclatex}[code]
+\NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
+\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
+	\end{tdoclatex}
+\end{tdocnote}
 
 
 % ------------------ %
 
 
-\begin{bdocwarn}
+\begin{tdocwarn}
     Avec la mise en forme par défaut, si le code \LaTeX\ commence par un crochet ouvrant, il faudra indiquer explicitement une option vide comme dans l'exemple suivant.
 
-    \bdoclatexinput[code]{examples/showcase/hook.tex}
+    \tdoclatexinput[code]{examples/showcase/hook.tex}
 
     Ceci produira ce qui suit.
 
     \medskip
 
     \input{examples/showcase/hook.tex}
-\end{bdocwarn}
+\end{tdocwarn}
 
 
-\begin{bdocnote}
-    Il faut savoir qu'en coulisse la macro \bdocmacro{bdocruler} est utilisée.
+\begin{tdocnote}
+    Il faut savoir qu'en coulisse la macro \tdocmacro{tdocruler} est utilisée.
 
-    \begin{bdoclatex}[std]
-        \bdocruler{Un pseudo-titre décoré}{red}
-    \end{bdoclatex}
-\end{bdocnote}
+    \begin{tdoclatex}[std]
+        \tdocruler{Un pseudo-titre décoré}{red}
+    \end{tdoclatex}
+\end{tdocnote}
 
 
 \end{document}

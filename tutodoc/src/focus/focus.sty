@@ -11,51 +11,51 @@
 
 %%%
 % See the \doc of the macro ''\newtheorem'' from the package ''amsthm''
-% to have \infos about the environment ''@@bdocexa@nb''.
+% to have \infos about the environment ''@@tdocexa@nb''.
 %%%
-\newtheorem{@@bdocexa@nb}{\bdoc@trans@exa@title}%
+\newtheorem{@@tdocexa@nb}{\tdoc@trans@exa@title}%
                          [subsubsection]
 
 %%%
-% We redefine the counter associated to the environment ''@@bdocexa@nb''
+% We redefine the counter associated to the environment ''@@tdocexa@nb''
 % to obtain only one single arabic number.
 %%%
-\renewcommand{\the@@bdocexa@nb}{\arabic{@@bdocexa@nb}}
+\renewcommand{\the@@tdocexa@nb}{\arabic{@@tdocexa@nb}}
 
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''@@bdocexa@no@nb''.
+% to have \infos about the environment ''@@tdocexa@no@nb''.
 %%%
-\newtheorem*{@@bdocexa@no@nb}{\bdoc@trans@exa@title}
+\newtheorem*{@@tdocexa@no@nb}{\tdoc@trans@exa@title}
 
 
 % :: EXAMPLE - PUBLIC VERSION :: %
 
 \ExplSyntaxOn
 
-\msg_set:nnnn { bdoc } { env-bdocexa-unknown-option }
+\msg_set:nnnn { tdoc } { env-tdocexa-unknown-option }
   { Unknown ~ rafters ~ option. }
   { See ~ the ~ documentation ~ for ~ the ~ supported ~ options. }
 
-\NewDocumentEnvironment{bdocexa}{D<>{nb} O{}}{
+\NewDocumentEnvironment{tdocexa}{D<>{nb} O{}}{
   \str_case:nnF { #1 } {
     { nb   } {
-      \begin{@@bdocexa@nb}[#2]
+      \begin{@@tdocexa@nb}[#2]
     }
     { nonb } {
-      \begin{@@bdocexa@no@nb}[#2]
+      \begin{@@tdocexa@no@nb}[#2]
     }
   }{
-    \msg_error:nn { bdoc } { env-bdocexa-unknown-option }
+    \msg_error:nn { tdoc } { env-tdocexa-unknown-option }
   }
 }{
   \str_case:nnF { #1 } {
     { nb   } {
-      \end{@@bdocexa@nb}
+      \end{@@tdocexa@nb}
     }
     { nonb } {
-      \end{@@bdocexa@no@nb}
+      \end{@@tdocexa@no@nb}
     }
   }{}
 }
@@ -67,51 +67,51 @@
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocrem''.
+% to have \infos about the environment ''tdocrem''.
 %%%
-\newtheorem*{bdocrem}{\bdoc@trans@rmk@title}
+\newtheorem*{tdocrem}{\tdoc@trans@rmk@title}
 
 
 % :: IMPORTANT :: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocimportant''.
+% to have \infos about the environment ''tdocimportant''.
 %%%
-\newtheorem*{bdocimportant}{\bdoc@trans@important@title}
+\newtheorem*{tdocimportant}{\tdoc@trans@important@title}
 
 
 % :: NOTE :: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocnote''.
+% to have \infos about the environment ''tdocnote''.
 %%%
-\newtheorem*{bdocnote}{\bdoc@trans@note@title}
+\newtheorem*{tdocnote}{\tdoc@trans@note@title}
 
 
 % :: TIP :: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdoctip''.
+% to have \infos about the environment ''tdoctip''.
 %%%
-\newtheorem*{bdoctip}{\bdoc@trans@tip@title}
+\newtheorem*{tdoctip}{\tdoc@trans@tip@title}
 
 
 % :: CUATION :: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdoccaution''.
+% to have \infos about the environment ''tdoccaution''.
 %%%
-\newtheorem*{bdoccaution}{\bdoc@trans@caution@title}
+\newtheorem*{tdoccaution}{\tdoc@trans@caution@title}
 
 
 % :: WARNING :: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocwarn''.
+% to have \infos about the environment ''tdocwarn''.
 %%%
-\newtheorem*{bdocwarn}{\bdoc@trans@warn@title}
+\newtheorem*{tdocwarn}{\tdoc@trans@warn@title}

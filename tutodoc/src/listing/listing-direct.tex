@@ -17,30 +17,30 @@
 
 \section{Cas d'utilisation en \LaTeX}
 
-\subsection{Codes \bdocquote{en ligne}} \label{bdoc-listing-inline}
+\subsection{Codes \tdocquote{en ligne}} \label{tdoc-listing-inline}
 
-La macro \bdocmacro{bdocinlatex}
+La macro \tdocmacro{tdocinlatex}
 \footnote{
-	Le nom de la macro \bdocmacro{bdocinlatex} vient de \bdocquote{\bdocprewhy{in.line} \LaTeX} soit \bdocinEN{\LaTeX\ en ligne}.
+	Le nom de la macro \tdocmacro{tdocinlatex} vient de \tdocquote{\tdocprewhy{in.line} \LaTeX} soit \tdocinEN{\LaTeX\ en ligne}.
 }
-permet de taper du code en ligne via un usage similaire à \bdocmacro{verb}.
+permet de taper du code en ligne via un usage similaire à \tdocmacro{verb}.
 Voici des exemples d'utilisation.
 \begin{itemize}
-    \item \bdocinlatex|$a^b = c$| s'obtient via le code suivant.
+    \item \tdocinlatex|$a^b = c$| s'obtient via le code suivant.
 		  \begin{center}
-		  		\bdocinlatex+\bdocinlatex|$a^b = c$|+
+		  		\tdocinlatex+\tdocinlatex|$a^b = c$|+
 		  \end{center}
 
 
-    \item \bdocinlatex+\bdocinlatex|$a^b = c$|+ s'obtient via le code suivant.
+    \item \tdocinlatex+\tdocinlatex|$a^b = c$|+ s'obtient via le code suivant.
 		  \begin{center}
-		  		\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#
+		  		\tdocinlatex#\tdocinlatex+\tdocinlatex|$a^b = c$|+#
 		  \end{center}
 
 
-    \item \bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+# s'obtient via le code suivant.
+    \item \tdocinlatex#\tdocinlatex+\tdocinlatex|$a^b = c$|+# s'obtient via le code suivant.
 		  \begin{center}
-		  		\bdocinlatex£\bdocinlatex#\bdocinlatex+\bdocinlatex|$a^b = c$|+#£
+		  		\tdocinlatex£\tdocinlatex#\tdocinlatex+\tdocinlatex|$a^b = c$|+#£
 
 				\medskip
 
@@ -49,12 +49,12 @@ Voici des exemples d'utilisation.
 \end{itemize}
 
 
-\begin{bdocnote}
-    La macro \bdocmacro{bdocinlatex} est utilisable dans une note de pied de page : voir le bas de cette page
+\begin{tdocnote}
+    La macro \tdocmacro{tdocinlatex} est utilisable dans une note de pied de page : voir le bas de cette page
     \footnote{
-        \bdocinlatex+$minted = TOP$+ a été tapé \bdocinlatex|\bdocinlatex+$minted = TOP$+| dans cette note de bas de page..
+        \tdocinlatex+$minted = TOP$+ a été tapé \tdocinlatex|\tdocinlatex+$minted = TOP$+| dans cette note de bas de page..
     }.
-\end{bdocnote}
+\end{tdocnote}
 
 
 % ------------------ %
@@ -62,47 +62,47 @@ Voici des exemples d'utilisation.
 
 \subsection{Codes tapés directement}
 
-\begin{bdocexa}[Face à face]
-    Dans le code suivant, l'option \bdocinlatex#sbs# est pour \bdocquote{\bdocprewhy{s.ide} \bdocprewhy{b.y} \bdocprewhy{s.ide}} soit \bdocinEN{côte à côte}.
+\begin{tdocexa}[Face à face]
+    Dans le code suivant, l'option \tdocinlatex#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}.
 
-    \bdoclatexshow{examples/listing/ABC.tex}
-\end{bdocexa}
+    \tdoclatexshow{examples/listing/ABC.tex}
+\end{tdocexa}
 
 
 % ------------------ %
 
 
-\begin{bdocexa}[À la suite]
-    \bdocenv{bdoclatex} produit le résultat suivant qui correspond à l'option par défaut \bdocinlatex#std#
+\begin{tdocexa}[À la suite]
+    \tdocenv{tdoclatex} produit le résultat suivant qui correspond à l'option par défaut \tdocinlatex#std#
     \footnote{
-        \bdocinlatex{std} fait référence au comportement \bdocquote{standard} de \bdocpack{tcolorbox} vis à vis de la librairie \bdocpack{minted}.
+        \tdocinlatex{std} fait référence au comportement \tdocquote{standard} de \tdocpack{tcolorbox} vis à vis de la librairie \tdocpack{minted}.
     }.
 
-    \begin{bdoclatex}
+    \begin{tdoclatex}
         $A = B + C$
-    \end{bdoclatex}
-\end{bdocexa}
+    \end{tdoclatex}
+\end{tdocexa}
 
 
 % ------------------ %
 
 
-\begin{bdocexa}[Juste le code]
-    Afficher juste le code comme ci-après s'obtient via l'option \bdocinlatex#code#, donc \bdocenv[{[code]}]{bdoclatex} donnera juste ce qui suit.
+\begin{tdocexa}[Juste le code]
+    Afficher juste le code comme ci-après s'obtient via l'option \tdocinlatex#code#, donc \tdocenv[{[code]}]{tdoclatex} donnera juste ce qui suit.
 
-    \begin{bdoclatex}[code]
+    \begin{tdoclatex}[code]
         $A = B + C$
-    \end{bdoclatex}
-\end{bdocexa}
+    \end{tdoclatex}
+\end{tdocexa}
 
 
 % ------------------ %
 
 
-\begin{bdocwarn}
+\begin{tdocwarn}
     Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut. Voici un cas d'usage.
 
-    \bdoclatexshow[explain = Ceci permet d'obtenir ce qui est attendu :]{examples/listing/strange.tex}
-\end{bdocwarn}
+    \tdoclatexshow[explain = Ceci permet d'obtenir ce qui est attendu :]{examples/listing/strange.tex}
+\end{tdocwarn}
 
 \end{document}

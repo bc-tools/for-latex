@@ -11,7 +11,7 @@
 
 % :: MESSAGES :: %
 
-\msg_set:nnnn { bdoc } { date-bad-format  }
+\msg_set:nnnn { tdoc } { date-bad-format  }
   { Bad ~ format ~ for ~ a ~ date. }
   { Use ~ YYYY-MM-DD. }
 
@@ -30,9 +30,9 @@
 %     :action: this macro factorizes the printing of the changes
 %              in the left margin.
 %
-%     :see: \__bdoc_translate_date:n
+%     :see: \__tdoc_translate_date:n
 %%%
-\NewDocumentCommand{\bdoc@new@change@margin}{m m m m}{
+\NewDocumentCommand{\tdoc@new@change@margin}{m m m m}{
   \marginnote{
     \color{#1}
     \scriptsize
@@ -44,7 +44,7 @@
 
     \IfBlankTF{#2}{}{
       \par
-        \__bdoc_translate_date:n { #2 }
+        \__tdoc_translate_date:n { #2 }
       \par
     }
 
@@ -64,16 +64,16 @@
 % prototype::
 %     :action: this function checks if we have something like
 %              ''YYYY-MM-DD'' and then it calls the function
-%              ''\__bdoc_translate_date_process:w'' to finish
+%              ''\__tdoc_translate_date_process:w'' to finish
 %              the job.
 %
-%     :see: \__bdoc_translate_date_process:w
+%     :see: \__tdoc_translate_date_process:w
 %%%
-\cs_new:Nn \__bdoc_translate_date:n {
+\cs_new:Nn \__tdoc_translate_date:n {
   \regex_match:nnTF { \A \d{1,4} \- \d{2} \- \d{2} \Z } { #1 }{
-    \__bdoc_translate_date_process:w #1 \q_stop
+    \__tdoc_translate_date_process:w #1 \q_stop
   }{
-    \msg_error:nn { bdoc } { date-bad-format }
+    \msg_error:nn { tdoc } { date-bad-format }
   }
 }
 
@@ -81,11 +81,11 @@
 %%%
 % prototype::
 %     :action: this function extracts year, month and day in something
-%              like ''YYYY-MM-DD'' and then it calls ''\bdoc@trans@date''
+%              like ''YYYY-MM-DD'' and then it calls ''\tdoc@trans@date''
 %              to use the format expected for a "localised" date.
 %%%
-\cs_new:Npn \__bdoc_translate_date_process:w #1 - #2 - #3 \q_stop {
-    \bdoc@trans@date{#1}
+\cs_new:Npn \__tdoc_translate_date_process:w #1 - #2 - #3 \q_stop {
+    \tdoc@trans@date{#1}
                     {#2}
                     {#3}
 }
@@ -108,8 +108,8 @@
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
 %%%
-\NewDocumentCommand{\bdocversion}{O{blue} m O{}}{
-  \bdoc@new@change@margin{#1}      % Color
+\NewDocumentCommand{\tdocversion}{O{blue} m O{}}{
+  \tdoc@new@change@margin{#1}      % Color
                          {#3}      % Date
                          {#2}      % Version
                          {-4.25pt} % Last negative vertical spacing
@@ -123,11 +123,11 @@
 %     #1 : the color of the margin note
 %     #2 : a date ''YYYY-MM-DD''
 %
-%     :action: this macro is similar to ''\bdocversion'' except that it just
+%     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\bdocdate}{O{blue} m}{
-  \bdoc@new@change@margin{#1}      % Color
+\NewDocumentCommand{\tdocdate}{O{blue} m}{
+  \tdoc@new@change@margin{#1}      % Color
                          {#2}      % Date
                          {}        % Version
                          {-5.35pt} % Last negative spacing
@@ -138,7 +138,7 @@
 
 % :: MESSAGES :: %
 
-\msg_set:nnnn { bdoc } { changes-topic-missing-title }
+\msg_set:nnnn { tdoc } { changes-topic-missing-title }
   { Missing ~ title. }
   { One ~ single ~ title ~ must ~ be ~ indicated. }
 
@@ -152,9 +152,9 @@
 %     :action: this environment prints some ¨infos about specific changes
 %              achieved in a new version (no special formatting is applied).
 %%%
-\NewDocumentEnvironment{bdoctopic}{ m }{
+\NewDocumentEnvironment{tdoctopic}{ m }{
   \IfBlankT{#1}{
-    \msg_fatal:nn { bdoc } { changes-topic-missing-title }
+    \msg_fatal:nn { tdoc } { changes-topic-missing-title }
   }
 
   \textbf{
@@ -171,15 +171,15 @@
 
 %%%
 % prototype::
-%     :see: env.bdoctopic
+%     :see: env.tdoctopic
 %
-%     :action: similar to the \env ''bdoctopic'' with the title "New"
+%     :action: similar to the \env ''tdoctopic'' with the title "New"
 %              translated into the good language.
 %%%
-\NewDocumentEnvironment{bdocnew}{}{
-  \begin{bdoctopic}{\bdoc@trans@chges@new}
+\NewDocumentEnvironment{tdocnew}{}{
+  \begin{tdoctopic}{\tdoc@trans@chges@new}
 }{
-  \end{bdoctopic}
+  \end{tdoctopic}
 }
 
 
@@ -187,15 +187,15 @@
 
 %%%
 % prototype::
-%     :see: env.bdoctopic
+%     :see: env.tdoctopic
 %
-%     :action: similar to the \env ''bdoctopic'' with the title "Update"
+%     :action: similar to the \env ''tdoctopic'' with the title "Update"
 %              translated into the good language.
 %%%
-\NewDocumentEnvironment{bdocupdate}{}{
-  \begin{bdoctopic}{\bdoc@trans@chges@update}
+\NewDocumentEnvironment{tdocupdate}{}{
+  \begin{tdoctopic}{\tdoc@trans@chges@update}
 }{
-  \end{bdoctopic}
+  \end{tdoctopic}
 }
 
 
@@ -203,15 +203,15 @@
 
 %%%
 % prototype::
-%     :see: env.bdoctopic
+%     :see: env.tdoctopic
 %
-%     :action: similar to the \env ''bdoctopic'' with the title "Fix"
+%     :action: similar to the \env ''tdoctopic'' with the title "Fix"
 %              translated into the good language.
 %%%
-\NewDocumentEnvironment{bdocfix}{}{
-  \begin{bdoctopic}{\bdoc@trans@chges@fix}
+\NewDocumentEnvironment{tdocfix}{}{
+  \begin{tdoctopic}{\tdoc@trans@chges@fix}
 }{
-  \end{bdoctopic}
+  \end{tdoctopic}
 }
 
 \ExplSyntaxOff

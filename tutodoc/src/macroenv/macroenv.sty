@@ -6,9 +6,9 @@
 % prototype::
 %     #1 : the name of a class
 %
-%     :action: ''\bdoccls{myclass}'' prints verb::''myclass''.
+%     :action: ''\tdoccls{myclass}'' prints verb::''myclass''.
 %%%
-\NewDocumentCommand{\bdoccls}{m}{%
+\NewDocumentCommand{\tdoccls}{m}{%
   \texttt{#1}%
 }
 
@@ -17,9 +17,9 @@
 % prototype::
 %     #1 : the name of a package
 %
-%     :action:''\bdocpack{mypack}'' prints verb::''mypack''.
+%     :action:''\tdocpack{mypack}'' prints verb::''mypack''.
 %%%
-\NewDocumentCommand{\bdocpack}{m}{%
+\NewDocumentCommand{\tdocpack}{m}{%
   \texttt{#1}%
 }
 
@@ -28,9 +28,9 @@
 % prototype::
 %     #1 : the name of a macro
 %
-%     :action: ''\bdocenv{mymacro}'' prints verb::''\mymacro''.
+%     :action: ''\tdocenv{mymacro}'' prints verb::''\mymacro''.
 %%%
-\NewDocumentCommand{\bdocmacro}{m}{%
+\NewDocumentCommand{\tdocmacro}{m}{%
   \texttt{\textbackslash{}#1}%
 }
 
@@ -40,11 +40,11 @@
 %     #1 : hard typed options with the good delimiters
 %     #2 : the name of an environment
 %
-%     :action: ''\bdocenv{myenv}'' prints verb::''\begin{myenv} ... \end{myenv}''
+%     :action: ''\tdocenv{myenv}'' prints verb::''\begin{myenv} ... \end{myenv}''
 %              or something like verb::''\begin{myenv}<opt1> ... \end{myenv}'',
 %              the spaces being secable.
 %%%
-\NewDocumentCommand{\bdocenv}{O{}m}{%
+\NewDocumentCommand{\tdocenv}{O{}m}{%
   \texttt{\textbackslash{}begin\{#2\}#1 %
           \!...\! %
           \textbackslash{}end\{#2\}}%
@@ -68,9 +68,9 @@
 % prototype::
 %     #1 : a prefix and a suffix separated by one colon.
 %
-%     :action: ''\bdocprewhy{pre.fix}'' prints verb::''pre''.fix.
+%     :action: ''\tdocprewhy{pre.fix}'' prints verb::''pre''.fix.
 %%%
-\NewDocumentCommand{\bdocprewhy}{m}{%
+\NewDocumentCommand{\tdocprewhy}{m}{%
 % Do we have 2 parts?
   \seq_set_split:Nnn \l_tmpa_seq { . } { #1 }
 
@@ -86,7 +86,7 @@
   \seq_pop:NN \l_tmpa_seq \l_tmpa_tl
   \seq_pop:NN \l_tmpa_seq \l_tmpb_tl
 
-  \textbf{\bdocpre{\tl_use:N \l_tmpa_tl}\kern.5pt\textperiodcentered\kern.5pt{\tl_use:N \l_tmpb_tl}}
+  \textbf{\tdocpre{\tl_use:N \l_tmpa_tl}\kern.5pt\textperiodcentered\kern.5pt{\tl_use:N \l_tmpb_tl}}
 }
 
 \ExplSyntaxOff
@@ -98,12 +98,12 @@
 % prototype::
 %     #1 : just a prefix
 %
-%     :action: ''\bdocpre{pre}'' only prints verb::''pre''.
+%     :action: ''\tdocpre{pre}'' only prints verb::''pre''.
 %              This can be useful in a case like
-%              ''\bdocpre{pre} comes from \bdocprewhy{pre}{fix}''
+%              ''\tdocpre{pre} comes from \tdocprewhy{pre}{fix}''
 %              which prints:
 %              verb::''pre'' comes from verb::''pre''-fix.
 %%%
-\NewDocumentCommand{\bdocpre}{m}{%
+\NewDocumentCommand{\tdocpre}{m}{%
   \texttt{#1}%
 }

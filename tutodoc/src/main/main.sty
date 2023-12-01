@@ -25,34 +25,34 @@
 
 % :: SOME MESSAGES :: %
 
-\msg_set:nnnn { bdoc } { package-option-lang-unknown }
+\msg_set:nnnn { tdoc } { package-option-lang-unknown }
   { Unknown ~ language. }
   { See ~ the ~ documentation ~ for ~ the ~ supported ~ languages. }
 
 
 % :: SETTING SOME KEYS :: %
 
-\str_new:N \l_bdoc_opt_lang_str
+\str_new:N \l_tdoc_opt_lang_str
 
 %%%
 % We define the key-val options that will be exposed by the package.
 %%%
-\keys_define:nn { bdoc } {
+\keys_define:nn { tdoc } {
   lang .choices:nn =
     { french, english }
     {
-      \tl_set:Nn \l_bdoc_opt_lang_str
+      \tl_set:Nn \l_tdoc_opt_lang_str
                  { \tl_use:N \l_keys_choice_tl }
     },
   lang .initial:n = english,
   lang / unknown .code:n =
-    \msg_error:nnxxx { bdoc } { package-option-lang-unknown }
+    \msg_error:nnxxx { tdoc } { package-option-lang-unknown }
       { lang }             % Name of choice key
       { french, english }  % Valid choices
       { \exp_not:n {#1} }  % Invalid choice given
 }
 
-\ProcessKeyOptions[bdoc]
+\ProcessKeyOptions[tdoc]
 
 \ExplSyntaxOff
 
@@ -61,18 +61,18 @@
 
 % -- LOCALE SETTINGS -- %
 
-\NewDocumentCommand{\bdoc@colon}{}{:}
+\NewDocumentCommand{\tdoc@colon}{}{:}
 
 % We must take care of the colons, babel and spacing.
 \@ifpackageloaded{babel}{
   \iflanguage{french}{
-    \RenewDocumentCommand{\bdoc@colon}{}{\babelshorthand{:}}
+    \RenewDocumentCommand{\tdoc@colon}{}{\babelshorthand{:}}
   }{}
 }{}
 
 \ExplSyntaxOn
 
-\input{../main/bdoc-locale-\l_bdoc_opt_lang_str.cfg.sty}
+\input{../main/tdoc-locale-\l_tdoc_opt_lang_str.cfg.sty}
 
 \ExplSyntaxOff
 
