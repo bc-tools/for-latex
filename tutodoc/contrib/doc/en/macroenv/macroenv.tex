@@ -1,0 +1,67 @@
+\documentclass[10pt, a4paper]{article}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\section{Specify packages, classes, macros or environments}
+
+Here's what you can type semantically.
+
+\begin{tdoclatex}[sbs]
+\tdoccls{myclass} is for...
+
+\tdocpack{mypackage} is for...
+
+\tdocmacro{onemacro} is for...
+
+\tdocenv{env} produces...
+
+We also have :
+
+\tdocenv[{[opt1]<opt2>}]{env}
+\end{tdoclatex}
+
+
+\begin{tdocrem}
+    The advantage of the previous macros over the use of \tdocmacro{tdocinlatex}, see the section \ref{tdoc-listing-inline} page \pageref{tdoc-listing-inline}, is the absence of colouring.
+    Furthermore, the \tdocmacro{tdocenv} macro simply asks you to type the name of the environment
+    \footnote{
+        In addition, \tdocinlatex{\tdocenv{monenv}} produces \tdocenv{monenv} with spaces to allow line breaks if necessary.
+    }
+    with any options by typing the correct delimiters   
+    \footnote{
+        Remember that almost anything is possible from now on.
+    }
+    by hand.
+\end{tdocrem}
+
+
+\begin{tdocwarn}
+    The optional argument to the \tdocmacro{tdocenv} macro is copied and pasted during rendering. This can sometimes require the use of protective braces, as in the previous example. 
+\end{tdocwarn}
+
+
+% -------------------- %
+
+
+\section{Origin of a prefix or suffix}
+
+To explain the names chosen, there is nothing like indicating and explaining the short prefixes and suffixes used. This is easily done as follows.
+
+\begin{tdoclatex}[sbs]
+\tdocpre{sup} relates to...
+
+\tdocprewhy{sup.erbe} means...
+
+\emph{\tdocprewhy{sup.er} for...}
+\end{tdoclatex}
+
+
+\begin{tdocrem}
+    Le choix du point pour scinder un mot permet d'utiliser des mots avec un tiret comme dans \tdocinlatex+\tdocprewhy{ca.sse-brique}+ qui donne \tdocprewhy{ca.sse-brique}.
+    The choice of a full stop to split a word allows words with a hyphen to be used, as in \tdocinlatex+\tdocprewhy{bric.k-breaker}+ which gives \tdocprewhy{bric.k-breaker}.
+\end{tdocrem}
+
+\end{document}

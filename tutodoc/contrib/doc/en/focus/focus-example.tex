@@ -1,0 +1,56 @@
+\documentclass[10pt, a4paper]{article}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\section{Highlighting content}
+
+\begin{tdocnote}    
+    The environments presented in this section
+    \footnote{
+        The formatting comes from the \tdocpack{amsthm} package.
+    }
+    add a short title indicating the type of information provided.
+    This short text will always be translated into the language indicated when the \tdocpack{tutodoc} package is loaded.
+\end{tdocnote}
+
+
+% ------------------ %
+
+
+\subsection{Examples}
+
+Numbered or unnumbered examples can be indicated using the \tdocenv{tdocexa} environment, which offers two optional arguments.
+
+\begin{enumerate}
+    \item The \ordinalnum{1} argument between brackets \verb#<...># can take the values \verb#nb# to number, which is the default setting, and \verb#nonb# to not number.
+
+    \item The \ordinalnum{2} argument in square brackets \verb#[...]# is used to add a mini-title..
+\end{enumerate}
+
+
+Here are some possible uses.
+
+\tdoclatexinput[sbs]{examples/focus/exa.tex}
+
+
+% ------------------ %
+
+
+\begin{tdocimportant}
+    The numbering of the examples is reset to zero as soon as a section with a level at least equal to a \tdocinlatex|\subsubsection| is opened.
+\end{tdocimportant}
+
+
+% ------------------ %
+
+
+\begin{tdoctip}    
+    It can sometimes be useful to return to the line at the start of the content. Here's how to do it (this trick remains valid for the environments presented in the following sub-sections). Note in passing that the numbering follows that of the previous example as desired.
+
+    \tdoclatexinput[sbs]{examples/focus/exa-leavevmode.tex}
+\end{tdoctip}
+
+\end{document}

@@ -10,3 +10,10 @@
 --------
 
 \ctan forces us to change the name of the \proj to \tutodoc.
+
+
+-----
+:new:
+-----
+
+\Contrib - \Doc: trying a workflow to translate the \doc.
