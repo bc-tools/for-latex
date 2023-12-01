@@ -12,9 +12,10 @@ PATTERNS = [
     re.compile(r"^([^%\\]*)(.*)(\\" + macroname + ")(\[.*\][\t ]*\n?[\t ]*)?{(.*)}(.*)$")
     for macroname in [
         'input',
-        'bdoclatexshow',
-        'bdoclatexinput',
-        'bdocshowcaseinput',
+        'tdoclatexshow',
+        'tdoclatexinput',
+        'tdocshowcaseinput',
+        'tdocdocbasicinput',
     ]
 ]
 DEBUG = False
@@ -112,7 +113,7 @@ tmpdir = build_tmp_proj(
     treeview = treeview
 )
 
-tmpdir = Path("/Users/projetmbc/Mon Drive/git[NEW]-G-Drive/coding/bc-tools/for-latex/bdoc/.bdoc")
+tmpdir = Path("/Users/projetmbc/Mon Drive/git[NEW]-G-Drive/coding/bc-tools/for-latex/tutodoc/.tutodoc")
 
 build_rollout_proj(
     patterns   = PATTERNS,

@@ -39,52 +39,52 @@
 
 % :: SOME MESSAGES :: %
 
-\msg_set:nnnn { bdoc } { package-option-lang-unknown }
+\msg_set:nnnn { tdoc } { package-option-lang-unknown }
   { Unknown ~ language. }
   { See ~ the ~ documentation ~ for ~ the ~ supported ~ languages. }
 
 
 % :: SETTING SOME KEYS :: %
 
-\str_new:N \l_bdoc_opt_lang_str
+\str_new:N \l_tdoc_opt_lang_str
 
 %%%
 % We define the key-val options that will be exposed by the package.
 %%%
-\keys_define:nn { bdoc } {
+\keys_define:nn { tdoc } {
   lang .choices:nn =
     { french, english }
     {
-      \tl_set:Nn \l_bdoc_opt_lang_str
+      \tl_set:Nn \l_tdoc_opt_lang_str
                  { \tl_use:N \l_keys_choice_tl }
     },
   lang .initial:n = english,
   lang / unknown .code:n =
-    \msg_error:nnxxx { bdoc } { package-option-lang-unknown }
+    \msg_error:nnxxx { tdoc } { package-option-lang-unknown }
       { lang }             % Name of choice key
       { french, english }  % Valid choices
       { \exp_not:n {#1} }  % Invalid choice given
 }
 
-\ProcessKeyOptions[bdoc]
+\ProcessKeyOptions[tdoc]
 
 \ExplSyntaxOff
 
 
 % -- LOCALE SETTINGS -- %
 
-\NewDocumentCommand{\bdoc@colon}{}{:}
+\NewDocumentCommand{\tdoc@colon}{}{:}
 
 % We must take care of the colons, babel and spacing.
 \@ifpackageloaded{babel}{
   \iflanguage{french}{
-    \RenewDocumentCommand{\bdoc@colon}{}{\babelshorthand{:}}
+    \RenewDocumentCommand{\tdoc@colon}{}{\babelshorthand{:}}
   }{}
 }{}
 
 \ExplSyntaxOn
 
-\input{bdoc-locale-\l_bdoc_opt_lang_str.cfg.sty}
+\input{tdoc-locale-\l_tdoc_opt_lang_str.cfg.sty}
 
 \ExplSyntaxOff
 
@@ -153,9 +153,9 @@
 % prototype::
 %     #1 : a text to quote.
 %
-% For example, ''\bdocquote{Something}'' prints something like **"Something"**.
+% For example, ''\tdocquote{Something}'' prints something like **"Something"**.
 %%%
-\NewDocumentCommand{\bdocquote}{m}{%
+\NewDocumentCommand{\tdocquote}{m}{%
   \enquote{\emph{#1}}%
 }
 
@@ -171,20 +171,20 @@
 % For example, if the language chosen is ''french'', we have
 % the following outputs.
 %
-%     1) ''\bdocinEN{Something}'' prints
+%     1) ''\tdocinEN{Something}'' prints
 %        **"Something" en anglais**.
 %
-%     2) ''\bdocinEN*{Something}'' just prints
+%     2) ''\tdocinEN*{Something}'' just prints
 %        **"Something"**.
 %        This can be useful in a case like
-%        ''\bdocinEN*{Something} et \bdocinEN{Another thing}''
+%        ''\tdocinEN*{Something} et \tdocinEN{Another thing}''
 %        which gives
 %        **"Something" et "Another thing" en anglais**.
 %%%
-\NewDocumentCommand{\bdocinEN}{s m}{%
-  \bdocquote{#2}%
+\NewDocumentCommand{\tdocinEN}{s m}{%
+  \tdocquote{#2}%
   \IfBooleanF{#1}{% No star used.
-    \ \bdoc@trans@in@EN{}%
+    \ \tdoc@trans@in@EN{}%
   }%
 }
 
@@ -195,51 +195,51 @@
 
 %%%
 % See the \doc of the macro ''\newtheorem'' from the package ''amsthm''
-% to have \infos about the environment ''@@bdocexa@nb''.
+% to have \infos about the environment ''@@tdocexa@nb''.
 %%%
-\newtheorem{@@bdocexa@nb}{\bdoc@trans@exa@title}%
+\newtheorem{@@tdocexa@nb}{\tdoc@trans@exa@title}%
                          [subsubsection]
 
 %%%
-% We redefine the counter associated to the environment ''@@bdocexa@nb''
+% We redefine the counter associated to the environment ''@@tdocexa@nb''
 % to obtain only one single arabic number.
 %%%
-\renewcommand{\the@@bdocexa@nb}{\arabic{@@bdocexa@nb}}
+\renewcommand{\the@@tdocexa@nb}{\arabic{@@tdocexa@nb}}
 
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''@@bdocexa@no@nb''.
+% to have \infos about the environment ''@@tdocexa@no@nb''.
 %%%
-\newtheorem*{@@bdocexa@no@nb}{\bdoc@trans@exa@title}
+\newtheorem*{@@tdocexa@no@nb}{\tdoc@trans@exa@title}
 
 
 % :: EXAMPLE - PUBLIC VERSION :: %
 
 \ExplSyntaxOn
 
-\msg_set:nnnn { bdoc } { env-bdocexa-unknown-option }
+\msg_set:nnnn { tdoc } { env-tdocexa-unknown-option }
   { Unknown ~ rafters ~ option. }
   { See ~ the ~ documentation ~ for ~ the ~ supported ~ options. }
 
-\NewDocumentEnvironment{bdocexa}{D<>{nb} O{}}{
+\NewDocumentEnvironment{tdocexa}{D<>{nb} O{}}{
   \str_case:nnF { #1 } {
     { nb   } {
-      \begin{@@bdocexa@nb}[#2]
+      \begin{@@tdocexa@nb}[#2]
     }
     { nonb } {
-      \begin{@@bdocexa@no@nb}[#2]
+      \begin{@@tdocexa@no@nb}[#2]
     }
   }{
-    \msg_error:nn { bdoc } { env-bdocexa-unknown-option }
+    \msg_error:nn { tdoc } { env-tdocexa-unknown-option }
   }
 }{
   \str_case:nnF { #1 } {
     { nb   } {
-      \end{@@bdocexa@nb}
+      \end{@@tdocexa@nb}
     }
     { nonb } {
-      \end{@@bdocexa@no@nb}
+      \end{@@tdocexa@no@nb}
     }
   }{}
 }
@@ -251,54 +251,54 @@
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocrem''.
+% to have \infos about the environment ''tdocrem''.
 %%%
-\newtheorem*{bdocrem}{\bdoc@trans@rmk@title}
+\newtheorem*{tdocrem}{\tdoc@trans@rmk@title}
 
 
 % :: IMPORTANT :: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocimportant''.
+% to have \infos about the environment ''tdocimportant''.
 %%%
-\newtheorem*{bdocimportant}{\bdoc@trans@important@title}
+\newtheorem*{tdocimportant}{\tdoc@trans@important@title}
 
 
 % :: NOTE :: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocnote''.
+% to have \infos about the environment ''tdocnote''.
 %%%
-\newtheorem*{bdocnote}{\bdoc@trans@note@title}
+\newtheorem*{tdocnote}{\tdoc@trans@note@title}
 
 
 % :: TIP :: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdoctip''.
+% to have \infos about the environment ''tdoctip''.
 %%%
-\newtheorem*{bdoctip}{\bdoc@trans@tip@title}
+\newtheorem*{tdoctip}{\tdoc@trans@tip@title}
 
 
 % :: CUATION :: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdoccaution''.
+% to have \infos about the environment ''tdoccaution''.
 %%%
-\newtheorem*{bdoccaution}{\bdoc@trans@caution@title}
+\newtheorem*{tdoccaution}{\tdoc@trans@caution@title}
 
 
 % :: WARNING :: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''bdocwarn''.
+% to have \infos about the environment ''tdocwarn''.
 %%%
-\newtheorem*{bdocwarn}{\bdoc@trans@warn@title}
+\newtheorem*{tdocwarn}{\tdoc@trans@warn@title}
 
 
 % -- NAMES OF PACKAGES, MACROS & ENVIRONMENTS -- %
@@ -307,9 +307,9 @@
 % prototype::
 %     #1 : the name of a class
 %
-%     :action: ''\bdoccls{myclass}'' prints verb::''myclass''.
+%     :action: ''\tdoccls{myclass}'' prints verb::''myclass''.
 %%%
-\NewDocumentCommand{\bdoccls}{m}{%
+\NewDocumentCommand{\tdoccls}{m}{%
   \texttt{#1}%
 }
 
@@ -318,9 +318,9 @@
 % prototype::
 %     #1 : the name of a package
 %
-%     :action:''\bdocpack{mypack}'' prints verb::''mypack''.
+%     :action:''\tdocpack{mypack}'' prints verb::''mypack''.
 %%%
-\NewDocumentCommand{\bdocpack}{m}{%
+\NewDocumentCommand{\tdocpack}{m}{%
   \texttt{#1}%
 }
 
@@ -329,9 +329,9 @@
 % prototype::
 %     #1 : the name of a macro
 %
-%     :action: ''\bdocenv{mymacro}'' prints verb::''\mymacro''.
+%     :action: ''\tdocenv{mymacro}'' prints verb::''\mymacro''.
 %%%
-\NewDocumentCommand{\bdocmacro}{m}{%
+\NewDocumentCommand{\tdocmacro}{m}{%
   \texttt{\textbackslash{}#1}%
 }
 
@@ -341,11 +341,11 @@
 %     #1 : hard typed options with the good delimiters
 %     #2 : the name of an environment
 %
-%     :action: ''\bdocenv{myenv}'' prints verb::''\begin{myenv} ... \end{myenv}''
+%     :action: ''\tdocenv{myenv}'' prints verb::''\begin{myenv} ... \end{myenv}''
 %              or something like verb::''\begin{myenv}<opt1> ... \end{myenv}'',
 %              the spaces being secable.
 %%%
-\NewDocumentCommand{\bdocenv}{O{}m}{%
+\NewDocumentCommand{\tdocenv}{O{}m}{%
   \texttt{\textbackslash{}begin\{#2\}#1 %
           \!...\! %
           \textbackslash{}end\{#2\}}%
@@ -369,9 +369,9 @@
 % prototype::
 %     #1 : a prefix and a suffix separated by one colon.
 %
-%     :action: ''\bdocprewhy{pre.fix}'' prints verb::''pre''.fix.
+%     :action: ''\tdocprewhy{pre.fix}'' prints verb::''pre''.fix.
 %%%
-\NewDocumentCommand{\bdocprewhy}{m}{%
+\NewDocumentCommand{\tdocprewhy}{m}{%
 % Do we have 2 parts?
   \seq_set_split:Nnn \l_tmpa_seq { . } { #1 }
 
@@ -387,7 +387,7 @@
   \seq_pop:NN \l_tmpa_seq \l_tmpa_tl
   \seq_pop:NN \l_tmpa_seq \l_tmpb_tl
 
-  \textbf{\bdocpre{\tl_use:N \l_tmpa_tl}\kern.5pt\textperiodcentered\kern.5pt{\tl_use:N \l_tmpb_tl}}
+  \textbf{\tdocpre{\tl_use:N \l_tmpa_tl}\kern.5pt\textperiodcentered\kern.5pt{\tl_use:N \l_tmpb_tl}}
 }
 
 \ExplSyntaxOff
@@ -399,13 +399,13 @@
 % prototype::
 %     #1 : just a prefix
 %
-%     :action: ''\bdocpre{pre}'' only prints verb::''pre''.
+%     :action: ''\tdocpre{pre}'' only prints verb::''pre''.
 %              This can be useful in a case like
-%              ''\bdocpre{pre} comes from \bdocprewhy{pre}{fix}''
+%              ''\tdocpre{pre} comes from \tdocprewhy{pre}{fix}''
 %              which prints:
 %              verb::''pre'' comes from verb::''pre''-fix.
 %%%
-\NewDocumentCommand{\bdocpre}{m}{%
+\NewDocumentCommand{\tdocpre}{m}{%
   \texttt{#1}%
 }
 
@@ -429,7 +429,7 @@
 %     cf::''this post ;
 %           https://tex.stackexchange.com/a/604708/6880''.
 %%%
-\NewDocumentCommand{\bdocruler}{m m}{
+\NewDocumentCommand{\tdocruler}{m m}{
   \par
   {
     \centering
@@ -463,7 +463,7 @@
 %
 %     :return: a "darker" version of the color ''#1''.
 %%%
-\NewExpandableDocumentCommand{\bdocdarkcolor}{m}{%
+\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{%
   #1!50!black%
 }
 
@@ -474,7 +474,7 @@
 %
 %     :return: a "transparent" version of the color `#1`.
 %%%
-\NewExpandableDocumentCommand{\bdoclightcolor}{m}{%
+\NewExpandableDocumentCommand{\tdoclightcolor}{m}{%
   #1!5%
 }
 
@@ -490,15 +490,15 @@
 %          corresponding to the two first arguments.
 %
 %     :action: this environment just adds its content processed by \latex
-%              between centered materials produced by the macro ''\bdocruler''
+%              between centered materials produced by the macro ''\tdocruler''
 %              such as to stress the start and the end of the content.
 %%%
-\NewDocumentEnvironment{bdoc@showcase@basic}{m m m}{
-  \bdocruler{#1}{\bdocdarkcolor{#3}}
+\NewDocumentEnvironment{tdoc@showcase@basic}{m m m}{
+  \tdocruler{#1}{\tdocdarkcolor{#3}}
   \medskip
 }{
   \medskip
-  \bdocruler{#2}{\bdocdarkcolor{#3}}
+  \tdocruler{#2}{\tdocdarkcolor{#3}}
 }
 
 
@@ -513,15 +513,15 @@
 %     :action: this environment adds a page-width colored stripe in the
 %              background of the environment content processed by \latex.
 %              This stripe is preceded and followed by centered materials
-%              produced by the macro ''\bdocruler'' such as to stress the
+%              produced by the macro ''\tdocruler'' such as to stress the
 %              start and the end of the content.
 %%%
 
-\NewDocumentEnvironment{bdoc@showcase@colorstrip}{m m m}{
-  \begin{colorstrip}{\bdoclightcolor{#3}}
-    \begin{bdoc@showcase@basic}{#1}{#2}{#3}
+\NewDocumentEnvironment{tdoc@showcase@colorstrip}{m m m}{
+  \begin{colorstrip}{\tdoclightcolor{#3}}
+    \begin{tdoc@showcase@basic}{#1}{#2}{#3}
 }{
-    \end{bdoc@showcase@basic}
+    \end{tdoc@showcase@basic}
   \end{colorstrip}
 }
 
@@ -530,29 +530,29 @@
 
 % :: SETTING SOME KEYS :: %
 
-\tl_new:N   \l_bdoc_showcase_before_tl
-\tl_new:N   \l_bdoc_showcase_after_tl
-\tl_new:N   \l_bdoc_showcase_color_tl
-\bool_new:N \l_bdoc_showcase_nostripe_bool
+\tl_new:N   \l_tdoc_showcase_before_tl
+\tl_new:N   \l_tdoc_showcase_after_tl
+\tl_new:N   \l_tdoc_showcase_color_tl
+\bool_new:N \l_tdoc_showcase_nostripe_bool
 
 
 %%%
 % prototype::
-%     :see: env.bdocshowcase
+%     :see: env.tdocshowcase
 %
 % We define the key-val options that will be exposed by the \env
-% ''bdocshowcase''.
+% ''tdocshowcase''.
 %%%
-\keys_define:nn { bdoc/showcase } {
+\keys_define:nn { tdoc/showcase } {
 % Texts.
-  before .tl_set:N   = \l_bdoc_showcase_before_tl,
-  before .initial:n  = \bdoc@trans@latex@show@start,
-  after  .tl_set:N   = \l_bdoc_showcase_after_tl,
-  after  .initial:n  = \bdoc@trans@latex@show@end,
+  before .tl_set:N   = \l_tdoc_showcase_before_tl,
+  before .initial:n  = \tdoc@trans@latex@show@start,
+  after  .tl_set:N   = \l_tdoc_showcase_after_tl,
+  after  .initial:n  = \tdoc@trans@latex@show@end,
 % Decorations.
-  color    .tl_set:N   = \l_bdoc_showcase_color_tl,
+  color    .tl_set:N   = \l_tdoc_showcase_color_tl,
   color    .initial:n  = cyan,
-  nostripe .bool_set:N = \l_bdoc_showcase_nostripe_bool,
+  nostripe .bool_set:N = \l_tdoc_showcase_nostripe_bool,
   nostripe .initial:n  = false,
 }
 
@@ -563,35 +563,35 @@
 %     #1 : the key-value options.
 %
 %     :action: this \env formats \latex code, given as an argument,
-%              by framing it with texts decorated by ''\bdocruler'',
+%              by framing it with texts decorated by ''\tdocruler'',
 %              in order to clearly identify a rendering used as an
 %              example.
 %              It is also possible to have a coloured strip of the width
 %              of the page in the background of the content.
 %
-%     :see: env.bdoc@showcase@basic ,
-%           env.bdoc@showcase@colorstrip
+%     :see: env.tdoc@showcase@basic ,
+%           env.tdoc@showcase@colorstrip
 %%%
-\NewDocumentEnvironment{bdocshowcase}{O{}}{
+\NewDocumentEnvironment{tdocshowcase}{O{}}{
   \group_begin:
-    \keys_set:nn { bdoc/showcase } { #1 }
+    \keys_set:nn { tdoc/showcase } { #1 }
 
-    \bool_if:NTF \l_bdoc_showcase_nostripe_bool {
-      \begin{bdoc@showcase@basic}%
-        { \tl_use:N \l_bdoc_showcase_before_tl }%
-        { \tl_use:N \l_bdoc_showcase_after_tl }%
-        { \tl_use:N \l_bdoc_showcase_color_tl }
+    \bool_if:NTF \l_tdoc_showcase_nostripe_bool {
+      \begin{tdoc@showcase@basic}%
+        { \tl_use:N \l_tdoc_showcase_before_tl }%
+        { \tl_use:N \l_tdoc_showcase_after_tl }%
+        { \tl_use:N \l_tdoc_showcase_color_tl }
     }{
-      \begin{bdoc@showcase@colorstrip}%
-        { \tl_use:N \l_bdoc_showcase_before_tl }%
-        { \tl_use:N \l_bdoc_showcase_after_tl }%
-        { \tl_use:N \l_bdoc_showcase_color_tl }
+      \begin{tdoc@showcase@colorstrip}%
+        { \tl_use:N \l_tdoc_showcase_before_tl }%
+        { \tl_use:N \l_tdoc_showcase_after_tl }%
+        { \tl_use:N \l_tdoc_showcase_color_tl }
     }
 }{
-    \bool_if:NTF \l_bdoc_showcase_nostripe_bool {
-      \end{bdoc@showcase@basic}
+    \bool_if:NTF \l_tdoc_showcase_nostripe_bool {
+      \end{tdoc@showcase@basic}
     }{
-      \end{bdoc@showcase@colorstrip}
+      \end{tdoc@showcase@colorstrip}
     }
   \group_end:
 }
@@ -601,18 +601,18 @@
 
 %%%
 % prototype::
-%     #1 : the key-value options supported by the ''bdocshowcase'' \env.
+%     #1 : the key-value options supported by the ''tdocshowcase'' \env.
 %     #2 : the path of a file
 %
-%     :see: env.bdocshowcase
+%     :see: env.tdocshowcase
 %%%
-\NewDocumentCommand{\bdocshowcaseinput}{O{} m}{
+\NewDocumentCommand{\tdocshowcaseinput}{O{} m}{
   \group_begin:
-    \keys_set_known:nnN { bdoc/latexshow } { #1 } \l_tmpa_tl
+    \keys_set_known:nnN { tdoc/latexshow } { #1 } \l_tmpa_tl
 
-    \exp_last_unbraced:NNV \bdocshowcase [\l_tmpa_tl]
+    \exp_last_unbraced:NNV \tdocshowcase [\l_tmpa_tl]
       \input{#2}
-    \endbdocshowcase
+    \endtdocshowcase
   \group_end:
 }
 
@@ -625,9 +625,9 @@
 
 %%%
 % See the \doc of the macro ''\newmintinline'' from the package ''minted''
-% to have \infos about the macro ''bdocinlatex''.
+% to have \infos about the macro ''tdocinlatex''.
 %%%
-\newmintinline[bdocinlatex]{latex}{}
+\newmintinline[tdocinlatex]{latex}{}
 
 
 % :: SHORTCUTS FOR TCOLORBOX LISTING FORMATING :: %
@@ -636,21 +636,21 @@
 
 %%%
 % In the following easy-to-understand macro, we use one fictive ''tcolorbox''
-% style such as to indicate an unknown ''bdoc'' style to the user.
+% style such as to indicate an unknown ''tdoc'' style to the user.
 % For example, this can give one message similar to the following one.
 %
 % term::
-%     Package pgfkeys Error: I do not know the key '/tcb/bdoclatex bad option
+%     Package pgfkeys Error: I do not know the key '/tcb/tdoclatex bad option
 %     "NOT-A-STYLE"' and I am going to ignore it. Perhaps you misspelled it.
 %
 %     See the pgfkeys package documentation for explanation.
 %%%
-\NewExpandableDocumentCommand{\bdoc@latex@listing@formating}{ m }{
+\NewExpandableDocumentCommand{\tdoc@latex@listing@formating}{ m }{
   \str_case:nnF { #1 } {
     { sbs  } { listing ~ side ~ text }
     { code } { listing ~ only }
     { std  } { listing ~ and ~ text }
-  } { bdoclatex ~ bad ~ option ~ "#1" }
+  } { tdoclatex ~ bad ~ option ~ "#1" }
 }
 
 \ExplSyntaxOff
@@ -665,7 +665,7 @@
 %         * https://tex.stackexchange.com/a/327983/6880
 %%%
 \tcbset{
-  bdoclatex_tcbstyle/.style = {
+  tdoclatex_tcbstyle/.style = {
     minted language = latex,
     breakable,
 % Code and output
@@ -701,10 +701,10 @@
 %
 % note::
 %     See the \doc of the macro ''\newtcblisting'' from the package
-%     ''tcolorbox'' to have \infos about the environment ''bdoclatex''.
+%     ''tcolorbox'' to have \infos about the environment ''tdoclatex''.
 %%%
-\newtcblisting{bdoclatex}[1][std]{%
-  bdoclatex_tcbstyle = \bdoc@latex@listing@formating{#1}
+\newtcblisting{tdoclatex}[1][std]{%
+  tdoclatex_tcbstyle = \tdoc@latex@listing@formating{#1}
 }
 
 
@@ -712,16 +712,16 @@
 
 %%%
 % prototype::
-%     #1 : :see: \newtcblisting{bdoclatex}.
+%     #1 : :see: \newtcblisting{tdoclatex}.
 %     #2 : the path of the file to input and format.
 %
 % note::
 %     See the \doc of the macro ''\newtcbinputlisting'' from the package
-%     ''tcolorbox'' to have more \infos about the macro ''\bdoclatexinput''.
+%     ''tcolorbox'' to have more \infos about the macro ''\tdoclatexinput''.
 %%%
-\newtcbinputlisting{\bdoclatexinput}[2][std]{
+\newtcbinputlisting{\tdoclatexinput}[2][std]{
   listing file = {#2},
-  bdoclatex_tcbstyle = \bdoc@latex@listing@formating{#1}
+  tdoclatex_tcbstyle = \tdoc@latex@listing@formating{#1}
 }
 
 
@@ -731,17 +731,17 @@
 
 % :: SETTING SOME KEYS :: %
 
-\tl_new:N \l_bdoc_listing_input_tl
+\tl_new:N \l_tdoc_listing_explain_tl
 
 %%%
 % prototype::
-%     :see: macro.bdoclatexshow
+%     :see: macro.tdoclatexshow
 %
-% We define the key-val options that will be exposed by ''\bdoclatexshow''.
+% We define the key-val options that will be exposed by ''\tdoclatexshow''.
 %%%
-\keys_define:nn { bdoc/latexshow } {
-  explain .tl_set:N   = \l_bdoc_listing_explain_tl,
-  explain .initial:n  = { \bdoc@trans@this@gives \bdoc@colon },
+\keys_define:nn { tdoc/latexshow } {
+  explain .tl_set:N   = \l_tdoc_listing_explain_tl,
+  explain .initial:n  = { \tdoc@trans@this@gives \tdoc@colon },
 }
 
 
@@ -749,24 +749,24 @@
 
 %%%
 % prototype::
-%     #1 : the key-value options supported by the ''bdocshowcase'' \env,
+%     #1 : the key-value options supported by the ''tdocshowcase'' \env,
 %          plus one allowing you to change the description of a line
 %          printed between the code and its focused output.
 %     #2 : the path of a file
 %
-%     :see: env.bdocshowcase ,
-%           macro.bdoclatexinput
+%     :see: env.tdocshowcase ,
+%           macro.tdoclatexinput
 %%%
-\NewDocumentCommand{\bdoclatexshow}{O{} m}{
+\NewDocumentCommand{\tdoclatexshow}{O{} m}{
   \group_begin:
-    \keys_set_known:nnN { bdoc/latexshow } { #1 } \l_tmpa_tl
+    \keys_set_known:nnN { tdoc/latexshow } { #1 } \l_tmpa_tl
 
-    \bdoclatexinput[code]{#2}
+    \tdoclatexinput[code]{#2}
 
-    \tl_use:N \l_bdoc_listing_explain_tl
+    \tl_use:N \l_tdoc_listing_explain_tl
 
 % Source: https://tex.stackexchange.com/a/696700/6880
-    \exp_last_unbraced:NNV \bdocshowcaseinput [\l_tmpa_tl] {#2}
+    \exp_last_unbraced:NNV \tdocshowcaseinput [\l_tmpa_tl] {#2}
   \group_end:
 }
 
@@ -779,7 +779,7 @@
 
 % :: MESSAGES :: %
 
-\msg_set:nnnn { bdoc } { date-bad-format  }
+\msg_set:nnnn { tdoc } { date-bad-format  }
   { Bad ~ format ~ for ~ a ~ date. }
   { Use ~ YYYY-MM-DD. }
 
@@ -798,9 +798,9 @@
 %     :action: this macro factorizes the printing of the changes
 %              in the left margin.
 %
-%     :see: \__bdoc_translate_date:n
+%     :see: \__tdoc_translate_date:n
 %%%
-\NewDocumentCommand{\bdoc@new@change@margin}{m m m m}{
+\NewDocumentCommand{\tdoc@new@change@margin}{m m m m}{
   \marginnote{
     \color{#1}
     \scriptsize
@@ -812,7 +812,7 @@
 
     \IfBlankTF{#2}{}{
       \par
-        \__bdoc_translate_date:n { #2 }
+        \__tdoc_translate_date:n { #2 }
       \par
     }
 
@@ -832,16 +832,16 @@
 % prototype::
 %     :action: this function checks if we have something like
 %              ''YYYY-MM-DD'' and then it calls the function
-%              ''\__bdoc_translate_date_process:w'' to finish
+%              ''\__tdoc_translate_date_process:w'' to finish
 %              the job.
 %
-%     :see: \__bdoc_translate_date_process:w
+%     :see: \__tdoc_translate_date_process:w
 %%%
-\cs_new:Nn \__bdoc_translate_date:n {
+\cs_new:Nn \__tdoc_translate_date:n {
   \regex_match:nnTF { \A \d{1,4} \- \d{2} \- \d{2} \Z } { #1 }{
-    \__bdoc_translate_date_process:w #1 \q_stop
+    \__tdoc_translate_date_process:w #1 \q_stop
   }{
-    \msg_error:nn { bdoc } { date-bad-format }
+    \msg_error:nn { tdoc } { date-bad-format }
   }
 }
 
@@ -849,11 +849,11 @@
 %%%
 % prototype::
 %     :action: this function extracts year, month and day in something
-%              like ''YYYY-MM-DD'' and then it calls ''\bdoc@trans@date''
+%              like ''YYYY-MM-DD'' and then it calls ''\tdoc@trans@date''
 %              to use the format expected for a "localised" date.
 %%%
-\cs_new:Npn \__bdoc_translate_date_process:w #1 - #2 - #3 \q_stop {
-    \bdoc@trans@date{#1}
+\cs_new:Npn \__tdoc_translate_date_process:w #1 - #2 - #3 \q_stop {
+    \tdoc@trans@date{#1}
                     {#2}
                     {#3}
 }
@@ -876,8 +876,8 @@
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
 %%%
-\NewDocumentCommand{\bdocversion}{O{blue} m O{}}{
-  \bdoc@new@change@margin{#1}      % Color
+\NewDocumentCommand{\tdocversion}{O{blue} m O{}}{
+  \tdoc@new@change@margin{#1}      % Color
                          {#3}      % Date
                          {#2}      % Version
                          {-4.25pt} % Last negative vertical spacing
@@ -891,11 +891,11 @@
 %     #1 : the color of the margin note
 %     #2 : a date ''YYYY-MM-DD''
 %
-%     :action: this macro is similar to ''\bdocversion'' except that it just
+%     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\bdocdate}{O{blue} m}{
-  \bdoc@new@change@margin{#1}      % Color
+\NewDocumentCommand{\tdocdate}{O{blue} m}{
+  \tdoc@new@change@margin{#1}      % Color
                          {#2}      % Date
                          {}        % Version
                          {-5.35pt} % Last negative spacing
@@ -906,7 +906,7 @@
 
 % :: MESSAGES :: %
 
-\msg_set:nnnn { bdoc } { changes-topic-missing-title }
+\msg_set:nnnn { tdoc } { changes-topic-missing-title }
   { Missing ~ title. }
   { One ~ single ~ title ~ must ~ be ~ indicated. }
 
@@ -920,9 +920,9 @@
 %     :action: this environment prints some ¨infos about specific changes
 %              achieved in a new version (no special formatting is applied).
 %%%
-\NewDocumentEnvironment{bdoctopic}{ m }{
+\NewDocumentEnvironment{tdoctopic}{ m }{
   \IfBlankT{#1}{
-    \msg_fatal:nn { bdoc } { changes-topic-missing-title }
+    \msg_fatal:nn { tdoc } { changes-topic-missing-title }
   }
 
   \textbf{
@@ -939,15 +939,15 @@
 
 %%%
 % prototype::
-%     :see: env.bdoctopic
+%     :see: env.tdoctopic
 %
-%     :action: similar to the \env ''bdoctopic'' with the title "New"
+%     :action: similar to the \env ''tdoctopic'' with the title "New"
 %              translated into the good language.
 %%%
-\NewDocumentEnvironment{bdocnew}{}{
-  \begin{bdoctopic}{\bdoc@trans@chges@new}
+\NewDocumentEnvironment{tdocnew}{}{
+  \begin{tdoctopic}{\tdoc@trans@chges@new}
 }{
-  \end{bdoctopic}
+  \end{tdoctopic}
 }
 
 
@@ -955,15 +955,15 @@
 
 %%%
 % prototype::
-%     :see: env.bdoctopic
+%     :see: env.tdoctopic
 %
-%     :action: similar to the \env ''bdoctopic'' with the title "Update"
+%     :action: similar to the \env ''tdoctopic'' with the title "Update"
 %              translated into the good language.
 %%%
-\NewDocumentEnvironment{bdocupdate}{}{
-  \begin{bdoctopic}{\bdoc@trans@chges@update}
+\NewDocumentEnvironment{tdocupdate}{}{
+  \begin{tdoctopic}{\tdoc@trans@chges@update}
 }{
-  \end{bdoctopic}
+  \end{tdoctopic}
 }
 
 
@@ -971,15 +971,15 @@
 
 %%%
 % prototype::
-%     :see: env.bdoctopic
+%     :see: env.tdoctopic
 %
-%     :action: similar to the \env ''bdoctopic'' with the title "Fix"
+%     :action: similar to the \env ''tdoctopic'' with the title "Fix"
 %              translated into the good language.
 %%%
-\NewDocumentEnvironment{bdocfix}{}{
-  \begin{bdoctopic}{\bdoc@trans@chges@fix}
+\NewDocumentEnvironment{tdocfix}{}{
+  \begin{tdoctopic}{\tdoc@trans@chges@fix}
 }{
-  \end{bdoctopic}
+  \end{tdoctopic}
 }
 
 \ExplSyntaxOff
@@ -994,7 +994,7 @@
 %              text width.
 %              Extra vertical spaces are added above and below the rule.
 %%%
-\NewDocumentCommand{\bdocsep}{}{
+\NewDocumentCommand{\tdocsep}{}{
   \medskip
   \hfill\rule{0.5\textwidth}{0.75pt}\hfill
   \medskip
@@ -1006,6 +1006,6 @@
 % prototype::
 %     :action: this macro adds a tiny vertical spacing.
 %%%
-\NewDocumentCommand{\bdocxspace}{}{
+\NewDocumentCommand{\tdocxspace}{}{
   \vspace{0.25em}
 }

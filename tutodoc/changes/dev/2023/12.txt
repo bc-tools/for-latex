@@ -2,15 +2,11 @@
 
 
 ==
-01   ????
+01
 ==
 
 --------
 :update:
 --------
 
-\ctan forces us to change the name of the \proj wich becomes \tutodoc   ???.
-
-bdoc --> tdoc mais on ne bouge aucun num version car que du renommage et non publié !!!!!
-
-??? upadte doc ? aj aussi de specs avec example bdoc
+\ctan forces us to change the name of the \proj to \tutodoc.

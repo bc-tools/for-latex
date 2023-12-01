@@ -13,6 +13,22 @@
 \usepackage{listing}
 
 
+% == FORDOC == %
+
+% Source.
+%    * https://tex.stackexchange.com/a/604698/6880
+
+\NewDocumentCommand{ \tdocdocbasicinput }{ m }{%
+    Considérons le code suivant.
+    
+    \tdoclatexinput[code]{#1}
+    
+    Ceci produira ce qui suit.
+
+    \input{#1}
+}
+
+
 \begin{document}
 
 \section{Cas d'utilisation en \LaTeX}
@@ -31,20 +47,13 @@ La macro \tdocmacro{tdocinlatex}
 }
 permet de taper du code en ligne via un usage similaire à \tdocmacro{verb}.
 Voici des exemples d'utilisation.
-\begin{itemize}
-    \item \tdocinlatex|$a^b = c$| s'obtient via le code suivant.
 
-		  \smallskip
-		  \centerline{\tdocinlatex+\tdocinlatex|$a^b = c$|+}
 
-    \item \tdocinlatex+\tdocinlatex|$a^b = c$|+ s'obtient via le code suivant.
-
-		  \smallskip
-		  \centerline{\tdocinlatex£\tdocinlatex+\tdocinlatex|$a^b = c$|+£}
-
-		  \medskip
-	  	  \centerline{... \emph{etc.}}
-\end{itemize}
+\begin{tdoclatex}[sbs]
+    1: \tdocinlatex|$a^b = c$|
+    
+    2: \tdocinlatex+\tdocinlatex|$a^b = c$|+
+\end{tdoclatex}
 
 
 \begin{tdocnote}
@@ -63,9 +72,7 @@ Voici des exemples d'utilisation.
 \begin{tdocexa}[Face à face]
     Via \tdocenv[{[sbs]}]{tdoclatex}, on affichera un code et son rendu côte à côte.
     Indiquons que \tdocinlatex#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}.
-    Voici un exemple d'utilisation.
-
-    \tdoclatexshow{examples/listing/ABC.tex}
+    \tdocdocbasicinput{examples/listing/ABC.tex}
 \end{tdocexa}
 
 
@@ -100,9 +107,8 @@ Voici des exemples d'utilisation.
 
 
 \begin{tdocwarn}
-    Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut. Voici un cas d'usage.
-
-    \tdoclatexshow[explain = Ceci permet d'obtenir ce qui est attendu :]{examples/listing/strange.tex}
+    Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut.
+    \tdocdocbasicinput{examples/listing/strange.tex}
 \end{tdocwarn}
 
 \end{document}
