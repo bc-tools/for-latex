@@ -1,4 +1,4 @@
-# Manifest for bdoc
+# Manifest for tutodoc
 
 This file is a listing of all files considered to be part of this package.
 It is automatically generated with `l3build manifest`.
@@ -16,9 +16,9 @@ These are source files for a number of purposes, including the `unpack` process 
 generates the installation files of the package. Additional files included here will also
 be installed for processing such as testing.
 
-* bdoc-locale-english.cfg.sty †
-* bdoc-locale-french.cfg.sty †
-* bdoc.sty †
+* tdoc-locale-english.cfg.sty †
+* tdoc-locale-french.cfg.sty †
+* tutodoc.sty †
 
 ### Text files
 
@@ -32,9 +32,9 @@ Plain text files included as documentation or metadata.
 The files created by ‘unpacking’ the package sources. This typically includes
 `.sty` and `.cls` files created from DocStrip `.dtx` files.
 
-* bdoc-locale-english.cfg.sty †
-* bdoc-locale-french.cfg.sty †
-* bdoc.sty †
+* tdoc-locale-english.cfg.sty †
+* tdoc-locale-french.cfg.sty †
+* tutodoc.sty †
 
 
 ## TDS manifest
@@ -44,20 +44,20 @@ the package into a TeX distribution.
 
 ### TeX files (TDS)
 
-All files included in the `bdoc/tex` directory.
+All files included in the `tutodoc/tex` directory.
 
-* bdoc-locale-english.cfg.sty 
-* bdoc-locale-french.cfg.sty 
-* bdoc.sty 
+* tdoc-locale-english.cfg.sty 
+* tdoc-locale-french.cfg.sty 
+* tutodoc.sty 
 
 ### Doc files (TDS)
 
-All files included in the `bdoc/doc` directory.
+All files included in the `tutodoc/doc` directory.
 
 * MANIFEST.md 
 * README.md 
-* bdoc-fr.pdf 
-* bdoc-fr.tex 
+* tutodoc-fr.pdf 
+* tutodoc-fr.tex 
 
 
 ## CTAN manifest
