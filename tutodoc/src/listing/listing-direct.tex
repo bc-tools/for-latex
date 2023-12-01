@@ -17,6 +17,12 @@
 
 \section{Cas d'utilisation en \LaTeX}
 
+Documenter un package ou une classe se fait efficacement via des cas d'utilisation montrant à la fois du code et le résultat correspondant.
+
+
+% ------------------ %
+
+
 \subsection{Codes \tdocquote{en ligne}} \label{tdoc-listing-inline}
 
 La macro \tdocmacro{tdocinlatex}
@@ -27,25 +33,17 @@ permet de taper du code en ligne via un usage similaire à \tdocmacro{verb}.
 Voici des exemples d'utilisation.
 \begin{itemize}
     \item \tdocinlatex|$a^b = c$| s'obtient via le code suivant.
-		  \begin{center}
-		  		\tdocinlatex+\tdocinlatex|$a^b = c$|+
-		  \end{center}
 
+		  \smallskip
+		  \centerline{\tdocinlatex+\tdocinlatex|$a^b = c$|+}
 
     \item \tdocinlatex+\tdocinlatex|$a^b = c$|+ s'obtient via le code suivant.
-		  \begin{center}
-		  		\tdocinlatex#\tdocinlatex+\tdocinlatex|$a^b = c$|+#
-		  \end{center}
 
+		  \smallskip
+		  \centerline{\tdocinlatex£\tdocinlatex+\tdocinlatex|$a^b = c$|+£}
 
-    \item \tdocinlatex#\tdocinlatex+\tdocinlatex|$a^b = c$|+# s'obtient via le code suivant.
-		  \begin{center}
-		  		\tdocinlatex£\tdocinlatex#\tdocinlatex+\tdocinlatex|$a^b = c$|+#£
-
-				\medskip
-
-				... \emph{etc.}
-		  \end{center}
+		  \medskip
+	  	  \centerline{... \emph{etc.}}
 \end{itemize}
 
 
@@ -63,7 +61,9 @@ Voici des exemples d'utilisation.
 \subsection{Codes tapés directement}
 
 \begin{tdocexa}[Face à face]
-    Dans le code suivant, l'option \tdocinlatex#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}.
+    Via \tdocenv[{[sbs]}]{tdoclatex}, on affichera un code et son rendu côte à côte.
+    Indiquons que \tdocinlatex#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}.
+    Voici un exemple d'utilisation.
 
     \tdoclatexshow{examples/listing/ABC.tex}
 \end{tdocexa}
@@ -88,7 +88,7 @@ Voici des exemples d'utilisation.
 
 
 \begin{tdocexa}[Juste le code]
-    Afficher juste le code comme ci-après s'obtient via l'option \tdocinlatex#code#, donc \tdocenv[{[code]}]{tdoclatex} donnera juste ce qui suit.
+	Via \tdocenv[{[code]}]{tdoclatex}, on aura juste le code comme ci-après.
 
     \begin{tdoclatex}[code]
         $A = B + C$

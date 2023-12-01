@@ -52,7 +52,7 @@
 
 \subsection{Codes importés}
 
-Pour les codes suivants, on considère un fichier \verb+xyz.tex+ avec le contenu suivant, et ayant le chemin relatif \verb+examples-listing-xyz.tex+ vis à vis de ce document.
+Pour les codes suivants, on considère un fichier de chemin relatif \verb+examples-listing-xyz.tex+, et ayant le contenu suivant.
 
 \tdoclatexinput[code]{examples/listing/xyz.tex}
 
@@ -115,7 +115,7 @@ La macro \tdocmacro{tdoclatexinput} , présentée ci-après, s'utilise comme l'e
 \subsection{Codes importés et mis en situation} \label{tdoc-latexshow}
 
 \begin{tdocexa}[Showcase]
-    Ce qui suit s'obtient via \tdocinlatex+\tdoclatexshow{examples/listing/xyz.tex}+.
+    Ce qui suit s'obtient via \tdocinlatex+\tdoclatexshow{examples-listing-xyz.tex}+.
 
     \medskip
 
@@ -126,7 +126,7 @@ La macro \tdocmacro{tdoclatexinput} , présentée ci-après, s'utilise comme l'e
 
 
 \begin{tdocnote}
-    Les textes par défaut tiennent compte de la langue choisie lors du chargement du package \tdocpack{tdoc}.
+    Les textes par défaut tiennent compte de la langue choisie lors du chargement du package \tdocpack{tutodoc}.
 \end{tdocnote}
 
 
@@ -134,7 +134,7 @@ La macro \tdocmacro{tdoclatexinput} , présentée ci-après, s'utilise comme l'e
 
 
 \begin{tdocexa}[Changer le texte explicatif]
-    Via la clé \tdocinlatex|explain|, on peut utiliser un texte personnalisé. Ainsi, \tdocinlatex|\tdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}| produira ce qui suit.
+    Via la clé \tdocinlatex|explain|, on peut utiliser un texte personnalisé. Ainsi, \tdocinlatex|\tdoclatexshow[explain = Voici le rendu réel.]{examples-listing-xyz.tex}| produira ce qui suit.
 
     \medskip
 
@@ -148,7 +148,7 @@ La macro \tdocmacro{tdoclatexinput} , présentée ci-après, s'utilise comme l'e
 
 
 \begin{tdocexa}[Les options disponibles]
-    En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de \tdocenv{tdocshowcase}, voir \ref{tdoc-showcase}.
+    En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de \tdocenv{tdocshowcase}, voir \ref{tdoc-showcase} page \pageref{tdoc-showcase}.
     Voici un exemple illustrant ceci.
 
     \medskip

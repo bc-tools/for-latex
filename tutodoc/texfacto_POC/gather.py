@@ -422,28 +422,52 @@ FINAL PRODUCT "{projectname}"
             code += r"""
 \begin{document}
 
-\title{Le package \texttt{bdoc} - Documenter simplement un projet}
+\title{Le package \texttt{tutodoc} - Documentation de type tutoriel}
 \author{Christophe BAL}
 \date{29 Nov. 2023 - Version 1.0.0}
 
 \maketitle
 
 \begin{abstract}
-Le package \bdocpack{bdoc}
+Le package \tdocpack{tutodoc}
 \footnote{
-    Le nom vient de \bdocquote{\bdocprewhy{b.asic} \bdocprewhy{doc.umentation}} qui ne nécessite aucune traduction.
+    Le nom vient de \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}} se traduit en \tdocquote{documentation de type tutoriel}.
 }
-est sans aucune prétention.
-Son but est de faciliter la saisie sémantique de documentations de packages et de classes \LaTeX\ avec un rendu sobre pour une lecture sur écran
+est utilisé par son auteur pour produire de façon sémantique des documentations de packages et de classes \LaTeX\ dans un style de type tutoriel
 \footnote{
     L'idée est de produire un fichier \texttt{PDF} efficace à parcourir pour des besoins ponctuels. C'est généralement ce que l'on attend d'une documentation liée au codage.
-}.
+},
+et avec un rendu sobre pour une lecture sur écran.
 
 
-\begin{bdocnote}
- 	Ce package propose, ou impose, un style de mise en forme.
-	Dans un avenir plus ou moins proche, \bdocpack{bdoc} sera sûrement éclaté en une classe et un package.
-\end{bdocnote}
+\begin{tdocnote}
+ 	Ce package impose un style de mise en forme.
+	Dans un avenir plus ou moins proche, \tdocpack{tutodoc} sera sûrement éclaté en une classe et un package.
+\end{tdocnote}
+
+\medskip
+\hrule
+\medskip
+{\small
+\textbf{Abstract.}
+The \tdocpack{tutodoc} package
+\footnote{
+	The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
+}
+is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style
+\footnote{
+    The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
+},
+and with a sober rendering for reading on screen.
+
+
+\begin{tdocnote}
+ 	This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
+\end{tdocnote}
+}
+
+\medskip
+\hrule
 \end{abstract}
 """
 
@@ -458,7 +482,7 @@ Son but est de faciliter la saisie sémantique de documentations de packages et 
     code += r"""
 \section{Historique}
 
-\bdocversion{1.0.0}[2023-11-29]
+\tdocversion{1.0.0}[2023-11-29]
 
 Première version publique du projet.
 
