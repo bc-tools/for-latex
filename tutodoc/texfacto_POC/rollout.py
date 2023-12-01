@@ -29,6 +29,9 @@ def build_rollout_proj(patterns, tmpdir, rolloutdir):
 
                     start, comment, macroname, options, input_file, end = match[0]
 
+                    if input_file == '#1':
+                        continue
+
                     if comment:
                         continue
 

@@ -15,7 +15,7 @@ PATTERNS = [
         'tdoclatexshow',
         'tdoclatexinput',
         'tdocshowcaseinput',
-        'tdocdocbasicinput',
+        'tdocdocbasicinput', #pb si dans prabule !!!
     ]
 ]
 DEBUG = False
