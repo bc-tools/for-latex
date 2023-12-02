@@ -105,7 +105,7 @@ for directdir, content in treeview[TAG_DIR].items():
 # -- ONLY SOURCE FILES SORTED -- #
 # ------------------------------ #
 
-# debug_treeview(SOURCE_DIR, treeview);exit()
+debug_treeview(SOURCE_DIR, treeview);exit()
 # from pprint import pprint;pprint(list(treeview[TAG_DIR].keys()));exit()
 
 tmpdir = build_tmp_proj(
