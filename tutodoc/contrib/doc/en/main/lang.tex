@@ -1,0 +1,24 @@
+\documentclass[10pt, a4paper]{article}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\section{Select language when loading package}
+
+By default, \tdocpack{tutodoc} is set for English. It is possible to change the language: for example, a French documentation will use \tdocinlatex|\usepackage[lang = french]{tutodoc}| .
+For the moment, we only have the following two choices.
+
+\begin{enumerate}
+    \item \tdocinlatex|english| is the default value.
+
+    \item \tdocinlatex|french|
+\end{enumerate}
+
+
+\begin{tdocnote}
+	Language names are those suggested by the \tdocpack{babel} package.
+\end{tdocnote}
+
+\end{document}

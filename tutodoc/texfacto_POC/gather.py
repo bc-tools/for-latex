@@ -445,10 +445,9 @@ et avec un rendu sobre pour une lecture sur écran.
 	Dans un avenir plus ou moins proche, \tdocpack{tutodoc} sera sûrement éclaté en une classe et un package.
 \end{tdocnote}
 
-\medskip
-\hrule
-\medskip
-{\small
+\tdocsep
+
+{\small\itshape
 \textbf{Abstract.}
 The \tdocpack{tutodoc} package
 \footnote{
@@ -465,10 +464,12 @@ and with a sober rendering for reading on screen.
  	This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
 \end{tdocnote}
 }
-
-\medskip
-\hrule
 \end{abstract}
+
+
+\newpage
+\tableofcontents
+\newpage
 """
 
         with (projectfolder_TEMP / tmpfile).open(
