@@ -1,0 +1,54 @@
+\documentclass[10pt, a4paper]{article}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+%\section{Indiquer les changements}
+
+\subsection{What's new?}
+
+\tdocpack{tutodoc} offers different environments to indicate quickly and clearly what has been done
+\footnote{
+    The user doesn't need all the technical details.
+}
+during the latest changes.
+
+\begin{tdocexa}[For new features]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples/version-n-change/new.tex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[For updates]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples/version-n-change/update.tex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[For fixes]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples/version-n-change/fix.tex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Chosen topics]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples/version-n-change/topic.tex}
+\end{tdocexa}
+
+\end{document}

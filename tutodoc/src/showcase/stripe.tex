@@ -27,8 +27,8 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 \begin{tdocexa}[Avec les textes par défaut]
     Il peut être utile de montrer un rendu réel directement dans un document
     \footnote{
-    	Typiquement lorsque l'on fait une démo.
-	}.
+        Typiquement lorsque l'on fait une démo.
+    }.
     Ceci se tape via \tdocenv{tdocshowcase} comme suit.
 
     \tdoclatexinput[code]{examples/showcase/default.tex}
@@ -47,6 +47,7 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 \begin{tdocrem}
     Voir la section \ref{tdoc-latexshow} page \pageref{tdoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
 \end{tdocrem}
+
 
 \begin{tdocnote}
     Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \tdocpack{tutodoc}.
@@ -71,12 +72,12 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
 \begin{tdocnote}
     Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor} sont utilisées pour créer celles du fond et des titres respectivement à partir de la couleur proposée à \tdocenv{tdocshowcase}.
-	Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
+    Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
 
-	\begin{tdoclatex}[code]
+    \begin{tdoclatex}[code]
 \NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
 \NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
-	\end{tdoclatex}
+    \end{tdoclatex}
 \end{tdocnote}
 
 
@@ -103,6 +104,5 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
         \tdocruler{Un pseudo-titre décoré}{red}
     \end{tdoclatex}
 \end{tdocnote}
-
 
 \end{document}

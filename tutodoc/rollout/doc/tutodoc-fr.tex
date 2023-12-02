@@ -337,8 +337,8 @@ et avec un rendu sobre pour une lecture sur écran.
 
 
 \begin{tdocnote}
- 	Ce package impose un style de mise en forme.
-	Dans un avenir plus ou moins proche, \tdocpack{tutodoc} sera sûrement éclaté en une classe et un package.
+     Ce package impose un style de mise en forme.
+    Dans un avenir plus ou moins proche, \tdocpack{tutodoc} sera sûrement éclaté en une classe et un package.
 \end{tdocnote}
 
 \tdocsep
@@ -347,7 +347,7 @@ et avec un rendu sobre pour une lecture sur écran.
 \textbf{Abstract.}
 The \tdocpack{tutodoc} package
 \footnote{
-	The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
+    The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
 }
 is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style
 \footnote{
@@ -357,7 +357,7 @@ and with a sober rendering for reading on screen.
 
 
 \begin{tdocnote}
- 	This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
+     This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
 \end{tdocnote}
 }
 \end{abstract}
@@ -467,7 +467,7 @@ Pour le moment, on a juste les deux choix suivants.
 
 
 \begin{tdocnote}
-	Les noms des langues sont ceux proposés par le package \tdocpack{babel}.
+    Les noms des langues sont ceux proposés par le package \tdocpack{babel}.
 \end{tdocnote}
 
 
@@ -484,7 +484,7 @@ La macro \tdocmacro{tdocinEN} et sa version étoilée s'appuient sur \tdocmacro{
 
 
 \begin{tdocnote}
-	Le texte \tdocquote{en anglais} est traduit dans la langue indiquée lors de l'importation de \tdocpack{tutodoc}.
+    Le texte \tdocquote{en anglais} est traduit dans la langue indiquée lors de l'importation de \tdocpack{tutodoc}.
 \end{tdocnote}
 
 
@@ -663,8 +663,8 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 \begin{tdocexa}[Avec les textes par défaut]
     Il peut être utile de montrer un rendu réel directement dans un document
     \footnote{
-    	Typiquement lorsque l'on fait une démo.
-	}.
+        Typiquement lorsque l'on fait une démo.
+    }.
     Ceci se tape via \tdocenv{tdocshowcase} comme suit.
 
     \tdoclatexinput[code]{examples-showcase-default.tex}
@@ -707,12 +707,12 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
 \begin{tdocnote}
     Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor} sont utilisées pour créer celles du fond et des titres respectivement à partir de la couleur proposée à \tdocenv{tdocshowcase}.
-	Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
+    Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
 
-	\begin{tdoclatex}[code]
+    \begin{tdoclatex}[code]
 \NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
 \NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
-	\end{tdoclatex}
+    \end{tdoclatex}
 \end{tdocnote}
 
 
@@ -813,7 +813,7 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 
 La macro \tdocmacro{tdocinlatex}
 \footnote{
-	Le nom de la macro \tdocmacro{tdocinlatex} vient de \tdocquote{\tdocprewhy{in.line} \LaTeX} soit \tdocinEN{\LaTeX\ en ligne}.
+    Le nom de la macro \tdocmacro{tdocinlatex} vient de \tdocquote{\tdocprewhy{in.line} \LaTeX} soit \tdocinEN{\LaTeX\ en ligne}.
 }
 permet de taper du code en ligne via un usage similaire à \tdocmacro{verb}.
 Voici des exemples d'utilisation.
@@ -865,7 +865,7 @@ Voici des exemples d'utilisation.
 
 
 \begin{tdocexa}[Juste le code]
-	Via \tdocenv[{[code]}]{tdoclatex}, on aura juste le code comme ci-après.
+    Via \tdocenv[{[code]}]{tdoclatex}, on aura juste le code comme ci-après.
 
     \begin{tdoclatex}[code]
         $A = B + C$
@@ -1062,13 +1062,13 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 \subsection{Quoi de neuf ?}
 \tdocpack{tutodoc} propose différents environnements pour indiquer rapidement et clairement ce qui a été fait
 \footnote{
-	L'utilisateur n'a pas besoin de tous les détails techniques.
+    L'utilisateur n'a pas besoin de tous les détails techniques.
 }
 lors des derniers changements.
 
 
 \begin{tdocexa}[Pour les nouveautés]
-	\leavevmode
+    \leavevmode
 
     \tdoclatexinput[sbs]{examples-version-n-change-new.tex}
 \end{tdocexa}
@@ -1078,7 +1078,7 @@ lors des derniers changements.
 
 
 \begin{tdocexa}[Pour les mises à jour]
-	\leavevmode
+    \leavevmode
 
     \tdoclatexinput[sbs]{examples-version-n-change-update.tex}
 \end{tdocexa}
@@ -1088,7 +1088,7 @@ lors des derniers changements.
 
 
 \begin{tdocexa}[Pour les réparations]
-	\leavevmode
+    \leavevmode
 
     \tdoclatexinput[sbs]{examples-version-n-change-fix.tex}
 \end{tdocexa}
@@ -1098,7 +1098,7 @@ lors des derniers changements.
 
 
 \begin{tdocexa}[Thématiques aux choix]
-	\leavevmode
+    \leavevmode
 
     \tdoclatexinput[sbs]{examples-version-n-change-topic.tex}
 \end{tdocexa}

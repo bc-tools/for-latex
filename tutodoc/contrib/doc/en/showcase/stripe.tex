@@ -1,0 +1,100 @@
+\documentclass[10pt, a4paper]{article}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\section{A real-life rendering} \label{tdoc-showcase}
+
+It is sometimes useful to render code directly in the documentation. This type of rendering must be dissociable from the explanatory text.
+
+
+% ------------------ %
+
+
+\subsection{With a coloured stripe}
+
+\begin{tdocexa} [With default text]
+    It can be useful to show a real rendering directly in a document
+    \footnote{
+        Typically when making a demo.
+    }.
+    This is done via \tdocenv{tdocshowcase} as follows.
+
+    \tdoclatexinput[code]{examples/showcase/default.tex}
+
+    The result is the following rendering
+    \footnote{
+        Behind the scenes, the strip is created effortlessly using the \tdocpack{clrstrip} package.
+    }.
+
+    \medskip
+
+    \input{examples/showcase/default.tex}
+\end{tdocexa}
+
+
+\begin{tdocrem}
+    See the section \ref{tdoc-latexshow} on page \pageref{tdoc-latexshow} to easily obtain code followed by its actual rendering as in the previous example.
+\end{tdocrem}
+
+
+\begin{tdocnote}
+    The explanatory texts adapt to the language chosen when \tdocpack{tutodoc} is loaded.
+\end{tdocnote}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Change the default colour and/or text]
+    \leavevmode
+
+    \tdoclatexinput[code]{examples/showcase/customized.tex}
+
+    This will produce the following.
+
+    \medskip
+
+    \input{examples/showcase/customized.tex}
+\end{tdocexa}
+
+
+\begin{tdocnote}
+    You will have noticed that we don't obtain a pure red: behind the scenes, the expandable macros \tdocmacro{tdocbackcolor} and \tdocmacro{tdocdarkcolor} are used to create the background and title colours respectively from the ones proposed in \tdocenv{tdocshowcase}.
+    These macros have a single argument, the chosen colour, and accept the following codes.
+
+    \begin{tdoclatex}[code]
+\NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
+\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
+    \end{tdoclatex}
+\end{tdocnote}
+
+
+% ------------------ %
+
+
+\begin{tdocwarn}
+    With the default settings, if the code to be formatted begins with an opening bracket, an empty option must be explicitly indicated, as in the following example.
+
+    \tdoclatexinput[code]{examples/showcase/hook.tex}
+
+    This will produce the following.
+
+    \medskip
+
+    \input{examples/showcase/hook.tex}
+\end{tdocwarn}
+
+
+\begin{tdocnote}
+    Behind the scenes, the \tdocmacro{tdocruler} macro is used.
+
+    \begin{tdoclatex}[std]
+        \tdocruler{Un pseudo-titre décoré}{red}
+    \end{tdoclatex}
+\end{tdocnote}
+
+
+\end{document}

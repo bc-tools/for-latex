@@ -20,9 +20,9 @@
 
 \NewDocumentCommand{ \tdocdocbasicinput }{ m }{%
     Considérons le code suivant.
-    
+
     \tdoclatexinput[code]{#1}
-    
+
     Ceci produira ce qui suit.
 
     \input{#1}
@@ -43,7 +43,7 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 
 La macro \tdocmacro{tdocinlatex}
 \footnote{
-	Le nom de la macro \tdocmacro{tdocinlatex} vient de \tdocquote{\tdocprewhy{in.line} \LaTeX} soit \tdocinEN{\LaTeX\ en ligne}.
+    Le nom de la macro \tdocmacro{tdocinlatex} vient de \tdocquote{\tdocprewhy{in.line} \LaTeX} soit \tdocinEN{\LaTeX\ en ligne}.
 }
 permet de taper du code en ligne via un usage similaire à \tdocmacro{verb}.
 Voici des exemples d'utilisation.
@@ -51,7 +51,7 @@ Voici des exemples d'utilisation.
 
 \begin{tdoclatex}[sbs]
     1: \tdocinlatex|$a^b = c$|
-    
+
     2: \tdocinlatex+\tdocinlatex|$a^b = c$|+
 \end{tdoclatex}
 
@@ -95,7 +95,7 @@ Voici des exemples d'utilisation.
 
 
 \begin{tdocexa}[Juste le code]
-	Via \tdocenv[{[code]}]{tdoclatex}, on aura juste le code comme ci-après.
+    Via \tdocenv[{[code]}]{tdoclatex}, on aura juste le code comme ci-après.
 
     \begin{tdoclatex}[code]
         $A = B + C$
