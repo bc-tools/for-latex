@@ -65,7 +65,7 @@ def build_rollout_proj(patterns, tmpdir, rolloutdir):
                 headcontents.append(
 f"""
 \\begin{{filecontents*}}{{{rname}}}
-{f.read().lstrip()}
+{f.read().strip()}
 \\end{{filecontents*}}
 """
                 )

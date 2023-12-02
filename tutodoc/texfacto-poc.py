@@ -105,7 +105,7 @@ for directdir, content in treeview[TAG_DIR].items():
 # -- ONLY SOURCE FILES SORTED -- #
 # ------------------------------ #
 
-debug_treeview(SOURCE_DIR, treeview);exit()
+# debug_treeview(SOURCE_DIR, treeview);exit()
 # from pprint import pprint;pprint(list(treeview[TAG_DIR].keys()));exit()
 
 tmpdir = build_tmp_proj(
@@ -113,7 +113,6 @@ tmpdir = build_tmp_proj(
     treeview = treeview
 )
 
-tmpdir = Path("/Users/projetmbc/Mon Drive/git[NEW]-G-Drive/coding/bc-tools/for-latex/tutodoc/.tutodoc")
 
 build_rollout_proj(
     patterns   = PATTERNS,

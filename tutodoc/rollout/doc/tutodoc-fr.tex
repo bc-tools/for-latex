@@ -178,7 +178,7 @@ $x y z = 1$
                before  = Rendu ci-après.,
                after   = Rendu fini.,
                color   = orange]
-               {examples-listing-xyz.tex}
+               {examples/listing/xyz.tex}
 \end{filecontents*}
 
 
@@ -305,13 +305,11 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \NewDocumentEnvironment{ tdoc-doc-showcase }
                        { O{ Début du rendu dans cette doc. }
                          O{ Fin du rendu dans cette doc. } }{
-%    \begin{colorstrip}{green!5}
         \tdocdocextraruler{#1}
         \smallskip
 }{
         \smallskip
         \tdocdocextraruler{#2}
-%    \end{colorstrip}
 }
 
 
@@ -337,8 +335,8 @@ et avec un rendu sobre pour une lecture sur écran.
 
 
 \begin{tdocnote}
-     Ce package impose un style de mise en forme.
-    Dans un avenir plus ou moins proche, \tdocpack{tutodoc} sera sûrement éclaté en une classe et un package.
+ 	Ce package impose un style de mise en forme.
+	Dans un avenir plus ou moins proche, \tdocpack{tutodoc} sera sûrement éclaté en une classe et un package.
 \end{tdocnote}
 
 \tdocsep
@@ -347,7 +345,7 @@ et avec un rendu sobre pour une lecture sur écran.
 \textbf{Abstract.}
 The \tdocpack{tutodoc} package
 \footnote{
-    The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
+	The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
 }
 is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style
 \footnote{
@@ -357,7 +355,7 @@ and with a sober rendering for reading on screen.
 
 
 \begin{tdocnote}
-     This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
+ 	This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
 \end{tdocnote}
 }
 \end{abstract}
@@ -366,12 +364,12 @@ and with a sober rendering for reading on screen.
 \newpage
 \tableofcontents
 \newpage
-
 \section{Mises en forme générales imposées}
 
 \subsection{Géométrie de la page}
 
 Le package \tdocpack{geometry} est chargé avec les réglages suivants.
+
 
 \begin{tdoclatex}[code]
 \RequirePackage[
@@ -386,11 +384,10 @@ Le package \tdocpack{geometry} est chargé avec les réglages suivants.
 \end{tdoclatex}
 
 
-%\section{Mises en forme générales imposées}
-
 \subsection{Titre et table des matières}
 
 Les packages \tdocpack{titlesec} et \tdocpack{tocbasic} sont réglés comme suit.
+
 
 \begin{tdoclatex}[code]
 \RequirePackage[raggedright]{titlesec}
@@ -437,11 +434,10 @@ Les packages \tdocpack{titlesec} et \tdocpack{tocbasic} sont réglés comme suit
 \end{tdoclatex}
 
 
-%\section{Mises en forme générales imposées}
-
 \subsection{Liens dynamiques}
 
 Le package \tdocpack{hyperref} est importé en coulisse avec les réglages ci-dessous.
+
 
 \begin{tdoclatex}[code]
 \hypersetup{
@@ -474,6 +470,7 @@ Pour le moment, on a juste les deux choix suivants.
 \section{Cela veut dire quoi en \tdocquote{anglais}}
 
 Penser aux non-anglophones est bien, même si ces derniers se font de plus en plus rares.
+
 
 \begin{tdoclatex}
 Cool et top signifient \tdocinEN*{cool} et \tdocinEN{top}.
@@ -537,16 +534,12 @@ Voici différents emplois possibles.
 \end{tdoctip}
 
 
-%\section{Mettre en avant du contenu}
-
 \subsection{Des remarques}
 
 Tout se passe via l'environnement \tdocenv{tdocrem} comme dans l'exemple suivant.
 
 \tdoclatexinput[sbs]{examples-focus-rmk.tex}
 
-
-%\section{Mettre en avant du contenu}
 
 \subsection{Une astuce}
 
@@ -555,16 +548,12 @@ L'environnement \tdocenv{tdoctip} sert à donner des astuces. Voici comment l'em
 \tdoclatexinput[sbs]{examples-focus-tip.tex}
 
 
-%\section{Mettre en avant du contenu}
-
 \subsection{Note informative}
 
 L'environnement \tdocenv{tdocnote} sert à mettre en avant des informations utiles. Voici comment l'utiliser.
 
 \tdoclatexinput[sbs]{examples-focus-note.tex}
 
-
-%\section{Mettre en avant du contenu}
 
 \subsection{Un truc important}
 
@@ -573,16 +562,12 @@ L'environnement \tdocenv{tdocimportant} permet d'indiquer quelque chose d'import
 \tdoclatexinput[sbs]{examples-focus-important.tex}
 
 
-%\section{Mettre en avant du contenu}
-
 \subsection{Avertir d'un point très délicat}
 
 L'environnement \tdocenv{tdoccaution} sert à indiquer un point délicat à  l'utilisateur. Voici comment l'employer.
 
 \tdoclatexinput[sbs]{examples-focus-caution.tex}
 
-
-%\section{Mettre en avant du contenu}
 
 \subsection{Avertir d'un danger}
 
@@ -594,6 +579,7 @@ L'environnement \tdocenv{tdocwarn} sert à avertir l'utilisateur d'un piège à 
 \section{Indiquer des packages, des classes, des macros ou des environnements}
 
 Voici ce qu'il est possible de taper de façon sémantique.
+
 
 \begin{tdoclatex}[sbs]
 \tdoccls{maclasse} sert à...
@@ -635,6 +621,7 @@ On a aussi :
 \section{Origine d'un préfixe ou d'un suffixe}
 
 Pour expliquer les noms retenus, rien de tel que d'indiquer et expliciter les courts préfixes et suffixes employés. Ceci se fait facilement comme suit.
+
 
 \begin{tdoclatex}[sbs]
 \tdocpre{sup} est relatif à...
@@ -683,6 +670,7 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 \begin{tdocrem}
     Voir la section \ref{tdoc-latexshow} page \pageref{tdoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
 \end{tdocrem}
+
 
 \begin{tdocnote}
     Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \tdocpack{tutodoc}.
@@ -741,12 +729,11 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 \end{tdocnote}
 
 
-%\section{Un rendu en situation réelle} \label{tdoc-showcase}
-
 \subsection{Sans bande colorée}
 
 Le rendu de \tdocenv{tdocshowcase} avec une bande colorée peut ne pas convenir, ou parfois ne pas être acceptable malgré le travail fait par \tdocpack{clrstrip}.
 Il est possible de ne pas utiliser une bande colorée comme nous allons le voir tout de suite.
+
 
 \begin{tdocexa}
     L'emploi de \tdocenv[{[nostripe]}]{tdocshowcase} demande de ne pas faire appel à \tdocpack{clrstrip}.
@@ -778,11 +765,10 @@ Il est possible de ne pas utiliser une bande colorée comme nous allons le voir 
 \end{tdocexa}
 
 
-%\section{Un rendu en situation réelle} \label{tdoc-showcase}
-
 \subsection{En important le code \LaTeX}
 
 Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \tdocmacro{tdocshowcaseinput} dont l'option reprend la syntaxe de celle de \tdocenv{tdocshowcase} et l'argument obligatoire correspond au chemin du fichier.
+
 
 \begin{tdocexa}<nonb>
     Ce qui suit a été obtenu via \tdocinlatex+\tdocshowcaseinput{external.tex}+.
@@ -881,8 +867,6 @@ Voici des exemples d'utilisation.
     \tdocdocbasicinput{examples-listing-strange.tex}
 \end{tdocwarn}
 
-
-%\section{Cas d'utilisation en \LaTeX}
 
 \subsection{Codes importés}
 
@@ -1057,9 +1041,8 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 \end{tdocwarn}
 
 
-%\section{Indiquer les changements}
-
 \subsection{Quoi de neuf ?}
+
 \tdocpack{tutodoc} propose différents environnements pour indiquer rapidement et clairement ce qui a été fait
 \footnote{
     L'utilisateur n'a pas besoin de tous les détails techniques.
@@ -1107,6 +1090,7 @@ lors des derniers changements.
 \section{Décorations}
 
 Finissons cette documentation avec de petites outils de mise en forme pouvant rendre de grands services.
+
 
 \begin{tdoclatex}[sbs]
 Bla, bla, bla...

@@ -333,9 +333,9 @@ def build_tmp_proj(
     extradeco = "-"*(2 + len(projectname))
 
     print(f"""
---------------{extradeco}
-FINAL PRODUCT "{projectname}"
---------------{extradeco}
+---------------{extradeco}
+"{projectname}": FINAL PRODUCT
+---------------{extradeco}
     """)
 
     emptydir(projectfolder_TEMP)
