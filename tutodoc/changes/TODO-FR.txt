@@ -6,7 +6,20 @@ bdoc - TODO
 NOW
 ---
 
-LICENCE !!!!!
+> ---------------------------- <
+
+Pour CTAN
+
+    ---> LICENCE !!!!!
+
+    ---> syst semi auto des dépendances avec explications possibles dans lang de la doc :
+            + fichier dep.yaml ou clé dep dans about ???
+
+            + indiquer les dép au tout début de la doc.
+
+    ---> finaliser POC pour les contribs !
+
+    ---> gérer chemin idniquer en multiligne...
 
 
 > ---------------------------- <
