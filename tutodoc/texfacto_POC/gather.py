@@ -388,7 +388,16 @@ def build_tmp_proj(
             code += f.read()
 
     code = code.strip()
-    code += "\n"
+
+    code = f"""
+\\ProvidesPackage%
+    {{{projectname}}}     %
+    {{2023-11-29}}  % Creation: 2023-11-29
+    {{1.0.0}}       %
+    {{This package proposes tools for writing "human friendly" documentations of LaTeX packages.}}
+
+{code}
+""".lstrip()
 
     with codefile.open(
         encoding = "utf-8",
