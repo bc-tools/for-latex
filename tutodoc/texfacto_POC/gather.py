@@ -390,6 +390,15 @@ def build_tmp_proj(
     code = code.strip()
 
     code = f"""
+% ------------------------------------------------------- %
+% - This is file `{projectname}.sty' generated automatically. - %
+% -                                                     - %
+% - Copyright (C) 2023 by Christophe BAL                - %
+% -                                                     - %
+% - This file may be distributed and/or modified under  - %
+% - the conditions of the GNU 3 License.                - %
+% ------------------------------------------------------- %
+
 \\ProvidesPackage%
     {{{projectname}}}     %
     {{2023-11-29}}  % Creation: 2023-11-29
