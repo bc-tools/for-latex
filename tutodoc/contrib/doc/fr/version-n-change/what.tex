@@ -1,0 +1,64 @@
+\documentclass[10pt, a4paper]{article}
+
+\input{../preamble.cfg.tex}
+
+\usepackage[lang = french]{../main/main}
+\usepackage{../macroenv/macroenv}
+\usepackage{../inenglish/inenglish}
+\usepackage{../showcase/showcase}
+\usepackage{../listing/listing}
+\usepackage{../focus/focus}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{version-n-change}
+
+
+\begin{document}
+
+\subsection{Quoi de neuf ?}
+
+\tdocpack{tutodoc} propose différents environnements pour indiquer rapidement et clairement ce qui a été fait
+\footnote{
+    L'utilisateur n'a pas besoin de tous les détails techniques.
+}
+lors des derniers changements.
+
+
+\begin{tdocexa}[Pour les nouveautés]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples/version-n-change/new.tex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Pour les mises à jour]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples/version-n-change/update.tex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Pour les réparations]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples/version-n-change/fix.tex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Thématiques aux choix]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples/version-n-change/topic.tex}
+\end{tdocexa}
+
+\end{document}

@@ -124,6 +124,9 @@ def copyfromto(srcfile, destfile, mode="w"):
     ) as f:
         content = f.read()
 
+    destfile.parent.mkdir(parents=True, exist_ok=True)
+    destfile.touch()
+
     with destfile.open(
         encoding = "utf-8",
         mode = mode

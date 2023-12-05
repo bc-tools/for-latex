@@ -16,5 +16,5 @@ def update_contrib(
     for docfile in toc_doc:
         copyfromto(
             srcdir / docfile,
-            contribdir / docfile
+            maindoc / docfile
         )
