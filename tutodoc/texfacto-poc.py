@@ -114,7 +114,24 @@ tmpdir = build_tmp_proj(
 )
 
 
-build_rollout_proj(
+update_contrib(
+    projdir         = PROJECT_DIR,
+    toc_doc         = TOC_DOC,
+    toc_doc_resrces = TOC_DOC_RESRCES
+)
+
+# print(f"{=}")
+
+# print(f"{=}")
+
+
+
+build_rollout_proj_code(
+    tmpdir     = tmpdir,
+    rolloutdir = ROLLOUT_DIR,
+)
+
+build_rollout_proj_doc_main(
     patterns   = PATTERNS,
     tmpdir     = tmpdir,
     rolloutdir = ROLLOUT_DIR,

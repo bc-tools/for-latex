@@ -9,7 +9,7 @@
 :update:
 --------
 
-\Contrib - \Doc: English translation of \doc finished (it remains to build the single ext::''tex'' file for the \ctan publication)
+\Contrib - \Doc: English translation of \doc finished (all that remains is to build the single ext::''tex'' file for publication on \ctan)
 
 
 // ---------- //

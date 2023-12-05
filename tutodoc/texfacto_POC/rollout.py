@@ -1,4 +1,29 @@
-def build_rollout_proj(patterns, tmpdir, rolloutdir):
+from .gather import copyfromto, emptydir
+
+
+def build_rollout_proj_code(tmpdir, rolloutdir):
+    destdir = rolloutdir / "code"
+
+    emptydir(destdir)
+
+    for srcfile in tmpdir.glob("*"):
+        if (
+            not srcfile.is_file()
+            or
+            srcfile.name[0] == '.'
+            or
+            srcfile.suffix == ".tex"
+        ):
+            continue
+
+        print(f"+ Copying {srcfile.name}.")
+
+        copyfromto(srcfile, destdir / srcfile.name)
+
+
+def build_rollout_proj_doc_main(patterns, tmpdir, rolloutdir):
+    emptydir(rolloutdir / "doc")
+
     for texfile in tmpdir.glob("*.tex"):
         if texfile.name[0] == '.':
             continue

@@ -13,7 +13,13 @@ About `bcdoc`
 This package proposes some macros to write human documentations of `LaTeX` packages with a tutorial-like flavour.
 
 
+License
+-------
+
+This project may be distributed and/or modified under the conditions of the GNU 3 License.
+
+
 Where is the documentation?
 ---------------------------
 
-At this time, there is only one French documentation writing with a tutorial-like flavor.
+At this time, there is a French and an English documentation writing with a tutorial-like flavor (in the repository, see the folder `rollout/doc`).

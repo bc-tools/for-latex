@@ -302,6 +302,7 @@ def adddocsubdir(source, tmpdir, dirview, firstcall=True):
 
         for srcfile in dircontent[TAG_FILE]:
             copyfromto(srcfile, destdir / srcfile.name)
+            TOC_DOC_RESRCES.append(relpath / srcfile.name)
 
         adddocsubdir(source, tmpdir, dircontent[TAG_DIR], firstcall=False)
 
@@ -316,13 +317,17 @@ PREPARE = {
     TAG_TEX: prepare_TEX
 }
 
+TOC_DOC           = []
+TOC_DOC_RESRCES = []
+
+
 def build_tmp_proj(
     source  ,
     treeview
 ):
     projectname = source.parent.name
 
-    projectfolder      = source.parent / projectname
+    projectfolder_SRC  = source.parent / "src"
     projectfolder_TEMP = source.parent / f".{projectname}"
 
     sorteddirs = dirs2analyze(
@@ -350,6 +355,7 @@ def build_tmp_proj(
             allfiles = list(contentdir[TAG_FILE])
         )
 
+
         for srcfile in sorted2analyze:
             ext = srcfile.suffix[1:]
 
@@ -360,6 +366,10 @@ def build_tmp_proj(
             pieces = EXTRACT_FROM[ext](srcfile)
             PREPARE[ext](onedir, projectfolder_TEMP, *pieces)
 
+            if ext == TAG_TEX:
+                TOC_DOC.append(srcfile.relative_to(projectfolder_SRC))
+
+
         for srcfile in resources:
             print(
                 f'   * [RES-SRC] Copying {srcfile.name}'
@@ -369,6 +379,8 @@ def build_tmp_proj(
                 srcfile  = srcfile,
                 destfile = projectfolder_TEMP / srcfile.name
             )
+
+
 
         adddocsubdir(onedir, projectfolder_TEMP, contentdir[TAG_DIR])
 
