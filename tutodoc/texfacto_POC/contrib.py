@@ -13,7 +13,7 @@ def contrib_tex_template(text, localtools = ""):
     return f"""
 \\documentclass[12pt, a4paper]{{article}}
 
-\\input{{../../preamble.cfg.tex}}
+\\input{{../preamble.cfg.tex}}
 
 {localtools}
 \\begin{{document}}
