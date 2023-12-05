@@ -415,10 +415,10 @@ def build_tmp_proj(
 % - the conditions of the GNU 3 License.                - %
 % ------------------------------------------------------- %
 
-\\ProvidesPackage%
-    {{{projectname}}}     %
-    {{2023-11-29}}  % Creation: 2023-11-29
-    {{1.0.0}}       %
+\\ProvidesExplPackage
+    {{{projectname}}}
+    {{2023-11-29}} % Creation: 2023-11-29
+    {{1.0.0}}
     {{This package proposes tools for writing "human friendly" documentations of LaTeX packages.}}
 
 {code}
@@ -444,7 +444,7 @@ def build_tmp_proj(
 \frenchsetup{StandardItemLabels=true}
     """.strip() + f"""
 
-% Package developped.
+% Package documented.
 \\usepackage[lang = french]{{{projectname}}}
     """.rstrip() + '\n'*3
 

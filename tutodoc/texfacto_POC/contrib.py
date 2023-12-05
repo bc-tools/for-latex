@@ -123,3 +123,16 @@ def update_contrib(
                 logfile.read_text(),
             )
         )
+
+# Add translation.
+    for langdir in contribdir.glob("*"):
+        if (
+            not langdir.is_dir()
+            or
+            langdir.name.startswith('.')
+            or
+            langdir.name in ['changes', main_lang]
+        ):
+            continue
+
+        print(langdir.name)
