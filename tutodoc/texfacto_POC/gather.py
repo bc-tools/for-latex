@@ -305,7 +305,8 @@ def adddocsubdir(source, tmpdir, dirview, firstcall=True):
 
         for srcfile in dircontent[TAG_FILE]:
             copyfromto(srcfile, destdir / srcfile.name)
-            TOC_DOC_RESRCES.append(relpath / srcfile.name)
+
+            TOC_DOC_RESRCES.append(srcfile)
 
         adddocsubdir(source, tmpdir, dircontent[TAG_DIR], firstcall=False)
 
@@ -320,7 +321,7 @@ PREPARE = {
     TAG_TEX: prepare_TEX
 }
 
-TOC_DOC           = []
+TOC_DOC         = []
 TOC_DOC_RESRCES = []
 
 
