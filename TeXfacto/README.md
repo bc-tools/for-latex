@@ -1,26 +1,21 @@
-The `Python` module `TeXfactory`
-================================
-
-
-> **I beg your pardon for my english...**
->
-> English is not my native language, so be nice if you notice misunderstandings, misspellings, or grammatical errors in my documents and codes.
+The `Python` module `TeXfacto`
+==============================
 
 This document is a *not so short* tutorial showing the most useful features without being exhaustive.
 
 
-About `TeXfactory`
-------------------
+About `TeXfacto`
+----------------
 
 This module proposes `Python` tools to automate the production of a `TeX` project from a `STY` source directory using a standardized workflow (the idea is to code using small parts of the project rather than big `STY` files).
 
-> *For the moment, `TeXfactory` is focused on `LaTeX` projects using `STY` files on the coding side with written documentation management via `TEX` files, resource files being possible.. The case of classes will be implemented later, as the author does not use this kind of stuff yet.*
+> *For the moment, `TeXfacto` is focused on `LaTeX` projects using `STY` files on the coding side with written documentation management via `TEX` files, resource files being possible.. The case of classes will be implemented later, as the author does not use this kind of stuff yet.*
 
 
 Code of coding
 --------------
 
-Let's start by looking at the development cycle needed before calling `TeXfactory` to the rescue. To do this, we will work with a fictitious example.
+Let's start by looking at the development cycle needed before calling `TeXfacto` to the rescue. To do this, we will work with a fictitious example.
 
 
 ### The fictive source folder
@@ -60,7 +55,7 @@ In the following sections, we will consider a project named `MockProject` with t
 The `src` directory in our example shows that the final code is developped using "small" `STY` files together with `TEX` files used to build the "tutorial" documentation and another exposing the public API (the latter gives the "signature" of macros and environments).
 
 
-> ***NOTE 1.*** *It is possible to target the files and folders analyzed by `TeXfactory`: see the documentation for more information.*
+> ***NOTE 1.*** *It is possible to target the files and folders analyzed by `TeXfacto`: see the documentation for more information.*
 
 
 > ***NOTE 2.*** *The `PDF` files associated to a `TEX` chunk of the documentation won't be imported in the final product.*
@@ -68,10 +63,10 @@ The `src` directory in our example shows that the final code is developped using
 
 #### Resources
 
-`TeXfactory` should, normally, find alone the ressources used by the `STY` source files and the `TEX` ones.
+`TeXfacto` should, normally, find alone the ressources used by the `STY` source files and the `TEX` ones.
 
 
-#### What `TeXfactory` will do for us?
+#### What `TeXfacto` will do for us?
 
 The goal is to obtain automaticcaly the following `mockproject` folder.
 
@@ -133,7 +128,7 @@ general:
 
 ### Optional `about.yaml` file for the source folder
 
-To change the default behavior of `TeXfactory` on the source folder, you can add an `about.yaml` file. Let's give again the general structure of our source code.
+To change the default behavior of `TeXfacto` on the source folder, you can add an `about.yaml` file. Let's give again the general structure of our source code.
 
 ~~~
 + src
@@ -151,4 +146,4 @@ toc:
 ~~~
 
 
-> ***NOTE.*** *It is also possible to use `about.yaml` files in any folder analyzed by `TeXfactory`. In our example, we don't need them in `init-tools` as following the "natural" sorting is fine.*
+> ***NOTE.*** *It is also possible to use `about.yaml` files in any folder analyzed by `TeXfacto`. In our example, we don't need them in `init-tools` as following the "natural" sorting is fine.*

@@ -1,12 +1,19 @@
-==========
-TeXfactory - TODO
-==========
+========
+TeXfacto - TODO
+========
 
 
 > ---------------------------- <
 
-POC de bdoc - QUOI FAIRE ?
+POC de tutodoc - QUOI FAIRE ?
 
+    1) XXXX
+
+    1) XXXX
+
+    1) XXXX
+
+    1) XXXX
 
 
 > ---------------------------- <

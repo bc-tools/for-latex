@@ -1,6 +1,6 @@
 ### Optional `about.yaml` file for the source folder
 
-To change the default behavior of `TeXfactory` on the source folder, you can add an `about.yaml` file. Let's give again the general structure of our source code.
+To change the default behavior of `TeXfacto` on the source folder, you can add an `about.yaml` file. Let's give again the general structure of our source code.
 
 ~~~
 + src
@@ -18,4 +18,4 @@ toc:
 ~~~
 
 
-> ***NOTE.*** *It is also possible to use `about.yaml` files in any folder analyzed by `TeXfactory`. In our example, we don't need them in `init-tools` as following the "natural" sorting is fine.*
+> ***NOTE.*** *It is also possible to use `about.yaml` files in any folder analyzed by `TeXfacto`. In our example, we don't need them in `init-tools` as following the "natural" sorting is fine.*
