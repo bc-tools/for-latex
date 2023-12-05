@@ -107,7 +107,7 @@ def files2analyze(
 
 def emptydir(folder):
     if folder.is_dir():
-        print(f'+ Cleaning src/{folder.name}')
+        print(f'+ Cleaning {folder.parent.name}/{folder.name}')
 
         rmtree(folder)
 

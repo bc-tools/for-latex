@@ -120,11 +120,6 @@ update_contrib(
     toc_doc_resrces = TOC_DOC_RESRCES
 )
 
-# print(f"{=}")
-
-# print(f"{=}")
-
-
 
 build_rollout_proj_code(
     tmpdir     = tmpdir,
