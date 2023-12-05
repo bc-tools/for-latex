@@ -126,8 +126,16 @@ build_rollout_proj_code(
     rolloutdir = ROLLOUT_DIR,
 )
 
+
 build_rollout_proj_doc_main(
     patterns   = PATTERNS,
     tmpdir     = tmpdir,
     rolloutdir = ROLLOUT_DIR,
+)
+
+
+add_contrib_doc(
+    projdir    = PROJECT_DIR,
+    rolloutdir = ROLLOUT_DIR,
+    toc_doc    = TOC_DOC,
 )

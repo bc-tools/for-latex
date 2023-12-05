@@ -124,7 +124,16 @@ def update_contrib(
             )
         )
 
-# Add translation.
+
+def add_contrib_doc(
+    projdir,
+    rolloutdir,
+    toc_doc,
+    main_lang = 'fr'
+):
+    projectname = projdir.name
+    contribdir  = projdir / "contrib" / "doc"
+
     for langdir in contribdir.glob("*"):
         if (
             not langdir.is_dir()
@@ -135,4 +144,27 @@ def update_contrib(
         ):
             continue
 
-        print(langdir.name)
+        lang = langdir.name
+
+        print(f"+ New translation: {lang.upper()}.")
+
+        destfile = rolloutdir / 'doc' / f'{projectname}-{lang}.tex'
+
+        code = r"""
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[french]{babel, varioref}
+
+\usepackage{enumitem}
+\frenchsetup{StandardItemLabels=true}
+    """.strip() + f"""
+
+% Package documented.
+\\usepackage[lang = {projectname}]{{{projectname}}}
+        """.rstrip() + '\n'*3
+
+        for docpartfile in toc_doc:
+            print(docpartfile)

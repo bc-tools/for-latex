@@ -14,7 +14,7 @@ flatten = false
 flattentds = false
 
 docfiledir = "doc"
-typesetfiles = {"tutodoc-fr.tex"}
+typesetfiles = {"*.tex"}
 -- typesetsourcefiles = {"**/*"}
 
 checkopts   = "-interaction=nonstopmode --shell-escape"

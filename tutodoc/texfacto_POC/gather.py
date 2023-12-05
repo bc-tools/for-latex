@@ -385,7 +385,6 @@ def build_tmp_proj(
             )
 
 
-
         adddocsubdir(onedir, projectfolder_TEMP, contentdir[TAG_DIR])
 
 
