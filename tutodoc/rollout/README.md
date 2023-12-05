@@ -4,12 +4,16 @@ The `LaTeX` package `tutodoc`
 About `tutodoc`
 ---------------
 
-This package proposes some macros and environments to write semantically human-friendly documentations of `LaTeX` packages and classes with a tutorial-like flavour.
+This package proposes some macros to write human documentations of `LaTeX` packages with a tutorial-like flavour.
 
-> `tutodoc` comes from *"tutorial-like documentation"*.
+
+License
+-------
+
+This project may be distributed and/or modified under the conditions of the GNU 3 License.
 
 
 Where is the documentation?
 ---------------------------
 
-At this time, there is only one French documentation writing with a tutorial-like flavor : look at the folder `rollout/doc`.
+At this time, there is a French and an English documentation writing with a tutorial-like flavor (in the repository, see the folder `rollout/doc`).

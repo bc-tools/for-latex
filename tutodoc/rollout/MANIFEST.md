@@ -56,6 +56,8 @@ All files included in the `tutodoc/doc` directory.
 
 * MANIFEST.md 
 * README.md 
+* tutodoc-en.pdf 
+* tutodoc-en.tex 
 * tutodoc-fr.pdf 
 * tutodoc-fr.tex 
 
