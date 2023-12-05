@@ -5,7 +5,8 @@ TeXfactory - TODO
 
 > ---------------------------- <
 
-partir du poc de bdoc
+POC de bdoc - QUOI FAIRE ?
+
 
 
 > ---------------------------- <
