@@ -5,9 +5,14 @@ TeXfacto - TODO
 
 > ---------------------------- <
 
+migration depuis specs générales vers ici de nouveau MAIS en grardant juste parties sur le workflow !!!
+
+
+> ---------------------------- <
+
 POC de tutodoc - QUOI FAIRE ?
 
-    1) XXXX
+    1) classe capable de produurie fuchier unique à partie de fichier de niveau 1, ou bien garde resource en externe, au choix : garder style utiliser avec chgt des chemins dans la doc, mais il faut aussi laisser de côté ce qui n'est pas de l'input
 
     1) XXXX
 

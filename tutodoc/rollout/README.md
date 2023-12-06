@@ -16,4 +16,4 @@ This project may be distributed and/or modified under the conditions of the GNU 
 Where is the documentation?
 ---------------------------
 
-At this time, there is a French and an English documentation writing with a tutorial-like flavor (in the repository, see the folder `rollout/doc`).
+Documentation is currently available in French and English, they arewriting with a tutorial-like flavor (in the repository, see the folder `rollout/doc`).
