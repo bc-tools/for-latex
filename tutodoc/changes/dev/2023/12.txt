@@ -2,6 +2,21 @@
 
 
 ==
+07  (1.0.0-beta.2)
+==
+
+-----
+:new:
+-----
+
+\Doc: the abstract indicates all available translations of the \doc.
+
+
+
+// ---------- //
+
+
+==
 07  (1.0.0-beta.1)
 ==
 
