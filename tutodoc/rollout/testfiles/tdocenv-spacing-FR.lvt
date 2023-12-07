@@ -1,13 +1,11 @@
 \documentclass{article}
-\usepackage{tutodoc}
+\usepackage[lang = french]{tutodoc}
 \input{regression-test}
 
 \begin{document}
 \START
 
-myenv
-
-\tdocenv{myenv}
+\tdocenv{env}
 
 \showoutput
 

@@ -344,7 +344,7 @@
 % prototype::
 %     #1 : the name of a macro
 %
-%     :action: ''\tdocenv{mymacro}'' prints verb::''\mymacro''.
+%     :action: ''\tdocmacro{mymacro}'' prints verb::''\mymacro''.
 %%%
 \NewDocumentCommand{\tdocmacro}{m}{%
   \texttt{\textbackslash{}#1}%
@@ -364,7 +364,7 @@
 % Cleaner code from https://tex.stackexchange.com/a/703379/6880 .
 \NewDocumentCommand{\tdocenv}{O{}m}{%
   \texttt{\string\begin\string{#2\string}#1 %
-          \!...\@\! %
+          \!\!...\@\!\!\! %
           \string\end\string{#2\string}}%
 }
 
