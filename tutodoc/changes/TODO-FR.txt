@@ -1,6 +1,6 @@
-====
-bdoc - TODO
-====
+=======
+tutodoc - TODO
+=======
 
 ---
 NOW
@@ -9,6 +9,8 @@ NOW
 > ---------------------------- <
 
 Pour CTAN
+
+    ---> localiser les fichiers extérieurs car ils ne sont pas nettoyés et du coup cela merde
 
     ---> syst semi auto des dépendances avec explications possibles dans lang de la doc :
             + fichier dep.yaml ou clé dep dans about ???
