@@ -6,21 +6,6 @@ tutodoc - TODO
 NOW
 ---
 
-> ---------------------------- <
-
-Pour CTAN
-
-    ---> localiser les fichiers extérieurs car ils ne sont pas nettoyés et du coup cela merde
-
-    ---> syst semi auto des dépendances avec explications possibles dans lang de la doc :
-            + fichier dep.yaml ou clé dep dans about ???
-
-            + indiquer les dép au tout début de la doc.
-
-    ---> finaliser POC pour les contribs !
-
-    ---> gérer chemin idniquer en multiligne...
-
 
 > ---------------------------- <
 
@@ -31,30 +16,10 @@ pb des dots pour env avec trop d'esâces parès ...
 
 focus
 
+    ---> Chgt local de la lang possible : cf abstract !
+
     ---> tout numérotable mais seul exemple est numéroté par défaut
          besoin de passre via xtempalte !!!
-
-
-> ---------------------------- <
-
-texfacto
-
-    ---> produire un fichier compilable: on passe de la structa arbo à une strucplate et en ajoutant l'extenasion exadoc afin de ne pas être traité par l3build...
-
-    ---> titre manquant pour la doc
-
-    ---> construction "à la main" (cf premiers package tns + texfacto à faire)
-
-    ---> une fois un seul sty fait, on passe à l3build tests unitaires !!!
-
-    ---> gestion d'un README avant le about : cf nettoyage du src !!!!
-
-    ---> gestion des about
-
-    ---> resource : clarifier que ce qui est vu comme resource ne pas pas être au niveau des stys !!! Cf doc de tns_latex et aussi texfacto
-
-    ---> fichier sty vide : ignorer mais info log
-
 
 
 -----
