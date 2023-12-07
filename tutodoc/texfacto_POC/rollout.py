@@ -89,7 +89,7 @@ def build_rollout_proj_doc_main(patterns, tmpdir, rolloutdir):
             with (tmpdir / rfile).open("r") as f:
                 headcontents.append(
 f"""
-\\begin{{filecontents*}}{{{rname}}}
+\\begin{{filecontents*}}[overwrite]{{{rname}}}
 {f.read().strip()}
 \\end{{filecontents*}}
 """
