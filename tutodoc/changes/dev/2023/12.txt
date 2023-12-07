@@ -2,6 +2,21 @@
 
 
 ==
+07  (1.0.0-beta.1)
+==
+
+-----
+:fix:
+-----
+
+\ctan - \Doc: the option ''overwrite'' was missing in the use of the \env ''filecontents*''.
+
+
+
+// ---------- //
+
+
+==
 02
 ==
 
@@ -9,7 +24,7 @@
 :update:
 --------
 
-\Contrib - \Doc: English translation of \doc finished (all that remains is to build the single ext::''tex'' file for publication on \ctan)
+\Contrib - \Doc: English translation of \doc finished (all that remains is to build the single ext::''tex'' file for publication on \ctan).
 
 
 // ---------- //
