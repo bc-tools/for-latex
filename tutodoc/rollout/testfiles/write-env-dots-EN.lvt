@@ -1,0 +1,14 @@
+\documentclass{article}
+\usepackage{tutodoc}
+\input{regression-test}
+
+\begin{document}
+\START
+
+myenv
+
+\tdocenv{myenv}
+
+\showoutput
+
+\end{document}

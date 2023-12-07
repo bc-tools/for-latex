@@ -2,6 +2,20 @@
 
 
 ==
+07  (1.0.0-beta.3)
+==
+
+-----
+:fix:
+-----
+
+Macro ''\tdocenv'': the spacing is robust now thanks to \kern.
+
+
+// ---------- //
+
+
+==
 07  (1.0.0-beta.2)
 ==
 
@@ -10,7 +24,6 @@
 -----
 
 \Doc: the abstract indicates all available translations of the \doc.
-
 
 
 // ---------- //

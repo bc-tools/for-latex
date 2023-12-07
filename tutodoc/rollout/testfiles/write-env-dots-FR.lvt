@@ -1,17 +1,13 @@
 \documentclass{article}
-\usepackage{bdoc}
+\usepackage[lang = french]{tutodoc}
 \input{regression-test}
 
 \begin{document}
 \START
 
-onepack
+monenv
 
-\bdocpack{onepack}
-
-onemacro
-
-\bdocmacro{onemacro}
+\tdocenv{monenv}
 
 \showoutput
 
