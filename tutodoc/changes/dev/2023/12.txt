@@ -23,7 +23,7 @@
 :fix:
 -----
 
-Macro ''\tdocenv'' : spacing is now robust and correct, even if the ''babel'' \pack is not loaded with the French \lang.
+Macro ''\tdocenv'': spacing is now robust and correct, even if the ''babel'' \pack is not loaded with the French \lang.
 
 
 --------

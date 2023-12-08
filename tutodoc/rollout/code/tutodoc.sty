@@ -9,8 +9,8 @@
 
 \ProvidesExplPackage
     {tutodoc}
-    {2023-11-29} % Creation: 2023-11-29
-    {1.0.0}
+    {2023-12-08} % Creation: 2023-11-29
+    {1.0.1}
     {This package proposes tools for writing "human friendly" documentations of LaTeX packages.}
 
 \RequirePackage[
@@ -589,7 +589,7 @@
 %     :see: env.tdoc@showcase@basic ,
 %           env.tdoc@showcase@colorstrip
 %%%
-\NewDocumentEnvironment{tdocshowcase}{O{}}{
+\NewDocumentEnvironment{tdocshowcase}{ O{} }{
   \group_begin:
     \keys_set:nn { tdoc/showcase } { #1 }
 

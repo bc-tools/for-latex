@@ -24,13 +24,13 @@ typesetopts = checkopts
 
 uploadconfig = {
     version      = "1.0.1 [2023-12-08]",
-    announcement = "Two spacing weaknesses have been corrected, and the documentation codes have been correctly translated.",
+    announcement = "Two spacing weaknesses have been corrected, and the documentation codes are the good ones now.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",
     license      = "gpl3",
     pkg          = "tutodoc",
-    update       = false,
+    -- update       = false,
     summary      = 'This package proposes tools for writing "human friendly" documentations of LaTeX packages.',
     topic        = {"doc-tool"},
     ctanPath     = "/macros/latex/contrib/tutodoc",
