@@ -2,6 +2,20 @@
 
 
 ==
+08  (1.0.1-rc.1)
+==
+
+-----
+:fix:
+-----
+
+\Env ''showcase'': page breaks around the rulers are no longer possible with the ''nostripe'' option.
+
+
+// ---------- //
+
+
+==
 07  (1.0.0-beta.3)
 ==
 
@@ -9,7 +23,7 @@
 :fix:
 -----
 
-Macro ''\tdocenv'': the spacing is robust and good even if ''babel'' \pack is not used with the ''french'' \lang.
+Macro ''\tdocenv'' : spacing is now robust and correct, even if the ''babel'' \pack is not loaded with the French \lang.
 
 
 --------

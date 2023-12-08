@@ -5,8 +5,4 @@
 ??  (??)
 ==
 
------
-:fix:
------
-
-Macro ''\tdocenv'': the spacing is robust and good even if ''babel'' \pack is not used with the ''french'' \lang.
+???

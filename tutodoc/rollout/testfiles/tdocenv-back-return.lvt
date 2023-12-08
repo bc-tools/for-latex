@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{tutodoc}
+\geometry{showframe}
+\input{regression-test}
+
+\newcommand\extraONE{a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a }
+
+\newcommand\extraTWO{\extraONE a a a a a}
+
+\begin{document}
+\START
+
+\extraONE\tdocenv{env}
+
+\extraTWO\tdocenv{env}
+
+\showoutput
+
+\end{document}
