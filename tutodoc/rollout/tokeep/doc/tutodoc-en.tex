@@ -125,8 +125,8 @@ Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 
 
 \begin{filecontents*}[overwrite]{examples-showcase-hook.tex}
-\begin{tdocshowcase}[]
-    [This works...]
+\begin{tdocshowcase}
+    \string[This works...]
 \end{tdocshowcase}
 \end{filecontents*}
 
@@ -337,10 +337,14 @@ is used by its author to semantically produce documentation of \LaTeX\ packages 
 },
 and with a sober rendering for reading on screen.
 
+\medskip
 
-\begin{tdocnote}
-     This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
-\end{tdocnote}
+Two important points to note.
+\begin{itemize}
+    \item This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
+
+    \item This documentation is also available in French.
+\end{itemize}
 \end{abstract}
 
 
@@ -690,7 +694,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
 \begin{tdocwarn}
-    With the default settings, if the code to be formatted begins with an opening bracket, an empty option must be explicitly indicated, as in the following example.
+	With the default settings, if the code to be formatted begins with an opening bracket, use \tdocmacro{string} as in the following example. the following example.
 
     \tdoclatexinput[code]{examples-showcase-hook.tex}
 

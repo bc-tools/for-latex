@@ -23,8 +23,8 @@ typesetopts = checkopts
 
 
 uploadconfig = {
-    version      = "1.0.0 [2023-11-29]",
-    announcement = "1st release: tutodoc can be used to type tutorial-like documentations.",
+    version      = "1.0.1 [2023-12-08]",
+    announcement = "Two spacing weaknesses have been corrected, and the documentation codes have been correctly translated.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",
