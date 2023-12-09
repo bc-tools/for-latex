@@ -23,6 +23,12 @@ migration depuis specs générales vers ici de nouveau MAIS en grardant juste pa
                 authors:
                 preamble: preamble.cfg.tex
 
+    ---> Doc final via collages et fichiers via template PLUS PUISSANT ET UTILE
+
+    ---> mode tout-eun comme pour ctan mais sous forme d'potions, sinon on fait comme je vouslais le faire via copie de la structure : cf par exemple cas avec images or doc ctan
+
+    Par contre, il faut gérére les bugs : tutodoc-fr : besoind e modifier un truc à la main mais juste dans final car cela vient d'in code importer : on fait donc syst de post et pre hook à la jinjang
+
     ---> syst semi auto des dépendances avec explications possibles dans lang de la doc :
             + fichier dep.yaml ou clé dep dans about ???
 
