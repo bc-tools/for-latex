@@ -10,15 +10,15 @@
 -----
 
 [[:api:]]
-Here are the new features.
+Macro ''\bdoccls'' added to write a class name.
 
-    1) Macro ''\bdoccls'' added to write a class name.
 
-    1) Writing the change log.
+[[:api:]]
+Writing the change log.
 
-        * The ''bdoctopic'' \env become an itemize-like one with a mandatory title.
+    1) The ''bdoctopic'' \env become an itemize-like one with a mandatory title.
 
-        * Specialized versions for new features, updates or fixes.
+    1) Specialized versions for new features, updates or fixes.
 
 
 --------
@@ -162,7 +162,7 @@ Avoid unwanted \pdf changes: a \bash file added (but later the job will be done 
 -------
 
 [[:api:]]
-Focusing.
+Focusing examples.
 
     1) The \env ''bdocexa*'' has been removed
 

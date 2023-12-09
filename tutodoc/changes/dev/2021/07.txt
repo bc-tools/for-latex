@@ -5,14 +5,11 @@
 19
 ==
 
---------
-:fordev:
---------
+-----
+:fix:
+-----
 
-[[:facto:]]
-Instead of using the ''most'' option in  ''\RequirePackage[most]{tcolorbox}'', we just add the library ''skins'' via ''\tcbuselibrary''.
-
-[[:bug:]]
+[[:format:]]
 The ugly hack for french quotes was a partial copy of some part of the ''babel'' package source code.
 
     1) Right quote: ''\ignorespaces'' has been added at the end.
@@ -20,6 +17,14 @@ The ugly hack for french quotes was a partial copy of some part of the ''babel''
     1) Left quote: ''\ifdim\lastskip>\z@\unskip\fi'' starts the definition.
 
     1) Better unbreakable spacing: ''\kern.25em'' replaces ''\,''.
+
+
+--------
+:fordev:
+--------
+
+[[:facto:]]
+Instead of using the ''most'' option in  ''\RequirePackage[most]{tcolorbox}'', we just add the library ''skins'' via ''\tcbuselibrary''.
 
 
 // ---------- //
@@ -43,9 +48,9 @@ The macro ''\docilatex'' has been added to display inline \latex codes (verb::''
 For showcases, the text indicating the start and the end of a showcase can be customized.
 
 
----------
-:updates:
----------
+--------
+:update:
+--------
 
 [[:api:]]
 The option of the \env ''doctopic'' must be put after the title now.
@@ -77,9 +82,9 @@ The macro ''\docquote'' uses ''\og'' and ''\fg'' that come from ''\usepackage[fr
 The macros ''\inputdoclatexafter'', ''\inputdoclatexbefore'' and ''\inputdoclatexreal'' have now an optional argument to change the explaining text.
 
 
----------
-:updates:
----------
+--------
+:update:
+--------
 
 [[:format:]]
 The macro ''\docversion'' prints now the date with the format of the language loaded with \bdoc.

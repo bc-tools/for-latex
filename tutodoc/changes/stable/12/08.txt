@@ -9,8 +9,9 @@
 :fix:
 -----
 
-Spacing.
+[[:format:]]
+Macro ''\tdocenv'': spacing is now robust and correct, even if the ''babel'' \pack is not loaded with the French \lang.
 
-    1) Macro ''\tdocenv'': spacing is now robust and correct, even if the ''babel'' \pack is not loaded with the French \lang.
 
-    1) \Env ''showcase'': page breaks around the rulers are no longer possible with the ''nostripe'' option.
+[[:format:]]
+\Env ''showcase'': page breaks around the rulers are no longer possible with the ''nostripe'' option.

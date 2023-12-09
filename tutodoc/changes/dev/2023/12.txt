@@ -5,10 +5,11 @@
 08  (1.0.1-beta.1)
 ==
 
------
-:doc:
------
+--------
+:update:
+--------
 
+[[:doc:]]
 English version: the title has been translated.
 
 
@@ -20,9 +21,10 @@ English version: the title has been translated.
 ==
 
 -----
-:fix:
+:new:
 -----
 
+[[:fix:]]
 \Env ''showcase'': page breaks around the rulers are no longer possible with the ''nostripe'' option.
 
 
@@ -34,9 +36,10 @@ English version: the title has been translated.
 ==
 
 -----
-:fix:
+:new:
 -----
 
+[[:fix:]]
 Macro ''\tdocenv'': spacing is now robust and correct, even if the ''babel'' \pack is not loaded with the French \lang.
 
 
@@ -44,7 +47,8 @@ Macro ''\tdocenv'': spacing is now robust and correct, even if the ''babel'' \pa
 :fordev:
 --------
 
-Unit tests: process ok.
+[[:test:]]
+Unit tests: \l3build process OK.
 
 
 // ---------- //
@@ -58,7 +62,8 @@ Unit tests: process ok.
 :new:
 -----
 
-\Doc: the abstract indicates all available translations of the \doc.
+[[:doc:]]
+User \doc: the abstract indicates all available translations of the \doc.
 
 
 // ---------- //
@@ -72,6 +77,7 @@ Unit tests: process ok.
 :fix:
 -----
 
+[[:doc:]]
 \ctan - \Doc: the option ''overwrite'' was missing in the use of the \env ''filecontents*''.
 
 
@@ -87,7 +93,8 @@ Unit tests: process ok.
 :update:
 --------
 
-\Contrib - \Doc: English translation of \doc finished (all that remains is to build the single ext::''tex'' file for publication on \ctan).
+[[:doc:]]
+\Contrib: English translation of \doc finished (all that remains is to build the single ext::''tex'' file for publication on \ctan).
 
 
 // ---------- //
@@ -97,10 +104,11 @@ Unit tests: process ok.
 01
 ==
 
---------
-:update:
---------
+-----
+:fix:
+-----
 
+[[:issue:]]
 \ctan forces us to change the name of the \proj to \tutodoc.
 
 
@@ -108,4 +116,5 @@ Unit tests: process ok.
 :new:
 -----
 
-\Contrib - \Doc: trying a workflow to translate the \doc.
+[[:doc:]]
+\Contrib: trying a workflow to translate the \doc.
