@@ -16,7 +16,7 @@ English version: the title has been translated.
 
 
 ==
-08  (1.0.1-rc.1)
+08  (1.0.0-rc.1)
 ==
 
 -----

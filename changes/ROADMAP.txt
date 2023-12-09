@@ -18,7 +18,8 @@ NEXT STEPS
 
     1) TeXfactory
 
-        ---> bdoc : moving from POC to code : issue must be solved by hand before
-        ---> bdoc as a real use case for testing
+        ---> tutodoc
+                + moving from POC to code : some issues to solve
+                + real use case for testing
 
     1) macroenvsign: new version to build and publish
