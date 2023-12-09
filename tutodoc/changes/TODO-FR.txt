@@ -9,17 +9,20 @@ NOW
 
 > ---------------------------- <
 
-pb des dots pour env avec trop d'esâces parès ...
-
-
-> ---------------------------- <
-
 focus
 
     ---> Chgt local de la lang possible : cf abstract !
 
     ---> tout numérotable mais seul exemple est numéroté par défaut
          besoin de passre via xtempalte !!!
+
+
+> ---------------------------- <
+
+changes
+
+    ---> ajouter break traduit en Cassure.
+
 
 
 -----
