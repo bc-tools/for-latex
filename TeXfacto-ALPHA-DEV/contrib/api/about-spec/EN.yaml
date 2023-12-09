@@ -27,8 +27,8 @@ texfacto:
       transbys*:
         - author_1 defined as above
         - ...
-      title* :
-      date*  : modifiable à la amin ou auto
+      title  :
+      date   : modifiable à la amin ou auto
       version: modifiable à la amin ou auto
       lang   : xxx
       authors:
