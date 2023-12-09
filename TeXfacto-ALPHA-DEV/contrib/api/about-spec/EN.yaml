@@ -1,0 +1,35 @@
+﻿# NOTES.
+#     1) Names followed by one star indicates an optional setting.
+#     2) Special comments ''#:'' allow to use one small DSL to indicate
+#        some constraints in the specifications but not the YAML file
+#        that will be used.
+
+# ===================== #
+# == XXX == #
+# ===================== #
+
+texfacto:
+  doc:
+#: SPEC_ID in: [pack, class, pack-class]
+    SPEC_ID*:
+  # -------------------------- #
+  # -- ABOUT THE TRANSLATOR(S) -- #
+  # -------------------------- #
+  #
+  # NOTES.
+  #     1) For authors, only the NAME is mandatory.
+  #     2) Several FIRST NAMES can be indicated.
+  #     3) Several MAILS can be used.
+      transby* : First Name 1 ,
+             ... ,
+             Name
+             [auth_email_1@auth_provider.abc , ...]
+      transbys*:
+        - author_1 defined as above
+        - ...
+      title* :
+      date*  : modifiable à la amin ou auto
+      version: modifiable à la amin ou auto
+      lang   : xxx
+      authors:
+      preamble: preamble.cfg.tex
