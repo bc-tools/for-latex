@@ -108,7 +108,7 @@ for langdir in CONTRIB_DIR.glob("*"):
         langname = all_status[langdir.stem].get("lang-api", langdir.stem)
 
         stycfgfile = SOURCE_DIR / ctxt.name
-        stycfgfile /= f"{PROJECT_NAME}-locale-{ctxt.stem}-{langname}.sty"
+        stycfgfile /= f"{PROJECT_NAME}-locale-{ctxt.stem}-{langname}.cfg.sty"
 
         texmacros = []
 
