@@ -61,7 +61,7 @@ def update_contrib(
     toc_doc_resrces,
     main_lang = 'fr'
 ):
-    contribdir = projdir / "contrib" / "doc"
+    contribdir = projdir / "contrib" / "doc" / "manual"
     srcdir     = projdir / "src"
 
 # Update main doc.
