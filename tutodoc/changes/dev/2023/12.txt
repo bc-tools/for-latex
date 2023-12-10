@@ -10,7 +10,7 @@
 --------
 
 [[:api:]]
-Translations of the \api: preparation of specific automation tools.
+Translations of the \api: preparation of specific automation tools (this will be done later via \texfacto).
 
 
 // ---------- //
