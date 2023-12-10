@@ -88,12 +88,12 @@
 
 % -- LOCALE SETTINGS -- %
 
-\NewDocumentCommand{\tdoc@colon}{}{:}
+\NewDocumentCommand{\tutodoc@colon}{}{:}
 
 % We must take care of the colons, babel and spacing.
 \@ifpackageloaded{babel}{
   \iflanguage{french}{
-    \RenewDocumentCommand{\tdoc@colon}{}{\babelshorthand{:}}
+    \RenewDocumentCommand{\tutodoc@colon}{}{\babelshorthand{:}}
   }{}
 }{}
 
@@ -199,7 +199,7 @@
 \NewDocumentCommand{\tdocinEN}{s m}{%
   \tdocquote{#2}%
   \IfBooleanF{#1}{% No star used.
-    \ \tdoc@trans@in@EN{}%
+    \ \tutodoc@trans@in@EN{}%
   }%
 }
 
@@ -212,7 +212,7 @@
 % See the \doc of the macro ''\newtheorem'' from the package ''amsthm''
 % to have \infos about the environment ''@@tdocexa@nb''.
 %%%
-\newtheorem{@@tdocexa@nb}{\tdoc@trans@exa@title}%
+\newtheorem{@@tdocexa@nb}{\tutodoc@trans@exa@title}%
                          [subsubsection]
 
 %%%
@@ -226,7 +226,7 @@
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
 % to have \infos about the environment ''@@tdocexa@no@nb''.
 %%%
-\newtheorem*{@@tdocexa@no@nb}{\tdoc@trans@exa@title}
+\newtheorem*{@@tdocexa@no@nb}{\tutodoc@trans@exa@title}
 
 
 % :: EXAMPLE - PUBLIC VERSION :: %
@@ -268,7 +268,7 @@
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
 % to have \infos about the environment ''tdocrem''.
 %%%
-\newtheorem*{tdocrem}{\tdoc@trans@rmk@title}
+\newtheorem*{tdocrem}{\tutodoc@trans@rmk@title}
 
 
 % :: IMPORTANT :: %
@@ -277,7 +277,7 @@
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
 % to have \infos about the environment ''tdocimportant''.
 %%%
-\newtheorem*{tdocimportant}{\tdoc@trans@important@title}
+\newtheorem*{tdocimportant}{\tutodoc@trans@important@title}
 
 
 % :: NOTE :: %
@@ -286,7 +286,7 @@
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
 % to have \infos about the environment ''tdocnote''.
 %%%
-\newtheorem*{tdocnote}{\tdoc@trans@note@title}
+\newtheorem*{tdocnote}{\tutodoc@trans@note@title}
 
 
 % :: TIP :: %
@@ -295,7 +295,7 @@
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
 % to have \infos about the environment ''tdoctip''.
 %%%
-\newtheorem*{tdoctip}{\tdoc@trans@tip@title}
+\newtheorem*{tdoctip}{\tutodoc@trans@tip@title}
 
 
 % :: CUATION :: %
@@ -304,7 +304,7 @@
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
 % to have \infos about the environment ''tdoccaution''.
 %%%
-\newtheorem*{tdoccaution}{\tdoc@trans@caution@title}
+\newtheorem*{tdoccaution}{\tutodoc@trans@caution@title}
 
 
 % :: WARNING :: %
@@ -313,7 +313,7 @@
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
 % to have \infos about the environment ''tdocwarn''.
 %%%
-\newtheorem*{tdocwarn}{\tdoc@trans@warn@title}
+\newtheorem*{tdocwarn}{\tutodoc@trans@warn@title}
 
 
 % -- NAMES OF PACKAGES, MACROS & ENVIRONMENTS -- %
@@ -563,9 +563,9 @@
 \keys_define:nn { tdoc/showcase } {
 % Texts.
   before .tl_set:N   = \l_tdoc_showcase_before_tl,
-  before .initial:n  = \tdoc@trans@latex@show@start,
+  before .initial:n  = \tutodoc@trans@latex@show@start,
   after  .tl_set:N   = \l_tdoc_showcase_after_tl,
-  after  .initial:n  = \tdoc@trans@latex@show@end,
+  after  .initial:n  = \tutodoc@trans@latex@show@end,
 % Decorations.
   color    .tl_set:N   = \l_tdoc_showcase_color_tl,
   color    .initial:n  = cyan,
@@ -662,7 +662,7 @@
 %
 %     See the pgfkeys package documentation for explanation.
 %%%
-\NewExpandableDocumentCommand{\tdoc@latex@listing@formating}{ m }{
+\NewExpandableDocumentCommand{\tutodoc@latex@listing@formating}{ m }{
   \str_case:nnF { #1 } {
     { sbs  } { listing ~ side ~ text }
     { code } { listing ~ only }
@@ -721,7 +721,7 @@
 %     ''tcolorbox'' to have \infos about the environment ''tdoclatex''.
 %%%
 \newtcblisting{tdoclatex}[1][std]{%
-  tdoclatex_tcbstyle = \tdoc@latex@listing@formating{#1}
+  tdoclatex_tcbstyle = \tutodoc@latex@listing@formating{#1}
 }
 
 
@@ -738,7 +738,7 @@
 %%%
 \newtcbinputlisting{\tdoclatexinput}[2][std]{
   listing file = {#2},
-  tdoclatex_tcbstyle = \tdoc@latex@listing@formating{#1}
+  tdoclatex_tcbstyle = \tutodoc@latex@listing@formating{#1}
 }
 
 
@@ -758,7 +758,7 @@
 %%%
 \keys_define:nn { tdoc/latexshow } {
   explain .tl_set:N   = \l_tdoc_listing_explain_tl,
-  explain .initial:n  = { \tdoc@trans@this@gives \tdoc@colon },
+  explain .initial:n  = { \tutodoc@trans@this@gives \tutodoc@colon },
 }
 
 
@@ -817,7 +817,7 @@
 %
 %     :see: \__tdoc_translate_date:n
 %%%
-\NewDocumentCommand{\tdoc@new@change@margin}{m m m m}{
+\NewDocumentCommand{\tutodoc@new@change@margin}{m m m m}{
   \marginnote{
     \color{#1}
     \scriptsize
@@ -866,11 +866,11 @@
 %%%
 % prototype::
 %     :action: this function extracts year, month and day in something
-%              like ''YYYY-MM-DD'' and then it calls ''\tdoc@trans@date''
+%              like ''YYYY-MM-DD'' and then it calls ''\tutodoc@trans@date''
 %              to use the format expected for a "localised" date.
 %%%
 \cs_new:Npn \__tdoc_translate_date_process:w #1 - #2 - #3 \q_stop {
-    \tdoc@trans@date{#1}
+    \tutodoc@trans@date{#1}
                     {#2}
                     {#3}
 }
@@ -894,7 +894,7 @@
 %     of the language chosen when loading the package.
 %%%
 \NewDocumentCommand{\tdocversion}{O{blue} m O{}}{
-  \tdoc@new@change@margin{#1}      % Color
+  \tutodoc@new@change@margin{#1}      % Color
                          {#3}      % Date
                          {#2}      % Version
                          {-4.25pt} % Last negative vertical spacing
@@ -912,7 +912,7 @@
 %              prints a date.
 %%%
 \NewDocumentCommand{\tdocdate}{O{blue} m}{
-  \tdoc@new@change@margin{#1}      % Color
+  \tutodoc@new@change@margin{#1}      % Color
                          {#2}      % Date
                          {}        % Version
                          {-5.35pt} % Last negative spacing
@@ -962,7 +962,7 @@
 %              translated into the good language.
 %%%
 \NewDocumentEnvironment{tdocnew}{}{
-  \begin{tdoctopic}{\tdoc@trans@chges@new}
+  \begin{tdoctopic}{\tutodoc@trans@chges@new}
 }{
   \end{tdoctopic}
 }
@@ -978,7 +978,7 @@
 %              translated into the good language.
 %%%
 \NewDocumentEnvironment{tdocupdate}{}{
-  \begin{tdoctopic}{\tdoc@trans@chges@update}
+  \begin{tdoctopic}{\tutodoc@trans@chges@update}
 }{
   \end{tdoctopic}
 }
@@ -994,7 +994,7 @@
 %              translated into the good language.
 %%%
 \NewDocumentEnvironment{tdocfix}{}{
-  \begin{tdoctopic}{\tdoc@trans@chges@fix}
+  \begin{tdoctopic}{\tutodoc@trans@chges@fix}
 }{
   \end{tdoctopic}
 }

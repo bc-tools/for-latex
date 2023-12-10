@@ -32,7 +32,7 @@
 %
 %     See the pgfkeys package documentation for explanation.
 %%%
-\NewExpandableDocumentCommand{\tdoc@latex@listing@formating}{ m }{
+\NewExpandableDocumentCommand{\tutodoc@latex@listing@formating}{ m }{
   \str_case:nnF { #1 } {
     { sbs  } { listing ~ side ~ text }
     { code } { listing ~ only }
@@ -91,7 +91,7 @@
 %     ''tcolorbox'' to have \infos about the environment ''tdoclatex''.
 %%%
 \newtcblisting{tdoclatex}[1][std]{%
-  tdoclatex_tcbstyle = \tdoc@latex@listing@formating{#1}
+  tdoclatex_tcbstyle = \tutodoc@latex@listing@formating{#1}
 }
 
 
@@ -108,7 +108,7 @@
 %%%
 \newtcbinputlisting{\tdoclatexinput}[2][std]{
   listing file = {#2},
-  tdoclatex_tcbstyle = \tdoc@latex@listing@formating{#1}
+  tdoclatex_tcbstyle = \tutodoc@latex@listing@formating{#1}
 }
 
 
@@ -128,7 +128,7 @@
 %%%
 \keys_define:nn { tdoc/latexshow } {
   explain .tl_set:N   = \l_tdoc_listing_explain_tl,
-  explain .initial:n  = { \tdoc@trans@this@gives \tdoc@colon },
+  explain .initial:n  = { \tutodoc@trans@this@gives \tutodoc@colon },
 }
 
 

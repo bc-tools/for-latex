@@ -1,3 +1,19 @@
+
+// ---------- //
+
+
+==
+10
+==
+
+--------
+:fordev:
+--------
+
+[[Localization]]
+Use of the prefix ''tutodoc@'' instead of ''tdoc@'' (we are preparing for automation with the future \texfacto \proj).
+
+
 // ---------- //
 
 

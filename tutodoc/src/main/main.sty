@@ -61,18 +61,18 @@
 
 % -- LOCALE SETTINGS -- %
 
-\NewDocumentCommand{\tdoc@colon}{}{:}
+\NewDocumentCommand{\tutodoc@colon}{}{:}
 
 % We must take care of the colons, babel and spacing.
 \@ifpackageloaded{babel}{
   \iflanguage{french}{
-    \RenewDocumentCommand{\tdoc@colon}{}{\babelshorthand{:}}
+    \RenewDocumentCommand{\tutodoc@colon}{}{\babelshorthand{:}}
   }{}
 }{}
 
 \ExplSyntaxOn
 
-\input{../main/tdoc-locale-\l_tdoc_opt_lang_str.cfg.sty}
+\input{../main/tutodoc-locale-\l_tdoc_opt_lang_str.cfg.sty}
 
 \ExplSyntaxOff
 

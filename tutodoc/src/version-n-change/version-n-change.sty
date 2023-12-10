@@ -32,7 +32,7 @@
 %
 %     :see: \__tdoc_translate_date:n
 %%%
-\NewDocumentCommand{\tdoc@new@change@margin}{m m m m}{
+\NewDocumentCommand{\tutodoc@new@change@margin}{m m m m}{
   \marginnote{
     \color{#1}
     \scriptsize
@@ -81,11 +81,11 @@
 %%%
 % prototype::
 %     :action: this function extracts year, month and day in something
-%              like ''YYYY-MM-DD'' and then it calls ''\tdoc@trans@date''
+%              like ''YYYY-MM-DD'' and then it calls ''\tutodoc@trans@date''
 %              to use the format expected for a "localised" date.
 %%%
 \cs_new:Npn \__tdoc_translate_date_process:w #1 - #2 - #3 \q_stop {
-    \tdoc@trans@date{#1}
+    \tutodoc@trans@date{#1}
                     {#2}
                     {#3}
 }
@@ -109,7 +109,7 @@
 %     of the language chosen when loading the package.
 %%%
 \NewDocumentCommand{\tdocversion}{O{blue} m O{}}{
-  \tdoc@new@change@margin{#1}      % Color
+  \tutodoc@new@change@margin{#1}      % Color
                          {#3}      % Date
                          {#2}      % Version
                          {-4.25pt} % Last negative vertical spacing
@@ -127,7 +127,7 @@
 %              prints a date.
 %%%
 \NewDocumentCommand{\tdocdate}{O{blue} m}{
-  \tdoc@new@change@margin{#1}      % Color
+  \tutodoc@new@change@margin{#1}      % Color
                          {#2}      % Date
                          {}        % Version
                          {-5.35pt} % Last negative spacing
@@ -177,7 +177,7 @@
 %              translated into the good language.
 %%%
 \NewDocumentEnvironment{tdocnew}{}{
-  \begin{tdoctopic}{\tdoc@trans@chges@new}
+  \begin{tdoctopic}{\tutodoc@trans@chges@new}
 }{
   \end{tdoctopic}
 }
@@ -193,7 +193,7 @@
 %              translated into the good language.
 %%%
 \NewDocumentEnvironment{tdocupdate}{}{
-  \begin{tdoctopic}{\tdoc@trans@chges@update}
+  \begin{tdoctopic}{\tutodoc@trans@chges@update}
 }{
   \end{tdoctopic}
 }
@@ -209,7 +209,7 @@
 %              translated into the good language.
 %%%
 \NewDocumentEnvironment{tdocfix}{}{
-  \begin{tdoctopic}{\tdoc@trans@chges@fix}
+  \begin{tdoctopic}{\tutodoc@trans@chges@fix}
 }{
   \end{tdoctopic}
 }
