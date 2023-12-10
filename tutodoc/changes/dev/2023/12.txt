@@ -2,6 +2,21 @@
 
 
 ==
+10  (1.0.1-beta.3)
+==
+
+--------
+:fordev:
+--------
+
+[[:api:]]
+Translations of the \api: preparation of specific automation tools.
+
+
+// ---------- //
+
+
+==
 08  (1.0.1-beta.2)
 ==
 

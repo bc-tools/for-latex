@@ -1,0 +1,16 @@
+author: Christophe, BAL, [projetmbc@gmail.com]
+
+# Possible status.
+#    + on hold
+#    + ko
+#    + ok
+#    + update
+status: ok
+
+# Classical comments.
+#    + [on hold]  New API not yet analysed.
+#                 Changes to do: ...
+#    + [ko]       API rejected because ...
+#    + [ok]       API accepted.
+#    + [update]   Working on...
+comment: API from the project maintainer. ;-)
