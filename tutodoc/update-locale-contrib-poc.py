@@ -68,6 +68,7 @@ def extractesv(projname, file):
     for nbparams, macroname, texcode in iter_texspec_from_esv(file):
         signature = "m"*nbparams
         macroname = macroname.replace('_', '@')
+        texcode   = texcode.replace(' ', ' ~ ')
 
         macrodefs.append(
             f"\\NewDocumentCommand{{\\{projname}@trans@{macroname}}}"
