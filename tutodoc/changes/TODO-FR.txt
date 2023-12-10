@@ -9,12 +9,19 @@ NOW
 
 > ---------------------------- <
 
+texfacto-poc
+
+    ---> besoin de régeler bug du au chemin via fichier importé !!! voir si faisable sans hook sinon on se la joue brutale en attendnat de passer al amin a texfacto
+
+
+> ---------------------------- <
+
 focus
 
     ---> Chgt local de la lang possible : cf abstract !
 
     ---> tout numérotable mais seul exemple est numéroté par défaut
-         besoin de passre via xtempalte !!!
+         Z !!! Besoin de passre via xtempalte !!!
 
 
 > ---------------------------- <
