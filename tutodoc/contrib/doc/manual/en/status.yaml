@@ -6,9 +6,9 @@
 status: ok
 
 # Classical comments.
-#    + [on hold]  New specs not yet analysed.
+#    + [on hold]  New translation not yet analysed.
 #                 Changes to do: ...
-#    + [ko]       Specs rejected because ...
-#    + [ok]       Specs accepted.
-#    + [update]   Working on..
+#    + [ko]       Translation rejected because ...
+#    + [ok]       Translation accepted.
+#    + [update]   Working on...
 comment: Translation accepted.
