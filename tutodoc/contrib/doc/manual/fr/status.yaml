@@ -1,0 +1,14 @@
+# Possible status.
+#    + on hold
+#    + ko
+#    + ok
+#    + update
+status: ok
+
+# Classical comments.
+#    + [on hold]  New specs not yet analysed.
+#                 Changes to do: ...
+#    + [ko]       Specs rejected because ...
+#    + [ok]       Specs accepted.
+#    + [update]   Working on..
+comment: Doc from the project maintainer. ;-)
