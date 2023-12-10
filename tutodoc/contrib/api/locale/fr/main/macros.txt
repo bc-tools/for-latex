@@ -1,6 +1,3 @@
-// The space between a word and a colon.
-colon_space = \space
-
 // #1: year  in format YYYY like 2023.
 // #2: month in format MM   like 04.
 // #3: day   in format DD   like 29.
