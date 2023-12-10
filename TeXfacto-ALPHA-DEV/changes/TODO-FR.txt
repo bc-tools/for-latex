@@ -11,6 +11,8 @@ NOW
 
 migration depuis specs générales vers ici de nouveau MAIS en grardant juste parties sur le workflow !!!
 
+    ---> build.lua construit auto et/ou mis à jour
+
     ---> PB du titre de la doc : on veut automatiser ceci, conc c'est mis dans un fichier à part de type about qui aura tout indiquéer pour texfacto A CREUSER !
 
 

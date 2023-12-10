@@ -1,0 +1,15 @@
++ fict-proj
+    + contrib
+        + api
+            + changes  [...]
+            + locale
+                + french
+                    + main
+                        * macros.txt
+                        * sentences.txt
+                + english
+                    + main
+                        * macros.txt
+                        * sentences.txt
+        + [...]
+    + [...]

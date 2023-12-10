@@ -17,6 +17,8 @@ docfiledir = "doc"
 typesetfiles = {"*.tex"}
 -- typesetsourcefiles = {"**/*"}
 
+testfiledir = "./tests"
+
 checkopts   = "-interaction=nonstopmode --shell-escape"
 -- checkopts   = "-interaction=batchmode --shell-escape"
 typesetopts = checkopts

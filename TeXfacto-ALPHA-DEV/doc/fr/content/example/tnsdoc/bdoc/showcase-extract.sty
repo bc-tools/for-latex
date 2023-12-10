@@ -1,0 +1,18 @@
+%%%
+% prototype::
+%     #1 : the text before the real output
+%     #2 : the text after the real output
+%     #3 : one color following the ''xcolor'' format.
+%          This color is used to set the one for the decorated texts printed corresponding to the two first arguments.
+%
+%     :action: this environment just adds its content processed by \latex
+%              between centered materials produced by the macro ''\bdocruler''
+%              such as to stress the start and the end of the content.
+%%%
+\NewDocumentEnvironment{bdoc@showcase@basic}{m m m}{
+  \bdocruler{#1}{\bdocdarkcolor{#3}}
+  \medskip
+}{
+  \medskip
+  \bdocruler{#2}{\bdocdarkcolor{#3}}
+}
