@@ -22,10 +22,9 @@ texfacto-poc
 
 focus
 
-    ---> Chgt local de la lang possible : cf abstract !
-
-    ---> tout numérotable mais seul exemple est numéroté par défaut
-         Z !!! Besoin de passre via xtempalte !!!
+    ---> rmk numérotable mais pas fait par défaut, mais pas le reste
+         +
+         en proiter pour coder via xtempalte !!!
 
 
 > ---------------------------- <
