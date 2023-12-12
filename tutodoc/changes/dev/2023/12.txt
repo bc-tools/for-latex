@@ -2,6 +2,21 @@
 
 
 ==
+12  (1.0.1-beta.4)
+==
+
+--------
+:fordev:
+--------
+
+[[:doc:]]
+\Readme: the \src of the \readme has been updated.
+
+
+// ---------- //
+
+
+==
 10  (1.0.1-beta.3)
 ==
 
