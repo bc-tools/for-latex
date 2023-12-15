@@ -10,6 +10,8 @@ important_title = Important
 caution_title   = Caution
 warn_title      = Warning
 
+chges_pb     = Problem
+chges_break  = Break
 chges_fix    = Fix
 chges_new    = New
 chges_update = Update

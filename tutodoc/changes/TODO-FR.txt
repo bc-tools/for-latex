@@ -22,16 +22,7 @@ texfacto-poc
 
 focus
 
-    ---> rmk numérotable mais pas fait par défaut, mais pas le reste
-         +
-         en proiter pour coder via xtempalte !!!
-
-
-> ---------------------------- <
-
-changes
-
-    ---> ajouter break traduit en Cassure.
+    ---> rmk and co : passer via xtempalte !!!
 
 
 
@@ -41,7 +32,7 @@ LATER
 
 > ---------------------------- <
 
-pour rc-1
+cleaner code
 
     ---> latex3 strict pour showcase et listinginput
 

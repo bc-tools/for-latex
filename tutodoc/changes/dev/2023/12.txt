@@ -11,15 +11,8 @@
 
 [[:api:]]
 
-????   chge --> ajout de break
- --> ajout de pb
+\Chges: the \env ''tdocbreak'' and ''tdocprob'' have been added.
 
---------
-:update:
---------
-
-[[:api:]]
-???? rmk  numérotable
 
 // ---------- //
 
