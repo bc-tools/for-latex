@@ -2,6 +2,29 @@
 
 
 ==
+15  (1.0.1-beta.5)
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+
+????   chge --> ajout de break
+ --> ajout de pb
+
+--------
+:update:
+--------
+
+[[:api:]]
+???? rmk  numérotable
+
+// ---------- //
+
+
+==
 12  (1.0.1-beta.4)
 ==
 
