@@ -178,7 +178,7 @@ $x y z = 1$
                before  = Rendu ci-après.,
                after   = Rendu fini.,
                color   = orange]
-               {examples-listing-xyz.tex}
+               {examples/listing/xyz.tex}
 \end{filecontents*}
 
 
@@ -235,6 +235,22 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-version-n-change-break.tex}
+\begin{tdocbreak}
+    \item Info 1...
+    \item Info 2...
+\end{tdocbreak}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-pb.tex}
+\begin{tdocprob}
+    \item Info 1...
+    \item Info 2...
+\end{tdocprob}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-version-n-change-fix.tex}
 \begin{tdocfix}
     \item Info 1...
@@ -243,8 +259,8 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-version-n-change-topic.tex}
-\begin{tdoctopic}{Des changements inclassables}
+\begin{filecontents*}[overwrite]{examples-version-n-change-unclassifiable.tex}
+\begin{tdoctopic}{Inclassable}
 % Ici le point s'impose.
     \item Info 1...
     \item Info 2...
@@ -269,7 +285,6 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 % Package documented.
 \usepackage[lang = french]{tutodoc}
 
-\setlength{\parindent}{0em}
 
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
@@ -319,12 +334,11 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 \title{Le package \texttt{tutodoc} - Documentation de type tutoriel}
 \author{Christophe BAL}
-\date{8 Déc. 2023 - Version 1.0.1}
+\date{29 Nov. 2023 - Version 1.0.0}
 
 \maketitle
 
 \begin{abstract}
-\noindent
 Le package \tdocpack{tutodoc}
 \footnote{
     Le nom vient de \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}} se traduit en \tdocquote{documentation de type tutoriel}.
@@ -335,24 +349,15 @@ est utilisé par son auteur pour produire de façon sémantique des documentatio
 },
 et avec un rendu sobre pour une lecture sur écran.
 
-\medskip
 
-\noindent
-Deux points importants à noter.
-\begin{itemize}
-    \item Ce package impose un style de mise en forme. Dans un avenir plus ou moins proche, \tdocpack{tutodoc} sera sûrement éclaté en une classe et un package.
-
-    \item Cette documentation est aussi disponible en anglais.
-\end{itemize}
-
-
-% ------------------ %
-
+\begin{tdocnote}
+     Ce package impose un style de mise en forme.
+    Dans un avenir plus ou moins proche, \tdocpack{tutodoc} sera sûrement éclaté en une classe et un package.
+\end{tdocnote}
 
 \tdocsep
 
-{\noindent
-\small\itshape
+{\small\itshape
 \textbf{Abstract.}
 The \tdocpack{tutodoc} package
 \footnote{
@@ -364,15 +369,10 @@ is used by its author to semantically produce documentation of \LaTeX\ packages 
 },
 and with a sober rendering for reading on screen.
 
-\medskip
 
-\noindent
-Two important points to note.
-\begin{itemize}
-    \item This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
-
-    \item This documentation is also available in French.
-\end{itemize}
+\begin{tdocnote}
+     This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
+\end{tdocnote}
 }
 \end{abstract}
 
@@ -898,7 +898,6 @@ La macro \tdocmacro{tdoclatexinput} , présentée ci-après, s'utilise comme l'e
 % ------------------ %
 
 
-\newpage
 \begin{tdocexa}[Face à face]
     \leavevmode
 
@@ -1067,7 +1066,6 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 lors des derniers changements.
 
 
-\newpage
 \begin{tdocexa}[Pour les nouveautés]
     \leavevmode
 
@@ -1088,6 +1086,26 @@ lors des derniers changements.
 % ------------------ %
 
 
+\begin{tdocexa}[Pour les bifurcations]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples-version-n-change-break.tex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Pour les problèmes]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples-version-n-change-pb.tex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
 \begin{tdocexa}[Pour les réparations]
     \leavevmode
 
@@ -1101,7 +1119,7 @@ lors des derniers changements.
 \begin{tdocexa}[Thématiques aux choix]
     \leavevmode
 
-    \tdoclatexinput[sbs]{examples-version-n-change-topic.tex}
+    \tdoclatexinput[sbs]{examples-version-n-change-unclassifiable.tex}
 \end{tdocexa}
 
 
@@ -1127,19 +1145,7 @@ Blo, blo, blo...
 Blu, blu, blu...
 
 \end{tdoclatex}
-
-\newpage
 \section{Historique}
-
-\tdocversion{1.0.1}[2023-12-08]
-
-\begin{tdocfix}
-	\item \tdocmacro{tdocenv}: l'espacement est maintenant correct, même si le paquet \tdocpack{babel} n'est pas chargé avec la langue française.
-
-	\item \tdocenv[{[nostripe]}]{showcase}: les sauts de page autour des règles ne sont plus possibles.
-\end{tdocfix}
-
-\tdocsep
 
 \tdocversion{1.0.0}[2023-11-29]
 
