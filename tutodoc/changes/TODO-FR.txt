@@ -25,6 +25,12 @@ focus
     ---> rmk and co : passer via xtempalte !!!
 
 
+> ---------------------------- <
+
+listing
+
+    ---> \newmintinline[tdocinlatex]{latex}{bgcolor = yellow!4} MIEUX !!!
+
 
 -----
 LATER
