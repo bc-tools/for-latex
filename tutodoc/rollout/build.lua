@@ -10,14 +10,14 @@ module = "tutodoc"
 sourcefiledir = "code"
 sourcefiles   = {"*.sty"}
 
-flatten = false
+flatten    = false
 flattentds = false
 
-docfiledir = "doc"
+docfiledir   = "doc"
 typesetfiles = {"*.tex"}
 -- typesetsourcefiles = {"**/*"}
 
-testfiledir = "./tests"
+testfiledir = "tests"
 
 checkopts   = "-interaction=nonstopmode --shell-escape"
 -- checkopts   = "-interaction=batchmode --shell-escape"
