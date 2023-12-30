@@ -2,6 +2,9 @@
 
 % -- DECORATIONS -- %
 
+% Source for \addvspace{\medskipamount} instead of \medskip.
+%    * https://tex.stackexchange.com/a/705938/6880
+
 %%%
 % prototype::
 %     :action: this macro draws a centered horizontal rule with a height
@@ -10,8 +13,8 @@
 %              Extra vertical spaces are added above and below the rule.
 %%%
 \NewDocumentCommand{\tdocsep}{}{
-  \medskip
-  \hfill\rule{0.5\textwidth}{0.75pt}\hfill
+  \par\addvspace{\medskipamount}
+  \hfill\rule{0.5\textwidth}{0.75pt}\hfill\null
   \medskip
   \smallskip
 }

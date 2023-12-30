@@ -14,4 +14,4 @@ Macro ''\tdocenv'': spacing is now robust and correct, even if the ''babel'' \pa
 
 
 [[:format:]]
-\Env ''showcase'': page breaks around the rulers are no longer possible with the ''nostripe'' option.
+\Env ''showcase'': page breaks around the rules should become rare with the ''nostripe'' option.

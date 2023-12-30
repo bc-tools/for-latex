@@ -12,3 +12,12 @@
 [[:api:]]
 
 \Chges: the \env ''tdocbreak'' and ''tdocprob'' have been added.
+
+
+-----
+:fix:
+-----
+
+[[:format:]]
+
+Macro ''\tdocsep'': the spacing before the line should be the same in all situations.
