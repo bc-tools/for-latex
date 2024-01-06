@@ -48,10 +48,11 @@ Voici des exemples d'utilisation.
 
 
 \begin{tdocnote}
-    La macro \tdocmacro{tdocinlatex} est utilisable dans une note de pied de page : voir le bas de cette page
+    La macro \tdocmacro{tdocinlatex} est utilisable dans une note de pied de page : voir plus bas
     \footnote{
         \tdocinlatex+$minted = TOP$+ a été tapé \tdocinlatex|\tdocinlatex+$minted = TOP$+| dans cette note de bas de page..
     }.
+    De plus, une couleur de fond est volontairement utilisée pour subtilement faire ressortir les codes \tdocinlatex#\LaTeX#\,.
 \end{tdocnote}
 
 
@@ -100,6 +101,11 @@ Voici des exemples d'utilisation.
 \begin{tdocwarn}
     Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut.
     \tdocdocbasicinput{examples/listing/strange.tex}
+    
+    \smallskip
+    
+    Une autre méthode consiste à utiliser la primitive \tdocmacro{string}.
+    \tdocdocbasicinput{examples/listing/strange-bis.tex}
 \end{tdocwarn}
 
 \end{document}

@@ -47,10 +47,11 @@ Here are some examples.
 
 
 \begin{tdocnote}
-    The \tdocmacro{tdocinlatex} macro can be used in a footnote: see the bottom of this page
+    The \tdocmacro{tdocinlatex} macro can be used in a footnote: see below.
     \footnote{
-        \tdocinlatex+$minted = TOP$+ was typed \tdocinlatex|\tdocinlatex+$minted = TOP$+| in this footnote.
+        \tdocinlatex+$minted = TOP$+ has been typed \tdocinlatex|\tdocinlatex+$minted = TOP$+| in this footnote...
     }.
+    In addition, a background color is deliberately used to subtly highlight the codes \tdocinlatex#\LaTeX#\,.
 \end{tdocnote}
 
 
@@ -98,6 +99,11 @@ Here are some examples.
 \begin{tdocwarn}
     With default formatting, if the code begins with an opening bracket, the default option must be explicitly indicated.
     \tdocdocbasicinput{examples/listing/strange.tex}
+    
+    \smallskip
+    
+    Another method is to use the \tdocmacro{string} primitive.
+    \tdocdocbasicinput{examples/listing/strange-bis.tex}
 \end{tdocwarn}
 
 \end{document}
