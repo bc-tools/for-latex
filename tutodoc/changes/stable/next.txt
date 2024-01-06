@@ -4,25 +4,3 @@
 ==
 ??  (??)
 ==
-
------
-:new:
------
-
-[[:api:]]
-
-\Chges: the \envs ''tdocbreak'' and ''tdocprob'' have been added.
-
-
-[[:format:]]
-
-Macro ''\tdocinlatex'': the background is now slightly coloured.
-
-
------
-:fix:
------
-
-[[:format:]]
-
-Macro ''\tdocsep'': the spacing before the line should be the same in all situations.

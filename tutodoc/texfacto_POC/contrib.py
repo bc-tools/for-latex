@@ -151,6 +151,15 @@ def add_contrib_doc(
 
         destfile = rolloutdir / 'doc' / f'{projectname}-{lang}.tex'
 
+        locale_tmpdir = tmpdir / f"{langdir.name}"
+
+        emptydir(locale_tmpdir)
+
+        for docpartfile in toc_doc:
+            pieces = extractfrom_TEX(langdir / docpartfile)
+            prepare_TEX(None, locale_tmpdir, *pieces)
+
+
         code = r"""
 \documentclass[10pt, a4paper]{article}
 
@@ -171,10 +180,90 @@ def add_contrib_doc(
 \\usepackage[lang = english]{{{projectname}}}
         """.rstrip() + '\n'*3
 
-        locale_tmpdir = tmpdir / f"{langdir.name}"
 
-        emptydir(locale_tmpdir)
+        for tmpfile in [
+            ".tmp_fordoc.tex",
+            ".tmp_thedoc.tex",
+        ]:
+            if tmpfile == ".tmp_thedoc.tex":
+                code += r"""
+\begin{document}
 
-        for docpartfile in toc_doc:
-            pieces = extractfrom_TEX(docpartfile)
-            prepare_TEX(_, locale_tmpdir, *pieces)
+\title{Le package \texttt{tutodoc} - Documentation de type tutoriel}
+\author{Christophe BAL}
+\date{\ordinalnum{1} Jan. 2024 - Version 1.1.0}
+
+\maketitle
+
+\begin{abstract}
+The \tdocpack{tutodoc} package
+\footnote{
+    The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
+}
+is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style
+\footnote{
+    The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
+},
+and with a sober rendering for reading on screen.
+
+
+\begin{tdocnote}
+    This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
+\end{tdocnote}
+\end{abstract}
+
+
+\newpage
+\tableofcontents
+\newpage
+"""
+
+            with (locale_tmpdir / tmpfile).open(
+                encoding = "utf-8",
+                mode = "r"
+            ) as f:
+                code += f.read()
+
+        code = code.strip()
+        code += r"""
+\section{History}
+
+\tdocversion{1.1.0}[2024-01-06]
+
+\begin{tdocnew}
+	\item Change log : two new environments.
+    \begin{enumerate}
+        \item \tdocenv{tdocbreak} for breaking changes which are not backward compatible.
+
+        \item \tdocenv{tdocprob} for identified problems.
+    \end{enumerate}
+
+	\item \tdocmacro{tdocinlatex}: a light yellow is used as the background color.
+\end{tdocnew}
+
+\tdocsep
+
+\tdocversion{1.0.1}[2023-12-08]
+
+\begin{tdocfix}
+	\item \tdocmacro{tdocenv}: spacing is now correct, even if the \tdocpack{babel} package is not loaded with the French language.
+
+	\item \tdocenv[{[nostripe]}]{tdocshowcase}: page breaks around \tdocquote{framing} lines should be rare from now on.
+\end{tdocfix}
+
+\tdocsep
+
+\tdocversion{1.0.0}[2023-11-29]
+
+First public version of the project.
+
+\end{document}
+    """
+
+    codefile = locale_tmpdir.parent / f"{projectname}-en.tex"
+
+    with codefile.open(
+        encoding = "utf-8",
+        mode = "a"
+    ) as f:
+        f.write(code)

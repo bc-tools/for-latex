@@ -4,9 +4,10 @@ from src2prod import *
 
 from texfacto_POC import *
 
-PROJECT_DIR = Path(__file__).parent
-SOURCE_DIR  = PROJECT_DIR / 'src'
-ROLLOUT_DIR = PROJECT_DIR / "rollout"
+PROJECT_DIR         = Path(__file__).parent
+SOURCE_DIR          = PROJECT_DIR / 'src'
+ROLLOUT_DIR         = PROJECT_DIR / "rollout"
+MANUAL__DIR = PROJECT_DIR / "contrib" / "doc" / "manual"
 
 PATTERNS = [
     re.compile(r"^([^%\\]*)(.*)(\\" + macroname + ")(\[.*\][\t ]*\n?[\t ]*)?{(.*)}(.*)$")
@@ -127,16 +128,17 @@ build_rollout_proj_code(
 )
 
 
-build_rollout_proj_doc_main(
-    patterns   = PATTERNS,
-    tmpdir     = tmpdir,
-    rolloutdir = ROLLOUT_DIR,
-)
-
-
 add_contrib_doc(
     tmpdir     = tmpdir,
     projdir    = PROJECT_DIR,
     rolloutdir = ROLLOUT_DIR,
     toc_doc    = TOC_DOC,
+)
+
+
+build_rollout_proj_doc_main(
+    patterns   = PATTERNS,
+    tmpdir     = tmpdir,
+    rolloutdir = ROLLOUT_DIR,
+    manual_dir = MANUAL__DIR,
 )

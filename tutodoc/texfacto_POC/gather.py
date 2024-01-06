@@ -270,7 +270,7 @@ def extractfrom_TEX(srcfile):
     return fordoc, thedoc
 
 
-def prepare_TEX(curdir, tmpdir, fordoc, thedoc):
+def prepare_TEX(_, tmpdir, fordoc, thedoc):
     if fordoc:
         fordoc += '\n'*3
 
@@ -408,7 +408,7 @@ def build_tmp_proj(
 % ------------------------------------------------------- %
 % - This is file `{projectname}.sty' generated automatically. - %
 % -                                                     - %
-% - Copyright (C) 2023 by Christophe BAL                - %
+% - Copyright (C) 2023-2024 by Christophe BAL           - %
 % -                                                     - %
 % - This file may be distributed and/or modified under  - %
 % - the conditions of the GNU 3 License.                - %
@@ -416,8 +416,8 @@ def build_tmp_proj(
 
 \\ProvidesExplPackage
     {{{projectname}}}
-    {{2023-11-29}} % Creation: 2023-11-29
-    {{1.0.0}}
+    {{2024-01-06}} % Creation: 2023-11-29
+    {{1.1.0}}
     {{This package proposes tools for writing "human friendly" documentations of LaTeX packages.}}
 
 {code}
@@ -457,7 +457,7 @@ def build_tmp_proj(
 
 \title{Le package \texttt{tutodoc} - Documentation de type tutoriel}
 \author{Christophe BAL}
-\date{29 Nov. 2023 - Version 1.0.0}
+\date{1\ier{} Janv. 2024 - Version 1.1.0}
 
 \maketitle
 

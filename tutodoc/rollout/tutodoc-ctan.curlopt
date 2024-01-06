@@ -1,5 +1,5 @@
 
-form-string="announcement=Two spacing weaknesses have been corrected, and the documentation codes are the good ones now."
+form-string="announcement=Two new environments for changes & Background colour for tdocinlatex macro."
 form-string="author=Christophe BAL"
 form-string="bugtracker=https://github.com/bc-tools/for-latex/issues"
 form-string="ctanPath=/macros/latex/contrib/tutodoc"
@@ -12,5 +12,5 @@ form-string="summary=This package proposes tools for writing \"human friendly\" 
 form-string="topic=doc-tool"
 form-string="update=true"
 form-string="uploader=Christophe BAL"
-form-string="version=1.0.1 [2023-12-08]"
+form-string="version=1.1.0 [2024-01-06]"
 form="file=@tutodoc-ctan.zip;filename=tutodoc-ctan.zip"

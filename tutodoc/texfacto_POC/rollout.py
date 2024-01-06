@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from .gather import copyfromto, emptydir
 
 
@@ -21,12 +23,14 @@ def build_rollout_proj_code(tmpdir, rolloutdir):
         copyfromto(srcfile, destdir / srcfile.name)
 
 
-def build_rollout_proj_doc_main(patterns, tmpdir, rolloutdir):
+def build_rollout_proj_doc_main(patterns, tmpdir, rolloutdir, manual_dir):
     emptydir(rolloutdir / "doc")
 
     for texfile in tmpdir.glob("*.tex"):
         if texfile.name[0] == '.':
             continue
+
+        lang = texfile.stem.split('-')[1]
 
         destfile = rolloutdir / "doc" / texfile.name
 
@@ -85,8 +89,21 @@ def build_rollout_proj_doc_main(patterns, tmpdir, rolloutdir):
                 )
 
 
+        if lang == "fr":
+            rdir = tmpdir
+
+        else:
+            rdir = manual_dir / lang
+
+
         for rfile, rname in resources.items():
-            with (tmpdir / rfile).open("r") as f:
+            if lang == "fr":
+                rfiledir = rdir
+
+            else:
+                rfiledir = rdir / Path(rfile).parent.name
+
+            with (rfiledir / rfile).open("r") as f:
                 headcontents.append(
 f"""
 \\begin{{filecontents*}}[overwrite]{{{rname}}}

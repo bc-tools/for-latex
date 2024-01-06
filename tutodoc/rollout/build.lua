@@ -25,8 +25,8 @@ typesetopts = checkopts
 
 
 uploadconfig = {
-    version      = "1.0.1 [2023-12-08]",
-    announcement = "Two spacing weaknesses have been corrected, and the documentation codes are the good ones now.",
+    version      = "1.1.0 [2024-01-06]",
+    announcement = "Two new environments for changes & Background colour for tdocinlatex macro.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",
