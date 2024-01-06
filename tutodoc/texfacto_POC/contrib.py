@@ -1,4 +1,4 @@
-from .gather import copyfromto, emptydir
+from .gather import *
 
 
 def contrib_tex_template(text, localtools = ""):
@@ -126,13 +126,14 @@ def update_contrib(
 
 
 def add_contrib_doc(
+    tmpdir,
     projdir,
     rolloutdir,
     toc_doc,
     main_lang = 'fr'
 ):
     projectname = projdir.name
-    contribdir  = projdir / "contrib" / "doc"
+    contribdir  = projdir / "contrib" / "doc" / "manual"
 
     for langdir in contribdir.glob("*"):
         if (
@@ -140,13 +141,13 @@ def add_contrib_doc(
             or
             langdir.name.startswith('.')
             or
-            langdir.name in ['changes', main_lang]
+            langdir.name in ['changes', 'status', main_lang]
         ):
             continue
 
         lang = langdir.name
 
-        print(f"+ New translation: {lang.upper()}.")
+        print(f"+ MANUAL - New translation: {lang.upper()}.")
 
         destfile = rolloutdir / 'doc' / f'{projectname}-{lang}.tex'
 
@@ -156,15 +157,24 @@ def add_contrib_doc(
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\usepackage[french]{babel, varioref}
+\usepackage[english]{babel, varioref}
 
 \usepackage{enumitem}
-\frenchsetup{StandardItemLabels=true}
+
+\usepackage{tabularray}
+\usepackage{fmtcount}
+
+\setlength{\parindent}{0em}
     """.strip() + f"""
 
 % Package documented.
-\\usepackage[lang = {projectname}]{{{projectname}}}
+\\usepackage[lang = english]{{{projectname}}}
         """.rstrip() + '\n'*3
 
+        locale_tmpdir = tmpdir / f"{langdir.name}"
+
+        emptydir(locale_tmpdir)
+
         for docpartfile in toc_doc:
-            print(docpartfile)
+            pieces = extractfrom_TEX(docpartfile)
+            prepare_TEX(_, locale_tmpdir, *pieces)

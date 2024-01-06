@@ -516,6 +516,31 @@ and with a sober rendering for reading on screen.
     code += r"""
 \section{Historique}
 
+\tdocversion{1.0.0}[2024-01-06]
+
+\begin{tdocnew}
+	\item Journal des changements : deux nouveaux environnements.
+    \begin{enumerate}
+        \item \tdocenv{tdocbreak} pour les \tdocquote{bifurcations}\,, soit les modifications non rétrocompatibles.
+
+        \item \tdocenv{tdocprob} pour les problèmes repérés.
+    \end{enumerate}
+
+	\item \tdocmacro{tdocinlatex}: un jaune léger est utilisé comme couleur de fond.
+\end{tdocnew}
+
+\tdocsep
+
+\tdocversion{1.0.0}[2023-12-08]
+
+\begin{tdocfix}
+	\item \tdocmacro{tdocenv}: l'espacement est maintenant correct, même si le paquet \tdocpack{babel} n'est pas chargé avec la langue française.
+
+	\item \tdocenv[{[nostripe]}]{tdocshowcase}: les sauts de page autour des lignes "cadrantes" devraient être rares dorénavant.
+\end{tdocfix}
+
+\tdocsep
+
 \tdocversion{1.0.0}[2023-11-29]
 
 Première version publique du projet.

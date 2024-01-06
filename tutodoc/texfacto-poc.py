@@ -135,6 +135,7 @@ build_rollout_proj_doc_main(
 
 
 add_contrib_doc(
+    tmpdir     = tmpdir,
     projdir    = PROJECT_DIR,
     rolloutdir = ROLLOUT_DIR,
     toc_doc    = TOC_DOC,
