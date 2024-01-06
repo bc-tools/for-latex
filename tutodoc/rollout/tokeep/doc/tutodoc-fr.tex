@@ -167,6 +167,13 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-listing-strange-bis.tex}
+\begin{tdoclatex}
+    \string[Étrange... Ou pas !]
+\end{tdoclatex}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-listing-xyz.tex}
 % Juste une démo.
 $x y z = 1$
@@ -235,6 +242,22 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-version-n-change-break.tex}
+\begin{tdocbreak}
+    \item Info 1...
+    \item Info 2...
+\end{tdocbreak}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-pb.tex}
+\begin{tdocprob}
+    \item Info 1...
+    \item Info 2...
+\end{tdocprob}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-version-n-change-fix.tex}
 \begin{tdocfix}
     \item Info 1...
@@ -243,8 +266,8 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-version-n-change-topic.tex}
-\begin{tdoctopic}{Des changements inclassables}
+\begin{filecontents*}[overwrite]{examples-version-n-change-unclassifiable.tex}
+\begin{tdoctopic}{Inclassable}
 % Ici le point s'impose.
     \item Info 1...
     \item Info 2...
@@ -269,7 +292,6 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 % Package documented.
 \usepackage[lang = french]{tutodoc}
 
-\setlength{\parindent}{0em}
 
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
@@ -319,12 +341,11 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 \title{Le package \texttt{tutodoc} - Documentation de type tutoriel}
 \author{Christophe BAL}
-\date{8 Déc. 2023 - Version 1.0.1}
+\date{29 Nov. 2023 - Version 1.0.0}
 
 \maketitle
 
 \begin{abstract}
-\noindent
 Le package \tdocpack{tutodoc}
 \footnote{
     Le nom vient de \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}} se traduit en \tdocquote{documentation de type tutoriel}.
@@ -335,24 +356,15 @@ est utilisé par son auteur pour produire de façon sémantique des documentatio
 },
 et avec un rendu sobre pour une lecture sur écran.
 
-\medskip
 
-\noindent
-Deux points importants à noter.
-\begin{itemize}
-    \item Ce package impose un style de mise en forme. Dans un avenir plus ou moins proche, \tdocpack{tutodoc} sera sûrement éclaté en une classe et un package.
-
-    \item Cette documentation est aussi disponible en anglais.
-\end{itemize}
-
-
-% ------------------ %
-
+\begin{tdocnote}
+     Ce package impose un style de mise en forme.
+    Dans un avenir plus ou moins proche, \tdocpack{tutodoc} sera sûrement éclaté en une classe et un package.
+\end{tdocnote}
 
 \tdocsep
 
-{\noindent
-\small\itshape
+{\small\itshape
 \textbf{Abstract.}
 The \tdocpack{tutodoc} package
 \footnote{
@@ -364,15 +376,10 @@ is used by its author to semantically produce documentation of \LaTeX\ packages 
 },
 and with a sober rendering for reading on screen.
 
-\medskip
 
-\noindent
-Two important points to note.
-\begin{itemize}
-    \item This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
-
-    \item This documentation is also available in French.
-\end{itemize}
+\begin{tdocnote}
+     This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
+\end{tdocnote}
 }
 \end{abstract}
 
@@ -521,9 +528,9 @@ La macro \tdocmacro{tdocinEN} et sa version étoilée s'appuient sur \tdocmacro{
 Des exemples numérotés, ou non, s'indiquent via l'environnement \tdocenv{tdocexa} qui propose deux arguments optionnels.
 
 \begin{enumerate}
-    \item Le 1\ier{} argument entre chevrons \verb#<...># peut prendre au choix les valeurs \verb#nb# pour numéroter, réglage par défaut, et \verb#nonb# pour ne pas numéroter.
+    \item Le 1\ier{} argument entre chevrons \tdocinlatex#<...># peut prendre au choix les valeurs \tdocinlatex#nb# pour numéroter, réglage par défaut, et \tdocinlatex#nonb# pour ne pas numéroter.
 
-    \item Le 2\ieme{} argument entre crochets \verb#[...]# sert à ajouter un mini-titre.
+    \item Le 2\ieme{} argument entre crochets \tdocinlatex#[...]# sert à ajouter un mini-titre.
 \end{enumerate}
 
 
@@ -795,7 +802,7 @@ Pour obtenir des rendus en important le code depuis un fichier externe, au lieu 
 
     \medskip
 
-    Quant à \tdocinlatex+\tdocshowcaseinput[color = orange]{external.tex}+ , ceci produira le changement de couleur observable ci-après.
+    Quant à \tdocinlatex+\tdocshowcaseinput[color = orange]{external.tex}+\,, ceci produira le changement de couleur observable ci-après.
 
     \medskip
 
@@ -829,10 +836,11 @@ Voici des exemples d'utilisation.
 
 
 \begin{tdocnote}
-    La macro \tdocmacro{tdocinlatex} est utilisable dans une note de pied de page : voir le bas de cette page
+    La macro \tdocmacro{tdocinlatex} est utilisable dans une note de pied de page : voir plus bas
     \footnote{
         \tdocinlatex+$minted = TOP$+ a été tapé \tdocinlatex|\tdocinlatex+$minted = TOP$+| dans cette note de bas de page..
     }.
+    De plus, une couleur de fond est volontairement utilisée pour subtilement faire ressortir les codes \tdocinlatex#\LaTeX#\,.
 \end{tdocnote}
 
 
@@ -881,6 +889,11 @@ Voici des exemples d'utilisation.
 \begin{tdocwarn}
     Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut.
     \tdocdocbasicinput{examples-listing-strange.tex}
+
+    \smallskip
+
+    Une autre méthode consiste à utiliser la primitive \tdocmacro{string}.
+    \tdocdocbasicinput{examples-listing-strange-bis.tex}
 \end{tdocwarn}
 
 
@@ -892,13 +905,12 @@ Pour les codes suivants, on considère un fichier de chemin relatif \verb+exampl
 
 \medskip
 
-La macro \tdocmacro{tdoclatexinput} , présentée ci-après, s'utilise comme l'environnement \tdocenv{tdoclatex} excepté que l'on fournit le chemin d'un fichier.
+La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'un fichier et propose les mêmes options que l'environnement \tdocenv{tdoclatex}.
 
 
 % ------------------ %
 
 
-\newpage
 \begin{tdocexa}[Face à face]
     \leavevmode
 
@@ -1067,7 +1079,6 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 lors des derniers changements.
 
 
-\newpage
 \begin{tdocexa}[Pour les nouveautés]
     \leavevmode
 
@@ -1088,6 +1099,26 @@ lors des derniers changements.
 % ------------------ %
 
 
+\begin{tdocexa}[Pour les bifurcations]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples-version-n-change-break.tex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Pour les problèmes]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples-version-n-change-pb.tex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
 \begin{tdocexa}[Pour les réparations]
     \leavevmode
 
@@ -1101,7 +1132,7 @@ lors des derniers changements.
 \begin{tdocexa}[Thématiques aux choix]
     \leavevmode
 
-    \tdoclatexinput[sbs]{examples-version-n-change-topic.tex}
+    \tdoclatexinput[sbs]{examples-version-n-change-unclassifiable.tex}
 \end{tdocexa}
 
 
@@ -1115,6 +1146,16 @@ Bla, bla, bla...
 
 \tdocsep % Pratique pour délimiter.
 
+Ceci fonctionne avec des énumérations.
+
+\begin{itemize}
+    \item Point souligné.
+
+    \item Autre chose utile.
+\end{itemize}
+
+\tdocsep % Un comportement uniforme.
+
 Ble, ble, ble...
 
 Bli, bli, bli...
@@ -1127,16 +1168,29 @@ Blo, blo, blo...
 Blu, blu, blu...
 
 \end{tdoclatex}
-
-\newpage
 \section{Historique}
 
-\tdocversion{1.0.1}[2023-12-08]
+\tdocversion{1.0.0}[2024-01-06]
+
+\begin{tdocnew}
+	\item Journal des changements : deux nouveaux environnements.
+    \begin{enumerate}
+        \item \tdocenv{tdocbreak} pour les \tdocquote{bifurcations}\,, soit les modifications non rétrocompatibles.
+
+        \item \tdocenv{tdocprob} pour les problèmes repérés.
+    \end{enumerate}
+
+	\item \tdocmacro{tdocinlatex}: un jaune léger est utilisé comme couleur de fond.
+\end{tdocnew}
+
+\tdocsep
+
+\tdocversion{1.0.0}[2023-12-08]
 
 \begin{tdocfix}
 	\item \tdocmacro{tdocenv}: l'espacement est maintenant correct, même si le paquet \tdocpack{babel} n'est pas chargé avec la langue française.
 
-	\item \tdocenv[{[nostripe]}]{showcase}: les sauts de page autour des règles ne sont plus possibles.
+	\item \tdocenv[{[nostripe]}]{tdocshowcase}: les sauts de page autour des lignes \tdocquote{cadrantes} devraient être rares dorénavant.
 \end{tdocfix}
 
 \tdocsep

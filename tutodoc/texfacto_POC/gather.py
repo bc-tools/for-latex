@@ -516,7 +516,7 @@ and with a sober rendering for reading on screen.
     code += r"""
 \section{Historique}
 
-\tdocversion{1.0.0}[2024-01-06]
+\tdocversion{1.1.0}[2024-01-06]
 
 \begin{tdocnew}
 	\item Journal des changements : deux nouveaux environnements.
@@ -531,12 +531,12 @@ and with a sober rendering for reading on screen.
 
 \tdocsep
 
-\tdocversion{1.0.0}[2023-12-08]
+\tdocversion{1.0.1}[2023-12-08]
 
 \begin{tdocfix}
 	\item \tdocmacro{tdocenv}: l'espacement est maintenant correct, même si le paquet \tdocpack{babel} n'est pas chargé avec la langue française.
 
-	\item \tdocenv[{[nostripe]}]{tdocshowcase}: les sauts de page autour des lignes "cadrantes" devraient être rares dorénavant.
+	\item \tdocenv[{[nostripe]}]{tdocshowcase}: les sauts de page autour des lignes \tdocquote{cadrantes} devraient être rares dorénavant.
 \end{tdocfix}
 
 \tdocsep
