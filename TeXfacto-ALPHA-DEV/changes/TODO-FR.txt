@@ -6,6 +6,21 @@ TeXfacto - TODO
 NOW
 ---
 
+> ---------------------------- <
+
+texfacto-poc
+
+    ---> besoin de régeler bug du au chemin via fichier importé !!! voir si faisable sans hook sinon on se la joue brutale en attendnat de passer al amin a texfacto
+
+    ---> abstract auto
+
+    ---> titre du doc ???
+
+
+> ---------------------------- <
+
+tempdoc directement compilable et du coup rollour just du copier coller
+
 
 > ---------------------------- <
 
