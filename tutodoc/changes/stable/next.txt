@@ -11,12 +11,12 @@
 
 [[:api:]]
 
-\Chges: the \env ''tdocbreak'' and ''tdocprob'' have been added.
+\Chges: the \envs ''tdocbreak'' and ''tdocprob'' have been added.
 
 
 [[:format:]]
 
-Macro ''\newmintinline'': the background is now slightly coloured.
+Macro ''\tdocinlatex'': the background is now slightly coloured.
 
 
 -----

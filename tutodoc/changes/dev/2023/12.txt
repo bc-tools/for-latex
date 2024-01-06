@@ -27,7 +27,7 @@ Macro ''\tdocsep'': the spacing before the line should be the same in all situat
 
 [[:api:]]
 
-\Chges: the \env ''tdocbreak'' and ''tdocprob'' have been added.
+\Chges: the \envs ''tdocbreak'' and ''tdocprob'' have been added.
 
 
 // ---------- //
@@ -117,7 +117,7 @@ English version: the title has been translated.
 -----
 
 [[:fix:]]
-\Env ''showcase'': page breaks around the rules should become rare with the ''nostripe'' option.
+\Env ''tdocshowcase'': page breaks around the rules should become rare with the ''nostripe'' option.
 
 
 // ---------- //

@@ -4,9 +4,13 @@
 % -- DATE TO TEST - START -- %
 % -------------------------- %
 
-\newcommand\docyear {2023}
-\newcommand\docmonth{12}
-\newcommand\docday  {08}
+\newcommand\docyear {2024}
+\newcommand\docmonth{01}
+\newcommand\docday  {06}
+
+% Preparing next release
+%\renewcommand\docday{0}
+
 
 % ------------------------ %
 % -- DATE TO TEST - END -- %
@@ -35,14 +39,23 @@
     \rule\linewidth{1pt}
 
     \vspace{-1em}
-    \section*{Test : \docyear-\docmonth-\docday}
-
+    \section*{Test : 
+	\ifnum\docday=0
+		Next release
+	\else
+		\docyear-\docmonth-\docday
+	\fi
+	}
     \vspace{-.75em}
     \rule\linewidth{1pt}
 }
 
 \bigskip
 
-\input{\docyear/\docmonth/\docday}
+\ifnum\docday=0
+	\input{next}
+\else
+	\input{\docyear/\docmonth/\docday}
+\fi
 
 \end{document}
