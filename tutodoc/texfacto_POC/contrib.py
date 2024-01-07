@@ -189,7 +189,7 @@ def add_contrib_doc(
                 code += r"""
 \begin{document}
 
-\title{Le package \texttt{tutodoc} - Documentation de type tutoriel}
+\title{The \texttt{tutodoc} package - Tutorial-type documentation}
 \author{Christophe BAL}
 \date{\ordinalnum{1} Jan. 2024 - Version 1.1.0}
 
