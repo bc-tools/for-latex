@@ -22,5 +22,6 @@ NEXT STEPS
                 + moving from POC to code :
                   some issues to solve
                 + real use case for testing
+                + debug folder from test folder sucha as to easily test something : we simply copy tlv file by adding  .tex extension : it is the rsponsability of the dev to chnage the code of the original tlv if needed
 
     1) macroenvsign: new version to build and publish
