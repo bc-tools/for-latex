@@ -41,8 +41,10 @@ Instead of using the ''most'' option in  ''\RequirePackage[most]{tcolorbox}'', w
 [[:api:]]
 The new macro ''\docnew'' can be used to indicate the date of something new.
 
+
 [[:api:]]
 The macro ''\docilatex'' has been added to display inline \latex codes (verb::''i'' is for "inline").
+
 
 [[:api:]]
 For showcases, the text indicating the start and the end of a showcase can be customized.
@@ -54,6 +56,7 @@ For showcases, the text indicating the start and the end of a showcase can be cu
 
 [[:api:]]
 The option of the \env ''doctopic'' must be put after the title now.
+
 
 [[:format:]]
 Decorations: the macro ''\docsep'' produces a more "symmetrical" vertical spacing.
@@ -88,6 +91,7 @@ The macros ''\inputdoclatexafter'', ''\inputdoclatexbefore'' and ''\inputdoclate
 
 [[:format:]]
 The macro ''\docversion'' prints now the date with the format of the language loaded with \bdoc.
+
 
 [[:format:]]
 For the showcases, the strip contains now also the focusing rules, and this strip uses a blue color instead of a green one.
@@ -176,6 +180,7 @@ The resbonsabilities of the package have been minimized: the user has to manage 
 [[:tech:]]
 The preferred coding language will be \latex3 (some more advanced and optional features will be coded in \lua).
 
+
 [[:flow:]]
 The code is now developed like other independent packages of the \tns series (it remains to build the automatic tools and then we will be ready to publish a version of \bdoc for users).
 
@@ -193,6 +198,7 @@ The code is now developed like other independent packages of the \tns series (it
 
 [[:api:]]
 The macro ''\signprewhy'' has been removed. It will be proposed by the package \macroenvsign (this is more logical).
+
 
 [[:api:]]
 The \env ''remark'' has been renamed ''docremark''.

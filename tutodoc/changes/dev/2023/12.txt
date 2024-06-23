@@ -10,7 +10,6 @@
 -----
 
 [[:format:]]
-
 Macro ''\tdocsep'': the spacing before the line should be the same in all situations.
 
 
@@ -26,7 +25,6 @@ Macro ''\tdocsep'': the spacing before the line should be the same in all situat
 -----
 
 [[:api:]]
-
 \Chges: the \envs ''tdocbreak'' and ''tdocprob'' have been added.
 
 
@@ -86,7 +84,7 @@ Translations of \docs: use of path::''status.yaml'' files to manage the integrat
 :fordev:
 --------
 
-[[Localization]]
+[[:local:]]
 Use of the prefix ''tutodoc@'' instead of ''tdoc@'' (we are preparing for automation with the future \texfacto \proj).
 
 

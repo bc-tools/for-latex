@@ -10,10 +10,8 @@
 -----
 
 [[:api:]]
-
 \Chges: the \envs ''tdocbreak'' and ''tdocprob'' have been added.
 
 
 [[:format:]]
-
 Macro ''\tdocinlatex'': the background is now slightly coloured.
