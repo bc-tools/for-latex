@@ -10,7 +10,6 @@
 --------
 
 [[:doc:]]
-
 Change log: new released version documented.
 
 
@@ -26,5 +25,4 @@ Change log: new released version documented.
 -----
 
 [[:format:]]
-
 Macro ''\tdocinlatex'': the background is now slightly coloured.

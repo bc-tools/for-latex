@@ -24,8 +24,8 @@
 %%%
 % prototype::
 %     #1 : the color of the margin note
-%     #2 : the first material (a date or nothing)
-%     #3 : the second material (a version number or nothing)
+%     #2 : the first material (a version number or nothing)
+%     #3 : the second material (a date or nothing)
 %     #4 : the last negative vertical spacing for the 2nd rule
 %
 %     :action: this macro factorizes the printing of the changes
@@ -45,15 +45,19 @@
 
     \IfBlankTF{#2}{}{
       \par
-        \__tdoc_translate_date:n { #2 }
+        #2
       \par
     }
 
-    \vspace{1pt}
+    \IfBlankTF{#3}{}{
+      \IfBlankTF{#2}{}{
+        \vspace{1pt}
+      }
 
-    \par
-      #3
-    \par
+      \par
+        \__tdoc_translate_date:n { #3 }
+      \par
+    }
 
     \vspace{#4}
     \rule{1.65cm}{.95pt}
@@ -87,8 +91,8 @@
 %%%
 \cs_new:Npn \__tdoc_translate_date_process:w #1 - #2 - #3 \q_stop {
     \tutodoc@trans@date{#1}
-                    {#2}
-                    {#3}
+                       {#2}
+                       {#3}
 }
 
 
@@ -111,9 +115,9 @@
 %%%
 \NewDocumentCommand{\tdocversion}{O{blue} m O{}}{
   \tutodoc@new@change@margin{#1}      % Color
-                         {#3}      % Date
-                         {#2}      % Version
-                         {-4.25pt} % Last negative vertical spacing
+                            {#2}      % Version
+                            {#3}      % Date
+                            {-4.25pt} % Last negative vertical spacing
 }
 
 
