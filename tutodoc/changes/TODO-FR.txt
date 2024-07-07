@@ -8,6 +8,11 @@ NOW
 
 > ---------------------------- <
 
+Macro \tdocinlatex : height and depth ---> Waiting for request...
+
+
+> ---------------------------- <
+
 focus
 
     ---> rmk and co : passer via xtempalte !!!
