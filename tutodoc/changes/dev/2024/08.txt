@@ -1,0 +1,13 @@
+// ---------- //
+
+
+==
+23  (1.2.0-beta.2)
+==
+
+-----
+:fix:
+-----
+
+[[:format:]]
+Focusing: French translations of "caution" and "danger" were missing.

@@ -7,8 +7,8 @@ note_title = Note
 tip_title  = Astuce
 
 important_title = Important
-caution_title   = Caution
-warn_title      = Danger
+caution_title   = Mise en garde
+warn_title      = Avertissement
 
 chges_pb     = Problème
 chges_break  = Bifurcation

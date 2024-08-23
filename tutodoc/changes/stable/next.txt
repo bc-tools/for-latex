@@ -15,3 +15,11 @@ Macro ''\tdocversion''.
     1) Version number printed above the date (more useful).
 
     2) Better management of the spacing when the date is unused.
+
+
+-----
+:fix:
+-----
+
+[[:format:]]
+Focusing: French translations of "caution" and "danger" were missing.
