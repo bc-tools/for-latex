@@ -189,36 +189,16 @@ def add_contrib_doc(
             ".tmp_thedoc.tex",
         ]:
             if tmpfile == ".tmp_thedoc.tex":
-                code += r"""
-\begin{document}
+                content = (PRE_AUTO_START / "en.tex").read_text()
 
-\title{The \texttt{tutodoc} package - Tutorial-type documentation}
-\author{Christophe BAL}
-\date{\ordinalnum{1} Jan. 2024 - Version 1.1.0}
+                code += f"""
+\\begin{{document}}
 
-\maketitle
+{content}
 
-\begin{abstract}
-The \tdocpack{tutodoc} package
-\footnote{
-    The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
-}
-is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style
-\footnote{
-    The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
-},
-and with a sober rendering for reading on screen.
-
-
-\begin{tdocnote}
-    This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
-\end{tdocnote}
-\end{abstract}
-
-
-\newpage
-\tableofcontents
-\newpage
+\\newpage
+\\tableofcontents
+\\newpage
 """
 
             with (locale_tmpdir / tmpfile).open(
@@ -227,40 +207,15 @@ and with a sober rendering for reading on screen.
             ) as f:
                 code += f.read()
 
+        content = (PRE_AUTO_CHGELOG / "en.tex").read_text()
+
         code = code.strip()
-        code += r"""
-\section{History}
+        code += f"""
+\\section{{History}}
 
-\tdocversion{1.1.0}[2024-01-06]
+{content}
 
-\begin{tdocnew}
-	\item Change log : two new environments.
-    \begin{enumerate}
-        \item \tdocenv{tdocbreak} for breaking changes which are not backward compatible.
-
-        \item \tdocenv{tdocprob} for identified problems.
-    \end{enumerate}
-
-	\item \tdocmacro{tdocinlatex}: a light yellow is used as the background color.
-\end{tdocnew}
-
-\tdocsep
-
-\tdocversion{1.0.1}[2023-12-08]
-
-\begin{tdocfix}
-	\item \tdocmacro{tdocenv}: spacing is now correct, even if the \tdocpack{babel} package is not loaded with the French language.
-
-	\item \tdocenv[{[nostripe]}]{tdocshowcase}: page breaks around \tdocquote{framing} lines should be rare from now on.
-\end{tdocfix}
-
-\tdocsep
-
-\tdocversion{1.0.0}[2023-11-29]
-
-First public version of the project.
-
-\end{document}
+\\end{{document}}
     """
 
     codefile = locale_tmpdir.parent / f"{projectname}-en.tex"

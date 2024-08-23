@@ -1,8 +1,13 @@
 from collections import defaultdict
+from pathlib     import Path
 from shutil      import rmtree
 from yaml        import safe_load
 
 from natsort import natsorted
+
+PRE_AUTO_DIR     = Path(__file__).parent / 'pre-auto'
+PRE_AUTO_CHGELOG = PRE_AUTO_DIR / 'changelog'
+PRE_AUTO_START   = PRE_AUTO_DIR / 'start'
 
 
 TAG_FILE = "file"
@@ -459,57 +464,16 @@ def build_tmp_proj(
         ".tmp_thedoc.tex",
     ]:
         if tmpfile == ".tmp_thedoc.tex":
-            code += r"""
-\begin{document}
+            content = (PRE_AUTO_START / "fr.tex").read_text()
 
-\title{Le package \texttt{tutodoc} - Documentation de type tutoriel}
-\author{Christophe BAL}
-\date{1\ier{} Janv. 2024 - Version 1.1.0}
+            code += f"""
+\\begin{{document}}
 
-\maketitle
+{content}
 
-\begin{abstract}
-Le package \tdocpack{tutodoc}
-\footnote{
-    Le nom vient de \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}} se traduit en \tdocquote{documentation de type tutoriel}.
-}
-est utilisé par son auteur pour produire de façon sémantique des documentations de packages et de classes \LaTeX\ dans un style de type tutoriel
-\footnote{
-    L'idée est de produire un fichier \texttt{PDF} efficace à parcourir pour des besoins ponctuels. C'est généralement ce que l'on attend d'une documentation liée au codage.
-},
-et avec un rendu sobre pour une lecture sur écran.
-
-
-\begin{tdocnote}
-     Ce package impose un style de mise en forme.
-    Dans un avenir plus ou moins proche, \tdocpack{tutodoc} sera sûrement éclaté en une classe et un package.
-\end{tdocnote}
-
-\tdocsep
-
-{\small\itshape
-\textbf{Abstract.}
-The \tdocpack{tutodoc} package
-\footnote{
-    The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
-}
-is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style
-\footnote{
-    The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
-},
-and with a sober rendering for reading on screen.
-
-
-\begin{tdocnote}
-     This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
-\end{tdocnote}
-}
-\end{abstract}
-
-
-\newpage
-\tableofcontents
-\newpage
+\\newpage
+\\tableofcontents
+\\newpage
 """
 
         with (projectfolder_TEMP / tmpfile).open(
@@ -519,40 +483,16 @@ and with a sober rendering for reading on screen.
             code += f.read()
 
 
+# French version.
+    content = (PRE_AUTO_CHGELOG / "fr.tex").read_text()
+
     code = code.strip()
-    code += r"""
-\section{Historique}
+    code += f"""
+\\section{{Historique}}
 
-\tdocversion{1.1.0}[2024-01-06]
+{content}
 
-\begin{tdocnew}
-	\item Journal des changements : deux nouveaux environnements.
-    \begin{enumerate}
-        \item \tdocenv{tdocbreak} pour les \tdocquote{bifurcations}\,, soit les modifications non rétrocompatibles.
-
-        \item \tdocenv{tdocprob} pour les problèmes repérés.
-    \end{enumerate}
-
-	\item \tdocmacro{tdocinlatex}: un jaune léger est utilisé comme couleur de fond.
-\end{tdocnew}
-
-\tdocsep
-
-\tdocversion{1.0.1}[2023-12-08]
-
-\begin{tdocfix}
-	\item \tdocmacro{tdocenv}: l'espacement est maintenant correct, même si le paquet \tdocpack{babel} n'est pas chargé avec la langue française.
-
-	\item \tdocenv[{[nostripe]}]{tdocshowcase}: les sauts de page autour des lignes \tdocquote{cadrantes} devraient être rares dorénavant.
-\end{tdocfix}
-
-\tdocsep
-
-\tdocversion{1.0.0}[2023-11-29]
-
-Première version publique du projet.
-
-\end{document}
+\\end{{document}}
 """
 
     with codefile.open(
