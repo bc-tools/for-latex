@@ -25,8 +25,8 @@ typesetopts = checkopts
 
 
 uploadconfig = {
-    version      = "1.1.0 [2024-01-06]",
-    announcement = "Two new environments for changes & Background colour for tdocinlatex macro.",
+    version      = "1.2.0 [2024-08-23]",
+    announcement = "better formatting of tdocversion output + two bad translations fixed.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",
