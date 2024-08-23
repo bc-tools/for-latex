@@ -139,7 +139,7 @@ Use of path::''doc-header.cfg'' instead of path::''doc-header.tex''.
 -----
 
 [[:api:]]
-Focusing: the use of verbatim content was no longer possible with the latest version of the \env ''bdocexa''.
+Focus: the use of verbatim content was no longer possible with the latest version of the \env ''bdocexa''.
 
 
 --------
@@ -181,7 +181,7 @@ Focusing examples.
 --------
 
 [[:api:]]
-Focusing: a full list of \envs has been build by following the choices made by cf::''asciidoctor ; https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions''.
+Focus: a full list of \envs has been build by following the choices made by cf::''asciidoctor ; https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions''.
 
     1) Unchanged.
 

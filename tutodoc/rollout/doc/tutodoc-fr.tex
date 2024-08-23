@@ -266,8 +266,8 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-version-n-change-unclassifiable.tex}
-\begin{tdoctopic}{Inclassable}
+\begin{filecontents*}[overwrite]{examples-version-n-change-user-choice.tex}
+\begin{tdoctopic}{C'est mon choix}
 % Ici le point s'impose.
     \item Info 1...
     \item Info 2...
@@ -671,18 +671,18 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 \subsection{Avec une bande colorée}
 
 \begin{tdocexa}[Avec les textes par défaut]
-    Il peut être utile de montrer un rendu réel directement dans un document
+    Il peut être utile de montrer un rendu réel directement dans un document.
     \footnote{
         Typiquement lorsque l'on fait une démo.
-    }.
+    }
     Ceci se tape via \tdocenv{tdocshowcase} comme suit.
 
     \tdoclatexinput[code]{examples-showcase-default.tex}
 
-    On obtient alors le rendu suivant
+    On obtient alors le rendu suivant.
     \footnote{
         En coulisse, la bande est créée sans effort grâce au package \tdocpack{clrstrip}.
-    }.
+    }
 
     \medskip
 
@@ -1059,10 +1059,10 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 
 
 \begin{tdocwarn}
-    Seul l'emploi du format numérique \tdocinlatex+YYYY-MM-DD+ est vérifié
+    Seul l'emploi du format numérique \tdocinlatex+YYYY-MM-DD+ est vérifié,
     \footnote{
         Techniquement, vérifier la validité d'une date, via \LaTeX3, ne présente pas de difficulté.
-    },
+    }
     et ceci est un choix ! Pourquoi cela ? Tout simplement car dater et versionner des explications devrait se faire de façon semi-automatisée afin d'éviter tout bug humain.
 %    \footnote{
 %        L'auteur de \tdocpack{tutodoc} est entrain de mettre en place un ensemble d'outils permettant une telle semi-automatisation.
@@ -1132,7 +1132,7 @@ lors des derniers changements.
 \begin{tdocexa}[Thématiques aux choix]
     \leavevmode
 
-    \tdoclatexinput[sbs]{examples-version-n-change-unclassifiable.tex}
+    \tdoclatexinput[sbs]{examples-version-n-change-user-choice.tex}
 \end{tdocexa}
 
 
@@ -1170,7 +1170,10 @@ Blu, blu, blu...
 \end{tdoclatex}
 \section{Historique}
 
-\tdocversion{1.1.0}[2024-01-06]
+\tdocversion{1.1.0}[
+
+
+2024-01-06]
 
 \begin{tdocnew}
 	\item Journal des changements : deux nouveaux environnements.

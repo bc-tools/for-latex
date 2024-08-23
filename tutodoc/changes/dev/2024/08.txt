@@ -2,6 +2,30 @@
 
 
 ==
+23  (1.2.0-rc.1)
+==
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Change log: new released version documented.
+
+
+--------
+:fordev:
+--------
+
+[[:doc:]]
+??
+Change log: automation of the process.
+
+
+// ---------- //
+
+
+==
 23  (1.2.0-beta.2)
 ==
 
@@ -10,4 +34,4 @@
 -----
 
 [[:format:]]
-Focusing: French translations of "caution" and "danger" were missing.
+Highlighting: the French translations of “caution” and “danger” were wrong.

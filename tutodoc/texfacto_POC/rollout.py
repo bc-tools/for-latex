@@ -3,7 +3,10 @@ from pathlib import Path
 from .gather import copyfromto, emptydir
 
 
-def build_rollout_proj_code(tmpdir, rolloutdir):
+def build_rollout_proj_code(
+    tmpdir,
+    rolloutdir
+):
     destdir = rolloutdir / "code"
 
     emptydir(destdir)
@@ -23,7 +26,12 @@ def build_rollout_proj_code(tmpdir, rolloutdir):
         copyfromto(srcfile, destdir / srcfile.name)
 
 
-def build_rollout_proj_doc_main(patterns, tmpdir, rolloutdir, manual_dir):
+def build_rollout_proj_doc_main(
+    patterns,
+    tmpdir,
+    rolloutdir,
+    manual_dir
+):
     emptydir(rolloutdir / "doc")
 
     for texfile in tmpdir.glob("*.tex"):

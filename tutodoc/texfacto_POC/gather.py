@@ -117,7 +117,11 @@ def emptydir(folder):
     folder.mkdir(parents = True)
 
 
-def copyfromto(srcfile, destfile, mode="w"):
+def copyfromto(
+    srcfile,
+    destfile,
+    mode="w"
+):
     with srcfile.open(
         encoding = "utf-8",
         mode = "r"
@@ -134,7 +138,10 @@ def copyfromto(srcfile, destfile, mode="w"):
         f.write(content)
 
 
-def addcontentto(content, destfile):
+def addcontentto(
+    content,
+    destfile
+):
     with destfile.open(
         encoding = "utf-8",
         mode = "a"

@@ -1,7 +1,7 @@
 general:
   desc   : This package proposes tools for writing "human friendly"
            documentations of LaTeX packages.
-  acronym: tuto-rial doc-umentation
+  acronym: "[tuto]rial [doc]umentation"
   author : Christophe BAL
   licence: gnu 3
   lang   :

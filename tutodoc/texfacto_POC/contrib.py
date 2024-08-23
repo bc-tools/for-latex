@@ -1,7 +1,10 @@
 from .gather import *
 
 
-def contrib_tex_template(text, localtools = ""):
+def contrib_tex_template(
+    text,
+    localtools = ""
+):
     if localtools:
         localtools = f"""
 % == FORDOC == %

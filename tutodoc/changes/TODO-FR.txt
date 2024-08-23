@@ -8,7 +8,9 @@ NOW
 
 > ---------------------------- <
 
-Macro \tdocinlatex : height and depth ---> Waiting for request...
+Macro \tdocinlatex : height and depth
+
+    ---> patch ou màj minted ?
 
 
 > ---------------------------- <
