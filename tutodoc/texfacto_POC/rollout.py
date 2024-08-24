@@ -53,7 +53,7 @@ def build_rollout_proj_doc_main(
 
         with (
             destfile.open("w") as f_out,
-            texfile.open("r") as f_in
+            texfile.open("r")  as f_in
         ):
             for line in f_in:
                 newline = line

@@ -1,8 +1,11 @@
 // ---------- //
 
 
+// ''-a'' needed because of smal errors in the update by hand
+// of the source code and the documentation.
+
 ==
-23  (1.2.0)
+23  (1.2.0-a)
 ==
 
 --------
