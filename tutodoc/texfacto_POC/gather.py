@@ -477,7 +477,7 @@ def build_tmp_proj(
 % {deco} %
 % - This is file `{proj_name}.sty' generated automatically.{extraspace_1} - %
 % -                                                   {extraspace_2} - %
-% - Copyright (C) {proj_year}-{creation_year} by Christophe BAL         {extraspace_2} - %
+% - Copyright (C) {creation_year}-{proj_year} by Christophe BAL         {extraspace_2} - %
 % -                                                   {extraspace_2} - %
 % - This file may be distributed and/or modified under{extraspace_2} - %
 % - the conditions of the GNU 3 License.              {extraspace_2} - %

@@ -25,7 +25,7 @@ typesetopts = checkopts
 
 
 uploadconfig = {
-    version      = "1.2.0 [2024-08-23]",
+    version      = "1.2.0-a [2024-08-23]",
     announcement = "Date and version were wrong in \\ProvidesExplPackage. Sorry for the noise...",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
