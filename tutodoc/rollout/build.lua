@@ -26,7 +26,7 @@ typesetopts = checkopts
 
 uploadconfig = {
     version      = "1.2.0 [2024-08-23]",
-    announcement = "better formatting of tdocversion output + two bad translations fixed.",
+    announcement = "Date and version were wrong in \\ProvidesExplPackage. Sorry for the noise...",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",

@@ -4,9 +4,9 @@ from src2prod import *
 
 from texfacto_POC import *
 
-PROJECT_DIR         = Path(__file__).parent
-SOURCE_DIR          = PROJECT_DIR / 'src'
-ROLLOUT_DIR         = PROJECT_DIR / "rollout"
+PROJECT_DIR = Path(__file__).parent
+SOURCE_DIR  = PROJECT_DIR / 'src'
+ROLLOUT_DIR = PROJECT_DIR / "rollout"
 MANUAL__DIR = PROJECT_DIR / "contrib" / "doc" / "manual"
 
 PATTERNS = [

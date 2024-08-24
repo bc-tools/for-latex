@@ -1,5 +1,5 @@
 
-form-string="announcement=better formatting of tdocversion output + two bad translations fixed."
+form-string="announcement=Date and version were wrong in \\ProvidesExplPackage. Sorry for the noise..."
 form-string="author=Christophe BAL"
 form-string="bugtracker=https://github.com/bc-tools/for-latex/issues"
 form-string="ctanPath=/macros/latex/contrib/tutodoc"

@@ -5,9 +5,10 @@ from yaml        import safe_load
 
 from natsort import natsorted
 
-PRE_AUTO_DIR     = Path(__file__).parent / 'pre-auto'
-PRE_AUTO_CHGELOG = PRE_AUTO_DIR / 'changelog'
-PRE_AUTO_START   = PRE_AUTO_DIR / 'start'
+PRE_AUTO_DIR          = Path(__file__).parent / 'pre-auto'
+PRE_AUTO_CHGELOG      = PRE_AUTO_DIR / 'changelog'
+PRE_AUTO_START        = PRE_AUTO_DIR / 'start'
+PRE_AUTO_VERSION_FILE = PRE_AUTO_DIR / 'stable-versions.yaml'
 
 
 TAG_FILE = "file"
@@ -337,25 +338,40 @@ TOC_DOC         = []
 TOC_DOC_RESRCES = []
 
 
+def date_n_version():
+
+    # with PRE_AUTO_VERSION_FILE.open(
+    #     encoding='utf8',
+    #     mode='r',
+    # ) as f:
+    #     stable_versions = safe_load(f)
+    stable_versions = safe_load(PRE_AUTO_VERSION_FILE.read_text())
+
+    print(stable_versions)
+
+    exit()
+
+
 def build_tmp_proj(
     source  ,
     treeview
 ):
-    projectname = source.parent.name
+    proj_name               = source.parent.name
+    proj_date, proj_version = date_n_version()
 
     projectfolder_SRC  = source.parent / "src"
-    projectfolder_TEMP = source.parent / f".{projectname}"
+    projectfolder_TEMP = source.parent / f".{proj_name}"
 
     sorteddirs = dirs2analyze(
         source  = source,
         alldirs = list(treeview[TAG_DIR].keys())
     )
 
-    extradeco = "-"*(2 + len(projectname))
+    extradeco = "-"*(2 + len(proj_name))
 
     print(f"""
 ---------------{extradeco}
-"{projectname}": FINAL PRODUCT
+"{proj_name}": FINAL PRODUCT
 ---------------{extradeco}
     """)
 
@@ -400,7 +416,7 @@ def build_tmp_proj(
         adddocsubdir(onedir, projectfolder_TEMP, contentdir[TAG_DIR])
 
 
-    codefile = projectfolder_TEMP / f"{projectname}.sty"
+    codefile = projectfolder_TEMP / f"{proj_name}.sty"
     code     = ''
 
     for tmpfile in [
@@ -416,20 +432,44 @@ def build_tmp_proj(
 
     code = code.strip()
 
+# DEBUG
+#     projectname = "ABC"
+
+    project_len  = len(f"This is file `{proj_name}.sty' generated automatically.")
+    init_max_len = len("This file may be distributed and/or modified under")
+
+    max_len = max(project_len, init_max_len)
+
+    extraspace_1 = " "*(max_len - project_len)
+    extraspace_2 = " "*(max_len - init_max_len)
+
+    deco = '-'*(max_len + 4)
+
+# DEBUG
+#     print(f"""
+# % {deco} %
+# % - This is file `{projectname}.sty' generated automatically.{extraspace_1} - %
+# % -                                                   {extraspace_2} - %
+# % - Copyright (C) 2023-2024 by Christophe BAL         {extraspace_2} - %
+# % -                                                   {extraspace_2} - %
+# % - This file may be distributed and/or modified under{extraspace_2} - %
+# % - the conditions of the GNU 3 License.              {extraspace_2} - %
+# % {deco} %""");exit()
+
     code = f"""
-% ------------------------------------------------------- %
-% - This is file `{projectname}.sty' generated automatically. - %
-% -                                                     - %
-% - Copyright (C) 2023-2024 by Christophe BAL           - %
-% -                                                     - %
-% - This file may be distributed and/or modified under  - %
-% - the conditions of the GNU 3 License.                - %
-% ------------------------------------------------------- %
+% {deco} %
+% - This is file `{proj_name}.sty' generated automatically.{extraspace_1} - %
+% -                                                   {extraspace_2} - %
+% - Copyright (C) 2023-2024 by Christophe BAL         {extraspace_2} - %
+% -                                                   {extraspace_2} - %
+% - This file may be distributed and/or modified under{extraspace_2} - %
+% - the conditions of the GNU 3 License.              {extraspace_2} - %
+% {deco} %
 
 \\ProvidesExplPackage
-    {{{projectname}}}
-    {{2024-01-06}} % Creation: 2023-11-29
-    {{1.1.0}}
+    {{{proj_name}}}
+    {{{proj_date}}} % Creation: 2023-11-29
+    {{{proj_version}}}
     {{This package proposes tools for writing "human friendly" documentations of LaTeX packages.}}
 
 {code}
@@ -442,7 +482,7 @@ def build_tmp_proj(
         f.write(code)
 
 
-    codefile = projectfolder_TEMP / f"{projectname}-fr.tex"
+    codefile = projectfolder_TEMP / f"{proj_name}-fr.tex"
     code     = r"""
 \documentclass[10pt, a4paper]{article}
 
@@ -456,7 +496,7 @@ def build_tmp_proj(
     """.strip() + f"""
 
 % Package documented.
-\\usepackage[lang = french]{{{projectname}}}
+\\usepackage[lang = french]{{{proj_name}}}
     """.rstrip() + '\n'*3
 
     for tmpfile in [
