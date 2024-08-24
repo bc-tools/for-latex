@@ -338,26 +338,43 @@ TOC_DOC         = []
 TOC_DOC_RESRCES = []
 
 
-def date_n_version():
+def versions_sorted():
+    return safe_load(
+        PRE_AUTO_VERSION_FILE.read_text()
+    )
 
-    # with PRE_AUTO_VERSION_FILE.open(
-    #     encoding='utf8',
-    #     mode='r',
-    # ) as f:
-    #     stable_versions = safe_load(f)
-    stable_versions = safe_load(PRE_AUTO_VERSION_FILE.read_text())
 
-    print(stable_versions)
+def lastversion(stable_versions):
+    for v, (y, m, d) in stable_versions.items():
+        break
 
-    exit()
+    return v, y, m, d
+
+
+def creation(stable_versions):
+    for v, (y, m, d) in stable_versions.items():
+        ...
+
+    return y, m, d
 
 
 def build_tmp_proj(
     source  ,
     treeview
 ):
-    proj_name               = source.parent.name
-    proj_date, proj_version = date_n_version()
+    proj_name = source.parent.name
+
+    stable_versions                               = versions_sorted()
+    proj_version, proj_year, proj_month, proj_day = lastversion(stable_versions)
+
+    proj_date = f"{proj_year}-{proj_month}-{proj_day}"
+
+    creation_year, creation_month, creation_day = creation(stable_versions)
+
+    creation_date = f"{creation_year}-{creation_month}-{creation_day}"
+
+# DEBUG
+#     print(f"{proj_version}, {proj_year}, {proj_month}, {proj_day}");exit()
 
     projectfolder_SRC  = source.parent / "src"
     projectfolder_TEMP = source.parent / f".{proj_name}"
@@ -460,7 +477,7 @@ def build_tmp_proj(
 % {deco} %
 % - This is file `{proj_name}.sty' generated automatically.{extraspace_1} - %
 % -                                                   {extraspace_2} - %
-% - Copyright (C) 2023-2024 by Christophe BAL         {extraspace_2} - %
+% - Copyright (C) {proj_year}-{creation_year} by Christophe BAL         {extraspace_2} - %
 % -                                                   {extraspace_2} - %
 % - This file may be distributed and/or modified under{extraspace_2} - %
 % - the conditions of the GNU 3 License.              {extraspace_2} - %
@@ -468,7 +485,7 @@ def build_tmp_proj(
 
 \\ProvidesExplPackage
     {{{proj_name}}}
-    {{{proj_date}}} % Creation: 2023-11-29
+    {{{proj_date}}} % Creation: {creation_date}
     {{{proj_version}}}
     {{This package proposes tools for writing "human friendly" documentations of LaTeX packages.}}
 

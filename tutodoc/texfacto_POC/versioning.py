@@ -1,8 +1,7 @@
 from pathlib import Path
 import              re
-from yaml    import dump as yaml_dump
 
-from natsort import natsorted
+from semver.version import Version
 
 THIS_DIR              = Path(__file__).parent
 STABLE_CHGES_DIR      = THIS_DIR.parent / 'changes' / 'stable'
@@ -26,10 +25,25 @@ for month_file in STABLE_CHGES_DIR.glob("*/*.txt"):
         day     = match.group(1)
         version = match.group(2)
 
-        stable_versions[version] = f"{year}-{month}-{day}"
+        stable_versions[version] = [year, month, day]
 
-# from pprint import pprint;pprint(stable_versions)
 
-PRE_AUTO_VERSION_FILE.write_text(
-    yaml_dump(stable_versions)
-)
+yaml_stable_versions_sorted = []
+
+all_nb_versions = [
+    Version.parse(v)
+    for v in stable_versions
+]
+
+all_nb_versions.sort(reverse = True)
+
+for v in all_nb_versions:
+    v = str(v)
+
+    yaml_stable_versions_sorted.append(
+        f"'{v}': {stable_versions[v]}"
+    )
+
+yaml_stable_versions_sorted = '\n'.join(yaml_stable_versions_sorted)
+
+PRE_AUTO_VERSION_FILE.write_text(yaml_stable_versions_sorted)
