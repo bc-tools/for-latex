@@ -1,8 +1,8 @@
 // ---------- //
 
 
-// ''-a'' needed because of smal errors in the update by hand
-// of the source code and the documentation.
+// ''-a'' needed because of small errors in the update by hand of
+// the source code and the documentation. Do not laugh too loud!
 
 ==
 23  (1.2.0-a)

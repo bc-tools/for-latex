@@ -8,16 +8,16 @@ NOW
 
 > ---------------------------- <
 
-Macro \tdocinlatex : height and depth
+focus
 
-    ---> patch ou màj minted ?
+    ---> rmk and co : passer via xtempalte !!!
 
 
 > ---------------------------- <
 
-focus
+Macro \tdocinlatex : height and depth
 
-    ---> rmk and co : passer via xtempalte !!!
+    ---> patch ou màj minted ?
 
 
 -----

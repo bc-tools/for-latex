@@ -114,6 +114,7 @@ tmpdir = build_tmp_proj(
     treeview = treeview
 )
 
+exit()
 
 update_contrib(
     projdir         = PROJECT_DIR,
