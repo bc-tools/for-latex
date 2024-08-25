@@ -363,6 +363,7 @@ def build_tmp_proj(
     treeview
 ):
     proj_name = source.parent.name
+    doc_lang  = "fr"
 
     stable_versions                               = versions_sorted()
     proj_version, proj_year, proj_month, proj_day = lastversion(stable_versions)
@@ -394,6 +395,7 @@ def build_tmp_proj(
 
     emptydir(projectfolder_TEMP)
 
+
     for onedir in sorteddirs:
         print(f'+ Working in src/{onedir.relative_to(source)}/')
 
@@ -403,7 +405,6 @@ def build_tmp_proj(
             onedir   = onedir,
             allfiles = list(contentdir[TAG_FILE])
         )
-
 
         for srcfile in sorted2analyze:
             ext = srcfile.suffix[1:]
@@ -433,6 +434,7 @@ def build_tmp_proj(
         adddocsubdir(onedir, projectfolder_TEMP, contentdir[TAG_DIR])
 
 
+# Source.
     codefile = projectfolder_TEMP / f"{proj_name}.sty"
     code     = ''
 
@@ -498,35 +500,51 @@ def build_tmp_proj(
     ) as f:
         f.write(code)
 
-
+# Doc.
     codefile = projectfolder_TEMP / f"{proj_name}-fr.tex"
-    code     = r"""
-\documentclass[10pt, a4paper]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+    code = (projectfolder_SRC / "preamble.cfg.tex").read_text()
+    code = code.strip()
+    code = f"\\documentclass[12pt, a4paper]{{article}}\n\n{code}\n\n"
 
-\usepackage[french]{babel, varioref}
 
-\usepackage{enumitem}
-\frenchsetup{StandardItemLabels=true}
-    """.strip() + f"""
+    abstract = (projectfolder_SRC / "preamble.cfg.tex").read_text()
+    abstract = (PRE_AUTO_START / "fr.tex").read_text()
 
-% Package documented.
-\\usepackage[lang = french]{{{proj_name}}}
-    """.rstrip() + '\n'*3
+    # if doc_lang != "en":
 
+
+
+    """
+\tdocsep
+
+{\small\itshape
+\textbf{Abstract.}
+The \tdocpack{tutodoc} package
+\footnote{
+    The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
+}
+is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style
+\footnote{
+    The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
+},
+and with a sober rendering for reading on screen.
+
+
+\begin{tdocnote}
+     This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
+\end{tdocnote}
+}"""
     for tmpfile in [
         ".tmp_fordoc.tex",
         ".tmp_thedoc.tex",
     ]:
         if tmpfile == ".tmp_thedoc.tex":
-            content = (PRE_AUTO_START / "fr.tex").read_text()
-
             code += f"""
+
 \\begin{{document}}
 
-{content}
+{abstract}
 
 \\newpage
 \\tableofcontents
