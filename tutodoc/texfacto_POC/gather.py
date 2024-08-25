@@ -511,8 +511,11 @@ def build_tmp_proj(
     abstract = (projectfolder_SRC / "preamble.cfg.tex").read_text()
     abstract = (PRE_AUTO_START / "fr.tex").read_text()
 
+# TODO : add en abstract auto + gestion de chargelment sépcifique lors du dev mais qui devient transparent dans le dossier des contribs, si pas utilisé on o fait un cahrgelent sans option
+
     # if doc_lang != "en":
 
+    STOP
 
 
     """
