@@ -78,7 +78,7 @@ def copyfromto(
 
     with destfile.open(
         encoding = "utf-8",
-        mode = mode
+        mode     = mode
     ) as f:
         f.write(content)
 
@@ -89,7 +89,7 @@ def addcontentto(
 ):
     with destfile.open(
         encoding = "utf-8",
-        mode = "a"
+        mode     = "a"
     ) as f:
         f.write(content)
 
@@ -129,8 +129,7 @@ def adddocsubdir(
 def iter_sorted_useful_files(
     source,
     sorted_useful_files,
-    ext_wanted,
-    all_kinds
+    ext_wanted
 ):
     not_first_dir = False
 
@@ -143,7 +142,10 @@ def iter_sorted_useful_files(
 
         print(f'+ Working in src/{onedir.relative_to(source)}/')
 
-        for kind in all_kinds:
+        for kind in [
+            TAG_FILE,
+            f"{ext_wanted}-{TAG_RESRC}"
+        ]:
             for srcfile in files_n_resrc[kind]:
                 ext = srcfile.suffix[1:]
 

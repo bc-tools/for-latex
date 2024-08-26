@@ -20,8 +20,8 @@ def build_metadata(project_dir):
 
 
     with proj_about.open(
-        encoding='utf8',
-        mode='r',
+        encoding = 'utf8',
+        mode     = 'r',
     ) as f:
         about_cfg = safe_load(f)
 

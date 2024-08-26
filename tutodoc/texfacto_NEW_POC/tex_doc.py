@@ -14,14 +14,13 @@ def build_single_tex(
     for onedir, srcfile, kind in iter_sorted_useful_files(
         source              = source,
         sorted_useful_files = sorted_useful_files,
-        ext_wanted          = TAG_TEX,
-        all_kinds           = [TAG_FILE]
+        ext_wanted          = TAG_TEX
     ):
         print(
             f"   * Analyzing ''{srcfile.name}''"
         )
 
-        TODO
+
 
 
 def adddocsubdir(source, tmpdir, dirview, firstcall=True):

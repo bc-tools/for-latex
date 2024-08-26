@@ -6,9 +6,8 @@ import              re
 # -- TAGS -- #
 # ---------- #
 
-TAG_DIR      = "dir"
-TAG_FILE     = "file"
-TAG_RESOURCE = "resource"
+TAG_DIR  = "dir"
+TAG_FILE = "file"
 
 TAG_TOC  = "toc"
 
@@ -16,6 +15,10 @@ TAG_ABOUT_FILE = "about.yaml"
 
 TAG_STY = "sty"
 TAG_TEX = "tex"
+
+TAG_RESRC     = "resource"
+TAG_STY_RESRC = f"{TAG_STY}-{TAG_RESRC}"
+TAG_TEX_RESRC = f"{TAG_TEX}-{TAG_RESRC}"
 
 TAG_CFG_STY = "cfg.sty"
 TAG_CFG_TEX = "cfg.tex"

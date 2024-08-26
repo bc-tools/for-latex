@@ -96,8 +96,8 @@ def dirs_2_analyze(
 
     else:
         with src_about.open(
-            encoding='utf8',
-            mode='r',
+            encoding = 'utf8',
+            mode     = 'r',
         ) as f:
             about_cfg = safe_load(f)
 
@@ -109,13 +109,19 @@ def dirs_2_analyze(
     else:
         for i, p in enumerate(sorteddirs):
             if p[-1] != '/':
-                TODO_PB
+                raise ValueError(
+                     "path for folders expected in the TOC of "
+                    f"the following file.\n{src_about}"
+                )
 
             p  = p[:-1]
             fp = source / p
 
             if not fp.is_dir():
-                TODO_PB
+                raise IOError(
+                     "the following path does not point to a folder"
+                    f"\n{fp}"
+                )
 
             sorteddirs[i] = fp
 
@@ -128,6 +134,7 @@ def loc_files_2_analyze(
     onedir,
     allfiles
 ):
+# 1st level files
     files_about = onedir / "about.yaml"
 
     if not files_about.is_file():
@@ -135,8 +142,8 @@ def loc_files_2_analyze(
 
     else:
         with files_about.open(
-            encoding='utf8',
-            mode='r',
+            encoding = 'utf8',
+            mode     = 'r',
         ) as f:
             about_cfg = safe_load(f)
 
@@ -146,8 +153,11 @@ def loc_files_2_analyze(
         sorted2analyze = natsorted(
             p
             for p in allfiles
-            if p.suffix[1:] in [TAG_STY,TAG_TEX]
-            and not p.suffix[1:] in [TAG_CFG_STY,TAG_CFG_TEX]
+            if (
+                p.suffix[1:] in [TAG_STY,TAG_TEX]
+                and
+                not p.suffix[1:] in [TAG_CFG_STY,TAG_CFG_TEX]
+            )
         )
 
     else:
@@ -159,15 +169,26 @@ def loc_files_2_analyze(
 
             sorted2analyze[i] = fp
 
-    resources = [
-        p
-        for p in allfiles
-        if not p in sorted2analyze
-           and p.name != TAG_ABOUT_FILE
-    ]
+    resources = {
+        TAG_STY: [
+            p
+            for p in allfiles
+            if (
+                not p in sorted2analyze
+                and
+                p.name != TAG_ABOUT_FILE
+            )
+        ]
+    }
 
-    # print([p.name for p in sorting])
+# Doc resources
 
+
+
+
+    resources[TAG_TEX] = []
+
+# Nothing left to do.
     return sorted2analyze, resources
 
 
@@ -202,8 +223,9 @@ def files_2_analyze(
             print(f'  * {srcfile.name}')
 
         sorted_useful_files[onedir] = {
-            TAG_FILE    : sorted2analyze,
-            TAG_RESOURCE: resources,
+            TAG_FILE     : sorted2analyze,
+            TAG_STY_RESRC: resources[TAG_STY],
+            TAG_TEX_RESRC: resources[TAG_TEX],
         }
 
     return sorted_useful_files

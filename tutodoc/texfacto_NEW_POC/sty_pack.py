@@ -14,8 +14,7 @@ def build_single_sty(
     for onedir, srcfile, kind in iter_sorted_useful_files(
         source              = source,
         sorted_useful_files = sorted_useful_files,
-        ext_wanted          = TAG_STY,
-        all_kinds           = [TAG_FILE, TAG_RESOURCE]
+        ext_wanted          = TAG_STY
     ):
         if kind == TAG_FILE:
             print(f"   * Analyzing ''{srcfile.name}''")
@@ -33,14 +32,16 @@ def build_single_sty(
             )
 
     print()
-    print(f"+ ''{temp_dir.parent.name}/{temp_dir.name}'' folder OK for the ''STY'' file.")
+    print(
+        f"+ ''{temp_dir.parent.name}/{temp_dir.name}'' "
+         "folder OK for the ''STY'' file."
+    )
 
-    exit()
 
 def extractfrom_STY(srcfile):
     with srcfile.open(
         encoding = "utf-8",
-        mode = "r"
+        mode     = "r"
     ) as f:
         content = f.read()
 

@@ -1,5 +1,5 @@
 DEBUG = False
-# DEBUG = True
+DEBUG = True
 
 
 # ------------------- #
@@ -150,7 +150,7 @@ if DEBUG:
         print()
         pprint(sorted2analyze)
 
-    # exit()
+        exit()
 
 
 # --------------------------- #
@@ -174,7 +174,6 @@ for kind, builder in [
     ("STY", build_single_sty),
     ("TEX", build_single_tex),
 ]:
-
     print_frame(
         metadata[TAG_PROJ_NAME],
         f"SINGLE {kind} FILE",
