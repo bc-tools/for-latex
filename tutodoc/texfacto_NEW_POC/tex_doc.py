@@ -21,6 +21,8 @@ def build_single_tex(
             f"   * Analyzing ''{srcfile.name}''"
         )
 
+        TODO
+
 
 def adddocsubdir(source, tmpdir, dirview, firstcall=True):
     for onedir, dircontent in dirview.items():
