@@ -32,6 +32,10 @@ def build_single_sty(
                 destfile = temp_dir / srcfile.name
             )
 
+    print()
+    print(f"+ ''{temp_dir.parent.name}/{temp_dir.name}'' folder OK for the ''STY'' file.")
+
+    exit()
 
 def extractfrom_STY(srcfile):
     with srcfile.open(
