@@ -3,23 +3,7 @@ from yaml        import safe_load
 
 from src2prod import *
 
-
-# --------------- #
-# -- CONSTANTS -- #
-# --------------- #
-
-TAG_FILE = "file"
-TAG_DIR  = "dir"
-
-TAG_TOC  = "toc"
-
-TAG_ABOUT_FILE = "about.yaml"
-
-TAG_STY = "sty"
-TAG_TEX = "tex"
-
-TAG_CFG_STY = "cfg.sty"
-TAG_CFG_TEX = "cfg.tex"
+from .constants import *
 
 
 # ----------------- #

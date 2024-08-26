@@ -2,36 +2,23 @@ DEBUG = False
 # DEBUG = True
 
 
-import re
+# ------------------- #
+# -- PACKAGES USED -- #
+# ------------------- #
 
 from src2prod import *
 
 from texfacto_NEW_POC import *
+
+if DEBUG:
+    from pprint import pprint
 
 
 # --------------- #
 # -- CONSTANTS -- #
 # --------------- #
 
-PROJECT_DIR = Path(__file__).parent
-SOURCE_DIR  = PROJECT_DIR / 'src'
-ROLLOUT_DIR = PROJECT_DIR / "rollout"
-MANUALS_DIR = PROJECT_DIR / "contrib" / "doc" / "manual"
-
-
-PROJECT_NAME = SOURCE_DIR.parent.name
-
-
-CMDS_FOR_FILE_PATTERNS = [
-    re.compile(r"^([^%\\]*)(.*)(\\" + macroname + ")(\[.*\][\t ]*\n?[\t ]*)?{(.*)}(.*)$")
-    for macroname in [
-        'input',
-        'tdoclatexshow',
-        'tdoclatexinput',
-        'tdocshowcaseinput',
-        'tdocdocbasicinput',
-    ]
-]
+THIS_DIR = Path(__file__).parent
 
 
 # ----------------- #
@@ -71,14 +58,35 @@ def _recu_debug_treeview(
                 )
 
 
+# ---------------------- #
+# -- METADATA PROJECT -- #
+# ---------------------- #
+
+print_frame(THIS_DIR.name, "METADATA")
+
+metadata = build_metadata(project_dir = THIS_DIR)
+
+print(f"""
+Creation          : {str_date(metadata[TAG_CREATION][TAG_DATE])}
+Last version      : {str_date(metadata[TAG_LAST_VERSION][TAG_DATE])} [{metadata[TAG_LAST_VERSION][TAG_VERSION]}]
+Manual - Main lang: {metadata[TAG_DOC_LANG]}
+... etc.
+""".lstrip())
+
+if DEBUG:
+    print("# -- METADATA -- #")
+
+    pprint(metadata)
+    exit()
+
 # ----------------------- #
 # -- ALL USEFULL FILES -- #
 # ----------------------- #
 
 treeview = build_tree(
-    project = PROJECT_DIR,
-    source  = Path('src'),
-    target  = ROLLOUT_DIR,
+    project = metadata[TAG_PROJ_DIR],
+    source  = metadata[TAG_SRC],
+    target  = metadata[TAG_ROLLOUT],
     readme  = Path('README.md'),
     ignore = """
 test_*/
@@ -107,26 +115,23 @@ for directdir, content in treeview[TAG_DIR].items():
 
 if DEBUG:
     print("# -- TREVIEW -- #")
-    debug_treeview(SOURCE_DIR, treeview)
+    debug_treeview(metadata[TAG_SRC], treeview)
 
 
-# ---------------- #
-# -- MAIN FILES -- #
-# ---------------- #
+# ----------------------- #
+# -- SORTED MAIN FILES -- #
+# ----------------------- #
 
-print_frame(PROJECT_NAME, "MAIN FILES (without resources)")
+print_frame(metadata[TAG_PROJ_NAME], "SORTED MAIN FILES", "(no resources)")
 
 sorted_useful_files = files_2_analyze(
-    source   = SOURCE_DIR,
+    source   = metadata[TAG_SRC],
     treeview = treeview
 )
 
 
-# ---------------------------------------------- #
-# -- XXXXX -- #
-# ---------------------------------------------- #
+# --------------------- #
+# -- SINGLE STY FILE -- #
+# --------------------- #
 
-
-# ---------------------------------------------- #
-# -- XXXXX -- #
-# ---------------------------------------------- #
+print_frame(metadata[TAG_PROJ_NAME], "SINGLE STY FILE")
