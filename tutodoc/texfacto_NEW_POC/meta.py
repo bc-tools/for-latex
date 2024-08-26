@@ -29,6 +29,7 @@ def build_metadata(project_dir):
 
     metadata = {
         TAG_AUTHOR  : gene_cfg["author"],
+        TAG_DESC    : gene_cfg["desc"],
         TAG_DOC_LANG: gene_cfg["lang"]["doc"],
     }
 

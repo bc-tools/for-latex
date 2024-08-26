@@ -30,6 +30,7 @@ TAG_MONTH    = "month"
 TAG_YEAR     = "year"
 
 TAG_AUTHOR    = "author"
+TAG_DESC      = "desc"
 TAG_DOC_LANG  = "doc-lang"
 TAG_MANUALS   = "manuals"
 TAG_PROJ_DIR  = "proj-dir"

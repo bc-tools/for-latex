@@ -70,9 +70,11 @@ print_frame(
 metadata = build_metadata(project_dir = THIS_DIR)
 
 print(f"""
+Author           : {metadata[TAG_AUTHOR]}
 Creation         : {str_date(metadata[TAG_CREATION][TAG_DATE])}
 Last version     : {str_date(metadata[TAG_LAST_VERSION][TAG_DATE])} [{metadata[TAG_LAST_VERSION][TAG_VERSION]}]
 Manual - Dev lang: {metadata[TAG_DOC_LANG]}
+Short desc.      : {metadata[TAG_DESC]}
 
 ... etc.
 """.lstrip())
