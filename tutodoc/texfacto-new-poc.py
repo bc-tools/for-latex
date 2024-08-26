@@ -62,14 +62,18 @@ def _recu_debug_treeview(
 # -- METADATA PROJECT -- #
 # ---------------------- #
 
-print_frame(THIS_DIR.name, "METADATA")
+print_frame(
+    THIS_DIR.name,
+    "METADATA"
+)
 
 metadata = build_metadata(project_dir = THIS_DIR)
 
 print(f"""
-Creation          : {str_date(metadata[TAG_CREATION][TAG_DATE])}
-Last version      : {str_date(metadata[TAG_LAST_VERSION][TAG_DATE])} [{metadata[TAG_LAST_VERSION][TAG_VERSION]}]
-Manual - Main lang: {metadata[TAG_DOC_LANG]}
+Creation         : {str_date(metadata[TAG_CREATION][TAG_DATE])}
+Last version     : {str_date(metadata[TAG_LAST_VERSION][TAG_DATE])} [{metadata[TAG_LAST_VERSION][TAG_VERSION]}]
+Manual - Dev lang: {metadata[TAG_DOC_LANG]}
+
 ... etc.
 """.lstrip())
 
@@ -77,7 +81,8 @@ if DEBUG:
     print("# -- METADATA -- #")
 
     pprint(metadata)
-    exit()
+    # exit()
+
 
 # ----------------------- #
 # -- ALL USEFULL FILES -- #
@@ -117,21 +122,76 @@ if DEBUG:
     print("# -- TREVIEW -- #")
     debug_treeview(metadata[TAG_SRC], treeview)
 
+    # exit()
+
 
 # ----------------------- #
 # -- SORTED MAIN FILES -- #
 # ----------------------- #
 
-print_frame(metadata[TAG_PROJ_NAME], "SORTED MAIN FILES", "(no resources)")
+print_frame(
+    metadata[TAG_PROJ_NAME],
+    "SORTED MAIN FILES",
+    "(no resources)"
+)
 
 sorted_useful_files = files_2_analyze(
     source   = metadata[TAG_SRC],
     treeview = treeview
 )
 
+if DEBUG:
+    for onedir, sorted2analyze in sorted_useful_files.items():
+        print()
+        print()
+        print(f"+ {onedir}")
+        print()
+        pprint(sorted2analyze)
 
-# --------------------- #
-# -- SINGLE STY FILE -- #
-# --------------------- #
+    # exit()
 
-print_frame(metadata[TAG_PROJ_NAME], "SINGLE STY FILE")
+
+# --------------------------- #
+# -- TEMP. VERSION - START -- #
+# --------------------------- #
+
+print_frame(
+    metadata[TAG_PROJ_NAME],
+    "TEMP. VERSION",
+    "(start)"
+)
+
+emptydir(metadata[TAG_TEMP])
+
+
+# ---------------------------- #
+# -- SINGLE STY & TEX FILES -- #
+# ---------------------------- #
+
+for kind, builder in [
+    ("STY", build_single_sty),
+    ("TEX", build_single_tex),
+]:
+
+    print_frame(
+        metadata[TAG_PROJ_NAME],
+        f"SINGLE {kind} FILE",
+        "(temp. version)"
+    )
+
+    builder(
+        source              = metadata[TAG_SRC],
+        temp_dir            = metadata[TAG_TEMP],
+        sorted_useful_files = sorted_useful_files
+    )
+
+
+# ------------------------- #
+# -- TEMP. VERSION - END -- #
+# ------------------------- #
+
+print_frame(
+    metadata[TAG_PROJ_NAME],
+    "TEMP. VERSION",
+    "(finished)"
+)

@@ -6,8 +6,9 @@ import              re
 # -- TAGS -- #
 # ---------- #
 
-TAG_FILE = "file"
-TAG_DIR  = "dir"
+TAG_DIR      = "dir"
+TAG_FILE     = "file"
+TAG_RESOURCE = "resource"
 
 TAG_TOC  = "toc"
 

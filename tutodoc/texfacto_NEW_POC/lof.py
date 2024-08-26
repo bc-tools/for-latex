@@ -175,7 +175,7 @@ def files_2_analyze(
     source,
     treeview
 ):
-    useful_files = []
+    sorted_useful_files = {}
 
     not_first_dir = False
 
@@ -201,6 +201,9 @@ def files_2_analyze(
         for srcfile in sorted2analyze:
             print(f'  * {srcfile.name}')
 
-            useful_files.append(srcfile)
+        sorted_useful_files[onedir] = {
+            TAG_FILE    : sorted2analyze,
+            TAG_RESOURCE: resources,
+        }
 
-    return useful_files
+    return sorted_useful_files
