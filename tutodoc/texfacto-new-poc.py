@@ -110,11 +110,11 @@ if DEBUG:
     debug_treeview(SOURCE_DIR, treeview)
 
 
-# ------------------ #
-# -- USEFUL FILES -- #
-# ------------------ #
+# ---------------- #
+# -- MAIN FILES -- #
+# ---------------- #
 
-print_frame(PROJECT_NAME, "USEFUL FILES")
+print_frame(PROJECT_NAME, "MAIN FILES (without resources)")
 
 sorted_useful_files = files_2_analyze(
     source   = SOURCE_DIR,
