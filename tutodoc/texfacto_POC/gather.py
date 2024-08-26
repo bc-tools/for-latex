@@ -514,19 +514,19 @@ def build_tmp_proj(
 
 # TODO : add en abstract auto + gestion de chargelment sépcifique lors du dev mais qui devient transparent dans le dossier des contribs, si pas utilisé on o fait un cahrgelent sans option
 
-    # if doc_lang != "en":
+#     # if doc_lang != "en":
 
-    STOP
+#     STOP
 
 
-    """
-\tdocsep
+#     """
+# \tdocsep
 
-{\small\itshape
-\textbf{Abstract.}
+# {\small\itshape
+# \textbf{Abstract.}
 
-version anglaise ici
-}"""
+# version anglaise ici
+# }"""
     for tmpfile in [
         ".tmp_fordoc.tex",
         ".tmp_thedoc.tex",
