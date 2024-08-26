@@ -500,6 +500,7 @@ def build_tmp_proj(
     ) as f:
         f.write(code)
 
+# TODO : la doc devienr le boulot des docs pour toutes les langues !!!
 # Doc.
     codefile = projectfolder_TEMP / f"{proj_name}-fr.tex"
 
@@ -523,20 +524,8 @@ def build_tmp_proj(
 
 {\small\itshape
 \textbf{Abstract.}
-The \tdocpack{tutodoc} package
-\footnote{
-    The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
-}
-is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style
-\footnote{
-    The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
-},
-and with a sober rendering for reading on screen.
 
-
-\begin{tdocnote}
-     This package imposes a formatting style. In the not-too-distant future, \tdocpack{tutodoc} will probably be split into a class and a package.
-\end{tdocnote}
+version anglaise ici
 }"""
     for tmpfile in [
         ".tmp_fordoc.tex",
