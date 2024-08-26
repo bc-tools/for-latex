@@ -178,18 +178,39 @@ def loc_files_2_analyze(
                 and
                 p.name != TAG_ABOUT_FILE
             )
+        ],
+# Searching for doc resources
+        TAG_TEX: [
+            p
+            for p in onedir.rglob("*")
+            if (
+                p.is_file()
+                and
+                not ignore_this(onedir, p)
+            )
         ]
     }
 
-# Doc resources
-
-
-
-
-    resources[TAG_TEX] = []
-
 # Nothing left to do.
     return sorted2analyze, resources
+
+
+def ignore_this(
+    onedir,
+    pfile
+):
+    if (
+        pfile.parent == onedir
+        or
+        pfile.parent.name.startswith("_minted-")
+        or
+        pfile.parent.parent.name == "locale"
+        or
+        pfile.name == TAG_ABOUT_FILE
+    ):
+        return True
+
+    return False
 
 
 def files_2_analyze(

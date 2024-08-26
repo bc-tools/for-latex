@@ -1,5 +1,5 @@
 DEBUG = False
-DEBUG = True
+# DEBUG = True
 
 
 # ------------------- #
@@ -134,7 +134,7 @@ if DEBUG:
 print_frame(
     metadata[TAG_PROJ_NAME],
     "SORTED MAIN FILES",
-    "(no resources)"
+    "(no resources printed)"
 )
 
 sorted_useful_files = files_2_analyze(
@@ -150,7 +150,7 @@ if DEBUG:
         print()
         pprint(sorted2analyze)
 
-        exit()
+    # exit()
 
 
 # --------------------------- #

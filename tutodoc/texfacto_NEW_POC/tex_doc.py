@@ -6,6 +6,7 @@ from .misc      import *
 # -- BUILD SINGLE STY FILE -- #
 # --------------------------- #
 
+TODO: pour contrib qui sera le lieu de la doc fbarictauio entenan compte du statut d'une trad
 def build_single_tex(
     source,
     temp_dir,
@@ -16,34 +17,16 @@ def build_single_tex(
         sorted_useful_files = sorted_useful_files,
         ext_wanted          = TAG_TEX
     ):
-        print(
-            f"   * Analyzing ''{srcfile.name}''"
-        )
+        if kind == TAG_FILE:
+            print(f"   * Analyzing ''{srcfile.name}''")
+
+        else:
+            print(f"   * [RES-DOC]")
+            print(f"       -> Copying ''{srcfile.relative_to(onedir)}"
+                  f"/{srcfile.name}'")
 
 
 
-
-def adddocsubdir(source, tmpdir, dirview, firstcall=True):
-    for onedir, dircontent in dirview.items():
-        if firstcall and onedir.name == "locale":
-            continue
-
-        relpath = onedir.relative_to(source)
-
-        if firstcall:
-            print(f'   * [RES-DOC] Copying {relpath}/')
-
-        destdir = tmpdir / relpath
-
-        if not destdir.is_dir():
-            destdir.mkdir(parents = True)
-
-        for srcfile in dircontent[TAG_FILE]:
-            copyfromto(srcfile, destdir / srcfile.name)
-
-            TOC_DOC_RESRCES.append(srcfile)
-
-        adddocsubdir(source, tmpdir, dircontent[TAG_DIR], firstcall=False)
 
 def extractfrom_TEX(srcfile):
     with srcfile.open(
