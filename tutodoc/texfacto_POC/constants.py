@@ -6,6 +6,10 @@ import              re
 # -- TAGS -- #
 # ---------- #
 
+TAG_LANG_EN = "en"
+
+TAG_ABSTRACT = "abstract"
+
 TAG_DIR  = "dir"
 TAG_FILE = "file"
 
@@ -74,6 +78,3 @@ CMDS_FOR_FILE_PATTERNS = [
 
 
 DATE_PATTERN = re.compile(r"==\n(\d+)\s+\((.+)\)\n==")
-
-
-LATEX_CONTENT_PATTERN = re.compile(r"begin(.*)end")

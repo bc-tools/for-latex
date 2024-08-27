@@ -14,13 +14,25 @@ def prebuild_single_tex(
     other_lang,
     versions
 ):
-    all_langs = [dev_lang] + other_lang
-
+    all_langs   = [dev_lang] + other_lang
     contrib_dir = source.parent / TAG_CONTRIB / TAG_DOC / TAG_MANUAL
 
+# English abstract.
+    if not TAG_LANG_EN in all_langs:
+        print(f"+ Abstract: no English!")
+
+    else:
+        print(f"+ Abstract: English version.")
+
+        abstract_EN = abstract_of(
+            lang        = TAG_LANG_EN,
+            contrib_dir = contrib_dir,
+            start_block = '\\maketitle'
+        )
+
+# Let's work lang by lang.
     for i, lang in enumerate(all_langs, 0):
-        if i != 0:
-            print()
+        print()
 
         kind = "dev." if i == 0 else "contrib."
 
@@ -64,25 +76,43 @@ def prebuild_single_tex(
                     f"missing file.\n{chge_file.relative_to(lang_dir)}"
                 )
 
-            content = chge_file.read_text()
+            about_this_change = content_from_TEX(chge_file)
 
-            print(content)
+            content.append(
+                f"""
+\\tdocversion{{{vers[TAG_NB]}}}[{nb_date_EN(vers)}]
 
-            match = re.search(LATEX_CONTENT_PATTERN, content)
+{about_this_change}
+                """.strip()
+            )
 
-            if match:
-                content = match.group(1)
+        content = "\n\n\n% ------------------ %\n\n\n".join(content)
+        content = content.strip()
 
-            else:
-                raise IOError(f"illegal TEX file.\n{chge_file}")
-
-
-        exit()
+        chge_file = lang_temp_dir / f"{TAG_CHGE_LOG}.tex"
+        chge_file.write_text(content)
 
 # Abstract.
+        if lang == TAG_LANG_EN:
+            abstract = abstract_EN
+
+        else:
+            abstract = abstract_of(
+                lang        = lang,
+                contrib_dir = contrib_dir
+            )
+
+            print(abstract)
+            exit()
+
+            abstract = f"""
+{abstract}
+            """.strip()
 
 
 
+# Manual.
+        print()
 
         for onedir, srcfile, kind in iter_sorted_useful_files(
             source              = source,
@@ -110,8 +140,48 @@ def prebuild_single_tex(
                 )
 
 
-def content_from_TEX(srcfile):
-    ...
+def abstract_of(
+    lang,
+    contrib_dir
+):
+    abstract_file = contrib_dir / lang / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
+
+    if not abstract_file.is_file():
+        raise IOError("missing file.\n{abstract_file}")
+
+    return content_from_TEX(
+        srcfile     = abstract_file,
+        start_block = "\\begin{abstract}",
+        end_block   = "\\end{abtract}"
+    )
+
+
+def content_from_TEX(
+    srcfile,
+    start_block = "\\begin{document}",
+    end_block   = "\\end{document}"
+):
+    content  = []
+    store_in = False
+
+    for oneline in srcfile.read_text().split('\n'):
+        shortline = oneline.strip()
+
+        if shortline == start_block:
+            store_in = True
+            continue
+
+        if shortline == end_block:
+            break
+
+        if store_in:
+            content.append(oneline)
+
+
+    content = "\n".join(content)
+    content = content.strip()
+
+    return content
 
 
 def extract_from_TEX(srcfile):
