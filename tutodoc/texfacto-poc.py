@@ -1,26 +1,24 @@
-import re
+DEBUG = False
+# DEBUG = True
+
+
+# ------------------- #
+# -- PACKAGES USED -- #
+# ------------------- #
 
 from src2prod import *
 
 from texfacto_POC import *
 
-PROJECT_DIR = Path(__file__).parent
-SOURCE_DIR  = PROJECT_DIR / 'src'
-ROLLOUT_DIR = PROJECT_DIR / "rollout"
-MANUAL__DIR = PROJECT_DIR / "contrib" / "doc" / "manual"
+if DEBUG:
+    from pprint import pprint
 
-PATTERNS = [
-    re.compile(r"^([^%\\]*)(.*)(\\" + macroname + ")(\[.*\][\t ]*\n?[\t ]*)?{(.*)}(.*)$")
-    for macroname in [
-        'input',
-        'tdoclatexshow',
-        'tdoclatexinput',
-        'tdocshowcaseinput',
-        'tdocdocbasicinput', #pb si dans prabule !!!
-    ]
-]
-DEBUG = False
-# DEBUG = True
+
+# --------------- #
+# -- CONSTANTS -- #
+# --------------- #
+
+THIS_DIR = Path(__file__).parent
 
 
 # ----------------- #
@@ -36,9 +34,6 @@ def debug_treeview(
         treeview = treeview,
         depth = 1
     )
-
-    if DEBUG:
-        exit()
 
 
 def _recu_debug_treeview(
@@ -63,14 +58,47 @@ def _recu_debug_treeview(
                 )
 
 
+# ---------------------- #
+# -- METADATA PROJECT -- #
+# ---------------------- #
+
+print_frame(
+    THIS_DIR.name,
+    "METADATA"
+)
+
+metadata = build_metadata(project_dir = THIS_DIR)
+
+print(f"""
+Author           : {metadata[TAG_AUTHOR]}
+Creation         : {str_date(metadata[TAG_CREATION][TAG_DATE])}
+Last version     : {str_date(metadata[TAG_LAST_VERSION][TAG_DATE])} [{metadata[TAG_LAST_VERSION][TAG_VERSION]}]
+Short desc.      : {metadata[TAG_DESC]}
+
+Manual
+  - Dev lang  : {metadata[TAG_MANUAL_DEV_LANG]}
+  - Other lang: {', '.join(metadata[TAG_MANUAL_OTHER_LANG]) if metadata[TAG_MANUAL_OTHER_LANG] else 'none'}
+
+... etc.
+""".lstrip())
+
+# exit()
+
+if DEBUG:
+    print("# -- METADATA -- #")
+
+    pprint(metadata)
+    exit()
+
+
 # ----------------------- #
 # -- ALL USEFULL FILES -- #
 # ----------------------- #
 
 treeview = build_tree(
-    project = PROJECT_DIR,
-    source  = Path('src'),
-    target  = ROLLOUT_DIR,
+    project = metadata[TAG_PROJ_DIR],
+    source  = metadata[TAG_SRC],
+    target  = metadata[TAG_ROLLOUT],
     readme  = Path('README.md'),
     ignore = """
 test_*/
@@ -85,11 +113,6 @@ tools_*.*
 """
 )
 
-
-# --------------------------------- #
-# -- IGNORE THE UNUSED PDF FILES -- #
-# --------------------------------- #
-
 for directdir, content in treeview[TAG_DIR].items():
     subfiles = content[TAG_FILE]
 
@@ -102,43 +125,79 @@ for directdir, content in treeview[TAG_DIR].items():
                 subfiles.remove(pdf_unused)
 
 
-# ------------------------------ #
-# -- ONLY SOURCE FILES SORTED -- #
-# ------------------------------ #
+if DEBUG:
+    print("# -- TREVIEW -- #")
+    debug_treeview(metadata[TAG_SRC], treeview)
 
-# debug_treeview(SOURCE_DIR, treeview);exit()
-# from pprint import pprint;pprint(list(treeview[TAG_DIR].keys()));exit()
+    # exit()
 
-tmpdir = build_tmp_proj(
-    source   = SOURCE_DIR,
+
+# ----------------------- #
+# -- SORTED MAIN FILES -- #
+# ----------------------- #
+
+print_frame(
+    metadata[TAG_PROJ_NAME],
+    "SORTED MAIN FILES",
+    "(no resources printed)"
+)
+
+sorted_useful_files = files_2_analyze(
+    source   = metadata[TAG_SRC],
     treeview = treeview
 )
 
+if DEBUG:
+    for onedir, sorted2analyze in sorted_useful_files.items():
+        print()
+        print()
+        print(f"+ {onedir}")
+        print()
+        pprint(sorted2analyze)
 
-update_contrib(
-    projdir         = PROJECT_DIR,
-    toc_doc         = TOC_DOC,
-    toc_doc_resrces = TOC_DOC_RESRCES
+    # exit()
+
+
+# --------------------------- #
+# -- TEMP. VERSION - START -- #
+# --------------------------- #
+
+print_frame(
+    metadata[TAG_PROJ_NAME],
+    "TEMP. VERSION",
+    "(start)"
 )
 
-
-build_rollout_proj_code(
-    tmpdir     = tmpdir,
-    rolloutdir = ROLLOUT_DIR,
-)
+emptydir(metadata[TAG_TEMP])
 
 
-add_contrib_doc(
-    tmpdir     = tmpdir,
-    projdir    = PROJECT_DIR,
-    rolloutdir = ROLLOUT_DIR,
-    toc_doc    = TOC_DOC,
-)
+# ----------------------------------------- #
+# -- TEMP. VERSION - PRE STY & TEX FILES -- #
+# ----------------------------------------- #
+
+for kind, builder in [
+    ("STY", build_single_sty),
+    ("TEX", build_single_tex),
+]:
+    print_frame(
+        metadata[TAG_PROJ_NAME],
+        f"SINGLE {kind} FILE",
+        "(temp. version)"
+    )
+
+    builder(
+        source              = metadata[TAG_SRC],
+        temp_dir            = metadata[TAG_TEMP],
+        sorted_useful_files = sorted_useful_files
+    )
 
 
-build_rollout_proj_doc_main(
-    patterns   = PATTERNS,
-    tmpdir     = tmpdir,
-    rolloutdir = ROLLOUT_DIR,
-    manual_dir = MANUAL__DIR,
+# ------------------------- #
+# -- TEMP. VERSION - END -- #
+# ------------------------- #
+
+print_frame(
+    metadata[TAG_PROJ_NAME],
+    "TEMP. VERSION",
+    "(finished)"
 )

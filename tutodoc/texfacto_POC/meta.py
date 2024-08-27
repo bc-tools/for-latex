@@ -30,11 +30,16 @@ def build_metadata(project_dir):
     metadata = {
         TAG_AUTHOR  : gene_cfg["author"],
         TAG_DESC    : gene_cfg["desc"],
-        TAG_DOC_LANG: gene_cfg["lang"]["doc"],
+        TAG_MANUAL_DEV_LANG: gene_cfg["lang"]["doc"],
     }
 
+    metadata[TAG_MANUAL_OTHER_LANG] = manual_other_lang(
+        project_dir = project_dir,
+        dev_lang    = metadata[TAG_MANUAL_DEV_LANG]
+    )
+
     metadata[TAG_PROJ_DIR]  = project_dir
-    metadata[TAG_MANUALS]   = project_dir / "contrib" / "doc" / "manual"
+    metadata[TAG_MANUAL]    = project_dir / "contrib" / "doc" / "manual"
     metadata[TAG_PROJ_NAME] = project_dir.name
     metadata[TAG_ROLLOUT]   = project_dir / "rollout"
     metadata[TAG_SRC]       = project_dir / "src"
@@ -48,6 +53,9 @@ def build_metadata(project_dir):
     return metadata
 
 
+# -------------- #
+# -- VERSIONS -- #
+# -------------- #
 
 def about_stable_version(project_dir):
     stable_chges_dir = project_dir / 'changes' / 'stable'
@@ -91,7 +99,6 @@ def about_stable_version(project_dir):
     return stable_versions_revsorted
 
 
-
 def version_n_date(dict_vd):
     for v, d in dict_vd.items():
         return {
@@ -112,3 +119,45 @@ def creation(stable_versions):
         ...
 
     return version_n_date(vd)
+
+
+
+# ----------------- #
+# -- DOC. TRANS. -- #
+# ----------------- #
+
+def manual_other_lang(
+    project_dir,
+    dev_lang
+):
+    other_lang = []
+
+    contrib_dir = project_dir / TAG_CONTRIB / TAG_DOC / TAG_MANUAL
+
+    if not contrib_dir.is_dir():
+        return other_lang
+
+    status_dir = contrib_dir / TAG_STATUS
+
+    if not status_dir.is_dir():
+        raise IOError(
+            f"missing ''{TAG_STATUS}'' folder. See the following dir.\n"
+            f"{contrib_dir}")
+
+    for yaml_file in status_dir.glob("*.yaml"):
+        lang = yaml_file.stem
+
+        if lang == dev_lang:
+            continue
+
+# Is the translation accpeted?
+        with yaml_file.open(
+            encoding = 'utf8',
+            mode     = 'r',
+        ) as f:
+            lang_status = safe_load(f)
+
+        if lang_status[TAG_STATUS] == TAG_STATUS_OK:
+            other_lang.append(lang)
+
+    return other_lang

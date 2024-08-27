@@ -2,16 +2,16 @@
 
 
 ==
-26    ??
+??
 ==
 
 --------
 :fordev:
 --------
 
-[[:doc: & code]]
+[[:facto:]]
 ??
-Change log, dates, \nbver and co.: complete automation of the process, making this last one usable for other projects.
+**Complete** automation of the building process, making this last one usable for other projects.
 
 
 // ---------- //

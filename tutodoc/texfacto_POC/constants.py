@@ -34,8 +34,6 @@ TAG_YEAR     = "year"
 
 TAG_AUTHOR    = "author"
 TAG_DESC      = "desc"
-TAG_DOC_LANG  = "doc-lang"
-TAG_MANUALS   = "manuals"
 TAG_PROJ_DIR  = "proj-dir"
 TAG_PROJ_NAME = "proj-name"
 TAG_ROLLOUT   = "rollout"
@@ -45,6 +43,17 @@ TAG_VERSION      = "version"
 TAG_ALL_VERSIONS = "all-stable-versions"
 TAG_LAST_VERSION = "last-stable-versions"
 
+TAG_CONTRIB           = "contrib"
+TAG_DOC               = "doc"
+TAG_MANUAL            = "manual"
+TAG_MANUAL_DEV_LANG   = "manual-dev-lang"
+TAG_MANUAL_OTHER_LANG = "manual-other-lang"
+
+TAG_STATUS         = "status"
+TAG_STATUS_ON_HOLD = "on hold"
+TAG_STATUS_KO      = "ko"
+TAG_STATUS_OK     = "ok"
+TAG_STATUS_UPDATE = "update"
 
 # -------------- #
 # -- PATTERNS -- #

@@ -1,13 +1,13 @@
 author: Christophe, BAL, [projetmbc@gmail.com]
 
-# Possible status.
+# Status for humans and machines.
 #    + on hold
 #    + ko
 #    + ok
 #    + update
 status: ok
 
-# Classical comments.
+# Comments for translators.
 #    + [on hold]  New translation not yet analysed.
 #                 Changes to do: ...
 #    + [ko]       Translation rejected because ...

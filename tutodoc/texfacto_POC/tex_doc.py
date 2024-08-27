@@ -6,7 +6,7 @@ from .misc      import *
 # -- BUILD SINGLE STY FILE -- #
 # --------------------------- #
 
-TODO: pour contrib qui sera le lieu de la doc fbarictauio entenan compte du statut d'une trad
+# TODO: pour contrib qui sera le lieu de la doc fbarictauio entenan compte du statut d'une trad
 def build_single_tex(
     source,
     temp_dir,
