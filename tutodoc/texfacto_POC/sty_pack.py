@@ -6,12 +6,13 @@ from .misc      import *
 # -- BUILD SINGLE STY FILE -- #
 # --------------------------- #
 
-def build_single_sty(
+def prebuild_single_sty(
     source,
     temp_dir,
     sorted_useful_files,
     dev_lang,
-    other_lang
+    other_lang,
+    versions
 ):
     for onedir, srcfile, kind in iter_sorted_useful_files(
         source              = source,
@@ -21,7 +22,7 @@ def build_single_sty(
         if kind == TAG_FILE:
             print(f"   * Analyzing ''{srcfile.name}''")
 
-            pieces = extractfrom_STY(srcfile)
+            pieces = extract_from_STY(srcfile)
             prepare_STY(onedir, temp_dir, *pieces)
 
         else:
@@ -39,7 +40,7 @@ def build_single_sty(
     )
 
 
-def extractfrom_STY(srcfile):
+def extract_from_STY(srcfile):
     with srcfile.open(
         encoding = "utf-8",
         mode     = "r"

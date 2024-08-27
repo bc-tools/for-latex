@@ -45,10 +45,12 @@ def build_metadata(project_dir):
     metadata[TAG_SRC]       = project_dir / "src"
     metadata[TAG_TEMP]      = project_dir / f".{metadata[TAG_PROJ_NAME]}"
 
-    metadata[TAG_ALL_VERSIONS] = about_stable_version(project_dir)
-    metadata[TAG_LAST_VERSION] = last_version(metadata[TAG_ALL_VERSIONS])
+    metadata[TAG_VERSIONS] = {
+        TAG_ALL: about_stable_version(project_dir)
+    }
+    metadata[TAG_VERSIONS][TAG_LAST] = last_version(metadata[TAG_VERSIONS][TAG_ALL])
 
-    metadata[TAG_CREATION] = creation(metadata[TAG_ALL_VERSIONS])
+    metadata[TAG_CREATION] = creation(metadata[TAG_VERSIONS][TAG_ALL])
 
     return metadata
 
@@ -93,32 +95,23 @@ def about_stable_version(project_dir):
         v = str(v)
 
         stable_versions_revsorted.append(
-            {v: stable_versions[v]}
+            stable_versions[v] | {TAG_NB: v}
         )
 
     return stable_versions_revsorted
 
 
-def version_n_date(dict_vd):
-    for v, d in dict_vd.items():
-        return {
-            TAG_VERSION: v,
-            TAG_DATE   : d,
-        }
-
-
 def last_version(stable_versions):
-    for vd in stable_versions:
+    for v in stable_versions:
         break
 
-    return version_n_date(vd)
-
+    return v
 
 def creation(stable_versions):
-    for vd in stable_versions:
+    for v in stable_versions:
         ...
 
-    return version_n_date(vd)
+    return v
 
 
 

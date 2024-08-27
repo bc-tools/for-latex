@@ -1,4 +1,7 @@
-from shutil      import rmtree
+from datetime    import date
+from babel.dates import format_date
+
+from shutil   import rmtree
 
 from .constants import *
 
@@ -38,12 +41,25 @@ def print_frame(
 # -- DATE / VERSION -- #
 # -------------------- #
 
-def str_date(dict_date):
+def nb_date_EN(dict_date):
     return (
         f"{dict_date[TAG_YEAR]}-"
         f"{dict_date[TAG_MONTH]}-"
         f"{dict_date[TAG_DAY]}"
     )
+
+
+def short_name_date(
+    dict_date,
+    lang
+):
+    d = date(
+        int(dict_date[TAG_YEAR]),
+        int(dict_date[TAG_MONTH]),
+        int(dict_date[TAG_DAY])
+    )
+
+    return format_date(d, locale='fr')
 
 
 # ------------------- #

@@ -6,12 +6,13 @@ from .misc      import *
 # -- BUILD SINGLE STY FILE -- #
 # --------------------------- #
 
-def build_single_tex(
+def prebuild_single_tex(
     source,
     temp_dir,
     sorted_useful_files,
     dev_lang,
-    other_lang
+    other_lang,
+    versions
 ):
     all_langs = [dev_lang] + other_lang
 
@@ -29,11 +30,11 @@ def build_single_tex(
         lang_dir      = contrib_dir / lang
         lang_temp_dir = temp_dir / lang
 
-
+# Empty lang dir.
         emptydir(lang_temp_dir)
+
+# Preamble file.
         print()
-
-
         print(f"+ [RES-TEX] Copying ''{lang}/preamble.cfg.tex''")
 
         copyfromto(
@@ -41,9 +42,43 @@ def build_single_tex(
             destfile = lang_temp_dir / "preamble.cfg.tex"
         )
 
+# Change log.
+        print()
+        print(f"+ Change log")
 
+        chge_dir = lang_dir / TAG_CHGE_LOG
+        content  = []
 
-# TODO : abstract / chanange!
+        for vers in versions[TAG_ALL]:
+            print(
+                f"    * {vers[TAG_YEAR]}-{vers[TAG_MONTH]}-{vers[TAG_DAY]}  "
+                f"[{vers[TAG_NB]}]"
+            )
+
+            chge_file = (
+                chge_dir / vers[TAG_YEAR] / f"{vers[TAG_MONTH]}-{vers[TAG_DAY]}.tex"
+            )
+
+            if not chge_file.is_file():
+                raise IOError(
+                    f"missing file.\n{chge_file.relative_to(lang_dir)}"
+                )
+
+            content = chge_file.read_text()
+
+            match = re.search(LATEX_CONTENT_PATTERN, content)
+
+            if match:
+                content = match.group(1)
+
+            else:
+                raise IOError(f"illegal TEX file.\n{chge_file}")
+
+            print(content)
+
+        exit()
+
+# Abstract.
 
 
 
@@ -60,7 +95,7 @@ def build_single_tex(
             if kind == TAG_FILE:
                 print(f"   * Analyzing ''{srcfile.name}''")
 
-                pieces = extractfrom_TEX(srcfile)
+                pieces = extract_from_TEX(srcfile)
                 prepare_TEX(onedir, lang_temp_dir, *pieces)
 
             else:
@@ -74,7 +109,11 @@ def build_single_tex(
                 )
 
 
-def extractfrom_TEX(srcfile):
+def content_from_TEX(srcfile):
+    ...
+
+
+def extract_from_TEX(srcfile):
     with srcfile.open(
         encoding = "utf-8",
         mode = "r"

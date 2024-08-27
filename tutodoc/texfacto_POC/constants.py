@@ -39,12 +39,14 @@ TAG_PROJ_NAME = "proj-name"
 TAG_ROLLOUT   = "rollout"
 TAG_SRC       = "source"
 
-TAG_VERSION      = "version"
-TAG_ALL_VERSIONS = "all-stable-versions"
-TAG_LAST_VERSION = "last-stable-versions"
+TAG_VERSIONS = "versions"
+TAG_NB       = "nb"
+TAG_ALL      = "all"
+TAG_LAST     = "last"
 
 TAG_CONTRIB           = "contrib"
 TAG_DOC               = "doc"
+TAG_CHGE_LOG          = "changelog"
 TAG_MANUAL            = "manual"
 TAG_MANUAL_DEV_LANG   = "manual-dev-lang"
 TAG_MANUAL_OTHER_LANG = "manual-other-lang"
@@ -72,3 +74,6 @@ CMDS_FOR_FILE_PATTERNS = [
 
 
 DATE_PATTERN = re.compile(r"==\n(\d+)\s+\((.+)\)\n==")
+
+
+LATEX_CONTENT_PATTERN = re.compile(r"\\begin(.*)\\end\{document\}")

@@ -1,5 +1,5 @@
 DEBUG = False
-# DEBUG = True
+#DEBUG = True
 
 
 # ------------------- #
@@ -69,10 +69,16 @@ print_frame(
 
 metadata = build_metadata(project_dir = THIS_DIR)
 
+if DEBUG:
+    print("# -- METADATA -- #")
+
+    pprint(metadata)
+    exit()
+
 print(f"""
 Author           : {metadata[TAG_AUTHOR]}
-Creation         : {str_date(metadata[TAG_CREATION][TAG_DATE])}
-Last version     : {str_date(metadata[TAG_LAST_VERSION][TAG_DATE])} [{metadata[TAG_LAST_VERSION][TAG_VERSION]}]
+Creation         : {nb_date_EN(metadata[TAG_CREATION])}
+Last version     : {nb_date_EN(metadata[TAG_VERSIONS][TAG_LAST])} [{metadata[TAG_VERSIONS][TAG_LAST][TAG_NB]}]
 Short desc.      : {metadata[TAG_DESC]}
 
 Manual
@@ -82,13 +88,8 @@ Manual
 ... etc.
 """.lstrip())
 
+
 # exit()
-
-if DEBUG:
-    print("# -- METADATA -- #")
-
-    pprint(metadata)
-    exit()
 
 
 # ----------------------- #
@@ -175,9 +176,9 @@ emptydir(metadata[TAG_TEMP])
 # -- TEMP. VERSION - PRE STY & TEX FILES -- #
 # ----------------------------------------- #
 
-for kind, builder in [
-    ("STY", build_single_sty),
-    ("TEX", build_single_tex),
+for kind, prebuilder in [
+    ("STY", prebuild_single_sty),
+    ("TEX", prebuild_single_tex),
 ]:
     print_frame(
         metadata[TAG_PROJ_NAME],
@@ -185,15 +186,35 @@ for kind, builder in [
         "(temp. version)"
     )
 
-    builder(
+    prebuilder(
         source              = metadata[TAG_SRC],
         temp_dir            = metadata[TAG_TEMP],
         sorted_useful_files = sorted_useful_files,
         dev_lang            = metadata[TAG_MANUAL_DEV_LANG],
         other_lang          = metadata[TAG_MANUAL_OTHER_LANG],
+        versions            = metadata[TAG_VERSIONS],
     )
 
 
+
+
+
+
+
+exit()
+
+
+
+versions = metadata[TAG_VERSIONS]
+last_vers = versions[TAG_LAST]
+
+sn_date = short_name_date(
+            dict_date = last_vers[TAG_DATE],
+            lang      = "fr"
+)
+
+date_n_ver = f"{sn_date} - Version {last_vers[TAG_NB]}"
+print(f"{date_n_ver = }")
 # ------------------------- #
 # -- TEMP. VERSION - END -- #
 # ------------------------- #
