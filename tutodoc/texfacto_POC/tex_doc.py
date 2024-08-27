@@ -29,6 +29,16 @@ def prebuild_single_tex(
             contrib_dir = contrib_dir
         )
 
+        abstract_EN = "\n    ".join(
+            abstract_EN.split("\n")
+        )
+
+        abstract_EN = other_langs(
+            content   = abstract_EN,
+            lang      = TAG_LANG_EN,
+            all_langs = all_langs
+        )
+
 # Let's work lang by lang.
     for i, lang in enumerate(all_langs, 0):
         print()
@@ -92,31 +102,31 @@ def prebuild_single_tex(
         chge_file.write_text(content)
 
 # Abstract.
-        if lang == TAG_LANG_EN:
-            abstract = abstract_EN
+        abstract = content_from_TEX(
+            srcfile = contrib_dir / lang / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
+        )
 
-        else:
-            abstract = content_from_TEX(
-                srcfile = contrib_dir / lang / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
-            )
-
+        if lang != TAG_LANG_EN:
             abstract = abstract.replace(
                 "\\end{abstract}",
                 f"""
 
     {{\\small\\itshape
-\\textbf{{Abstract.}}
-    {abstract_EN}
+        \\textbf{{Abstract.}}
+        {abstract_EN}
     }}
 \\end{{abstract}}
                 """.rstrip()
             )
 
+        abstract = other_langs(
+            content   = abstract,
+            lang      = lang,
+            all_langs = all_langs
+        )
 
-        print(abstract)
-        exit()
-
-
+        abstract_file = lang_temp_dir / f"{TAG_ABSTRACT}.tex"
+        abstract_file.write_text(abstract)
 
 # Manual.
         print()
@@ -145,22 +155,6 @@ def prebuild_single_tex(
                     srcfile  = srcfile,
                     destfile = lang_temp_dir / relpath
                 )
-
-
-def abstract_of(
-    lang,
-    contrib_dir
-):
-    abstract_file = contrib_dir / lang / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
-
-    if not abstract_file.is_file():
-        raise IOError("missing file.\n{abstract_file}")
-
-    return content_from_TEX(
-        srcfile     = abstract_file,
-        start_block = f"\\begin{{{TAG_ABSTRACT}}}",
-        end_block   = f"\\end{{{TAG_ABSTRACT}}}"
-    )
 
 
 def content_from_TEX(
@@ -256,3 +250,39 @@ def prepare_TEX(
             content  = thedoc,
             destfile = tmpdir / '.tmp_thedoc.tex'
         )
+
+
+
+def other_langs(
+    content,
+    lang,
+    all_langs,
+):
+    others = [
+        LANG_NAMES[lang][l]
+        for l in all_langs
+        if l != lang
+    ]
+
+    content = content.replace(
+        "<<OTHER-LANGS>>",
+        ", ".join(others)
+    )
+
+    return content
+
+
+def abstract_of(
+    lang,
+    contrib_dir
+):
+    abstract_file = contrib_dir / lang / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
+
+    if not abstract_file.is_file():
+        raise IOError("missing file.\n{abstract_file}")
+
+    return content_from_TEX(
+        srcfile     = abstract_file,
+        start_block = f"\\begin{{{TAG_ABSTRACT}}}",
+        end_block   = f"\\end{{{TAG_ABSTRACT}}}"
+    )

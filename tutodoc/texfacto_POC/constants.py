@@ -61,6 +61,7 @@ TAG_STATUS_KO      = "ko"
 TAG_STATUS_OK     = "ok"
 TAG_STATUS_UPDATE = "update"
 
+
 # -------------- #
 # -- PATTERNS -- #
 # -------------- #
@@ -78,3 +79,19 @@ CMDS_FOR_FILE_PATTERNS = [
 
 
 DATE_PATTERN = re.compile(r"==\n(\d+)\s+\((.+)\)\n==")
+
+
+# --------------- #
+# -- LANGUAGES -- #
+# --------------- #
+
+LANG_NAMES = {
+    'en' : {
+        'en': "English",
+        'fr': "French",
+    },
+    'fr' : {
+        'en': "anglais",
+        'fr': "français",
+    },
+}
