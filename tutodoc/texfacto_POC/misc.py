@@ -129,7 +129,8 @@ def adddocsubdir(
 def iter_sorted_useful_files(
     source,
     sorted_useful_files,
-    ext_wanted
+    ext_wanted,
+    extra_info
 ):
     not_first_dir = False
 
@@ -140,7 +141,7 @@ def iter_sorted_useful_files(
         else:
             not_first_dir = True
 
-        print(f'+ Working in src/{onedir.relative_to(source)}/')
+        print(f'+ Working in {extra_info}/{onedir.relative_to(source)}/')
 
         for kind in [
             TAG_FILE,

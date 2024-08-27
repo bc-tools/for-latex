@@ -188,7 +188,9 @@ for kind, builder in [
     builder(
         source              = metadata[TAG_SRC],
         temp_dir            = metadata[TAG_TEMP],
-        sorted_useful_files = sorted_useful_files
+        sorted_useful_files = sorted_useful_files,
+        dev_lang            = metadata[TAG_MANUAL_DEV_LANG],
+        other_lang          = metadata[TAG_MANUAL_OTHER_LANG],
     )
 
 

@@ -9,12 +9,15 @@ from .misc      import *
 def build_single_sty(
     source,
     temp_dir,
-    sorted_useful_files
+    sorted_useful_files,
+    dev_lang,
+    other_lang
 ):
     for onedir, srcfile, kind in iter_sorted_useful_files(
         source              = source,
         sorted_useful_files = sorted_useful_files,
-        ext_wanted          = TAG_STY
+        ext_wanted          = TAG_STY,
+        extra_info          = source.name
     ):
         if kind == TAG_FILE:
             print(f"   * Analyzing ''{srcfile.name}''")

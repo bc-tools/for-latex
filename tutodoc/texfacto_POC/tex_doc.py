@@ -10,22 +10,64 @@ from .misc      import *
 def build_single_tex(
     source,
     temp_dir,
-    sorted_useful_files
+    sorted_useful_files,
+    dev_lang,
+    other_lang
 ):
-    for onedir, srcfile, kind in iter_sorted_useful_files(
-        source              = source,
-        sorted_useful_files = sorted_useful_files,
-        ext_wanted          = TAG_TEX
-    ):
-        if kind == TAG_FILE:
-            print(f"   * Analyzing ''{srcfile.name}''")
+    all_langs = [dev_lang] + other_lang
 
-        else:
-            print(f"   * [RES-DOC]")
-            print(f"       -> Copying ''{srcfile.relative_to(onedir)}"
-                  f"/{srcfile.name}'")
+    contrib_dir = source.parent / TAG_CONTRIB / TAG_DOC / TAG_MANUAL
 
+    for i, lang in enumerate(all_langs, 0):
+        if i != 0:
+            print()
 
+        kind = "dev." if i == 0 else "contrib."
+
+        print(f"-- {kind.upper()} LANG ''{lang}'' --")
+        print()
+
+        lang_dir      = contrib_dir / lang
+        lang_temp_dir = temp_dir / lang
+
+        emptydir(lang_temp_dir)
+
+        for onedir, srcfile, kind in iter_sorted_useful_files(
+            source              = source,
+            sorted_useful_files = sorted_useful_files,
+            ext_wanted          = TAG_TEX,
+            extra_info          = lang
+        ):
+            srcfile       = lang_dir / onedir.name / srcfile.relative_to(onedir)
+
+            if kind == TAG_FILE:
+                print(f"   * Analyzing ''{srcfile.name}''")
+
+                pieces = extractfrom_TEX(srcfile)
+                prepare_TEX(onedir, lang_temp_dir, *pieces)
+
+            else:
+                print(f"   * [RES-TEX]")
+                print(f"       -> Copying ''{srcfile.name}'")
+
+                exit()
+
+                destdir = tmpdir / relpath
+
+                if not destdir.is_dir():
+                    destdir.mkdir(parents = True)
+
+                for srcfile in dircontent[TAG_FILE]:
+                    copyfromto(srcfile, destdir / srcfile.name)
+
+                    TOC_DOC_RESRCES.append(srcfile)
+
+                copyfromto(
+                    srcfile  = srcfile,
+                    destfile = lang_temp_dir / srcfile.name
+                )
+
+        exit()
 
 
 def extractfrom_TEX(srcfile):
@@ -73,6 +115,7 @@ def extractfrom_TEX(srcfile):
 
 
 def prepare_TEX(
+    _     ,  # factorization needs ths unused argument...
     tmpdir,
     fordoc,
     thedoc
