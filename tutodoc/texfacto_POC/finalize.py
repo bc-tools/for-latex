@@ -7,6 +7,32 @@ from .misc      import *
 # --------------------------- #
 
 def finalize(metadata):
+    final_sty(metadata)
+    final_tex(metadata)
+
+
+
+def final_tex(metadata):
+# Useful.
+    proj_name = metadata[TAG_PROJ_NAME]
+
+    temp_dir    = metadata[TAG_TEMP]
+    rollout_dir = metadata[TAG_ROLLOUT]
+
+# TEX files.
+    print()
+
+    doc_dir  = rollout_dir / "doc"
+
+    emptydir(doc_dir)
+
+
+
+
+
+
+
+def final_sty(metadata):
 # Useful.
     proj_name = metadata[TAG_PROJ_NAME]
 
@@ -55,17 +81,6 @@ def finalize(metadata):
             destfile = code_dir / resrc.name
         )
 
-# TEX files.
-    print()
-
-    doc_dir  = rollout_dir / "doc"
-
-    emptydir(doc_dir)
-
-
-
-
-
 
 def sty_header(metadata):
 # About
@@ -85,13 +100,13 @@ def sty_header(metadata):
 
     for i, line in enumerate(about):
         line += ' ' * (max_len - len(line))
-        line  = f"% -- {line} -- %"
+        line  = f"% ** {line} ** %"
 
         about[i] = line
 
     about = '\n'.join(about)
 
-    deco =  '-' * (max_len + 6)
+    deco =  '*' * (max_len + 6)
     deco  = f"% {deco} %"
 
     about = f"""

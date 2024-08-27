@@ -115,6 +115,11 @@ LANG_NAMES = {
     },
 }
 
+HISTORY_TRANS = {
+    'en' : "History",
+    'fr' : "Historique",
+}
+
 
 # -------------- #
 # -- SRC CODE -- #
