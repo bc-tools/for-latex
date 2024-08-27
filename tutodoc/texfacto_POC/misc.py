@@ -130,8 +130,11 @@ def iter_sorted_useful_files(
     source,
     sorted_useful_files,
     ext_wanted,
-    extra_info
+    fake_src_name = ""
 ):
+    if not fake_src_name:
+        fake_src_name = source.name
+
     not_first_dir = False
 
     for onedir, files_n_resrc in sorted_useful_files.items():
@@ -141,7 +144,7 @@ def iter_sorted_useful_files(
         else:
             not_first_dir = True
 
-        print(f'+ Working in {extra_info}/{onedir.relative_to(source)}/')
+        print(f'+ Working in {fake_src_name}/{onedir.relative_to(source)}/')
 
         for kind in [
             TAG_FILE,

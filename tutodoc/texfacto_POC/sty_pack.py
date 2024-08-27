@@ -16,8 +16,7 @@ def build_single_sty(
     for onedir, srcfile, kind in iter_sorted_useful_files(
         source              = source,
         sorted_useful_files = sorted_useful_files,
-        ext_wanted          = TAG_STY,
-        extra_info          = source.name
+        ext_wanted          = TAG_STY
     ):
         if kind == TAG_FILE:
             print(f"   * Analyzing ''{srcfile.name}''")

@@ -24,21 +24,22 @@ def build_single_tex(
 
         kind = "dev." if i == 0 else "contrib."
 
-        print(f"-- {kind.upper()} LANG ''{lang}'' --")
+        print(f"## {kind.upper()} LANG ''{lang}'' ##")
         print()
 
         lang_dir      = contrib_dir / lang
         lang_temp_dir = temp_dir / lang
 
         emptydir(lang_temp_dir)
+        print()
 
         for onedir, srcfile, kind in iter_sorted_useful_files(
             source              = source,
             sorted_useful_files = sorted_useful_files,
             ext_wanted          = TAG_TEX,
-            extra_info          = lang
+            fake_src_name       = lang
         ):
-            srcfile       = lang_dir / onedir.name / srcfile.relative_to(onedir)
+            srcfile = lang_dir / onedir.name / srcfile.relative_to(onedir)
 
             if kind == TAG_FILE:
                 print(f"   * Analyzing ''{srcfile.name}''")
