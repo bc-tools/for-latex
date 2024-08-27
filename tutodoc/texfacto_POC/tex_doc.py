@@ -26,9 +26,11 @@ def prebuild_single_tex(
 
         abstract_EN = abstract_of(
             lang        = TAG_LANG_EN,
-            contrib_dir = contrib_dir,
-            start_block = '\\maketitle'
+            contrib_dir = contrib_dir
         )
+
+        print(abstract_EN)
+        exit()
 
 # Let's work lang by lang.
     for i, lang in enumerate(all_langs, 0):
@@ -97,17 +99,25 @@ def prebuild_single_tex(
             abstract = abstract_EN
 
         else:
-            abstract = abstract_of(
-                lang        = lang,
-                contrib_dir = contrib_dir
+            abstract = content_from_TEX(
+                srcfile = contrib_dir / lang / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
             )
 
-            print(abstract)
-            exit()
+            abstract = abstract.replace(
+                "\\end{abstract}",
+                f"""
 
-            abstract = f"""
-{abstract}
-            """.strip()
+    {{\\small\\itshape
+\\textbf{{Abstract.}}
+    {abstract_EN}
+    }}
+\\end{{abstract}}
+                """.rstrip()
+            )
+
+
+        print(abstract)
+        exit()
 
 
 
