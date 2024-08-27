@@ -42,6 +42,12 @@ def build_single_tex(
         )
 
 
+
+# TODO : abstract / chanange!
+
+
+
+
         for onedir, srcfile, kind in iter_sorted_useful_files(
             source              = source,
             sorted_useful_files = sorted_useful_files,
