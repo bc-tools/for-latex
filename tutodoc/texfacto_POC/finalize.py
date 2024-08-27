@@ -8,24 +8,109 @@ from .misc      import *
 
 def finalize(metadata):
     final_sty(metadata)
+
+    print()
+
     final_tex(metadata)
 
 
-
 def final_tex(metadata):
-# Useful.
-    proj_name = metadata[TAG_PROJ_NAME]
-
-    temp_dir    = metadata[TAG_TEMP]
-    rollout_dir = metadata[TAG_ROLLOUT]
-
-# TEX files.
-    print()
-
-    doc_dir  = rollout_dir / "doc"
+    doc_dir  = metadata[TAG_ROLLOUT] / "doc"
 
     emptydir(doc_dir)
 
+    for lang in metadata[TAG_TEMP].glob("*"):
+        if not lang.is_dir():
+            continue
+
+        lang = lang.name
+
+        print(f"+ Building ''{lang}'' TEX file.")
+
+        header = tex_header(
+            lang,
+            metadata
+        )
+
+        main = tex_main(
+            lang,
+            metadata
+        )
+
+        print(main)
+
+
+        exit()
+
+
+def tex_header(
+    lang,
+    metadata
+):
+    lang_dir = metadata[TAG_TEMP] / lang
+
+    preamble = (lang_dir / TAG_TMP_PREAMBLE).read_text()
+    preamble = preamble.strip()
+
+    fordoc = (lang_dir / TAG_TMP_TEX_FOR_DOC).read_text()
+    fordoc = fordoc.strip()
+
+    title = pretty_title(
+        deco  = "=",
+        title = "SOURCE FOR THE DOC"
+    )
+
+    header = f"""{title}
+
+\\documentclass[10pt, a4paper]{{article}}
+
+{preamble}
+
+
+{fordoc}
+
+
+\\begin{{document}}
+    """.strip()
+
+    return header
+
+
+def tex_main(
+    lang,
+    metadata
+):
+    lang_dir = metadata[TAG_TEMP] / lang
+
+    manual = (lang_dir / TAG_TMP_TEX_THE_DOC).read_text()
+    manual = manual.strip()
+
+    abstract = (lang_dir / f"{TAG_ABSTRACT}.tex").read_text()
+    abstract = abstract.strip()
+
+    chgelog = (lang_dir / f"{TAG_CHGE_LOG}.tex").read_text()
+    chgelog = chgelog.strip()
+
+    main = f"""
+{abstract}
+
+
+{manual}
+
+
+\\section{{{HISTORY_TRANS[lang]}}}
+
+{chgelog}
+
+\\end{{document}}
+    """.strip() + '\n'
+
+    return main
+
+
+
+def tex_resrc(metadata):
+    ...
 
 
 
@@ -33,20 +118,13 @@ def final_tex(metadata):
 
 
 def final_sty(metadata):
-# Useful.
-    proj_name = metadata[TAG_PROJ_NAME]
-
-    temp_dir    = metadata[TAG_TEMP]
-    rollout_dir = metadata[TAG_ROLLOUT]
-
-# STY file.
-    code_dir  = rollout_dir / "code"
+    code_dir  = metadata[TAG_ROLLOUT] / "code"
 
     emptydir(code_dir)
 
     print("+ Building STY file.")
 
-    code_file = code_dir / f"{proj_name}.sty"
+    code_file = code_dir / f"{metadata[TAG_PROJ_NAME]}.sty"
 
     code = [sty_header(metadata)]
 
@@ -59,20 +137,20 @@ def final_sty(metadata):
             f"""
 % == {kind} == %
 
-{(temp_dir / temp_file).read_text()}
+{(metadata[TAG_TEMP] / temp_file).read_text()}
             """.rstrip()
         )
 
     code = '\n\n'.join(code)
     code = code.strip()
 
-    code = pretty_title(code)
+    code = prettify_all_titles(code)
 
     code_file.write_text(code)
 
     print("+ Copying STY resources.")
 
-    for resrc in temp_dir.glob("*.sty"):
+    for resrc in metadata[TAG_TEMP].glob("*.sty"):
         if resrc.name[0] == '.':
             continue
 
@@ -134,7 +212,7 @@ def sty_header(metadata):
     """.strip()
 
 
-def pretty_title(code):
+def prettify_all_titles(code):
     new_code   = []
     not_ignore = False
 
@@ -151,14 +229,10 @@ def pretty_title(code):
                     pre_deco  = match.group(1)
                     # post_deco = match.group(3)
 
-                    deco = pre_deco[0] * (len(title) + 6)
-                    deco = f"% {deco} %"
-
-                    line = f"""
-{deco}
-{line}
-{deco}
-                    """.strip()
+                    line = pretty_title(
+                        pre_deco[0],
+                        title
+                    )
 
                     break
 
@@ -167,3 +241,19 @@ def pretty_title(code):
     new_code = '\n'.join(new_code)
 
     return new_code
+
+
+def pretty_title(
+    deco,
+    title
+):
+    rule = deco * (len(title) + 6)
+    rule = f"% {rule} %"
+
+    title = f"""
+{rule}
+% {deco*2} {title} {deco*2} %
+{rule}
+    """.strip()
+
+    return title

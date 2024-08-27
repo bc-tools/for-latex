@@ -66,6 +66,13 @@ TAG_TMP_STY_IMPORT  = '.tmp_pack_import.sty'
 TAG_TMP_STY_OPTIONS = '.tmp_pack_options.sty'
 TAG_TMP_STY_SRC     = '.tmp_pack_src.sty'
 
+TAG_TMP_TEX_FOR_DOC = '.tmp_fordoc.tex'
+TAG_TMP_TEX_THE_DOC = '.tmp_thedoc.tex'
+
+
+TAG_TMP_PREAMBLE = 'preamble.cfg.tex'
+
+
 # -------------- #
 # -- PATTERNS -- #
 # -------------- #
@@ -133,6 +140,7 @@ Copyright (C) <<CREATION_YEAR>>-<<LAST_YEAR>> by <<AUTHOR>>
 This file may be distributed and/or modified under
 the conditions of the GNU 3 License.
 """.strip()
+
 
 SRC_CODE_PROVIDE_PACK = """
 \\ProvidesExplPackage

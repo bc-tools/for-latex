@@ -56,11 +56,11 @@ def prebuild_single_tex(
 
 # Preamble file.
         print()
-        print(f"+ [RES-TEX] Copying ''{lang}/preamble.cfg.tex''")
+        print(f"+ [RES-TEX] Copying ''{lang}/{TAG_TMP_PREAMBLE}''")
 
         copyfromto(
-            srcfile  = lang_dir / "preamble.cfg.tex",
-            destfile = lang_temp_dir / "preamble.cfg.tex"
+            srcfile  = lang_dir / TAG_TMP_PREAMBLE,
+            destfile = lang_temp_dir / TAG_TMP_PREAMBLE
         )
 
 # Change log.
