@@ -105,7 +105,7 @@ def prepare_STY(
 
         addcontentto(
             content  = pack_import,
-            destfile = tmpdir / '.tmp_pack_import.sty'
+            destfile = tmpdir / TAG_TMP_STY_IMPORT
         )
 
     if pack_options:
@@ -113,7 +113,7 @@ def prepare_STY(
 
         addcontentto(
             content  = pack_options,
-            destfile = tmpdir / '.tmp_pack_options.sty'
+            destfile = tmpdir / TAG_TMP_STY_OPTIONS
         )
 
     if pack_src:
@@ -126,5 +126,5 @@ def prepare_STY(
 
         addcontentto(
             content  = pack_src,
-            destfile = tmpdir / '.tmp_pack_src.sty'
+            destfile = tmpdir / TAG_TMP_STY_SRC
         )

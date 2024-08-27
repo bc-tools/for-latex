@@ -62,12 +62,20 @@ TAG_STATUS_OK     = "ok"
 TAG_STATUS_UPDATE = "update"
 
 
+TAG_TMP_STY_IMPORT  = '.tmp_pack_import.sty'
+TAG_TMP_STY_OPTIONS = '.tmp_pack_options.sty'
+TAG_TMP_STY_SRC     = '.tmp_pack_src.sty'
+
 # -------------- #
 # -- PATTERNS -- #
 # -------------- #
 
 CMDS_FOR_FILE_PATTERNS = [
-    re.compile(r"^([^%\\]*)(.*)(\\" + macroname + ")(\[.*\][\t ]*\n?[\t ]*)?{(.*)}(.*)$")
+    re.compile(
+          r"^([^%\\]*)(.*)(\\"
+        + macroname
+        + ")(\[.*\][\t ]*\n?[\t ]*)?{(.*)}(.*)$"
+    )
     for macroname in [
         "input",
         "tdoclatexshow",
@@ -80,6 +88,17 @@ CMDS_FOR_FILE_PATTERNS = [
 
 DATE_PATTERN = re.compile(r"==\n(\d+)\s+\((.+)\)\n==")
 
+
+TITLE_PATTERNS = [
+    re.compile(
+          r"% ("
+        + d
+        + r"{2})\s+(.+)\s+("
+        + d
+        + r"{2}) %"
+    )
+    for d in "=-:"
+]
 
 # --------------- #
 # -- LANGUAGES -- #
@@ -95,3 +114,25 @@ LANG_NAMES = {
         'fr': "français",
     },
 }
+
+
+# -------------- #
+# -- SRC CODE -- #
+# -------------- #
+
+SRC_CODE_HEADER = """
+This is file `<<PROJ_NAME>>.sty' generated automatically.
+
+Copyright (C) <<CREATION_YEAR>>-<<LAST_YEAR>> by <<AUTHOR>>
+
+This file may be distributed and/or modified under
+the conditions of the GNU 3 License.
+""".strip()
+
+SRC_CODE_PROVIDE_PACK = """
+\\ProvidesExplPackage
+  {<<PROJ_NAME>>}
+  {<<LAST_DATE>>}  % Creation: <<CREATION_DATE>>
+  {<<LAST_NB_VER>>}
+  {<<SHORT_DESC>>}
+""".strip()

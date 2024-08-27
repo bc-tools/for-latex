@@ -59,7 +59,7 @@ def short_name_date(
         int(dict_date[TAG_DAY])
     )
 
-    return format_date(d, locale='fr')
+    return format_date(d, locale = lang)
 
 
 # ------------------- #
@@ -67,13 +67,15 @@ def short_name_date(
 # ------------------- #
 
 def emptydir(folder):
+    what = f"''{folder.parent.name}/{folder.name}'' folder."
+
     if folder.is_dir():
-        print(f'+ Cleaning {folder.parent.name}/{folder.name}')
+        print(f"+ Cleaning {what}")
 
         rmtree(folder)
 
     else:
-        print(f'+ Creation of {folder.name}')
+        print(f"+ Creation of {what}")
 
     folder.mkdir(parents = True)
 

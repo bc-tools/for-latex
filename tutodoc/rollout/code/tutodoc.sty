@@ -1,17 +1,22 @@
-% ------------------------------------------------------- %
-% - This is file `tutodoc.sty' generated automatically. - %
-% -                                                     - %
-% - Copyright (C) 2023-2024 by Christophe BAL           - %
-% -                                                     - %
-% - This file may be distributed and/or modified under  - %
-% - the conditions of the GNU 3 License.                - %
-% ------------------------------------------------------- %
+% --------------------------------------------------------- %
+% -- This is file `tutodoc.sty' generated automatically. -- %
+% --                                                     -- %
+% -- Copyright (C) 2023-2024 by Christophe BAL           -- %
+% --                                                     -- %
+% -- This file may be distributed and/or modified under  -- %
+% -- the conditions of the GNU 3 License.                -- %
+% --------------------------------------------------------- %
 
 \ProvidesExplPackage
-    {tutodoc}
-    {2024-08-23} % Creation: 2023-11-29
-    {1.2.0-a}
-    {This package proposes tools for writing "human friendly" documentations of LaTeX packages.}
+  {tutodoc}
+  {2024-08-23}  % Creation: 2023-11-29
+  {1.2.0-a}
+  {This package proposes tools for writing "human friendly" documentations of LaTeX packages.}
+
+
+% =================== %
+% == PACKAGES USED == %
+% =================== %
 
 \RequirePackage[
   top            = 2.5cm,
@@ -59,18 +64,28 @@
                [2023-09-07]
 
 
+% ======================= %
+% == AVAILABLE OPTIONS == %
+% ======================= %
+
+% ----------------- %
 % -- LOCALE LANG -- %
+% ----------------- %
 
 \ExplSyntaxOn
 
+% ::::::::::::::::::: %
 % :: SOME MESSAGES :: %
+% ::::::::::::::::::: %
 
 \msg_set:nnnn { tdoc } { package-option-lang-unknown }
   { Unknown ~ language. }
   { See ~ the ~ documentation ~ for ~ the ~ supported ~ languages. }
 
 
+% ::::::::::::::::::::::: %
 % :: SETTING SOME KEYS :: %
+% ::::::::::::::::::::::: %
 
 \str_new:N \l_tdoc_opt_lang_str
 
@@ -97,7 +112,13 @@
 \ExplSyntaxOff
 
 
+% =============== %
+% == MAIN CODE == %
+% =============== %
+
+% --------------------- %
 % -- LOCALE SETTINGS -- %
+% --------------------- %
 
 \NewDocumentCommand{\tutodoc@colon}{}{:}
 
@@ -115,12 +136,16 @@
 \ExplSyntaxOff
 
 
+% ---------------------- %
 % -- GENERAL SETTINGS -- %
+% ---------------------- %
 
 \setlength{\parindent}{0cm}
 
 
+% ----------- %
 % -- LINKS -- %
+% ----------- %
 
 \hypersetup{
   colorlinks,
@@ -131,7 +156,9 @@
 }
 
 
+% --------------- %
 % -- TOC & Co. -- %
+% --------------- %
 
 \ifcsundef{chapter}%
           {}%
@@ -173,7 +200,9 @@
 \DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
 
 
+% ------------- %
 % -- QUOTING -- %
+% ------------- %
 
 %%%
 % prototype::
@@ -186,7 +215,9 @@
 }
 
 
+% ------------------------------ %
 % -- EXPLAINING ENGLISH NAMES -- %
+% ------------------------------ %
 
 %%%
 % prototype::
@@ -215,9 +246,13 @@
 }
 
 
+% --------------------------- %
 % -- FOCUS ON SOME CONTENT -- %
+% --------------------------- %
 
+% ::::::::::::::::::::::::::::::: %
 % :: EXAMPLE - HIDDEN VERSIONS :: %
+% ::::::::::::::::::::::::::::::: %
 
 %%%
 % See the \doc of the macro ''\newtheorem'' from the package ''amsthm''
@@ -240,7 +275,9 @@
 \newtheorem*{@@tdocexa@no@nb}{\tutodoc@trans@exa@title}
 
 
+% :::::::::::::::::::::::::::::: %
 % :: EXAMPLE - PUBLIC VERSION :: %
+% :::::::::::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
@@ -273,7 +310,9 @@
 \ExplSyntaxOff
 
 
+% :::::::::::: %
 % :: REMARK :: %
+% :::::::::::: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
@@ -282,7 +321,9 @@
 \newtheorem*{tdocrem}{\tutodoc@trans@rmk@title}
 
 
+% ::::::::::::::: %
 % :: IMPORTANT :: %
+% ::::::::::::::: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
@@ -291,7 +332,9 @@
 \newtheorem*{tdocimportant}{\tutodoc@trans@important@title}
 
 
+% :::::::::: %
 % :: NOTE :: %
+% :::::::::: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
@@ -300,7 +343,9 @@
 \newtheorem*{tdocnote}{\tutodoc@trans@note@title}
 
 
+% ::::::::: %
 % :: TIP :: %
+% ::::::::: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
@@ -309,7 +354,9 @@
 \newtheorem*{tdoctip}{\tutodoc@trans@tip@title}
 
 
+% ::::::::::::: %
 % :: CUATION :: %
+% ::::::::::::: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
@@ -318,7 +365,9 @@
 \newtheorem*{tdoccaution}{\tutodoc@trans@caution@title}
 
 
+% ::::::::::::: %
 % :: WARNING :: %
+% ::::::::::::: %
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
@@ -327,7 +376,9 @@
 \newtheorem*{tdocwarn}{\tutodoc@trans@warn@title}
 
 
+% ---------------------------------------------- %
 % -- NAMES OF PACKAGES, MACROS & ENVIRONMENTS -- %
+% ---------------------------------------------- %
 
 %%%
 % prototype::
@@ -380,18 +431,24 @@
 }
 
 
+% ------------------------- %
 % -- EXPLAINING PREFIXES -- %
+% ------------------------- %
 
 \ExplSyntaxOn
 
+% :::::::::::::: %
 % :: MESSAGES :: %
+% :::::::::::::: %
 
 \msg_set:nnnn { bdoc } { prefixwhy-bad-format }
 { Bad ~ format, ~ something ~ like ~ ''pre.fix'' ~ expected. }
 { You ~ must ~ use ~ one ~ single ~ point. }
 
 
+% :::::::::::::::::::: %
 % :: PREFIX FROM... :: %
+% :::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -421,7 +478,9 @@
 \ExplSyntaxOff
 
 
+% ::::::::::::::::::::: %
 % :: JUST ONE PREFIX :: %
+% ::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -438,9 +497,13 @@
 }
 
 
+% ------------------------ %
 % -- GENERAL FORMATTING -- %
+% ------------------------ %
 
+% :::::::::::::::::::::::: %
 % :: TEXT INSIDE A RULE :: %
+% :::::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
@@ -483,7 +546,9 @@
 \ExplSyntaxOff
 
 
+% ::::::::::::::::::::::::::: %
 % :: COLOR TRANSFORMATIONS :: %
+% ::::::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -507,7 +572,9 @@
 }
 
 
+% ::::::::::::::::::::::::::: %
 % :: INTERNAL ENVIRONMENTS :: %
+% ::::::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -556,7 +623,9 @@
 
 \ExplSyntaxOn
 
+% ::::::::::::::::::::::: %
 % :: SETTING SOME KEYS :: %
+% ::::::::::::::::::::::: %
 
 \tl_new:N   \l_tdoc_showcase_before_tl
 \tl_new:N   \l_tdoc_showcase_after_tl
@@ -585,7 +654,9 @@
 }
 
 
+% :::::::::::::::::::::::::::::: %
 % :: SHOWCASE FROM TYPED CODE :: %
+% :::::::::::::::::::::::::::::: %
 
 % prototype::
 %     #1 : the key-value options.
@@ -625,7 +696,9 @@
 }
 
 
+% :::::::::::::::::::::::: %
 % :: SHOWCASE FROM FILE :: %
+% :::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -647,9 +720,13 @@
 \ExplSyntaxOff
 
 
+% -------------------- %
 % -- LATEX EXAMPLES -- %
+% -------------------- %
 
+% ::::::::::::::::::::::::::::: %
 % :: INLINE SHORT LATEX CODE :: %
+% ::::::::::::::::::::::::::::: %
 
 %%%
 % See the \doc of the macro ''\newmintinline'' from the package ''minted''
@@ -658,7 +735,9 @@
 \newmintinline[tdocinlatex]{latex}{bgcolor = yellow!4}
 
 
+% ::::::::::::::::::::::::::::::::::::::::::::::: %
 % :: SHORTCUTS FOR TCOLORBOX LISTING FORMATING :: %
+% ::::::::::::::::::::::::::::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
@@ -684,7 +763,9 @@
 \ExplSyntaxOff
 
 
+% ::::::::::::::::::::::::::::::::: %
 % :: THE TCOLORBOX LISTING STYLE :: %
+% ::::::::::::::::::::::::::::::::: %
 
 %%%
 % note::
@@ -718,7 +799,9 @@
 }
 
 
+% ::::::::::::::::::::::::::::::::::: %
 % :: TCOLORBOX LISTING ENVIRONMENT :: %
+% ::::::::::::::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -736,7 +819,9 @@
 }
 
 
+% :::::::::::::::::::::::::::::::::::::: %
 % :: TCOLORBOX IMPORTED LISTING MACRO :: %
+% :::::::::::::::::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -753,11 +838,15 @@
 }
 
 
+% -------------------------- %
 % -- LATEX REAL USE CASES -- %
+% -------------------------- %
 
 \ExplSyntaxOn
 
+% ::::::::::::::::::::::: %
 % :: SETTING SOME KEYS :: %
+% ::::::::::::::::::::::: %
 
 \tl_new:N \l_tdoc_listing_explain_tl
 
@@ -773,7 +862,9 @@
 }
 
 
+% ::::::::::::::::::::: %
 % :: LATEXSHOW MACRO :: %
+% ::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -805,14 +896,18 @@
 
 \ExplSyntaxOn
 
+% :::::::::::::: %
 % :: MESSAGES :: %
+% :::::::::::::: %
 
 \msg_set:nnnn { tdoc } { date-bad-format  }
   { Bad ~ format ~ for ~ a ~ date. }
   { Use ~ YYYY-MM-DD. }
 
 
+% ::::::::::::::::: %
 % :: MARGIN NOTE :: %
+% ::::::::::::::::: %
 
 \reversemarginpar{}
 
@@ -891,7 +986,9 @@
 }
 
 
+% :::::::::::::::::::::: %
 % :: VERSION AND DATE :: %
+% :::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -916,7 +1013,9 @@
 }
 
 
+% :::::::::: %
 % :: DATE :: %
+% :::::::::: %
 
 %%%
 % prototype::
@@ -934,16 +1033,22 @@
 }
 
 
+% --------------------- %
 % -- CHANGES - WHAT? -- %
+% --------------------- %
 
+% :::::::::::::: %
 % :: MESSAGES :: %
+% :::::::::::::: %
 
 \msg_set:nnnn { tdoc } { changes-topic-missing-title }
   { Missing ~ title. }
   { One ~ single ~ title ~ must ~ be ~ indicated. }
 
 
+% ::::::::::::::::::::: %
 % :: CHANGES - TOPIC :: %
+% ::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -967,7 +1072,9 @@
 }
 
 
+% :::::::::::::::::::::::::: %
 % :: CHANGES - NEW THINGS :: %
+% :::::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -983,7 +1090,9 @@
 }
 
 
+% :::::::::::::::::::::: %
 % :: CHANGES - UPDATE :: %
+% :::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -999,7 +1108,9 @@
 }
 
 
+% ::::::::::::::::::::: %
 % :: CHANGES - BREAK :: %
+% ::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -1015,7 +1126,9 @@
 }
 
 
+% ::::::::::::::::::::::: %
 % :: CHANGES - PROBLEM :: %
+% ::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -1031,7 +1144,9 @@
 }
 
 
+% ::::::::::::::::::: %
 % :: CHANGES - FIX :: %
+% ::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -1049,7 +1164,9 @@
 \ExplSyntaxOff
 
 
+% ----------------- %
 % -- DECORATIONS -- %
+% ----------------- %
 
 % Source for \addvspace{\medskipamount} instead of \medskip.
 %    * https://tex.stackexchange.com/a/705938/6880

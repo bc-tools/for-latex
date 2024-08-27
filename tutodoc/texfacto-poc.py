@@ -1,5 +1,5 @@
 DEBUG = False
-#DEBUG = True
+# DEBUG = True
 
 
 # ------------------- #
@@ -76,18 +76,17 @@ if DEBUG:
     exit()
 
 print(f"""
-Author           : {metadata[TAG_AUTHOR]}
-Creation         : {nb_date_EN(metadata[TAG_CREATION])}
-Last version     : {nb_date_EN(metadata[TAG_VERSIONS][TAG_LAST])} [{metadata[TAG_VERSIONS][TAG_LAST][TAG_NB]}]
-Short desc.      : {metadata[TAG_DESC]}
+Author       : {metadata[TAG_AUTHOR]}
+Creation     : {nb_date_EN(metadata[TAG_CREATION])}  [{metadata[TAG_CREATION][TAG_NB]}]
+Last version : {nb_date_EN(metadata[TAG_VERSIONS][TAG_LAST])}  [{metadata[TAG_VERSIONS][TAG_LAST][TAG_NB]}]
+Short desc.  : {metadata[TAG_DESC]}
 
 Manual
-  - Dev lang  : {metadata[TAG_MANUAL_DEV_LANG]}
-  - Other lang: {', '.join(metadata[TAG_MANUAL_OTHER_LANG]) if metadata[TAG_MANUAL_OTHER_LANG] else 'none'}
+  - Dev lang   : {metadata[TAG_MANUAL_DEV_LANG]}
+  - Other lang : {', '.join(metadata[TAG_MANUAL_OTHER_LANG]) if metadata[TAG_MANUAL_OTHER_LANG] else 'none'}
 
 ... etc.
 """.lstrip())
-
 
 # exit()
 
@@ -196,31 +195,14 @@ for kind, prebuilder in [
     )
 
 
-
-
-
-
-
-exit()
-
-
-
-versions = metadata[TAG_VERSIONS]
-last_vers = versions[TAG_LAST]
-
-sn_date = short_name_date(
-            dict_date = last_vers[TAG_DATE],
-            lang      = "fr"
-)
-
-date_n_ver = f"{sn_date} - Version {last_vers[TAG_NB]}"
-print(f"{date_n_ver = }")
-# ------------------------- #
-# -- TEMP. VERSION - END -- #
-# ------------------------- #
+# --------------------------- #
+# -- FINAL PRODUCT - START -- #
+# --------------------------- #
 
 print_frame(
     metadata[TAG_PROJ_NAME],
-    "TEMP. VERSION",
-    "(finished)"
+    "FINAL PRODUCT",
+    "(start)"
 )
+
+finalize(metadata)
