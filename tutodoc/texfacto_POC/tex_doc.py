@@ -29,8 +29,18 @@ def build_single_tex(
         lang_dir      = contrib_dir / lang
         lang_temp_dir = temp_dir / lang
 
+
         emptydir(lang_temp_dir)
         print()
+
+
+        print(f"+ [RES-TEX] Copying ''{lang}/preamble.cfg.tex''")
+
+        copyfromto(
+            srcfile  = lang_dir / "preamble.cfg.tex",
+            destfile = lang_temp_dir / "preamble.cfg.tex"
+        )
+
 
         for onedir, srcfile, kind in iter_sorted_useful_files(
             source              = source,
@@ -50,9 +60,7 @@ def build_single_tex(
             else:
                 relpath = srcfile.relative_to(curdir)
 
-                print(f"   * [RES-TEX]")
-                print(f"       -> Copying ''{relpath}'")
-
+                print(f"   * [RES-TEX] Copying ''{relpath}'")
 
                 copyfromto(
                     srcfile  = srcfile,

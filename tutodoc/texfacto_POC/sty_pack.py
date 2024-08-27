@@ -25,8 +25,7 @@ def build_single_sty(
             prepare_STY(onedir, temp_dir, *pieces)
 
         else:
-            print(f"   * [RES-STY]")
-            print(f"       -> Copying ''{srcfile.name}'")
+            print(f"   * [RES-STY] Copying ''{srcfile.name}'")
 
             copyfromto(
                 srcfile  = srcfile,
