@@ -27,6 +27,13 @@ def final_tex(metadata):
 
         print(f"+ Building ''{lang}'' TEX file.")
 
+        code_file = doc_dir / f"{metadata[TAG_PROJ_NAME]}-{lang}.tex"
+
+        old_2_new_path, resrc = tex_resrc(
+            lang,
+            metadata
+        )
+
         header = tex_header(
             lang,
             metadata
@@ -37,10 +44,50 @@ def final_tex(metadata):
             metadata
         )
 
-        print(main)
+        old_main = main.split('\n')
+        main     = []
+
+        for line in old_main:
+            newline = line
+
+            for pattern in CMDS_FOR_FILE_PATTERNS:
+                match = pattern.findall(line)
+
+                if not match:
+                    continue
+
+                start, comment, macroname, options, input_file, end = match[0]
+
+                if input_file == '#1':
+                    continue
+
+                if comment:
+                    continue
+
+                for old in "./":
+                    input_file_cleaned = input_file.replace(old, '-')
+
+                newline = f"{start}{macroname}{options}{{{input_file_cleaned}}}{end}\n"
+
+                break
+
+                f_out.write(newline)
+
+            main.append(newline)
+
+        main = '\n'.join(main)
+
+        code = f"""
+{resrc}
 
 
-        exit()
+{header}
+
+
+{main}
+        """.strip() + '\n'
+
+        code_file.write_text(code)
 
 
 def tex_header(
@@ -95,6 +142,11 @@ def tex_main(
 {abstract}
 
 
+\\newpage
+\\tableofcontents
+\\newpage
+
+
 {manual}
 
 
@@ -109,12 +161,55 @@ def tex_main(
 
 
 
-def tex_resrc(metadata):
-    ...
+def tex_resrc(
+    lang,
+    metadata
+):
+    lang_dir = metadata[TAG_TEMP] / lang
+
+    resrc        = []
+    old_2_new_path = {}
+
+    for resrc_dir in lang_dir.glob("*"):
+        if (
+            not resrc_dir.is_dir()
+            or
+            resrc_dir.name[0] == "."
+        ):
+            continue
+
+        for resrc_file in resrc_dir.rglob("*"):
+            if (
+                not resrc_file.is_file()
+                or
+                resrc_file.name[0] == "."
+            ):
+                continue
+
+            old_path = str(resrc_file.relative_to(lang_dir))
+            new_path = old_path.replace("/", "-")
+
+            old_2_new_path[old_path] = new_path
+
+            resrc.append(
+                f"""
+\\begin{{filecontents*}}[overwrite]{{{new_path}}}
+{resrc_file.read_text().strip()}
+\\end{{filecontents*}}
+                """.strip()
+            )
+
+    resrc = [
+        pretty_title(
+            deco  = "=",
+            title = "RESOURCES USED"
+        )
+    ] + resrc
+
+    resrc = '\n\n\n'.join(resrc)
 
 
-
-
+    return old_2_new_path, resrc
 
 
 def final_sty(metadata):
@@ -142,7 +237,7 @@ def final_sty(metadata):
         )
 
     code = '\n\n'.join(code)
-    code = code.strip()
+    code = code.strip() + '\n'
 
     code = prettify_all_titles(code)
 

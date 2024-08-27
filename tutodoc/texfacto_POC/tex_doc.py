@@ -95,7 +95,7 @@ def prebuild_single_tex(
                 """.strip()
             )
 
-        content = "\n\n\n% ------------------ %\n\n\n".join(content)
+        content = "\n\n\\tdocsep\n\n\n% ------------------ %\n\n\n".join(content)
         content = content.strip()
 
         chge_file = lang_temp_dir / f"{TAG_CHGE_LOG}.tex"
@@ -110,6 +110,7 @@ def prebuild_single_tex(
             abstract = abstract.replace(
                 "\\end{abstract}",
                 f"""
+    \\tdocsep
 
     {{\\small\\itshape
         \\textbf{{Abstract.}}
