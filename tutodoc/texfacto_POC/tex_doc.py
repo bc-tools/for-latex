@@ -29,9 +29,6 @@ def prebuild_single_tex(
             contrib_dir = contrib_dir
         )
 
-        print(abstract_EN)
-        exit()
-
 # Let's work lang by lang.
     for i, lang in enumerate(all_langs, 0):
         print()
@@ -161,8 +158,8 @@ def abstract_of(
 
     return content_from_TEX(
         srcfile     = abstract_file,
-        start_block = "\\begin{abstract}",
-        end_block   = "\\end{abtract}"
+        start_block = f"\\begin{{{TAG_ABSTRACT}}}",
+        end_block   = f"\\end{{{TAG_ABSTRACT}}}"
     )
 
 
