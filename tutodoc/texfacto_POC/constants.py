@@ -76,4 +76,4 @@ CMDS_FOR_FILE_PATTERNS = [
 DATE_PATTERN = re.compile(r"==\n(\d+)\s+\((.+)\)\n==")
 
 
-LATEX_CONTENT_PATTERN = re.compile(r"\\begin(.*)\\end\{document\}")
+LATEX_CONTENT_PATTERN = re.compile(r"begin(.*)end")

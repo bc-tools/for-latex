@@ -66,6 +66,8 @@ def prebuild_single_tex(
 
             content = chge_file.read_text()
 
+            print(content)
+
             match = re.search(LATEX_CONTENT_PATTERN, content)
 
             if match:
@@ -74,7 +76,6 @@ def prebuild_single_tex(
             else:
                 raise IOError(f"illegal TEX file.\n{chge_file}")
 
-            print(content)
 
         exit()
 

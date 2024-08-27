@@ -39,13 +39,13 @@
     \rule\linewidth{1pt}
 
     \vspace{-1em}
-    \section*{Test : 
-	\ifnum\docday=0
-		Next release
-	\else
-		\docyear-\docmonth-\docday
-	\fi
-	}
+    \section*{Test :
+    \ifnum\docday=0
+        Next release
+    \else
+        \docyear-\docmonth-\docday
+    \fi
+    }
     \vspace{-.75em}
     \rule\linewidth{1pt}
 }
@@ -53,9 +53,9 @@
 \bigskip
 
 \ifnum\docday=0
-	\input{next}
+    \input{next}
 \else
-	\input{\docyear/\docmonth/\docday}
+    \input{\docyear/\docmonth/\docday}
 \fi
 
 \end{document}
