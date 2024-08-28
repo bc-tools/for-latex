@@ -20,6 +20,8 @@ if DEBUG:
 
 THIS_DIR = Path(__file__).parent
 
+WHAT = "<-- MAIN to CONTRIB."
+
 
 # ---------------------- #
 # -- METADATA PROJECT -- #
@@ -38,7 +40,7 @@ if DEBUG:
     pprint(metadata)
     exit()
 
-print(f"Manual - Dev lang : {metadata[TAG_MANUAL_DEV_LANG]}")
+print(f"Dev lang : {metadata[TAG_MANUAL_DEV_LANG]}")
 print()
 
 # exit()
@@ -93,11 +95,12 @@ CONTRIB_MANUAL_DIR = CONTRIB_DIR / TAG_DOC / TAG_MANUAL
 
 print_frame(
     metadata[TAG_PROJ_NAME],
-    "API, MAIN to CONTRIB."
+    "API",
+    WHAT
 )
 
 glob_search = f"*/{TAG_LOCALE}/*"
-first_lang  = False
+first_dir   = True
 
 for locale_dir in metadata[TAG_SRC].glob(glob_search):
     lang = locale_dir.name
@@ -105,8 +108,8 @@ for locale_dir in metadata[TAG_SRC].glob(glob_search):
         locale_dir.relative_to(metadata[TAG_SRC]).parents
     )[1]
 
-    if first_lang:
-        first_lang = False
+    if first_dir:
+        first_dir = False
     else:
         print()
 
@@ -138,5 +141,6 @@ for locale_dir in metadata[TAG_SRC].glob(glob_search):
 
 print_frame(
     metadata[TAG_PROJ_NAME],
-    "DOC, MAIN to CONTRIB."
+    "DOC",
+    WHAT
 )
