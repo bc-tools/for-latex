@@ -87,7 +87,6 @@ CONTRIB_API_DIR    = CONTRIB_DIR / TAG_API / TAG_LOCALE
 CONTRIB_MANUAL_DIR = CONTRIB_DIR / TAG_DOC / TAG_MANUAL
 
 
-
 # ------------------ #
 # -- API CONTRIB. -- #
 # ------------------ #
