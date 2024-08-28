@@ -135,6 +135,16 @@ def tex_main(
     abstract = (lang_dir / f"{TAG_ABSTRACT}.tex").read_text()
     abstract = abstract.strip()
 
+    for old, new in {
+        'AUTHOR'        : metadata[TAG_AUTHOR],
+        'DATE-N-VERSION': date_n_version(
+            metadata[TAG_VERSIONS][TAG_LAST],
+            lang
+        ),
+    }.items():
+        abstract = abstract.replace(f"<<{old}>>", new)
+
+
     chgelog = (lang_dir / f"{TAG_CHGE_LOG}.tex").read_text()
     chgelog = chgelog.strip()
 

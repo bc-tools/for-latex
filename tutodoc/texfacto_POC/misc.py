@@ -62,6 +62,18 @@ def short_name_date(
     return format_date(d, locale = lang)
 
 
+def date_n_version(
+    dict_version,
+    lang
+):
+    d = short_name_date(dict_version, lang)
+    v = f"Version {dict_version[TAG_NB]}"
+
+    dv = f"{d} - {v}"
+
+    return dv
+
+
 # ------------------- #
 # -- OS OPERATIONS -- #
 # ------------------- #
