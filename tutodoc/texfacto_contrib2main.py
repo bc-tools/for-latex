@@ -200,7 +200,7 @@ for lang_dir in CONTRIB_API_DIR.glob("*"):
 
         print(f'    * Updating "/src/{ctxt.name}".')
 
-        lang_full = LANG_NAMES[TAG_LANG_EN][lang]
+        lang_full = LANG_NAMES[TAG_LANG_EN][lang].lower()
 
         sty_cfg  = SRC_DIR / ctxt.name
         sty_cfg /= f"{PROJECT_NAME}-locale-{ctxt.stem}-{lang_full}.cfg.sty"
