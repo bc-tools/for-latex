@@ -6,15 +6,18 @@ from .misc      import *
 # -- END IS COMING SOON... -- #
 # --------------------------- #
 
-def finalize(metadata):
+def finalize(
+    metadata,
+    ugly_hack = lambda x:x
+):
     final_sty(metadata)
 
     print()
 
-    final_tex(metadata)
+    final_tex(metadata, ugly_hack)
 
 
-def final_tex(metadata):
+def final_tex(metadata, ugly_hack):
     doc_dir  = metadata[TAG_ROLLOUT] / "doc"
 
     emptydir(
@@ -79,6 +82,9 @@ def final_tex(metadata):
             main.append(newline)
 
         main = '\n'.join(main)
+        main = ugly_hack(main)
+
+        resrc = ugly_hack(resrc)
 
         code = f"""
 {resrc}

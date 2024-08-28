@@ -20,7 +20,7 @@ if DEBUG:
 
 THIS_DIR = Path(__file__).parent
 
-WHAT = "<-- MAIN to CONTRIB."
+WHAT = "[MAIN to CONTRIB.]"
 
 
 # ---------------------- #

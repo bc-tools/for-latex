@@ -22,7 +22,7 @@ def prebuild_single_sty(
         if kind == TAG_FILE:
             print(f"   * Analyzing ''{srcfile.name}''")
 
-            pieces = extract_from_STY(srcfile)
+            pieces = extract_from_DEV_STY(srcfile)
             prepare_STY(onedir, temp_dir, *pieces)
 
         else:
@@ -40,7 +40,7 @@ def prebuild_single_sty(
     )
 
 
-def extract_from_STY(srcfile):
+def extract_from_DEV_STY(srcfile):
     with srcfile.open(
         encoding = "utf-8",
         mode     = "r"

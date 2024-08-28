@@ -57,12 +57,12 @@ TAG_MANUAL            = "manual"
 TAG_MANUAL_DEV_LANG   = "manual-dev-lang"
 TAG_MANUAL_OTHER_LANG = "manual-other-lang"
 
-TAG_STATUS         = "status"
-TAG_STATUS_ON_HOLD = "on hold"
-TAG_STATUS_KO      = "ko"
-TAG_STATUS_OK     = "ok"
-TAG_STATUS_UPDATE = "update"
-
+TAG_STATUS          = "status"
+TAG_STATUS_ON_HOLD  = "on hold"
+TAG_STATUS_KO       = "ko"
+TAG_STATUS_OK       = "ok"
+TAG_STATUS_UPDATE   = "update"
+TAG_STATUS_LANG_API = "lang-api"
 
 TAG_TMP_STY_IMPORT  = '.tmp_pack_import.sty'
 TAG_TMP_STY_OPTIONS = '.tmp_pack_options.sty'
@@ -115,6 +115,9 @@ CMDS_FOR_FILE_PATTERNS = [
         "tdocdocbasicinput",
     ]
 ]
+
+
+CMD_ARG_PATTERN = re.compile('#(\d+)')
 
 
 DATE_PATTERN = re.compile(r"==\n(\d+)\s+\((.+)\)\n==")

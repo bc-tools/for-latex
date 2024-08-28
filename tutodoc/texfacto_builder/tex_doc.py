@@ -147,8 +147,19 @@ def prebuild_single_tex(
             if kind == TAG_FILE:
                 print(f"   * Analyzing ''{srcfile.name}''")
 
-                pieces = extract_from_TEX(srcfile)
-                prepare_TEX(onedir, lang_temp_dir, *pieces)
+# WARNING!
+# No magic comment inside the manual of the dev contrib.
+                thedoc = srcfile.read_text()
+
+                _     , _, thedoc = thedoc.partition("\\input{../preamble.cfg.tex}")
+                fordoc, _, thedoc = thedoc.partition("\\begin{document}")
+                thedoc, _, _      = thedoc.partition("\\end{document}")
+
+                fordoc = fordoc.strip()
+                thedoc = thedoc.strip()
+
+                pieces = extract_from_DEV_TEX(srcfile)
+                prepare_TEX(onedir, lang_temp_dir, fordoc, thedoc)
 
             else:
                 relpath = srcfile.relative_to(curdir)
@@ -189,7 +200,7 @@ def content_from_TEX(
     return content
 
 
-def extract_from_TEX(srcfile):
+def extract_from_DEV_TEX(srcfile):
     with srcfile.open(
         encoding = "utf-8",
         mode = "r"
@@ -239,12 +250,18 @@ def prepare_TEX(
     fordoc,
     thedoc
 ):
+    fordoc_file = tmpdir / '.tmp_fordoc.tex'
+    thedoc_file = tmpdir / '.tmp_thedoc.tex'
+
+    createfile(fordoc_file)
+    createfile(thedoc_file)
+
     if fordoc:
         fordoc += '\n'*3
 
         addcontentto(
             content  = fordoc,
-            destfile = tmpdir / '.tmp_fordoc.tex'
+            destfile = fordoc_file
         )
 
     if thedoc:
@@ -252,7 +269,7 @@ def prepare_TEX(
 
         addcontentto(
             content  = thedoc,
-            destfile = tmpdir / '.tmp_thedoc.tex'
+            destfile = thedoc_file
         )
 
 

@@ -208,4 +208,14 @@ print_frame(
     "(start)"
 )
 
-finalize(metadata)
+def ugly_hack(content):
+    content = content.replace(
+        "{examples/listing/xyz.tex}",
+        "{examples-listing-xyz.tex}",
+    )
+    return content
+
+finalize(
+    metadata  = metadata,
+    ugly_hack = ugly_hack
+)
