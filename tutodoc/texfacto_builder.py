@@ -8,7 +8,7 @@ DEBUG = False
 
 from src2prod import *
 
-from texfacto_POC import *
+from texfacto_builder import *
 
 if DEBUG:
     from pprint import pprint

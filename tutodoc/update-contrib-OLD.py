@@ -3,7 +3,7 @@ import re
 from pathlib import Path
 from yaml import safe_load
 
-from texfacto_POC import *
+from texfacto_builder import *
 
 
 PROJECT_DIR    = Path(__file__).parent
