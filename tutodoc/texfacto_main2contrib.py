@@ -93,7 +93,7 @@ CONTRIB_MANUAL_DIR = CONTRIB_DIR / TAG_DOC / TAG_MANUAL
 
 print_frame(
     metadata[TAG_PROJ_NAME],
-    "API CONTRIB."
+    "API, MAIN to CONTRIB."
 )
 
 glob_search = f"*/{TAG_LOCALE}/*"
@@ -138,5 +138,5 @@ for locale_dir in metadata[TAG_SRC].glob(glob_search):
 
 print_frame(
     metadata[TAG_PROJ_NAME],
-    "DOC CONTRIB."
+    "DOC, MAIN to CONTRIB."
 )
