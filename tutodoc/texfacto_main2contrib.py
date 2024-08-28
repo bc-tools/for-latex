@@ -260,7 +260,7 @@ for srcfile in all_tex_files:
     content = f"""
 \\documentclass[12pt, a4paper]{{article}}
 
-\\input{{../../preamble.cfg.tex}}
+\\input{{../preamble.cfg.tex}}
 {fordoc}
 
 \\begin{{document}}
