@@ -211,16 +211,6 @@ new_content = '\n'.join(new_content)
 
 contrib_preamble.write_text(new_content)
 
-# Abstract file.
-print(f"+ Building ''src/{TAG_ABSTRACT}''")
-
-srcfile = SRC_DIR / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
-
-copyfromto(
-    srcfile  = SRC_DIR / TAG_TMP_PREAMBLE,
-    destfile = CONTRIB_DEV_MANUAL_DIR / srcfile.relative_to(SRC_DIR)
-)
-
 # Change log.
 print(f"+ Building ''src/{TAG_CHGE_LOG}''")
 
@@ -229,22 +219,68 @@ for srcfile in (SRC_DIR / TAG_CHGE_LOG).glob("*/*/*.tex"):
     month = srcfile.parent.name
     year  = srcfile.parent.parent.name
 
+    destfile = CONTRIB_DEV_MANUAL_DIR / TAG_CHGE_LOG / year / f"{month}-{day}.tex"
 
-    copyfromto(
-        srcfile  = srcfile,
-        destfile = CONTRIB_DEV_MANUAL_DIR / TAG_CHGE_LOG / year / f"{month}-{day}.tex"
-    )
+    content = srcfile.read_text().strip()
+    content = f"""
+\\documentclass[12pt, a4paper]{{article}}
 
-# Other TEX files.
+\\input{{../../preamble.cfg.tex}}
+
+
+\\begin{{document}}
+
+{content}
+
+\\end{{document}}
+    """.strip() + "\n"
+
+    createfile(destfile)
+    destfile.write_text(content)
+
+# Manual TEX files.
+print("+ Copying manual TEX files...")
+
+all_tex_files = [SRC_DIR / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"]
+
 for onedir, sorted2analyze in sorted_useful_files.items():
-    print(f"+ Copying  ''{onedir.relative_to(metadata[TAG_PROJ_DIR])}''")
+    for srcfile in sorted2analyze[TAG_FILE]:
+        if srcfile.suffix[1:] != TAG_TEX:
+            continue
 
-    for kind in [TAG_FILE, TAG_TEX_RESRC]:
-        for srcfile in sorted2analyze[kind]:
-            if srcfile.suffix[1:] != TAG_TEX:
-                continue
+        all_tex_files.append(srcfile)
 
-            copyfromto(
-                srcfile  = srcfile,
-                destfile = CONTRIB_DEV_MANUAL_DIR / srcfile.relative_to(SRC_DIR)
-            )
+
+for srcfile in all_tex_files:
+    fordoc, thedoc = extract_from_TEX(srcfile)
+
+    if fordoc:
+        fordoc = f"\n{fordoc}\n"
+
+    content = f"""
+\\documentclass[12pt, a4paper]{{article}}
+
+\\input{{../../preamble.cfg.tex}}
+{fordoc}
+
+\\begin{{document}}
+
+{thedoc}
+
+\\end{{document}}
+    """.strip() + "\n"
+
+    destfile = CONTRIB_DEV_MANUAL_DIR / srcfile.relative_to(SRC_DIR)
+
+    createfile(destfile)
+    destfile.write_text(content)
+
+# TEX resources.
+print("+ Copying TEX resources...")
+
+for onedir, sorted2analyze in sorted_useful_files.items():
+    for srcfile in sorted2analyze[TAG_TEX_RESRC]:
+        copyfromto(
+            srcfile  = srcfile,
+            destfile = CONTRIB_DEV_MANUAL_DIR / srcfile.relative_to(SRC_DIR)
+        )

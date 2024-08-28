@@ -95,6 +95,11 @@ def emptydir(
     folder.mkdir(parents = True)
 
 
+def createfile(file):
+    file.parent.mkdir(parents=True, exist_ok=True)
+    file.touch()
+
+
 def copyfromto(
     srcfile,
     destfile,
@@ -106,8 +111,7 @@ def copyfromto(
     ) as f:
         content = f.read()
 
-    destfile.parent.mkdir(parents=True, exist_ok=True)
-    destfile.touch()
+    createfile(destfile)
 
     with destfile.open(
         encoding = "utf-8",
