@@ -38,7 +38,7 @@ if DEBUG:
     print("# -- METADATA -- #")
 
     pprint(metadata)
-    exit()
+    # exit()
 
 print(f"Dev lang : {metadata[TAG_MANUAL_DEV_LANG]}")
 print()
@@ -80,13 +80,40 @@ for directdir, content in treeview[TAG_DIR].items():
                 subfiles.remove(pdf_unused)
 
 
-# ---------------------- #
-# -- CONTRIB. FOLDERS -- #
-# ---------------------- #
+# ----------------------- #
+# -- SORTED MAIN FILES -- #
+# ----------------------- #
+
+print_frame(
+    metadata[TAG_PROJ_NAME],
+    "SORTED MAIN FILES",
+    "(no resources printed)"
+)
+
+sorted_useful_files = files_2_analyze(
+    source   = metadata[TAG_SRC],
+    treeview = treeview
+)
+
+if DEBUG:
+    for onedir, sorted2analyze in sorted_useful_files.items():
+        print()
+        print()
+        print(f"+ {onedir}")
+        print()
+        pprint(sorted2analyze)
+
+    exit()
+
+# -------------------- #
+# -- USEFUL FOLDERS -- #
+# -------------------- #
+
+SRC_DIR = metadata[TAG_SRC]
 
 CONTRIB_DIR        = metadata[TAG_PROJ_DIR] / TAG_CONTRIB
 CONTRIB_API_DIR    = CONTRIB_DIR / TAG_API / TAG_LOCALE
-CONTRIB_MANUAL_DIR = CONTRIB_DIR / TAG_DOC / TAG_MANUAL
+CONTRIB_DEV_MANUAL_DIR = CONTRIB_DIR / TAG_DOC / TAG_MANUAL / metadata[TAG_MANUAL_DEV_LANG]
 
 
 # ------------------ #
@@ -144,3 +171,80 @@ print_frame(
     "DOC",
     WHAT
 )
+
+
+# Empty lang dir.
+emptydir(
+    folder  = CONTRIB_DEV_MANUAL_DIR,
+    rel_dir = metadata[TAG_PROJ_DIR],
+)
+
+# Preamble file.
+print(f"+ Building ''src/{TAG_TMP_PREAMBLE}''")
+
+contrib_preamble = CONTRIB_DEV_MANUAL_DIR / TAG_TMP_PREAMBLE
+
+copyfromto(
+    srcfile  = SRC_DIR / TAG_TMP_PREAMBLE,
+    destfile = contrib_preamble
+)
+
+content = contrib_preamble.read_text()
+
+new_content    = []
+contrib_import = False
+
+for line in content.split('\n'):
+    short_line = line.strip()
+
+    if line == TAG_MC_CONTRIB_LOAD:
+        contrib_import = True
+
+        line = "% Package documented."
+
+    elif contrib_import and short_line:
+        line = line[2:]
+
+    new_content.append(line)
+
+new_content = '\n'.join(new_content)
+
+contrib_preamble.write_text(new_content)
+
+# Abstract file.
+print(f"+ Building ''src/{TAG_ABSTRACT}''")
+
+srcfile = SRC_DIR / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
+
+copyfromto(
+    srcfile  = SRC_DIR / TAG_TMP_PREAMBLE,
+    destfile = CONTRIB_DEV_MANUAL_DIR / srcfile.relative_to(SRC_DIR)
+)
+
+# Change log.
+print(f"+ Building ''src/{TAG_CHGE_LOG}''")
+
+for srcfile in (SRC_DIR / TAG_CHGE_LOG).glob("*/*/*.tex"):
+    day   = srcfile.stem
+    month = srcfile.parent.name
+    year  = srcfile.parent.parent.name
+
+
+    copyfromto(
+        srcfile  = srcfile,
+        destfile = CONTRIB_DEV_MANUAL_DIR / TAG_CHGE_LOG / year / f"{month}-{day}.tex"
+    )
+
+# Other TEX files.
+for onedir, sorted2analyze in sorted_useful_files.items():
+    print(f"+ Copying  ''{onedir.relative_to(metadata[TAG_PROJ_DIR])}''")
+
+    for kind in [TAG_FILE, TAG_TEX_RESRC]:
+        for srcfile in sorted2analyze[kind]:
+            if srcfile.suffix[1:] != TAG_TEX:
+                continue
+
+            copyfromto(
+                srcfile  = srcfile,
+                destfile = CONTRIB_DEV_MANUAL_DIR / srcfile.relative_to(SRC_DIR)
+            )

@@ -1,17 +1,25 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 
 \input{../preamble.cfg.tex}
 
+\usepackage[lang = french]{../main/main}
+\usepackage{../macroenv/macroenv}
+\usepackage{../inenglish/inenglish}
+\usepackage{../showcase/showcase}
+\usepackage{../listing/listing}
+\usepackage{../focus/focus}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{version-n-change}
+
 
 \begin{document}
-
 
 \section{Indiquer les changements}
 
 Afin de faciliter le suivi d'un package, il est indispensable de fournir un historique indiquant les changements effectués lors de la publication d'une nouvelle version.
 
-
-% ------------------ %
 
 
 \subsection{À quel moment ?}
@@ -60,8 +68,5 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 %        L'auteur de \thispack{} est entrain de mettre en place un ensemble d'outils permettant une telle semi-automatisation.
 %    }.
 \end{tdocwarn}
-
-\end{document}
-
 
 \end{document}

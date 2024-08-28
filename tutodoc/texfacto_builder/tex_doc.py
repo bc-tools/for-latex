@@ -207,7 +207,7 @@ def extract_from_TEX(srcfile):
     for oneline in content.split('\n'):
         shortline = oneline.strip()
 
-        if shortline == '% == FORDOC == %':
+        if shortline == TAG_MC_FORDOC:
             store_in = store_fordoc
             continue
 

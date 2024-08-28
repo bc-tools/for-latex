@@ -75,6 +75,28 @@ TAG_TMP_TEX_THE_DOC = '.tmp_thedoc.tex'
 TAG_TMP_PREAMBLE = 'preamble.cfg.tex'
 
 
+# ------------------------- #
+# -- MC = MAGIC COMMENTS -- #
+# ------------------------- #
+
+for kind in [
+    "PACKAGES",
+    "OPTIONS",
+    "TOOLS",
+    "FORDOC",
+    "CONTRIB - LOAD",
+]:
+    varname = kind
+
+    for old, new in [
+        (' ', ''),
+        ('-', '_')
+    ]:
+        varname = varname.replace(old, new)
+
+    globals()[f"TAG_MC_{varname}"] = f"% == {kind} == %"
+
+
 # -------------- #
 # -- PATTERNS -- #
 # -------------- #

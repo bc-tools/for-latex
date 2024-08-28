@@ -1,10 +1,18 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 
 \input{../preamble.cfg.tex}
 
+\usepackage[lang = french]{../main/main}
+\usepackage{../macroenv/macroenv}
+\usepackage{../listing/listing}
+\usepackage{../focus/focus}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{\jobname}
+
 
 \begin{document}
-
 
 \section{Cela veut dire quoi en \tdocquote{anglais}}
 
@@ -22,8 +30,5 @@ La macro \tdocmacro{tdocinEN} et sa version étoilée s'appuient sur \tdocmacro{
 \begin{tdocnote}
     Le texte \tdocquote{en anglais} est traduit dans la langue indiquée lors de l'importation de \thispack{}.
 \end{tdocnote}
-
-\end{document}
-
 
 \end{document}

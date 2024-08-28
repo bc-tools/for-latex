@@ -60,15 +60,15 @@ def extract_from_STY(srcfile):
     for oneline in content.split('\n'):
         shortline = oneline.strip()
 
-        if shortline == '% == PACKAGES == %':
+        if shortline == TAG_MC_PACKAGES:
             store_in = store_import
             continue
 
-        if shortline == '% == OPTIONS == %':
+        if shortline == TAG_MC_OPTIONS:
             store_in = store_options
             continue
 
-        if shortline == '% == TOOLS == %':
+        if shortline == TAG_MC_TOOLS:
             store_in = store_src
             continue
 

@@ -1,17 +1,23 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 
 \input{../preamble.cfg.tex}
 
+\usepackage[lang = french]{../main/main}
+\usepackage{../macroenv/macroenv}
+\usepackage{../listing/listing}
+\usepackage{../focus/focus}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{showcase}
+
 
 \begin{document}
-
 
 \section{Un rendu en situation réelle} \label{tdoc-showcase}
 
 Il est parfois utile d'obtenir directement le rendu d'un code dans la documentation. Ceci nécessite que ce type de rendu soit dissociable du texte donnant des explications.
 
-
-% ------------------ %
 
 
 \subsection{Avec une bande colorée}
@@ -96,8 +102,5 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
         \tdocruler{Un pseudo-titre décoré}{red}
     \end{tdoclatex}
 \end{tdocnote}
-
-\end{document}
-
 
 \end{document}

@@ -1,10 +1,19 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 
 \input{../preamble.cfg.tex}
 
+\usepackage[lang = french]{../main/main}
+\usepackage{../macroenv/macroenv}
+\usepackage{../inenglish/inenglish}
+\usepackage{../showcase/showcase}
+\usepackage{../focus/focus}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{listing}
+
 
 % == FORDOC == %
-
 
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
@@ -26,8 +35,6 @@
 
 Documenter un package ou une classe se fait efficacement via des cas d'utilisation montrant à la fois du code et le résultat correspondant.
 
-
-% ------------------ %
 
 
 \subsection{Codes \tdocquote{en ligne}} \label{tdoc-listing-inline}
@@ -105,12 +112,5 @@ Voici des exemples d'utilisation.
     Une autre méthode consiste à utiliser la primitive \tdocmacro{string}.
     \tdocdocbasicinput{examples/listing/strange-bis.tex}
 \end{tdocwarn}
-
-\end{document}
-
-
-\begin{document}
-
-
 
 \end{document}
