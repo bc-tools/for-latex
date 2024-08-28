@@ -1,192 +1,6 @@
-
-% -------------------- %
-% -- RESOURCES USED -- %
-% -------------------- %
-
-
-\begin{filecontents*}[overwrite]{examples-focus-exa.tex}
-Bla, bla, bla...
-
-\begin{tdocexa}
-    Ble, ble, ble...
-\end{tdocexa}
-
-\begin{tdocexa}[Magnifique]
-    Bli, bli, bli...
-\end{tdocexa}
-
-\begin{tdocexa}<nonb>
-    Blo, blo, blo...
-\end{tdocexa}
-
-\begin{tdocexa}<nonb>[Superbe]
-    Blu, blu, blu...
-\end{tdocexa}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-focus-exa-leavevmode.tex}
-\begin{tdocexa}
-    \leavevmode
-
-    \begin{enumerate}
-        \item Point 1.
-
-        \item Point 2.
-    \end{enumerate}
-\end{tdocexa}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-focus-rmk.tex}
-\begin{tdocrem}
-    Juste une remarque...
-\end{tdocrem}
-
-\begin{tdocrem}[Mini titre]
-    Utile ?
-\end{tdocrem}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-focus-tip.tex}
-\begin{tdoctip}
-    Une astuce.
-\end{tdoctip}
-
-\begin{tdoctip}[Mini titre]
-    Utile ?
-\end{tdoctip}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-focus-note.tex}
-\begin{tdocnote}
-    Un truc utile à vous dire...
-\end{tdocnote}
-
-\begin{tdocnote}[Mini titre]
-    Utile ?
-\end{tdocnote}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-focus-important.tex}
-\begin{tdocimportant}
-    Un truc important sans danger.
-\end{tdocimportant}
-
-\begin{tdocimportant}[Mini titre]
-    Utile ?
-\end{tdocimportant}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-focus-caution.tex}
-\begin{tdoccaution}
-    Prudence, prudence...
-\end{tdoccaution}
-
-\begin{tdoccaution}[Mini titre]
-    Utile ?
-\end{tdoccaution}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-focus-warn.tex}
-\begin{tdocwarn}
-    Evitez les dangers...
-\end{tdocwarn}
-
-\begin{tdocwarn}[Mini titre]
-    Utile ?
-\end{tdocwarn}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-showcase-default.tex}
-\begin{tdocshowcase}
-    \bfseries Un peu de code \LaTeX.
-
-    \bigskip
-
-    \emph{\large Fin de l'affreuse démo.}
-\end{tdocshowcase}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-showcase-customized.tex}
-\begin{tdocshowcase}[before = Mon début,
-                     after  = Ma fin à moi,
-                     color  = red]
-    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
-\end{tdocshowcase}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-showcase-hook.tex}
-\begin{tdocshowcase}
-    \string[Cela fonctionne...]
-\end{tdocshowcase}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-showcase-no-clrstrip.tex}
-\begin{tdocshowcase}[nostripe]
-    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
-\end{tdocshowcase}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-showcase-no-clrstrip-customized.tex}
-\begin{tdocshowcase}[nostripe,
-                     before = Mon début,
-                     after  = Ma fin à moi,
-                     color  = green]
-    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
-\end{tdocshowcase}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-showcase-external.tex}
-Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-listing-ABC.tex}
-\begin{tdoclatex}[sbs]
-    $A = B + C$
-\end{tdoclatex}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-listing-strange.tex}
-\begin{tdoclatex}[std]
-    [Étrange... Ou pas !]
-\end{tdoclatex}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-listing-strange-bis.tex}
-\begin{tdoclatex}
-    \string[Étrange... Ou pas !]
-\end{tdoclatex}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-listing-xyz.tex}
-% Juste une démo.
-$x y z = 1$
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-listing-latexshow-options.tex}
-\tdoclatexshow[explain = Ce qui vient est coloré...,
-               before  = Rendu ci-après.,
-               after   = Rendu fini.,
-               color   = orange]
-               {examples-listing-xyz.tex}
-\end{filecontents*}
+% ==================== %
+% == RESOURCES USED == %
+% ==================== %
 
 
 \begin{filecontents*}[overwrite]{examples-version-n-change-dating.tex}
@@ -210,6 +24,23 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-version-n-change-user-choice.tex}
+\begin{tdoctopic}{C'est mon choix}
+% Ici le point s'impose.
+    \item Info 1...
+    \item Info 2...
+\end{tdoctopic}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-update.tex}
+\begin{tdocupdate}
+    \item Info 1...
+    \item Info 2...
+\end{tdocupdate}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-version-n-change-versioning.tex}
 \tdocversion[red]{10.2.0-beta}[2023-12-01]
 
@@ -223,22 +54,6 @@ Ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble,
 ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble,
 ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble,
 ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-version-n-change-new.tex}
-\begin{tdocnew}
-    \item Info 1...
-    \item Info 2...
-\end{tdocnew}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-version-n-change-update.tex}
-\begin{tdocupdate}
-    \item Info 1...
-    \item Info 2...
-\end{tdocupdate}
 \end{filecontents*}
 
 
@@ -258,6 +73,14 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-version-n-change-new.tex}
+\begin{tdocnew}
+    \item Info 1...
+    \item Info 2...
+\end{tdocnew}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-version-n-change-fix.tex}
 \begin{tdocfix}
     \item Info 1...
@@ -266,18 +89,194 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-version-n-change-unclassifiable.tex}
-\begin{tdoctopic}{Inclassable}
-% Ici le point s'impose.
-    \item Info 1...
-    \item Info 2...
-\end{tdoctopic}
+\begin{filecontents*}[overwrite]{examples-focus-exa-leavevmode.tex}
+\begin{tdocexa}
+    \leavevmode
+
+    \begin{enumerate}
+        \item Point 1.
+
+        \item Point 2.
+    \end{enumerate}
+\end{tdocexa}
 \end{filecontents*}
 
 
-% ------------------------ %
-% -- SOURCE FOR THE DOC -- %
-% ------------------------ %
+\begin{filecontents*}[overwrite]{examples-focus-important.tex}
+\begin{tdocimportant}
+    Un truc important sans danger.
+\end{tdocimportant}
+
+\begin{tdocimportant}[Mini titre]
+    Utile ?
+\end{tdocimportant}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-focus-note.tex}
+\begin{tdocnote}
+    Un truc utile à vous dire...
+\end{tdocnote}
+
+\begin{tdocnote}[Mini titre]
+    Utile ?
+\end{tdocnote}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-focus-caution.tex}
+\begin{tdoccaution}
+    Prudence, prudence...
+\end{tdoccaution}
+
+\begin{tdoccaution}[Mini titre]
+    Utile ?
+\end{tdoccaution}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-focus-tip.tex}
+\begin{tdoctip}
+    Une astuce.
+\end{tdoctip}
+
+\begin{tdoctip}[Mini titre]
+    Utile ?
+\end{tdoctip}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-focus-warn.tex}
+\begin{tdocwarn}
+    Evitez les dangers...
+\end{tdocwarn}
+
+\begin{tdocwarn}[Mini titre]
+    Utile ?
+\end{tdocwarn}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-focus-exa.tex}
+Bla, bla, bla...
+
+\begin{tdocexa}
+    Ble, ble, ble...
+\end{tdocexa}
+
+\begin{tdocexa}[Magnifique]
+    Bli, bli, bli...
+\end{tdocexa}
+
+\begin{tdocexa}<nonb>
+    Blo, blo, blo...
+\end{tdocexa}
+
+\begin{tdocexa}<nonb>[Superbe]
+    Blu, blu, blu...
+\end{tdocexa}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-focus-rmk.tex}
+\begin{tdocrem}
+    Juste une remarque...
+\end{tdocrem}
+
+\begin{tdocrem}[Mini titre]
+    Utile ?
+\end{tdocrem}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-latexshow-options.tex}
+\tdoclatexshow[explain = Ce qui vient est coloré...,
+               before  = Rendu ci-après.,
+               after   = Rendu fini.,
+               color   = orange]
+               {examples/listing/xyz.tex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-ABC.tex}
+\begin{tdoclatex}[sbs]
+    $A = B + C$
+\end{tdoclatex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-xyz.tex}
+% Juste une démo.
+$x y z = 1$
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-strange.tex}
+\begin{tdoclatex}[std]
+    [Étrange... Ou pas !]
+\end{tdoclatex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-strange-bis.tex}
+\begin{tdoclatex}
+    \string[Étrange... Ou pas !]
+\end{tdoclatex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-showcase-customized.tex}
+\begin{tdocshowcase}[before = Mon début,
+                     after  = Ma fin à moi,
+                     color  = red]
+    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+\end{tdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-showcase-hook.tex}
+\begin{tdocshowcase}
+    \string[Cela fonctionne...]
+\end{tdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-showcase-no-clrstrip-customized.tex}
+\begin{tdocshowcase}[nostripe,
+                     before = Mon début,
+                     after  = Ma fin à moi,
+                     color  = green]
+    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+\end{tdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-showcase-external.tex}
+Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-showcase-default.tex}
+\begin{tdocshowcase}
+    \bfseries Un peu de code \LaTeX.
+
+    \bigskip
+
+    \emph{\large Fin de l'affreuse démo.}
+\end{tdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-showcase-no-clrstrip.tex}
+\begin{tdocshowcase}[nostripe]
+    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+\end{tdocshowcase}
+\end{filecontents*}
+
+
+% ======================== %
+% == SOURCE FOR THE DOC == %
+% ======================== %
 
 \documentclass[10pt, a4paper]{article}
 
@@ -289,7 +288,9 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \usepackage{enumitem}
 \frenchsetup{StandardItemLabels=true}
 
-% Package documented.
+% == LOADING PACKAGE == %
+% \usepackage[lang = french]{tutodoc}
+
 \usepackage[lang = french]{tutodoc}
 
 
@@ -336,57 +337,67 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 }
 
 
-
 \begin{document}
+
 
 \title{Le package \texttt{tutodoc} - Documentation de type tutoriel}
 \author{Christophe BAL}
-\date{1\ier{} Janv. 2024 - Version 1.1.0}
+\date{23 août 2024 - Version 1.2.0-a}
 
 \maketitle
 
 \begin{abstract}
-Le package \thispack\
-\footnote{
-    Le nom vient de \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}} se traduit en \tdocquote{documentation de type tutoriel}.
-}
-est utilisé par son auteur pour produire de façon sémantique des documentations de packages et de classes \LaTeX\ dans un style de type tutoriel
-\footnote{
-    L'idée est de produire un fichier \texttt{PDF} efficace à parcourir pour des besoins ponctuels. C'est généralement ce que l'on attend d'une documentation liée au codage.
-},
-et avec un rendu sobre pour une lecture sur écran.
+    Le package \thispack\
+    \footnote{
+        Le nom vient de \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}} qui se traduit en \tdocquote{documentation de type tutoriel}.
+    }
+    est utilisé par son auteur pour produire de façon sémantique des documentations de packages et de classes \LaTeX\ dans un style de type tutoriel
+    \footnote{
+        L'idée est de produire un fichier \texttt{PDF} efficace à parcourir pour des besoins ponctuels. C'est généralement ce que l'on attend d'une documentation liée au codage.
+    },
+    et avec un rendu sobre pour une lecture sur écran.
 
+    \medskip
 
-\begin{tdocnote}
-     Ce package impose un style de mise en forme.
-    Dans un avenir plus ou moins proche, \thispack\ sera sûrement éclaté en une classe et un package.
-\end{tdocnote}
+    \noindent
+    Deux points importants à noter.
+    \begin{itemize}
+        \item Ce package impose un style de mise en forme. Dans un avenir plus ou moins proche, \thispack\ sera sûrement éclaté en une classe et un package.
 
-\tdocsep
+        \item Cette documentation est aussi disponible en anglais.
+    \end{itemize}
 
-{\small\itshape
-\textbf{Abstract.}
-The \thispack\ package
-\footnote{
-    The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
-}
-is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style
-\footnote{
-    The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
-},
-and with a sober rendering for reading on screen.
+    \tdocsep
 
+    {\small\itshape
+        \textbf{Abstract.}
+        The \thispack\ package
+        \footnote{
+            The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
+        }
+        is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style
+        \footnote{
+            The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
+        },
+        and with a sober rendering for reading on screen.
 
-\begin{tdocnote}
-     This package imposes a formatting style. In the not-too-distant future, \thispack\ will probably be split into a class and a package.
-\end{tdocnote}
-}
+        \medskip
+
+        Two important points to note.
+        \begin{itemize}
+            \item This package imposes a formatting style. In the not-too-distant future, \thispack\ will probably be split into a class and a package.
+
+            \item This documentation is also available in French.
+        \end{itemize}
+    }
 \end{abstract}
 
 
 \newpage
 \tableofcontents
 \newpage
+
+
 \section{Mises en forme générales imposées}
 
 \subsection{Géométrie de la page}
@@ -520,8 +531,6 @@ La macro \tdocmacro{tdocinEN} et sa version étoilée s'appuient sur \tdocmacro{
 \end{tdocnote}
 
 
-% ------------------ %
-
 
 \subsection{Des exemples}
 
@@ -539,6 +548,7 @@ Voici différents emplois possibles.
 \tdoclatexinput[sbs]{examples-focus-exa.tex}
 
 
+
 % ------------------ %
 
 
@@ -554,6 +564,7 @@ Voici différents emplois possibles.
     Il peut parfois être utile de revenir à la ligne dès le début du contenu. Voici comment faire (ce tour de passe-passe reste valable pour les environnements présentés dans les sous-sections suivantes). Noter au passage que la numérotation suit celle de l'exemple précédent comme souhaité.
 
     \tdoclatexinput[sbs]{examples-focus-exa-leavevmode.tex}
+
 \end{tdoctip}
 
 
@@ -564,11 +575,13 @@ Tout se passe via l'environnement \tdocenv{tdocrem} comme dans l'exemple suivant
 \tdoclatexinput[sbs]{examples-focus-rmk.tex}
 
 
+
 \subsection{Une astuce}
 
 L'environnement \tdocenv{tdoctip} sert à donner des astuces. Voici comment l'employer.
 
 \tdoclatexinput[sbs]{examples-focus-tip.tex}
+
 
 
 \subsection{Note informative}
@@ -578,11 +591,13 @@ L'environnement \tdocenv{tdocnote} sert à mettre en avant des informations util
 \tdoclatexinput[sbs]{examples-focus-note.tex}
 
 
+
 \subsection{Un truc important}
 
 L'environnement \tdocenv{tdocimportant} permet d'indiquer quelque chose d'important mais sans danger.
 
 \tdoclatexinput[sbs]{examples-focus-important.tex}
+
 
 
 \subsection{Avertir d'un point très délicat}
@@ -592,11 +607,13 @@ L'environnement \tdocenv{tdoccaution} sert à indiquer un point délicat à  l'u
 \tdoclatexinput[sbs]{examples-focus-caution.tex}
 
 
+
 \subsection{Avertir d'un danger}
 
 L'environnement \tdocenv{tdocwarn} sert à avertir l'utilisateur d'un piège à éviter. Voici comment l'employer.
 
 \tdoclatexinput[sbs]{examples-focus-warn.tex}
+
 
 
 \section{Indiquer des packages, des classes, des macros ou des environnements}
@@ -671,22 +688,24 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 \subsection{Avec une bande colorée}
 
 \begin{tdocexa}[Avec les textes par défaut]
-    Il peut être utile de montrer un rendu réel directement dans un document
+    Il peut être utile de montrer un rendu réel directement dans un document.
     \footnote{
         Typiquement lorsque l'on fait une démo.
-    }.
+    }
     Ceci se tape via \tdocenv{tdocshowcase} comme suit.
 
     \tdoclatexinput[code]{examples-showcase-default.tex}
 
-    On obtient alors le rendu suivant
+
+    On obtient alors le rendu suivant.
     \footnote{
         En coulisse, la bande est créée sans effort grâce au package \tdocpack{clrstrip}.
-    }.
+    }
 
     \medskip
 
     \input{examples-showcase-default.tex}
+
 \end{tdocexa}
 
 
@@ -708,11 +727,13 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
     \tdoclatexinput[code]{examples-showcase-customized.tex}
 
+
     Ceci produira ce qui suit.
 
     \medskip
 
     \input{examples-showcase-customized.tex}
+
 \end{tdocexa}
 
 
@@ -735,11 +756,13 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
     \tdoclatexinput[code]{examples-showcase-hook.tex}
 
+
     Ceci produira ce qui suit.
 
     \medskip
 
     \input{examples-showcase-hook.tex}
+
 \end{tdocwarn}
 
 
@@ -764,11 +787,13 @@ Il est possible de ne pas utiliser une bande colorée comme nous allons le voir 
 
     \tdoclatexinput[code]{examples-showcase-no-clrstrip.tex}
 
+
     Ceci produira ce qui suit.
 
     \medskip
 
     \input{examples-showcase-no-clrstrip.tex}
+
 \end{tdocexa}
 
 
@@ -780,11 +805,13 @@ Il est possible de ne pas utiliser une bande colorée comme nous allons le voir 
 
     \tdoclatexinput[code]{examples-showcase-no-clrstrip-customized.tex}
 
+
     Ceci produira ce qui suit.
 
     \medskip
 
     \input{examples-showcase-no-clrstrip-customized.tex}
+
 \end{tdocexa}
 
 
@@ -800,6 +827,7 @@ Pour obtenir des rendus en important le code depuis un fichier externe, au lieu 
 
     \tdocshowcaseinput{examples-showcase-external.tex}
 
+
     \medskip
 
     Quant à \tdocinlatex+\tdocshowcaseinput[color = orange]{external.tex}+\,, ceci produira le changement de couleur observable ci-après.
@@ -807,6 +835,7 @@ Pour obtenir des rendus en important le code depuis un fichier externe, au lieu 
     \medskip
 
     \tdocshowcaseinput[color = orange]{examples-showcase-external.tex}
+
 \end{tdocexa}
 
 
@@ -844,8 +873,6 @@ Voici des exemples d'utilisation.
 \end{tdocnote}
 
 
-% ------------------ %
-
 
 \subsection{Codes tapés directement}
 
@@ -853,6 +880,7 @@ Voici des exemples d'utilisation.
     Via \tdocenv[{[sbs]}]{tdoclatex}, on affichera un code et son rendu côte à côte.
     Indiquons que \tdocinlatex#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}.
     \tdocdocbasicinput{examples-listing-ABC.tex}
+
 \end{tdocexa}
 
 
@@ -890,10 +918,12 @@ Voici des exemples d'utilisation.
     Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut.
     \tdocdocbasicinput{examples-listing-strange.tex}
 
+
     \smallskip
 
     Une autre méthode consiste à utiliser la primitive \tdocmacro{string}.
     \tdocdocbasicinput{examples-listing-strange-bis.tex}
+
 \end{tdocwarn}
 
 
@@ -902,6 +932,7 @@ Voici des exemples d'utilisation.
 Pour les codes suivants, on considère un fichier de chemin relatif \verb+examples-listing-xyz.tex+, et ayant le contenu suivant.
 
 \tdoclatexinput[code]{examples-listing-xyz.tex}
+
 
 \medskip
 
@@ -916,11 +947,13 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \begin{tdoclatex}[code]
 \tdoclatexinput[sbs]{examples-listing-xyz.tex}
+
     \end{tdoclatex}
 
     Ceci produit la mise en forme suivante.
 
     \tdoclatexinput[sbs]{examples-listing-xyz.tex}
+
 \end{tdocexa}
 
 
@@ -932,11 +965,13 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \begin{tdoclatex}[code]
 \tdoclatexinput{examples-listing-xyz.tex}
+
     \end{tdoclatex}
 
     Ceci produit la mise en forme suivante où l'option employée par défaut est \tdocinlatex#std#.
 
     \tdoclatexinput{examples-listing-xyz.tex}
+
 \end{tdocexa}
 
 
@@ -948,11 +983,13 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \begin{tdoclatex}[code]
 \tdoclatexinput[code]{examples-listing-xyz.tex}
+
     \end{tdoclatex}
 
     Ceci produit la mise en forme suivante.
 
     \tdoclatexinput[code]{examples-listing-xyz.tex}
+
 \end{tdocexa}
 
 
@@ -968,6 +1005,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \begin{tdoc-doc-showcase}
         \tdoclatexshow{examples-listing-xyz.tex}
+
     \end{tdoc-doc-showcase}
 \end{tdocexa}
 
@@ -987,6 +1025,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \begin{tdoc-doc-showcase}
         \tdoclatexshow[explain = Voici le rendu réel.]{examples-listing-xyz.tex}
+
     \end{tdoc-doc-showcase}
 \end{tdocexa}
 
@@ -1002,6 +1041,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \tdoclatexinput[code]{examples-listing-latexshow-options.tex}
 
+
     \medskip
 
     Ceci va produire ce qui suit.
@@ -1010,6 +1050,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \begin{tdoc-doc-showcase}
         \input{examples-listing-latexshow-options.tex}
+
     \end{tdoc-doc-showcase}
 \end{tdocexa}
 
@@ -1034,6 +1075,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
     La macro \tdocmacro{tdocdate} permet d'indiquer une date dans la marge comme dans l'exemple suivant.
 
     \tdoclatexshow{examples-version-n-change-dating.tex}
+
 \end{tdocexa}
 
 
@@ -1044,6 +1086,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
     Associer un numéro de version à une nouveauté se fait via la macro \tdocmacro{tdocversion}, la couleur et la date étant des arguments optionnels.
 
     \tdoclatexshow{examples-version-n-change-versioning.tex}
+
 \end{tdocexa}
 
 
@@ -1059,10 +1102,10 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 
 
 \begin{tdocwarn}
-    Seul l'emploi du format numérique \tdocinlatex+YYYY-MM-DD+ est vérifié
+    Seul l'emploi du format numérique \tdocinlatex+YYYY-MM-DD+ est vérifié,
     \footnote{
         Techniquement, vérifier la validité d'une date, via \LaTeX3, ne présente pas de difficulté.
-    },
+    }
     et ceci est un choix ! Pourquoi cela ? Tout simplement car dater et versionner des explications devrait se faire de façon semi-automatisée afin d'éviter tout bug humain.
 %    \footnote{
 %        L'auteur de \thispack\ est entrain de mettre en place un ensemble d'outils permettant une telle semi-automatisation.
@@ -1083,6 +1126,7 @@ lors des derniers changements.
     \leavevmode
 
     \tdoclatexinput[sbs]{examples-version-n-change-new.tex}
+
 \end{tdocexa}
 
 
@@ -1093,6 +1137,7 @@ lors des derniers changements.
     \leavevmode
 
     \tdoclatexinput[sbs]{examples-version-n-change-update.tex}
+
 \end{tdocexa}
 
 
@@ -1103,6 +1148,7 @@ lors des derniers changements.
     \leavevmode
 
     \tdoclatexinput[sbs]{examples-version-n-change-break.tex}
+
 \end{tdocexa}
 
 
@@ -1113,6 +1159,7 @@ lors des derniers changements.
     \leavevmode
 
     \tdoclatexinput[sbs]{examples-version-n-change-pb.tex}
+
 \end{tdocexa}
 
 
@@ -1123,6 +1170,7 @@ lors des derniers changements.
     \leavevmode
 
     \tdoclatexinput[sbs]{examples-version-n-change-fix.tex}
+
 \end{tdocexa}
 
 
@@ -1132,11 +1180,11 @@ lors des derniers changements.
 \begin{tdocexa}[Thématiques aux choix]
     \leavevmode
 
-    \tdoclatexinput[sbs]{examples-version-n-change-unclassifiable.tex}
+    \tdoclatexinput[sbs]{examples-version-n-change-user-choice.tex}
+
 \end{tdocexa}
 
 
-\newpage
 \section{Décorations}
 
 Finissons cette documentation avec de petites outils de mise en forme pouvant rendre de grands services.
@@ -1169,8 +1217,31 @@ Blo, blo, blo...
 Blu, blu, blu...
 
 \end{tdoclatex}
-\newpage
+
+
 \section{Historique}
+
+\tdocversion{1.2.0-a}[2024-08-23]
+
+\begin{tdocupdate}
+    \item \tdocmacro{tdocversion}
+    \begin{enumerate}
+        \item Le numéro de version est au-dessus de la date.
+
+        \item L'espacement est mieux géré lorsque la date est absente.
+    \end{enumerate}
+\end{tdocupdate}
+
+
+\begin{tdocfix}
+    \item Mise en avant de contenus : les traductions françaises de \tdocinEN*{caution} et \tdocinEN*{danger} étaient erronées.
+\end{tdocfix}
+
+\tdocsep
+
+
+% ------------------ %
+
 
 \tdocversion{1.1.0}[2024-01-06]
 
@@ -1187,6 +1258,10 @@ Blu, blu, blu...
 
 \tdocsep
 
+
+% ------------------ %
+
+
 \tdocversion{1.0.1}[2023-12-08]
 
 \begin{tdocfix}
@@ -1196,6 +1271,10 @@ Blu, blu, blu...
 \end{tdocfix}
 
 \tdocsep
+
+
+% ------------------ %
+
 
 \tdocversion{1.0.0}[2023-11-29]
 
