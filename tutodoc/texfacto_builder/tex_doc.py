@@ -52,7 +52,10 @@ def prebuild_single_tex(
         lang_temp_dir = temp_dir / lang
 
 # Empty lang dir.
-        emptydir(lang_temp_dir)
+        emptydir(
+            folder  = lang_temp_dir,
+            rel_dir = source.parent
+        )
 
 # Preamble file.
         print()

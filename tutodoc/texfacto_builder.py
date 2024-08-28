@@ -168,7 +168,10 @@ print_frame(
     "(start)"
 )
 
-emptydir(metadata[TAG_TEMP])
+emptydir(
+    folder  = metadata[TAG_TEMP],
+    rel_dir = metadata[TAG_PROJ_DIR]
+)
 
 
 # ----------------------------------------- #

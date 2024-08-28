@@ -7,6 +7,7 @@ import              re
 # ---------- #
 
 TAG_LANG_EN = "en"
+TAG_LOCALE  = "locale"
 
 TAG_ABSTRACT = "abstract"
 
@@ -42,6 +43,7 @@ TAG_PROJ_DIR  = "proj-dir"
 TAG_PROJ_NAME = "proj-name"
 TAG_ROLLOUT   = "rollout"
 TAG_SRC       = "source"
+TAG_API       = "api"
 
 TAG_VERSIONS = "versions"
 TAG_NB       = "nb"

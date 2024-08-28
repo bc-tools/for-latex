@@ -78,8 +78,11 @@ def date_n_version(
 # -- OS OPERATIONS -- #
 # ------------------- #
 
-def emptydir(folder):
-    what = f"''{folder.parent.name}/{folder.name}'' folder."
+def emptydir(
+    folder,
+    rel_dir
+):
+    what = f"''{folder.relative_to(rel_dir)}'' folder."
 
     if folder.is_dir():
         print(f"+ Cleaning {what}")

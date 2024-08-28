@@ -17,7 +17,10 @@ def finalize(metadata):
 def final_tex(metadata):
     doc_dir  = metadata[TAG_ROLLOUT] / "doc"
 
-    emptydir(doc_dir)
+    emptydir(
+        folder  = doc_dir,
+        rel_dir = metadata[TAG_PROJ_DIR]
+    )
 
     for lang in metadata[TAG_TEMP].glob("*"):
         if not lang.is_dir():
@@ -225,7 +228,10 @@ def tex_resrc(
 def final_sty(metadata):
     code_dir  = metadata[TAG_ROLLOUT] / "code"
 
-    emptydir(code_dir)
+    emptydir(
+        folder  = code_dir,
+        rel_dir = metadata[TAG_PROJ_DIR]
+    )
 
     print("+ Building STY file.")
 
