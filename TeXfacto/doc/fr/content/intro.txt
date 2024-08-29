@@ -12,6 +12,8 @@ abrev::
 \latex et compagnie
 ===================
 
+???
+
 Pour pouvoir coder par petites touches, il faut pouvoir automatiser la \fabric d'un "unique" \pack \etou d'une "unique" classe de \mef que l'on souhaite distribuer.
 Ceci nécessite de respecter un style de codage et une \orga "commune" des dossiers et des fichiers, ainsi qu'un cycle de \dev spécialement pour les \projs \latex.
 Nous allons parler de ceci dans les sections à venir.

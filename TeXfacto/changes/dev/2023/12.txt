@@ -10,4 +10,4 @@
 --------
 
 [[:doc:]]
-Start-up of the \doc using extracts from the previous version of the general personal \specs.
+Start-up of the \doc: we have just extracted \doc files from general personal \specs.

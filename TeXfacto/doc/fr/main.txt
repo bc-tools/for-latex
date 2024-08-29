@@ -23,11 +23,12 @@ abrev::
                     https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1#Liste_des_codes_ISO_639-1/2/3''
 
 
+
 content::
-// -------------------- //
-// -- OUT OF CONTEXT -- //
-// -------------------- //
-    \content/intro.txt
+    \content/intro.txt              ??
+
+
+/* OLD
     \content/survival-guide.txt
     \content/workflow.txt
     \content/archi.txt
@@ -36,3 +37,4 @@ content::
 // -- SPECIFIC TO ... -- //
 // --------------------- //
     \content/coding.txt
+*/
