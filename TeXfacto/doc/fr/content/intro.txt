@@ -1,30 +1,28 @@
 this::
-    date = 2023-10-31  ????
-
-    lexic = latex
+    date = 2024-09-02
 
 
 abrev::
     content = :this.name:
 
 
-===================
-\latex et compagnie
-===================
+================
+\proj, quèsaco ?
+================
 
-???
+Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu'il existe un écosystème de \dev poposé par \latex, \thisproj propose une autre façon de coder plus proche de ce qui fait dans les \langs de \prog plus \stds comme \python. Dans les \gdes lignes, voici ce que \thisproj propose pour fabriquer un \pack
+((
+    La gestion des classes viendra plus tard lorsque l'auteur de \thisproj en codera une...
+)).
 
-Pour pouvoir coder par petites touches, il faut pouvoir automatiser la \fabric d'un "unique" \pack \etou d'une "unique" classe de \mef que l'on souhaite distribuer.
-Ceci nécessite de respecter un style de codage et une \orga "commune" des dossiers et des fichiers, ainsi qu'un cycle de \dev spécialement pour les \projs \latex.
-Nous allons parler de ceci dans les sections à venir.
+    1) Le codage se fait de façon modulaire et non d'un seul tenant. Ceci facilite grandement la phase de \dev initial, puis ensuite la maintenance.
+
+    1) La \doc destinée aux utilisateurs est écritre parallèlement au code et non dans le code lui-même
+    ((
+        L'auteur de \thisproj garde la \doc dans le code uniquement à destination d'autres codeurs éventuels. Pour ce faire, il utilise la syntaxe \tnsdoc qui est en cours de \dev.
+    )).
+
+    1) La proposition de \trads à faire côté \api et côté \doc se fait de façon automatisée.
 
 
-note::
-    L'outil d'automatisation retenu pour concevoir les \projs \latex est \texfacto.
-
-
-content::
-    \content/archi.txt         ???????
-    \content/tech-norms.txt    ?????
-    \content/testing.txt       ????
-    \content/contrib.txt       ???
+Tout ceci nécessite de respecter un style de codage et une \orga "commune" des dossiers et des fichiers, ainsi qu'un cycle de \dev comme nous allons le constater dans les sections à venir.

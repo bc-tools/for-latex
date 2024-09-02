@@ -19,44 +19,34 @@ texfacto-poc
 
 > ---------------------------- <
 
-tempdoc directement compilable et du coup rollour just du copier coller
+L'outil \tnsdoc produit une \doc \tech \auto^t à partir du code \src, lors de cette phase, un fichier path::''signature.yaml'' est produit pour donner l'\ens des \signs des objets codés.
+Le projet \texfacto sait utiliser path::''signature.yaml'' afin de vérifier qu'il n'y a pas de conflits de noms \etou de \signs au sein d'un \pack, mais aussi avec ceux disponibles sur \ctan.
+
+
+> ---------------------------- <
+
+???? tempdoc directement compilable et du coup rollour just du copier coller
 
 
 > ---------------------------- <
 
 migration depuis specs générales vers ici de nouveau MAIS en grardant juste parties sur le workflow !!!
 
+    ---> produire un fichier TOOUT_EN_UN compilable dans .temp pour debug sévré à la main : on passe de la structa arbo à une strucplate et en ajoutant l'extenasion exadoc afin de ne pas être traité par l3build...
+
+    ---> resource : clarifier que ce qui est vu comme resource ne pas pas être au niveau des stys !!! Cf doc de tns_latex et aussi texfacto
+
     ---> build.lua construit auto et/ou mis à jour
 
-    ---> PB du titre de la doc : on veut automatiser ceci, conc c'est mis dans un fichier à part de type about qui aura tout indiquéer pour texfacto A CREUSER !
-
-
-    ---> Doc final via collages et fichiers via template PLUS PUISSANT ET UTILE
-
-    ---> mode tout-eun comme pour ctan mais sous forme d'potions, sinon on fait comme je vouslais le faire via copie de la structure : cf par exemple cas avec images or doc ctan
-
-    Par contre, il faut gérére les bugs : tutodoc-fr : besoind e modifier un truc à la main mais juste dans final car cela vient d'in code importer : on fait donc syst de post et pre hook à la jinjang
-
     ---> syst semi auto des dépendances avec explications possibles dans lang de la doc :
+
             + fichier dep.yaml ou clé dep dans about ???
 
             + indiquer les dép au tout début de la doc.
 
     ---> gérer chemin idniquer en multiligne...
 
-    ---> produire un fichier compilable: on passe de la structa arbo à une strucplate et en ajoutant l'extenasion exadoc afin de ne pas être traité par l3build...
-
-    ---> titre manquant pour la doc
-
-    ---> construction "à la main" (cf premiers package tns + texfacto à faire)
-
-    ---> une fois un seul sty fait, on passe à l3build tests unitaires !!!
-
     ---> gestion d'un README avant le about : cf nettoyage du src !!!!
-
-    ---> gestion des about
-
-    ---> resource : clarifier que ce qui est vu comme resource ne pas pas être au niveau des stys !!! Cf doc de tns_latex et aussi texfacto
 
     ---> fichier sty vide : ignorer mais info log
 
@@ -68,28 +58,8 @@ LATER
 
 > ---------------------------- <
 
-syst de commentaire magique qui remplace date et version par ceelle en cours de construction
-
-
-> ---------------------------- <
-
 on doit aussi prendre en compte les classes
 
-
-> ---------------------------- <
-
-commentaires magiques dans sty : on doit tolérer les fichiers vides une fosi commentaires virés
-
-
-> ---------------------------- <
-
-ajout auto via les about.yaml de
-
-    \ProvidesExplPackage%
-        {derivative}
-        {2023/07/26}
-        {1.3}
-        {Short description}
 
 > ---------------------------- <
 
@@ -152,14 +122,6 @@ A VOIR
     https://indymotion.fr/w/wojwqX2bkp4PWcsSDQhMoE
 
 
-
-
-
-> ---------------------------- <
-
-gestiond es dates autos SI demandé : on prend celle del'installation, et c'est pertinent si pack testé
-
-
 > ---------------------------- <
 
 gestion automatisée de l'ajout de la version associée à un cangement, caharge ua codeur de varifier via git a qu'il n'a pas oublié queluqe chose
@@ -182,13 +144,6 @@ toc:
 
 > ---------------------------- <
 
-penser à préfixer les resources pour éviter les ocnflits, par contre lors du dev, on en le fait aps !
-
-faisable car de toute façon on doit repére ce qui est importé, et comment
-
-
-> ---------------------------- <
-
 gestion autre fichiers que sty à réunir ?
 
 
@@ -203,6 +158,7 @@ extra::
 > ---------------------------- <
 
 lancement via arg en ligne de commande !!!!
+
     ---> pour le futur makefile !!!
 
 
@@ -211,8 +167,11 @@ lancement via arg en ligne de commande !!!!
 gestions manquantes
 
     --> fichiers dans about (tex associé à sty + mode mixte sty + tex)
+
     --> class
+
     --> agregate
+
     --> netoygae doit virere pdf encas d'échec ou si demandé (cf git push en mide dégradé)
 
 
@@ -224,7 +183,9 @@ proposer un mode compile petit bout avec diagnostique de ce quie ne marche même
 > ---------------------------- <
 
 log TeX Live pour source dépendance en dur et non au vol car trop long !!!
+
     --->  /usr/local/texlive/2013/texmf-var/web2c/tlmgr.log.
+
     ---> stocker dans une BdD sqlite : si demande on vérifie que rieen de nouveau si c'est le cas, on met à jour
 
 
@@ -243,94 +204,6 @@ automatisation des licence
 
 
 > ---------------------------- <
-
-POUR LA DOC COMPLÈTE
-
-+ FictivePack
-    * about.yaml
-    * versions.yaml
-    + src
-        * about.yaml
-        * doc-header.tex
-        + changelog [...]
-        + intro
-            * intro.tex
-        + other-tools
-            * config.sty
-            * config.tex
-            * other.sty
-            * other.tex
-            * utils.py
-            + images
-                * screenshot.png
-        + some-tools
-            * about.yaml
-            * optional.tex
-            * mandatory.tex
-            * some.sty
-            + utils
-                * config.lua
-                * analyzer.lua
-            + locale
-                * EN.sty
-                * FR.sty
-    + ...
-
-
-
-### Version history
-
-???
-
-utilisé juste pour valider dates du changelog
-
-
-~~~yaml
-2023-01-13: 0.1.2-rc
-2023-01-11:
-  - 0.1.1-rc
-  - 0.1.0-rc
-2022-12-27: 0.0.0-beta
-~~~
-
-
-~~~yaml
-2023-01-13:
-  - 0.1.2-rc
-2023-01-11:
-  - 0.1.1-rc
-  - 0.1.0-rc
-2022-12-27:
-  - 0.0.0-beta
-~~~
-
-
-~~~yaml
-2023-01:
-  13: 0.1.2-rc
-  11:
-    - 0.1.1-rc
-    - 0.1.0-rc
-2022-12:
-  27: 0.0.0-beta
-~~~
-
-
-~~~yaml
-2023:
-  01:
-    13: 0.1.2-rc
-    11:
-      - 0.1.1-rc
-      - 0.1.0-rc
-2022;
-  12:
-    27: 0.0.0-beta
-~~~
-
-
-mixes possibles
-
 
 Standardized workflow
 ---------------------

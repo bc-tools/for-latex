@@ -1,31 +1,29 @@
 this::
-    title  = \Specs pour des projets informatiques
+    title  = Coder en \latex via la \methodo \thisproj
     author = Christophe, BAL
     mail   = projetmbc@gmail.com
     lang   = fr
 
-    licence = cc by-nc-sa 4.0
-    out     = html | pdf
+    licence = by nc sa 4.0
+    out     = html, pdf
+
+    lexic = python
 
 
 abrev::
-    content = /content
-
-    cookiecuter = cf::''Cookiecutter ;
-                        https://github.com/cookiecutter/cookiecutter''
-
-
-    glob   = verb::''glob''
-    pyglob = cf::''syntaxe \glob à la \python;
-                   https://docs.python.org/3/library/glob.html''
+    thisproj = cf::''TeXfacto ;
+                     https://github.com/bc-tools/for-latex/tree/main/TeXfacto''
 
     isolang = cf::''norme ISO 639-1 ;
                     https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1#Liste_des_codes_ISO_639-1/2/3''
 
+    content = /content
 
 
 content::
-    \content/intro.txt              ??
+    \content/intro.txt
+
+
 
 
 /* OLD
