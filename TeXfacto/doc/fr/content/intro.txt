@@ -31,4 +31,4 @@ note::
 
 
 caution::
-    \texfacto impose un certain \nbre de règles: style de codage, \orga "commune" des dossiers et des fichiers, cycle de \dev fixé.
+    \texfacto impose un certain \nbre de règles: style de codage, \orga "commune" des dossiers et des fichiers, cycle de \dev fixé. Ces choix permettent d'automatiser pas mal de choses...
