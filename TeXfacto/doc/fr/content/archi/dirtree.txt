@@ -10,7 +10,7 @@ abrev::
 \Struct du code
 ===============
 
-Considérons un \fakeproj \fakename utilisant \ttes les fonctionnalités proposées par \thisproj. Pour ce faire, ce \proj utilise la \struc de dossiers suivante qui va être présentée ci-dessous.
+Considérons un \fakeproj \fakename utilisant \ttes les fonctionnalités proposées par \thisproj. Pour ce faire, ce \proj utilise la \struc de dossiers suivante qui va être présentée just après.
 
 dirtree::
     ---

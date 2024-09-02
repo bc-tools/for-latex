@@ -2,14 +2,13 @@ abrev::
     fakeproj = \proj fictif
     fakename = ''fict-proj''
 
-
     content = :this.name:
 
 
 
-===============
-\Struct du code
-===============
+===============================================
+\Archi logicielle, ou comment organiser le code
+===============================================
 
 
 content::
