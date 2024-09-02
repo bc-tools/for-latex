@@ -19,6 +19,20 @@ texfacto-poc
 
 > ---------------------------- <
 
+AJOUTER
+
+    1) Un \pack "agrégateur" réunissant différents \packs.
+
+    1) Une classe de \mef.
+
+    1) Un \pack et une classe de \mef portant le même nom
+    ((
+        \latex permet cela, et dans certains cas ceci fait totalement sens.
+    )).
+
+
+> ---------------------------- <
+
 L'outil \tnsdoc produit une \doc \tech \auto^t à partir du code \src, lors de cette phase, un fichier path::''signature.yaml'' est produit pour donner l'\ens des \signs des objets codés.
 Le projet \texfacto sait utiliser path::''signature.yaml'' afin de vérifier qu'il n'y a pas de conflits de noms \etou de \signs au sein d'un \pack, mais aussi avec ceux disponibles sur \ctan.
 

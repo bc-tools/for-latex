@@ -1,0 +1,49 @@
+this::
+    date = 2024-09-02  ???
+
+
+abrev::
+    content = :this.name:
+
+
+===============
+\Struct du code
+===============
+
+Considérons un \fakeproj \fakename utilisant \ttes les fonctionnalités proposées par \thisproj. Pour ce faire, ce \proj utilise la \struc de dossiers suivante qui va être présentée ci-dessous.
+
+dirtree::
+    ---
+    path = ?/examples/archi/fict-proj.dirtree.txt
+    ---
+
+
+
+????
+
+
+Voici les divers composants utilisables.
+
+
+    1) path::''about.yaml''
+
+    1) Fichier \readme via path::''README.md'' ou path::''readme''
+
+    1) path::''changes''
+    Journaux des \chgts \techs et publiques dans le dossier path::''changes''.
+
+
+    1) path::''contrib''
+
+    1) path::''demos''
+
+    1) path::''rollout''
+    dossier path::''rollout'' est apparu ; ce dernier est dédié à l'utilisation de \l3build pour tester son projet, puis déployer ce dernier sur \ctan. Voir la section cf::''test-n-deploy.txt'' à ce sujet. ==> Le dossier path::''tests'' est aussi absent
+
+    1) path::''src''
+
+    code sty + Le \proj \textfacto permet quant à lui de coder par petites touches son \proj en gérant en parallèle le code \src et la \doc "utilisateur" ==>  Le dossier path::''doc'' pour la \doc "utilisateur" a disparu.
+
+    1) path::''tools''
+
+    Outils spécifiques d'automatisation

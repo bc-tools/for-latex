@@ -10,4 +10,9 @@
 --------
 
 [[:doc:]]
-\Doc before the code: \1st version of the \intro.
+\Doc before the code.
+
+    1) \1st version of the \intro.
+
+    1) ??
+    Software \archi constraints explained.

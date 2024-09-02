@@ -1,0 +1,20 @@
+abrev::
+    fakeproj = \proj fictif
+    fakename = ''fict-proj''
+
+
+    content = :this.name:
+
+
+
+===============
+\Struct du code
+===============
+
+
+content::
+    content/dirtree.txt         ??????????
+    content/XXX.txt         ????????
+    content/XXX.txt         ??????
+    content/XXX.txt         ????
+    content/XXX.txt         ??

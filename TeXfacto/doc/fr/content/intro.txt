@@ -10,7 +10,7 @@ abrev::
 \proj, quèsaco ?
 ================
 
-Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu'il existe un écosystème de \dev poposé par \latex, \thisproj propose une autre façon de coder plus proche de ce qui fait dans les \langs de \prog plus \stds comme \python. Dans les \gdes lignes, voici ce que \thisproj propose pour fabriquer un \pack
+Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu'il existe un écosystème de \dev poposé par \latex, \thisproj propose une autre façon de coder plus proche de ce qui fait dans les \langs de \prog plus \stds comme \python. Dans les \gdes lignes, voici quelques fonctionnalités proposées par \thisproj pour fabriquer un \pack
 ((
     La gestion des classes viendra plus tard lorsque l'auteur de \thisproj en codera une...
 )).
@@ -26,4 +26,5 @@ Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu
     1) La proposition de \trads à faire côté \api et côté \doc se fait de façon automatisée.
 
 
-Tout ceci nécessite de respecter un style de codage et une \orga "commune" des dossiers et des fichiers, ainsi qu'un cycle de \dev fixé comme nous le constaterons dans les sections à venir.
+caution::
+    Tout ceci nécessite de respecter un style de codage et une \orga "commune" des dossiers et des fichiers, ainsi qu'un cycle de \dev fixé comme nous le constaterons dans les sections à venir.

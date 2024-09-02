@@ -1,0 +1,9 @@
+general:
+  desc   : Fictional package for this example.
+  author : Christophe BAL
+  mail   : projetmbc@gmail.com
+  licence: gnu 3
+  lang   :
+    doc: fr
+  require:
+    - latex

@@ -22,17 +22,10 @@ abrev::
 
 content::
     \content/intro.txt
-
-
-
-
-/* OLD
-    \content/survival-guide.txt
-    \content/workflow.txt
     \content/archi.txt
 
-// --------------------- //
-// -- SPECIFIC TO ... -- //
-// --------------------- //
-    \content/coding.txt
+
+/* TODO
+
+manual-doc.txt
 */
