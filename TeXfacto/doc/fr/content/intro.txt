@@ -21,8 +21,9 @@ Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu
     ((
         L'auteur de \thisproj garde la \doc dans le code uniquement à destination d'autres codeurs éventuels. Pour ce faire, il utilise la syntaxe \tnsdoc qui est en cours de \dev.
     )).
+    Ce choix évite de produire une \doc austère et peu utile à de "simples" utilisateurs : on peut ainsi proposer des cas d'utilisation complexes. De plus, documenter dans le code rend la tache de maintenance très vite pénible.
 
     1) La proposition de \trads à faire côté \api et côté \doc se fait de façon automatisée.
 
 
-Tout ceci nécessite de respecter un style de codage et une \orga "commune" des dossiers et des fichiers, ainsi qu'un cycle de \dev comme nous allons le constater dans les sections à venir.
+Tout ceci nécessite de respecter un style de codage et une \orga "commune" des dossiers et des fichiers, ainsi qu'un cycle de \dev fixé comme nous le constaterons dans les sections à venir.
