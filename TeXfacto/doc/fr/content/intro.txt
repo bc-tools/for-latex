@@ -26,5 +26,9 @@ Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu
     1) La proposition de \trads à faire côté \api et côté \doc se fait de façon automatisée.
 
 
+note::
+    \texfacto utilisant activement \src2prod, il est conseillé de lire la \doc de ce \2nd \proj afin d'en tirer partie (nous présenterons succinctement certaines fonctionnalités de \src2prod sans entrer dans les détails d'utilisation).
+
+
 caution::
-    Tout ceci nécessite de respecter un style de codage et une \orga "commune" des dossiers et des fichiers, ainsi qu'un cycle de \dev fixé comme nous le constaterons dans les sections à venir.
+    \texfacto impose un certain \nbre de règles: style de codage, \orga "commune" des dossiers et des fichiers, cycle de \dev fixé.
