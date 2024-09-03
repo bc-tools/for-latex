@@ -1,14 +1,14 @@
 this::
-    date = 2024-09-03
+    date = 2024-09-04
 
 
 abrev::
     content = :this.name:
 
 
-================
-\proj, quèsaco ?
-================
+====================
+\thisproj, quèsaco ?
+====================
 
 Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu'il existe un écosystème de \dev poposé par \latex, \thisproj propose une autre façon de coder plus proche de ce qui fait dans les \langs de \prog plus \stds comme \python. Dans les \gdes lignes, voici quelques fonctionnalités proposées par \thisproj pour fabriquer un \pack
 ((
@@ -27,7 +27,7 @@ Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu
 
 
 note::
-    \texfacto utilisant activement \src2prod, les fonctionnalités venant de \src2prod seront présentées succinctement, charge au lecteur de consulter la \doc de \src2prod pour plus de détails.
+    \texfacto utilisant activement \src2prod, les fonctionnalités venant de ce dernier seront présentées succinctement, charge au lecteur de consulter la \doc de \src2prod pour plus de détails.
 
 
 caution::

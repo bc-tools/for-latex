@@ -2,6 +2,21 @@
 
 
 ==
+03  ??
+==
+
+--------
+:fordev:
+--------
+
+[[:doc:]]  ??
+\Doc before the code: software \archi constraints explained.
+
+
+// ---------- //
+
+
+==
 02
 ==
 
@@ -10,9 +25,4 @@
 --------
 
 [[:doc:]]
-\Doc before the code.
-
-    1) \1st version of the \intro.
-
-    1) ??
-    Software \archi constraints explained.
+\Doc before the code: \1st version of the \intro.
