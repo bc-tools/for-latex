@@ -1,5 +1,5 @@
 this::
-    date = 2024-09-02  ???
+    date = 2024-09-   ??
 
 
 abrev::
@@ -10,7 +10,7 @@ abrev::
 \Struct générale du code
 ========================
 
-Considérons un \fakeproj \fakename utilisant \ttes les fonctionnalités proposées par \thisproj. Pour ce faire, ce \proj utilise la \struc de dossiers suivante qui va être présentée juste après.
+Considérons un \fakeproj nommé \fakename qui va utiliser \ttes les fonctionnalités proposées par \thisproj. Pour ce faire, ce \proj utilise la \struc de dossiers suivante qui va être présentée juste après.
 
 dirtree::
     ---

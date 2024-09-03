@@ -1,5 +1,5 @@
 this::
-    date = 2024-09-02
+    date = 2024-09-03
 
 
 abrev::
@@ -27,7 +27,7 @@ Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu
 
 
 note::
-    \texfacto utilisant activement \src2prod, il est conseillé de lire la \doc de ce \2nd \proj afin d'en tirer partie (nous présenterons succinctement certaines fonctionnalités de \src2prod sans entrer dans les détails d'utilisation).
+    \texfacto utilisant activement \src2prod, les fonctionnalités venant de \src2prod seront présentées succinctement, charge au lecteur de consulter la \doc de \src2prod pour plus de détails.
 
 
 caution::
