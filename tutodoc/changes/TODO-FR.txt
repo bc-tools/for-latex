@@ -6,6 +6,12 @@ tutodoc - TODO
 NOW
 ---
 
+
+> ---------------------------- <
+
+change: icons mais comment car simpleicons inutile car marque et fontawesome poitr lualatex , via SVG sinon ???
+
+
 > ---------------------------- <
 
 focus
