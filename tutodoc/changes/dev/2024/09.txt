@@ -2,12 +2,12 @@
 
 
 ==
-          ??
+23  (1.2.1-beta.1)
 ==
 
 -----
 :new:
 -----
 
-[[:format:]]  ???
-Focus: "subtle" color boxes to help to understand the (the \pack \keytheorems is now used).
+[[:format:]]
+Focus: color boxes to help to understand the (the \pack \keytheorems is used i, backstage).

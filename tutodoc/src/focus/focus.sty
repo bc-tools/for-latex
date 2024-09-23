@@ -1,11 +1,17 @@
 % == PACKAGES == %
 
-\RequirePackage{amsthm}%
-               [2017/09]
-               
+\RequirePackage{keytheorems}%
+               [2024/09/19]
+
+\RequirePackage{tcolorbox}%
+               [2024/07/10]
+
+\tcbuselibrary{breakable, skins}
+
+
 % == TOOLS == %
 
-% -- FOCUS ON SOME CONTENT -- %
+% -- SOBER HIGHLIGHTING OF CONTENT -- %
 
 % :: EXAMPLE - HIDDEN VERSIONS :: %
 
@@ -72,47 +78,47 @@
 \newtheorem*{tdocrem}{\tutodoc@trans@rmk@title}
 
 
-% :: IMPORTANT :: %
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''tdocimportant''.
-%%%
-\newtheorem*{tdocimportant}{\tutodoc@trans@important@title}
-
-
-% :: NOTE :: %
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''tdocnote''.
-%%%
-\newtheorem*{tdocnote}{\tutodoc@trans@note@title}
-
-
-% :: TIP :: %
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''tdoctip''.
-%%%
-\newtheorem*{tdoctip}{\tutodoc@trans@tip@title}
-
-
-% :: CAUTION :: %
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''tdoccaution''.
-%%%
-\newtheorem*{tdoccaution}{\tutodoc@trans@caution@title}
 
 
 
-% :: WARNING :: %
 
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''tdocwarn''.
-%%%
-\newtheorem*{tdocwarn}{\tutodoc@trans@warn@title}
+% -- COLORFUL HIGHLIGHTING OF CONTENT -- %
+
+% :: ABSTRACTION :: %
+
+% Source used.
+%    + https://tex.stackexchange.com/a/727022/6880
+
+\tcbset{
+  tutodoc-focus-color-style/.style = {
+    breakable,
+    enhanced,
+    fontupper = \color{#1!45!black},
+    colback   = #1!5,
+    colframe  = #1!75!black!45,
+    shadow    = {.75mm}{-.75mm}{0mm}{black!30},
+ }
+}
+
+
+% :: LET'S GO BACK TO THE REAL WORLD :: %
+
+\ExplSyntaxOn
+
+\prop_set_from_keyval:Nn \__g_tutodoc_focus_color_prop {
+  note      = cyan,
+  tip       = lime,
+  important = orange,
+  caution   = violet,
+  warn      = red,
+}
+
+\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+  \newkeytheorem{tdoc#1}[
+    numbered              = false,
+    name                  = \use:c { tutodoc@trans@#1@title },
+    tcolorbox-no-titlebar = {tutodoc-focus-color-style=#2}
+  ]
+}
+
+\ExplSyntaxOff
