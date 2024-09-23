@@ -522,7 +522,7 @@ The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{t
 \begin{tdocnote}
     The environments presented in this section
     \footnote{
-        The formatting comes from the \tdocpack{amsthm} package.
+        The formatting comes from the \tdocpack{keytheorems} package.
     }
     add a short title indicating the type of information provided.
     This short text will always be translated into the language indicated when the \thispack{} package is loaded.
@@ -682,26 +682,26 @@ It is sometimes useful to render code directly in the documentation. This type o
 \subsection{With a coloured stripe}
 
 \begin{tdocexa} [With default text]
-    It can be useful to show a real rendering directly in a document
+    It can be useful to show a real rendering directly in a document.
     \footnote{
         Typically when making a demo.
-    }.
+    }
     This is done via \tdocenv{tdocshowcase} as follows.
 
     \tdoclatexinput[code]{examples-showcase-default.tex}
 
 
-    The result is the following rendering
+    The result is the following rendering.
     \footnote{
         Behind the scenes, the strip is created effortlessly using the \tdocpack{clrstrip} package.
-    }.
-
-    \medskip
-
-    \input{examples-showcase-default.tex}
-
+    }
 \end{tdocexa}
 
+\input{examples-showcase-default.tex}
+
+
+
+\smallskip
 
 \begin{tdocrem}
     See the section \ref{tdoc-latexshow} on page \pageref{tdoc-latexshow} to easily obtain code followed by its actual rendering as in the previous example.
@@ -860,7 +860,7 @@ Here are some examples.
     The \tdocmacro{tdocinlatex} macro can be used in a footnote: see below.
     \footnote{
         \tdocinlatex+$minted = TOP$+ has been typed \tdocinlatex|\tdocinlatex+$minted = TOP$+| in this footnote...
-    }.
+    }
     In addition, a background color is deliberately used to subtly highlight the codes \tdocinlatex#\LaTeX#\,.
 \end{tdocnote}
 
@@ -881,10 +881,10 @@ Here are some examples.
 
 
 \begin{tdocexa}[Following]
-    \tdocenv{tdoclatex} produces the following result, which corresponds to the default option \tdocinlatex#std#
+    \tdocenv{tdoclatex} produces the following result, which corresponds to the default option \tdocinlatex#std#\,.
     \footnote{
         \tdocinlatex{std} refers to the \tdocquote{standard} behaviour of \tdocpack{tcolorbox} in relation to the \tdocpack{minted} library.
-    }.
+    }
 
     \begin{tdoclatex}
         $A = B + C$

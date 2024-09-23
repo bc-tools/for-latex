@@ -524,7 +524,7 @@ La macro \tdocmacro{tdocinEN} et sa version étoilée s'appuient sur \tdocmacro{
 \begin{tdocnote}
     Les environnements présentés dans cette section
     \footnote{
-        La mise en forme provient du package \tdocpack{amsthm}.
+        La mise en forme provient du package \tdocpack{keytheorems}.
     }
     ajoutent un court titre indiquant le type d'informations fournies.
     Ce court texte sera toujours traduit dans la langue indiquée lors du chargement du package \thispack{}.
@@ -754,13 +754,13 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
 
     Ceci produira ce qui suit.
-
-    \medskip
-
-    \input{examples-showcase-hook.tex}
-
 \end{tdocwarn}
 
+\input{examples-showcase-hook.tex}
+
+
+
+\smallskip
 
 \begin{tdocnote}
     Il faut savoir qu'en coulisse la macro \tdocmacro{tdocruler} est utilisée.
@@ -859,10 +859,10 @@ Voici des exemples d'utilisation.
 
 
 \begin{tdocnote}
-    La macro \tdocmacro{tdocinlatex} est utilisable dans une note de pied de page : voir plus bas
+    La macro \tdocmacro{tdocinlatex} est utilisable dans une note de pied de page : voir ci-dessous.
     \footnote{
         \tdocinlatex+$minted = TOP$+ a été tapé \tdocinlatex|\tdocinlatex+$minted = TOP$+| dans cette note de bas de page..
-    }.
+    }
     De plus, une couleur de fond est volontairement utilisée pour subtilement faire ressortir les codes \tdocinlatex#\LaTeX#\,.
 \end{tdocnote}
 
@@ -882,10 +882,10 @@ Voici des exemples d'utilisation.
 
 
 \begin{tdocexa}[À la suite]
-    \tdocenv{tdoclatex} produit le résultat suivant qui correspond à l'option par défaut \tdocinlatex#std#
+    \tdocenv{tdoclatex} produit le résultat suivant qui correspond à l'option par défaut \tdocinlatex#std#\,.
     \footnote{
         \tdocinlatex{std} fait référence au comportement \tdocquote{standard} de \tdocpack{tcolorbox} vis à vis de la librairie \tdocpack{minted}.
-    }.
+    }
 
     \begin{tdoclatex}
         $A = B + C$
