@@ -5,4 +5,9 @@
 ??  (??)
 ==
 
-??
+-----
+:new:
+-----
+
+[[:format:]]
+Focus: colored frames for easy recognition of information types (the \pack \keytheorems is used in backstage).

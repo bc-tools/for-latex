@@ -10,4 +10,4 @@
 -----
 
 [[:format:]]
-Focus: color boxes to help to understand the (the \pack \keytheorems is used i, backstage).
+Focus: colored frames for easy recognition of information types (the \pack \keytheorems is used in backstage).
