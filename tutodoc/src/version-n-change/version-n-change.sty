@@ -1,5 +1,8 @@
 % == PACKAGES == %
 
+\RequirePackage{fontawesome5}%
+               [2022-05-02]
+
 \RequirePackage{marginnote}%
                [2023-09-07]
 
@@ -157,13 +160,14 @@
 %     :action: this environment prints some ¨infos about specific changes
 %              achieved in a new version (no special formatting is applied).
 %%%
-\NewDocumentEnvironment{tdoctopic}{ m }{
+\NewDocumentEnvironment{tdoctopic}{ m O{} }{
   \IfBlankT{#1}{
     \msg_fatal:nn { tdoc } { changes-topic-missing-title }
   }
 
   \textbf{
-    \textsc{#1.}
+  	\IfBlankF{#2}{#2\kern3.5pt}%
+	\textsc{#1.}
   }
 
   \begin{itemize}
@@ -175,11 +179,11 @@
 % :: CHANGES - NEW THINGS :: %
 
 \prop_set_from_keyval:Nn \__g_tutodoc_topic_change_prop {
-  break  = ZZZ,
-  fix    = XXX,
-  new    = AAA,
-  prob   = WWW,
-  update = YYY,
+  break  = \faCodeBranch,
+  fix    = \faWrench,
+  new    = \faGem,
+  prob   = \faFire*,
+  update = \faMagic,
 }
 
 
@@ -192,7 +196,7 @@
 %%% 
 \prop_map_inline:Nn \__g_tutodoc_topic_change_prop {
   \NewDocumentEnvironment{tdoc#1}{}{
-    \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 }}
+    \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } [ #2 ]
   }{
     \end{tdoctopic}
   }

@@ -5,6 +5,14 @@
 24  (1.2.1-beta.2)
 ==
 
+-----
+:new:
+-----
+
+[[:format:]]
+Change log: icons are associated to the kind-of-\infos \env (use of the \fontawesome5 \pack).
+
+
 --------
 :update:
 --------

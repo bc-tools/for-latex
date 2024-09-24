@@ -1,5 +1,8 @@
 % == PACKAGES == %
 
+\RequirePackage{fontawesome5}%
+               [2022-05-02]
+               
 \RequirePackage{keytheorems}%
                [2024/09/19]
 
@@ -91,7 +94,7 @@
     breakable,
     enhanced,
 %    fonttitle    = \itshape,
-    halign title = center, 
+%    halign title = center, 
     fontupper    = \color{#1!45!black},
     colback      = #1!5,
     colframe     = #1!75!black!45,
@@ -114,12 +117,23 @@
   warn      = red,
 }
 
+\prop_set_from_keyval:Nn \__g_tutodoc_focus_icon_prop {
+  note      = \faInfoCircle,
+  tip       = \faLightbulb,
+  important = \faHighlighter,
+  caution   = \faBiohazard,
+  warn      = \faSkullCrossbones,
+}
+
 \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
   \newkeytheorem{tdoc#1}[
     numbered              = false,
-    name                  = \use:c { tutodoc@trans@#1@title },
 %    tcolorbox-no-titlebar = {tutodoc-focus-color-style=#2},
     tcolorbox = {tutodoc-focus-color-style=#2},
+    name                  = { 
+    	\prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } \kern3.5pt
+	    \use:c { tutodoc@trans@#1@title }
+	},
   ]
 }
 
