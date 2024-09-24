@@ -10,7 +10,7 @@ important_title = Important
 caution_title   = Mise en garde
 warn_title      = Avertissement
 
-chges_pb     = Problème
+chges_prob   = Problème
 chges_break  = Bifurcation
 chges_fix    = Réparation
 chges_new    = Nouveau

@@ -174,81 +174,26 @@
 
 % :: CHANGES - NEW THINGS :: %
 
+\prop_set_from_keyval:Nn \__g_tutodoc_topic_change_prop {
+  break  = ZZZ,
+  fix    = XXX,
+  new    = AAA,
+  prob   = WWW,
+  update = YYY,
+}
+
+
 %%%
 % prototype::
 %     :see: env.tdoctopic
 %
 %     :action: similar to the \env ''tdoctopic'' with the title "New"
 %              translated into the good language.
-%%%
-\NewDocumentEnvironment{tdocnew}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@new}
-}{
-  \end{tdoctopic}
+%%% 
+\prop_map_inline:Nn \__g_tutodoc_topic_change_prop {
+  \NewDocumentEnvironment{tdoc#1}{}{
+    \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 }}
+  }{
+    \end{tdoctopic}
+  }
 }
-
-
-% :: CHANGES - UPDATE :: %
-
-%%%
-% prototype::
-%     :see: env.tdoctopic
-%
-%     :action: similar to the \env ''tdoctopic'' with the title "Update"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{tdocupdate}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@update}
-}{
-  \end{tdoctopic}
-}
-
-
-% :: CHANGES - BREAK :: %
-
-%%%
-% prototype::
-%     :see: env.tdoctopic
-%
-%     :action: similar to the \env ''tdoctopic'' with the title "Break"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{tdocbreak}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@break}
-}{
-  \end{tdoctopic}
-}
-
-
-% :: CHANGES - PROBLEM :: %
-
-%%%
-% prototype::
-%     :see: env.tdoctopic
-%
-%     :action: similar to the \env ''tdoctopic'' with the title "Problem"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{tdocprob}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@pb}
-}{
-  \end{tdoctopic}
-}
-
-
-% :: CHANGES - FIX :: %
-
-%%%
-% prototype::
-%     :see: env.tdoctopic
-%
-%     :action: similar to the \env ''tdoctopic'' with the title "Fix"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{tdocfix}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@fix}
-}{
-  \end{tdoctopic}
-}
-
-\ExplSyntaxOff

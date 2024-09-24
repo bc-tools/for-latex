@@ -82,17 +82,22 @@
 
 % :: ABSTRACTION :: %
 
-% Source used.
+% Sources used.
 %    + https://tex.stackexchange.com/a/727022/6880
+%    + https://tex.stackexchange.com/a/682332/6880
 
 \tcbset{
   tutodoc-focus-color-style/.style = {
     breakable,
     enhanced,
-    fontupper = \color{#1!45!black},
-    colback   = #1!5,
-    colframe  = #1!75!black!45,
-    shadow    = {.75mm}{-.75mm}{0mm}{black!30},
+%    fonttitle    = \itshape,
+    halign title = center, 
+    fontupper    = \color{#1!45!black},
+    colback      = #1!5,
+    colframe     = #1!75!black!45,
+    shadow       = {.75mm}{-.75mm}{0mm}{black!30},
+% We want to use the same color for the footnotes in the frame.
+    before upper = {\let\default@color\current@color},
  }
 }
 
@@ -113,7 +118,8 @@
   \newkeytheorem{tdoc#1}[
     numbered              = false,
     name                  = \use:c { tutodoc@trans@#1@title },
-    tcolorbox-no-titlebar = {tutodoc-focus-color-style=#2}
+%    tcolorbox-no-titlebar = {tutodoc-focus-color-style=#2},
+    tcolorbox = {tutodoc-focus-color-style=#2},
   ]
 }
 

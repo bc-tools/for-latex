@@ -2,6 +2,33 @@
 
 
 ==
+24  (1.2.1-beta.2)
+==
+
+--------
+:update:
+--------
+
+[[:format:]]
+Focus.
+
+    1) Use of two-parts colored frames (the recognition becomes better).
+
+    1) Color for the footnotes inside the frame.
+
+
+-------
+:break:
+-------
+
+[[:bug:]]
+New \minted: the version 3 breaks the use of the \minted \tcolorbox \lib.
+
+
+// ---------- //
+
+
+==
 23  (1.2.1-beta.1)
 ==
 

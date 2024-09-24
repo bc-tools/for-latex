@@ -12,6 +12,17 @@ NOW
 
 minted 3 !!!!!
 
+
+> ---------------------------- <
+
+
+Mieux.
+
+\section{Historique}
+
+\small
+
+
 > ---------------------------- <
 
 texfacto
@@ -28,19 +39,12 @@ texfacto
         The \thispack{} package
 
 
-+
-
-
-https://tex.stackexchange.com/q/265726/6880
-
-
 > ---------------------------- <
 
 note and co
 
-    --> titre dans le cadre centré comme cela, si on ajoute icone ici c'est facile
-
-    --> tester différents mef possible : on choisi le CCS templ et on forunit alors les macro et réglage attendus; toit simplement !
+    --> différents mef possible ?
+        OK quand je ferais une classe : on choisi le CCS templ et on forunit alors les macro et réglage attendus; toit simplement !
 
 
 > ---------------------------- <
