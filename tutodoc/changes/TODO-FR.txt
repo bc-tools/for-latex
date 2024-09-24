@@ -7,6 +7,42 @@ NOW
 ---
 
 
+
+> ---------------------------- <
+
+minted 3 !!!!!
+
+> ---------------------------- <
+
+texfacto
+
+    \tdocsep
+
+    {\small\itshape
+        \vspace{-5pt}
+        \begin{center}
+        	\textbf{Abstract.}
+        \end{center}
+
+
+        The \thispack{} package
+
+
++
+
+
+https://tex.stackexchange.com/q/265726/6880
+
+
+> ---------------------------- <
+
+note and co
+
+    --> titre dans le cadre centré comme cela, si on ajoute icone ici c'est facile
+
+    --> tester différents mef possible : on choisi le CCS templ et on forunit alors les macro et réglage attendus; toit simplement !
+
+
 > ---------------------------- <
 
 change: icons mais comment car simpleicons inutile car marque et fontawesome poitr lualatex , via SVG sinon ???
