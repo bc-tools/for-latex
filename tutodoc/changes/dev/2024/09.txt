@@ -30,7 +30,7 @@ Focus.
 -------
 
 [[:bug:]]
-New \minted: the version 3 breaks the use of the \minted \tcolorbox \lib.
+New \minted: the version 3 breaks the use of the \minted \tcolorbox \lib. The \thispack becomes unusable... Let's wait for a fix before releasing the brand-new, colorful version.
 
 
 // ---------- //

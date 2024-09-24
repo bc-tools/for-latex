@@ -2,7 +2,7 @@ latex_show_start = Début du rendu réel
 latex_show_end   = Fin du rendu réel
 
 exa_title  = Exemple
-rmk_title  = Remarque
+rem_title  = Remarque
 note_title = Note
 tip_title  = Astuce
 

@@ -2,7 +2,7 @@ latex_show_start = Start of the real output
 latex_show_end   = End of the real output
 
 exa_title  = Example
-rmk_title  = Remark
+rem_title  = Remark
 note_title = Note
 tip_title  = Tip
 

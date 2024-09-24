@@ -49,11 +49,6 @@ note and co
 
 > ---------------------------- <
 
-change: icons mais comment car simpleicons inutile car marque et fontawesome poitr lualatex , via SVG sinon ???
-
-
-> ---------------------------- <
-
 focus
 
     ---> rmk and co : passer via xtempalte !!!

@@ -2,7 +2,7 @@
 
 \RequirePackage{fontawesome5}%
                [2022-05-02]
-               
+
 \RequirePackage{keytheorems}%
                [2024/09/19]
 
@@ -78,7 +78,7 @@
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
 % to have \infos about the environment ''tdocrem''.
 %%%
-\newtheorem*{tdocrem}{\tutodoc@trans@rmk@title}
+\newtheorem*{tdocrem}{\tutodoc@trans@rem@title}
 
 
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
@@ -94,7 +94,7 @@
     breakable,
     enhanced,
 %    fonttitle    = \itshape,
-%    halign title = center, 
+%    halign title = center,
     fontupper    = \color{#1!45!black},
     colback      = #1!5,
     colframe     = #1!75!black!45,
@@ -130,7 +130,7 @@
     numbered              = false,
 %    tcolorbox-no-titlebar = {tutodoc-focus-color-style=#2},
     tcolorbox = {tutodoc-focus-color-style=#2},
-    name                  = { 
+    name                  = {
     	\prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } \kern3.5pt
 	    \use:c { tutodoc@trans@#1@title }
 	},
