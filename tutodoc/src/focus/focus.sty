@@ -47,7 +47,7 @@
   { Unknown ~ rafters ~ option. }
   { See ~ the ~ documentation ~ for ~ the ~ supported ~ options. }
 
-\NewDocumentEnvironment{tdocexa}{D<>{nb} O{}}{
+\NewDocumentEnvironment{ tdocexa } { D<>{nb} O{} } {
   \str_case:nnF { #1 } {
     { nb   } {
       \begin{@@tdocexa@nb}[#2]
@@ -60,7 +60,7 @@
   }
 }{
   \str_case:nnF { #1 } {
-    { nb   } {
+    { nb } {
       \end{@@tdocexa@nb}
     }
     { nonb } {
@@ -127,13 +127,13 @@
 
 \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
   \newkeytheorem{tdoc#1}[
-    numbered              = false,
-%    tcolorbox-no-titlebar = {tutodoc-focus-color-style=#2},
+    numbered  = false,
+%  tcolorbox-no-titlebar can be used.
     tcolorbox = {tutodoc-focus-color-style=#2},
-    name                  = {
-    	\prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } \kern3.5pt
-	    \use:c { tutodoc@trans@#1@title }
-	},
+    name      = {
+      \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } \kern3.5pt
+      \use:c { tutodoc@trans@#1@title }
+    },
   ]
 }
 

@@ -98,6 +98,8 @@
                        {#3}
 }
 
+\ExplSyntaxOff
+
 
 % :: VERSION AND DATE :: %
 
@@ -136,13 +138,15 @@
 %%%
 \NewDocumentCommand{\tdocdate}{O{blue} m}{
   \tutodoc@new@change@margin{#1}      % Color
-                         {#2}      % Date
-                         {}        % Version
-                         {-5.35pt} % Last negative spacing
+                            {#2}      % Date
+                            {}        % Version
+                            {-5.35pt} % Last negative spacing
 }
 
 
 % -- CHANGES - WHAT? -- %
+
+\ExplSyntaxOn
 
 % :: MESSAGES :: %
 
@@ -166,8 +170,8 @@
   }
 
   \textbf{
-  	\IfBlankF{#2}{#2\kern3.5pt}%
-	\textsc{#1.}
+    \IfBlankF{#2}{#2\kern3.5pt}%
+  \textsc{#1.}
   }
 
   \begin{itemize}
@@ -193,11 +197,13 @@
 %
 %     :action: similar to the \env ''tdoctopic'' with the title "New"
 %              translated into the good language.
-%%% 
+%%%
 \prop_map_inline:Nn \__g_tutodoc_topic_change_prop {
-  \NewDocumentEnvironment{tdoc#1}{}{
-    \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } [ #2 ]
+  \NewDocumentEnvironment{ tdoc#1 } {} {
+    \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } [ #2 ]
   }{
     \end{tdoctopic}
   }
 }
+
+\ExplSyntaxOff

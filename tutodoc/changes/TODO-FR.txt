@@ -15,6 +15,14 @@ minted 3 !!!!!
 
 > ---------------------------- <
 
+newtheorem --->  newkeytheorem
+
++
+
+prototype dans focus et version-n-change
+
+
+> ---------------------------- <
 
 Mieux.
 
