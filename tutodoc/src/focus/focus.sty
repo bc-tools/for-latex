@@ -6,6 +6,9 @@
 \RequirePackage{keytheorems}%
                [2024/09/19]
 
+\RequirePackage[svgnames]{xcolor}%
+               [2023/11/15]
+
 \RequirePackage{tcolorbox}%
                [2024/07/10]
 
@@ -111,8 +114,8 @@
 
 \prop_set_from_keyval:Nn \__g_tutodoc_focus_color_prop {
   note      = cyan,
-  tip       = lime,
-  important = orange,
+  tip       = ForestGreen,%lime,
+  imp = orange,
   caution   = violet,
   warn      = red,
 }
@@ -120,7 +123,7 @@
 \prop_set_from_keyval:Nn \__g_tutodoc_focus_icon_prop {
   note      = \faInfoCircle,
   tip       = \faLightbulb,
-  important = \faHighlighter,
+  imp       = \faHighlighter,
   caution   = \faBiohazard,
   warn      = \faSkullCrossbones,
 }

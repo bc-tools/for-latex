@@ -103,13 +103,13 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 
 \begin{filecontents*}[overwrite]{examples-focus-important.tex}
-\begin{tdocimportant}
+\begin{tdocimp}
     Important and harmless.
-\end{tdocimportant}
+\end{tdocimp}
 
-\begin{tdocimportant}[Mini title]
+\begin{tdocimp}[Mini title]
     Useful?
-\end{tdocimportant}
+\end{tdocimp}
 \end{filecontents*}
 
 
@@ -550,9 +550,9 @@ Here are some possible uses.
 % ------------------ %
 
 
-\begin{tdocimportant}
+\begin{tdocimp}
     The numbering of the examples is reset to zero as soon as a section with a level at least equal to a \tdocinlatex|\subsubsection| is opened.
-\end{tdocimportant}
+\end{tdocimp}
 
 
 % ------------------ %
@@ -592,7 +592,7 @@ The \tdocenv{tdocnote} environment is used to highlight useful information. Here
 
 \subsection{Something important}
 
-The \tdocenv{tdocimportant} environment is used to indicate something important but harmless.
+The \tdocenv{tdocimp} environment is used to indicate something important but harmless.
 
 \tdoclatexinput[sbs]{examples-focus-important.tex}
 
@@ -1081,7 +1081,7 @@ You can either date something, or version it, in which case the version number c
 \end{tdocexa}
 
 
-\begin{tdocimportant}
+\begin{tdocimp}
     \leavevmode
 
     \begin{enumerate}
@@ -1089,7 +1089,7 @@ You can either date something, or version it, in which case the version number c
 
         \item The final rendering of the dates takes into account the language specified when loading the package \thispack{}: for example, if French is selected, the dates will be displayed in the format \texttt{DD/MM/YYYY}.
     \end{enumerate}
-\end{tdocimportant}
+\end{tdocimp}
 
 
 \begin{tdocwarn}

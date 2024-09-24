@@ -6,9 +6,9 @@ rem_title  = Remark
 note_title = Note
 tip_title  = Tip
 
-important_title = Important
-caution_title   = Caution
-warn_title      = Warning
+imp_title     = Important
+caution_title = Caution
+warn_title    = Warning
 
 chges_prob   = Problem
 chges_break  = Break

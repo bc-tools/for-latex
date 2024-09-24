@@ -7,7 +7,6 @@ NOW
 ---
 
 
-
 > ---------------------------- <
 
 minted 3 !!!!!
@@ -55,23 +54,12 @@ note and co
         OK quand je ferais une classe : on choisi le CCS templ et on forunit alors les macro et réglage attendus; toit simplement !
 
 
-> ---------------------------- <
-
-focus
-
-    ---> rmk and co : passer via xtempalte !!!
-
-
-> ---------------------------- <
-
-Macro \tdocinlatex : height and depth
-
-    ---> patch ou màj minted ?
 
 
 -----
 LATER
 -----
+
 
 > ---------------------------- <
 
