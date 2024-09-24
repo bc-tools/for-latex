@@ -10,4 +10,19 @@
 -----
 
 [[:format:]]
-Focus: colored frames for easy recognition of information types (the \pack \keytheorems is used in backstage).
+Focus.
+
+    1) Use of two-parts colored frames (the recognition becomes better).
+
+    1) Color for the footnotes inside the frame.
+
+
+Change log: icons are associated to the kind-of-\infos \env (use of the \fontawesome5 \pack).
+
+
+-------
+:break:
+-------
+
+[[:api:]]
+Focus: the \env ''tdocimportant'' has been renamed to ''tdocimp'' for ease of use.

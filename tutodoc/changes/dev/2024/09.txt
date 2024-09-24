@@ -13,7 +13,6 @@
 Focus: the \env ''tdocimportant'' has been renamed to ''tdocimp'' for ease of use.
 
 
-
 // ---------- //
 
 
@@ -26,7 +25,7 @@ Focus: the \env ''tdocimportant'' has been renamed to ''tdocimp'' for ease of us
 -------
 
 [[:bug:]]
-New \minted: the version 3 breaks the use of the \minted \tcolorbox \lib. The \thispack becomes unusable... Let's wait for a fix before releasing the current brand-new, colorful version.
+\minted: the new version 3 breaks the use of the \minted \tcolorbox \lib. The \thispack becomes unusable... Let's wait for a fix before releasing the current brand-new, colorful version.
 
 
 -----
