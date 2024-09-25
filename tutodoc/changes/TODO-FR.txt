@@ -7,7 +7,6 @@ NOW
 ---
 
 
-BUG CHnagelog version anglaise ????
 
 
 
@@ -15,7 +14,13 @@ BUG CHnagelog version anglaise ????
 
 newtheorem --->  newkeytheorem
 
-+
+
+tedocrem et tdocexa : de type sobre et avec même fonctionnement (parler de nuémraotation si besoin fourni par keytheorems)
+
+autres dut de type tape à l'oeil, les mattres dans des sections spéarées
+
+
+> ---------------------------- <
 
 prototype dans focus et version-n-change
 

@@ -7,7 +7,7 @@
 -----
 
 [[:doc:]]
-Too much small \pbs have been fixed (we wait for the fix of the version 3 of \minted before doing any \ctan upload).
+Too much small \pbs have been fixed (we wait for the fix of the version 3 of \minted to upload a new version on \ctan).
 
 
 // ---------- //
