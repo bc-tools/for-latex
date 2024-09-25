@@ -7,6 +7,10 @@ NOW
 ---
 
 
+BUG CHnagelog version anglaise ????
+
+
+
 > ---------------------------- <
 
 newtheorem --->  newkeytheorem
@@ -14,14 +18,6 @@ newtheorem --->  newkeytheorem
 +
 
 prototype dans focus et version-n-change
-
-
-> ---------------------------- <
-
-note and co
-
-    --> différents mef possible ?
-        OK quand je ferais une classe : on choisi le CCS templ et on forunit alors les macro et réglage attendus; toit simplement !
 
 
 
@@ -40,6 +36,14 @@ cleaner code
     ---> classe + package car il y a des choix esthétique
          + class pour une mef perso : police, marge
          + pack pour le reste
+
+
+> ---------------------------- <
+
+note and co
+
+    --> différents mef possible ?
+        OK quand je ferais une classe : on choisi le CCS templ et on forunit alors les macro et réglage attendus; toit simplement !
 
 
 > ---------------------------- <
