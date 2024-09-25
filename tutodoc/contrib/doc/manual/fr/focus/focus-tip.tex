@@ -11,4 +11,16 @@ L'environnement \tdocenv{tdoctip} sert à donner des astuces. Voici comment l'em
 
 \tdoclatexinput[sbs]{examples/focus/tip.tex}
 
+
+\smallskip
+
+\begin{tdocnote}
+    Les couleurs sont fournies par les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor} qui admettent les codes suivants.
+
+    \begin{tdoclatex}[code]
+\NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
+\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
+    \end{tdoclatex}
+\end{tdocnote}
+
 \end{document}
