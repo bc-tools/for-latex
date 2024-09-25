@@ -6,6 +6,7 @@ tutodoc - TODO
 NOW
 ---
 
+ajouter boite ouverte comme icone de le toute première version
 
 > ---------------------------- <
 

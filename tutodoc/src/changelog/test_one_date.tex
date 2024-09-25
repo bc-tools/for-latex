@@ -6,7 +6,7 @@
 
 \newcommand\docyear {2024}
 \newcommand\docmonth{09}
-\newcommand\docday  {25}
+\newcommand\docday  {99}
 
 % Preparing next release
 %\renewcommand\docday{0}
@@ -40,13 +40,7 @@
     \rule\linewidth{1pt}
 
     \vspace{-1em}
-    \section*{Test :
-    \ifnum\docday=0
-        Next release
-    \else
-        \docyear-\docmonth-\docday
-    \fi
-    }
+    \section*{Test: \docyear-\docmonth-\docday}
     \vspace{-.75em}
     \rule\linewidth{1pt}
 }
@@ -56,10 +50,9 @@
 
 \bigskip
 
-\ifnum\docday=0
-    \input{next}
-\else
-    \input{\docyear/\docmonth/\docday}
-\fi
+\tdocversion{1.2.3-rc}[2024-01-01]
+
+\input{\docyear/\docmonth/\docday}
 
 \end{document}
+5

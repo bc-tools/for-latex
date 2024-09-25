@@ -3,6 +3,14 @@
 ==
 
 -----
+:new:
+-----
+
+[[:api:]]
+Macro ''\tdocenv'': a star version just prints the name of the \env.
+
+
+-----
 :fix:
 -----
 

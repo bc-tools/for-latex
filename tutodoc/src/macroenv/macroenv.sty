@@ -46,10 +46,14 @@
 %%%
 %
 % Cleaner code from https://tex.stackexchange.com/a/703379/6880 .
-\NewDocumentCommand{\tdocenv}{O{}m}{%
-  \texttt{\string\begin\string{#2\string}#1 %
-          \!\!...\@\!\!\! %
-          \string\end\string{#2\string}}%
+\NewDocumentCommand{\tdocenv}{sO{}m}{%
+  \IfBooleanTF{#1}{%
+  	\texttt{#3}%
+  }{%
+    \texttt{\string\begin\string{#3\string}#2 %
+            \!\!...\@\!\!\! %
+            \string\end\string{#3\string}}%
+  }%
 }
 
 
