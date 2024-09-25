@@ -2,7 +2,7 @@
 
 
 ==
-25  (1.2.1-beta.3)
+25  (1.3.0-rc.0)
 ==
 
 -------
@@ -13,22 +13,24 @@
 Focus: the \env ''tdocimportant'' has been renamed to ''tdocimp'' for ease of use.
 
 
-\tdocdarkcolor
-\tdoclightcolor dans main
+--------
+:update:
+--------
 
-+
-ajout de
+[[:doc:]]
+The French and the English \docs have been updated.
 
-ceci utilisé par focus coloré
-
-
-mise ajour doc correspondante
-
-
-minted3 fixé via \RequirePackage{minted2} % minted v3 bug!
+[[:api:]]
+\minted: we use \RequirePackage{minted2} as a temporary patch.
 
 
-le mettre dans jouranl des chgts en attendnat support complet du nouveau minted3
+--------
+:fordev:
+--------
+
+[[:facto:]]
+
+The macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' has been moved into the path::''main.sty'' file, and there are aslo used for the highlighted content.
 
 
 // ---------- //
