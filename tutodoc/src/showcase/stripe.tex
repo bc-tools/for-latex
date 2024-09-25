@@ -69,12 +69,25 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
 
 \begin{tdocnote}
-    Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor} sont utilisées pour créer celles du fond et des titres respectivement à partir de la couleur proposée à \tdocenv{tdocshowcase}.
-    Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
+    Vous avez sûrement remarqué que le rouge sert de base pour obtenir les couleurs utilisées.
+    
+    \begin{itemize}
+    	\item La couleur de fond est fournie par \tdocmacro{tdocbackcolor}.
+
+    	\item La couleur des titres et des lignes est fournie par \tdocmacro{tdocdarkcolor}.
+    \end{itemize}
+    
+    Ces macros développables et à un seul argument, la couleur choisie, admettent les codes suivants.
 
     \begin{tdoclatex}[code]
 \NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
 \NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
+    \end{tdoclatex}
+
+    Il faut également savoir qu'en coulisses, la macro \tdocmacro{tdocruler} est utilisée.
+    
+    \begin{tdoclatex}[std]
+        \tdocruler{Un pseudo-titre décoré}{red}
     \end{tdoclatex}
 \end{tdocnote}
 
@@ -91,16 +104,5 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 \end{tdocwarn}
 
 \input{examples/showcase/hook.tex}
-
-
-\smallskip
-
-\begin{tdocnote}
-    Il faut savoir qu'en coulisse la macro \tdocmacro{tdocruler} est utilisée.
-
-    \begin{tdoclatex}[std]
-        \tdocruler{Un pseudo-titre décoré}{red}
-    \end{tdoclatex}
-\end{tdocnote}
 
 \end{document}

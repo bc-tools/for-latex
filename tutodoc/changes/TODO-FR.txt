@@ -12,6 +12,14 @@ NOW
 minted 3 !!!!!
 
 
+-----
+:new:       ??
+-----
+
+[[:API:]]       ??
+\latex listings: it is now possible basic verbatim suchas to fix problem like the one met with the version 3 of \minted.
+
+
 > ---------------------------- <
 
 newtheorem --->  newkeytheorem

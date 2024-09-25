@@ -60,12 +60,25 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
 \begin{tdocnote}
-    You will have noticed that we don't obtain a pure red: behind the scenes, the expandable macros \tdocmacro{tdocbackcolor} and \tdocmacro{tdocdarkcolor} are used to create the background and title colours respectively from the ones proposed in \tdocenv{tdocshowcase}.
-    These macros have a single argument, the chosen colour, and accept the following codes.
+    You've probably noticed that red is used as a base to obtain the colors used.
+    
+    \begin{itemize}
+    	\item The background color is provided by \tdocmacro{tdocbackcolor}.
+
+    	\item The color of titles and lines is provided by \tdocmacro{tdocdarkcolor}.
+    \end{itemize}
+    
+    These expandable macros have a single argument, the chosen color, and accept the following codes.
 
     \begin{tdoclatex}[code]
-\NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
-\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
+\NewExpandableDocumentCommand{tdocbackcolor}{m}{#1!5}
+\NewExpandableDocumentCommand{tdocdarkcolor}{m}{#1!50!black}
+    \end{tdoclatex}
+    
+    You also have to know that behind the scene, the \tdocmacro{tdocruler} macro is used.
+
+    \begin{tdoclatex}[std]
+        \tdocruler{A decorated pseudo-title}{red}
     \end{tdoclatex}
 \end{tdocnote}
 
@@ -79,19 +92,9 @@ It is sometimes useful to render code directly in the documentation. This type o
     \tdoclatexinput[code]{examples/showcase/hook.tex}
 
     This will produce the following.
-
-    \medskip
-
-    \input{examples/showcase/hook.tex}
 \end{tdocwarn}
 
 
-\begin{tdocnote}
-    Behind the scenes, the \tdocmacro{tdocruler} macro is used.
-
-    \begin{tdoclatex}[std]
-        \tdocruler{Un pseudo-titre décoré}{red}
-    \end{tdoclatex}
-\end{tdocnote}
+\input{examples/showcase/hook.tex}
 
 \end{document}
