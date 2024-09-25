@@ -24,8 +24,17 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-version-n-change-user-choice-icon.tex}
+\begin{tdoctopic}{Ne pas regarder}[\faEyeSlash]
+% Une icône venant de fontawesome5.
+    \item Info 1...
+    \item Info 2...
+\end{tdoctopic}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-version-n-change-user-choice.tex}
-\begin{tdoctopic}{C'est mon choix}
+\begin{tdoctopic}{La fin des icônes}
 % Ici le point s'impose.
     \item Info 1...
     \item Info 2...
@@ -288,57 +297,12 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \usepackage{enumitem}
 \frenchsetup{StandardItemLabels=true}
 
+\usepackage{multicol}
+
 \newcommand\thispack{\tdocpack{tutodoc}}
 
 % Package documented.
 \usepackage[lang = french]{tutodoc}
-
-\listfiles % initialize
-\AtEndDocument{\printfilelist}
-
-\ExplSyntaxOn
-\NewDocumentCommand{\printfilelist}{}
- {
-  \cleardoublepage
-  \section*{Used ~ packages}
-  \setlength{\LTleft}{0pt}
-  \pagestyle{empty}
-  \footnotesize
-  \begin{longtable}{@{} >{\ttfamily}l >{\raggedright}p{.6\textwidth} @{}}
-  \nobbz_print_filelist:
-  \end{longtable}
- }
-
-\tl_new:N \l_nobbz_filelist_body_tl
-
-\cs_new_protected:Npn \nobbz_print_filelist:
- {
-  \clist_map_inline:cn { @filelist }
-   {
-    \nobbz_print_fileinfo:n { ##1 }
-   }
-  \tl_use:N \l_nobbz_filelist_body_tl
- }
-
-\cs_new_protected:Npn \nobbz_print_fileinfo:n #1
- {
-  \regex_match:nnT { \.(sty|cls)\Z } { #1 }
-   {
-    \nobbz_print_pkginfo:n { #1 }
-   }
- }
-
-\cs_new_protected:Npn \nobbz_print_pkginfo:n #1
- {
-  \tl_put_right:Nx \l_nobbz_filelist_body_tl
-   {
-    \exp_not:n { #1 }
-    &
-    \exp_not:v { ver@#1 }
-    \exp_not:N \tabularnewline
-   }
- }
-\ExplSyntaxOff
 
 
 % Source.
@@ -417,12 +381,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
     \tdocsep
 
     {\small\itshape
-        \vspace{-5pt}
-        \begin{center}
-        	\textbf{Abstract.}
-        \end{center}
-
-
+        \textbf{Abstract.}
         The \thispack{} package
         \footnote{
             The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
@@ -432,13 +391,13 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
             The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
         },
         and with a sober rendering for reading on screen.
-
+    
         \medskip
-
+    
         Two important points to note.
         \begin{itemize}
             \item This package imposes a formatting style. In the not-too-distant future, \thispack{} will probably be split into a class and a package.
-
+    
             \item This documentation is also available in French.
         \end{itemize}
     }
@@ -636,6 +595,18 @@ L'environnement \tdocenv{tdoctip} sert à donner des astuces. Voici comment l'em
 
 
 
+\smallskip
+
+\begin{tdocnote}
+    Les couleurs sont fournies par les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor} qui admettent les codes suivants.
+
+    \begin{tdoclatex}[code]
+\NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
+\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
+    \end{tdoclatex}
+\end{tdocnote}
+
+
 \subsection{Note informative}
 
 L'environnement \tdocenv{tdocnote} sert à mettre en avant des informations utiles. Voici comment l'utiliser.
@@ -786,12 +757,25 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
 
 \begin{tdocnote}
-    Vous avez sûrement noté que l'on n'obtient pas un rouge pur : en coulisse les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor} sont utilisées pour créer celles du fond et des titres respectivement à partir de la couleur proposée à \tdocenv{tdocshowcase}.
-    Ces macros à un seul argument, la couleur choisie, admettent les codes suivants.
+    Vous avez sûrement remarqué que le rouge sert de base pour obtenir les couleurs utilisées.
+    
+    \begin{itemize}
+    	\item La couleur de fond est fournie par \tdocmacro{tdocbackcolor}.
+
+    	\item La couleur des titres et des lignes est fournie par \tdocmacro{tdocdarkcolor}.
+    \end{itemize}
+    
+    Ces macros développables et à un seul argument, la couleur choisie, admettent les codes suivants.
 
     \begin{tdoclatex}[code]
 \NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
 \NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
+    \end{tdoclatex}
+
+    Il faut également savoir qu'en coulisses, la macro \tdocmacro{tdocruler} est utilisée.
+    
+    \begin{tdoclatex}[std]
+        \tdocruler{Un pseudo-titre décoré}{red}
     \end{tdoclatex}
 \end{tdocnote}
 
@@ -810,17 +794,6 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
 \input{examples-showcase-hook.tex}
 
-
-
-\smallskip
-
-\begin{tdocnote}
-    Il faut savoir qu'en coulisse la macro \tdocmacro{tdocruler} est utilisée.
-
-    \begin{tdoclatex}[std]
-        \tdocruler{Un pseudo-titre décoré}{red}
-    \end{tdoclatex}
-\end{tdocnote}
 
 
 \subsection{Sans bande colorée}
@@ -1155,13 +1128,12 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 \end{tdocwarn}
 
 
-\subsection{Quoi de neuf ?}
+\subsection{Quoi de neuf ?} 
 
-\thispack{} propose différents environnements pour indiquer rapidement et clairement ce qui a été fait
+\thispack{} propose différents environnements pour indiquer rapidement et clairement ce qui a été fait lors des derniers changements.%
 \footnote{
     L'utilisateur n'a pas besoin de tous les détails techniques.
 }
-lors des derniers changements.
 
 
 \begin{tdocexa}[Pour les nouveautés]
@@ -1219,7 +1191,18 @@ lors des derniers changements.
 % ------------------ %
 
 
-\begin{tdocexa}[Thématiques aux choix]
+\begin{tdocexa}[Thématiques aux choix avec une icône]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples-version-n-change-user-choice-icon.tex}
+
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Thématiques aux choix sans icône]
     \leavevmode
 
     \tdoclatexinput[sbs]{examples-version-n-change-user-choice.tex}
@@ -1227,7 +1210,6 @@ lors des derniers changements.
 \end{tdocexa}
 
 
-\newpage
 \section{Décorations}
 
 Finissons cette documentation avec de petits outils de mise en forme pouvant rendre de grands services.
@@ -1264,8 +1246,6 @@ Blu, blu, blu...
 
 \section{Historique}
 
-\small
-
 \tdocversion{1.2.0-a}[2024-08-23]
 
 \begin{tdocupdate}
@@ -1287,7 +1267,6 @@ Blu, blu, blu...
 
 % ------------------ %
 
-\small
 
 \tdocversion{1.1.0}[2024-01-06]
 

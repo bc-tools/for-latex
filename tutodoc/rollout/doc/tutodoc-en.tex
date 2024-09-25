@@ -24,8 +24,17 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-version-n-change-user-choice-icon.tex}
+\begin{tdoctopic}{Don't look}[\faEyeSlash]
+% An icon from fontawesome5.
+    \item Info 1...
+    \item Info 2...
+\end{tdoctopic}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-version-n-change-user-choice.tex}
-\begin{tdoctopic}{It's my choice}
+\begin{tdoctopic}{End of icons}
 % This is where the point needs to be put.
     \item Info 1...
     \item Info 2...
@@ -582,6 +591,18 @@ The \tdocenv{tdoctip} environment is used to give tips. Here's how to use it.
 
 
 
+\smallskip
+
+\begin{tdocnote}
+    Colors are provided by the extensible macros \tdocmacro{tdocbackcolor} and \tdocmacro{tdocdarkcolor}, which have the following codes.
+
+    \begin{tdoclatex}[code]
+\NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
+\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
+    \end{tdoclatex}
+\end{tdocnote}
+
+
 \subsection{Informative note}
 
 The \tdocenv{tdocnote} environment is used to highlight useful information. Here's how to use it.
@@ -732,12 +753,25 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
 \begin{tdocnote}
-    You will have noticed that we don't obtain a pure red: behind the scenes, the expandable macros \tdocmacro{tdocbackcolor} and \tdocmacro{tdocdarkcolor} are used to create the background and title colours respectively from the ones proposed in \tdocenv{tdocshowcase}.
-    These macros have a single argument, the chosen colour, and accept the following codes.
+    You've probably noticed that red is used as a base to obtain the colors used.
+    
+    \begin{itemize}
+    	\item The background color is provided by \tdocmacro{tdocbackcolor}.
+
+    	\item The color of titles and lines is provided by \tdocmacro{tdocdarkcolor}.
+    \end{itemize}
+    
+    These expandable macros have a single argument, the chosen color, and accept the following codes.
 
     \begin{tdoclatex}[code]
-\NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
-\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
+\NewExpandableDocumentCommand{tdocbackcolor}{m}{#1!5}
+\NewExpandableDocumentCommand{tdocdarkcolor}{m}{#1!50!black}
+    \end{tdoclatex}
+    
+    You also have to know that behind the scene, the \tdocmacro{tdocruler} macro is used.
+
+    \begin{tdoclatex}[std]
+        \tdocruler{A decorated pseudo-title}{red}
     \end{tdoclatex}
 \end{tdocnote}
 
@@ -752,21 +786,11 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
     This will produce the following.
-
-    \medskip
-
-    \input{examples-showcase-hook.tex}
-
 \end{tdocwarn}
 
 
-\begin{tdocnote}
-    Behind the scenes, the \tdocmacro{tdocruler} macro is used.
+\input{examples-showcase-hook.tex}
 
-    \begin{tdoclatex}[std]
-        \tdocruler{Un pseudo-titre décoré}{red}
-    \end{tdoclatex}
-\end{tdocnote}
 
 
 \subsection{Without a colour strip}
@@ -1103,11 +1127,10 @@ You can either date something, or version it, in which case the version number c
 
 \subsection{What's new?}
 
-\thispack{} offers different environments to indicate quickly and clearly what has been done
+\thispack{} offers different environments to indicate quickly and clearly what has been done during the latest changes.%
 \footnote{
     The user doesn't need all the technical details.
 }
-during the latest changes.
 
 
 \begin{tdocexa}[For new features]
@@ -1165,7 +1188,18 @@ during the latest changes.
 % ------------------ %
 
 
-\begin{tdocexa}[Chosen topics]
+\begin{tdocexa}[Selectable themes with an icon]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples-version-n-change-user-choice-icon.tex}
+
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Selectable themes without icons]
     \leavevmode
 
     \tdoclatexinput[sbs]{examples-version-n-change-user-choice.tex}

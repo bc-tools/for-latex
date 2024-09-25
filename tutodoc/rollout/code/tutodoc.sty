@@ -48,8 +48,15 @@
                [2022-09-14]
 
 
+\RequirePackage{fontawesome5}%
+               [2022-05-02]
+
 \RequirePackage{keytheorems}%
                [2024/09/19]
+
+\RequirePackage[svgnames]%
+               {xcolor}%
+               [2023/11/15]
 
 \RequirePackage{tcolorbox}%
                [2024/07/10]
@@ -61,9 +68,16 @@
                [2021-08-28]
 
 
-\RequirePackage{tcolorbox}[2023/06/19]
+\RequirePackage{minted2} % minted v3 bug!
+
+\RequirePackage{tcolorbox}%
+               [2024/07/10]
+
 \tcbuselibrary{minted, breakable, skins}
 
+
+\RequirePackage{fontawesome5}%
+               [2022-05-02]
 
 \RequirePackage{marginnote}%
                [2023-09-07]
@@ -205,6 +219,32 @@
 \DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
 
 
+% --------------------------- %
+% -- COLOR TRANSFORMATIONS -- %
+% --------------------------- %
+
+%%%
+% prototype::
+%     #1 : one color following the ''xcolor'' format.
+%
+%     :return: a "darker" version of the color ''#1''.
+%%%
+\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{%
+  #1!50!black%
+}
+
+
+%%%
+% prototype::
+%     #1 : one color following the ''xcolor'' format.
+%
+%     :return: a "transparent" version of the color `#1`.
+%%%
+\NewExpandableDocumentCommand{\tdoclightcolor}{m}{%
+  #1!5%
+}
+
+
 % ------------- %
 % -- QUOTING -- %
 % ------------- %
@@ -290,7 +330,7 @@
   { Unknown ~ rafters ~ option. }
   { See ~ the ~ documentation ~ for ~ the ~ supported ~ options. }
 
-\NewDocumentEnvironment{tdocexa}{D<>{nb} O{}}{
+\NewDocumentEnvironment{ tdocexa } { D<>{nb} O{} } {
   \str_case:nnF { #1 } {
     { nb   } {
       \begin{@@tdocexa@nb}[#2]
@@ -303,7 +343,7 @@
   }
 }{
   \str_case:nnF { #1 } {
-    { nb   } {
+    { nb } {
       \end{@@tdocexa@nb}
     }
     { nonb } {
@@ -326,10 +366,6 @@
 \newtheorem*{tdocrem}{\tutodoc@trans@rem@title}
 
 
-
-
-
-
 % -------------------------------------- %
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
 % -------------------------------------- %
@@ -338,17 +374,22 @@
 % :: ABSTRACTION :: %
 % ::::::::::::::::: %
 
-% Source used.
+% Sources used.
 %    + https://tex.stackexchange.com/a/727022/6880
+%    + https://tex.stackexchange.com/a/682332/6880
 
 \tcbset{
   tutodoc-focus-color-style/.style = {
     breakable,
     enhanced,
-    fontupper = \color{#1!45!black},
-    colback   = #1!5,
-    colframe  = #1!75!black!45,
-    shadow    = {.75mm}{-.75mm}{0mm}{black!30},
+%    fonttitle    = \itshape,
+%    halign title = center,
+    fontupper    = \color{\tdocdarkcolor{#1}},
+    colback      = \tdoclightcolor{#1},
+    colframe     = #1!75!black!45,
+    shadow       = {.75mm}{-.75mm}{0mm}{black!30},
+% We want to use the same color for the footnotes in the frame.
+    before upper = {\let\default@color\current@color},
  }
 }
 
@@ -361,17 +402,29 @@
 
 \prop_set_from_keyval:Nn \__g_tutodoc_focus_color_prop {
   note      = cyan,
-  tip       = lime,
-  important = orange,
+  tip       = ForestGreen,%lime,
+  imp = orange,
   caution   = violet,
   warn      = red,
 }
 
+\prop_set_from_keyval:Nn \__g_tutodoc_focus_icon_prop {
+  note      = \faInfoCircle,
+  tip       = \faLightbulb,
+  imp       = \faHighlighter,
+  caution   = \faBiohazard,
+  warn      = \faSkullCrossbones,
+}
+
 \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
   \newkeytheorem{tdoc#1}[
-    numbered              = false,
-    name                  = \use:c { tutodoc@trans@#1@title },
-    tcolorbox-no-titlebar = {tutodoc-focus-color-style=#2}
+    numbered  = false,
+%  tcolorbox-no-titlebar can be used.
+    tcolorbox = {tutodoc-focus-color-style=#2},
+    name      = {
+      \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } \kern3.5pt
+      \use:c { tutodoc@trans@#1@title }
+    },
   ]
 }
 
@@ -546,32 +599,6 @@
 }
 
 \ExplSyntaxOff
-
-
-% ::::::::::::::::::::::::::: %
-% :: COLOR TRANSFORMATIONS :: %
-% ::::::::::::::::::::::::::: %
-
-%%%
-% prototype::
-%     #1 : one color following the ''xcolor'' format.
-%
-%     :return: a "darker" version of the color ''#1''.
-%%%
-\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{%
-  #1!50!black%
-}
-
-
-%%%
-% prototype::
-%     #1 : one color following the ''xcolor'' format.
-%
-%     :return: a "transparent" version of the color `#1`.
-%%%
-\NewExpandableDocumentCommand{\tdoclightcolor}{m}{%
-  #1!5%
-}
 
 
 % ::::::::::::::::::::::::::: %
@@ -987,6 +1014,8 @@
                        {#3}
 }
 
+\ExplSyntaxOff
+
 
 % :::::::::::::::::::::: %
 % :: VERSION AND DATE :: %
@@ -1029,15 +1058,17 @@
 %%%
 \NewDocumentCommand{\tdocdate}{O{blue} m}{
   \tutodoc@new@change@margin{#1}      % Color
-                         {#2}      % Date
-                         {}        % Version
-                         {-5.35pt} % Last negative spacing
+                            {#2}      % Date
+                            {}        % Version
+                            {-5.35pt} % Last negative spacing
 }
 
 
 % --------------------- %
 % -- CHANGES - WHAT? -- %
 % --------------------- %
+
+\ExplSyntaxOn
 
 % :::::::::::::: %
 % :: MESSAGES :: %
@@ -1059,12 +1090,13 @@
 %     :action: this environment prints some ¨infos about specific changes
 %              achieved in a new version (no special formatting is applied).
 %%%
-\NewDocumentEnvironment{tdoctopic}{ m }{
+\NewDocumentEnvironment{tdoctopic}{ m O{} }{
   \IfBlankT{#1}{
     \msg_fatal:nn { tdoc } { changes-topic-missing-title }
   }
 
   \textbf{
+    \IfBlankF{#2}{#2\kern3.5pt}%
     \textsc{#1.}
   }
 
@@ -1078,6 +1110,15 @@
 % :: CHANGES - NEW THINGS :: %
 % :::::::::::::::::::::::::: %
 
+\prop_set_from_keyval:Nn \__g_tutodoc_topic_change_prop {
+  break  = \faCodeBranch,
+  fix    = \faWrench,
+  new    = \faGem,
+  prob   = \faFire*,
+  update = \faMagic,
+}
+
+
 %%%
 % prototype::
 %     :see: env.tdoctopic
@@ -1085,82 +1126,12 @@
 %     :action: similar to the \env ''tdoctopic'' with the title "New"
 %              translated into the good language.
 %%%
-\NewDocumentEnvironment{tdocnew}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@new}
-}{
-  \end{tdoctopic}
-}
-
-
-% :::::::::::::::::::::: %
-% :: CHANGES - UPDATE :: %
-% :::::::::::::::::::::: %
-
-%%%
-% prototype::
-%     :see: env.tdoctopic
-%
-%     :action: similar to the \env ''tdoctopic'' with the title "Update"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{tdocupdate}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@update}
-}{
-  \end{tdoctopic}
-}
-
-
-% ::::::::::::::::::::: %
-% :: CHANGES - BREAK :: %
-% ::::::::::::::::::::: %
-
-%%%
-% prototype::
-%     :see: env.tdoctopic
-%
-%     :action: similar to the \env ''tdoctopic'' with the title "Break"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{tdocbreak}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@break}
-}{
-  \end{tdoctopic}
-}
-
-
-% ::::::::::::::::::::::: %
-% :: CHANGES - PROBLEM :: %
-% ::::::::::::::::::::::: %
-
-%%%
-% prototype::
-%     :see: env.tdoctopic
-%
-%     :action: similar to the \env ''tdoctopic'' with the title "Problem"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{tdocprob}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@pb}
-}{
-  \end{tdoctopic}
-}
-
-
-% ::::::::::::::::::: %
-% :: CHANGES - FIX :: %
-% ::::::::::::::::::: %
-
-%%%
-% prototype::
-%     :see: env.tdoctopic
-%
-%     :action: similar to the \env ''tdoctopic'' with the title "Fix"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{tdocfix}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@fix}
-}{
-  \end{tdoctopic}
+\prop_map_inline:Nn \__g_tutodoc_topic_change_prop {
+  \NewDocumentEnvironment{ tdoc#1 } {} {
+    \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } [ #2 ]
+  }{
+    \end{tdoctopic}
+  }
 }
 
 \ExplSyntaxOff
