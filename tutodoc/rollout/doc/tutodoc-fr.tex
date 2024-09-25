@@ -101,7 +101,6 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \begin{filecontents*}[overwrite]{examples-focus-exa-leavevmode.tex}
 \begin{tdocexa}
     \leavevmode
-
     \begin{enumerate}
         \item Point 1.
 
@@ -576,11 +575,11 @@ Voici différents emplois possibles.
 
 
 \begin{tdoctip}
-    Il peut parfois être utile de revenir à la ligne dès le début du contenu. Voici comment faire (ce tour de passe-passe reste valable pour les environnements présentés dans les sous-sections suivantes). Noter au passage que la numérotation suit celle de l'exemple précédent comme souhaité.
-
-    \tdoclatexinput[sbs]{examples-focus-exa-leavevmode.tex}
-
+    Il peut parfois être utile de revenir à la ligne dès le début du contenu. Le code suivant montre comment faire (ce tour de passe-passe reste valable pour les environnements présentés dans les sous-sections suivantes). Noter au passage que la numérotation suit celle de l'exemple précédent comme souhaité.
 \end{tdoctip}
+
+\tdoclatexinput[sbs]{examples-focus-exa-leavevmode.tex}
+
 
 
 \subsection{Des remarques}
@@ -602,7 +601,7 @@ L'environnement \tdocenv{tdoctip} sert à donner des astuces. Voici comment l'em
 \smallskip
 
 \begin{tdocnote}
-    Les couleurs sont fournies par les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor} qui admettent les codes suivants.
+    Les couleurs sont fournies par les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor} qui admettent les codes suivants et attendent une couleur au format \tdocpack{xcolor} comme argument.
 
     \begin{tdoclatex}[code]
 \NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
