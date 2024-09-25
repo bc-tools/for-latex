@@ -292,14 +292,17 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
+
 \usepackage[english]{babel, varioref}
 
+
+
+
+
 \usepackage{enumitem}
-
-\usepackage{multicol}
-
 \usepackage{fmtcount}
 
+\usepackage{multicol}
 \setlength{\parindent}{0em}
 
 \newcommand\thispack{\tdocpack{tutodoc}}
@@ -1270,8 +1273,10 @@ Blu, blu, blu...
 
 
     \item Content highlighting: colored frames with icons are proposed for the following environments.
+    \bgroup
+    \setlength\multicolsep{5pt}
     \begin{multicols}{3}
-        \begin{enumerate}
+        \begin{enumerate}[topsep=0pt]
         	\item \verb#tdoccaution#
         	\item \verb#tdocimp#
         	\item \verb#tdocnote#
@@ -1279,6 +1284,7 @@ Blu, blu, blu...
         	\item \verb#tdocwarn#
         \end{enumerate}
     \end{multicols}
+    \egroup
 \end{tdocnew}
 
 \tdocsep
