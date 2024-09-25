@@ -90,8 +90,8 @@ def prebuild_single_tex(
 
             about_this_change = content_from_TEX(chge_file)
 
-            print(f"{chge_file=}")
-            input(about_this_change)
+            # print(f"{chge_file=}")
+            # input(about_this_change)
 
             content.append(
                 f"""
