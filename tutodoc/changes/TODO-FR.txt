@@ -18,31 +18,6 @@ prototype dans focus et version-n-change
 
 > ---------------------------- <
 
-Mieux.
-
-\section{Historique}
-
-\small
-
-
-> ---------------------------- <
-
-texfacto
-
-    \tdocsep
-
-    {\small\itshape
-        \vspace{-5pt}
-        \begin{center}
-        	\textbf{Abstract.}
-        \end{center}
-
-
-        The \thispack{} package
-
-
-> ---------------------------- <
-
 note and co
 
     --> différents mef possible ?

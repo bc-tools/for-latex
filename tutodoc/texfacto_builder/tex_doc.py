@@ -116,7 +116,11 @@ def prebuild_single_tex(
     \\tdocsep
 
     {{\\small\\itshape
-        \\textbf{{Abstract.}}
+        \\vspace{{-5pt}}
+        \\begin{{center}}
+        	\\textbf{{Abstract.}}
+        \\end{{center}}
+
         {abstract_EN}
     }}
 \\end{{abstract}}
