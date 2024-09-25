@@ -24,12 +24,19 @@ The French and the English \docs have been updated.
 \minted: we use \RequirePackage{minted2} as a temporary patch.
 
 
+-----
+:fix:
+-----
+
+[[:doc:]]
+Too much small \pbs have been fixed.
+
+
 --------
 :fordev:
 --------
 
 [[:facto:]]
-
 The macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' has been moved into the path::''main.sty'' file, and there are aslo used for the highlighted content.
 
 
