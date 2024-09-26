@@ -18,7 +18,7 @@ Macros and \envs: the ''\tdocenv'' macro has a star version which simply display
 --------
 
 [[:tech:]]     ??????
-\texfacto \poc: the previous version didn't handle several stable changes in the same month. This has been corrected.
+\texfacto \poc: the previous version didn't handle several stable changes in the same month. This has been corrected (the \regex process used a single match instead of an all one).
 
 
 // ---------- //
