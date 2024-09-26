@@ -352,7 +352,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \title{Le package \texttt{tutodoc} - Documentation de type tutoriel}
 \author{Christophe BAL}
-\date{25 sept. 2024 - Version 1.3.0}
+\date{26 sept. 2024 - Version 1.3.1}
 
 \maketitle
 
@@ -670,28 +670,26 @@ Voici ce qu'il est possible de taper de façon sémantique.
 
 \tdocenv{env} produit...
 
-On a aussi :
+Juste \tdocenv*{env}...
 
 \tdocenv[{[opt1]<opt2>}]{env}
+
+Enfin \tdocenv*[{[opt1]<opt2>}]{env}...
 \end{tdoclatex}
 
 
 \begin{tdocrem}
-    L'intérêt des macros précédentes vis à vis de l'usage de \tdocmacro{tdocinlatex}, voir la section \ref{tdoc-listing-inline} page \pageref{tdoc-listing-inline}, est l'absence de coloration.
-    De plus, la macro \tdocmacro{tdocenv} demande juste de taper le nom de l'environnement
-    \footnote{
-        De plus, \tdocinlatex{\tdocenv{monenv}} produit \tdocenv{monenv} avec des espaces afin d'autoriser des retours à la ligne si besoin.
-    }
-    avec des éventuelles options en tapant les bons délimiteurs
-    \footnote{
-        Se souvenir que tout est possible ou presque dorénavant.
-    }
-    à la main.
+	Contrairement à \tdocmacro{tdocinlatex}, les macros \tdocmacro{tdocenv} et \tdocmacro{tdocenv*} ne colorent pas le texte produit.
+    De plus, \tdocinlatex{\tdocenv{monenv}} produit \tdocenv{monenv} avec des espaces afin d'autoriser des retours à la ligne si besoin.
 \end{tdocrem}
 
 
 \begin{tdocwarn}
-    L'argument optionnel de la macro \tdocmacro{tdocenv} est copié-collé lors du rendu. Ceci peut donc parfois nécessiter d'utiliser des accolades protectrices comme dans l'exemple précédent.
+	L'argument optionnel de la macro \tdocmacro{tdocenv} est copié-collé
+    \footnote{
+        Se souvenir que tout est possible ou presque dorénavant.
+    }
+    lors du rendu. Ceci peut donc parfois nécessiter d'utiliser des accolades protectrices comme dans l'exemple ci-dessus.
 \end{tdocwarn}
 
 
@@ -885,9 +883,9 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 }
 
 
-\begin{tdocwarn}
+\begin{tdoccaution}
 	La version 3 de \tdocpack{minted} ne peut pas être prise en compte pour le moment car elle comporte des bugs : voir \url{https://github.com/gpoore/minted/issues/401}. On force donc l'usage de la version 2 de \tdocpack{minted}.
-\end{tdocwarn}
+\end{tdoccaution}
 
 
 \subsection{Codes \tdocquote{en ligne}} \label{tdoc-listing-inline}
@@ -1270,6 +1268,18 @@ Blu, blu, blu...
 
 \small
 
+\tdocversion{1.3.1}[2024-09-26]
+
+\begin{tdocnew}
+    \item Version étoilée de \tdocmacro{tdocenv} pour n'avoir que le nom de l'environnement.
+\end{tdocnew}
+
+\tdocsep
+
+
+% ------------------ %
+
+
 \tdocversion{1.3.0}[2024-09-25]
 
 \begin{tdocprob}
@@ -1278,7 +1288,7 @@ Blu, blu, blu...
 
 
 \begin{tdocbreak}
-	\item L'environnement \verb#tdocimportant# a été renommé \verb#tdocimp# pour une saisie simplifiée.
+	\item L'environnement \tdocenv*{tdocimportant} a été renommé \tdocenv*{tdocimp} pour une saisie simplifiée.
 \end{tdocbreak}
 
 
@@ -1291,11 +1301,11 @@ Blu, blu, blu...
     \setlength\multicolsep{5pt}
     \begin{multicols}{3}
         \begin{enumerate}
-        	\item \verb#tdoccaution#
-        	\item \verb#tdocimp#
-        	\item \verb#tdocnote#
-        	\item \verb#tdoctip#
-        	\item \verb#tdocwarn#
+        	\item \tdocenv*{tdoccaution}
+        	\item \tdocenv*{tdocimp}
+        	\item \tdocenv*{tdocnote}
+        	\item \tdocenv*{tdoctip}
+        	\item \tdocenv*{tdocwarn}
         \end{enumerate}
     \end{multicols}
     \egroup

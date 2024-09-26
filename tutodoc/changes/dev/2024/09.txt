@@ -13,6 +13,14 @@
 Macros and \envs: the ''\tdocenv'' macro has a star version which simply displays the name of the \env.
 
 
+--------
+:fordev:
+--------
+
+[[:tech:]]     ??????
+\texfacto \poc: the previous version didn't handle several stable changes in the same month. This has been corrected.
+
+
 // ---------- //
 
 

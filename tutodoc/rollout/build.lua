@@ -25,8 +25,8 @@ typesetopts = checkopts
 
 
 uploadconfig = {
-    version      = "1.3.0 [2024-09-25]",
-    announcement = "Colorful formatting.",
+    version      = "1.3.1 [2024-09-26]",
+    announcement = "\\tdocenv* just displays the name + Documentations fixed.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",

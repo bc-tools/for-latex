@@ -9,8 +9,8 @@
 
 \ProvidesExplPackage
   {tutodoc}
-  {2024-09-25}  % Creation: 2023-11-29
-  {1.3.0}
+  {2024-09-26}  % Creation: 2023-11-29
+  {1.3.1}
   {This package proposes tools for writing "human friendly" documentations of LaTeX packages.}
 
 
@@ -68,7 +68,11 @@
                [2021-08-28]
 
 
-\RequirePackage{minted2}% Temporary patch? minted3 seems very slow8
+%\RequirePackage[highlightmode = immediate]% Too slow!
+%               {minted}%
+%               [2024/09/22]
+
+\RequirePackage{minted2}% Temporary patch.
 
 \RequirePackage{tcolorbox}%
                [2024/07/10]
@@ -479,10 +483,14 @@
 %%%
 %
 % Cleaner code from https://tex.stackexchange.com/a/703379/6880 .
-\NewDocumentCommand{\tdocenv}{O{}m}{%
-  \texttt{\string\begin\string{#2\string}#1 %
-          \!\!...\@\!\!\! %
-          \string\end\string{#2\string}}%
+\NewDocumentCommand{\tdocenv}{sO{}m}{%
+  \IfBooleanTF{#1}{%
+  	\texttt{#3}%
+  }{%
+    \texttt{\string\begin\string{#3\string}#2 %
+            \!\!...\@\!\!\! %
+            \string\end\string{#3\string}}%
+  }%
 }
 
 
