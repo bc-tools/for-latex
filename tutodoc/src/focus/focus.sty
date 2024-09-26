@@ -24,53 +24,42 @@
 
 %%%
 % See the \doc of the macro ''\newtheorem'' from the package ''amsthm''
-% to have \infos about the environment ''@@tdocexa@nb''.
+% to have \infos about the environment ''@@tdoc#1@nb''.
 %%%
-\newtheorem{@@tdocexa@nb}{\tutodoc@trans@exa@title}%
-                         [subsubsection]
+% \newtheorem{@@tdoc#1@nb}{\tutodoc@trans@exa@title}%
+%                          [subsubsection]
 
 %%%
-% We redefine the counter associated to the environment ''@@tdocexa@nb''
+% We redefine the counter associated to the environment ''@@tdoc#1@nb''
 % to obtain only one single arabic number.
 %%%
-\renewcommand{\the@@tdocexa@nb}{\arabic{@@tdocexa@nb}}
+% \renewcommand{\the@@tdoc#1@nb}{\arabic{@@tdoc#1@nb}}
 
 
 %%%
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''@@tdocexa@no@nb''.
+% to have \infos about the environment ''@@tdoc#1@no@nb''.
 %%%
-\newtheorem*{@@tdocexa@no@nb}{\tutodoc@trans@exa@title}
+% \newtheorem*{@@tdoc#1@no@nb}{\tutodoc@trans@exa@title}
 
 
 % :: EXAMPLE - PUBLIC VERSION :: %
 
 \ExplSyntaxOn
 
-\msg_set:nnnn { tdoc } { env-tdocexa-unknown-option }
-  { Unknown ~ rafters ~ option. }
-  { See ~ the ~ documentation ~ for ~ the ~ supported ~ options. }
+\seq_new:N \__g_tutodoc_focus_sober_seq
 
-\NewDocumentEnvironment{ tdocexa } { D<>{nb} O{} } {
-  \str_case:nnF { #1 } {
-    { nb   } {
-      \begin{@@tdocexa@nb}[#2]
-    }
-    { nonb } {
-      \begin{@@tdocexa@no@nb}[#2]
-    }
-  }{
-    \msg_error:nn { tdoc } { env-tdocexa-unknown-option }
-  }
-}{
-  \str_case:nnF { #1 } {
-    { nb } {
-      \end{@@tdocexa@nb}
-    }
-    { nonb } {
-      \end{@@tdocexa@no@nb}
-    }
-  }{}
+\seq_set_from_clist:Nn \__g_tutodoc_focus_sober_seq {
+  exa,
+  rem
+}
+
+\seq_map_inline:Nn \__g_tutodoc_focus_sober_seq {
+  \newkeytheorem{tdoc#1}[
+    name     = \use:c { tutodoc@trans@#1@title },
+    numbered = unless-unique,
+    within   = subsection
+  ]
 }
 
 \ExplSyntaxOff
@@ -82,7 +71,7 @@
 % See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
 % to have \infos about the environment ''tdocrem''.
 %%%
-\newtheorem*{tdocrem}{\tutodoc@trans@rem@title}
+% \newtheorem*{tdocrem}{\tutodoc@trans@rem@title}
 
 
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
@@ -97,10 +86,8 @@
   tutodoc-focus-color-style/.style = {
     breakable,
     enhanced,
-    left  = 3pt,
-    right = 3pt,
-%    fonttitle    = \itshape,
-%    halign title = center,
+    left         = 3pt,
+    right        = 3pt,
     fontupper    = \color{\tdocdarkcolor{#1}},
     colback      = \tdoclightcolor{#1},
     colframe     = #1!75!black!45,
@@ -116,19 +103,19 @@
 \ExplSyntaxOn
 
 \prop_set_from_keyval:Nn \__g_tutodoc_focus_color_prop {
-  note      = cyan,
-  tip       = ForestGreen,%lime,
-  imp       = orange,
-  caution   = violet,
-  warn      = red,
+  note = cyan,
+  tip  = ForestGreen,
+  imp  = orange,
+  caut = violet,
+  warn = red,
 }
 
 \prop_set_from_keyval:Nn \__g_tutodoc_focus_icon_prop {
-  note      = \faInfoCircle,
-  tip       = \faLightbulb,
-  imp       = \faHighlighter,
-  caution   = \faBiohazard,
-  warn      = \faSkullCrossbones,
+  note = \faInfoCircle,
+  tip  = \faLightbulb,
+  imp  = \faHighlighter,
+  caut = \faBiohazard,
+  warn = \faSkullCrossbones,
 }
 
 \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {

@@ -9,14 +9,7 @@ NOW
 
 > ---------------------------- <
 
-newtheorem --->  newkeytheorem
-
-+
-
-tedocrem et tdocexa : de type sobre et avec même fonctionnement (parler de nuémraotation si besoin fourni par keytheorems)
-
-dans doc mini texte présentant sobre, et un autre pour tape-à-l'oeil
-
+???
 
 
 

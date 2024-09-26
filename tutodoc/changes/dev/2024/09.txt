@@ -2,8 +2,16 @@
 
 
 ==
-26  (1.4.0-beta.1)
+27  (1.4.0-beta.1)
 ==
+
+-------
+:break:
+-------
+
+[[:api:]]
+Focus: the \env ''tdoccaution'' has been renamed to ''tdoccaut'' for ease of use.
+
 
 -----
 :new:
@@ -11,7 +19,25 @@
 
 [[:api:]]
 
+
+KO pour le moment
+
+prototype dans focus et version-n-change
+
++
+
+doc à jour
+
+
+
+OK
+
+\\tdocstartproj + \\tdocicon + Better spacing for colorfull highlight
+
+
+
 \tdocicon  macro gérant les iconnes dans main (même espacement partout)
+
 
 rgélage des espaces des boites colorées via left  = 3pt,
     right = 3pt,
@@ -22,11 +48,11 @@ rgélage des espaces des boites colorées via left  = 3pt,
 ajout d'une macro pour l'initialisation du projet avec aout d'une ancre pour uen ef unifomre du change log
 
 
+tdocrem et tdocexa : de type sobre et avec même fonctionnement (parler de nuémraotation si besoin fourni par keytheorems) passage ; newkeytheorem inutilisable qui simplifie tout grâce à unless-unique
 
-????
+    ---> plus de possibilité d'avoir exemple non numéroté mais c'est acceptable
 
 
-prototype dans focus et version-n-change
 
 
 

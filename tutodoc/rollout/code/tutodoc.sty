@@ -249,6 +249,21 @@
 }
 
 
+% ----------- %
+% -- ICONS -- %
+% ----------- %
+
+%%%
+% prototype::
+%     #1 : one icon from the ''fontawsome5'' \pack.
+%
+%     :return: the icon followed by a small insecable  space.
+%%%
+\NewDocumentCommand{\tdocicon}{m}{%
+  #1\kern.45em%
+}
+
+
 % ------------- %
 % -- QUOTING -- %
 % ------------- %
@@ -386,6 +401,8 @@
   tutodoc-focus-color-style/.style = {
     breakable,
     enhanced,
+    left  = 3pt,
+    right = 3pt,
 %    fonttitle    = \itshape,
 %    halign title = center,
     fontupper    = \color{\tdocdarkcolor{#1}},
@@ -426,7 +443,7 @@
 %  tcolorbox-no-titlebar can be used.
     tcolorbox = {tutodoc-focus-color-style=#2},
     name      = {
-      \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 }\kern5pt% 
+      \tdocicon{ \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } }
       \use:c { tutodoc@trans@#1@title }
     },
   ]
@@ -1103,7 +1120,7 @@
     \msg_fatal:nn { tdoc } { changes-topic-missing-title }
   }%
   \textbf{%
-    \IfBlankF{#2}{#2\kern5pt}%
+    \IfBlankF{#2}{\tdocicon{#2}}%
     \textsc{#1.}
   }
 
@@ -1139,6 +1156,11 @@
   }{
     \end{tdoctopic}
   }
+}
+
+
+\NewDocumentCommand{ \tdocstartproj }{ m } {
+  \tdocicon{\faAnchor}#1
 }
 
 \ExplSyntaxOff
