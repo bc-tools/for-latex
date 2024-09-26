@@ -17,7 +17,7 @@ Macros and \envs: the ''\tdocenv'' macro has a star version which simply display
 :fordev:
 --------
 
-[[:tech:]]     ??????
+[[:tech:]]
 \texfacto \poc: the previous version didn't handle several stable changes in the same month. This has been corrected (the \regex process used a single match instead of an all one).
 
 

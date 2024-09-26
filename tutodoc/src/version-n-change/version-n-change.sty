@@ -167,10 +167,9 @@
 \NewDocumentEnvironment{tdoctopic}{ m O{} }{
   \IfBlankT{#1}{
     \msg_fatal:nn { tdoc } { changes-topic-missing-title }
-  }
-
-  \textbf{
-    \IfBlankF{#2}{#2\kern3.5pt}%
+  }%
+  \textbf{%
+    \IfBlankF{#2}{#2\kern5pt}%
     \textsc{#1.}
   }
 
