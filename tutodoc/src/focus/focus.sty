@@ -97,6 +97,8 @@
   tutodoc-focus-color-style/.style = {
     breakable,
     enhanced,
+    left  = 3pt,
+    right = 3pt,
 %    fonttitle    = \itshape,
 %    halign title = center,
     fontupper    = \color{\tdocdarkcolor{#1}},
@@ -135,7 +137,7 @@
 %  tcolorbox-no-titlebar can be used.
     tcolorbox = {tutodoc-focus-color-style=#2},
     name      = {
-      \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 }\kern5pt% 
+      \tdocicon{ \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } }
       \use:c { tutodoc@trans@#1@title }
     },
   ]

@@ -2,6 +2,40 @@
 
 
 ==
+26  (1.4.0-beta.1)
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+
+\tdocicon  macro gérant les iconnes dans main (même espacement partout)
+
+rgélage des espaces des boites colorées via left  = 3pt,
+    right = 3pt,
+
++
+
+\tdocstartproj
+ajout d'une macro pour l'initialisation du projet avec aout d'une ancre pour uen ef unifomre du change log
+
+
+
+????
+
+
+prototype dans focus et version-n-change
+
+
+
+
+
+// ---------- //
+
+
+==
 26  (1.3.1-rc.1)
 ==
 

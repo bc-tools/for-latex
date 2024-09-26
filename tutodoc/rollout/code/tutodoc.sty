@@ -407,7 +407,7 @@
 \prop_set_from_keyval:Nn \__g_tutodoc_focus_color_prop {
   note      = cyan,
   tip       = ForestGreen,%lime,
-  imp = orange,
+  imp       = orange,
   caution   = violet,
   warn      = red,
 }
@@ -426,7 +426,7 @@
 %  tcolorbox-no-titlebar can be used.
     tcolorbox = {tutodoc-focus-color-style=#2},
     name      = {
-      \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } \kern3.5pt
+      \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 }\kern5pt% 
       \use:c { tutodoc@trans@#1@title }
     },
   ]
@@ -1101,10 +1101,9 @@
 \NewDocumentEnvironment{tdoctopic}{ m O{} }{
   \IfBlankT{#1}{
     \msg_fatal:nn { tdoc } { changes-topic-missing-title }
-  }
-
-  \textbf{
-    \IfBlankF{#2}{#2\kern3.5pt}%
+  }%
+  \textbf{%
+    \IfBlankF{#2}{#2\kern5pt}%
     \textsc{#1.}
   }
 
