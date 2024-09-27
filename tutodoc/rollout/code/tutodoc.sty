@@ -9,8 +9,8 @@
 
 \ProvidesExplPackage
   {tutodoc}
-  {2024-09-26}  % Creation: 2023-11-29
-  {1.3.1}
+  {2024-09-27}  % Creation: 2023-11-29
+  {1.4.0}
   {This package proposes tools for writing "human friendly" documentations of LaTeX packages.}
 
 
@@ -314,39 +314,13 @@
 % -- SOBER HIGHLIGHTING OF CONTENT -- %
 % ----------------------------------- %
 
-% ::::::::::::::::::::::::::::::: %
-% :: EXAMPLE - HIDDEN VERSIONS :: %
-% ::::::::::::::::::::::::::::::: %
-
-%%%
-% See the \doc of the macro ''\newtheorem'' from the package ''amsthm''
-% to have \infos about the environment ''@@tdoc#1@nb''.
-%%%
-% \newtheorem{@@tdoc#1@nb}{\tutodoc@trans@exa@title}%
-%                          [subsubsection]
-
-%%%
-% We redefine the counter associated to the environment ''@@tdoc#1@nb''
-% to obtain only one single arabic number.
-%%%
-% \renewcommand{\the@@tdoc#1@nb}{\arabic{@@tdoc#1@nb}}
-
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''@@tdoc#1@no@nb''.
-%%%
-% \newtheorem*{@@tdoc#1@no@nb}{\tutodoc@trans@exa@title}
-
-
-% :::::::::::::::::::::::::::::: %
-% :: EXAMPLE - PUBLIC VERSION :: %
-% :::::::::::::::::::::::::::::: %
+% :::::::::::::::::::::: %
+% :: EXAMPLE - REMARK :: %
+% :::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
-\seq_new:N \__g_tutodoc_focus_sober_seq
-
+\seq_new:N             \__g_tutodoc_focus_sober_seq
 \seq_set_from_clist:Nn \__g_tutodoc_focus_sober_seq {
   exa,
   rem
@@ -365,22 +339,10 @@
     ]
   }
 
-  \cs_set:cpn { thetdoc#1 } { \arabic{tdoc#1} }
+  \cs_set:cpn { the tdoc #1 } { \arabic{tdoc#1} }
 }
 
-
 \ExplSyntaxOff
-
-
-% :::::::::::: %
-% :: REMARK :: %
-% :::::::::::: %
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''tdocrem''.
-%%%
-% \newtheorem*{tdocrem}{\tutodoc@trans@rem@title}
 
 
 % -------------------------------------- %
@@ -490,13 +452,22 @@
 %     #1 : hard typed options with the good delimiters
 %     #2 : the name of an environment
 %
-%     :action: ''\tdocenv{myenv}'' prints verb::''\begin{myenv} ... \end{myenv}''
-%              or something like verb::''\begin{myenv}<opt1> ... \end{myenv}'',
-%              the spaces being secable.
+%     :extra: this macro has a star version.
+%
+% Here are the three kind of outputs.
+%
+%     1) ''\tdocenv*{myenv}'' prints
+%        verb::''myenv''.
+%
+%     2) ''\tdocenv{myenv}'' prints
+%        verb::''\begin{myenv} ... \end{myenv}''.
+%
+%     3) ''\tdocenv[{<opt1>[mando2]}]{myenv}'' prints
+%         verb::''\begin{myenv}<opt1>[mando2] ... \end{myenv}''.
 %%%
 %
 % Cleaner code from https://tex.stackexchange.com/a/703379/6880 .
-\NewDocumentCommand{\tdocenv}{sO{}m}{%
+\NewDocumentCommand{\tdocenv}{s O{} m}{%
   \IfBooleanTF{#1}{%
   	\texttt{#3}%
   }{%
@@ -792,6 +763,9 @@
 \ExplSyntaxOn
 
 %%%
+% prototype::
+%     #1 : ZZZ
+%
 % In the following easy-to-understand macro, we use one fictive ''tcolorbox''
 % style such as to indicate an unknown ''tdoc'' style to the user.
 % For example, this can give one message similar to the following one.
@@ -1107,6 +1081,7 @@
 %%%
 % prototype::
 %     #1 : a title that will be followed by a colon.
+%     #2 : XXXX
 %
 %     :action: this environment prints some ¨infos about specific changes
 %              achieved in a new version (no special formatting is applied).
@@ -1140,7 +1115,7 @@
 
 
 %%%
-% prototype::
+% prototype::   YYY
 %     :see: env.tdoctopic
 %
 %     :action: similar to the \env ''tdoctopic'' with the title "New"
@@ -1155,6 +1130,10 @@
 }
 
 
+%%%
+% prototype::
+%     #1 : ZZZ
+%%%
 \NewDocumentCommand{ \tdocstartproj }{ m } {
   \tdocicon{\faAnchor}#1
 }
