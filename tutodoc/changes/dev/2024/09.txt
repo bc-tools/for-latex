@@ -30,7 +30,7 @@ doc à jour
 
 
 
-OK
+OK   \\tdocstartproj , \\tdocicon and better spacing for colorfull highlight
 
 \\tdocstartproj + Better spacing for colorfull highlight
 

@@ -176,11 +176,11 @@ Bla, bla, bla...
     Bli, bli, bli...
 \end{tdocexa}
 
-\begin{tdocexa}<nonb>
+\begin{tdocexa}
     Blo, blo, blo...
 \end{tdocexa}
 
-\begin{tdocexa}<nonb>[Superbe]
+\begin{tdocexa}[Superbe]
     Blu, blu, blu...
 \end{tdocexa}
 \end{filecontents*}
@@ -394,13 +394,13 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
             The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
         },
         and with a sober rendering for reading on screen.
-    
+
         \medskip
-    
+
         Two important points to note.
         \begin{itemize}
             \item This package imposes a formatting style. In the not-too-distant future, \thispack{} will probably be split into a class and a package.
-    
+
             \item This documentation is also available in French.
         \end{itemize}
     }
@@ -773,13 +773,13 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
 \begin{tdocnote}
     Vous avez sûrement remarqué que le rouge sert de base pour obtenir les couleurs utilisées.
-    
+
     \begin{itemize}
     	\item La couleur de fond est fournie par \tdocmacro{tdocbackcolor}.
 
     	\item La couleur des titres et des lignes est fournie par \tdocmacro{tdocdarkcolor}.
     \end{itemize}
-    
+
     Ces macros développables et à un seul argument, la couleur choisie, admettent les codes suivants.
 
     \begin{tdoclatex}[code]
@@ -788,7 +788,7 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
     \end{tdoclatex}
 
     Il faut également savoir qu'en coulisse, la macro \tdocmacro{tdocruler} est utilisée.
-    
+
     \begin{tdoclatex}[std]
         \tdocruler{Un pseudo-titre décoré}{red}
     \end{tdoclatex}
@@ -856,7 +856,7 @@ Il est possible de ne pas utiliser une bande colorée comme nous allons le voir 
 Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \tdocmacro{tdocshowcaseinput} dont l'option reprend la syntaxe de celle de \tdocenv{tdocshowcase} et l'argument obligatoire correspond au chemin du fichier.
 
 
-\begin{tdocexa}<nonb>
+\begin{tdocexa}
     Ce qui suit a été obtenu via \tdocinlatex+\tdocshowcaseinput{external.tex}+.
 
     \medskip
@@ -1148,7 +1148,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 \end{tdocwarn}
 
 
-\subsection{Quoi de neuf ?} 
+\subsection{Quoi de neuf ?}
 
 \thispack{} propose différents environnements pour indiquer rapidement et clairement ce qui a été fait lors des derniers changements.%
 \footnote{

@@ -7,10 +7,28 @@
 
 \subsection{What's new?}
 
-\thispack{} offers different environments to indicate quickly and clearly what has been done during the latest changes.%
+\thispack{} offers the macro \tdocmacro{tdocstartproj} and different environments to indicate quickly and clearly what has been done during the latest changes.%
 \footnote{
     The user doesn't need all the technical details.
 }
+
+
+\begin{tdocnote}
+    Icons are obtained via the \tdocpack{fontawesome5} package, and text spacing is managed by the \tdocmacro{tdocicon} macro.
+\end{tdocnote}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Just for the very first version]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples/version-n-change/first.tex}
+\end{tdocexa}
+
+
+% ------------------ %
 
 
 \begin{tdocexa}[For new features]
@@ -78,5 +96,17 @@
 
     \tdoclatexinput[sbs]{examples/version-n-change/user-choice.tex}
 \end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocnote}
+    The use of an icon followed by the correct spacing just before the text is done via the \tdocmacro{tdocicon} macro.
+    For example,
+    \tdocinlatex|tdocicon{faBed}{Fatigued}|
+    product\,
+    \tdocicon{\faBed}{Fatigued}.
+\end{tdocnote}
 
 \end{document}

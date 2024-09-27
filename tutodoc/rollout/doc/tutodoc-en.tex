@@ -176,11 +176,11 @@ Bla, bla, bla...
     Bli, bli, bli...
 \end{tdocexa}
 
-\begin{tdocexa}<nonb>
+\begin{tdocexa}
     Blo, blo, blo...
 \end{tdocexa}
 
-\begin{tdocexa}<nonb>[Superb]
+\begin{tdocexa}[Superb]
     Blu, blu, blu...
 \end{tdocexa}
 \end{filecontents*}
@@ -767,20 +767,20 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 \begin{tdocnote}
     You've probably noticed that red is used as a base to obtain the colors used.
-    
+
     \begin{itemize}
     	\item The background color is provided by \tdocmacro{tdocbackcolor}.
 
     	\item The color of titles and lines is provided by \tdocmacro{tdocdarkcolor}.
     \end{itemize}
-    
+
     These expandable macros have a single argument, the chosen color, and accept the following codes.
 
     \begin{tdoclatex}[code]
 \NewExpandableDocumentCommand{tdocbackcolor}{m}{#1!5}
 \NewExpandableDocumentCommand{tdocdarkcolor}{m}{#1!50!black}
     \end{tdoclatex}
-    
+
     You also have to know that behind the scene, the \tdocmacro{tdocruler} macro is used.
 
     \begin{tdoclatex}[std]
@@ -851,7 +851,7 @@ It is possible not to use a coloured strip, as we will see straight away.
 To obtain renderings by importing the code from an external file, instead of typing it, simply use the \tdocmacro{tdocshowcaseinput} macro whose option uses the syntax of that of \tdocenv{tdocshowcase} and the mandatory argument corresponds to the path of the file.
 
 
-\begin{tdocexa}<nonb>
+\begin{tdocexa}
     The following was obtained via \tdocinlatex+\tdocshowcaseinput{external.tex}+.
 
     \medskip
