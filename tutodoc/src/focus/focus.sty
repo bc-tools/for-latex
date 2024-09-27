@@ -55,12 +55,21 @@
 }
 
 \seq_map_inline:Nn \__g_tutodoc_focus_sober_seq {
-  \newkeytheorem{tdoc#1}[
-    name     = \use:c { tutodoc@trans@#1@title },
-    numbered = unless-unique,
-    within   = subsection
-  ]
+  \str_if_eq:nnTF { #1 } { exa } {
+    \newkeytheorem{tdoc#1}[
+      name   = \use:c { tutodoc@trans@#1@title },
+      within = subsection,
+    ]
+  } {
+    \newkeytheorem{tdoc#1}[
+      name       = \use:c { tutodoc@trans@#1@title },
+      numberlike = tdocexa
+    ]
+  }
+
+  \cs_set:cpn { thetdoc#1 } { \arabic{tdoc#1} }
 }
+
 
 \ExplSyntaxOff
 

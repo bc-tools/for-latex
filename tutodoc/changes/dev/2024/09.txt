@@ -20,7 +20,7 @@ Focus: the \env ''tdoccaution'' has been renamed to ''tdoccaut'' for ease of use
 [[:api:]]
 
 
-KO pour le moment
+KO
 
 prototype dans focus et version-n-change
 
@@ -32,9 +32,7 @@ doc à jour
 
 OK
 
-\\tdocstartproj + \\tdocicon + Better spacing for colorfull highlight
-
-
+\\tdocstartproj + Better spacing for colorfull highlight
 
 \tdocicon  macro gérant les iconnes dans main (même espacement partout)
 
