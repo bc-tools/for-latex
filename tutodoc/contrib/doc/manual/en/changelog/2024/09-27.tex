@@ -1,0 +1,26 @@
+\documentclass[12pt, a4paper]{article}
+
+\input{../../preamble.cfg.tex}
+
+
+\begin{document}
+
+\begin{tdocbreak}
+	\item The \tdocenv*{tdoccaution} environment has been renamed \tdocenv*{tdoccaut} for simplified input.
+	
+	\item Content highlighting: examples and remarks, indicated via the \tdocenv*{tdocexa} and \tdocenv*{tdocrem} environments, are always numbered, and share the same counter.
+\end{tdocbreak}
+
+
+\begin{tdocnew}
+    \item Change log: the \tdocmacro{tdocstartproj} macro is used to manage the case of the first public version.
+
+    \item Code factorization: the \tdocmacro{tdocicon} macro is responsible for adding icons in front of text.
+\end{tdocnew}
+
+
+\begin{tdocupdate}
+    \item Content highlighting: reduced space around content in colored frames.
+\end{tdocupdate}
+
+\end{document}
