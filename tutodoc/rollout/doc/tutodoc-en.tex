@@ -593,10 +593,16 @@ Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocen
 
 
 
-\subsection{Flashy content}
+\subsection{Flashy content} \label{tdoc-colorful-focus}
 
 \begin{tdocnote}
     Icons are obtained via the \tdocpack{fontawesome5} package, and text spacing is managed by the \tdocmacro{tdocicon} macro.
+    \footnote{
+        For example,
+        \tdocinlatex|\tdocicon{\faBed}{Fatigué}|
+        produces\,
+        \tdocicon{\faBed}{Fatigué}.
+    }
 \end{tdocnote}
 
 
@@ -1163,7 +1169,7 @@ You can either date something, or version it, in which case the version number c
 
 
 \begin{tdocnote}
-    Icons are obtained via the \tdocpack{fontawesome5} package, and text spacing is managed by the \tdocmacro{tdocicon} macro.
+    For icons, see the note at the beginning of the section \ref{tdoc-colorful-focus}.
 \end{tdocnote}
 
 
@@ -1253,18 +1259,6 @@ You can either date something, or version it, in which case the version number c
     \tdoclatexinput[sbs]{examples-version-n-change-user-choice.tex}
 
 \end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocnote}
-    The use of an icon followed by the correct spacing just before the text is done via the \tdocmacro{tdocicon} macro.
-    For example,
-    \tdocinlatex|tdocicon{faBed}{Fatigued}|
-    product\,
-    \tdocicon{\faBed}{Fatigued}.
-\end{tdocnote}
 
 
 \section{Ornaments}
