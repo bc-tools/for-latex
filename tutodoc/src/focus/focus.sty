@@ -24,8 +24,7 @@
 
 \ExplSyntaxOn
 
-\seq_new:N \__g_tutodoc_focus_sober_seq
-
+\seq_new:N             \__g_tutodoc_focus_sober_seq
 \seq_set_from_clist:Nn \__g_tutodoc_focus_sober_seq {
   exa,
   rem
@@ -44,7 +43,7 @@
     ]
   }
 
-  \cs_set:cpn { thetdoc#1 } { \arabic{tdoc#1} }
+  \cs_set:cpn { the tdoc #1 } { \arabic{tdoc#1} }
 }
 
 \ExplSyntaxOff
