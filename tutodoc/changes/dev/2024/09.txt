@@ -1,3 +1,10 @@
+KO
+
+prototype updated in
+    ??? focus
+    ??? version-n-change
+
+
 // ---------- //
 
 
@@ -10,7 +17,11 @@
 -------
 
 [[:api:]]
-Focus: the \env ''tdoccaution'' has been renamed to ''tdoccaut'' for ease of use.
+Focus.
+
+    1) The ''tdoccaution'' \env has been renamed to ''tdoccaut'' for ease of use.
+
+    1) The ''tdocexa'' and ''tdocrem'' \envs are always numbered, and share the same counter (the \pack ''keytheorems'' is used behind the scene).
 
 
 -----
@@ -18,45 +29,19 @@ Focus: the \env ''tdoccaution'' has been renamed to ''tdoccaut'' for ease of use
 -----
 
 [[:api:]]
+Change log: the ''\tdocstartproj'' macro is used to manage the case of the first public version.
 
 
-KO
-
-prototype updated in
-    ??? focus
-    ??? version-n-change
-
-+
+[[:tech:]]
+\Facto: the ''\tdocicon'' macro is responsible for adding icons in front of text.
 
 
-OK     \\tdocstartproj , \\tdocicon and better spacing for colorfull highlight  QUATER
+--------
+:update:
+--------
 
-
-newkeytheorem inutilisable qui simplifie tout grâce à unless-unique
-
-
-
-
-\begin{tdocbreak}
-	\item L'environnement \tdocenv*{tdoccaution} a été renommé \tdocenv*{tdoccaut} pour une saisie simplifiée.
-
-	\item Mise en avant de contenus : les exemples et remarques, indiqués via les environnements \tdocenv*{tdocexa} et \tdocenv*{tdocrem}, sont toujours numérotés, et ils partagent le même compteur.
-\end{tdocbreak}
-
-
-\begin{tdocnew}
-    \item Journal des changements : la macro \tdocmacro{tdocstartproj} permet de gérer le cas de la première version publique.
-
-    \item Factorisation du code : la macro \tdocmacro{tdocicon} est en charge de l'ajout d'icônes devant du texte.
-\end{tdocnew}
-
-
-\begin{tdocupdate}
-    \item Mise en avant de contenus : réduction de l'espace autour du contenu dans les cadres colorés.
-\end{tdocupdate}
-
-
-
+[[:format:]]
+Focus: reduced space around content in colored frames.
 
 
 // ---------- //
@@ -109,7 +94,7 @@ Too much small \pbs have been fixed.
 -------
 
 [[:api:]]
-Focus: the \env ''tdocimportant'' has been renamed to ''tdocimp'' for ease of use.
+Focus: the ''tdocimportant'' \env has been renamed to ''tdocimp'' for ease of use.
 
 
 --------

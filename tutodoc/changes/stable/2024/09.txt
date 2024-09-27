@@ -2,6 +2,45 @@
 
 
 ==
+27  (1.4.0)
+==
+
+-------
+:break:
+-------
+
+[[:api:]]
+Focus.
+
+    1) The ''tdoccaution'' \env has been renamed to ''tdoccaut'' for ease of use.
+
+    1) The ''tdocexa'' and ''tdocrem'' \envs are always numbered, and share the same counter (the \pack ''keytheorems'' is used behind the scene).
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+Change log: the ''\tdocstartproj'' macro is used to manage the case of the first public version.
+
+
+[[:tech:]]
+\Facto: the ''\tdocicon'' macro is responsible for adding icons in front of text.
+
+
+--------
+:update:
+--------
+
+[[:format:]]
+Focus: reduced space around content in colored frames.
+
+
+// ---------- //
+
+
+==
 26  (1.3.1)
 ==
 
