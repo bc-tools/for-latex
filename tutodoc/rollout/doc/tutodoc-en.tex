@@ -66,6 +66,11 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-version-n-change-first.tex}
+\tdocstartproj{1st version of the project.}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-version-n-change-break.tex}
 \begin{tdocbreak}
     \item Info 1...
@@ -133,13 +138,13 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 
 \begin{filecontents*}[overwrite]{examples-focus-caution.tex}
-\begin{tdoccaution}
+\begin{tdoccaut}
     Caution, caution...
-\end{tdoccaution}
+\end{tdoccaut}
 
-\begin{tdoccaution}[Mini title]
+\begin{tdoccaut}[Mini title]
     Useful?
-\end{tdoccaution}
+\end{tdoccaut}
 \end{filecontents*}
 
 
@@ -166,22 +171,12 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 
 \begin{filecontents*}[overwrite]{examples-focus-exa.tex}
-Bla, bla, bla...
-
 \begin{tdocexa}
-    Ble, ble, ble...
+    An example...
 \end{tdocexa}
 
-\begin{tdocexa}[Wonderful]
-    Bli, bli, bli...
-\end{tdocexa}
-
-\begin{tdocexa}
-    Blo, blo, blo...
-\end{tdocexa}
-
-\begin{tdocexa}[Superb]
-    Blu, blu, blu...
+\begin{tdocexa}[Mini title]
+    Useful?
 \end{tdocexa}
 \end{filecontents*}
 
@@ -189,6 +184,10 @@ Bla, bla, bla...
 \begin{filecontents*}[overwrite]{examples-focus-rmk.tex}
 \begin{tdocrem}
     Just one remark...
+\end{tdocrem}
+
+\begin{tdocrem}
+    Another?
 \end{tdocrem}
 
 \begin{tdocrem}[Mini title]
@@ -544,18 +543,22 @@ The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{t
 
 \subsection{Content in the reading flow}
 
+
+% ------------------ %
+
+
+\begin{tdocimp}
+    All the environments presented in this section share the same counter.
+\end{tdocimp}
+
+
+% ------------------ %
+
+
 \subsubsection{Examples}
 
-Numbered or unnumbered examples can be indicated using the \tdocenv{tdocexa} environment, which offers two optional arguments.
-
-\begin{enumerate}
-    \item The \ordinalnum{1} argument between brackets \tdocinlatex#<...># can take the values \tdocinlatex#nb# to number, which is the default setting, and \tdocinlatex#nonb# to not number.
-
-    \item The \ordinalnum{2} argument in square brackets \tdocinlatex#[...]# is used to add a mini-title..
-\end{enumerate}
-
-
-Here are some possible uses.
+Numbered examples, if required, are indicated via \tdocenv{tdocexa}, which offers an optional argument for adding a mini-title.
+Here are two possible uses.
 
 \tdoclatexinput[sbs]{examples-focus-exa.tex}
 
@@ -584,7 +587,7 @@ Here are some possible uses.
 
 \subsubsection{Some remarks}
 
-Everything happens via the \tdocenv{tdocrem} environment, as in the following example.
+Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocenv*{tdocexa} environment, as shown in the following example.
 
 \tdoclatexinput[sbs]{examples-focus-rmk.tex}
 
@@ -592,9 +595,14 @@ Everything happens via the \tdocenv{tdocrem} environment, as in the following ex
 
 \subsection{Flashy content}
 
+\begin{tdocnote}
+    Icons are obtained via the \tdocpack{fontawesome5} package, and text spacing is managed by the \tdocmacro{tdocicon} macro.
+\end{tdocnote}
+
+
 \subsubsection{A tip}
 
-The \tdocenv{tdoctip} environment is used to give tips. Here's how to use it.
+The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
 \tdoclatexinput[sbs]{examples-focus-tip.tex}
 
@@ -616,7 +624,7 @@ The \tdocenv{tdoctip} environment is used to give tips. Here's how to use it.
 
 \subsubsection{Informative note}
 
-The \tdocenv{tdocnote} environment is used to highlight useful information. Here's how to use it.
+The \tdocenv*{tdocnote} environment is used to highlight useful information. Here's how to use it.
 
 \tdoclatexinput[sbs]{examples-focus-note.tex}
 
@@ -626,15 +634,17 @@ The \tdocenv{tdocnote} environment is used to highlight useful information. Here
 
 \subsubsection{Something important}
 
-The \tdocenv{tdocimp} environment is used to indicate something important but harmless.
+The \tdocenv*{tdocimp} environment is used to indicate something important but harmless.
 
 \tdoclatexinput[sbs]{examples-focus-important.tex}
 
 
 
-\subsection{Caution about a delicate point}
+%\subsection{Flashy content}
 
-The \tdocenv{tdoccaution} environment is used to indicate a delicate point to the user. Here's how to use it.
+\subsubsection{Caution about a delicate point}
+
+The \tdocenv*{tdoccaut} environment is used to indicate a delicate point to the user. Here's how to use it.
 
 \tdoclatexinput[sbs]{examples-focus-caution.tex}
 
@@ -644,7 +654,7 @@ The \tdocenv{tdoccaution} environment is used to indicate a delicate point to th
 
 \subsubsection{Warning of danger}
 
-The \tdocenv{tdocwarn} environment is used to warn the user of a trap to avoid. Here's how to use it.
+The \tdocenv*{tdocwarn} environment is used to warn the user of a trap to avoid. Here's how to use it.
 
 \tdoclatexinput[sbs]{examples-focus-warn.tex}
 
@@ -767,20 +777,20 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 \begin{tdocnote}
     You've probably noticed that red is used as a base to obtain the colors used.
-
+    
     \begin{itemize}
     	\item The background color is provided by \tdocmacro{tdocbackcolor}.
 
     	\item The color of titles and lines is provided by \tdocmacro{tdocdarkcolor}.
     \end{itemize}
-
+    
     These expandable macros have a single argument, the chosen color, and accept the following codes.
 
     \begin{tdoclatex}[code]
 \NewExpandableDocumentCommand{tdocbackcolor}{m}{#1!5}
 \NewExpandableDocumentCommand{tdocdarkcolor}{m}{#1!50!black}
     \end{tdoclatex}
-
+    
     You also have to know that behind the scene, the \tdocmacro{tdocruler} macro is used.
 
     \begin{tdoclatex}[std]
@@ -878,10 +888,10 @@ Documenting a package or class is best done through use cases showing both the c
 }
 
 
-\begin{tdoccaution}
+\begin{tdoccaut}
 	Version 3 of \tdocpack{minted} cannot be used at the moment, as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of minted.
 
-\end{tdoccaution}
+\end{tdoccaut}
 
 
 \subsection{\tdocquote{Inline} codes} \label{tdoc-listing-inline}
@@ -974,7 +984,7 @@ For the following codes, consider a file with the relative path \verb+examples-l
 
 \medskip
 
-The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file and offers the same options as the \tdocenv{tdoclatex} environment.
+The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file and offers the same options as the \tdocenv*{tdoclatex} environment.
 
 
 % ------------------ %
@@ -1072,7 +1082,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
 
 \begin{tdocexa}[The options available]
-    In addition to the explanatory text, it is also possible to use all the options of \tdocenv{tdocshowcase}, see \ref{tdoc-showcase} page \pageref{tdoc-showcase}.
+    In addition to the explanatory text, it is also possible to use all the options of \tdocenv*{tdocshowcase} environment, see \ref{tdoc-showcase} page \pageref{tdoc-showcase}.
     Here is an example to illustrate this.
 
     \medskip
@@ -1146,10 +1156,29 @@ You can either date something, or version it, in which case the version number c
 
 \subsection{What's new?}
 
-\thispack{} offers different environments to indicate quickly and clearly what has been done during the latest changes.%
+\thispack{} offers the macro \tdocmacro{tdocstartproj} and different environments to indicate quickly and clearly what has been done during the latest changes.%
 \footnote{
     The user doesn't need all the technical details.
 }
+
+
+\begin{tdocnote}
+    Icons are obtained via the \tdocpack{fontawesome5} package, and text spacing is managed by the \tdocmacro{tdocicon} macro.
+\end{tdocnote}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Just for the very first version]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples-version-n-change-first.tex}
+
+\end{tdocexa}
+
+
+% ------------------ %
 
 
 \begin{tdocexa}[For new features]
@@ -1224,6 +1253,18 @@ You can either date something, or version it, in which case the version number c
     \tdoclatexinput[sbs]{examples-version-n-change-user-choice.tex}
 
 \end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocnote}
+    The use of an icon followed by the correct spacing just before the text is done via the \tdocmacro{tdocicon} macro.
+    For example,
+    \tdocinlatex|tdocicon{faBed}{Fatigued}|
+    product\,
+    \tdocicon{\faBed}{Fatigued}.
+\end{tdocnote}
 
 
 \section{Ornaments}

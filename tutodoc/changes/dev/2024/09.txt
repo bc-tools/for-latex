@@ -2,7 +2,7 @@
 
 
 ==
-27  (1.4.0-beta.1)
+27  (1.4.0-rc.1)
 ==
 
 -------
@@ -22,15 +22,20 @@ Focus: the \env ''tdoccaution'' has been renamed to ''tdoccaut'' for ease of use
 
 KO
 
-prototype dans focus et version-n-change
+prototype updated in
+    ??? focus
+    ??? version-n-change
 
 +
 
+
+
+
+
+OK
+
 doc à jour
 
-
-
-OK   \\tdocstartproj , \\tdocicon and better spacing for colorfull highlight
 
 \\tdocstartproj + Better spacing for colorfull highlight
 
@@ -91,7 +96,7 @@ Macros and \envs: the ''\tdocenv'' macro has a star version which simply display
 -----
 
 [[:doc:]]
-Too much small \pbs have been fixed (we wait for the fix of the version 3 of \minted to upload a new version on \ctan).
+Too much small \pbs have been fixed.
 
 
 // ---------- //

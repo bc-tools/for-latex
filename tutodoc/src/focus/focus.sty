@@ -20,30 +20,7 @@
 
 % -- SOBER HIGHLIGHTING OF CONTENT -- %
 
-% :: EXAMPLE - HIDDEN VERSIONS :: %
-
-%%%
-% See the \doc of the macro ''\newtheorem'' from the package ''amsthm''
-% to have \infos about the environment ''@@tdoc#1@nb''.
-%%%
-% \newtheorem{@@tdoc#1@nb}{\tutodoc@trans@exa@title}%
-%                          [subsubsection]
-
-%%%
-% We redefine the counter associated to the environment ''@@tdoc#1@nb''
-% to obtain only one single arabic number.
-%%%
-% \renewcommand{\the@@tdoc#1@nb}{\arabic{@@tdoc#1@nb}}
-
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''@@tdoc#1@no@nb''.
-%%%
-% \newtheorem*{@@tdoc#1@no@nb}{\tutodoc@trans@exa@title}
-
-
-% :: EXAMPLE - PUBLIC VERSION :: %
+% :: EXAMPLE - REMARK :: %
 
 \ExplSyntaxOn
 
@@ -70,17 +47,7 @@
   \cs_set:cpn { thetdoc#1 } { \arabic{tdoc#1} }
 }
 
-
 \ExplSyntaxOff
-
-
-% :: REMARK :: %
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''tdocrem''.
-%%%
-% \newtheorem*{tdocrem}{\tutodoc@trans@rem@title}
 
 
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
