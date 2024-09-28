@@ -1,5 +1,5 @@
 
-form-string="announcement=\\tdocenv* just displays the name + Documentations fixed."
+form-string="announcement=New macros \\tdocstartproj and \\tdocicon + Breaking changes for \\tdoccaution, \\tdocexa and \\tdocrem."
 form-string="author=Christophe BAL"
 form-string="bugtracker=https://github.com/bc-tools/for-latex/issues"
 form-string="ctanPath=/macros/latex/contrib/tutodoc"
@@ -12,5 +12,5 @@ form-string="summary=This package proposes tools for writing \"human friendly\" 
 form-string="topic=doc-tool"
 form-string="update=true"
 form-string="uploader=Christophe BAL"
-form-string="version=1.3.1 [2024-09-26]"
+form-string="version=1.4.0 [2024-09-28]"
 form="file=@tutodoc-ctan.zip;filename=tutodoc-ctan.zip"
