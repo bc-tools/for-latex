@@ -10,15 +10,9 @@ NOW
 > ---------------------------- <
 
 
-KO
-
-prototype updated in
-    ??? focus
-    ??? version-n-change
-
----------
-:foredev:
----------
+--------
+:fordev:
+--------
 
 ????
 texfacto met a jout l3build pour date et version !

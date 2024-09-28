@@ -1,21 +1,5 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-! LaTeX Error: Environment tdoccaut undefined.
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-l. ...\begin{tdoccaut}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-! LaTeX Error: \begin{document} ended by \end{tdoccaut}.
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-l. ...\end{tdoccaut}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line ....
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -24,22 +8,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line ....
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line ....
-! LaTeX Error: Environment tdoccaut undefined.
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-l. ...\begin{tdoccaut}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-! LaTeX Error: \begin{document} ended by \end{tdoccaut}.
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-l. ...\end{tdoccaut}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 [1
 ]
 Completed box being shipped out [2]
@@ -79,34 +47,367 @@ Completed box being shipped out [2]
 .....\special{color pop}
 ...\glue 25.0
 ...\glue(\lineskip) 0.0
-...\vbox(658.0+0.0)x472.03123, glue set 523.74075fil
-....\glue(\topskip) 1.72308
-....\hbox(8.27692+0.10999)x472.03123, glue set 416.01822fil
-.....\hbox(0.0+0.0)x0.0
-.....\TU/lmr/m/n/10 Be
-.....\glue 3.33 plus 1.665 minus 1.11
-.....\TU/lmr/m/n/10 aware.
-.....\glue 4.44 plus 4.99498 minus 0.37
-.....\penalty 10000
-.....\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 0]/H/I/C[1 0 0]/A<</S/GoTo/D(Hfootnote.4)>>>>}
-.....\special{color push rgb 0.75 0.375 0}
-.....\hbox(8.27692+0.0)x4.483
-......\mathon
-......\hbox(4.648+0.0)x4.483, shifted -3.62892
-.......\TU/lmr/m/n/7 1
-......\mathoff
+...\vbox(658.0+0.0)x472.03123, glue set 478.57896fil
+....\glue(\topskip) 0.0
+....\hbox(84.07999+0.0)x472.03123
+.....\hbox(84.07999+0.0)x472.03123
+......\glue 0.0
+......\hbox(0.0+0.0)x0.0
+.......\special{pdf:bcontent}
+.......\special{pdf:code q }
+.......\special{pdf:code 0 G }
+.......\special{pdf:code 0 g }
+.......\special{pdf:code 0.3985 w }
+.......\hbox(0.0+0.0)x0.0
+........\special{pdf:code q }
+........\special{pdf:code q }
+........\glue 0.0
+........\hbox(0.0+0.0)x0.0
+.........\hbox(0.0+0.0)x0.0
+..........\special{pdf:code q }
+..........\special{pdf:code 0.0 w }
+..........\glue 0.0
+..........\glue 0.0
+..........\special{pdf:code q }
+..........\special{pdf:code 0.0 w }
+..........\glue 0.0
+..........\special{pdf:code Q }
+..........\special{pdf:code q }
+..........\special{pdf:code q -1 0 0 -1 0 0 cm q}
+..........\special{pdf: econtent}
+..........\special{pdf: bcontent}
+..........\special{pdf:code -1 0 0 -1 0 0 cm}
+..........\special{pdf:code q}
+..........\special{pdf: econtent}
+..........\special{pdf:code 0 J [] 0 d}
+..........\special{pdf:bcolor [1]}
+..........\special{pdf:bcolor [0]}
+..........\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 235.13689 41.88347}
+..........\hbox(0.0+0.0)x0.0
+...........\hbox(0.0+0.0)x0.0
+............\special{pdf:code 0 G }
+............\special{pdf:code 0 g }
+............\hbox(0.0+0.0)x0.0
+............\glue 0.0
+..........\special{pdf:etrans}
+..........\special{pdf:ecolor}
+..........\special{pdf:ecolor}
+..........\special{pdf: bcontent}
+..........\special{pdf:code Q Q Q}
+..........\special{pdf:code Q }
+..........\glue 0.0
+..........\glue 0.0
+..........\special{pdf:code Q }
+........\glue 0.0
+........\hbox(0.0+0.0)x0.0
+.........\hbox(0.0+0.0)x0.0
+..........\special{pdf:code q }
+..........\special{pdf:code 0.0 w }
+..........\glue 0.0
+..........\glue 0.0
+..........\special{pdf:code q }
+..........\special{pdf:code 0.0 w }
+..........\glue 0.0
+..........\special{pdf:code Q }
+..........\special{pdf:code q }
+..........\special{pdf:code q -1 0 0 -1 0 0 cm q}
+..........\special{pdf: econtent}
+..........\special{pdf: bcontent}
+..........\special{pdf:code -1 0 0 -1 0 0 cm}
+..........\special{pdf:code q}
+..........\special{pdf: econtent}
+..........\special{pdf:code 0 J [] 0 d}
+..........\special{pdf:bcolor [1]}
+..........\special{pdf:bcolor [0]}
+..........\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 235.13689 33.30396}
+..........\hbox(0.0+0.0)x0.0
+...........\hbox(0.0+0.0)x0.0
+............\special{pdf:code 0 G }
+............\special{pdf:code 0 g }
+............\hbox(0.0+0.0)x0.0
+............\glue 0.0
+..........\special{pdf:etrans}
+..........\special{pdf:ecolor}
+..........\special{pdf:ecolor}
+..........\special{pdf: bcontent}
+..........\special{pdf:code Q Q Q}
+..........\special{pdf:code Q }
+..........\glue 0.0
+..........\glue 0.0
+..........\special{pdf:code Q }
+........\glue 0.0
+........\hbox(0.0+0.0)x0.0
+.........\hbox(0.0+0.0)x0.0
+..........\special{pdf:code q }
+..........\special{pdf:code 0.0 w }
+..........\glue 0.0
+..........\glue 0.0
+..........\special{pdf:code q }
+..........\special{pdf:code 0.0 w }
+..........\glue 0.0
+..........\special{pdf:code Q }
+..........\special{pdf:code q }
+..........\special{pdf:code q -1 0 0 -1 0 0 cm q}
+..........\special{pdf: econtent}
+..........\special{pdf: bcontent}
+..........\special{pdf:code -1 0 0 -1 0 0 cm}
+..........\special{pdf:code q}
+..........\special{pdf: econtent}
+..........\special{pdf:code 0 J [] 0 d}
+..........\special{pdf:bcolor [1]}
+..........\special{pdf:bcolor [0]}
+..........\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 235.13689 74.47876}
+..........\hbox(0.0+0.0)x0.0
+...........\hbox(0.0+0.0)x0.0
+............\special{pdf:code 0 G }
+............\special{pdf:code 0 g }
+............\hbox(0.0+0.0)x0.0
+............\glue 0.0
+..........\special{pdf:etrans}
+..........\special{pdf:ecolor}
+..........\special{pdf:ecolor}
+..........\special{pdf: bcontent}
+..........\special{pdf:code Q Q Q}
+..........\special{pdf:code Q }
+..........\glue 0.0
+..........\glue 0.0
+..........\special{pdf:code Q }
+........\glue 0.0
+........\glue 0.0
+........\special{pdf:code Q }
+........\special{pdf:code q }
+........\special{color push gray 0.7}
+........\special{pdf:code 2.12599 3.18898 m }
+........\special{pdf:code 2.12599 76.32594 l }
+........\special{pdf:code 2.12599 79.26137 4.50555 81.64095 7.44098 81.64095 c }
+........\special{pdf:code 467.08478 81.64095 l }
+........\special{pdf:code 470.0202 81.64095 472.39977 79.26137 472.39977 76.32594 c }
+........\special{pdf:code 472.39977 3.18898 l }
+........\special{pdf:code 472.39977 0.25356 470.0202 -2.12599 467.08478 -2.12599 c }
+........\special{pdf:code 7.44098 -2.12599 l }
+........\special{pdf:code 4.50555 -2.12599 2.12599 0.25356 2.12599 3.18898 c }
+........\special{pdf:code h }
+........\special{pdf:code f }
+........\glue 0.0
+........\special{color pop}
+........\special{pdf:code Q }
+........\special{pdf:code q }
+........\special{pdf:code 0.71875 0.55 0.71875 rg }
+........\special{pdf:code /pgf@ca1.0 gs }
+........\special{pdf:code 0.0 4.25198 m }
+........\special{pdf:code 0.0 79.51494 l }
+........\special{pdf:code 0.0 81.86328 1.90364 83.76694 4.25198 83.76694 c }
+........\special{pdf:code 466.02179 83.76694 l }
+........\special{pdf:code 468.37013 83.76694 470.27379 81.86328 470.27379 79.51494 c }
+........\special{pdf:code 470.27379 4.25198 l }
+........\special{pdf:code 470.27379 1.90364 468.37013 0.0 466.02179 0.0 c }
+........\special{pdf:code 4.25198 0.0 l }
+........\special{pdf:code 1.90364 0.0 0.0 1.90364 0.0 4.25198 c }
+........\special{pdf:code h }
+........\special{pdf:code f }
+........\glue 0.0
+........\special{pdf:code Q }
+........\special{pdf:code q }
+........\special{pdf:code 0.975 0.95 0.975 rg }
+........\special{pdf:code /pgf@ca1.0 gs }
+........\special{pdf:code 1.41731 4.25198 m }
+........\special{pdf:code 1.41731 65.1906 l }
+........\special{pdf:code 468.85646 65.1906 l }
+........\special{pdf:code 468.85646 4.25198 l }
+........\special{pdf:code 468.85646 2.68643 467.58736 1.41731 466.02179 1.41731 c }
+........\special{pdf:code 4.25198 1.41731 l }
+........\special{pdf:code 2.68643 1.41731 1.41731 2.68643 1.41731 4.25198 c }
+........\special{pdf:code h }
+........\special{pdf:code f }
+........\glue 0.0
+........\special{pdf:code Q }
+........\special{pdf:code q }
+........\special{pdf:code /pgf@ca1.0 gs }
+........\special{pdf:code q }
+........\special{pdf:code q -1 0 0 -1 0 0 cm q}
+........\special{pdf: econtent}
+........\special{pdf: bcontent}
+........\special{pdf:code -1 0 0 -1 0 0 cm}
+........\special{pdf:code q}
+........\special{pdf: econtent}
+........\special{pdf:code 0 J [] 0 d}
+........\special{pdf:bcolor [1]}
+........\special{pdf:bcolor [0]}
+........\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 7.24081 70.77759}
+........\hbox(0.0+0.0)x0.0
+.........\hbox(8.77+1.34)x457.49547
+..........\special{color push gray 1}
+..........\vbox(8.77+1.34)x457.49547
+...........\special{color push gray 1}
+...........\glue(\parskip) 0.0
+...........\glue(\parskip) 0.0
+...........\hbox(8.77+1.34)x457.49547, glue set 398.4655fil
+............\TU/fontawesomefree/solid/n/10 glyph#977
+............\kern 4.49997
+............\TU/lmr/bx/n/10 Caution.
+............\penalty 10000
+............\glue(\parfillskip) 0.0 plus 1.0fil
+............\glue(\rightskip) 0.0
+...........\special{color pop}
+..........\special{color pop}
+........\special{pdf:etrans}
+........\special{pdf:ecolor}
+........\special{pdf:ecolor}
+........\special{pdf: bcontent}
+........\special{pdf:code Q Q Q}
+........\special{pdf:code Q }
+........\glue 0.0
+........\special{pdf:code Q }
+........\special{pdf:code q }
+........\special{pdf:code /pgf@ca1.0 gs }
+........\special{pdf:code q }
+........\special{pdf:code q -1 0 0 -1 0 0 cm q}
+........\special{pdf: econtent}
+........\special{pdf: bcontent}
+........\special{pdf:code -1 0 0 -1 0 0 cm}
+........\special{pdf:code q}
+........\special{pdf: econtent}
+........\special{pdf:code 0 J [] 0 d}
+........\special{pdf:bcolor [1]}
+........\special{pdf:bcolor [0]}
+........\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 7.24081 12.76074}
+........\hbox(0.0+0.0)x0.0
+.........\hbox(44.08998+2.85002)x457.49547
+..........\special{color push gray 0}
+..........\vbox(44.08998+2.85002)x457.49547
+...........\special{color push gray 0}
+...........\special{color push rgb 0.25 0 0.25}
+...........\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdoccaut}{}{keythms_unnumbered_dummyctr.unnumbered.9}{1}{}{note={}}{}}}}
+...........\glue(\parskip) 0.0
+...........\glue(\parskip) 0.0
+...........\hbox(6.83+0.10999)x457.49547, glue set 414.03546fil
+............\hbox(0.0+0.0)x0.0
+............\special{color push gray 0}
+............\TU/lmr/m/it/10 Be
+............\glue 3.58 plus 1.79 minus 1.19333
+............\TU/lmr/m/it/10 aware.
+............\special{color pop}
+............\penalty 10000
+............\glue(\parfillskip) 0.0 plus 1.0fil
+............\glue(\rightskip) 0.0
+...........\glue(\parskip) 0.0
+...........\glue(\parskip) 0.0
+...........\glue(\baselineskip) 5.06001
+...........\hbox(6.83+0.10999)x457.49547, glue set 404.54114fil
+............\hbox(0.0+0.0)x0.0
+............\TU/lmr/m/it/10 Be
+............\glue 3.58 plus 1.79 minus 1.19333
+............\TU/lmr/m/it/10 aware.
+............\glue 4.77333 plus 5.36998 minus 0.39777
+............\penalty 10000
+............\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 0]/H/I/C[1 0 0]/A<</S/GoTo/D(Hfootnote.4)>>>>}
+............\special{color push rgb 0.75 0.375 0}
+............\hbox(6.71593+0.0)x4.721
+.............\mathon
+.............\hbox(3.087+0.06999)x4.721, shifted -3.62892
+..............\TU/lmr/m/it/7 a
+.............\mathoff
+............\special{color pop}
+............\special{pdf:eann}
+............\penalty 10000
+............\glue(\parfillskip) 0.0 plus 1.0fil
+............\glue(\rightskip) 0.0
+...........\glue 9.0 plus 4.0 minus 2.0
+...........\special{color push rgb 0.25 0 0.25}
+...........\kern -3.0
+...........\rule(0.4+0.0)x182.99539
+...........\kern 2.6
+...........\hbox(6.65+1.63998)x457.49547, glue set 320.51143fil
+............\hbox(5.46933+0.0)x14.40002, glue set 10.28203fil
+.............\glue 0.0 plus 1.0fil minus 1.0fil
+.............\hbox(5.46933+0.0)x4.118
+..............\mathon
+..............\hbox(2.646+0.05998)x4.118, shifted -2.82333
+...............\TU/lmr/m/it/6 a
+..............\mathoff
+............\hbox(6.65+0.0)x0.0
+.............\rule(6.65+0.0)x0.0
+............\penalty 10000
+............\hbox(0.0+0.0)x0.0
+.............\hbox(0.0+0.0)x0.0, shifted -9.5
+..............\special{pdf:dest (Hfootnote.4) [@thispage /XYZ @xpos @ypos null]}
+..............\penalty 10000
+............\special{color push gray 0}
+............\TU/lmr/m/n/8 Good
+............\glue 2.832 plus 1.416 minus 0.944
+............\TU/lmr/m/n/8 color
+............\glue 2.832 plus 1.416 minus 0.944
+............\TU/lmr/m/n/8 and
+............\glue 2.832 plus 1.416 minus 0.944
+............\TU/lmr/m/n/8 not
+............\glue 2.832 plus 1.416 minus 0.944
+............\TU/lmr/m/n/8 good
+............\glue 2.832 plus 1.416 minus 0.944
+............\TU/lmr/m/n/8 doctor!
+............\special{color pop}
+............\penalty 10000
+............\glue(\parfillskip) 0.0 plus 1.0fil
+............\glue(\rightskip) 0.0
+...........\glue(\parskip) 0.0
+...........\glue(\parskip) 0.0
+...........\glue(\baselineskip) 2.14001
+...........\hbox(5.72+2.85002)x457.49547, glue set 326.91145fil
+............\hbox(0.0+0.0)x8.0
+............\TU/lmr/m/n/8 Good
+............\glue 2.832 plus 1.416 minus 0.944
+............\TU/lmr/m/n/8 color
+............\glue 2.832 plus 1.416 minus 0.944
+............\TU/lmr/m/n/8 and
+............\glue 2.832 plus 1.416 minus 0.944
+............\TU/lmr/m/n/8 not
+............\glue 2.832 plus 1.416 minus 0.944
+............\TU/lmr/m/n/8 good
+............\glue 2.832 plus 1.416 minus 0.944
+............\TU/lmr/m/n/8 doctor!
+............\penalty 10000
+............\rule(0.0+2.85002)x0.0
+............\penalty 10000
+............\glue(\parfillskip) 0.0 plus 1.0fil
+............\glue(\rightskip) 0.0
+...........\special{color pop}
+...........\special{color pop}
+...........\special{color pop}
+..........\special{color pop}
+........\special{pdf:etrans}
+........\special{pdf:ecolor}
+........\special{pdf:ecolor}
+........\special{pdf: bcontent}
+........\special{pdf:code Q Q Q}
+........\special{pdf:code Q }
+........\glue 0.0
+........\special{pdf:code Q }
+........\glue 0.0
+........\special{pdf:code Q }
+........\glue 0.0 plus 1.0fil minus 1.0fil
+.......\special{pdf:code n }
+.......\special{pdf:code Q }
+.......\special{pdf:econtent}
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\special{color push gray 0}
 .....\special{color pop}
-.....\special{pdf:eann}
-.....\glue 4.44 plus 4.99498 minus 0.37
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
-....\special{pdf:dest (keythms_unnumbered_dummyctr.unnumbered.8) [@thispage /XYZ @xpos @ypos null]}
-....\penalty 10000
+....\glue 6.0 plus 1.0
+....\glue -6.0 plus -1.0
+....\glue 6.0 plus 1.0
+....\glue -9.60004 plus -1.0
 ....\penalty -51
-....\glue 0.0
-....\glue 0.0 plus -1.0
-....\glue 9.49005 plus 1.0
+....\glue 3.60004
+....\glue 6.0 plus 1.0
+....\special{pdf:dest (keythms_unnumbered_dummyctr.unnumbered.10) [@thispage /XYZ @xpos @ypos null]}
+....\penalty 10000
+....\glue -6.0 plus -1.0
+....\glue 6.0 plus 1.0
+....\glue -9.60004 plus -1.0
+....\penalty -51
+....\glue 3.60004
+....\glue 6.0 plus 1.0
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue 0.0
@@ -298,17 +599,17 @@ Completed box being shipped out [2]
 ........\special{pdf:code 0 J [] 0 d}
 ........\special{pdf:bcolor [1]}
 ........\special{pdf:bcolor [0]}
-........\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 15.5907 73.59705}
+........\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 7.24081 73.59705}
 ........\hbox(0.0+0.0)x0.0
-.........\hbox(8.75+2.00998)x440.73329
+.........\hbox(8.75+2.00998)x457.49547
 ..........\special{color push gray 1}
-..........\vbox(8.75+2.00998)x440.73329
+..........\vbox(8.75+2.00998)x457.49547
 ...........\special{color push gray 1}
 ...........\glue(\parskip) 0.0
 ...........\glue(\parskip) 0.0
-...........\hbox(8.75+2.00998)x440.73329, glue set 382.3133fil
+...........\hbox(8.75+2.00998)x457.49547, glue set 398.0755fil
 ............\TU/fontawesomefree/solid/n/10 glyph#949
-............\kern 3.5
+............\kern 4.49997
 ............\TU/lmr/bx/n/10 Warning.
 ............\penalty 10000
 ............\glue(\parfillskip) 0.0 plus 1.0fil
@@ -335,17 +636,17 @@ Completed box being shipped out [2]
 ........\special{pdf:code 0 J [] 0 d}
 ........\special{pdf:bcolor [1]}
 ........\special{pdf:bcolor [0]}
-........\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 15.5907 12.76074}
+........\special{pdf:btrans matrix 1.0 0.0 0.0 1.0 7.24081 12.76074}
 ........\hbox(0.0+0.0)x0.0
-.........\hbox(46.24998+2.85002)x440.73329
+.........\hbox(46.24998+2.85002)x457.49547
 ..........\special{color push gray 0}
-..........\vbox(46.24998+2.85002)x440.73329
+..........\vbox(46.24998+2.85002)x457.49547
 ...........\special{color push gray 0}
 ...........\special{color push rgb 0.5 0 0}
-...........\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocwarn}{}{keythms_unnumbered_dummyctr.unnumbered.8}{2}{}{note={}}{}}}}
+...........\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocwarn}{}{keythms_unnumbered_dummyctr.unnumbered.10}{2}{}{note={}}{}}}}
 ...........\glue(\parskip) 0.0
 ...........\glue(\parskip) 0.0
-...........\hbox(7.16+1.93999)x440.73329, glue set 389.09329fil
+...........\hbox(7.16+1.93999)x457.49547, glue set 405.85547fil
 ............\hbox(0.0+0.0)x0.0
 ............\special{color push gray 0}
 ............\TU/lmr/m/it/10 Be
@@ -358,7 +659,7 @@ Completed box being shipped out [2]
 ...........\glue(\parskip) 0.0
 ...........\glue(\parskip) 0.0
 ...........\glue(\baselineskip) 2.90001
-...........\hbox(7.16+1.93999)x440.73329, glue set 379.59897fil
+...........\hbox(7.16+1.93999)x457.49547, glue set 396.36115fil
 ............\hbox(0.0+0.0)x0.0
 ............\TU/lmr/m/it/10 Be
 ............\glue 3.58 plus 1.79 minus 1.19333
@@ -380,9 +681,9 @@ Completed box being shipped out [2]
 ...........\glue 9.0 plus 4.0 minus 2.0
 ...........\special{color push rgb 0.5 0 0}
 ...........\kern -3.0
-...........\rule(0.4+0.0)x176.29062
+...........\rule(0.4+0.0)x182.99539
 ...........\kern 2.6
-...........\hbox(6.65+1.63998)x440.73329, glue set 303.74925fil
+...........\hbox(6.65+1.63998)x457.49547, glue set 320.51143fil
 ............\hbox(5.46933+0.0)x14.40002, glue set 10.28203fil
 .............\glue 0.0 plus 1.0fil minus 1.0fil
 .............\hbox(5.46933+0.0)x4.118
@@ -416,7 +717,7 @@ Completed box being shipped out [2]
 ...........\glue(\parskip) 0.0
 ...........\glue(\parskip) 0.0
 ...........\glue(\baselineskip) 2.14001
-...........\hbox(5.72+2.85002)x440.73329, glue set 310.14928fil
+...........\hbox(5.72+2.85002)x457.49547, glue set 326.91145fil
 ............\hbox(0.0+0.0)x8.0
 ............\TU/lmr/m/n/8 Good
 ............\glue 2.832 plus 1.416 minus 0.944
@@ -467,65 +768,7 @@ Completed box being shipped out [2]
 ....\glue 6.0 plus 1.0
 ....\glue -3.60004
 ....\glue 0.0 plus 1.0fil
-....\glue 9.0 plus 4.0 minus 2.0
-....\special{color push gray 0}
-....\kern -3.0
-....\rule(0.4+0.0)x188.8096
-....\kern 2.6
-....\hbox(6.81334+1.63998)x472.03123, glue set 335.0472fil
-.....\hbox(6.81334+0.0)x14.40002, glue set 10.23402fil
-......\glue 0.0 plus 1.0fil minus 1.0fil
-......\hbox(6.81334+0.0)x4.166
-.......\mathon
-.......\hbox(3.99+0.0)x4.166, shifted -2.82333
-........\TU/lmr/m/n/6 1
-.......\mathoff
-.....\hbox(6.65+0.0)x0.0
-......\rule(6.65+0.0)x0.0
-.....\penalty 10000
-.....\hbox(0.0+0.0)x0.0
-......\hbox(0.0+0.0)x0.0, shifted -9.5
-.......\special{pdf:dest (Hfootnote.4) [@thispage /XYZ @xpos @ypos null]}
-.......\penalty 10000
-.....\special{color push gray 0}
-.....\TU/lmr/m/n/8 Good
-.....\glue 2.832 plus 1.416 minus 0.944
-.....\TU/lmr/m/n/8 color
-.....\glue 2.832 plus 1.416 minus 0.944
-.....\TU/lmr/m/n/8 and
-.....\glue 2.832 plus 1.416 minus 0.944
-.....\TU/lmr/m/n/8 not
-.....\glue 2.832 plus 1.416 minus 0.944
-.....\TU/lmr/m/n/8 good
-.....\glue 2.832 plus 1.416 minus 0.944
-.....\TU/lmr/m/n/8 doctor!
-.....\special{color pop}
-.....\penalty 10000
-.....\glue(\parfillskip) 0.0 plus 1.0fil
-.....\glue(\rightskip) 0.0
-....\glue(\parskip) 0.0
-....\glue(\parskip) 0.0
-....\glue(\baselineskip) 2.14001
-....\hbox(5.72+2.85002)x472.03123, glue set 341.44722fil
-.....\hbox(0.0+0.0)x8.0
-.....\TU/lmr/m/n/8 Good
-.....\glue 2.832 plus 1.416 minus 0.944
-.....\TU/lmr/m/n/8 color
-.....\glue 2.832 plus 1.416 minus 0.944
-.....\TU/lmr/m/n/8 and
-.....\glue 2.832 plus 1.416 minus 0.944
-.....\TU/lmr/m/n/8 not
-.....\glue 2.832 plus 1.416 minus 0.944
-.....\TU/lmr/m/n/8 good
-.....\glue 2.832 plus 1.416 minus 0.944
-.....\TU/lmr/m/n/8 doctor!
-.....\penalty 10000
-.....\rule(0.0+2.85002)x0.0
-.....\penalty 10000
-.....\glue(\parfillskip) 0.0 plus 1.0fil
-.....\glue(\rightskip) 0.0
-....\special{color pop}
-....\glue -2.85002
+....\glue 0.0
 ....\glue 0.0 plus 0.0001fil
 ...\glue(\baselineskip) 23.34
 ...\hbox(6.66+0.0)x472.03123

@@ -30,7 +30,11 @@ Colors: the macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' have an optional a
 --------
 
 [[:test]]
-Focus: tests on colored frames showed that finer adjustment was necessary (see above).
+Focus: tests on colored frames showed that finer adjustment could be necessary (see above).
+
+
+[[:tech]]
+\tnsdoc: all files look good now.
 
 
 // ---------- //
