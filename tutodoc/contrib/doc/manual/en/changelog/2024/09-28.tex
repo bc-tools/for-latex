@@ -7,8 +7,10 @@
 
 \begin{tdocbreak}
 	\item The \tdocenv*{tdoccaution} environment has been renamed \tdocenv*{tdoccaut} for simplified input.
-	
+
 	\item Content highlighting: examples and remarks, indicated via the \tdocenv*{tdocexa} and \tdocenv*{tdocrem} environments, are always numbered, and share the same counter.
+
+	\item The unused macro \tdocmacro{tdocxspace} has been deleted.
 \end{tdocbreak}
 
 
@@ -20,6 +22,13 @@
 
 
 \begin{tdocupdate}
+	\item Colors: the \tdocmacro{tdocdarkcolor} and \tdocmacro{tdoclightcolor} macros offer an optional argument.
+	\begin{enumerate}
+		\item \tdocmacro{tdocdarkcolor} : the amount of color in relation to black can be optionally defined.
+
+		\item \tdocmacro{tdoclightcolor} : the transparency rate can be optionally defined.
+	\end{enumerate}
+
     \item Content highlighting: reduced space around content in colored frames.
 \end{tdocupdate}
 
