@@ -35,18 +35,18 @@
   \str_if_eq:nnTF { #1 } { exa } {
     \newkeytheorem{tdoc#1}[
       name     = \use:c { tutodoc@trans@#1@title },
-      numbered = unless-unique,
-      within   = subsection,
+%      numbered = unless-unique,
+      within   = section,
     ]
   } {
     \newkeytheorem{tdoc#1}[
       name       = \use:c { tutodoc@trans@#1@title },
       numberlike = tdocexa,
-      numbered = unless-unique
+%      numbered = unless-unique
     ]
   }
 
-  \cs_set:cpn { the tdoc #1 } { \arabic{tdoc#1} }
+  \cs_set:cpn { the tdoc #1 } { \thesection\arabic{tdoc#1} }
 }
 
 \ExplSyntaxOff
