@@ -1,0 +1,11 @@
+abrev::
+    content = :this.name:
+
+
+=================
+À propos du \proj
+=================
+
+content::
+    \content/for-all.txt
+    \content/agregate.txt
