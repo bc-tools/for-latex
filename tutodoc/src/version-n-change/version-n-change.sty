@@ -1,5 +1,8 @@
 % == PACKAGES == %
 
+\RequirePackage{fontawesome5}%
+               [2022-05-02]
+
 \RequirePackage{marginnote}%
                [2023-09-07]
 
@@ -95,6 +98,8 @@
                        {#3}
 }
 
+\ExplSyntaxOff
+
 
 % :: VERSION AND DATE :: %
 
@@ -133,13 +138,15 @@
 %%%
 \NewDocumentCommand{\tdocdate}{O{blue} m}{
   \tutodoc@new@change@margin{#1}      % Color
-                         {#2}      % Date
-                         {}        % Version
-                         {-5.35pt} % Last negative spacing
+                            {#2}      % Date
+                            {}        % Version
+                            {-5.35pt} % Last negative spacing
 }
 
 
 % -- CHANGES - WHAT? -- %
+
+\ExplSyntaxOn
 
 % :: MESSAGES :: %
 
@@ -153,16 +160,18 @@
 %%%
 % prototype::
 %     #1 : a title that will be followed by a colon.
+%     #2 : one material that expects to be an icon command from the
+%          ''fontawsome5'' \pack.
 %
 %     :action: this environment prints some ¨infos about specific changes
 %              achieved in a new version (no special formatting is applied).
 %%%
-\NewDocumentEnvironment{tdoctopic}{ m }{
+\NewDocumentEnvironment{tdoctopic}{ m O{} }{
   \IfBlankT{#1}{
     \msg_fatal:nn { tdoc } { changes-topic-missing-title }
-  }
-
-  \textbf{
+  }%
+  \textbf{%
+    \IfBlankF{#2}{\tdocicon{#2}}%
     \textsc{#1.}
   }
 
@@ -175,80 +184,43 @@
 % :: CHANGES - NEW THINGS :: %
 
 %%%
-% prototype::
-%     :see: env.tdoctopic
-%
-%     :action: similar to the \env ''tdoctopic'' with the title "New"
-%              translated into the good language.
+% We use a ''prop'' variable to factorize the code just after.
 %%%
-\NewDocumentEnvironment{tdocnew}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@new}
-}{
-  \end{tdoctopic}
+\prop_new:N              \__g_tutodoc_topic_change_prop
+\prop_set_from_keyval:Nn \__g_tutodoc_topic_change_prop {
+  break  = \faCodeBranch,
+  fix    = \faWrench,
+  new    = \faGem,
+  prob   = \faFire*,
+  update = \faMagic,
 }
 
 
-% :: CHANGES - UPDATE :: %
-
 %%%
 % prototype::
 %     :see: env.tdoctopic
 %
-%     :action: similar to the \env ''tdoctopic'' with the title "Update"
-%              translated into the good language.
+%     :action: ''key/value'' iteration over ''\__g_tutodoc_topic_change_prop''
+%              to build topic-like \envs using the \env ''tdoctopic''
+%              (the title used is translated into the good language).
 %%%
-\NewDocumentEnvironment{tdocupdate}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@update}
-}{
-  \end{tdoctopic}
+\prop_map_inline:Nn \__g_tutodoc_topic_change_prop {
+  \NewDocumentEnvironment{ tdoc#1 } {} {
+    \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } [ #2 ]
+  }{
+    \end{tdoctopic}
+  }
 }
 
 
-% :: CHANGES - BREAK :: %
-
 %%%
 % prototype::
-%     :see: env.tdoctopic
+%     #1 : a short text expected t indicate the very first version of a project.
 %
-%     :action: similar to the \env ''tdoctopic'' with the title "Break"
-%              translated into the good language.
+%     :action: the short text printed will be preceded by a pretty anchor icon.
 %%%
-\NewDocumentEnvironment{tdocbreak}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@break}
-}{
-  \end{tdoctopic}
-}
-
-
-% :: CHANGES - PROBLEM :: %
-
-%%%
-% prototype::
-%     :see: env.tdoctopic
-%
-%     :action: similar to the \env ''tdoctopic'' with the title "Problem"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{tdocprob}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@pb}
-}{
-  \end{tdoctopic}
-}
-
-
-% :: CHANGES - FIX :: %
-
-%%%
-% prototype::
-%     :see: env.tdoctopic
-%
-%     :action: similar to the \env ''tdoctopic'' with the title "Fix"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{tdocfix}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@fix}
-}{
-  \end{tdoctopic}
+\NewDocumentCommand{ \tdocstartproj }{ m } {
+  \tdocicon{\faAnchor}#1
 }
 
 \ExplSyntaxOff

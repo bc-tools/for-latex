@@ -1,0 +1,198 @@
+// ---------- //
+
+
+==
+28  (1.4.0-rc.1)
+==
+
+-------
+:break:
+-------
+
+[[:api:]]
+Ornaments: the unused macro ''\tdocxspace'' has been removed.
+
+
+--------
+:update:
+--------
+
+[[:api:]]
+Colors: the macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' have an optional argument.
+
+    1) ''\tdocdarkcolor'': the amount of color relative to black can be optionally defined.
+
+    1) ''\tdoclightcolor'': the transparency ratio can be optionally defined.
+
+
+--------
+:fordev:
+--------
+
+[[:test]]
+Focus: tests on colored frames showed that finer adjustment could be necessary (see above).
+
+
+[[:tech]]
+\tnsdoc: all files look good now.
+
+
+// ---------- //
+
+
+==
+27  (1.4.0-beta.1)
+==
+
+-------
+:break:
+-------
+
+[[:api:]]
+Focus.
+
+    1) The ''tdoccaution'' \env has been renamed to ''tdoccaut'' for ease of use.
+
+    1) The ''tdocexa'' and ''tdocrem'' \envs are always numbered within sections, and they share the same counter (the \pack ''keytheorems'' is used behind the scene).
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+Change log: the ''\tdocstartproj'' macro is used to manage the case of the first public version.
+
+
+[[:tech:]]
+\Facto: the ''\tdocicon'' macro is responsible for adding icons in front of text.
+
+
+--------
+:update:
+--------
+
+[[:format:]]
+Focus: reduced space around content in colored frames.
+
+
+// ---------- //
+
+
+==
+26  (1.3.1-rc.1)
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+Macros and \envs: the ''\tdocenv'' macro has a star version which simply displays the name of the \env.
+
+
+--------
+:fordev:
+--------
+
+[[:tech:]]
+\texfacto \poc: the previous version didn't handle several stable changes in the same month. This has been corrected (the \regex process used a single match instead of an all one).
+
+
+// ---------- //
+
+
+==
+25  (1.3.1-beta.1)
+==
+
+-----
+:fix:
+-----
+
+[[:doc:]]
+Too much small \pbs have been fixed.
+
+
+// ---------- //
+
+
+==
+25  (1.3.0-rc.1)
+==
+
+-------
+:break:
+-------
+
+[[:api:]]
+Focus: the ''tdocimportant'' \env has been renamed to ''tdocimp'' for ease of use.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+The French and the English \docs have been updated.
+
+[[:api:]]
+\minted: we use \RequirePackage{minted2} as a temporary patch.
+
+
+--------
+:fordev:
+--------
+
+[[:facto:]]
+The macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' has been moved into the path::''main.sty'' file, and there are aslo used for the highlighted content.
+
+
+// ---------- //
+
+
+==
+24  (1.2.1-beta.2)
+==
+
+-------
+:issue:
+-------
+
+[[:bug:]]
+\minted: the new version 3 breaks the use of the \minted \tcolorbox \lib. The \thispack becomes unusable... Let's wait for a fix before releasing the current brand-new, colorful version.
+
+
+-----
+:new:
+-----
+
+[[:format:]]
+Change log: icons are associated to the kind-of-\infos \env (use of the \fontawesome5 \pack).
+
+
+--------
+:update:
+--------
+
+[[:format:]]
+Focus.
+
+    1) Use of two-parts colored frames (the recognition becomes better).
+
+    1) Color for the footnotes inside the frame.
+
+
+// ---------- //
+
+
+==
+23  (1.2.1-beta.1)
+==
+
+-----
+:new:
+-----
+
+[[:format:]]
+Focus: colored frames for easy recognition of information types (the \pack \keytheorems is used in backstage).

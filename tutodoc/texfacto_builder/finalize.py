@@ -171,6 +171,8 @@ def tex_main(
 
 \\section{{{HISTORY_TRANS[lang]}}}
 
+\small
+
 {chgelog}
 
 \\end{{document}}

@@ -24,9 +24,17 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-version-n-change-user-choice-icon.tex}
+\begin{tdoctopic}{Don't look}[\faEyeSlash]
+% An icon from fontawesome5.
+    \item Info 1...
+    \item Info 2...
+\end{tdoctopic}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-version-n-change-user-choice.tex}
-\begin{tdoctopic}{It's my choice}
-% This is where the point needs to be put.
+\begin{tdoctopic}{End of icons}
     \item Info 1...
     \item Info 2...
 \end{tdoctopic}
@@ -54,6 +62,11 @@ Ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble,
 ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble,
 ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble,
 ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-first.tex}
+\tdocstartproj{1st version of the project.}
 \end{filecontents*}
 
 
@@ -92,7 +105,6 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \begin{filecontents*}[overwrite]{examples-focus-exa-leavevmode.tex}
 \begin{tdocexa}
     \leavevmode
-
     \begin{enumerate}
         \item Point 1.
 
@@ -103,13 +115,13 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 
 \begin{filecontents*}[overwrite]{examples-focus-important.tex}
-\begin{tdocimportant}
+\begin{tdocimp}
     Important and harmless.
-\end{tdocimportant}
+\end{tdocimp}
 
-\begin{tdocimportant}[Mini title]
+\begin{tdocimp}[Mini title]
     Useful?
-\end{tdocimportant}
+\end{tdocimp}
 \end{filecontents*}
 
 
@@ -125,13 +137,13 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 
 \begin{filecontents*}[overwrite]{examples-focus-caution.tex}
-\begin{tdoccaution}
+\begin{tdoccaut}
     Caution, caution...
-\end{tdoccaution}
+\end{tdoccaut}
 
-\begin{tdoccaution}[Mini title]
+\begin{tdoccaut}[Mini title]
     Useful?
-\end{tdoccaution}
+\end{tdoccaut}
 \end{filecontents*}
 
 
@@ -158,22 +170,12 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 
 \begin{filecontents*}[overwrite]{examples-focus-exa.tex}
-Bla, bla, bla...
-
 \begin{tdocexa}
-    Ble, ble, ble...
+    An example...
 \end{tdocexa}
 
-\begin{tdocexa}[Wonderful]
-    Bli, bli, bli...
-\end{tdocexa}
-
-\begin{tdocexa}<nonb>
-    Blo, blo, blo...
-\end{tdocexa}
-
-\begin{tdocexa}<nonb>[Superb]
-    Blu, blu, blu...
+\begin{tdocexa}[Mini title]
+    Useful?
 \end{tdocexa}
 \end{filecontents*}
 
@@ -181,6 +183,10 @@ Bla, bla, bla...
 \begin{filecontents*}[overwrite]{examples-focus-rmk.tex}
 \begin{tdocrem}
     Just one remark...
+\end{tdocrem}
+
+\begin{tdocrem}
+    Another?
 \end{tdocrem}
 
 \begin{tdocrem}[Mini title]
@@ -283,12 +289,17 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
+
 \usepackage[english]{babel, varioref}
 
-\usepackage{enumitem}
 
+
+
+
+\usepackage{enumitem}
 \usepackage{fmtcount}
 
+\usepackage{multicol}
 \setlength{\parindent}{0em}
 
 \newcommand\thispack{\tdocpack{tutodoc}}
@@ -365,19 +376,19 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \title{The \texttt{tutodoc} package - Tutorial-style documentation}
 \author{Christophe BAL}
-\date{Aug 23, 2024 - Version 1.2.0-a}
+\date{Sep 28, 2024 - Version 1.4.0}
 
 \maketitle
 
 \begin{abstract}
-    The \thispack{} package
+    The \thispack{} package\,%
     \footnote{
         The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
     }
-    is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style
+    is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style,%
     \footnote{
         The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
-    },
+    }
     and with a sober rendering for reading on screen.
 
     \medskip
@@ -522,26 +533,31 @@ The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{t
 \begin{tdocnote}
     The environments presented in this section
     \footnote{
-        The formatting comes from the \tdocpack{amsthm} package.
+        The formatting comes from the \tdocpack{keytheorems} package.
     }
     add a short title indicating the type of information provided.
     This short text will always be translated into the language indicated when the \thispack{} package is loaded.
 \end{tdocnote}
 
 
-
-\subsection{Examples}
-
-Numbered or unnumbered examples can be indicated using the \tdocenv{tdocexa} environment, which offers two optional arguments.
-
-\begin{enumerate}
-    \item The \ordinalnum{1} argument between brackets \tdocinlatex#<...># can take the values \tdocinlatex#nb# to number, which is the default setting, and \tdocinlatex#nonb# to not number.
-
-    \item The \ordinalnum{2} argument in square brackets \tdocinlatex#[...]# is used to add a mini-title..
-\end{enumerate}
+\subsection{Content in the reading flow}
 
 
-Here are some possible uses.
+% ------------------ %
+
+
+\begin{tdocimp}
+    All the environments presented in this section share the same counter.
+\end{tdocimp}
+
+
+% ------------------ %
+
+
+\subsubsection{Examples}
+
+Numbered examples, if required, are indicated via \tdocenv{tdocexa}, which offers an optional argument for adding a mini-title.
+Here are two possible uses.
 
 \tdoclatexinput[sbs]{examples-focus-exa.tex}
 
@@ -550,65 +566,96 @@ Here are some possible uses.
 % ------------------ %
 
 
-\begin{tdocimportant}
-    The numbering of the examples is reset to zero as soon as a section with a level at least equal to a \tdocinlatex|\subsubsection| is opened.
-\end{tdocimportant}
+\begin{tdocimp}
+    The numbering of the examples is reset to zero as soon as a section with a level at least equal to a \tdocinlatex|\section| is opened.
+\end{tdocimp}
 
 
 % ------------------ %
 
 
 \begin{tdoctip}
-    It can sometimes be useful to return to the line at the start of the content. Here's how to do it (this trick remains valid for the environments presented in the following sub-sections). Note in passing that the numbering follows that of the previous example as desired.
-
-    \tdoclatexinput[sbs]{examples-focus-exa-leavevmode.tex}
-
+    It can sometimes be useful to return to the line at the start of the content. The code below shows how to proceed (this trick also applies to the \verb#tdocrem# environment presented next). Note in passing that the numbering follows that of the previous example as desired.
 \end{tdoctip}
 
+\tdoclatexinput[sbs]{examples-focus-exa-leavevmode.tex}
 
-\subsection{Some remarks}
 
-Everything happens via the \tdocenv{tdocrem} environment, as in the following example.
+
+% \subsection{Content in the reading flow}
+
+\subsubsection{Some remarks}
+
+Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocenv*{tdocexa} environment, as shown in the following example.
 
 \tdoclatexinput[sbs]{examples-focus-rmk.tex}
 
 
 
-\subsection{A tip}
+\subsection{Flashy content} \label{tdoc-colorful-focus}
 
-The \tdocenv{tdoctip} environment is used to give tips. Here's how to use it.
+\begin{tdocnote}
+    Icons are obtained via the \tdocpack{fontawesome5} package, and text spacing is managed by the \tdocmacro{tdocicon} macro.
+    \footnote{
+        For example,
+        \tdocinlatex|\tdocicon{\faBed}{Tired}|
+        produces\,
+        \tdocicon{\faBed}{Tired}.
+    }
+\end{tdocnote}
+
+
+\subsubsection{A tip}
+
+The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
 \tdoclatexinput[sbs]{examples-focus-tip.tex}
 
 
 
-\subsection{Informative note}
+\smallskip
 
-The \tdocenv{tdocnote} environment is used to highlight useful information. Here's how to use it.
+\begin{tdocnote}
+    Colors are obtained via the expandable macros \tdocmacro{tdocbackcolor} and \tdocmacro{tdocdarkcolor}.
+    For further information, please refer to the end of the section \ref{tdoc-color-macros} page \pageref{tdoc-color-macros}.
+\end{tdocnote}
+
+
+%\subsection{Flashy content}
+
+\subsubsection{Informative note}
+
+The \tdocenv*{tdocnote} environment is used to highlight useful information. Here's how to use it.
 
 \tdoclatexinput[sbs]{examples-focus-note.tex}
 
 
 
-\subsection{Something important}
+%\subsection{Flashy content}
 
-The \tdocenv{tdocimportant} environment is used to indicate something important but harmless.
+\subsubsection{Something important}
+
+The \tdocenv*{tdocimp} environment is used to indicate something important but harmless.
 
 \tdoclatexinput[sbs]{examples-focus-important.tex}
 
 
 
-\subsection{Caution about a delicate point}
+%\subsection{Flashy content}
 
-The \tdocenv{tdoccaution} environment is used to indicate a delicate point to the user. Here's how to use it.
+\subsubsection{Caution about a delicate point}
+
+The \tdocenv*{tdoccaut} environment is used to indicate a delicate point to the user. Here's how to use it.
 
 \tdoclatexinput[sbs]{examples-focus-caution.tex}
 
 
 
-\subsection{Warning of danger}
+%\subsection{Flashy content}
 
-The \tdocenv{tdocwarn} environment is used to warn the user of a trap to avoid. Here's how to use it.
+\subsubsection{Warning of danger}
+
+The \tdocenv*{tdocwarn} environment is used to warn the user of a trap to avoid. Here's how to use it.
 
 \tdoclatexinput[sbs]{examples-focus-warn.tex}
 
@@ -620,36 +667,28 @@ Here's what you can type semantically.
 
 
 \begin{tdoclatex}[sbs]
-\tdoccls{myclass} is for...
-
-\tdocpack{mypackage} is for...
-
-\tdocmacro{onemacro} is for...
-
-\tdocenv{env} produces...
-
-We also have :
-
-\tdocenv[{[opt1]<opt2>}]{env}
+\tdoccls{myclass} is for...              \\
+\tdocpack{mypackage} is for...           \\
+\tdocmacro{onemacro} is for...           \\
+\tdocenv{env} produces...                \\
+\tdocenv[{[opt1]<opt2>}]{env}            \\
+Just \tdocenv*{env}...                   \\
+Finally \tdocenv*[{[opt1]<opt2>}]{env}...
 \end{tdoclatex}
 
 
 \begin{tdocrem}
-    The advantage of the previous macros over the use of \tdocmacro{tdocinlatex}, see the section \ref{tdoc-listing-inline} page \pageref{tdoc-listing-inline}, is the absence of colouring.
-    Furthermore, the \tdocmacro{tdocenv} macro simply asks you to type the name of the environment
-    \footnote{
-        In addition, \tdocinlatex{\tdocenv{monenv}} produces \tdocenv{monenv} with spaces to allow line breaks if necessary.
-    }
-    with any options by typing the correct delimiters
-    \footnote{
-        Remember that almost anything is possible from now on.
-    }
-    by hand.
+	Unlike \tdocmacro{tdocinlatex}, \tdocmacro{tdocenv} and \tdocmacro{tdocenv*} macros don't color the text they produce.
+    In addition, \tdocinlatex{\tdocenv{monenv}} produces \tdocenv{monenv} with spaces to allow line breaks if required.
 \end{tdocrem}
 
 
 \begin{tdocwarn}
-    The optional argument to the \tdocmacro{tdocenv} macro is copied and pasted during rendering. This can sometimes require the use of protective braces, as in the previous example.
+	The optional argument of the \tdocmacro{tdocenv} macro is copied and pasted
+    \footnote{
+        Remember that almost anything is possible from now on.
+    }
+    when rendering. This may sometimes require the use of protective braces, as in the example above.
 \end{tdocwarn}
 
 
@@ -660,10 +699,8 @@ To explain the names chosen, there is nothing like indicating and explaining the
 
 
 \begin{tdoclatex}[sbs]
-\tdocpre{sup} relates to...
-
-\tdocprewhy{sup.erbe} means...
-
+\tdocpre{sup} relates to...      \\
+\tdocprewhy{sup.erbe} means...   \\
 \emph{\tdocprewhy{sup.er} for...}
 \end{tdoclatex}
 
@@ -679,29 +716,29 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
 
-\subsection{With a coloured stripe}
+\subsection{With a coloured stripe} \label{tdoc-color-macros}
 
 \begin{tdocexa} [With default text]
-    It can be useful to show a real rendering directly in a document
+    It can be useful to show a real rendering directly in a document.
     \footnote{
         Typically when making a demo.
-    }.
+    }
     This is done via \tdocenv{tdocshowcase} as follows.
 
     \tdoclatexinput[code]{examples-showcase-default.tex}
 
 
-    The result is the following rendering
+    The result is the following rendering.
     \footnote{
         Behind the scenes, the strip is created effortlessly using the \tdocpack{clrstrip} package.
-    }.
-
-    \medskip
-
-    \input{examples-showcase-default.tex}
-
+    }
 \end{tdocexa}
 
+\input{examples-showcase-default.tex}
+
+
+
+\smallskip
 
 \begin{tdocrem}
     See the section \ref{tdoc-latexshow} on page \pageref{tdoc-latexshow} to easily obtain code followed by its actual rendering as in the previous example.
@@ -732,12 +769,32 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
 \begin{tdocnote}
-    You will have noticed that we don't obtain a pure red: behind the scenes, the expandable macros \tdocmacro{tdocbackcolor} and \tdocmacro{tdocdarkcolor} are used to create the background and title colours respectively from the ones proposed in \tdocenv{tdocshowcase}.
-    These macros have a single argument, the chosen colour, and accept the following codes.
+    You've probably noticed that red is used as a base to obtain the colors used.
+
+    \begin{itemize}
+    	\item The background color is provided by \tdocmacro{tdocbackcolor}.
+
+    	\item The color of titles and lines is provided by \tdocmacro{tdocdarkcolor}.
+    \end{itemize}
+
+    These expandable macros accept the following codes.
 
     \begin{tdoclatex}[code]
-\NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
-\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
+% Argument 1 : optionally, the amount of color relative to black can be specified.
+%              In general, there's no need to change this setting!
+% Argument 2 : a color in xcolor format.
+\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
+
+% Argument 1 : optionally, the transparency rate can be specified.
+%              In general, there's no need to change this setting!
+% Argument 2 : a color in xcolor format.
+\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
+    \end{tdoclatex}
+
+    You also have to know that behind the scene, the \tdocmacro{tdocruler} macro is used.
+
+    \begin{tdoclatex}[std]
+        \tdocruler{A decorated pseudo-title}{red}
     \end{tdoclatex}
 \end{tdocnote}
 
@@ -752,21 +809,11 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
     This will produce the following.
-
-    \medskip
-
-    \input{examples-showcase-hook.tex}
-
 \end{tdocwarn}
 
 
-\begin{tdocnote}
-    Behind the scenes, the \tdocmacro{tdocruler} macro is used.
+\input{examples-showcase-hook.tex}
 
-    \begin{tdoclatex}[std]
-        \tdocruler{Un pseudo-titre décoré}{red}
-    \end{tdoclatex}
-\end{tdocnote}
 
 
 \subsection{Without a colour strip}
@@ -814,7 +861,7 @@ It is possible not to use a coloured strip, as we will see straight away.
 To obtain renderings by importing the code from an external file, instead of typing it, simply use the \tdocmacro{tdocshowcaseinput} macro whose option uses the syntax of that of \tdocenv{tdocshowcase} and the mandatory argument corresponds to the path of the file.
 
 
-\begin{tdocexa}<nonb>
+\begin{tdocexa}
     The following was obtained via \tdocinlatex+\tdocshowcaseinput{external.tex}+.
 
     \medskip
@@ -835,8 +882,16 @@ To obtain renderings by importing the code from an external file, instead of typ
 
 \section{Use cases in \LaTeX}
 
-Documenting a package or a class is done efficiently using use cases showing both the code and the corresponding result.
+Documenting a package or class is best done through use cases showing both the code and the corresponding result.
+\footnote{
+	Code is formatted using the \tdocpack{minted} package.
+}
 
+
+\begin{tdoccaut}
+	Version 3 of \tdocpack{minted} cannot be used at the moment, as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of minted.
+
+\end{tdoccaut}
 
 
 \subsection{\tdocquote{Inline} codes} \label{tdoc-listing-inline}
@@ -860,7 +915,7 @@ Here are some examples.
     The \tdocmacro{tdocinlatex} macro can be used in a footnote: see below.
     \footnote{
         \tdocinlatex+$minted = TOP$+ has been typed \tdocinlatex|\tdocinlatex+$minted = TOP$+| in this footnote...
-    }.
+    }
     In addition, a background color is deliberately used to subtly highlight the codes \tdocinlatex#\LaTeX#\,.
 \end{tdocnote}
 
@@ -881,10 +936,10 @@ Here are some examples.
 
 
 \begin{tdocexa}[Following]
-    \tdocenv{tdoclatex} produces the following result, which corresponds to the default option \tdocinlatex#std#
+    \tdocenv{tdoclatex} produces the following result, which corresponds to the default option \tdocinlatex#std#\,.
     \footnote{
         \tdocinlatex{std} refers to the \tdocquote{standard} behaviour of \tdocpack{tcolorbox} in relation to the \tdocpack{minted} library.
-    }.
+    }
 
     \begin{tdoclatex}
         $A = B + C$
@@ -929,7 +984,7 @@ For the following codes, consider a file with the relative path \verb+examples-l
 
 \medskip
 
-The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file and offers the same options as the \tdocenv{tdoclatex} environment.
+The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file and offers the same options as the \tdocenv*{tdoclatex} environment.
 
 
 % ------------------ %
@@ -1027,7 +1082,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
 
 \begin{tdocexa}[The options available]
-    In addition to the explanatory text, it is also possible to use all the options of \tdocenv{tdocshowcase}, see \ref{tdoc-showcase} page \pageref{tdoc-showcase}.
+    In addition to the explanatory text, it is also possible to use all the options of \tdocenv*{tdocshowcase} environment, see \ref{tdoc-showcase} page \pageref{tdoc-showcase}.
     Here is an example to illustrate this.
 
     \medskip
@@ -1081,15 +1136,13 @@ You can either date something, or version it, in which case the version number c
 \end{tdocexa}
 
 
-\begin{tdocimportant}
-    \leavevmode
-
+\begin{tdocimp}
     \begin{enumerate}
         \item The \tdocmacro{tdocdate} and \tdocmacro{tdocversion} macros require two compilations.
 
         \item The final rendering of the dates takes into account the language specified when loading the package \thispack{}: for example, if French is selected, the dates will be displayed in the format \texttt{DD/MM/YYYY}.
     \end{enumerate}
-\end{tdocimportant}
+\end{tdocimp}
 
 
 \begin{tdocwarn}
@@ -1103,11 +1156,29 @@ You can either date something, or version it, in which case the version number c
 
 \subsection{What's new?}
 
-\thispack{} offers different environments to indicate quickly and clearly what has been done
+\thispack{} offers the macro \tdocmacro{tdocstartproj} and different environments to indicate quickly and clearly what has been done during the latest changes.%
 \footnote{
     The user doesn't need all the technical details.
 }
-during the latest changes.
+
+
+\begin{tdocnote}
+    For icons, see the note at the beginning of the section \ref{tdoc-colorful-focus} page \pageref{tdoc-colorful-focus}.
+\end{tdocnote}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Just for the very first version]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples-version-n-change-first.tex}
+
+\end{tdocexa}
+
+
+% ------------------ %
 
 
 \begin{tdocexa}[For new features]
@@ -1165,7 +1236,18 @@ during the latest changes.
 % ------------------ %
 
 
-\begin{tdocexa}[Chosen topics]
+\begin{tdocexa}[Selectable themes with an icon]
+    \leavevmode
+
+    \tdoclatexinput[sbs]{examples-version-n-change-user-choice-icon.tex}
+
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Selectable themes without icons]
     \leavevmode
 
     \tdoclatexinput[sbs]{examples-version-n-change-user-choice.tex}
@@ -1175,7 +1257,7 @@ during the latest changes.
 
 \section{Ornaments}
 
-Let's finish this documentation with a few small formatting tools that can be very useful.
+Let's finish this documentation with a small formatting tool that is very useful.
 
 
 \begin{tdoclatex}[sbs]
@@ -1187,27 +1269,101 @@ This works with enumerations.
 
 \begin{itemize}
     \item Underline.
-
-    \item Something else useful.
 \end{itemize}
 
 \tdocsep % Uniform behaviour.
 
 Ble, ble, ble...
-
-Bli, bli, bli...
-
-\tdocxspace % Subtle space
-            % but useful.
-
-Blo, blo, blo...
-
-Blu, blu, blu...
-
 \end{tdoclatex}
 
 
 \section{History}
+
+\small
+
+\tdocversion{1.4.0}[2024-09-28]
+
+\begin{tdocbreak}
+	\item The \tdocenv*{tdoccaution} environment has been renamed \tdocenv*{tdoccaut} for simplified input.
+
+	\item Content highlighting: examples and remarks, indicated via the \tdocenv*{tdocexa} and \tdocenv*{tdocrem} environments, are always numbered, and share the same counter.
+
+	\item The unused macro \tdocmacro{tdocxspace} has been deleted.
+\end{tdocbreak}
+
+
+\begin{tdocnew}
+    \item Change log: the \tdocmacro{tdocstartproj} macro is used to manage the case of the first public version.
+
+    \item Code factorization: the \tdocmacro{tdocicon} macro is responsible for adding icons in front of text.
+\end{tdocnew}
+
+
+\begin{tdocupdate}
+	\item Colors: the \tdocmacro{tdocdarkcolor} and \tdocmacro{tdoclightcolor} macros offer an optional argument.
+	\begin{enumerate}
+		\item \tdocmacro{tdocdarkcolor} : the amount of color in relation to black can be optionally defined.
+
+		\item \tdocmacro{tdoclightcolor} : the transparency rate can be optionally defined.
+	\end{enumerate}
+
+    \item Content highlighting: reduced space around content in colored frames.
+\end{tdocupdate}
+
+\tdocsep
+
+
+% ------------------ %
+
+
+\tdocversion{1.3.1}[2024-09-26]
+
+\begin{tdocnew}
+    \item Star version of \tdocmacro{tdocenv} to display only the environment name.
+\end{tdocnew}
+
+\tdocsep
+
+
+% ------------------ %
+
+
+\tdocversion{1.3.0}[2024-09-25]
+
+\begin{tdocprob}
+	\item Version 3 of \tdocpack{minted} cannot be used for the moment as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of \tdocpack{minted}.
+\end{tdocprob}
+
+
+\begin{tdocbreak}
+	\item The \tdocenv*{tdocimportant} environment has been renamed \tdocenv*{tdocimp} for simplified input.
+\end{tdocbreak}
+
+
+\begin{tdocnew}
+    \item Change log: proposed environments use icons.
+
+
+    \item Content highlighting: colored frames with icons are proposed for the following environments.
+    \bgroup
+    \setlength\multicolsep{5pt}
+    \begin{multicols}{3}
+        \begin{enumerate}[topsep=0pt]
+        	\item \tdocenv*{tdoccaution}
+        	\item \tdocenv*{tdocimp}
+        	\item \tdocenv*{tdocnote}
+        	\item \tdocenv*{tdoctip}
+        	\item \tdocenv*{tdocwarn}
+        \end{enumerate}
+    \end{multicols}
+    \egroup
+\end{tdocnew}
+
+\tdocsep
+
+
+% ------------------ %
+
 
 \tdocversion{1.2.0-a}[2024-08-23]
 
@@ -1266,6 +1422,6 @@ Blu, blu, blu...
 
 \tdocversion{1.0.0}[2023-11-29]
 
-First public version of the project.
+\tdocstartproj{First public version of the project.}
 
 \end{document}

@@ -70,12 +70,7 @@ def about_stable_version(project_dir):
 
         content = month_file.read_text()
 
-        match = re.search(DATE_PATTERN, content)
-
-        if match:
-            day     = match.group(1)
-            version = match.group(2)
-
+        for day, version in re.findall(DATE_PATTERN, content):
             stable_versions[version] = {
                 TAG_DAY  : day,
                 TAG_MONTH: month,

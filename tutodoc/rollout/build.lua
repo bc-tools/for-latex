@@ -23,10 +23,9 @@ checkopts   = "-interaction=nonstopmode --shell-escape"
 -- checkopts   = "-interaction=batchmode --shell-escape"
 typesetopts = checkopts
 
-
 uploadconfig = {
-    version      = "1.2.0-a [2024-08-23]",
-    announcement = "Date and version were wrong in \\ProvidesExplPackage. Sorry for the noise...",
+    version      = "1.4.0 [2024-09-28]",
+    announcement = "New macros \\tdocstartproj and \\tdocicon + Breaking changes for \\tdoccaution, \\tdocexa and \\tdocrem.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",

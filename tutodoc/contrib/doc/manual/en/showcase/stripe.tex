@@ -11,27 +11,27 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
 
-\subsection{With a coloured stripe}
+\subsection{With a coloured stripe} \label{tdoc-color-macros}
 
 \begin{tdocexa} [With default text]
-    It can be useful to show a real rendering directly in a document
+    It can be useful to show a real rendering directly in a document.
     \footnote{
         Typically when making a demo.
-    }.
+    }
     This is done via \tdocenv{tdocshowcase} as follows.
 
     \tdoclatexinput[code]{examples/showcase/default.tex}
 
-    The result is the following rendering
+    The result is the following rendering.
     \footnote{
         Behind the scenes, the strip is created effortlessly using the \tdocpack{clrstrip} package.
-    }.
-
-    \medskip
-
-    \input{examples/showcase/default.tex}
+    }
 \end{tdocexa}
 
+\input{examples/showcase/default.tex}
+
+
+\smallskip
 
 \begin{tdocrem}
     See the section \ref{tdoc-latexshow} on page \pageref{tdoc-latexshow} to easily obtain code followed by its actual rendering as in the previous example.
@@ -60,12 +60,32 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
 \begin{tdocnote}
-    You will have noticed that we don't obtain a pure red: behind the scenes, the expandable macros \tdocmacro{tdocbackcolor} and \tdocmacro{tdocdarkcolor} are used to create the background and title colours respectively from the ones proposed in \tdocenv{tdocshowcase}.
-    These macros have a single argument, the chosen colour, and accept the following codes.
+    You've probably noticed that red is used as a base to obtain the colors used.
+
+    \begin{itemize}
+    	\item The background color is provided by \tdocmacro{tdocbackcolor}.
+
+    	\item The color of titles and lines is provided by \tdocmacro{tdocdarkcolor}.
+    \end{itemize}
+
+    These expandable macros accept the following codes.
 
     \begin{tdoclatex}[code]
-\NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
-\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
+% Argument 1 : optionally, the amount of color relative to black can be specified.
+%              In general, there's no need to change this setting!
+% Argument 2 : a color in xcolor format.
+\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
+
+% Argument 1 : optionally, the transparency rate can be specified.
+%              In general, there's no need to change this setting!
+% Argument 2 : a color in xcolor format.
+\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
+    \end{tdoclatex}
+
+    You also have to know that behind the scene, the \tdocmacro{tdocruler} macro is used.
+
+    \begin{tdoclatex}[std]
+        \tdocruler{A decorated pseudo-title}{red}
     \end{tdoclatex}
 \end{tdocnote}
 
@@ -79,19 +99,9 @@ It is sometimes useful to render code directly in the documentation. This type o
     \tdoclatexinput[code]{examples/showcase/hook.tex}
 
     This will produce the following.
-
-    \medskip
-
-    \input{examples/showcase/hook.tex}
 \end{tdocwarn}
 
 
-\begin{tdocnote}
-    Behind the scenes, the \tdocmacro{tdocruler} macro is used.
-
-    \begin{tdoclatex}[std]
-        \tdocruler{Un pseudo-titre décoré}{red}
-    \end{tdoclatex}
-\end{tdocnote}
+\input{examples/showcase/hook.tex}
 
 \end{document}

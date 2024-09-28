@@ -2,15 +2,15 @@ latex_show_start = Début du rendu réel
 latex_show_end   = Fin du rendu réel
 
 exa_title  = Exemple
-rmk_title  = Remarque
+rem_title  = Remarque
 note_title = Note
 tip_title  = Astuce
 
-important_title = Important
-caution_title   = Mise en garde
-warn_title      = Avertissement
+imp_title  = Important
+caut_title = Mise en garde
+warn_title = Avertissement
 
-chges_pb     = Problème
+chges_prob   = Problème
 chges_break  = Bifurcation
 chges_fix    = Réparation
 chges_new    = Nouveau

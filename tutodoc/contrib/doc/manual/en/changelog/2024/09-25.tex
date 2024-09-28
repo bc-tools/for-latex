@@ -1,0 +1,37 @@
+\documentclass[12pt, a4paper]{article}
+
+\input{../../preamble.cfg.tex}
+
+
+\begin{document}
+
+\begin{tdocprob}
+	\item Version 3 of \tdocpack{minted} cannot be used for the moment as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of \tdocpack{minted}.
+\end{tdocprob}
+
+
+\begin{tdocbreak}
+	\item The \tdocenv*{tdocimportant} environment has been renamed \tdocenv*{tdocimp} for simplified input.
+\end{tdocbreak}
+
+
+\begin{tdocnew}
+    \item Change log: proposed environments use icons.
+
+
+    \item Content highlighting: colored frames with icons are proposed for the following environments.
+    \bgroup
+    \setlength\multicolsep{5pt}
+    \begin{multicols}{3}
+        \begin{enumerate}[topsep=0pt]
+        	\item \tdocenv*{tdoccaution}
+        	\item \tdocenv*{tdocimp}
+        	\item \tdocenv*{tdocnote}
+        	\item \tdocenv*{tdoctip}
+        	\item \tdocenv*{tdocwarn}
+        \end{enumerate}
+    \end{multicols}
+    \egroup
+\end{tdocnew}
+
+\end{document}

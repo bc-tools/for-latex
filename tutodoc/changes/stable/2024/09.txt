@@ -1,0 +1,87 @@
+// ---------- //
+
+
+==
+28  (1.4.0)
+==
+
+-------
+:break:
+-------
+
+[[:api:]]
+Focus.
+
+    1) The ''tdoccaution'' \env has been renamed to ''tdoccaut'' for ease of use.
+
+    1) The ''tdocexa'' and ''tdocrem'' \envs are always numbered within sections, and they share the same counter (the \pack ''keytheorems'' is used behind the scene).
+
+    1) The unused macro ''\tdocxspace'' has been removed.
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+Change log: the ''\tdocstartproj'' macro is used to manage the case of the first public version.
+
+
+[[:tech:]]
+\Facto: the ''\tdocicon'' macro is responsible for adding icons in front of text.
+
+
+--------
+:update:
+--------
+
+[[:api:]]
+Colors: the macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' have an optional argument.
+
+    1) ''\tdocdarkcolor'': the amount of color relative to black can be optionally defined.
+
+    1) ''\tdoclightcolor'': the transparency ratio can be optionally defined.
+
+
+[[:format:]]
+Focus: reduced space around content in colored frames.
+
+
+// ---------- //
+
+
+==
+26  (1.3.1)
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+Macros and \envs: the ''\tdocenv'' macro has a star version which simply displays the name of the \env.
+
+
+// ---------- //
+
+
+==
+25  (1.3.0)
+==
+
+-------
+:break:
+-------
+
+[[:api:]]
+Focus: the \env ''tdocimportant'' has been renamed to ''tdocimp'' for ease of use.
+
+
+-----
+:new:
+-----
+
+[[:format:]]
+Focus: use of icons from the \fontawesome5 \pack, and two-parts colored frames (the recognition becomes better).
+
+Change log: icons from the the \fontawesome5 \pack are associated to the kind-of-\infos \env.

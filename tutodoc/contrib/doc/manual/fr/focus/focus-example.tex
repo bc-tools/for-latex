@@ -10,7 +10,7 @@
 \begin{tdocnote}
     Les environnements présentés dans cette section
     \footnote{
-        La mise en forme provient du package \tdocpack{amsthm}.
+        La mise en forme provient du package \tdocpack{keytheorems}.
     }
     ajoutent un court titre indiquant le type d'informations fournies.
     Ce court texte sera toujours traduit dans la langue indiquée lors du chargement du package \thispack{}.
@@ -18,18 +18,24 @@
 
 
 
-\subsection{Des exemples}
-
-Des exemples numérotés, ou non, s'indiquent via l'environnement \tdocenv{tdocexa} qui propose deux arguments optionnels.
-
-\begin{enumerate}
-    \item Le 1\ier{} argument entre chevrons \tdocinlatex#<...># peut prendre au choix les valeurs \tdocinlatex#nb# pour numéroter, réglage par défaut, et \tdocinlatex#nonb# pour ne pas numéroter.
-
-    \item Le 2\ieme{} argument entre crochets \tdocinlatex#[...]# sert à ajouter un mini-titre.
-\end{enumerate}
+\subsection{Du contenu dans le flot de la lecture}
 
 
-Voici différents emplois possibles.
+% ------------------ %
+
+
+\begin{tdocimp}
+    Tous les environnements présentés dans cette section partagent le même compteur.
+\end{tdocimp}
+
+
+% ------------------ %
+
+
+\subsubsection{Des exemples}
+
+Des exemples numérotés, si besoin, s'indiquent via \tdocenv{tdocexa} qui propose un argument optionnel pour ajouter un mini-titre.
+Voici deux usages possibles.
 
 \tdoclatexinput[sbs]{examples/focus/exa.tex}
 
@@ -37,18 +43,18 @@ Voici différents emplois possibles.
 % ------------------ %
 
 
-\begin{tdocimportant}
-    La numérotation des exemples est remise à zéro dès qu'une section  de niveau au moins égale à une \tdocinlatex|\subsubsection| est ouverte.
-\end{tdocimportant}
+\begin{tdocimp}
+    La numérotation des exemples est remise à zéro dès qu'une section de niveau au moins égale à une \tdocinlatex|\section| est ouverte.
+\end{tdocimp}
 
 
 % ------------------ %
 
 
 \begin{tdoctip}
-    Il peut parfois être utile de revenir à la ligne dès le début du contenu. Voici comment faire (ce tour de passe-passe reste valable pour les environnements présentés dans les sous-sections suivantes). Noter au passage que la numérotation suit celle de l'exemple précédent comme souhaité.
-
-    \tdoclatexinput[sbs]{examples/focus/exa-leavevmode.tex}
+    Il peut parfois être utile de revenir à la ligne dès le début du contenu. Le code suivant montre comment faire (ce tour de passe-passe reste valable pour l'environnement \verb#tdocrem# présenté juste après). Noter au passage que la numérotation suit celle de l'exemple précédent comme souhaité.
 \end{tdoctip}
+
+\tdoclatexinput[sbs]{examples/focus/exa-leavevmode.tex}
 
 \end{document}

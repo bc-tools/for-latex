@@ -5,10 +5,31 @@
 
 \begin{document}
 
-\subsection{A tip}
+\subsection{Flashy content} \label{tdoc-colorful-focus}
 
-The \tdocenv{tdoctip} environment is used to give tips. Here's how to use it.
+\begin{tdocnote}
+    Icons are obtained via the \tdocpack{fontawesome5} package, and text spacing is managed by the \tdocmacro{tdocicon} macro.
+    \footnote{
+        For example,
+        \tdocinlatex|\tdocicon{\faBed}{Tired}|
+        produces\,
+        \tdocicon{\faBed}{Tired}.
+    }
+\end{tdocnote}
+
+
+\subsubsection{A tip}
+
+The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
 \tdoclatexinput[sbs]{examples/focus/tip.tex}
+
+
+\smallskip
+
+\begin{tdocnote}
+    Colors are obtained via the expandable macros \tdocmacro{tdocbackcolor} and \tdocmacro{tdocdarkcolor}.
+    For further information, please refer to the end of the section \ref{tdoc-color-macros} page \pageref{tdoc-color-macros}.
+\end{tdocnote}
 
 \end{document}

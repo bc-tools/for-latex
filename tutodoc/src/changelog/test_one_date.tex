@@ -5,8 +5,8 @@
 % -------------------------- %
 
 \newcommand\docyear {2024}
-\newcommand\docmonth{08}
-\newcommand\docday  {23}
+\newcommand\docmonth{09}
+\newcommand\docday  {28}
 
 % Preparing next release
 %\renewcommand\docday{0}
@@ -31,6 +31,7 @@
 \usepackage{../focus/focus}
 \usepackage{../version-n-change/version-n-change}
 
+\input{../preamble.cfg.tex}
 
 \begin{document}
 
@@ -39,23 +40,18 @@
     \rule\linewidth{1pt}
 
     \vspace{-1em}
-    \section*{Test :
-    \ifnum\docday=0
-        Next release
-    \else
-        \docyear-\docmonth-\docday
-    \fi
-    }
+    \section*{Test: \docyear-\docmonth-\docday}
     \vspace{-.75em}
     \rule\linewidth{1pt}
 }
 
+
+\small
+
 \bigskip
 
-\ifnum\docday=0
-    \input{next}
-\else
-    \input{\docyear/\docmonth/\docday}
-\fi
+\tdocversion{1.2.3-rc}[2024-01-01]
+
+\input{\docyear/\docmonth/\docday}
 
 \end{document}

@@ -252,7 +252,7 @@ for onedir, sorted2analyze in sorted_useful_files.items():
 
 
 for srcfile in all_tex_files:
-    fordoc, thedoc = extract_from_TEX(srcfile)
+    fordoc, thedoc = extract_from_DEV_TEX(srcfile)
 
     if fordoc:
         fordoc = f"\n{fordoc}\n"
