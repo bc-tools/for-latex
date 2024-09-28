@@ -1,19 +1,9 @@
-\documentclass[10pt, a4paper]{article}
-
-\input{../preamble.cfg.tex}
-
-\usepackage[lang = french]{../main/main}
-\usepackage{../macroenv/macroenv}
-\usepackage{../showcase/showcase}
-\usepackage{../listing/listing}
-\usepackage{../inenglish/inenglish}
-
-% TESTING LOCAL IMPLEMENTATION %
-
-\usepackage{focus}
-
+\documentclass{article}
+\usepackage{tutodoc}
+\input{regression-test}
 
 \begin{document}
+\START
 
 \section{Example and then.}
 
@@ -74,5 +64,6 @@
     No number.
 \end{tdocrem}
 
+\showoutput
 
 \end{document}

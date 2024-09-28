@@ -23,7 +23,6 @@ checkopts   = "-interaction=nonstopmode --shell-escape"
 -- checkopts   = "-interaction=batchmode --shell-escape"
 typesetopts = checkopts
 
-
 uploadconfig = {
     version      = "1.3.1 [2024-09-26]",
     announcement = "\\tdocenv* just displays the name + Documentations fixed.",

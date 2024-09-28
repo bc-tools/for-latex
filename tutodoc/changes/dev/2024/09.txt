@@ -9,6 +9,57 @@ prototype updated in
 
 
 ==
+28  (1.4.0-rc.1)
+==
+
+-------
+:new:    ????
+-------
+
+ \tdocdarkcolor
+ et
+ \tdoclightcolor
+
+réglage fin mais pas utilisé en interne
+
+%%%
+% prototype::
+%     #1 : the amount of color relative to black.
+%     #2 : one color following the ''xcolor'' format.
+%
+%     :return: a "darker" version of the color ''#1''.
+%%%
+\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
+
+
+%%%
+% prototype::
+%     #1 : the transparency rate.
+%     #2 : one color following the ''xcolor'' format.
+%
+%     :return: a "transparent" version of the color `#1`.
+%%%
+\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
+
+
+
+
+-------
+:foredev:
+-------
+
+[[:test]]   ???? (revoir test en interne via instal local direct)
+Focus: tests added that had shwon finer setting is needed for colorful higlithing boxes (see above)
+
+    1) counter for example and remark
+
+    1) color for colorful env
+
+
+// ---------- //
+
+
+==
 27  (1.4.0-rc.1)
 ==
 

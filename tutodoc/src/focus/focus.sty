@@ -13,7 +13,8 @@
 \RequirePackage{tcolorbox}%
                [2024/07/10]
 
-\tcbuselibrary{breakable, skins}
+\tcbuselibrary{breakable,
+               skins}
 
 
 % == TOOLS == %
@@ -33,17 +34,19 @@
 \seq_map_inline:Nn \__g_tutodoc_focus_sober_seq {
   \str_if_eq:nnTF { #1 } { exa } {
     \newkeytheorem{tdoc#1}[
-      name   = \use:c { tutodoc@trans@#1@title },
-      within = subsection,
+      name     = \use:c { tutodoc@trans@#1@title },
+      numbered = unless-unique,
+      within   = subsection,
     ]
   } {
     \newkeytheorem{tdoc#1}[
       name       = \use:c { tutodoc@trans@#1@title },
-      numberlike = tdocexa
+      numberlike = tdocexa,
+      numbered = unless-unique
     ]
   }
 
-  \cs_set:cpn { the tdoc #1 } { \arabic{tdoc#1} }
+  % \cs_set:cpn { the tdoc #1 } { \arabic{tdoc#1} }
 }
 
 \ExplSyntaxOff
