@@ -1,0 +1,19 @@
+this::
+    date = 2023-11-16
+
+
+abrev::
+    content = :this.name:
+
+
+=====================
+Des réglages "maison"
+=====================
+
+Dans la majorité des cas, le préambule par défaut sera trop minimaliste. Heureusement, \texfacto permet de choisir la classe \etou le préambule nécessaires à la compilation de la \doc "humaine".
+
+
+content::
+    \content/for-pack.txt
+    \content/for-class.txt
+    \content/for-pack-n-class.txt

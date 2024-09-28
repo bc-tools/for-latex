@@ -1,0 +1,13 @@
+// ---------- //
+
+
+==
+06
+==
+
+--------
+:update:
+--------
+
+[[:doc:]]
+\readme: the ''readme'' folder contains simpler examples (it remains to talk about the building).
