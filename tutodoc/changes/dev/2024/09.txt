@@ -62,6 +62,9 @@ Focus: tests added that had shwon finer setting is needed for colorful higlithin
     1) color for colorful env     OK
 
 
+
+
+
 // ---------- //
 
 
@@ -78,7 +81,7 @@ Focus.
 
     1) The ''tdoccaution'' \env has been renamed to ''tdoccaut'' for ease of use.
 
-    1) The ''tdocexa'' and ''tdocrem'' \envs are always numbered, and share the same counter (the \pack ''keytheorems'' is used behind the scene).
+    1) The ''tdocexa'' and ''tdocrem'' \envs are always numbered within sections, and share the same counter (the \pack ''keytheorems'' is used behind the scene).
 
 
 -----

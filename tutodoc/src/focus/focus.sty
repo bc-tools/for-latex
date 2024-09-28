@@ -34,15 +34,13 @@
 \seq_map_inline:Nn \__g_tutodoc_focus_sober_seq {
   \str_if_eq:nnTF { #1 } { exa } {
     \newkeytheorem{tdoc#1}[
-      name     = \use:c { tutodoc@trans@#1@title },
-%      numbered = unless-unique,
-      within   = section,
+      name   = \use:c { tutodoc@trans@#1@title },
+      within = section,
     ]
   } {
     \newkeytheorem{tdoc#1}[
       name       = \use:c { tutodoc@trans@#1@title },
       numberlike = tdocexa,
-%      numbered = unless-unique
     ]
   }
 
