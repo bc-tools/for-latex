@@ -617,12 +617,8 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 \smallskip
 
 \begin{tdocnote}
-    Les couleurs sont fournies par les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor} qui admettent les codes suivants et attendent une couleur au format \tdocpack{xcolor} comme argument.
-
-    \begin{tdoclatex}[code]
-\NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
-\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
-    \end{tdoclatex}
+    Les couleurs sont obtenues via les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor}.
+    Pour des informations complémentaires à ce sujet, se repporter à la fin de la section \ref{tdoc-color-macros}.
 \end{tdocnote}
 
 
@@ -729,7 +725,7 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
 
 
-\subsection{Avec une bande colorée}
+\subsection{Avec une bande colorée} \label{tdoc-color-macros}
 
 \begin{tdocexa}[Avec les textes par défaut]
     Il peut être utile de montrer un rendu réel directement dans un document.
@@ -783,22 +779,30 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
 \begin{tdocnote}
     Vous avez sûrement remarqué que le rouge sert de base pour obtenir les couleurs utilisées.
-    
+
     \begin{itemize}
     	\item La couleur de fond est fournie par \tdocmacro{tdocbackcolor}.
 
     	\item La couleur des titres et des lignes est fournie par \tdocmacro{tdocdarkcolor}.
     \end{itemize}
-    
-    Ces macros développables et à un seul argument, la couleur choisie, admettent les codes suivants.
+
+    Ces macros développables admettent les codes suivants.
 
     \begin{tdoclatex}[code]
-\NewExpandableDocumentCommand{\tdocbackcolor}{m}{#1!5}
-\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{#1!50!black}
+% Argument 1 : de façon optionnelle, on peut indiquer la quantité de couleur
+%              relativement au noir.
+%              Il est en général inutile de modifier ce paramètre !
+% Argument 2 : une couleur au format xcolor.
+\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
+
+% Argument 1 : de façon optionnelle, on peut indiquer le taux de transparence.
+%              Il est en général inutile de modifier ce paramètre !
+% Argument 2 : une couleur au format xcolor.
+\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
     \end{tdoclatex}
 
     Il faut également savoir qu'en coulisse, la macro \tdocmacro{tdocruler} est utilisée.
-    
+
     \begin{tdoclatex}[std]
         \tdocruler{Un pseudo-titre décoré}{red}
     \end{tdoclatex}

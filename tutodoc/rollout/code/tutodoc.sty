@@ -61,7 +61,8 @@
 \RequirePackage{tcolorbox}%
                [2024/07/10]
 
-\tcbuselibrary{breakable, skins}
+\tcbuselibrary{breakable,
+               skins}
 
 
 \RequirePackage{clrstrip}%
@@ -229,24 +230,22 @@
 
 %%%
 % prototype::
-%     #1 : one color following the ''xcolor'' format.
+%     #1 : the amount of color relative to black.
+%     #2 : one color following the ''xcolor'' format.
 %
 %     :return: a "darker" version of the color ''#1''.
 %%%
-\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{%
-  #1!50!black%
-}
+\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
 
 
 %%%
 % prototype::
-%     #1 : one color following the ''xcolor'' format.
+%     #1 : the transparency rate.
+%     #2 : one color following the ''xcolor'' format.
 %
 %     :return: a "transparent" version of the color `#1`.
 %%%
-\NewExpandableDocumentCommand{\tdoclightcolor}{m}{%
-  #1!5%
-}
+\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
 
 
 % ----------- %
@@ -255,7 +254,8 @@
 
 %%%
 % prototype::
-%     #1 : one icon from the ''fontawsome5'' \pack.
+%     #1 : one material that expects to be an icon command from the
+%          ''fontawsome5'' \pack.
 %
 %     :return: the icon followed by a small insecable  space.
 %%%
@@ -329,17 +329,19 @@
 \seq_map_inline:Nn \__g_tutodoc_focus_sober_seq {
   \str_if_eq:nnTF { #1 } { exa } {
     \newkeytheorem{tdoc#1}[
-      name   = \use:c { tutodoc@trans@#1@title },
-      within = subsection,
+      name     = \use:c { tutodoc@trans@#1@title },
+      numbered = unless-unique,
+      within   = subsection,
     ]
   } {
     \newkeytheorem{tdoc#1}[
       name       = \use:c { tutodoc@trans@#1@title },
-      numberlike = tdocexa
+      numberlike = tdocexa,
+      numbered = unless-unique
     ]
   }
 
-  \cs_set:cpn { the tdoc #1 } { \arabic{tdoc#1} }
+  % \cs_set:cpn { the tdoc #1 } { \arabic{tdoc#1} }
 }
 
 \ExplSyntaxOff
