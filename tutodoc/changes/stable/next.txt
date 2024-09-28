@@ -2,7 +2,50 @@
 
 
 ==
-??  (??)
+28  (1.4.0)
 ==
 
-??
+-------
+:break:
+-------
+
+[[:api:]]
+Focus.
+
+    1) The ''tdoccaution'' \env has been renamed to ''tdoccaut'' for ease of use.
+
+    1) The ''tdocexa'' and ''tdocrem'' \envs are always numbered within sections, and they share the same counter (the \pack ''keytheorems'' is used behind the scene).
+
+    1) The unused macro ''\tdocxspace'' has been removed.
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+Colors: the macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' have an optional argument.
+
+    1) ''\tdocdarkcolor'': the amount of color relative to black can be optionally defined.
+
+    1) ''\tdoclightcolor'': the transparency ratio can be optionally defined.
+
+
+[[:tech:]]
+\Facto: the ''\tdocicon'' macro is responsible for adding icons in front of text.
+
+
+--------
+:update:
+--------
+
+[[:format:]]
+Focus: reduced space around content in colored frames.
+
+
+[[:api:]]
+Colors: the macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' have an optional argument.
+
+    1) ''\tdocdarkcolor'': the amount of color relative to black can be optionally defined.
+
+    1) ''\tdoclightcolor'': the transparency ratio can be optionally defined.

@@ -2,7 +2,7 @@
 
 
 ==
-27  (1.4.0)
+28  (1.4.0)
 ==
 
 -------
@@ -14,7 +14,9 @@ Focus.
 
     1) The ''tdoccaution'' \env has been renamed to ''tdoccaut'' for ease of use.
 
-    1) The ''tdocexa'' and ''tdocrem'' \envs are always numbered, and share the same counter (the \pack ''keytheorems'' is used behind the scene).
+    1) The ''tdocexa'' and ''tdocrem'' \envs are always numbered within sections, and they share the same counter (the \pack ''keytheorems'' is used behind the scene).
+
+    1) The unused macro ''\tdocxspace'' has been removed.
 
 
 -----
@@ -22,7 +24,11 @@ Focus.
 -----
 
 [[:api:]]
-Change log: the ''\tdocstartproj'' macro is used to manage the case of the first public version.
+Colors: the macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' have an optional argument.
+
+    1) ''\tdocdarkcolor'': the amount of color relative to black can be optionally defined.
+
+    1) ''\tdoclightcolor'': the transparency ratio can be optionally defined.
 
 
 [[:tech:]]
@@ -35,6 +41,14 @@ Change log: the ''\tdocstartproj'' macro is used to manage the case of the first
 
 [[:format:]]
 Focus: reduced space around content in colored frames.
+
+
+[[:api:]]
+Colors: the macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' have an optional argument.
+
+    1) ''\tdocdarkcolor'': the amount of color relative to black can be optionally defined.
+
+    1) ''\tdoclightcolor'': the transparency ratio can be optionally defined.
 
 
 // ---------- //
