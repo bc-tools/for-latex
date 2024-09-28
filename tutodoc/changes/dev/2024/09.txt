@@ -16,6 +16,8 @@ prototype updated in
 :new:
 -------
 
+
+\tdocxspace virée : inutile!!!
  \tdocdarkcolor
  et
  \tdoclightcolor
