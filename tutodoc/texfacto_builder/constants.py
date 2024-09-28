@@ -123,6 +123,9 @@ CMD_ARG_PATTERN = re.compile('#(\d+)')
 DATE_PATTERN = re.compile(r"==\n(\d+)\s+\((.+)\)\n==")
 
 
+VERSION_EQUAL_PATTERN = re.compile(r"==\n(\d+)\s+\((.+)\)\n==")
+
+
 TITLE_PATTERNS = [
     re.compile(
           r"% ("

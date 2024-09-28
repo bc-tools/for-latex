@@ -12,6 +12,8 @@
 x-*-x.*
 x-*-x/
 
+*.unq
+
 
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,latex,tex,python,lua

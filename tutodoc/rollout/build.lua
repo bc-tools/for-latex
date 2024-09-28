@@ -39,3 +39,43 @@ uploadconfig = {
     bugtracker   = "https://github.com/bc-tools/for-latex/issues",
     note         = [[Uploaded automatically by l3build...]]
 }
+
+
+------------------------------
+-- New command line options --
+------------------------------
+
+VIEW_TAG = "view"
+
+function viewPDF(xtra_args)
+  if xtra_args == nil or #xtra_args ~= 1
+  then
+    print("One single tesfile name needed!")
+    return 1
+  end
+
+  testfilename = xtra_args[1]
+  pdffile = "build/test/" .. testfilename .. ".pdf"
+
+  if fileexists(pdffile) == false
+  then
+    print("No PDF file found.\nSee: " .. pdffile)
+    return 1
+  end
+
+  trycmd = run(".", "open " .. '"' .. pdffile .. '"')
+
+  if trycmd ~= 0
+  then
+    print("No command to open PDF files.\nSee: " .. pdffile)
+  end
+
+  return 0
+end
+
+target_list[VIEW_TAG] = {
+  func = viewPDF,
+  desc = "Open a PDF of tested files",
+--   pre = function(xtra_args)
+--   end
+}
