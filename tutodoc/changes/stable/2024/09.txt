@@ -24,11 +24,7 @@ Focus.
 -----
 
 [[:api:]]
-Colors: the macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' have an optional argument.
-
-    1) ''\tdocdarkcolor'': the amount of color relative to black can be optionally defined.
-
-    1) ''\tdoclightcolor'': the transparency ratio can be optionally defined.
+Change log: the ''\tdocstartproj'' macro is used to manage the case of the first public version.
 
 
 [[:tech:]]
@@ -39,16 +35,16 @@ Colors: the macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' have an optional a
 :update:
 --------
 
-[[:format:]]
-Focus: reduced space around content in colored frames.
-
-
 [[:api:]]
 Colors: the macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' have an optional argument.
 
     1) ''\tdocdarkcolor'': the amount of color relative to black can be optionally defined.
 
     1) ''\tdoclightcolor'': the transparency ratio can be optionally defined.
+
+
+[[:format:]]
+Focus: reduced space around content in colored frames.
 
 
 // ---------- //

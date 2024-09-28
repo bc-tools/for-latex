@@ -25,11 +25,7 @@ texfacto met a jout l3build pour date et version !
 
 
 [[:test]]   ???? (revoir test en interne via instal local direct)
-Focus: tests added that had shwon finer setting is needed for colorful higlithing boxes (see above)
-
-    1) counter for example and remark   KO (test ok mais macros KO)
-
-    1) color for colorful env     OK
+Focus: counter for example and remark   KO (test ok mais macros KO)
 
 
 

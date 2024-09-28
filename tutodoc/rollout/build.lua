@@ -24,8 +24,8 @@ checkopts   = "-interaction=nonstopmode --shell-escape"
 typesetopts = checkopts
 
 uploadconfig = {
-    version      = "1.3.1 [2024-09-26]",
-    announcement = "\\tdocenv* just displays the name + Documentations fixed.",
+    version      = "1.4.0 [2024-09-28]",
+    announcement = "New macros \\tdocstartproj and \\tdocicon + Breaking changes for \\tdoccaution, \\tdocexa and \\tdocrem.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",
