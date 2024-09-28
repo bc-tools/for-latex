@@ -29,12 +29,20 @@ Colors: the macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' have an optional a
 :fordev:
 --------
 
-[[:test]]
-Focus: tests on colored frames showed that finer adjustment could be necessary (see above).
+[[:test:]]
+Focus.
+
+    1) Tests on colored frames showed that finer adjustment could be necessary (see above).
+
+    1) Test about numbering of examples and remarks.
 
 
-[[:tech]]
+[[:tech:]]
 \tnsdoc: all files look good now.
+
+
+[[:flow:]]
+\texfacto \poc: in the path::''rollout/l3build.lua'' file, the lua::''version'' \arg is automatically updated.
 
 
 // ---------- //

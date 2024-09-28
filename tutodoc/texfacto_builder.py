@@ -198,14 +198,13 @@ for kind, prebuilder in [
     )
 
 
-# --------------------------- #
-# -- FINAL PRODUCT - START -- #
-# --------------------------- #
+# ------------------- #
+# -- FINAL PRODUCT -- #
+# ------------------- #
 
 print_frame(
     metadata[TAG_PROJ_NAME],
     "FINAL PRODUCT",
-    "(start)"
 )
 
 def ugly_hack(content):
@@ -213,9 +212,54 @@ def ugly_hack(content):
         "{examples/listing/xyz.tex}",
         "{examples-listing-xyz.tex}",
     )
+
     return content
 
 finalize(
     metadata  = metadata,
     ugly_hack = ugly_hack
 )
+
+
+# ------------------------------------- #
+# -- USER'S ''l3build.lua'' - UPDATE -- #
+# ------------------------------------- #
+
+print_frame(
+    metadata[TAG_PROJ_NAME],
+    "USER'S ''l3build.lua''",
+    "UPDATE"
+)
+
+l3build_file = metadata[TAG_ROLLOUT] / "build.lua"
+
+l3build_content  = []
+look_for_version = False
+
+for line in l3build_file.read_text().split('\n'):
+    short_line = line.strip()
+
+    if short_line.startswith("uploadconfig"):
+        look_for_version = True
+
+    elif look_for_version:
+        if short_line.startswith("version"):
+            before, _ , _ = line.partition("=")
+            last_version  = metadata[TAG_VERSIONS][TAG_LAST]
+
+            lv_nb    = last_version[TAG_NB]
+            lv_year  = last_version[TAG_YEAR]
+            lv_month = last_version[TAG_MONTH]
+            lv_day   = last_version[TAG_DAY]
+
+            line = f'{before}= "{lv_nb} [{lv_year}-{lv_month}-{lv_day}]",'
+
+    l3build_content.append(line)
+
+l3build_content = '\n'.join(l3build_content)
+
+l3build_file.write_text(l3build_content)
+
+print("+ DON'T FORGET TO DESCRIBE THE LAST VERSION!")
+print()
+print(f"  --> {l3build_file}")

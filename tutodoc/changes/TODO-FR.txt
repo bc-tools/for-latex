@@ -6,28 +6,20 @@ tutodoc - TODO
 NOW
 ---
 
-
 > ---------------------------- <
 
+classe + package car il y a des choix esthétique
 
---------
-:fordev:
---------
+    + class pour une mef perso :
+        --> police, marge
+        --> couleur / noir-et-blanc
 
-????
-texfacto met a jout l3build pour date et version !
-
-
-[[:test]]   ???? (revoir test en interne via instal local direct)
-Focus: counter for example and remark   KO (test ok mais macros KO)
-
-
+    + pack pour le reste
 
 
 -----
 LATER
 -----
-
 
 > ---------------------------- <
 
@@ -37,9 +29,7 @@ cleaner code
 
     ---> respecter mes specs latex : on isole les messages par exemple!
 
-    ---> classe + package car il y a des choix esthétique
-         + class pour une mef perso : police, marge
-         + pack pour le reste
+
 
 
 > ---------------------------- <
