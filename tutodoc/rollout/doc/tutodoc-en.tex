@@ -382,14 +382,14 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \maketitle
 
 \begin{abstract}
-    The \thispack{} package
+    The \thispack{} package\,%
     \footnote{
         The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
     }
-    is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style
+    is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style,%
     \footnote{
         The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
-    },
+    }
     and with a sober rendering for reading on screen.
 
     \medskip
@@ -668,18 +668,12 @@ Here's what you can type semantically.
 
 
 \begin{tdoclatex}[sbs]
-\tdoccls{myclass} is for...
-
-\tdocpack{mypackage} is for...
-
-\tdocmacro{onemacro} is for...
-
-\tdocenv{env} produces...
-
-Just \tdocenv*{env}...
-
-\tdocenv[{[opt1]<opt2>}]{env}
-
+\tdoccls{myclass} is for...              \\
+\tdocpack{mypackage} is for...           \\
+\tdocmacro{onemacro} is for...           \\
+\tdocenv{env} produces...                \\
+\tdocenv[{[opt1]<opt2>}]{env}            \\
+Just \tdocenv*{env}...                   \\
 Finally \tdocenv*[{[opt1]<opt2>}]{env}...
 \end{tdoclatex}
 
@@ -706,10 +700,8 @@ To explain the names chosen, there is nothing like indicating and explaining the
 
 
 \begin{tdoclatex}[sbs]
-\tdocpre{sup} relates to...
-
-\tdocprewhy{sup.erbe} means...
-
+\tdocpre{sup} relates to...      \\
+\tdocprewhy{sup.erbe} means...   \\
 \emph{\tdocprewhy{sup.er} for...}
 \end{tdoclatex}
 
@@ -1278,7 +1270,6 @@ This works with enumerations.
 
 \begin{itemize}
     \item Underline.
-
     \item Something else useful.
 \end{itemize}
 
@@ -1288,8 +1279,7 @@ Ble, ble, ble...
 
 Bli, bli, bli...
 
-\tdocxspace % Subtle space
-            % but useful.
+\tdocxspace % Subtle space but useful.
 
 Blo, blo, blo...
 
