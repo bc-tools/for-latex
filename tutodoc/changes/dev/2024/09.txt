@@ -25,6 +25,10 @@ Colors: the macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' have an optional a
     1) ''\tdoclightcolor'': the transparency ratio can be optionally defined.
 
 
+[[:format:]]
+Versions: better vertical spacing thanks to ''\vphantom{Mp}''.
+
+
 --------
 :fordev:
 --------

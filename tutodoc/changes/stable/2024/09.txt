@@ -44,7 +44,11 @@ Colors: the macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' have an optional a
 
 
 [[:format:]]
-Focus: reduced space around content in colored frames.
+Two enhancements.
+
+    1) Focus: reduced space around content in colored frames.
+
+    1) Versions: better vertical spacing thanks to ''\vphantom{Mp}''.
 
 
 // ---------- //

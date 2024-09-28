@@ -8,6 +8,11 @@ NOW
 
 > ---------------------------- <
 
+version+date espace avec ligne du haut !!!
+\vphantom{Mp}
+
+> ---------------------------- <
+
 classe + package car il y a des choix esthétique
 
     + class pour une mef perso :
