@@ -160,7 +160,8 @@
 %%%
 % prototype::
 %     #1 : a title that will be followed by a colon.
-%     #2 : XXXX
+%     #2 : one material that expects to be an icon command from the
+%          ''fontawsome5'' \pack.
 %
 %     :action: this environment prints some ¨infos about specific changes
 %              achieved in a new version (no special formatting is applied).
@@ -182,6 +183,9 @@
 
 % :: CHANGES - NEW THINGS :: %
 
+%%%
+% We use a ''prop'' variable to factorize the code just after.
+%%%
 \prop_new:N              \__g_tutodoc_topic_change_prop
 \prop_set_from_keyval:Nn \__g_tutodoc_topic_change_prop {
   break  = \faCodeBranch,
@@ -193,11 +197,12 @@
 
 
 %%%
-% prototype::   YYY
+% prototype::
 %     :see: env.tdoctopic
 %
-%     :action: similar to the \env ''tdoctopic'' with the title "New"
-%              translated into the good language.
+%     :action: ''key/value'' iteration over ''\__g_tutodoc_topic_change_prop''
+%              to build topic-like \envs using the \env ''tdoctopic''
+%              (the title used is translated into the good language).
 %%%
 \prop_map_inline:Nn \__g_tutodoc_topic_change_prop {
   \NewDocumentEnvironment{ tdoc#1 } {} {
@@ -210,7 +215,9 @@
 
 %%%
 % prototype::
-%     #1 : ZZZ
+%     #1 : a short text expected t indicate the very first version of a project.
+%
+%     :action: the short text printed will be preceded by a pretty anchor icon.
 %%%
 \NewDocumentCommand{ \tdocstartproj }{ m } {
   \tdocicon{\faAnchor}#1

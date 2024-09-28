@@ -42,16 +42,19 @@
 %
 %     :extra: this macro has a star version.
 %
-% Here are the three kind of outputs.
+% Here are the four kind of outputs.
 %
-%     1) ''\tdocenv*{myenv}'' prints
-%        verb::''myenv''.
-%
-%     2) ''\tdocenv{myenv}'' prints
+%     1) ''\tdocenv{myenv}'' prints
 %        verb::''\begin{myenv} ... \end{myenv}''.
 %
-%     3) ''\tdocenv[{<opt1>[mando2]}]{myenv}'' prints
+%     2) ''\tdocenv[{<opt1>[mando2]}]{myenv}'' prints
 %         verb::''\begin{myenv}<opt1>[mando2] ... \end{myenv}''.
+%
+%     3) ''\tdocenv*{myenv}'' prints
+%        verb::''myenv''.
+%
+%     4) ''\tdocenv*[{<opt1>[mando2]}]{myenv}'' prints
+%        verb::''myenv''.
 %%%
 %
 % Cleaner code from https://tex.stackexchange.com/a/703379/6880 .

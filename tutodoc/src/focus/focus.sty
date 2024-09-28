@@ -25,12 +25,23 @@
 
 \ExplSyntaxOn
 
+%%%
+% We use a ''seq'' variable to factorize the code just after.
+%%%
 \seq_new:N             \__g_tutodoc_focus_sober_seq
 \seq_set_from_clist:Nn \__g_tutodoc_focus_sober_seq {
   exa,
   rem
 }
 
+
+%%%
+% prototype::
+%     :action: looping over ''\__g_tutodoc_focus_sober_seq'' to build new
+%              numbered theorems sharing the same section level counter.
+%              To achieve that, we use the ''\newkeytheorem'' macro from
+%              the ''keytheorems'' \pack.
+%%%
 \seq_map_inline:Nn \__g_tutodoc_focus_sober_seq {
   \str_if_eq:nnTF { #1 } { exa } {
     \newkeytheorem{tdoc#1}[
@@ -54,10 +65,12 @@
 
 % :: ABSTRACTION :: %
 
-% Sources used.
-%    + https://tex.stackexchange.com/a/727022/6880
-%    + https://tex.stackexchange.com/a/682332/6880
-
+%%%
+% note::
+%     The settings used come from the following sources.
+%         * https://tex.stackexchange.com/a/727022/6880
+%         * https://tex.stackexchange.com/a/682332/6880
+%%%
 \tcbset{
   tutodoc-focus-color-style/.style = {
     breakable,
@@ -78,6 +91,9 @@
 
 \ExplSyntaxOn
 
+%%%
+% We use two ''prop'' variables to factorize the code just after.
+%%%
 \prop_set_from_keyval:Nn \__g_tutodoc_focus_color_prop {
   note = cyan,
   tip  = ForestGreen,
@@ -94,6 +110,15 @@
   warn = \faSkullCrossbones,
 }
 
+
+%%%
+% prototype::
+%     :action: ''key/value'' iteration over ''\__g_tutodoc_focus_color_prop''
+%              to build new colorful unumbered theorems. To achieve that,
+%              we use a ''tcolorbox'' style givent to the ''\newkeytheorem''
+%              macro from the ''keytheorems'' \pack, and icons from the
+%              ''fontawesome5'' \pack.
+%%%
 \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
   \newkeytheorem{tdoc#1}[
     numbered  = false,
