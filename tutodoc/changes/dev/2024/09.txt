@@ -42,7 +42,11 @@ Focus.
 
 
 [[:flow:]]
-\texfacto \poc: in the path::''rollout/l3build.lua'' file, the lua::''version'' \arg is automatically updated.
+Two major additions done.
+
+    1) \texfacto \poc: in the path::''rollout/l3build.lua'' file, the lua::''version'' \arg is automatically updated.
+
+    1) term::''l3build view mytest'' will try to open the file path::''build/test/mytest.pdf''.
 
 
 // ---------- //
