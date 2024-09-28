@@ -6,10 +6,6 @@ tutodoc - TODO
 NOW
 ---
 
-> ---------------------------- <
-
-version+date espace avec ligne du haut !!!
-\vphantom{Mp}
 
 > ---------------------------- <
 
