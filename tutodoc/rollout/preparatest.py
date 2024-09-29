@@ -1,17 +1,18 @@
 # Source: https://stackoverflow.com/a/25120960/4589608
 
 from pathlib import Path
+from random  import shuffle
 
-testfiles = """
-highlight-same-counter
-highlight-colorful
-showcase-no-stripe-page-break-1
-showcase-no-stripe-page-break-2
-tdocenv-back-return
-tdocenv-spacing-EN.luatex
-tdocenv-spacing-FR
-""".strip().split('\n')
+THIS_DIR = Path(__file__).parent
 
+TESTS_DIR = THIS_DIR / "tests"
+
+testfiles = [
+    p.stem
+    for p in TESTS_DIR.glob("*.lvt")
+]
+
+shuffle(testfiles)
 
 import multiprocessing
 import subprocess

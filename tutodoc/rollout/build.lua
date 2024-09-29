@@ -45,29 +45,39 @@ uploadconfig = {
 -- New command line options --
 ------------------------------
 
+-- Proposed by projetmbc.
+
 VIEW_TAG = "view"
 
 function viewPDF(xtra_args)
   if xtra_args == nil or #xtra_args ~= 1
   then
-    print("One single tesfile name needed!")
+    print("One single test file name needed!")
     return 1
   end
 
-  testfilename = xtra_args[1]
-  pdffile = "build/test/" .. testfilename .. ".pdf"
+  local testfilename = xtra_args[1]
 
-  if fileexists(pdffile) == false
+  -- cfr: use the variable in case builddir isn't this directory
+  local pdffile = testfilename .. ".pdf"
+
+  if fileexists(testdir .. "/" .. pdffile) == false
   then
     print("No PDF file found.\nSee: " .. pdffile)
     return 1
   end
 
-  trycmd = run(".", "open " .. '"' .. pdffile .. '"')
+-- works on Linux, but not MacOS
+  local trycmd = run(testdir, "xdg-open " .. '"' .. pdffile .. '"')
 
-  if trycmd ~= 0
-  then
-    print("No command to open PDF files.\nSee: " .. pdffile)
+  if trycmd ~= 0 then
+-- Works on MacOS, but not on Linux.
+    trycmd = run(testdir, "open " .. '"' .. pdffile .. '"')
+
+    if trycmd ~= 0
+    then
+      print("No command to open PDF files.\nSee: " .. pdffile)
+    end
   end
 
   return 0
