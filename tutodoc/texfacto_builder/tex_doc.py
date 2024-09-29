@@ -90,6 +90,9 @@ def prebuild_single_tex(
 
             about_this_change = content_from_TEX(chge_file)
 
+            # print(f"{chge_file=}")
+            # input(about_this_change)
+
             content.append(
                 f"""
 \\tdocversion{{{vers[TAG_NB]}}}[{nb_date_EN(vers)}]
@@ -116,7 +119,11 @@ def prebuild_single_tex(
     \\tdocsep
 
     {{\\small\\itshape
-        \\textbf{{Abstract.}}
+        \\vspace{{-5pt}}
+        \\begin{{center}}
+        	\\textbf{{Abstract.}}
+        \\end{{center}}
+
         {abstract_EN}
     }}
 \\end{{abstract}}

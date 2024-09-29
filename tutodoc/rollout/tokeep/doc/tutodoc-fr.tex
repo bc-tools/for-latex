@@ -15,11 +15,11 @@ Bla, bla, bla...
     Bli, bli, bli...
 \end{tdocexa}
 
-\begin{tdocexa}<nonb>
+\begin{tdocexa}
     Blo, blo, blo...
 \end{tdocexa}
 
-\begin{tdocexa}<nonb>[Superbe]
+\begin{tdocexa}[Superbe]
     Blu, blu, blu...
 \end{tdocexa}
 \end{filecontents*}
@@ -72,13 +72,13 @@ Bla, bla, bla...
 
 
 \begin{filecontents*}[overwrite]{examples-focus-important.tex}
-\begin{tdocimportant}
+\begin{tdocimp}
     Un truc important sans danger.
-\end{tdocimportant}
+\end{tdocimp}
 
-\begin{tdocimportant}[Mini titre]
+\begin{tdocimp}[Mini titre]
     Utile ?
-\end{tdocimportant}
+\end{tdocimp}
 \end{filecontents*}
 
 
@@ -542,9 +542,9 @@ Voici différents emplois possibles.
 % ------------------ %
 
 
-\begin{tdocimportant}
+\begin{tdocimp}
     La numérotation des exemples est remise à zéro dès qu'une section  de niveau au moins égale à une \tdocinlatex|\subsubsection| est ouverte.
-\end{tdocimportant}
+\end{tdocimp}
 
 
 % ------------------ %
@@ -580,7 +580,7 @@ L'environnement \tdocenv{tdocnote} sert à mettre en avant des informations util
 
 \subsection{Un truc important}
 
-L'environnement \tdocenv{tdocimportant} permet d'indiquer quelque chose d'important mais sans danger.
+L'environnement \tdocenv{tdocimp} permet d'indiquer quelque chose d'important mais sans danger.
 
 \tdoclatexinput[sbs]{examples-focus-important.tex}
 
@@ -793,7 +793,7 @@ Il est possible de ne pas utiliser une bande colorée comme nous allons le voir 
 Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \tdocmacro{tdocshowcaseinput} dont l'option reprend la syntaxe de celle de \tdocenv{tdocshowcase} et l'argument obligatoire correspond au chemin du fichier.
 
 
-\begin{tdocexa}<nonb>
+\begin{tdocexa}
     Ce qui suit a été obtenu via \tdocinlatex+\tdocshowcaseinput{external.tex}+.
 
     \medskip
@@ -1047,7 +1047,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 \end{tdocexa}
 
 
-\begin{tdocimportant}
+\begin{tdocimp}
     \leavevmode
 
     \begin{enumerate}
@@ -1055,7 +1055,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 
         \item Comme la langue indiquée pour cette documentation est le français, la date dans le rendu final est au format \texttt{JJ/MM/AAAA} alors que dans le code celle-ci devra toujours être saisie au format anglais \texttt{AAAA-MM-JJ}.
     \end{enumerate}
-\end{tdocimportant}
+\end{tdocimp}
 
 
 \begin{tdocwarn}

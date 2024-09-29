@@ -23,10 +23,9 @@ checkopts   = "-interaction=nonstopmode --shell-escape"
 -- checkopts   = "-interaction=batchmode --shell-escape"
 typesetopts = checkopts
 
-
 uploadconfig = {
-    version      = "1.2.0-a [2024-08-23]",
-    announcement = "Date and version were wrong in \\ProvidesExplPackage. Sorry for the noise...",
+    version      = "1.4.0 [2024-09-28]",
+    announcement = "New macros \\tdocstartproj and \\tdocicon + Breaking changes for \\tdoccaution, \\tdocexa and \\tdocrem.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",
@@ -39,4 +38,54 @@ uploadconfig = {
     repository   = "https://github.com/bc-tools/for-latex",
     bugtracker   = "https://github.com/bc-tools/for-latex/issues",
     note         = [[Uploaded automatically by l3build...]]
+}
+
+
+------------------------------
+-- New command line options --
+------------------------------
+
+-- Proposed by projetmbc.
+
+VIEW_TAG = "view"
+
+function viewPDF(xtra_args)
+  if xtra_args == nil or #xtra_args ~= 1
+  then
+    print("One single test file name needed!")
+    return 1
+  end
+
+  local testfilename = xtra_args[1]
+
+  -- cfr: use the variable in case builddir isn't this directory
+  local pdffile = testfilename .. ".pdf"
+
+  if fileexists(testdir .. "/" .. pdffile) == false
+  then
+    print("No PDF file found.\nSee: " .. pdffile)
+    return 1
+  end
+
+-- works on Linux, but not MacOS
+  local trycmd = run(testdir, "xdg-open " .. '"' .. pdffile .. '"')
+
+  if trycmd ~= 0 then
+-- Works on MacOS, but not on Linux.
+    trycmd = run(testdir, "open " .. '"' .. pdffile .. '"')
+
+    if trycmd ~= 0
+    then
+      print("No command to open PDF files.\nSee: " .. pdffile)
+    end
+  end
+
+  return 0
+end
+
+target_list[VIEW_TAG] = {
+  func = viewPDF,
+  desc = "Open a PDF of tested files",
+--   pre = function(xtra_args)
+--   end
 }

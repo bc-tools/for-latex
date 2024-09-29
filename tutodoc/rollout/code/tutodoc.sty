@@ -9,8 +9,8 @@
 
 \ProvidesExplPackage
   {tutodoc}
-  {2024-08-23}  % Creation: 2023-11-29
-  {1.2.0-a}
+  {2024-09-28}  % Creation: 2023-11-29
+  {1.4.0}
   {This package proposes tools for writing "human friendly" documentations of LaTeX packages.}
 
 
@@ -48,17 +48,41 @@
                [2022-09-14]
 
 
-\RequirePackage{amsthm}%
-               [2017/09]
+\RequirePackage{fontawesome5}%
+               [2022-05-02]
+
+\RequirePackage{keytheorems}%
+               [2024/09/19]
+
+\RequirePackage[svgnames]%
+               {xcolor}%
+               [2023/11/15]
+
+\RequirePackage{tcolorbox}%
+               [2024/07/10]
+
+\tcbuselibrary{breakable,
+               skins}
 
 
 \RequirePackage{clrstrip}%
                [2021-08-28]
 
 
-\RequirePackage{tcolorbox}[2023/06/19]
+%\RequirePackage[highlightmode = immediate]% Too slow!
+%               {minted}%
+%               [2024/09/22]
+
+\RequirePackage{minted2}% Temporary patch.
+
+\RequirePackage{tcolorbox}%
+               [2024/07/10]
+
 \tcbuselibrary{minted, breakable, skins}
 
+
+\RequirePackage{fontawesome5}%
+               [2022-05-02]
 
 \RequirePackage{marginnote}%
                [2023-09-07]
@@ -200,6 +224,46 @@
 \DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
 
 
+% --------------------------- %
+% -- COLOR TRANSFORMATIONS -- %
+% --------------------------- %
+
+%%%
+% prototype::
+%     #1 : the amount of color relative to black.
+%     #2 : one color following the ''xcolor'' format.
+%
+%     :return: a "darker" version of the color ''#1''.
+%%%
+\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
+
+
+%%%
+% prototype::
+%     #1 : the transparency rate.
+%     #2 : one color following the ''xcolor'' format.
+%
+%     :return: a "transparent" version of the color `#1`.
+%%%
+\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
+
+
+% ----------- %
+% -- ICONS -- %
+% ----------- %
+
+%%%
+% prototype::
+%     #1 : one material that expects to be an icon command from the
+%          ''fontawsome5'' \pack.
+%
+%     :return: the icon followed by a small insecable  space.
+%%%
+\NewDocumentCommand{\tdocicon}{m}{%
+  #1\kern.45em%
+}
+
+
 % ------------- %
 % -- QUOTING -- %
 % ------------- %
@@ -246,134 +310,129 @@
 }
 
 
-% --------------------------- %
-% -- FOCUS ON SOME CONTENT -- %
-% --------------------------- %
+% ----------------------------------- %
+% -- SOBER HIGHLIGHTING OF CONTENT -- %
+% ----------------------------------- %
 
-% ::::::::::::::::::::::::::::::: %
-% :: EXAMPLE - HIDDEN VERSIONS :: %
-% ::::::::::::::::::::::::::::::: %
-
-%%%
-% See the \doc of the macro ''\newtheorem'' from the package ''amsthm''
-% to have \infos about the environment ''@@tdocexa@nb''.
-%%%
-\newtheorem{@@tdocexa@nb}{\tutodoc@trans@exa@title}%
-                         [subsubsection]
-
-%%%
-% We redefine the counter associated to the environment ''@@tdocexa@nb''
-% to obtain only one single arabic number.
-%%%
-\renewcommand{\the@@tdocexa@nb}{\arabic{@@tdocexa@nb}}
-
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''@@tdocexa@no@nb''.
-%%%
-\newtheorem*{@@tdocexa@no@nb}{\tutodoc@trans@exa@title}
-
-
-% :::::::::::::::::::::::::::::: %
-% :: EXAMPLE - PUBLIC VERSION :: %
-% :::::::::::::::::::::::::::::: %
+% :::::::::::::::::::::: %
+% :: EXAMPLE - REMARK :: %
+% :::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
-\msg_set:nnnn { tdoc } { env-tdocexa-unknown-option }
-  { Unknown ~ rafters ~ option. }
-  { See ~ the ~ documentation ~ for ~ the ~ supported ~ options. }
+%%%
+% We use a ''seq'' variable to factorize the code just after.
+%%%
+\seq_new:N             \__g_tutodoc_focus_sober_seq
+\seq_set_from_clist:Nn \__g_tutodoc_focus_sober_seq {
+  exa,
+  rem
+}
 
-\NewDocumentEnvironment{tdocexa}{D<>{nb} O{}}{
-  \str_case:nnF { #1 } {
-    { nb   } {
-      \begin{@@tdocexa@nb}[#2]
-    }
-    { nonb } {
-      \begin{@@tdocexa@no@nb}[#2]
-    }
-  }{
-    \msg_error:nn { tdoc } { env-tdocexa-unknown-option }
+
+%%%
+% prototype::
+%     :action: looping over ''\__g_tutodoc_focus_sober_seq'' to build new
+%              numbered theorems sharing the same section level counter.
+%              To achieve that, we use the ''\newkeytheorem'' macro from
+%              the ''keytheorems'' \pack.
+%%%
+\seq_map_inline:Nn \__g_tutodoc_focus_sober_seq {
+  \str_if_eq:nnTF { #1 } { exa } {
+    \newkeytheorem{tdoc#1}[
+      name   = \use:c { tutodoc@trans@#1@title },
+      within = section,
+    ]
+  } {
+    \newkeytheorem{tdoc#1}[
+      name       = \use:c { tutodoc@trans@#1@title },
+      numberlike = tdocexa,
+    ]
   }
-}{
-  \str_case:nnF { #1 } {
-    { nb   } {
-      \end{@@tdocexa@nb}
-    }
-    { nonb } {
-      \end{@@tdocexa@no@nb}
-    }
-  }{}
+
+  \cs_set:cpn { the tdoc #1 } { \thesection\arabic{tdoc#1} }
 }
 
 \ExplSyntaxOff
 
 
-% :::::::::::: %
-% :: REMARK :: %
-% :::::::::::: %
+% -------------------------------------- %
+% -- COLORFUL HIGHLIGHTING OF CONTENT -- %
+% -------------------------------------- %
+
+% ::::::::::::::::: %
+% :: ABSTRACTION :: %
+% ::::::::::::::::: %
 
 %%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''tdocrem''.
+% note::
+%     The settings used come from the following sources.
+%         * https://tex.stackexchange.com/a/727022/6880
+%         * https://tex.stackexchange.com/a/682332/6880
 %%%
-\newtheorem*{tdocrem}{\tutodoc@trans@rmk@title}
+\tcbset{
+  tutodoc-focus-color-style/.style = {
+    breakable,
+    enhanced,
+    left         = 3pt,
+    right        = 3pt,
+    fontupper    = \color{\tdocdarkcolor{#1}},
+    colback      = \tdoclightcolor{#1},
+    colframe     = #1!75!black!45,
+    shadow       = {.75mm}{-.75mm}{0mm}{black!30},
+% We want to use the same color for the footnotes in the frame.
+    before upper = {\let\default@color\current@color},
+ }
+}
 
 
-% ::::::::::::::: %
-% :: IMPORTANT :: %
-% ::::::::::::::: %
+% ::::::::::::::::::::::::::::::::::::: %
+% :: LET'S GO BACK TO THE REAL WORLD :: %
+% ::::::::::::::::::::::::::::::::::::: %
 
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''tdocimportant''.
-%%%
-\newtheorem*{tdocimportant}{\tutodoc@trans@important@title}
-
-
-% :::::::::: %
-% :: NOTE :: %
-% :::::::::: %
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''tdocnote''.
-%%%
-\newtheorem*{tdocnote}{\tutodoc@trans@note@title}
-
-
-% ::::::::: %
-% :: TIP :: %
-% ::::::::: %
+\ExplSyntaxOn
 
 %%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''tdoctip''.
+% We use two ''prop'' variables to factorize the code just after.
 %%%
-\newtheorem*{tdoctip}{\tutodoc@trans@tip@title}
+\prop_set_from_keyval:Nn \__g_tutodoc_focus_color_prop {
+  note = cyan,
+  tip  = ForestGreen,
+  imp  = orange,
+  caut = violet,
+  warn = red,
+}
 
+\prop_set_from_keyval:Nn \__g_tutodoc_focus_icon_prop {
+  note = \faInfoCircle,
+  tip  = \faLightbulb,
+  imp  = \faHighlighter,
+  caut = \faBiohazard,
+  warn = \faSkullCrossbones,
+}
 
-% ::::::::::::: %
-% :: CUATION :: %
-% ::::::::::::: %
-
-%%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''tdoccaution''.
-%%%
-\newtheorem*{tdoccaution}{\tutodoc@trans@caution@title}
-
-
-% ::::::::::::: %
-% :: WARNING :: %
-% ::::::::::::: %
 
 %%%
-% See the \doc of the macro ''\newtheorem*'' from the package ''amsthm''
-% to have \infos about the environment ''tdocwarn''.
+% prototype::
+%     :action: ''key/value'' iteration over ''\__g_tutodoc_focus_color_prop''
+%              to build new colorful unumbered theorems. To achieve that,
+%              we use a ''tcolorbox'' style givent to the ''\newkeytheorem''
+%              macro from the ''keytheorems'' \pack, and icons from the
+%              ''fontawesome5'' \pack.
 %%%
-\newtheorem*{tdocwarn}{\tutodoc@trans@warn@title}
+\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+  \newkeytheorem{tdoc#1}[
+    numbered  = false,
+%  tcolorbox-no-titlebar can be used.
+    tcolorbox = {tutodoc-focus-color-style=#2},
+    name      = {
+      \tdocicon{ \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } }
+      \use:c { tutodoc@trans@#1@title }
+    },
+  ]
+}
+
+\ExplSyntaxOff
 
 
 % ---------------------------------------------- %
@@ -418,16 +477,32 @@
 %     #1 : hard typed options with the good delimiters
 %     #2 : the name of an environment
 %
-%     :action: ''\tdocenv{myenv}'' prints verb::''\begin{myenv} ... \end{myenv}''
-%              or something like verb::''\begin{myenv}<opt1> ... \end{myenv}'',
-%              the spaces being secable.
+%     :extra: this macro has a star version.
+%
+% Here are the four kind of outputs.
+%
+%     1) ''\tdocenv{myenv}'' prints
+%        verb::''\begin{myenv} ... \end{myenv}''.
+%
+%     2) ''\tdocenv[{<opt1>[mando2]}]{myenv}'' prints
+%         verb::''\begin{myenv}<opt1>[mando2] ... \end{myenv}''.
+%
+%     3) ''\tdocenv*{myenv}'' prints
+%        verb::''myenv''.
+%
+%     4) ''\tdocenv*[{<opt1>[mando2]}]{myenv}'' prints
+%        verb::''myenv''.
 %%%
 %
 % Cleaner code from https://tex.stackexchange.com/a/703379/6880 .
-\NewDocumentCommand{\tdocenv}{O{}m}{%
-  \texttt{\string\begin\string{#2\string}#1 %
-          \!\!...\@\!\!\! %
-          \string\end\string{#2\string}}%
+\NewDocumentCommand{\tdocenv}{s O{} m}{%
+  \IfBooleanTF{#1}{%
+  	\texttt{#3}%
+  }{%
+    \texttt{\string\begin\string{#3\string}#2 %
+            \!\!...\@\!\!\! %
+            \string\end\string{#3\string}}%
+  }%
 }
 
 
@@ -544,32 +619,6 @@
 }
 
 \ExplSyntaxOff
-
-
-% ::::::::::::::::::::::::::: %
-% :: COLOR TRANSFORMATIONS :: %
-% ::::::::::::::::::::::::::: %
-
-%%%
-% prototype::
-%     #1 : one color following the ''xcolor'' format.
-%
-%     :return: a "darker" version of the color ''#1''.
-%%%
-\NewExpandableDocumentCommand{\tdocdarkcolor}{m}{%
-  #1!50!black%
-}
-
-
-%%%
-% prototype::
-%     #1 : one color following the ''xcolor'' format.
-%
-%     :return: a "transparent" version of the color `#1`.
-%%%
-\NewExpandableDocumentCommand{\tdoclightcolor}{m}{%
-  #1!5%
-}
 
 
 % ::::::::::::::::::::::::::: %
@@ -742,6 +791,11 @@
 \ExplSyntaxOn
 
 %%%
+% prototype::
+%     #1 : a style of formatting for a \latex listing and its output.
+%
+%     :see: macro.tdoclatex , macro.tdoclatexinput
+%
 % In the following easy-to-understand macro, we use one fictive ''tcolorbox''
 % style such as to indicate an unknown ''tdoc'' style to the user.
 % For example, this can give one message similar to the following one.
@@ -777,6 +831,7 @@
   tdoclatex_tcbstyle/.style = {
     minted language = latex,
     breakable,
+    enhanced,
 % Code and output
     colback = yellow!5,
 % Frame
@@ -788,7 +843,6 @@
 % We can use  ''sharp corners'' to obtain an "old school" style.
 %
 % Separating line
-    enhanced,
     segmentation style = {
       gray,
       dash pattern = {on 5pt off 2.5pt},
@@ -825,7 +879,7 @@
 
 %%%
 % prototype::
-%     #1 : :see: \newtcblisting{tdoclatex}.
+%     #1 : :see: ''\newtcblisting{tdoclatex}'' just before.
 %     #2 : the path of the file to input and format.
 %
 % note::
@@ -935,7 +989,7 @@
 
     \IfBlankTF{#2}{}{
       \par
-        #2
+        #2\vphantom{Mp}
       \par
     }
 
@@ -945,7 +999,7 @@
       }
 
       \par
-        \__tdoc_translate_date:n { #3 }
+        \__tdoc_translate_date:n { #3 }\vphantom{Mp}
       \par
     }
 
@@ -984,6 +1038,8 @@
                        {#2}
                        {#3}
 }
+
+\ExplSyntaxOff
 
 
 % :::::::::::::::::::::: %
@@ -1027,15 +1083,17 @@
 %%%
 \NewDocumentCommand{\tdocdate}{O{blue} m}{
   \tutodoc@new@change@margin{#1}      % Color
-                         {#2}      % Date
-                         {}        % Version
-                         {-5.35pt} % Last negative spacing
+                            {#2}      % Date
+                            {}        % Version
+                            {-5.35pt} % Last negative spacing
 }
 
 
 % --------------------- %
 % -- CHANGES - WHAT? -- %
 % --------------------- %
+
+\ExplSyntaxOn
 
 % :::::::::::::: %
 % :: MESSAGES :: %
@@ -1053,16 +1111,18 @@
 %%%
 % prototype::
 %     #1 : a title that will be followed by a colon.
+%     #2 : one material that expects to be an icon command from the
+%          ''fontawsome5'' \pack.
 %
 %     :action: this environment prints some ¨infos about specific changes
 %              achieved in a new version (no special formatting is applied).
 %%%
-\NewDocumentEnvironment{tdoctopic}{ m }{
+\NewDocumentEnvironment{tdoctopic}{ m O{} }{
   \IfBlankT{#1}{
     \msg_fatal:nn { tdoc } { changes-topic-missing-title }
-  }
-
-  \textbf{
+  }%
+  \textbf{%
+    \IfBlankF{#2}{\tdocicon{#2}}%
     \textsc{#1.}
   }
 
@@ -1077,88 +1137,43 @@
 % :::::::::::::::::::::::::: %
 
 %%%
-% prototype::
-%     :see: env.tdoctopic
-%
-%     :action: similar to the \env ''tdoctopic'' with the title "New"
-%              translated into the good language.
+% We use a ''prop'' variable to factorize the code just after.
 %%%
-\NewDocumentEnvironment{tdocnew}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@new}
-}{
-  \end{tdoctopic}
+\prop_new:N              \__g_tutodoc_topic_change_prop
+\prop_set_from_keyval:Nn \__g_tutodoc_topic_change_prop {
+  break  = \faCodeBranch,
+  fix    = \faWrench,
+  new    = \faGem,
+  prob   = \faFire*,
+  update = \faMagic,
 }
 
 
-% :::::::::::::::::::::: %
-% :: CHANGES - UPDATE :: %
-% :::::::::::::::::::::: %
-
 %%%
 % prototype::
 %     :see: env.tdoctopic
 %
-%     :action: similar to the \env ''tdoctopic'' with the title "Update"
-%              translated into the good language.
+%     :action: ''key/value'' iteration over ''\__g_tutodoc_topic_change_prop''
+%              to build topic-like \envs using the \env ''tdoctopic''
+%              (the title used is translated into the good language).
 %%%
-\NewDocumentEnvironment{tdocupdate}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@update}
-}{
-  \end{tdoctopic}
+\prop_map_inline:Nn \__g_tutodoc_topic_change_prop {
+  \NewDocumentEnvironment{ tdoc#1 } {} {
+    \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } [ #2 ]
+  }{
+    \end{tdoctopic}
+  }
 }
 
 
-% ::::::::::::::::::::: %
-% :: CHANGES - BREAK :: %
-% ::::::::::::::::::::: %
-
 %%%
 % prototype::
-%     :see: env.tdoctopic
+%     #1 : a short text expected t indicate the very first version of a project.
 %
-%     :action: similar to the \env ''tdoctopic'' with the title "Break"
-%              translated into the good language.
+%     :action: the short text printed will be preceded by a pretty anchor icon.
 %%%
-\NewDocumentEnvironment{tdocbreak}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@break}
-}{
-  \end{tdoctopic}
-}
-
-
-% ::::::::::::::::::::::: %
-% :: CHANGES - PROBLEM :: %
-% ::::::::::::::::::::::: %
-
-%%%
-% prototype::
-%     :see: env.tdoctopic
-%
-%     :action: similar to the \env ''tdoctopic'' with the title "Problem"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{tdocprob}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@pb}
-}{
-  \end{tdoctopic}
-}
-
-
-% ::::::::::::::::::: %
-% :: CHANGES - FIX :: %
-% ::::::::::::::::::: %
-
-%%%
-% prototype::
-%     :see: env.tdoctopic
-%
-%     :action: similar to the \env ''tdoctopic'' with the title "Fix"
-%              translated into the good language.
-%%%
-\NewDocumentEnvironment{tdocfix}{}{
-  \begin{tdoctopic}{\tutodoc@trans@chges@fix}
-}{
-  \end{tdoctopic}
+\NewDocumentCommand{ \tdocstartproj }{ m } {
+  \tdocicon{\faAnchor}#1
 }
 
 \ExplSyntaxOff
@@ -1183,13 +1198,4 @@
   \hfill\rule{0.5\textwidth}{0.75pt}\hfill\null
   \medskip
   \smallskip
-}
-
-
-%%%
-% prototype::
-%     :action: this macro adds a tiny vertical spacing.
-%%%
-\NewDocumentCommand{\tdocxspace}{}{
-  \vspace{0.25em}
 }

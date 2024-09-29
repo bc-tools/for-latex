@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{tutodoc}
+\input{regression-test}
+
+\begin{document}
+\START
+
+\section{Example and then.}
+
+\begin{tdocexa}
+    Number 1.
+\end{tdocexa}
+
+\begin{tdocexa}
+    Number 2.
+\end{tdocexa}
+
+\begin{tdocrem}
+    Number 3.
+\end{tdocrem}
+
+\begin{tdocexa}
+    Number 4.
+\end{tdocexa}
+
+\begin{tdocrem}
+    Number 5.
+\end{tdocrem}
+
+\begin{tdocrem}
+    Number 6.
+\end{tdocrem}
+
+
+\section{Example after.}
+
+\begin{tdocrem}
+    Number 1.
+\end{tdocrem}
+
+\begin{tdocrem}
+    Number 2.
+\end{tdocrem}
+
+\begin{tdocrem}
+    Number 3.
+\end{tdocrem}
+
+\begin{tdocexa}
+    Number 4.
+\end{tdocexa}
+
+
+\section{Example - No number.}
+
+\begin{tdocexa}
+    No number.
+\end{tdocexa}
+
+
+\section{Remark - No number.}
+
+\begin{tdocrem}
+    No number.
+\end{tdocrem}
+
+\showoutput
+
+\end{document}

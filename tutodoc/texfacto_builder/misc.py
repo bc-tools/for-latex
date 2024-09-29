@@ -109,6 +109,9 @@ def copyfromto(
     destfile,
     mode = "w"
 ):
+    if str(srcfile.name)[0] == '.':
+        return
+
     with srcfile.open(
         encoding = "utf-8",
         mode = "r"

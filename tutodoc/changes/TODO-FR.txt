@@ -6,18 +6,16 @@ tutodoc - TODO
 NOW
 ---
 
-> ---------------------------- <
-
-focus
-
-    ---> rmk and co : passer via xtempalte !!!
-
 
 > ---------------------------- <
 
-Macro \tdocinlatex : height and depth
+classe + package car il y a des choix esthétique
 
-    ---> patch ou màj minted ?
+    + class pour une mef perso :
+        --> police, marge
+        --> couleur / noir-et-blanc
+
+    + pack pour le reste
 
 
 -----
@@ -30,9 +28,19 @@ cleaner code
 
     ---> latex3 strict pour showcase et listinginput
 
-    ---> classe + package car il y a des choix esthétique
-         + class pour une mef perso : police, marge
-         + pack pour le reste
+    ---> respecter mes specs latex : on isole les messages par exemple!
+
+
+
+
+> ---------------------------- <
+
+note and co
+
+    --> différents mef possible ?
+        OK quand je ferais une classe : on choisi le CCS templ et on forunit alors les macro et réglage attendus; toit simplement !
+
+    --> Numéroter ?
 
 
 > ---------------------------- <
@@ -48,37 +56,7 @@ focus
 
 > ---------------------------- <
 
-ajout de enumitem dans main avec gestion des listes à la francaise : on vire di doc-header
-
-\usepackage{enumitem}
-\frenchsetup{StandardItemLabels=true}
-
-
-> ---------------------------- <
-
-bdocdate
-et
-bdocversion
-
-    --> option pour vérifie la date et pas juste la syntaxe
-        indiquer que ce choix vient de ce que j'utilise ourtils qui ajoute ces macros automatiquement pour moi donc les dates sont forcément bonnes.
-
-    --> intérpet d'option c'est que régalable globalement valeur par défaut : le faire comme cela on aura aussi une option et un setter global à coder
-
-
-> ---------------------------- <
-
-une fois macroenvsign ok, ajouter les fiches technqiues "utilisateurs" !!!
-
-
-> ---------------------------- <
-
-translatyion in contrbution workflow implemnted !!!
-
-
-> ---------------------------- <
-
-lang de babel si possible ????
+une fois macroenvsign ok, ajouter les fiches technqiues "utilisateurs" ùais dans un doc a part bien netdnu !!!
 
 
 > ---------------------------- <
