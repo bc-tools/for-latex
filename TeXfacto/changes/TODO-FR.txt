@@ -19,6 +19,11 @@ texfacto-poc
 
 > ---------------------------- <
 
+If the body of your code is in L3 syntax you may prefer to use \ProvidesExplClass rather than \ProvideClass at the start of the file as this will take care of switching to L3 syntax and save explicit use of \ExplSyntaxOn.
+
+
+> ---------------------------- <
+
 AJOUTER
 
     1) Un \pack "agrégateur" réunissant différents \packs.
