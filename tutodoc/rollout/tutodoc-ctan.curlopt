@@ -1,5 +1,5 @@
 
-form-string="announcement=New macros \\tdocstartproj and \\tdocicon + Breaking changes for \\tdoccaution, \\tdocexa and \\tdocrem."
+form-string="announcement=New macros \\tdocstartproj and \\tdocicon + Breaking changes for \\tdoccaution, \\tdocexa and \\tdocrem + Misc."
 form-string="author=Christophe BAL"
 form-string="bugtracker=https://github.com/bc-tools/for-latex/issues"
 form-string="ctanPath=/macros/latex/contrib/tutodoc"
