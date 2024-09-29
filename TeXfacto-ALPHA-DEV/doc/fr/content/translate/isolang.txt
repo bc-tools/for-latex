@@ -1,0 +1,9 @@
+this::
+    date = 2023-10-31
+
+
+==================
+Codage des langues
+==================
+
+Les dossiers avec du contenu traduisible seront nommés en suivant la \isolang : par exemple, verb::''fr'', verb::''en'' et verb::''es'' servent à indiquer \resp du français, de l'anglais et de l'espagnol.

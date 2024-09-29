@@ -1,0 +1,9 @@
++ fict-proj
+    + contrib
+        + doc
+            + tech
+                + changes  [...]
+                + en       [...]
+            + [...]
+        + [...]
+    + [...]

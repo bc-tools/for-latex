@@ -1,0 +1,11 @@
+abrev::
+    content = :this.name:
+
+
+=========================
+Organiser un fichier \src
+=========================
+
+content::
+    \content/common.txt
+    \content/special.txt

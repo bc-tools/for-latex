@@ -1,0 +1,62 @@
+this::
+    date = 2023-11-26    ???
+
+
+abrev::
+    content = :this.name:
+
+    bdocdate = date::''2023-11-11''
+
+
+==================
+Coder efficacement
+==================
+
+Pour les explications, nous utiliserons des exemples de projets fictifs ayant tous une structure globale similaire à la suivante proche de ce qui est proposé dans cf::''?/coding/archi.txt''
+((
+    L'absence de dossier path::''doc'' pour la \doc "utilisateur" vient d'un processus de rédaction de cette dernière très particulier pour les \projs \latex comme cela est expliqué dans cf::''?/latex/the-docs.txt''.
+)),
+excepté que le dossier path::''tests'' a disparu, et un dossier path::''rollout'' est dédié à l'utilisation de \l3build pour tester son projet, puis déployer ce dernier sur \ctan.
+
+dirtree::
+    + fict-proj
+        * about.yaml
+        * README.md
+        + changes  [...]
+        + contrib  [...]
+        + demos    [...]
+        + rollout  [...]
+        + src      [...]
+        + tools    [...]
+
+
+note::
+    Se reporter à cf::''?/coding/archi.txt'' pour des explications à propos des composants généralistes suivants.
+
+        * Fichier \readme.
+
+        * Journaux des \chgts \techs et publiques dans le dossier path::''changes''.
+
+        * Outils spécifiques d'automatisation mis dans le dossier path::''tools''.
+
+
+Quatre types de \proj sont possibles.
+
+    1) Un \pack autonome.
+
+    1) Un \pack "agrégateur" réunissant différents \packs.
+
+    1) Une classe de \mef.
+
+    1) Un \pack et une classe de \mef portant le même nom
+    ((
+        \latex permet cela, et dans certains cas ceci fait totalement sens.
+    )).
+
+
+Il est temps de passer à des explications détaillées.
+
+
+content::
+    \content/demos.txt    ????
+    \content/testing.txt  ??

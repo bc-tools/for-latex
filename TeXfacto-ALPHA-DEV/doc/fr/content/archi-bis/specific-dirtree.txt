@@ -1,0 +1,35 @@
+this::
+    date = 2023-12-10
+
+
+=======================
+\Struct globale du code
+=======================
+
+Voici la \struct globale d'un projet \latex.
+
+dirtree::
+    + fict-proj
+        * about.yaml
+        * README.md
+        + changes  [...]
+        + contrib  [...]
+        + demos    [...]
+        + rollout  [...]
+        + src      [...]
+        + tools    [...]
+
+
+Voici ce qui change relativement à ce qui est proposé dans cf::''?/coding/archi.txt''.
+
+    1) Le dossier path::''doc'' pour la \doc "utilisateur" a disparu. Cette absence vient d'un processus de rédaction de cette dernière très particulier pour les \projs \latex.
+
+        * Si l'on suit le processus standard, la \doc est présente dans les fichiers \srcs en suivant le style dit de "\prog littérale".
+
+        * Le \proj \textfacto permet quant à lui de coder par petites touches son \proj en gérant en parallèle le code \src et la \doc "utilisateur".
+
+    1) Le dossier path::''tests'' est aussi absent, mais un dossier path::''rollout'' est apparu ; ce dernier est dédié à l'utilisation de \l3build pour tester son projet, puis déployer ce dernier sur \ctan. Voir la section cf::''test-n-deploy.txt'' à ce sujet.
+
+    1) Suivant votre style de codage, le dossier path::''src'' peut aussi dipsaraître pour intégrer le code \src dans le dossier path::''rollout''.
+
+    1) Pour le reste, se reporter à cf::''?/coding/archi.txt''.
