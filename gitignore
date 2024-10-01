@@ -13,11 +13,9 @@ x-*-x.*
 x-*-x/
 
 *.unq
+*.unq
+*.config.minted
 
-
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,latex,tex,python,lua
-###
 
 # Created by https://www.toptal.com/developers/gitignore/api/lua,tex,latex,python,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=lua,tex,latex,python,visualstudiocode
