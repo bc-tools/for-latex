@@ -9,13 +9,8 @@ NOW
 
 > ---------------------------- <
 
-classe + package car il y a des choix esthétique
+package --> classe car il n'y a que des choix esthétique
 
-    + class pour une mef perso :
-        --> police, marge
-        --> couleur / noir-et-blanc
-
-    + pack pour le reste
 
 
 -----

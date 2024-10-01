@@ -1,0 +1,42 @@
+\documentclass[12pt, a4paper]{article}
+
+\input{../preamble.cfg.tex}
+
+\usepackage[lang = french]{../main/main}
+\usepackage{../macroenv/macroenv}
+\usepackage{../inenglish/inenglish}
+\usepackage{../focus/focus}
+\usepackage{../deco/deco}
+
+
+\begin{document}
+
+\title{Le package \texttt{tutodoc} - Documentation de type tutoriel}
+\author{<<AUTHOR>>}
+\date{<<DATE-N-VERSION>>}
+
+\maketitle
+
+\begin{abstract}
+    Le package \thispack{}\,%
+    \footnote{
+        Le nom vient de \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}} qui se traduit en \tdocquote{documentation de type tutoriel}.
+    }
+    est utilisé par son auteur pour produire de façon sémantique des documentations de packages et de classes \LaTeX\ dans un style de type tutoriel,%
+    \footnote{
+        L'idée est de produire un fichier \texttt{PDF} efficace à parcourir pour des besoins ponctuels. C'est généralement ce que l'on attend d'une documentation liée au codage.
+    }
+    et avec un rendu sobre pour une lecture sur écran.
+
+    \medskip
+
+    \noindent
+    Deux points importants à noter.
+    \begin{itemize}
+        \item Ce package impose un style de mise en forme. Dans un avenir plus ou moins proche, \thispack{} sera sûrement éclaté en une classe et un package.
+
+        \item Cette documentation est aussi disponible en <<OTHER-LANGS>>.
+    \end{itemize}
+\end{abstract}
+
+\end{document}

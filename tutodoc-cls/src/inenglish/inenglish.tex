@@ -1,0 +1,34 @@
+\documentclass[10pt, a4paper]{article}
+
+\input{../preamble.cfg.tex}
+
+\usepackage[lang = french]{../main/main}
+\usepackage{../macroenv/macroenv}
+\usepackage{../listing/listing}
+\usepackage{../focus/focus}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{\jobname}
+
+
+\begin{document}
+
+\section{Cela veut dire quoi en \tdocquote{anglais}}
+
+Penser aux non-anglophones est bien, même si ces derniers se font de plus en plus rares.
+
+
+\begin{tdoclatex}
+Cool et top signifient \tdocinEN*{cool} et \tdocinEN{top}.
+\end{tdoclatex}
+
+
+La macro \tdocmacro{tdocinEN} et sa version étoilée s'appuient sur \tdocmacro{tdocquote} : par exemple, \tdocquote{sémantique} s'obtient via \tdocinlatex|\tdocquote{sémantique}| .
+
+
+\begin{tdocnote}
+    Le texte \tdocquote{en anglais} est traduit dans la langue indiquée lors de l'importation de \thispack{}.
+\end{tdocnote}
+
+\end{document}

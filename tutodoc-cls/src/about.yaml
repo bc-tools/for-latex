@@ -1,0 +1,14 @@
+texfacto:
+  doc:
+    pack:
+      preamble: preamble.cfg.tex
+
+toc:
+  - main/
+  - inenglish/
+  - focus/
+  - macroenv/
+  - showcase/
+  - listing/
+  - version-n-change/
+  - deco/
