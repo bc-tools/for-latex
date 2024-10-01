@@ -1,0 +1,65 @@
+%\usepackage[lang = french]{}
+
+\documentclass[10pt, a4paper]{../main/main}
+
+\input{../preamble.cfg.tex}
+
+\usepackage{../listing/listing}
+\usepackage{../focus/focus}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{\jobname}
+
+
+\begin{document}
+
+\section{Indiquer des packages, des classes, des macros ou des environnements}
+
+Voici ce qu'il est possible de taper de façon sémantique.
+
+
+\begin{tdoclatex}[sbs]
+\tdoccls{maclasse} sert à...           \\
+\tdocpack{monpackage} est pour...      \\
+\tdocmacro{unemacro} permet de...      \\
+\tdocenv{env} produit...               \\
+\tdocenv[{[opt1]<opt2>}]{env}          \\
+Juste \tdocenv*{env}...                \\
+Enfin \tdocenv*[{[opt1]<opt2>}]{env}...
+\end{tdoclatex}
+
+
+\begin{tdocrem}
+	Contrairement à \tdocmacro{tdocinlatex}, les macros \tdocmacro{tdocenv} et \tdocmacro{tdocenv*} ne colorent pas le texte produit.
+    De plus, \tdocinlatex{\tdocenv{monenv}} produit \tdocenv{monenv} avec des espaces afin d'autoriser des retours à la ligne si besoin.
+\end{tdocrem}
+
+
+\begin{tdocwarn}
+	L'argument optionnel de la macro \tdocmacro{tdocenv} est copié-collé
+    \footnote{
+        Se souvenir que tout est possible ou presque dorénavant.
+    }
+    lors du rendu. Ceci peut donc parfois nécessiter d'utiliser des accolades protectrices comme dans l'exemple ci-dessus.
+\end{tdocwarn}
+
+
+
+\section{Origine d'un préfixe ou d'un suffixe}
+
+Pour expliquer les noms retenus, rien de tel que d'indiquer et expliciter les courts préfixes et suffixes employés. Ceci se fait facilement comme suit.
+
+
+\begin{tdoclatex}[sbs]
+\tdocpre{sup} est relatif à...    \\
+\tdocprewhy{sup.erbe} signifie... \\
+\emph{\tdocprewhy{sup.er} pour...}
+\end{tdoclatex}
+
+
+\begin{tdocrem}
+    Le choix du point pour scinder un mot permet d'utiliser des mots avec un tiret comme dans \tdocinlatex+\tdocprewhy{ca.sse-brique}+ qui donne \tdocprewhy{ca.sse-brique}.
+\end{tdocrem}
+
+\end{document}

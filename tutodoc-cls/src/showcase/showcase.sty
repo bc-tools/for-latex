@@ -1,0 +1,191 @@
+% == PACKAGES == %
+
+\RequirePackage{clrstrip}%
+               [2021-08-28]
+
+
+% == TOOLS == %
+
+% -- GENERAL FORMATTING -- %
+
+% :: TEXT INSIDE A RULE :: %
+
+\ExplSyntaxOn
+
+%%%
+% prototype::
+%     #1 : a text
+%     #2 : a color
+%
+%     :action: this macro adds two horizontal lines on either side of the text.
+%              The final output is centered.
+%
+% note::
+%     The code used comes from
+%     cf::''this post ;
+%           https://tex.stackexchange.com/a/604708/6880''.
+%%%
+\NewDocumentCommand{\tdocruler}{m m}{
+  \par
+  {
+    \centering
+      \scriptsize
+      \itshape
+      \bfseries
+      \color{#2}
+
+      \hbox_set:Nn \l_tmpa_box { \,\, #1 \,\, }
+      \dim_set:Nn  \l_tmpa_dim {
+        .35 \linewidth - .5 \box_wd:N \l_tmpa_box
+      }
+
+      \rule[.75pt] { \dim_use:N \l_tmpa_dim }
+                   { 2.5pt }
+      \box_use:N   \l_tmpa_box
+      \rule[.75pt] { \dim_use:N \l_tmpa_dim }
+                   { 2.5pt }
+      \par
+  }
+}
+
+\ExplSyntaxOff
+
+
+% :: INTERNAL ENVIRONMENTS :: %
+
+%%%
+% prototype::
+%     #1 : the text before the real output
+%     #2 : the text after the real output
+%     #3 : one color following the ''xcolor'' format.
+%          This color is used to set the one for the decorated texts printed
+%          corresponding to the two first arguments.
+%
+%     :action: this environment just adds its content processed by \latex
+%              between centered materials produced by the macro ''\tdocruler''
+%              such as to stress the start and the end of the content.
+%%%
+\NewDocumentEnvironment{tdoc@showcase@basic}{m m m}{
+  \tdocruler{#1}{\tdocdarkcolor{#3}}
+  \nopagebreak\medskip\nopagebreak
+}{
+  \nopagebreak\medskip\nopagebreak
+  \tdocruler{#2}{\tdocdarkcolor{#3}}
+}
+
+
+%%%
+% prototype::
+%     #1 : the text before the real output
+%     #2 : the text after the real output
+%     #3 : the color following the ''xcolor'' format.
+%          This color is used to set the ones of the stripe and the decorated
+%          texts printed (see the two first arguments).
+%
+%     :action: this environment adds a page-width colored stripe in the
+%              background of the environment content processed by \latex.
+%              This stripe is preceded and followed by centered materials
+%              produced by the macro ''\tdocruler'' such as to stress the
+%              start and the end of the content.
+%%%
+
+\NewDocumentEnvironment{tdoc@showcase@colorstrip}{m m m}{
+  \begin{colorstrip}{\tdoclightcolor{#3}}
+    \begin{tdoc@showcase@basic}{#1}{#2}{#3}
+}{
+    \end{tdoc@showcase@basic}
+  \end{colorstrip}
+}
+
+
+\ExplSyntaxOn
+
+% :: SETTING SOME KEYS :: %
+
+\tl_new:N   \l_tdoc_showcase_before_tl
+\tl_new:N   \l_tdoc_showcase_after_tl
+\tl_new:N   \l_tdoc_showcase_color_tl
+\bool_new:N \l_tdoc_showcase_nostripe_bool
+
+
+%%%
+% prototype::
+%     :see: env.tdocshowcase
+%
+% We define the key-val options that will be exposed by the \env
+% ''tdocshowcase''.
+%%%
+\keys_define:nn { tdoc/showcase } {
+% Texts.
+  before .tl_set:N   = \l_tdoc_showcase_before_tl,
+  before .initial:n  = \tutodoc@trans@latex@show@start,
+  after  .tl_set:N   = \l_tdoc_showcase_after_tl,
+  after  .initial:n  = \tutodoc@trans@latex@show@end,
+% Decorations.
+  color    .tl_set:N   = \l_tdoc_showcase_color_tl,
+  color    .initial:n  = cyan,
+  nostripe .bool_set:N = \l_tdoc_showcase_nostripe_bool,
+  nostripe .initial:n  = false,
+}
+
+
+% :: SHOWCASE FROM TYPED CODE :: %
+
+% prototype::
+%     #1 : the key-value options.
+%
+%     :action: this \env formats \latex code, given as an argument,
+%              by framing it with texts decorated by ''\tdocruler'',
+%              in order to clearly identify a rendering used as an
+%              example.
+%              It is also possible to have a coloured strip of the width
+%              of the page in the background of the content.
+%
+%     :see: env.tdoc@showcase@basic ,
+%           env.tdoc@showcase@colorstrip
+%%%
+\NewDocumentEnvironment{tdocshowcase}{ O{} }{
+  \group_begin:
+    \keys_set:nn { tdoc/showcase } { #1 }
+
+    \bool_if:NTF \l_tdoc_showcase_nostripe_bool {
+      \begin{tdoc@showcase@basic}%
+        { \tl_use:N \l_tdoc_showcase_before_tl }%
+        { \tl_use:N \l_tdoc_showcase_after_tl }%
+        { \tl_use:N \l_tdoc_showcase_color_tl }
+    }{
+      \begin{tdoc@showcase@colorstrip}%
+        { \tl_use:N \l_tdoc_showcase_before_tl }%
+        { \tl_use:N \l_tdoc_showcase_after_tl }%
+        { \tl_use:N \l_tdoc_showcase_color_tl }
+    }
+}{
+    \bool_if:NTF \l_tdoc_showcase_nostripe_bool {
+      \end{tdoc@showcase@basic}
+    }{
+      \end{tdoc@showcase@colorstrip}
+    }
+  \group_end:
+}
+
+
+% :: SHOWCASE FROM FILE :: %
+
+%%%
+% prototype::
+%     #1 : the key-value options supported by the ''tdocshowcase'' \env.
+%     #2 : the path of a file
+%
+%     :see: env.tdocshowcase
+%%%
+\NewDocumentCommand{\tdocshowcaseinput}{O{} m}{
+  \group_begin:
+    \keys_set_known:nnN { tdoc/latexshow } { #1 } \l_tmpa_tl
+
+    \exp_last_unbraced:NNV \tdocshowcase [\l_tmpa_tl]
+      \input{#2}
+    \endtdocshowcase
+  \group_end:
+}
+
+\ExplSyntaxOff

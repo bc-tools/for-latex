@@ -1,0 +1,52 @@
+\documentclass[10pt, a4paper]{article}
+
+\input{../preamble.cfg.tex}
+
+\usepackage[lang = french]{../main/main}
+\usepackage{../macroenv/macroenv}
+\usepackage{../listing/listing}
+\usepackage{../focus/focus}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{showcase}
+
+
+\begin{document}
+
+\subsection{Sans bande colorée}
+
+Le rendu de \tdocenv{tdocshowcase} avec une bande colorée peut ne pas convenir, ou parfois ne pas être acceptable malgré le travail fait par \tdocpack{clrstrip}.
+Il est possible de ne pas utiliser une bande colorée comme nous allons le voir tout de suite.
+
+
+\begin{tdocexa}
+    L'emploi de \tdocenv[{[nostripe]}]{tdocshowcase} demande de ne pas faire appel à \tdocpack{clrstrip}.
+    Voici un exemple d'utilisation.
+
+    \tdoclatexinput[code]{examples/showcase/no-clrstrip.tex}
+
+    Ceci produira ce qui suit.
+
+    \medskip
+
+    \input{examples/showcase/no-clrstrip.tex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Changer la couleur et/ou les textes par défaut]
+    \leavevmode
+
+    \tdoclatexinput[code]{examples/showcase/no-clrstrip-customized.tex}
+
+    Ceci produira ce qui suit.
+
+    \medskip
+
+    \input{examples/showcase/no-clrstrip-customized.tex}
+\end{tdocexa}
+
+\end{document}
