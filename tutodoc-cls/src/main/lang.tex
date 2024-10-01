@@ -1,0 +1,32 @@
+%\usepackage[lang = french]{main}
+
+\documentclass[10pt, a4paper]{main}
+
+\input{../preamble.cfg.tex}
+
+\usepackage{../macroenv/macroenv}
+\usepackage{../listing/listing}
+\usepackage{../inenglish/inenglish}
+\usepackage{../focus/focus}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\begin{document}
+
+\section{Choisir la langue au chargement du package}
+
+La présente documentation utilise le français via \tdocinlatex|\usepackage[lang = french]{tutodoc}| .
+Pour le moment, on a juste les deux choix suivants.
+
+\begin{enumerate}
+    \item \tdocinlatex|english| est la valeur par défaut.
+
+    \item \tdocinlatex|french| est pour \tdocinEN{français}.
+\end{enumerate}
+
+
+\begin{tdocnote}
+    Les noms des langues sont ceux proposés par le package \tdocpack{babel}.
+\end{tdocnote}
+
+\end{document}

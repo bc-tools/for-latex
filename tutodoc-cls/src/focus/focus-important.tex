@@ -1,0 +1,26 @@
+\documentclass[10pt, a4paper]{article}
+
+\input{../preamble.cfg.tex}
+
+\usepackage[lang = french]{../main/main}
+\usepackage{../macroenv/macroenv}
+\usepackage{../showcase/showcase}
+\usepackage{../listing/listing}
+\usepackage{../inenglish/inenglish}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{focus}
+
+
+\begin{document}
+
+%\subsection{Du contenu tape-à-l'oeil}
+
+\subsubsection{Un truc important}
+
+L'environnement \tdocenv*{tdocimp} permet d'indiquer quelque chose d'important mais sans danger.
+
+\tdoclatexinput[sbs]{examples/focus/important.tex}
+
+\end{document}

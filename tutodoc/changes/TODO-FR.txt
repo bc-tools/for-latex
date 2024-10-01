@@ -9,13 +9,16 @@ NOW
 
 > ---------------------------- <
 
-classe + package car il y a des choix esthétique
 
-    + class pour une mef perso :
-        --> police, marge
-        --> couleur / noir-et-blanc
+-------
+:break:
+-------
 
-    + pack pour le reste
+[[:api:]]
+Pck --> cls ???
+
+
+
 
 
 -----

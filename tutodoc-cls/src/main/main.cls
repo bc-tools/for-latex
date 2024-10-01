@@ -1,5 +1,7 @@
 % == PACKAGES == %
 
+\LoadClassWithOptions{article}[2022-06-01]
+
 \RequirePackage[svgnames]%
                {xcolor}%
                [2023/11/15]
