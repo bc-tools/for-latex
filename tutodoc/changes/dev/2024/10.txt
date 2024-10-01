@@ -5,10 +5,9 @@
 01  (1.5.0-beta.1)
 ==
 
-
 --------
 :update:
 --------
 
 [[:api:]]
-Links: the colors has moved from verb::''orange!75!black'' to the macro ''\tdoclinkcolor'' wich is equal to verb::''NavyBlue!85!white''.
+Link color: see the macro ''\tdoclinkcolor'' which expansion is verb::''NavyBlue!85!white'' (the old one was verb::''orange!75!black'').
