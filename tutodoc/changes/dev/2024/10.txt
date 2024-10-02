@@ -10,4 +10,4 @@
 --------
 
 [[:api:]]
-Link color: new color verb::''NavyBlue!85!white'' defined using the macro ''\tdoclinkcolor'' (the old one was verb::''orange!75!black'').
+Link color: new color verb::''NavyBlue!85!white'' stored inside the macro ''\tdoclinkcolor'' (the previous color was verb::''orange!75!black'').
