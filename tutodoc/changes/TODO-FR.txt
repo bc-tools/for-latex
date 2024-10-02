@@ -15,9 +15,11 @@ NOW
 -------
 
 [[:api:]]
-Pck --> cls ???
+Pck --> cls
 
 
+
+\BCPdata{language} donne fr ou via AtBeginDocument : par contre, on garde long nim comme babel + polyglossia !
 
 
 

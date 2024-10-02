@@ -12,6 +12,10 @@
 \ProcessOptions\relax
 \LoadClass[twocolumn]{article}
 
+\AtBeginDocument{
+	\newcommand\test{\BCPdata{language}}
+}
+
 \renewcommand{\maketitle}{%
     \twocolumn[%
         \fontsize{50}{60}\fontfamily{phv}\fontseries{b}%
@@ -31,3 +35,4 @@
 \setlength{\textwidth}{17.5cm}
 \setlength{\textheight}{22cm}
 \setcounter{secnumdepth}{0}
+
