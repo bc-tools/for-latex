@@ -1,25 +1,22 @@
-\documentclass[10pt, a4paper]{article}
+\documentclass[10pt, a4paper]{../main/main}
 
 \input{../preamble.cfg.tex}
 
-\usepackage[lang = french]{../main/main}
-\usepackage{../macroenv/macroenv}
-\usepackage{../inenglish/inenglish}
-\usepackage{../showcase/showcase}
-\usepackage{../listing/listing}
-\usepackage{../focus/focus}
+\usepackage{../macroenv/macroenv.cls}
+\usepackage{../listing/listing.cls}
+\usepackage{../focus/focus.cls}
 
 
 % TESTING LOCAL IMPLEMENTATION %
 
-\usepackage{version-n-change}
+\usepackage{version-n-change.cls}
 
 
 \begin{document}
 
 \subsection{Quoi de neuf ?}
 
-\thispack{} propose la macro \tdocmacro{tdocstartproj} et différents environnements pour indiquer rapidement et clairement ce qui a été fait lors des derniers changements.%
+\thisproj\ propose la macro \tdocmacro{tdocstartproj} et différents environnements pour indiquer rapidement et clairement ce qui a été fait lors des derniers changements.%
 \footnote{
     L'utilisateur n'a pas besoin de tous les détails techniques.
 }

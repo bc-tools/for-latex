@@ -7,7 +7,7 @@
 
 \section{Indicate changes}
 
-To make it easier to monitor a package, it is essential to provide a history indicating the changes made when a new version is published.
+To make it easier to monitor a project, it is essential to provide a history indicating the changes made when a new version is published.
 
 
 
@@ -40,16 +40,16 @@ You can either date something, or version it, in which case the version number c
     \begin{enumerate}
         \item The \tdocmacro{tdocdate} and \tdocmacro{tdocversion} macros require two compilations.
 
-        \item The final rendering of the dates takes into account the language specified when loading the package \thispack{}: for example, if French is selected, the dates will be displayed in the format \texttt{DD/MM/YYYY}.
+        \item The final rendering of the dates takes into account the language detected by \thisproj{}: for example, if French is selected, the dates will be displayed in the format \texttt{DD/MM/YYYY}.
     \end{enumerate}
 \end{tdocimp}
 
 
 \begin{tdocwarn}
-    Only the use of the digital format \tdocinlatex+YYYY-MM-DD+ is verified.
+    Only the use of the digital format \tdocinlatex+YYYY-MM-DD+ is verified,
     \footnote{
         Technically, checking the validity of a date using \LaTeX3 presents no difficulty.
-    },
+    }
     and this is a choice! Why? Quite simply because dating and versioning explanations should be done semi-automatically to avoid any human bugs.
 \end{tdocwarn}
 

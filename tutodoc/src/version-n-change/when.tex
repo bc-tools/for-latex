@@ -1,24 +1,23 @@
-\documentclass[10pt, a4paper]{article}
+\documentclass[10pt, a4paper]{../main/main}
 
 \input{../preamble.cfg.tex}
 
-\usepackage[lang = french]{../main/main}
-\usepackage{../macroenv/macroenv}
-\usepackage{../inenglish/inenglish}
-\usepackage{../showcase/showcase}
-\usepackage{../listing/listing}
-\usepackage{../focus/focus}
+\usepackage{../macroenv/macroenv.cls}
+\usepackage{../listing/listing.cls}
+\usepackage{../showcase/showcase.cls}
+\usepackage{../focus/focus.cls}
+
 
 % TESTING LOCAL IMPLEMENTATION %
 
-\usepackage{version-n-change}
+\usepackage{version-n-change.cls}
 
 
 \begin{document}
 
 \section{Indiquer les changements}
 
-Afin de faciliter le suivi d'un package, il est indispensable de fournir un historique indiquant les changements effectués lors de la publication d'une nouvelle version.
+Afin de faciliter le suivi d'un projet, il est indispensable de fournir un historique indiquant les changements effectués lors de la publication d'une nouvelle version.
 
 
 
@@ -51,7 +50,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
     \begin{enumerate}
         \item Les macros \tdocmacro{tdocdate} et \tdocmacro{tdocversion} nécessitent deux compilations.
 
-        \item Comme la langue indiquée pour cette documentation est le français, la date dans le rendu final est au format \texttt{JJ/MM/AAAA} alors que dans le code celle-ci devra toujours être saisie au format anglais \texttt{AAAA-MM-JJ}.
+        \item Comme la langue détectée pour cette documentation est le français, la date dans le rendu final est au format \texttt{JJ/MM/AAAA} alors que dans le code celle-ci devra toujours être saisie au format anglais \texttt{AAAA-MM-JJ}.
     \end{enumerate}
 \end{tdocimp}
 

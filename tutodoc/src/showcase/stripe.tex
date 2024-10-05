@@ -1,15 +1,14 @@
-\documentclass[10pt, a4paper]{article}
+\documentclass[10pt, a4paper]{../main/main}
 
 \input{../preamble.cfg.tex}
 
-\usepackage[lang = french]{../main/main}
-\usepackage{../macroenv/macroenv}
-\usepackage{../listing/listing}
-\usepackage{../focus/focus}
+\usepackage{../macroenv/macroenv.cls}
+\usepackage{../listing/listing.cls}
+\usepackage{../focus/focus.cls}
 
 % TESTING LOCAL IMPLEMENTATION %
 
-\usepackage{showcase}
+\usepackage{showcase.cls}
 
 
 \begin{document}
@@ -48,7 +47,7 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
 
 \begin{tdocnote}
-    Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \thispack{}.
+    Les textes explicatifs s'adaptent à la langue détectée par \thisproj.
 \end{tdocnote}
 
 

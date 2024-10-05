@@ -1,16 +1,15 @@
-\documentclass[10pt, a4paper]{article}
+\documentclass[10pt, a4paper]{../main/main}
 
 \input{../preamble.cfg.tex}
 
-\usepackage[lang = french]{../main/main}
-\usepackage{../macroenv/macroenv}
-\usepackage{../inenglish/inenglish}
-\usepackage{../showcase/showcase}
-\usepackage{../focus/focus}
+\usepackage{../macroenv/macroenv.cls}
+\usepackage{../inenglish/inenglish.cls}
+\usepackage{../showcase/showcase.cls}
+\usepackage{../focus/focus.cls}
 
 % TESTING LOCAL IMPLEMENTATION %
 
-\usepackage{listing}
+\usepackage{listing.cls}
 
 
 % == FORDOC == %
@@ -120,7 +119,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
 
 \begin{tdocnote}
-    Les textes par défaut tiennent compte de la langue choisie lors du chargement du package \thispack{}.
+    Les textes par défaut tiennent compte de la langue détectée par \thisproj.
 \end{tdocnote}
 
 
