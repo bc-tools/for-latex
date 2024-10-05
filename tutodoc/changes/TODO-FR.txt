@@ -11,6 +11,12 @@ NOW
 
 lang régélé via une commande et du coup modigfiable à la amin, ceci nécessite de crérer une version de base avec des renewcommand
 
++
+
+faire gestion des langues grérées dans les docs !
+
+    ---> mettre exemple avec chgt local de la langue
+
 
 > ---------------------------- <
 
@@ -34,6 +40,10 @@ note and co
 
     --> différents mef possible ?
         OK quand je ferais une classe : on choisi le CCS templ et on forunit alors les macro et réglage attendus; toit simplement !
+
+            + color par défaut
+            + black/white pour impression
+            + minimal pour relecture sur papier
 
     --> Numéroter ?
 
