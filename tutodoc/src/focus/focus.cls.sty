@@ -28,8 +28,8 @@
 %%%
 % We use a ''seq'' variable to factorize the code just after.
 %%%
-\seq_new:N             \__g_tutodoc_focus_sober_seq
-\seq_set_from_clist:Nn \__g_tutodoc_focus_sober_seq {
+\seq_new:N             \__g_tutodoc_focus_std_seq
+\seq_set_from_clist:Nn \__g_tutodoc_focus_std_seq {
   exa,
   rem
 }
@@ -37,12 +37,12 @@
 
 %%%
 % prototype::
-%     :action: looping over ''\__g_tutodoc_focus_sober_seq'' to build new
+%     :action: looping over ''\__g_tutodoc_focus_std_seq'' to build new
 %              numbered theorems sharing the same section level counter.
 %              To achieve that, we use the ''\newkeytheorem'' macro from
 %              the ''keytheorems'' \pack.
 %%%
-\seq_map_inline:Nn \__g_tutodoc_focus_sober_seq {
+\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
   \str_if_eq:nnTF { #1 } { exa } {
     \newkeytheorem{tdoc#1}[
       name   = \use:c { tutodoc@trans@#1@title },

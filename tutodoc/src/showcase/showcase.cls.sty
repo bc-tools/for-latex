@@ -65,7 +65,7 @@
 %              between centered materials produced by the macro ''\tdocruler''
 %              such as to stress the start and the end of the content.
 %%%
-\NewDocumentEnvironment{tdoc@showcase@basic}{m m m}{
+\NewDocumentEnvironment{tutodoc@showcase@basic}{m m m}{
   \tdocruler[\tdocdarkcolor{#3}]{#1}
   \nopagebreak\medskip\nopagebreak
 }{
@@ -89,11 +89,11 @@
 %              start and the end of the content.
 %%%
 
-\NewDocumentEnvironment{tdoc@showcase@colorstrip}{m m m}{
+\NewDocumentEnvironment{tutodoc@showcase@colorstrip}{m m m}{
   \begin{colorstrip}{\tdoclightcolor{#3}}
-    \begin{tdoc@showcase@basic}{#1}{#2}{#3}
+    \begin{tutodoc@showcase@basic}{#1}{#2}{#3}
 }{
-    \end{tdoc@showcase@basic}
+    \end{tutodoc@showcase@basic}
   \end{colorstrip}
 }
 
@@ -102,10 +102,10 @@
 
 % :: SETTING SOME KEYS :: %
 
-\tl_new:N   \l_tdoc_showcase_before_tl
-\tl_new:N   \l_tdoc_showcase_after_tl
-\tl_new:N   \l_tdoc_showcase_color_tl
-\bool_new:N \l_tdoc_showcase_nostripe_bool
+\tl_new:N   \l_tutodoc_showcase_before_tl
+\tl_new:N   \l_tutodoc_showcase_after_tl
+\tl_new:N   \l_tutodoc_showcase_color_tl
+\bool_new:N \l_tutodoc_showcase_nostripe_bool
 
 
 %%%
@@ -115,16 +115,16 @@
 % We define the key-val options that will be exposed by the \env
 % ''tdocshowcase''.
 %%%
-\keys_define:nn { tdoc/showcase } {
+\keys_define:nn { tutodoc/showcase } {
 % Texts.
-  before .tl_set:N   = \l_tdoc_showcase_before_tl,
-  before .initial:n  = \tutodoc@trans@latex@show@start,
-  after  .tl_set:N   = \l_tdoc_showcase_after_tl,
-  after  .initial:n  = \tutodoc@trans@latex@show@end,
+  before .tl_set:N  = \l_tutodoc_showcase_before_tl,
+  before .initial:n = \tutodoc@trans@latex@show@start,
+  after  .tl_set:N  = \l_tutodoc_showcase_after_tl,
+  after  .initial:n = \tutodoc@trans@latex@show@end,
 % Decorations.
-  color    .tl_set:N   = \l_tdoc_showcase_color_tl,
+  color    .tl_set:N   = \l_tutodoc_showcase_color_tl,
   color    .initial:n  = cyan,
-  nostripe .bool_set:N = \l_tdoc_showcase_nostripe_bool,
+  nostripe .bool_set:N = \l_tutodoc_showcase_nostripe_bool,
   nostripe .initial:n  = false,
 }
 
@@ -141,29 +141,29 @@
 %              It is also possible to have a coloured strip of the width
 %              of the page in the background of the content.
 %
-%     :see: env.tdoc@showcase@basic ,
-%           env.tdoc@showcase@colorstrip
+%     :see: env.tutodoc@showcase@basic ,
+%           env.tutodoc@showcase@colorstrip
 %%%
 \NewDocumentEnvironment{tdocshowcase}{ O{} }{
   \group_begin:
-    \keys_set:nn { tdoc/showcase } { #1 }
+    \keys_set:nn { tutodoc/showcase } { #1 }
 
-    \bool_if:NTF \l_tdoc_showcase_nostripe_bool {
-      \begin{tdoc@showcase@basic}%
-        { \tl_use:N \l_tdoc_showcase_before_tl }%
-        { \tl_use:N \l_tdoc_showcase_after_tl }%
-        { \tl_use:N \l_tdoc_showcase_color_tl }
+    \bool_if:NTF \l_tutodoc_showcase_nostripe_bool {
+      \begin{tutodoc@showcase@basic}%
+        { \tl_use:N \l_tutodoc_showcase_before_tl }%
+        { \tl_use:N \l_tutodoc_showcase_after_tl }%
+        { \tl_use:N \l_tutodoc_showcase_color_tl }
     }{
-      \begin{tdoc@showcase@colorstrip}%
-        { \tl_use:N \l_tdoc_showcase_before_tl }%
-        { \tl_use:N \l_tdoc_showcase_after_tl }%
-        { \tl_use:N \l_tdoc_showcase_color_tl }
+      \begin{tutodoc@showcase@colorstrip}%
+        { \tl_use:N \l_tutodoc_showcase_before_tl }%
+        { \tl_use:N \l_tutodoc_showcase_after_tl }%
+        { \tl_use:N \l_tutodoc_showcase_color_tl }
     }
 }{
-    \bool_if:NTF \l_tdoc_showcase_nostripe_bool {
-      \end{tdoc@showcase@basic}
+    \bool_if:NTF \l_tutodoc_showcase_nostripe_bool {
+      \end{tutodoc@showcase@basic}
     }{
-      \end{tdoc@showcase@colorstrip}
+      \end{tutodoc@showcase@colorstrip}
     }
   \group_end:
 }
@@ -180,7 +180,7 @@
 %%%
 \NewDocumentCommand{\tdocshowcaseinput}{O{} m}{
   \group_begin:
-    \keys_set_known:nnN { tdoc/latexshow } { #1 } \l_tmpa_tl
+    \keys_set_known:nnN { tutodoc/latexshow } { #1 } \l_tmpa_tl
 
     \exp_last_unbraced:NNV \tdocshowcase [\l_tmpa_tl]
       \input{#2}

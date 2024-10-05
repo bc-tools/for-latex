@@ -9,28 +9,10 @@ NOW
 
 > ---------------------------- <
 
--------
-:break:
--------
 
-[[:api:]]
-The \thisproj package has become a class.
+test format date !!! cf bug oubli du formatage
 
-
-> ---------------------------- <
-
-langue n'est plus option, elle est en par défaut et sinon déduite de ce qui est foruni à babel + polyglossia
-
-    --> \BCPdata{language} donne fr ou via AtBeginDocument : par contre, on garde long nim comme babel + polyglossia !
-
-
-> ---------------------------- <
-
-cleaner code
-
-    ---> latex3 strict pour showcase et listinginput
-
-    ---> respecter mes specs latex : on isole les messages par exemple!
+????
 
 
 

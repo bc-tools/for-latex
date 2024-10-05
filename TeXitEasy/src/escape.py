@@ -2,8 +2,8 @@
 
 ###
 # This file proposes two escaping functions.
-#     1) The 1st one escape a text to be used in a ¨latex content.
-#     2) The 2nd one prepare a ¨latex source code to be used in a f-string.
+#     1) The 1st one escape a text to be used in a \latex content.
+#     2) The 2nd one prepare a \latex source code to be used in a f-string.
 ###
 
 
@@ -46,10 +46,10 @@ PLACEHOLDERS_F_STRING = {
 ###
 # prototype::
 #     text : the text to be escaped.
-#     mode : the ¨latex mode where the text will be used.
+#     mode : the \latex mode where the text will be used.
 #          @ mode in [MODE_MATH, MODE_TEXT]
 #
-#     :return: the text with all specific ¨latex characters escaped so as
+#     :return: the text with all specific \latex characters escaped so as
 #              to be used verbatim in either a math formula or a text
 #              regarding to the value of ''mode''.
 ###
@@ -95,9 +95,9 @@ def escape(
 
 ###
 # prototype::
-#     code : the ¨latex source to transform into a f-string template.
+#     code : the \latex source to transform into a f-string template.
 #
-#     :return: the source with all specific ¨latex characters escaped so as
+#     :return: the source with all specific \latex characters escaped so as
 #              to be used verbatim in either a math formula or a text
 #              regarding to the value of ''mode''.
 ###

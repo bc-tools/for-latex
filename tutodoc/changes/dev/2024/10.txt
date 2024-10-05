@@ -2,7 +2,7 @@
 
 
 ==
-05
+05  (1.5.0-beta.2)
 ==
 
 -----
@@ -10,18 +10,29 @@
 -----
 
 [[:api:]]
-Dates unstranslated: the \args was not correctly sent to ''\tutodoc@new@change@margin'' from ''\tdocdate''.
+Dates untranslated: the \args was not correctly sent to ''\tutodoc@new@change@margin'' from ''\tdocdate''.
 
 
-:break::
+-------
+:break:
+-------
 
-\tdocruler passe de  m<text> m <color> à O{black} m}
+[[:api:]]
+Two major \chges and a minor one.
+
+    1) The \thisproj package has become the \thisproj class.
+
+    1) The class doesn't have any \lang option. Instead, we look for the \latex "kernel" value of ''\BCPdata{language}'' that is managed by the \packs ''babel'' and ''polyglossia''.
+
+    1) ``\tdocruler``: the \sign of this macro has been changed from ''{<text>}{<color>}'' to ''[<color>]{<text>}'' with the black as the default color.
 
 
+--------
+:fordev:
+--------
 
-
-
-
+[[:facto:]]
+The code has been cleaned to follow the \l3 recommendations.
 
 
 // ---------- //

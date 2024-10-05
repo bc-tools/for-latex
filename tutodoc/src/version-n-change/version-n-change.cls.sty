@@ -15,7 +15,7 @@
 
 % :: MESSAGES :: %
 
-\msg_set:nnnn { tdoc } { date-bad-format  }
+\msg_set:nnnn { tutodoc } { date-bad-format }
   { Bad ~ format ~ for ~ a ~ date. }
   { Use ~ YYYY-MM-DD. }
 
@@ -34,7 +34,7 @@
 %     :action: this macro factorizes the printing of the changes
 %              in the left margin.
 %
-%     :see: \__tdoc_translate_date:n
+%     :see: \__tutodoc_translate_date:n
 %%%
 \NewDocumentCommand{\tutodoc@new@change@margin}{m m m m}{
   \marginnote{
@@ -58,7 +58,7 @@
       }
 
       \par
-        \__tdoc_translate_date:n { #3 }\vphantom{Mp}
+        \__tutodoc_translate_date:n { #3 }\vphantom{Mp}
       \par
     }
 
@@ -72,16 +72,16 @@
 % prototype::
 %     :action: this function checks if we have something like
 %              ''YYYY-MM-DD'' and then it calls the function
-%              ''\__tdoc_translate_date_process:w'' to finish
+%              ''\__tutodoc_translate_date_process:w'' to finish
 %              the job.
 %
-%     :see: \__tdoc_translate_date_process:w
+%     :see: \__tutodoc_translate_date_process:w
 %%%
-\cs_new:Nn \__tdoc_translate_date:n {
+\cs_new:Nn \__tutodoc_translate_date:n {
   \regex_match:nnTF { \A \d{1,4} \- \d{2} \- \d{2} \Z } { #1 }{
-    \__tdoc_translate_date_process:w #1 \q_stop
+    \__tutodoc_translate_date_process:w #1 \q_stop
   }{
-    \msg_error:nn { tdoc } { date-bad-format }
+    \msg_error:nn { tutodoc } { date-bad-format }
   }
 }
 
@@ -92,7 +92,7 @@
 %              like ''YYYY-MM-DD'' and then it calls ''\tutodoc@trans@date''
 %              to use the format expected for a "localised" date.
 %%%
-\cs_new:Npn \__tdoc_translate_date_process:w #1 - #2 - #3 \q_stop {
+\cs_new:Npn \__tutodoc_translate_date_process:w #1 - #2 - #3 \q_stop {
     \tutodoc@trans@date{#1}
                        {#2}
                        {#3}
@@ -150,7 +150,7 @@
 
 % :: MESSAGES :: %
 
-\msg_set:nnnn { tdoc } { changes-topic-missing-title }
+\msg_set:nnnn { tutodoc } { changes-custom-topic-missing-title }
   { Missing ~ title. }
   { One ~ single ~ title ~ must ~ be ~ indicated. }
 
@@ -163,12 +163,12 @@
 %     #2 : one material that expects to be an icon command from the
 %          ''fontawsome5'' \pack.
 %
-%     :action: this environment prints some ¨infos about specific changes
+%     :action: this environment prints some \infos about specific changes
 %              achieved in a new version (no special formatting is applied).
 %%%
 \NewDocumentEnvironment{tdoctopic}{ m O{} }{
   \IfBlankT{#1}{
-    \msg_fatal:nn { tdoc } { changes-topic-missing-title }
+    \msg_fatal:nn { tutodoc } { changes-custom-topic-missing-title }
   }%
   \textbf{%
     \IfBlankF{#2}{\tdocicon{#2}}%

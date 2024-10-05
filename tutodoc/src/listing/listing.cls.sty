@@ -1,10 +1,10 @@
 % == PACKAGES == %
 
-\RequirePackage[highlightmode = immediate]% Too slow!
+%\RequirePackage{minted2}% Old implementation.
+
+\RequirePackage[highlightmode = immediate]%
                {minted}%
                [2024/09/22]
-
-%\RequirePackage{minted2}% Temporary patch.
 
 \RequirePackage{tcolorbox}%
                [2024/07/10]
@@ -65,7 +65,7 @@
 %         * https://tex.stackexchange.com/a/327983/6880
 %%%
 \tcbset{
-  tdoclatex_tcbstyle/.style = {
+  tutodoc-latex-listing-style/.style = {
     minted language = latex,
     breakable,
     enhanced,
@@ -104,7 +104,7 @@
 %     ''tcolorbox'' to have \infos about the environment ''tdoclatex''.
 %%%
 \newtcblisting{tdoclatex}[1][std]{%
-  tdoclatex_tcbstyle = \tutodoc@latex@listing@formating{#1}
+  tutodoc-latex-listing-style = \tutodoc@latex@listing@formating{#1}
 }
 
 
@@ -120,8 +120,8 @@
 %     ''tcolorbox'' to have more \infos about the macro ''\tdoclatexinput''.
 %%%
 \newtcbinputlisting{\tdoclatexinput}[2][std]{
-  listing file = {#2},
-  tdoclatex_tcbstyle = \tutodoc@latex@listing@formating{#1}
+  listing file                = {#2},
+  tutodoc-latex-listing-style = \tutodoc@latex@listing@formating{#1}
 }
 
 
@@ -129,19 +129,20 @@
 
 \ExplSyntaxOn
 
-% :: SETTING SOME KEYS :: %
+% :: SETTING THE KEY :: %
 
-\tl_new:N \l_tdoc_listing_explain_tl
+\tl_new:N \l_tutodoc_listing_explain_tl
 
 %%%
 % prototype::
 %     :see: macro.tdoclatexshow
 %
-% We define the key-val options that will be exposed by ''\tdoclatexshow''.
+% We add a key-val option specific to ''\tdoclatexshow'', the other ones
+% will be sent to ''\tdocshowcaseinput''.
 %%%
-\keys_define:nn { tdoc/latexshow } {
-  explain .tl_set:N   = \l_tdoc_listing_explain_tl,
-  explain .initial:n  = { \tutodoc@trans@this@gives \tutodoc@colon },
+\keys_define:nn { tutodoc/latexshow } {
+  explain .tl_set:N  = \l_tutodoc_listing_explain_tl,
+  explain .initial:n = { \tutodoc@trans@this@gives \tutodoc@colon },
 }
 
 
@@ -159,11 +160,11 @@
 %%%
 \NewDocumentCommand{\tdoclatexshow}{O{} m}{
   \group_begin:
-    \keys_set_known:nnN { tdoc/latexshow } { #1 } \l_tmpa_tl
+    \keys_set_known:nnN { tutodoc/latexshow } { #1 } \l_tmpa_tl
 
     \tdoclatexinput[code]{#2}
 
-    \tl_use:N \l_tdoc_listing_explain_tl
+    \tl_use:N \l_tutodoc_listing_explain_tl
 
 % Source: https://tex.stackexchange.com/a/696700/6880
     \exp_last_unbraced:NNV \tdocshowcaseinput [\l_tmpa_tl] {#2}

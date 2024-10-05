@@ -75,9 +75,9 @@
 
 % :: MESSAGES :: %
 
-\msg_set:nnnn { bdoc } { prefixwhy-bad-format }
-{ Bad ~ format, ~ something ~ like ~ ''pre.fix'' ~ expected. }
-{ You ~ must ~ use ~ one ~ single ~ point. }
+\msg_set:nnnn { tutodoc } { prefix-why-bad-format }
+  { Bad ~ format, ~ something ~ like ~ ''pre.fix'' ~ expected. }
+  { You ~ must ~ use ~ one ~ single ~ point. }
 
 
 % :: PREFIX FROM... :: %
@@ -97,7 +97,7 @@
 
   \if_int_compare:w \l_tmpa_int = 2
   \else:
-    \msg_error:nn { bdoc } { prefixwhy-bad-format }
+    \msg_error:nn { tutodoc } { prefix-why-bad-format }
   \fi:
 
 % Let's go.

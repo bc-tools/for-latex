@@ -39,16 +39,15 @@
 \msg_set:nnnn { tutodoc } { unsupported-lang }
   { unsupported ~ language ~ << ~ #1 ~ >>. }
   { \msg_see_documentation_text:n {tutodoc} }
-  
 
 
-\NewDocumentCommand{\tutodoc@colon}{}{:}
+\newcommand{\tutodoc@colon}{:}
 
 \AtBeginDocument{
 % We must take care of the colons, babel and spacing.
   \@ifpackageloaded{babel}{
   \iflanguage{french}{
-      \RenewDocumentCommand{\tutodoc@colon}{}{\babelshorthand{:}}
+      \renewcommand{\tutodoc@colon}{\babelshorthand{:}}
     }{}
   }{}
 
@@ -91,11 +90,11 @@
 
 \ifcsundef{chapter}%
           {}%
-          {\renewcommand\thechapter{\Alph{chapter}.}}
+          {\renewcommand{\thechapter}{\Alph{chapter}.}}
 
-\renewcommand\thesection{\Roman{section}.}
-\renewcommand\thesubsection{\arabic{subsection}.}
-\renewcommand\thesubsubsection{\roman{subsubsection}.}
+\renewcommand{\thesection}{\Roman{section}.}
+\renewcommand{\thesubsection}{\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\roman{subsubsection}.}
 
 \titleformat{\paragraph}[hang]%
             {\normalfont\normalsize\bfseries}%
