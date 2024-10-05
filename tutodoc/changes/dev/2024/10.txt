@@ -5,6 +5,13 @@
 05  (1.5.0-beta.2)
 ==
 
+------
+:desc:
+------
+
+The \thisproj package is becoming the \thisproj class.
+
+
 -----
 :fix:
 -----
@@ -18,9 +25,7 @@ Dates untranslated: the \args was not correctly sent to ''\tutodoc@new@change@ma
 -------
 
 [[:api:]]
-Two major \chges and a minor one.
-
-    1) The \thisproj package has become the \thisproj class.
+One major \chge and a minor one.
 
     1) The class doesn't have any \lang option. Instead, we look for the \latex "kernel" value of ''\BCPdata{language}'' that is managed by the \packs ''babel'' and ''polyglossia''.
 

@@ -10,4 +10,4 @@
 -------
 
 [[:api:]]
-The \thisproj package has become a class.
+The \thisproj package is now a class.

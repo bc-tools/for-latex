@@ -9,10 +9,17 @@ NOW
 
 > ---------------------------- <
 
+lang régélé via une commande et du coup modigfiable à la amin, ceci nécessite de crérer une version de base avec des renewcommand
+
+
+> ---------------------------- <
+
+réorganiser contrib trad via dossier de lang et non via doc, api, ... car au final trop de chemins à parcourrir par le traducteur
+
+
+> ---------------------------- <
 
 test format date !!! cf bug oubli du formatage
-
-????
 
 
 
