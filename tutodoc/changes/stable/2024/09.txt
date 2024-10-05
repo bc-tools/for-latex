@@ -5,6 +5,13 @@
 28  (1.4.0)
 ==
 
+------
+:desc:
+------
+
+This version adds the new macros ''\tdocstartproj'' and ''\tdocicon''. On the other hand, there are \chges to ''\tdoccaution'', ''\tdocexa'' and ''\tdocrem'', as well as a few new features.
+
+
 -------
 :break:
 -------

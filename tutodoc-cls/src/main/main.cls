@@ -30,66 +30,45 @@
                [2023-02-07]
 
 
-% == OPTIONS == %
-
-% -- LOCALE LANG -- %
-
-\ExplSyntaxOn
-
-% :: SOME MESSAGES :: %
-
-\msg_set:nnnn { tdoc } { package-option-lang-unknown }
-  { Unknown ~ language. }
-  { See ~ the ~ documentation ~ for ~ the ~ supported ~ languages. }
-
-
-% :: SETTING SOME KEYS :: %
-
-\str_new:N \l_tdoc_opt_lang_str
-
-%%%
-% We define the key-val options that will be exposed by the package.
-%%%
-\keys_define:nn { tdoc } {
-  lang .choices:nn =
-    { french, english }
-    {
-      \tl_set:Nn \l_tdoc_opt_lang_str
-                 { \tl_use:N \l_keys_choice_tl }
-    },
-  lang .initial:n = english,
-  lang / unknown .code:n =
-    \msg_error:nnxxx { tdoc } { package-option-lang-unknown }
-      { lang }             % Name of choice key
-      { french, english }  % Valid choices
-      { \exp_not:n {#1} }  % Invalid choice given
-}
-
-\ProcessKeyOptions[tdoc]
-
-\ExplSyntaxOff
-
-
 % == TOOLS == %
 
 % -- LOCALE SETTINGS -- %
 
-\NewDocumentCommand{\tutodoc@colon}{}{:}
-
-% We must take care of the colons, babel and spacing.
-\@ifpackageloaded{babel}{
-  \iflanguage{french}{
-    \RenewDocumentCommand{\tutodoc@colon}{}{\babelshorthand{:}}
-  }{}
-}{}
-
 \ExplSyntaxOn
 
-\input{../main/tutodoc-locale-main-\l_tdoc_opt_lang_str.cfg.sty}
+\msg_set:nnnn { tutodoc } { unsupported-lang }
+  { unsupported ~ language ~ << ~ #1 ~ >>. }
+  { \msg_see_documentation_text:n {tutodoc} }
+  
+
+
+\NewDocumentCommand{\tutodoc@colon}{}{:}
+
+\AtBeginDocument{
+% We must take care of the colons, babel and spacing.
+  \@ifpackageloaded{babel}{
+  \iflanguage{french}{
+      \RenewDocumentCommand{\tutodoc@colon}{}{\babelshorthand{:}}
+    }{}
+  }{}
+
+  \newcommand{\tdoclang}{\BCPdata{language}}
+
+% If the lang is not supported, we emit a warning and just turn 
+% to the english language.
+  \makeatletter
+  	\InputIfFileExists{../main/tutodoc-locale-main-\tdoclang.cfg.sty}{}{
+	  \input{../main/tutodoc-locale-main-en.cfg.sty}
+
+	  \msg_warning:nnx { tutodoc } { unsupported-lang }
+        { \tdoclang }
+	}
+  \makeatother
+}
 
 \ExplSyntaxOff
-
-
+  
+  
 % -- GENERAL SETTINGS -- %
 
 \setlength{\parindent}{0cm}

@@ -9,23 +9,20 @@ NOW
 
 > ---------------------------- <
 
-
 -------
 :break:
 -------
 
 [[:api:]]
-Pck --> cls
+The \thisproj package has become a class.
 
 
+> ---------------------------- <
 
-\BCPdata{language} donne fr ou via AtBeginDocument : par contre, on garde long nim comme babel + polyglossia !
+langue n'est plus option, elle est en par défaut et sinon déduite de ce qui est foruni à babel + polyglossia
 
+    --> \BCPdata{language} donne fr ou via AtBeginDocument : par contre, on garde long nim comme babel + polyglossia !
 
-
------
-LATER
------
 
 > ---------------------------- <
 
@@ -36,6 +33,10 @@ cleaner code
     ---> respecter mes specs latex : on isole les messages par exemple!
 
 
+
+-----
+LATER
+-----
 
 
 > ---------------------------- <
