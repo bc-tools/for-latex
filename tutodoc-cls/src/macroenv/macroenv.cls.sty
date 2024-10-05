@@ -1,0 +1,127 @@
+% == TOOLS == %
+
+% -- NAMES OF PACKAGES, MACROS & ENVIRONMENTS -- %
+
+%%%
+% prototype::
+%     #1 : the name of a class
+%
+%     :action: ''\tdoccls{myclass}'' prints verb::''myclass''.
+%%%
+\NewDocumentCommand{\tdoccls}{m}{%
+  \texttt{#1}%
+}
+
+
+%%%
+% prototype::
+%     #1 : the name of a package
+%
+%     :action:''\tdocpack{mypack}'' prints verb::''mypack''.
+%%%
+\NewDocumentCommand{\tdocpack}{m}{%
+  \texttt{#1}%
+}
+
+
+%%%
+% prototype::
+%     #1 : the name of a macro
+%
+%     :action: ''\tdocmacro{mymacro}'' prints verb::''\mymacro''.
+%%%
+\NewDocumentCommand{\tdocmacro}{m}{%
+  \texttt{\textbackslash{}#1}%
+}
+
+
+%%%
+% prototype::
+%     #1 : hard typed options with the good delimiters
+%     #2 : the name of an environment
+%
+%     :extra: this macro has a star version.
+%
+% Here are the four kind of outputs.
+%
+%     1) ''\tdocenv{myenv}'' prints
+%        verb::''\begin{myenv} ... \end{myenv}''.
+%
+%     2) ''\tdocenv[{<opt1>[mando2]}]{myenv}'' prints
+%         verb::''\begin{myenv}<opt1>[mando2] ... \end{myenv}''.
+%
+%     3) ''\tdocenv*{myenv}'' prints
+%        verb::''myenv''.
+%
+%     4) ''\tdocenv*[{<opt1>[mando2]}]{myenv}'' prints
+%        verb::''myenv''.
+%%%
+%
+% Cleaner code from https://tex.stackexchange.com/a/703379/6880 .
+\NewDocumentCommand{\tdocenv}{s O{} m}{%
+  \IfBooleanTF{#1}{%
+  	\texttt{#3}%
+  }{%
+    \texttt{\string\begin\string{#3\string}#2 %
+            \!\!...\@\!\!\! %
+            \string\end\string{#3\string}}%
+  }%
+}
+
+
+% -- EXPLAINING PREFIXES -- %
+
+\ExplSyntaxOn
+
+% :: MESSAGES :: %
+
+\msg_set:nnnn { bdoc } { prefixwhy-bad-format }
+{ Bad ~ format, ~ something ~ like ~ ''pre.fix'' ~ expected. }
+{ You ~ must ~ use ~ one ~ single ~ point. }
+
+
+% :: PREFIX FROM... :: %
+
+%%%
+% prototype::
+%     #1 : a prefix and a suffix separated by one colon.
+%
+%     :action: ''\tdocprewhy{pre.fix}'' prints verb::''pre''.fix.
+%%%
+\NewDocumentCommand{\tdocprewhy}{m}{%
+% Do we have 2 parts?
+  \seq_set_split:Nnn \l_tmpa_seq { . } { #1 }
+
+  \int_set:Nn \l_tmpa_int
+              {\int_eval:n {\seq_count:N \l_tmpa_seq}}
+
+  \if_int_compare:w \l_tmpa_int = 2
+  \else:
+    \msg_error:nn { bdoc } { prefixwhy-bad-format }
+  \fi:
+
+% Let's go.
+  \seq_pop:NN \l_tmpa_seq \l_tmpa_tl
+  \seq_pop:NN \l_tmpa_seq \l_tmpb_tl
+
+  \textbf{\tdocpre{\tl_use:N \l_tmpa_tl}\kern.5pt\textperiodcentered\kern.5pt{\tl_use:N \l_tmpb_tl}}
+}
+
+\ExplSyntaxOff
+
+
+% :: JUST ONE PREFIX :: %
+
+%%%
+% prototype::
+%     #1 : just a prefix
+%
+%     :action: ''\tdocpre{pre}'' only prints verb::''pre''.
+%              This can be useful in a case like
+%              ''\tdocpre{pre} comes from \tdocprewhy{pre}{fix}''
+%              which prints:
+%              verb::''pre'' comes from verb::''pre''-fix.
+%%%
+\NewDocumentCommand{\tdocpre}{m}{%
+  \texttt{#1}%
+}

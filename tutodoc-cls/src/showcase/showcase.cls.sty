@@ -14,8 +14,8 @@
 
 %%%
 % prototype::
-%     #1 : a text
-%     #2 : a color
+%     #1 : the color for the rule and the text
+%     #2 : the text surrounded by two horizontal rules
 %
 %     :action: this macro adds two horizontal lines on either side of the text.
 %              The final output is centered.
@@ -25,16 +25,16 @@
 %     cf::''this post ;
 %           https://tex.stackexchange.com/a/604708/6880''.
 %%%
-\NewDocumentCommand{\tdocruler}{m m}{
+\NewDocumentCommand{\tdocruler}{O{black} m}{
   \par
   {
     \centering
       \scriptsize
       \itshape
       \bfseries
-      \color{#2}
+      \color{#1}
 
-      \hbox_set:Nn \l_tmpa_box { \,\, #1 \,\, }
+      \hbox_set:Nn \l_tmpa_box { \,\, #2 \,\, }
       \dim_set:Nn  \l_tmpa_dim {
         .35 \linewidth - .5 \box_wd:N \l_tmpa_box
       }
@@ -66,11 +66,11 @@
 %              such as to stress the start and the end of the content.
 %%%
 \NewDocumentEnvironment{tdoc@showcase@basic}{m m m}{
-  \tdocruler{#1}{\tdocdarkcolor{#3}}
+  \tdocruler[\tdocdarkcolor{#3}]{#1}
   \nopagebreak\medskip\nopagebreak
 }{
   \nopagebreak\medskip\nopagebreak
-  \tdocruler{#2}{\tdocdarkcolor{#3}}
+  \tdocruler[\tdocdarkcolor{#3}]{#2}
 }
 
 

@@ -2,6 +2,32 @@
 
 
 ==
+05
+==
+
+-----
+:fix:
+-----
+
+[[:api:]]
+Dates unstranslated: the \args was not correctly sent to ''\tutodoc@new@change@margin'' from ''\tdocdate''.
+
+
+:break::
+
+\tdocruler passe de  m<text> m <color> à O{black} m}
+
+
+
+
+
+
+
+
+// ---------- //
+
+
+==
 01  (1.5.0-beta.1)
 ==
 

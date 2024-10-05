@@ -23,9 +23,6 @@
 
 % -- EXPLAINING ENGLISH NAMES -- %
 
-\ExplSyntaxOn
-  
-\AtBeginDocument{
 %%%
 % prototype::
 %     #1 : an english text to explain in another language.
@@ -45,10 +42,9 @@
 %        which gives
 %        **"Something" et "Another thing" en anglais**.
 %%%
-  \NewDocumentCommand{\tdocinEN}{s m}{%
-    \tdocquote{#2}%
-    \IfBooleanF{#1}{% No star used.
-      \tutodoc@trans@in@EN{}%
-    }%
-  }
-} % \AtBeginDocument
+\NewDocumentCommand{\tdocinEN}{s m}{%
+  \tdocquote{#2}%
+  \IfBooleanF{#1}{% No star used.
+    \tutodoc@trans@in@EN{}%
+  }%
+}
