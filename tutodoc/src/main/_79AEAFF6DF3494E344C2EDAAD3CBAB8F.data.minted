@@ -1,0 +1,13 @@
+{
+"command": "clean",
+"jobname": "formatting-geo",
+"timestamp": "19700101000000Z",
+"cachepath": "_minted/",
+"cachefiles":
+"""\
+[
+\"default.style.minted\",
+\"16BD1B6802DB0E13D1D3D112D4566598.highlight.minted\",
+]
+""",
+}

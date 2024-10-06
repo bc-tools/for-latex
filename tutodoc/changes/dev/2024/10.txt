@@ -2,15 +2,23 @@
 
 
 ==
-?????????
+07
 ==
 
 -----
 :new:
 -----
 
-[[:doc:]]    ?????
+[[:doc:]]
 Manual: a new section explains how to contribute.
+
+
+-------
+:break:
+-------
+
+[[:api:]]
+\Contribs: the \dir \struct has been made translator-friendly.
 
 
 // ---------- //

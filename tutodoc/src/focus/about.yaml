@@ -2,8 +2,4 @@ toc:
   - focus.sty
   - focus-example.tex
   - focus-remark.tex
-  - focus-tip.tex
-  - focus-note.tex
-  - focus-important.tex
-  - focus-caution.tex
-  - focus-warn.tex
+  - focus-colorful.tex

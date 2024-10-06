@@ -32,4 +32,29 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
     For further information, please refer to the end of the section \ref{tdoc-color-macros} page \pageref{tdoc-color-macros}.
 \end{tdocnote}
 
+
+\foreach \sectitle/\desc/\filename in {
+	{Informative note}/%<-- Translate me!
+	{The \tdocenv*{tdocnote} environment is used to highlight useful information. Here's how to use it.}/%<-- Translate me!
+	note,
+	%
+	{Something important}/%<-- Translate me!
+	{The \tdocenv*{tdocimp} environment is used to indicate something important but harmless.}/%<-- Translate me!
+	important,
+	%
+	{Caution about a delicate point}/%<-- Translate me!
+	{The \tdocenv*{tdoccaut} environment is used to indicate a delicate point to the user. Here's how to use it.}/% <-- Translate me!
+	caution,
+	%
+	{Warning of danger}/%<-- Translate me!
+	{The \tdocenv*{tdocwarn} environment is used to warn the user of a trap to avoid. Here's how to use it.}/%<-- Translate me!
+	warn%
+} {
+	\subsubsection{\sectitle}
+
+	\desc
+
+	\tdoclatexinput[sbs]{examples/focus/\filename.tex}
+}
+
 \end{document}
