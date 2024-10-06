@@ -1,10 +1,15 @@
 \begin{tdocbreak}
-	\item La classe \thisproj\ remplace le défunt package  \thisproj.
+	\item La classe \thisproj\ remplace le défunt package \thisproj\ sans option spécifique pour le moment.
+
+	\item La macro \tdocmacro{tdocruler} s'emploie dorénavant via \tdocinlatex{\tdocruler[<color>]{<text>}} (avant il fallait employer la syntaxe \tdocinlatex{\tdocruler{<text>}{<color>}}).
 \end{tdocbreak}
 
 
 \begin{tdocfix}
-	\item La macro \tdocmacro{tdocdate} ne gérait pas la date.
-
-	\item La macro \tdocmacro{tdocruler} s'emploie dorénavant via \tdocinlatex{\tdocruler[<color>]{<text>}} (avant il fallait employer la syntaxe \tdocinlatex{\tdocruler{<text>}{<color>}}).
+	\item La macro \tdocmacro{tdocdate} ne gérait pas le format et la mise en forme de la date.
 \end{tdocfix}
+
+
+\begin{tdocnew}
+	\item La documentation contient une nouvelle section expliquant comment contribuer.
+\end{tdocnew}

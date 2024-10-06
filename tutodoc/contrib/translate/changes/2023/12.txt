@@ -5,8 +5,9 @@
 02
 ==
 
----------------
-English version
----------------
+-----
+:new:
+-----
 
-The translation is done.
+[[:doc:]]
+Manual: the English version has been written.

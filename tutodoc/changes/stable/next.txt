@@ -10,7 +10,11 @@
 -------
 
 [[:api:]]
-The \thisproj package is now a class.
+Here are the \chges made.
+
+    1) The \thisproj package is now a class.
+
+    1) ''\tdocruler'': the \sign of this macro is now ''[<color>]{<text>}'' with the black as the default color.
 
 
 -----
@@ -19,3 +23,17 @@ The \thisproj package is now a class.
 
 [[:api:]]
 Dates untranslated: the \args was not correctly sent to ''\tutodoc@new@change@margin'' from ''\tdocdate''.
+
+
+
+\begin{tdocnew}
+	\item La documentation contient une nouvelle section expliquant comment contribuer.
+\end{tdocnew}
+
+
+-----
+:new:
+-----
+
+[[:doc:]]
+Manual: a new section explains how to contribute.
