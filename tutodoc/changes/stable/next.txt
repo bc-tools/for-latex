@@ -25,12 +25,6 @@ Here are the \chges made.
 Dates untranslated: the \args was not correctly sent to ''\tutodoc@new@change@margin'' from ''\tdocdate''.
 
 
-
-\begin{tdocnew}
-	\item La documentation contient une nouvelle section expliquant comment contribuer.
-\end{tdocnew}
-
-
 -----
 :new:
 -----
