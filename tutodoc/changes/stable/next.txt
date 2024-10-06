@@ -11,3 +11,11 @@
 
 [[:api:]]
 The \thisproj package is now a class.
+
+
+-----
+:fix:
+-----
+
+[[:api:]]
+Dates untranslated: the \args was not correctly sent to ''\tutodoc@new@change@margin'' from ''\tdocdate''.

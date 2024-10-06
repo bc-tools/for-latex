@@ -27,9 +27,9 @@ Dates untranslated: the \args was not correctly sent to ''\tutodoc@new@change@ma
 [[:api:]]
 One major \chge and a minor one.
 
-    1) The class doesn't have any \lang option. Instead, we look for the \latex "kernel" value of ''\BCPdata{language}'' that is managed by the \packs ''babel'' and ''polyglossia''.
+    1) The incoming class doesn't have any \lang option. Instead, we look for the \latex "kernel" value of ''\BCPdata{language}'' that is managed by the \packs ''babel'' and ''polyglossia''.
 
-    1) ``\tdocruler``: the \sign of this macro has been changed from ''{<text>}{<color>}'' to ''[<color>]{<text>}'' with the black as the default color.
+    1) ''\tdocruler'': the \sign of this macro has been changed from ''{<text>}{<color>}'' to ''[<color>]{<text>}'' with the black as the default color.
 
 
 --------

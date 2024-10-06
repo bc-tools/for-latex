@@ -10,7 +10,7 @@
 \newcommand\docday  {28}
 
 % Preparing next release
-%\renewcommand\docday{0}
+\renewcommand\docday{0}
 
 
 % ------------------------ %
@@ -28,6 +28,17 @@
 \usepackage{../version-n-change/version-n-change.cls}
 
 
+\ExplSyntaxOn
+  \int_compare:nTF { \docday = 0 } {
+  	\newcommand\when{NEXT ~ (draft)}
+  	\newcommand\filepath{next}
+  } {
+  	\newcommand\when{\docyear-\docmonth-\docday}
+  	\newcommand\filepath{\docyear/\docmonth/\docday}
+  }
+\ExplSyntaxOff
+    
+
 \begin{document}
 
 {
@@ -35,7 +46,8 @@
     \rule\linewidth{1pt}
 
     \vspace{-1em}
-    \section*{Test: \docyear-\docmonth-\docday}
+    \section*{Test: \when}
+    \ExplSyntaxOff
     \vspace{-.75em}
     \rule\linewidth{1pt}
 }
@@ -46,8 +58,7 @@
 \bigskip
 
 \tdocversion{1.2.3-rc}[2024-01-01]
-
-\input{\docyear/\docmonth/\docday}
+\input{\filepath}
 
 \end{document}
 
