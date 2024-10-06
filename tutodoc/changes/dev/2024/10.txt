@@ -12,14 +12,6 @@
 The \thisproj package is becoming the \thisproj class.
 
 
------
-:fix:
------
-
-[[:api:]]
-Dates untranslated: the \args was not correctly sent to ''\tutodoc@new@change@margin'' from ''\tdocdate''.
-
-
 -------
 :break:
 -------
@@ -30,6 +22,22 @@ One major \chge and a minor one.
     1) The incoming class doesn't have any \lang option. Instead, we look for the \latex "kernel" value of ''\BCPdata{language}'' that is managed by the \packs ''babel'' and ''polyglossia''.
 
     1) ''\tdocruler'': the \sign of this macro has been changed from ''{<text>}{<color>}'' to ''[<color>]{<text>}'' with the black as the default color.
+
+
+-----
+:fix:
+-----
+
+[[:api:]]
+Dates untranslated: the \args was not correctly sent to ''\tutodoc@new@change@margin'' from ''\tdocdate''.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: examples like ''\tdocinlatex{\mymacro[...]{...}}'' have been added to show the power of the macro ''\tdocinlatex''.
 
 
 --------

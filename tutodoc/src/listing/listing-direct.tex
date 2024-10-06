@@ -48,14 +48,14 @@ La macro \tdocmacro{tdocinlatex}
 \footnote{
     Le nom de la macro \tdocmacro{tdocinlatex} vient de \tdocquote{\tdocprewhy{in.line} \LaTeX} soit \tdocinEN{\LaTeX\ en ligne}.
 }
-permet de taper du code en ligne via un usage similaire à \tdocmacro{verb}.
+permet de taper du code en ligne via un usage similaire à \tdocmacro{verb} ou bien comme une macro standard (voir la gestion des accolades dans le dernier cas ci-dessous).
 Voici des exemples d'utilisation.
 
 
 \begin{tdoclatex}[sbs]
-    1: \tdocinlatex|$a^b = c$|
-
-    2: \tdocinlatex+\tdocinlatex|$a^b = c$|+
+    1: \tdocinlatex|$a^b = c$|               \\
+    2: \tdocinlatex+\tdocinlatex|$a^b = c$|+ \\
+    3: \tdocinlatex{\tdocinlatex{$a^b = c$}}
 \end{tdoclatex}
 
 
