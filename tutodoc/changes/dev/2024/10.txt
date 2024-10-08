@@ -2,6 +2,29 @@
 
 
 ==
+08
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+New translation: a Spanish version added.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: the new section explaining how to contribute needs some clarifications.
+
+
+// ---------- //
+
+
+==
 07
 ==
 
