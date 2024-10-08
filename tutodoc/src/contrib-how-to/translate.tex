@@ -11,6 +11,9 @@
 
 % == FORDOC == %
 
+\NewDocumentCommand{\mailsubject}{m}%  <-- Translate me!
+  {sujet \tdocquote{\texttt{tutodoc - CONTRIB - #1}}}
+
 % Source: https://tex.stackexchange.com/a/424061/6880
 
 \newcommand{\FTdirO}{}
@@ -87,7 +90,7 @@
 \begin{tdoccaut}
 	Même si nous allons expliquer comment traduire les documentations, il semble peu pertinent de le faire, car l'anglais devrait suffire de nos jours.%
 	\footnote{
-		L'existence d'une version française  est une simple conséquence de la langue maternelle de l'auteur de \thisproj.
+		L'existence d'une version française est une simple conséquence de la langue maternelle de l'auteur de \thisproj.
 	}
 \end{tdoccaut}
 
@@ -132,7 +135,7 @@ Ces deux dossiers, gérés par l'auteur de \thisproj, ont la même organisation 
 		}
 
 		\item Soit via une demande par mail.
-		Dans ce cas, on utilisera le sujet \tdocquote{\texttt{tutodoc - CONTRIB - en : it}}\,, ceci afin de préserver la santé mentale de l'auteur de \thisproj.
+		Dans ce cas, on utilisera le \mailsubject{en : it}\,, ceci afin de préserver la santé mentale de l'auteur de \thisproj.
 	\end{enumerate}
 
 
@@ -140,6 +143,15 @@ Ces deux dossiers, gérés par l'auteur de \thisproj, ont la même organisation 
 	\footnote{
 		Comme indiqué plus haut, il n'y a pas de besoin du côté du dossier \texttt{doc} de la documentation.
 	}
+
+
+	\item Une fois le travail fini, deux options s'offrent à vous.
+	%
+	\begin{enumerate}
+		\item L'idéal est de le communiquer via \thisrepo\ en usant de \git\ via un classique \verb#git push#\,.
+		
+		\item En cas d'allergie connue à \git\,, vous pourrez envoyer votre dossier de traductions compressé au format \verb#zip# ou \verb#rar# via un mail de \mailsubject{it}\,.
+	\end{enumerate}
 \end{enumerate}
 
 
