@@ -4,7 +4,7 @@ latex_show_end   = Fin de la representación real
 exa_title  = Ejemplo
 rem_title  = Observación
 note_title = Nota
-tip_title  = Consejo
+tip_title  = Astucia
 
 imp_title  = Importante
 caut_title = Recomendación
