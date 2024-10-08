@@ -29,5 +29,9 @@ Dates untranslated: the \args was not correctly sent to ''\tutodoc@new@change@ma
 :new:
 -----
 
+[[:api:]]
+New translation: a Spanish version added.
+
+
 [[:doc:]]
 Manual: a new section explains how to contribute.
