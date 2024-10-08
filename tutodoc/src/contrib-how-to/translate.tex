@@ -72,6 +72,7 @@
   \end{tikzpicture}
 }
 
+
 \begin{document}
 
 %\section{Contribuer}
@@ -79,27 +80,26 @@
 \subsection{Compléter les traductions}
 
 \begin{tdocnote}
-	L'auteur de \thisproj\ se charge des versions françaises et anglaises des traductions.
+	L'auteur de \thisproj\ gère les versions françaises et anglaises des traductions.
 \end{tdocnote}
 
 
 \begin{tdoccaut}
 	Même si nous allons expliquer comment traduire les documentations, il semble peu pertinent de le faire, car l'anglais devrait suffire de nos jours.%
 	\footnote{
-		L'existence d'une version anglaise et d'une française vient juste de la langue maternelle de l'auteur de \thisproj, le français.
+		L'existence d'une version française  est une simple conséquence de la langue maternelle de l'auteur de \thisproj.
 	}
 \end{tdoccaut}
 
 
-\begin{wrapfigure}{R}%[0pt]
+\begin{wrapfigure}{R}
 	\contribtranslatedirtree\
-	
 	\caption{Vue simplifiée du dossier des traductions}
 	\label{tdoc-contrib-tranlsate-dir}
 \end{wrapfigure}{}
 
 
-Les traductions sont organisées grosso-modo comme dans la figure \ref{tdoc-contrib-tranlsate-dir} où seuls les dossiers importants pour de nouvelles traductions ont été \tdocquote{ouverts}\,.%
+Les traductions sont organisées grosso-modo comme dans la figure \ref{tdoc-contrib-tranlsate-dir} où seuls les dossiers importants pour les traductions ont été \tdocquote{ouverts}\,.%
 \footnote{
 	Cette organisation était celle du 5 octobre 2024, mais elle reste d'actualité.
 }
@@ -108,26 +108,66 @@ Les traductions sont organisées grosso-modo comme dans la figure \ref{tdoc-cont
 
 \subsubsection{Les dossiers \texttt{fr} et \texttt{en}}
 
-Ces deux dossiers, d'organisation identique, contiennent des fichiers faciles à traduire même si l'on n'est pas un codeur. Imaginons que vous souhaitiez ajouter le support de l'espagnol. Vous pouvez le faire de deux façons.
+Ces deux dossiers, gérés par l'auteur de \thisproj, ont la même organisation ; ils contiennent des fichiers faciles à traduire même si l'on n'est pas un codeur.
+
+\medskip
+
+\textbf{\emph{Si vous souhaitez ajouter le support de l'italien en partant de fichiers rédigés en anglais}}, il faudra agir comme suit.
 %
 \begin{enumerate}
-	\item Le plus important est de s'intéresser au dossier \verb#api# pour les traductions relatives aux fonctionnalités de \thisproj.
-	Vous y trouverez uniquement des dossiers et des fichiers de type \verb#TXT# à modifier via un éditeur de texte, ou de code, mais non via un traitement de texte.
+	\item Obtenir le nom court standardisé de la langue italien. 
+	Pour ce faire, il suffit de visiter
+	\href{https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags}%
+	     {la page \tdocquote{IIETF language tag}}
+	de \texttt{Wikipédia}.
+	Pour notre exemple fictif, nous découvrons le nom court \verb#it#\,.
+
+	\item Obtenir une copie du dossier \verb#translate/en#\,.
+	Pour cela, deux méthodes sont possibles.
+	%
+	\begin{enumerate}
+		\item Soit via \thisrepo\,.\,%
+		\footnote{
+			Si \git\ vous est inconnu, ou vous fait peur, vous pourrez télécharger l'ensemble du code source de \thisproj\ depuis un navigateur, puis ensuite ne garder que le dossier utile.
+		}
+
+		\item Soit via une demande par mail.
+		Dans ce cas, on utilisera le sujet \tdocquote{\texttt{tutodoc - CONTRIB - en : it}}\,, ceci afin de préserver la santé mentale de l'auteur de \thisproj.
+	\end{enumerate}
+
+
+	\item Il ne reste plus qu'à copier intégralement le contenu de \verb#translate/en# dans un dossier \verb#it# pour faire les traductions en italien.%
+	\footnote{
+		Comme indiqué plus haut, il n'y a pas de besoin du côté du dossier \texttt{doc} de la documentation.
+	}
+\end{enumerate}
+
+
+\begin{tdocimp}
+	Le dossier \verb#api# contient les traductions relatives aux fonctionnalités de \thisproj.
+	Vous y trouverez des fichiers de type \verb#TXT# à modifier via un éditeur de texte, ou de code, mais non via un traitement de texte.
 	Les contenus de ces fichiers utilisent des lignes commentées en anglais pour expliquer ce que fera \thisproj\ : ces lignes commencent par \verb#//# comme dans l'extrait suivant.
-\end{enumerate}
 	
-\begin{verbatim}
-     // #1: year  in format YYYY like 2023.
-     // #2: month in format MM   like 04.
-     // #3: day   in format DD   like 29.
-     date = #1-#2-#3
-\end{verbatim}
+	\begin{verbatim}
+  // #1: year  in format YYYY like 2023.
+  // #2: month in format MM   like 04.
+  // #3: day   in format DD   like 29.
+  date = #1-#2-#3
+
+  // #1: the idea is to produce one text like
+  //     "this word means #1 in english".
+  in_EN = #1 in english\end{verbatim}
+\end{tdocimp}
 
 
-\begin{enumerate}[resume]
-	\item Le dossier \verb#doc# est réservé aux documentations. Il contient des dossiers avec uniquement des fichiers de type \verb#TEX# compilables directement pour une validation en temps réel des traductions faites.
-\end{enumerate}
+\begin{tdocnote}
+	Le dossier \verb#doc# est réservé aux documentations. Il contient des fichiers de type \verb#TEX# compilables directement pour une validation en temps réel des traductions faites.
+\end{tdocnote}
 
+
+\begin{tdocwarn}
+	Ne partir que de l'un des dossiers \verb#fr# et \verb#en#, car ceux-ci sont de la responsabilité de l'auteur de \thisproj.
+\end{tdocwarn}
 
 
 \subsubsection{Le dossier \texttt{changes}}
@@ -138,7 +178,7 @@ Ce dossier est un outil de communication où sont indiqués les changements impo
 
 \subsubsection{Le dossier \texttt{status}}
 
-Ce dossier permet de savoir où en sont les traductions du point de vue du projet. Tout se passe via des fichiers \verb#YAML# bien commentés.
+Ce dossier permet de savoir où en sont les traductions du point de vue du projet. Tout se passe via des fichiers \verb#YAML# bien commentés, et lisibles par un non codeur.
 
 
 
