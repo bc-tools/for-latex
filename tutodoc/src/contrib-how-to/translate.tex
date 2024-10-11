@@ -2,7 +2,7 @@
 
 \input{../preamble.cfg.tex}
 
-\usepackage{../focus/focus.cls}
+\usepackage{../highlight/highlight.cls}
 \usepackage{../inenglish/inenglish.cls}
 \usepackage{../macroenv/macroenv.cls}
 
@@ -21,7 +21,7 @@
   \FTfile(#1,{\color{blue!40!black}\faFolderOpen\hspace{-.35pt}}{\hspace{0.2em}#3})
   (tmp.west)++(0.8em,-0.4em)node(#2){}
   (tmp.west)++(1.5em,0)
-  ++(0,-1.3em) 
+  ++(0,-1.3em)
 }
 
 \newcommand{\FTdirC}{}
@@ -29,7 +29,7 @@
   \FTfile(#1,{\color{blue!40!black}\faFolder\hspace{.75pt}}{\hspace{0.2em}#3})
   (tmp.west)++(0.8em,-0.4em)node(#2){}
   (tmp.west)++(1.5em,0)
-  ++(0,-1.3em) 
+  ++(0,-1.3em)
 }
 
 \newcommand{\FTfile}{}
@@ -38,7 +38,7 @@
   (#1|-tmp)++(0.6em,0)
   node(tmp)[anchor=west,black]{\tt #2}
   (#1)|-(tmp.west)
-  ++(0,-1.2em) 
+  ++(0,-1.2em)
 }
 
 \newcommand{\FTroot}{}
@@ -53,19 +53,19 @@
       \FTdirO(\FTroot,root,translate){
         \FTdirC(root,changes,changes){
         }
-        \FTdirO(root,en,en) {    
+        \FTdirO(root,en,en) {
           \FTdirC(en,api,api) {
-          } 
+          }
           \FTdirC(en,doc,doc) {
-          } 
-        } 
+          }
+        }
         \FTdirC(root,fr,fr){
         }
         \FTdirC(root,status,status){
           \FTdirO(status,en,en) {
             \FTfile(en,api.yaml)
             \FTfile(en,manual.yaml)
-          } 
+          }
           \FTdirC(status,fr,fr){
           }
         }
@@ -118,7 +118,7 @@ Ces deux dossiers, gérés par l'auteur de \thisproj, ont la même organisation 
 \textbf{\emph{Si vous souhaitez ajouter le support de l'italien en partant de fichiers rédigés en anglais}}, il faudra agir comme suit.
 %
 \begin{enumerate}
-	\item Obtenir le nom court standardisé de la langue italien. 
+	\item Obtenir le nom court standardisé de la langue italien.
 	Pour ce faire, il suffit de visiter
 	\href{https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags}%
 	     {la page \tdocquote{IIETF language tag}}
@@ -149,7 +149,7 @@ Ces deux dossiers, gérés par l'auteur de \thisproj, ont la même organisation 
 	%
 	\begin{enumerate}
 		\item L'idéal est de le communiquer via \thisrepo\ en usant de \git\ via un classique \verb#git push#\,.
-		
+
 		\item En cas d'allergie connue à \git\,, vous pourrez envoyer votre dossier de traductions compressé au format \verb#zip# ou \verb#rar# via un mail de \mailsubject{it}\,.
 	\end{enumerate}
 \end{enumerate}
@@ -159,7 +159,7 @@ Ces deux dossiers, gérés par l'auteur de \thisproj, ont la même organisation 
 	Le dossier \verb#api# contient les traductions relatives aux fonctionnalités de \thisproj.
 	Vous y trouverez des fichiers de type \verb#TXT# à modifier via un éditeur de texte, ou de code, mais non via un traitement de texte.
 	Les contenus de ces fichiers utilisent des lignes commentées en anglais pour expliquer ce que fera \thisproj\ ; ces lignes commencent par \verb#//#\,. Voici un extrait de ce type de fichier.
-	
+
 	\begin{verbatim}
   // #1: year  in format YYYY like 2023.
   // #2: month in format MM   like 04.

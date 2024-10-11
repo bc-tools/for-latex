@@ -70,9 +70,11 @@
 %     The settings used come from the following sources.
 %         * https://tex.stackexchange.com/a/727022/6880
 %         * https://tex.stackexchange.com/a/682332/6880
+%         * https://tex.stackexchange.com/a/623232/6880
 %%%
 \tcbset{
   tutodoc-focus-color-style/.style = {
+    use color stack, % Before breakable! 
     breakable,
     enhanced,
     left         = 3pt,
