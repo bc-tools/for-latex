@@ -9,14 +9,21 @@ NOW
 
 > ---------------------------- <
 
-gestion des pacakages et classe importés
-
-    --> besoin d'un fichier éventuellement vide pour indiquer els depndances ordonnées ! pas d'auto, charge au condeur de nourrir texfacto !
+mécanism du main/main.[sty|cls]
++
+des *.sty|*.cls.sty
 
 
 > ---------------------------- <
 
-lang régélé via une commande et du coup modigfiable à la amin, ceci nécessite de crérer une version de base avec des renewcommand
+gestion des pacakages et classe importés
+
+    --> besoin d'un fichier  DEPENDSN.txt des dépendances ventuellement vide pour indiquer els depndances ordonnées ! pas d'auto, charge au condeur de nourrir texfacto !
+
+
+> ---------------------------- <
+
+lang régélé via une commande \TDocSetLocale et du coup modigfiable à la amin, ceci nécessite de crérer une version de base avec des renewcommand
 
 +
 
