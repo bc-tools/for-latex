@@ -16,6 +16,10 @@ pack et/ou class
     ---> ce main sert de base au coadge, avec dans le cas d'un classe \documentclass{../main.main} et codage via des *.cls.sty ey non des *.sty
     Ici le main.cls va prendre en main ce qui n'est pas équable, mais du coup certaines choses vont s'imposer : par exemple, la langue doit être régalble via une macro , laquelle macro sera appelle par ain.cls via \AtBeginDocument{...} pour utiliser le \BCPdata{language} valant en, fr, ????
 
+    ---> mécanism du main/main.[sty|cls]
+       +
+         des *.sty|*.cls.sty
+
 
 > ---------------------------- <
 
