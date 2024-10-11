@@ -17,7 +17,7 @@ This version adds the new macros ''\tdocstartproj'' and ''\tdocicon''. On the ot
 -------
 
 [[:api:]]
-Focus.
+Highlight.
 
     1) The ''tdoccaution'' \env has been renamed to ''tdoccaut'' for ease of use.
 
@@ -53,7 +53,7 @@ Colors: the macros ''\tdocdarkcolor'' and ''\tdoclightcolor'' have an optional a
 [[:format:]]
 Two enhancements.
 
-    1) Focus: reduced space around content in colored frames.
+    1) Highlight: reduced space around content in colored frames.
 
     1) Versions: better vertical spacing thanks to ''\vphantom{Mp}''.
 
@@ -85,7 +85,7 @@ Macros and \envs: the ''\tdocenv'' macro has a star version which simply display
 -------
 
 [[:api:]]
-Focus: the \env ''tdocimportant'' has been renamed to ''tdocimp'' for ease of use.
+Highlight: the \env ''tdocimportant'' has been renamed to ''tdocimp'' for ease of use.
 
 
 -----
@@ -93,6 +93,6 @@ Focus: the \env ''tdocimportant'' has been renamed to ''tdocimp'' for ease of us
 -----
 
 [[:format:]]
-Focus: use of icons from the \fontawesome5 \pack, and two-parts colored frames (the recognition becomes better).
+Highlight: use of icons from the \fontawesome5 \pack, and two-parts colored frames (the recognition becomes better).
 
 Change log: icons from the the \fontawesome5 \pack are associated to the kind-of-\infos \env.

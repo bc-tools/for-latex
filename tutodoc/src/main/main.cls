@@ -1,6 +1,7 @@
 % == PACKAGES == %
 
-\LoadClassWithOptions{article}[2022-06-01]
+\LoadClassWithOptions{article}%
+                     [2022-06-01]
 
 \RequirePackage[svgnames]%
                {xcolor}%
@@ -44,9 +45,9 @@
 \newcommand{\tutodoc@colon}{:}
 
 \AtBeginDocument{
-% We must take care of the colons, babel and spacing.
+% We must take care of colons and spacing.
   \@ifpackageloaded{babel}{
-  \iflanguage{french}{
+    \iflanguage{french}{
       \renewcommand{\tutodoc@colon}{\babelshorthand{:}}
     }{}
   }{}
@@ -132,8 +133,10 @@
 
 %%%
 % prototype::
-%     #1 : the amount of color relative to black.
-%     #2 : one color following the ''xcolor'' format.
+%     #1 : (black-rate)
+%          the amount of color relative to black.
+%     #2 : (color)
+%          one color following the ''xcolor'' format.
 %
 %     :return: a "darker" version of the color ''#1''.
 %%%
@@ -142,8 +145,10 @@
 
 %%%
 % prototype::
-%     #1 : the transparency rate.
-%     #2 : one color following the ''xcolor'' format.
+%     #1 : (transparency)
+%          the transparency rate.
+%     #2 : (color)
+%          one color following the ''xcolor'' format.
 %
 %     :return: a "transparent" version of the color `#1`.
 %%%
@@ -154,7 +159,8 @@
 
 %%%
 % prototype::
-%     #1 : one material that expects to be an icon command from the
+%     #1 : (aws-icon)
+%          one material that expects to be an icon command from the
 %          ''fontawsome5'' \pack.
 %
 %     :return: the icon followed by a small insecable  space.

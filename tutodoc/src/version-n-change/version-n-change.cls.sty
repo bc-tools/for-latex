@@ -26,10 +26,14 @@
 
 %%%
 % prototype::
-%     #1 : the color of the margin note
-%     #2 : the first material (a version number or nothing)
-%     #3 : the second material (a date or nothing)
-%     #4 : the last negative vertical spacing for the 2nd rule
+%     #1 : (color)
+%          the color of the margin note
+%     #2 : (up-text)
+%          the first material (a version number or nothing)
+%     #3 : (down-text)
+%          the second material (a date or nothing)
+%     #4 : (spacing)
+%          the last negative vertical spacing for the 2nd rule
 %
 %     :action: this macro factorizes the printing of the changes
 %              in the left margin.
@@ -105,9 +109,12 @@
 
 %%%
 % prototype::
-%     #1 : the color of the margin note
-%     #2 : a version number
-%     #3 : a date ''YYYY-MM-DD''
+%     #1 : (color)
+%          the color of the margin note
+%     #2 : (version)
+%          a version number
+%     #3 : (date)
+%          a date ''YYYY-MM-DD''
 %
 %     :action: this macro prints a margin note showing a version number
 %              below a date, and the optional argument is used to colorize
@@ -130,8 +137,10 @@
 
 %%%
 % prototype::
-%     #1 : the color of the margin note
-%     #2 : a date ''YYYY-MM-DD''
+%     #1 : (color)
+%          the color of the margin note
+%     #2 : (date)
+%          a date ''YYYY-MM-DD''
 %
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
@@ -159,8 +168,10 @@
 
 %%%
 % prototype::
-%     #1 : a title that will be followed by a colon.
-%     #2 : one material that expects to be an icon command from the
+%     #1 : (title)
+%          a title that will be followed by a colon.
+%     #2 : (aws-icon)
+%          one material that expects to be an icon command from the
 %          ''fontawsome5'' \pack.
 %
 %     :action: this environment prints some \infos about specific changes
@@ -215,7 +226,8 @@
 
 %%%
 % prototype::
-%     #1 : a short text expected t indicate the very first version of a project.
+%     #1 : (short-desc)
+%          a short text expected t indicate the very first version of a project.
 %
 %     :action: the short text printed will be preceded by a pretty anchor icon.
 %%%

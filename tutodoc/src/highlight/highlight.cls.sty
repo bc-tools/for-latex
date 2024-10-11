@@ -74,7 +74,7 @@
 %%%
 \tcbset{
   tutodoc-focus-color-style/.style = {
-    use color stack, % Before breakable! 
+    use color stack, % Must be before breakable! 
     breakable,
     enhanced,
     left         = 3pt,
@@ -117,7 +117,7 @@
 % prototype::
 %     :action: ''key/value'' iteration over ''\__g_tutodoc_focus_color_prop''
 %              to build new colorful unumbered theorems. To achieve that,
-%              we use a ''tcolorbox'' style givent to the ''\newkeytheorem''
+%              we use a ''tcolorbox'' style given to the ''\newkeytheorem''
 %              macro from the ''keytheorems'' \pack, and icons from the
 %              ''fontawesome5'' \pack.
 %%%

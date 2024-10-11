@@ -2,6 +2,29 @@
 
 
 ==
+11
+==
+
+-----
+:fix:
+-----
+
+[[:api:]]
+Highlight: the colored frames didn't color the text after a page break.
+
+
+--------
+:fordev:
+--------
+
+[[:tech:]]
+\Tech \doc: the positional \args have been "named".
+
+
+// ---------- //
+
+
+==
 08
 ==
 

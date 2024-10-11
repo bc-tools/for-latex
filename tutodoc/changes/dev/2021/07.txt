@@ -94,7 +94,7 @@ The macro ''\docversion'' prints now the date with the format of the language lo
 
 
 [[:format:]]
-For the showcases, the strip contains now also the focusing rules, and this strip uses a blue color instead of a green one.
+For the showcases, the strip contains now also the highlighting rules, and this strip uses a blue color instead of a green one.
 
 
 --------

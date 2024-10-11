@@ -9,6 +9,13 @@ NOW
 
 > ---------------------------- <
 
+nommé les vars pour la doc tech via
+
+    #1 : (var-name) bla, bla, ...
+
+
+> ---------------------------- <
+
 mécanism du main/main.[sty|cls]
 +
 des *.sty|*.cls.sty
@@ -23,7 +30,7 @@ gestion des pacakages et classe importés
 
 > ---------------------------- <
 
-lang régélé via une commande \TDocSetLocale et du coup modigfiable à la amin, ceci nécessite de crérer une version de base avec des renewcommand
+lang régélé via une commande \TutodocSetLocale et du coup modigfiable à la amin, ceci nécessite de crérer une version de base avec des renewcommand
 
 +
 

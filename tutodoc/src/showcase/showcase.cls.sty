@@ -14,8 +14,10 @@
 
 %%%
 % prototype::
-%     #1 : the color for the rule and the text
-%     #2 : the text surrounded by two horizontal rules
+%     #1 : (color)
+%          the color for the rule and the text
+%     #2 : (text)
+%          the text surrounded by two horizontal rules
 %
 %     :action: this macro adds two horizontal lines on either side of the text.
 %              The final output is centered.
@@ -55,9 +57,12 @@
 
 %%%
 % prototype::
-%     #1 : the text before the real output
-%     #2 : the text after the real output
-%     #3 : one color following the ''xcolor'' format.
+%     #1 : (up-text)
+%          the descriptive text before the real output
+%     #2 : (down-text)
+%          the descriptive text after the real output
+%     #3 : (color)
+%          one color following the ''xcolor'' format.
 %          This color is used to set the one for the decorated texts printed
 %          corresponding to the two first arguments.
 %
@@ -76,11 +81,12 @@
 
 %%%
 % prototype::
-%     #1 : the text before the real output
-%     #2 : the text after the real output
-%     #3 : the color following the ''xcolor'' format.
-%          This color is used to set the ones of the stripe and the decorated
-%          texts printed (see the two first arguments).
+%     #1 : (up-text)
+%          :see: env.tutodoc@showcase@basic
+%     #2 : (down-text)
+%          :see: env.tutodoc@showcase@basic
+%     #3 : (color)
+%          :see: env.tutodoc@showcase@basic
 %
 %     :action: this environment adds a page-width colored stripe in the
 %              background of the environment content processed by \latex.
@@ -109,9 +115,6 @@
 
 
 %%%
-% prototype::
-%     :see: env.tdocshowcase
-%
 % We define the key-val options that will be exposed by the \env
 % ''tdocshowcase''.
 %%%
@@ -132,7 +135,8 @@
 % :: SHOWCASE FROM TYPED CODE :: %
 
 % prototype::
-%     #1 : the key-value options.
+%     #1 : (key-val)
+%          the key-value options (see above).
 %
 %     :action: this \env formats \latex code, given as an argument,
 %              by framing it with texts decorated by ''\tdocruler'',
@@ -173,10 +177,10 @@
 
 %%%
 % prototype::
-%     #1 : the key-value options supported by the ''tdocshowcase'' \env.
-%     #2 : the path of a file
-%
-%     :see: env.tdocshowcase
+%     #1 : (key-val)
+%          :see: env.tdocshowcase
+%     #2 : (file-path)
+%          the path of a file
 %%%
 \NewDocumentCommand{\tdocshowcaseinput}{O{} m}{
   \group_begin:

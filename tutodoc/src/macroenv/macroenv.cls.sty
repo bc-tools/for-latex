@@ -4,7 +4,8 @@
 
 %%%
 % prototype::
-%     #1 : the name of a class
+%     #1 : (cls-name)
+%          the name of a class
 %
 %     :action: ''\tdoccls{myclass}'' prints verb::''myclass''.
 %%%
@@ -15,7 +16,8 @@
 
 %%%
 % prototype::
-%     #1 : the name of a package
+%     #1 : (pck-name)
+%          the name of a package
 %
 %     :action:''\tdocpack{mypack}'' prints verb::''mypack''.
 %%%
@@ -26,7 +28,8 @@
 
 %%%
 % prototype::
-%     #1 : the name of a macro
+%     #1 : (cmd-name)
+%          the name of a macro 
 %
 %     :action: ''\tdocmacro{mymacro}'' prints verb::''\mymacro''.
 %%%
@@ -37,8 +40,10 @@
 
 %%%
 % prototype::
-%     #1 : hard typed options with the good delimiters
-%     #2 : the name of an environment
+%     #1 : (env-options)
+%          hard typed options with the good delimiters
+%     #2 : (env-name)
+%          the name of an environment
 %
 %     :extra: this macro has a star version.
 %
@@ -84,7 +89,8 @@
 
 %%%
 % prototype::
-%     #1 : a prefix and a suffix separated by one colon.
+%     #1 : (pre.fix)
+%          a prefix and a suffix separated by one colon.
 %
 %     :action: ''\tdocprewhy{pre.fix}'' prints verb::''pre''.fix.
 %%%
@@ -114,7 +120,8 @@
 
 %%%
 % prototype::
-%     #1 : just a prefix
+%     #1 : (pre)
+%          just a prefix
 %
 %     :action: ''\tdocpre{pre}'' only prints verb::''pre''.
 %              This can be useful in a case like

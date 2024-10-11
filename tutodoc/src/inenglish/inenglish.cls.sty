@@ -1,7 +1,7 @@
 % == PACKAGES == %
 
-% We delegate the management of quoting to the `csquotes' package,
-% which takes care of the linguistic parameters.
+% We delegate the management of quoting to the ''csquotes'' package,
+% which takes care of the locale settings.
 \RequirePackage{csquotes}%
                [2022-09-14]
 
@@ -12,9 +12,10 @@
 
 %%%
 % prototype::
-%     #1 : a text to quote.
+%     #1 : (text)
+%          a text to quote.
 %
-% For example, ''\tdocquote{Something}'' prints something like **"Something"**.
+% For example, ''\tdocquote{Something}'' prints **"Something"**.
 %%%
 \NewDocumentCommand{\tdocquote}{m}{%
   \enquote{\emph{#1}}%
@@ -25,7 +26,8 @@
 
 %%%
 % prototype::
-%     #1 : an english text to explain in another language.
+%     #1 : (text-en)
+%          an english text that will be explained in another \lang.
 %
 %     :extra: this macro has a star version.
 %
@@ -37,9 +39,9 @@
 %
 %     2) ''\tdocinEN*{Something}'' just prints
 %        **"Something"**.
-%        This can be useful in a case like
-%        ''\tdocinEN*{Something} et \tdocinEN{Another thing}''
-%        which gives
+%
+%     3) ''\tdocinEN*{Something} et \tdocinEN{Another thing}''
+%        gives
 %        **"Something" et "Another thing" en anglais**.
 %%%
 \NewDocumentCommand{\tdocinEN}{s m}{%
