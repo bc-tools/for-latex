@@ -9,18 +9,6 @@ NOW
 
 > ---------------------------- <
 
-https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags
-
-
-> ---------------------------- <
-
-mécanism du main/main.[sty|cls]
-+
-des *.sty|*.cls.sty
-
-
-> ---------------------------- <
-
 gestion des pacakages et classe importés
 
     --> besoin d'un fichier  DEPENDSN.txt des dépendances ventuellement vide pour indiquer els depndances ordonnées ! pas d'auto, charge au condeur de nourrir texfacto !
@@ -35,6 +23,10 @@ lang régélé via une commande \TutodocSetLocale et du coup modigfiable à la a
 faire gestion des langues grérées dans les docs !
 
     ---> mettre exemple avec chgt local de la langue
+
+
+https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags
+
 
 
 > ---------------------------- <
