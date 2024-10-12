@@ -9,9 +9,7 @@ NOW
 
 > ---------------------------- <
 
-nommé les vars pour la doc tech via
-
-    #1 : (var-name) bla, bla, ...
+https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags
 
 
 > ---------------------------- <

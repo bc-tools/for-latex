@@ -118,14 +118,6 @@ Ces deux dossiers, gérés par l'auteur de \thisproj, ont la même organisation 
 \textbf{\emph{Si vous souhaitez ajouter le support de l'italien en partant de fichiers rédigés en anglais}}, il faudra agir comme suit.
 %
 \begin{enumerate}
-	\item Obtenir le nom court standardisé de la langue italien.
-	Pour ce faire, il suffit de visiter
-	\href{https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags}%
-	     {la page \tdocquote{IIETF language tag}}
-	de \texttt{Wikipédia}.
-	Pour notre exemple fictif, nous découvrons le nom court \verb#it#\,.
-
-
 	\item Obtenir une copie du dossier \verb#translate/en#\,.
 	Pour cela, deux méthodes sont possibles.
 	%
@@ -136,11 +128,11 @@ Ces deux dossiers, gérés par l'auteur de \thisproj, ont la même organisation 
 		}
 
 		\item Soit via une demande par mail.
-		Dans ce cas, on utilisera le \mailsubject{en FOR it}\,, ceci afin de préserver la santé mentale de l'auteur de \thisproj.
+		Dans ce cas, on utilisera le \mailsubject{en FOR italian} avec le nom anglais de la langue, ceci afin de préserver la santé mentale de l'auteur de \thisproj.
 	\end{enumerate}
 	
 	
-	\item Il ne reste plus qu'à copier intégralement le contenu de \verb#translate/en# dans un dossier \verb#it# pour faire les traductions en italien.%
+	\item Il ne reste plus qu'à copier intégralement le contenu de \verb#translate/en# dans un dossier \verb#italian# pour faire les traductions en italien.%
 	\footnote{
 		Comme indiqué plus haut, il n'y a pas de besoin du côté du dossier \texttt{doc} de la documentation.
 	}
@@ -151,7 +143,7 @@ Ces deux dossiers, gérés par l'auteur de \thisproj, ont la même organisation 
 	\begin{enumerate}
 		\item L'idéal est de le communiquer via \thisrepo\ en usant de \git\ via un classique \verb#git push#\,.
 
-		\item En cas d'allergie connue à \git\,, vous pourrez envoyer votre dossier de traductions compressé au format \verb#zip# ou \verb#rar# via un mail de \mailsubject{it}\,.
+		\item En cas d'allergie connue à \git\,, vous pourrez envoyer votre dossier de traductions compressé au format \verb#zip# ou \verb#rar# via un mail de \mailsubject{italian}\,.
 	\end{enumerate}
 \end{enumerate}
 
@@ -170,6 +162,8 @@ Ces deux dossiers, gérés par l'auteur de \thisproj, ont la même organisation 
   // #1: the idea is to produce one text like
   //     "this word means #1 in english".
   in_EN = #1 in english\end{verbatim}
+  
+  Dans ces fichiers, les traductions se font après chaque signe $=$\,, ce qui se trouve avant est utilisé en interne par le code de \thisproj.
 \end{tdocimp}
 
 

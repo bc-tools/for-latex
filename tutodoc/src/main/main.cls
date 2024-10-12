@@ -40,7 +40,7 @@
 \msg_set:nnnn { tutodoc ~ (main) }
   { main : unsupported-lang }
   { unsupported ~ language ~ << ~ #1 ~ >>. }
-  { \msg_see_documentation_text:n {tutodoc} }
+  { \msg_see_documentation_text:n { tutodoc } }
 
 
 \newcommand{\tutodoc@colon}{:}
