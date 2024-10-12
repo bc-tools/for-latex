@@ -161,7 +161,8 @@
 
 % :: MESSAGES :: %
 
-\msg_set:nnnn { tutodoc } { changes-custom-topic-missing-title }
+\msg_set:nnnn { tutodoc ~ (version-n-change) }
+  { version-n-change : topic-missing-title }
   { Missing ~ title. }
   { One ~ single ~ title ~ must ~ be ~ indicated. }
 
@@ -181,7 +182,8 @@
 %%%
 \NewDocumentEnvironment{tdoctopic}{ m O{} }{
   \IfBlankT{#1}{
-    \msg_fatal:nn { tutodoc } { changes-custom-topic-missing-title }
+    \msg_fatal:nn { tutodoc ~ (version-n-change) }
+      { version-n-change : topic-missing-title }
   }%
   \textbf{%
     \IfBlankF{#2}{\tdocicon{#2}}%

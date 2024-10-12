@@ -118,7 +118,7 @@
 % We define the key-val options that will be exposed by the \env
 % ''tdocshowcase''.
 %%%
-\keys_define:nn { tutodoc/showcase } {
+\keys_define:nn { tutodoc / showcase } {
 % Texts.
   before .tl_set:N  = \l_tutodoc_showcase_before_tl,
   before .initial:n = \tutodoc@trans@latex@show@start,
@@ -150,7 +150,7 @@
 %%%
 \NewDocumentEnvironment{tdocshowcase}{ O{} }{
   \group_begin:
-    \keys_set:nn { tutodoc/showcase } { #1 }
+    \keys_set:nn { tutodoc / showcase } { #1 }
 
     \bool_if:NTF \l_tutodoc_showcase_nostripe_bool {
       \begin{tutodoc@showcase@basic}%
@@ -184,7 +184,7 @@
 %%%
 \NewDocumentCommand{\tdocshowcaseinput}{O{} m}{
   \group_begin:
-    \keys_set_known:nnN { tutodoc/latexshow } { #1 } \l_tmpa_tl
+    \keys_set_known:nnN { tutodoc / showcase } { #1 } \l_tmpa_tl
 
     \exp_last_unbraced:NNV \tdocshowcase [\l_tmpa_tl]
       \input{#2}

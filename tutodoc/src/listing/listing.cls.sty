@@ -9,8 +9,8 @@
 \RequirePackage{tcolorbox}%
                [2024/07/10]
 
-\tcbuselibrary{minted, 
-               breakable, 
+\tcbuselibrary{minted,
+               breakable,
                skins}
 
 
@@ -36,7 +36,7 @@
 %     #1 : (tdoclatex-style)
 %          a style of formatting for a \latex listing and its output.
 %
-%     :see: macro.tdoclatex , 
+%     :see: macro.tdoclatex ,
 %           macro.tdoclatexinput
 %
 % In the following easy-to-understand macro, we use one fictive ''tcolorbox''
@@ -144,7 +144,7 @@
 % We add a key-val option specific to ''\tdoclatexshow'', the other ones
 % will be sent to ''\tdocshowcaseinput''.
 %%%
-\keys_define:nn { tutodoc/latexshow } {
+\keys_define:nn { tutodoc / listing } {
   explain .tl_set:N  = \l_tutodoc_listing_explain_tl,
   explain .initial:n = { \tutodoc@trans@this@gives \tutodoc@colon },
 }
@@ -166,7 +166,7 @@
 %%%
 \NewDocumentCommand{\tdoclatexshow}{O{} m}{
   \group_begin:
-    \keys_set_known:nnN { tutodoc/latexshow } { #1 } \l_tmpa_tl
+    \keys_set_known:nnN { tutodoc / listing } { #1 } \l_tmpa_tl
 
     \tdoclatexinput[code]{#2}
 
