@@ -2,6 +2,25 @@
 
 
 ==
+12
+==
+
+--------
+:fordev:
+--------
+
+[[:update:]]
+Error \msgs.
+
+    1) The \src file name is next to the \pck one in the begining of error \msgs.
+
+    1) The \src file name is used as prefix to avoid conflict names.
+
+
+// ---------- //
+
+
+==
 11
 ==
 

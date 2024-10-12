@@ -6,7 +6,7 @@
 \RequirePackage[svgnames]%
                {xcolor}%
                [2023/11/15]
-               
+
 \RequirePackage[
   top            = 2.5cm,
   bottom         = 2.5cm,
@@ -37,7 +37,8 @@
 
 \ExplSyntaxOn
 
-\msg_set:nnnn { tutodoc } { unsupported-lang }
+\msg_set:nnnn { tutodoc ~ (main) }
+  { main : unsupported-lang }
   { unsupported ~ language ~ << ~ #1 ~ >>. }
   { \msg_see_documentation_text:n {tutodoc} }
 
@@ -54,21 +55,22 @@
 
   \newcommand{\tdoclang}{\BCPdata{language}}
 
-% If the lang is not supported, we emit a warning and just turn 
+% If the lang is not supported, we emit a warning and just turn
 % to the english language.
   \makeatletter
   	\InputIfFileExists{../main/tutodoc-locale-main-\tdoclang.cfg.sty}{}{
 	  \input{../main/tutodoc-locale-main-en.cfg.sty}
 
-	  \msg_warning:nnx { tutodoc } { unsupported-lang }
-        { \tdoclang }
+	  \msg_critical:nnx { tutodoc ~ (main) }
+      { main : unsupported-lang }
+      { \tdoclang }
 	}
   \makeatother
 }
 
 \ExplSyntaxOff
-  
-  
+
+
 % -- GENERAL SETTINGS -- %
 
 \setlength{\parindent}{0cm}

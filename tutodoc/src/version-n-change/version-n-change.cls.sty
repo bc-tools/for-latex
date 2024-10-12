@@ -15,7 +15,8 @@
 
 % :: MESSAGES :: %
 
-\msg_set:nnnn { tutodoc } { date-bad-format }
+\msg_set:nnnn { tutodoc ~ (version-n-change) }
+  { version-n-change : date-bad-format }
   { Bad ~ format ~ for ~ a ~ date. }
   { Use ~ YYYY-MM-DD. }
 
@@ -85,7 +86,8 @@
   \regex_match:nnTF { \A \d{1,4} \- \d{2} \- \d{2} \Z } { #1 }{
     \__tutodoc_translate_date_process:w #1 \q_stop
   }{
-    \msg_error:nn { tutodoc } { date-bad-format }
+    \msg_error:nn { tutodoc ~ (version-n-change) }
+      { version-n-change : date-bad-format }
   }
 }
 

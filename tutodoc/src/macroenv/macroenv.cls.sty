@@ -29,7 +29,7 @@
 %%%
 % prototype::
 %     #1 : (cmd-name)
-%          the name of a macro 
+%          the name of a macro
 %
 %     :action: ''\tdocmacro{mymacro}'' prints verb::''\mymacro''.
 %%%
@@ -80,7 +80,8 @@
 
 % :: MESSAGES :: %
 
-\msg_set:nnnn { tutodoc } { prefix-why-bad-format }
+\msg_set:nnnn { tutodoc ~ (macroenv) }
+  { macroenv : prefix-why-bad-format }
   { Bad ~ format, ~ something ~ like ~ ''pre.fix'' ~ expected. }
   { You ~ must ~ use ~ one ~ single ~ point. }
 
@@ -103,7 +104,8 @@
 
   \if_int_compare:w \l_tmpa_int = 2
   \else:
-    \msg_error:nn { tutodoc } { prefix-why-bad-format }
+    \msg_error:nn { tutodoc ~ (macroenv) }
+      { macroenv : prefix-why-bad-format }
   \fi:
 
 % Let's go.
