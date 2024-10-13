@@ -12,11 +12,11 @@ NOW
 gestion des pacakages et classe importés
 
     --> besoin d'un fichier  DEPENDSN.txt des dépendances ventuellement vide pour indiquer els depndances ordonnées ! pas d'auto, charge au condeur de nourrir texfacto !
-
+x
 
 > ---------------------------- <
 
-lang régélé via une commande \TdocSetLocale et du coup modigfiable à la amin, ceci nécessite de crérer une version de base avec des renewcommand
+lang régélé via une commande \TDocSetLocale et du coup modigfiable à la amin, ceci nécessite de crérer une version de base avec des renewcommand
 
 +
 
