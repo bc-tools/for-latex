@@ -2,6 +2,7 @@
 
 \input{../preamble.cfg.tex}
 
+\usepackage{../deco/deco.cls}
 \usepackage{../highlight/highlight.cls}
 \usepackage{../inenglish/inenglish.cls}
 \usepackage{../macroenv/macroenv.cls}
@@ -132,16 +133,16 @@ Ces deux dossiers, gérés par l'auteur de \thisproj, ont la même organisation 
 	\end{enumerate}
 	
 	
-	\item Il ne reste plus qu'à copier intégralement le contenu de \verb#translate/en# dans un dossier \verb#italian# pour faire les traductions en italien.%
+	\item Le dossier \verb#en# doit ensuite être renommé en \verb#italian# avant de faire les traductions.%
 	\footnote{
-		Comme indiqué plus haut, il n'y a pas de besoin du côté du dossier \texttt{doc} de la documentation.
+		Comme indiqué plus haut, il n'y a pas de besoin réel du côté du dossier \texttt{doc} de la documentation.
 	}
 
 
-	\item Une fois le travail fini, deux options s'offrent à vous.
+	\item Pour livrer le travail fini, deux options s'offrent à vous.
 	%
 	\begin{enumerate}
-		\item L'idéal est de le communiquer via \thisrepo\ en usant de \git\ via un classique \verb#git push#\,.
+		\item L'idéal est de passer via \thisrepo\ en usant d'un classique \verb#git push#\,.
 
 		\item En cas d'allergie connue à \git\,, vous pourrez envoyer votre dossier de traductions compressé au format \verb#zip# ou \verb#rar# via un mail de \mailsubject{italian}\,.
 	\end{enumerate}
@@ -153,6 +154,8 @@ Ces deux dossiers, gérés par l'auteur de \thisproj, ont la même organisation 
 	Vous y trouverez des fichiers de type \verb#TXT# à modifier via un éditeur de texte, ou de code, mais non via un traitement de texte.
 	Les contenus de ces fichiers utilisent des lignes commentées en anglais pour expliquer ce que fera \thisproj\ ; ces lignes commencent par \verb#//#\,. Voici un extrait de ce type de fichier.
 
+	\tdocsep
+	\vspace{-10pt}
 	\begin{verbatim}
   // #1: year  in format YYYY like 2023.
   // #2: month in format MM   like 04.
@@ -162,8 +165,10 @@ Ces deux dossiers, gérés par l'auteur de \thisproj, ont la même organisation 
   // #1: the idea is to produce one text like
   //     "this word means #1 in english".
   in_EN = #1 in english\end{verbatim}
+	\vspace{-10pt}
+	\tdocsep
   
-  Dans ces fichiers, les traductions se font après chaque signe $=$\,, ce qui se trouve avant est utilisé en interne par le code de \thisproj.
+  	Les traductions se font après chaque signe \,$=$\, sans toucher à ce qui se trouve avant qui est utilisé en interne par le code de \thisproj.
 \end{tdocimp}
 
 

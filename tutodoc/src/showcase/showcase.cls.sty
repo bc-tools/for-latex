@@ -184,7 +184,9 @@
 %%%
 \NewDocumentCommand{\tdocshowcaseinput}{O{} m}{
   \group_begin:
-    \keys_set_known:nnN { tutodoc / showcase } { #1 } \l_tmpa_tl
+    \keys_set_known:nnN { tutodoc / showcase }
+      { #1 }
+      \l_tmpa_tl
 
     \exp_last_unbraced:NNV \tdocshowcase [\l_tmpa_tl]
       \input{#2}
