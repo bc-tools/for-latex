@@ -22,7 +22,7 @@ Error \msgs.
 
     1) The \src file name is next to the \pck one in the begining of error \msgs.
 
-    1) The \src file name is used as prefix to avoid conflict names  internally.
+    1) The \src file name is used as a prefix for the internal message names to avoid conflict internally.
 
 
 // ---------- //

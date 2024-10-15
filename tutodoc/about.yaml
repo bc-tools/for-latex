@@ -1,10 +1,13 @@
 general:
-  desc   : This package proposes tools for writing "human friendly"
-           documentations of LaTeX packages.
+  desc   : This LaTeX class proposes tools for writing "human friendly"
+           PDF documentations of LaTeX packages and classes.
   acronym: "[tuto]rial [doc]umentation"
   author : Christophe BAL
+
   licence: gnu 3
+
   lang   :
     doc: fr
+
   require:
     - latex

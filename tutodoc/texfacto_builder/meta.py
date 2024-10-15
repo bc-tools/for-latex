@@ -120,20 +120,24 @@ def manual_other_lang(
 ):
     other_lang = []
 
-    contrib_dir = project_dir / TAG_CONTRIB / TAG_DOC / TAG_MANUAL
+    translate_dir = project_dir / TAG_CONTRIB / TAG_TRANSLATE
 
-    if not contrib_dir.is_dir():
-        return other_lang
+    if not translate_dir.is_dir():
+        raise IOError(
+            f"missing ''{TAG_TRANSLATE}'' folder. See the following dir.\n"
+            f"{translate_dir}"
+        )
 
-    status_dir = contrib_dir / TAG_STATUS
+    status_dir = translate_dir / TAG_STATUS
 
     if not status_dir.is_dir():
         raise IOError(
             f"missing ''{TAG_STATUS}'' folder. See the following dir.\n"
-            f"{contrib_dir}")
+            f"{translate_dir}"
+        )
 
-    for yaml_file in status_dir.glob("*.yaml"):
-        lang = yaml_file.stem
+    for yaml_file in status_dir.glob("*/manual.yaml"):
+        lang = yaml_file.parent.name
 
         if lang == dev_lang:
             continue

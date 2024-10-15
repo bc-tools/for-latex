@@ -51,6 +51,7 @@ TAG_ALL      = "all"
 TAG_LAST     = "last"
 
 TAG_CONTRIB           = "contrib"
+TAG_TRANSLATE         = "translate"
 TAG_DOC               = "doc"
 TAG_CHGE_LOG          = "changelog"
 TAG_MANUAL            = "manual"
@@ -163,7 +164,7 @@ HISTORY_TRANS = {
 # -------------- #
 
 SRC_CODE_HEADER = """
-This is file `<<PROJ_NAME>>.sty' generated automatically.
+This is file `<<PROJ_NAME>>.{ext}' generated automatically.
 
 Copyright (C) <<CREATION_YEAR>>-<<LAST_YEAR>> by <<AUTHOR>>
 
@@ -171,11 +172,17 @@ This file may be distributed and/or modified under
 the conditions of the GNU 3 License.
 """.strip()
 
+SRC_CODE_HEADER_STY = SRC_CODE_HEADER.format(ext = "sty")
+SRC_CODE_HEADER_CLS = SRC_CODE_HEADER.format(ext = "cls")
 
-SRC_CODE_PROVIDE_PACK = """
-\\ProvidesExplPackage
-  {<<PROJ_NAME>>}
-  {<<LAST_DATE>>}  % Creation: <<CREATION_DATE>>
-  {<<LAST_NB_VER>>}
-  {<<SHORT_DESC>>}
+
+SRC_CODE_PROVIDE = """
+\\ProvidesExpl{kind}
+  {{<<PROJ_NAME>>}}
+  {{<<LAST_DATE>>}}  % Creation: <<CREATION_DATE>>
+  {{<<LAST_NB_VER>>}}
+  {{<<SHORT_DESC>>}}
 """.strip()
+
+SRC_CODE_PROVIDE_PACK = SRC_CODE_PROVIDE.format(kind = "Package")
+SRC_CODE_PROVIDE_CLS  = SRC_CODE_PROVIDE.format(kind = "Class")

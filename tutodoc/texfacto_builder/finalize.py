@@ -281,7 +281,7 @@ def final_sty(metadata):
 
 def sty_header(metadata):
 # About
-    about = SRC_CODE_HEADER
+    about = SRC_CODE_HEADER_STY
 
     for old, new in {
         'PROJ_NAME'    : metadata[TAG_PROJ_NAME],

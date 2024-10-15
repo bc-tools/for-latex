@@ -69,11 +69,11 @@ print_frame(
 
 metadata = build_metadata(project_dir = THIS_DIR)
 
-if DEBUG:
-    print("# -- METADATA -- #")
+# if DEBUG:
+#     print("# -- METADATA -- #")
 
-    pprint(metadata)
-    exit()
+#     pprint(metadata)
+#     exit()
 
 print(f"""
 Author       : {metadata[TAG_AUTHOR]}
@@ -88,7 +88,7 @@ Manual
 ... etc.
 """.lstrip())
 
-exit()
+# exit()
 
 
 # ----------------------- #
@@ -126,10 +126,15 @@ for directdir, content in treeview[TAG_DIR].items():
 
 
 if DEBUG:
+    print("# -- TREVIEW FULL -- #")
+    debug_treeview(metadata, treeview)
+
+    exit()
+
     print("# -- TREVIEW -- #")
     debug_treeview(metadata[TAG_SRC], treeview)
 
-    # exit()
+    exit()
 
 
 # ----------------------- #
