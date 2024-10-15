@@ -15,7 +15,9 @@ def prebuild_single_tex(
     versions
 ):
     all_langs   = [dev_lang] + other_lang
-    contrib_dir = source.parent / TAG_CONTRIB / TAG_DOC / TAG_MANUAL
+    contrib_dir = source.parent / TAG_CONTRIB / TAG_TRANSLATE / TAG_MANUAL
+
+    TODO_PB_TEX_DOC
 
 # English abstract.
     if not TAG_LANG_EN in all_langs:

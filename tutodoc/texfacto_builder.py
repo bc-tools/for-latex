@@ -77,9 +77,10 @@ metadata = build_metadata(project_dir = THIS_DIR)
 
 print(f"""
 Author       : {metadata[TAG_AUTHOR]}
-Creation     : {nb_date_EN(metadata[TAG_CREATION])}  [{metadata[TAG_CREATION][TAG_NB]}]
-Last version : {nb_date_EN(metadata[TAG_VERSIONS][TAG_LAST])}  [{metadata[TAG_VERSIONS][TAG_LAST][TAG_NB]}]
 Short desc.  : {metadata[TAG_DESC]}
+
+Last version : {nb_date_EN(metadata[TAG_VERSIONS][TAG_LAST])}  [{metadata[TAG_VERSIONS][TAG_LAST][TAG_NB]}]
+Creation     : {nb_date_EN(metadata[TAG_CREATION])}  [{metadata[TAG_CREATION][TAG_NB]}]
 
 Manual
   - Dev lang   : {metadata[TAG_MANUAL_DEV_LANG]}

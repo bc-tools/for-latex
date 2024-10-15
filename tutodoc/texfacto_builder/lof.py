@@ -165,6 +165,7 @@ def loc_files_2_analyze(
             fp = onedir / p
 
             if not fp.is_file():
+                print(f"{fp = }")
                 TODO_PB
 
             sorted2analyze[i] = fp

@@ -18,7 +18,6 @@ def build_metadata(project_dir):
     if not proj_about.is_file():
         raise IOError("missing an ''about.yaml'' for the project")
 
-
     with proj_about.open(
         encoding = 'utf8',
         mode     = 'r',
@@ -28,8 +27,8 @@ def build_metadata(project_dir):
     gene_cfg = about_cfg["general"]
 
     metadata = {
-        TAG_AUTHOR  : gene_cfg["author"],
-        TAG_DESC    : gene_cfg["desc"],
+        TAG_AUTHOR         : gene_cfg["author"],
+        TAG_DESC           : gene_cfg["desc"],
         TAG_MANUAL_DEV_LANG: gene_cfg["lang"]["doc"],
     }
 
@@ -39,9 +38,9 @@ def build_metadata(project_dir):
     )
 
     metadata[TAG_PROJ_DIR]  = project_dir
-    metadata[TAG_MANUAL]    = project_dir / "contrib" / "doc" / "manual"
+    metadata[TAG_MANUAL]    = project_dir / TAG_CONTRIB / TAG_TRANSLATE
     metadata[TAG_PROJ_NAME] = project_dir.name
-    metadata[TAG_ROLLOUT]   = project_dir / "rollout"
+    metadata[TAG_ROLLOUT]   = project_dir / TAG_ROLLOUT
     metadata[TAG_SRC]       = project_dir / "src"
     metadata[TAG_TEMP]      = project_dir / f".{metadata[TAG_PROJ_NAME]}"
 
