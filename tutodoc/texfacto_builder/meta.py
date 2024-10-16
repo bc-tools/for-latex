@@ -88,8 +88,10 @@ def about_stable_version(project_dir):
     for v in all_nb_versions:
         v = str(v)
 
+        stable_versions[v].update({TAG_NB: v})
+
         stable_versions_revsorted.append(
-            stable_versions[v] | {TAG_NB: v}
+            stable_versions[v]
         )
 
     return stable_versions_revsorted

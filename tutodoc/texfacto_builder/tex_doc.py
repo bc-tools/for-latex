@@ -307,7 +307,7 @@ def abstract_of(
     abstract_file = contrib_dir / lang / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
 
     if not abstract_file.is_file():
-        raise IOError("missing file.\n{abstract_file}")
+        raise IOError(f"missing file.\n{abstract_file}")
 
     return content_from_TEX(
         srcfile     = abstract_file,

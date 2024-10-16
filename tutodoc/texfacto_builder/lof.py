@@ -154,9 +154,9 @@ def loc_files_2_analyze(
             p
             for p in allfiles
             if (
-                p.suffix[1:] in [TAG_STY,TAG_TEX]
+                p.suffix[1:] in [TAG_CLS, TAG_STY,TAG_TEX]
                 and
-                not p.suffix[1:] in [TAG_CFG_STY,TAG_CFG_TEX]
+                not p.suffix[1:] in [TAG_CFG_CLS, TAG_CFG_STY, TAG_CFG_TEX]
             )
         )
 
@@ -165,8 +165,7 @@ def loc_files_2_analyze(
             fp = onedir / p
 
             if not fp.is_file():
-                print(f"{fp = }")
-                TODO_PB
+                raise IOError(f"Missing file:\n{fp}")
 
             sorted2analyze[i] = fp
 
@@ -203,7 +202,7 @@ def ignore_this(
     if (
         pfile.parent == onedir
         or
-        pfile.parent.name.startswith("_minted-")
+        pfile.parent.name.startswith("_minted")
         or
         pfile.parent.parent.name == "locale"
         or

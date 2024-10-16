@@ -1,5 +1,5 @@
 DEBUG = False
-# DEBUG = True
+DEBUG = True
 
 
 # ------------------- #
@@ -102,6 +102,8 @@ treeview = build_tree(
     target  = metadata[TAG_ROLLOUT],
     readme  = Path('README.md'),
     ignore = """
+debug-*
+
 test_*/
 tests_*/
 test_*.*
@@ -126,16 +128,16 @@ for directdir, content in treeview[TAG_DIR].items():
                 subfiles.remove(pdf_unused)
 
 
-if DEBUG:
-    print("# -- TREVIEW FULL -- #")
-    debug_treeview(metadata, treeview)
+# if DEBUG:
+#     print("# -- TREVIEW FULL -- #")
+#     debug_treeview(metadata, treeview)
 
-    exit()
+#     exit()
 
-    print("# -- TREVIEW -- #")
-    debug_treeview(metadata[TAG_SRC], treeview)
+#     print("# -- TREVIEW -- #")
+#     debug_treeview(metadata[TAG_SRC], treeview)
 
-    exit()
+#     exit()
 
 
 # ----------------------- #
@@ -161,7 +163,7 @@ if DEBUG:
         print()
         pprint(sorted2analyze)
 
-    # exit()
+        exit()
 
 
 # --------------------------- #
