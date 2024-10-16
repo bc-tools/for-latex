@@ -155,15 +155,17 @@ sorted_useful_files = files_2_analyze(
     treeview = treeview
 )
 
-if DEBUG:
-    for onedir, sorted2analyze in sorted_useful_files.items():
-        print()
-        print()
-        print(f"+ {onedir}")
-        print()
-        pprint(sorted2analyze)
+# if DEBUG:
+#     for onedir, sorted2analyze in sorted_useful_files.items():
+#         print()
+#         print()
+#         print(f"+ {onedir}")
+#         print()
+#         pprint(sorted2analyze)
 
-        exit()
+#         input("next?")
+
+#     exit()
 
 
 # --------------------------- #
@@ -204,6 +206,10 @@ for kind, prebuilder in [
         other_lang          = metadata[TAG_MANUAL_OTHER_LANG],
         versions            = metadata[TAG_VERSIONS],
     )
+
+
+if DEBUG:
+    exit()
 
 
 # ------------------- #

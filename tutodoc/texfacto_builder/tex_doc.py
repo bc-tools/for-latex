@@ -14,8 +14,8 @@ def prebuild_single_tex(
     other_lang,
     versions
 ):
-    all_langs   = [dev_lang] + other_lang
-    contrib_dir = source.parent / TAG_CONTRIB / TAG_DOC / TAG_MANUAL
+    all_langs     = [dev_lang] + other_lang
+    translate_dir = source.parent / TAG_CONTRIB / TAG_TRANSLATE
 
 # English abstract.
     if not TAG_LANG_EN in all_langs:
@@ -26,7 +26,7 @@ def prebuild_single_tex(
 
         abstract_EN = abstract_of(
             lang        = TAG_LANG_EN,
-            contrib_dir = contrib_dir
+            translate_dir = translate_dir
         )
 
         abstract_EN = "\n    ".join(
@@ -48,7 +48,7 @@ def prebuild_single_tex(
         print(f"## {kind.upper()} LANG ''{lang}'' ##")
         print()
 
-        lang_dir      = contrib_dir / lang
+        lang_dir      = translate_dir / lang
         lang_temp_dir = temp_dir / lang
 
 # Empty lang dir.
@@ -59,10 +59,10 @@ def prebuild_single_tex(
 
 # Preamble file.
         print()
-        print(f"+ [RES-TEX] Copying ''{lang}/{TAG_TMP_PREAMBLE}''")
+        print(f"+ [RES-TEX] Copying ''{TAG_TMP_PREAMBLE}''")
 
         copyfromto(
-            srcfile  = lang_dir / TAG_TMP_PREAMBLE,
+            srcfile  = lang_dir / TAG_DOC / TAG_MANUAL / TAG_TMP_PREAMBLE,
             destfile = lang_temp_dir / TAG_TMP_PREAMBLE
         )
 
@@ -109,7 +109,7 @@ def prebuild_single_tex(
 
 # Abstract.
         abstract = content_from_TEX(
-            srcfile = contrib_dir / lang / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
+            srcfile = translate_dir / lang / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
         )
 
         if lang != TAG_LANG_EN:
@@ -302,9 +302,9 @@ def other_langs(
 
 def abstract_of(
     lang,
-    contrib_dir
+    translate_dir
 ):
-    abstract_file = contrib_dir / lang / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
+    abstract_file = translate_dir / lang /  TAG_DOC / TAG_MANUAL / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
 
     if not abstract_file.is_file():
         raise IOError(f"missing file.\n{abstract_file}")
