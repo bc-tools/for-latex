@@ -8,7 +8,7 @@
 module = "tutodoc"
 
 sourcefiledir = "code"
-sourcefiles   = {"*.sty"}
+sourcefiles   = {"*.cls", "*.cls.sty"}
 
 flatten    = false
 flattentds = false

@@ -9,6 +9,13 @@ NOW
 
 > ---------------------------- <
 
+Pour publier nvle version, il reste à ...
+
+    ---> intégrer main.cls
+    ---> gérer DOC-LANGS et ALL-LANGS
+
+> ---------------------------- <
+
 gestion des pacakages et classe importés
 
     --> besoin d'un fichier  DEPENDSN.txt des dépendances ventuellement vide pour indiquer els depndances ordonnées ! pas d'auto, charge au condeur de nourrir texfacto !

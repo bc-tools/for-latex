@@ -1,5 +1,5 @@
-\documentclass{article}
-\usepackage{tutodoc}
+\documentclass{tutodoc}
+
 \input{regression-test}
 
 \begin{document}
@@ -51,17 +51,17 @@
 \end{tdocexa}
 
 
-\section{Example - No number.}
+\section{Example - Single number.}
 
 \begin{tdocexa}
-    No number.
+    Single number.
 \end{tdocexa}
 
 
-\section{Remark - No number.}
+\section{Remark - Single number.}
 
 \begin{tdocrem}
-    No number.
+    Single number.
 \end{tdocrem}
 
 \showoutput

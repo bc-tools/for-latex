@@ -1,5 +1,5 @@
-\documentclass{article}
-\usepackage{tutodoc}
+\documentclass{tutodoc}
+
 \input{regression-test}
 
 \begin{document}

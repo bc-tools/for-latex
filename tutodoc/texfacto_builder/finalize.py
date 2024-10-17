@@ -10,14 +10,18 @@ def finalize(
     metadata,
     ugly_hack = lambda x: x
 ):
+    code_dir  = metadata[TAG_ROLLOUT] / "code"
 
+    emptydir(
+        folder  = code_dir,
+        rel_dir = metadata[TAG_PROJ_DIR]
+    )
 
-    exit()
-    final_sty(metadata)
+    if (metadata[TAG_TEMP] / TAG_TMP_STY_SRC).is_file():
+        final_sty(metadata)
 
-    print()
-
-    final_cls(metadata)
+    if (metadata[TAG_TEMP] / TAG_TMP_CLS_SRC).is_file():
+        final_cls(metadata)
 
     print()
 
@@ -125,7 +129,7 @@ def tex_header(
 
     header = f"""{title}
 
-\\documentclass[10pt, a4paper]{{article}}
+\\documentclass[10pt, a4paper]{{tutodoc}}
 
 {preamble}
 
@@ -243,11 +247,6 @@ def tex_resrc(
 def final_sty(metadata):
     code_dir  = metadata[TAG_ROLLOUT] / "code"
 
-    emptydir(
-        folder  = code_dir,
-        rel_dir = metadata[TAG_PROJ_DIR]
-    )
-
     print("+ Building STY file.")
 
     code_file = code_dir / f"{metadata[TAG_PROJ_NAME]}.sty"
@@ -259,6 +258,9 @@ def final_sty(metadata):
         ("AVAILABLE OPTIONS", TAG_TMP_STY_OPTIONS),
         ("MAIN CODE"        , TAG_TMP_STY_SRC),
     ]:
+        if not (metadata[TAG_TEMP] / temp_file).is_file():
+            continue
+
         code.append(
             f"""
 % == {kind} == %
@@ -321,6 +323,102 @@ def sty_header(metadata):
 
 # Provide package
     provide = SRC_CODE_PROVIDE_PACK
+
+    for old, new in {
+        'PROJ_NAME'    : metadata[TAG_PROJ_NAME],
+        'CREATION_DATE': nb_date_EN(metadata[TAG_CREATION]),
+        'LAST_DATE'    : nb_date_EN(metadata[TAG_VERSIONS][TAG_LAST]),
+        'LAST_NB_VER'  : metadata[TAG_VERSIONS][TAG_LAST][TAG_NB],
+        'SHORT_DESC'   : metadata[TAG_DESC],
+    }.items():
+        provide = provide.replace(f"<<{old}>>", new)
+
+    return f"""
+{about}
+
+{provide}
+    """.strip()
+
+
+def final_cls(metadata):
+    code_dir  = metadata[TAG_ROLLOUT] / "code"
+
+    print("+ Building CLS file.")
+
+    code_file = code_dir / f"{metadata[TAG_PROJ_NAME]}.cls"
+
+    code = [cls_header(metadata)]
+
+    for kind, temp_file in [
+        ("PACKAGES USED"    , TAG_TMP_CLS_IMPORT),
+        ("AVAILABLE OPTIONS", TAG_TMP_CLS_OPTIONS),
+        ("MAIN CODE"        , TAG_TMP_CLS_SRC),
+    ]:
+        if not (metadata[TAG_TEMP] / temp_file).is_file():
+            continue
+
+        code.append(
+            f"""
+% == {kind} == %
+
+{(metadata[TAG_TEMP] / temp_file).read_text()}
+            """.rstrip()
+        )
+
+    code = '\n\n'.join(code)
+    code = code.strip() + '\n'
+
+    code = prettify_all_titles(code)
+
+    code_file.write_text(code)
+
+    print("+ Copying CLS resources.")
+
+    for resrc in metadata[TAG_TEMP].glob("*.cls.sty"):
+        if resrc.name[0] == '.':
+            continue
+
+        copyfromto(
+            srcfile  = resrc,
+            destfile = code_dir / resrc.name
+        )
+
+
+def cls_header(metadata):
+# About
+    about = SRC_CODE_HEADER_CLS
+
+    for old, new in {
+        'PROJ_NAME'    : metadata[TAG_PROJ_NAME],
+        'CREATION_YEAR': metadata[TAG_CREATION][TAG_YEAR],
+        'LAST_YEAR'    : metadata[TAG_VERSIONS][TAG_LAST][TAG_YEAR],
+        'AUTHOR'       : metadata[TAG_AUTHOR],
+    }.items():
+        about = about.replace(f"<<{old}>>", new)
+
+    about = about.split('\n')
+
+    max_len = max(len(l) for l in about)
+
+    for i, line in enumerate(about):
+        line += ' ' * (max_len - len(line))
+        line  = f"% ** {line} ** %"
+
+        about[i] = line
+
+    about = '\n'.join(about)
+
+    deco =  '*' * (max_len + 6)
+    deco  = f"% {deco} %"
+
+    about = f"""
+{deco}
+{about}
+{deco}
+    """.strip()
+
+# Provide package
+    provide = SRC_CODE_PROVIDE_CLS
 
     for old, new in {
         'PROJ_NAME'    : metadata[TAG_PROJ_NAME],
