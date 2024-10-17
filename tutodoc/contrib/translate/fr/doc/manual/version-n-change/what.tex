@@ -7,7 +7,7 @@
 
 \subsection{Quoi de neuf ?}
 
-\thispack{} propose la macro \tdocmacro{tdocstartproj} et différents environnements pour indiquer rapidement et clairement ce qui a été fait lors des derniers changements.%
+\thisproj\ propose la macro \tdocmacro{tdocstartproj} et différents environnements pour indiquer rapidement et clairement ce qui a été fait lors des derniers changements.%
 \footnote{
     L'utilisateur n'a pas besoin de tous les détails techniques.
 }
@@ -18,83 +18,29 @@
 \end{tdocnote}
 
 
-% ------------------ %
+\foreach \exatitle/\filename in {
+	{Juste pour la toute première version}/%<-- Translate me!
+	first,
+	{Pour les nouveautés}/% <-- Translate me!
+	new,
+	{Pour les mises à jour}/% <-- Translate me!
+	update,
+	{Pour les bifurcations}/% <-- Translate me!
+	break,
+	{Pour les problèmes}/% <-- Translate me!
+	pb,
+	{Pour les réparations}/% <-- Translate me!
+	fix,
+	{Thématiques aux choix avec une icône}/%<-- Translate me!
+	user-choice-icon,
+	{Thématiques aux choix sans icône}/% <-- Translate me!
+	user-choice%
+} {
+	\begin{tdocexa}[\exatitle]
+    	\leavevmode
 
-
-\begin{tdocexa}[Juste pour la toute première version]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples/version-n-change/first.tex}
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[Pour les nouveautés]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples/version-n-change/new.tex}
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[Pour les mises à jour]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples/version-n-change/update.tex}
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[Pour les bifurcations]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples/version-n-change/break.tex}
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[Pour les problèmes]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples/version-n-change/pb.tex}
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[Pour les réparations]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples/version-n-change/fix.tex}
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[Thématiques aux choix avec une icône]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples/version-n-change/user-choice-icon.tex}
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[Thématiques aux choix sans icône]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples/version-n-change/user-choice.tex}
-\end{tdocexa}
+	    \tdoclatexinput[sbs]{examples/version-n-change/\filename.tex}
+	\end{tdocexa}
+}
 
 \end{document}

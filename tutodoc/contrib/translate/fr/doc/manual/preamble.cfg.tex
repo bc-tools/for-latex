@@ -1,14 +1,21 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-\usepackage[french]{babel, varioref}
-
 \usepackage{enumitem}
+
+% \usepackage[german]{babel}
+\usepackage[french]{babel, varioref}
 \frenchsetup{StandardItemLabels=true}
 
 \usepackage{multicol}
+\usepackage{wrapfig2}
 
-\newcommand\thispack{\tdocpack{tutodoc}}
 
-% Package documented.
-\usepackage[lang = french]{tutodoc}
+\newcommand\thisproj{\tdoccls{tutodoc}}
+\newcommand\thisrepo{\url{https://github.com/bc-tools/for-latex/tree/tutodoc}}
+\newcommand\thismonorepo{\url{https://github.com/bc-tools/for-latex}}
+
+\NewDocumentCommand{\trademark}{m}{\texttt{#1}}
+
+\newcommand\ctan{\href{https://ctan.org/}{\trademark{CTAN}}}
+\newcommand\git{\trademark{git}}

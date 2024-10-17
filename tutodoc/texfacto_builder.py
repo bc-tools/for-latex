@@ -191,7 +191,7 @@ emptydir(
 for kind, prebuilder in [
     (TAG_CLS, prebuild_single_cls),
     (TAG_STY, prebuild_single_sty),
-    # (TAG_TEX, prebuild_single_tex),
+    (TAG_TEX, prebuild_single_tex),
 ]:
     print_frame(
         metadata[TAG_PROJ_NAME],
