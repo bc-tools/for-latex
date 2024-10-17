@@ -48,7 +48,10 @@ TAG_PROJ_DIR  = "proj-dir"
 TAG_PROJ_NAME = "proj-name"
 TAG_ROLLOUT   = "rollout"
 TAG_SRC       = "source"
+
 TAG_API       = "api"
+TAG_LANG_API  = "lang-api"
+TAG_API_LANGS = "api-langs"
 
 TAG_VERSIONS = "versions"
 TAG_NB       = "nb"
@@ -59,6 +62,7 @@ TAG_CONTRIB           = "contrib"
 TAG_TRANSLATE         = "translate"
 TAG_DOC               = "doc"
 TAG_CHGE_LOG          = "changelog"
+
 TAG_MANUAL            = "manual"
 TAG_MANUAL_DEV_LANG   = "manual-dev-lang"
 TAG_MANUAL_OTHER_LANG = "manual-other-lang"

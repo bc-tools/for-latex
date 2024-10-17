@@ -51,7 +51,31 @@ def build_metadata(project_dir):
 
     metadata[TAG_CREATION] = creation(metadata[TAG_VERSIONS][TAG_ALL])
 
+    metadata[TAG_API_LANGS] = api_langs(project_dir)
+
     return metadata
+
+
+# --------------- #
+# -- API LANGS -- #
+# --------------- #
+
+def api_langs(project_dir):
+    contrib_status_dir = project_dir / TAG_CONTRIB / TAG_TRANSLATE / TAG_STATUS
+
+    all_langs = []
+
+    for api_yaml in contrib_status_dir.glob("*/api.yaml"):
+        with api_yaml.open(
+            encoding = 'utf8',
+            mode     = 'r',
+        ) as f:
+            lang_status = safe_load(f)
+
+        if lang_status[TAG_STATUS] == TAG_STATUS_OK:
+            all_langs.append(lang_status[TAG_LANG_API])
+
+    return all_langs
 
 
 # -------------- #

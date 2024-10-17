@@ -13,7 +13,7 @@ Pour publier nvle version, il reste à ...
 
     ---> intégrer main.cls avec au passge les load classe !!!
 
-    ---> gérer DOC-LANGS et ALL-LANGS
+    ---> gérer DOC-LANGS et ALL-LANGS (api lang mis dans metadata)
 
 > ---------------------------- <
 

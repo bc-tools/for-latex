@@ -69,11 +69,11 @@ print_frame(
 
 metadata = build_metadata(project_dir = THIS_DIR)
 
-# if DEBUG:
-#     print("# -- METADATA -- #")
+if DEBUG:
+    print("# -- METADATA -- #")
 
-#     pprint(metadata)
-#     exit()
+    pprint(metadata)
+    exit()
 
 print(f"""
 Author       : {metadata[TAG_AUTHOR]}
