@@ -200,4 +200,18 @@ def iter_sorted_useful_files(
                 if ext != ext_wanted:
                     continue
 
+                if (
+                    ext_wanted == TAG_STY
+                    and
+                    Path(srcfile.stem).suffix == ".cls"
+                ):
+                    continue
+
+                if (
+                    ext_wanted == TAG_CLS
+                    and
+                    Path(srcfile.stem).suffix != ".cls"
+                ):
+                    continue
+
                 yield onedir, srcfile, kind
