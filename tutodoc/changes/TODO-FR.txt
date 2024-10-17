@@ -11,7 +11,8 @@ NOW
 
 Pour publier nvle version, il reste à ...
 
-    ---> intégrer main.cls
+    ---> intégrer main.cls avec au passge les load classe !!!
+
     ---> gérer DOC-LANGS et ALL-LANGS
 
 > ---------------------------- <
