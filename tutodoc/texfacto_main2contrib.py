@@ -248,6 +248,9 @@ for onedir, sorted2analyze in sorted_useful_files.items():
         if srcfile.suffix[1:] != TAG_TEX:
             continue
 
+        if srcfile.name.startswith("debug-"):
+            continue
+
         all_tex_files.append(srcfile)
 
 
@@ -258,7 +261,7 @@ for srcfile in all_tex_files:
         fordoc = f"\n{fordoc}\n"
 
     content = f"""
-\\documentclass[12pt, a4paper]{{article}}
+\\documentclass[12pt, a4paper]{{tutodoc}}
 
 \\input{{../preamble.cfg.tex}}
 {fordoc}
