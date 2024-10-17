@@ -58,8 +58,8 @@
 % If the lang is not supported, we emit a warning and just turn
 % to the english language.
   \makeatletter
-  	\InputIfFileExists{../main/tutodoc-locale-main-\tdoclang.cfg.sty}{}{
-	  \input{../main/tutodoc-locale-main-en.cfg.sty}
+  	\InputIfFileExists{../main/tutodoc-locale-main-\tdoclang.cfg.cls.sty}{}{
+	  \input{../main/tutodoc-locale-main-en.cfg.cls.sty}
 
 	  \msg_critical:nnx { tutodoc ~ (main) }
       { main : unsupported-lang }

@@ -8,9 +8,16 @@ from .misc      import *
 
 def finalize(
     metadata,
-    ugly_hack = lambda x:x
+    ugly_hack = lambda x: x
 ):
+
+
+    exit()
     final_sty(metadata)
+
+    print()
+
+    final_cls(metadata)
 
     print()
 

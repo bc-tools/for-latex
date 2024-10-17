@@ -209,8 +209,8 @@ for kind, prebuilder in [
     )
 
 
-if DEBUG:
-    exit()
+# if DEBUG:
+#     exit()
 
 
 # ------------------- #

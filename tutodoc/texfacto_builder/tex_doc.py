@@ -48,8 +48,9 @@ def prebuild_single_tex(
         print(f"## {kind.upper()} LANG ''{lang}'' ##")
         print()
 
-        lang_dir      = translate_dir / lang
-        lang_temp_dir = temp_dir / lang
+        # lang_dir        = translate_dir / lang
+        lang_dir_manual = translate_dir / lang / TAG_DOC / TAG_MANUAL
+        lang_temp_dir   = temp_dir / lang
 
 # Empty lang dir.
         emptydir(
@@ -62,7 +63,7 @@ def prebuild_single_tex(
         print(f"+ [RES-TEX] Copying ''{TAG_TMP_PREAMBLE}''")
 
         copyfromto(
-            srcfile  = lang_dir / TAG_DOC / TAG_MANUAL / TAG_TMP_PREAMBLE,
+            srcfile  = lang_dir_manual / TAG_TMP_PREAMBLE,
             destfile = lang_temp_dir / TAG_TMP_PREAMBLE
         )
 
@@ -70,7 +71,7 @@ def prebuild_single_tex(
         print()
         print(f"+ Change log")
 
-        chge_dir = lang_dir / TAG_CHGE_LOG
+        chge_dir = lang_dir_manual / TAG_CHGE_LOG
         content  = []
 
         for vers in versions[TAG_ALL]:
@@ -85,7 +86,8 @@ def prebuild_single_tex(
 
             if not chge_file.is_file():
                 raise IOError(
-                    f"missing file.\n{chge_file.relative_to(lang_dir)}"
+                    # f"missing file.\n{chge_file}"
+                    f"missing file.\n{chge_file.relative_to(translate_dir)}"
                 )
 
             about_this_change = content_from_TEX(chge_file)
@@ -109,7 +111,7 @@ def prebuild_single_tex(
 
 # Abstract.
         abstract = content_from_TEX(
-            srcfile = translate_dir / lang / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
+            srcfile = lang_dir_manual / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
         )
 
         if lang != TAG_LANG_EN:
@@ -148,7 +150,7 @@ def prebuild_single_tex(
             ext_wanted          = TAG_TEX,
             fake_src_name       = lang
         ):
-            curdir  = lang_dir / onedir.name
+            curdir  = lang_dir_manual / onedir.name
             srcfile = curdir / srcfile.relative_to(onedir)
 
             if kind == TAG_FILE:
