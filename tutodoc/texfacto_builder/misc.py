@@ -190,14 +190,28 @@ def iter_sorted_useful_files(
 
         print(f'+ Working in {fake_src_name}/{onedir.relative_to(source)}/')
 
+        resrc_kind = (
+            f"{ext_wanted}-{TAG_RESRC}"
+            if ext_wanted == TAG_TEX else
+            f"{TAG_STY}-{TAG_RESRC}"
+        )
+
         for kind in [
             TAG_FILE,
-            f"{ext_wanted}-{TAG_RESRC}"
+            resrc_kind
         ]:
             for srcfile in files_n_resrc[kind]:
                 ext = srcfile.suffix[1:]
 
-                if ext != ext_wanted:
+                if (
+                    ext_wanted != TAG_TEX
+                    and
+                    ext != TAG_STY
+                ) or (
+                    ext_wanted == TAG_TEX
+                    and
+                    ext != TAG_TEX
+                ):
                     continue
 
                 if (
