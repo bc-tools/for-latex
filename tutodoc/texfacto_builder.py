@@ -203,7 +203,6 @@ for kind, prebuilder in [
         source              = metadata[TAG_SRC],
         temp_dir            = metadata[TAG_TEMP],
         sorted_useful_files = sorted_useful_files,
-        dev_lang            = metadata[TAG_MANUAL_DEV_LANG],
         versions            = metadata[TAG_VERSIONS],
         langs               = {
             TAG_MANUAL_DEV_LANG  : metadata[TAG_MANUAL_DEV_LANG],

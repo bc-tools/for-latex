@@ -295,6 +295,8 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \usepackage{fmtcount}
 
 \usepackage{multicol}
+\usepackage{wrapfig2}
+
 \setlength{\parindent}{0em}
 
 
@@ -851,7 +853,7 @@ It is sometimes useful to render code directly in the documentation. This type o
     You also have to know that behind the scene, the \tdocmacro{tdocruler} macro is used.
 
     \begin{tdoclatex}[std]
-        \tdocrulertdocruler[red]{A decorated pseudo-title}
+        \tdocruler[red]{A decorated pseudo-title}
     \end{tdoclatex}
 \end{tdocnote}
 
@@ -1311,7 +1313,7 @@ The translations are roughly organized as in figure \ref{tdoc-contrib-translate-
 \textbf{A little further down, the \ref{tdoc-contrib-translate} section explains how to add new translations}.
 
 
-\subssection{The \texttt{fr} and \texttt{en} folders}
+\subsubsection{The \texttt{fr} and \texttt{en} folders}
 
 These two folders, managed by the author of \thisproj, have the same organization; they contain files that are easy to translate even if you're not a coder.
 
@@ -1363,7 +1365,7 @@ The \texttt{LICENSE.txt} file is aptly named, while the \texttt{README.md} file 
 
 
 \begin{tdocwarn}
-    Only start from one of the \verb#fr# and \verb#en# folders, as these are the responsibility of the \thisproj# author.
+    Only start from one of the \verb#fr# and \verb#en# folders, as these are the responsibility of the \thisproj\ author.
 \end{tdocwarn}
 
 

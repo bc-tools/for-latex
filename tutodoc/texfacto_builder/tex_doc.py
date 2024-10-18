@@ -13,10 +13,7 @@ def prebuild_single_tex(
     versions,
     langs,
 ):
-    manual_langs     = [
-        langs[kind]
-        for kind in [TAG_MANUAL_DEV_LANG, TAG_MANUAL_OTHER_LANG]
-    ]
+    manual_langs  = langs[TAG_MANUAL_OTHER_LANG] + [langs[TAG_MANUAL_DEV_LANG]]
     translate_dir = source.parent / TAG_CONTRIB / TAG_TRANSLATE
 
 # English abstract.
@@ -168,6 +165,22 @@ def prebuild_single_tex(
 
                 fordoc = fordoc.strip()
                 thedoc = thedoc.strip()
+
+                api_lang_items = '\\item '.join(
+                    langs[TAG_API_LANGS]
+                )
+
+                thedoc = thedoc.replace(
+                    """
+% Do not touch the following placeholder.
+<<API-LANGS>>
+                    """.strip(),
+                    f"""
+\\begin{{itemize}}
+    \\item {api_lang_items}
+\\end{{itemize}}
+                    """
+                )
 
                 pieces = extract_from_DEV_TEX(srcfile)
                 prepare_TEX(onedir, lang_temp_dir, fordoc, thedoc)
