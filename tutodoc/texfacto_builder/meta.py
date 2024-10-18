@@ -73,7 +73,7 @@ def api_langs(project_dir):
             lang_status = safe_load(f)
 
         if lang_status[TAG_STATUS] == TAG_STATUS_OK:
-            all_langs.append(lang_status[TAG_LANG_API])
+            all_langs.append(api_yaml.parent.name)
 
     return all_langs
 

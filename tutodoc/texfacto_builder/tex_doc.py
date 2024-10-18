@@ -10,22 +10,24 @@ def prebuild_single_tex(
     source,
     temp_dir,
     sorted_useful_files,
-    dev_lang,
-    other_lang,
-    versions
+    versions,
+    langs,
 ):
-    all_langs     = [dev_lang] + other_lang
+    manual_langs     = [
+        langs[kind]
+        for kind in [TAG_MANUAL_DEV_LANG, TAG_MANUAL_OTHER_LANG]
+    ]
     translate_dir = source.parent / TAG_CONTRIB / TAG_TRANSLATE
 
 # English abstract.
-    if not TAG_LANG_EN in all_langs:
+    if not TAG_LANG_EN in manual_langs:
         print(f"+ Abstract: no English!")
 
     else:
         print(f"+ Abstract: English version.")
 
         abstract_EN = abstract_of(
-            lang        = TAG_LANG_EN,
+            lang          = TAG_LANG_EN,
             translate_dir = translate_dir
         )
 
@@ -33,14 +35,14 @@ def prebuild_single_tex(
             abstract_EN.split("\n")
         )
 
-        abstract_EN = other_langs(
-            content   = abstract_EN,
-            lang      = TAG_LANG_EN,
-            all_langs = all_langs
+        abstract_EN = other_manual_langs(
+            content      = abstract_EN,
+            lang         = TAG_LANG_EN,
+            manual_langs = manual_langs
         )
 
 # Let's work lang by lang.
-    for i, lang in enumerate(all_langs, 0):
+    for i, lang in enumerate(manual_langs, 0):
         print()
 
         kind = "dev." if i == 0 else "contrib."
@@ -132,10 +134,10 @@ def prebuild_single_tex(
                 """.rstrip()
             )
 
-        abstract = other_langs(
+        abstract = other_manual_langs(
             content   = abstract,
             lang      = lang,
-            all_langs = all_langs
+            manual_langs = manual_langs
         )
 
         abstract_file = lang_temp_dir / f"{TAG_ABSTRACT}.tex"
@@ -283,19 +285,19 @@ def prepare_TEX(
 
 
 
-def other_langs(
+def other_manual_langs(
     content,
     lang,
-    all_langs,
+    manual_langs,
 ):
     others = [
         LANG_NAMES[lang][l]
-        for l in all_langs
+        for l in manual_langs
         if l != lang
     ]
 
     content = content.replace(
-        "<<OTHER-LANGS>>",
+        "<<DOC-LANGS>>",
         ", ".join(others)
     )
 

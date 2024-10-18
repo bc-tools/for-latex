@@ -69,11 +69,11 @@ print_frame(
 
 metadata = build_metadata(project_dir = THIS_DIR)
 
-if DEBUG:
-    print("# -- METADATA -- #")
+# if DEBUG:
+#     print("# -- METADATA -- #")
 
-    pprint(metadata)
-    exit()
+#     pprint(metadata)
+#     exit()
 
 print(f"""
 Author       : {metadata[TAG_AUTHOR]}
@@ -189,8 +189,8 @@ emptydir(
 # ----------------------------------------- #
 
 for kind, prebuilder in [
-    (TAG_CLS, prebuild_single_cls),
-    (TAG_STY, prebuild_single_sty),
+    # (TAG_CLS, prebuild_single_cls),
+    # (TAG_STY, prebuild_single_sty),
     (TAG_TEX, prebuild_single_tex),
 ]:
     print_frame(
@@ -204,8 +204,12 @@ for kind, prebuilder in [
         temp_dir            = metadata[TAG_TEMP],
         sorted_useful_files = sorted_useful_files,
         dev_lang            = metadata[TAG_MANUAL_DEV_LANG],
-        other_lang          = metadata[TAG_MANUAL_OTHER_LANG],
         versions            = metadata[TAG_VERSIONS],
+        langs               = {
+            TAG_MANUAL_DEV_LANG  : metadata[TAG_MANUAL_DEV_LANG],
+            TAG_MANUAL_OTHER_LANG: metadata[TAG_MANUAL_OTHER_LANG],
+            TAG_API_LANGS        : metadata[TAG_API_LANGS],
+        },
     )
 
 
