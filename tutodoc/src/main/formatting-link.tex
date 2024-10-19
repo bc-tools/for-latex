@@ -1,14 +1,9 @@
-\documentclass[10pt, a4paper]{article}
+\documentclass[10pt, a4paper]{main}
 
 \input{../preamble.cfg.tex}
 
-\usepackage{../macroenv/macroenv}
-\usepackage{../listing/listing}
-\usepackage{../inenglish/inenglish}
-
-% TESTING LOCAL IMPLEMENTATION %
-
-\usepackage[lang = french]{main}
+\usepackage{../listing/listing.cls}
+\usepackage{../macroenv/macroenv.cls}
 
 
 \begin{document}
@@ -19,12 +14,14 @@ Le package \tdocpack{hyperref} est importé en coulisse avec les réglages ci-de
 
 
 \begin{tdoclatex}[code]
+\newcommand{\tdoclinkcolor}{NavyBlue!85!white}
+
 \hypersetup{
   colorlinks,
-  citecolor = orange!75!black,
-  filecolor = orange!75!black,
-  linkcolor = orange!75!black,
-  urlcolor  = orange!75!black
+  citecolor = \tdoclinkcolor,
+  filecolor = \tdoclinkcolor,
+  linkcolor = \tdoclinkcolor,
+  urlcolor  = \tdoclinkcolor
 }
 \end{tdoclatex}
 

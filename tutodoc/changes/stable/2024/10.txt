@@ -1,0 +1,41 @@
+// ---------- //
+
+
+==
+19  (1.5.0)
+==
+
+-------
+:break:
+-------
+
+[[:api:]]
+Here are the \chges made.
+
+    1) The \thisproj package is now a class.
+
+    1) ''\tdocruler'': the \sign of this macro is now ''[<color>]{<text>}'' with the black as the default color.
+
+
+-----
+:fix:
+-----
+
+[[:api:]]
+Dates untranslated: the \args was not correctly sent to ''\tutodoc@new@change@margin'' from ''\tdocdate''.
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+New translation: a Spanish version added.
+
+
+[[:doc:]]
+Manual.
+
+    1) A new section explains how to contribute.
+
+    1) The last \chges appear in the first page of the \doc.

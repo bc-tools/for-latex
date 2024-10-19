@@ -1,5 +1,6 @@
-\documentclass{article}
-\usepackage[lang = french]{tutodoc}
+\documentclass{tutodoc}
+\usepackage[french]{babel}
+
 \input{regression-test}
 
 \begin{document}

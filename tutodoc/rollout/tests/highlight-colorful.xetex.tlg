@@ -301,7 +301,7 @@ Completed box being shipped out [2]
 ............\glue 4.77333 plus 5.36998 minus 0.39777
 ............\penalty 10000
 ............\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 0]/H/I/C[1 0 0]/A<</S/GoTo/D(Hfootnote.4)>>>>}
-............\special{color push rgb 0.75 0.375 0}
+............\special{color push rgb 0.15 0.15 0.575}
 ............\hbox(6.71593+0.0)x4.721
 .............\mathon
 .............\hbox(3.087+0.06999)x4.721, shifted -3.62892
@@ -667,7 +667,7 @@ Completed box being shipped out [2]
 ............\glue 4.77333 plus 5.36998 minus 0.39777
 ............\penalty 10000
 ............\special{pdf:bann<</Type/Annot/Subtype/Link/Border[0 0 0]/H/I/C[1 0 0]/A<</S/GoTo/D(Hfootnote.5)>>>>}
-............\special{color push rgb 0.75 0.375 0}
+............\special{color push rgb 0.15 0.15 0.575}
 ............\hbox(6.71593+0.0)x4.721
 .............\mathon
 .............\hbox(3.087+0.06999)x4.721, shifted -3.62892

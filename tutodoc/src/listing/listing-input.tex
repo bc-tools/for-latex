@@ -1,16 +1,15 @@
-\documentclass[10pt, a4paper]{article}
+\documentclass[10pt, a4paper]{../main/main}
 
 \input{../preamble.cfg.tex}
 
-\usepackage[lang = french]{../main/main}
-\usepackage{../macroenv/macroenv}
-\usepackage{../inenglish/inenglish}
-\usepackage{../showcase/showcase}
-\usepackage{../focus/focus}
+\usepackage{../admonitions/admonitions.cls}
+\usepackage{../inenglish/inenglish.cls}
+\usepackage{../macroenv/macroenv.cls}
+\usepackage{../showcase/showcase.cls}
 
 % TESTING LOCAL IMPLEMENTATION %
 
-\usepackage{listing}
+\usepackage{listing.cls}
 
 
 % == FORDOC == %
@@ -50,14 +49,14 @@
 
 Pour les codes suivants, on considère un fichier de chemin relatif \verb+examples-listing-xyz.tex+, et ayant le contenu suivant.
 
+
 \tdoclatexinput[code]{examples/listing/xyz.tex}
+
 
 \medskip
 
+
 La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'un fichier et propose les mêmes options que l'environnement \tdocenv*{tdoclatex}.
-
-
-% ------------------ %
 
 
 \begin{tdocexa}[Face à face]
@@ -73,9 +72,6 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 \end{tdocexa}
 
 
-% ------------------ %
-
-
 \begin{tdocexa}[À la suite]
     \leavevmode
 
@@ -87,9 +83,6 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \tdoclatexinput{examples/listing/xyz.tex}
 \end{tdocexa}
-
-
-% ------------------ %
 
 
 \begin{tdocexa}[Juste le code]
@@ -120,11 +113,8 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
 
 \begin{tdocnote}
-    Les textes par défaut tiennent compte de la langue choisie lors du chargement du package \thispack{}.
+    Les textes par défaut tiennent compte de la langue détectée par \thisproj.
 \end{tdocnote}
-
-
-% ------------------ %
 
 
 \begin{tdocexa}[Changer le texte explicatif]
@@ -136,9 +126,6 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
         \tdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}
     \end{tdoc-doc-showcase}
 \end{tdocexa}
-
-
-% ------------------ %
 
 
 \begin{tdocexa}[Les options disponibles]

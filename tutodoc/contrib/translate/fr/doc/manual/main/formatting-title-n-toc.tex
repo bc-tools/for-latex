@@ -1,0 +1,57 @@
+\documentclass[12pt, a4paper]{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\subsection{Titre et table des matières}
+
+Les packages \tdocpack{titlesec} et \tdocpack{tocbasic} sont réglés comme suit.
+
+
+\begin{tdoclatex}[code]
+\RequirePackage[raggedright]{titlesec}
+
+% ...
+\ifcsundef{chapter}%
+          {}%
+          {\renewcommand\thechapter{\Alph{chapter}.}}
+
+\renewcommand\thesection{\Roman{section}.}
+\renewcommand\thesubsection{\arabic{subsection}.}
+\renewcommand\thesubsubsection{\roman{subsubsection}.}
+
+\titleformat{\paragraph}[hang]%
+            {\normalfont\normalsize\bfseries}%
+            {\theparagraph}{1em}%
+            {}
+
+\titlespacing*{\paragraph}%
+              {0pt}%
+              {3.25ex plus 1ex minus .2ex}%
+              {0.5em}
+
+% Source
+%    * https://tex.stackexchange.com/a/558025/6880
+\DeclareTOCStyleEntries[
+  raggedentrytext,
+  linefill = \hfill,
+  indent   = 0pt,
+  dynindent,
+  numwidth = 0pt,
+  numsep   = 1ex,
+  dynnumwidth
+]{tocline}{
+  chapter,
+  section,
+  subsection,
+  subsubsection,
+  paragraph,
+  subparagraph
+}
+
+\DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
+\end{tdoclatex}
+
+\end{document}

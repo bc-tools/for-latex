@@ -8,7 +8,7 @@
 module = "tutodoc"
 
 sourcefiledir = "code"
-sourcefiles   = {"*.sty"}
+sourcefiles   = {"*.cls", "*.cls.sty"}
 
 flatten    = false
 flattentds = false
@@ -24,15 +24,15 @@ checkopts   = "-interaction=nonstopmode --shell-escape"
 typesetopts = checkopts
 
 uploadconfig = {
-    version      = "1.4.0 [2024-09-28]",
-    announcement = "New macros \\tdocstartproj and \\tdocicon + Breaking changes for \\tdoccaution, \\tdocexa and \\tdocrem.",
+    version      = "1.5.0 [2024-10-19]",
+    announcement = "tutodoc becomes a LaTeX class.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",
     license      = "gpl3",
     pkg          = "tutodoc",
     -- update       = false,
-    summary      = 'This package proposes tools for writing "human friendly" documentations of LaTeX packages.',
+    summary      = 'This class proposes tools for writing "human friendly" documentations of LaTeX packages.',
     topic        = {"doc-tool"},
     ctanPath     = "/macros/latex/contrib/tutodoc",
     repository   = "https://github.com/bc-tools/for-latex",
@@ -45,29 +45,39 @@ uploadconfig = {
 -- New command line options --
 ------------------------------
 
+-- Proposed by projetmbc.
+
 VIEW_TAG = "view"
 
 function viewPDF(xtra_args)
   if xtra_args == nil or #xtra_args ~= 1
   then
-    print("One single tesfile name needed!")
+    print("One single test file name needed!")
     return 1
   end
 
-  testfilename = xtra_args[1]
-  pdffile = "build/test/" .. testfilename .. ".pdf"
+  local testfilename = xtra_args[1]
 
-  if fileexists(pdffile) == false
+  -- cfr: use the variable in case builddir isn't this directory
+  local pdffile = testfilename .. ".pdf"
+
+  if fileexists(testdir .. "/" .. pdffile) == false
   then
     print("No PDF file found.\nSee: " .. pdffile)
     return 1
   end
 
-  trycmd = run(".", "open " .. '"' .. pdffile .. '"')
+-- works on Linux, but not MacOS
+  local trycmd = run(testdir, "xdg-open " .. '"' .. pdffile .. '"')
 
-  if trycmd ~= 0
-  then
-    print("No command to open PDF files.\nSee: " .. pdffile)
+  if trycmd ~= 0 then
+-- Works on MacOS, but not on Linux.
+    trycmd = run(testdir, "open " .. '"' .. pdffile .. '"')
+
+    if trycmd ~= 0
+    then
+      print("No command to open PDF files.\nSee: " .. pdffile)
+    end
   end
 
   return 0

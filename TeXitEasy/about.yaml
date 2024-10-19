@@ -1,5 +1,5 @@
 general:
-  desc   : This project contains tools to work with ¨latex.
+  desc   : This project contains tools to work with \latex.
   author : Christophe BAL
   licence: gnu 3
   lang   :

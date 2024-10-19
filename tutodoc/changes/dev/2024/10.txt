@@ -1,0 +1,189 @@
+// ---------- //
+
+
+==
+19  (1.5.0-rc.1)
+==
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: the last \chges appear in the first page of the \doc.
+
+
+// ---------- //
+
+
+==
+17  (1.5.0-beta.4)
+==
+
+--------
+:fordev:
+--------
+
+[[:test:]]
+Migration from the dead path::''sty'' \proj to the new path::''cls'' one.
+
+
+// ---------- //
+
+
+==
+12  (1.5.0-beta.3)
+==
+
+--------
+:update:
+--------
+
+[[:doc: & :flow:]]
+Manual: the translation process has been simplified on the translator's side.
+
+
+--------
+:fordev:
+--------
+
+[[:update:]]
+Error \msgs.
+
+    1) The \src file name is next to the \pck one in the begining of error \msgs.
+
+    1) The \src file name is used as a prefix for the internal message names to avoid conflict internally.
+
+
+// ---------- //
+
+
+==
+11
+==
+
+-----
+:fix:
+-----
+
+[[:api:]]
+Highlight: the colored frames didn't color the text after a page break.
+
+
+--------
+:fordev:
+--------
+
+[[:tech:]]
+\Tech \doc: the positional \args have been "named".
+
+
+// ---------- //
+
+
+==
+08
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+New translation: a Spanish version added.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: the new section explaining how to contribute needs some clarifications.
+
+
+// ---------- //
+
+
+==
+07
+==
+
+-----
+:new:
+-----
+
+[[:doc:]]
+Manual: a new section explains how to contribute.
+
+
+-------
+:break:
+-------
+
+[[:api:]]
+\Contribs: the \dir \struct has been made translator-friendly.
+
+
+// ---------- //
+
+
+==
+05  (1.5.0-beta.2)
+==
+
+------
+:desc:
+------
+
+The \thisproj package is becoming the \thisproj class.
+
+
+-------
+:break:
+-------
+
+[[:api:]]
+One major \chge and a minor one.
+
+    1) The incoming class doesn't have any \lang option. Instead, we look for the \latex "kernel" value of ''\BCPdata{language}'' that is managed by the \packs ''babel'' and ''polyglossia''.
+
+    1) ''\tdocruler'': the \sign of this macro has been changed from ''{<text>}{<color>}'' to ''[<color>]{<text>}'' with the black as the default color.
+
+
+-----
+:fix:
+-----
+
+[[:api:]]
+Dates untranslated: the \args was not correctly sent to ''\tutodoc@new@change@margin'' from ''\tdocdate''.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: examples like ''\tdocinlatex{\mymacro[...]{...}}'' have been added to show the power of the macro ''\tdocinlatex''.
+
+
+--------
+:fordev:
+--------
+
+[[:facto:]]
+The code has been cleaned to follow the \l3 recommendations.
+
+
+// ---------- //
+
+
+==
+01  (1.5.0-beta.1)
+==
+
+--------
+:update:
+--------
+
+[[:api:]]
+Link color: new color verb::''NavyBlue!85!white'' stored inside the macro ''\tdoclinkcolor'' (the previous color was verb::''orange!75!black'').

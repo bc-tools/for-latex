@@ -1,0 +1,52 @@
+% == PACKAGES == %
+
+% We delegate the management of quoting to the ''csquotes'' package,
+% which takes care of the locale settings.
+\RequirePackage{csquotes}%
+               [2022-09-14]
+
+
+% == TOOLS == %
+
+% -- QUOTING -- %
+
+%%%
+% prototype::
+%     #1 : (text)
+%          a text to quote.
+%
+% For example, ''\tdocquote{Something}'' prints **"Something"**.
+%%%
+\NewDocumentCommand{\tdocquote}{m}{%
+  \enquote{\emph{#1}}%
+}
+
+
+% -- EXPLAINING ENGLISH NAMES -- %
+
+%%%
+% prototype::
+%     #1 : (text-en)
+%          an english text that will be explained in another \lang.
+%
+%     :extra: this macro has a star version.
+%
+% For example, if the language chosen is ''french'', we have
+% the following outputs.
+%
+%     1) ''\tdocinEN{Something}'' prints
+%        **"Something" en anglais**.
+%
+%     2) ''\tdocinEN*{Something}'' just prints
+%        **"Something"**.
+%
+%     3) ''\tdocinEN*{Something} et \tdocinEN{Another thing}''
+%        gives
+%        **"Something" et "Another thing" en anglais**.
+%%%
+\NewDocumentCommand{\tdocinEN}{s m}{%
+  \tdocquote{#2}%
+  \IfBooleanF{#1}{% No star used.
+    \tutodoc@trans@in@EN{}%
+  }%
+}

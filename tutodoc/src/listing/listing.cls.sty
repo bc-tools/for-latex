@@ -1,0 +1,182 @@
+% == PACKAGES == %
+
+%\RequirePackage{minted2}% Old implementation.
+
+\RequirePackage[highlightmode = immediate]%
+               {minted}%
+               [2024/09/22]
+
+\RequirePackage{tcolorbox}%
+               [2024/07/10]
+
+\tcbuselibrary{minted,
+               breakable,
+               skins}
+
+
+% == TOOLS == %
+
+% -- LATEX EXAMPLES -- %
+
+% :: INLINE SHORT LATEX CODE :: %
+
+%%%
+% See the \doc of the macro ''\newmintinline'' from the package ''minted''
+% to have \infos about the macro ''tdocinlatex''.
+%%%
+\newmintinline[tdocinlatex]{latex}{bgcolor = yellow!4}
+
+
+% :: SHORTCUTS FOR TCOLORBOX LISTING FORMATING :: %
+
+\ExplSyntaxOn
+
+%%%
+% prototype::
+%     #1 : (tdoclatex-style)
+%          a style of formatting for a \latex listing and its output.
+%
+%     :see: macro.tdoclatex ,
+%           macro.tdoclatexinput
+%
+% In the following easy-to-understand macro, we use one fictive ''tcolorbox''
+% style such as to indicate an unknown ''tutodoc'' style to the user.
+% For example, this can give one message similar to the following one.
+%
+% term::
+%     Package pgfkeys Error: I do not know the key '/tcb/tdoclatex bad option
+%     "NOT-A-STYLE"' and I am going to ignore it. Perhaps you misspelled it.
+%
+%     See the pgfkeys package documentation for explanation.
+%%%
+\NewExpandableDocumentCommand{\tutodoc@latex@listing@formating}{ m }{
+  \str_case:nnF { #1 } {
+    { sbs  } { listing ~ side ~ text }
+    { code } { listing ~ only }
+    { std  } { listing ~ and ~ text }
+  } { tdoclatex ~ bad ~ option ~ "#1" }
+}
+
+\ExplSyntaxOff
+
+
+% :: THE TCOLORBOX LISTING STYLE :: %
+
+% Source.
+%     * https://tex.stackexchange.com/a/604821/6880
+%     * https://tex.stackexchange.com/a/327983/6880
+\tcbset{
+  tutodoc-latex-listing-style/.style = {
+    minted language = latex,
+    breakable,
+    enhanced,
+% Code and output
+    colback = yellow!5,
+% Frame
+    colframe = darkgray,
+    shadow   = {.75mm}{-.75mm}{0mm}{black!30},
+    arc      = .75mm,
+    left     = 1mm, right = 1mm,
+    bottom   = 1mm, top   = 1mm,
+% We can use  ''sharp corners'' to obtain an "old school" style.
+%
+% Separating line
+    segmentation style = {
+      gray,
+      dash pattern = {on 5pt off 2.5pt},
+      line width   = 1.25pt
+    },
+    #1
+  },
+}
+
+
+% :: TCOLORBOX LISTING ENVIRONMENT :: %
+
+%%%
+% prototype::
+%     #1 : (tdoclatex-style)
+%          the style to be used (code only, code and output side by side,
+%          or the standard style corresponding to the code followed by
+%          its output)
+%        @ #1 in [code, sbs, std]
+%
+% note::
+%     See the \doc of the macro ''\newtcblisting'' from the package
+%     ''tcolorbox'' to have \infos about the environment ''tdoclatex''.
+%%%
+\newtcblisting{tdoclatex}[1][std]{%
+  tutodoc-latex-listing-style = \tutodoc@latex@listing@formating{#1}
+}
+
+
+% :: TCOLORBOX IMPORTED LISTING MACRO :: %
+
+%%%
+% prototype::
+%     #1 : (tdoclatex-style)
+%          :see: ''\newtcblisting{tdoclatex}''
+%     #2 : (file-path)
+%          the path of the file to input and format.
+%
+% note::
+%     See the \doc of the macro ''\newtcbinputlisting'' from the package
+%     ''tcolorbox'' to have more \infos about the macro ''\tdoclatexinput''.
+%%%
+\newtcbinputlisting{\tdoclatexinput}[2][std]{
+  listing file                = {#2},
+  tutodoc-latex-listing-style = \tutodoc@latex@listing@formating{#1}
+}
+
+
+% -- LATEX REAL USE CASES -- %
+
+\ExplSyntaxOn
+
+% :: SETTING THE KEY :: %
+
+\tl_new:N \l_tutodoc_listing_explain_tl
+
+%%%
+% prototype::
+%     :see: macro.tdoclatexshow
+%
+% We add a key-val option specific to ''\tdoclatexshow'', the other ones
+% will be sent to ''\tdocshowcaseinput''.
+%%%
+\keys_define:nn { tutodoc / listing / latexshow } {
+  explain .tl_set:N  = \l_tutodoc_listing_explain_tl,
+  explain .initial:n = { \tutodoc@trans@this@gives \tutodoc@colon },
+}
+
+
+% :: LATEXSHOW MACRO :: %
+
+%%%
+% prototype::
+%     #1 : (key-val)
+%          the key-value options supported by the ''tdocshowcase'' \env,
+%          plus one allowing you to change the description of a line
+%          printed between the code and its highlighted output.
+%     #2 : (file-path)
+%          the path of a file
+%
+%     :see: env.tdocshowcase ,
+%           macro.tdoclatexinput
+%%%
+\NewDocumentCommand{\tdoclatexshow}{O{} m}{
+  \group_begin:
+    \keys_set_known:nnN { tutodoc / listing / latexshow }
+      { #1 }
+      \l_tmpa_tl
+
+    \tdoclatexinput[code]{#2}
+
+    \tl_use:N \l_tutodoc_listing_explain_tl
+
+% Source: https://tex.stackexchange.com/a/696700/6880
+    \exp_last_unbraced:NNV \tdocshowcaseinput [\l_tmpa_tl] {#2}
+  \group_end:
+}
+
+\ExplSyntaxOff

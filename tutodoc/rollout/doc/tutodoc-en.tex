@@ -102,7 +102,7 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-focus-exa-leavevmode.tex}
+\begin{filecontents*}[overwrite]{examples-admonitions-exa-leavevmode.tex}
 \begin{tdocexa}
     \leavevmode
     \begin{enumerate}
@@ -114,7 +114,7 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-focus-important.tex}
+\begin{filecontents*}[overwrite]{examples-admonitions-important.tex}
 \begin{tdocimp}
     Important and harmless.
 \end{tdocimp}
@@ -125,7 +125,7 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-focus-note.tex}
+\begin{filecontents*}[overwrite]{examples-admonitions-note.tex}
 \begin{tdocnote}
     Something useful to tell you...
 \end{tdocnote}
@@ -136,7 +136,7 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-focus-caution.tex}
+\begin{filecontents*}[overwrite]{examples-admonitions-caution.tex}
 \begin{tdoccaut}
     Caution, caution...
 \end{tdoccaut}
@@ -147,7 +147,7 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-focus-tip.tex}
+\begin{filecontents*}[overwrite]{examples-admonitions-tip.tex}
 \begin{tdoctip}
     A tip.
 \end{tdoctip}
@@ -158,7 +158,7 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-focus-warn.tex}
+\begin{filecontents*}[overwrite]{examples-admonitions-warn.tex}
 \begin{tdocwarn}
     Avoid the dangers...
 \end{tdocwarn}
@@ -169,7 +169,7 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-focus-exa.tex}
+\begin{filecontents*}[overwrite]{examples-admonitions-exa.tex}
 \begin{tdocexa}
     An example...
 \end{tdocexa}
@@ -180,7 +180,7 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-focus-rmk.tex}
+\begin{filecontents*}[overwrite]{examples-admonitions-rmk.tex}
 \begin{tdocrem}
     Just one remark...
 \end{tdocrem}
@@ -284,28 +284,30 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 % == SOURCE FOR THE DOC == %
 % ======================== %
 
-\documentclass[10pt, a4paper]{article}
+\documentclass[10pt, a4paper]{tutodoc}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-
 \usepackage[english]{babel, varioref}
-
-
-
-
 
 \usepackage{enumitem}
 \usepackage{fmtcount}
 
 \usepackage{multicol}
+\usepackage{wrapfig2}
+
 \setlength{\parindent}{0em}
 
-\newcommand\thispack{\tdocpack{tutodoc}}
 
-% Package documented.
-\usepackage[lang = english]{tutodoc}
+\newcommand\thisproj{\tdoccls{tutodoc}}
+\newcommand\thisrepo{\url{https://github.com/bc-tools/for-latex/tree/tutodoc}}
+\newcommand\thismonorepo{\url{https://github.com/bc-tools/for-latex}}
+
+\NewDocumentCommand{\trademark}{m}{\texttt{#1}}
+
+\newcommand\ctan{\href{https://ctan.org/}{\trademark{CTAN}}}
+\newcommand\git{\trademark{git}}
 
 
 % --------------- %
@@ -371,35 +373,129 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 }
 
 
+\NewDocumentCommand{\mailsubject}{m}%  <-- Translate me!
+  {subject \tdocquote{\texttt{tutodoc - CONTRIB - #1}}}
+
+% Source: https://tex.stackexchange.com/a/424061/6880
+
+\newcommand{\FTdirO}{}
+\def\FTdirO(#1,#2,#3){%
+  \FTfile(#1,{\color{blue!40!black}\faFolderOpen\hspace{-.35pt}}{\hspace{0.2em}#3})
+  (tmp.west)++(0.8em,-0.4em)node(#2){}
+  (tmp.west)++(1.5em,0)
+  ++(0,-1.3em)
+}
+
+\newcommand{\FTdirC}{}
+\def\FTdirC(#1,#2,#3){%
+  \FTfile(#1,{\color{blue!40!black}\faFolder\hspace{.75pt}}{\hspace{0.2em}#3})
+  (tmp.west)++(0.8em,-0.4em)node(#2){}
+  (tmp.west)++(1.5em,0)
+  ++(0,-1.3em)
+}
+
+\newcommand{\FTfile}{}
+\def\FTfile(#1,#2){%
+  node(tmp){}
+  (#1|-tmp)++(0.6em,0)
+  node(tmp)[anchor=west,black]{\tt #2}
+  (#1)|-(tmp.west)
+  ++(0,-1.2em)
+}
+
+\newcommand{\FTroot}{}
+\def\FTroot{tmp.west}
+
+\newcommand\contribtranslatedirtree{
+  \begin{tikzpicture}%
+    \draw[color=black, thick]
+% en        : parent = \FTroot
+% normal dir: (parentID, currentID, label)
+% file      :       (parentID, label)
+      \FTdirO(\FTroot,root,translate){
+        \FTdirC(root,changes,changes){
+        }
+        \FTdirO(root,en,en) {
+          \FTdirC(en,api,api) {
+          }
+          \FTdirC(en,doc,doc) {
+          }
+        }
+        \FTdirC(root,fr,fr){
+        }
+        \FTdirC(root,status,status){
+          \FTdirO(status,en,en) {
+            \FTfile(en,api.yaml)
+            \FTfile(en,manual.yaml)
+          }
+          \FTdirC(status,fr,fr){
+          }
+        }
+        \FTfile(root,README.md)
+        \FTfile(root,LICENSE.txt)
+      };
+  \end{tikzpicture}
+}
+
+
 \begin{document}
 
 
-\title{The \texttt{tutodoc} package - Tutorial-style documentation}
+\title{The \texttt{tutodoc} class - Tutorial-style documentation}
 \author{Christophe BAL}
-\date{Sep 28, 2024 - Version 1.4.0}
+\date{Oct 19, 2024 - Version 1.5.0}
 
 \maketitle
 
 \begin{abstract}
-    The \thispack{} package\,%
+    The \thisproj{} class\,%
     \footnote{
         The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
     }
-    is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style,%
+    is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style\,%
     \footnote{
         The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
     }
-    and with a sober rendering for reading on screen.
+    using a sober rendering for reading on screen.
 
-    \medskip
+    \smallskip
 
-    Two important points to note.
-    \begin{itemize}
-        \item This package imposes a formatting style. In the not-too-distant future, \thispack{} will probably be split into a class and a package.
-
-        \item This documentation is also available in French.
-    \end{itemize}
+	\noindent
+    \emph{\textbf{Remark :} this documentation is also available in French.}
 \end{abstract}
+
+\medskip
+
+\begin{center}
+\small
+\begin{minipage}{.9\textwidth}
+\begin{tdocnote}[Last changes]
+\small
+
+\begin{tdocbreak}
+	\item The \thisproj\ class replaces the now-defunct \thisproj\ package (for the moment, the young class offers no specific options).
+
+	\item The \tdocmacro{tdocruler} macro is now used via \tdocinlatex{\tdocruler[<color>]{<text>}} (remember that the old syntax was \tdocinlatex{\tdocruler{<text>}{<color>}}).
+\end{tdocbreak}
+
+
+\begin{tdocfix}
+	\item Version 3 of \tdocpack{minted} is taken into account.
+
+	\item The \tdocmacro{tdocdate} macro did not handle date format and formatting.
+
+	\item Colored frames did not color text after a page break.
+\end{tdocfix}
+
+
+\begin{tdocnew}
+	\item The class is usable in Spanish.
+
+	\item The documentation contains a new section explaining how to contribute.
+\end{tdocnew}
+\end{tdocnote}
+\end{minipage}
+\end{center}
 
 
 \newpage
@@ -483,30 +579,49 @@ The \tdocpack{hyperref} package is imported behind the scenes with the settings 
 
 
 \begin{tdoclatex}[code]
+\newcommand{\tdoclinkcolor}{NavyBlue!85!white}
+
 \hypersetup{
   colorlinks,
-  citecolor = orange!75!black,
-  filecolor = orange!75!black,
-  linkcolor = orange!75!black,
-  urlcolor  = orange!75!black
+  citecolor = \tdoclinkcolor,
+  filecolor = \tdoclinkcolor,
+  linkcolor = \tdoclinkcolor,
+  urlcolor  = \tdoclinkcolor
 }
 \end{tdoclatex}
 
 
-\section{Select language when loading package}
+\section{What language is used by the \thisproj\ class?}
 
-By default, \thispack{} is set for English, but it is possible to change the language: for example, a French documentation will use \tdocinlatex|\usepackage[lang = french]{tutodoc}| .
-For the moment, we only have the following two choices.
+This documentation loads the \tdocpack{babel} package via \tdocinlatex|\usepackage[english]{babel}|\,.
+As a result, the \thisproj\ class identifies \tdocinlatex|en| as the main language used by \tdocpack{babel}.%.
+\footnote{
+	Technically, we use \tdocinlatex|\BCPdata{language}| which returns a language in short format.
+}
+As this language is included in the list of languages taken into account, see below, the \thisproj\ class will produce the expected effects.
 
-\begin{enumerate}
-    \item \tdocinlatex|english| is the default value.
+\begin{multicols}{3}
+    \begin{itemize}
+        \item \tdocinlatex|en| : English.
+        \item \tdocinlatex|es| : Spanish.
+        \item \tdocinlatex|fr| : French.
+    \end{itemize}
+\end{multicols}
+                    
 
-    \item \tdocinlatex|french|
-\end{enumerate}
+
+\begin{tdoccaut}
+	If the choice of main language is not made in the preamble, the mechanism used will fail with unintended side effects (see warning that follows).
+\end{tdoccaut}
+
+
+\begin{tdocwarn}
+    When a language is not supported by \thisproj, a warning message is issued, and English is selected as the language for \thisproj.
+\end{tdocwarn}
 
 
 \begin{tdocnote}
-    Language names are those suggested by the \tdocpack{babel} package.
+    The mechanism used should be compatible with the \tdocpack{polyglossia} package.
 \end{tdocnote}
 
 
@@ -524,7 +639,7 @@ The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{t
 
 
 \begin{tdocnote}
-    As the text \tdocquote{in English} is translated into the language indicated when \thispack{} is imported, the macro \tdocmacro{tdocinEN} and its starred version become useful for non-English speakers.
+    As the text \tdocquote{in English} is translated into the language detected by \thisproj, the macro \tdocmacro{tdocinEN} and its starred version become useful for non-English speakers.
 \end{tdocnote}
 
 
@@ -536,7 +651,7 @@ The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{t
         The formatting comes from the \tdocpack{keytheorems} package.
     }
     add a short title indicating the type of information provided.
-    This short text will always be translated into the language indicated when the \thispack{} package is loaded.
+    This short text will always be translated into the language detected by the \thisproj\ class.
 \end{tdocnote}
 
 
@@ -559,7 +674,7 @@ The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{t
 Numbered examples, if required, are indicated via \tdocenv{tdocexa}, which offers an optional argument for adding a mini-title.
 Here are two possible uses.
 
-\tdoclatexinput[sbs]{examples-focus-exa.tex}
+\tdoclatexinput[sbs]{examples-admonitions-exa.tex}
 
 
 
@@ -578,7 +693,7 @@ Here are two possible uses.
     It can sometimes be useful to return to the line at the start of the content. The code below shows how to proceed (this trick also applies to the \verb#tdocrem# environment presented next). Note in passing that the numbering follows that of the previous example as desired.
 \end{tdoctip}
 
-\tdoclatexinput[sbs]{examples-focus-exa-leavevmode.tex}
+\tdoclatexinput[sbs]{examples-admonitions-exa-leavevmode.tex}
 
 
 
@@ -588,19 +703,19 @@ Here are two possible uses.
 
 Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocenv*{tdocexa} environment, as shown in the following example.
 
-\tdoclatexinput[sbs]{examples-focus-rmk.tex}
+\tdoclatexinput[sbs]{examples-admonitions-rmk.tex}
 
 
 
-\subsection{Flashy content} \label{tdoc-colorful-focus}
+\subsection{Flashy content} \label{tdoc-admonitions}
 
 \begin{tdocnote}
     Icons are obtained via the \tdocpack{fontawesome5} package, and text spacing is managed by the \tdocmacro{tdocicon} macro.
     \footnote{
         For example,
-        \tdocinlatex|\tdocicon{\faBed}{Tired}|
+        \tdocinlatex|\fbox{\tdocicon{\faBed}{Tired}}|
         produces\,
-        \tdocicon{\faBed}{Tired}.
+        \fbox{\tdocicon{\faBed}{Tired}}\,.
     }
 \end{tdocnote}
 
@@ -609,7 +724,7 @@ Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocen
 
 The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
-\tdoclatexinput[sbs]{examples-focus-tip.tex}
+\tdoclatexinput[sbs]{examples-admonitions-tip.tex}
 
 
 
@@ -621,44 +736,30 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 \end{tdocnote}
 
 
-%\subsection{Flashy content}
+\foreach \sectitle/\desc/\filename in {
+	{Informative note}/%<-- Translate me!
+	{The \tdocenv*{tdocnote} environment is used to highlight useful information. Here's how to use it.}/%<-- Translate me!
+	note,
+	%
+	{Something important}/%<-- Translate me!
+	{The \tdocenv*{tdocimp} environment is used to indicate something important but harmless.}/%<-- Translate me!
+	important,
+	%
+	{Caution about a delicate point}/%<-- Translate me!
+	{The \tdocenv*{tdoccaut} environment is used to indicate a delicate point to the user. Here's how to use it.}/% <-- Translate me!
+	caution,
+	%
+	{Warning of danger}/%<-- Translate me!
+	{The \tdocenv*{tdocwarn} environment is used to warn the user of a trap to avoid. Here's how to use it.}/%<-- Translate me!
+	warn%
+} {
+	\subsubsection{\sectitle}
 
-\subsubsection{Informative note}
+	\desc
 
-The \tdocenv*{tdocnote} environment is used to highlight useful information. Here's how to use it.
+	\tdoclatexinput[sbs]{examples-admonitions-\filename.tex}
 
-\tdoclatexinput[sbs]{examples-focus-note.tex}
-
-
-
-%\subsection{Flashy content}
-
-\subsubsection{Something important}
-
-The \tdocenv*{tdocimp} environment is used to indicate something important but harmless.
-
-\tdoclatexinput[sbs]{examples-focus-important.tex}
-
-
-
-%\subsection{Flashy content}
-
-\subsubsection{Caution about a delicate point}
-
-The \tdocenv*{tdoccaut} environment is used to indicate a delicate point to the user. Here's how to use it.
-
-\tdoclatexinput[sbs]{examples-focus-caution.tex}
-
-
-
-%\subsection{Flashy content}
-
-\subsubsection{Warning of danger}
-
-The \tdocenv*{tdocwarn} environment is used to warn the user of a trap to avoid. Here's how to use it.
-
-\tdoclatexinput[sbs]{examples-focus-warn.tex}
-
+}
 
 
 \section{Specify packages, classes, macros or environments}
@@ -716,7 +817,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
 
-\subsection{With a coloured stripe} \label{tdoc-color-macros}
+\subsection{With a colored stripe} \label{tdoc-color-macros}
 
 \begin{tdocexa} [With default text]
     It can be useful to show a real rendering directly in a document.
@@ -746,7 +847,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
 \begin{tdocnote}
-    The explanatory texts adapt to the language chosen when \thispack{} is loaded.
+    The explanatory texts adapt to the language detected by \thisproj.
 \end{tdocnote}
 
 
@@ -794,7 +895,7 @@ It is sometimes useful to render code directly in the documentation. This type o
     You also have to know that behind the scene, the \tdocmacro{tdocruler} macro is used.
 
     \begin{tdoclatex}[std]
-        \tdocruler{A decorated pseudo-title}{red}
+        \tdocruler[red]{A decorated pseudo-title}
     \end{tdoclatex}
 \end{tdocnote}
 
@@ -888,10 +989,10 @@ Documenting a package or class is best done through use cases showing both the c
 }
 
 
-\begin{tdoccaut}
-	Version 3 of \tdocpack{minted} cannot be used at the moment, as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of minted.
-
-\end{tdoccaut}
+%\begin{tdoccaut}
+%	Version 3 of \tdocpack{minted} cannot be used at the moment, as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of minted.
+%
+%\end{tdoccaut}
 
 
 \subsection{\tdocquote{Inline} codes} \label{tdoc-listing-inline}
@@ -900,14 +1001,14 @@ The \tdocmacro{tdocinlatex} macro
 \footnote{
     The name of the macro \tdocmacro{tdocinlatex} comes from \tdocquote{\tdocprewhy{in.line} \LaTeX}.
 }
-can be used to type inline code in a similar way to \tdocmacro{verb}.
+can be used to type inline code in a similar way to \tdocmacro{verb} or like a standard macro (see brace management in the last case below).
 Here are some examples.
 
 
 \begin{tdoclatex}[sbs]
-    1: \tdocinlatex|$a^b = c$|
-
-    2: \tdocinlatex+\tdocinlatex|$a^b = c$|+
+    1: \tdocinlatex|$a^b = c$|               \\
+    2: \tdocinlatex+\tdocinlatex|$a^b = c$|+ \\
+    3: \tdocinlatex{\tdocinlatex{$a^b = c$}}
 \end{tdoclatex}
 
 
@@ -1059,7 +1160,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
 
 \begin{tdocnote}
-    The default texts take into account the language chosen when loading the package \thispack{}.
+    The default texts take into account the language detected by \thisproj.
 \end{tdocnote}
 
 
@@ -1105,7 +1206,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
 \section{Indicate changes}
 
-To make it easier to monitor a package, it is essential to provide a history indicating the changes made when a new version is published.
+To make it easier to monitor a project, it is essential to provide a history indicating the changes made when a new version is published.
 
 
 
@@ -1140,119 +1241,58 @@ You can either date something, or version it, in which case the version number c
     \begin{enumerate}
         \item The \tdocmacro{tdocdate} and \tdocmacro{tdocversion} macros require two compilations.
 
-        \item The final rendering of the dates takes into account the language specified when loading the package \thispack{}: for example, if French is selected, the dates will be displayed in the format \texttt{DD/MM/YYYY}.
+        \item The final rendering of the dates takes into account the language detected by \thisproj{}: for example, if French is selected, the dates will be displayed in the format \texttt{DD/MM/YYYY}.
     \end{enumerate}
 \end{tdocimp}
 
 
 \begin{tdocwarn}
-    Only the use of the digital format \tdocinlatex+YYYY-MM-DD+ is verified.
+    Only the use of the digital format \tdocinlatex+YYYY-MM-DD+ is verified,
     \footnote{
         Technically, checking the validity of a date using \LaTeX3 presents no difficulty.
-    },
+    }
     and this is a choice! Why? Quite simply because dating and versioning explanations should be done semi-automatically to avoid any human bugs.
 \end{tdocwarn}
 
 
 \subsection{What's new?}
 
-\thispack{} offers the macro \tdocmacro{tdocstartproj} and different environments to indicate quickly and clearly what has been done during the latest changes.%
+\thisproj\ offers the macro \tdocmacro{tdocstartproj} and different environments to indicate quickly and clearly what has been done during the latest changes.%
 \footnote{
     The user doesn't need all the technical details.
 }
 
 
 \begin{tdocnote}
-    For icons, see the note at the beginning of the section \ref{tdoc-colorful-focus} page \pageref{tdoc-colorful-focus}.
+    For icons, see the note at the beginning of the section \ref{tdoc-admonitions} page \pageref{tdoc-admonitions}.
 \end{tdocnote}
 
 
-% ------------------ %
+\foreach \exatitle/\filename in {
+	{Just for the very first version}/%<-- Translate me!
+	first,
+	{For new features}/% <-- Translate me!
+	new,
+	{For updates}/% <-- Translate me!
+	update,
+	{For breaks}/% <-- Translate me!
+	break,
+	{For problems}/% <-- Translate me!
+	pb,
+	{For fixes}/% <-- Translate me!
+	fix,
+	{Selectable themes with an icon}/% <-- Translate me!
+	user-choice-icon,
+	{Selectable themes without icons}/%<-- Translate me!
+	user-choice%
+} {
+	\begin{tdocexa}[\exatitle]
+    	\leavevmode
 
+	    \tdoclatexinput[sbs]{examples-version-n-change-\filename.tex}
 
-\begin{tdocexa}[Just for the very first version]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples-version-n-change-first.tex}
-
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[For new features]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples-version-n-change-new.tex}
-
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[For updates]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples-version-n-change-update.tex}
-
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[For breaks]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples-version-n-change-break.tex}
-
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[For problems]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples-version-n-change-pb.tex}
-
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[For fixes]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples-version-n-change-fix.tex}
-
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[Selectable themes with an icon]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples-version-n-change-user-choice-icon.tex}
-
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[Selectable themes without icons]
-    \leavevmode
-
-    \tdoclatexinput[sbs]{examples-version-n-change-user-choice.tex}
-
-\end{tdocexa}
+	\end{tdocexa}
+}
 
 
 \section{Ornaments}
@@ -1277,16 +1317,188 @@ Ble, ble, ble...
 \end{tdoclatex}
 
 
+\section{Contribute}
+
+\begin{tdocnote}
+	\textbf{You don't need to be a coder to take part in translations}, including those that are useful for the running of \thisproj.
+\end{tdocnote}
+
+
+%\section{Contribute}
+
+\subsection{Complete the translations}
+
+\begin{tdocnote}
+    The author of \thisproj\ manages the French and English versions of the translations.
+\end{tdocnote}
+
+
+\begin{tdoccaut}
+    Although we're going to explain how to translate the documentation, it doesn't seem relevant to do so, as English should suffice these days.%
+    \footnote{
+      The existence of a French version is simply a consequence of the native language of the author of \thisproj.
+    }
+\end{tdoccaut}
+
+
+\begin{wrapfigure}{R}
+	\contribtranslatedirtree\
+	\caption{Simplified view of the translation folder}
+	\label{tdoc-contrib-translate-dir}
+\end{wrapfigure}{}
+
+
+The translations are roughly organized as in figure \ref{tdoc-contrib-translate-dir} where only the folders important for the translations have been \tdocquote{opened}\,.%}.
+\footnote{
+    This was the organization on October 5, 2024, but it's still relevant today.
+}
+\textbf{A little further down, the \ref{tdoc-contrib-translate} section explains how to add new translations}.
+
+
+\subsubsection{The \texttt{fr} and \texttt{en} folders}
+
+These two folders, managed by the author of \thisproj, have the same organization; they contain files that are easy to translate even if you're not a coder.
+
+
+\subsubsection{The \texttt{changes} folder}
+
+This folder is a communication tool where important changes are indicated without dwelling on minor modifications specific to one or more translations.
+
+
+\subsubsection{The \texttt{status} folder}
+
+This folder is used to keep track of translations from the project's point of view. Everything is done via well-commented \verb#YAML# files, readable by a non-coder.
+
+
+\subsubsection{The \texttt{README.md} and \texttt{LICENSE.txt} files}
+
+The \texttt{LICENSE.txt} file is aptly named, while the \texttt{README.md} file takes up in English the important points of what is said in this section about new translations.
+
+
+\subsubsection{New translations}
+\label{tdoc-contrib-translate}
+
+\begin{tdocimp}
+    The \verb#api# folder contains translations relating to the functionalities of \thisproj.
+    Here you'll find \verb#TXT# files for editing with a text or code editor, but not with a word processor.
+    The content of these files uses commented lines in English to explain what \thisproj\ will do; these lines begin with \verb#//#\,. Here's an extract from such a file, where translations are made after each \,$=$\ sign, without touching the preceding, as this initial piece is used internally by the \thisproj code.
+
+    \tdocsep
+    \vspace{-10pt}
+    \begin{verbatim}
+    // #1: year  in format YYYY like 2023.
+    // #2: month in format MM   like 04.
+    // #3: day   in format DD   like 29.
+    date = #1-#2-#3
+
+    // #1: the idea is to produce one text like
+    //     "this word means #1 in english".
+    in_EN = #1 in english\end{verbatim}
+\end{tdocimp}
+
+
+\begin{tdocnote}
+    The \verb#doc# folder is reserved for documentation. It contains files of type \verb#TEX# that can be compiled directly for real-time validation of translations.
+\end{tdocnote}
+
+
+\begin{tdocwarn}
+    Only start from one of the \verb#fr# and \verb#en# folders, as these are the responsibility of the \thisproj\ author.
+\end{tdocwarn}
+
+
+\medskip
+
+
+\emph{\textbf{Let's say you want to add support for Italian from files written in English.}}%
+\footnote{
+    As mentioned above, there is no real need for the \texttt{doc} documentation folder.
+}
+
+
+\paragraph{Method 1 : \git.}
+
+\begin{enumerate}
+	  \item Obtain the entire project folder via \thisrepo\,.
+    Do not use the \verb#main# branch, which is used to freeze the latest stable versions of projects in the single \thismonorepo\ repository,.
+
+	  \item In the \verb#tutodoc/contrib/translate# folder, create a \verb#it# copy of the \verb#en# folder, with the short name of the language documented in
+	  \href{https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags}%
+	       {the page \tdocquote{IIETF language tag}}
+	  from \texttt{Wikipedia}.
+
+	  \item Once the translation is complete in the \verb#it# folder, you'll need to communicate it via \thisrepo\ using a classic \verb#git push#\,.
+\end{enumerate}
+
+
+\paragraph{Method 2 : communicate by e-mail.}
+
+\begin{enumerate}
+	  \item By e-mail with the \mailsubject{en FOR italian}, request a version of the English translations (note the use of the English name for the new language).
+    Be sure to respect the subject of the e-mail, as the author of \thisproj\ automates the pre-processing of this type of e-mail.
+
+	  \item You will receive a folder named \verb#italian# containing the English version of the latest translations.
+    This folder will be the place for your contribution.
+
+	  \item Once the translation is complete, you will need to compress your \verb#italian# file in \verb#zip# or \verb#rar# format before sending it by e-mail with the \mailsubject{italian}\,.
+\end{enumerate}
+
+
+%\section{Contribute}
+
+\subsection{Improving the source code}
+
+\begin{tdocimp}
+	If you want to participate in \thisproj\, you'll need to use the \LaTeX3 programming paradigm.
+\end{tdocimp}
+
+
+Participation as a coder is made via the \thisrepo\ repository corresponding to the \verb#tutodoc# development branch.
+Do not use the \verb#main# branch, which is used to freeze the latest stable versions of projects in the single \thismonorepo\ repository.
+
+
 \section{History}
 
 \small
+
+\tdocversion{1.5.0}[2024-10-19]
+
+\small
+
+\begin{tdocbreak}
+	\item The \thisproj\ class replaces the now-defunct \thisproj\ package (for the moment, the young class offers no specific options).
+
+	\item The \tdocmacro{tdocruler} macro is now used via \tdocinlatex{\tdocruler[<color>]{<text>}} (remember that the old syntax was \tdocinlatex{\tdocruler{<text>}{<color>}}).
+\end{tdocbreak}
+
+
+\begin{tdocfix}
+	\item Version 3 of \tdocpack{minted} is taken into account.
+
+	\item The \tdocmacro{tdocdate} macro did not handle date format and formatting.
+
+	\item Colored frames did not color text after a page break.
+\end{tdocfix}
+
+
+\begin{tdocnew}
+	\item The class is usable in Spanish.
+
+	\item The documentation contains a new section explaining how to contribute.
+\end{tdocnew}
+
+\tdocsep
+
+
+% ------------------ %
+
 
 \tdocversion{1.4.0}[2024-09-28]
 
 \begin{tdocbreak}
 	\item The \tdocenv*{tdoccaution} environment has been renamed \tdocenv*{tdoccaut} for simplified input.
 
-	\item Content highlighting: examples and remarks, indicated via the \tdocenv*{tdocexa} and \tdocenv*{tdocrem} environments, are always numbered, and share the same counter.
+	\item Content highlighting: examples and remarks, indicated via the \tdocenv*{tdocexa} and \tdocenv*{tdocrem} environments, are always numbered using a common counter.
 
 	\item The unused macro \tdocmacro{tdocxspace} has been deleted.
 \end{tdocbreak}

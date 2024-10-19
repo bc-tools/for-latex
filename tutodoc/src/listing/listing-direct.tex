@@ -1,16 +1,14 @@
-\documentclass[10pt, a4paper]{article}
+\documentclass[10pt, a4paper]{../main/main}
 
 \input{../preamble.cfg.tex}
 
-\usepackage[lang = french]{../main/main}
-\usepackage{../macroenv/macroenv}
-\usepackage{../inenglish/inenglish}
-\usepackage{../showcase/showcase}
-\usepackage{../focus/focus}
+\usepackage{../admonitions/admonitions.cls}
+\usepackage{../inenglish/inenglish.cls}
+\usepackage{../macroenv/macroenv.cls}
 
 % TESTING LOCAL IMPLEMENTATION %
 
-\usepackage{listing}
+\usepackage{listing.cls}
 
 
 % == FORDOC == %
@@ -39,9 +37,10 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 }
 
 
-\begin{tdoccaut}
-	La version 3 de \tdocpack{minted} ne peut pas être prise en compte pour le moment car elle comporte des bugs : voir \url{https://github.com/gpoore/minted/issues/401}. On force donc l'usage de la version 2 de \tdocpack{minted}.
-\end{tdoccaut}
+%\begin{tdoccaut}
+%	La version 3 de \tdocpack{minted} ne peut pas être prise en compte pour le moment car elle comporte des bugs : voir \url{https://github.com/gpoore/minted/issues/401}. On force donc l'usage de la version 2 de \tdocpack{minted}.
+%\end{tdoccaut}
+
 
 
 \subsection{Codes \tdocquote{en ligne}} \label{tdoc-listing-inline}
@@ -50,14 +49,14 @@ La macro \tdocmacro{tdocinlatex}
 \footnote{
     Le nom de la macro \tdocmacro{tdocinlatex} vient de \tdocquote{\tdocprewhy{in.line} \LaTeX} soit \tdocinEN{\LaTeX\ en ligne}.
 }
-permet de taper du code en ligne via un usage similaire à \tdocmacro{verb}.
+permet de taper du code en ligne via un usage similaire à \tdocmacro{verb} ou bien comme une macro standard (voir la gestion des accolades dans le dernier cas ci-dessous).
 Voici des exemples d'utilisation.
 
 
 \begin{tdoclatex}[sbs]
-    1: \tdocinlatex|$a^b = c$|
-
-    2: \tdocinlatex+\tdocinlatex|$a^b = c$|+
+    1: \tdocinlatex|$a^b = c$|               \\
+    2: \tdocinlatex+\tdocinlatex|$a^b = c$|+ \\
+    3: \tdocinlatex{\tdocinlatex{$a^b = c$}}
 \end{tdoclatex}
 
 
@@ -80,9 +79,6 @@ Voici des exemples d'utilisation.
 \end{tdocexa}
 
 
-% ------------------ %
-
-
 \begin{tdocexa}[À la suite]
     \tdocenv{tdoclatex} produit le résultat suivant qui correspond à l'option par défaut \tdocinlatex#std#\,.
     \footnote{
@@ -95,9 +91,6 @@ Voici des exemples d'utilisation.
 \end{tdocexa}
 
 
-% ------------------ %
-
-
 \begin{tdocexa}[Juste le code]
     Via \tdocenv[{[code]}]{tdoclatex}, on aura juste le code comme ci-après.
 
@@ -105,9 +98,6 @@ Voici des exemples d'utilisation.
         $A = B + C$
     \end{tdoclatex}
 \end{tdocexa}
-
-
-% ------------------ %
 
 
 \begin{tdocwarn}

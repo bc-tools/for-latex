@@ -18,7 +18,6 @@ def build_metadata(project_dir):
     if not proj_about.is_file():
         raise IOError("missing an ''about.yaml'' for the project")
 
-
     with proj_about.open(
         encoding = 'utf8',
         mode     = 'r',
@@ -28,8 +27,8 @@ def build_metadata(project_dir):
     gene_cfg = about_cfg["general"]
 
     metadata = {
-        TAG_AUTHOR  : gene_cfg["author"],
-        TAG_DESC    : gene_cfg["desc"],
+        TAG_AUTHOR         : gene_cfg["author"],
+        TAG_DESC           : gene_cfg["desc"],
         TAG_MANUAL_DEV_LANG: gene_cfg["lang"]["doc"],
     }
 
@@ -39,9 +38,9 @@ def build_metadata(project_dir):
     )
 
     metadata[TAG_PROJ_DIR]  = project_dir
-    metadata[TAG_MANUAL]    = project_dir / "contrib" / "doc" / "manual"
+    metadata[TAG_MANUAL]    = project_dir / TAG_CONTRIB / TAG_TRANSLATE
     metadata[TAG_PROJ_NAME] = project_dir.name
-    metadata[TAG_ROLLOUT]   = project_dir / "rollout"
+    metadata[TAG_ROLLOUT]   = project_dir / TAG_ROLLOUT
     metadata[TAG_SRC]       = project_dir / "src"
     metadata[TAG_TEMP]      = project_dir / f".{metadata[TAG_PROJ_NAME]}"
 
@@ -52,7 +51,31 @@ def build_metadata(project_dir):
 
     metadata[TAG_CREATION] = creation(metadata[TAG_VERSIONS][TAG_ALL])
 
+    metadata[TAG_API_LANGS] = api_langs(project_dir)
+
     return metadata
+
+
+# --------------- #
+# -- API LANGS -- #
+# --------------- #
+
+def api_langs(project_dir):
+    contrib_status_dir = project_dir / TAG_CONTRIB / TAG_TRANSLATE / TAG_STATUS
+
+    all_langs = []
+
+    for api_yaml in contrib_status_dir.glob("*/api.yaml"):
+        with api_yaml.open(
+            encoding = 'utf8',
+            mode     = 'r',
+        ) as f:
+            lang_status = safe_load(f)
+
+        if lang_status[TAG_STATUS] == TAG_STATUS_OK:
+            all_langs.append(api_yaml.parent.name)
+
+    return all_langs
 
 
 # -------------- #
@@ -89,8 +112,10 @@ def about_stable_version(project_dir):
     for v in all_nb_versions:
         v = str(v)
 
+        stable_versions[v].update({TAG_NB: v})
+
         stable_versions_revsorted.append(
-            stable_versions[v] | {TAG_NB: v}
+            stable_versions[v]
         )
 
     return stable_versions_revsorted
@@ -120,20 +145,24 @@ def manual_other_lang(
 ):
     other_lang = []
 
-    contrib_dir = project_dir / TAG_CONTRIB / TAG_DOC / TAG_MANUAL
+    translate_dir = project_dir / TAG_CONTRIB / TAG_TRANSLATE
 
-    if not contrib_dir.is_dir():
-        return other_lang
+    if not translate_dir.is_dir():
+        raise IOError(
+            f"missing ''{TAG_TRANSLATE}'' folder. See the following dir.\n"
+            f"{translate_dir}"
+        )
 
-    status_dir = contrib_dir / TAG_STATUS
+    status_dir = translate_dir / TAG_STATUS
 
     if not status_dir.is_dir():
         raise IOError(
             f"missing ''{TAG_STATUS}'' folder. See the following dir.\n"
-            f"{contrib_dir}")
+            f"{translate_dir}"
+        )
 
-    for yaml_file in status_dir.glob("*.yaml"):
-        lang = yaml_file.stem
+    for yaml_file in status_dir.glob("*/manual.yaml"):
+        lang = yaml_file.parent.name
 
         if lang == dev_lang:
             continue

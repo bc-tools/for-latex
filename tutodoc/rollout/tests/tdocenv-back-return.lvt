@@ -1,6 +1,6 @@
-\documentclass{article}
-\usepackage{tutodoc}
+\documentclass{tutodoc}
 \geometry{showframe}
+
 \input{regression-test}
 
 \newcommand\extraONE{a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a }

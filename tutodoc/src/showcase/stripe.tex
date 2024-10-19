@@ -1,15 +1,14 @@
-\documentclass[10pt, a4paper]{article}
+\documentclass[10pt, a4paper]{../main/main}
 
 \input{../preamble.cfg.tex}
 
-\usepackage[lang = french]{../main/main}
-\usepackage{../macroenv/macroenv}
-\usepackage{../listing/listing}
-\usepackage{../focus/focus}
+\usepackage{../admonitions/admonitions.cls}
+\usepackage{../listing/listing.cls}
+\usepackage{../macroenv/macroenv.cls}
 
 % TESTING LOCAL IMPLEMENTATION %
 
-\usepackage{showcase}
+\usepackage{showcase.cls}
 
 
 \begin{document}
@@ -48,11 +47,8 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
 
 \begin{tdocnote}
-    Les textes explicatifs s'adaptent à la langue choisie lors du chargement de \thispack{}.
+    Les textes explicatifs s'adaptent à la langue détectée par \thisproj.
 \end{tdocnote}
-
-
-% ------------------ %
 
 
 \begin{tdocexa}[Changer la couleur et/ou les textes par défaut]
@@ -95,12 +91,9 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
     Il faut également savoir qu'en coulisse, la macro \tdocmacro{tdocruler} est utilisée.
 
     \begin{tdoclatex}[std]
-        \tdocruler{Un pseudo-titre décoré}{red}
+        \tdocruler[red]{Un pseudo-titre décoré}
     \end{tdoclatex}
 \end{tdocnote}
-
-
-% ------------------ %
 
 
 \begin{tdocwarn}

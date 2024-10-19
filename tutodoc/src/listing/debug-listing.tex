@@ -1,0 +1,46 @@
+\documentclass[10pt, a4paper]{../main/main}
+
+\input{../preamble.cfg.tex}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{listing.cls}
+
+
+\begin{document}
+
+\tdocinlatex{\LaTeX} : \LaTeX
+
+\tdocinlatex{aaa}
+\tdocinlatex{bbb}
+\tdocinlatex{ppp}
+
+\begin{tdoclatex}
+	$A = B + C$
+\end{tdoclatex}
+
+\begin{tdoclatex}[sbs]
+	$A = B + C$
+\end{tdoclatex}
+
+\begin{tdoclatex}[code]
+	$A = B + C$
+\end{tdoclatex}
+
+\vspace{16cm}
+
+\begin{tdoclatex}[code]
+	$A = B + C$
+
+	$A = B + C$
+
+	$A = B + C$
+
+	$A = B + C$
+
+	$A = B + C$
+
+	$A = B + C$
+\end{tdoclatex}
+
+\end{document}

@@ -1,3 +1,5 @@
+import babel
+
 from .constants import *
 from .misc      import *
 
@@ -10,37 +12,36 @@ def prebuild_single_tex(
     source,
     temp_dir,
     sorted_useful_files,
-    dev_lang,
-    other_lang,
-    versions
+    versions,
+    about_langs,
 ):
-    all_langs   = [dev_lang] + other_lang
-    contrib_dir = source.parent / TAG_CONTRIB / TAG_DOC / TAG_MANUAL
+    manual_langs  = about_langs[TAG_MANUAL_OTHER_LANG] + [about_langs[TAG_MANUAL_DEV_LANG]]
+    translate_dir = source.parent / TAG_CONTRIB / TAG_TRANSLATE
 
 # English abstract.
-    if not TAG_LANG_EN in all_langs:
+    if not TAG_LANG_EN in manual_langs:
         print(f"+ Abstract: no English!")
 
     else:
         print(f"+ Abstract: English version.")
 
         abstract_EN = abstract_of(
-            lang        = TAG_LANG_EN,
-            contrib_dir = contrib_dir
+            lang          = TAG_LANG_EN,
+            translate_dir = translate_dir
         )
 
         abstract_EN = "\n    ".join(
             abstract_EN.split("\n")
         )
 
-        abstract_EN = other_langs(
-            content   = abstract_EN,
-            lang      = TAG_LANG_EN,
-            all_langs = all_langs
+        abstract_EN = other_manual_langs(
+            content      = abstract_EN,
+            lang         = TAG_LANG_EN,
+            manual_langs = manual_langs
         )
 
 # Let's work lang by lang.
-    for i, lang in enumerate(all_langs, 0):
+    for i, lang in enumerate(manual_langs, 0):
         print()
 
         kind = "dev." if i == 0 else "contrib."
@@ -48,8 +49,9 @@ def prebuild_single_tex(
         print(f"## {kind.upper()} LANG ''{lang}'' ##")
         print()
 
-        lang_dir      = contrib_dir / lang
-        lang_temp_dir = temp_dir / lang
+        # lang_dir        = translate_dir / lang
+        lang_dir_manual = translate_dir / lang / TAG_DOC / TAG_MANUAL
+        lang_temp_dir   = temp_dir / lang
 
 # Empty lang dir.
         emptydir(
@@ -59,10 +61,10 @@ def prebuild_single_tex(
 
 # Preamble file.
         print()
-        print(f"+ [RES-TEX] Copying ''{lang}/{TAG_TMP_PREAMBLE}''")
+        print(f"+ [RES-TEX] Copying ''{TAG_TMP_PREAMBLE}''")
 
         copyfromto(
-            srcfile  = lang_dir / TAG_TMP_PREAMBLE,
+            srcfile  = lang_dir_manual / TAG_TMP_PREAMBLE,
             destfile = lang_temp_dir / TAG_TMP_PREAMBLE
         )
 
@@ -70,8 +72,10 @@ def prebuild_single_tex(
         print()
         print(f"+ Change log")
 
-        chge_dir = lang_dir / TAG_CHGE_LOG
+        chge_dir = lang_dir_manual / TAG_CHGE_LOG
         content  = []
+
+        last_chges_explained = ""
 
         for vers in versions[TAG_ALL]:
             print(
@@ -85,10 +89,14 @@ def prebuild_single_tex(
 
             if not chge_file.is_file():
                 raise IOError(
-                    f"missing file.\n{chge_file.relative_to(lang_dir)}"
+                    # f"missing file.\n{chge_file}"
+                    f"missing file.\n{chge_file.relative_to(translate_dir)}"
                 )
 
             about_this_change = content_from_TEX(chge_file)
+
+            if not last_chges_explained:
+                last_chges_explained = about_this_change
 
             # print(f"{chge_file=}")
             # input(about_this_change)
@@ -109,7 +117,7 @@ def prebuild_single_tex(
 
 # Abstract.
         abstract = content_from_TEX(
-            srcfile = contrib_dir / lang / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
+            srcfile = lang_dir_manual / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
         )
 
         if lang != TAG_LANG_EN:
@@ -130,11 +138,25 @@ def prebuild_single_tex(
                 """.rstrip()
             )
 
-        abstract = other_langs(
+        abstract = other_manual_langs(
             content   = abstract,
             lang      = lang,
-            all_langs = all_langs
+            manual_langs = manual_langs
         )
+
+        abstract += f"""
+
+\\medskip
+
+\\begin{{center}}
+\\small
+\\begin{{minipage}}{{.9\\textwidth}}
+\\begin{{tdocnote}}[{LAST_CHGES_IN[lang]}]
+{last_chges_explained}
+\\end{{tdocnote}}
+\\end{{minipage}}
+\\end{{center}}
+        """.rstrip()
 
         abstract_file = lang_temp_dir / f"{TAG_ABSTRACT}.tex"
         abstract_file.write_text(abstract)
@@ -148,7 +170,7 @@ def prebuild_single_tex(
             ext_wanted          = TAG_TEX,
             fake_src_name       = lang
         ):
-            curdir  = lang_dir / onedir.name
+            curdir  = lang_dir_manual / onedir.name
             srcfile = curdir / srcfile.relative_to(onedir)
 
             if kind == TAG_FILE:
@@ -164,6 +186,25 @@ def prebuild_single_tex(
 
                 fordoc = fordoc.strip()
                 thedoc = thedoc.strip()
+
+                api_lang_items = '\n        \\item '.join(
+                    f"\\tdocinlatex|{l}| : {babel.Locale.parse(l).get_display_name(lang)}."
+                    for l in sorted(about_langs[TAG_API_LANGS])
+                )
+
+                thedoc = thedoc.replace(
+                    """
+% Do not touch the following placeholder.
+<<API-LANGS>>
+                    """.strip(),
+                    f"""
+\\begin{{multicols}}{{3}}
+    \\begin{{itemize}}
+        \\item {api_lang_items}
+    \\end{{itemize}}
+\\end{{multicols}}
+                    """
+                )
 
                 pieces = extract_from_DEV_TEX(srcfile)
                 prepare_TEX(onedir, lang_temp_dir, fordoc, thedoc)
@@ -281,19 +322,19 @@ def prepare_TEX(
 
 
 
-def other_langs(
+def other_manual_langs(
     content,
     lang,
-    all_langs,
+    manual_langs,
 ):
     others = [
         LANG_NAMES[lang][l]
-        for l in all_langs
+        for l in manual_langs
         if l != lang
     ]
 
     content = content.replace(
-        "<<OTHER-LANGS>>",
+        "<<DOC-LANGS>>",
         ", ".join(others)
     )
 
@@ -302,12 +343,12 @@ def other_langs(
 
 def abstract_of(
     lang,
-    contrib_dir
+    translate_dir
 ):
-    abstract_file = contrib_dir / lang / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
+    abstract_file = translate_dir / lang /  TAG_DOC / TAG_MANUAL / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
 
     if not abstract_file.is_file():
-        raise IOError("missing file.\n{abstract_file}")
+        raise IOError(f"missing file.\n{abstract_file}")
 
     return content_from_TEX(
         srcfile     = abstract_file,

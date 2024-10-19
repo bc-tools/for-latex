@@ -1,0 +1,204 @@
+\documentclass[10pt, a4paper]{../main/main}
+
+\input{../preamble.cfg.tex}
+
+\usepackage{../deco/deco.cls}
+\usepackage{../admonitions/admonitions.cls}
+\usepackage{../inenglish/inenglish.cls}
+\usepackage{../macroenv/macroenv.cls}
+
+%\geometry{showframe}
+
+
+% == FORDOC == %
+
+\NewDocumentCommand{\mailsubject}{m}%  <-- Translate me!
+  {sujet \tdocquote{\texttt{tutodoc - CONTRIB - #1}}}
+
+% Source: https://tex.stackexchange.com/a/424061/6880
+
+\newcommand{\FTdirO}{}
+\def\FTdirO(#1,#2,#3){%
+  \FTfile(#1,{\color{blue!40!black}\faFolderOpen\hspace{-.35pt}}{\hspace{0.2em}#3})
+  (tmp.west)++(0.8em,-0.4em)node(#2){}
+  (tmp.west)++(1.5em,0)
+  ++(0,-1.3em)
+}
+
+\newcommand{\FTdirC}{}
+\def\FTdirC(#1,#2,#3){%
+  \FTfile(#1,{\color{blue!40!black}\faFolder\hspace{.75pt}}{\hspace{0.2em}#3})
+  (tmp.west)++(0.8em,-0.4em)node(#2){}
+  (tmp.west)++(1.5em,0)
+  ++(0,-1.3em)
+}
+
+\newcommand{\FTfile}{}
+\def\FTfile(#1,#2){%
+  node(tmp){}
+  (#1|-tmp)++(0.6em,0)
+  node(tmp)[anchor=west,black]{\tt #2}
+  (#1)|-(tmp.west)
+  ++(0,-1.2em)
+}
+
+\newcommand{\FTroot}{}
+\def\FTroot{tmp.west}
+
+\newcommand\contribtranslatedirtree{
+  \begin{tikzpicture}%
+    \draw[color=black, thick]
+% en        : parent = \FTroot
+% normal dir: (parentID, currentID, label)
+% file      :       (parentID, label)
+      \FTdirO(\FTroot,root,translate){
+        \FTdirC(root,changes,changes){
+        }
+        \FTdirO(root,en,en) {
+          \FTdirC(en,api,api) {
+          }
+          \FTdirC(en,doc,doc) {
+          }
+        }
+        \FTdirC(root,fr,fr){
+        }
+        \FTdirC(root,status,status){
+          \FTdirO(status,en,en) {
+            \FTfile(en,api.yaml)
+            \FTfile(en,manual.yaml)
+          }
+          \FTdirC(status,fr,fr){
+          }
+        }
+        \FTfile(root,README.md)
+        \FTfile(root,LICENSE.txt)
+      };
+  \end{tikzpicture}
+}
+
+
+\begin{document}
+
+%\section{Contribuer}
+
+\subsection{Compléter les traductions}
+
+\begin{tdocnote}
+	L'auteur de \thisproj\ gère les versions françaises et anglaises des traductions.
+\end{tdocnote}
+
+
+\begin{tdoccaut}
+	Même si nous allons expliquer comment traduire les documentations, il semble peu pertinent de le faire, car l'anglais devrait suffire de nos jours.%
+	\footnote{
+		L'existence d'une version française est une simple conséquence de la langue maternelle de l'auteur de \thisproj.
+	}
+\end{tdoccaut}
+
+
+\begin{wrapfigure}{R}
+	\contribtranslatedirtree\
+	\caption{Vue simplifiée du dossier des traductions}
+	\label{tdoc-contrib-translate-dir}
+\end{wrapfigure}{}
+
+
+Les traductions sont organisées grosso-modo comme dans la figure \ref{tdoc-contrib-translate-dir} où seuls les dossiers importants pour les traductions ont été \tdocquote{ouverts}\,.%
+\footnote{
+	Cette organisation était celle du 5 octobre 2024, mais elle reste d'actualité.
+}
+\textbf{Un peu plus bas, la section \ref{tdoc-contrib-translate} donne les démarches à suivre pour ajouter de nouvelles traductions.}
+
+
+\subsubsection{Les dossiers \texttt{fr} et \texttt{en}}
+
+Ces deux dossiers, gérés par l'auteur de \thisproj, ont la même organisation ; ils contiennent des fichiers faciles à traduire même si l'on n'est pas un codeur.
+
+
+\subsubsection{Le dossier \texttt{changes}}
+
+Ce dossier est un outil de communication où sont indiqués les changements importants sans s'attarder sur les modifications mineures propres à une ou plusieurs traductions.
+
+
+
+\subsubsection{Le dossier \texttt{status}}
+
+Ce dossier permet de savoir où en sont les traductions du point de vue du projet. Tout se passe via des fichiers \verb#YAML# bien commentés, et lisibles par un non codeur.
+
+
+
+\subsubsection{Les fichiers \texttt{README.md} et \texttt{LICENSE.txt}}
+
+Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{README.md} reprend en anglais les points importants de ce qui est dit dans cette section sur les nouvelles traductions.
+
+
+
+\subsubsection{De nouvelles traductions} 
+\label{tdoc-contrib-translate}
+
+\begin{tdocimp}
+	Le dossier \verb#api# contient les traductions relatives aux fonctionnalités de \thisproj.
+	Vous y trouverez des fichiers de type \verb#TXT# à modifier via un éditeur de texte, ou de code, mais non via un traitement de texte.
+	Les contenus de ces fichiers utilisent des lignes commentées en anglais pour expliquer ce que fera \thisproj\ ; ces lignes commencent par \verb#//#\,. Voici un extrait de ce type de fichier où \textbf{les traductions se font après chaque signe \,$=$\, sans toucher à ce qui se trouve avant}, car ce morceau initial est utilisé en interne par le code de \thisproj..
+
+	\tdocsep
+	\vspace{-10pt}
+	\begin{verbatim}
+  // #1: year  in format YYYY like 2023.
+  // #2: month in format MM   like 04.
+  // #3: day   in format DD   like 29.
+  date = #1-#2-#3
+
+  // #1: the idea is to produce one text like
+  //     "this word means #1 in english".
+  in_EN = #1 in english\end{verbatim}
+\end{tdocimp}
+
+
+\begin{tdocnote}
+	Le dossier \verb#doc# est réservé aux documentations. Il contient des fichiers de type \verb#TEX# compilables directement pour une validation en temps réel des traductions faites.
+\end{tdocnote}
+
+
+\begin{tdocwarn}
+	Ne partir que de l'un des dossiers \verb#fr# et \verb#en#, car ceux-ci sont de la responsabilité de l'auteur de \thisproj.
+\end{tdocwarn}
+
+
+\medskip
+
+
+\emph{\textbf{Imaginons que vous souhaitiez ajouter le support de l'italien en partant de fichiers rédigés en anglais.}}%
+\footnote{
+	Comme indiqué plus haut, il n'y a pas de besoin réel du côté du dossier \texttt{doc} de la documentation.
+}
+
+
+\paragraph{Méthode 1 : \git.}
+
+\begin{enumerate}
+	\item Obtenir tout le dossier du projet via \thisrepo\,.
+	Ne pas passer via la branche \verb#main# qui sert à figer les dernières versions stables des projets du dépôt unique \thismonorepo\,.
+		
+	\item Dans le dossier \verb#tutodoc/contrib/translate#, créer une copie \verb#it# du dossier \verb#en#\,, le nom court de la langue étant documenté dans
+	\href{https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags}%
+	     {la page \tdocquote{IIETF language tag}}
+	de \texttt{Wikipédia}.
+	
+	\item Une fois la traduction achevée dans le dossier \verb#it# , il faudra la communiquer via \thisrepo\ en usant d'un classique \verb#git push#\,.
+\end{enumerate}
+
+
+\paragraph{Méthode 2 : communiquer par courriels.}
+
+\begin{enumerate}
+	\item Via un courriel de \mailsubject{en FOR italian}\,, demander une version des traductions anglaises (noter l'emploi du nom anglais de la nouvelle langue).
+	Bien respecter le sujet du courriel, car l'auteur de \thisproj\ automatise le pré-traitement de ce type de courriels.
+		
+	\item Vous recevrez un dossier nommé \verb#italian# contenant la version anglaise des dernières traductions.
+	Ce dossier sera le lieu de votre contribution.
+	
+	\item Une fois la traduction achevée, il faudra compresser votre dossier \verb#italian# au format \verb#zip# ou \verb#rar# avant de l'envoyer par courriel avec le \mailsubject{italian}\,.
+\end{enumerate}
+
+\end{document}

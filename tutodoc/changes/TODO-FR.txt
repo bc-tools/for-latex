@@ -9,28 +9,60 @@ NOW
 
 > ---------------------------- <
 
-classe + package car il y a des choix esthétique
+Pour publier nvle version, il reste à ...
 
-    + class pour une mef perso :
-        --> police, marge
-        --> couleur / noir-et-blanc
+    ---> intégrer main.cls avec au passge les load classe !!!
 
-    + pack pour le reste
+    ---> gérer DOC-LANGS et ALL-LANGS (api lang mis dans metadata)
+
+> ---------------------------- <
+
+gestion des pacakages et classe importés
+
+    --> besoin d'un fichier  DEPENDSN.txt des dépendances ventuellement vide pour indiquer els depndances ordonnées ! pas d'auto, charge au condeur de nourrir texfacto !
+x
+
+> ---------------------------- <
+
+lang régélé via une commande \TDocSetLocale et du coup modigfiable à la amin, ceci nécessite de crérer une version de base avec des renewcommand
+
++
+
+faire gestion des langues grérées dans les docs !
+
+    ---> mettre exemple avec chgt local de la langue
+
+
+https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags
+
+
+
+> ---------------------------- <
+
+réorganiser contrib trad via dossier de lang et non via doc, api, ... car au final trop de chemins à parcourrir par le traducteur
+
+
+> ---------------------------- <
+
+test format date !!! cf bug oubli du formatage
+
+
+> ---------------------------- <
+
+doc : section sur la contribtuion, maintenat que la structu est figée !
+
+    ---> incister sur besoin de trad de l'api et tools en priorité, pour la doc c'est pour les ourageux !
+
 
 
 -----
 LATER
 -----
 
+
 > ---------------------------- <
 
-cleaner code
-
-    ---> latex3 strict pour showcase et listinginput
-
-    ---> respecter mes specs latex : on isole les messages par exemple!
-
-
+nouvelle page tjrs pour les \sections en format écran mais en format paper (cf du coup l'usage de macro du type newpage met avec tag)
 
 
 > ---------------------------- <
@@ -40,7 +72,13 @@ note and co
     --> différents mef possible ?
         OK quand je ferais une classe : on choisi le CCS templ et on forunit alors les macro et réglage attendus; toit simplement !
 
-    --> Numéroter ?
+
+            + format = color par défaut
+            + format = bw pour black/white pour ceux faches avec les couleurs
+            + format = dark pour white/black pour se reposer les yeux
+            + format = paper  pour relecture sur papier avec dans ce cas
+
+            + ajout de macro du type newpage met avec tag qui agisse uniquement si la format est choisi
 
 
 > ---------------------------- <

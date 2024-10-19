@@ -1,0 +1,69 @@
+\documentclass[10pt, a4paper]{../main/main}
+
+\input{../preamble.cfg.tex}
+
+\usepackage{../listing/listing.cls}
+\usepackage{../macroenv/macroenv.cls}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{admonitions.cls}
+
+
+\begin{document}
+
+\subsection{Du contenu tape-à-l'oeil} \label{tdoc-admonitions}
+
+\begin{tdocnote}
+    Les icônes sont obtenues via le package \tdocpack{fontawesome5}, et la gestion de l'espacement avec le texte est faite par la macro \tdocmacro{tdocicon}.
+    \footnote{
+        Par exemple,
+        \tdocinlatex|\fbox{\tdocicon{\faBed}{Fatigué}}|
+        produit\,
+        \fbox{\tdocicon{\faBed}{Fatigué}}\,.
+    }
+\end{tdocnote}
+
+
+
+\subsubsection{Une astuce}
+
+L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'employer.
+
+\tdoclatexinput[sbs]{examples/admonitions/tip.tex}
+
+
+\smallskip
+
+
+\begin{tdocnote}
+    Les couleurs sont obtenues via les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor}.
+    Pour des informations complémentaires à ce sujet, se reporter à la fin de la section \ref{tdoc-color-macros} page \pageref{tdoc-color-macros}.
+\end{tdocnote}
+
+
+\foreach \sectitle/\desc/\filename in {
+	{Note informative}/% <-- Translate me!
+	{L'environnement \tdocenv*{tdocnote} sert à mettre en avant des informations utiles. Voici comment l'utiliser.}/% <-- Translate me!
+	note,
+	%
+	{Un truc important}/% <-- Translate me!
+	{L'environnement \tdocenv*{tdocimp} permet d'indiquer quelque chose d'important mais sans danger.}/% <-- Translate me!
+	important,
+	%
+	{Avertir d'un point très délicat}/% <-- Translate me!
+	{L'environnement \tdocenv*{tdoccaut} sert à indiquer un point délicat à  l'utilisateur. Voici comment l'employer.}/%<-- Translate me!
+	caution,
+	%
+	{Avertir d'un danger}/% <-- Translate me!
+	{L'environnement \tdocenv*{tdocwarn} sert à avertir l'utilisateur d'un piège à éviter. Voici comment l'employer.}/% <-- Translate me!
+	warn%
+} {
+	\subsubsection{\sectitle}
+
+	\desc
+
+	\tdoclatexinput[sbs]{examples/admonitions/\filename.tex}
+}
+
+\end{document}
