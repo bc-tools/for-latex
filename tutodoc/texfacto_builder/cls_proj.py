@@ -18,8 +18,8 @@ def prebuild_single_cls(
         sorted_useful_files = sorted_useful_files,
         ext_wanted          = TAG_CLS
     ):
-        print(srcfile)
-        continue
+        # print(srcfile)
+        # continue
 
         if kind == TAG_FILE:
             print(f"   * Analyzing ''{srcfile.name}''")
@@ -35,7 +35,7 @@ def prebuild_single_cls(
                 destfile = temp_dir / srcfile.name
             )
 
-    exit()
+    # exit()
     print()
     print(
         f"+ ''{temp_dir.parent.name}/{temp_dir.name}'' "

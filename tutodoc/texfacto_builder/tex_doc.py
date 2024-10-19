@@ -168,7 +168,7 @@ def prebuild_single_tex(
                 fordoc = fordoc.strip()
                 thedoc = thedoc.strip()
 
-                api_lang_items = '\n    \\item '.join(
+                api_lang_items = '\n        \\item '.join(
                     f"\\tdocinlatex|{l}| : {babel.Locale.parse(l).get_display_name(lang)}."
                     for l in sorted(about_langs[TAG_API_LANGS])
                 )
@@ -179,9 +179,11 @@ def prebuild_single_tex(
 <<API-LANGS>>
                     """.strip(),
                     f"""
-\\begin{{itemize}}
-    \\item {api_lang_items}
-\\end{{itemize}}
+\\begin{{multicols}}{{3}}
+    \\begin{{itemize}}
+        \\item {api_lang_items}
+    \\end{{itemize}}
+\\end{{multicols}}
                     """
                 )
 

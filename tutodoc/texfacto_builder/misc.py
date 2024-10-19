@@ -204,28 +204,40 @@ def iter_sorted_useful_files(
                 ext = srcfile.suffix[1:]
 
                 if (
-                    ext_wanted != TAG_TEX
+                    ext_wanted == TAG_CLS
                     and
-                    ext != TAG_STY
-                ) or (
-                    ext_wanted == TAG_TEX
-                    and
-                    ext != TAG_TEX
+                    not (
+                        srcfile.suffix == ".cls"
+                        or (
+                            srcfile.suffix == ".sty"
+                            and
+                            Path(srcfile.stem).suffix == ".cls"
+                        )
+                    )
                 ):
+                    # input(f"TEST 1: {srcfile.name}")
                     continue
+
 
                 if (
                     ext_wanted == TAG_STY
                     and
-                    Path(srcfile.stem).suffix == ".cls"
+                    not (
+                        srcfile.suffix == ".sty"
+                        and
+                        Path(srcfile.stem).suffix != ".cls"
+                    )
                 ):
+                    # input(f"TEST 2: {srcfile.name}")
                     continue
 
                 if (
-                    ext_wanted == TAG_CLS
+                    ext_wanted == TAG_TEX
                     and
-                    Path(srcfile.stem).suffix != ".cls"
+                    ext != TAG_TEX
                 ):
+                    # input(f"TEST 3: {srcfile.name}")
                     continue
+
 
                 yield onedir, srcfile, kind

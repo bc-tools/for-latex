@@ -7,14 +7,14 @@
 % ** the conditions of the GNU 3 License.                ** %
 % ********************************************************* %
 
-\ProvidesExplPackage
+\ProvidesExplClass
   {tutodoc}
   {2024-09-28}  % Creation: 2023-11-29
   {1.4.0}
   {This LaTeX class proposes tools for writing "human friendly" PDF documentations of LaTeX packages and classes.}
 
 
-% == PACKAGES == %
+% == PACKAGES USED == %
 
 \LoadClassWithOptions{article}%
                      [2022-06-01]
@@ -47,7 +47,55 @@
                [2023-02-07]
 
 
-% == TOOLS == %
+% We delegate the management of quoting to the ''csquotes'' package,
+% which takes care of the locale settings.
+\RequirePackage{csquotes}%
+               [2022-09-14]
+
+
+\RequirePackage{fontawesome5}%
+               [2022-05-02]
+
+\RequirePackage{keytheorems}%
+               [2024/09/19]
+
+\RequirePackage[svgnames]%
+               {xcolor}%
+               [2023/11/15]
+
+\RequirePackage{tcolorbox}%
+               [2024/07/10]
+
+\tcbuselibrary{breakable,
+               skins}
+
+
+\RequirePackage{clrstrip}%
+               [2021-08-28]
+
+
+%\RequirePackage{minted2}% Old implementation.
+
+\RequirePackage[highlightmode = immediate]%
+               {minted}%
+               [2024/09/22]
+
+\RequirePackage{tcolorbox}%
+               [2024/07/10]
+
+\tcbuselibrary{minted,
+               breakable,
+               skins}
+
+
+\RequirePackage{fontawesome5}%
+               [2022-05-02]
+
+\RequirePackage{marginnote}%
+               [2023-09-07]
+
+
+% == MAIN CODE == %
 
 % -- LOCALE SETTINGS -- %
 
@@ -188,66 +236,7 @@
 }
 
 
-
-% =================== %
-% == PACKAGES USED == %
-% =================== %
-
-% We delegate the management of quoting to the ''csquotes'' package,
-% which takes care of the locale settings.
-\RequirePackage{csquotes}%
-               [2022-09-14]
-
-
-\RequirePackage{fontawesome5}%
-               [2022-05-02]
-
-\RequirePackage{keytheorems}%
-               [2024/09/19]
-
-\RequirePackage[svgnames]%
-               {xcolor}%
-               [2023/11/15]
-
-\RequirePackage{tcolorbox}%
-               [2024/07/10]
-
-\tcbuselibrary{breakable,
-               skins}
-
-
-\RequirePackage{clrstrip}%
-               [2021-08-28]
-
-
-%\RequirePackage{minted2}% Old implementation.
-
-\RequirePackage[highlightmode = immediate]%
-               {minted}%
-               [2024/09/22]
-
-\RequirePackage{tcolorbox}%
-               [2024/07/10]
-
-\tcbuselibrary{minted,
-               breakable,
-               skins}
-
-
-\RequirePackage{fontawesome5}%
-               [2022-05-02]
-
-\RequirePackage{marginnote}%
-               [2023-09-07]
-
-
-% =============== %
-% == MAIN CODE == %
-% =============== %
-
-% ------------- %
 % -- QUOTING -- %
-% ------------- %
 
 %%%
 % prototype::
@@ -261,9 +250,7 @@
 }
 
 
-% ------------------------------ %
 % -- EXPLAINING ENGLISH NAMES -- %
-% ------------------------------ %
 
 %%%
 % prototype::
@@ -293,13 +280,9 @@
 }
 
 
-% ----------------------------------- %
 % -- SOBER HIGHLIGHTING OF CONTENT -- %
-% ----------------------------------- %
 
-% :::::::::::::::::::::: %
 % :: EXAMPLE - REMARK :: %
-% :::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
@@ -339,13 +322,9 @@
 \ExplSyntaxOff
 
 
-% -------------------------------------- %
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
-% -------------------------------------- %
 
-% ::::::::::::::::: %
 % :: ABSTRACTION :: %
-% ::::::::::::::::: %
 
 %%%
 % note::
@@ -356,7 +335,7 @@
 %%%
 \tcbset{
   tutodoc-focus-color-style/.style = {
-    use color stack, % Must be before breakable!
+    use color stack, % Must be before breakable! 
     breakable,
     enhanced,
     left         = 3pt,
@@ -371,9 +350,7 @@
 }
 
 
-% ::::::::::::::::::::::::::::::::::::: %
 % :: LET'S GO BACK TO THE REAL WORLD :: %
-% ::::::::::::::::::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
@@ -420,9 +397,7 @@
 \ExplSyntaxOff
 
 
-% ---------------------------------------------- %
 % -- NAMES OF PACKAGES, MACROS & ENVIRONMENTS -- %
-% ---------------------------------------------- %
 
 %%%
 % prototype::
@@ -496,15 +471,11 @@
 }
 
 
-% ------------------------- %
 % -- EXPLAINING PREFIXES -- %
-% ------------------------- %
 
 \ExplSyntaxOn
 
-% :::::::::::::: %
 % :: MESSAGES :: %
-% :::::::::::::: %
 
 \msg_set:nnnn { tutodoc ~ (macroenv) }
   { macroenv : prefix-why-bad-format }
@@ -512,9 +483,7 @@
   { You ~ must ~ use ~ one ~ single ~ point. }
 
 
-% :::::::::::::::::::: %
 % :: PREFIX FROM... :: %
-% :::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -546,9 +515,7 @@
 \ExplSyntaxOff
 
 
-% ::::::::::::::::::::: %
 % :: JUST ONE PREFIX :: %
-% ::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -566,13 +533,9 @@
 }
 
 
-% ------------------------ %
 % -- GENERAL FORMATTING -- %
-% ------------------------ %
 
-% :::::::::::::::::::::::: %
 % :: TEXT INSIDE A RULE :: %
-% :::::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
@@ -617,9 +580,7 @@
 \ExplSyntaxOff
 
 
-% ::::::::::::::::::::::::::: %
 % :: INTERNAL ENVIRONMENTS :: %
-% ::::::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -672,9 +633,7 @@
 
 \ExplSyntaxOn
 
-% ::::::::::::::::::::::: %
 % :: SETTING SOME KEYS :: %
-% ::::::::::::::::::::::: %
 
 \tl_new:N   \l_tutodoc_showcase_before_tl
 \tl_new:N   \l_tutodoc_showcase_after_tl
@@ -700,9 +659,7 @@
 }
 
 
-% :::::::::::::::::::::::::::::: %
 % :: SHOWCASE FROM TYPED CODE :: %
-% :::::::::::::::::::::::::::::: %
 
 % prototype::
 %     #1 : (key-val)
@@ -743,9 +700,7 @@
 }
 
 
-% :::::::::::::::::::::::: %
 % :: SHOWCASE FROM FILE :: %
-% :::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -769,13 +724,9 @@
 \ExplSyntaxOff
 
 
-% -------------------- %
 % -- LATEX EXAMPLES -- %
-% -------------------- %
 
-% ::::::::::::::::::::::::::::: %
 % :: INLINE SHORT LATEX CODE :: %
-% ::::::::::::::::::::::::::::: %
 
 %%%
 % See the \doc of the macro ''\newmintinline'' from the package ''minted''
@@ -784,9 +735,7 @@
 \newmintinline[tdocinlatex]{latex}{bgcolor = yellow!4}
 
 
-% ::::::::::::::::::::::::::::::::::::::::::::::: %
 % :: SHORTCUTS FOR TCOLORBOX LISTING FORMATING :: %
-% ::::::::::::::::::::::::::::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
@@ -819,9 +768,7 @@
 \ExplSyntaxOff
 
 
-% ::::::::::::::::::::::::::::::::: %
 % :: THE TCOLORBOX LISTING STYLE :: %
-% ::::::::::::::::::::::::::::::::: %
 
 % Source.
 %     * https://tex.stackexchange.com/a/604821/6880
@@ -852,9 +799,7 @@
 }
 
 
-% ::::::::::::::::::::::::::::::::::: %
 % :: TCOLORBOX LISTING ENVIRONMENT :: %
-% ::::::::::::::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -873,9 +818,7 @@
 }
 
 
-% :::::::::::::::::::::::::::::::::::::: %
 % :: TCOLORBOX IMPORTED LISTING MACRO :: %
-% :::::::::::::::::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -894,15 +837,11 @@
 }
 
 
-% -------------------------- %
 % -- LATEX REAL USE CASES -- %
-% -------------------------- %
 
 \ExplSyntaxOn
 
-% ::::::::::::::::::::: %
 % :: SETTING THE KEY :: %
-% ::::::::::::::::::::: %
 
 \tl_new:N \l_tutodoc_listing_explain_tl
 
@@ -919,9 +858,7 @@
 }
 
 
-% ::::::::::::::::::::: %
 % :: LATEXSHOW MACRO :: %
-% ::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -957,9 +894,7 @@
 
 \ExplSyntaxOn
 
-% :::::::::::::: %
 % :: MESSAGES :: %
-% :::::::::::::: %
 
 \msg_set:nnnn { tutodoc ~ (version-n-change) }
   { version-n-change : date-bad-format }
@@ -967,9 +902,7 @@
   { Use ~ YYYY-MM-DD. }
 
 
-% ::::::::::::::::: %
 % :: MARGIN NOTE :: %
-% ::::::::::::::::: %
 
 \reversemarginpar{}
 
@@ -1055,9 +988,7 @@
 \ExplSyntaxOff
 
 
-% :::::::::::::::::::::: %
 % :: VERSION AND DATE :: %
-% :::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -1085,9 +1016,7 @@
 }
 
 
-% :::::::::: %
 % :: DATE :: %
-% :::::::::: %
 
 %%%
 % prototype::
@@ -1107,15 +1036,11 @@
 }
 
 
-% --------------------- %
 % -- CHANGES - WHAT? -- %
-% --------------------- %
 
 \ExplSyntaxOn
 
-% :::::::::::::: %
 % :: MESSAGES :: %
-% :::::::::::::: %
 
 \msg_set:nnnn { tutodoc ~ (version-n-change) }
   { version-n-change : topic-missing-title }
@@ -1123,9 +1048,7 @@
   { One ~ single ~ title ~ must ~ be ~ indicated. }
 
 
-% ::::::::::::::::::::: %
 % :: CHANGES - TOPIC :: %
-% ::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -1154,9 +1077,7 @@
 }
 
 
-% :::::::::::::::::::::::::: %
 % :: CHANGES - NEW THINGS :: %
-% :::::::::::::::::::::::::: %
 
 %%%
 % We use a ''prop'' variable to factorize the code just after.
@@ -1202,9 +1123,7 @@
 \ExplSyntaxOff
 
 
-% ----------------- %
 % -- DECORATIONS -- %
-% ----------------- %
 
 % Source
 %    * https://tex.stackexchange.com/a/705938/6880
@@ -1214,7 +1133,7 @@
 % prototype::
 %     :action: this macro draws a centered horizontal rule with a height
 %              of qty::''0.75 pt'', and a width equal to half of the current
-%              text width, and extra vertical spaces are added above and
+%              text width, and extra vertical spaces are added above and 
 %              below the rule.
 %%%
 \NewDocumentCommand{\tdocsep}{}{

@@ -567,11 +567,13 @@ Dès lors, la classe \thisproj\ repère \tdocinlatex|fr| comme langue principale
 }
 Comme cette langue fait partie de la liste des langues prises en compte, voir ci-dessous, la classe \thisproj\ produira les effets attendus.
 
-\begin{itemize}
-    \item \tdocinlatex|en| : anglais.
-    \item \tdocinlatex|es| : espagnol.
-    \item \tdocinlatex|fr| : français.
-\end{itemize}
+\begin{multicols}{3}
+    \begin{itemize}
+        \item \tdocinlatex|en| : anglais.
+        \item \tdocinlatex|es| : espagnol.
+        \item \tdocinlatex|fr| : français.
+    \end{itemize}
+\end{multicols}
                     
 
 
@@ -1305,7 +1307,7 @@ Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{R
 \begin{tdocimp}
 	Le dossier \verb#api# contient les traductions relatives aux fonctionnalités de \thisproj.
 	Vous y trouverez des fichiers de type \verb#TXT# à modifier via un éditeur de texte, ou de code, mais non via un traitement de texte.
-	Les contenus de ces fichiers utilisent des lignes commentées en anglais pour expliquer ce que fera \thisproj\ ; ces lignes commencent par \verb#//#\,. Voici un extrait de ce type de fichier.
+	Les contenus de ces fichiers utilisent des lignes commentées en anglais pour expliquer ce que fera \thisproj\ ; ces lignes commencent par \verb#//#\,. Voici un extrait de ce type de fichier où \textbf{les traductions se font après chaque signe \,$=$\, sans toucher à ce qui se trouve avant}, car ce morceau initial est utilisé en interne par le code de \thisproj..
 
 	\tdocsep
 	\vspace{-10pt}
@@ -1318,10 +1320,6 @@ Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{R
   // #1: the idea is to produce one text like
   //     "this word means #1 in english".
   in_EN = #1 in english\end{verbatim}
-	\vspace{-10pt}
-	\tdocsep
-
-  	Les traductions se font après chaque signe \,$=$\, sans toucher à ce qui se trouve avant, car ce morceau initial est utilisé en interne par le code de \thisproj.
 \end{tdocimp}
 
 
@@ -1376,13 +1374,13 @@ Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{R
 
 \subsection{Améliorer le code source}
 
-La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrepo\ correspondant à la branche de développement \verb#tutodoc#.
-Ne pas passer via la branche \verb#main# qui sert à figer les dernières versions stables des projets du dépôt unique \thismonorepo\,.
-
-
 \begin{tdocimp}
 	Si vous souhaitez participer à \thisproj\,, il faudra privilégier le paradigme de programmation \LaTeX3.
 \end{tdocimp}
+
+
+La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrepo\ correspondant à la branche de développement \verb#tutodoc#.
+Ne pas passer via la branche \verb#main# qui sert à figer les dernières versions stables des projets du dépôt unique \thismonorepo\,.
 
 
 \section{Historique}
