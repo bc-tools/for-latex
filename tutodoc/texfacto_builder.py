@@ -189,8 +189,8 @@ emptydir(
 # ----------------------------------------- #
 
 for kind, prebuilder in [
-    # (TAG_CLS, prebuild_single_cls),
-    # (TAG_STY, prebuild_single_sty),
+    (TAG_CLS, prebuild_single_cls),
+    (TAG_STY, prebuild_single_sty),
     (TAG_TEX, prebuild_single_tex),
 ]:
     print_frame(
@@ -204,7 +204,7 @@ for kind, prebuilder in [
         temp_dir            = metadata[TAG_TEMP],
         sorted_useful_files = sorted_useful_files,
         versions            = metadata[TAG_VERSIONS],
-        langs               = {
+        about_langs               = {
             TAG_MANUAL_DEV_LANG  : metadata[TAG_MANUAL_DEV_LANG],
             TAG_MANUAL_OTHER_LANG: metadata[TAG_MANUAL_OTHER_LANG],
             TAG_API_LANGS        : metadata[TAG_API_LANGS],

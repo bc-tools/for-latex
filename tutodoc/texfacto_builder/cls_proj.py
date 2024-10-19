@@ -10,15 +10,17 @@ def prebuild_single_cls(
     source,
     temp_dir,
     sorted_useful_files,
-    dev_lang,
-    other_lang,
-    versions
+    versions,
+    about_langs
 ):
     for onedir, srcfile, kind in iter_sorted_useful_files(
         source              = source,
         sorted_useful_files = sorted_useful_files,
         ext_wanted          = TAG_CLS
     ):
+        print(srcfile)
+        continue
+
         if kind == TAG_FILE:
             print(f"   * Analyzing ''{srcfile.name}''")
 
@@ -33,6 +35,7 @@ def prebuild_single_cls(
                 destfile = temp_dir / srcfile.name
             )
 
+    exit()
     print()
     print(
         f"+ ''{temp_dir.parent.name}/{temp_dir.name}'' "

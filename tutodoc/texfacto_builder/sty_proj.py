@@ -10,9 +10,8 @@ def prebuild_single_sty(
     source,
     temp_dir,
     sorted_useful_files,
-    dev_lang,
-    other_lang,
-    versions
+    versions,
+    about_langs
 ):
     for onedir, srcfile, kind in iter_sorted_useful_files(
         source              = source,

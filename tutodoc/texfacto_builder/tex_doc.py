@@ -1,3 +1,5 @@
+import babel
+
 from .constants import *
 from .misc      import *
 
@@ -11,9 +13,9 @@ def prebuild_single_tex(
     temp_dir,
     sorted_useful_files,
     versions,
-    langs,
+    about_langs,
 ):
-    manual_langs  = langs[TAG_MANUAL_OTHER_LANG] + [langs[TAG_MANUAL_DEV_LANG]]
+    manual_langs  = about_langs[TAG_MANUAL_OTHER_LANG] + [about_langs[TAG_MANUAL_DEV_LANG]]
     translate_dir = source.parent / TAG_CONTRIB / TAG_TRANSLATE
 
 # English abstract.
@@ -166,8 +168,9 @@ def prebuild_single_tex(
                 fordoc = fordoc.strip()
                 thedoc = thedoc.strip()
 
-                api_lang_items = '\\item '.join(
-                    langs[TAG_API_LANGS]
+                api_lang_items = '\n    \\item '.join(
+                    f"\\tdocinlatex|{l}| : {babel.Locale.parse(l).get_display_name(lang)}."
+                    for l in sorted(about_langs[TAG_API_LANGS])
                 )
 
                 thedoc = thedoc.replace(
