@@ -1,7 +1,29 @@
 % == PACKAGES == %
 
+% -- OPTIONS -- %
+
 \LoadClassWithOptions{article}%
                      [2022-06-01]
+
+\DeclareKeys[tutodoc / main / options] {
+  theme .choices:nn =
+  {
+    color,
+    draft,
+    bw,
+    wb
+  } { color },
+  theme .store = \tutodoc@theme
+}
+
+\DeclareUnknownKeyHandler{%
+  \PassOptionsToClass{\CurrentOption}{article}
+}
+
+\ProcessKeyOptions[tutodoc / main / options]
+
+
+% -- COMMUNITY TOOLS -- %
 
 \RequirePackage[svgnames]%
                {xcolor}%
@@ -62,8 +84,8 @@
 	  \input{../main/tutodoc-locale-main-en.cfg.cls.sty}
 
 	  \msg_critical:nnx { tutodoc ~ (main) }
-      { main : unsupported-lang }
-      { \tdoclang }
+        { main : unsupported-lang }
+        { \tdoclang }
 	}
   \makeatother
 }
