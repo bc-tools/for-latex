@@ -135,16 +135,6 @@ def prebuild_single_tex(
         {abstract_EN}
     }}
 \\end{{abstract}}
-
-\\medskip
-
-\\begin{{center}}
-\\begin{{minipage}}{{.9\\textwidth}}
-\\begin{{tdocnote}}[Derniers changements]
-{last_chges_explained}
-\\end{{tdocnote}}
-\\end{{minipage}}
-\\end{{center}}
                 """.rstrip()
             )
 
@@ -153,6 +143,20 @@ def prebuild_single_tex(
             lang      = lang,
             manual_langs = manual_langs
         )
+
+        abstract += f"""
+
+\\medskip
+
+\\begin{{center}}
+\\small
+\\begin{{minipage}}{{.9\\textwidth}}
+\\begin{{tdocnote}}[Derniers changements]
+{last_chges_explained}
+\\end{{tdocnote}}
+\\end{{minipage}}
+\\end{{center}}
+        """.rstrip()
 
         abstract_file = lang_temp_dir / f"{TAG_ABSTRACT}.tex"
         abstract_file.write_text(abstract)

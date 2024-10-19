@@ -443,7 +443,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \title{The \texttt{tutodoc} class - Tutorial-style documentation}
 \author{Christophe BAL}
-\date{Sep 28, 2024 - Version 1.4.0}
+\date{Oct 19, 2024 - Version 1.5.0}
 
 \maketitle
 
@@ -463,6 +463,37 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 	\noindent
     \emph{\textbf{Remark :} this documentation is also available in French.}
 \end{abstract}
+
+\medskip
+
+\begin{center}
+\small
+\begin{minipage}{.9\textwidth}
+\begin{tdocnote}[Derniers changements]
+\begin{tdocbreak}
+	\item The \thisproj\ class replaces the now-defunct \thisproj\ package (for the moment, the young class offers no specific options).
+
+	\item The \tdocmacro{tdocruler} macro is now used via \tdocinlatex{tdocruler[<color>]{<text>}} (previously you had to use \tdocinlatex{tdocruler{<text>}{<color>}}).
+\end{tdocbreak}
+
+
+\begin{tdocfix}
+	\item Version 3 of \tdocpack{minted} is taken into account.
+
+	\item The \tdocmacro{tdocdate} macro did not handle date format and formatting.
+
+	\item Colored frames did not color text after a page break.
+\end{tdocfix}
+
+
+\begin{tdocnew}
+	\item The class is usable in Spanish.
+
+	\item The documentation contains a new section explaining how to contribute.
+\end{tdocnew}
+\end{tdocnote}
+\end{minipage}
+\end{center}
 
 
 \newpage
@@ -1427,6 +1458,36 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \section{History}
 
 \small
+
+\tdocversion{1.5.0}[2024-10-19]
+
+\begin{tdocbreak}
+	\item The \thisproj\ class replaces the now-defunct \thisproj\ package (for the moment, the young class offers no specific options).
+
+	\item The \tdocmacro{tdocruler} macro is now used via \tdocinlatex{tdocruler[<color>]{<text>}} (remember that the old syntax was \tdocinlatex{tdocruler{<text>}{<color>}}).
+\end{tdocbreak}
+
+
+\begin{tdocfix}
+	\item Version 3 of \tdocpack{minted} is taken into account.
+
+	\item The \tdocmacro{tdocdate} macro did not handle date format and formatting.
+
+	\item Colored frames did not color text after a page break.
+\end{tdocfix}
+
+
+\begin{tdocnew}
+	\item The class is usable in Spanish.
+
+	\item The documentation contains a new section explaining how to contribute.
+\end{tdocnew}
+
+\tdocsep
+
+
+% ------------------ %
+
 
 \tdocversion{1.4.0}[2024-09-28]
 

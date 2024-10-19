@@ -9,8 +9,8 @@
 
 \ProvidesExplClass
   {tutodoc}
-  {2024-09-28}  % Creation: 2023-11-29
-  {1.4.0}
+  {2024-10-19}  % Creation: 2023-11-29
+  {1.5.0}
   {This LaTeX class proposes tools for writing "human friendly" PDF documentations of LaTeX packages and classes.}
 
 
@@ -122,7 +122,7 @@
 % If the lang is not supported, we emit a warning and just turn
 % to the english language.
   \makeatletter
-  	\InputIfFileExists{../main/tutodoc-locale-main-\tdoclang.cfg.cls.sty}{}{
+  	\InputIfFileExists{tutodoc-locale-main-\tdoclang.cfg.cls.sty}{}{
 	  \input{tutodoc-locale-main-en.cfg.cls.sty}
 
 	  \msg_critical:nnx { tutodoc ~ (main) }

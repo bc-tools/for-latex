@@ -231,6 +231,11 @@ def ugly_hack(content):
         "{examples-listing-xyz.tex}",
     )
 
+    content = content.replace(
+        "{../main/tutodoc-locale",
+        "{tutodoc-locale",
+    )
+
     return content
 
 finalize(

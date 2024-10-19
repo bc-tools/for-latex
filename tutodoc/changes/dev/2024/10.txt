@@ -9,12 +9,8 @@
 :update:
 --------
 
-[[:doc:]]    ???
-Manual:
-
-
-
-
+[[:doc:]]
+Manual: the last \chges appear in the first page of the \doc.
 
 
 // ---------- //

@@ -418,7 +418,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \title{La classe \texttt{tutodoc} - Documentation de type tutoriel}
 \author{Christophe BAL}
-\date{28 sept. 2024 - Version 1.4.0}
+\date{19 oct. 2024 - Version 1.5.0}
 
 \maketitle
 
@@ -467,36 +467,30 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \medskip
 
 \begin{center}
+\small
 \begin{minipage}{.9\textwidth}
 \begin{tdocnote}[Derniers changements]
 \begin{tdocbreak}
-	\item L'environnement \tdocenv*{tdoccaution} a été renommé \tdocenv*{tdoccaut} pour une saisie simplifiée.
+	\item La classe \thisproj\ remplace le défunt package \thisproj\ (pour le moment, la toute jeune classe ne propose aucune option spécifique).
 
-	\item Mise en avant de contenus : les exemples et remarques, indiqués via les environnements \tdocenv*{tdocexa} et \tdocenv*{tdocrem}, sont toujours numérotés, et ils partagent le même compteur.
-
-	\item La macro inutilisée \tdocmacro{tdocxspace} a été supprimée.
+	\item La macro \tdocmacro{tdocruler} s'emploie dorénavant via \tdocinlatex{\tdocruler[<color>]{<text>}} (avant il fallait utiliser \tdocinlatex{\tdocruler{<text>}{<color>}}).
 \end{tdocbreak}
 
 
+\begin{tdocfix}
+	\item La version 3 de \tdocpack{minted} est prise en compte.
+
+	\item La macro \tdocmacro{tdocdate} ne gérait pas le format et la mise en forme de la date.
+
+	\item Les cadres colorés ne coloraient pas le texte après un saut de page.
+\end{tdocfix}
+
+
 \begin{tdocnew}
-    \item Journal des changements : la macro \tdocmacro{tdocstartproj} permet de gérer le cas de la première version publique.
+	\item La classe est utilisable en langue espagnole.
 
-    \item Factorisation du code : la macro \tdocmacro{tdocicon} est en charge de l'ajout d'icônes devant du texte.
+	\item La documentation contient une nouvelle section expliquant comment contribuer.
 \end{tdocnew}
-
-
-\begin{tdocupdate}
-	\item Couleurs : les macros \tdocmacro{tdocdarkcolor} et \tdocmacro{tdoclightcolor} proposent un argument facultatif.
-	\begin{enumerate}
-		\item \tdocmacro{tdocdarkcolor} : la quantité de couleur par rapport au noir peut être définie de manière facultative.
-
-		\item \tdocmacro{tdoclightcolor} : le taux de transparence peut être défini de manière facultative.
-	\end{enumerate}
-
-    \item Mise en avant de contenus : réduction de l'espace autour du contenu dans les cadres colorés.
-
-	\item Gestion des versions: un meilleur espacement vertical via \tdocmacro{vphantom}.
-\end{tdocupdate}
 \end{tdocnote}
 \end{minipage}
 \end{center}
@@ -1424,12 +1418,42 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 
 \small
 
+\tdocversion{1.5.0}[2024-10-19]
+
+\begin{tdocbreak}
+	\item La classe \thisproj\ remplace le défunt package \thisproj\ (pour le moment, la toute jeune classe ne propose aucune option spécifique).
+
+	\item La macro \tdocmacro{tdocruler} s'emploie dorénavant via \tdocinlatex{\tdocruler[<color>]{<text>}} (avant il fallait utiliser \tdocinlatex{\tdocruler{<text>}{<color>}}).
+\end{tdocbreak}
+
+
+\begin{tdocfix}
+	\item La version 3 de \tdocpack{minted} est prise en compte.
+
+	\item La macro \tdocmacro{tdocdate} ne gérait pas le format et la mise en forme de la date.
+
+	\item Les cadres colorés ne coloraient pas le texte après un saut de page.
+\end{tdocfix}
+
+
+\begin{tdocnew}
+	\item La classe est utilisable en langue espagnole.
+
+	\item La documentation contient une nouvelle section expliquant comment contribuer.
+\end{tdocnew}
+
+\tdocsep
+
+
+% ------------------ %
+
+
 \tdocversion{1.4.0}[2024-09-28]
 
 \begin{tdocbreak}
 	\item L'environnement \tdocenv*{tdoccaution} a été renommé \tdocenv*{tdoccaut} pour une saisie simplifiée.
 
-	\item Mise en avant de contenus : les exemples et remarques, indiqués via les environnements \tdocenv*{tdocexa} et \tdocenv*{tdocrem}, sont toujours numérotés, et ils partagent le même compteur.
+	\item Mise en avant de contenus : les exemples et remarques, indiqués via les environnements \tdocenv*{tdocexa} et \tdocenv*{tdocrem}, sont toujours numérotés via un compteur commun.
 
 	\item La macro inutilisée \tdocmacro{tdocxspace} a été supprimée.
 \end{tdocbreak}

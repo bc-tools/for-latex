@@ -18,10 +18,10 @@ def finalize(
     )
 
     if (metadata[TAG_TEMP] / TAG_TMP_STY_SRC).is_file():
-        final_sty(metadata)
+        final_sty(metadata, ugly_hack)
 
     if (metadata[TAG_TEMP] / TAG_TMP_CLS_SRC).is_file():
-        final_cls(metadata)
+        final_cls(metadata, ugly_hack)
 
     print()
 
@@ -244,7 +244,7 @@ def tex_resrc(
     return old_2_new_path, resrc
 
 
-def final_sty(metadata):
+def final_sty(metadata, ugly_hack):
     code_dir  = metadata[TAG_ROLLOUT] / "code"
 
     print("+ Building STY file.")
@@ -273,6 +273,7 @@ def final_sty(metadata):
     code = code.strip() + '\n'
 
     code = prettify_all_titles(code)
+    code = ugly_hack(code)
 
     code_file.write_text(code)
 
@@ -340,7 +341,7 @@ def sty_header(metadata):
     """.strip()
 
 
-def final_cls(metadata):
+def final_cls(metadata, ugly_hack):
     code_dir  = metadata[TAG_ROLLOUT] / "code"
 
     print("+ Building CLS file.")
@@ -369,6 +370,7 @@ def final_cls(metadata):
     code = code.strip() + '\n'
 
     code = prettify_all_titles(code)
+    code = ugly_hack(code)
 
     code_file.write_text(code)
 
