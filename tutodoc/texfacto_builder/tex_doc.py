@@ -75,6 +75,8 @@ def prebuild_single_tex(
         chge_dir = lang_dir_manual / TAG_CHGE_LOG
         content  = []
 
+        last_chges_explained = ""
+
         for vers in versions[TAG_ALL]:
             print(
                 f"    * {vers[TAG_YEAR]}-{vers[TAG_MONTH]}-{vers[TAG_DAY]}  "
@@ -92,6 +94,9 @@ def prebuild_single_tex(
                 )
 
             about_this_change = content_from_TEX(chge_file)
+
+            if not last_chges_explained:
+                last_chges_explained = about_this_change
 
             # print(f"{chge_file=}")
             # input(about_this_change)
@@ -130,6 +135,16 @@ def prebuild_single_tex(
         {abstract_EN}
     }}
 \\end{{abstract}}
+
+\\medskip
+
+\\begin{{center}}
+\\begin{{minipage}}{{.9\\textwidth}}
+\\begin{{tdocnote}}[Derniers changements]
+{last_chges_explained}
+\\end{{tdocnote}}
+\\end{{minipage}}
+\\end{{center}}
                 """.rstrip()
             )
 

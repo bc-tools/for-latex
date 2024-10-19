@@ -211,8 +211,6 @@ for kind, prebuilder in [
         },
     )
 
-    input("NEXT?")
-
 
 # if DEBUG:
 #     exit()
