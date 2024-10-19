@@ -9,63 +9,8 @@ NOW
 
 > ---------------------------- <
 
-Pour publier nvle version, il reste à ...
+mise en place du mécanime de thèmes qyiva au passage permettre aussi de changer la langue au sein du document : faire une démo dans \tdocinEN
 
-    ---> intégrer main.cls avec au passge les load classe !!!
-
-    ---> gérer DOC-LANGS et ALL-LANGS (api lang mis dans metadata)
-
-> ---------------------------- <
-
-gestion des pacakages et classe importés
-
-    --> besoin d'un fichier  DEPENDSN.txt des dépendances ventuellement vide pour indiquer els depndances ordonnées ! pas d'auto, charge au condeur de nourrir texfacto !
-x
-
-> ---------------------------- <
-
-lang régélé via une commande \TDocSetLocale et du coup modigfiable à la amin, ceci nécessite de crérer une version de base avec des renewcommand
-
-+
-
-faire gestion des langues grérées dans les docs !
-
-    ---> mettre exemple avec chgt local de la langue
-
-
-https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags
-
-
-
-> ---------------------------- <
-
-réorganiser contrib trad via dossier de lang et non via doc, api, ... car au final trop de chemins à parcourrir par le traducteur
-
-
-> ---------------------------- <
-
-test format date !!! cf bug oubli du formatage
-
-
-> ---------------------------- <
-
-doc : section sur la contribtuion, maintenat que la structu est figée !
-
-    ---> incister sur besoin de trad de l'api et tools en priorité, pour la doc c'est pour les ourageux !
-
-
-
------
-LATER
------
-
-
-> ---------------------------- <
-
-nouvelle page tjrs pour les \sections en format écran mais en format paper (cf du coup l'usage de macro du type newpage met avec tag)
-
-
-> ---------------------------- <
 
 note and co
 
@@ -80,16 +25,31 @@ note and co
 
             + ajout de macro du type newpage met avec tag qui agisse uniquement si la format est choisi
 
++
+
+lang régélé via une commande \TDocSetLocale et du coup modigfiable à la amin, ceci nécessite de crérer une version de base avec des renewcommand
+
++
+
+faire gestion des langues grérées dans les docs !
+
+    ---> mettre exemple avec chgt local de la langue
+
+
+https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags
+
 
 > ---------------------------- <
 
-focus
+gestion des pacakages et classe importés
 
-    ---> nonb as a package option
+    --> besoin d'un fichier  DEPENDSN.txt des dépendances ventuellement vide pour indiquer els depndances ordonnées ! pas d'auto, charge au condeur de nourrir texfacto !
 
-    ---> "choice" option ''nb/nonb'' poir tous les cas mais en choissisant de numéroté que les exemples par défaut
 
-    ---> code auto  mêm si c'est fixé a priori
+
+-----
+LATER
+-----
 
 
 > ---------------------------- <
