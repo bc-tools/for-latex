@@ -1,0 +1,36 @@
+% == TOOLS == %
+
+% -- COLORFUL HIGHLIGHTING OF CONTENT -- %
+
+% :: LET'S GO BACK TO THE REAL WORLD :: %
+
+\ExplSyntaxOn
+
+%%%
+% We use a ''seq'' variable to factorize the code just after.
+%%%
+\seq_new:N             \__g_tutodoc_focus_color_seq
+\seq_set_from_clist:Nn \__g_tutodoc_focus_color_seq {
+  note,
+  tip,
+  imp,
+  caut,
+  warn,
+}
+
+
+%%%
+% prototype::
+%     :action: looping over ''\__g_tutodoc_focus_color_seq'' to build new
+%              numbered theorems sharing the same section level counter.
+%              To achieve that, we use the ''\newkeytheorem'' macro from
+%              the ''keytheorems'' \pack.
+%%%
+\seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+  \newkeytheorem{tdoc#1}[
+    name     = \use:c { tutodoc@trans@#1@title },
+    numbered = false,
+  ]
+}
+
+\ExplSyntaxOff
