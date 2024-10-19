@@ -62,6 +62,8 @@ def _recu_debug_treeview(
 # -- METADATA PROJECT -- #
 # ---------------------- #
 
+assert THIS_DIR.name != ""
+
 print_frame(
     THIS_DIR.name,
     "METADATA"

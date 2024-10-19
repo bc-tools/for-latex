@@ -24,8 +24,8 @@ checkopts   = "-interaction=nonstopmode --shell-escape"
 typesetopts = checkopts
 
 uploadconfig = {
-    version      = "1.4.0 [2024-09-28]",
-    announcement = "New macros \\tdocstartproj and \\tdocicon + Breaking changes for \\tdoccaution, \\tdocexa and \\tdocrem + Misc.",
+    version      = "1.5.0 [2024-10-19]",
+    announcement = "tutodoc becomes a LaTeX class.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",

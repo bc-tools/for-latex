@@ -6,6 +6,11 @@ import              re
 # -- TAGS -- #
 # ---------- #
 
+LAST_CHGES_IN = {
+    'en': "Last changes",
+    'fr': "Derniers changements",
+}
+
 TAG_LANG_EN = "en"
 TAG_LOCALE  = "locale"
 

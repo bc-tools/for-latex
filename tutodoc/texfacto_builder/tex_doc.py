@@ -151,7 +151,7 @@ def prebuild_single_tex(
 \\begin{{center}}
 \\small
 \\begin{{minipage}}{{.9\\textwidth}}
-\\begin{{tdocnote}}[Derniers changements]
+\\begin{{tdocnote}}[{LAST_CHGES_IN[lang]}]
 {last_chges_explained}
 \\end{{tdocnote}}
 \\end{{minipage}}
