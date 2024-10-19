@@ -9,6 +9,9 @@ NOW
 
 > ---------------------------- <
 
+passer via l3 pour options de classe car bien plus puissant que latex std
+
+
 mise en place du mécanime de thèmes qyiva au passage permettre aussi de changer la langue au sein du document : faire une démo dans \tdocinEN
 
 
