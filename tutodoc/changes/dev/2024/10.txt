@@ -2,6 +2,21 @@
 
 
 ==
+20  (1.6.0-beta.1)
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+Themes: a \1st draft version just for admonitions looks good.
+
+
+// ---------- //
+
+
+==
 19  (1.5.0-rc.1)
 ==
 

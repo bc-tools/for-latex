@@ -2,12 +2,11 @@
 
 % -- OPTIONS -- %
 
-\LoadClass{article}%
-          [2022-06-01]
-
 \ExplSyntaxOn
 
 \tl_new:N \l__tutodoc_remaining_cls_options_tl
+
+\newcommand{ \tutodoc@theme } { color }
 
 \keys_define:nn { tutodoc / main / class / options } {
   theme .choices:nn = {
@@ -16,36 +15,22 @@
     bw,
     wb
   } {
-    \newcommand{ \tutodoc@theme } {
+    \renewcommand{ \tutodoc@theme } {
       \tl_use:N \l_keys_choice_tl
     }
   },
-  theme / unknown .code:n =
-    \msg_error:nneee { tutodoc ~ (main) }
-      { main : unknown-theme }
-      { theme } {
-        color,
-        draft,
-        bw,
-        wb
-      }
-      { \exp_not:n {#1} }, % Invalid choice given
-    unknown .code:n = {
-      \tl_set:Nn \l__tutodoc_remaining_cls_options_tl { #1 }
-    }
+  unknown .code:n = {
+    \tl_set:Nn \l__tutodoc_remaining_cls_options_tl { #1 }
+  }
 }
 
+\ProcessKeyOptions[tutodoc / main / class / options]
+
+\LoadClass[ \tl_use:N \l__tutodoc_remaining_cls_options_tl ]%
+          { article }%
+          [ 2022-06-01 ]
 
 \ExplSyntaxOff
-
-% \ProcessKeysOptions { tutodoc / main / class / options }
-
-
-% \DeclareUnknownKeyHandler{%
-%   \PassOptionsToClass{\CurrentOption}{article}
-% }
-
-% \ProcessKeyOptions[tutodoc / main / options]
 
 
 % -- COMMUNITY TOOLS -- %
@@ -105,13 +90,15 @@
 % If the lang is not supported, we emit a warning and just turn
 % to the english language.
   \makeatletter
-  	\InputIfFileExists{../main/tutodoc-locale-main-\tdoclang.cfg.cls.sty}{}{
+
+  \InputIfFileExists{../main/tutodoc-locale-main-\tdoclang.cfg.cls.sty}{}{
 	  \input{../main/tutodoc-locale-main-en.cfg.cls.sty}
 
 	  \msg_critical:nnx { tutodoc ~ (main) }
         { main : unsupported-lang }
         { \tdoclang }
 	}
+
   \makeatother
 }
 
