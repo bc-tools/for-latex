@@ -2,6 +2,15 @@
 
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
 
+%%%
+% DESC!!!!!
+%
+%
+%
+%
+%
+%%%
+
 % :: ABSTRACTION :: %
 
 %%%
@@ -13,15 +22,15 @@
 %%%
 \tcbset{
   tutodoc-focus-color-style/.style = {
-    use color stack, % Must be before breakable! 
+    use color stack, % Must be before breakable!
     breakable,
     enhanced,
     left         = 3pt,
     right        = 3pt,
-    fontupper    = \color{\tdocdarkcolor{#1}},
-    colback      = \tdoclightcolor{#1},
-    colframe     = #1!75!black!45,
-    shadow       = {.75mm}{-.75mm}{0mm}{black!30},
+    fontupper    = \color{\tdocdarkcolor[40]{Gray}},
+    colback      = \tdoclightcolor[10]{Gray},
+    colframe     = Gray!75!black!45,
+    shadow       = {.75mm}{-.75mm}{0mm}{Gray!15},
 % We want to use the same color for the footnotes in the frame.
     before upper = {\let\default@color\current@color},
  }
@@ -35,14 +44,7 @@
 %%%
 % We use two ''prop'' variables to factorize the code just after.
 %%%
-\prop_set_from_keyval:Nn \__g_tutodoc_focus_color_prop {
-  note = gray,
-  tip  = gray,
-  imp  = gray,
-  caut = gray,
-  warn = gray,
-}
-
+\prop_new:N              \__g_tutodoc_focus_icon_prop
 \prop_set_from_keyval:Nn \__g_tutodoc_focus_icon_prop {
   note = \faInfoCircle,
   tip  = \faLightbulb,
@@ -60,13 +62,13 @@
 %              macro from the ''keytheorems'' \pack, and icons from the
 %              ''fontawesome5'' \pack.
 %%%
-\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+\prop_map_inline:Nn \__g_tutodoc_focus_icon_prop {
   \newkeytheorem{tdoc#1}[
     numbered  = false,
 %  tcolorbox-no-titlebar can be used.
-    tcolorbox = {tutodoc-focus-color-style=#2},
+    tcolorbox = tutodoc-focus-color-style,
     name      = {
-      \tdocicon{ \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } }
+      \tdocicon{ #2 }
       \use:c { tutodoc@trans@#1@title }
     },
   ]

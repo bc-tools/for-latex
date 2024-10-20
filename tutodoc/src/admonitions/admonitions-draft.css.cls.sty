@@ -2,6 +2,15 @@
 
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
 
+%%%
+% DESC!!!!!
+%
+%
+%
+%
+%
+%%%
+
 % :: LET'S GO BACK TO THE REAL WORLD :: %
 
 \ExplSyntaxOn
@@ -28,9 +37,13 @@
 %%%
 \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
   \newkeytheorem{tdoc#1}[
-    name     = \use:c { tutodoc@trans@#1@title },
-    numbered = false,
+    name       = \use:c { tutodoc@trans@#1@title },
+    numberlike = tdocexa,
   ]
+
+
+  \AddToHook{env/tdoc#1/before}{\small}
+  \AddToHook{env/tdoc#1/after}{\normalsize}
 }
 
 \ExplSyntaxOff

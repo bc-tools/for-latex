@@ -10,10 +10,10 @@
 
 \keys_define:nn { tutodoc / main / class / options } {
   theme .choices:nn = {
-    color,
-    draft,
     bw,
-    wb
+    color,
+    dark,
+    draft
   } {
     \renewcommand{ \tutodoc@theme } {
       \tl_use:N \l_keys_choice_tl

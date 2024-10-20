@@ -2,10 +2,18 @@
 
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
 
-% :: ABSTRACTION :: %
+%%%
+% DESC!!!!!
+%
+%
+%
+%
+%
+%%%
 
 \pagecolor{black}
-\color{\tdocdarkcolor[95]{white}}
+\color{\tdocdarkcolor[80]{white}}
+
 
 %%%
 % note::
@@ -16,15 +24,15 @@
 %%%
 \tcbset{
   tutodoc-focus-color-style/.style = {
-    use color stack, % Must be before breakable! 
+    use color stack, % Must be before breakable!
     breakable,
     enhanced,
     left         = 3pt,
     right        = 3pt,
-    fontupper    = \color{\tdocdarkcolor[90]{white}},
-    colback      = \tdocdarkcolor[90]{gray},
-    colframe     = \tdocdarkcolor[70]{gray},
-    shadow       = {.75mm}{-.75mm}{0mm}{black!50},
+    fontupper    = \color{\tdocdarkcolor{#1}},
+    colback      = \tdoclightcolor{#1},
+    colframe     = #1!75!black!45,
+    shadow       = {.75mm}{-.75mm}{0mm}{black!30},
 % We want to use the same color for the footnotes in the frame.
     before upper = {\let\default@color\current@color},
  }
@@ -39,11 +47,11 @@
 % We use two ''prop'' variables to factorize the code just after.
 %%%
 \prop_set_from_keyval:Nn \__g_tutodoc_focus_color_prop {
-  note = white,
-  tip  = white,
-  imp  = white,
-  caut = white,
-  warn = white,
+  note = cyan,
+  tip  = ForestGreen,
+  imp  = orange,
+  caut = violet,
+  warn = red,
 }
 
 \prop_set_from_keyval:Nn \__g_tutodoc_focus_icon_prop {
