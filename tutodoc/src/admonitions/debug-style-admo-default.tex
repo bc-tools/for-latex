@@ -1,0 +1,57 @@
+\documentclass[10pt, a4paper]{../main/main}
+
+\newcommand\thisstyle{default = color}
+
+\input{../preamble.cfg.tex}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{admonitions.cls}
+
+\usepackage{lipsum}
+
+
+\begin{document}
+
+\section{Thème \thisstyle}
+
+\ExplSyntaxOn
+
+\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+	\subsection*{tdoc#1}
+
+	\lipsum[2]
+
+	\begin{tdoc#1}
+		\lipsum[2]
+	\end{tdoc#1}
+	
+	\begin{tdoc#1}
+		\lipsum[2]
+	\end{tdoc#1}
+
+	\lipsum[2]
+}
+
+\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+	\subsection*{tdoc#1}
+
+	\lipsum[2]
+
+	\begin{tdoc#1}
+		\lipsum[2]%
+		\footnote{
+			Blo, blo, blo, blo, blo, blo, blo, blo...
+		}
+		
+		\\
+		
+		\lipsum[2]
+	\end{tdoc#1}
+
+	\lipsum[2]
+}
+
+\ExplSyntaxOff
+
+\end{document}

@@ -2,8 +2,8 @@
 
 % -- OPTIONS -- %
 
-\LoadClassWithOptions{article}%
-                     [2022-06-01]
+\LoadClass{article}%
+          [2022-06-01]
 
 \DeclareKeys[tutodoc / main / options] {
   theme .choices:nn =
