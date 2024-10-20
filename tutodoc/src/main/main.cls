@@ -5,22 +5,47 @@
 \LoadClass{article}%
           [2022-06-01]
 
-\DeclareKeys[tutodoc / main / options] {
-  theme .choices:nn =
-  {
+\ExplSyntaxOn
+
+\tl_new:N \l__tutodoc_remaining_cls_options_tl
+
+\keys_define:nn { tutodoc / main / class / options } {
+  theme .choices:nn = {
     color,
     draft,
     bw,
     wb
-  } { color },
-  theme .store = \tutodoc@theme
+  } {
+    \newcommand{ \tutodoc@theme } {
+      \tl_use:N \l_keys_choice_tl
+    }
+  },
+  theme / unknown .code:n =
+    \msg_error:nneee { tutodoc ~ (main) }
+      { main : unknown-theme }
+      { theme } {
+        color,
+        draft,
+        bw,
+        wb
+      }
+      { \exp_not:n {#1} }, % Invalid choice given
+    unknown .code:n = {
+      \tl_set:Nn \l__tutodoc_remaining_cls_options_tl { #1 }
+    }
 }
 
-\DeclareUnknownKeyHandler{%
-  \PassOptionsToClass{\CurrentOption}{article}
-}
 
-\ProcessKeyOptions[tutodoc / main / options]
+\ExplSyntaxOff
+
+% \ProcessKeysOptions { tutodoc / main / class / options }
+
+
+% \DeclareUnknownKeyHandler{%
+%   \PassOptionsToClass{\CurrentOption}{article}
+% }
+
+% \ProcessKeyOptions[tutodoc / main / options]
 
 
 % -- COMMUNITY TOOLS -- %
