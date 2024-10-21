@@ -195,4 +195,4 @@
 
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
 
-\input{../main/main-\tutodoc@theme.css.cls.sty}
+\input{../main/css/main-\tutodoc@theme.cls.sty}

@@ -2,6 +2,16 @@
 
 
 ==
+21  (1.6.0-beta.1)
+==
+
+\tdoclinkcolor --> tdoclinkcolor a color !
+
+
+// ---------- //
+
+
+==
 20  (1.6.0-beta.1)
 ==
 

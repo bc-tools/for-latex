@@ -6,6 +6,28 @@ tutodoc - TODO
 NOW
 ---
 
+dark
+    link : #9591a6
+
+    note : 149	195	210
+           dark  #50636a
+           light #697579
+
+    tip : 151	184	151
+          dark  #505f50
+          light #697269
+
+    important : 225	183	143
+                dark  #715e4c
+                light #7f7266
+
+    caution : 182	141	182
+              dark  #5e4c5e
+              light #7f707f
+
+    warning : 194	122	123
+              dark #644343
+              light #856969
 
 > ---------------------------- <
 
