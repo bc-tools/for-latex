@@ -4,7 +4,10 @@
 % See the \doc of the macro ''\newmintinline'' from the package ''minted''
 % to have \infos about the macro ''tdocinlatex''.
 %%%
-\newmintinline[tdocinlatex]{latex}{bgcolor = black, style = bw}
+\newmintinline[tdocinlatex]{latex}{
+  bgcolor = \tdocdarkcolor[30]{white},
+  style   = monokai
+}
 
 
 % :: THE TCOLORBOX LISTING STYLE :: %
@@ -15,11 +18,13 @@
 \tcbset{
   tutodoc-latex-listing-style/.style = {
     minted language = latex,
-    minted style = bw,
+    minted style = monokai,
     breakable,
     enhanced,
 % Code and output
-    colback = black,
+    colback = \tdocdarkcolor[30]{white},
+    colupper= \tdocdarkcolor[80]{white},
+    collower= \tdocdarkcolor[80]{white},
 % Frame
     colframe = darkgray,
     shadow   = {.75mm}{-.75mm}{0mm}{black!30},

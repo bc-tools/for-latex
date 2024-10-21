@@ -1,0 +1,30 @@
+\documentclass[10pt, a4paper]{../main/main}
+
+\input{../preamble.cfg.tex}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{showcase.cls}
+
+
+\begin{document}
+
+\begin{tdocshowcase}
+  \tdocruler{PAR DÉFAUT}
+
+  \tdocruler[red]{ROUGE}
+\end{tdocshowcase}
+
+\begin{tdocshowcase}
+  Réglages standard ou par défaut...
+\end{tdocshowcase}
+
+\begin{tdocshowcase}[nostripe]
+  Sans bande colorée ?
+\end{tdocshowcase}
+
+\begin{tdocshowcase}[color = orange]
+  Les goûts et les couleurs... Besoin de choisir aussi la couleur du texte !
+\end{tdocshowcase}
+
+\end{document}

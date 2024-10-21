@@ -1,3 +1,6 @@
+\definecolor{mycolback}{named}{white}
+
+
 % :: INLINE SHORT LATEX CODE :: %
 
 %%%
@@ -22,13 +25,15 @@
     breakable,
     enhanced,
 % Code and output
-    colback = white,
+    colback  = mycolback,
+    colframe = black,
 % Padding
     left   = 1mm,
     right  = 1mm,
     bottom = 1mm,
     top    = 1mm,
 % Frame
+    shadow     = {0mm}{0mm}{0mm}{black},
     arc        = 0pt,
     leftrule   = 0pt,
     rightrule  = 0pt,
