@@ -110,19 +110,6 @@
 \setlength{\parindent}{0cm}
 
 
-% -- LINKS -- %
-
-\newcommand{\tdoclinkcolor}{NavyBlue!85!white}
-
-\hypersetup{
-  colorlinks,
-  citecolor = \tdoclinkcolor,
-  filecolor = \tdoclinkcolor,
-  linkcolor = \tdoclinkcolor,
-  urlcolor  = \tdoclinkcolor
-}
-
-
 % -- TOC & Co. -- %
 
 \ifcsundef{chapter}%
@@ -204,3 +191,8 @@
 \NewDocumentCommand{\tdocicon}{m}{%
   #1\kern.45em%
 }
+
+
+% -- COLORFUL HIGHLIGHTING OF CONTENT -- %
+
+\input{../main/main-\tutodoc@theme.css.cls.sty}
