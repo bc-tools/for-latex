@@ -1,50 +1,31 @@
-\definecolor{mycolback}{named}{white}
+% :: INLINE LATEX MACRO :: %
 
+\renewcommand{\tdocltxlexer}{text}
+\newcommand{\tdocltxstyle}{default}
 
-% :: INLINE SHORT LATEX CODE :: %
-
-%%%
-% See the \doc of the macro ''\newmintinline'' from the package ''minted''
-% to have \infos about the macro ''tdocinlatex''.
-%%%
-\newmintinline[tdocinlatex]{text}{
-    bgcolor = white,
-    % style   = bw
-}
+\colorlet{tdocltxcbackcolor}{white}
+\colorlet{tdocltxctextcol}{black}
 
 
 % :: THE TCOLORBOX LISTING STYLE :: %
 
-% Source.
-%     * https://tex.stackexchange.com/a/604821/6880
-%     * https://tex.stackexchange.com/a/327983/6880
-\tcbset{
-  tutodoc-latex-listing-style/.style = {
-    minted language = text,
-    % minted style    = bw,
-    breakable,
-    enhanced,
-% Code and output
-    colback  = mycolback,
-    colframe = black,
-% Padding
-    left   = 1mm,
-    right  = 1mm,
-    bottom = 1mm,
-    top    = 1mm,
-% Frame
-    shadow     = {0mm}{0mm}{0mm}{black},
-    arc        = 0pt,
-    leftrule   = 1pt,
-    rightrule  = 0pt,
-    bottomrule = 0pt,
-    toprule    = 0pt,
-% Separating line
-    segmentation style = {
-      black,
-      dash pattern = {on 5pt off 2.5pt},
-      line width   = .75pt
-    },
-    #1
-  },
-}
+\colorlet{tdocltxcframecolor}{darkgray}
+
+\newcommand{\tdocltxleft}{1mm}
+\newcommand{\tdocltxright}{1mm}
+\newcommand{\tdocltxtop}{1mm}
+\newcommand{\tdocltxbottom}{1mm}
+
+\newcommand{\tdocltxarc}{0pt}
+
+\newcommand{\tdocltxleftrule}{1pt}
+\newcommand{\tdocltxrightrule}{0pt}
+\newcommand{\tdocltxtoprule}{0pt}
+\newcommand{\tdocltxbottomrule}{0pt}
+
+\colorlet{tdocltxcshadowcolor}{black}
+\newcommand{\tdocltxcshadowxshift}{0mm}
+\newcommand{\tdocltxcshadowyshift}{0mm}
+\newcommand{\tdocltxcshadowoffset}{0mm}
+
+\colorlet{tdocltxcsegmentcolor}{black}

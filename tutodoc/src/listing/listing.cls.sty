@@ -16,7 +16,26 @@
 
 % -- LATEX EXAMPLES -- %
 
-% :: TCOLORBOX LISTING ENV. STYLE + INLINE LATEX MACRO :: %
+% :: STYLES OF THE LISTING ENV. AND THE MACRO :: %
+
+\newcommand{\tdocltxlexer}{latex}
+
+\input{../listing/css/listing-\tutodoc@theme.cls.sty}
+
+
+% :: INLINE LATEX MACRO :: %
+
+%%%
+% See the \doc of the macro ''\newmintinline'' from the package ''minted''
+% to have \infos about the macro ''tdocinlatex''.
+%%%
+\newmintinline[tdocinlatex]{\tdocltxlexer}{%
+  bgcolor            = tdocltxcbackcolor,%
+  style/.expand once = \tdocltxstyle%
+}
+
+
+% :: TCOLORBOX LISTING ENVIRONMENT :: %
 
 \ExplSyntaxOn
 
@@ -48,17 +67,47 @@
 
 \ExplSyntaxOff
 
-\input{../listing/css/listing-\tutodoc@theme.cls.sty}
+%%
+% source::
+%     + https://tex.stackexchange.com/a/604821/6880
+%     + https://tex.stackexchange.com/a/327983/6880
+%%
+\tcbset{
+  tutodoc-latex-listing-style/.style = {
+    minted language/.expand once = \tdocltxlexer,
+    minted style/.expand once    = \tdocltxstyle,
+    breakable,
+    enhanced,
+% Code and output
+    colframe = tdocltxcframecolor,
+    colback  = tdocltxcbackcolor,
+    colupper = tdocltxctextcol,
+    collower = tdocltxctextcol,
+% Padding
+    left   = \tdocltxleft,
+    right  = \tdocltxright,
+    bottom = \tdocltxbottom,
+    top    = \tdocltxtop,
+% Frame
+    shadow     = {\tdocltxcshadowxshift}%
+                 {\tdocltxcshadowyshift}%
+                 {\tdocltxcshadowoffset}%
+                 {tdocltxcshadowcolor},
+    arc        = \tdocltxarc,
+    leftrule   = \tdocltxleftrule,
+    rightrule  = \tdocltxrightrule,
+    bottomrule = \tdocltxbottomrule,
+    toprule    = \tdocltxtoprule,
+% Separating line
+    segmentation style = {
+      tdocltxcsegmentcolor,
+      dash pattern = {on 5pt off 2.5pt},
+      line width   = .75pt
+    },
+    #1
+  },
+}
 
-
-
-
-
-
-
-
-
-% :: TCOLORBOX LISTING ENVIRONMENT :: %
 
 %%%
 % prototype::
