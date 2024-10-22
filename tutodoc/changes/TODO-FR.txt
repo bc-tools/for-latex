@@ -6,54 +6,41 @@ tutodoc - TODO
 NOW
 ---
 
-il restera à afctoriser les codes et les nettoyer, mais aussi intégerre cela dans tefacto-POC
-
-
-main OK
-listing OK
-admo
-
-shwocase ???
-
-    ---> tdocshowcase : la couleur du texte en plus car au final c'est indispensanble !
 
 > ---------------------------- <
 
-mise en place du mécanime de thèmes qyiva au passage permettre aussi de changer la langue au sein du document : faire une démo dans \tdocinEN
+THÈMES
 
+    --> factoriser les codes et les nettoyer
 
-note and co
+            ??? admonitions
+            ??? listing
+            ??? showcase
 
-    --> différents mef possible ?
-        OK quand je ferais une classe : on choisi le CCS templ et on forunit alors les macro et réglage attendus; toit simplement !
+    --> intégerre cela dans tefacto-POC
 
-
-            + format = color par défaut
-            + format = bw pour black/white pour ceux faches avec les couleurs
-            + format = dark pour white/black pour se reposer les yeux
-            + format = paper  pour relecture sur papier avec dans ce cas
-
-            + ajout de macro du type newpage met avec tag qui agisse uniquement si la format est choisi
-
-+
-
-lang régélé via une commande \TDocSetLocale et du coup modigfiable à la amin, ceci nécessite de crérer une version de base avec des renewcommand
-
-+
-
-faire gestion des langues grérées dans les docs !
-
-    ---> mettre exemple avec chgt local de la langue
-
-
-https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags
+    --> ajout de macro du type newpage met avec tag qui agisse uniquement si la thème est choisi
 
 
 > ---------------------------- <
 
-gestion des pacakages et classe importés
+IMPORTS
 
-    --> besoin d'un fichier  DEPENDSN.txt des dépendances ventuellement vide pour indiquer els depndances ordonnées ! pas d'auto, charge au condeur de nourrir texfacto !
+    --> ATTENTION le lieu des imports est aussi celui de la gestiond es options : il faut donc aussi une section dédier à le gestiond es options de pack/cls qui sera toujours au début ????
+
+    --> nettoyer les doublons en les comprant
+
+    --> créer au passage un fichier  DEPENNDS.yaml des dépendances ventuellement vide pour indiquer els depndances ordonnées !
+    on le construit auto pour ce qui est utilisé, et on propose un clé pour indiquer des ordres d'imports imposés, cette partie n'atant jmaais touchée par texfacto
+
+
+> ---------------------------- <
+
+LANG
+
+    --> mettre exemple avec chgt local de la langue
+
+    --> https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags
 
 
 

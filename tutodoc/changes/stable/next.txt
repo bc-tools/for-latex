@@ -10,4 +10,4 @@
 -----
 
 [[:api:]]
-Themes: different styles of formatting are proposed thanks to the \cls option ''theme''.
+Themes: the \cls option ''theme'' allows to choose the formatting.

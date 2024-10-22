@@ -65,6 +65,47 @@
 
 % == TOOLS == %
 
+% -- COLOR TRANSFORMATIONS -- %
+
+%%%
+% prototype::
+%     #1 : (black-rate)
+%          the amount of color relative to black.
+%     #2 : (color)
+%          one color following the ''xcolor'' format.
+%
+%     :return: a "darker" version of the color ''#1''.
+%%%
+\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
+
+
+%%%
+% prototype::
+%     #1 : (transparency)
+%          the transparency rate.
+%     #2 : (color)
+%          one color following the ''xcolor'' format.
+%
+%     :return: a "transparent" version of the color `#1`.
+%%%
+\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
+
+
+% -- ICONS -- %
+
+%%%
+% prototype::
+%     #1 : (aws-icon)
+%          one material that expects to be an icon command from the
+%          ''fontawsome5'' \pack.
+%
+%     :return: the icon followed by a small insecable  space.
+%%%
+\NewDocumentCommand{\tdocicon}{m}{%
+  #1\kern.45em%
+}
+
+
 % -- LOCALE SETTINGS -- %
 
 \ExplSyntaxOn
@@ -152,47 +193,14 @@
 \DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
 
 
-% -- COLOR TRANSFORMATIONS -- %
-
-%%%
-% prototype::
-%     #1 : (black-rate)
-%          the amount of color relative to black.
-%     #2 : (color)
-%          one color following the ''xcolor'' format.
-%
-%     :return: a "darker" version of the color ''#1''.
-%%%
-\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
-
-
-%%%
-% prototype::
-%     #1 : (transparency)
-%          the transparency rate.
-%     #2 : (color)
-%          one color following the ''xcolor'' format.
-%
-%     :return: a "transparent" version of the color `#1`.
-%%%
-\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
-
-
-% -- ICONS -- %
-
-%%%
-% prototype::
-%     #1 : (aws-icon)
-%          one material that expects to be an icon command from the
-%          ''fontawsome5'' \pack.
-%
-%     :return: the icon followed by a small insecable  space.
-%%%
-\NewDocumentCommand{\tdocicon}{m}{%
-  #1\kern.45em%
-}
-
-
-% -- COLORFUL HIGHLIGHTING OF CONTENT -- %
+% -- LINKS AND CO. -- %
 
 \input{../main/css/main-\tutodoc@theme.cls.sty}
+
+\hypersetup{
+  colorlinks,
+  citecolor = tdoclinkcolor,
+  filecolor = tdoclinkcolor,
+  linkcolor = tdoclinkcolor,
+  urlcolor  = tdoclinkcolor
+}

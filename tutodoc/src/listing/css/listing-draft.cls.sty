@@ -7,9 +7,9 @@
 % See the \doc of the macro ''\newmintinline'' from the package ''minted''
 % to have \infos about the macro ''tdocinlatex''.
 %%%
-\newmintinline[tdocinlatex]{latex}{
+\newmintinline[tdocinlatex]{text}{
     bgcolor = white,
-    style   = bw
+    % style   = bw
 }
 
 
@@ -20,8 +20,8 @@
 %     * https://tex.stackexchange.com/a/327983/6880
 \tcbset{
   tutodoc-latex-listing-style/.style = {
-    minted language = latex,
-    minted style    = bw,
+    minted language = text,
+    % minted style    = bw,
     breakable,
     enhanced,
 % Code and output
@@ -35,10 +35,10 @@
 % Frame
     shadow     = {0mm}{0mm}{0mm}{black},
     arc        = 0pt,
-    leftrule   = 0pt,
+    leftrule   = 1pt,
     rightrule  = 0pt,
-    bottomrule = .75pt,
-    toprule    = .75pt,
+    bottomrule = 0pt,
+    toprule    = 0pt,
 % Separating line
     segmentation style = {
       black,

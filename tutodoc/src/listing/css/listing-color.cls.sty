@@ -1,10 +1,17 @@
+% /.style 2 args
+
+
+
+
+
+
 % :: INLINE SHORT LATEX CODE :: %
 
 %%%
 % See the \doc of the macro ''\newmintinline'' from the package ''minted''
 % to have \infos about the macro ''tdocinlatex''.
 %%%
-\newmintinline[tdocinlatex]{latex}{bgcolor = yellow!4, style=default}
+\newmintinline[tdocinlatex]{latex}{bgcolor = yellow!4, style=pastie}
 
 
 % :: THE TCOLORBOX LISTING STYLE :: %
@@ -15,7 +22,7 @@
 \tcbset{
   tutodoc-latex-listing-style/.style = {
     minted language = latex,
-    minted style    = default,
+    minted style    = pastie,
     breakable,
     enhanced,
 % Code and output

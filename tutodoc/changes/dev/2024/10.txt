@@ -2,10 +2,38 @@
 
 
 ==
-21  (1.6.0-beta.1)
+??????????  (1.6.0-beta.3)
 ==
 
-\tdoclinkcolor --> tdoclinkcolor a color !
+-----
+:new:
+-----
+
+[[:api:]]
+Themes.
+
+    1) Draft versions look good (main, admonitions, listing and
+    ???
+    showcase).
+
+    2)
+    ???
+    \Env ''tdocshowcase'': a new option allows to change the text color.
+
+
+// ---------- //
+
+
+==
+21  (1.6.0-beta.2)
+==
+
+--------
+:update:
+--------
+
+[[:api:]]
+Themes: the macro ``\tdoclinkcolor`` becomes ''tdoclinkcolor'' an \xcolor color.
 
 
 // ---------- //
