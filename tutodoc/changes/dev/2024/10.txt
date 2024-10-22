@@ -16,9 +16,17 @@ Themes.
     ???
     showcase).
 
-    2)
+    1)
     ???
     \Env ''tdocshowcase'': a new option allows to change the text color.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]   ????
+Manual: a section shows examples of use of each theme.
 
 
 // ---------- //

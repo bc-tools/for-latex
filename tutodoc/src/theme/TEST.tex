@@ -1,19 +1,22 @@
-\documentclass[10pt, a4paper, theme = dark]{../../main/main}
+\begin{filecontents*}[overwrite]{bidon.tex}
+\documentclass[10pt, a4paper]{../main/main}
 
 \newcommand\thisstyle{dark}
 
-\input{../../preamble.cfg.tex}
+\input{../preamble.cfg.tex}
 
 % TESTING LOCAL IMPLEMENTATION %
 
-\usepackage{../admonitions.cls}
+\usepackage{admonitions.cls}
 
 \usepackage{lipsum}
 
 
 \begin{document}
 
-\section{Thème \thisstyle}
+{\Huge\bfseries Thème \thisstyle}
+
+\section{OK ? KO ?}
 
 \ExplSyntaxOn
 
@@ -25,7 +28,7 @@
  \begin{tdoc#1}
   \lipsum[2]
  \end{tdoc#1}
-
+ 
  \begin{tdoc#1}
   \lipsum[2]
  \end{tdoc#1}
@@ -43,9 +46,9 @@
   \footnote{
    Blo, blo, blo, blo, blo, blo, blo, blo...
   }
-
+  
   \\
-
+  
   \lipsum[2]
  \end{tdoc#1}
 
@@ -55,3 +58,24 @@
 \ExplSyntaxOff
 
 \end{document}
+\end{filecontents*}
+
+
+% ---------------- %
+
+
+\documentclass[12pt]{article}
+
+\immediate\write18{pdflatex -shell-escape bidon}
+
+\usepackage{pdfpages}
+
+\begin{document}
+
+% Compile for the PDF versions.
+
+\includepdf[nup=2x2, pages=1-4, delta=1 1, frame = true, fitpaper=true]{bidon}
+
+
+\end{document}
+

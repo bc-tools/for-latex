@@ -1,0 +1,53 @@
+\documentclass[a4paper, 12pt, theme = color]{../main/main}
+
+\newcommand\thisstyle{color}
+
+\input{../preamble.cfg.tex}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{admonitions.cls}
+
+\usepackage[math]{blindtext}
+
+\renewcommand{\blindmarkup}[1]{\emph{\bfseries#1}}
+
+\begin{document}
+
+{\Huge\bfseries Theme \thisstyle}
+
+\section{One section}
+
+\ExplSyntaxOn
+
+\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+	\subsection*{tdoc#1}
+
+	\blindtext
+
+	\begin{tdoc#1}
+		\blindtext
+	\end{tdoc#1}
+
+	\blindtext
+}
+
+\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+	\subsection*{tdoc#1}
+
+	\blindtext
+
+	\begin{tdoc#1}
+		One ~ text ~ with ~ one ~ footnote.%
+		\footnote{
+			Blo, ~ blo, ~ blo, ~ blo, ~ blo, ~ blo, ~ blo, ~ blo...
+		}
+		\blindtext
+	\end{tdoc#1}
+
+	\blindtext
+}
+
+\ExplSyntaxOff
+
+\end{document}

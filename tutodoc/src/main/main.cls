@@ -33,7 +33,7 @@
 \ExplSyntaxOff
 
 
-% -- COMMUNITY TOOLS -- %
+% -- IMPORTS -- %
 
 \RequirePackage[svgnames]%
                {xcolor}%

@@ -1,5 +1,4 @@
-\begin{filecontents*}[overwrite]{bidon.tex}
-\documentclass[10pt, a4paper, theme = dark]{../main/main}
+\documentclass[10pt, a4paper]{../main/main}
 
 \newcommand\thisstyle{dark}
 
@@ -14,7 +13,9 @@
 
 \begin{document}
 
-\section{Thème \thisstyle}
+{\Huge\bfseries Thème \thisstyle}
+
+\section{OK ? KO ?}
 
 \ExplSyntaxOn
 
@@ -26,7 +27,7 @@
  \begin{tdoc#1}
   \lipsum[2]
  \end{tdoc#1}
- 
+
  \begin{tdoc#1}
   \lipsum[2]
  \end{tdoc#1}
@@ -44,9 +45,9 @@
   \footnote{
    Blo, blo, blo, blo, blo, blo, blo, blo...
   }
-  
+
   \\
-  
+
   \lipsum[2]
  \end{tdoc#1}
 
@@ -56,17 +57,3 @@
 \ExplSyntaxOff
 
 \end{document}
-\end{filecontents*}
-
-
-\documentclass[12pt]{article}
-
-\usepackage{pdfpages}
-
-\begin{document}
-
-\includepdf{bidon}
-
-
-\end{document}
-
