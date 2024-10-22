@@ -1,7 +1,5 @@
 % == PACKAGES == %
 
-%\RequirePackage{minted2}% Old implementation.
-
 \RequirePackage[highlightmode = immediate]%
                {minted}%
                [2024/09/22]
@@ -18,7 +16,7 @@
 
 % -- LATEX EXAMPLES -- %
 
-% :: SHORTCUTS FOR TCOLORBOX LISTING FORMATING :: %
+% :: TCOLORBOX LISTING ENV. STYLE + INLINE LATEX MACRO :: %
 
 \ExplSyntaxOn
 
@@ -36,7 +34,7 @@
 %
 % term::
 %     Package pgfkeys Error: I do not know the key '/tcb/tdoclatex bad option
-%     "NOT-A-STYLE"' and I am going to ignore it. Perhaps you misspelled it.
+%     "MISTYPED-STYLE"' and I am going to ignore it. Perhaps you misspelled it.
 %
 %     See the pgfkeys package documentation for explanation.
 %%%
@@ -51,6 +49,12 @@
 \ExplSyntaxOff
 
 \input{../listing/css/listing-\tutodoc@theme.cls.sty}
+
+
+
+
+
+
 
 
 
