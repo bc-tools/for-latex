@@ -42,7 +42,7 @@ TEMPLATE_ONE_FILE_CONTENTS = r"""
 """.strip()
 
 TEX_BUILD_CMD = r"""
-\immediate\write18{pdflatex -shell-escape gallery-showcase-<<THEME>>}
+\immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-<<THEME>>}
 """.strip()
 
 TEMPLATE_INCLUDE_PDF = r"""
