@@ -11,9 +11,34 @@ NOW
 
 THÈMES
 
-    --> factoriser les codes et les nettoyer
+[[:doc:]]   ????
+Manual: a section shows examples of use of each theme.
 
-            ??? showcase
+
+mettre aussi
+
+
+    \begin{itemize}
+    	\item La couleur de fond est fournie par \tdocmacro{tdocbackcolor}.
+
+    	\item La couleur des titres et des lignes est fournie par \tdocmacro{tdocdarkcolor}.
+    \end{itemize}
+
+    Ces macros développables admettent les codes suivants.
+
+    \begin{tdoclatex}[code]
+% Argument 1 : de façon optionnelle, on peut indiquer la quantité de couleur
+%              relativement au noir.
+%              Il est en général inutile de modifier ce paramètre !
+% Argument 2 : une couleur au format xcolor.
+\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
+
+% Argument 1 : de façon optionnelle, on peut indiquer le taux de transparence.
+%              Il est en général inutile de modifier ce paramètre !
+% Argument 2 : une couleur au format xcolor.
+\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
+    \end{tdoclatex}
+
 
     --> intégerre cela dans tefacto-POC
 
@@ -36,9 +61,9 @@ IMPORTS
 
 LANG
 
-    --> mettre exemple avec chgt local de la langue
+    --> les trads dans la doc : faire uns cript qui gère cela automatiquement !
 
-    --> https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags
+    --> ref à https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags ???
 
 
 

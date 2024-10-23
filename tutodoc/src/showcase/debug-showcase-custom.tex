@@ -1,0 +1,27 @@
+\documentclass[10pt, a4paper]{../main/main}
+
+\input{../preamble.cfg.tex}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{showcase.cls}
+
+\usepackage{lipsum}
+
+\begin{document}
+
+\lipsum[2]
+
+\tdocruler[orange]{ORANGE}
+
+\lipsum[2]
+
+\begin{tdocshowcase}[
+	colstripe = purple,
+	coltext   = red
+]
+  \itshape
+  \lipsum[2]
+\end{tdocshowcase}
+
+\end{document}

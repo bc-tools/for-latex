@@ -1,49 +1,21 @@
-% :: INTERNAL ENVIRONMENTS :: %
+% -- SHOWCASE -- %
 
-%%%
-% prototype::
-%     #1 : (up-text)
-%          the descriptive text before the real output
-%     #2 : (down-text)
-%          the descriptive text after the real output
-%     #3 : (color)
-%          one color following the ''xcolor'' format.
-%          This color is used to set the one for the decorated texts printed
-%          corresponding to the two first arguments.
-%
-%     :action: this environment just adds its content processed by \latex
-%              between centered materials produced by the macro ''\tdocruler''
-%              such as to stress the start and the end of the content.
-%%%
-\NewDocumentEnvironment{tutodoc@showcase@basic}{m m m}{
-  \tdocruler[\tdocdarkcolor{#3}]{#1}
-  \nopagebreak\medskip\nopagebreak
-}{
-  \nopagebreak\medskip\nopagebreak
-  \tdocruler[\tdocdarkcolor{#3}]{#2}
+\NewExpandableDocumentCommand{\tutodoc@showcase@rule@color}{}{%
+  black%
 }
 
+\NewExpandableDocumentCommand{\tutodoc@showcase@stripe@color}{}{%
+  cyan%
+}
 
-%%%
-% prototype::
-%     #1 : (up-text)
-%          :see: env.tutodoc@showcase@basic
-%     #2 : (down-text)
-%          :see: env.tutodoc@showcase@basic
-%     #3 : (color)
-%          :see: env.tutodoc@showcase@basic
-%
-%     :action: this environment adds a page-width colored stripe in the
-%              background of the environment content processed by \latex.
-%              This stripe is preceded and followed by centered materials
-%              produced by the macro ''\tdocruler'' such as to stress the
-%              start and the end of the content.
-%%%
+\NewExpandableDocumentCommand{\tutodoc@showcase@text@color}{}{%
+  black%
+}
 
-\NewDocumentEnvironment{tutodoc@showcase@colorstrip}{m m m}{
-  \begin{colorstrip}{\tdoclightcolor{#3}}
-    \begin{tutodoc@showcase@basic}{#1}{#2}{#3}
-}{
-    \end{tutodoc@showcase@basic}
-  \end{colorstrip}
+\NewExpandableDocumentCommand{\tutodoc@showcase@build@rule@color}{m}{%
+  \tdocdarkcolor{#1}%
+}
+
+\NewExpandableDocumentCommand{\tutodoc@showcase@build@back@color}{m}{%
+  \tdoclightcolor{#1}%
 }

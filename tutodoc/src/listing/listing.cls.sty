@@ -74,22 +74,22 @@
 %%
 \tcbset{
   tutodoc-latex-listing-style/.style = {
-% General
+% General.
     minted language/.expand once = \tutodoc@latex@lexer,
     minted style/.expand once    = \tutodoc@latex@style,
     breakable,
     enhanced,
-% Colors
+% Colors.
     colframe = tutodoc@latex@frame@color,
     colback  = tutodoc@latex@back@color,
     colupper = tutodoc@latex@text@color,
     collower = tutodoc@latex@text@color,
-% Padding
+% Padding.
     left   = \tutodoc@latex@left,
     right  = \tutodoc@latex@right,
     bottom = \tutodoc@latex@bottom,
     top    = \tutodoc@latex@top,
-% Frame
+% Frame.
     shadow     = {\tutodoc@latex@shadow@xshift}%
                  {\tutodoc@latex@shadow@yshift}%
                  {\tutodoc@latex@shadow@offset}%
@@ -99,7 +99,7 @@
     rightrule  = \tutodoc@latex@right@rule,
     bottomrule = \tutodoc@latex@bottom@rule,
     toprule    = \tutodoc@latex@top@rule,
-% Separating line
+% Separating line.
     segmentation style = {
       tutodoc@latex@segment@color,
       dash pattern = {on 5pt off 2.5pt},

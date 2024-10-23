@@ -5,9 +5,27 @@
 ??  (1.6.0)
 ==
 
+-------
+:break:
+-------
+
+[[:api:]]
+Here are the breaking changes.
+
+    1) Showcase: the key ''color'' has been renamed ''colstripe''.
+
+    1) the macro ``\tdoclinkcolor`` becomes ''tutodoc@link@color''.
+
+
 -----
 :new:
 -----
 
 [[:api:]]
 Themes: the \cls option ''theme'' allows to choose the formatting.
+
+\Env ''tdocshowcase'': a missing option ''coltext'' to change the text color has been added.
+
+
+[[:doc:]]   ????
+Manual: a section shows examples of use of each theme.
