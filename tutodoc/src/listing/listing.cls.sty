@@ -74,11 +74,12 @@
 %%
 \tcbset{
   tutodoc-latex-listing-style/.style = {
+% General
     minted language/.expand once = \tutodoc@latex@lexer,
     minted style/.expand once    = \tutodoc@latex@style,
     breakable,
     enhanced,
-% Code and output
+% Colors
     colframe = tutodoc@latex@frame@color,
     colback  = tutodoc@latex@back@color,
     colupper = tutodoc@latex@text@color,
@@ -94,10 +95,10 @@
                  {\tutodoc@latex@shadow@offset}%
                  {tutodoc@latex@shadow@color},
     arc        = \tutodoc@latex@arc,
-    leftrule   = \tutodoc@latex@leftrule,
-    rightrule  = \tutodoc@latex@rightrule,
-    bottomrule = \tutodoc@latex@bottomrule,
-    toprule    = \tutodoc@latex@toprule,
+    leftrule   = \tutodoc@latex@left@rule,
+    rightrule  = \tutodoc@latex@right@rule,
+    bottomrule = \tutodoc@latex@bottom@rule,
+    toprule    = \tutodoc@latex@top@rule,
 % Separating line
     segmentation style = {
       tutodoc@latex@segment@color,

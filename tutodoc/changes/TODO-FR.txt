@@ -13,7 +13,6 @@ THÈMES
 
     --> factoriser les codes et les nettoyer
 
-            ??? admonitions
             ??? showcase
 
     --> intégerre cela dans tefacto-POC

@@ -1,52 +1,36 @@
-% == TOOLS == %
-
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
 
-%%%
-% DESC!!!!!
-%
-%
-%
-%
-%
-%%%
-
-\pagecolor{black}
-\color{\tdocdarkcolor[80]{white}}
-
-
-%%%
-% note::
-%     The settings used come from the following sources.
-%         * https://tex.stackexchange.com/a/727022/6880
-%         * https://tex.stackexchange.com/a/682332/6880
-%         * https://tex.stackexchange.com/a/623232/6880
-%%%
-\tcbset{
-  tutodoc-focus-color-style/.style = {
-    use color stack, % Must be before breakable!
-    breakable,
-    enhanced,
-    left         = 3pt,
-    right        = 3pt,
-    colupper= \tdocdarkcolor[95]{white},
-    collower= \tdocdarkcolor[95]{white},
-    colback      = #1!75!black!65,
-    colframe     = \tdocdarkcolor[65]{#1},
-    shadow       = {.75mm}{-.75mm}{0mm}{black!68},
-% We want to use the same color for the footnotes in the frame.
-    before upper = {\let\default@color\current@color},
- }
+\NewExpandableDocumentCommand{\tutodoc@build@title@color}{m}{%
+  \tdocdarkcolor[95]{white}%
 }
 
+\NewExpandableDocumentCommand{\tutodoc@build@upper@color}{m}{%
+  \tdocdarkcolor[95]{white}%
+}
 
-% :: LET'S GO BACK TO THE REAL WORLD :: %
+\NewExpandableDocumentCommand{\tutodoc@build@lower@color}{m}{%
+  \tdocdarkcolor[95]{white}%
+}
+
+\NewExpandableDocumentCommand{\tutodoc@build@back@color}{m}{%
+  #1!75!black!65%
+}
+
+\NewExpandableDocumentCommand{\tutodoc@build@frame@color}{m}{%
+  \tdocdarkcolor[65]{#1}%
+}
+
+\colorlet{tutodoc@admonition@shadow@color}{black!68}
+
 
 \ExplSyntaxOn
 
 %%%
 % We use two ''prop'' variables to factorize the code just after.
 %%%
+\prop_new:N \__g_tutodoc_focus_color_prop
+\prop_new:N \__g_tutodoc_focus_icon_prop
+
 \prop_set_from_keyval:Nn \__g_tutodoc_focus_color_prop {
   note = cyan,
   tip  = ForestGreen,
@@ -61,27 +45,6 @@
   imp  = \faHighlighter,
   caut = \faBiohazard,
   warn = \faSkullCrossbones,
-}
-
-
-%%%
-% prototype::
-%     :action: ''key/value'' iteration over ''\__g_tutodoc_focus_color_prop''
-%              to build new colorful unumbered theorems. To achieve that,
-%              we use a ''tcolorbox'' style given to the ''\newkeytheorem''
-%              macro from the ''keytheorems'' \pack, and icons from the
-%              ''fontawesome5'' \pack.
-%%%
-\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
-  \newkeytheorem{tdoc#1}[
-    numbered  = false,
-%  tcolorbox-no-titlebar can be used.
-    tcolorbox = {tutodoc-focus-color-style=#2},
-    name      = {
-      \tdocicon{ \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } }
-      \use:c { tutodoc@trans@#1@title }
-    },
-  ]
 }
 
 \ExplSyntaxOff

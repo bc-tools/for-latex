@@ -2,8 +2,16 @@
 
 
 ==
-??????????  (1.6.0-beta.3)
+23   ??????????  (1.6.0-beta.3)
 ==
+
+-------
+:break:
+-------
+
+[[:api:]]
+Themes: the color ''tdoclinkcolor'' becomes ''tutodoc@link@color'' such as to avoid unwanted changes by a common user.
+
 
 -----
 :new:
@@ -12,21 +20,13 @@
 [[:api:]]
 Themes.
 
-    1) Draft versions look good (main, admonitions, listing and
+    1) Draft versions look good (see the folder path::''main'', path::''admonitions'', path::''listing'' and
     ???
-    showcase).
+    path::''showcase'').
 
     1)
     ???
-    \Env ''tdocshowcase'': a new option allows to change the text color.
-
-
---------
-:update:
---------
-
-[[:api:]]
-Themes: the color ''tdoclinkcolor'' become the internal one ''tutodoc@link@color'' such as to avoid unwanted changes.
+    \Env ''tdocshowcase'': a missing option to change the text color has been added.
 
 
 [[:doc:]]   ????
