@@ -2,12 +2,32 @@
 
 \input{../preamble.cfg.tex}
 
+\newcommand\thisstyle{color}
+
+\newcommand\myexarktext{
+	\tdocdate{2024-10-23}
+	In the flow of text, it's always useful to be able to include examples and comments that complement the main content.
+}
+
+\newcommand\myadmotext{
+	\tdocversion{1.6.0}[2024-10-23]
+	Depending on the context of use, it is sometimes necessary to highlight content by indicating its degree of importance.
+}
+
+\newcommand\myhighlightedtext{
+	What to say
+	\footnote{
+		Let's not forget the footnotes...
+	} ?
+	I don't know, but in any case, it seems like a nice idea to show what can be achieved with one layout or another. No ?
+}
+
 
 \begin{document}
 
-{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
+{\Huge\bfseries The theme \texttt{"\thisstyle"}}
 
-\section{Mettre en avant, versionner et dater}
+\section{Highlighting, versioning and dating}
 
 \ExplSyntaxOn
 
@@ -19,53 +39,52 @@
 	\begin{tdoc#1}
 		\myhighlightedtext
 	\end{tdoc#1}
-	
+
 	\myexarktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{
 	\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
     	\subsection*{tdoc#1}
-    
+
     	\myadmotext
-    	
+
     	\begin{tdoc#1}
     		\myhighlightedtext
     	\end{tdoc#1}
-    	
+
     	\myadmotext
     }
 } {
 	\seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
     	\subsection*{tdoc#1}
-    
+
     	\myadmotext
-    	
+
     	\begin{tdoc#1}
     		\myhighlightedtext
     	\end{tdoc#1}
-    	
+
     	\myadmotext
     }
 }
 
 \ExplSyntaxOff
 
-\section{Des codes \LaTeX}
+\section{\LaTeX\ codes}
 
-Il est indispensable de pouvoir montrer des cas d'utilisation en \LaTeX.
+It is essential to be able to demonstrate use cases in \LaTeX.
 
 \begin{tdoclatex}
-Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+It's nice to see some formatted \LaTeX\ code : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
 
 
-On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ? 
+There's also a less intrusive side-by-side mode. Nice! No ?
 
 \begin{tdoclatex}[sbs]
-Voir du code \LaTeX\ mis en forme, 
-c'est sympa : $E = m c^2$ ou 
-$\pi \neq \frac{3}{14}$.
+It's nice to see some formatted \LaTeX\ code:
+$E = m c^2$ or $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
 
 \end{document}
