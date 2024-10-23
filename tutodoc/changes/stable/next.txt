@@ -33,7 +33,7 @@ Here are the new features.
 
     1) Themes: the \cls option ''theme'' allows to change the formatting.
 
-    1) \Env ''tdocshowcase'': addition of a new missing option ''coltext'' to change the text color (the themes need this new option).
+    1) Showcase: addition of a new missing option ''coltext'' to change the text color (the themes need this new option).
 
 
 [[:doc:]]
