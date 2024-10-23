@@ -243,9 +243,15 @@ print("+ Copying manual TEX files...")
 
 all_tex_files = [SRC_DIR / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"]
 
+# UGLY HACK
+all_tex_files.append(SRC_DIR / "theme" / "template-theme-showcase.tex")
+
 for onedir, sorted2analyze in sorted_useful_files.items():
     for srcfile in sorted2analyze[TAG_FILE]:
         if srcfile.suffix[1:] != TAG_TEX:
+            continue
+
+        if srcfile.stem == "gallery":
             continue
 
         if srcfile.name.startswith("debug-"):
@@ -261,7 +267,7 @@ for srcfile in all_tex_files:
         fordoc = f"\n{fordoc}\n"
 
     content = f"""
-\\documentclass[12pt, a4paper]{{tutodoc}}
+\\documentclass[10pt, a4paper]{{tutodoc}}
 
 \\input{{../preamble.cfg.tex}}
 {fordoc}
@@ -283,6 +289,9 @@ print("+ Copying TEX resources...")
 
 for onedir, sorted2analyze in sorted_useful_files.items():
     for srcfile in sorted2analyze[TAG_TEX_RESRC]:
+        if srcfile.parent.name == "css":
+            continue
+
         copyfromto(
             srcfile  = srcfile,
             destfile = TRANSLATE_DEV_MANUAL_DIR / srcfile.relative_to(SRC_DIR)
