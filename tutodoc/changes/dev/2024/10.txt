@@ -24,7 +24,13 @@ Here are the breaking changes.
 [[:api:]]
 Themes.
 
-    1) Draft versions look good (see the folder path::''main'', path::''admonitions'', path::''listing'' and path::''showcase'').
+    1) Draft versions look good. This concerns the following folders.
+
+        * path::''admonitions''
+        * path::''listing''
+        * path::''main''
+        * path::''showcase''
+        * path::''version-n-change''
 
     1) \Env ''tdocshowcase'': a missing option ''coltext'' to change the text color has been added.
 

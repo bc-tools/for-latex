@@ -109,6 +109,8 @@
 
 % :: VERSION AND DATE :: %
 
+\input{../version-n-change/css/version-n-change-\tutodoc@theme.cls.sty}
+
 %%%
 % prototype::
 %     #1 : (color)
@@ -127,7 +129,7 @@
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
 %%%
-\NewDocumentCommand{\tdocversion}{O{blue} m O{}}{
+\NewDocumentCommand{\tdocversion}{O{\tutodoc@changes@version@color} m O{}}{
   \tutodoc@new@change@margin{#1}      % Color
                             {#2}      % Version
                             {#3}      % Date
@@ -147,7 +149,7 @@
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\tdocdate}{O{blue} m}{
+\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@date@color} m}{
   \tutodoc@new@change@margin{#1}      % Color
                             {}        % Version
                             {#2}      % Date
