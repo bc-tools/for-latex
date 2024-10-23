@@ -32,7 +32,7 @@ Themes.
         * path::''showcase''
         * path::''version-n-change''
 
-    1) \Env ''tdocshowcase'': a missing option ''coltext'' to change the text color has been added.
+    1) \Env ''tdocshowcase'': addition of a new missing option ''coltext'' to change the text color. The themes need this new option.
 
 
 --------

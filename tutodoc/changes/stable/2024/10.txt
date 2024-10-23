@@ -5,6 +5,13 @@
 19  (1.5.0)
 ==
 
+------
+:desc:
+------
+
+The main change in this version is the move from the ''tutodoc'' package to the ''tutodoc'' class.
+
+
 -------
 :break:
 -------

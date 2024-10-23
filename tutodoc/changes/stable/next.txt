@@ -5,6 +5,13 @@
 ??  (1.6.0)
 ==
 
+------
+:desc:
+------
+
+This version adds the possibility of changing the layout via the choice of one theme.
+
+
 -------
 :break:
 -------
@@ -14,7 +21,7 @@ Here are the breaking changes.
 
     1) Showcase: the key ''color'' has been renamed ''colstripe''.
 
-    1) the macro ``\tdoclinkcolor`` becomes ''tutodoc@link@color''.
+    1) The macro ``\tdoclinkcolor`` becomes the internal \xcolor ''tutodoc@link@color''.
 
 
 -----
@@ -22,13 +29,26 @@ Here are the breaking changes.
 -----
 
 [[:api:]]
-Themes: the \cls option ''theme'' allows to choose the formatting.
+Here are the new features.
 
-\Env ''tdocshowcase'': a missing option ''coltext'' to change the text color has been added.
+    1) Themes: the \cls option ''theme'' allows to change the formatting.
+
+    1) \Env ''tdocshowcase'': a new option ''coltext'' allows to change the text color.
+
+
+
+
 
 
 [[:doc:]]   ????
-Manual: a section shows examples of use of each theme.
+Manual: a section presents the results obtained according to a chosen theme.
+
+
+
+
+
+
+
 
 
 
