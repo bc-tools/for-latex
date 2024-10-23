@@ -1,0 +1,92 @@
+\documentclass[a4paper, 12pt, theme = color]{../main/main}
+
+\usepackage{../admonitions/admonitions.cls}
+\usepackage{../listing/listing.cls}
+\usepackage{../version-n-change/version-n-change.cls}
+
+\newcommand\thisstyle{color}
+
+\newcommand\myexarktext{
+	\tdocdate{2024-10-23}
+	Dans le cours du texte, il est utile d'indique des exemples et des remarques qui viennent compléter le contenu principal.
+}
+
+\newcommand\myadmotext{
+	\tdocversion{1.6.0}[2024-10-23]
+	Suivant le contexte d'utilisation, il est parfois utile de pouvoir mettre en vanat du contenu en indiquant au passage le degré d'importance qu'il faut apporter au contenu mis en exergue.
+}
+
+\newcommand\myhighlightedtext{
+	Que dire
+	\footnote{
+		N'oublions les notes de bas de page...
+	} ?
+	Je ne sais pas, mais en tout cas, il semble utile de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
+}
+
+\begin{document}
+
+{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
+
+\section{Mettre en avant, versionner et dater}
+
+\ExplSyntaxOn
+
+\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+	\subsection*{tdoc#1}
+
+	\myexarktext
+
+	\begin{tdoc#1}
+		\myhighlightedtext
+	\end{tdoc#1}
+	
+	\myexarktext
+}
+
+\ifcsundef{__g_tutodoc_focus_color_seq}{
+	\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+    	\subsection*{tdoc#1}
+    
+    	\myadmotext
+    	
+    	\begin{tdoc#1}
+    		\myhighlightedtext
+    	\end{tdoc#1}
+    	
+    	\myadmotext
+    }
+} {
+	\seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+    	\subsection*{tdoc#1}
+    
+    	\myadmotext
+    	
+    	\begin{tdoc#1}
+    		\myhighlightedtext
+    	\end{tdoc#1}
+    	
+    	\myadmotext
+    }
+}
+
+\ExplSyntaxOff
+
+\section{Des codes \LaTeX}
+
+Il est aussi utile de pouvoir montrer des cas d'utilisation en \LaTeX.
+
+\begin{tdoclatex}
+Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+On peut utiliser un monde côte-à-côte. Sympa ! Non ? 
+
+\begin{tdoclatex}[sbs]
+Voir du code \LaTeX\ mis en forme, 
+c'est sympa : $E = m c^2$ ou 
+$\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+\end{document}

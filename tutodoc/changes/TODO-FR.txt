@@ -11,6 +11,8 @@ NOW
 
 texfacto-poc
 
+    ---> insertion brutale de filecontents (cf les thèmes)
+
     ---> css à gérer : pas de la contrib, c'est à applatir dans code src et ignorer pour les contribs !
 
     ---> prise en compte desc pour build.lua
