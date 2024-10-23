@@ -22,10 +22,6 @@ texfacto-poc
 
 THÈMES
 
-[[:doc:]]   ????
-Manual: a section shows examples of use of each theme.
-
-
 mettre aussi
 
 

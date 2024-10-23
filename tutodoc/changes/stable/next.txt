@@ -9,7 +9,7 @@
 :desc:
 ------
 
-This version adds the possibility of changing the layout via the choice of one theme.
+This version adds the possibility to change the layout via the choice of one theme.
 
 
 -------
@@ -33,60 +33,8 @@ Here are the new features.
 
     1) Themes: the \cls option ''theme'' allows to change the formatting.
 
-    1) \Env ''tdocshowcase'': a new option ''coltext'' allows to change the text color.
+    1) \Env ''tdocshowcase'': addition of a new missing option ''coltext'' to change the text color (the themes need this new option).
 
-
-
-
-
-
-[[:doc:]]   ????
-Manual: a section presents the results obtained according to a chosen theme.
-
-
-
-
-
-
-
-
-
-
-
-// ---------- //
-
-
-==
-23  (1.6.0-beta.3)
-==
-
--------
-:break:
--------
-
-[[:api:]]
-Here are the breaking changes.
-
-    1) Showcase: the key ''color'' has been renamed ''colstripe''.
-
-    1) Themes: the color ''tdoclinkcolor'' becomes ''tutodoc@link@color'' such as to avoid unwanted changes by a common user.
-
-
------
-:new:
------
-
-[[:api:]]
-Themes.
-
-    1) Draft versions look good (see the folder path::''main'', path::''admonitions'', path::''listing'' and path::''showcase'').
-
-    1) \Env ''tdocshowcase'': a missing option ''coltext'' to change the text color has been added.
-
-
---------
-:update:
---------
 
 [[:doc:]]
-Manual: the new options for the \env ''showcase'' have been documented (but not yet the ''theme'' option of the class).
+Manual: the new features have been documented.

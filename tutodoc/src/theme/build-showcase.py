@@ -8,12 +8,11 @@ from pathlib import Path
 THIS_DIR = Path(__file__).parent
 MAIN_CSS_DIR = THIS_DIR.parent / "main" / "css"
 
-MANUAL_FILE = THIS_DIR / "theme.tex"
+MANUAL_FILE = THIS_DIR / "gallery.tex"
 
-TEMPLATE_SWOWCASE_COLOR = THIS_DIR / "debug-theme-showcase-color.tex"
+TEMPLATE_SWOWCASE_COLOR = THIS_DIR / "template-theme-showcase.tex"
 
-TEMPLATE_SWOWCASE_THEME = TEMPLATE_SWOWCASE_COLOR.stem
-TEMPLATE_SWOWCASE_THEME = TEMPLATE_SWOWCASE_THEME.split('-')[-1]
+TEMPLATE_SWOWCASE_THEME = "color"
 
 TEX_CODE_SWOWCASE_COLOR = TEMPLATE_SWOWCASE_COLOR.read_text()
 
@@ -26,28 +25,31 @@ TEMPLATE_FOR_MANUAL = r"""
 
 \begin{document}
 
+\AtEndDocument{ % AtEndDocument - START
+
 <<BUILD-PDFs>>
 
 <<THE-THEMES>>
+} % AtEndDocument - END
 
 \end{document}
 """.strip() + "\n"
 
 TEMPLATE_ONE_FILE_CONTENTS = r"""
-\begin{filecontents*}[overwrite]{theme-showcase-<<THEME>>.tex}
+\begin{filecontents*}[overwrite]{gallery-showcase-<<THEME>>.tex}
 <<TEX-CODE-THEME-SHOWCASE>>
 \end{filecontents*}
 """.strip()
 
 TEX_BUILD_CMD = r"""
-\immediate\write18{pdflatex -shell-escape theme-showcase-<<THEME>>}
+\immediate\write18{pdflatex -shell-escape gallery-showcase-<<THEME>>}
 """.strip()
 
 TEMPLATE_INCLUDE_PDF = r"""
 \includepdf[
 	pages=1-2,
 	fitpaper=true
-]{theme-showcase-<<THEME>>}
+]{gallery-showcase-<<THEME>>}
 """.strip()
 
 

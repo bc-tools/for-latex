@@ -2,6 +2,21 @@
 
 
 ==
+23  (1.6.0-beta.4)
+==
+
+-----
+:new:
+-----
+
+[[:doc:]]
+Manual: a section talks about the themes, and also adds at the very end of the manual the results obtained according to a chosen theme.
+
+
+// ---------- //
+
+
+==
 23  (1.6.0-beta.3)
 ==
 
@@ -32,7 +47,7 @@ Themes.
         * path::''showcase''
         * path::''version-n-change''
 
-    1) \Env ''tdocshowcase'': addition of a new missing option ''coltext'' to change the text color. The themes need this new option.
+    1) \Env ''tdocshowcase'': addition of a new missing option ''coltext'' to change the text color (the themes need this new option).
 
 
 --------

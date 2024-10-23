@@ -5,6 +5,7 @@ texfacto:
 toc:
   - main/
   - inenglish/
+  - theme/
   - admonitions/
   - macroenv/
   - showcase/
