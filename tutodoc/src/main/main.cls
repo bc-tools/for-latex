@@ -199,8 +199,8 @@
 
 \hypersetup{
   colorlinks,
-  citecolor = tdoclinkcolor,
-  filecolor = tdoclinkcolor,
-  linkcolor = tdoclinkcolor,
-  urlcolor  = tdoclinkcolor
+  citecolor = tutodoc@link@color,
+  filecolor = tutodoc@link@color,
+  linkcolor = tutodoc@link@color,
+  urlcolor  = tutodoc@link@color
 }

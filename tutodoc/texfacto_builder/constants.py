@@ -153,7 +153,7 @@ TITLE_PATTERNS = [
         + d
         + r"{2}) %"
     )
-    for d in "=-:+"
+    for d in "=-:"
 ]
 
 # --------------- #

@@ -25,6 +25,10 @@ Themes.
 :update:
 --------
 
+[[:api:]]
+Themes: the color ''tdoclinkcolor'' become the internal one ''tutodoc@link@color'' such as to avoid unwanted changes.
+
+
 [[:doc:]]   ????
 Manual: a section shows examples of use of each theme.
 
