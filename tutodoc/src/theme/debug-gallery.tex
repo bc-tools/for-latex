@@ -13,21 +13,21 @@
 \newcommand\thisstyle{bw}
 
 \newcommand\myexarktext{
-	\tdocdate{2024-10-23}
-	Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
+    \tdocdate{2024-10-23}
+    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
 }
 
 \newcommand\myadmotext{
-	\tdocversion{1.6.0}[2024-10-23]
-	Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
+    \tdocversion{1.6.0}[2024-10-23]
+    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
 }
 
 \newcommand\myhighlightedtext{
-	Que dire
-	\footnote{
-		N'oublions pas les notes de bas de page...
-	} ?
-	Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
+    Que dire
+    \footnote{
+        N'oublions pas les notes de bas de page...
+    } ?
+    Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
 }
 
 \begin{document}
@@ -39,40 +39,40 @@
 \ExplSyntaxOn
 
 \seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
-	\subsection*{tdoc#1}
+    \subsection*{tdoc#1}
 
-	\myexarktext
+    \myexarktext
 
-	\begin{tdoc#1}
-		\myhighlightedtext
-	\end{tdoc#1}
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
 
-	\myexarktext
+    \myexarktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{
-	\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
-    	\subsection*{tdoc#1}
+    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+        \subsection*{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
 
-    	\begin{tdoc#1}
-    		\myhighlightedtext
-    	\end{tdoc#1}
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
     }
 } {
-	\seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
-    	\subsection*{tdoc#1}
+    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+        \subsection*{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
 
-    	\begin{tdoc#1}
-    		\myhighlightedtext
-    	\end{tdoc#1}
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
     }
 }
 
@@ -114,21 +114,21 @@ $\pi \neq \frac{3}{14}$.
 \newcommand\thisstyle{color}
 
 \newcommand\myexarktext{
-	\tdocdate{2024-10-23}
-	Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
+    \tdocdate{2024-10-23}
+    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
 }
 
 \newcommand\myadmotext{
-	\tdocversion{1.6.0}[2024-10-23]
-	Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
+    \tdocversion{1.6.0}[2024-10-23]
+    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
 }
 
 \newcommand\myhighlightedtext{
-	Que dire
-	\footnote{
-		N'oublions pas les notes de bas de page...
-	} ?
-	Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
+    Que dire
+    \footnote{
+        N'oublions pas les notes de bas de page...
+    } ?
+    Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
 }
 
 \begin{document}
@@ -140,40 +140,40 @@ $\pi \neq \frac{3}{14}$.
 \ExplSyntaxOn
 
 \seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
-	\subsection*{tdoc#1}
+    \subsection*{tdoc#1}
 
-	\myexarktext
+    \myexarktext
 
-	\begin{tdoc#1}
-		\myhighlightedtext
-	\end{tdoc#1}
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
 
-	\myexarktext
+    \myexarktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{
-	\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
-    	\subsection*{tdoc#1}
+    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+        \subsection*{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
 
-    	\begin{tdoc#1}
-    		\myhighlightedtext
-    	\end{tdoc#1}
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
     }
 } {
-	\seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
-    	\subsection*{tdoc#1}
+    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+        \subsection*{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
 
-    	\begin{tdoc#1}
-    		\myhighlightedtext
-    	\end{tdoc#1}
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
     }
 }
 
@@ -215,21 +215,21 @@ $\pi \neq \frac{3}{14}$.
 \newcommand\thisstyle{dark}
 
 \newcommand\myexarktext{
-	\tdocdate{2024-10-23}
-	Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
+    \tdocdate{2024-10-23}
+    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
 }
 
 \newcommand\myadmotext{
-	\tdocversion{1.6.0}[2024-10-23]
-	Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
+    \tdocversion{1.6.0}[2024-10-23]
+    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
 }
 
 \newcommand\myhighlightedtext{
-	Que dire
-	\footnote{
-		N'oublions pas les notes de bas de page...
-	} ?
-	Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
+    Que dire
+    \footnote{
+        N'oublions pas les notes de bas de page...
+    } ?
+    Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
 }
 
 \begin{document}
@@ -241,40 +241,40 @@ $\pi \neq \frac{3}{14}$.
 \ExplSyntaxOn
 
 \seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
-	\subsection*{tdoc#1}
+    \subsection*{tdoc#1}
 
-	\myexarktext
+    \myexarktext
 
-	\begin{tdoc#1}
-		\myhighlightedtext
-	\end{tdoc#1}
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
 
-	\myexarktext
+    \myexarktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{
-	\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
-    	\subsection*{tdoc#1}
+    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+        \subsection*{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
 
-    	\begin{tdoc#1}
-    		\myhighlightedtext
-    	\end{tdoc#1}
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
     }
 } {
-	\seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
-    	\subsection*{tdoc#1}
+    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+        \subsection*{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
 
-    	\begin{tdoc#1}
-    		\myhighlightedtext
-    	\end{tdoc#1}
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
     }
 }
 
@@ -316,21 +316,21 @@ $\pi \neq \frac{3}{14}$.
 \newcommand\thisstyle{draft}
 
 \newcommand\myexarktext{
-	\tdocdate{2024-10-23}
-	Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
+    \tdocdate{2024-10-23}
+    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
 }
 
 \newcommand\myadmotext{
-	\tdocversion{1.6.0}[2024-10-23]
-	Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
+    \tdocversion{1.6.0}[2024-10-23]
+    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
 }
 
 \newcommand\myhighlightedtext{
-	Que dire
-	\footnote{
-		N'oublions pas les notes de bas de page...
-	} ?
-	Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
+    Que dire
+    \footnote{
+        N'oublions pas les notes de bas de page...
+    } ?
+    Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
 }
 
 \begin{document}
@@ -342,40 +342,40 @@ $\pi \neq \frac{3}{14}$.
 \ExplSyntaxOn
 
 \seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
-	\subsection*{tdoc#1}
+    \subsection*{tdoc#1}
 
-	\myexarktext
+    \myexarktext
 
-	\begin{tdoc#1}
-		\myhighlightedtext
-	\end{tdoc#1}
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
 
-	\myexarktext
+    \myexarktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{
-	\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
-    	\subsection*{tdoc#1}
+    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+        \subsection*{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
 
-    	\begin{tdoc#1}
-    		\myhighlightedtext
-    	\end{tdoc#1}
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
     }
 } {
-	\seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
-    	\subsection*{tdoc#1}
+    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+        \subsection*{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
 
-    	\begin{tdoc#1}
-    		\myhighlightedtext
-    	\end{tdoc#1}
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
 
-    	\myadmotext
+        \myadmotext
     }
 }
 
@@ -420,16 +420,16 @@ $\pi \neq \frac{3}{14}$.
 % Source.
 %     + https://tex.stackexchange.com/a/8547/6880
 \bgroup
-	\titleformat{\section}[block]{\Huge\bfseries\filcenter}{}{1em}{}
-	\phantomsection\section*{Annexe -- Galerie des thèmes}%
-	\label{tutodoc-theme-gallery}
-	\addcontentsline{toc}{section}{Annexe -- Galerie des thèmes}%
+    \titleformat{\section}[block]{\Huge\bfseries\filcenter}{}{1em}{}
+    \phantomsection\section*{Annexe -- Galerie des thèmes}%
+    \label{tutodoc-theme-gallery}
+    \addcontentsline{toc}{section}{Annexe -- Galerie des thèmes}%
 \egroup
 
 \bigskip
 
 \begin{tdocnote}
-	Chaque exemple est un \pdf\ de deux pages exactement qui a été directement inséré dans ce document (ne soyez donc pas surpris par les numéros de page).
+    Chaque exemple est un \pdf\ de deux pages exactement qui a été directement inséré dans ce document (ne soyez donc pas surpris par les numéros de page).
 \end{tdocnote}
 
 \newpage
@@ -445,23 +445,23 @@ $\pi \neq \frac{3}{14}$.
 
 % The gallery starts here...
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-bw}
 
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-color}
 
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-dark}
 
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-draft}
 
 } % AT-END-DOCUMENT - END

@@ -10,7 +10,7 @@
 \newcommand\docday  {19}
 
 % Preparing next release
-\renewcommand\docday{0} 
+\renewcommand\docday{0}
 
 
 % ------------------------ %
@@ -30,11 +30,11 @@
 
 \ExplSyntaxOn
   \int_compare:nTF { \docday = 0 } {
-  	\newcommand\when{NEXT ~ (draft)}
-  	\newcommand\filepath{next}
+      \newcommand\when{NEXT ~ (draft)}
+      \newcommand\filepath{next}
   } {
-  	\newcommand\when{\docyear-\docmonth-\docday}
-  	\newcommand\filepath{\docyear/\docmonth/\docday}
+      \newcommand\when{\docyear-\docmonth-\docday}
+      \newcommand\filepath{\docyear/\docmonth/\docday}
   }
 \ExplSyntaxOff
 

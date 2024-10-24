@@ -482,7 +482,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
     \smallskip
 
-	\noindent
+    \noindent
     \emph{\textbf{Remark :} this documentation is also available in French.}
 \end{abstract}
 
@@ -495,25 +495,25 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \small
 
 \begin{tdocbreak}
-	\item The \thisproj\ class replaces the now-defunct \thisproj\ package (for the moment, the young class offers no specific options).
+    \item The \thisproj\ class replaces the now-defunct \thisproj\ package (for the moment, the young class offers no specific options).
 
-	\item The \tdocmacro{tdocruler} macro is now used via \tdocinlatex{\tdocruler[<color>]{<text>}} (remember that the old syntax was \tdocinlatex{\tdocruler{<text>}{<color>}}).
+    \item The \tdocmacro{tdocruler} macro is now used via \tdocinlatex{\tdocruler[<color>]{<text>}} (remember that the old syntax was \tdocinlatex{\tdocruler{<text>}{<color>}}).
 \end{tdocbreak}
 
 
 \begin{tdocnew}
-	\item The class is usable in Spanish.
+    \item The class is usable in Spanish.
 
-	\item The documentation contains a new section explaining how to contribute.
+    \item The documentation contains a new section explaining how to contribute.
 \end{tdocnew}
 
 
 \begin{tdocfix}
-	\item Version 3 of \tdocpack{minted} is taken into account.
+    \item Version 3 of \tdocpack{minted} is taken into account.
 
-	\item The \tdocmacro{tdocdate} macro did not handle date format and formatting.
+    \item The \tdocmacro{tdocdate} macro did not handle date format and formatting.
 
-	\item Colored frames did not color text after a page break.
+    \item Colored frames did not color text after a page break.
 \end{tdocfix}
 \end{tdocnote}
 \end{minipage}
@@ -618,7 +618,7 @@ The \tdocpack{hyperref} package is imported behind the scenes with the settings 
 This documentation loads the \tdocpack{babel} package via \tdocinlatex|\usepackage[english]{babel}|\,.
 As a result, the \thisproj\ class identifies \tdocinlatex|en| as the main language used by \tdocpack{babel}.%.
 \footnote{
-	Technically, we use \tdocinlatex|\BCPdata{language}| which returns a language in short format.
+    Technically, we use \tdocinlatex|\BCPdata{language}| which returns a language in short format.
 }
 As this language is included in the list of languages taken into account, see below, the \thisproj\ class will produce the expected effects.
 
@@ -629,11 +629,11 @@ As this language is included in the list of languages taken into account, see be
         \item \tdocinlatex|fr| : French.
     \end{itemize}
 \end{multicols}
-                    
+
 
 
 \begin{tdoccaut}
-	If the choice of main language is not made in the preamble, the mechanism used will fail with unintended side effects (see warning that follows).
+    If the choice of main language is not made in the preamble, the mechanism used will fail with unintended side effects (see warning that follows).
 \end{tdoccaut}
 
 
@@ -667,25 +667,25 @@ The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{t
 
 \section{Choose your theme}
 
-	To modify the general layout, there is the \thisproj\ class option \tdocinlatex{theme = <choice>} where \tdocinlatex{<choice>} can take the following values.
+    To modify the general layout, there is the \thisproj\ class option \tdocinlatex{theme = <choice>} where \tdocinlatex{<choice>} can take the following values.
 
 \begin{itemize}
-	\item \tdocinlatex|bw| :
-	this is a black-and-white theme with some shades of gray.
+    \item \tdocinlatex|bw| :
+    this is a black-and-white theme with some shades of gray.
 
-	\item \tdocinlatex|color| :
-	this theme is colored, \emph{it's the default value}.
+    \item \tdocinlatex|color| :
+    this theme is colored, \emph{it's the default value}.
 
-	\item \tdocinlatex|dark| :
-	this theme is dark, ideal for resting the eyes.
+    \item \tdocinlatex|dark| :
+    this theme is dark, ideal for resting the eyes.
 
-	\item \tdocinlatex|draft|:
-	this theme is just right for a printout to look for content errors that aren't necessarily easy to spot in front of a screen.
+    \item \tdocinlatex|draft|:
+    this theme is just right for a printout to look for content errors that aren't necessarily easy to spot in front of a screen.
 \end{itemize}
 
 
 \begin{tdocnote}
-	At the end of this document, after the change history, you'll find a gallery of use cases for these different themes : go to appendix page \pageref{tutodoc-theme-gallery}.
+    At the end of this document, after the change history, you'll find a gallery of use cases for these different themes : go to appendix page \pageref{tutodoc-theme-gallery}.
 \end{tdocnote}
 
 
@@ -787,27 +787,27 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
 
 \foreach \sectitle/\desc/\filename in {
-	{Informative note}/%<-- Translate me!
-	{The \tdocenv*{tdocnote} environment is used to highlight useful information. Here's how to use it.}/%<-- Translate me!
-	note,
-	%
-	{Something important}/%<-- Translate me!
-	{The \tdocenv*{tdocimp} environment is used to indicate something important but harmless.}/%<-- Translate me!
-	important,
-	%
-	{Caution about a delicate point}/%<-- Translate me!
-	{The \tdocenv*{tdoccaut} environment is used to indicate a delicate point to the user. Here's how to use it.}/% <-- Translate me!
-	caution,
-	%
-	{Warning of danger}/%<-- Translate me!
-	{The \tdocenv*{tdocwarn} environment is used to warn the user of a trap to avoid. Here's how to use it.}/%<-- Translate me!
-	warn%
+    {Informative note}/%<-- Translate me!
+    {The \tdocenv*{tdocnote} environment is used to highlight useful information. Here's how to use it.}/%<-- Translate me!
+    note,
+    %
+    {Something important}/%<-- Translate me!
+    {The \tdocenv*{tdocimp} environment is used to indicate something important but harmless.}/%<-- Translate me!
+    important,
+    %
+    {Caution about a delicate point}/%<-- Translate me!
+    {The \tdocenv*{tdoccaut} environment is used to indicate a delicate point to the user. Here's how to use it.}/% <-- Translate me!
+    caution,
+    %
+    {Warning of danger}/%<-- Translate me!
+    {The \tdocenv*{tdocwarn} environment is used to warn the user of a trap to avoid. Here's how to use it.}/%<-- Translate me!
+    warn%
 } {
-	\subsubsection{\sectitle}
+    \subsubsection{\sectitle}
 
-	\desc
+    \desc
 
-	\tdoclatexinput[sbs]{examples-admonitions-\filename.tex}
+    \tdoclatexinput[sbs]{examples-admonitions-\filename.tex}
 
 }
 
@@ -829,13 +829,13 @@ Finally \tdocenv*[{[opt1]<opt2>}]{env}...
 
 
 \begin{tdocrem}
-	Unlike \tdocmacro{tdocinlatex}, \tdocmacro{tdocenv} and \tdocmacro{tdocenv*} macros don't color the text they produce.
+    Unlike \tdocmacro{tdocinlatex}, \tdocmacro{tdocenv} and \tdocmacro{tdocenv*} macros don't color the text they produce.
     In addition, \tdocinlatex{\tdocenv{monenv}} produces \tdocenv{monenv} with spaces to allow line breaks if required.
 \end{tdocrem}
 
 
 \begin{tdocwarn}
-	The optional argument of the \tdocmacro{tdocenv} macro is copied and pasted
+    The optional argument of the \tdocmacro{tdocenv} macro is copied and pasted
     \footnote{
         Remember that almost anything is possible from now on.
     }
@@ -922,16 +922,16 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
 \begin{tdocnote}
-	In the previous example, the text uses the proposed darkened orange. On the other hand, red is used as a base to obtain the colors used for the strip: the transformations used depend on the theme chosen.%
-	\footnote{
-		For example, the themes \tdocinlatex{bw} and \tdocinlatex{draft} ignore the key \tdocinlatex{colstripe}!
-	}
-	%
-	You should also be aware that behind the scenes, the macro \tdocmacro{tdocruler} is used.
+    In the previous example, the text uses the proposed darkened orange. On the other hand, red is used as a base to obtain the colors used for the strip: the transformations used depend on the theme chosen.%
+    \footnote{
+        For example, the themes \tdocinlatex{bw} and \tdocinlatex{draft} ignore the key \tdocinlatex{colstripe}!
+    }
+    %
+    You should also be aware that behind the scenes, the macro \tdocmacro{tdocruler} is used.
 
-	\begin{tdoclatex}[std]
-		\tdocruler[red]{A decorated pseudo-title}
-	\end{tdoclatex}
+    \begin{tdoclatex}[std]
+        \tdocruler[red]{A decorated pseudo-title}
+    \end{tdoclatex}
 \end{tdocnote}
 
 
@@ -1020,12 +1020,12 @@ To obtain renderings by importing the code from an external file, instead of typ
 
 Documenting a package or class is best done through use cases showing both the code and the corresponding result.
 \footnote{
-	Code is formatted using the \tdocpack{minted} package.
+    Code is formatted using the \tdocpack{minted} package.
 }
 
 
 %\begin{tdoccaut}
-%	Version 3 of \tdocpack{minted} cannot be used at the moment, as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of minted.
+%    Version 3 of \tdocpack{minted} cannot be used at the moment, as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of minted.
 %
 %\end{tdoccaut}
 
@@ -1303,29 +1303,29 @@ You can either date something, or version it, in which case the version number c
 
 
 \foreach \exatitle/\filename in {
-	{Just for the very first version}/%<-- Translate me!
-	first,
-	{For new features}/% <-- Translate me!
-	new,
-	{For updates}/% <-- Translate me!
-	update,
-	{For breaks}/% <-- Translate me!
-	break,
-	{For problems}/% <-- Translate me!
-	pb,
-	{For fixes}/% <-- Translate me!
-	fix,
-	{Selectable themes with an icon}/% <-- Translate me!
-	user-choice-icon,
-	{Selectable themes without icons}/%<-- Translate me!
-	user-choice%
+    {Just for the very first version}/%<-- Translate me!
+    first,
+    {For new features}/% <-- Translate me!
+    new,
+    {For updates}/% <-- Translate me!
+    update,
+    {For breaks}/% <-- Translate me!
+    break,
+    {For problems}/% <-- Translate me!
+    pb,
+    {For fixes}/% <-- Translate me!
+    fix,
+    {Selectable themes with an icon}/% <-- Translate me!
+    user-choice-icon,
+    {Selectable themes without icons}/%<-- Translate me!
+    user-choice%
 } {
-	\begin{tdocexa}[\exatitle]
-    	\leavevmode
+    \begin{tdocexa}[\exatitle]
+        \leavevmode
 
-	    \tdoclatexinput[sbs]{examples-version-n-change-\filename.tex}
+        \tdoclatexinput[sbs]{examples-version-n-change-\filename.tex}
 
-	\end{tdocexa}
+    \end{tdocexa}
 }
 
 
@@ -1354,7 +1354,7 @@ Ble, ble, ble...
 \section{Contribute}
 
 \begin{tdocnote}
-	\textbf{You don't need to be a coder to take part in translations}, including those that are useful for the running of \thisproj.
+    \textbf{You don't need to be a coder to take part in translations}, including those that are useful for the running of \thisproj.
 \end{tdocnote}
 
 
@@ -1376,9 +1376,9 @@ Ble, ble, ble...
 
 
 \begin{wrapfigure}{R}
-	\contribtranslatedirtree\
-	\caption{Simplified view of the translation folder}
-	\label{tutodoc-contrib-translate-dir}
+    \contribtranslatedirtree\
+    \caption{Simplified view of the translation folder}
+    \label{tutodoc-contrib-translate-dir}
 \end{wrapfigure}{}
 
 
@@ -1453,28 +1453,28 @@ The \texttt{LICENSE.txt} file is aptly named, while the \texttt{README.md} file 
 \paragraph{Method 1 : \git.}
 
 \begin{enumerate}
-	  \item Obtain the entire project folder via \thisrepo\,.
+      \item Obtain the entire project folder via \thisrepo\,.
     Do not use the \verb#main# branch, which is used to freeze the latest stable versions of projects in the single \thismonorepo\ repository,.
 
-	  \item In the \verb#tutodoc/contrib/translate# folder, create a \verb#it# copy of the \verb#en# folder, with the short name of the language documented in
-	  \href{https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags}%
-	       {the page \tdocquote{IIETF language tag}}
-	  from \texttt{Wikipedia}.
+      \item In the \verb#tutodoc/contrib/translate# folder, create a \verb#it# copy of the \verb#en# folder, with the short name of the language documented in
+      \href{https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags}%
+           {the page \tdocquote{IIETF language tag}}
+      from \texttt{Wikipedia}.
 
-	  \item Once the translation is complete in the \verb#it# folder, you'll need to communicate it via \thisrepo\ using a classic \verb#git push#\,.
+      \item Once the translation is complete in the \verb#it# folder, you'll need to communicate it via \thisrepo\ using a classic \verb#git push#\,.
 \end{enumerate}
 
 
 \paragraph{Method 2 : communicate by e-mail.}
 
 \begin{enumerate}
-	  \item By e-mail with the \mailsubject{en FOR italian}, request a version of the English translations (note the use of the English name for the new language).
+      \item By e-mail with the \mailsubject{en FOR italian}, request a version of the English translations (note the use of the English name for the new language).
     Be sure to respect the subject of the e-mail, as the author of \thisproj\ automates the pre-processing of this type of e-mail.
 
-	  \item You will receive a folder named \verb#italian# containing the English version of the latest translations.
+      \item You will receive a folder named \verb#italian# containing the English version of the latest translations.
     This folder will be the place for your contribution.
 
-	  \item Once the translation is complete, you will need to compress your \verb#italian# file in \verb#zip# or \verb#rar# format before sending it by e-mail with the \mailsubject{italian}\,.
+      \item Once the translation is complete, you will need to compress your \verb#italian# file in \verb#zip# or \verb#rar# format before sending it by e-mail with the \mailsubject{italian}\,.
 \end{enumerate}
 
 
@@ -1483,7 +1483,7 @@ The \texttt{LICENSE.txt} file is aptly named, while the \texttt{README.md} file 
 \subsection{Improving the source code}
 
 \begin{tdocimp}
-	If you want to participate in \thisproj\, you'll need to use the \LaTeX3 programming paradigm.
+    If you want to participate in \thisproj\, you'll need to use the \LaTeX3 programming paradigm.
 \end{tdocimp}
 
 
@@ -1500,25 +1500,25 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \small
 
 \begin{tdocbreak}
-	\item The \thisproj\ class replaces the now-defunct \thisproj\ package (for the moment, the young class offers no specific options).
+    \item The \thisproj\ class replaces the now-defunct \thisproj\ package (for the moment, the young class offers no specific options).
 
-	\item The \tdocmacro{tdocruler} macro is now used via \tdocinlatex{\tdocruler[<color>]{<text>}} (remember that the old syntax was \tdocinlatex{\tdocruler{<text>}{<color>}}).
+    \item The \tdocmacro{tdocruler} macro is now used via \tdocinlatex{\tdocruler[<color>]{<text>}} (remember that the old syntax was \tdocinlatex{\tdocruler{<text>}{<color>}}).
 \end{tdocbreak}
 
 
 \begin{tdocnew}
-	\item The class is usable in Spanish.
+    \item The class is usable in Spanish.
 
-	\item The documentation contains a new section explaining how to contribute.
+    \item The documentation contains a new section explaining how to contribute.
 \end{tdocnew}
 
 
 \begin{tdocfix}
-	\item Version 3 of \tdocpack{minted} is taken into account.
+    \item Version 3 of \tdocpack{minted} is taken into account.
 
-	\item The \tdocmacro{tdocdate} macro did not handle date format and formatting.
+    \item The \tdocmacro{tdocdate} macro did not handle date format and formatting.
 
-	\item Colored frames did not color text after a page break.
+    \item Colored frames did not color text after a page break.
 \end{tdocfix}
 
 \tdocsep
@@ -1530,11 +1530,11 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \tdocversion{1.4.0}[2024-09-28]
 
 \begin{tdocbreak}
-	\item The \tdocenv*{tdoccaution} environment has been renamed \tdocenv*{tdoccaut} for simplified input.
+    \item The \tdocenv*{tdoccaution} environment has been renamed \tdocenv*{tdoccaut} for simplified input.
 
-	\item Content highlighting: examples and remarks, indicated via the \tdocenv*{tdocexa} and \tdocenv*{tdocrem} environments, are always numbered using a common counter.
+    \item Content highlighting: examples and remarks, indicated via the \tdocenv*{tdocexa} and \tdocenv*{tdocrem} environments, are always numbered using a common counter.
 
-	\item The unused macro \tdocmacro{tdocxspace} has been deleted.
+    \item The unused macro \tdocmacro{tdocxspace} has been deleted.
 \end{tdocbreak}
 
 
@@ -1546,16 +1546,16 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 
 \begin{tdocupdate}
-	\item Colors: the \tdocmacro{tdocdarkcolor} and \tdocmacro{tdoclightcolor} macros offer an optional argument.
-	\begin{enumerate}
-		\item \tdocmacro{tdocdarkcolor} : the amount of color in relation to black can be optionally defined.
+    \item Colors: the \tdocmacro{tdocdarkcolor} and \tdocmacro{tdoclightcolor} macros offer an optional argument.
+    \begin{enumerate}
+        \item \tdocmacro{tdocdarkcolor} : the amount of color in relation to black can be optionally defined.
 
-		\item \tdocmacro{tdoclightcolor} : the transparency rate can be optionally defined.
-	\end{enumerate}
+        \item \tdocmacro{tdoclightcolor} : the transparency rate can be optionally defined.
+    \end{enumerate}
 
     \item Content highlighting: reduced space around content in colored frames.
 
-	\item Versioning: better vertical spacing thanks to \tdocmacro{vphantom}.
+    \item Versioning: better vertical spacing thanks to \tdocmacro{vphantom}.
 \end{tdocupdate}
 
 \tdocsep
@@ -1579,12 +1579,12 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \tdocversion{1.3.0}[2024-09-25]
 
 \begin{tdocprob}
-	\item Version 3 of \tdocpack{minted} cannot be used for the moment as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of \tdocpack{minted}.
+    \item Version 3 of \tdocpack{minted} cannot be used for the moment as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of \tdocpack{minted}.
 \end{tdocprob}
 
 
 \begin{tdocbreak}
-	\item The \tdocenv*{tdocimportant} environment has been renamed \tdocenv*{tdocimp} for simplified input.
+    \item The \tdocenv*{tdocimportant} environment has been renamed \tdocenv*{tdocimp} for simplified input.
 \end{tdocbreak}
 
 
@@ -1597,11 +1597,11 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
     \setlength\multicolsep{5pt}
     \begin{multicols}{3}
         \begin{enumerate}[topsep=0pt]
-        	\item \tdocenv*{tdoccaution}
-        	\item \tdocenv*{tdocimp}
-        	\item \tdocenv*{tdocnote}
-        	\item \tdocenv*{tdoctip}
-        	\item \tdocenv*{tdocwarn}
+            \item \tdocenv*{tdoccaution}
+            \item \tdocenv*{tdocimp}
+            \item \tdocenv*{tdocnote}
+            \item \tdocenv*{tdoctip}
+            \item \tdocenv*{tdocwarn}
         \end{enumerate}
     \end{multicols}
     \egroup

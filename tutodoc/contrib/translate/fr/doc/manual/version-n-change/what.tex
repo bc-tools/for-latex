@@ -19,28 +19,28 @@
 
 
 \foreach \exatitle/\filename in {
-	{Juste pour la toute première version}/%<-- Translate me!
-	first,
-	{Pour les nouveautés}/% <-- Translate me!
-	new,
-	{Pour les mises à jour}/% <-- Translate me!
-	update,
-	{Pour les bifurcations}/% <-- Translate me!
-	break,
-	{Pour les problèmes}/% <-- Translate me!
-	pb,
-	{Pour les réparations}/% <-- Translate me!
-	fix,
-	{Thématiques aux choix avec une icône}/%<-- Translate me!
-	user-choice-icon,
-	{Thématiques aux choix sans icône}/% <-- Translate me!
-	user-choice%
+    {Juste pour la toute première version}/%<-- Translate me!
+    first,
+    {Pour les nouveautés}/% <-- Translate me!
+    new,
+    {Pour les mises à jour}/% <-- Translate me!
+    update,
+    {Pour les bifurcations}/% <-- Translate me!
+    break,
+    {Pour les problèmes}/% <-- Translate me!
+    pb,
+    {Pour les réparations}/% <-- Translate me!
+    fix,
+    {Thématiques aux choix avec une icône}/%<-- Translate me!
+    user-choice-icon,
+    {Thématiques aux choix sans icône}/% <-- Translate me!
+    user-choice%
 } {
-	\begin{tdocexa}[\exatitle]
-    	\leavevmode
+    \begin{tdocexa}[\exatitle]
+        \leavevmode
 
-	    \tdoclatexinput[sbs]{examples/version-n-change/\filename.tex}
-	\end{tdocexa}
+        \tdoclatexinput[sbs]{examples/version-n-change/\filename.tex}
+    \end{tdocexa}
 }
 
 \end{document}

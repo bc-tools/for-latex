@@ -47,27 +47,27 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 
 
 \foreach \sectitle/\desc/\filename in {
-	{Note informative}/% <-- Translate me!
-	{L'environnement \tdocenv*{tdocnote} sert à mettre en avant des informations utiles. Voici comment l'utiliser.}/% <-- Translate me!
-	note,
-	%
-	{Un truc important}/% <-- Translate me!
-	{L'environnement \tdocenv*{tdocimp} permet d'indiquer quelque chose d'important mais sans danger.}/% <-- Translate me!
-	important,
-	%
-	{Avertir d'un point très délicat}/% <-- Translate me!
-	{L'environnement \tdocenv*{tdoccaut} sert à indiquer un point délicat à  l'utilisateur. Voici comment l'employer.}/%<-- Translate me!
-	caution,
-	%
-	{Avertir d'un danger}/% <-- Translate me!
-	{L'environnement \tdocenv*{tdocwarn} sert à avertir l'utilisateur d'un piège à éviter. Voici comment l'employer.}/% <-- Translate me!
-	warn%
+    {Note informative}/% <-- Translate me!
+    {L'environnement \tdocenv*{tdocnote} sert à mettre en avant des informations utiles. Voici comment l'utiliser.}/% <-- Translate me!
+    note,
+    %
+    {Un truc important}/% <-- Translate me!
+    {L'environnement \tdocenv*{tdocimp} permet d'indiquer quelque chose d'important mais sans danger.}/% <-- Translate me!
+    important,
+    %
+    {Avertir d'un point très délicat}/% <-- Translate me!
+    {L'environnement \tdocenv*{tdoccaut} sert à indiquer un point délicat à  l'utilisateur. Voici comment l'employer.}/%<-- Translate me!
+    caution,
+    %
+    {Avertir d'un danger}/% <-- Translate me!
+    {L'environnement \tdocenv*{tdocwarn} sert à avertir l'utilisateur d'un piège à éviter. Voici comment l'employer.}/% <-- Translate me!
+    warn%
 } {
-	\subsubsection{\sectitle}
+    \subsubsection{\sectitle}
 
-	\desc
+    \desc
 
-	\tdoclatexinput[sbs]{examples/admonitions/\filename.tex}
+    \tdoclatexinput[sbs]{examples/admonitions/\filename.tex}
 }
 
 \end{document}
