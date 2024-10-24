@@ -292,6 +292,37 @@ for kind, prebuilder, hooks in [
 #     exit()
 
 
+# --------------- #
+# -- CSS FILES -- #
+# --------------- #
+
+for srcfile in metadata[TAG_SRC].glob("*/css/*.sty"):
+    catego = srcfile.parent.parent.name
+
+    kind = srcfile.name
+
+    for ext in [TAG_STY, TAG_CLS]:
+        ext = f".{ext}"
+
+        if kind.endswith(ext):
+            kind = kind[:-len(ext)]
+
+        else:
+            break
+
+    tmp_css_path = ROLLOUT_CSS_PATH.format(
+        texvar = kind,
+        catego = catego
+    )
+
+    destfile = metadata[TAG_TEMP] / tmp_css_path
+
+    copyfromto(
+        srcfile  = srcfile,
+        destfile = destfile,
+    )
+
+
 # ------------------- #
 # -- FINAL PRODUCT -- #
 # ------------------- #

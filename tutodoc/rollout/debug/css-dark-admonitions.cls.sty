@@ -1,0 +1,50 @@
+% -- COLORFUL HIGHLIGHTING OF CONTENT -- %
+
+\NewExpandableDocumentCommand{\tutodoc@build@title@color}{m}{%
+  \tdocdarkcolor[95]{white}%
+}
+
+\NewExpandableDocumentCommand{\tutodoc@build@upper@color}{m}{%
+  \tdocdarkcolor[95]{white}%
+}
+
+\NewExpandableDocumentCommand{\tutodoc@build@lower@color}{m}{%
+  \tdocdarkcolor[95]{white}%
+}
+
+\NewExpandableDocumentCommand{\tutodoc@build@back@color}{m}{%
+  #1!75!black!65%
+}
+
+\NewExpandableDocumentCommand{\tutodoc@build@frame@color}{m}{%
+  \tdocdarkcolor[65]{#1}%
+}
+
+\colorlet{tutodoc@admonition@shadow@color}{black!68}
+
+
+\ExplSyntaxOn
+
+%%%
+% We use two ''prop'' variables to factorize the code just after.
+%%%
+\prop_new:N \__g_tutodoc_focus_color_prop
+\prop_new:N \__g_tutodoc_focus_icon_prop
+
+\prop_set_from_keyval:Nn \__g_tutodoc_focus_color_prop {
+  note = cyan,
+  tip  = ForestGreen,
+  imp  = orange,
+  caut = violet,
+  warn = red,
+}
+
+\prop_set_from_keyval:Nn \__g_tutodoc_focus_icon_prop {
+  note = \faInfoCircle,
+  tip  = \faLightbulb,
+  imp  = \faHighlighter,
+  caut = \faBiohazard,
+  warn = \faSkullCrossbones,
+}
+
+\ExplSyntaxOff

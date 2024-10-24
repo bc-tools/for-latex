@@ -135,7 +135,7 @@ CMDS_FOR_FILE_PATTERNS = [
         "tdoclatexshow",
         "tdoclatexinput",
         "tdocshowcaseinput",
-        "tdocdocbasicinput",
+        "tdocbasicinputDOC",
     ]
 ]
 
@@ -159,6 +159,12 @@ TITLE_PATTERNS = [
     )
     for d in "=-:"
 ]
+
+
+INPUT_CSS_PATTERN = re.compile(r"\\input\{../(.+)/css/(.+).cls.sty\}")
+ROLLOUT_CSS_PATH  = r"css-{texvar}-{catego}.cls.sty"
+TEMPL_INPUT_CSS   = f"\\input{{{{{ROLLOUT_CSS_PATH}}}}}"
+
 
 # --------------- #
 # -- LANGUAGES -- #

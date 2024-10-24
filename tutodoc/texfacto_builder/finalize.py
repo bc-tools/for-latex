@@ -449,7 +449,10 @@ def prettify_all_titles(code):
     not_ignore = False
 
     for line in code.split('\n'):
-        if line == r"\ProvidesExplPackage":
+        if line in [
+            r"\ProvidesExplPackage",
+            r"\ProvidesExplClass"
+        ]:
             not_ignore = True
 
         if not_ignore:

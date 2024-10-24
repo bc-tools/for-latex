@@ -7,15 +7,12 @@ NOW
 ---
 
 
+
 > ---------------------------- <
 
 texfacto-poc
 
-    ---> insertion brutale de filecontents (cf les thèmes)
-
-    ---> theme gallery : besoin d'un build depuis les trads!!!!
-
-    ---> css à gérer : à applatir dans code src et ignorer pour les contribs !
+    ---> Templates to be translated but not used directly by the manual \doc.
 
     ---> prise en compte desc pour build.lua
 

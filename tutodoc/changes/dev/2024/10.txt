@@ -12,13 +12,9 @@
 [[:flow:]]
 The ugly \texfacto \poc has been updated to meet the following new requirements.
 
-    1) Use of post hooks.
+    1) Use of post hooks (see the building of the gallery of themes).
 
-    1) ???
-    Templates to be translated but not used directly by the manual \doc.
-
-    1) ???
-    \css like features for themes.
+    1) \css like features for themes.
 
 
 --------
