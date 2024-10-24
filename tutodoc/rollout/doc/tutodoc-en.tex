@@ -180,6 +180,23 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-admonitions-leavevmode-items.tex}
+\begin{tdoctip}[Little elegant]
+    \begin{enumerate}
+        \item Point 1.
+        \item Point 2.
+    \end{enumerate}
+\end{tdoctip}
+VERSUS.
+\begin{tdoctip}[More elegant]
+    \begin{enumerate}[wide]
+        \item Point 1.
+        \item Point 2.
+    \end{enumerate}
+\end{tdoctip}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-admonitions-rmk.tex}
 \begin{tdocrem}
     Just one remark...
@@ -196,10 +213,11 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 
 \begin{filecontents*}[overwrite]{examples-listing-latexshow-options.tex}
-\tdoclatexshow[explain = What comes next is colorful...,
-               before  = Rendering below.,
-               after   = Finished rendering.,
-               color   = orange]
+\tdoclatexshow[explain   = What comes next is colorful...,
+               before    = Rendering below.,
+               after     = Finished rendering.,
+               colstripe = orange,
+               coltext   = blue!70!black]
                {examples-listing-xyz.tex}
 \end{filecontents*}
 
@@ -232,9 +250,10 @@ $x y z = 1$
 
 
 \begin{filecontents*}[overwrite]{examples-showcase-customized.tex}
-\begin{tdocshowcase}[before = My beginning,
-                     after  = My end,
-                     color  = red]
+\begin{tdocshowcase}[before    = My beginning,
+                     after     = My end,
+                     colstripe = red,
+                     coltext   = orange!75!black]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 \end{tdocshowcase}
 \end{filecontents*}
@@ -249,9 +268,10 @@ $x y z = 1$
 
 \begin{filecontents*}[overwrite]{examples-showcase-no-clrstrip-customized.tex}
 \begin{tdocshowcase}[nostripe,
-                     before = My beginning,
-                     after  = My end,
-                     color  = green]
+                     before    = My beginning,
+                     after     = My end,
+                     colstripe = green,
+                     coltext   = purple]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 \end{tdocshowcase}
 \end{filecontents*}
@@ -286,6 +306,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \documentclass[10pt, a4paper]{tutodoc}
 
+% Community tools
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
@@ -299,7 +320,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \setlength{\parindent}{0em}
 
-
+% Some useful commands.
 \newcommand\thisproj{\tdoccls{tutodoc}}
 \newcommand\thisrepo{\url{https://github.com/bc-tools/for-latex/tree/tutodoc}}
 \newcommand\thismonorepo{\url{https://github.com/bc-tools/for-latex}}
@@ -308,6 +329,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \newcommand\ctan{\href{https://ctan.org/}{\trademark{CTAN}}}
 \newcommand\git{\trademark{git}}
+\newcommand\pdf{\trademark{PDF}}
 
 
 % --------------- %
@@ -362,7 +384,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
     }
 }
 
-\NewDocumentEnvironment{ tdocshowcase }
+\NewDocumentEnvironment{ tdocshowcaseDOC }
                        { O{ Start of the rendering in this doc. }
                          O{ End of rendering in this doc. } }{
         \tdocextrarulerDOC{#1}
@@ -479,6 +501,13 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \end{tdocbreak}
 
 
+\begin{tdocnew}
+	\item The class is usable in Spanish.
+
+	\item The documentation contains a new section explaining how to contribute.
+\end{tdocnew}
+
+
 \begin{tdocfix}
 	\item Version 3 of \tdocpack{minted} is taken into account.
 
@@ -486,13 +515,6 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 	\item Colored frames did not color text after a page break.
 \end{tdocfix}
-
-
-\begin{tdocnew}
-	\item The class is usable in Spanish.
-
-	\item The documentation contains a new section explaining how to contribute.
-\end{tdocnew}
 \end{tdocnote}
 \end{minipage}
 \end{center}
@@ -607,7 +629,7 @@ As this language is included in the list of languages taken into account, see be
         \item \tdocinlatex|fr| : French.
     \end{itemize}
 \end{multicols}
-
+                    
 
 
 \begin{tdoccaut}
@@ -643,6 +665,30 @@ The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{t
 \end{tdocnote}
 
 
+\section{Choose your theme}
+
+	To modify the general layout, there is the \thisproj\ class option \tdocinlatex{theme = <choice>} where \tdocinlatex{<choice>} can take the following values.
+
+\begin{itemize}
+	\item \tdocinlatex|bw| :
+	this is a black-and-white theme with some shades of gray.
+
+	\item \tdocinlatex|color| :
+	this theme is colored, \emph{it's the default value}.
+
+	\item \tdocinlatex|dark| :
+	this theme is dark, ideal for resting the eyes.
+
+	\item \tdocinlatex|draft|:
+	this theme is just right for a printout to look for content errors that aren't necessarily easy to spot in front of a screen.
+\end{itemize}
+
+
+\begin{tdocnote}
+	At the end of this document, after the change history, you'll find a gallery of use cases for these different themes : go to appendix page \pageref{tutodoc-theme-gallery}.
+\end{tdocnote}
+
+
 \section{Highlighting content}
 
 \begin{tdocnote}
@@ -662,7 +708,7 @@ The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{t
 
 
 \begin{tdocimp}
-    All the environments presented in this section share the same counter.
+    All the environments presented in this section share the same counter, which will be reset to zero as soon as a section with a level at least equal to a \tdocinlatex|\section| is opened.
 \end{tdocimp}
 
 
@@ -676,14 +722,6 @@ Here are two possible uses.
 
 \tdoclatexinput[sbs]{examples-admonitions-exa.tex}
 
-
-
-% ------------------ %
-
-
-\begin{tdocimp}
-    The numbering of the examples is reset to zero as soon as a section with a level at least equal to a \tdocinlatex|\section| is opened.
-\end{tdocimp}
 
 
 % ------------------ %
@@ -707,7 +745,8 @@ Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocen
 
 
 
-\subsection{Flashy content} \label{tutodoc-admonitions}
+\subsection{Flashy content}
+\label{tutodoc-admonitions}
 
 \begin{tdocnote}
     Icons are obtained via the \tdocpack{fontawesome5} package, and text spacing is managed by the \tdocmacro{tdocicon} macro.
@@ -734,6 +773,17 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
     Colors are obtained via the expandable macros \tdocmacro{tdocbackcolor} and \tdocmacro{tdocdarkcolor}.
     For further information, please refer to the end of the section \ref{tutodoc-color-macros} page \pageref{tutodoc-color-macros}.
 \end{tdocnote}
+
+
+\smallskip
+
+
+\begin{tdoctip}
+    Sometimes, highlighted content can be reduced to a list. In this case, the formatting can be improved as follows.
+\end{tdoctip}
+
+\tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
+
 
 
 \foreach \sectitle/\desc/\filename in {
@@ -811,13 +861,15 @@ To explain the names chosen, there is nothing like indicating and explaining the
 \end{tdocrem}
 
 
-\section{A real-life rendering} \label{tutodoc-showcase}
+\section{A real-life rendering}
+\label{tutodoc-showcase}
 
 It is sometimes useful to render code directly in the documentation. This type of rendering must be dissociable from the explanatory text.
 
 
 
-\subsection{With a colored stripe} \label{tutodoc-color-macros}
+\subsection{With a colored stripe}
+\label{tutodoc-color-macros}
 
 \begin{tdocexa} [With default text]
     It can be useful to show a real rendering directly in a document.
@@ -854,7 +906,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 % ------------------ %
 
 
-\begin{tdocexa}[Change the default colour and/or text]
+\begin{tdocexa}[Change the colors and/or the texts]
     \leavevmode
 
     \tdoclatexinput[code]{examples-showcase-customized.tex}
@@ -870,33 +922,16 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
 \begin{tdocnote}
-    You've probably noticed that red is used as a base to obtain the colors used.
+	In the previous example, the text uses the proposed darkened orange. On the other hand, red is used as a base to obtain the colors used for the strip: the transformations used depend on the theme chosen.%
+	\footnote{
+		For example, the themes \tdocinlatex{bw} and \tdocinlatex{draft} ignore the key \tdocinlatex{colstripe}!
+	}
+	%
+	You should also be aware that behind the scenes, the macro \tdocmacro{tdocruler} is used.
 
-    \begin{itemize}
-    	\item The background color is provided by \tdocmacro{tdocbackcolor}.
-
-    	\item The color of titles and lines is provided by \tdocmacro{tdocdarkcolor}.
-    \end{itemize}
-
-    These expandable macros accept the following codes.
-
-    \begin{tdoclatex}[code]
-% Argument 1 : optionally, the amount of color relative to black can be specified.
-%              In general, there's no need to change this setting!
-% Argument 2 : a color in xcolor format.
-\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
-
-% Argument 1 : optionally, the transparency rate can be specified.
-%              In general, there's no need to change this setting!
-% Argument 2 : a color in xcolor format.
-\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
-    \end{tdoclatex}
-
-    You also have to know that behind the scene, the \tdocmacro{tdocruler} macro is used.
-
-    \begin{tdoclatex}[std]
-        \tdocruler[red]{A decorated pseudo-title}
-    \end{tdoclatex}
+	\begin{tdoclatex}[std]
+		\tdocruler[red]{A decorated pseudo-title}
+	\end{tdoclatex}
 \end{tdocnote}
 
 
@@ -942,13 +977,13 @@ It is possible not to use a coloured strip, as we will see straight away.
 % ------------------ %
 
 
-\begin{tdocexa}[Change the default colour and/or text]
+\begin{tdocexa}[Change the colors and/or the texts]
     \leavevmode
 
     \tdoclatexinput[code]{examples-showcase-no-clrstrip-customized.tex}
 
 
-    This will produce the following.
+    This will produce the following horror.
 
     \medskip
 
@@ -972,11 +1007,11 @@ To obtain renderings by importing the code from an external file, instead of typ
 
     \medskip
 
-    As for \tdocinlatex+\tdocshowcaseinput[color = orange]{external.tex}+\,, this will produce the colour change shown below.
+    As for \tdocinlatex+\tdocshowcaseinput[colstripe = red, coltext = orange!75!black]{external.tex}+\,, this will produce the color change shown below.
 
     \medskip
 
-    \tdocshowcaseinput[color = orange]{examples-showcase-external.tex}
+    \tdocshowcaseinput[colstripe = red, coltext = orange!75!black]{examples-showcase-external.tex}
 
 \end{tdocexa}
 
@@ -995,7 +1030,8 @@ Documenting a package or class is best done through use cases showing both the c
 %\end{tdoccaut}
 
 
-\subsection{\tdocquote{Inline} codes} \label{tutodoc-listing-inline}
+\subsection{\tdocquote{Inline} codes}
+\label{tutodoc-listing-inline}
 
 The \tdocmacro{tdocinlatex} macro
 \footnote{
@@ -1028,8 +1064,7 @@ Here are some examples.
 
 \begin{tdocexa}[Side by side]
     Using \tdocenv[{[sbs]}]{tdoclatex}, we can display a code and its rendering side by side.
-    \tdocDOCbasicinput{examples-listing-ABC.tex}
-
+    \tdocDOCbasicinput{examples/listing/ABC.tex}
 \end{tdocexa}
 
 
@@ -1065,14 +1100,12 @@ Here are some examples.
 
 \begin{tdocwarn}
     With default formatting, if the code begins with an opening bracket, the default option must be explicitly indicated.
-    \tdocDOCbasicinput{examples-listing-strange.tex}
-
+    \tdocDOCbasicinput{examples/listing/strange.tex}
 
     \smallskip
 
     Another method is to use the \tdocmacro{string} primitive.
-    \tdocDOCbasicinput{examples-listing-strange-bis.tex}
-
+    \tdocDOCbasicinput{examples/listing/strange-bis.tex}
 \end{tdocwarn}
 
 
@@ -1145,17 +1178,18 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 % ------------------ %
 
 
-\subsection{Imported codes put into practice} \label{tutodoc-latexshow}
+\subsection{Imported codes put into practice}
+\label{tutodoc-latexshow}
 
 \begin{tdocexa}[Showcase]
     The following comes from \tdocinlatex+\tdoclatexshow{examples-listing-xyz.tex}+.
 
     \medskip
 
-    \begin{tdocshowcase}
+    \begin{tdocshowcaseDOC}
         \tdoclatexshow{examples-listing-xyz.tex}
 
-    \end{tdocshowcase}
+    \end{tdocshowcaseDOC}
 \end{tdocexa}
 
 
@@ -1172,10 +1206,10 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
     \medskip
 
-    \begin{tdocshowcase}
+    \begin{tdocshowcaseDOC}
         \tdoclatexshow[explain = Here is the actual rendering.]{examples-listing-xyz.tex}
 
-    \end{tdocshowcase}
+    \end{tdocshowcaseDOC}
 \end{tdocexa}
 
 
@@ -1197,10 +1231,10 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
     \medskip
 
-    \begin{tdocshowcase}
+    \begin{tdocshowcaseDOC}
         \input{examples-listing-latexshow-options.tex}
 
-    \end{tdocshowcase}
+    \end{tdocshowcaseDOC}
 \end{tdocexa}
 
 
@@ -1238,7 +1272,7 @@ You can either date something, or version it, in which case the version number c
 
 
 \begin{tdocimp}
-    \begin{enumerate}
+    \begin{enumerate}[wide]
         \item The \tdocmacro{tdocdate} and \tdocmacro{tdocversion} macros require two compilations.
 
         \item The final rendering of the dates takes into account the language detected by \thisproj{}: for example, if French is selected, the dates will be displayed in the format \texttt{DD/MM/YYYY}.
@@ -1472,6 +1506,13 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \end{tdocbreak}
 
 
+\begin{tdocnew}
+	\item The class is usable in Spanish.
+
+	\item The documentation contains a new section explaining how to contribute.
+\end{tdocnew}
+
+
 \begin{tdocfix}
 	\item Version 3 of \tdocpack{minted} is taken into account.
 
@@ -1479,13 +1520,6 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 	\item Colored frames did not color text after a page break.
 \end{tdocfix}
-
-
-\begin{tdocnew}
-	\item The class is usable in Spanish.
-
-	\item The documentation contains a new section explaining how to contribute.
-\end{tdocnew}
 
 \tdocsep
 
