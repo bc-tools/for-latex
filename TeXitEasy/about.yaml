@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 project:
   desc   : This project contains tools to work with ¨latex.
   author : Christophe, BAL
 
-=======
-general:
-  desc   : This project contains tools to work with \latex.
-  author : Christophe BAL
->>>>>>> tutodoc
   licence: gnu 3
 
   url:
