@@ -8,7 +8,7 @@
 module = "tutodoc"
 
 sourcefiledir = "code"
-sourcefiles   = {"*.sty"}
+sourcefiles   = {"*.cls", "*.cls.sty"}
 
 flatten    = false
 flattentds = false
@@ -24,15 +24,15 @@ checkopts   = "-interaction=nonstopmode --shell-escape"
 typesetopts = checkopts
 
 uploadconfig = {
-    version      = "1.4.0 [2024-09-28]",
-    announcement = "New macros \\tdocstartproj and \\tdocicon + Breaking changes for \\tdoccaution, \\tdocexa and \\tdocrem + Misc.",
+    version      = "1.5.0 [2024-10-19]",
+    announcement = "tutodoc becomes a LaTeX class.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",
     license      = "gpl3",
     pkg          = "tutodoc",
     -- update       = false,
-    summary      = 'This package proposes tools for writing "human friendly" documentations of LaTeX packages.',
+    summary      = 'This class proposes tools for writing "human friendly" documentations of LaTeX packages.',
     topic        = {"doc-tool"},
     ctanPath     = "/macros/latex/contrib/tutodoc",
     repository   = "https://github.com/bc-tools/for-latex",

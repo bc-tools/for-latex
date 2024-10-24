@@ -1,0 +1,139 @@
+\documentclass[10pt, a4paper]{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+% Source.
+%    * https://tex.stackexchange.com/a/604698/6880
+
+\NewDocumentCommand{ \tdocextrarulerDOC }{ m }{%
+    \par
+    {
+        \centering
+        \color{green!50!black}%
+        \leavevmode
+        \kern.075\linewidth
+        \leaders\hrule height3.25pt\hfill\kern0pt
+        \footnotesize\itshape\bfseries\space\ignorespaces#1\unskip\space
+        \leaders\hrule height3.25pt\hfill\kern0pt
+        \kern.075\linewidth
+        \par
+    }
+}
+
+\NewDocumentEnvironment{ tdocshowcaseDOC }
+                       { O{ Début du rendu dans cette doc. }
+                         O{ Fin du rendu dans cette doc. } }{
+        \tdocextrarulerDOC{#1}
+        \nopagebreak\smallskip\nopagebreak
+}{
+        \nopagebreak\smallskip\nopagebreak
+        \tdocextrarulerDOC{#2}
+}
+
+
+\begin{document}
+
+\subsection{Codes importés}
+
+Pour les codes suivants, on considère un fichier de chemin relatif \verb+examples-listing-xyz.tex+, et ayant le contenu suivant.
+
+
+\tdoclatexinput[code]{examples/listing/xyz.tex}
+
+
+\medskip
+
+
+La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'un fichier et propose les mêmes options que l'environnement \tdocenv*{tdoclatex}.
+
+
+\begin{tdocexa}[Face à face]
+    \leavevmode
+
+    \begin{tdoclatex}[code]
+\tdoclatexinput[sbs]{examples/listing/xyz.tex}
+    \end{tdoclatex}
+
+    Ceci produit la mise en forme suivante.
+
+    \tdoclatexinput[sbs]{examples/listing/xyz.tex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[À la suite]
+    \leavevmode
+
+    \begin{tdoclatex}[code]
+\tdoclatexinput{examples/listing/xyz.tex}
+    \end{tdoclatex}
+
+    Ceci produit la mise en forme suivante où l'option employée par défaut est \tdocinlatex#std#.
+
+    \tdoclatexinput{examples/listing/xyz.tex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[Juste le code]
+    \leavevmode
+
+    \begin{tdoclatex}[code]
+\tdoclatexinput[code]{examples/listing/xyz.tex}
+    \end{tdoclatex}
+
+    Ceci produit la mise en forme suivante.
+
+    \tdoclatexinput[code]{examples/listing/xyz.tex}
+\end{tdocexa}
+
+
+
+\subsection{Codes importés et mis en situation}
+\label{tutodoc-latexshow}
+
+\begin{tdocexa}[Mise en situation]
+    Ce qui suit s'obtient via \tdocinlatex+\tdoclatexshow{examples-listing-xyz.tex}+.
+
+    \medskip
+
+    \begin{tdocshowcaseDOC}
+        \tdoclatexshow{examples/listing/xyz.tex}
+    \end{tdocshowcaseDOC}
+\end{tdocexa}
+
+
+\begin{tdocnote}
+    Les textes par défaut tiennent compte de la langue détectée par \thisproj.
+\end{tdocnote}
+
+
+\begin{tdocexa}[Changer le texte explicatif]
+    Via la clé \tdocinlatex|explain|, on peut utiliser un texte personnalisé. Ainsi, \tdocinlatex|\tdoclatexshow[explain = Voici le rendu réel.]{examples-listing-xyz.tex}| produira ce qui suit.
+
+    \medskip
+
+    \begin{tdocshowcaseDOC}
+        \tdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}
+    \end{tdocshowcaseDOC}
+\end{tdocexa}
+
+
+\begin{tdocexa}[Les options disponibles]
+    En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de l'environnement \tdocenv*{tdocshowcase}, voir \ref{tutodoc-showcase} page \pageref{tutodoc-showcase}.
+    Voici un exemple illustrant ceci.
+
+    \medskip
+
+    \tdoclatexinput[code]{examples/listing/latexshow-options.tex}
+
+    \medskip
+
+    Ceci va produire ce qui suit.
+
+    \medskip
+
+    \begin{tdocshowcaseDOC}
+        \input{examples/listing/latexshow-options.tex}
+    \end{tdocshowcaseDOC}
+\end{tdocexa}
+
+\end{document}

@@ -1,0 +1,23 @@
+\documentclass[10pt, a4paper]{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+% Source.
+%     + https://tex.stackexchange.com/a/8547/6880
+\bgroup
+    \titleformat{\section}[block]{\Huge\bfseries\filcenter}{}{1em}{}
+    \phantomsection\section*{Appendix -- Theme gallery}%
+    \label{tutodoc-theme-gallery}
+    \addcontentsline{toc}{section}{Appendix -- Theme gallery}%
+\egroup
+
+\bigskip
+
+\begin{tdocnote}
+    Each example is exactly a two pages long \pdf\ and has been inserted directly into this document (so don't be surprised by the page numbers).
+\end{tdocnote}
+
+\end{document}

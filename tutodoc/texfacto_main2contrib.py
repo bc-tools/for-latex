@@ -1,5 +1,5 @@
 DEBUG = False
-# DEBUG = True
+DEBUG = True
 
 
 # ------------------- #
@@ -34,15 +34,15 @@ print_frame(
 
 metadata = build_metadata(project_dir = THIS_DIR)
 
-if DEBUG:
-    print("# -- METADATA -- #")
+# if DEBUG:
+#     print("# -- METADATA -- #")
 
-    pprint(metadata)
-    # exit()
+#     pprint(metadata)
+#     exit()
 
-print(f"Dev lang : {metadata[TAG_MANUAL_DEV_LANG]}")
-print()
 
+# print(f"Dev lang : {metadata[TAG_MANUAL_DEV_LANG]}")
+# print()
 # exit()
 
 
@@ -95,15 +95,15 @@ sorted_useful_files = files_2_analyze(
     treeview = treeview
 )
 
-if DEBUG:
-    for onedir, sorted2analyze in sorted_useful_files.items():
-        print()
-        print()
-        print(f"+ {onedir}")
-        print()
-        pprint(sorted2analyze)
+# if DEBUG:
+#     for onedir, sorted2analyze in sorted_useful_files.items():
+#         print()
+#         print()
+#         print(f"+ {onedir}")
+#         print()
+#         pprint(sorted2analyze)
 
-    exit()
+#     exit()
 
 # -------------------- #
 # -- USEFUL FOLDERS -- #
@@ -111,9 +111,9 @@ if DEBUG:
 
 SRC_DIR = metadata[TAG_SRC]
 
-CONTRIB_DIR        = metadata[TAG_PROJ_DIR] / TAG_CONTRIB
-CONTRIB_API_DIR    = CONTRIB_DIR / TAG_API / TAG_LOCALE
-CONTRIB_DEV_MANUAL_DIR = CONTRIB_DIR / TAG_DOC / TAG_MANUAL / metadata[TAG_MANUAL_DEV_LANG]
+TRANSLATE_DIR            = metadata[TAG_PROJ_DIR] / TAG_CONTRIB / TAG_TRANSLATE / metadata[TAG_MANUAL_DEV_LANG]
+TRANSLATE_API_DIR        = TRANSLATE_DIR / TAG_API / TAG_LOCALE
+TRANSLATE_DEV_MANUAL_DIR = TRANSLATE_DIR / TAG_DOC / TAG_MANUAL
 
 
 # ------------------ #
@@ -142,11 +142,11 @@ for locale_dir in metadata[TAG_SRC].glob(glob_search):
 
     print(f"+ Working in ''src/{locale_dir.relative_to(metadata[TAG_SRC])}''")
 
-    this_contrib_dir = CONTRIB_API_DIR / lang / ctxt
+    this_contrib_dir = TRANSLATE_API_DIR / ctxt
 
     emptydir(
         folder  = this_contrib_dir,
-        rel_dir = CONTRIB_DIR
+        rel_dir = TRANSLATE_DIR
     )
 
     for locale_file in locale_dir.glob("*"):
@@ -175,14 +175,14 @@ print_frame(
 
 # Empty lang dir.
 emptydir(
-    folder  = CONTRIB_DEV_MANUAL_DIR,
+    folder  = TRANSLATE_DEV_MANUAL_DIR,
     rel_dir = metadata[TAG_PROJ_DIR],
 )
 
 # Preamble file.
 print(f"+ Building ''src/{TAG_TMP_PREAMBLE}''")
 
-contrib_preamble = CONTRIB_DEV_MANUAL_DIR / TAG_TMP_PREAMBLE
+contrib_preamble = TRANSLATE_DEV_MANUAL_DIR / TAG_TMP_PREAMBLE
 
 copyfromto(
     srcfile  = SRC_DIR / TAG_TMP_PREAMBLE,
@@ -219,7 +219,7 @@ for srcfile in (SRC_DIR / TAG_CHGE_LOG).glob("*/*/*.tex"):
     month = srcfile.parent.name
     year  = srcfile.parent.parent.name
 
-    destfile = CONTRIB_DEV_MANUAL_DIR / TAG_CHGE_LOG / year / f"{month}-{day}.tex"
+    destfile = TRANSLATE_DEV_MANUAL_DIR / TAG_CHGE_LOG / year / f"{month}-{day}.tex"
 
     content = srcfile.read_text().strip()
     content = f"""
@@ -243,9 +243,20 @@ print("+ Copying manual TEX files...")
 
 all_tex_files = [SRC_DIR / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"]
 
+# Add extra files to be translated.
+
+for srcfile in SRC_DIR.glob("**/tmpl-*.tex"):
+    all_tex_files.append(srcfile)
+
 for onedir, sorted2analyze in sorted_useful_files.items():
     for srcfile in sorted2analyze[TAG_FILE]:
         if srcfile.suffix[1:] != TAG_TEX:
+            continue
+
+        if srcfile.stem == "gallery":
+            continue
+
+        if srcfile.name.startswith("debug-"):
             continue
 
         all_tex_files.append(srcfile)
@@ -258,7 +269,7 @@ for srcfile in all_tex_files:
         fordoc = f"\n{fordoc}\n"
 
     content = f"""
-\\documentclass[12pt, a4paper]{{article}}
+\\documentclass[10pt, a4paper]{{tutodoc}}
 
 \\input{{../preamble.cfg.tex}}
 {fordoc}
@@ -270,7 +281,7 @@ for srcfile in all_tex_files:
 \\end{{document}}
     """.strip() + "\n"
 
-    destfile = CONTRIB_DEV_MANUAL_DIR / srcfile.relative_to(SRC_DIR)
+    destfile = TRANSLATE_DEV_MANUAL_DIR / srcfile.relative_to(SRC_DIR)
 
     createfile(destfile)
     destfile.write_text(content)
@@ -280,7 +291,10 @@ print("+ Copying TEX resources...")
 
 for onedir, sorted2analyze in sorted_useful_files.items():
     for srcfile in sorted2analyze[TAG_TEX_RESRC]:
+        if srcfile.parent.name == "css":
+            continue
+
         copyfromto(
             srcfile  = srcfile,
-            destfile = CONTRIB_DEV_MANUAL_DIR / srcfile.relative_to(SRC_DIR)
+            destfile = TRANSLATE_DEV_MANUAL_DIR / srcfile.relative_to(SRC_DIR)
         )

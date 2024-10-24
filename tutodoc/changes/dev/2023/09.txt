@@ -149,7 +149,7 @@ Some simplifications have been made.
 [[:api:]]
 Here are the new features.
 
-    1) Two \envs ''bdocwarning'' and ''bdocinfo'' have been added: this allows to focus some content more precisely.
+    1) Two \envs ''bdocwarning'' and ''bdocinfo'' have been added: this allows to highlight some content more precisely.
 
     1) The new \envs ''bdoclatexshow*'' and ''bdocshowcase*'' work without the ''clrstrip'' package.
 

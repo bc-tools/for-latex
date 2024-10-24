@@ -1,0 +1,30 @@
+\documentclass[10pt, a4paper]{tutodoc}
+
+\input{../../preamble.cfg.tex}
+
+
+\begin{document}
+
+\small
+
+\begin{tdocbreak}
+    \item The \thisproj\ class replaces the now-defunct \thisproj\ package (for the moment, the young class offers no specific options).
+
+    \item The \tdocmacro{tdocruler} macro is now used via \tdocinlatex{\tdocruler[<color>]{<text>}} (remember that the old syntax was \tdocinlatex{\tdocruler{<text>}{<color>}}).
+\end{tdocbreak}
+
+
+\begin{tdocnew}
+    \item The class is usable in Spanish.
+
+    \item The documentation contains a new section explaining how to contribute.
+\end{tdocnew}
+
+
+\begin{tdocfix}
+    \item Version 3 of \tdocpack{minted} is taken into account.
+
+    \item The \tdocmacro{tdocdate} macro did not handle date format and formatting.
+
+    \item Colored frames did not color text after a page break.
+\end{tdocfix}

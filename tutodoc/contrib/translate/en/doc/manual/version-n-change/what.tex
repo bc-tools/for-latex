@@ -1,0 +1,46 @@
+\documentclass[10pt, a4paper]{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\subsection{What's new?}
+
+\thisproj\ offers the macro \tdocmacro{tdocstartproj} and different environments to indicate quickly and clearly what has been done during the latest changes.%
+\footnote{
+    The user doesn't need all the technical details.
+}
+
+
+\begin{tdocnote}
+    For icons, see the note at the beginning of the section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
+\end{tdocnote}
+
+
+\foreach \exatitle/\filename in {
+    {Just for the very first version}/%<-- Translate me!
+    first,
+    {For new features}/% <-- Translate me!
+    new,
+    {For updates}/% <-- Translate me!
+    update,
+    {For breaks}/% <-- Translate me!
+    break,
+    {For problems}/% <-- Translate me!
+    pb,
+    {For fixes}/% <-- Translate me!
+    fix,
+    {Selectable themes with an icon}/% <-- Translate me!
+    user-choice-icon,
+    {Selectable themes without icons}/%<-- Translate me!
+    user-choice%
+} {
+    \begin{tdocexa}[\exatitle]
+        \leavevmode
+
+        \tdoclatexinput[sbs]{examples/version-n-change/\filename.tex}
+    \end{tdocexa}
+}
+
+\end{document}

@@ -1,0 +1,191 @@
+\documentclass[10pt, a4paper]{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+\NewDocumentCommand{\mailsubject}{m}%  <-- Translate me!
+  {subject \tdocquote{\texttt{tutodoc - CONTRIB - #1}}}
+
+% Source: https://tex.stackexchange.com/a/424061/6880
+
+\newcommand{\FTdirO}{}
+\def\FTdirO(#1,#2,#3){%
+  \FTfile(#1,{\color{blue!40!black}\faFolderOpen\hspace{-.35pt}}{\hspace{0.2em}#3})
+  (tmp.west)++(0.8em,-0.4em)node(#2){}
+  (tmp.west)++(1.5em,0)
+  ++(0,-1.3em)
+}
+
+\newcommand{\FTdirC}{}
+\def\FTdirC(#1,#2,#3){%
+  \FTfile(#1,{\color{blue!40!black}\faFolder\hspace{.75pt}}{\hspace{0.2em}#3})
+  (tmp.west)++(0.8em,-0.4em)node(#2){}
+  (tmp.west)++(1.5em,0)
+  ++(0,-1.3em)
+}
+
+\newcommand{\FTfile}{}
+\def\FTfile(#1,#2){%
+  node(tmp){}
+  (#1|-tmp)++(0.6em,0)
+  node(tmp)[anchor=west,black]{\tt #2}
+  (#1)|-(tmp.west)
+  ++(0,-1.2em)
+}
+
+\newcommand{\FTroot}{}
+\def\FTroot{tmp.west}
+
+\newcommand\contribtranslatedirtree{
+  \begin{tikzpicture}%
+    \draw[color=black, thick]
+% en        : parent = \FTroot
+% normal dir: (parentID, currentID, label)
+% file      :       (parentID, label)
+      \FTdirO(\FTroot,root,translate){
+        \FTdirC(root,changes,changes){
+        }
+        \FTdirO(root,en,en) {
+          \FTdirC(en,api,api) {
+          }
+          \FTdirC(en,doc,doc) {
+          }
+        }
+        \FTdirC(root,fr,fr){
+        }
+        \FTdirC(root,status,status){
+          \FTdirO(status,en,en) {
+            \FTfile(en,api.yaml)
+            \FTfile(en,manual.yaml)
+          }
+          \FTdirC(status,fr,fr){
+          }
+        }
+        \FTfile(root,README.md)
+        \FTfile(root,LICENSE.txt)
+      };
+  \end{tikzpicture}
+}
+
+
+\begin{document}
+
+%\section{Contribute}
+
+\subsection{Complete the translations}
+
+\begin{tdocnote}
+    The author of \thisproj\ manages the French and English versions of the translations.
+\end{tdocnote}
+
+
+\begin{tdoccaut}
+    Although we're going to explain how to translate the documentation, it doesn't seem relevant to do so, as English should suffice these days.%
+    \footnote{
+      The existence of a French version is simply a consequence of the native language of the author of \thisproj.
+    }
+\end{tdoccaut}
+
+
+\begin{wrapfigure}{R}
+    \contribtranslatedirtree\
+    \caption{Simplified view of the translation folder}
+    \label{tutodoc-contrib-translate-dir}
+\end{wrapfigure}{}
+
+
+The translations are roughly organized as in figure \ref{tutodoc-contrib-translate-dir} where only the folders important for the translations have been \tdocquote{opened}\,.%}.
+\footnote{
+    This was the organization on October 5, 2024, but it's still relevant today.
+}
+\textbf{A little further down, the \ref{tutodoc-contrib-translate} section explains how to add new translations}.
+
+
+\subsubsection{The \texttt{fr} and \texttt{en} folders}
+
+These two folders, managed by the author of \thisproj, have the same organization; they contain files that are easy to translate even if you're not a coder.
+
+
+\subsubsection{The \texttt{changes} folder}
+
+This folder is a communication tool where important changes are indicated without dwelling on minor modifications specific to one or more translations.
+
+
+\subsubsection{The \texttt{status} folder}
+
+This folder is used to keep track of translations from the project's point of view. Everything is done via well-commented \verb#YAML# files, readable by a non-coder.
+
+
+\subsubsection{The \texttt{README.md} and \texttt{LICENSE.txt} files}
+
+The \texttt{LICENSE.txt} file is aptly named, while the \texttt{README.md} file takes up in English the important points of what is said in this section about new translations.
+
+
+\subsubsection{New translations}
+\label{tutodoc-contrib-translate}
+
+\begin{tdocimp}
+    The \verb#api# folder contains translations relating to the functionalities of \thisproj.
+    Here you'll find \verb#TXT# files for editing with a text or code editor, but not with a word processor.
+    The content of these files uses commented lines in English to explain what \thisproj\ will do; these lines begin with \verb#//#\,. Here's an extract from such a file, where translations are made after each \,$=$\ sign, without touching the preceding, as this initial piece is used internally by the \thisproj code.
+
+    \tdocsep
+    \vspace{-10pt}
+    \begin{verbatim}
+    // #1: year  in format YYYY like 2023.
+    // #2: month in format MM   like 04.
+    // #3: day   in format DD   like 29.
+    date = #1-#2-#3
+
+    // #1: the idea is to produce one text like
+    //     "this word means #1 in english".
+    in_EN = #1 in english\end{verbatim}
+\end{tdocimp}
+
+
+\begin{tdocnote}
+    The \verb#doc# folder is reserved for documentation. It contains files of type \verb#TEX# that can be compiled directly for real-time validation of translations.
+\end{tdocnote}
+
+
+\begin{tdocwarn}
+    Only start from one of the \verb#fr# and \verb#en# folders, as these are the responsibility of the \thisproj\ author.
+\end{tdocwarn}
+
+
+\medskip
+
+
+\emph{\textbf{Let's say you want to add support for Italian from files written in English.}}%
+\footnote{
+    As mentioned above, there is no real need for the \texttt{doc} documentation folder.
+}
+
+
+\paragraph{Method 1 : \git.}
+
+\begin{enumerate}
+      \item Obtain the entire project folder via \thisrepo\,.
+    Do not use the \verb#main# branch, which is used to freeze the latest stable versions of projects in the single \thismonorepo\ repository,.
+
+      \item In the \verb#tutodoc/contrib/translate# folder, create a \verb#it# copy of the \verb#en# folder, with the short name of the language documented in
+      \href{https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags}%
+           {the page \tdocquote{IIETF language tag}}
+      from \texttt{Wikipedia}.
+
+      \item Once the translation is complete in the \verb#it# folder, you'll need to communicate it via \thisrepo\ using a classic \verb#git push#\,.
+\end{enumerate}
+
+
+\paragraph{Method 2 : communicate by e-mail.}
+
+\begin{enumerate}
+      \item By e-mail with the \mailsubject{en FOR italian}, request a version of the English translations (note the use of the English name for the new language).
+    Be sure to respect the subject of the e-mail, as the author of \thisproj\ automates the pre-processing of this type of e-mail.
+
+      \item You will receive a folder named \verb#italian# containing the English version of the latest translations.
+    This folder will be the place for your contribution.
+
+      \item Once the translation is complete, you will need to compress your \verb#italian# file in \verb#zip# or \verb#rar# format before sending it by e-mail with the \mailsubject{italian}\,.
+\end{enumerate}
+
+\end{document}

@@ -34,7 +34,7 @@ Versions: better vertical spacing thanks to ''\vphantom{Mp}''.
 --------
 
 [[:test:]]
-Focus.
+Highlight.
 
     1) Tests on colored frames showed that finer adjustment could be necessary (see above).
 
@@ -65,7 +65,7 @@ Two major additions done.
 -------
 
 [[:api:]]
-Focus.
+Highlight.
 
     1) The ''tdoccaution'' \env has been renamed to ''tdoccaut'' for ease of use.
 
@@ -89,7 +89,7 @@ Change log: the ''\tdocstartproj'' macro is used to manage the case of the first
 --------
 
 [[:format:]]
-Focus: reduced space around content in colored frames.
+Highlight: reduced space around content in colored frames.
 
 
 // ---------- //
@@ -142,7 +142,7 @@ Too much small \pbs have been fixed.
 -------
 
 [[:api:]]
-Focus: the ''tdocimportant'' \env has been renamed to ''tdocimp'' for ease of use.
+Highlight: the ''tdocimportant'' \env has been renamed to ''tdocimp'' for ease of use.
 
 
 --------
@@ -192,7 +192,7 @@ Change log: icons are associated to the kind-of-\infos \env (use of the \fontawe
 --------
 
 [[:format:]]
-Focus.
+Highlight.
 
     1) Use of two-parts colored frames (the recognition becomes better).
 
@@ -211,4 +211,4 @@ Focus.
 -----
 
 [[:format:]]
-Focus: colored frames for easy recognition of information types (the \pack \keytheorems is used in backstage).
+Highlight: colored frames for easy recognition of information types (the \pack \keytheorems is used in backstage).

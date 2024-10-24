@@ -1,14 +1,15 @@
 texfacto:
   doc:
-    pack:
-      preamble: preamble.cfg.tex
+    preamble: preamble.cfg.tex
 
 toc:
   - main/
   - inenglish/
-  - focus/
+  - theme/
+  - admonitions/
   - macroenv/
   - showcase/
   - listing/
   - version-n-change/
   - deco/
+  - contrib-how-to/

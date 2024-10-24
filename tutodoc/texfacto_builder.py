@@ -1,5 +1,5 @@
 DEBUG = False
-# DEBUG = True
+DEBUG = True
 
 
 # ------------------- #
@@ -62,6 +62,8 @@ def _recu_debug_treeview(
 # -- METADATA PROJECT -- #
 # ---------------------- #
 
+assert THIS_DIR.name != ""
+
 print_frame(
     THIS_DIR.name,
     "METADATA"
@@ -69,17 +71,18 @@ print_frame(
 
 metadata = build_metadata(project_dir = THIS_DIR)
 
-if DEBUG:
-    print("# -- METADATA -- #")
+# if DEBUG:
+#     print("# -- METADATA -- #")
 
-    pprint(metadata)
-    exit()
+#     pprint(metadata)
+#     exit()
 
 print(f"""
 Author       : {metadata[TAG_AUTHOR]}
-Creation     : {nb_date_EN(metadata[TAG_CREATION])}  [{metadata[TAG_CREATION][TAG_NB]}]
-Last version : {nb_date_EN(metadata[TAG_VERSIONS][TAG_LAST])}  [{metadata[TAG_VERSIONS][TAG_LAST][TAG_NB]}]
 Short desc.  : {metadata[TAG_DESC]}
+
+Last version : {nb_date_EN(metadata[TAG_VERSIONS][TAG_LAST])}  [{metadata[TAG_VERSIONS][TAG_LAST][TAG_NB]}]
+Creation     : {nb_date_EN(metadata[TAG_CREATION])}  [{metadata[TAG_CREATION][TAG_NB]}]
 
 Manual
   - Dev lang   : {metadata[TAG_MANUAL_DEV_LANG]}
@@ -101,6 +104,8 @@ treeview = build_tree(
     target  = metadata[TAG_ROLLOUT],
     readme  = Path('README.md'),
     ignore = """
+debug-*
+
 test_*/
 tests_*/
 test_*.*
@@ -125,11 +130,16 @@ for directdir, content in treeview[TAG_DIR].items():
                 subfiles.remove(pdf_unused)
 
 
-if DEBUG:
-    print("# -- TREVIEW -- #")
-    debug_treeview(metadata[TAG_SRC], treeview)
+# if DEBUG:
+#     print("# -- TREVIEW FULL -- #")
+#     debug_treeview(metadata, treeview)
 
-    # exit()
+#     exit()
+
+#     print("# -- TREVIEW -- #")
+#     debug_treeview(metadata[TAG_SRC], treeview)
+
+#     exit()
 
 
 # ----------------------- #
@@ -147,15 +157,17 @@ sorted_useful_files = files_2_analyze(
     treeview = treeview
 )
 
-if DEBUG:
-    for onedir, sorted2analyze in sorted_useful_files.items():
-        print()
-        print()
-        print(f"+ {onedir}")
-        print()
-        pprint(sorted2analyze)
+# if DEBUG:
+#     for onedir, sorted2analyze in sorted_useful_files.items():
+#         print()
+#         print()
+#         print(f"+ {onedir}")
+#         print()
+#         pprint(sorted2analyze)
 
-    # exit()
+#         input("next?")
+
+#     exit()
 
 
 # --------------------------- #
@@ -179,12 +191,13 @@ emptydir(
 # ----------------------------------------- #
 
 for kind, prebuilder in [
-    ("STY", prebuild_single_sty),
-    ("TEX", prebuild_single_tex),
+    (TAG_CLS, prebuild_single_cls),
+    (TAG_STY, prebuild_single_sty),
+    (TAG_TEX, prebuild_single_tex),
 ]:
     print_frame(
         metadata[TAG_PROJ_NAME],
-        f"SINGLE {kind} FILE",
+        f"SINGLE {kind.upper()} FILE",
         "(temp. version)"
     )
 
@@ -192,10 +205,17 @@ for kind, prebuilder in [
         source              = metadata[TAG_SRC],
         temp_dir            = metadata[TAG_TEMP],
         sorted_useful_files = sorted_useful_files,
-        dev_lang            = metadata[TAG_MANUAL_DEV_LANG],
-        other_lang          = metadata[TAG_MANUAL_OTHER_LANG],
         versions            = metadata[TAG_VERSIONS],
+        about_langs               = {
+            TAG_MANUAL_DEV_LANG  : metadata[TAG_MANUAL_DEV_LANG],
+            TAG_MANUAL_OTHER_LANG: metadata[TAG_MANUAL_OTHER_LANG],
+            TAG_API_LANGS        : metadata[TAG_API_LANGS],
+        },
     )
+
+
+# if DEBUG:
+#     exit()
 
 
 # ------------------- #
@@ -211,6 +231,11 @@ def ugly_hack(content):
     content = content.replace(
         "{examples/listing/xyz.tex}",
         "{examples-listing-xyz.tex}",
+    )
+
+    content = content.replace(
+        "{../main/tutodoc-locale",
+        "{tutodoc-locale",
     )
 
     return content

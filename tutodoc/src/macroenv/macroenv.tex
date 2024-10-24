@@ -1,14 +1,13 @@
-\documentclass[10pt, a4paper]{article}
+\documentclass[10pt, a4paper]{../main/main}
 
 \input{../preamble.cfg.tex}
 
-\usepackage[lang = french]{../main/main}
-\usepackage{../listing/listing}
-\usepackage{../focus/focus}
+\usepackage{../admonitions/admonitions.cls}
+\usepackage{../listing/listing.cls}
 
 % TESTING LOCAL IMPLEMENTATION %
 
-\usepackage{\jobname}
+\usepackage{\jobname.cls}
 
 
 \begin{document}
@@ -30,13 +29,13 @@ Enfin \tdocenv*[{[opt1]<opt2>}]{env}...
 
 
 \begin{tdocrem}
-	Contrairement à \tdocmacro{tdocinlatex}, les macros \tdocmacro{tdocenv} et \tdocmacro{tdocenv*} ne colorent pas le texte produit.
+    Contrairement à \tdocmacro{tdocinlatex}, les macros \tdocmacro{tdocenv} et \tdocmacro{tdocenv*} ne colorent pas le texte produit.
     De plus, \tdocinlatex{\tdocenv{monenv}} produit \tdocenv{monenv} avec des espaces afin d'autoriser des retours à la ligne si besoin.
 \end{tdocrem}
 
 
 \begin{tdocwarn}
-	L'argument optionnel de la macro \tdocmacro{tdocenv} est copié-collé
+    L'argument optionnel de la macro \tdocmacro{tdocenv} est copié-collé
     \footnote{
         Se souvenir que tout est possible ou presque dorénavant.
     }

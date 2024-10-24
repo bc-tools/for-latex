@@ -139,7 +139,7 @@ Use of path::''doc-header.cfg'' instead of path::''doc-header.tex''.
 -----
 
 [[:api:]]
-Focus: the use of verbatim content was no longer possible with the latest version of the \env ''bdocexa''.
+Highlight: the use of verbatim content was no longer possible with the latest version of the \env ''bdocexa''.
 
 
 --------
@@ -162,7 +162,7 @@ Avoid unwanted \pdf changes: a \bash file added (but later the job will be done 
 -------
 
 [[:api:]]
-Focusing examples.
+Highlighting examples.
 
     1) The \env ''bdocexa*'' has been removed
 
@@ -181,7 +181,7 @@ Focusing examples.
 --------
 
 [[:api:]]
-Focus: a full list of \envs has been build by following the choices made by cf::''asciidoctor ; https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions''.
+Highlight: a full list of \envs has been build by following the choices made by cf::''asciidoctor ; https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions''.
 
     1) Unchanged.
 

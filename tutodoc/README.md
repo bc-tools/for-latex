@@ -1,10 +1,10 @@
-The `LaTeX` package `tutodoc`
-=============================
+The `LaTeX` class `tutodoc`
+===========================
 
 About `tutodoc`
 ---------------
 
-This package proposes some macros to write human documentations of `LaTeX` packages with a tutorial-like flavour.
+This class proposes some settings and macros to write human documentations of `LaTeX` packages and classes with a tutorial-like flavour.
 
 
 License
@@ -13,16 +13,8 @@ License
 This project may be distributed and/or modified under the conditions of the GNU 3 License.
 
 
-Contact
--------
-
-**Author.**
-
-  * Christophe Bal
-  * projetmbc@gmail.com
-
-
-**WEB pages.**
+WEB pages
+---------
 
   * `CTAN`: https://ctan.org/pkg/tutodoc
   * Repository: https://github.com/bc-tools/for-latex/tree/main/tutodoc

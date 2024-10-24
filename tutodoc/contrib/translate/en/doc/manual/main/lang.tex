@@ -1,0 +1,42 @@
+\documentclass[10pt, a4paper]{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+% --------------- %
+% -- IMPORTANT -- %
+% --------------- %
+%
+% See the French version of this file for the text to be used
+% for languages other than English.
+
+
+\begin{document}
+
+\section{What language is used by the \thisproj\ class?}
+
+This documentation loads the \tdocpack{babel} package via \tdocinlatex|\usepackage[english]{babel}|\,.
+As a result, the \thisproj\ class identifies \tdocinlatex|en| as the main language used by \tdocpack{babel}.%.
+\footnote{
+    Technically, we use \tdocinlatex|\BCPdata{language}| which returns a language in short format.
+}
+As this language is included in the list of languages taken into account, see below, the \thisproj\ class will produce the expected effects.
+% Do not touch the following placeholder.
+<<API-LANGS>>
+
+
+\begin{tdoccaut}
+    If the choice of main language is not made in the preamble, the mechanism used will fail with unintended side effects (see warning that follows).
+\end{tdoccaut}
+
+
+\begin{tdocwarn}
+    When a language is not supported by \thisproj, a warning message is issued, and English is selected as the language for \thisproj.
+\end{tdocwarn}
+
+
+\begin{tdocnote}
+    The mechanism used should be compatible with the \tdocpack{polyglossia} package.
+\end{tdocnote}
+
+\end{document}

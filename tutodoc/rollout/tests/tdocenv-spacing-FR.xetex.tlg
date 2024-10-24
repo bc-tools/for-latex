@@ -48,6 +48,7 @@ Completed box being shipped out [1]
 ....\special{pdf:minorversion 5}
 ....\special{pdf:docview<</OpenAction[@page1/Fit]/PageMode/UseOutlines>>}
 ....\special{pdf:dest (Doc-Start) [@thispage /XYZ @xpos @ypos null]}
+....\write1{\babel@aux{french}{}}
 ....\glue(\topskip) 3.06
 ....\hbox(6.94+2.28998)x472.03123, glue set 349.11482fil
 .....\hbox(0.0+0.0)x0.0

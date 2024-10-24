@@ -9,52 +9,76 @@ NOW
 
 > ---------------------------- <
 
+texfacto-poc
 
--------
-:break:
--------
+    ---> insertion brutale de filecontents (cf les thèmes)
 
-[[:api:]]
-Pck --> cls ???
+    ---> theme gallery : besoin d'un build depuis les trads!!!!
+
+    ---> css à gérer : à applatir dans code src et ignorer pour les contribs !
+
+    ---> prise en compte desc pour build.lua
 
 
+> ---------------------------- <
+
+THÈMES
+
+mettre aussi
+
+
+    \begin{itemize}
+    	\item La couleur de fond est fournie par \tdocmacro{tdocbackcolor}.
+
+    	\item La couleur des titres et des lignes est fournie par \tdocmacro{tdocdarkcolor}.
+    \end{itemize}
+
+    Ces macros développables admettent les codes suivants.
+
+    \begin{tdoclatex}[code]
+% Argument 1 : de façon optionnelle, on peut indiquer la quantité de couleur
+%              relativement au noir.
+%              Il est en général inutile de modifier ce paramètre !
+% Argument 2 : une couleur au format xcolor.
+\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
+
+% Argument 1 : de façon optionnelle, on peut indiquer le taux de transparence.
+%              Il est en général inutile de modifier ce paramètre !
+% Argument 2 : une couleur au format xcolor.
+\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
+    \end{tdoclatex}
+
+
+    --> intégerre cela dans tefacto-POC
+
+    --> ajout de macro du type newpage met avec tag qui agisse uniquement si la thème est choisi
+
+
+> ---------------------------- <
+
+IMPORTS
+
+    --> ATTENTION le lieu des imports est aussi celui de la gestiond es options : il faut donc aussi une section dédier à le gestiond es options de pack/cls qui sera toujours au début ????
+
+    --> nettoyer les doublons en les comprant
+
+    --> créer au passage un fichier  DEPENNDS.yaml des dépendances ventuellement vide pour indiquer els depndances ordonnées !
+    on le construit auto pour ce qui est utilisé, et on propose un clé pour indiquer des ordres d'imports imposés, cette partie n'atant jmaais touchée par texfacto
+
+
+> ---------------------------- <
+
+LANG
+
+    --> les trads dans la doc : faire uns cript qui gère cela automatiquement !
+
+    --> ref à https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags ???
 
 
 
 -----
 LATER
 -----
-
-> ---------------------------- <
-
-cleaner code
-
-    ---> latex3 strict pour showcase et listinginput
-
-    ---> respecter mes specs latex : on isole les messages par exemple!
-
-
-
-
-> ---------------------------- <
-
-note and co
-
-    --> différents mef possible ?
-        OK quand je ferais une classe : on choisi le CCS templ et on forunit alors les macro et réglage attendus; toit simplement !
-
-    --> Numéroter ?
-
-
-> ---------------------------- <
-
-focus
-
-    ---> nonb as a package option
-
-    ---> "choice" option ''nb/nonb'' poir tous les cas mais en choissisant de numéroté que les exemples par défaut
-
-    ---> code auto  mêm si c'est fixé a priori
 
 
 > ---------------------------- <

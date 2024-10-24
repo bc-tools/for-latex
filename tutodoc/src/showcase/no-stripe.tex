@@ -1,15 +1,14 @@
-\documentclass[10pt, a4paper]{article}
+\documentclass[10pt, a4paper]{../main/main}
 
 \input{../preamble.cfg.tex}
 
-\usepackage[lang = french]{../main/main}
-\usepackage{../macroenv/macroenv}
-\usepackage{../listing/listing}
-\usepackage{../focus/focus}
+\usepackage{../admonitions/admonitions.cls}
+\usepackage{../listing/listing.cls}
+\usepackage{../macroenv/macroenv.cls}
 
 % TESTING LOCAL IMPLEMENTATION %
 
-\usepackage{showcase}
+\usepackage{showcase.cls}
 
 
 \begin{document}
@@ -34,15 +33,12 @@ Il est possible de ne pas utiliser une bande colorée comme nous allons le voir 
 \end{tdocexa}
 
 
-% ------------------ %
-
-
-\begin{tdocexa}[Changer la couleur et/ou les textes par défaut]
+\begin{tdocexa}[Changer les couleurs et/ou les textes par défaut]
     \leavevmode
 
     \tdoclatexinput[code]{examples/showcase/no-clrstrip-customized.tex}
 
-    Ceci produira ce qui suit.
+    Ceci produira l'horreur suivante.
 
     \medskip
 

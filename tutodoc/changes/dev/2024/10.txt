@@ -2,6 +2,295 @@
 
 
 ==
+24  (1.6.0-rc.1)   ??
+==
+
+--------
+:fordev:
+--------
+
+[[:flow:]]   ??
+The ugly \texfacto \poc has been updated to take care of the gallery of themes. This allows to publish the new version.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: explanations about the use of the ''wide'' option from the \enumitem \pack (useful with admonition \envs).
+
+
+// ---------- //
+
+
+==
+23  (1.6.0-beta.4)
+==
+
+-----
+:new:
+-----
+
+[[:doc:]]
+Manual: a section talks about the themes, and also adds at the very end of the manual the results obtained according to a chosen theme.
+
+
+// ---------- //
+
+
+==
+23  (1.6.0-beta.3)
+==
+
+-------
+:break:
+-------
+
+[[:api:]]
+Here are the breaking changes.
+
+    1) Showcase: the key ''color'' has been renamed ''colstripe''.
+
+    1) Themes: the color ''tdoclinkcolor'' becomes ''tutodoc@link@color'' such as to avoid unwanted changes by a common user.
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+Themes.
+
+    1) Draft versions look good. This concerns the following folders.
+
+        * path::''admonitions''
+        * path::''listing''
+        * path::''main''
+        * path::''showcase''
+        * path::''version-n-change''
+
+    1) Showcase: addition of a new missing option ''coltext'' to change the text color (the themes need this new option).
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: the new options for the \env ''showcase'' have been documented (but not yet the ''theme'' option of the class).
+
+
+// ---------- //
+
+
+==
+21  (1.6.0-beta.2)
+==
+
+--------
+:update:
+--------
+
+[[:api:]]
+Themes: the macro ``\tdoclinkcolor`` becomes ''tdoclinkcolor'' an \xcolor color.
+
+
+// ---------- //
+
+
+==
+20  (1.6.0-beta.1)
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+Themes: a \1st draft version just for admonitions looks good.
+
+
+// ---------- //
+
+
+==
+19  (1.5.0-rc.1)
+==
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: the last \chges appear in the first page of the \doc.
+
+
+// ---------- //
+
+
+==
+17  (1.5.0-beta.4)
+==
+
+--------
+:fordev:
+--------
+
+[[:test:]]
+Migration from the dead path::''sty'' \proj to the new path::''cls'' one.
+
+
+// ---------- //
+
+
+==
+12  (1.5.0-beta.3)
+==
+
+--------
+:update:
+--------
+
+[[:doc: & :flow:]]
+Manual: the translation process has been simplified on the translator's side.
+
+
+--------
+:fordev:
+--------
+
+[[:update:]]
+Error \msgs.
+
+    1) The \src file name is next to the \pck one in the begining of error \msgs.
+
+    1) The \src file name is used as a prefix for the internal message names to avoid conflict internally.
+
+
+// ---------- //
+
+
+==
+11
+==
+
+-----
+:fix:
+-----
+
+[[:api:]]
+Highlight: the colored frames didn't color the text after a page break.
+
+
+--------
+:fordev:
+--------
+
+[[:tech:]]
+\Tech \doc: the positional \args have been "named".
+
+
+// ---------- //
+
+
+==
+08
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+New translation: a Spanish version added.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: the new section explaining how to contribute needs some clarifications.
+
+
+// ---------- //
+
+
+==
+07
+==
+
+-----
+:new:
+-----
+
+[[:doc:]]
+Manual: a new section explains how to contribute.
+
+
+-------
+:break:
+-------
+
+[[:api:]]
+\Contribs: the \dir \struct has been made translator-friendly.
+
+
+// ---------- //
+
+
+==
+05  (1.5.0-beta.2)
+==
+
+------
+:desc:
+------
+
+The \thisproj package is becoming the \thisproj class.
+
+
+-------
+:break:
+-------
+
+[[:api:]]
+One major \chge and a minor one.
+
+    1) The incoming class doesn't have any \lang option. Instead, we look for the \latex "kernel" value of ''\BCPdata{language}'' that is managed by the \packs ''babel'' and ''polyglossia''.
+
+    1) ''\tdocruler'': the \sign of this macro has been changed from ''{<text>}{<color>}'' to ''[<color>]{<text>}'' with the black as the default color.
+
+
+-----
+:fix:
+-----
+
+[[:api:]]
+Dates untranslated: the \args was not correctly sent to ''\tutodoc@new@change@margin'' from ''\tdocdate''.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: examples like ''\tdocinlatex{\mymacro[...]{...}}'' have been added to show the power of the macro ''\tdocinlatex''.
+
+
+--------
+:fordev:
+--------
+
+[[:facto:]]
+The code has been cleaned to follow the \l3 recommendations.
+
+
+// ---------- //
+
+
+==
 01  (1.5.0-beta.1)
 ==
 
@@ -10,4 +299,4 @@
 --------
 
 [[:api:]]
-Link color: see the macro ''\tdoclinkcolor'' which expansion is verb::''NavyBlue!85!white'' (the old one was verb::''orange!75!black'').
+Link color: new color verb::''NavyBlue!85!white'' stored inside the macro ''\tdoclinkcolor'' (the previous color was verb::''orange!75!black'').

@@ -1,0 +1,116 @@
+\documentclass[10pt, a4paper]{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+% == FORDOC == %
+
+% Source.
+%    * https://tex.stackexchange.com/a/604698/6880
+
+\NewDocumentCommand{ \tdocDOCbasicinput }{ m }{%
+    Consider the following code.
+
+    \tdoclatexinput[code]{#1}
+
+    This will produce the following.
+
+    \input{#1}
+}
+
+
+\begin{document}
+
+\section{Use cases in \LaTeX}
+
+Documenting a package or class is best done through use cases showing both the code and the corresponding result.
+\footnote{
+    Code is formatted using the \tdocpack{minted} package.
+}
+
+
+%\begin{tdoccaut}
+%    Version 3 of \tdocpack{minted} cannot be used at the moment, as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of minted.
+%
+%\end{tdoccaut}
+
+
+\subsection{\tdocquote{Inline} codes}
+\label{tutodoc-listing-inline}
+
+The \tdocmacro{tdocinlatex} macro
+\footnote{
+    The name of the macro \tdocmacro{tdocinlatex} comes from \tdocquote{\tdocprewhy{in.line} \LaTeX}.
+}
+can be used to type inline code in a similar way to \tdocmacro{verb} or like a standard macro (see brace management in the last case below).
+Here are some examples.
+
+
+\begin{tdoclatex}[sbs]
+    1: \tdocinlatex|$a^b = c$|               \\
+    2: \tdocinlatex+\tdocinlatex|$a^b = c$|+ \\
+    3: \tdocinlatex{\tdocinlatex{$a^b = c$}}
+\end{tdoclatex}
+
+
+\begin{tdocnote}
+    The \tdocmacro{tdocinlatex} macro can be used in a footnote: see below.
+    \footnote{
+        \tdocinlatex+$minted = TOP$+ has been typed \tdocinlatex|\tdocinlatex+$minted = TOP$+| in this footnote...
+    }
+    In addition, a background color is deliberately used to subtly highlight the codes \tdocinlatex#\LaTeX#\,.
+\end{tdocnote}
+
+
+% ------------------ %
+
+
+\subsection{Directly typed codes}
+
+\begin{tdocexa}[Side by side]
+    Using \tdocenv[{[sbs]}]{tdoclatex}, we can display a code and its rendering side by side.
+    \tdocDOCbasicinput{examples/listing/ABC.tex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Following]
+    \tdocenv{tdoclatex} produces the following result, which corresponds to the default option \tdocinlatex#std#\,.
+    \footnote{
+        \tdocinlatex{std} refers to the \tdocquote{standard} behaviour of \tdocpack{tcolorbox} in relation to the \tdocpack{minted} library.
+    }
+
+    \begin{tdoclatex}
+        $A = B + C$
+    \end{tdoclatex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Just the code]
+    Via \tdocenv[{[code]}]{tdoclatex}, we'll just get the code as shown below.
+
+    \begin{tdoclatex}[code]
+        $A = B + C$
+    \end{tdoclatex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocwarn}
+    With default formatting, if the code begins with an opening bracket, the default option must be explicitly indicated.
+    \tdocDOCbasicinput{examples/listing/strange.tex}
+
+    \smallskip
+
+    Another method is to use the \tdocmacro{string} primitive.
+    \tdocDOCbasicinput{examples/listing/strange-bis.tex}
+\end{tdocwarn}
+
+\end{document}

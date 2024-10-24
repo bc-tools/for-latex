@@ -1,0 +1,56 @@
+\documentclass[10pt, a4paper]{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\section{Indicate changes}
+
+To make it easier to monitor a project, it is essential to provide a history indicating the changes made when a new version is published.
+
+
+
+\subsection{When?}
+
+You can either date something, or version it, in which case the version number can be dated.
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Dating new products]
+    The \tdocmacro{tdocdate} macro is used to indicate a date in the margin, as in the following example.
+
+    \tdoclatexshow{examples/version-n-change/dating.tex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Versioning new features, possibly with a date]
+    Associating a version number with a new feature is done using the \tdocmacro{tdocversion} macro, with the colour and date being optional arguments.
+
+    \tdoclatexshow{examples/version-n-change/versioning.tex}
+\end{tdocexa}
+
+
+\begin{tdocimp}
+    \begin{enumerate}[wide]
+        \item The \tdocmacro{tdocdate} and \tdocmacro{tdocversion} macros require two compilations.
+
+        \item The final rendering of the dates takes into account the language detected by \thisproj{}: for example, if French is selected, the dates will be displayed in the format \texttt{DD/MM/YYYY}.
+    \end{enumerate}
+\end{tdocimp}
+
+
+\begin{tdocwarn}
+    Only the use of the digital format \tdocinlatex+YYYY-MM-DD+ is verified,
+    \footnote{
+        Technically, checking the validity of a date using \LaTeX3 presents no difficulty.
+    }
+    and this is a choice! Why? Quite simply because dating and versioning explanations should be done semi-automatically to avoid any human bugs.
+\end{tdocwarn}
+
+\end{document}
