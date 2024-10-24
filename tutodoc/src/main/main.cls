@@ -195,7 +195,7 @@
 
 % -- LINKS AND CO. -- %
 
-\input{../main/css/main-\tutodoc@theme.cls.sty}
+\input{../main/css/\tutodoc@theme.cls.sty}
 
 \hypersetup{
   colorlinks,
