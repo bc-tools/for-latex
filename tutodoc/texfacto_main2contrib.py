@@ -243,8 +243,12 @@ print("+ Copying manual TEX files...")
 
 all_tex_files = [SRC_DIR / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"]
 
-# UGLY HACK
-all_tex_files.append(SRC_DIR / "theme" / "template-theme-showcase.tex")
+# Add extra files to be translated.
+
+for srcfile in SRC_DIR.glob("**/tmpl-*"):
+    print(srcfile)
+
+exit()
 
 for onedir, sorted2analyze in sorted_useful_files.items():
     for srcfile in sorted2analyze[TAG_FILE]:

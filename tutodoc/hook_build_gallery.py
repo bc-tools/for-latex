@@ -8,13 +8,22 @@ from pathlib import Path
 THIS_DIR = Path(__file__).parent
 MAIN_CSS_DIR = THIS_DIR.parent / "main" / "css"
 
-MANUAL_FILE = THIS_DIR / "gallery.tex"
+MANUAL_FILE = THIS_DIR / "debug-gallery.tex"
 
-TEMPLATE_SWOWCASE_COLOR = THIS_DIR / "template-theme-showcase.tex"
 
 TEMPLATE_SWOWCASE_THEME = "color"
 
+TEMPLATE_SWOWCASE_COLOR = THIS_DIR / "tmpl-theme-showcase-color.tex"
 TEX_CODE_SWOWCASE_COLOR = TEMPLATE_SWOWCASE_COLOR.read_text()
+
+TEMPLATE_ANNEX_PAGE = THIS_DIR / "tmpl-theme-annex-page.tex"
+TEMPLATE_ANNEX_PAGE = TEMPLATE_ANNEX_PAGE.read_text()
+
+_ , _ , TEMPLATE_ANNEX_PAGE = TEMPLATE_ANNEX_PAGE.partition(r"\begin{document}")
+TEMPLATE_ANNEX_PAGE, _ , _  = TEMPLATE_ANNEX_PAGE.partition(r"\end{document}")
+
+TEMPLATE_ANNEX_PAGE = TEMPLATE_ANNEX_PAGE.strip()
+
 
 TEMPLATE_FOR_MANUAL = r"""
 <<THE-FILE-CONTENTS>>
@@ -34,20 +43,7 @@ TEMPLATE_FOR_MANUAL = r"""
 % An annex page for a pretty doc.
 \newpage
 
-% Source.
-%     + https://tex.stackexchange.com/a/8547/6880
-\bgroup
-	\titleformat{\section}[block]{\Huge\bfseries\filcenter}{}{1em}{}
-	\phantomsection\section*{Annexe -- Galerie des thèmes}%
-	\label{tutodoc-theme-gallery}
-	\addcontentsline{toc}{section}{Annexe -- Galerie des thèmes}%
-\egroup
-
-\bigskip
-
-\begin{tdocnote}
-	Chaque exemple est un \pdf\ de deux pages exactement qui a été directement inséré dans ce document (ne soyez donc pas surpris par les numéros de page).
-\end{tdocnote}
+<<ANNEX-PAGE>>
 
 \newpage
 
@@ -154,6 +150,7 @@ for theme in all_themes:
 tex_code = multireplace(
     text         = TEMPLATE_FOR_MANUAL,
     replacements = {
+        rafterit("ANNEX-PAGE")       : TEMPLATE_ANNEX_PAGE,
         rafterit("THE-FILE-CONTENTS"): jointhis(file_contents_code),
         rafterit("BUILD-PDFs")       : jointhis(build_pdfs_code),
         rafterit("THE-THEMES")       : jointhis(include_pdfs),
