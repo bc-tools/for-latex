@@ -1,5 +1,5 @@
 \begin{filecontents*}[overwrite]{gallery-showcase-bw.tex}
-\documentclass[a4paper, 12pt, theme = bw]{../main/main}
+\documentclass[10pt, a4paper, theme = bw]{../main/main}
 
 \input{../preamble.cfg.tex}
 
@@ -7,12 +7,9 @@
 \usepackage{../listing/listing.cls}
 \usepackage{../version-n-change/version-n-change.cls}
 
-
-% == FORDOC == %
-
 \newcommand\thisstyle{bw}
 
-\newcommand\myexarktext{
+\newcommand\myexrmktext{
     \tdocdate{2024-10-23}
     Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
 }
@@ -41,13 +38,13 @@
 \seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
     \subsection*{tdoc#1}
 
-    \myexarktext
+    \myexrmktext
 
     \begin{tdoc#1}
         \myhighlightedtext
     \end{tdoc#1}
 
-    \myexarktext
+    \myexrmktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{
@@ -100,7 +97,7 @@ $\pi \neq \frac{3}{14}$.
 \end{filecontents*}
 
 \begin{filecontents*}[overwrite]{gallery-showcase-color.tex}
-\documentclass[a4paper, 12pt, theme = color]{../main/main}
+\documentclass[10pt, a4paper, theme = color]{../main/main}
 
 \input{../preamble.cfg.tex}
 
@@ -108,12 +105,9 @@ $\pi \neq \frac{3}{14}$.
 \usepackage{../listing/listing.cls}
 \usepackage{../version-n-change/version-n-change.cls}
 
-
-% == FORDOC == %
-
 \newcommand\thisstyle{color}
 
-\newcommand\myexarktext{
+\newcommand\myexrmktext{
     \tdocdate{2024-10-23}
     Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
 }
@@ -142,13 +136,13 @@ $\pi \neq \frac{3}{14}$.
 \seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
     \subsection*{tdoc#1}
 
-    \myexarktext
+    \myexrmktext
 
     \begin{tdoc#1}
         \myhighlightedtext
     \end{tdoc#1}
 
-    \myexarktext
+    \myexrmktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{
@@ -201,7 +195,7 @@ $\pi \neq \frac{3}{14}$.
 \end{filecontents*}
 
 \begin{filecontents*}[overwrite]{gallery-showcase-dark.tex}
-\documentclass[a4paper, 12pt, theme = dark]{../main/main}
+\documentclass[10pt, a4paper, theme = dark]{../main/main}
 
 \input{../preamble.cfg.tex}
 
@@ -209,12 +203,9 @@ $\pi \neq \frac{3}{14}$.
 \usepackage{../listing/listing.cls}
 \usepackage{../version-n-change/version-n-change.cls}
 
-
-% == FORDOC == %
-
 \newcommand\thisstyle{dark}
 
-\newcommand\myexarktext{
+\newcommand\myexrmktext{
     \tdocdate{2024-10-23}
     Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
 }
@@ -243,13 +234,13 @@ $\pi \neq \frac{3}{14}$.
 \seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
     \subsection*{tdoc#1}
 
-    \myexarktext
+    \myexrmktext
 
     \begin{tdoc#1}
         \myhighlightedtext
     \end{tdoc#1}
 
-    \myexarktext
+    \myexrmktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{
@@ -302,7 +293,7 @@ $\pi \neq \frac{3}{14}$.
 \end{filecontents*}
 
 \begin{filecontents*}[overwrite]{gallery-showcase-draft.tex}
-\documentclass[a4paper, 12pt, theme = draft]{../main/main}
+\documentclass[10pt, a4paper, theme = draft]{../main/main}
 
 \input{../preamble.cfg.tex}
 
@@ -310,12 +301,9 @@ $\pi \neq \frac{3}{14}$.
 \usepackage{../listing/listing.cls}
 \usepackage{../version-n-change/version-n-change.cls}
 
-
-% == FORDOC == %
-
 \newcommand\thisstyle{draft}
 
-\newcommand\myexarktext{
+\newcommand\myexrmktext{
     \tdocdate{2024-10-23}
     Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
 }
@@ -344,13 +332,13 @@ $\pi \neq \frac{3}{14}$.
 \seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
     \subsection*{tdoc#1}
 
-    \myexarktext
+    \myexrmktext
 
     \begin{tdoc#1}
         \myhighlightedtext
     \end{tdoc#1}
 
-    \myexarktext
+    \myexrmktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{
@@ -445,23 +433,23 @@ $\pi \neq \frac{3}{14}$.
 
 % The gallery starts here...
 \includepdf[
-    pages=1-2,
-    fitpaper=true
+	pages=1-2,
+	fitpaper=true
 ]{gallery-showcase-bw}
 
 \includepdf[
-    pages=1-2,
-    fitpaper=true
+	pages=1-2,
+	fitpaper=true
 ]{gallery-showcase-color}
 
 \includepdf[
-    pages=1-2,
-    fitpaper=true
+	pages=1-2,
+	fitpaper=true
 ]{gallery-showcase-dark}
 
 \includepdf[
-    pages=1-2,
-    fitpaper=true
+	pages=1-2,
+	fitpaper=true
 ]{gallery-showcase-draft}
 
 } % AT-END-DOCUMENT - END

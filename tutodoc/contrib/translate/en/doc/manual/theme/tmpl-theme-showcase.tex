@@ -4,7 +4,7 @@
 
 \newcommand\thisstyle{color}
 
-\newcommand\myexarktext{
+\newcommand\myexrmktext{
     \tdocdate{2024-10-23}
     In the flow of text, it's always useful to be able to include examples and comments that complement the main content.
 }
@@ -34,13 +34,13 @@
 \seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
     \subsection*{tdoc#1}
 
-    \myexarktext
+    \myexrmktext
 
     \begin{tdoc#1}
         \myhighlightedtext
     \end{tdoc#1}
 
-    \myexarktext
+    \myexrmktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{
