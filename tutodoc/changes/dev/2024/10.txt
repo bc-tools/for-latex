@@ -2,15 +2,23 @@
 
 
 ==
-24  (1.6.0-rc.1)   ??
+25  (1.6.0-rc.1)   ??
 ==
 
 --------
 :fordev:
 --------
 
-[[:flow:]]   ??
-The ugly \texfacto \poc has been updated to take care of the gallery of themes. This allows to publish the new version.
+[[:flow:]]
+The ugly \texfacto \poc has been updated to meet the following new requirements.
+
+    1) Use of post hooks.
+
+    1) ???
+    Templates to be translated but not used directly by the manual \doc.
+
+    1) ???
+    \css like features for themes.
 
 
 --------
