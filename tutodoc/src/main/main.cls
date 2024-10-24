@@ -59,7 +59,7 @@
 \RequirePackage{xcolor}%
                [2022/06/12]
 
-\RequirePackage{hyperref}%
+\RequirePackage{hyperref}% To load after titlesec!
                [2023-02-07]
 
 

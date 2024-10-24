@@ -20,7 +20,7 @@
     }
 }
 
-\NewDocumentEnvironment{ tdocshowcase }
+\NewDocumentEnvironment{ tdocshowcaseDOC }
                        { O{ Début du rendu dans cette doc. }
                          O{ Fin du rendu dans cette doc. } }{
         \tdocextrarulerDOC{#1}
@@ -87,16 +87,17 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
 
 
-\subsection{Codes importés et mis en situation} \label{tutodoc-latexshow}
+\subsection{Codes importés et mis en situation}
+\label{tutodoc-latexshow}
 
 \begin{tdocexa}[Mise en situation]
     Ce qui suit s'obtient via \tdocinlatex+\tdoclatexshow{examples-listing-xyz.tex}+.
 
     \medskip
 
-    \begin{tdocshowcase}
+    \begin{tdocshowcaseDOC}
         \tdoclatexshow{examples/listing/xyz.tex}
-    \end{tdocshowcase}
+    \end{tdocshowcaseDOC}
 \end{tdocexa}
 
 
@@ -110,9 +111,9 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \medskip
 
-    \begin{tdocshowcase}
+    \begin{tdocshowcaseDOC}
         \tdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}
-    \end{tdocshowcase}
+    \end{tdocshowcaseDOC}
 \end{tdocexa}
 
 
@@ -130,9 +131,9 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \medskip
 
-    \begin{tdocshowcase}
+    \begin{tdocshowcaseDOC}
         \input{examples/listing/latexshow-options.tex}
-    \end{tdocshowcase}
+    \end{tdocshowcaseDOC}
 \end{tdocexa}
 
 \end{document}
