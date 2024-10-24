@@ -10,6 +10,11 @@ NOW
 
 > ---------------------------- <
 
+test à modifier + next change à documenter
+
+
+> ---------------------------- <
+
 texfacto-poc
 
     ---> Templates to be translated but not used directly by the manual \doc.

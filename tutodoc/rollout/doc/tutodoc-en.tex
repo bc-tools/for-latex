@@ -6,8 +6,6 @@
 \begin{filecontents*}[overwrite]{gallery-showcase-bw.tex}
 \documentclass[10pt, a4paper, theme = bw]{tutodoc}
 
-\input{../preamble.cfg.tex}
-
 \newcommand\thisstyle{bw}
 
 \newcommand\myexrmktext{
@@ -99,8 +97,6 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 
 \begin{filecontents*}[overwrite]{gallery-showcase-color.tex}
 \documentclass[10pt, a4paper, theme = color]{tutodoc}
-
-\input{../preamble.cfg.tex}
 
 \newcommand\thisstyle{color}
 
@@ -194,8 +190,6 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 \begin{filecontents*}[overwrite]{gallery-showcase-dark.tex}
 \documentclass[10pt, a4paper, theme = dark]{tutodoc}
 
-\input{../preamble.cfg.tex}
-
 \newcommand\thisstyle{dark}
 
 \newcommand\myexrmktext{
@@ -287,8 +281,6 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 
 \begin{filecontents*}[overwrite]{gallery-showcase-draft.tex}
 \documentclass[10pt, a4paper, theme = draft]{tutodoc}
-
-\input{../preamble.cfg.tex}
 
 \newcommand\thisstyle{draft}
 
@@ -695,6 +687,8 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \usepackage{multicol}
 \usepackage{wrapfig2}
 
+\usepackage{pdfpages}
+
 \setlength{\parindent}{0em}
 
 % Some useful commands.
@@ -1006,7 +1000,7 @@ As this language is included in the list of languages taken into account, see be
         \item \tdocinlatex|fr| : French.
     \end{itemize}
 \end{multicols}
-
+                    
 
 
 \begin{tdoccaut}
@@ -1506,7 +1500,8 @@ Here are some examples.
 
 \begin{tdocexa}[Side by side]
     Using \tdocenv[{[sbs]}]{tdoclatex}, we can display a code and its rendering side by side.
-    \tdocbasicinputDOC{examples/listing/ABC.tex}
+    \tdocbasicinputDOC{examples-listing-ABC.tex}
+
 \end{tdocexa}
 
 
@@ -1542,12 +1537,14 @@ Here are some examples.
 
 \begin{tdocwarn}
     With default formatting, if the code begins with an opening bracket, the default option must be explicitly indicated.
-    \tdocbasicinputDOC{examples/listing/strange.tex}
+    \tdocbasicinputDOC{examples-listing-strange.tex}
+
 
     \smallskip
 
     Another method is to use the \tdocmacro{string} primitive.
-    \tdocbasicinputDOC{examples/listing/strange-bis.tex}
+    \tdocbasicinputDOC{examples-listing-strange-bis.tex}
+
 \end{tdocwarn}
 
 

@@ -94,7 +94,7 @@ def multireplace(
 # TeXfacto will only send us the folder conaining the fole associated to the hooks.
 def theme_gallery(
     curdir,
-    isfordebug = False
+    fordebug = False
 ):
 # Template for the showcase.
     tmpl_theme = "color"
@@ -110,7 +110,7 @@ def theme_gallery(
 
     # print(tmpl_showcase_code[:200]);print('+++')
 
-    if not isfordebug:
+    if not fordebug:
         tmpl_showcase_code = tmpl_showcase_code.replace(
             r"""
 \documentclass[10pt, a4paper, theme = color]{../main/main}
@@ -127,6 +127,8 @@ def theme_gallery(
 \input{../preamble.cfg.tex}
             """.strip()
         )
+
+    # print(tmpl_showcase_code);exit()
 
 # Template for the annex front page.
     tmpl_annex_code = curdir / "tmpl-theme-annex-page.tex"
@@ -226,7 +228,7 @@ if __name__ == "__main__":
 
     virtual_resrc, tex_code = theme_gallery(
         curdir = src_theme_dir,
-        isfordebug   = True
+        fordebug   = True
     )
 
     file_contents_code = [

@@ -1,0 +1,580 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+Completed box being shipped out [1]
+\vbox(686.8619+0.0)x470.89313
+.\hbox(0.0+0.0)x0.0
+..\special{pdf:docinfo<</Title()/Subject()/Creator(LaTeX with hyperref)/Author()/Keywords()>>}
+.\hbox(0.0+0.0)x0.0
+..\kern -72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil
+...\kern -72.26999
+...\hbox(0.0+0.0)x0.0
+....\hbox(0.0+0.0)x0.0, glue set 72.26999fil, shifted 72.26999
+.....\kern -72.26999
+.....\special{pdf:obj @pgfcolorspaces <<>>}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\special{pdf:put @pgfcolorspaces <<  /pgfprgb [/Pattern /DeviceRGB]  >>}
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\vbox(0.0+0.0)x0.0, glue set 39.14185fil
+..\kern 0.0
+..\kern -38.1381
+..\kern -1.00374
+..\hbox(0.0+0.0)x0.0, glue set 2.14185fil
+...\kern 0.0
+...\kern -1.1381
+...\kern -1.00374
+...\special{pdf:dest (page.1) [@thispage /XYZ @xpos @ypos null]}
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(686.8619+0.0)x470.89313
+..\glue -38.1381
+..\vbox(725.0+0.0)x472.03123, shifted -1.1381
+...\vbox(12.0+0.0)x472.03123, glue set 12.0fil
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x472.03123
+.....\special{color push gray 0}
+.....\hbox(0.0+0.0)x472.03123
+.....\special{color pop}
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(658.0+0.0)x472.03123, glue set 284.88245fil
+....\write-{}
+....\special{color push gray 0}
+....\special{pdf:majorversion 1}
+....\special{pdf:minorversion 5}
+....\special{pdf:outline [-] 1<</Title(\376\377\000E\000x\000a\000m\000p\000l\000e\000\040\000a\000n\000d\000\040\000t\000h\000e\000n\000.)/A<</S/GoTo/D(section.1)>>>>}
+....\special{pdf:outline [-] 1<</Title(\376\377\000E\000x\000a\000m\000p\000l\000e\000\040\000a\000f\000t\000e\000r\000.)/A<</S/GoTo/D(section.2)>>>>}
+....\special{pdf:outline [-] 1<</Title(\376\377\000E\000x\000a\000m\000p\000l\000e\000\040\000-\000\040\000S\000i\000n\000g\000l\000e\000\040\000n\000u\000m\000b\000e\000r\000.)/A<</S/GoTo/D(section.3)>>>>}
+....\special{pdf:outline [-] 1<</Title(\376\377\000R\000e\000m\000a\000r\000k\000\040\000-\000\040\000S\000i\000n\000g\000l\000e\000\040\000n\000u\000m\000b\000e\000r\000.)/A<</S/GoTo/D(section.4)>>>>}
+....\special{pdf:docview<</OpenAction[@page1/Fit]/PageMode/UseOutlines>>}
+....\special{pdf:dest (Doc-Start) [@thispage /XYZ @xpos @ypos null]}
+....\special{pdf:dest (section.1) [@thispage /XYZ @xpos @ypos null]}
+....\glue(\topskip) 0.0
+....\hbox(12.59995+5.40005)x472.03123, glue set 156.37645fil
+.....\rule(12.59995+5.40005)x0.0
+.....\hbox(12.59995+5.40005)x24.9408
+......\special{color push gray 0}
+......\TU/lmr/bx/n/14.4 I.
+......\glue 14.4
+......\rule(12.59995+5.40005)x0.0
+......\glue 0.0
+......\special{color pop}
+.....\TU/lmr/bx/n/14.4 Example
+.....\glue 5.4 plus 2.7 minus 1.79999
+.....\TU/lmr/bx/n/14.4 and
+.....\glue 5.4 plus 2.7 minus 1.79999
+.....\TU/lmr/bx/n/14.4 then.
+.....\kern 0.0
+.....\rule(12.59995+5.40005)x0.0
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0 plus 1.0fil
+....\penalty 10000
+....\write5{\protect \BOOKMARK [1][-]{section.1}{\376\377\000E\000x\000a\000m\000p\000l\000e\000\040\000a\000n\000d\000\040\000t\000h\000e\000n\000.}{}% 1}
+....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {I.}Example and then.}{\thepage }{section.1}\protected@file@percent }}
+....\penalty 10000
+....\penalty 10000
+....\glue 9.913 plus 0.86198
+....\glue 0.0
+....\glue 0.0
+....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{I.1}{tdocexa.1.1}{1}{}{note={}}{}}}}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\lineskip) 1.0
+....\hbox(6.94+1.93999)x472.03123, glue set 357.41121fil
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -12.0
+.......\special{pdf:dest (tdocexa.1.1) [@thispage /XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\special{color push gray 0}
+.....\TU/lmr/bx/n/10 Example
+.....\kern 0.0
+.....\glue 3.83 plus 1.915 minus 1.27666
+.....\TU/lmr/bx/n/10 I.1
+.....\kern 0.0
+.....\TU/lmr/bx/n/10 .
+.....\glue 5.0 plus 1.0 minus 1.0
+.....\special{color pop}
+.....\TU/lmr/m/it/10 Number
+.....\glue 3.58 plus 1.79 minus 1.19333
+.....\TU/lmr/m/it/10 1.
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -9.93999 plus -2.0 minus -4.0
+....\penalty -51
+....\glue 1.93999
+....\glue 8.0 plus 2.0 minus 4.0
+....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{I.2}{tdocexa.1.2}{1}{}{note={}}{}}}}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 3.12001
+....\hbox(6.94+1.93999)x472.03123, glue set 357.41121fil
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -12.0
+.......\special{pdf:dest (tdocexa.1.2) [@thispage /XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\special{color push gray 0}
+.....\TU/lmr/bx/n/10 Example
+.....\kern 0.0
+.....\glue 3.83 plus 1.915 minus 1.27666
+.....\TU/lmr/bx/n/10 I.2
+.....\kern 0.0
+.....\TU/lmr/bx/n/10 .
+.....\glue 5.0 plus 1.0 minus 1.0
+.....\special{color pop}
+.....\TU/lmr/m/it/10 Number
+.....\glue 3.58 plus 1.79 minus 1.19333
+.....\TU/lmr/m/it/10 2.
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -9.93999 plus -2.0 minus -4.0
+....\penalty -51
+....\glue 1.93999
+....\glue 8.0 plus 2.0 minus 4.0
+....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{I.3}{tdocrem.1.3}{1}{}{note={}}{}}}}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 3.12001
+....\hbox(6.94+0.21999)x472.03123, glue set 361.18121fil
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -12.0
+.......\special{pdf:dest (tdocrem.1.3) [@thispage /XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\special{color push gray 0}
+.....\TU/lmr/bx/n/10 Remark
+.....\kern 0.0
+.....\glue 3.83 plus 1.915 minus 1.27666
+.....\TU/lmr/bx/n/10 I.3
+.....\kern 0.0
+.....\TU/lmr/bx/n/10 .
+.....\glue 5.0 plus 1.0 minus 1.0
+.....\special{color pop}
+.....\TU/lmr/m/it/10 Number
+.....\glue 3.58 plus 1.79 minus 1.19333
+.....\TU/lmr/m/it/10 3.
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -8.21999 plus -2.0 minus -4.0
+....\penalty -51
+....\glue 0.21999
+....\glue 8.0 plus 2.0 minus 4.0
+....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{I.4}{tdocexa.1.4}{1}{}{note={}}{}}}}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.84001
+....\hbox(6.94+1.93999)x472.03123, glue set 357.41121fil
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -12.0
+.......\special{pdf:dest (tdocexa.1.4) [@thispage /XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\special{color push gray 0}
+.....\TU/lmr/bx/n/10 Example
+.....\kern 0.0
+.....\glue 3.83 plus 1.915 minus 1.27666
+.....\TU/lmr/bx/n/10 I.4
+.....\kern 0.0
+.....\TU/lmr/bx/n/10 .
+.....\glue 5.0 plus 1.0 minus 1.0
+.....\special{color pop}
+.....\TU/lmr/m/it/10 Number
+.....\glue 3.58 plus 1.79 minus 1.19333
+.....\TU/lmr/m/it/10 4.
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -9.93999 plus -2.0 minus -4.0
+....\penalty -51
+....\glue 1.93999
+....\glue 8.0 plus 2.0 minus 4.0
+....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{I.5}{tdocrem.1.5}{1}{}{note={}}{}}}}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 3.12001
+....\hbox(6.94+0.21999)x472.03123, glue set 361.18121fil
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -12.0
+.......\special{pdf:dest (tdocrem.1.5) [@thispage /XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\special{color push gray 0}
+.....\TU/lmr/bx/n/10 Remark
+.....\kern 0.0
+.....\glue 3.83 plus 1.915 minus 1.27666
+.....\TU/lmr/bx/n/10 I.5
+.....\kern 0.0
+.....\TU/lmr/bx/n/10 .
+.....\glue 5.0 plus 1.0 minus 1.0
+.....\special{color pop}
+.....\TU/lmr/m/it/10 Number
+.....\glue 3.58 plus 1.79 minus 1.19333
+.....\TU/lmr/m/it/10 5.
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -8.21999 plus -2.0 minus -4.0
+....\penalty -51
+....\glue 0.21999
+....\glue 8.0 plus 2.0 minus 4.0
+....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{I.6}{tdocrem.1.6}{1}{}{note={}}{}}}}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.84001
+....\hbox(6.94+0.21999)x472.03123, glue set 361.18121fil
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -12.0
+.......\special{pdf:dest (tdocrem.1.6) [@thispage /XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\special{color push gray 0}
+.....\TU/lmr/bx/n/10 Remark
+.....\kern 0.0
+.....\glue 3.83 plus 1.915 minus 1.27666
+.....\TU/lmr/bx/n/10 I.6
+.....\kern 0.0
+.....\TU/lmr/bx/n/10 .
+.....\glue 5.0 plus 1.0 minus 1.0
+.....\special{color pop}
+.....\TU/lmr/m/it/10 Number
+.....\glue 3.58 plus 1.79 minus 1.19333
+.....\TU/lmr/m/it/10 6.
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -8.21999 plus -2.0 minus -4.0
+....\penalty -300
+....\glue 0.21999
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -8.0 plus -2.0 minus -4.0
+....\glue 15.08499 plus 4.31 minus 0.86198
+....\special{pdf:dest (section.2) [@thispage /XYZ @xpos @ypos null]}
+....\penalty 10000
+....\glue -15.08499 plus -4.31 minus -0.86198
+....\glue 15.08499 plus 4.31 minus 0.86198
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 5.18007
+....\hbox(12.59995+5.40005)x472.03123, glue set 168.04764fil
+.....\rule(12.59995+5.40005)x0.0
+.....\hbox(12.59995+5.40005)x31.42079
+......\special{color push gray 0}
+......\TU/lmr/bx/n/14.4 II.
+......\glue 14.4
+......\rule(12.59995+5.40005)x0.0
+......\glue 0.0
+......\special{color pop}
+.....\TU/lmr/bx/n/14.4 Example
+.....\glue 5.4 plus 2.7 minus 1.79999
+.....\TU/lmr/bx/n/14.4 after.
+.....\kern 0.0
+.....\rule(12.59995+5.40005)x0.0
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0 plus 1.0fil
+....\penalty 10000
+....\write5{\protect \BOOKMARK [1][-]{section.2}{\376\377\000E\000x\000a\000m\000p\000l\000e\000\040\000a\000f\000t\000e\000r\000.}{}% 2}
+....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {II.}Example after.}{\thepage }{section.2}\protected@file@percent }}
+....\penalty 10000
+....\penalty 10000
+....\glue 9.913 plus 0.86198
+....\glue 0.0
+....\glue 0.0
+....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{II.1}{tdocrem.2.1}{1}{}{note={}}{}}}}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\lineskip) 1.0
+....\hbox(6.94+0.10999)x472.03123, glue set 356.50122fil
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -12.0
+.......\special{pdf:dest (tdocrem.2.1) [@thispage /XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\special{color push gray 0}
+.....\TU/lmr/bx/n/10 Remark
+.....\kern 0.0
+.....\glue 3.83 plus 1.915 minus 1.27666
+.....\TU/lmr/bx/n/10 II.1
+.....\kern 0.0
+.....\TU/lmr/bx/n/10 .
+.....\glue 5.0 plus 1.0 minus 1.0
+.....\special{color pop}
+.....\TU/lmr/m/it/10 Number
+.....\glue 3.58 plus 1.79 minus 1.19333
+.....\TU/lmr/m/it/10 1.
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -8.10999 plus -2.0 minus -4.0
+....\penalty -51
+....\glue 0.10999
+....\glue 8.0 plus 2.0 minus 4.0
+....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{II.2}{tdocrem.2.2}{1}{}{note={}}{}}}}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.95001
+....\hbox(6.94+0.21999)x472.03123, glue set 356.50122fil
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -12.0
+.......\special{pdf:dest (tdocrem.2.2) [@thispage /XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\special{color push gray 0}
+.....\TU/lmr/bx/n/10 Remark
+.....\kern 0.0
+.....\glue 3.83 plus 1.915 minus 1.27666
+.....\TU/lmr/bx/n/10 II.2
+.....\kern 0.0
+.....\TU/lmr/bx/n/10 .
+.....\glue 5.0 plus 1.0 minus 1.0
+.....\special{color pop}
+.....\TU/lmr/m/it/10 Number
+.....\glue 3.58 plus 1.79 minus 1.19333
+.....\TU/lmr/m/it/10 2.
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -8.21999 plus -2.0 minus -4.0
+....\penalty -51
+....\glue 0.21999
+....\glue 8.0 plus 2.0 minus 4.0
+....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{II.3}{tdocrem.2.3}{1}{}{note={}}{}}}}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.84001
+....\hbox(6.94+0.21999)x472.03123, glue set 356.50122fil
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -12.0
+.......\special{pdf:dest (tdocrem.2.3) [@thispage /XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\special{color push gray 0}
+.....\TU/lmr/bx/n/10 Remark
+.....\kern 0.0
+.....\glue 3.83 plus 1.915 minus 1.27666
+.....\TU/lmr/bx/n/10 II.3
+.....\kern 0.0
+.....\TU/lmr/bx/n/10 .
+.....\glue 5.0 plus 1.0 minus 1.0
+.....\special{color pop}
+.....\TU/lmr/m/it/10 Number
+.....\glue 3.58 plus 1.79 minus 1.19333
+.....\TU/lmr/m/it/10 3.
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -8.21999 plus -2.0 minus -4.0
+....\penalty -51
+....\glue 0.21999
+....\glue 8.0 plus 2.0 minus 4.0
+....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{II.4}{tdocexa.2.4}{1}{}{note={}}{}}}}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 4.84001
+....\hbox(6.94+1.93999)x472.03123, glue set 352.73122fil
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -12.0
+.......\special{pdf:dest (tdocexa.2.4) [@thispage /XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\special{color push gray 0}
+.....\TU/lmr/bx/n/10 Example
+.....\kern 0.0
+.....\glue 3.83 plus 1.915 minus 1.27666
+.....\TU/lmr/bx/n/10 II.4
+.....\kern 0.0
+.....\TU/lmr/bx/n/10 .
+.....\glue 5.0 plus 1.0 minus 1.0
+.....\special{color pop}
+.....\TU/lmr/m/it/10 Number
+.....\glue 3.58 plus 1.79 minus 1.19333
+.....\TU/lmr/m/it/10 4.
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -9.93999 plus -2.0 minus -4.0
+....\penalty -300
+....\glue 1.93999
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -8.0 plus -2.0 minus -4.0
+....\glue 15.08499 plus 4.31 minus 0.86198
+....\special{pdf:dest (section.3) [@thispage /XYZ @xpos @ypos null]}
+....\penalty 10000
+....\glue -15.08499 plus -4.31 minus -0.86198
+....\glue 15.08499 plus 4.31 minus 0.86198
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 3.46007
+....\hbox(12.59995+5.40005)x472.03123, glue set 124.99167fil
+.....\rule(12.59995+5.40005)x0.0
+.....\hbox(12.59995+5.40005)x37.90079
+......\special{color push gray 0}
+......\TU/lmr/bx/n/14.4 III.
+......\glue 14.4
+......\rule(12.59995+5.40005)x0.0
+......\glue 0.0
+......\special{color pop}
+.....\TU/lmr/bx/n/14.4 Example
+.....\glue 5.4 plus 2.7 minus 1.79999
+.....\TU/lmr/bx/n/14.4 -
+.....\discretionary
+.....\glue 5.4 plus 2.7 minus 1.79999
+.....\TU/lmr/bx/n/14.4 Single
+.....\glue 5.4 plus 2.7 minus 1.79999
+.....\TU/lmr/bx/n/14.4 number.
+.....\kern 0.0
+.....\rule(12.59995+5.40005)x0.0
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0 plus 1.0fil
+....\penalty 10000
+....\write5{\protect \BOOKMARK [1][-]{section.3}{\376\377\000E\000x\000a\000m\000p\000l\000e\000\040\000-\000\040\000S\000i\000n\000g\000l\000e\000\040\000n\000u\000m\000b\000e\000r\000.}{}% 3}
+....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {III.}Example - Single number.}{\thepage }{section.3}\protected@file@percent }}
+....\penalty 10000
+....\penalty 10000
+....\glue 9.913 plus 0.86198
+....\glue 0.0
+....\glue 0.0
+....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{III.1}{tdocexa.3.1}{1}{}{note={}}{}}}}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\lineskip) 1.0
+....\hbox(7.05+2.04999)x472.03123, glue set 328.9012fil
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -12.0
+.......\special{pdf:dest (tdocexa.3.1) [@thispage /XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\special{color push gray 0}
+.....\TU/lmr/bx/n/10 Example
+.....\kern 0.0
+.....\glue 3.83 plus 1.915 minus 1.27666
+.....\TU/lmr/bx/n/10 III.1
+.....\kern 0.0
+.....\TU/lmr/bx/n/10 .
+.....\glue 5.0 plus 1.0 minus 1.0
+.....\special{color pop}
+.....\TU/lmr/m/it/10 Single
+.....\glue 3.58 plus 1.79 minus 1.19333
+.....\TU/lmr/m/it/10 number.
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -10.04999 plus -2.0 minus -4.0
+....\penalty -300
+....\glue 2.04999
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -8.0 plus -2.0 minus -4.0
+....\glue 15.08499 plus 4.31 minus 0.86198
+....\special{pdf:dest (section.4) [@thispage /XYZ @xpos @ypos null]}
+....\penalty 10000
+....\glue -15.08499 plus -4.31 minus -0.86198
+....\glue 15.08499 plus 4.31 minus 0.86198
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\baselineskip) 3.35007
+....\hbox(12.59995+5.40005)x472.03123, glue set 128.06607fil
+.....\rule(12.59995+5.40005)x0.0
+.....\hbox(12.59995+5.40005)x37.18079
+......\special{color push gray 0}
+......\TU/lmr/bx/n/14.4 IV.
+......\glue 14.4
+......\rule(12.59995+5.40005)x0.0
+......\glue 0.0
+......\special{color pop}
+.....\TU/lmr/bx/n/14.4 Remark
+.....\glue 5.4 plus 2.7 minus 1.79999
+.....\TU/lmr/bx/n/14.4 -
+.....\discretionary
+.....\glue 5.4 plus 2.7 minus 1.79999
+.....\TU/lmr/bx/n/14.4 Single
+.....\glue 5.4 plus 2.7 minus 1.79999
+.....\TU/lmr/bx/n/14.4 number.
+.....\kern 0.0
+.....\rule(12.59995+5.40005)x0.0
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0 plus 1.0fil
+....\penalty 10000
+....\write5{\protect \BOOKMARK [1][-]{section.4}{\376\377\000R\000e\000m\000a\000r\000k\000\040\000-\000\040\000S\000i\000n\000g\000l\000e\000\040\000n\000u\000m\000b\000e\000r\000.}{}% 4}
+....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {IV.}Remark - Single number.}{\thepage }{section.4}\protected@file@percent }}
+....\penalty 10000
+....\penalty 10000
+....\glue 9.913 plus 0.86198
+....\glue 0.0
+....\glue 0.0
+....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{IV.1}{tdocrem.4.1}{1}{}{note={}}{}}}}
+....\glue(\parskip) 0.0 plus 1.0
+....\glue(\parskip) 0.0
+....\glue(\lineskip) 1.0
+....\hbox(7.05+2.04999)x472.03123, glue set 333.3412fil
+.....\penalty 10000
+.....\hbox(0.0+0.0)x0.0
+......\hbox(0.0+0.0)x0.0, shifted -12.0
+.......\special{pdf:dest (tdocrem.4.1) [@thispage /XYZ @xpos @ypos null]}
+.......\penalty 10000
+.....\special{color push gray 0}
+.....\TU/lmr/bx/n/10 Remark
+.....\kern 0.0
+.....\glue 3.83 plus 1.915 minus 1.27666
+.....\TU/lmr/bx/n/10 IV.1
+.....\kern 0.0
+.....\TU/lmr/bx/n/10 .
+.....\glue 5.0 plus 1.0 minus 1.0
+.....\special{color pop}
+.....\TU/lmr/m/it/10 Single
+.....\glue 3.58 plus 1.79 minus 1.19333
+.....\TU/lmr/m/it/10 number.
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\penalty -51
+....\glue 8.0 plus 2.0 minus 4.0
+....\glue -2.04999
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\glue(\baselineskip) 23.34
+...\hbox(6.66+0.0)x472.03123
+....\special{color push gray 0}
+....\hbox(6.66+0.0)x472.03123, glue set 233.51563fil
+.....\glue 0.0 plus 1.0fil
+.....\TU/lmr/m/n/10 1
+.....\glue 0.0 plus 1.0fil
+....\special{color pop}
+.\kern 0.0
+.\kern 0.0
+(highlight-same-counter.aux)
+Package rerunfilecheck Info: File `highlight-same-counter.out' has not changed.
+(rerunfilecheck)             Checksum: C7689A3BB73181864CA6BDFBD1F5A1FE;589.

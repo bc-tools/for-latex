@@ -17,11 +17,16 @@ def call_hook(
     with lang_temp_srcfile_indoc.open(
         mode = 'a',
     ) as temp_file:
-        for vpath, texcode in virtual_resrc.items():
+        for vpath, tcode in virtual_resrc.items():
+            tcode = tcode.replace(
+                r"\input{../preamble.cfg.tex}" + "\n"*2,
+                ""
+            )
+
             temp_file.write(
                 TMPL_FILE_CONTENTS.format(
                     virtual_path = vpath,
-                    tex_code     = texcode
+                    tex_code     = tcode
                 ) + '\n'*2
             )
 
