@@ -257,7 +257,7 @@
 
 % -- LINKS AND CO. -- %
 
-\input{css/main-\tutodoc@theme.cls.sty}
+\input{css/\tutodoc@theme.cls.sty}
 
 \hypersetup{
   colorlinks,
@@ -356,7 +356,7 @@
 
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
 
-\input{css/admonitions-\tutodoc@theme.cls.sty}
+\input{css/\tutodoc@theme.cls.sty}
 
 
 %%%
@@ -587,7 +587,7 @@
 
 % -- GENERAL FORMATTING -- %
 
-\input{css/showcase-\tutodoc@theme.cls.sty}
+\input{css/\tutodoc@theme.cls.sty}
 
 
 % :: TEXT INSIDE A RULE :: %
@@ -805,7 +805,7 @@
 
 \newcommand{\tutodoc@latex@lexer}{latex}
 
-\input{css/listing-\tutodoc@theme.cls.sty}
+\input{css/\tutodoc@theme.cls.sty}
 
 
 % :: INLINE LATEX MACRO :: %
@@ -1084,7 +1084,7 @@
 
 % :: VERSION AND DATE :: %
 
-\input{css/version-n-change-\tutodoc@theme.cls.sty}
+\input{css/\tutodoc@theme.cls.sty}
 
 %%%
 % prototype::
