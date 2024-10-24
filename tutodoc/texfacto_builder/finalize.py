@@ -25,10 +25,16 @@ def finalize(
 
     print()
 
-    final_tex(metadata, ugly_hack)
+    final_tex(
+        metadata,
+        ugly_hack
+    )
 
 
-def final_tex(metadata, ugly_hack):
+def final_tex(
+    metadata,
+    ugly_hack
+):
     doc_dir  = metadata[TAG_ROLLOUT] / "doc"
 
     emptydir(
@@ -199,7 +205,7 @@ def tex_resrc(
 ):
     lang_dir = metadata[TAG_TEMP] / lang
 
-    resrc        = []
+    resrc          = [(lang_dir / TAG_TMP_SRCFILE_INDOC).read_text().strip()]
     old_2_new_path = {}
 
     for resrc_dir in lang_dir.glob("*"):

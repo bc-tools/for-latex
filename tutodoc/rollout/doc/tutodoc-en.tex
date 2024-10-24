@@ -3,6 +3,383 @@
 % ==================== %
 
 
+\begin{filecontents*}[overwrite]{gallery-showcase-bw.tex}
+\documentclass[10pt, a4paper, theme = bw]{../main/main}
+
+\input{../preamble.cfg.tex}
+
+\newcommand\thisstyle{bw}
+
+\newcommand\myexrmktext{
+    \tdocdate{2024-10-23}
+    In the flow of text, it's always useful to be able to include examples and comments that complement the main content.
+}
+
+\newcommand\myadmotext{
+    \tdocversion{1.6.0}[2024-10-23]
+    Depending on the context of use, it is sometimes necessary to highlight content by indicating its degree of importance.
+}
+
+\newcommand\myhighlightedtext{
+    What to say
+    \footnote{
+        Let's not forget the footnotes...
+    } ?
+    I don't know, but in any case, it seems like a nice idea to show what can be achieved with one layout or another. No ?
+}
+
+
+\begin{document}
+
+{\Huge\bfseries The theme \texttt{"\thisstyle"}}
+
+\section{Highlighting, versioning and dating}
+
+\ExplSyntaxOn
+
+\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+    \subsection*{tdoc#1}
+
+    \myexrmktext
+
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
+
+    \myexrmktext
+}
+
+\ifcsundef{__g_tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+} {
+    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+}
+
+\ExplSyntaxOff
+
+\section{\LaTeX\ codes}
+
+It is essential to be able to demonstrate use cases in \LaTeX.
+
+\begin{tdoclatex}
+It's nice to see some formatted \LaTeX\ code : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+There's also a less intrusive side-by-side mode. Nice! No ?
+
+\begin{tdoclatex}[sbs]
+It's nice to see some formatted \LaTeX\ code:
+$E = m c^2$ or $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+\end{document}
+
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{gallery-showcase-color.tex}
+\documentclass[10pt, a4paper, theme = color]{../main/main}
+
+\input{../preamble.cfg.tex}
+
+\newcommand\thisstyle{color}
+
+\newcommand\myexrmktext{
+    \tdocdate{2024-10-23}
+    In the flow of text, it's always useful to be able to include examples and comments that complement the main content.
+}
+
+\newcommand\myadmotext{
+    \tdocversion{1.6.0}[2024-10-23]
+    Depending on the context of use, it is sometimes necessary to highlight content by indicating its degree of importance.
+}
+
+\newcommand\myhighlightedtext{
+    What to say
+    \footnote{
+        Let's not forget the footnotes...
+    } ?
+    I don't know, but in any case, it seems like a nice idea to show what can be achieved with one layout or another. No ?
+}
+
+
+\begin{document}
+
+{\Huge\bfseries The theme \texttt{"\thisstyle"}}
+
+\section{Highlighting, versioning and dating}
+
+\ExplSyntaxOn
+
+\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+    \subsection*{tdoc#1}
+
+    \myexrmktext
+
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
+
+    \myexrmktext
+}
+
+\ifcsundef{__g_tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+} {
+    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+}
+
+\ExplSyntaxOff
+
+\section{\LaTeX\ codes}
+
+It is essential to be able to demonstrate use cases in \LaTeX.
+
+\begin{tdoclatex}
+It's nice to see some formatted \LaTeX\ code : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+There's also a less intrusive side-by-side mode. Nice! No ?
+
+\begin{tdoclatex}[sbs]
+It's nice to see some formatted \LaTeX\ code:
+$E = m c^2$ or $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+\end{document}
+
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{gallery-showcase-dark.tex}
+\documentclass[10pt, a4paper, theme = dark]{../main/main}
+
+\input{../preamble.cfg.tex}
+
+\newcommand\thisstyle{dark}
+
+\newcommand\myexrmktext{
+    \tdocdate{2024-10-23}
+    In the flow of text, it's always useful to be able to include examples and comments that complement the main content.
+}
+
+\newcommand\myadmotext{
+    \tdocversion{1.6.0}[2024-10-23]
+    Depending on the context of use, it is sometimes necessary to highlight content by indicating its degree of importance.
+}
+
+\newcommand\myhighlightedtext{
+    What to say
+    \footnote{
+        Let's not forget the footnotes...
+    } ?
+    I don't know, but in any case, it seems like a nice idea to show what can be achieved with one layout or another. No ?
+}
+
+
+\begin{document}
+
+{\Huge\bfseries The theme \texttt{"\thisstyle"}}
+
+\section{Highlighting, versioning and dating}
+
+\ExplSyntaxOn
+
+\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+    \subsection*{tdoc#1}
+
+    \myexrmktext
+
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
+
+    \myexrmktext
+}
+
+\ifcsundef{__g_tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+} {
+    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+}
+
+\ExplSyntaxOff
+
+\section{\LaTeX\ codes}
+
+It is essential to be able to demonstrate use cases in \LaTeX.
+
+\begin{tdoclatex}
+It's nice to see some formatted \LaTeX\ code : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+There's also a less intrusive side-by-side mode. Nice! No ?
+
+\begin{tdoclatex}[sbs]
+It's nice to see some formatted \LaTeX\ code:
+$E = m c^2$ or $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+\end{document}
+
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{gallery-showcase-draft.tex}
+\documentclass[10pt, a4paper, theme = draft]{../main/main}
+
+\input{../preamble.cfg.tex}
+
+\newcommand\thisstyle{draft}
+
+\newcommand\myexrmktext{
+    \tdocdate{2024-10-23}
+    In the flow of text, it's always useful to be able to include examples and comments that complement the main content.
+}
+
+\newcommand\myadmotext{
+    \tdocversion{1.6.0}[2024-10-23]
+    Depending on the context of use, it is sometimes necessary to highlight content by indicating its degree of importance.
+}
+
+\newcommand\myhighlightedtext{
+    What to say
+    \footnote{
+        Let's not forget the footnotes...
+    } ?
+    I don't know, but in any case, it seems like a nice idea to show what can be achieved with one layout or another. No ?
+}
+
+
+\begin{document}
+
+{\Huge\bfseries The theme \texttt{"\thisstyle"}}
+
+\section{Highlighting, versioning and dating}
+
+\ExplSyntaxOn
+
+\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+    \subsection*{tdoc#1}
+
+    \myexrmktext
+
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
+
+    \myexrmktext
+}
+
+\ifcsundef{__g_tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+} {
+    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+}
+
+\ExplSyntaxOff
+
+\section{\LaTeX\ codes}
+
+It is essential to be able to demonstrate use cases in \LaTeX.
+
+\begin{tdoclatex}
+It's nice to see some formatted \LaTeX\ code : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+There's also a less intrusive side-by-side mode. Nice! No ?
+
+\begin{tdoclatex}[sbs]
+It's nice to see some formatted \LaTeX\ code:
+$E = m c^2$ or $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+\end{document}
+
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-version-n-change-dating.tex}
 Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 
@@ -629,7 +1006,7 @@ As this language is included in the list of languages taken into account, see be
         \item \tdocinlatex|fr| : French.
     \end{itemize}
 \end{multicols}
-
+                    
 
 
 \begin{tdoccaut}
@@ -667,7 +1044,7 @@ The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{t
 
 \section{Choose your theme}
 
-    To modify the general layout, there is the \thisproj\ class option \tdocinlatex{theme = <choice>} where \tdocinlatex{<choice>} can take the following values.
+To modify the general layout, there is the \thisproj\ class option \tdocinlatex{theme = <choice>} where \tdocinlatex{<choice>} can take the following values.
 
 \begin{itemize}
     \item \tdocinlatex|bw| :
@@ -688,6 +1065,71 @@ The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{t
     At the end of this document, after the change history, you'll find a gallery of use cases for these different themes : go to appendix page \pageref{tutodoc-theme-gallery}.
 \end{tdocnote}
 
+
+% ----------------------------- %
+% -- AT END DOCUMENT - START -- %
+% ----------------------------- %
+
+% The following AT-END-DOCUMENT lines of codes have been generated
+% automatically. Don't judge their relative beauty...
+
+\AtEndDocument{
+
+% An annex page for a pretty doc.
+\newpage
+
+% Source.
+%     + https://tex.stackexchange.com/a/8547/6880
+\bgroup
+    \titleformat{\section}[block]{\Huge\bfseries\filcenter}{}{1em}{}
+    \phantomsection\section*{Appendix -- Theme gallery}%
+    \label{tutodoc-theme-gallery}
+    \addcontentsline{toc}{section}{Appendix -- Theme gallery}%
+\egroup
+
+\bigskip
+
+\begin{tdocnote}
+    Each example is exactly a two pages long \pdf\ and has been inserted directly into this document (so don't be surprised by the page numbers).
+\end{tdocnote}
+
+\newpage
+
+% Let's build the PDFs.
+\immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-bw}
+
+\immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-color}
+
+\immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-dark}
+
+\immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-draft}
+
+% The gallery starts here...
+\includepdf[
+	pages=1-2,
+	fitpaper=true
+]{gallery-showcase-bw}
+
+\includepdf[
+	pages=1-2,
+	fitpaper=true
+]{gallery-showcase-color}
+
+\includepdf[
+	pages=1-2,
+	fitpaper=true
+]{gallery-showcase-dark}
+
+\includepdf[
+	pages=1-2,
+	fitpaper=true
+]{gallery-showcase-draft}
+
+}
+
+% --------------------------- %
+% -- AT END DOCUMENT - END -- %
+% --------------------------- %
 
 \section{Highlighting content}
 

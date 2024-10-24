@@ -1,3 +1,6 @@
+PRE_HOOK  = {}
+POST_HOOK = {}
+
 from pathlib import Path
 
 
@@ -6,9 +9,14 @@ from pathlib import Path
 # --------------- #
 
 TMPL_CONTENT_CODE = r"""
-% The following AT-END-DOCUMENT lines of code have been generated
+% ----------------------------- %
+% -- AT END DOCUMENT - START -- %
+% ----------------------------- %
+
+% The following AT-END-DOCUMENT lines of codes have been generated
 % automatically. Don't judge their relative beauty...
-\AtEndDocument{ % AT-END-DOCUMENT - START
+
+\AtEndDocument{
 
 % An annex page for a pretty doc.
 \newpage
@@ -23,7 +31,11 @@ TMPL_CONTENT_CODE = r"""
 % The gallery starts here...
 <<THE-THEMES>>
 
-} % AT-END-DOCUMENT - END
+}
+
+% --------------------------- %
+% -- AT END DOCUMENT - END -- %
+% --------------------------- %
 """.strip()
 
 TEX_BUILD_CMD = r"""
@@ -78,17 +90,25 @@ def multireplace(
 # -- TOOLS -- #
 # ----------- #
 
-# We muste use a fnction main as an netry point.
-# We have to return the LaTeX code to put directly inside the manual, and a dictionnary for the resources with key a virtual path, the one used inisde the manual, and value the content of the virtual fiel.
-def main(
-    dir_analyzed,
+# We have to work with the folder conaining the hooks real file.
+# TeXfacto will only send us the folder conaining the fole associated to the hooks.
+def theme_gallery(
+    curdir,
     isfordebug = False
 ):
 # Template for the showcase.
     tmpl_theme = "color"
 
-    tmpl_showcase_code = dir_analyzed / "tmpl-theme-showcase-color.tex"
+    tmpl_showcase_code = curdir / "tmpl-theme-showcase-color.tex"
+
+    if not tmpl_showcase_code.is_file():
+        raise IOError(
+            f'missing template file:\n{tmpl_showcase_code}'
+        )
+
     tmpl_showcase_code = tmpl_showcase_code.read_text()
+
+    # print(tmpl_showcase_code[:200]);print('+++')
 
     if not isfordebug:
         tmpl_showcase_code = tmpl_showcase_code.replace(
@@ -109,7 +129,13 @@ def main(
         )
 
 # Template for the annex front page.
-    tmpl_annex_code = dir_analyzed / "tmpl-theme-annex-page.tex"
+    tmpl_annex_code = curdir / "tmpl-theme-annex-page.tex"
+
+    if not tmpl_annex_code.is_file():
+        raise IOError(
+            f'missing template file:\n{tmpl_annex_code}'
+        )
+
     tmpl_annex_code = tmpl_annex_code.read_text()
 
     _ , _ , tmpl_annex_code = tmpl_annex_code.partition(r"\begin{document}")
@@ -126,6 +152,8 @@ def main(
     option_theme        = f"theme = {tmpl_theme}]"
 
     for theme in ALL_THEMES:
+        # print(tmpl_showcase_code[:200]);print('---')
+
         contents = multireplace(
             text         = tmpl_showcase_code,
             replacements = {
@@ -133,6 +161,8 @@ def main(
                 option_theme       : f"theme = {theme}]"
             },
         )
+
+        # print(contents[:200]);exit()
 
         virtual_resrc[
             TMPL_VIRTUAL_PATH.replace(
@@ -159,6 +189,9 @@ def main(
     )
 
     return virtual_resrc, tex_code
+
+
+POST_HOOK['theme/theme.tex'] = theme_gallery
 
 
 # ------------------- #
@@ -191,8 +224,8 @@ if __name__ == "__main__":
 \end{filecontents*}
 """.strip()
 
-    virtual_resrc, tex_code = main(
-        dir_analyzed = src_theme_dir,
+    virtual_resrc, tex_code = theme_gallery(
+        curdir = src_theme_dir,
         isfordebug   = True
     )
 
@@ -216,3 +249,5 @@ if __name__ == "__main__":
     )
 
     debug_file.write_text(tex_code)
+
+    print("Job done!")

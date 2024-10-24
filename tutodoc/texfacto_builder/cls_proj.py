@@ -11,6 +11,7 @@ def prebuild_single_cls(
     temp_dir,
     sorted_useful_files,
     versions,
+    hooks,
     about_langs
 ):
     for onedir, srcfile, kind in iter_sorted_useful_files(

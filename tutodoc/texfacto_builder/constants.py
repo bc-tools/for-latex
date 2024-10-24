@@ -16,6 +16,9 @@ TAG_LOCALE  = "locale"
 
 TAG_ABSTRACT = "abstract"
 
+TAG_PRE  = "PRE"
+TAG_POST = "POST"
+
 TAG_DIR  = "dir"
 TAG_FILE = "file"
 
@@ -87,8 +90,9 @@ TAG_TMP_STY_IMPORT  = f'.tmp_pack_import.{TAG_STY}'
 TAG_TMP_STY_OPTIONS = f'.tmp_pack_options.{TAG_STY}'
 TAG_TMP_STY_SRC     = f'.tmp_pack_src.{TAG_STY}'
 
-TAG_TMP_TEX_FOR_DOC = f'.tmp_fordoc.{TAG_TEX}'
-TAG_TMP_TEX_THE_DOC = f'.tmp_thedoc.{TAG_TEX}'
+TAG_TMP_TEX_FOR_DOC   = f'.tmp_fordoc.{TAG_TEX}'
+TAG_TMP_TEX_THE_DOC   = f'.tmp_thedoc.{TAG_TEX}'
+TAG_TMP_SRCFILE_INDOC = f'.tmp_srcfile_in_doc.{TAG_TEX}'
 
 
 TAG_TMP_PREAMBLE = f'preamble.{TAG_CONF}.{TAG_TEX}'
@@ -175,6 +179,17 @@ HISTORY_TRANS = {
     'en' : "History",
     'fr' : "Historique",
 }
+
+
+# --------------- #
+# -- FOR HOOKS -- #
+# --------------- #
+
+TMPL_FILE_CONTENTS = r"""
+\begin{{filecontents*}}[overwrite]{{{virtual_path}}}
+{tex_code}
+\end{{filecontents*}}
+""".strip()
 
 
 # -------------- #
