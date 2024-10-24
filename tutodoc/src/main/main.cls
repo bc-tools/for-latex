@@ -52,7 +52,7 @@
 
 \RequirePackage[raggedright]%
                {titlesec}%
-               [2021/07/05]
+               [2023/10/27]
 
 \RequirePackage{tocbasic}
 

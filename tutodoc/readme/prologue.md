@@ -1,2 +1,2 @@
-The `LaTeX` package `tutodoc`
-=============================
+The `LaTeX` class `tutodoc`
+===========================

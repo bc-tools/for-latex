@@ -5,7 +5,7 @@
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
 
-\NewDocumentCommand{ \tdocdocbasicinput }{ m }{%
+\NewDocumentCommand{ \tdocDOCbasicinput }{ m }{%
     Considérons le code suivant.
 
     \tdoclatexinput[code]{#1}
@@ -32,7 +32,7 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 
 
 
-\subsection{Codes \tdocquote{en ligne}} \label{tdoc-listing-inline}
+\subsection{Codes \tdocquote{en ligne}} \label{tutodoc-listing-inline}
 
 La macro \tdocmacro{tdocinlatex}
 \footnote{
@@ -64,7 +64,7 @@ Voici des exemples d'utilisation.
 \begin{tdocexa}[Face à face]
     Via \tdocenv[{[sbs]}]{tdoclatex}, on affichera un code et son rendu côte à côte.
     Indiquons que \tdocinlatex#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}.
-    \tdocdocbasicinput{examples/listing/ABC.tex}
+    \tdocDOCbasicinput{examples/listing/ABC.tex}
 \end{tdocexa}
 
 
@@ -91,12 +91,12 @@ Voici des exemples d'utilisation.
 
 \begin{tdocwarn}
     Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut.
-    \tdocdocbasicinput{examples/listing/strange.tex}
+    \tdocDOCbasicinput{examples/listing/strange.tex}
 
     \smallskip
 
     Une autre méthode consiste à utiliser la primitive \tdocmacro{string}.
-    \tdocdocbasicinput{examples/listing/strange-bis.tex}
+    \tdocDOCbasicinput{examples/listing/strange-bis.tex}
 \end{tdocwarn}
 
 \end{document}

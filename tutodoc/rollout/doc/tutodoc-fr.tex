@@ -308,7 +308,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
 
-\NewDocumentCommand{ \tdocdocbasicinput }{ m }{%
+\NewDocumentCommand{ \tdocDOCbasicinput }{ m }{%
     Considérons le code suivant.
 
     \tdoclatexinput[code]{#1}
@@ -322,7 +322,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
 
-\NewDocumentCommand{ \tdocdocextraruler }{ m }{%
+\NewDocumentCommand{ \tdocextrarulerDOC }{ m }{%
     \par
     {
         \centering
@@ -337,14 +337,14 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
     }
 }
 
-\NewDocumentEnvironment{ tdoc-doc-showcase }
+\NewDocumentEnvironment{ tdocshowcase }
                        { O{ Début du rendu dans cette doc. }
                          O{ Fin du rendu dans cette doc. } }{
-        \tdocdocextraruler{#1}
+        \tdocextrarulerDOC{#1}
         \nopagebreak\smallskip\nopagebreak
 }{
         \nopagebreak\smallskip\nopagebreak
-        \tdocdocextraruler{#2}
+        \tdocextrarulerDOC{#2}
 }
 
 
@@ -456,9 +456,9 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
             The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
         }
         using a sober rendering for reading on screen.
-    
+
         \smallskip
-    
+
     	\noindent
         \emph{\textbf{Remark :} this documentation is also available in French.}
     }
@@ -605,7 +605,7 @@ Comme cette langue fait partie de la liste des langues prises en compte, voir ci
         \item \tdocinlatex|fr| : français.
     \end{itemize}
 \end{multicols}
-                    
+
 
 
 \begin{tdoccaut}
@@ -695,7 +695,7 @@ Tout se passe via \tdocenv{tdocrem} avec un fonctionnement identique à l'enviro
 
 
 
-\subsection{Du contenu tape-à-l'oeil} \label{tdoc-admonitions}
+\subsection{Du contenu tape-à-l'oeil} \label{tutodoc-admonitions}
 
 \begin{tdocnote}
     Les icônes sont obtenues via le package \tdocpack{fontawesome5}, et la gestion de l'espacement avec le texte est faite par la macro \tdocmacro{tdocicon}.
@@ -722,7 +722,7 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 
 \begin{tdocnote}
     Les couleurs sont obtenues via les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor}.
-    Pour des informations complémentaires à ce sujet, se reporter à la fin de la section \ref{tdoc-color-macros} page \pageref{tdoc-color-macros}.
+    Pour des informations complémentaires à ce sujet, se reporter à la fin de la section \ref{tutodoc-color-macros} page \pageref{tutodoc-color-macros}.
 \end{tdocnote}
 
 
@@ -801,13 +801,13 @@ Pour expliquer les noms retenus, rien de tel que d'indiquer et expliciter les co
 \end{tdocrem}
 
 
-\section{Un rendu en situation réelle} \label{tdoc-showcase}
+\section{Un rendu en situation réelle} \label{tutodoc-showcase}
 
 Il est parfois utile d'obtenir directement le rendu d'un code dans la documentation. Ceci nécessite que ce type de rendu soit dissociable du texte donnant des explications.
 
 
 
-\subsection{Avec une bande colorée} \label{tdoc-color-macros}
+\subsection{Avec une bande colorée} \label{tutodoc-color-macros}
 
 \begin{tdocexa}[Avec les textes par défaut]
     Il peut être utile de montrer un rendu réel directement dans un document.
@@ -832,7 +832,7 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
 
 \begin{tdocrem}
-    Voir la section \ref{tdoc-latexshow} page \pageref{tdoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
+    Voir la section \ref{tutodoc-latexshow} page \pageref{tutodoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
 \end{tdocrem}
 
 
@@ -976,7 +976,7 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 
 
 
-\subsection{Codes \tdocquote{en ligne}} \label{tdoc-listing-inline}
+\subsection{Codes \tdocquote{en ligne}} \label{tutodoc-listing-inline}
 
 La macro \tdocmacro{tdocinlatex}
 \footnote{
@@ -1008,7 +1008,7 @@ Voici des exemples d'utilisation.
 \begin{tdocexa}[Face à face]
     Via \tdocenv[{[sbs]}]{tdoclatex}, on affichera un code et son rendu côte à côte.
     Indiquons que \tdocinlatex#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}.
-    \tdocdocbasicinput{examples-listing-ABC.tex}
+    \tdocDOCbasicinput{examples-listing-ABC.tex}
 
 \end{tdocexa}
 
@@ -1036,13 +1036,13 @@ Voici des exemples d'utilisation.
 
 \begin{tdocwarn}
     Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut.
-    \tdocdocbasicinput{examples-listing-strange.tex}
+    \tdocDOCbasicinput{examples-listing-strange.tex}
 
 
     \smallskip
 
     Une autre méthode consiste à utiliser la primitive \tdocmacro{string}.
-    \tdocdocbasicinput{examples-listing-strange-bis.tex}
+    \tdocDOCbasicinput{examples-listing-strange-bis.tex}
 
 \end{tdocwarn}
 
@@ -1108,17 +1108,17 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
 
 
-\subsection{Codes importés et mis en situation} \label{tdoc-latexshow}
+\subsection{Codes importés et mis en situation} \label{tutodoc-latexshow}
 
 \begin{tdocexa}[Mise en situation]
     Ce qui suit s'obtient via \tdocinlatex+\tdoclatexshow{examples-listing-xyz.tex}+.
 
     \medskip
 
-    \begin{tdoc-doc-showcase}
+    \begin{tdocshowcase}
         \tdoclatexshow{examples-listing-xyz.tex}
 
-    \end{tdoc-doc-showcase}
+    \end{tdocshowcase}
 \end{tdocexa}
 
 
@@ -1132,15 +1132,15 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \medskip
 
-    \begin{tdoc-doc-showcase}
+    \begin{tdocshowcase}
         \tdoclatexshow[explain = Voici le rendu réel.]{examples-listing-xyz.tex}
 
-    \end{tdoc-doc-showcase}
+    \end{tdocshowcase}
 \end{tdocexa}
 
 
 \begin{tdocexa}[Les options disponibles]
-    En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de l'environnement \tdocenv*{tdocshowcase}, voir \ref{tdoc-showcase} page \pageref{tdoc-showcase}.
+    En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de l'environnement \tdocenv*{tdocshowcase}, voir \ref{tutodoc-showcase} page \pageref{tutodoc-showcase}.
     Voici un exemple illustrant ceci.
 
     \medskip
@@ -1154,10 +1154,10 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \medskip
 
-    \begin{tdoc-doc-showcase}
+    \begin{tdocshowcase}
         \input{examples-listing-latexshow-options.tex}
 
-    \end{tdoc-doc-showcase}
+    \end{tdocshowcase}
 \end{tdocexa}
 
 
@@ -1218,7 +1218,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 
 
 \begin{tdocnote}
-    Concernant les icônes, voir la note au début de la section \ref{tdoc-admonitions} page \pageref{tdoc-admonitions}.
+    Concernant les icônes, voir la note au début de la section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
 \end{tdocnote}
 
 
@@ -1298,15 +1298,15 @@ Ble, ble, ble...
 \begin{wrapfigure}{R}
 	\contribtranslatedirtree\
 	\caption{Vue simplifiée du dossier des traductions}
-	\label{tdoc-contrib-translate-dir}
+	\label{tutodoc-contrib-translate-dir}
 \end{wrapfigure}{}
 
 
-Les traductions sont organisées grosso-modo comme dans la figure \ref{tdoc-contrib-translate-dir} où seuls les dossiers importants pour les traductions ont été \tdocquote{ouverts}\,.%
+Les traductions sont organisées grosso-modo comme dans la figure \ref{tutodoc-contrib-translate-dir} où seuls les dossiers importants pour les traductions ont été \tdocquote{ouverts}\,.%
 \footnote{
 	Cette organisation était celle du 5 octobre 2024, mais elle reste d'actualité.
 }
-\textbf{Un peu plus bas, la section \ref{tdoc-contrib-translate} donne les démarches à suivre pour ajouter de nouvelles traductions.}
+\textbf{Un peu plus bas, la section \ref{tutodoc-contrib-translate} donne les démarches à suivre pour ajouter de nouvelles traductions.}
 
 
 \subsubsection{Les dossiers \texttt{fr} et \texttt{en}}
@@ -1332,8 +1332,8 @@ Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{R
 
 
 
-\subsubsection{De nouvelles traductions} 
-\label{tdoc-contrib-translate}
+\subsubsection{De nouvelles traductions}
+\label{tutodoc-contrib-translate}
 
 \begin{tdocimp}
 	Le dossier \verb#api# contient les traductions relatives aux fonctionnalités de \thisproj.
@@ -1378,12 +1378,12 @@ Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{R
 \begin{enumerate}
 	\item Obtenir tout le dossier du projet via \thisrepo\,.
 	Ne pas passer via la branche \verb#main# qui sert à figer les dernières versions stables des projets du dépôt unique \thismonorepo\,.
-		
+
 	\item Dans le dossier \verb#tutodoc/contrib/translate#, créer une copie \verb#it# du dossier \verb#en#\,, le nom court de la langue étant documenté dans
 	\href{https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags}%
 	     {la page \tdocquote{IIETF language tag}}
 	de \texttt{Wikipédia}.
-	
+
 	\item Une fois la traduction achevée dans le dossier \verb#it# , il faudra la communiquer via \thisrepo\ en usant d'un classique \verb#git push#\,.
 \end{enumerate}
 
@@ -1393,10 +1393,10 @@ Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{R
 \begin{enumerate}
 	\item Via un courriel de \mailsubject{en FOR italian}\,, demander une version des traductions anglaises (noter l'emploi du nom anglais de la nouvelle langue).
 	Bien respecter le sujet du courriel, car l'auteur de \thisproj\ automatise le pré-traitement de ce type de courriels.
-		
+
 	\item Vous recevrez un dossier nommé \verb#italian# contenant la version anglaise des dernières traductions.
 	Ce dossier sera le lieu de votre contribution.
-	
+
 	\item Une fois la traduction achevée, il faudra compresser votre dossier \verb#italian# au format \verb#zip# ou \verb#rar# avant de l'envoyer par courriel avec le \mailsubject{italian}\,.
 \end{enumerate}
 

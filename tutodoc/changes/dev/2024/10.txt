@@ -2,6 +2,29 @@
 
 
 ==
+24  (1.6.0-rc.1)   ??
+==
+
+--------
+:fordev:
+--------
+
+[[:flow:]]   ??
+The ugly \texfacto \poc has been updated to take care of the gallery of themes. This allows to publish the new version.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: explanations about the use of the ''wide'' option from the \enumitem \pack (useful with admonition \envs).
+
+
+// ---------- //
+
+
+==
 23  (1.6.0-beta.4)
 ==
 

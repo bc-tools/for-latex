@@ -1,0 +1,24 @@
+besoin de chnager about.yaml au ofmrat suivant
+
+
+texfacto:
+  doc:
+    preamble: preamble.cfg.tex
+
+    toc:
+        - main/
+        - inenglish/
+        - theme/
+        - admonitions/
+        - macroenv/
+        - showcase/
+        - listing/
+        - version-n-change/
+        - deco/
+        - contrib-how-to/
+
+    src:
+        Pour les sty et co
+
+    hooks:
+        cf galleire de tutodoc

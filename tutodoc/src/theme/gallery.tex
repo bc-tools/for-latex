@@ -7,6 +7,9 @@
 \usepackage{../listing/listing.cls}
 \usepackage{../version-n-change/version-n-change.cls}
 
+
+% == FORDOC == %
+
 \newcommand\thisstyle{bw}
 
 \newcommand\myexarktext{
@@ -43,32 +46,32 @@
 	\begin{tdoc#1}
 		\myhighlightedtext
 	\end{tdoc#1}
-	
+
 	\myexarktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{
 	\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
     	\subsection*{tdoc#1}
-    
+
     	\myadmotext
-    	
+
     	\begin{tdoc#1}
     		\myhighlightedtext
     	\end{tdoc#1}
-    	
+
     	\myadmotext
     }
 } {
 	\seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
     	\subsection*{tdoc#1}
-    
+
     	\myadmotext
-    	
+
     	\begin{tdoc#1}
     		\myhighlightedtext
     	\end{tdoc#1}
-    	
+
     	\myadmotext
     }
 }
@@ -84,11 +87,11 @@ Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{
 \end{tdoclatex}
 
 
-On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ? 
+On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
 
 \begin{tdoclatex}[sbs]
-Voir du code \LaTeX\ mis en forme, 
-c'est sympa : $E = m c^2$ ou 
+Voir du code \LaTeX\ mis en forme,
+c'est sympa : $E = m c^2$ ou
 $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
 
@@ -104,6 +107,9 @@ $\pi \neq \frac{3}{14}$.
 \usepackage{../admonitions/admonitions.cls}
 \usepackage{../listing/listing.cls}
 \usepackage{../version-n-change/version-n-change.cls}
+
+
+% == FORDOC == %
 
 \newcommand\thisstyle{color}
 
@@ -141,32 +147,32 @@ $\pi \neq \frac{3}{14}$.
 	\begin{tdoc#1}
 		\myhighlightedtext
 	\end{tdoc#1}
-	
+
 	\myexarktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{
 	\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
     	\subsection*{tdoc#1}
-    
+
     	\myadmotext
-    	
+
     	\begin{tdoc#1}
     		\myhighlightedtext
     	\end{tdoc#1}
-    	
+
     	\myadmotext
     }
 } {
 	\seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
     	\subsection*{tdoc#1}
-    
+
     	\myadmotext
-    	
+
     	\begin{tdoc#1}
     		\myhighlightedtext
     	\end{tdoc#1}
-    	
+
     	\myadmotext
     }
 }
@@ -182,11 +188,11 @@ Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{
 \end{tdoclatex}
 
 
-On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ? 
+On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
 
 \begin{tdoclatex}[sbs]
-Voir du code \LaTeX\ mis en forme, 
-c'est sympa : $E = m c^2$ ou 
+Voir du code \LaTeX\ mis en forme,
+c'est sympa : $E = m c^2$ ou
 $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
 
@@ -202,6 +208,9 @@ $\pi \neq \frac{3}{14}$.
 \usepackage{../admonitions/admonitions.cls}
 \usepackage{../listing/listing.cls}
 \usepackage{../version-n-change/version-n-change.cls}
+
+
+% == FORDOC == %
 
 \newcommand\thisstyle{dark}
 
@@ -239,32 +248,32 @@ $\pi \neq \frac{3}{14}$.
 	\begin{tdoc#1}
 		\myhighlightedtext
 	\end{tdoc#1}
-	
+
 	\myexarktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{
 	\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
     	\subsection*{tdoc#1}
-    
+
     	\myadmotext
-    	
+
     	\begin{tdoc#1}
     		\myhighlightedtext
     	\end{tdoc#1}
-    	
+
     	\myadmotext
     }
 } {
 	\seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
     	\subsection*{tdoc#1}
-    
+
     	\myadmotext
-    	
+
     	\begin{tdoc#1}
     		\myhighlightedtext
     	\end{tdoc#1}
-    	
+
     	\myadmotext
     }
 }
@@ -280,11 +289,11 @@ Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{
 \end{tdoclatex}
 
 
-On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ? 
+On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
 
 \begin{tdoclatex}[sbs]
-Voir du code \LaTeX\ mis en forme, 
-c'est sympa : $E = m c^2$ ou 
+Voir du code \LaTeX\ mis en forme,
+c'est sympa : $E = m c^2$ ou
 $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
 
@@ -300,6 +309,9 @@ $\pi \neq \frac{3}{14}$.
 \usepackage{../admonitions/admonitions.cls}
 \usepackage{../listing/listing.cls}
 \usepackage{../version-n-change/version-n-change.cls}
+
+
+% == FORDOC == %
 
 \newcommand\thisstyle{draft}
 
@@ -337,32 +349,32 @@ $\pi \neq \frac{3}{14}$.
 	\begin{tdoc#1}
 		\myhighlightedtext
 	\end{tdoc#1}
-	
+
 	\myexarktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{
 	\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
     	\subsection*{tdoc#1}
-    
+
     	\myadmotext
-    	
+
     	\begin{tdoc#1}
     		\myhighlightedtext
     	\end{tdoc#1}
-    	
+
     	\myadmotext
     }
 } {
 	\seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
     	\subsection*{tdoc#1}
-    
+
     	\myadmotext
-    	
+
     	\begin{tdoc#1}
     		\myhighlightedtext
     	\end{tdoc#1}
-    	
+
     	\myadmotext
     }
 }
@@ -378,11 +390,11 @@ Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{
 \end{tdoclatex}
 
 
-On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ? 
+On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
 
 \begin{tdoclatex}[sbs]
-Voir du code \LaTeX\ mis en forme, 
-c'est sympa : $E = m c^2$ ou 
+Voir du code \LaTeX\ mis en forme,
+c'est sympa : $E = m c^2$ ou
 $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
 
@@ -394,10 +406,35 @@ $\pi \neq \frac{3}{14}$.
 
 \input{../preamble.cfg.tex}
 
+\usepackage{../admonitions/admonitions.cls}
+
 \begin{document}
 
-\AtEndDocument{ % AtEndDocument - START
+% The following AT-END-DOCUMENT lines of code have been generated
+% automatically. Don't judge their relative beauty...
+\AtEndDocument{ % AT-END-DOCUMENT - START
 
+% An annex page for a pretty doc.
+\newpage
+
+% Source.
+%     + https://tex.stackexchange.com/a/8547/6880
+\bgroup
+	\titleformat{\section}[block]{\Huge\bfseries\filcenter}{}{1em}{}
+	\phantomsection\section*{Annexe -- Galerie des thèmes}%
+	\label{tutodoc-theme-gallery}
+	\addcontentsline{toc}{section}{Annexe -- Galerie des thèmes}%
+\egroup
+
+\bigskip
+
+\begin{tdocnote}
+	Chaque exemple est un \pdf\ de deux pages exactement qui a été directement inséré dans ce document (ne soyez donc pas surpris par les numéros de page).
+\end{tdocnote}
+
+\newpage
+
+% Let's build the PDFs.
 \immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-bw}
 
 \immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-color}
@@ -406,6 +443,7 @@ $\pi \neq \frac{3}{14}$.
 
 \immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-draft}
 
+% The gallery starts here...
 \includepdf[
 	pages=1-2,
 	fitpaper=true
@@ -425,6 +463,7 @@ $\pi \neq \frac{3}{14}$.
 	pages=1-2,
 	fitpaper=true
 ]{gallery-showcase-draft}
-} % AtEndDocument - END
+
+} % AT-END-DOCUMENT - END
 
 \end{document}

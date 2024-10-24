@@ -23,14 +23,41 @@ TEMPLATE_FOR_MANUAL = r"""
 
 \input{../preamble.cfg.tex}
 
+\usepackage{../admonitions/admonitions.cls}
+
 \begin{document}
 
-\AtEndDocument{ % AtEndDocument - START
+% The following AT-END-DOCUMENT lines of code have been generated
+% automatically. Don't judge their relative beauty...
+\AtEndDocument{ % AT-END-DOCUMENT - START
 
+% An annex page for a pretty doc.
+\newpage
+
+% Source.
+%     + https://tex.stackexchange.com/a/8547/6880
+\bgroup
+	\titleformat{\section}[block]{\Huge\bfseries\filcenter}{}{1em}{}
+	\phantomsection\section*{Annexe -- Galerie des thèmes}%
+	\label{tutodoc-theme-gallery}
+	\addcontentsline{toc}{section}{Annexe -- Galerie des thèmes}%
+\egroup
+
+\bigskip
+
+\begin{tdocnote}
+	Chaque exemple est un \pdf\ de deux pages exactement qui a été directement inséré dans ce document (ne soyez donc pas surpris par les numéros de page).
+\end{tdocnote}
+
+\newpage
+
+% Let's build the PDFs.
 <<BUILD-PDFs>>
 
+% The gallery starts here...
 <<THE-THEMES>>
-} % AtEndDocument - END
+
+} % AT-END-DOCUMENT - END
 
 \end{document}
 """.strip() + "\n"

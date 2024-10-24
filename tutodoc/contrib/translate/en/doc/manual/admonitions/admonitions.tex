@@ -5,7 +5,8 @@
 
 \begin{document}
 
-\subsection{Flashy content} \label{tdoc-admonitions}
+\subsection{Flashy content}
+\label{tutodoc-admonitions}
 
 \begin{tdocnote}
     Icons are obtained via the \tdocpack{fontawesome5} package, and text spacing is managed by the \tdocmacro{tdocicon} macro.
@@ -29,8 +30,18 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
 \begin{tdocnote}
     Colors are obtained via the expandable macros \tdocmacro{tdocbackcolor} and \tdocmacro{tdocdarkcolor}.
-    For further information, please refer to the end of the section \ref{tdoc-color-macros} page \pageref{tdoc-color-macros}.
+    For further information, please refer to the end of the section \ref{tutodoc-color-macros} page \pageref{tutodoc-color-macros}.
 \end{tdocnote}
+
+
+\smallskip
+
+
+\begin{tdoctip}
+    Sometimes, highlighted content can be reduced to a list. In this case, the formatting can be improved as follows.
+\end{tdoctip}
+
+\tdoclatexinput[sbs]{examples/admonitions/leavevmode-items.tex}
 
 
 \foreach \sectitle/\desc/\filename in {

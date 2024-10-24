@@ -331,7 +331,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
 
-\NewDocumentCommand{ \tdocdocbasicinput }{ m }{%
+\NewDocumentCommand{ \tdocDOCbasicinput }{ m }{%
     Consider the following code.
 
     \tdoclatexinput[code]{#1}
@@ -347,7 +347,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
 
-\NewDocumentCommand{ \tdocdocextraruler }{ m }{%
+\NewDocumentCommand{ \tdocextrarulerDOC }{ m }{%
     \par
     {
         \centering
@@ -362,14 +362,14 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
     }
 }
 
-\NewDocumentEnvironment{ tdoc-doc-showcase }
+\NewDocumentEnvironment{ tdocshowcase }
                        { O{ Start of the rendering in this doc. }
                          O{ End of rendering in this doc. } }{
-        \tdocdocextraruler{#1}
+        \tdocextrarulerDOC{#1}
         \nopagebreak\smallskip\nopagebreak
 }{
         \nopagebreak\smallskip\nopagebreak
-        \tdocdocextraruler{#2}
+        \tdocextrarulerDOC{#2}
 }
 
 
@@ -707,7 +707,7 @@ Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocen
 
 
 
-\subsection{Flashy content} \label{tdoc-admonitions}
+\subsection{Flashy content} \label{tutodoc-admonitions}
 
 \begin{tdocnote}
     Icons are obtained via the \tdocpack{fontawesome5} package, and text spacing is managed by the \tdocmacro{tdocicon} macro.
@@ -732,7 +732,7 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
 \begin{tdocnote}
     Colors are obtained via the expandable macros \tdocmacro{tdocbackcolor} and \tdocmacro{tdocdarkcolor}.
-    For further information, please refer to the end of the section \ref{tdoc-color-macros} page \pageref{tdoc-color-macros}.
+    For further information, please refer to the end of the section \ref{tutodoc-color-macros} page \pageref{tutodoc-color-macros}.
 \end{tdocnote}
 
 
@@ -811,13 +811,13 @@ To explain the names chosen, there is nothing like indicating and explaining the
 \end{tdocrem}
 
 
-\section{A real-life rendering} \label{tdoc-showcase}
+\section{A real-life rendering} \label{tutodoc-showcase}
 
 It is sometimes useful to render code directly in the documentation. This type of rendering must be dissociable from the explanatory text.
 
 
 
-\subsection{With a colored stripe} \label{tdoc-color-macros}
+\subsection{With a colored stripe} \label{tutodoc-color-macros}
 
 \begin{tdocexa} [With default text]
     It can be useful to show a real rendering directly in a document.
@@ -842,7 +842,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 \smallskip
 
 \begin{tdocrem}
-    See the section \ref{tdoc-latexshow} on page \pageref{tdoc-latexshow} to easily obtain code followed by its actual rendering as in the previous example.
+    See the section \ref{tutodoc-latexshow} on page \pageref{tutodoc-latexshow} to easily obtain code followed by its actual rendering as in the previous example.
 \end{tdocrem}
 
 
@@ -995,7 +995,7 @@ Documenting a package or class is best done through use cases showing both the c
 %\end{tdoccaut}
 
 
-\subsection{\tdocquote{Inline} codes} \label{tdoc-listing-inline}
+\subsection{\tdocquote{Inline} codes} \label{tutodoc-listing-inline}
 
 The \tdocmacro{tdocinlatex} macro
 \footnote{
@@ -1028,7 +1028,7 @@ Here are some examples.
 
 \begin{tdocexa}[Side by side]
     Using \tdocenv[{[sbs]}]{tdoclatex}, we can display a code and its rendering side by side.
-    \tdocdocbasicinput{examples-listing-ABC.tex}
+    \tdocDOCbasicinput{examples-listing-ABC.tex}
 
 \end{tdocexa}
 
@@ -1065,13 +1065,13 @@ Here are some examples.
 
 \begin{tdocwarn}
     With default formatting, if the code begins with an opening bracket, the default option must be explicitly indicated.
-    \tdocdocbasicinput{examples-listing-strange.tex}
+    \tdocDOCbasicinput{examples-listing-strange.tex}
 
 
     \smallskip
 
     Another method is to use the \tdocmacro{string} primitive.
-    \tdocdocbasicinput{examples-listing-strange-bis.tex}
+    \tdocDOCbasicinput{examples-listing-strange-bis.tex}
 
 \end{tdocwarn}
 
@@ -1145,17 +1145,17 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 % ------------------ %
 
 
-\subsection{Imported codes put into practice} \label{tdoc-latexshow}
+\subsection{Imported codes put into practice} \label{tutodoc-latexshow}
 
 \begin{tdocexa}[Showcase]
     The following comes from \tdocinlatex+\tdoclatexshow{examples-listing-xyz.tex}+.
 
     \medskip
 
-    \begin{tdoc-doc-showcase}
+    \begin{tdocshowcase}
         \tdoclatexshow{examples-listing-xyz.tex}
 
-    \end{tdoc-doc-showcase}
+    \end{tdocshowcase}
 \end{tdocexa}
 
 
@@ -1172,10 +1172,10 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
     \medskip
 
-    \begin{tdoc-doc-showcase}
+    \begin{tdocshowcase}
         \tdoclatexshow[explain = Here is the actual rendering.]{examples-listing-xyz.tex}
 
-    \end{tdoc-doc-showcase}
+    \end{tdocshowcase}
 \end{tdocexa}
 
 
@@ -1183,7 +1183,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
 
 \begin{tdocexa}[The options available]
-    In addition to the explanatory text, it is also possible to use all the options of \tdocenv*{tdocshowcase} environment, see \ref{tdoc-showcase} page \pageref{tdoc-showcase}.
+    In addition to the explanatory text, it is also possible to use all the options of \tdocenv*{tdocshowcase} environment, see \ref{tutodoc-showcase} page \pageref{tutodoc-showcase}.
     Here is an example to illustrate this.
 
     \medskip
@@ -1197,10 +1197,10 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
     \medskip
 
-    \begin{tdoc-doc-showcase}
+    \begin{tdocshowcase}
         \input{examples-listing-latexshow-options.tex}
 
-    \end{tdoc-doc-showcase}
+    \end{tdocshowcase}
 \end{tdocexa}
 
 
@@ -1264,7 +1264,7 @@ You can either date something, or version it, in which case the version number c
 
 
 \begin{tdocnote}
-    For icons, see the note at the beginning of the section \ref{tdoc-admonitions} page \pageref{tdoc-admonitions}.
+    For icons, see the note at the beginning of the section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
 \end{tdocnote}
 
 
@@ -1344,15 +1344,15 @@ Ble, ble, ble...
 \begin{wrapfigure}{R}
 	\contribtranslatedirtree\
 	\caption{Simplified view of the translation folder}
-	\label{tdoc-contrib-translate-dir}
+	\label{tutodoc-contrib-translate-dir}
 \end{wrapfigure}{}
 
 
-The translations are roughly organized as in figure \ref{tdoc-contrib-translate-dir} where only the folders important for the translations have been \tdocquote{opened}\,.%}.
+The translations are roughly organized as in figure \ref{tutodoc-contrib-translate-dir} where only the folders important for the translations have been \tdocquote{opened}\,.%}.
 \footnote{
     This was the organization on October 5, 2024, but it's still relevant today.
 }
-\textbf{A little further down, the \ref{tdoc-contrib-translate} section explains how to add new translations}.
+\textbf{A little further down, the \ref{tutodoc-contrib-translate} section explains how to add new translations}.
 
 
 \subsubsection{The \texttt{fr} and \texttt{en} folders}
@@ -1376,7 +1376,7 @@ The \texttt{LICENSE.txt} file is aptly named, while the \texttt{README.md} file 
 
 
 \subsubsection{New translations}
-\label{tdoc-contrib-translate}
+\label{tutodoc-contrib-translate}
 
 \begin{tdocimp}
     The \verb#api# folder contains translations relating to the functionalities of \thisproj.

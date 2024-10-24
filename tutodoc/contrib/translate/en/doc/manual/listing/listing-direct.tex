@@ -8,7 +8,7 @@
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
 
-\NewDocumentCommand{ \tdocdocbasicinput }{ m }{%
+\NewDocumentCommand{ \tdocDOCbasicinput }{ m }{%
     Consider the following code.
 
     \tdoclatexinput[code]{#1}
@@ -35,7 +35,8 @@ Documenting a package or class is best done through use cases showing both the c
 %\end{tdoccaut}
 
 
-\subsection{\tdocquote{Inline} codes} \label{tdoc-listing-inline}
+\subsection{\tdocquote{Inline} codes}
+\label{tutodoc-listing-inline}
 
 The \tdocmacro{tdocinlatex} macro
 \footnote{
@@ -68,7 +69,7 @@ Here are some examples.
 
 \begin{tdocexa}[Side by side]
     Using \tdocenv[{[sbs]}]{tdoclatex}, we can display a code and its rendering side by side.
-    \tdocdocbasicinput{examples/listing/ABC.tex}
+    \tdocDOCbasicinput{examples/listing/ABC.tex}
 \end{tdocexa}
 
 
@@ -104,12 +105,12 @@ Here are some examples.
 
 \begin{tdocwarn}
     With default formatting, if the code begins with an opening bracket, the default option must be explicitly indicated.
-    \tdocdocbasicinput{examples/listing/strange.tex}
+    \tdocDOCbasicinput{examples/listing/strange.tex}
 
     \smallskip
 
     Another method is to use the \tdocmacro{string} primitive.
-    \tdocdocbasicinput{examples/listing/strange-bis.tex}
+    \tdocDOCbasicinput{examples/listing/strange-bis.tex}
 \end{tdocwarn}
 
 \end{document}
