@@ -9,6 +9,7 @@ DEBUG = True
 from src2prod import *
 
 from texfacto_builder import *
+from hook             import *
 
 if DEBUG:
     from pprint import pprint
@@ -20,6 +21,9 @@ if DEBUG:
 
 THIS_DIR = Path(__file__).parent
 
+MANUAL_HOOKS_AFTER = {
+    Path("theme") / "theme": build_gallery.main
+}
 
 # ----------------- #
 # -- DEBUG TOOLS -- #
@@ -206,7 +210,7 @@ for kind, prebuilder in [
         temp_dir            = metadata[TAG_TEMP],
         sorted_useful_files = sorted_useful_files,
         versions            = metadata[TAG_VERSIONS],
-        about_langs               = {
+        about_langs         = {
             TAG_MANUAL_DEV_LANG  : metadata[TAG_MANUAL_DEV_LANG],
             TAG_MANUAL_OTHER_LANG: metadata[TAG_MANUAL_OTHER_LANG],
             TAG_API_LANGS        : metadata[TAG_API_LANGS],
@@ -214,8 +218,8 @@ for kind, prebuilder in [
     )
 
 
-# if DEBUG:
-#     exit()
+if DEBUG:
+    exit()
 
 
 # ------------------- #
