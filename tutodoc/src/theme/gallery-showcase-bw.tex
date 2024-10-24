@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt, theme = bw]{../main/main}
+\documentclass[10pt, a4paper, theme = bw]{../main/main}
 
 \input{../preamble.cfg.tex}
 
@@ -6,12 +6,9 @@
 \usepackage{../listing/listing.cls}
 \usepackage{../version-n-change/version-n-change.cls}
 
-
-% == FORDOC == %
-
 \newcommand\thisstyle{bw}
 
-\newcommand\myexarktext{
+\newcommand\myexrmktext{
     \tdocdate{2024-10-23}
     Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
 }
@@ -40,13 +37,13 @@
 \seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
     \subsection*{tdoc#1}
 
-    \myexarktext
+    \myexrmktext
 
     \begin{tdoc#1}
         \myhighlightedtext
     \end{tdoc#1}
 
-    \myexarktext
+    \myexrmktext
 }
 
 \ifcsundef{__g_tutodoc_focus_color_seq}{

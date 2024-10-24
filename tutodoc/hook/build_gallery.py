@@ -5,17 +5,7 @@ from pathlib import Path
 # -- CONSTANTS -- #
 # --------------- #
 
-TEMPLATE_DEBUG_FILE = r"""
-<<THE-FILE-CONTENTS>>
-
-\documentclass[10pt, a4paper]{../main/main}
-
-\input{../preamble.cfg.tex}
-
-\usepackage{../admonitions/admonitions.cls}
-
-\begin{document}
-
+TMPL_CONTENT_CODE = r"""
 % The following AT-END-DOCUMENT lines of code have been generated
 % automatically. Don't judge their relative beauty...
 \AtEndDocument{ % AT-END-DOCUMENT - START
@@ -34,30 +24,24 @@ TEMPLATE_DEBUG_FILE = r"""
 <<THE-THEMES>>
 
 } % AT-END-DOCUMENT - END
-
-\end{document}
-""".strip() + "\n"
-
-TEMPLATE_FILE_CONTENTS = r"""
-\begin{filecontents*}[overwrite]{gallery-showcase-<<THEME>>.tex}
-<<TEX-CODE-THEME-SHOWCASE>>
-\end{filecontents*}
 """.strip()
 
 TEX_BUILD_CMD = r"""
 \immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-<<THEME>>}
 """.strip()
 
-TEMPLATE_INCLUDE_PDF = r"""
+TMPL_INCLUDE_PDF = r"""
 \includepdf[
 	pages=1-2,
 	fitpaper=true
 ]{gallery-showcase-<<THEME>>}
 """.strip()
 
+TMPL_VIRTUAL_PATH = r"gallery-showcase-<<THEME>>.tex"
+
 
 THIS_DIR     = Path(__file__).parent
-MAIN_CSS_DIR = THIS_DIR / "src" / "main" / "css"
+MAIN_CSS_DIR = THIS_DIR.parent / "src" / "main" / "css"
 
 ALL_THEMES = []
 
@@ -94,12 +78,35 @@ def multireplace(
 # -- TOOLS -- #
 # ----------- #
 
-def main(dir_analyzed):
+# We muste use a fnction main as an netry point.
+# We have to return the LaTeX code to put directly inside the manual, and a dictionnary for the resources with key a virtual path, the one used inisde the manual, and value the content of the virtual fiel.
+def main(
+    dir_analyzed,
+    isfordebug = False
+):
 # Template for the showcase.
     tmpl_theme = "color"
 
     tmpl_showcase_code = dir_analyzed / "tmpl-theme-showcase-color.tex"
     tmpl_showcase_code = tmpl_showcase_code.read_text()
+
+    if not isfordebug:
+        tmpl_showcase_code = tmpl_showcase_code.replace(
+            r"""
+\documentclass[10pt, a4paper, theme = color]{../main/main}
+
+\input{../preamble.cfg.tex}
+
+\usepackage{../admonitions/admonitions.cls}
+\usepackage{../listing/listing.cls}
+\usepackage{../version-n-change/version-n-change.cls}
+            """.strip(),
+            r"""
+\documentclass[10pt, a4paper, theme = color]{tutotoc}
+
+\input{../preamble.cfg.tex}
+            """.strip()
+        )
 
 # Template for the annex front page.
     tmpl_annex_code = dir_analyzed / "tmpl-theme-annex-page.tex"
@@ -111,9 +118,9 @@ def main(dir_analyzed):
     tmpl_annex_code = tmpl_annex_code.strip()
 
 # Let's build the pieces of our work.
-    file_contents_code = []
-    build_pdfs_code    = []
-    include_pdfs       = []
+    virtual_resrc   = {}
+    build_pdfs_code = []
+    include_pdfs    = []
 
     main_theme_brackets = f"{{{tmpl_theme}}}"
     option_theme        = f"theme = {tmpl_theme}]"
@@ -127,36 +134,31 @@ def main(dir_analyzed):
             },
         )
 
-        file_contents_code.append(
-            multireplace(
-                text         = TEMPLATE_FILE_CONTENTS,
-                replacements = {
-                rafterit("THEME")                  : theme,
-                rafterit("TEX-CODE-THEME-SHOWCASE"): contents
-                },
+        virtual_resrc[
+            TMPL_VIRTUAL_PATH.replace(
+                rafterit("THEME")                  ,
+                theme
             )
-        )
+        ] = contents
 
         build_pdfs_code.append(
             TEX_BUILD_CMD.replace(rafterit("THEME"), theme)
         )
 
         include_pdfs.append(
-            TEMPLATE_INCLUDE_PDF.replace(rafterit("THEME"), theme)
+            TMPL_INCLUDE_PDF.replace(rafterit("THEME"), theme)
         )
 
-# We can build the TeX code.
     tex_code = multireplace(
-        text         = TEMPLATE_DEBUG_FILE,
+        text         = TMPL_CONTENT_CODE,
         replacements = {
-            rafterit("ANNEX-PAGE")       : tmpl_annex_code,
-            rafterit("THE-FILE-CONTENTS"): jointhis(file_contents_code),
-            rafterit("BUILD-PDFs")       : jointhis(build_pdfs_code),
-            rafterit("THE-THEMES")       : jointhis(include_pdfs),
+            rafterit("ANNEX-PAGE"): tmpl_annex_code,
+            rafterit("BUILD-PDFs"): jointhis(build_pdfs_code),
+            rafterit("THE-THEMES"): jointhis(include_pdfs),
         },
     )
 
-    return tex_code
+    return virtual_resrc, tex_code
 
 
 # ------------------- #
@@ -167,6 +169,50 @@ if __name__ == "__main__":
     src_theme_dir = THIS_DIR.parent / "src" / "theme"
     debug_file    = src_theme_dir / "debug-gallery.tex"
 
-    tex_code = main(src_theme_dir)
+    tmpl_debug_file = r"""
+<<THE-FILE-CONTENTS>>
+
+\documentclass[10pt, a4paper]{../main/main}
+
+\input{../preamble.cfg.tex}
+
+\usepackage{../admonitions/admonitions.cls}
+
+\begin{document}
+
+<<TEX-CONTENT>>
+
+\end{document}
+    """.strip()
+
+    tmpl_file_contents = r"""
+\begin{filecontents*}[overwrite]{<<VIRTUAL-PATH>>}
+<<TEX-CODE-THEME-SHOWCASE>>
+\end{filecontents*}
+""".strip()
+
+    virtual_resrc, tex_code = main(
+        dir_analyzed = src_theme_dir,
+        isfordebug   = True
+    )
+
+    file_contents_code = [
+        multireplace(
+            text         = tmpl_file_contents,
+            replacements = {
+                rafterit("VIRTUAL-PATH")           : vpath,
+                rafterit("TEX-CODE-THEME-SHOWCASE"): content,
+            },
+        )
+        for vpath, content in virtual_resrc.items()
+    ]
+
+    tex_code = multireplace(
+        text         = tmpl_debug_file,
+        replacements = {
+            rafterit("THE-FILE-CONTENTS"): jointhis(file_contents_code),
+            rafterit("TEX-CONTENT")      : tex_code,
+        },
+    )
 
     debug_file.write_text(tex_code)
