@@ -2,6 +2,22 @@
 
 
 ==
+25  (1.6.0-rc.2)
+==
+
+--------
+:fordev:
+--------
+
+[[:test:]]   ????
+Need uoadte because chge of col (new version is ready to be put on \ctan)
+
+
+
+// ---------- //
+
+
+==
 25  (1.6.0-rc.1)
 ==
 
