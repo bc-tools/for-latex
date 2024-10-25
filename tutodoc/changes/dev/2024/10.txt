@@ -2,7 +2,7 @@
 
 
 ==
-26 (1.6.0-rc.2)
+26  (1.6.0-rc.2)
 ==
 
 
@@ -26,20 +26,14 @@
 --------
 
 [[:test:]]   ????
-Updates needed regarding the new ''theme'' option. We hav also
-
-
-eed uoadte because chge of col (new version is ready to be put on \ctan)
-
-usage de préfixe pdf pour visual test et unit pourteste unitaire
-
+Updates were needed regarding the new ''theme'' option. From now, we will use prefixes path::''pdf'' and path::''unit'' to indicate either a visual test, or a unit one.
 
 
 
 
 
 [[:flow:]]
-Translation of the \api: The ocde is up-to-date.
+Translation of the \api: the code has been updated to follow the new organization of the folders.
 
 
 // ---------- //
