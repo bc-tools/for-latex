@@ -339,8 +339,8 @@ def ugly_hack(content):
     )
 
     content = content.replace(
-        "{../main/tutodoc-locale",
-        "{tutodoc-locale",
+        "{../main/tutodoc-main-locale",
+        "{tutodoc-main-locale",
     )
 
     return content
