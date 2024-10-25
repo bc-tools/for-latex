@@ -132,7 +132,7 @@
 % to the english language.
   \makeatletter
 
-  \InputIfFileExists{../main/tutodoc-locale-main-\tdoclang.cfg.cls.sty}{}{
+  \InputIfFileExists{../main/tutodoc-main-locale-\tdoclang.cfg.cls.sty}{}{
 	  \input{../main/tutodoc-locale-main-en.cfg.cls.sty}
 
 	  \msg_critical:nnx { tutodoc ~ (main) }

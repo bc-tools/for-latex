@@ -176,20 +176,16 @@ for lang in  metadata[TAG_API_LANGS]:
             print(f'    * Translations from "/{srcdir.name}/{ctxt.name}".')
 
 
-            sty_cfg  = SRC_DIR / ctxt.name
-            sty_cfg /= f"{PROJECT_NAME}-locale-{ctxt.stem}-{lang}.cfg.cls.sty"
+            sty_cfg  = SRC_DIR / srcdir.name
+            sty_cfg /= f"{PROJECT_NAME}-{srcdir.name}-{ctxt.stem}-{lang}.cfg.cls.sty"
 
 
             texmacros = []
 
-            for esvfile in ctxt.glob("*/*.txt"):
-                print(esvfile.relative_to(lang_dir))
+            for esvfile in ctxt.glob("*.txt"):
+                texmacros += build_trans_cmds(PROJECT_NAME, esvfile)
 
+            texmacros = "\n".join(texmacros)
 
-
-            #     texmacros += build_trans_cmds(PROJECT_NAME, esvfile)
-
-            # texmacros = "\n".join(texmacros)
-
-            # createfile(sty_cfg)
-            # sty_cfg.write_text(texmacros)
+            createfile(sty_cfg)
+            sty_cfg.write_text(texmacros)
