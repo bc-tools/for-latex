@@ -86,9 +86,7 @@ for directdir, content in treeview[TAG_DIR].items():
 
 SRC_DIR = metadata[TAG_SRC]
 
-CONTRIB_DIR        = metadata[TAG_PROJ_DIR] / TAG_CONTRIB
-CONTRIB_API_DIR    = CONTRIB_DIR / TAG_API / TAG_LOCALE
-CONTRIB_STATUS_DIR = CONTRIB_API_DIR / 'status'
+CONTRIB_TRANS_DIR = metadata[TAG_PROJ_DIR] / TAG_CONTRIB / TAG_TRANSLATE
 
 PROJECT_NAME = metadata[TAG_PROJ_NAME]
 
@@ -117,7 +115,10 @@ def iter_texspec_from_esv(file):
         yield nbparams, macroname, texcode
 
 
-def extractesv(projname, file):
+def build_trans_cmds(
+    projname,
+    file
+):
     if not file.stem in ["macros", "sentences"]:
         return []
 
@@ -141,54 +142,22 @@ def extractesv(projname, file):
 # ------------------ #
 
 print_frame(
-    metadata[TAG_PROJ_NAME],
-    "API",
+    PROJECT_NAME,
+    "API - LANG ACCEPTED",
     WHAT
 )
 
-
-all_status = {}
-
-for lang_file in CONTRIB_STATUS_DIR.glob("*"):
-    if (
-        not lang_file.is_file()
-        or
-        lang_file.name[0] == "."
-        or
-        lang_file.suffix != ".yaml"
-    ):
-        continue
-
-    with open(lang_file,'r') as f:
-        all_status[lang_file.stem] = safe_load(f)
-
-
 first_dir = True
 
-for lang_dir in CONTRIB_API_DIR.glob("*"):
-    lang = lang_dir.name
-
-    if (
-        lang == "status"
-        or
-        not lang in all_status
-    ):
-        continue
-
+for lang in  metadata[TAG_API_LANGS]:
     if first_dir:
         first_dir = False
     else:
         print()
 
-    lang_status = all_status[lang]
+    print(f"+ {lang.upper()} translation")
 
-    if lang_status[TAG_STATUS] != TAG_STATUS_OK:
-        print(f"+ Rejected translation : ''contrib/api/locale/{lang}''")
-
-        continue
-
-    print(f"+ Accepted translation : ''contrib/api/locale/{lang}''")
-
+    lang_dir = CONTRIB_TRANS_DIR / lang / TAG_API
 
     for ctxt in lang_dir.glob("*"):
         if (
@@ -200,15 +169,14 @@ for lang_dir in CONTRIB_API_DIR.glob("*"):
 
         print(f'    * Updating "/src/{ctxt.name}".')
 
-        lang_full = LANG_NAMES[TAG_LANG_EN][lang].lower()
-
         sty_cfg  = SRC_DIR / ctxt.name
-        sty_cfg /= f"{PROJECT_NAME}-locale-{ctxt.stem}-{lang_full}.cfg.sty"
+        sty_cfg /= f"{PROJECT_NAME}-locale-{ctxt.stem}-{lang}.cfg.cls.sty"
+
 
         texmacros = []
 
         for esvfile in ctxt.glob("*.txt"):
-            texmacros += extractesv(PROJECT_NAME, esvfile)
+            texmacros += build_trans_cmds(PROJECT_NAME, esvfile)
 
         texmacros = "\n".join(texmacros)
 

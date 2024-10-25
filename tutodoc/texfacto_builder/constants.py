@@ -166,20 +166,9 @@ ROLLOUT_CSS_PATH  = r"css-{texvar}-{catego}.cls.sty"
 TEMPL_INPUT_CSS   = f"\\input{{{{{ROLLOUT_CSS_PATH}}}}}"
 
 
-# --------------- #
-# -- LANGUAGES -- #
-# --------------- #
-
-LANG_NAMES = {
-    'en' : {
-        'en': "English",
-        'fr': "French",
-    },
-    'fr' : {
-        'en': "anglais",
-        'fr': "français",
-    },
-}
+# ------------------ #
+# -- TRANSLATIONS -- #
+# ------------------ #
 
 HISTORY_TRANS = {
     'en' : "History",
