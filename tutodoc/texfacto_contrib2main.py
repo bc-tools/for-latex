@@ -136,6 +136,12 @@ def build_trans_cmds(
 
     return macrodefs
 
+def keepasdir(path):
+    return (
+        path.is_dir()
+        and
+        path.name[0] != "."
+    )
 
 # ------------------ #
 # -- API CONTRIB. -- #
@@ -155,30 +161,35 @@ for lang in  metadata[TAG_API_LANGS]:
     else:
         print()
 
-    print(f"+ {lang.upper()} translation")
+    print(f"+ {lang}")
 
     lang_dir = CONTRIB_TRANS_DIR / lang / TAG_API
 
-    for ctxt in lang_dir.glob("*"):
-        if (
-            not ctxt.is_dir()
-            or
-            ctxt.name[0] == "."
-        ):
+    for srcdir in lang_dir.glob("*"):
+        if not keepasdir(srcdir):
             continue
 
-        print(f'    * Updating "/src/{ctxt.name}".')
+        for ctxt in srcdir.glob("*"):
+            if not keepasdir(ctxt):
+                continue
 
-        sty_cfg  = SRC_DIR / ctxt.name
-        sty_cfg /= f"{PROJECT_NAME}-locale-{ctxt.stem}-{lang}.cfg.cls.sty"
+            print(f'    * Translations from "/{srcdir.name}/{ctxt.name}".')
 
 
-        texmacros = []
+            sty_cfg  = SRC_DIR / ctxt.name
+            sty_cfg /= f"{PROJECT_NAME}-locale-{ctxt.stem}-{lang}.cfg.cls.sty"
 
-        for esvfile in ctxt.glob("*.txt"):
-            texmacros += build_trans_cmds(PROJECT_NAME, esvfile)
 
-        texmacros = "\n".join(texmacros)
+            texmacros = []
 
-        createfile(sty_cfg)
-        sty_cfg.write_text(texmacros)
+            for esvfile in ctxt.glob("*/*.txt"):
+                print(esvfile.relative_to(lang_dir))
+
+
+
+            #     texmacros += build_trans_cmds(PROJECT_NAME, esvfile)
+
+            # texmacros = "\n".join(texmacros)
+
+            # createfile(sty_cfg)
+            # sty_cfg.write_text(texmacros)
