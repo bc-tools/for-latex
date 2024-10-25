@@ -127,7 +127,7 @@ def build_trans_cmds(
     for nbparams, macroname, texcode in iter_texspec_from_esv(file):
         signature = "m"*nbparams
         macroname = macroname.replace('_', '@')
-        texcode   = texcode.replace(' ', ' ~ ')
+        # texcode   = texcode.replace(' ', ' ~ ')
 
         macrodefs.append(
             f"\\NewDocumentCommand{{\\{projname}@trans@{macroname}}}"

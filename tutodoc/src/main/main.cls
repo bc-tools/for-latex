@@ -112,7 +112,11 @@
 
 \msg_set:nnnn { tutodoc ~ (main) }
   { main : unsupported-lang }
-  { unsupported ~ language ~ << ~ #1 ~ >>. }
+  {
+    unsupported ~ language ~ << ~ #1 ~ >>. %
+    ~ %
+    We ~ will ~ use ~ << ~ en ~ >>.
+  }
   { \msg_see_documentation_text:n { tutodoc } }
 
 
@@ -133,7 +137,7 @@
   \makeatletter
 
   \InputIfFileExists{../main/tutodoc-main-locale-\tdoclang.cfg.cls.sty}{}{
-	  \input{../main/tutodoc-locale-main-en.cfg.cls.sty}
+	  \input{../main/tutodoc-main-locale-en.cfg.cls.sty}
 
 	  \msg_critical:nnx { tutodoc ~ (main) }
         { main : unsupported-lang }
