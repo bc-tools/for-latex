@@ -24,8 +24,8 @@ checkopts   = "-interaction=nonstopmode --shell-escape"
 typesetopts = checkopts
 
 uploadconfig = {
-    version      = "1.5.0 [2024-10-19]",
-    announcement = "tutodoc becomes a LaTeX class.",
+    version      = "1.6.0 [2024-10-26]",
+    announcement = "The main change is the ability to choose a layout from 4 themes.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",

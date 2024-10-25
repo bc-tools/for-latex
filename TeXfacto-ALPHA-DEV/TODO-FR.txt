@@ -1,3 +1,6 @@
+box package --> dic via point notat
+
+
 > ---------------------------- <
 
 prendre en compte certain prefixe de fichier
@@ -13,6 +16,7 @@ prendre en compte certain prefixe de fichier
         + contenu text a pre post ajouter
 
     CELA DEVRAIT SUFFIRE !
+
 
 > ---------------------------- <
 

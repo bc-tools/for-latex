@@ -5,7 +5,7 @@
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
 
-\NewDocumentCommand{ \tdocDOCbasicinput }{ m }{%
+\NewDocumentCommand{ \tdocbasicinputDOC }{ m }{%
     Considérons le code suivant.
 
     \tdoclatexinput[code]{#1}
@@ -65,7 +65,7 @@ Voici des exemples d'utilisation.
 \begin{tdocexa}[Face à face]
     Via \tdocenv[{[sbs]}]{tdoclatex}, on affichera un code et son rendu côte à côte.
     Indiquons que \tdocinlatex#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}.
-    \tdocDOCbasicinput{examples/listing/ABC.tex}
+    \tdocbasicinputDOC{examples/listing/ABC.tex}
 \end{tdocexa}
 
 
@@ -92,12 +92,12 @@ Voici des exemples d'utilisation.
 
 \begin{tdocwarn}
     Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut.
-    \tdocDOCbasicinput{examples/listing/strange.tex}
+    \tdocbasicinputDOC{examples/listing/strange.tex}
 
     \smallskip
 
     Une autre méthode consiste à utiliser la primitive \tdocmacro{string}.
-    \tdocDOCbasicinput{examples/listing/strange-bis.tex}
+    \tdocbasicinputDOC{examples/listing/strange-bis.tex}
 \end{tdocwarn}
 
 \end{document}

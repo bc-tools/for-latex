@@ -9,14 +9,18 @@
 
 \ProvidesExplClass
   {tutodoc}
-  {2024-10-19}  % Creation: 2023-11-29
-  {1.5.0}
+  {2024-10-26}  % Creation: 2023-11-29
+  {1.6.0}
   {This LaTeX class proposes tools for writing "human friendly" PDF documentations of LaTeX packages and classes.}
 
 
+% =================== %
 % == PACKAGES USED == %
+% =================== %
 
+% ------------- %
 % -- OPTIONS -- %
+% ------------- %
 
 \ExplSyntaxOn
 
@@ -49,7 +53,9 @@
 \ExplSyntaxOff
 
 
+% ------------- %
 % -- IMPORTS -- %
+% ------------- %
 
 \RequirePackage[svgnames]%
                {xcolor}%
@@ -125,9 +131,13 @@
                [2023-09-07]
 
 
+% =============== %
 % == MAIN CODE == %
+% =============== %
 
+% --------------------------- %
 % -- COLOR TRANSFORMATIONS -- %
+% --------------------------- %
 
 %%%
 % prototype::
@@ -153,7 +163,9 @@
 \NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
 
 
+% ----------- %
 % -- ICONS -- %
+% ----------- %
 
 %%%
 % prototype::
@@ -168,13 +180,19 @@
 }
 
 
+% --------------------- %
 % -- LOCALE SETTINGS -- %
+% --------------------- %
 
 \ExplSyntaxOn
 
 \msg_set:nnnn { tutodoc ~ (main) }
   { main : unsupported-lang }
-  { unsupported ~ language ~ << ~ #1 ~ >>. }
+  {
+    unsupported ~ language ~ << ~ #1 ~ >>. %
+    ~ %
+    We ~ will ~ use ~ << ~ en ~ >>.
+  }
   { \msg_see_documentation_text:n { tutodoc } }
 
 
@@ -194,8 +212,8 @@
 % to the english language.
   \makeatletter
 
-  \InputIfFileExists{tutodoc-locale-main-\tdoclang.cfg.cls.sty}{}{
-	  \input{tutodoc-locale-main-en.cfg.cls.sty}
+  \InputIfFileExists{tutodoc-main-locale-\tdoclang.cfg.cls.sty}{}{
+	  \input{tutodoc-main-locale-en.cfg.cls.sty}
 
 	  \msg_critical:nnx { tutodoc ~ (main) }
         { main : unsupported-lang }
@@ -208,12 +226,16 @@
 \ExplSyntaxOff
 
 
+% ---------------------- %
 % -- GENERAL SETTINGS -- %
+% ---------------------- %
 
 \setlength{\parindent}{0cm}
 
 
+% --------------- %
 % -- TOC & Co. -- %
+% --------------- %
 
 \ifcsundef{chapter}%
           {}%
@@ -255,9 +277,11 @@
 \DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
 
 
+% ------------------- %
 % -- LINKS AND CO. -- %
+% ------------------- %
 
-\input{css/main-\tutodoc@theme.cls.sty}
+\input{css-\tutodoc@theme-main.cls.sty}
 
 \hypersetup{
   colorlinks,
@@ -268,7 +292,9 @@
 }
 
 
+% ------------- %
 % -- QUOTING -- %
+% ------------- %
 
 %%%
 % prototype::
@@ -282,7 +308,9 @@
 }
 
 
+% ------------------------------ %
 % -- EXPLAINING ENGLISH NAMES -- %
+% ------------------------------ %
 
 %%%
 % prototype::
@@ -305,16 +333,21 @@
 %        **"Something" et "Another thing" en anglais**.
 %%%
 \NewDocumentCommand{\tdocinEN}{s m}{%
-  \tdocquote{#2}%
-  \IfBooleanF{#1}{% No star used.
-    \tutodoc@trans@in@EN{}%
+  \IfBooleanTF{#1}{% No star used.
+    \tdocquote{#2}%
+  }{% Star used.
+    \tutodoc@trans@in@EN{\tdocquote{#2}}%
   }%
 }
 
 
+% ----------------------------------- %
 % -- SOBER HIGHLIGHTING OF CONTENT -- %
+% ----------------------------------- %
 
+% :::::::::::::::::::::: %
 % :: EXAMPLE & REMARK :: %
+% :::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
@@ -354,9 +387,11 @@
 \ExplSyntaxOff
 
 
+% -------------------------------------- %
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
+% -------------------------------------- %
 
-\input{css/admonitions-\tutodoc@theme.cls.sty}
+\input{css-\tutodoc@theme-admonitions.cls.sty}
 
 
 %%%
@@ -449,7 +484,9 @@
 \ExplSyntaxOff
 
 
+% ---------------------------------------------- %
 % -- NAMES OF PACKAGES, MACROS & ENVIRONMENTS -- %
+% ---------------------------------------------- %
 
 %%%
 % prototype::
@@ -523,11 +560,15 @@
 }
 
 
+% ------------------------- %
 % -- EXPLAINING PREFIXES -- %
+% ------------------------- %
 
 \ExplSyntaxOn
 
+% :::::::::::::: %
 % :: MESSAGES :: %
+% :::::::::::::: %
 
 \msg_set:nnnn { tutodoc ~ (macroenv) }
   { macroenv : prefix-why-bad-format }
@@ -535,7 +576,9 @@
   { You ~ must ~ use ~ one ~ single ~ point. }
 
 
+% :::::::::::::::::::: %
 % :: PREFIX FROM... :: %
+% :::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -567,7 +610,9 @@
 \ExplSyntaxOff
 
 
+% ::::::::::::::::::::: %
 % :: JUST ONE PREFIX :: %
+% ::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -585,12 +630,16 @@
 }
 
 
+% ------------------------ %
 % -- GENERAL FORMATTING -- %
+% ------------------------ %
 
-\input{css/showcase-\tutodoc@theme.cls.sty}
+\input{css-\tutodoc@theme-showcase.cls.sty}
 
 
+% :::::::::::::::::::::::: %
 % :: TEXT INSIDE A RULE :: %
+% :::::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
@@ -636,7 +685,9 @@
 \ExplSyntaxOff
 
 
+% ::::::::::::::::::::::::::: %
 % :: INTERNAL ENVIRONMENTS :: %
+% ::::::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -699,7 +750,9 @@
 
 \ExplSyntaxOn
 
+% ::::::::::::::::::::::: %
 % :: SETTING SOME KEYS :: %
+% ::::::::::::::::::::::: %
 
 \tl_new:N   \l_tutodoc_showcase_before_tl
 \tl_new:N   \l_tutodoc_showcase_after_tl
@@ -729,7 +782,9 @@
 }
 
 
+% :::::::::::::::::::::::::::::: %
 % :: SHOWCASE FROM TYPED CODE :: %
+% :::::::::::::::::::::::::::::: %
 
 % prototype::
 %     #1 : (key-val)
@@ -775,7 +830,9 @@
 }
 
 
+% :::::::::::::::::::::::: %
 % :: SHOWCASE FROM FILE :: %
+% :::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -799,16 +856,22 @@
 \ExplSyntaxOff
 
 
+% -------------------- %
 % -- LATEX EXAMPLES -- %
+% -------------------- %
 
+% :::::::::::::::::::::::::::::::::::::::::::::: %
 % :: STYLES OF THE LISTING ENV. AND THE MACRO :: %
+% :::::::::::::::::::::::::::::::::::::::::::::: %
 
 \newcommand{\tutodoc@latex@lexer}{latex}
 
-\input{css/listing-\tutodoc@theme.cls.sty}
+\input{css-\tutodoc@theme-listing.cls.sty}
 
 
+% :::::::::::::::::::::::: %
 % :: INLINE LATEX MACRO :: %
+% :::::::::::::::::::::::: %
 
 %%%
 % See the \doc of the macro ''\newmintinline'' from the package ''minted''
@@ -820,7 +883,9 @@
 }
 
 
+% ::::::::::::::::::::::::::::::::::: %
 % :: TCOLORBOX LISTING ENVIRONMENT :: %
+% ::::::::::::::::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
@@ -912,7 +977,9 @@
 }
 
 
+% :::::::::::::::::::::::::::::::::::::: %
 % :: TCOLORBOX IMPORTED LISTING MACRO :: %
+% :::::::::::::::::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -931,11 +998,15 @@
 }
 
 
+% -------------------------- %
 % -- LATEX REAL USE CASES -- %
+% -------------------------- %
 
 \ExplSyntaxOn
 
+% ::::::::::::::::::::: %
 % :: SETTING THE KEY :: %
+% ::::::::::::::::::::: %
 
 \tl_new:N \l_tutodoc_listing_explain_tl
 
@@ -952,7 +1023,9 @@
 }
 
 
+% ::::::::::::::::::::: %
 % :: LATEXSHOW MACRO :: %
+% ::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -988,7 +1061,9 @@
 
 \ExplSyntaxOn
 
+% :::::::::::::: %
 % :: MESSAGES :: %
+% :::::::::::::: %
 
 \msg_set:nnnn { tutodoc ~ (version-n-change) }
   { version-n-change : date-bad-format }
@@ -996,7 +1071,9 @@
   { Use ~ YYYY-MM-DD. }
 
 
+% ::::::::::::::::: %
 % :: MARGIN NOTE :: %
+% ::::::::::::::::: %
 
 \reversemarginpar{}
 
@@ -1082,9 +1159,11 @@
 \ExplSyntaxOff
 
 
+% :::::::::::::::::::::: %
 % :: VERSION AND DATE :: %
+% :::::::::::::::::::::: %
 
-\input{css/version-n-change-\tutodoc@theme.cls.sty}
+\input{css-\tutodoc@theme-version-n-change.cls.sty}
 
 %%%
 % prototype::
@@ -1112,7 +1191,9 @@
 }
 
 
+% :::::::::: %
 % :: DATE :: %
+% :::::::::: %
 
 %%%
 % prototype::
@@ -1132,11 +1213,15 @@
 }
 
 
+% --------------------- %
 % -- CHANGES - WHAT? -- %
+% --------------------- %
 
 \ExplSyntaxOn
 
+% :::::::::::::: %
 % :: MESSAGES :: %
+% :::::::::::::: %
 
 \msg_set:nnnn { tutodoc ~ (version-n-change) }
   { version-n-change : topic-missing-title }
@@ -1144,7 +1229,9 @@
   { One ~ single ~ title ~ must ~ be ~ indicated. }
 
 
+% ::::::::::::::::::::: %
 % :: CHANGES - TOPIC :: %
+% ::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -1173,7 +1260,9 @@
 }
 
 
+% :::::::::::::::::::::::::: %
 % :: CHANGES - NEW THINGS :: %
+% :::::::::::::::::::::::::: %
 
 %%%
 % We use a ''prop'' variable to factorize the code just after.
@@ -1184,7 +1273,8 @@
   fix    = \faWrench,
   new    = \faGem,
   prob   = \faFire*,
-  update = \faMagic,
+  tech   = \faFlask,
+  update = \reflectbox{\faHistory},
 }
 
 
@@ -1219,7 +1309,9 @@
 \ExplSyntaxOff
 
 
+% ----------------- %
 % -- DECORATIONS -- %
+% ----------------- %
 
 % Source
 %    * https://tex.stackexchange.com/a/705938/6880

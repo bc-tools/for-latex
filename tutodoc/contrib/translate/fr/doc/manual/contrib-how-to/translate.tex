@@ -2,6 +2,11 @@
 
 \input{../preamble.cfg.tex}
 
+%\geometry{showframe}
+
+
+% == FORDOC == %
+
 \NewDocumentCommand{\mailsubject}{m}%  <-- Translate me!
   {sujet \tdocquote{\texttt{tutodoc - CONTRIB - #1}}}
 
@@ -85,12 +90,12 @@
     }
 \end{tdoccaut}
 
-
-\begin{wrapfigure}{R}
+\begin{figure}[ht]
+	\centering
     \contribtranslatedirtree\
     \caption{Vue simplifiée du dossier des traductions}
     \label{tutodoc-contrib-translate-dir}
-\end{wrapfigure}{}
+\end{figure}
 
 
 Les traductions sont organisées grosso-modo comme dans la figure \ref{tutodoc-contrib-translate-dir} où seuls les dossiers importants pour les traductions ont été \tdocquote{ouverts}\,.%
@@ -140,7 +145,7 @@ Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{R
   date = #1-#2-#3
 
   // #1: the idea is to produce one text like
-  //     "this word means #1 in english".
+  //     "this word means #1 in English".
   in_EN = #1 in english\end{verbatim}
 \end{tdocimp}
 

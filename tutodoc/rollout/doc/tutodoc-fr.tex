@@ -3,6 +3,379 @@
 % ==================== %
 
 
+\begin{filecontents*}[overwrite]{gallery-showcase-bw.tex}
+\documentclass[10pt, a4paper, theme = bw]{tutodoc}
+
+\newcommand\thisstyle{bw}
+
+\newcommand\myexrmktext{
+    \tdocdate{2024-10-23}
+    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
+}
+
+\newcommand\myadmotext{
+    \tdocversion{1.6.0}[2024-10-23]
+    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
+}
+
+\newcommand\myhighlightedtext{
+    Que dire
+    \footnote{
+        N'oublions pas les notes de bas de page...
+    } ?
+    Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
+}
+
+
+\begin{document}
+
+{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
+
+\section{Mettre en avant, versionner et dater}
+
+\ExplSyntaxOn
+
+\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+    \subsection*{tdoc#1}
+
+    \myexrmktext
+
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
+
+    \myexrmktext
+}
+
+\ifcsundef{__g_tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+} {
+    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+}
+
+\ExplSyntaxOff
+
+\section{Des codes \LaTeX}
+
+Il est indispensable de pouvoir montrer des cas d'utilisation en \LaTeX.
+
+\begin{tdoclatex}
+Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
+
+\begin{tdoclatex}[sbs]
+Voir du code \LaTeX\ mis en forme,
+c'est sympa : $E = m c^2$ ou
+$\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+\end{document}
+
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{gallery-showcase-color.tex}
+\documentclass[10pt, a4paper, theme = color]{tutodoc}
+
+\newcommand\thisstyle{color}
+
+\newcommand\myexrmktext{
+    \tdocdate{2024-10-23}
+    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
+}
+
+\newcommand\myadmotext{
+    \tdocversion{1.6.0}[2024-10-23]
+    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
+}
+
+\newcommand\myhighlightedtext{
+    Que dire
+    \footnote{
+        N'oublions pas les notes de bas de page...
+    } ?
+    Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
+}
+
+
+\begin{document}
+
+{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
+
+\section{Mettre en avant, versionner et dater}
+
+\ExplSyntaxOn
+
+\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+    \subsection*{tdoc#1}
+
+    \myexrmktext
+
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
+
+    \myexrmktext
+}
+
+\ifcsundef{__g_tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+} {
+    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+}
+
+\ExplSyntaxOff
+
+\section{Des codes \LaTeX}
+
+Il est indispensable de pouvoir montrer des cas d'utilisation en \LaTeX.
+
+\begin{tdoclatex}
+Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
+
+\begin{tdoclatex}[sbs]
+Voir du code \LaTeX\ mis en forme,
+c'est sympa : $E = m c^2$ ou
+$\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+\end{document}
+
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{gallery-showcase-dark.tex}
+\documentclass[10pt, a4paper, theme = dark]{tutodoc}
+
+\newcommand\thisstyle{dark}
+
+\newcommand\myexrmktext{
+    \tdocdate{2024-10-23}
+    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
+}
+
+\newcommand\myadmotext{
+    \tdocversion{1.6.0}[2024-10-23]
+    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
+}
+
+\newcommand\myhighlightedtext{
+    Que dire
+    \footnote{
+        N'oublions pas les notes de bas de page...
+    } ?
+    Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
+}
+
+
+\begin{document}
+
+{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
+
+\section{Mettre en avant, versionner et dater}
+
+\ExplSyntaxOn
+
+\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+    \subsection*{tdoc#1}
+
+    \myexrmktext
+
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
+
+    \myexrmktext
+}
+
+\ifcsundef{__g_tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+} {
+    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+}
+
+\ExplSyntaxOff
+
+\section{Des codes \LaTeX}
+
+Il est indispensable de pouvoir montrer des cas d'utilisation en \LaTeX.
+
+\begin{tdoclatex}
+Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
+
+\begin{tdoclatex}[sbs]
+Voir du code \LaTeX\ mis en forme,
+c'est sympa : $E = m c^2$ ou
+$\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+\end{document}
+
+\end{filecontents*}
+
+\begin{filecontents*}[overwrite]{gallery-showcase-draft.tex}
+\documentclass[10pt, a4paper, theme = draft]{tutodoc}
+
+\newcommand\thisstyle{draft}
+
+\newcommand\myexrmktext{
+    \tdocdate{2024-10-23}
+    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
+}
+
+\newcommand\myadmotext{
+    \tdocversion{1.6.0}[2024-10-23]
+    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
+}
+
+\newcommand\myhighlightedtext{
+    Que dire
+    \footnote{
+        N'oublions pas les notes de bas de page...
+    } ?
+    Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
+}
+
+
+\begin{document}
+
+{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
+
+\section{Mettre en avant, versionner et dater}
+
+\ExplSyntaxOn
+
+\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+    \subsection*{tdoc#1}
+
+    \myexrmktext
+
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
+
+    \myexrmktext
+}
+
+\ifcsundef{__g_tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+} {
+    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+}
+
+\ExplSyntaxOff
+
+\section{Des codes \LaTeX}
+
+Il est indispensable de pouvoir montrer des cas d'utilisation en \LaTeX.
+
+\begin{tdoclatex}
+Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
+
+\begin{tdoclatex}[sbs]
+Voir du code \LaTeX\ mis en forme,
+c'est sympa : $E = m c^2$ ou
+$\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+\end{document}
+
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-version-n-change-dating.tex}
 Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 
@@ -25,7 +398,7 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 
 
 \begin{filecontents*}[overwrite]{examples-version-n-change-user-choice-icon.tex}
-\begin{tdoctopic}{Ne pas regarder}[\faEyeSlash]
+\begin{tdoctopic}{À cacher}[\faEyeSlash]
 % Une icône venant de fontawesome5.
     \item Info 1...
     \item Info 2...
@@ -67,6 +440,14 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 \begin{filecontents*}[overwrite]{examples-version-n-change-first.tex}
 \tdocstartproj{Première version du projet.}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-tech.tex}
+\begin{tdoctech}
+    \item Info 1...
+    \item Info 2...
+\end{tdoctech}
 \end{filecontents*}
 
 
@@ -331,7 +712,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
 
-\NewDocumentCommand{ \tdocDOCbasicinput }{ m }{%
+\NewDocumentCommand{ \tdocbasicinputDOC }{ m }{%
     Considérons le code suivant.
 
     \tdoclatexinput[code]{#1}
@@ -370,6 +751,11 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
         \tdocextrarulerDOC{#2}
 }
 
+
+%\geometry{showframe}
+
+
+% == FORDOC == %
 
 \NewDocumentCommand{\mailsubject}{m}%  <-- Translate me!
   {sujet \tdocquote{\texttt{tutodoc - CONTRIB - #1}}}
@@ -441,7 +827,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \title{La classe \texttt{tutodoc} - Documentation de type tutoriel}
 \author{Christophe BAL}
-\date{19 oct. 2024 - Version 1.5.0}
+\date{26 oct. 2024 - Version 1.6.0}
 
 \maketitle
 
@@ -467,7 +853,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
     {\small\itshape
         \vspace{-5pt}
         \begin{center}
-            \textbf{Abstract.}
+        	\textbf{Abstract.}
         \end{center}
 
         The \thisproj{} class\,%
@@ -479,9 +865,9 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
             The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
         }
         using a sober rendering for reading on screen.
-
+    
         \smallskip
-
+    
         \noindent
         \emph{\textbf{Remark :} this documentation is also available in French.}
     }
@@ -494,25 +880,33 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \begin{minipage}{.9\textwidth}
 \begin{tdocnote}[Derniers changements]
 \begin{tdocbreak}
-    \item La classe \thisproj\ remplace le défunt package \thisproj\ (pour le moment, la toute jeune classe ne propose aucune option spécifique).
+    \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{color} a été renommée \tdocinlatex{colstripe}.
 
-    \item La macro \tdocmacro{tdocruler} s'emploie dorénavant via \tdocinlatex{\tdocruler[<color>]{<text>}} (avant il fallait utiliser \tdocinlatex{\tdocruler{<text>}{<color>}}).
+    \item La macro \tdocmacro{tdoclinkcolor} devient la couleur \tdocinlatex{tutodoc@link@color} destinée à un usage interne.
 \end{tdocbreak}
 
 
 \begin{tdocnew}
-    \item La classe est utilisable en langue espagnole.
+    \item L'option de classe \tdocinlatex{theme} permet de choisir différents thèmes de mise en forme.
 
-    \item La documentation contient une nouvelle section expliquant comment contribuer.
+	\item Journal des modifications : ajout de l'environnement \tdocenv*{tdoctech} pour les informations techniques.
+
+    \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{coltext} permet de changer aussi la couleur du texte.
+
+    \item Les nouvelles fonctionnalités ont été documentées.
 \end{tdocnew}
 
 
+\begin{tdocupdate}
+    \item Journal des modifications : l'environnement \tdocenv*{tdocupdate} utilise l'icône
+    \raisebox{0pt}[0pt][0pt]{\fbox{\reflectbox{\faHistory}}} 
+    au lieu de
+    \raisebox{0pt}[0pt][0pt]{\fbox{\faMagic}}\,.
+\end{tdocupdate}
+
+
 \begin{tdocfix}
-    \item La version 3 de \tdocpack{minted} est prise en compte.
-
-    \item La macro \tdocmacro{tdocdate} ne gérait pas le format et la mise en forme de la date.
-
-    \item Les cadres colorés ne coloraient pas le texte après un saut de page.
+    \item Les traductions espagnoles n'avaient pas été livrées dans la précédente version ! Ne pas rire trop fort...
 \end{tdocfix}
 \end{tdocnote}
 \end{minipage}
@@ -628,7 +1022,7 @@ Comme cette langue fait partie de la liste des langues prises en compte, voir ci
         \item \tdocinlatex|fr| : français.
     \end{itemize}
 \end{multicols}
-
+                    
 
 
 \begin{tdoccaut}
@@ -688,6 +1082,71 @@ Pour modifier la mise en forme générale, la classe \thisproj\ propose l'option
 \end{tdocnote}
 
 
+% ----------------------------- %
+% -- AT END DOCUMENT - START -- %
+% ----------------------------- %
+
+% The following AT-END-DOCUMENT lines of codes have been generated
+% automatically. Don't judge their relative beauty...
+
+\AtEndDocument{
+
+% An annex page for a pretty doc.
+\newpage
+
+% Source.
+%     + https://tex.stackexchange.com/a/8547/6880
+\bgroup
+    \titleformat{\section}[block]{\Huge\bfseries\filcenter}{}{1em}{}
+    \phantomsection\section*{Annexe -- Galerie des thèmes}%
+    \label{tutodoc-theme-gallery}
+    \addcontentsline{toc}{section}{Annexe -- Galerie des thèmes}%
+\egroup
+
+\bigskip
+
+\begin{tdocnote}
+    Chaque exemple est un \pdf\ de deux pages exactement qui a été directement inséré dans ce document (ne soyez donc pas surpris par les numéros de page).
+\end{tdocnote}
+
+\newpage
+
+% Let's build the PDFs.
+\immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-bw}
+
+\immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-color}
+
+\immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-dark}
+
+\immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-draft}
+
+% The gallery starts here...
+\includepdf[
+	pages=1-2,
+	fitpaper=true
+]{gallery-showcase-bw}
+
+\includepdf[
+	pages=1-2,
+	fitpaper=true
+]{gallery-showcase-color}
+
+\includepdf[
+	pages=1-2,
+	fitpaper=true
+]{gallery-showcase-dark}
+
+\includepdf[
+	pages=1-2,
+	fitpaper=true
+]{gallery-showcase-draft}
+
+}
+
+% --------------------------- %
+% -- AT END DOCUMENT - END -- %
+% --------------------------- %
+
 \section{Mettre en avant du contenu}
 
 \begin{tdocnote}
@@ -741,7 +1200,8 @@ Tout se passe via \tdocenv{tdocrem} avec un fonctionnement identique à l'enviro
 \label{tutodoc-admonitions}
 
 \begin{tdocnote}
-    Les icônes sont obtenues via le package \tdocpack{fontawesome5}, et la gestion de l'espacement avec le texte est faite par la macro \tdocmacro{tdocicon}.
+	La mise en forme proposée ici est celle par défaut, mais d'autres sont possible en changeant de thème : voir la galerie de cas d'utilisation dans l'annexe page \pageref{tutodoc-theme-gallery}.
+    Quant aux icônes, elles sont obtenues via le package \tdocpack{fontawesome5}, et la macro \tdocmacro{tdocicon} gère l'espacement vis-à-vis du texte.
     \footnote{
         Par exemple,
         \tdocinlatex|\fbox{\tdocicon{\faBed}{Fatigué}}|
@@ -763,21 +1223,12 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 \smallskip
 
 
-\begin{tdocnote}
-    Les couleurs sont obtenues via les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor}.
-    Pour des informations complémentaires à ce sujet, se reporter à la fin de la section \ref{tutodoc-color-macros} page \pageref{tutodoc-color-macros}.
-\end{tdocnote}
-
-
-\smallskip
-
-
 \begin{tdoctip}
-    Quelque fois, un contenu mis en avant peut se réduire à une liste. Dans ce cas, la mise en forme peut être améliorée comme suit.
+    Quelque fois, un contenu mis en avant peut se réduire à une liste. Dans ce cas, la mise en forme peut être améliorée comme suit où nous utilisons l'option \tdocinlatex{wide} du package \tdocpack{enumitem}.
+
+	\tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
+
 \end{tdoctip}
-
-\tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
-
 
 
 \foreach \sectitle/\desc/\filename in {
@@ -863,7 +1314,6 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
 
 \subsection{Avec une bande colorée}
-\label{tutodoc-color-macros}
 
 \begin{tdocexa}[Avec les textes par défaut]
     Il peut être utile de montrer un rendu réel directement dans un document.
@@ -1047,7 +1497,8 @@ Voici des exemples d'utilisation.
 \begin{tdocexa}[Face à face]
     Via \tdocenv[{[sbs]}]{tdoclatex}, on affichera un code et son rendu côte à côte.
     Indiquons que \tdocinlatex#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}.
-    \tdocDOCbasicinput{examples/listing/ABC.tex}
+    \tdocbasicinputDOC{examples-listing-ABC.tex}
+
 \end{tdocexa}
 
 
@@ -1074,12 +1525,14 @@ Voici des exemples d'utilisation.
 
 \begin{tdocwarn}
     Avec la mise en forme par défaut, si le code commence par un crochet ouvrant, il faudra indiquer explicitement l'option par défaut.
-    \tdocDOCbasicinput{examples/listing/strange.tex}
+    \tdocbasicinputDOC{examples-listing-strange.tex}
+
 
     \smallskip
 
     Une autre méthode consiste à utiliser la primitive \tdocmacro{string}.
-    \tdocDOCbasicinput{examples/listing/strange-bis.tex}
+    \tdocbasicinputDOC{examples-listing-strange-bis.tex}
+
 \end{tdocwarn}
 
 
@@ -1261,21 +1714,24 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 
 \foreach \exatitle/\filename in {
     {Juste pour la toute première version}/%<-- Translate me!
-    first,
+    	first,
     {Pour les nouveautés}/% <-- Translate me!
-    new,
+    	new,
     {Pour les mises à jour}/% <-- Translate me!
-    update,
+    	update,
     {Pour les bifurcations}/% <-- Translate me!
-    break,
+    	break,
     {Pour les problèmes}/% <-- Translate me!
-    pb,
+    	pb,
     {Pour les réparations}/% <-- Translate me!
-    fix,
+    	fix,
+    {Informations techniques}/% <-- Translate me!
+    	tech,
+    %
     {Thématiques aux choix avec une icône}/%<-- Translate me!
-    user-choice-icon,
+    	user-choice-icon,
     {Thématiques aux choix sans icône}/% <-- Translate me!
-    user-choice%
+    	user-choice%
 } {
     \begin{tdocexa}[\exatitle]
         \leavevmode
@@ -1331,12 +1787,12 @@ Ble, ble, ble...
     }
 \end{tdoccaut}
 
-
-\begin{wrapfigure}{R}
+\begin{figure}[ht]
+	\centering
     \contribtranslatedirtree\
     \caption{Vue simplifiée du dossier des traductions}
     \label{tutodoc-contrib-translate-dir}
-\end{wrapfigure}{}
+\end{figure}
 
 
 Les traductions sont organisées grosso-modo comme dans la figure \ref{tutodoc-contrib-translate-dir} où seuls les dossiers importants pour les traductions ont été \tdocquote{ouverts}\,.%
@@ -1386,7 +1842,7 @@ Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{R
   date = #1-#2-#3
 
   // #1: the idea is to produce one text like
-  //     "this word means #1 in english".
+  //     "this word means #1 in English".
   in_EN = #1 in english\end{verbatim}
 \end{tdocimp}
 
@@ -1455,7 +1911,49 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 
 \small
 
+\tdocversion{1.6.0}[2024-10-26]
+
+\begin{tdocbreak}
+    \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{color} a été renommée \tdocinlatex{colstripe}.
+
+    \item La macro \tdocmacro{tdoclinkcolor} devient la couleur \tdocinlatex{tutodoc@link@color} destinée à un usage interne.
+\end{tdocbreak}
+
+
+\begin{tdocnew}
+    \item L'option de classe \tdocinlatex{theme} permet de choisir différents thèmes de mise en forme.
+
+	\item Journal des modifications : ajout de l'environnement \tdocenv*{tdoctech} pour les informations techniques.
+
+    \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{coltext} permet de changer aussi la couleur du texte.
+
+    \item Les nouvelles fonctionnalités ont été documentées.
+\end{tdocnew}
+
+
+\begin{tdocupdate}
+    \item Journal des modifications : l'environnement \tdocenv*{tdocupdate} utilise l'icône
+    \raisebox{0pt}[0pt][0pt]{\fbox{\reflectbox{\faHistory}}} 
+    au lieu de
+    \raisebox{0pt}[0pt][0pt]{\fbox{\faMagic}}\,.
+\end{tdocupdate}
+
+
+\begin{tdocfix}
+    \item Les traductions espagnoles n'avaient pas été livrées dans la précédente version ! Ne pas rire trop fort...
+\end{tdocfix}
+
+\tdocsep
+
+
+% ------------------ %
+
+
 \tdocversion{1.5.0}[2024-10-19]
+
+\begin{tdoctech}
+    \item La version 3 de \tdocpack{minted} est prise en compte.
+\end{tdoctech}
 
 \begin{tdocbreak}
     \item La classe \thisproj\ remplace le défunt package \thisproj\ (pour le moment, la toute jeune classe ne propose aucune option spécifique).
@@ -1472,8 +1970,6 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 
 
 \begin{tdocfix}
-    \item La version 3 de \tdocpack{minted} est prise en compte.
-
     \item La macro \tdocmacro{tdocdate} ne gérait pas le format et la mise en forme de la date.
 
     \item Les cadres colorés ne coloraient pas le texte après un saut de page.
@@ -1536,9 +2032,9 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 
 \tdocversion{1.3.0}[2024-09-25]
 
-\begin{tdocprob}
-    \item La version 3 de \tdocpack{minted} ne peut pas être prise en compte pour le moment car elle comporte des bugs : voir \url{https://github.com/gpoore/minted/issues/401}. On force donc l'usage de la version 2 de \tdocpack{minted}.
-\end{tdocprob}
+\begin{tdoctech}
+    \item La version 3 de \tdocpack{minted} ne peut pas être prise en compte pour le moment car elle comporte des bugs : voir \url{https://github.com/gpoore/minted/issues/401}. On force donc temporairement l'usage de la version 2 de \tdocpack{minted}.
+\end{tdoctech}
 
 
 \begin{tdocbreak}

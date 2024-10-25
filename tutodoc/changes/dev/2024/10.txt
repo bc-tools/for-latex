@@ -2,15 +2,57 @@
 
 
 ==
-24  (1.6.0-rc.1)   ??
+26  (1.6.0-rc.2)
+==
+
+
+-----
+:fix:
+-----
+
+''tdocinEN'': this macro was bad designed (indeed, we don't know where the \arg should be printed).
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+\Chges history: the new \env ''tdoctech'' allows to talk about technical \infos for geeks.
+
+
+--------
+:fordev:
+--------
+
+[[:test:]]   ????
+Updates were needed regarding the new ''theme'' option. From now, we will use prefixes path::''pdf'' and path::''unit'' to indicate either a visual test, or a unit one.
+
+
+
+
+
+[[:flow:]]
+Translation of the \api: the code has been updated to follow the new organization of the folders.
+
+
+// ---------- //
+
+
+==
+25  (1.6.0-rc.1)
 ==
 
 --------
 :fordev:
 --------
 
-[[:flow:]]   ??
-The ugly \texfacto \poc has been updated to take care of the gallery of themes. This allows to publish the new version.
+[[:flow:]]
+The ugly \texfacto \poc has been updated to meet the following new requirements.
+
+    1) Use of post hooks (see the building of the gallery of themes).
+
+    1) \css like features for themes.
 
 
 --------
