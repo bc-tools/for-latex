@@ -26,6 +26,7 @@
     Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
 }
 
+
 \begin{document}
 
 {\Huge\bfseries Le thème \texttt{"\thisstyle"}}
@@ -117,6 +118,7 @@ $\pi \neq \frac{3}{14}$.
     } ?
     Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
 }
+
 
 \begin{document}
 
@@ -210,6 +212,7 @@ $\pi \neq \frac{3}{14}$.
     Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
 }
 
+
 \begin{document}
 
 {\Huge\bfseries Le thème \texttt{"\thisstyle"}}
@@ -301,6 +304,7 @@ $\pi \neq \frac{3}{14}$.
     } ?
     Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
 }
+
 
 \begin{document}
 
@@ -889,7 +893,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 
 \begin{tdocupdate}
-    \item Journal des modifications : pour l'environnement \tdocenv*{tdocupdate}, la icône \fbox{\reflectbox{\faHistory}} remplace l'ancienne icône \fbox{\faMagic}\,.
+    \item Journal des modifications : pour l'environnement \tdocenv*{tdocupdate}, l'icône \fbox{\reflectbox{\faHistory}} remplace l'ancienne icône \fbox{\faMagic}\,.
 \end{tdocupdate}
 \end{tdocnote}
 \end{minipage}
@@ -1183,7 +1187,8 @@ Tout se passe via \tdocenv{tdocrem} avec un fonctionnement identique à l'enviro
 \label{tutodoc-admonitions}
 
 \begin{tdocnote}
-    Les icônes sont obtenues via le package \tdocpack{fontawesome5}, et la gestion de l'espacement avec le texte est faite par la macro \tdocmacro{tdocicon}.
+	La mise en forme proposée ici est celle par défaut, mais d'autres sont possible en changeant de thème : voir la galerie de cas d'utilisation dans l'annexe page \pageref{tutodoc-theme-gallery}.
+    Quant aux icônes, elles sont obtenues via le package \tdocpack{fontawesome5}, et la macro \tdocmacro{tdocicon} gère l'espacement vis-à-vis du texte.
     \footnote{
         Par exemple,
         \tdocinlatex|\fbox{\tdocicon{\faBed}{Fatigué}}|
@@ -1205,21 +1210,12 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 \smallskip
 
 
-\begin{tdocnote}
-    Les couleurs sont obtenues via les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor}.
-    Pour des informations complémentaires à ce sujet, se reporter à la fin de la section \ref{tutodoc-color-macros} page \pageref{tutodoc-color-macros}.
-\end{tdocnote}
-
-
-\smallskip
-
-
 \begin{tdoctip}
     Quelque fois, un contenu mis en avant peut se réduire à une liste. Dans ce cas, la mise en forme peut être améliorée comme suit où nous utilisons l'option \tdocinlatex{wide} du package \tdocpack{enumitem}.
+
+	\tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
+
 \end{tdoctip}
-
-\tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
-
 
 
 \foreach \sectitle/\desc/\filename in {
@@ -1305,7 +1301,6 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 
 
 \subsection{Avec une bande colorée}
-\label{tutodoc-color-macros}
 
 \begin{tdocexa}[Avec les textes par défaut]
     Il peut être utile de montrer un rendu réel directement dans un document.
@@ -1924,7 +1919,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 
 
 \begin{tdocupdate}
-    \item Journal des modifications : pour l'environnement \tdocenv*{tdocupdate}, la icône \fbox{\reflectbox{\faHistory}} remplace l'ancienne icône \fbox{\faMagic}\,.
+    \item Journal des modifications : pour l'environnement \tdocenv*{tdocupdate}, l'icône \fbox{\reflectbox{\faHistory}} remplace l'ancienne icône \fbox{\faMagic}\,.
 \end{tdocupdate}
 
 \tdocsep
