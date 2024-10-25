@@ -4,6 +4,10 @@ from .constants import *
 from .misc      import *
 
 
+# ----------- #
+# -- HOOKS -- #
+# ----------- #
+
 def call_hook(
     lang_temp_dir,
     srcfile,
@@ -34,6 +38,17 @@ def call_hook(
         mode = 'a',
     ) as temp_file:
         temp_file.write(tex_code + '\n'*2)
+
+
+# ------------ #
+# -- LOCALE -- #
+# ------------ #
+
+def lang_long_name_in(
+    shortname,
+    curlang
+):
+    return babel.Locale.parse(shortname).get_display_name(curlang)
 
 
 # --------------------------- #
@@ -231,7 +246,7 @@ def prebuild_single_tex(
                 thedoc = thedoc.strip()
 
                 api_lang_items = '\n        \\item '.join(
-                    f"\\tdocinlatex|{l}| : {babel.Locale.parse(l).get_display_name(lang)}."
+                    f"\\tdocinlatex|{l}| : {lang_long_name_in(l, lang)}."
                     for l in sorted(about_langs[TAG_API_LANGS])
                 )
 
@@ -381,7 +396,7 @@ def other_manual_langs(
     manual_langs,
 ):
     others = [
-        LANG_NAMES[lang][l]
+        lang_long_name_in(l, lang)
         for l in manual_langs
         if l != lang
     ]
