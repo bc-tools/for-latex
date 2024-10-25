@@ -4,8 +4,8 @@
 date = #1-#2-#3
 
 // #1: the idea is to produce one text like
-//     "this word means #1 in english".
-in_EN = #1 in english
+//     "this word means #1 in English".
+in_EN = #1 in English
 
 // #1: the idea is to produce one text like
 //     "This gives #1".

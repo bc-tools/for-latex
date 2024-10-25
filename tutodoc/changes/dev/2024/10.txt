@@ -2,7 +2,7 @@
 
 
 ==
-25  (1.6.0-rc.2)
+?? (1.6.0-rc.2)
 ==
 
 -----
@@ -20,6 +20,7 @@
 [[:test:]]   ????
 Need uoadte because chge of col (new version is ready to be put on \ctan)
 
+usage de préfixe pdf pour visual test et unit pourteste unitaire
 
 // ---------- //
 

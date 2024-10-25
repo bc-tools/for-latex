@@ -299,7 +299,7 @@
 %
 % For example, ''\tdocquote{Something}'' prints **"Something"**.
 %%%
-\NewDocumentCommand{\tdocquote}{m}{%
+\NewExpandableDocumentCommand{\tdocquote}{m}{%
   \enquote{\emph{#1}}%
 }
 
@@ -328,7 +328,7 @@
 %        gives
 %        **"Something" et "Another thing" en anglais**.
 %%%
-\NewDocumentCommand{\tdocinEN}{s m}{%
+\NewExpandableDocumentCommand{\tdocinEN}{s m}{%
   \tdocquote{#2}%
   \IfBooleanF{#1}{% No star used.
     \tutodoc@trans@in@EN{}%
