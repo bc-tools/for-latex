@@ -2,11 +2,15 @@
 
 
 ==
-?? (1.6.0-rc.2)
+26 (1.6.0-rc.2)
 ==
 
 
-tdocinEN was bad design because we d'ont knw wher the argument should be printed this has been fixed
+-----
+:fix:
+-----
+
+''tdocinEN'': this macro was bad designed (indeed, we don't know where the \arg should be printed).
 
 
 -----
@@ -22,9 +26,21 @@ tdocinEN was bad design because we d'ont knw wher the argument should be printed
 --------
 
 [[:test:]]   ????
-Need uoadte because chge of col (new version is ready to be put on \ctan)
+Updates needed regarding the new ''theme'' option. We hav also
+
+
+eed uoadte because chge of col (new version is ready to be put on \ctan)
 
 usage de préfixe pdf pour visual test et unit pourteste unitaire
+
+
+
+
+
+
+[[:flow:]]
+Translation of the \api: The ocde is up-to-date.
+
 
 // ---------- //
 

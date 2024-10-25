@@ -7,10 +7,9 @@ NOW
 ---
 
 
-
 > ---------------------------- <
 
-test à modifier + next change à documenter
+??? script fabriquant les examples tdoc warn and co à partir d'un donné (cec évite de redander des trads déjà faites !) + idem pour chge what è!!
 
 
 > ---------------------------- <
