@@ -25,7 +25,7 @@ typesetopts = checkopts
 
 uploadconfig = {
     version      = "1.6.0 [2024-10-26]",
-    announcement = "tutodoc becomes a LaTeX class.",
+    announcement = "The main change is the ability to choose a layout from 4 themes.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",

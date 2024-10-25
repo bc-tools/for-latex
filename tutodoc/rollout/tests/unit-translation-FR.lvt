@@ -1,0 +1,25 @@
+\documentclass{tutodoc}
+
+\input{regression-test}
+
+\begin{document}
+
+\makeatletter
+
+\START
+
+\BEGINTEST{Macros}
+\sbox0{\tdocinEN{OK?}}
+\sbox2{\tdocquote{OK?} in English}
+\SEPARATOR
+\TYPE{TESTED}
+\showbox0
+\SEPARATOR
+\TYPE{EXPECTED}
+\showbox2
+\SEPARATOR
+\ENDTEST
+
+\OMIT
+
+\end{document}
