@@ -5,13 +5,20 @@
 25  (1.6.0-rc.2)
 ==
 
+-----
+:new:
+-----
+
+[[:api:]]
+\Chges history: the new \env ''tdoctech'' allows to talk about technical \infos for geeks.
+
+
 --------
 :fordev:
 --------
 
 [[:test:]]   ????
 Need uoadte because chge of col (new version is ready to be put on \ctan)
-
 
 
 // ---------- //

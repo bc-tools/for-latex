@@ -30,11 +30,21 @@ Here are the new features.
 
     1) Themes: the \cls option ''theme'' allows to change the formatting.
 
+    1) \Chges history: the new \env ''tdoctech'' allows to talk about technical \infos for geeks.
+
     1) Showcase: addition of the option ''coltext'' to change the text color (the themes need this new option).
 
 
 [[:doc:]]
 Manual: the new features have been documented.
+
+
+--------
+:update:
+--------
+
+[[:api:]]
+\Chges history: the icon for updates is now ''\reflectbox{\faHistory}''.
 
 
 // ---------- //

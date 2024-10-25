@@ -10,6 +10,7 @@ imp_title  = Importante
 caut_title = Recomendación
 warn_title = Advertencia
 
+chges_tech   = Información técnica
 chges_prob   = Problema
 chges_break  = Bifurcación
 chges_fix    = Reparación
