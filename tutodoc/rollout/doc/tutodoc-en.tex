@@ -845,7 +845,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \title{The \texttt{tutodoc} class - Tutorial-style documentation}
 \author{Christophe BAL}
-\date{Oct 19, 2024 - Version 1.5.0}
+\date{Oct 26, 2024 - Version 1.6.0}
 
 \maketitle
 
@@ -874,29 +874,34 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \begin{tdocnote}[Last changes]
 \small
 
-\begin{tdoctech}
-    \item Version 3 of \tdocpack{minted} is taken into account.
-\end{tdoctech}
-
-
 \begin{tdocbreak}
-    \item The \thisproj\ class replaces the now-defunct \thisproj\ package (for the moment, the young class offers no specific options).
+	\item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{color} key has been renamed \tdocinlatex{colstripe}.
 
-    \item The \tdocmacro{tdocruler} macro is now used via \tdocinlatex{\tdocruler[<color>]{<text>}} (remember that the old syntax was \tdocinlatex{\tdocruler{<text>}{<color>}}).
+	\item The macro \tdocmacro{tdoclinkcolor} has been renamed \tdocinlatex{tutodoc@link@color} for internal use.
 \end{tdocbreak}
 
 
 \begin{tdocnew}
-    \item The class is usable in Spanish.
+	\item The \tdocinlatex{theme} class option allows you to choose different formatting themes.
 
-    \item The documentation contains a new section explaining how to contribute.
+	\item Change log: addition of the \tdocenv*{tdoctech} environment for technical information.
+
+	\item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{coltext} key can also be used to change the text color.
+
+	\item The new functionalities have been documented.
 \end{tdocnew}
 
 
-\begin{tdocfix}
-    \item The \tdocmacro{tdocdate} macro did not handle date format and formatting.
+\begin{tdocupdate}
+	\item Change log: the \tdocenv*{tdocupdate} environment uses the icon
+	\raisebox{0pt}[0pt][0pt]{\fbox{\reflectbox{\faHistory}}} 
+	instead of
+	\raisebox{0pt}[0pt][0pt]{\fbox{\faMagic}}\,.
+\end{tdocupdate}
 
-    \item Colored frames did not color text after a page break.
+
+\begin{tdocfix}
+	\item The Spanish translations were not included in the previous version! Don't laugh too hard...
 \end{tdocfix}
 \end{tdocnote}
 \end{minipage}
@@ -1940,6 +1945,46 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \section{History}
 
 \small
+
+\tdocversion{1.6.0}[2024-10-26]
+
+\small
+
+\begin{tdocbreak}
+	\item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{color} key has been renamed \tdocinlatex{colstripe}.
+
+	\item The macro \tdocmacro{tdoclinkcolor} has been renamed \tdocinlatex{tutodoc@link@color} for internal use.
+\end{tdocbreak}
+
+
+\begin{tdocnew}
+	\item The \tdocinlatex{theme} class option allows you to choose different formatting themes.
+
+	\item Change log: addition of the \tdocenv*{tdoctech} environment for technical information.
+
+	\item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{coltext} key can also be used to change the text color.
+
+	\item The new functionalities have been documented.
+\end{tdocnew}
+
+
+\begin{tdocupdate}
+	\item Change log: the \tdocenv*{tdocupdate} environment uses the icon
+	\raisebox{0pt}[0pt][0pt]{\fbox{\reflectbox{\faHistory}}} 
+	instead of
+	\raisebox{0pt}[0pt][0pt]{\fbox{\faMagic}}\,.
+\end{tdocupdate}
+
+
+\begin{tdocfix}
+	\item The Spanish translations were not included in the previous version! Don't laugh too hard...
+\end{tdocfix}
+
+\tdocsep
+
+
+% ------------------ %
+
 
 \tdocversion{1.5.0}[2024-10-19]
 

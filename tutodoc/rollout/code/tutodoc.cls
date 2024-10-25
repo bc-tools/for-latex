@@ -9,8 +9,8 @@
 
 \ProvidesExplClass
   {tutodoc}
-  {2024-10-19}  % Creation: 2023-11-29
-  {1.5.0}
+  {2024-10-26}  % Creation: 2023-11-29
+  {1.6.0}
   {This LaTeX class proposes tools for writing "human friendly" PDF documentations of LaTeX packages and classes.}
 
 
