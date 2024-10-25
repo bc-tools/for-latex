@@ -5,6 +5,10 @@
 ?? (1.6.0-rc.2)
 ==
 
+
+tdocinEN was bad design because we d'ont knw wher the argument should be printed this has been fixed
+
+
 -----
 :new:
 -----
