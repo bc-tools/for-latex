@@ -1,0 +1,70 @@
+\documentclass[10pt, a4paper]{tutodoc}
+
+
+\begin{document}
+
+{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
+
+\section{Mettre en avant, versionner et dater}
+
+\ExplSyntaxOn
+
+\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+    \subsection*{tdoc#1}
+
+    \myexrmktext
+
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
+
+    \myexrmktext
+}
+
+\ifcsundef{__g_tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+} {
+    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+        \subsection*{tdoc#1}
+
+        \myadmotext
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+
+        \myadmotext
+    }
+}
+
+\ExplSyntaxOff
+
+\section{Des codes \LaTeX}
+
+Il est indispensable de pouvoir montrer des cas d'utilisation en \LaTeX.
+
+\begin{tdoclatex}
+Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
+
+\begin{tdoclatex}[sbs]
+Voir du code \LaTeX\ mis en forme,
+c'est sympa : $E = m c^2$ ou
+$\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+\end{document}
+

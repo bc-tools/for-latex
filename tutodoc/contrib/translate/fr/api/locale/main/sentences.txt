@@ -11,9 +11,6 @@ caut_title = Mise en garde
 warn_title = Avertissement
 
 chges_tech   = Information technique
-
-
-
 chges_prob   = Problème
 chges_break  = Bifurcation
 chges_fix    = Réparation

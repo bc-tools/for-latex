@@ -2,6 +2,15 @@
 25  (1.6.0)
 ==
 
+
+??? contrib-api : ajout d'un doc de test + maj de la doc
+
+??? script fabriquant les examples tdoc warn and co à partir d'un donné (cec évite de redander des trads déjà faites !) + idem pour chge what è!!
+
+
+
+
+
 ------
 :desc:
 ------

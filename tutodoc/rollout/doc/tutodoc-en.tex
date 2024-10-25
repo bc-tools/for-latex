@@ -394,7 +394,7 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 
 
 \begin{filecontents*}[overwrite]{examples-version-n-change-user-choice-icon.tex}
-\begin{tdoctopic}{Don't look}[\faEyeSlash]
+\begin{tdoctopic}{To hide}[\faEyeSlash]
 % An icon from fontawesome5.
     \item Info 1...
     \item Info 2...
@@ -436,6 +436,14 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 \begin{filecontents*}[overwrite]{examples-version-n-change-first.tex}
 \tdocstartproj{1st version of the project.}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-tech.tex}
+\begin{tdoctech}
+    \item Info 1...
+    \item Info 2...
+\end{tdoctech}
 \end{filecontents*}
 
 
@@ -836,7 +844,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \title{The \texttt{tutodoc} class - Tutorial-style documentation}
 \author{Christophe BAL}
-\date{Oct 19, 2024 - Version 1.5.0}
+\date{Oct 25, 2024 - Version 1.6.0}
 
 \maketitle
 
@@ -866,26 +874,26 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \small
 
 \begin{tdocbreak}
-    \item The \thisproj\ class replaces the now-defunct \thisproj\ package (for the moment, the young class offers no specific options).
+    \item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{color} key has been renamed \tdocinlatex{colstripe}.
 
-    \item The \tdocmacro{tdocruler} macro is now used via \tdocinlatex{\tdocruler[<color>]{<text>}} (remember that the old syntax was \tdocinlatex{\tdocruler{<text>}{<color>}}).
+    \item The macro \tdocmacro{tdoclinkcolor} becomes the color \tdocinlatex{tutodoc@link@color} for internal use.
 \end{tdocbreak}
 
 
 \begin{tdocnew}
-    \item The class is usable in Spanish.
+    \item The \tdocinlatex{theme} class option lets you choose different formatting themes.
 
-    \item The documentation contains a new section explaining how to contribute.
+	\item Change log: \tdocenv*{tdoctech} environment for technical information.
+
+    \item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{coltext} key can also be used to change text color.
+
+    \item New features have been documented.
 \end{tdocnew}
 
 
-\begin{tdocfix}
-    \item Version 3 of \tdocpack{minted} is taken into account.
-
-    \item The \tdocmacro{tdocdate} macro did not handle date format and formatting.
-
-    \item Colored frames did not color text after a page break.
-\end{tdocfix}
+\begin{tdocupdate}
+    \item Change log: for the \tdocenv*{tdocupdate} environment, the icon \fbox{\reflectbox{\faHistory}} replaces the old icon \fbox{\faMagic}\,.
+\end{tdocupdate}
 \end{tdocnote}
 \end{minipage}
 \end{center}
@@ -1000,7 +1008,7 @@ As this language is included in the list of languages taken into account, see be
         \item \tdocinlatex|fr| : French.
     \end{itemize}
 \end{multicols}
-                    
+
 
 
 \begin{tdoccaut}
@@ -1388,7 +1396,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
 
-\subsection{Without a colour strip}
+\subsection{Without a coloured strip}
 
 The rendering of \tdocenv{tdocshowcase} with a coloured strip may not be suitable, or sometimes may not be acceptable despite the work done by \tdocpack{clrstrip}.
 It is possible not to use a coloured strip, as we will see straight away.
@@ -1743,21 +1751,23 @@ You can either date something, or version it, in which case the version number c
 
 \foreach \exatitle/\filename in {
     {Just for the very first version}/%<-- Translate me!
-    first,
+    	first,
     {For new features}/% <-- Translate me!
-    new,
+    	new,
     {For updates}/% <-- Translate me!
-    update,
+    	update,
     {For breaks}/% <-- Translate me!
-    break,
+    	break,
     {For problems}/% <-- Translate me!
-    pb,
+    	pb,
     {For fixes}/% <-- Translate me!
-    fix,
+    	fix,
+    {Technical information}/% <-- Translate me!
+    	tech,
     {Selectable themes with an icon}/% <-- Translate me!
-    user-choice-icon,
+    	user-choice-icon,
     {Selectable themes without icons}/%<-- Translate me!
-    user-choice%
+    	user-choice%
 } {
     \begin{tdocexa}[\exatitle]
         \leavevmode
@@ -1934,9 +1944,46 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 \small
 
+\tdocversion{1.6.0}[2024-10-25]
+
+\small
+
+\begin{tdocbreak}
+    \item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{color} key has been renamed \tdocinlatex{colstripe}.
+
+    \item The macro \tdocmacro{tdoclinkcolor} becomes the color \tdocinlatex{tutodoc@link@color} for internal use.
+\end{tdocbreak}
+
+
+\begin{tdocnew}
+    \item The \tdocinlatex{theme} class option lets you choose different formatting themes.
+
+	\item Change log: \tdocenv*{tdoctech} environment for technical information.
+
+    \item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{coltext} key can also be used to change text color.
+
+    \item New features have been documented.
+\end{tdocnew}
+
+
+\begin{tdocupdate}
+    \item Change log: for the \tdocenv*{tdocupdate} environment, the icon \fbox{\reflectbox{\faHistory}} replaces the old icon \fbox{\faMagic}\,.
+\end{tdocupdate}
+
+\tdocsep
+
+
+% ------------------ %
+
+
 \tdocversion{1.5.0}[2024-10-19]
 
 \small
+
+\begin{tdoctech}
+    \item Version 3 of \tdocpack{minted} is taken into account.
+\end{tdoctech}
+
 
 \begin{tdocbreak}
     \item The \thisproj\ class replaces the now-defunct \thisproj\ package (for the moment, the young class offers no specific options).
@@ -1953,8 +2000,6 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 
 \begin{tdocfix}
-    \item Version 3 of \tdocpack{minted} is taken into account.
-
     \item The \tdocmacro{tdocdate} macro did not handle date format and formatting.
 
     \item Colored frames did not color text after a page break.
@@ -1967,6 +2012,8 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 
 \tdocversion{1.4.0}[2024-09-28]
+
+\small
 
 \begin{tdocbreak}
     \item The \tdocenv*{tdoccaution} environment has been renamed \tdocenv*{tdoccaut} for simplified input.
@@ -1987,9 +2034,9 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \begin{tdocupdate}
     \item Colors: the \tdocmacro{tdocdarkcolor} and \tdocmacro{tdoclightcolor} macros offer an optional argument.
     \begin{enumerate}
-        \item \tdocmacro{tdocdarkcolor} : the amount of color in relation to black can be optionally defined.
+        \item \tdocmacro{tdocdarkcolor}: the amount of color in relation to black can be optionally defined.
 
-        \item \tdocmacro{tdoclightcolor} : the transparency rate can be optionally defined.
+        \item \tdocmacro{tdoclightcolor}: the transparency rate can be optionally defined.
     \end{enumerate}
 
     \item Content highlighting: reduced space around content in colored frames.
@@ -2005,6 +2052,8 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 \tdocversion{1.3.1}[2024-09-26]
 
+\small
+
 \begin{tdocnew}
     \item Star version of \tdocmacro{tdocenv} to display only the environment name.
 \end{tdocnew}
@@ -2017,9 +2066,11 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 \tdocversion{1.3.0}[2024-09-25]
 
-\begin{tdocprob}
-    \item Version 3 of \tdocpack{minted} cannot be used for the moment as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of \tdocpack{minted}.
-\end{tdocprob}
+\small
+
+\begin{tdoctech}
+    \item Version 3 of \tdocpack{minted} cannot be used for the moment as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force temporarily the use of version 2 of \tdocpack{minted}.
+\end{tdoctech}
 
 
 \begin{tdocbreak}
@@ -2054,6 +2105,8 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 \tdocversion{1.2.0-a}[2024-08-23]
 
+\small
+
 \begin{tdocupdate}
     \item \tdocmacro{tdocversion}
     \begin{enumerate}
@@ -2076,8 +2129,10 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 \tdocversion{1.1.0}[2024-01-06]
 
+\small
+
 \begin{tdocnew}
-    \item Change log : two new environments.
+    \item Change log: two new environments.
     \begin{enumerate}
         \item \tdocenv{tdocbreak} for breaking changes which are not backward compatible.
 
@@ -2095,10 +2150,12 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 \tdocversion{1.0.1}[2023-12-08]
 
+\small
+
 \begin{tdocfix}
     \item \tdocmacro{tdocenv}: spacing is now correct, even if the \tdocpack{babel} package is not loaded with the French language.
 
-    \item \tdocenv[{[nostripe]}]{tdocshowcase}: page breaks around \tdocquote{framing} lines should be rare from now on.
+    \item \tdocenv[{[nostripe]}]{tdocshowcase} : page breaks around \tdocquote{framing} lines should be rare from now on.
 \end{tdocfix}
 
 \tdocsep
@@ -2108,6 +2165,8 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 
 \tdocversion{1.0.0}[2023-11-29]
+
+\small
 
 \tdocstartproj{First public version of the project.}
 
