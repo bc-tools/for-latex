@@ -884,7 +884,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
     \item The \tdocinlatex{theme} class option lets you choose different formatting themes.
 
 	\item Change log: \tdocenv*{tdoctech} environment for technical information.
-
+	
     \item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{coltext} key can also be used to change text color.
 
     \item New features have been documented.
@@ -1008,7 +1008,7 @@ As this language is included in the list of languages taken into account, see be
         \item \tdocinlatex|fr| : French.
     \end{itemize}
 \end{multicols}
-
+                    
 
 
 \begin{tdoccaut}
@@ -1193,13 +1193,14 @@ Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocen
 \label{tutodoc-admonitions}
 
 \begin{tdocnote}
-    Icons are obtained via the \tdocpack{fontawesome5} package, and text spacing is managed by the \tdocmacro{tdocicon} macro.
-    \footnote{
-        For example,
-        \tdocinlatex|\fbox{\tdocicon{\faBed}{Tired}}|
-        produces\,
-        \fbox{\tdocicon{\faBed}{Tired}}\,.
-    }
+	The formatting proposed here is the default one, but others are possible by changing the theme: see the gallery of use cases in the appendix page \pageref{tutodoc-theme-gallery}.
+	As for the icons, they are obtained via the \tdocpack{fontawesome5} package, and the \tdocmacro{tdocicon} macro manages the spacing in relation to the text.
+	\footnote{
+		For example,
+		\tdocinlatex|\fbox{tdocicon{faBed}{Fatigued}}|
+		produces
+		\fbox{\tdocicon{\faBed}{Fatigued}},.
+	}
 \end{tdocnote}
 
 
@@ -1213,21 +1214,13 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
 \smallskip
 
-\begin{tdocnote}
-    Colors are obtained via the expandable macros \tdocmacro{tdocbackcolor} and \tdocmacro{tdocdarkcolor}.
-    For further information, please refer to the end of the section \ref{tutodoc-color-macros} page \pageref{tutodoc-color-macros}.
-\end{tdocnote}
-
-
-\smallskip
-
 
 \begin{tdoctip}
     Sometimes, highlighted content can be reduced to a list. In this case, the formatting can be improved as follows where we use the \tdocinlatex{wide} option from the \tdocpack{enumitem} package.
+
+	\tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
+
 \end{tdoctip}
-
-\tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
-
 
 
 \foreach \sectitle/\desc/\filename in {
@@ -1313,7 +1306,6 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
 \subsection{With a colored stripe}
-\label{tutodoc-color-macros}
 
 \begin{tdocexa} [With default text]
     It can be useful to show a real rendering directly in a document.
@@ -1959,7 +1951,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
     \item The \tdocinlatex{theme} class option lets you choose different formatting themes.
 
 	\item Change log: \tdocenv*{tdoctech} environment for technical information.
-
+	
     \item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{coltext} key can also be used to change text color.
 
     \item New features have been documented.
