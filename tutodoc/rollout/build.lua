@@ -46,7 +46,8 @@ uploadconfig = {
 -------------------
 
 function raise(kind, message)
-    print("\n" .. kind .. ".ERROR! " .. message)
+    print("")
+    print(kind .. ".ERROR! " .. message)
 
     return 1
 end
@@ -78,7 +79,7 @@ function checkSBUNIT(xtra_args)
         )
     end
 
-    print("Starting validation of SHOWBOX COMPARISON unit tests.")
+    print("SHOWBOX COMPARISON validation.")
 
     local testfilename = xtra_args[1]
     local logfile      = testfilename .. ".log"
@@ -91,8 +92,11 @@ function checkSBUNIT(xtra_args)
     local nbtests = 0
     local kind    = TAG_IGNORE
 
+    local line_test = -1
     local log_test  = ""
-    local log_check = ""
+
+    local line_check = -1
+    local log_check  = ""
 
     for line in lines
     do
@@ -101,8 +105,9 @@ function checkSBUNIT(xtra_args)
 
         if startline == "SB-TESTED"
         then
-            kind   = TAG_TEST
-            catego = string.sub(line, 11, -1)
+            line_test = nbline
+            kind      = TAG_TEST
+            catego    = string.sub(line, 11, -1)
 
         elseif startline == "SB-WANTED"
         then
@@ -116,13 +121,19 @@ function checkSBUNIT(xtra_args)
                 )
             end
 
-            kind = TAG_CHECK
+
+            line_check = nbline
+            kind       = TAG_CHECK
 
         elseif line == TAG_L3BUILD_BOX_END
         then
             if kind == TAG_CHECK
             then
-                if _compareSBUNIT(catego, log_test, log_check) == false
+                if _compareSBUNIT(
+                    catego,
+                    line_test , log_test,
+                    line_check, log_check
+                ) == false
                 then
                     return raise(
                         "TEST",
@@ -159,7 +170,11 @@ target_list[cmd_option] = {
 }
 
 
-function _compareSBUNIT(catego, log_test, log_check)
+function _compareSBUNIT(
+    catego,
+    line_test , log_test,
+    line_check, log_check
+)
     local what   = "Showbox " .. catego
 
 -- Happy day!
@@ -174,6 +189,58 @@ function _compareSBUNIT(catego, log_test, log_check)
 
 -- Chaos day...
     print("    + " .. what .. " [KO]")
+
+    print("LOG FILE. Test starts at line " .. line_test .. ".")
+    print("          Check starts at line " .. line_check .. ".")
+
+    print("")
+
+    -- io.write("UNIX ONLY. Do you want to `diff` the contents (y/n)? ")
+    -- answer = io.read()
+
+    -- if answer == "y"
+    -- then
+        local logtestfile_name = "@@test@l3build@@"
+        local logtestfile      = io.open(logtestfile_name, "w")
+
+        if logtestfile == nil
+        then
+            raise(
+                "IO",
+                "Temp file ''@@test@l3build@@'' can't be created."
+            )
+        end
+
+        local logcheckfile_name = "@@check@l3build@@"
+        local logcheckfile      = io.open(logcheckfile_name, "w")
+
+        if logcheckfile == nil
+        then
+            os.remove(logtestfile)
+
+            raise(
+                "IO",
+                "Temp file ''@@check@l3build@@'' can't be created."
+            )
+        end
+
+        logtestfile:write(log_test)
+        logcheckfile:write(log_check)
+
+        local summary = os.execute(
+            "diff '"
+            .. logtestfile_name ..
+            "' '"
+            .. logcheckfile_name ..
+            "'"
+        )
+
+        print("`diff test check` gives:")
+        print(summary)
+
+        os.remove(logtestfile_name)
+        os.remove(logcheckfile_name)
+    -- end
 
     return false
 end
