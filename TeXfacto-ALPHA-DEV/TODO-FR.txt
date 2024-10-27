@@ -1,0 +1,46 @@
+box package --> dic via point notat
+
+
+> ---------------------------- <
+
+prendre en compte certain prefixe de fichier
+
+    debug- comme test et co (a priori cela passse qd mmeêm
+
+
+    tmpl-... : pour les docs à tradruitre mais que l'in utile dans processus auto VOIR LES hooks !
+
+    usage de pre post hook via fichiers Python qui resneigne leur variable PRE_HOOK, POST _HOOK
+
+        + virtula path associé au contenu d'une resource
+        + contenu text a pre post ajouter
+
+    CELA DEVRAIT SUFFIRE !
+
+
+> ---------------------------- <
+
+besoin de chnager about.yaml au ofmrat suivant
+
+
+texfacto:
+  doc:
+    preamble: preamble.cfg.tex
+
+    toc:
+        - main/
+        - inenglish/
+        - theme/
+        - admonitions/
+        - macroenv/
+        - showcase/
+        - listing/
+        - version-n-change/
+        - deco/
+        - contrib-how-to/
+
+    src:
+        Pour les sty et co
+
+    hooks:
+        cf galleire de tutodoc
