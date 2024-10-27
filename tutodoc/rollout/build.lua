@@ -41,6 +41,16 @@ uploadconfig = {
 }
 
 
+-------------------
+-- GENERAL TOOLS --
+-------------------
+
+function raise(kind, message)
+    print("\n" .. kind .. ".ERROR! " .. message)
+
+    return 1
+end
+
 -----------------
 -- CMD OPTIONS --
 -----------------
@@ -62,13 +72,10 @@ TAG_L3BUILD_BOX_END   = "! OK."
 function checkSBUNIT(xtra_args)
     if xtra_args == nil or #xtra_args ~= 1
     then
-        print(
-            "IO.ERROR!"
-            ..
+        return raise(
+            "IO",
             "One single test file name needed!"
         )
-
-        return 1
     end
 
     print("Starting validation of SHOWBOX COMPARISON unit tests.")
@@ -101,13 +108,12 @@ function checkSBUNIT(xtra_args)
         then
             if catego ~= string.sub(line, 11, -1)
             then
-                print(
+                return raise(
+                    "FORMAT",
                     "Showbox checker without a showbox tested: see line "
                     .. nbline ..
                     " in the log file. Tested? Same category"
                 )
-
-                return 1
             end
 
             kind = TAG_CHECK
@@ -118,8 +124,10 @@ function checkSBUNIT(xtra_args)
             then
                 if _compareSBUNIT(catego, log_test, log_check) == false
                 then
-                    print("\nValidation has failed!")
-                    return 1
+                    return raise(
+                        "TEST",
+                        "Validation has failed!"
+                    )
                 end
             end
 
@@ -153,19 +161,21 @@ target_list[cmd_option] = {
 
 function _compareSBUNIT(catego, log_test, log_check)
     local what   = "Showbox " .. catego
-    local result = false
 
+-- Happy day!
     if log_test == log_check
     then
         result = true
 
         print("    + " .. what .. " [OK]")
 
-      else
-        print("    + " .. what .. " [KO]")
+        return true
     end
 
-    return result
+-- Chaos day...
+    print("    + " .. what .. " [KO]")
+
+    return false
 end
 
 
@@ -176,13 +186,10 @@ cmd_option = "view"
 function viewPDF(xtra_args)
     if xtra_args == nil or #xtra_args ~= 1
     then
-        print(
-            "IO.ERROR!"
-            ..
+        return raise(
+            "IO",
             "One single test file name needed!"
         )
-
-        return 1
     end
 
     local testfilename = xtra_args[1]
@@ -192,13 +199,10 @@ function viewPDF(xtra_args)
 
     if fileexists(testdir .. "/" .. pdffile) == false
     then
-        print(
-            "IO.ERROR!"
-            ..
+        return raise(
+            "IO",
             "No PDF file found.\nSee: " .. pdffile
         )
-
-        return 1
     end
 
 -- Works on Linux, but not MacOS
@@ -210,13 +214,10 @@ function viewPDF(xtra_args)
 
       if trycmd ~= 0
       then
-          print(
-              "OS.ERROR!"
-              ..
+          return raise(
+              "OS",
               "No command to open PDF files.\nSee: " .. pdffile
           )
-
-          return 1
       end
     end
 
