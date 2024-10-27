@@ -9,7 +9,7 @@
 
 \ProvidesExplClass
   {tutodoc}
-  {2024-10-26}  % Creation: 2023-11-29
+  {2024-10-27}  % Creation: 2023-11-29
   {1.6.0}
   {This LaTeX class proposes tools for writing "human friendly" PDF documentations of LaTeX packages and classes.}
 
@@ -78,9 +78,6 @@
 
 \RequirePackage{tocbasic}
 
-\RequirePackage{xcolor}%
-               [2022/06/12]
-
 \RequirePackage{hyperref}% To load after titlesec!
                [2023-02-07]
 
@@ -104,9 +101,6 @@
 \RequirePackage{tcolorbox}%
                [2024/07/10]
 
-\tcbuselibrary{breakable,
-               skins}
-
 
 \RequirePackage{clrstrip}%
                [2021-08-28]
@@ -116,16 +110,9 @@
                {minted}%
                [2024/09/22]
 
-\RequirePackage{tcolorbox}%
-               [2024/07/10]
-
 \tcbuselibrary{minted,
                breakable,
                skins}
-
-
-\RequirePackage{fontawesome5}%
-               [2022-05-02]
 
 \RequirePackage{marginnote}%
                [2023-09-07]
