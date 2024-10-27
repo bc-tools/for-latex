@@ -9,6 +9,10 @@ NOW
 
 > ---------------------------- <
 
+manual : ajouter comment indiquer problème erreur pour intégration facile dans mes tests unitaires cf le cas de englisj au lieu de English par exemple
+
+> ---------------------------- <
+
 ??? script fabriquant les examples tdoc warn and co à partir d'un donné (cec évite de redander des trads déjà faites !) + idem pour chge what è!!
 
 
