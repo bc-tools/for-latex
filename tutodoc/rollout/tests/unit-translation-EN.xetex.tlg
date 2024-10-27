@@ -1,0 +1,122 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: Macros - trans_date
+============================================================
+SB-TESTED ''trans_date''
+> \box...=
+\hbox(6.77+0.21999)x46.66
+.\special{color push gray 0}
+.\TU/lmr/m/n/10 ....-..-..
+.\special{color pop}
+! OK.
+l. ...\showbox0
+SB-WANTED ''trans_date''
+> \box...=
+\hbox(6.77+0.21999)x46.66
+.\special{color push gray 0}
+.\TU/lmr/m/n/10 ....-..-..
+.\special{color pop}
+! OK.
+l. ...\showbox2
+============================================================
+============================================================
+TEST 2: Macros - inEN
+============================================================
+SB-TESTED ''inEN''
+> \box...=
+\hbox(7.16+2.05998)x77.74
+.\special{color push gray 0}
+.\TU/lmr/m/n/10 “
+.\penalty 10000
+.\glue -0.0002
+.\glue 0.0002
+.\TU/lmr/m/it/10 OK?
+.\kern 0.4
+.\TU/lmr/m/n/10 ”
+.\glue 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 in
+.\glue 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 English
+.\special{color pop}
+! OK.
+l. ...\showbox0
+SB-WANTED ''inEN''
+> \box...=
+\hbox(7.16+2.05998)x77.74
+.\special{color push gray 0}
+.\TU/lmr/m/n/10 “
+.\penalty 10000
+.\glue -0.0002
+.\glue 0.0002
+.\TU/lmr/m/it/10 OK?
+.\kern 0.4
+.\TU/lmr/m/n/10 ”
+.\glue 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 in
+.\glue 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 English
+.\special{color pop}
+! OK.
+l. ...\showbox2
+============================================================
+============================================================
+TEST 3: Sentences - chges_tech
+============================================================
+SB-TESTED ''chges_tech''
+> \box...=
+\hbox(7.05+0.10999)x95.32
+.\special{color push gray 0}
+.\TU/lmr/m/n/10 Technical
+.\glue 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 information
+.\special{color pop}
+! OK.
+l. ...\showbox0
+SB-WANTED ''chges_tech''
+> \box...=
+\hbox(7.05+0.10999)x95.32
+.\special{color push gray 0}
+.\TU/lmr/m/n/10 Technical
+.\glue 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 information
+.\special{color pop}
+! OK.
+l. ...\showbox2
+============================================================
+============================================================
+TEST 4: Sentences - latex_show_start
+============================================================
+SB-TESTED ''latex_show_start''
+> \box...=
+\hbox(7.05+1.93999)x103.13
+.\special{color push gray 0}
+.\TU/lmr/m/n/10 Start
+.\glue 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 of
+.\glue 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 the
+.\glue 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 real
+.\glue 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 output
+.\special{color pop}
+! OK.
+l. ...\showbox0
+SB-WANTED ''latex_show_start''
+> \box...=
+\hbox(7.05+1.93999)x103.13
+.\special{color push gray 0}
+.\TU/lmr/m/n/10 Start
+.\glue 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 of
+.\glue 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 the
+.\glue 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 real
+.\glue 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 output
+.\special{color pop}
+! OK.
+l. ...\showbox2
+============================================================

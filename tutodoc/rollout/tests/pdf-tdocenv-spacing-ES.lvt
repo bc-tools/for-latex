@@ -1,0 +1,14 @@
+\documentclass{tutodoc}
+
+\usepackage[spanish]{babel}
+
+\input{regression-test}
+
+\begin{document}
+\START
+
+\tdocenv{env}
+
+\showoutput
+
+\end{document}

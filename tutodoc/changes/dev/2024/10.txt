@@ -1,10 +1,17 @@
+==
+27  (1.6.0)
+==
+
+[[:test:]]
+Updates were needed regarding the new ''theme'' option. From now, we will use prefixes path::''pdf'' and path::''unit'' to indicate either a visual test, or a unit one.
+
+
 // ---------- //
 
 
 ==
 26  (1.6.0-rc.2)
 ==
-
 
 -----
 :fix:
@@ -24,13 +31,6 @@
 --------
 :fordev:
 --------
-
-[[:test:]]   ????
-Updates were needed regarding the new ''theme'' option. From now, we will use prefixes path::''pdf'' and path::''unit'' to indicate either a visual test, or a unit one.
-
-
-
-
 
 [[:flow:]]
 Translation of the \api: the code has been updated to follow the new organization of the folders.

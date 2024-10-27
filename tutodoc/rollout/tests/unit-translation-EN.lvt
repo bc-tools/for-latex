@@ -1,7 +1,5 @@
 \documentclass{tutodoc}
 
-\usepackage[french]{babel}
-
 \input{regression-test}
 
 \begin{document}
@@ -14,7 +12,7 @@
 \BEGINTEST{Macros - trans_date}
 
 \sbox0{\tutodoc@trans@date{2024}{10}{27}}
-\sbox2{27/10/2024}
+\sbox2{2024-10-27}
 
 \TYPE{SB-TESTED ''trans_date''}
 \showbox0
@@ -28,7 +26,7 @@
 \BEGINTEST{Macros - inEN}
 
 \sbox0{\tdocinEN{OK?}}
-\sbox2{\tdocquote{OK?} en anglais}
+\sbox2{\tdocquote{OK?} in English}
 
 \TYPE{SB-TESTED ''inEN''}
 \showbox0
@@ -42,7 +40,7 @@
 \BEGINTEST{Sentences - chges_tech}
 
 \sbox0{\tutodoc@trans@chges@tech}
-\sbox2{Information technique}
+\sbox2{Technical information}
 
 \TYPE{SB-TESTED ''chges_tech''}
 \showbox0
@@ -56,7 +54,7 @@
 \BEGINTEST{Sentences - latex_show_start}
 
 \sbox0{\tutodoc@trans@latex@show@start}
-\sbox2{Début du rendu réel}
+\sbox2{Start of the real output}
 
 \TYPE{SB-TESTED ''latex_show_start''}
 \showbox0
