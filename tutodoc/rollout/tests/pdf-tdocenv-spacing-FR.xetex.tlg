@@ -1,0 +1,85 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+Completed box being shipped out [1]
+\vbox(686.8619+0.0)x470.89313
+.\hbox(0.0+0.0)x0.0
+..\special{pdf:docinfo<</Title()/Subject()/Creator(LaTeX with hyperref)/Author()/Keywords()>>}
+.\hbox(0.0+0.0)x0.0
+..\kern -72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil
+...\kern -72.26999
+...\hbox(0.0+0.0)x0.0
+....\hbox(0.0+0.0)x0.0, glue set 72.26999fil, shifted 72.26999
+.....\kern -72.26999
+.....\special{pdf:obj @pgfcolorspaces <<>>}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\special{pdf:put @pgfcolorspaces <<  /pgfprgb [/Pattern /DeviceRGB]  >>}
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\vbox(0.0+0.0)x0.0, glue set 39.14185fil
+..\kern 0.0
+..\kern -38.1381
+..\kern -1.00374
+..\hbox(0.0+0.0)x0.0, glue set 2.14185fil
+...\kern 0.0
+...\kern -1.1381
+...\kern -1.00374
+...\special{pdf:dest (page.1) [@thispage /XYZ @xpos @ypos null]}
+...\penalty 10000
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(686.8619+0.0)x470.89313
+..\glue -38.1381
+..\vbox(725.0+0.0)x472.03123, shifted -1.1381
+...\vbox(12.0+0.0)x472.03123, glue set 12.0fil
+....\glue 0.0 plus 1.0fil
+....\hbox(0.0+0.0)x472.03123
+.....\special{color push gray 0}
+.....\hbox(0.0+0.0)x472.03123
+.....\special{color pop}
+...\glue 25.0
+...\glue(\lineskip) 0.0
+...\vbox(658.0+0.0)x472.03123, glue set 647.93079fil
+....\write-{}
+....\special{color push gray 0}
+....\special{pdf:majorversion 1}
+....\special{pdf:minorversion 5}
+....\special{pdf:docview<</OpenAction[@page1/Fit]/PageMode/UseOutlines>>}
+....\special{pdf:dest (Doc-Start) [@thispage /XYZ @xpos @ypos null]}
+....\write1{\babel@aux{french}{}}
+....\glue(\topskip) 3.06
+....\hbox(6.94+2.28998)x472.03123, glue set 349.11482fil
+.....\hbox(0.0+0.0)x0.0
+.....\TU/lmtt/m/n/10 \begin{env}
+.....\glue 5.25
+.....\kern -1.66672
+.....\kern -1.66672
+.....\TU/lmtt/m/n/10 ...
+.....\kern -1.66672
+.....\kern -1.66672
+.....\kern -1.66672
+.....\glue 5.25
+.....\TU/lmtt/m/n/10 \end{env}
+.....\kern 0.0
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+....\glue -2.28998
+....\glue 0.0 plus 1.0fil
+....\glue 0.0
+....\glue 0.0 plus 0.0001fil
+...\glue(\baselineskip) 23.34
+...\hbox(6.66+0.0)x472.03123
+....\special{color push gray 0}
+....\hbox(6.66+0.0)x472.03123, glue set 233.51563fil
+.....\glue 0.0 plus 1.0fil
+.....\TU/lmr/m/n/10 1
+.....\glue 0.0 plus 1.0fil
+....\special{color pop}
+.\kern 0.0
+.\kern 0.0
+(pdf-tdocenv-spacing-FR.aux)
+Package rerunfilecheck Info: File `pdf-tdocenv-spacing-FR.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.

@@ -24,7 +24,7 @@ checkopts   = "-interaction=nonstopmode --shell-escape"
 typesetopts = checkopts
 
 uploadconfig = {
-    version      = "1.6.0 [2024-10-26]",
+    version      = "1.6.0 [2024-10-27]",
     announcement = "The main change is the ability to choose a layout from 4 themes.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
@@ -81,7 +81,7 @@ function checkSBUNIT(xtra_args)
         )
     end
 
-    print("SHOWBOX COMPARISON validation.")
+    print("SHOWBOX COMPARISON validated?")
 
     local testfilename = xtra_args[1]
     local logfile      = testfilename .. ".log"
@@ -166,7 +166,8 @@ function checkSBUNIT(xtra_args)
         end
     end
 
-    print("\nSuccessful validation.")
+    print("SHOWBOX COMPARISON: OK!")
+
     return 0
 end
 
@@ -191,80 +192,81 @@ function _compareSBUNIT(
     then
         result = true
 
-        print("    + " .. what .. " [OK]")
+        print("    + [OK] " .. what)
 
         return true
     end
 
 -- Chaos day...
-    print("    + " .. what .. " [KO]")
+    print("    + [KO] " .. what)
 
     print("LOG FILE. Test starts at line " .. line_test .. ".")
     print("          Check starts at line " .. line_check .. ".")
 
-    io.write("UNIX ONLY. Do you want to `diff` the contents (y/n)? ")
-    answer = io.read()
+    -- io.write("UNIX ONLY. Do you want to `diff` the contents (y/n)? ")
+    -- answer = io.read()
 
-    if answer == "y"
+    -- if answer == "y"
+    -- then
+    local logtestfile_name = "build/test/" .. "@_@test_@_l3build@_@"
+    local logtestfile      = io.open(logtestfile_name, "w")
+
+    if logtestfile == nil
     then
-        local logtestfile_name = "build/test/" .. "@_@test_@_l3build@_@"
-        local logtestfile      = io.open(logtestfile_name, "w")
-
-        if logtestfile == nil
-        then
-            return raise(
-                "IO",
-                "Temp file ''"
-                .. logtestfile_name ..
-                "'' can't be created."
-            )
-        end
-
-        local logcheckfile_name = "build/test/" .."@_@check_@_l3build@_@"
-        local logcheckfile      = io.open(logcheckfile_name, "w")
-
-        if logcheckfile == nil
-        then
-            os.remove(logtestfile)
-
-            return raise(
-                "IO",
-                "Temp file ''"
-                .. logcheckfile_name ..
-                "'' can't be created."
-            )
-        end
-
-        logtestfile:write(log_test)
-        logcheckfile:write(log_check)
-
-        local iostream = assert(
-            io.popen(
-                "diff "
-                .. DIFF_OPTION_FULL_ONE_PAGE ..
-                " "
-                .. logtestfile_name ..
-                " "
-                .. logcheckfile_name,
-                'r'
-            )
+        return raise(
+            "IO",
+            "Temp file ''"
+            .. logtestfile_name ..
+            "'' can't be created."
         )
-
-        local infos = assert(iostream:read('a'))
-
-        iostream:close()
-
-        infos = string.gsub(infos, '^%s+', '')
-        infos = string.gsub(infos, '%s+$', '')
-
-        print("`diff -u test check` gives:")
-        print("")
-
-        print(infos)
-
-        os.remove(logtestfile_name)
-        os.remove(logcheckfile_name)
     end
+
+    local logcheckfile_name = "build/test/" .."@_@check_@_l3build@_@"
+    local logcheckfile      = io.open(logcheckfile_name, "w")
+
+    if logcheckfile == nil
+    then
+        os.remove(logtestfile)
+
+        return raise(
+            "IO",
+            "Temp file ''"
+            .. logcheckfile_name ..
+            "'' can't be created."
+        )
+    end
+
+    logtestfile:write(log_test)
+    logcheckfile:write(log_check)
+
+    local iostream = assert(
+        io.popen(
+                "diff "
+            .. DIFF_OPTION_SIDE_BY_SIDE ..
+            -- .. DIFF_OPTION_FULL_ONE_PAGE ..
+            " "
+            .. logtestfile_name ..
+            " "
+            .. logcheckfile_name,
+            'r'
+        )
+    )
+
+    local infos = assert(iostream:read('a'))
+
+    iostream:close()
+
+    infos = string.gsub(infos, '^%s+', '')
+    infos = string.gsub(infos, '%s+$', '')
+
+    print("`diff -u test check` gives:")
+    print("")
+
+    print(infos)
+
+    os.remove(logtestfile_name)
+    os.remove(logcheckfile_name)
+    -- end
 
     return false
 end

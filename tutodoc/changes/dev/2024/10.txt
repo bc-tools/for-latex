@@ -1,8 +1,8 @@
 ==
-26  (1.6.0  ??? or  -rc.3)
+27  (1.6.0)
 ==
 
-[[:test:]]   ????
+[[:test:]]
 Updates were needed regarding the new ''theme'' option. From now, we will use prefixes path::''pdf'' and path::''unit'' to indicate either a visual test, or a unit one.
 
 

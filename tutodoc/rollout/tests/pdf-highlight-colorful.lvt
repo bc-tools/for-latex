@@ -43,35 +43,35 @@
 \begin{tdocnote}
 	\textcolor{black}{One note}
 	
-	One note...
+	One note...%
 	\footnote{\textcolor{black}{Good color and not good doctor!} \par Good color and not good doctor!}	
 \end{tdocnote}
 
 \begin{tdoctip}
 	\textcolor{black}{Useful tip.}
 	
-	Useful tip.
+	Useful tip.%
 	\footnote{\textcolor{black}{Good color and not good doctor!} \par Good color and not good doctor!}
 \end{tdoctip}
 
 \begin{tdocimp}
 	\textcolor{black}{Something important.}
 	
-	Something important.
+	Something important.%
 	\footnote{\textcolor{black}{Good color and not good doctor!} \par Good color and not good doctor!}
 \end{tdocimp}
 
 \begin{tdoccaut}
 	\textcolor{black}{Be aware.}
 	
-	Be aware.
+	Be aware.%
 	\footnote{\textcolor{black}{Good color and not good doctor!} \par Good color and not good doctor!}
 \end{tdoccaut}
 
 \begin{tdocwarn}
 	\textcolor{black}{Be prudent!}
 	
-	Be prudent!
+	Be prudent!%
 	\footnote{\textcolor{black}{Good color and not good doctor!} \par Good color and not good doctor!}
 \end{tdocwarn}
 
