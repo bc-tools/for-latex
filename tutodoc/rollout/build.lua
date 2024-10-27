@@ -69,6 +69,8 @@ TAG_TEST   = "test"
 TAG_L3BUILD_BOX_START = "> \\box"
 TAG_L3BUILD_BOX_END   = "! OK."
 
+DIFF_OPTION_SIDE_BY_SIDE  = "-y"
+DIFF_OPTION_FULL_ONE_PAGE = "-u"
 
 function checkSBUNIT(xtra_args)
     if xtra_args == nil or #xtra_args ~= 1
@@ -129,11 +131,18 @@ function checkSBUNIT(xtra_args)
         then
             if kind == TAG_CHECK
             then
-                if _compareSBUNIT(
+                error_code = _compareSBUNIT(
                     catego,
                     line_test , log_test,
                     line_check, log_check
-                ) == false
+                )
+
+                if error_code == 1
+                then
+                    return error_code
+                end
+
+                if error_code == false
                 then
                     return raise(
                         "TEST",
@@ -193,53 +202,68 @@ function _compareSBUNIT(
     print("LOG FILE. Test starts at line " .. line_test .. ".")
     print("          Check starts at line " .. line_check .. ".")
 
-    print("")
-
     -- io.write("UNIX ONLY. Do you want to `diff` the contents (y/n)? ")
     -- answer = io.read()
 
     -- if answer == "y"
     -- then
-        local logtestfile_name = "@@test@l3build@@"
+        local logtestfile_name = "build/test/" .. "@_@test_@_l3build@_@"
         local logtestfile      = io.open(logtestfile_name, "w")
 
         if logtestfile == nil
         then
-            raise(
+            return raise(
                 "IO",
-                "Temp file ''@@test@l3build@@'' can't be created."
+                "Temp file ''"
+                .. logtestfile_name ..
+                "'' can't be created."
             )
         end
 
-        local logcheckfile_name = "@@check@l3build@@"
+        local logcheckfile_name = "build/test/" .."@_@check_@_l3build@_@"
         local logcheckfile      = io.open(logcheckfile_name, "w")
 
         if logcheckfile == nil
         then
             os.remove(logtestfile)
 
-            raise(
+            return raise(
                 "IO",
-                "Temp file ''@@check@l3build@@'' can't be created."
+                "Temp file ''"
+                .. logcheckfile_name ..
+                "'' can't be created."
             )
         end
 
         logtestfile:write(log_test)
         logcheckfile:write(log_check)
 
-        local summary = os.execute(
-            "diff '"
-            .. logtestfile_name ..
-            "' '"
-            .. logcheckfile_name ..
-            "'"
+        local iostream = assert(
+            io.popen(
+                "diff "
+                .. DIFF_OPTION_FULL_ONE_PAGE ..
+                " "
+                .. logtestfile_name ..
+                " "
+                .. logcheckfile_name,
+                'r'
+            )
         )
 
-        print("`diff test check` gives:")
-        print(summary)
+        local infos = assert(iostream:read('*a'))
 
-        os.remove(logtestfile_name)
-        os.remove(logcheckfile_name)
+        iostream:close()
+
+        infos = string.gsub(infos, '^%s+', '')
+        infos = string.gsub(infos, '%s+$', '')
+
+        print("`diff -u test check` gives:")
+        print("")
+
+        print(infos)
+
+        -- os.remove(logtestfile_name)
+        -- os.remove(logcheckfile_name)
     -- end
 
     return false
