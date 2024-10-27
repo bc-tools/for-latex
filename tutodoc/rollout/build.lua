@@ -202,11 +202,11 @@ function _compareSBUNIT(
     print("LOG FILE. Test starts at line " .. line_test .. ".")
     print("          Check starts at line " .. line_check .. ".")
 
-    -- io.write("UNIX ONLY. Do you want to `diff` the contents (y/n)? ")
-    -- answer = io.read()
+    io.write("UNIX ONLY. Do you want to `diff` the contents (y/n)? ")
+    answer = io.read()
 
-    -- if answer == "y"
-    -- then
+    if answer == "y"
+    then
         local logtestfile_name = "build/test/" .. "@_@test_@_l3build@_@"
         local logtestfile      = io.open(logtestfile_name, "w")
 
@@ -250,7 +250,7 @@ function _compareSBUNIT(
             )
         )
 
-        local infos = assert(iostream:read('*a'))
+        local infos = assert(iostream:read('a'))
 
         iostream:close()
 
@@ -262,9 +262,9 @@ function _compareSBUNIT(
 
         print(infos)
 
-        -- os.remove(logtestfile_name)
-        -- os.remove(logcheckfile_name)
-    -- end
+        os.remove(logtestfile_name)
+        os.remove(logcheckfile_name)
+    end
 
     return false
 end
