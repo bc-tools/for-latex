@@ -41,51 +41,134 @@ uploadconfig = {
 }
 
 
-------------------------------
--- New command line options --
-------------------------------
+-----------------
+-- CMD OPTIONS --
+-----------------
 
--- Proposed by projetmbc.
+-- UNIT TESTS: AUTO VALIDATIONS OF [S]HOW[B]OX COMPARISONS --
 
-VIEW_TAG = "view"
+cmd_option = "sbunit"
 
-function viewPDF(xtra_args)
-  if xtra_args == nil or #xtra_args ~= 1
-  then
-    print("One single test file name needed!")
-    return 1
-  end
-
-  local testfilename = xtra_args[1]
-
-  -- cfr: use the variable in case builddir isn't this directory
-  local pdffile = testfilename .. ".pdf"
-
-  if fileexists(testdir .. "/" .. pdffile) == false
-  then
-    print("No PDF file found.\nSee: " .. pdffile)
-    return 1
-  end
-
--- works on Linux, but not MacOS
-  local trycmd = run(testdir, "xdg-open " .. '"' .. pdffile .. '"')
-
-  if trycmd ~= 0 then
--- Works on MacOS, but not on Linux.
-    trycmd = run(testdir, "open " .. '"' .. pdffile .. '"')
-
-    if trycmd ~= 0
+function checkSBUNIT(xtra_args)
+    if xtra_args == nil or #xtra_args ~= 1
     then
-      print("No command to open PDF files.\nSee: " .. pdffile)
+        print("Showbox comparison unit test: one single test file name needed!")
+        return 1
     end
-  end
+
+    print("Starting validation of SHOWBOX COMPARISON unit tests.")
+
+    local testfilename = xtra_args[1]
+    local logfile      = testfilename .. ".log"
+
+    file  = io.open(testdir .. "/" .. logfile)
+    lines = file:lines()
+
+    local nbline = 0
+
+    TAG_CHECK = "check"
+    TAG_STD   = "standard"
+    TAG_TEST  = "test"
+
+    TAG_L3BUILD_BOX = "> \\box"
+    local nbtests = 0
+    local kind    = "std"
+
+
+    for line in lines
+    do
+        nbline = nbline + 1
+
+        startline = string.sub(line, 1, 9)
+
+        if startline == "SB-TESTED"
+        then
+            kind   = TAG_TEST
+            catego = string.sub(line, 11, -1)
+
+        elseif startline == "SB-WANTED"
+        then
+            if kind ~=  TAG_TEST
+            then
+                print("No showbox tested before: see line " .. nbline .. " in the log file.")
+                return 1
+            end
+
+            if catego ~= string.sub(line, 11, -1)
+            then
+                print("Showbox checker without the same category: see line " .. nbline .. " in the log file.")
+                return 1
+            end
+
+            kind = TAG_CHECK
+        elseif line == "! OK."
+        then
+            kind = TAG_STD
+            print("--- LET'S WORK! --")
+        elseif kind == TAG_TEST or kind == TAG_CHECK
+        then
+            if string.sub(line, 0, 6) ~= TAG_L3BUILD_BOX
+            then
+                print("\t[" .. nbline .. "-" .. kind .. "]" .. line)
+            end
+        end
+    end
+
 
   return 0
 end
 
-target_list[VIEW_TAG] = {
-  func = viewPDF,
-  desc = "Open a PDF of tested files",
+
+target_list[cmd_option] = {
+    func = checkSBUNIT,
+    desc = "Check showbox comparison unit test",
+--   pre = function(xtra_args)
+--   end
+}
+
+
+-- VIEW PDF FROM ONE TEST --
+
+cmd_option = "view"
+
+function viewPDF(xtra_args)
+    if xtra_args == nil or #xtra_args ~= 1
+    then
+        print("View PDF from one test: one single test file name needed!")
+        return 1
+    end
+
+    local testfilename = xtra_args[1]
+
+    -- cfr: use the variable in case builddir isn't this directory
+    local pdffile = testfilename .. ".pdf"
+
+    if fileexists(testdir .. "/" .. pdffile) == false
+    then
+        print("No PDF file found.\nSee: " .. pdffile)
+        return 1
+    end
+
+-- Works on Linux, but not MacOS
+    local trycmd = run(testdir, "xdg-open " .. '"' .. pdffile .. '"')
+
+    if trycmd ~= 0 then
+-- Works on MacOS, but not on Linux.
+      trycmd = run(testdir, "open " .. '"' .. pdffile .. '"')
+
+      if trycmd ~= 0
+      then
+          print("No command to open PDF files.\nSee: " .. pdffile)
+      end
+    end
+
+    return 0
+end
+
+
+target_list[cmd_option] = {
+    func = viewPDF,
+    desc = "Open a PDF of tested files",
 --   pre = function(xtra_args)
 --   end
 }

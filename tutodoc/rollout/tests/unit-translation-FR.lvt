@@ -9,15 +9,16 @@
 \START
 
 \BEGINTEST{Macros}
+
 \sbox0{\tdocinEN{OK?}}
 \sbox2{\tdocquote{OK?} in English}
-\SEPARATOR
-\TYPE{TESTED}
+
+\TYPE{SB-TESTED "inEn"}
 \showbox0
-\SEPARATOR
-\TYPE{EXPECTED}
+
+\TYPE{SB-WANTED "inEn"}
 \showbox2
-\SEPARATOR
+
 \ENDTEST
 
 \OMIT
