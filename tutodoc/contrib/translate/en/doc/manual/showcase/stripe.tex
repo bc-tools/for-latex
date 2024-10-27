@@ -1,17 +1,18 @@
-\documentclass[12pt, a4paper]{tutodoc}
+\documentclass[10pt, a4paper]{tutodoc}
 
 \input{../preamble.cfg.tex}
 
 
 \begin{document}
 
-\section{A real-life rendering} \label{tdoc-showcase}
+\section{A real-life rendering}
+\label{tutodoc-showcase}
 
 It is sometimes useful to render code directly in the documentation. This type of rendering must be dissociable from the explanatory text.
 
 
 
-\subsection{With a colored stripe} \label{tdoc-color-macros}
+\subsection{With a colored stripe}
 
 \begin{tdocexa} [With default text]
     It can be useful to show a real rendering directly in a document.
@@ -34,7 +35,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 \smallskip
 
 \begin{tdocrem}
-    See the section \ref{tdoc-latexshow} on page \pageref{tdoc-latexshow} to easily obtain code followed by its actual rendering as in the previous example.
+    See the section \ref{tutodoc-latexshow} on page \pageref{tutodoc-latexshow} to easily obtain code followed by its actual rendering as in the previous example.
 \end{tdocrem}
 
 
@@ -46,7 +47,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 % ------------------ %
 
 
-\begin{tdocexa}[Change the default colour and/or text]
+\begin{tdocexa}[Change the colors and/or the texts]
     \leavevmode
 
     \tdoclatexinput[code]{examples/showcase/customized.tex}
@@ -60,29 +61,12 @@ It is sometimes useful to render code directly in the documentation. This type o
 
 
 \begin{tdocnote}
-    You've probably noticed that red is used as a base to obtain the colors used.
-
-    \begin{itemize}
-    	\item The background color is provided by \tdocmacro{tdocbackcolor}.
-
-    	\item The color of titles and lines is provided by \tdocmacro{tdocdarkcolor}.
-    \end{itemize}
-
-    These expandable macros accept the following codes.
-
-    \begin{tdoclatex}[code]
-% Argument 1 : optionally, the amount of color relative to black can be specified.
-%              In general, there's no need to change this setting!
-% Argument 2 : a color in xcolor format.
-\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
-
-% Argument 1 : optionally, the transparency rate can be specified.
-%              In general, there's no need to change this setting!
-% Argument 2 : a color in xcolor format.
-\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
-    \end{tdoclatex}
-
-    You also have to know that behind the scene, the \tdocmacro{tdocruler} macro is used.
+    In the previous example, the text uses the proposed darkened orange. On the other hand, red is used as a base to obtain the colors used for the strip: the transformations used depend on the theme chosen.%
+    \footnote{
+        For example, the themes \tdocinlatex{bw} and \tdocinlatex{draft} ignore the key \tdocinlatex{colstripe}!
+    }
+    %
+    You should also be aware that behind the scenes, the macro \tdocmacro{tdocruler} is used.
 
     \begin{tdoclatex}[std]
         \tdocruler[red]{A decorated pseudo-title}

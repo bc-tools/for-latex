@@ -1,5 +1,5 @@
 
-form-string="announcement=tutodoc becomes a LaTeX class."
+form-string="announcement=The main change is the ability to choose a layout from 4 themes."
 form-string="author=Christophe BAL"
 form-string="bugtracker=https://github.com/bc-tools/for-latex/issues"
 form-string="ctanPath=/macros/latex/contrib/tutodoc"
@@ -12,5 +12,5 @@ form-string="summary=This class proposes tools for writing \"human friendly\" do
 form-string="topic=doc-tool"
 form-string="update=true"
 form-string="uploader=Christophe BAL"
-form-string="version=1.5.0 [2024-10-19]"
+form-string="version=1.6.0 [2024-10-27]"
 form="file=@tutodoc-ctan.zip;filename=tutodoc-ctan.zip"

@@ -1,7 +1,5 @@
 % == PACKAGES == %
 
-%\RequirePackage{minted2}% Old implementation.
-
 \RequirePackage[highlightmode = immediate]%
                {minted}%
                [2024/09/22]
@@ -18,16 +16,26 @@
 
 % -- LATEX EXAMPLES -- %
 
-% :: INLINE SHORT LATEX CODE :: %
+% :: STYLES OF THE LISTING ENV. AND THE MACRO :: %
+
+\newcommand{\tutodoc@latex@lexer}{latex}
+
+\input{../listing/css/\tutodoc@theme.cls.sty}
+
+
+% :: INLINE LATEX MACRO :: %
 
 %%%
 % See the \doc of the macro ''\newmintinline'' from the package ''minted''
 % to have \infos about the macro ''tdocinlatex''.
 %%%
-\newmintinline[tdocinlatex]{latex}{bgcolor = yellow!4}
+\newmintinline[tdocinlatex]{\tutodoc@latex@lexer}{%
+  bgcolor            = tutodoc@latex@back@color,%
+  style/.expand once = \tutodoc@latex@style% <-- This needs minted3!
+}
 
 
-% :: SHORTCUTS FOR TCOLORBOX LISTING FORMATING :: %
+% :: TCOLORBOX LISTING ENVIRONMENT :: %
 
 \ExplSyntaxOn
 
@@ -45,7 +53,7 @@
 %
 % term::
 %     Package pgfkeys Error: I do not know the key '/tcb/tdoclatex bad option
-%     "NOT-A-STYLE"' and I am going to ignore it. Perhaps you misspelled it.
+%     "MISTYPED-STYLE"' and I am going to ignore it. Perhaps you misspelled it.
 %
 %     See the pgfkeys package documentation for explanation.
 %%%
@@ -59,39 +67,48 @@
 
 \ExplSyntaxOff
 
-
-% :: THE TCOLORBOX LISTING STYLE :: %
-
-% Source.
-%     * https://tex.stackexchange.com/a/604821/6880
-%     * https://tex.stackexchange.com/a/327983/6880
+%%
+% source::
+%     + https://tex.stackexchange.com/a/604821/6880
+%     + https://tex.stackexchange.com/a/327983/6880
+%%
 \tcbset{
   tutodoc-latex-listing-style/.style = {
-    minted language = latex,
+% General.
+    minted language/.expand once = \tutodoc@latex@lexer,
+    minted style/.expand once    = \tutodoc@latex@style,
     breakable,
     enhanced,
-% Code and output
-    colback = yellow!5,
-% Frame
-    colframe = darkgray,
-    shadow   = {.75mm}{-.75mm}{0mm}{black!30},
-    arc      = .75mm,
-    left     = 1mm, right = 1mm,
-    bottom   = 1mm, top   = 1mm,
-% We can use  ''sharp corners'' to obtain an "old school" style.
-%
-% Separating line
+% Colors.
+    colframe = tutodoc@latex@frame@color,
+    colback  = tutodoc@latex@back@color,
+    colupper = tutodoc@latex@text@color,
+    collower = tutodoc@latex@text@color,
+% Padding.
+    left   = \tutodoc@latex@left,
+    right  = \tutodoc@latex@right,
+    bottom = \tutodoc@latex@bottom,
+    top    = \tutodoc@latex@top,
+% Frame.
+    shadow     = {\tutodoc@latex@shadow@xshift}%
+                 {\tutodoc@latex@shadow@yshift}%
+                 {\tutodoc@latex@shadow@offset}%
+                 {tutodoc@latex@shadow@color},
+    arc        = \tutodoc@latex@arc,
+    leftrule   = \tutodoc@latex@left@rule,
+    rightrule  = \tutodoc@latex@right@rule,
+    bottomrule = \tutodoc@latex@bottom@rule,
+    toprule    = \tutodoc@latex@top@rule,
+% Separating line.
     segmentation style = {
-      gray,
+      tutodoc@latex@segment@color,
       dash pattern = {on 5pt off 2.5pt},
-      line width   = 1.25pt
+      line width   = .75pt
     },
     #1
   },
 }
 
-
-% :: TCOLORBOX LISTING ENVIRONMENT :: %
 
 %%%
 % prototype::

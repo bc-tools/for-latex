@@ -1,0 +1,264 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: Macros - trans_date
+============================================================
+SB-TESTED ''trans_date''
+> \box...=
+\hbox(6.77+0.22)x46.66, direction TLT
+.\pdfcolorstack 0 push {0 g 0 G}
+.\TU/lmr/m/n/10 2
+.\TU/lmr/m/n/10 0
+.\TU/lmr/m/n/10 2
+.\TU/lmr/m/n/10 4
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+..= \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 1
+.\TU/lmr/m/n/10 0
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+..= \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 2
+.\TU/lmr/m/n/10 7
+.\pdfcolorstack 0 pop
+! OK.
+l. ...\showbox0
+SB-WANTED ''trans_date''
+> \box...=
+\hbox(6.77+0.22)x46.66, direction TLT
+.\pdfcolorstack 0 push {0 g 0 G}
+.\TU/lmr/m/n/10 2
+.\TU/lmr/m/n/10 0
+.\TU/lmr/m/n/10 2
+.\TU/lmr/m/n/10 4
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+..= \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 1
+.\TU/lmr/m/n/10 0
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+..= \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 2
+.\TU/lmr/m/n/10 7
+.\pdfcolorstack 0 pop
+! OK.
+l. ...\showbox2
+============================================================
+============================================================
+TEST 2: Macros - inEN
+============================================================
+SB-TESTED ''inEN''
+> \box...=
+\hbox(7.16+2.06)x77.94, direction TLT
+.\pdfcolorstack 0 push {0 g 0 G}
+.\TU/lmr/m/n/10 “
+.\penalty 10000
+.\glue -0.0002
+.\glue 0.0002
+.\TU/lmr/m/it/10 O
+.\TU/lmr/m/it/10 K
+.\TU/lmr/m/it/10 ?
+.\kern0.6 (italic)
+.\TU/lmr/m/n/10 ”
+.\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 i
+.\TU/lmr/m/n/10 n
+.\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 E
+.\TU/lmr/m/n/10 n
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 g
+.\TU/lmr/m/n/10 l
+.\TU/lmr/m/n/10 i
+.\TU/lmr/m/n/10 s
+.\TU/lmr/m/n/10 h
+.\pdfcolorstack 0 pop
+! OK.
+l. ...\showbox0
+SB-WANTED ''inEN''
+> \box...=
+\hbox(7.16+2.06)x77.94, direction TLT
+.\pdfcolorstack 0 push {0 g 0 G}
+.\TU/lmr/m/n/10 “
+.\penalty 10000
+.\glue -0.0002
+.\glue 0.0002
+.\TU/lmr/m/it/10 O
+.\TU/lmr/m/it/10 K
+.\TU/lmr/m/it/10 ?
+.\kern0.6 (italic)
+.\TU/lmr/m/n/10 ”
+.\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 i
+.\TU/lmr/m/n/10 n
+.\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 E
+.\TU/lmr/m/n/10 n
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 g
+.\TU/lmr/m/n/10 l
+.\TU/lmr/m/n/10 i
+.\TU/lmr/m/n/10 s
+.\TU/lmr/m/n/10 h
+.\pdfcolorstack 0 pop
+! OK.
+l. ...\showbox2
+============================================================
+============================================================
+TEST 3: Sentences - chges_tech
+============================================================
+SB-TESTED ''chges_tech''
+> \box...=
+\hbox(7.05+0.11)x95.31999, direction TLT
+.\pdfcolorstack 0 push {0 g 0 G}
+.\TU/lmr/m/n/10 T
+.\kern-0.83 (font)
+.\TU/lmr/m/n/10 e
+.\TU/lmr/m/n/10 c
+.\kern-0.28 (font)
+.\TU/lmr/m/n/10 h
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 n
+.\TU/lmr/m/n/10 i
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 c
+.\TU/lmr/m/n/10 a
+.\TU/lmr/m/n/10 l
+.\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 i
+.\TU/lmr/m/n/10 n
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 f
+.\TU/lmr/m/n/10 o
+.\TU/lmr/m/n/10 r
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 m
+.\TU/lmr/m/n/10 a
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 t
+.\TU/lmr/m/n/10 i
+.\TU/lmr/m/n/10 o
+.\TU/lmr/m/n/10 n
+.\pdfcolorstack 0 pop
+! OK.
+l. ...\showbox0
+SB-WANTED ''chges_tech''
+> \box...=
+\hbox(7.05+0.11)x95.31999, direction TLT
+.\pdfcolorstack 0 push {0 g 0 G}
+.\TU/lmr/m/n/10 T
+.\kern-0.83 (font)
+.\TU/lmr/m/n/10 e
+.\TU/lmr/m/n/10 c
+.\kern-0.28 (font)
+.\TU/lmr/m/n/10 h
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 n
+.\TU/lmr/m/n/10 i
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 c
+.\TU/lmr/m/n/10 a
+.\TU/lmr/m/n/10 l
+.\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 i
+.\TU/lmr/m/n/10 n
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 f
+.\TU/lmr/m/n/10 o
+.\TU/lmr/m/n/10 r
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 m
+.\TU/lmr/m/n/10 a
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 t
+.\TU/lmr/m/n/10 i
+.\TU/lmr/m/n/10 o
+.\TU/lmr/m/n/10 n
+.\pdfcolorstack 0 pop
+! OK.
+l. ...\showbox2
+============================================================
+============================================================
+TEST 4: Sentences - latex_show_start
+============================================================
+SB-TESTED ''latex_show_start''
+> \box...=
+\hbox(7.05+1.94)x103.12999, direction TLT
+.\pdfcolorstack 0 push {0 g 0 G}
+.\TU/lmr/m/n/10 S
+.\TU/lmr/m/n/10 t
+.\TU/lmr/m/n/10 a
+.\TU/lmr/m/n/10 r
+.\TU/lmr/m/n/10 t
+.\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 o
+.\TU/lmr/m/n/10 f
+.\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 t
+.\TU/lmr/m/n/10 h
+.\TU/lmr/m/n/10 e
+.\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 r
+.\TU/lmr/m/n/10 e
+.\TU/lmr/m/n/10 a
+.\TU/lmr/m/n/10 l
+.\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 o
+.\TU/lmr/m/n/10 u
+.\TU/lmr/m/n/10 t
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 p
+.\TU/lmr/m/n/10 u
+.\TU/lmr/m/n/10 t
+.\pdfcolorstack 0 pop
+! OK.
+l. ...\showbox0
+SB-WANTED ''latex_show_start''
+> \box...=
+\hbox(7.05+1.94)x103.12999, direction TLT
+.\pdfcolorstack 0 push {0 g 0 G}
+.\TU/lmr/m/n/10 S
+.\TU/lmr/m/n/10 t
+.\TU/lmr/m/n/10 a
+.\TU/lmr/m/n/10 r
+.\TU/lmr/m/n/10 t
+.\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 o
+.\TU/lmr/m/n/10 f
+.\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 t
+.\TU/lmr/m/n/10 h
+.\TU/lmr/m/n/10 e
+.\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 r
+.\TU/lmr/m/n/10 e
+.\TU/lmr/m/n/10 a
+.\TU/lmr/m/n/10 l
+.\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+.\TU/lmr/m/n/10 o
+.\TU/lmr/m/n/10 u
+.\TU/lmr/m/n/10 t
+.\discretionary (penalty 50)
+..< \TU/lmr/m/n/10 -
+.\TU/lmr/m/n/10 p
+.\TU/lmr/m/n/10 u
+.\TU/lmr/m/n/10 t
+.\pdfcolorstack 0 pop
+! OK.
+l. ...\showbox2
+============================================================

@@ -1,14 +1,16 @@
-\documentclass[12pt, a4paper]{tutodoc}
+\documentclass[10pt, a4paper]{tutodoc}
 
 \input{../preamble.cfg.tex}
 
 
 \begin{document}
 
-\subsection{Du contenu tape-à-l'oeil} \label{tdoc-admonitions}
+\subsection{Du contenu tape-à-l'oeil}
+\label{tutodoc-admonitions}
 
 \begin{tdocnote}
-    Les icônes sont obtenues via le package \tdocpack{fontawesome5}, et la gestion de l'espacement avec le texte est faite par la macro \tdocmacro{tdocicon}.
+	La mise en forme proposée ici est celle par défaut, mais d'autres sont possible en changeant de thème : voir la galerie de cas d'utilisation dans l'annexe page \pageref{tutodoc-theme-gallery}.
+    Quant aux icônes, elles sont obtenues via le package \tdocpack{fontawesome5}, et la macro \tdocmacro{tdocicon} gère l'espacement vis-à-vis du texte.
     \footnote{
         Par exemple,
         \tdocinlatex|\fbox{\tdocicon{\faBed}{Fatigué}}|
@@ -29,34 +31,35 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 \smallskip
 
 
-\begin{tdocnote}
-    Les couleurs sont obtenues via les macros développables \tdocmacro{tdocbackcolor} et \tdocmacro{tdocdarkcolor}.
-    Pour des informations complémentaires à ce sujet, se reporter à la fin de la section \ref{tdoc-color-macros} page \pageref{tdoc-color-macros}.
-\end{tdocnote}
+\begin{tdoctip}
+    Quelque fois, un contenu mis en avant peut se réduire à une liste. Dans ce cas, la mise en forme peut être améliorée comme suit où nous utilisons l'option \tdocinlatex{wide} du package \tdocpack{enumitem}.
+
+	\tdoclatexinput[sbs]{examples/admonitions/leavevmode-items.tex}
+\end{tdoctip}
 
 
 \foreach \sectitle/\desc/\filename in {
-	{Note informative}/% <-- Translate me!
-	{L'environnement \tdocenv*{tdocnote} sert à mettre en avant des informations utiles. Voici comment l'utiliser.}/% <-- Translate me!
-	note,
-	%
-	{Un truc important}/% <-- Translate me!
-	{L'environnement \tdocenv*{tdocimp} permet d'indiquer quelque chose d'important mais sans danger.}/% <-- Translate me!
-	important,
-	%
-	{Avertir d'un point très délicat}/% <-- Translate me!
-	{L'environnement \tdocenv*{tdoccaut} sert à indiquer un point délicat à  l'utilisateur. Voici comment l'employer.}/%<-- Translate me!
-	caution,
-	%
-	{Avertir d'un danger}/% <-- Translate me!
-	{L'environnement \tdocenv*{tdocwarn} sert à avertir l'utilisateur d'un piège à éviter. Voici comment l'employer.}/% <-- Translate me!
-	warn%
+    {Note informative}/% <-- Translate me!
+    {L'environnement \tdocenv*{tdocnote} sert à mettre en avant des informations utiles. Voici comment l'utiliser.}/% <-- Translate me!
+    note,
+    %
+    {Un truc important}/% <-- Translate me!
+    {L'environnement \tdocenv*{tdocimp} permet d'indiquer quelque chose d'important mais sans danger.}/% <-- Translate me!
+    important,
+    %
+    {Avertir d'un point très délicat}/% <-- Translate me!
+    {L'environnement \tdocenv*{tdoccaut} sert à indiquer un point délicat à  l'utilisateur. Voici comment l'employer.}/%<-- Translate me!
+    caution,
+    %
+    {Avertir d'un danger}/% <-- Translate me!
+    {L'environnement \tdocenv*{tdocwarn} sert à avertir l'utilisateur d'un piège à éviter. Voici comment l'employer.}/% <-- Translate me!
+    warn%
 } {
-	\subsubsection{\sectitle}
+    \subsubsection{\sectitle}
 
-	\desc
+    \desc
 
-	\tdoclatexinput[sbs]{examples/admonitions/\filename.tex}
+    \tdoclatexinput[sbs]{examples/admonitions/\filename.tex}
 }
 
 \end{document}

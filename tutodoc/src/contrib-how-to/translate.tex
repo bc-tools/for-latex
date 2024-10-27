@@ -84,30 +84,30 @@
 \subsection{Compléter les traductions}
 
 \begin{tdocnote}
-	L'auteur de \thisproj\ gère les versions françaises et anglaises des traductions.
+    L'auteur de \thisproj\ gère les versions françaises et anglaises des traductions.
 \end{tdocnote}
 
 
 \begin{tdoccaut}
-	Même si nous allons expliquer comment traduire les documentations, il semble peu pertinent de le faire, car l'anglais devrait suffire de nos jours.%
-	\footnote{
-		L'existence d'une version française est une simple conséquence de la langue maternelle de l'auteur de \thisproj.
-	}
+    Même si nous allons expliquer comment traduire les documentations, il semble peu pertinent de le faire, car l'anglais devrait suffire de nos jours.%
+    \footnote{
+        L'existence d'une version française est une simple conséquence de la langue maternelle de l'auteur de \thisproj.
+    }
 \end{tdoccaut}
 
+\begin{figure}[ht]
+	\centering
+    \contribtranslatedirtree\
+    \caption{Vue simplifiée du dossier des traductions}
+    \label{tutodoc-contrib-translate-dir}
+\end{figure}
 
-\begin{wrapfigure}{R}
-	\contribtranslatedirtree\
-	\caption{Vue simplifiée du dossier des traductions}
-	\label{tdoc-contrib-translate-dir}
-\end{wrapfigure}{}
 
-
-Les traductions sont organisées grosso-modo comme dans la figure \ref{tdoc-contrib-translate-dir} où seuls les dossiers importants pour les traductions ont été \tdocquote{ouverts}\,.%
+Les traductions sont organisées grosso-modo comme dans la figure \ref{tutodoc-contrib-translate-dir} où seuls les dossiers importants pour les traductions ont été \tdocquote{ouverts}\,.%
 \footnote{
-	Cette organisation était celle du 5 octobre 2024, mais elle reste d'actualité.
+    Cette organisation était celle du 5 octobre 2024, mais elle reste d'actualité.
 }
-\textbf{Un peu plus bas, la section \ref{tdoc-contrib-translate} donne les démarches à suivre pour ajouter de nouvelles traductions.}
+\textbf{Un peu plus bas, la section \ref{tutodoc-contrib-translate} donne les démarches à suivre pour ajouter de nouvelles traductions.}
 
 
 \subsubsection{Les dossiers \texttt{fr} et \texttt{en}}
@@ -133,35 +133,35 @@ Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{R
 
 
 
-\subsubsection{De nouvelles traductions} 
-\label{tdoc-contrib-translate}
+\subsubsection{De nouvelles traductions}
+\label{tutodoc-contrib-translate}
 
 \begin{tdocimp}
-	Le dossier \verb#api# contient les traductions relatives aux fonctionnalités de \thisproj.
-	Vous y trouverez des fichiers de type \verb#TXT# à modifier via un éditeur de texte, ou de code, mais non via un traitement de texte.
-	Les contenus de ces fichiers utilisent des lignes commentées en anglais pour expliquer ce que fera \thisproj\ ; ces lignes commencent par \verb#//#\,. Voici un extrait de ce type de fichier où \textbf{les traductions se font après chaque signe \,$=$\, sans toucher à ce qui se trouve avant}, car ce morceau initial est utilisé en interne par le code de \thisproj..
+    Le dossier \verb#api# contient les traductions relatives aux fonctionnalités de \thisproj.
+    Vous y trouverez des fichiers de type \verb#TXT# à modifier via un éditeur de texte, ou de code, mais non via un traitement de texte.
+    Les contenus de ces fichiers utilisent des lignes commentées en anglais pour expliquer ce que fera \thisproj\ ; ces lignes commencent par \verb#//#\,. Voici un extrait de ce type de fichier où \textbf{les traductions se font après chaque signe \,$=$\, sans toucher à ce qui se trouve avant}, car ce morceau initial est utilisé en interne par le code de \thisproj..
 
-	\tdocsep
-	\vspace{-10pt}
-	\begin{verbatim}
+    \tdocsep
+    \vspace{-10pt}
+    \begin{verbatim}
   // #1: year  in format YYYY like 2023.
   // #2: month in format MM   like 04.
   // #3: day   in format DD   like 29.
   date = #1-#2-#3
 
   // #1: the idea is to produce one text like
-  //     "this word means #1 in english".
+  //     "this word means #1 in English".
   in_EN = #1 in english\end{verbatim}
 \end{tdocimp}
 
 
 \begin{tdocnote}
-	Le dossier \verb#doc# est réservé aux documentations. Il contient des fichiers de type \verb#TEX# compilables directement pour une validation en temps réel des traductions faites.
+    Le dossier \verb#doc# est réservé aux documentations. Il contient des fichiers de type \verb#TEX# compilables directement pour une validation en temps réel des traductions faites.
 \end{tdocnote}
 
 
 \begin{tdocwarn}
-	Ne partir que de l'un des dossiers \verb#fr# et \verb#en#, car ceux-ci sont de la responsabilité de l'auteur de \thisproj.
+    Ne partir que de l'un des dossiers \verb#fr# et \verb#en#, car ceux-ci sont de la responsabilité de l'auteur de \thisproj.
 \end{tdocwarn}
 
 
@@ -170,35 +170,35 @@ Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{R
 
 \emph{\textbf{Imaginons que vous souhaitiez ajouter le support de l'italien en partant de fichiers rédigés en anglais.}}%
 \footnote{
-	Comme indiqué plus haut, il n'y a pas de besoin réel du côté du dossier \texttt{doc} de la documentation.
+    Comme indiqué plus haut, il n'y a pas de besoin réel du côté du dossier \texttt{doc} de la documentation.
 }
 
 
 \paragraph{Méthode 1 : \git.}
 
 \begin{enumerate}
-	\item Obtenir tout le dossier du projet via \thisrepo\,.
-	Ne pas passer via la branche \verb#main# qui sert à figer les dernières versions stables des projets du dépôt unique \thismonorepo\,.
-		
-	\item Dans le dossier \verb#tutodoc/contrib/translate#, créer une copie \verb#it# du dossier \verb#en#\,, le nom court de la langue étant documenté dans
-	\href{https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags}%
-	     {la page \tdocquote{IIETF language tag}}
-	de \texttt{Wikipédia}.
-	
-	\item Une fois la traduction achevée dans le dossier \verb#it# , il faudra la communiquer via \thisrepo\ en usant d'un classique \verb#git push#\,.
+    \item Obtenir tout le dossier du projet via \thisrepo\,.
+    Ne pas passer via la branche \verb#main# qui sert à figer les dernières versions stables des projets du dépôt unique \thismonorepo\,.
+
+    \item Dans le dossier \verb#tutodoc/contrib/translate#, créer une copie \verb#it# du dossier \verb#en#\,, le nom court de la langue étant documenté dans
+    \href{https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags}%
+         {la page \tdocquote{IIETF language tag}}
+    de \texttt{Wikipédia}.
+
+    \item Une fois la traduction achevée dans le dossier \verb#it# , il faudra la communiquer via \thisrepo\ en usant d'un classique \verb#git push#\,.
 \end{enumerate}
 
 
 \paragraph{Méthode 2 : communiquer par courriels.}
 
 \begin{enumerate}
-	\item Via un courriel de \mailsubject{en FOR italian}\,, demander une version des traductions anglaises (noter l'emploi du nom anglais de la nouvelle langue).
-	Bien respecter le sujet du courriel, car l'auteur de \thisproj\ automatise le pré-traitement de ce type de courriels.
-		
-	\item Vous recevrez un dossier nommé \verb#italian# contenant la version anglaise des dernières traductions.
-	Ce dossier sera le lieu de votre contribution.
-	
-	\item Une fois la traduction achevée, il faudra compresser votre dossier \verb#italian# au format \verb#zip# ou \verb#rar# avant de l'envoyer par courriel avec le \mailsubject{italian}\,.
+    \item Via un courriel de \mailsubject{en FOR italian}\,, demander une version des traductions anglaises (noter l'emploi du nom anglais de la nouvelle langue).
+    Bien respecter le sujet du courriel, car l'auteur de \thisproj\ automatise le pré-traitement de ce type de courriels.
+
+    \item Vous recevrez un dossier nommé \verb#italian# contenant la version anglaise des dernières traductions.
+    Ce dossier sera le lieu de votre contribution.
+
+    \item Une fois la traduction achevée, il faudra compresser votre dossier \verb#italian# au format \verb#zip# ou \verb#rar# avant de l'envoyer par courriel avec le \mailsubject{italian}\,.
 \end{enumerate}
 
 \end{document}

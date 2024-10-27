@@ -9,15 +9,53 @@
 
 \ProvidesExplClass
   {tutodoc}
-  {2024-10-19}  % Creation: 2023-11-29
-  {1.5.0}
+  {2024-10-27}  % Creation: 2023-11-29
+  {1.6.0}
   {This LaTeX class proposes tools for writing "human friendly" PDF documentations of LaTeX packages and classes.}
 
 
+% =================== %
 % == PACKAGES USED == %
+% =================== %
 
-\LoadClassWithOptions{article}%
-                     [2022-06-01]
+% ------------- %
+% -- OPTIONS -- %
+% ------------- %
+
+\ExplSyntaxOn
+
+\tl_new:N \l__tutodoc_remaining_cls_options_tl
+
+\newcommand{ \tutodoc@theme } { color }
+
+\keys_define:nn { tutodoc / main / class / options } {
+  theme .choices:nn = {
+    bw,
+    color,
+    dark,
+    draft
+  } {
+    \renewcommand{ \tutodoc@theme } {
+      \tl_use:N \l_keys_choice_tl
+    }
+  },
+  unknown .code:n = {
+    \tl_set:Nn \l__tutodoc_remaining_cls_options_tl { #1 }
+  }
+}
+
+\ProcessKeyOptions[tutodoc / main / class / options]
+
+\LoadClass[ \tl_use:N \l__tutodoc_remaining_cls_options_tl ]%
+          { article }%
+          [ 2022-06-01 ]
+
+\ExplSyntaxOff
+
+
+% ------------- %
+% -- IMPORTS -- %
+% ------------- %
 
 \RequirePackage[svgnames]%
                {xcolor}%
@@ -36,14 +74,11 @@
 
 \RequirePackage[raggedright]%
                {titlesec}%
-               [2021/07/05]
+               [2023/10/27]
 
 \RequirePackage{tocbasic}
 
-\RequirePackage{xcolor}%
-               [2022/06/12]
-
-\RequirePackage{hyperref}%
+\RequirePackage{hyperref}% To load after titlesec!
                [2023-02-07]
 
 
@@ -66,44 +101,85 @@
 \RequirePackage{tcolorbox}%
                [2024/07/10]
 
-\tcbuselibrary{breakable,
-               skins}
-
 
 \RequirePackage{clrstrip}%
                [2021-08-28]
 
 
-%\RequirePackage{minted2}% Old implementation.
-
 \RequirePackage[highlightmode = immediate]%
                {minted}%
                [2024/09/22]
-
-\RequirePackage{tcolorbox}%
-               [2024/07/10]
 
 \tcbuselibrary{minted,
                breakable,
                skins}
 
-
-\RequirePackage{fontawesome5}%
-               [2022-05-02]
-
 \RequirePackage{marginnote}%
                [2023-09-07]
 
 
+% =============== %
 % == MAIN CODE == %
+% =============== %
 
+% --------------------------- %
+% -- COLOR TRANSFORMATIONS -- %
+% --------------------------- %
+
+%%%
+% prototype::
+%     #1 : (black-rate)
+%          the amount of color relative to black.
+%     #2 : (color)
+%          one color following the ''xcolor'' format.
+%
+%     :return: a "darker" version of the color ''#1''.
+%%%
+\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
+
+
+%%%
+% prototype::
+%     #1 : (transparency)
+%          the transparency rate.
+%     #2 : (color)
+%          one color following the ''xcolor'' format.
+%
+%     :return: a "transparent" version of the color `#1`.
+%%%
+\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
+
+
+% ----------- %
+% -- ICONS -- %
+% ----------- %
+
+%%%
+% prototype::
+%     #1 : (aws-icon)
+%          one material that expects to be an icon command from the
+%          ''fontawsome5'' \pack.
+%
+%     :return: the icon followed by a small insecable  space.
+%%%
+\NewDocumentCommand{\tdocicon}{m}{%
+  #1\kern.45em%
+}
+
+
+% --------------------- %
 % -- LOCALE SETTINGS -- %
+% --------------------- %
 
 \ExplSyntaxOn
 
 \msg_set:nnnn { tutodoc ~ (main) }
   { main : unsupported-lang }
-  { unsupported ~ language ~ << ~ #1 ~ >>. }
+  {
+    unsupported ~ language ~ << ~ #1 ~ >>. %
+    ~ %
+    We ~ will ~ use ~ << ~ en ~ >>.
+  }
   { \msg_see_documentation_text:n { tutodoc } }
 
 
@@ -122,38 +198,31 @@
 % If the lang is not supported, we emit a warning and just turn
 % to the english language.
   \makeatletter
-  	\InputIfFileExists{tutodoc-locale-main-\tdoclang.cfg.cls.sty}{}{
-	  \input{tutodoc-locale-main-en.cfg.cls.sty}
+
+  \InputIfFileExists{tutodoc-main-locale-\tdoclang.cfg.cls.sty}{}{
+	  \input{tutodoc-main-locale-en.cfg.cls.sty}
 
 	  \msg_critical:nnx { tutodoc ~ (main) }
-      { main : unsupported-lang }
-      { \tdoclang }
+        { main : unsupported-lang }
+        { \tdoclang }
 	}
+
   \makeatother
 }
 
 \ExplSyntaxOff
 
 
+% ---------------------- %
 % -- GENERAL SETTINGS -- %
+% ---------------------- %
 
 \setlength{\parindent}{0cm}
 
 
-% -- LINKS -- %
-
-\newcommand{\tdoclinkcolor}{NavyBlue!85!white}
-
-\hypersetup{
-  colorlinks,
-  citecolor = \tdoclinkcolor,
-  filecolor = \tdoclinkcolor,
-  linkcolor = \tdoclinkcolor,
-  urlcolor  = \tdoclinkcolor
-}
-
-
+% --------------- %
 % -- TOC & Co. -- %
+% --------------- %
 
 \ifcsundef{chapter}%
           {}%
@@ -195,48 +264,24 @@
 \DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
 
 
-% -- COLOR TRANSFORMATIONS -- %
+% ------------------- %
+% -- LINKS AND CO. -- %
+% ------------------- %
 
-%%%
-% prototype::
-%     #1 : (black-rate)
-%          the amount of color relative to black.
-%     #2 : (color)
-%          one color following the ''xcolor'' format.
-%
-%     :return: a "darker" version of the color ''#1''.
-%%%
-\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
+\input{css-\tutodoc@theme-main.cls.sty}
 
-
-%%%
-% prototype::
-%     #1 : (transparency)
-%          the transparency rate.
-%     #2 : (color)
-%          one color following the ''xcolor'' format.
-%
-%     :return: a "transparent" version of the color `#1`.
-%%%
-\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
-
-
-% -- ICONS -- %
-
-%%%
-% prototype::
-%     #1 : (aws-icon)
-%          one material that expects to be an icon command from the
-%          ''fontawsome5'' \pack.
-%
-%     :return: the icon followed by a small insecable  space.
-%%%
-\NewDocumentCommand{\tdocicon}{m}{%
-  #1\kern.45em%
+\hypersetup{
+  colorlinks,
+  citecolor = tutodoc@link@color,
+  filecolor = tutodoc@link@color,
+  linkcolor = tutodoc@link@color,
+  urlcolor  = tutodoc@link@color
 }
 
 
+% ------------- %
 % -- QUOTING -- %
+% ------------- %
 
 %%%
 % prototype::
@@ -250,7 +295,9 @@
 }
 
 
+% ------------------------------ %
 % -- EXPLAINING ENGLISH NAMES -- %
+% ------------------------------ %
 
 %%%
 % prototype::
@@ -273,16 +320,21 @@
 %        **"Something" et "Another thing" en anglais**.
 %%%
 \NewDocumentCommand{\tdocinEN}{s m}{%
-  \tdocquote{#2}%
-  \IfBooleanF{#1}{% No star used.
-    \tutodoc@trans@in@EN{}%
+  \IfBooleanTF{#1}{% No star used.
+    \tdocquote{#2}%
+  }{% Star used.
+    \tutodoc@trans@in@EN{\tdocquote{#2}}%
   }%
 }
 
 
+% ----------------------------------- %
 % -- SOBER HIGHLIGHTING OF CONTENT -- %
+% ----------------------------------- %
 
-% :: EXAMPLE - REMARK :: %
+% :::::::::::::::::::::: %
+% :: EXAMPLE & REMARK :: %
+% :::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
@@ -322,10 +374,27 @@
 \ExplSyntaxOff
 
 
+% -------------------------------------- %
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
+% -------------------------------------- %
 
-% :: ABSTRACTION :: %
+\input{css-\tutodoc@theme-admonitions.cls.sty}
 
+
+%%%
+% note::
+%     We provide two ways to define admonitions.
+%
+%         1) ''\__g_tutodoc_focus_color_prop'' and ''__g_tutodoc_focus_icon_prop''
+%         are for iconised and colored frames.
+%
+%         1) ''\__g_tutodoc_focus_color_seq'' is to use a dedicated basic theorem
+%         (this should be only useful for the draft theme).
+%
+% warning::
+%     The variables should be defined inside the themes!
+%%%
+\ifcsundef{__g_tutodoc_focus_color_seq}{
 %%%
 % note::
 %     The settings used come from the following sources.
@@ -333,47 +402,31 @@
 %         * https://tex.stackexchange.com/a/682332/6880
 %         * https://tex.stackexchange.com/a/623232/6880
 %%%
-\tcbset{
-  tutodoc-focus-color-style/.style = {
-    use color stack, % Must be before breakable! 
-    breakable,
-    enhanced,
-    left         = 3pt,
-    right        = 3pt,
-    fontupper    = \color{\tdocdarkcolor{#1}},
-    colback      = \tdoclightcolor{#1},
-    colframe     = #1!75!black!45,
-    shadow       = {.75mm}{-.75mm}{0mm}{black!30},
+  \tcbset{
+    tutodoc-focus-color-style/.style = {
+% General.
+      use color stack, % Must be before breakable!
+      breakable,
+      enhanced,
+% Colors.
+      coltitle = \tutodoc@build@title@color{#1},
+      colupper = \tutodoc@build@upper@color{#1},
+      colback  = \tutodoc@build@back@color{#1},
+      colframe = \tutodoc@build@frame@color{#1},
 % We want to use the same color for the footnotes in the frame.
-    before upper = {\let\default@color\current@color},
- }
-}
-
-
-% :: LET'S GO BACK TO THE REAL WORLD :: %
+      before upper = {\let\default@color\current@color},
+% Padding.
+      left  = 3pt,
+      right = 3pt,
+% Frame.
+      shadow = {.75mm}{-.75mm}{0mm}{tutodoc@admonition@shadow@color},
+   }
+  }
+}{}
 
 \ExplSyntaxOn
 
-%%%
-% We use two ''prop'' variables to factorize the code just after.
-%%%
-\prop_set_from_keyval:Nn \__g_tutodoc_focus_color_prop {
-  note = cyan,
-  tip  = ForestGreen,
-  imp  = orange,
-  caut = violet,
-  warn = red,
-}
-
-\prop_set_from_keyval:Nn \__g_tutodoc_focus_icon_prop {
-  note = \faInfoCircle,
-  tip  = \faLightbulb,
-  imp  = \faHighlighter,
-  caut = \faBiohazard,
-  warn = \faSkullCrossbones,
-}
-
-
+\ifcsundef{__g_tutodoc_focus_color_seq}{
 %%%
 % prototype::
 %     :action: ''key/value'' iteration over ''\__g_tutodoc_focus_color_prop''
@@ -382,22 +435,45 @@
 %              macro from the ''keytheorems'' \pack, and icons from the
 %              ''fontawesome5'' \pack.
 %%%
-\prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
-  \newkeytheorem{tdoc#1}[
-    numbered  = false,
-%  tcolorbox-no-titlebar can be used.
-    tcolorbox = {tutodoc-focus-color-style=#2},
-    name      = {
-      \tdocicon{ \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } }
-      \use:c { tutodoc@trans@#1@title }
-    },
-  ]
+  \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+    \newkeytheorem{tdoc#1}[
+      numbered  = false,
+% tcolorbox-no-titlebar can be used.
+      tcolorbox = {tutodoc-focus-color-style=#2},
+      name      = {
+        \tdocicon{ \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } }
+        \use:c { tutodoc@trans@#1@title }
+      },
+    ]
+  }
+} {
+%%%
+% prototype::
+%     :action: looping over ''\__g_tutodoc_focus_color_seq'' to build new
+%              numbered theorems sharing the same section level counter.
+%              To achieve that, we use the ''\newkeytheorem'' macro from
+%              the ''keytheorems'' \pack.
+%%%
+  \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+    \newkeytheorem{tdoc#1}[
+      name       = \use:c { tutodoc@trans@#1@title },
+      numberlike = tdocexa,
+% We could have used
+% \AddToHook{env/tdoc#1/before}{\small}
+% and
+% \AddToHook{env/tdoc#1/after}{\normalsize}.
+      preheadhook  = \small,
+      postfoothook = \normalsize
+    ]
+  }
 }
 
 \ExplSyntaxOff
 
 
+% ---------------------------------------------- %
 % -- NAMES OF PACKAGES, MACROS & ENVIRONMENTS -- %
+% ---------------------------------------------- %
 
 %%%
 % prototype::
@@ -471,11 +547,15 @@
 }
 
 
+% ------------------------- %
 % -- EXPLAINING PREFIXES -- %
+% ------------------------- %
 
 \ExplSyntaxOn
 
+% :::::::::::::: %
 % :: MESSAGES :: %
+% :::::::::::::: %
 
 \msg_set:nnnn { tutodoc ~ (macroenv) }
   { macroenv : prefix-why-bad-format }
@@ -483,7 +563,9 @@
   { You ~ must ~ use ~ one ~ single ~ point. }
 
 
+% :::::::::::::::::::: %
 % :: PREFIX FROM... :: %
+% :::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -515,7 +597,9 @@
 \ExplSyntaxOff
 
 
+% ::::::::::::::::::::: %
 % :: JUST ONE PREFIX :: %
+% ::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -533,9 +617,16 @@
 }
 
 
+% ------------------------ %
 % -- GENERAL FORMATTING -- %
+% ------------------------ %
 
+\input{css-\tutodoc@theme-showcase.cls.sty}
+
+
+% :::::::::::::::::::::::: %
 % :: TEXT INSIDE A RULE :: %
+% :::::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
@@ -554,7 +645,8 @@
 %     cf::''this post ;
 %           https://tex.stackexchange.com/a/604708/6880''.
 %%%
-\NewDocumentCommand{\tdocruler}{O{black} m}{
+
+\NewDocumentCommand{\tdocruler}{O{\tutodoc@showcase@rule@color} m}{
   \par
   {
     \centering
@@ -580,7 +672,9 @@
 \ExplSyntaxOff
 
 
+% ::::::::::::::::::::::::::: %
 % :: INTERNAL ENVIRONMENTS :: %
+% ::::::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -592,17 +686,21 @@
 %          one color following the ''xcolor'' format.
 %          This color is used to set the one for the decorated texts printed
 %          corresponding to the two first arguments.
+%     #4 : (text color)
+%          XXXXX
+%     #5 : (rule color builder)
+%          YYY
 %
 %     :action: this environment just adds its content processed by \latex
 %              between centered materials produced by the macro ''\tdocruler''
 %              such as to stress the start and the end of the content.
 %%%
-\NewDocumentEnvironment{tutodoc@showcase@basic}{m m m}{
-  \tdocruler[\tdocdarkcolor{#3}]{#1}
-  \nopagebreak\medskip\nopagebreak
+\NewDocumentEnvironment{tutodoc@showcase@basic}{m m m m m}{
+  \tdocruler[#5{#3}]{#1}%
+  \nopagebreak\medskip\nopagebreak\color{#4}%
 }{
   \nopagebreak\medskip\nopagebreak
-  \tdocruler[\tdocdarkcolor{#3}]{#2}
+  \tdocruler[#5{#3}]{#2}
 }
 
 
@@ -612,7 +710,13 @@
 %          :see: env.tutodoc@showcase@basic
 %     #2 : (down-text)
 %          :see: env.tutodoc@showcase@basic
-%     #3 : (color)
+%     #3 : (stripe color)
+%          :see: env.tutodoc@showcase@basic
+%     #4 : (text color)
+%          :see: env.tutodoc@showcase@basic
+%     #5 : (rule color builder)
+%          :see: env.tutodoc@showcase@basic
+%     #6 : (back color builder)
 %          :see: env.tutodoc@showcase@basic
 %
 %     :action: this environment adds a page-width colored stripe in the
@@ -622,9 +726,9 @@
 %              start and the end of the content.
 %%%
 
-\NewDocumentEnvironment{tutodoc@showcase@colorstrip}{m m m}{
-  \begin{colorstrip}{\tdoclightcolor{#3}}
-    \begin{tutodoc@showcase@basic}{#1}{#2}{#3}
+\NewDocumentEnvironment{tutodoc@showcase@colorstrip}{m m m m m m}{
+  \begin{colorstrip}{#6{#3}}
+    \begin{tutodoc@showcase@basic}{#1}{#2}{#3}{#4}{#5}
 }{
     \end{tutodoc@showcase@basic}
   \end{colorstrip}
@@ -633,11 +737,14 @@
 
 \ExplSyntaxOn
 
+% ::::::::::::::::::::::: %
 % :: SETTING SOME KEYS :: %
+% ::::::::::::::::::::::: %
 
 \tl_new:N   \l_tutodoc_showcase_before_tl
 \tl_new:N   \l_tutodoc_showcase_after_tl
-\tl_new:N   \l_tutodoc_showcase_color_tl
+\tl_new:N   \l_tutodoc_showcase_stripe_color_tl
+\tl_new:N   \l_tutodoc_showcase_text_color_tl
 \bool_new:N \l_tutodoc_showcase_nostripe_bool
 
 
@@ -651,15 +758,20 @@
   before .initial:n = \tutodoc@trans@latex@show@start,
   after  .tl_set:N  = \l_tutodoc_showcase_after_tl,
   after  .initial:n = \tutodoc@trans@latex@show@end,
-% Decorations.
-  color    .tl_set:N   = \l_tutodoc_showcase_color_tl,
-  color    .initial:n  = cyan,
+% Colors.
+  colstripe .tl_set:N  = \l_tutodoc_showcase_stripe_color_tl,
+  colstripe .initial:n = \tutodoc@showcase@stripe@color,
+  coltext .tl_set:N    = \l_tutodoc_showcase_text_color_tl,
+  coltext .initial:n   = \tutodoc@showcase@text@color,
+% Stripe?
   nostripe .bool_set:N = \l_tutodoc_showcase_nostripe_bool,
   nostripe .initial:n  = false,
 }
 
 
+% :::::::::::::::::::::::::::::: %
 % :: SHOWCASE FROM TYPED CODE :: %
+% :::::::::::::::::::::::::::::: %
 
 % prototype::
 %     #1 : (key-val)
@@ -680,15 +792,20 @@
     \keys_set:nn { tutodoc / showcase } { #1 }
 
     \bool_if:NTF \l_tutodoc_showcase_nostripe_bool {
-      \begin{tutodoc@showcase@basic}%
-        { \tl_use:N \l_tutodoc_showcase_before_tl }%
-        { \tl_use:N \l_tutodoc_showcase_after_tl }%
-        { \tl_use:N \l_tutodoc_showcase_color_tl }
+      \begin{tutodoc@showcase@basic}
+        { \tl_use:N \l_tutodoc_showcase_before_tl }
+        { \tl_use:N \l_tutodoc_showcase_after_tl }
+        { \tl_use:N \l_tutodoc_showcase_stripe_color_tl }
+        { \tl_use:N \l_tutodoc_showcase_text_color_tl }
+        { \tutodoc@showcase@build@rule@color }
     }{
-      \begin{tutodoc@showcase@colorstrip}%
-        { \tl_use:N \l_tutodoc_showcase_before_tl }%
-        { \tl_use:N \l_tutodoc_showcase_after_tl }%
-        { \tl_use:N \l_tutodoc_showcase_color_tl }
+      \begin{tutodoc@showcase@colorstrip}
+        { \tl_use:N \l_tutodoc_showcase_before_tl }
+        { \tl_use:N \l_tutodoc_showcase_after_tl }
+        { \tl_use:N \l_tutodoc_showcase_stripe_color_tl }
+        { \tl_use:N \l_tutodoc_showcase_text_color_tl }
+        { \tutodoc@showcase@build@rule@color }
+        { \tutodoc@showcase@build@back@color }
     }
 }{
     \bool_if:NTF \l_tutodoc_showcase_nostripe_bool {
@@ -700,7 +817,9 @@
 }
 
 
+% :::::::::::::::::::::::: %
 % :: SHOWCASE FROM FILE :: %
+% :::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -724,18 +843,36 @@
 \ExplSyntaxOff
 
 
+% -------------------- %
 % -- LATEX EXAMPLES -- %
+% -------------------- %
 
-% :: INLINE SHORT LATEX CODE :: %
+% :::::::::::::::::::::::::::::::::::::::::::::: %
+% :: STYLES OF THE LISTING ENV. AND THE MACRO :: %
+% :::::::::::::::::::::::::::::::::::::::::::::: %
+
+\newcommand{\tutodoc@latex@lexer}{latex}
+
+\input{css-\tutodoc@theme-listing.cls.sty}
+
+
+% :::::::::::::::::::::::: %
+% :: INLINE LATEX MACRO :: %
+% :::::::::::::::::::::::: %
 
 %%%
 % See the \doc of the macro ''\newmintinline'' from the package ''minted''
 % to have \infos about the macro ''tdocinlatex''.
 %%%
-\newmintinline[tdocinlatex]{latex}{bgcolor = yellow!4}
+\newmintinline[tdocinlatex]{\tutodoc@latex@lexer}{%
+  bgcolor            = tutodoc@latex@back@color,%
+  style/.expand once = \tutodoc@latex@style% <-- This needs minted3!
+}
 
 
-% :: SHORTCUTS FOR TCOLORBOX LISTING FORMATING :: %
+% ::::::::::::::::::::::::::::::::::: %
+% :: TCOLORBOX LISTING ENVIRONMENT :: %
+% ::::::::::::::::::::::::::::::::::: %
 
 \ExplSyntaxOn
 
@@ -753,7 +890,7 @@
 %
 % term::
 %     Package pgfkeys Error: I do not know the key '/tcb/tdoclatex bad option
-%     "NOT-A-STYLE"' and I am going to ignore it. Perhaps you misspelled it.
+%     "MISTYPED-STYLE"' and I am going to ignore it. Perhaps you misspelled it.
 %
 %     See the pgfkeys package documentation for explanation.
 %%%
@@ -767,39 +904,48 @@
 
 \ExplSyntaxOff
 
-
-% :: THE TCOLORBOX LISTING STYLE :: %
-
-% Source.
-%     * https://tex.stackexchange.com/a/604821/6880
-%     * https://tex.stackexchange.com/a/327983/6880
+%%
+% source::
+%     + https://tex.stackexchange.com/a/604821/6880
+%     + https://tex.stackexchange.com/a/327983/6880
+%%
 \tcbset{
   tutodoc-latex-listing-style/.style = {
-    minted language = latex,
+% General.
+    minted language/.expand once = \tutodoc@latex@lexer,
+    minted style/.expand once    = \tutodoc@latex@style,
     breakable,
     enhanced,
-% Code and output
-    colback = yellow!5,
-% Frame
-    colframe = darkgray,
-    shadow   = {.75mm}{-.75mm}{0mm}{black!30},
-    arc      = .75mm,
-    left     = 1mm, right = 1mm,
-    bottom   = 1mm, top   = 1mm,
-% We can use  ''sharp corners'' to obtain an "old school" style.
-%
-% Separating line
+% Colors.
+    colframe = tutodoc@latex@frame@color,
+    colback  = tutodoc@latex@back@color,
+    colupper = tutodoc@latex@text@color,
+    collower = tutodoc@latex@text@color,
+% Padding.
+    left   = \tutodoc@latex@left,
+    right  = \tutodoc@latex@right,
+    bottom = \tutodoc@latex@bottom,
+    top    = \tutodoc@latex@top,
+% Frame.
+    shadow     = {\tutodoc@latex@shadow@xshift}%
+                 {\tutodoc@latex@shadow@yshift}%
+                 {\tutodoc@latex@shadow@offset}%
+                 {tutodoc@latex@shadow@color},
+    arc        = \tutodoc@latex@arc,
+    leftrule   = \tutodoc@latex@left@rule,
+    rightrule  = \tutodoc@latex@right@rule,
+    bottomrule = \tutodoc@latex@bottom@rule,
+    toprule    = \tutodoc@latex@top@rule,
+% Separating line.
     segmentation style = {
-      gray,
+      tutodoc@latex@segment@color,
       dash pattern = {on 5pt off 2.5pt},
-      line width   = 1.25pt
+      line width   = .75pt
     },
     #1
   },
 }
 
-
-% :: TCOLORBOX LISTING ENVIRONMENT :: %
 
 %%%
 % prototype::
@@ -818,7 +964,9 @@
 }
 
 
+% :::::::::::::::::::::::::::::::::::::: %
 % :: TCOLORBOX IMPORTED LISTING MACRO :: %
+% :::::::::::::::::::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -837,11 +985,15 @@
 }
 
 
+% -------------------------- %
 % -- LATEX REAL USE CASES -- %
+% -------------------------- %
 
 \ExplSyntaxOn
 
+% ::::::::::::::::::::: %
 % :: SETTING THE KEY :: %
+% ::::::::::::::::::::: %
 
 \tl_new:N \l_tutodoc_listing_explain_tl
 
@@ -858,7 +1010,9 @@
 }
 
 
+% ::::::::::::::::::::: %
 % :: LATEXSHOW MACRO :: %
+% ::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -894,7 +1048,9 @@
 
 \ExplSyntaxOn
 
+% :::::::::::::: %
 % :: MESSAGES :: %
+% :::::::::::::: %
 
 \msg_set:nnnn { tutodoc ~ (version-n-change) }
   { version-n-change : date-bad-format }
@@ -902,7 +1058,9 @@
   { Use ~ YYYY-MM-DD. }
 
 
+% ::::::::::::::::: %
 % :: MARGIN NOTE :: %
+% ::::::::::::::::: %
 
 \reversemarginpar{}
 
@@ -988,7 +1146,11 @@
 \ExplSyntaxOff
 
 
+% :::::::::::::::::::::: %
 % :: VERSION AND DATE :: %
+% :::::::::::::::::::::: %
+
+\input{css-\tutodoc@theme-version-n-change.cls.sty}
 
 %%%
 % prototype::
@@ -1008,7 +1170,7 @@
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
 %%%
-\NewDocumentCommand{\tdocversion}{O{blue} m O{}}{
+\NewDocumentCommand{\tdocversion}{O{\tutodoc@changes@version@color} m O{}}{
   \tutodoc@new@change@margin{#1}      % Color
                             {#2}      % Version
                             {#3}      % Date
@@ -1016,7 +1178,9 @@
 }
 
 
+% :::::::::: %
 % :: DATE :: %
+% :::::::::: %
 
 %%%
 % prototype::
@@ -1028,7 +1192,7 @@
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\tdocdate}{O{blue} m}{
+\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@date@color} m}{
   \tutodoc@new@change@margin{#1}      % Color
                             {}        % Version
                             {#2}      % Date
@@ -1036,11 +1200,15 @@
 }
 
 
+% --------------------- %
 % -- CHANGES - WHAT? -- %
+% --------------------- %
 
 \ExplSyntaxOn
 
+% :::::::::::::: %
 % :: MESSAGES :: %
+% :::::::::::::: %
 
 \msg_set:nnnn { tutodoc ~ (version-n-change) }
   { version-n-change : topic-missing-title }
@@ -1048,7 +1216,9 @@
   { One ~ single ~ title ~ must ~ be ~ indicated. }
 
 
+% ::::::::::::::::::::: %
 % :: CHANGES - TOPIC :: %
+% ::::::::::::::::::::: %
 
 %%%
 % prototype::
@@ -1077,7 +1247,9 @@
 }
 
 
+% :::::::::::::::::::::::::: %
 % :: CHANGES - NEW THINGS :: %
+% :::::::::::::::::::::::::: %
 
 %%%
 % We use a ''prop'' variable to factorize the code just after.
@@ -1088,7 +1260,8 @@
   fix    = \faWrench,
   new    = \faGem,
   prob   = \faFire*,
-  update = \faMagic,
+  tech   = \faFlask,
+  update = \reflectbox{\faHistory},
 }
 
 
@@ -1123,7 +1296,9 @@
 \ExplSyntaxOff
 
 
+% ----------------- %
 % -- DECORATIONS -- %
+% ----------------- %
 
 % Source
 %    * https://tex.stackexchange.com/a/705938/6880

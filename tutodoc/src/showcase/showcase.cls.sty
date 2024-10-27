@@ -8,6 +8,9 @@
 
 % -- GENERAL FORMATTING -- %
 
+\input{../showcase/css/\tutodoc@theme.cls.sty}
+
+
 % :: TEXT INSIDE A RULE :: %
 
 \ExplSyntaxOn
@@ -27,7 +30,8 @@
 %     cf::''this post ;
 %           https://tex.stackexchange.com/a/604708/6880''.
 %%%
-\NewDocumentCommand{\tdocruler}{O{black} m}{
+
+\NewDocumentCommand{\tdocruler}{O{\tutodoc@showcase@rule@color} m}{
   \par
   {
     \centering
@@ -65,17 +69,21 @@
 %          one color following the ''xcolor'' format.
 %          This color is used to set the one for the decorated texts printed
 %          corresponding to the two first arguments.
+%     #4 : (text color)
+%          XXXXX
+%     #5 : (rule color builder)
+%          YYY
 %
 %     :action: this environment just adds its content processed by \latex
 %              between centered materials produced by the macro ''\tdocruler''
 %              such as to stress the start and the end of the content.
 %%%
-\NewDocumentEnvironment{tutodoc@showcase@basic}{m m m}{
-  \tdocruler[\tdocdarkcolor{#3}]{#1}
-  \nopagebreak\medskip\nopagebreak
+\NewDocumentEnvironment{tutodoc@showcase@basic}{m m m m m}{
+  \tdocruler[#5{#3}]{#1}%
+  \nopagebreak\medskip\nopagebreak\color{#4}%
 }{
   \nopagebreak\medskip\nopagebreak
-  \tdocruler[\tdocdarkcolor{#3}]{#2}
+  \tdocruler[#5{#3}]{#2}
 }
 
 
@@ -85,7 +93,13 @@
 %          :see: env.tutodoc@showcase@basic
 %     #2 : (down-text)
 %          :see: env.tutodoc@showcase@basic
-%     #3 : (color)
+%     #3 : (stripe color)
+%          :see: env.tutodoc@showcase@basic
+%     #4 : (text color)
+%          :see: env.tutodoc@showcase@basic
+%     #5 : (rule color builder)
+%          :see: env.tutodoc@showcase@basic
+%     #6 : (back color builder)
 %          :see: env.tutodoc@showcase@basic
 %
 %     :action: this environment adds a page-width colored stripe in the
@@ -95,9 +109,9 @@
 %              start and the end of the content.
 %%%
 
-\NewDocumentEnvironment{tutodoc@showcase@colorstrip}{m m m}{
-  \begin{colorstrip}{\tdoclightcolor{#3}}
-    \begin{tutodoc@showcase@basic}{#1}{#2}{#3}
+\NewDocumentEnvironment{tutodoc@showcase@colorstrip}{m m m m m m}{
+  \begin{colorstrip}{#6{#3}}
+    \begin{tutodoc@showcase@basic}{#1}{#2}{#3}{#4}{#5}
 }{
     \end{tutodoc@showcase@basic}
   \end{colorstrip}
@@ -110,7 +124,8 @@
 
 \tl_new:N   \l_tutodoc_showcase_before_tl
 \tl_new:N   \l_tutodoc_showcase_after_tl
-\tl_new:N   \l_tutodoc_showcase_color_tl
+\tl_new:N   \l_tutodoc_showcase_stripe_color_tl
+\tl_new:N   \l_tutodoc_showcase_text_color_tl
 \bool_new:N \l_tutodoc_showcase_nostripe_bool
 
 
@@ -124,9 +139,12 @@
   before .initial:n = \tutodoc@trans@latex@show@start,
   after  .tl_set:N  = \l_tutodoc_showcase_after_tl,
   after  .initial:n = \tutodoc@trans@latex@show@end,
-% Decorations.
-  color    .tl_set:N   = \l_tutodoc_showcase_color_tl,
-  color    .initial:n  = cyan,
+% Colors.
+  colstripe .tl_set:N  = \l_tutodoc_showcase_stripe_color_tl,
+  colstripe .initial:n = \tutodoc@showcase@stripe@color,
+  coltext .tl_set:N    = \l_tutodoc_showcase_text_color_tl,
+  coltext .initial:n   = \tutodoc@showcase@text@color,
+% Stripe?
   nostripe .bool_set:N = \l_tutodoc_showcase_nostripe_bool,
   nostripe .initial:n  = false,
 }
@@ -153,15 +171,20 @@
     \keys_set:nn { tutodoc / showcase } { #1 }
 
     \bool_if:NTF \l_tutodoc_showcase_nostripe_bool {
-      \begin{tutodoc@showcase@basic}%
-        { \tl_use:N \l_tutodoc_showcase_before_tl }%
-        { \tl_use:N \l_tutodoc_showcase_after_tl }%
-        { \tl_use:N \l_tutodoc_showcase_color_tl }
+      \begin{tutodoc@showcase@basic}
+        { \tl_use:N \l_tutodoc_showcase_before_tl }
+        { \tl_use:N \l_tutodoc_showcase_after_tl }
+        { \tl_use:N \l_tutodoc_showcase_stripe_color_tl }
+        { \tl_use:N \l_tutodoc_showcase_text_color_tl }
+        { \tutodoc@showcase@build@rule@color }
     }{
-      \begin{tutodoc@showcase@colorstrip}%
-        { \tl_use:N \l_tutodoc_showcase_before_tl }%
-        { \tl_use:N \l_tutodoc_showcase_after_tl }%
-        { \tl_use:N \l_tutodoc_showcase_color_tl }
+      \begin{tutodoc@showcase@colorstrip}
+        { \tl_use:N \l_tutodoc_showcase_before_tl }
+        { \tl_use:N \l_tutodoc_showcase_after_tl }
+        { \tl_use:N \l_tutodoc_showcase_stripe_color_tl }
+        { \tl_use:N \l_tutodoc_showcase_text_color_tl }
+        { \tutodoc@showcase@build@rule@color }
+        { \tutodoc@showcase@build@back@color }
     }
 }{
     \bool_if:NTF \l_tutodoc_showcase_nostripe_bool {

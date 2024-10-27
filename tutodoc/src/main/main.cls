@@ -1,7 +1,39 @@
 % == PACKAGES == %
 
-\LoadClassWithOptions{article}%
-                     [2022-06-01]
+% -- OPTIONS -- %
+
+\ExplSyntaxOn
+
+\tl_new:N \l__tutodoc_remaining_cls_options_tl
+
+\newcommand{ \tutodoc@theme } { color }
+
+\keys_define:nn { tutodoc / main / class / options } {
+  theme .choices:nn = {
+    bw,
+    color,
+    dark,
+    draft
+  } {
+    \renewcommand{ \tutodoc@theme } {
+      \tl_use:N \l_keys_choice_tl
+    }
+  },
+  unknown .code:n = {
+    \tl_set:Nn \l__tutodoc_remaining_cls_options_tl { #1 }
+  }
+}
+
+\ProcessKeyOptions[tutodoc / main / class / options]
+
+\LoadClass[ \tl_use:N \l__tutodoc_remaining_cls_options_tl ]%
+          { article }%
+          [ 2022-06-01 ]
+
+\ExplSyntaxOff
+
+
+% -- IMPORTS -- %
 
 \RequirePackage[svgnames]%
                {xcolor}%
@@ -20,18 +52,59 @@
 
 \RequirePackage[raggedright]%
                {titlesec}%
-               [2021/07/05]
+               [2023/10/27]
 
 \RequirePackage{tocbasic}
 
 \RequirePackage{xcolor}%
                [2022/06/12]
 
-\RequirePackage{hyperref}%
+\RequirePackage{hyperref}% To load after titlesec!
                [2023-02-07]
 
 
 % == TOOLS == %
+
+% -- COLOR TRANSFORMATIONS -- %
+
+%%%
+% prototype::
+%     #1 : (black-rate)
+%          the amount of color relative to black.
+%     #2 : (color)
+%          one color following the ''xcolor'' format.
+%
+%     :return: a "darker" version of the color ''#1''.
+%%%
+\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
+
+
+%%%
+% prototype::
+%     #1 : (transparency)
+%          the transparency rate.
+%     #2 : (color)
+%          one color following the ''xcolor'' format.
+%
+%     :return: a "transparent" version of the color `#1`.
+%%%
+\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
+
+
+% -- ICONS -- %
+
+%%%
+% prototype::
+%     #1 : (aws-icon)
+%          one material that expects to be an icon command from the
+%          ''fontawsome5'' \pack.
+%
+%     :return: the icon followed by a small insecable  space.
+%%%
+\NewDocumentCommand{\tdocicon}{m}{%
+  #1\kern.45em%
+}
+
 
 % -- LOCALE SETTINGS -- %
 
@@ -39,7 +112,11 @@
 
 \msg_set:nnnn { tutodoc ~ (main) }
   { main : unsupported-lang }
-  { unsupported ~ language ~ << ~ #1 ~ >>. }
+  {
+    unsupported ~ language ~ << ~ #1 ~ >>. %
+    ~ %
+    We ~ will ~ use ~ << ~ en ~ >>.
+  }
   { \msg_see_documentation_text:n { tutodoc } }
 
 
@@ -58,13 +135,15 @@
 % If the lang is not supported, we emit a warning and just turn
 % to the english language.
   \makeatletter
-  	\InputIfFileExists{../main/tutodoc-locale-main-\tdoclang.cfg.cls.sty}{}{
-	  \input{../main/tutodoc-locale-main-en.cfg.cls.sty}
+
+  \InputIfFileExists{../main/tutodoc-main-locale-\tdoclang.cfg.cls.sty}{}{
+	  \input{../main/tutodoc-main-locale-en.cfg.cls.sty}
 
 	  \msg_critical:nnx { tutodoc ~ (main) }
-      { main : unsupported-lang }
-      { \tdoclang }
+        { main : unsupported-lang }
+        { \tdoclang }
 	}
+
   \makeatother
 }
 
@@ -74,19 +153,6 @@
 % -- GENERAL SETTINGS -- %
 
 \setlength{\parindent}{0cm}
-
-
-% -- LINKS -- %
-
-\newcommand{\tdoclinkcolor}{NavyBlue!85!white}
-
-\hypersetup{
-  colorlinks,
-  citecolor = \tdoclinkcolor,
-  filecolor = \tdoclinkcolor,
-  linkcolor = \tdoclinkcolor,
-  urlcolor  = \tdoclinkcolor
-}
 
 
 % -- TOC & Co. -- %
@@ -131,42 +197,14 @@
 \DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
 
 
-% -- COLOR TRANSFORMATIONS -- %
+% -- LINKS AND CO. -- %
 
-%%%
-% prototype::
-%     #1 : (black-rate)
-%          the amount of color relative to black.
-%     #2 : (color)
-%          one color following the ''xcolor'' format.
-%
-%     :return: a "darker" version of the color ''#1''.
-%%%
-\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
+\input{../main/css/\tutodoc@theme.cls.sty}
 
-
-%%%
-% prototype::
-%     #1 : (transparency)
-%          the transparency rate.
-%     #2 : (color)
-%          one color following the ''xcolor'' format.
-%
-%     :return: a "transparent" version of the color `#1`.
-%%%
-\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
-
-
-% -- ICONS -- %
-
-%%%
-% prototype::
-%     #1 : (aws-icon)
-%          one material that expects to be an icon command from the
-%          ''fontawsome5'' \pack.
-%
-%     :return: the icon followed by a small insecable  space.
-%%%
-\NewDocumentCommand{\tdocicon}{m}{%
-  #1\kern.45em%
+\hypersetup{
+  colorlinks,
+  citecolor = tutodoc@link@color,
+  filecolor = tutodoc@link@color,
+  linkcolor = tutodoc@link@color,
+  urlcolor  = tutodoc@link@color
 }

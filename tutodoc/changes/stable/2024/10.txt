@@ -2,8 +2,68 @@
 
 
 ==
+27  (1.6.0)
+==
+
+
+------
+:desc:
+------
+
+This version adds the possibility to change the layout via the choice of one theme.
+
+
+-------
+:break:
+-------
+
+[[:api:]]
+Here are the breaking changes.
+
+    1) Showcase: the key ''color'' has been renamed ''colstripe''.
+
+    1) The macro ``\tdoclinkcolor`` becomes the internal \xcolor ''tutodoc@link@color''.
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+Here are the new features.
+
+    1) Themes: the \cls option ''theme'' allows to change the formatting.
+
+    1) \Chges history: the new \env ''tdoctech'' allows to talk about technical \infos for geeks.
+
+    1) Showcase: addition of the option ''coltext'' to change the text color (the themes need this new option).
+
+
+[[:doc:]]
+Manual: the new features have been documented.
+
+
+--------
+:update:
+--------
+
+[[:api:]]
+\Chges history: the icon for updates is now ''\reflectbox{\faHistory}''.
+
+
+// ---------- //
+
+
+==
 19  (1.5.0)
 ==
+
+------
+:desc:
+------
+
+The main change in this version is the move from the ''tutodoc'' package to the ''tutodoc'' class.
+
 
 -------
 :break:

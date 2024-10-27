@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{tutodoc}
+\documentclass[10pt, a4paper]{tutodoc}
 
 \input{../preamble.cfg.tex}
 
@@ -24,7 +24,7 @@
 
 
 \begin{tdocimp}
-    All the environments presented in this section share the same counter.
+    All the environments presented in this section share the same counter, which will be reset to zero as soon as a section with a level at least equal to a \tdocinlatex|\section| is opened.
 \end{tdocimp}
 
 
@@ -37,14 +37,6 @@ Numbered examples, if required, are indicated via \tdocenv{tdocexa}, which offer
 Here are two possible uses.
 
 \tdoclatexinput[sbs]{examples/admonitions/exa.tex}
-
-
-% ------------------ %
-
-
-\begin{tdocimp}
-    The numbering of the examples is reset to zero as soon as a section with a level at least equal to a \tdocinlatex|\section| is opened.
-\end{tdocimp}
 
 
 % ------------------ %

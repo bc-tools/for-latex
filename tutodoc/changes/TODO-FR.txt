@@ -9,87 +9,77 @@ NOW
 
 > ---------------------------- <
 
-Pour publier nvle version, il reste à ...
-
-    ---> intégrer main.cls avec au passge les load classe !!!
-
-    ---> gérer DOC-LANGS et ALL-LANGS (api lang mis dans metadata)
-
-> ---------------------------- <
-
-gestion des pacakages et classe importés
-
-    --> besoin d'un fichier  DEPENDSN.txt des dépendances ventuellement vide pour indiquer els depndances ordonnées ! pas d'auto, charge au condeur de nourrir texfacto !
-x
-
-> ---------------------------- <
-
-lang régélé via une commande \TDocSetLocale et du coup modigfiable à la amin, ceci nécessite de crérer une version de base avec des renewcommand
-
-+
-
-faire gestion des langues grérées dans les docs !
-
-    ---> mettre exemple avec chgt local de la langue
-
-
-https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags
-
+??? script fabriquant les examples tdoc warn and co à partir d'un donné (cec évite de redander des trads déjà faites !) + idem pour chge what è!!
 
 
 > ---------------------------- <
 
-réorganiser contrib trad via dossier de lang et non via doc, api, ... car au final trop de chemins à parcourrir par le traducteur
+texfacto-poc
+
+    ---> Templates to be translated but not used directly by the manual \doc.
+
+    ---> prise en compte desc pour build.lua
 
 
 > ---------------------------- <
 
-test format date !!! cf bug oubli du formatage
+THÈMES
+
+mettre aussi
+
+
+    \begin{itemize}
+    	\item La couleur de fond est fournie par \tdocmacro{tdocbackcolor}.
+
+    	\item La couleur des titres et des lignes est fournie par \tdocmacro{tdocdarkcolor}.
+    \end{itemize}
+
+    Ces macros développables admettent les codes suivants.
+
+    \begin{tdoclatex}[code]
+% Argument 1 : de façon optionnelle, on peut indiquer la quantité de couleur
+%              relativement au noir.
+%              Il est en général inutile de modifier ce paramètre !
+% Argument 2 : une couleur au format xcolor.
+\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
+
+% Argument 1 : de façon optionnelle, on peut indiquer le taux de transparence.
+%              Il est en général inutile de modifier ce paramètre !
+% Argument 2 : une couleur au format xcolor.
+\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
+    \end{tdoclatex}
+
+
+    --> intégerre cela dans tefacto-POC
+
+    --> ajout de macro du type newpage met avec tag qui agisse uniquement si la thème est choisi
 
 
 > ---------------------------- <
 
-doc : section sur la contribtuion, maintenat que la structu est figée !
+IMPORTS
 
-    ---> incister sur besoin de trad de l'api et tools en priorité, pour la doc c'est pour les ourageux !
+    --> ATTENTION le lieu des imports est aussi celui de la gestiond es options : il faut donc aussi une section dédier à le gestiond es options de pack/cls qui sera toujours au début ????
+
+    --> nettoyer les doublons en les comprant
+
+    --> créer au passage un fichier  DEPENNDS.yaml des dépendances ventuellement vide pour indiquer els depndances ordonnées !
+    on le construit auto pour ce qui est utilisé, et on propose un clé pour indiquer des ordres d'imports imposés, cette partie n'atant jmaais touchée par texfacto
+
+
+> ---------------------------- <
+
+LANG
+
+    --> les trads dans la doc : faire uns cript qui gère cela automatiquement !
+
+    --> ref à https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags ???
 
 
 
 -----
 LATER
 -----
-
-
-> ---------------------------- <
-
-nouvelle page tjrs pour les \sections en format écran mais en format paper (cf du coup l'usage de macro du type newpage met avec tag)
-
-
-> ---------------------------- <
-
-note and co
-
-    --> différents mef possible ?
-        OK quand je ferais une classe : on choisi le CCS templ et on forunit alors les macro et réglage attendus; toit simplement !
-
-
-            + format = color par défaut
-            + format = bw pour black/white pour ceux faches avec les couleurs
-            + format = dark pour white/black pour se reposer les yeux
-            + format = paper  pour relecture sur papier avec dans ce cas
-
-            + ajout de macro du type newpage met avec tag qui agisse uniquement si la format est choisi
-
-
-> ---------------------------- <
-
-focus
-
-    ---> nonb as a package option
-
-    ---> "choice" option ''nb/nonb'' poir tous les cas mais en choissisant de numéroté que les exemples par défaut
-
-    ---> code auto  mêm si c'est fixé a priori
 
 
 > ---------------------------- <

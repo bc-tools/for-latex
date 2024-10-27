@@ -1,3 +1,158 @@
+==
+27  (1.6.0)
+==
+
+[[:test:]]
+Updates were needed regarding the new ''theme'' option. From now, we will use prefixes path::''pdf'' and path::''unit'' to indicate either a visual test, or a unit one.
+
+
+// ---------- //
+
+
+==
+26  (1.6.0-rc.2)
+==
+
+-----
+:fix:
+-----
+
+''tdocinEN'': this macro was bad designed (indeed, we don't know where the \arg should be printed).
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+\Chges history: the new \env ''tdoctech'' allows to talk about technical \infos for geeks.
+
+
+--------
+:fordev:
+--------
+
+[[:flow:]]
+Translation of the \api: the code has been updated to follow the new organization of the folders.
+
+
+// ---------- //
+
+
+==
+25  (1.6.0-rc.1)
+==
+
+--------
+:fordev:
+--------
+
+[[:flow:]]
+The ugly \texfacto \poc has been updated to meet the following new requirements.
+
+    1) Use of post hooks (see the building of the gallery of themes).
+
+    1) \css like features for themes.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: explanations about the use of the ''wide'' option from the \enumitem \pack (useful with admonition \envs).
+
+
+// ---------- //
+
+
+==
+23  (1.6.0-beta.4)
+==
+
+-----
+:new:
+-----
+
+[[:doc:]]
+Manual: a section talks about the themes, and also adds at the very end of the manual the results obtained according to a chosen theme.
+
+
+// ---------- //
+
+
+==
+23  (1.6.0-beta.3)
+==
+
+-------
+:break:
+-------
+
+[[:api:]]
+Here are the breaking changes.
+
+    1) Showcase: the key ''color'' has been renamed ''colstripe''.
+
+    1) Themes: the color ''tdoclinkcolor'' becomes ''tutodoc@link@color'' such as to avoid unwanted changes by a common user.
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+Themes.
+
+    1) Draft versions look good. This concerns the following folders.
+
+        * path::''admonitions''
+        * path::''listing''
+        * path::''main''
+        * path::''showcase''
+        * path::''version-n-change''
+
+    1) Showcase: addition of a new missing option ''coltext'' to change the text color (the themes need this new option).
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: the new options for the \env ''showcase'' have been documented (but not yet the ''theme'' option of the class).
+
+
+// ---------- //
+
+
+==
+21  (1.6.0-beta.2)
+==
+
+--------
+:update:
+--------
+
+[[:api:]]
+Themes: the macro ``\tdoclinkcolor`` becomes ''tdoclinkcolor'' an \xcolor color.
+
+
+// ---------- //
+
+
+==
+20  (1.6.0-beta.1)
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+Themes: a \1st draft version just for admonitions looks good.
+
+
 // ---------- //
 
 

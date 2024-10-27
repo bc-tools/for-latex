@@ -1,0 +1,74 @@
+\documentclass{tutodoc}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[spanish]{babel}
+
+\input{regression-test}
+
+\begin{document}
+
+\makeatletter
+
+\START
+
+
+\BEGINTEST{Macros - trans_date}
+
+\sbox0{\tutodoc@trans@date{2024}{10}{27}}
+\sbox2{2024/10/27}
+
+\TYPE{SB-TESTED ''trans_date''}
+\showbox0
+
+\TYPE{SB-WANTED ''trans_date''}
+\showbox2
+
+\ENDTEST
+
+
+\BEGINTEST{Macros - inEN}
+
+\sbox0{\tdocinEN{OK?}}
+\sbox2{\tdocquote{OK?} en inglés}
+
+\TYPE{SB-TESTED ''inEN''}
+\showbox0
+
+\TYPE{SB-WANTED ''inEN''}
+\showbox2
+
+\ENDTEST
+
+
+\BEGINTEST{Sentences - chges_tech}
+
+\sbox0{\tutodoc@trans@chges@tech}
+\sbox2{Información técnica}
+
+\TYPE{SB-TESTED ''chges_tech''}
+\showbox0
+
+\TYPE{SB-WANTED ''chges_tech''}
+\showbox2
+
+\ENDTEST
+
+
+\BEGINTEST{Sentences - latex_show_start}
+
+\sbox0{\tutodoc@trans@latex@show@start}
+\sbox2{Inicio de la representación real}
+
+\TYPE{SB-TESTED ''latex_show_start''}
+\showbox0
+
+\TYPE{SB-WANTED ''latex_show_start''}
+\showbox2
+
+\ENDTEST
+
+\OMIT
+
+\end{document}

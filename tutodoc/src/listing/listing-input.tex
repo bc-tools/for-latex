@@ -17,7 +17,7 @@
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
 
-\NewDocumentCommand{ \tdocdocextraruler }{ m }{%
+\NewDocumentCommand{ \tdocextrarulerDOC }{ m }{%
     \par
     {
         \centering
@@ -32,14 +32,14 @@
     }
 }
 
-\NewDocumentEnvironment{ tdoc-doc-showcase }
+\NewDocumentEnvironment{ tdocshowcaseDOC }
                        { O{ Début du rendu dans cette doc. }
                          O{ Fin du rendu dans cette doc. } }{
-        \tdocdocextraruler{#1}
+        \tdocextrarulerDOC{#1}
         \nopagebreak\smallskip\nopagebreak
 }{
         \nopagebreak\smallskip\nopagebreak
-        \tdocdocextraruler{#2}
+        \tdocextrarulerDOC{#2}
 }
 
 
@@ -99,16 +99,17 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
 
 
-\subsection{Codes importés et mis en situation} \label{tdoc-latexshow}
+\subsection{Codes importés et mis en situation}
+\label{tutodoc-latexshow}
 
 \begin{tdocexa}[Mise en situation]
     Ce qui suit s'obtient via \tdocinlatex+\tdoclatexshow{examples-listing-xyz.tex}+.
 
     \medskip
 
-    \begin{tdoc-doc-showcase}
+    \begin{tdocshowcaseDOC}
         \tdoclatexshow{examples/listing/xyz.tex}
-    \end{tdoc-doc-showcase}
+    \end{tdocshowcaseDOC}
 \end{tdocexa}
 
 
@@ -122,14 +123,14 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \medskip
 
-    \begin{tdoc-doc-showcase}
+    \begin{tdocshowcaseDOC}
         \tdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}
-    \end{tdoc-doc-showcase}
+    \end{tdocshowcaseDOC}
 \end{tdocexa}
 
 
 \begin{tdocexa}[Les options disponibles]
-    En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de l'environnement \tdocenv*{tdocshowcase}, voir \ref{tdoc-showcase} page \pageref{tdoc-showcase}.
+    En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de l'environnement \tdocenv*{tdocshowcase}, voir \ref{tutodoc-showcase} page \pageref{tutodoc-showcase}.
     Voici un exemple illustrant ceci.
 
     \medskip
@@ -142,9 +143,9 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \medskip
 
-    \begin{tdoc-doc-showcase}
+    \begin{tdocshowcaseDOC}
         \input{examples/listing/latexshow-options.tex}
-    \end{tdoc-doc-showcase}
+    \end{tdocshowcaseDOC}
 \end{tdocexa}
 
 \end{document}

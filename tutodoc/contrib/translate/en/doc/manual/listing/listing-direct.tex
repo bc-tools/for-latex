@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{tutodoc}
+\documentclass[10pt, a4paper]{tutodoc}
 
 \input{../preamble.cfg.tex}
 
@@ -8,7 +8,7 @@
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
 
-\NewDocumentCommand{ \tdocdocbasicinput }{ m }{%
+\NewDocumentCommand{ \tdocbasicinputDOC }{ m }{%
     Consider the following code.
 
     \tdoclatexinput[code]{#1}
@@ -25,17 +25,18 @@
 
 Documenting a package or class is best done through use cases showing both the code and the corresponding result.
 \footnote{
-	Code is formatted using the \tdocpack{minted} package.
+    Code is formatted using the \tdocpack{minted} package.
 }
 
 
 %\begin{tdoccaut}
-%	Version 3 of \tdocpack{minted} cannot be used at the moment, as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of minted.
+%    Version 3 of \tdocpack{minted} cannot be used at the moment, as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of minted.
 %
 %\end{tdoccaut}
 
 
-\subsection{\tdocquote{Inline} codes} \label{tdoc-listing-inline}
+\subsection{\tdocquote{Inline} codes}
+\label{tutodoc-listing-inline}
 
 The \tdocmacro{tdocinlatex} macro
 \footnote{
@@ -68,7 +69,7 @@ Here are some examples.
 
 \begin{tdocexa}[Side by side]
     Using \tdocenv[{[sbs]}]{tdoclatex}, we can display a code and its rendering side by side.
-    \tdocdocbasicinput{examples/listing/ABC.tex}
+    \tdocbasicinputDOC{examples/listing/ABC.tex}
 \end{tdocexa}
 
 
@@ -104,12 +105,12 @@ Here are some examples.
 
 \begin{tdocwarn}
     With default formatting, if the code begins with an opening bracket, the default option must be explicitly indicated.
-    \tdocdocbasicinput{examples/listing/strange.tex}
+    \tdocbasicinputDOC{examples/listing/strange.tex}
 
     \smallskip
 
     Another method is to use the \tdocmacro{string} primitive.
-    \tdocdocbasicinput{examples/listing/strange-bis.tex}
+    \tdocbasicinputDOC{examples/listing/strange-bis.tex}
 \end{tdocwarn}
 
 \end{document}

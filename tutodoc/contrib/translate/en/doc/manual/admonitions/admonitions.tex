@@ -1,20 +1,22 @@
-\documentclass[12pt, a4paper]{tutodoc}
+\documentclass[10pt, a4paper]{tutodoc}
 
 \input{../preamble.cfg.tex}
 
 
 \begin{document}
 
-\subsection{Flashy content} \label{tdoc-admonitions}
+\subsection{Flashy content}
+\label{tutodoc-admonitions}
 
 \begin{tdocnote}
-    Icons are obtained via the \tdocpack{fontawesome5} package, and text spacing is managed by the \tdocmacro{tdocicon} macro.
-    \footnote{
-        For example,
-        \tdocinlatex|\fbox{\tdocicon{\faBed}{Tired}}|
-        produces\,
-        \fbox{\tdocicon{\faBed}{Tired}}\,.
-    }
+	The formatting proposed here is the default one, but others are possible by changing the theme: see the gallery of use cases in the appendix page \pageref{tutodoc-theme-gallery}.
+	As for the icons, they are obtained via the \tdocpack{fontawesome5} package, and the \tdocmacro{tdocicon} macro manages the spacing in relation to the text.
+	\footnote{
+		For example,
+		\tdocinlatex|\fbox{tdocicon{faBed}{Fatigued}}|
+		produces
+		\fbox{\tdocicon{\faBed}{Fatigued}},.
+	}
 \end{tdocnote}
 
 
@@ -27,34 +29,36 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
 \smallskip
 
-\begin{tdocnote}
-    Colors are obtained via the expandable macros \tdocmacro{tdocbackcolor} and \tdocmacro{tdocdarkcolor}.
-    For further information, please refer to the end of the section \ref{tdoc-color-macros} page \pageref{tdoc-color-macros}.
-\end{tdocnote}
+
+\begin{tdoctip}
+    Sometimes, highlighted content can be reduced to a list. In this case, the formatting can be improved as follows where we use the \tdocinlatex{wide} option from the \tdocpack{enumitem} package.
+
+	\tdoclatexinput[sbs]{examples/admonitions/leavevmode-items.tex}
+\end{tdoctip}
 
 
 \foreach \sectitle/\desc/\filename in {
-	{Informative note}/%<-- Translate me!
-	{The \tdocenv*{tdocnote} environment is used to highlight useful information. Here's how to use it.}/%<-- Translate me!
-	note,
-	%
-	{Something important}/%<-- Translate me!
-	{The \tdocenv*{tdocimp} environment is used to indicate something important but harmless.}/%<-- Translate me!
-	important,
-	%
-	{Caution about a delicate point}/%<-- Translate me!
-	{The \tdocenv*{tdoccaut} environment is used to indicate a delicate point to the user. Here's how to use it.}/% <-- Translate me!
-	caution,
-	%
-	{Warning of danger}/%<-- Translate me!
-	{The \tdocenv*{tdocwarn} environment is used to warn the user of a trap to avoid. Here's how to use it.}/%<-- Translate me!
-	warn%
+    {Informative note}/%<-- Translate me!
+    {The \tdocenv*{tdocnote} environment is used to highlight useful information. Here's how to use it.}/%<-- Translate me!
+    note,
+    %
+    {Something important}/%<-- Translate me!
+    {The \tdocenv*{tdocimp} environment is used to indicate something important but harmless.}/%<-- Translate me!
+    important,
+    %
+    {Caution about a delicate point}/%<-- Translate me!
+    {The \tdocenv*{tdoccaut} environment is used to indicate a delicate point to the user. Here's how to use it.}/% <-- Translate me!
+    caution,
+    %
+    {Warning of danger}/%<-- Translate me!
+    {The \tdocenv*{tdocwarn} environment is used to warn the user of a trap to avoid. Here's how to use it.}/%<-- Translate me!
+    warn%
 } {
-	\subsubsection{\sectitle}
+    \subsubsection{\sectitle}
 
-	\desc
+    \desc
 
-	\tdoclatexinput[sbs]{examples/admonitions/\filename.tex}
+    \tdoclatexinput[sbs]{examples/admonitions/\filename.tex}
 }
 
 \end{document}

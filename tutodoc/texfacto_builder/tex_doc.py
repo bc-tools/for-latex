@@ -4,6 +4,53 @@ from .constants import *
 from .misc      import *
 
 
+# ----------- #
+# -- HOOKS -- #
+# ----------- #
+
+def call_hook(
+    lang_temp_dir,
+    srcfile,
+    hookfunc
+):
+    lang_temp_srcfile_indoc = lang_temp_dir / TAG_TMP_SRCFILE_INDOC
+    lang_temp_doc           = lang_temp_dir / TAG_TMP_TEX_THE_DOC
+
+    virtual_resrc, tex_code = hookfunc(srcfile.parent)
+
+    with lang_temp_srcfile_indoc.open(
+        mode = 'a',
+    ) as temp_file:
+        for vpath, tcode in virtual_resrc.items():
+            tcode = tcode.replace(
+                r"\input{../preamble.cfg.tex}" + "\n"*2,
+                ""
+            )
+
+            temp_file.write(
+                TMPL_FILE_CONTENTS.format(
+                    virtual_path = vpath,
+                    tex_code     = tcode
+                ) + '\n'*2
+            )
+
+    with lang_temp_doc.open(
+        mode = 'a',
+    ) as temp_file:
+        temp_file.write(tex_code + '\n'*2)
+
+
+# ------------ #
+# -- LOCALE -- #
+# ------------ #
+
+def lang_long_name_in(
+    shortname,
+    curlang
+):
+    return babel.Locale.parse(shortname).get_display_name(curlang)
+
+
 # --------------------------- #
 # -- BUILD SINGLE STY FILE -- #
 # --------------------------- #
@@ -13,9 +60,11 @@ def prebuild_single_tex(
     temp_dir,
     sorted_useful_files,
     versions,
+    hooks,
     about_langs,
 ):
-    manual_langs  = about_langs[TAG_MANUAL_OTHER_LANG] + [about_langs[TAG_MANUAL_DEV_LANG]]
+    manual_langs  = about_langs[TAG_MANUAL_OTHER_LANG] \
+                  + [about_langs[TAG_MANUAL_DEV_LANG]]
     translate_dir = source.parent / TAG_CONTRIB / TAG_TRANSLATE
 
 # English abstract.
@@ -49,15 +98,18 @@ def prebuild_single_tex(
         print(f"## {kind.upper()} LANG ''{lang}'' ##")
         print()
 
-        # lang_dir        = translate_dir / lang
         lang_dir_manual = translate_dir / lang / TAG_DOC / TAG_MANUAL
-        lang_temp_dir   = temp_dir / lang
 
-# Empty lang dir.
+        lang_temp_dir           = temp_dir / lang
+        lang_temp_file_contents = lang_temp_dir / ".tmp_file_contents.tex"
+
+# Empty lang dir + add temp. file for source contents.
         emptydir(
             folder  = lang_temp_dir,
             rel_dir = source.parent
         )
+
+        lang_temp_file_contents.touch()
 
 # Preamble file.
         print()
@@ -176,6 +228,12 @@ def prebuild_single_tex(
             if kind == TAG_FILE:
                 print(f"   * Analyzing ''{srcfile.name}''")
 
+                hook_ref = f"{srcfile.parent.name}/{srcfile.name}"
+
+# A prehook ?
+                if hook_ref in hooks[TAG_PRE]:
+                    PRE_HOOKS_NOT_DONE
+
 # WARNING!
 # No magic comment inside the manual of the dev contrib.
                 thedoc = srcfile.read_text()
@@ -188,7 +246,7 @@ def prebuild_single_tex(
                 thedoc = thedoc.strip()
 
                 api_lang_items = '\n        \\item '.join(
-                    f"\\tdocinlatex|{l}| : {babel.Locale.parse(l).get_display_name(lang)}."
+                    f"\\tdocinlatex|{l}| : {lang_long_name_in(l, lang)}."
                     for l in sorted(about_langs[TAG_API_LANGS])
                 )
 
@@ -208,6 +266,16 @@ def prebuild_single_tex(
 
                 pieces = extract_from_DEV_TEX(srcfile)
                 prepare_TEX(onedir, lang_temp_dir, fordoc, thedoc)
+
+# A posthook ?
+                if hook_ref in hooks[TAG_POST]:
+                    print(f"   * POST HOOK for ''{srcfile.name}''")
+
+                    call_hook(
+                        lang_temp_dir = lang_temp_dir,
+                        srcfile       = srcfile,
+                        hookfunc      = hooks[TAG_POST][hook_ref]
+                    )
 
             else:
                 relpath = srcfile.relative_to(curdir)
@@ -328,7 +396,7 @@ def other_manual_langs(
     manual_langs,
 ):
     others = [
-        LANG_NAMES[lang][l]
+        lang_long_name_in(l, lang)
         for l in manual_langs
         if l != lang
     ]

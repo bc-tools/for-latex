@@ -11,6 +11,7 @@ def prebuild_single_sty(
     temp_dir,
     sorted_useful_files,
     versions,
+    hooks,
     about_langs
 ):
     for onedir, srcfile, kind in iter_sorted_useful_files(
@@ -116,6 +117,19 @@ def prepare_STY(
         )
 
     if pack_src:
+        new_code = []
+
+        for line in pack_src.split('\n'):
+            match = re.search(INPUT_CSS_PATTERN, line)
+
+            if match:
+                line = TEMPL_INPUT_CSS.format(
+                    catego = match.group(1),
+                    texvar = match.group(2),
+                )
+
+            new_code.append(line)
+
         pack_src = pack_src.replace(
             f"\\input{{../{curdir.name}/",
              "\\input{"

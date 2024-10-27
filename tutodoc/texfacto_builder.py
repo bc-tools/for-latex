@@ -20,6 +20,8 @@ if DEBUG:
 
 THIS_DIR = Path(__file__).parent
 
+HOOK_DIR = THIS_DIR / "hook"
+
 
 # ----------------- #
 # -- DEBUG TOOLS -- #
@@ -56,6 +58,77 @@ def _recu_debug_treeview(
                     treeview = subtree,
                     depth    = depth
                 )
+
+
+# ------------ #
+# -- HOOKS? -- #
+# ------------ #
+
+MANUAL_HOOKS = {
+    TAG_PRE : {},
+    TAG_POST: {}
+}
+
+
+if HOOK_DIR.is_dir():
+# Auto update the __init__ for our use.
+    initcode = [
+        r"""
+# This file has been updated automatically by TeXfacto.
+        """.strip()
+    ]
+
+    tmpl_init = r"""
+from .{hookname} import (
+    PRE_HOOK  as PRE_HOOK_{hookname},
+    POST_HOOK as POST_HOOK_{hookname}
+)
+    """.strip()
+
+    for pyfile in HOOK_DIR.glob("*.py"):
+        hookname = pyfile.stem
+
+        if hookname == "__init__":
+            continue
+
+        initcode.append(
+            tmpl_init.format(hookname = hookname)
+        )
+
+    initcode = "\n\n".join(initcode)
+
+    (HOOK_DIR / "__init__.py").write_text(initcode)
+
+    import hook
+
+    __globals_hook = globals()["hook"]
+
+    for hookdict_name in dir(hook):
+        if (
+            hookdict_name.startswith('__')
+            or
+            not (
+                hookdict_name.startswith('PRE_HOOK_')
+                or
+                hookdict_name.startswith('POST_HOOK_')
+            )
+        ):
+            continue
+
+        KIND = (
+            TAG_PRE
+            if hookdict_name.startswith('PRE_HOOK_') else
+            TAG_POST
+        )
+
+        MANUAL_HOOKS[KIND].update(
+            getattr(
+                __globals_hook,
+                hookdict_name
+            )
+        )
+
+# from pprint import pprint;pprint(MANUAL_HOOKS);exit()
 
 
 # ---------------------- #
@@ -190,10 +263,10 @@ emptydir(
 # -- TEMP. VERSION - PRE STY & TEX FILES -- #
 # ----------------------------------------- #
 
-for kind, prebuilder in [
-    (TAG_CLS, prebuild_single_cls),
-    (TAG_STY, prebuild_single_sty),
-    (TAG_TEX, prebuild_single_tex),
+for kind, prebuilder, hooks in [
+    (TAG_CLS, prebuild_single_cls, {}),
+    (TAG_STY, prebuild_single_sty, {}),
+    (TAG_TEX, prebuild_single_tex, MANUAL_HOOKS,),
 ]:
     print_frame(
         metadata[TAG_PROJ_NAME],
@@ -206,7 +279,8 @@ for kind, prebuilder in [
         temp_dir            = metadata[TAG_TEMP],
         sorted_useful_files = sorted_useful_files,
         versions            = metadata[TAG_VERSIONS],
-        about_langs               = {
+        hooks               = hooks,
+        about_langs         = {
             TAG_MANUAL_DEV_LANG  : metadata[TAG_MANUAL_DEV_LANG],
             TAG_MANUAL_OTHER_LANG: metadata[TAG_MANUAL_OTHER_LANG],
             TAG_API_LANGS        : metadata[TAG_API_LANGS],
@@ -216,6 +290,37 @@ for kind, prebuilder in [
 
 # if DEBUG:
 #     exit()
+
+
+# --------------- #
+# -- CSS FILES -- #
+# --------------- #
+
+for srcfile in metadata[TAG_SRC].glob("*/css/*.sty"):
+    catego = srcfile.parent.parent.name
+
+    kind = srcfile.name
+
+    for ext in [TAG_STY, TAG_CLS]:
+        ext = f".{ext}"
+
+        if kind.endswith(ext):
+            kind = kind[:-len(ext)]
+
+        else:
+            break
+
+    tmp_css_path = ROLLOUT_CSS_PATH.format(
+        texvar = kind,
+        catego = catego
+    )
+
+    destfile = metadata[TAG_TEMP] / tmp_css_path
+
+    copyfromto(
+        srcfile  = srcfile,
+        destfile = destfile,
+    )
 
 
 # ------------------- #
@@ -234,15 +339,15 @@ def ugly_hack(content):
     )
 
     content = content.replace(
-        "{../main/tutodoc-locale",
-        "{tutodoc-locale",
+        "{../main/tutodoc-main-locale",
+        "{tutodoc-main-locale",
     )
 
     return content
 
 finalize(
     metadata  = metadata,
-    ugly_hack = ugly_hack
+    ugly_hack = ugly_hack,
 )
 
 

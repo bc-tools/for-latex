@@ -1,0 +1,18 @@
+latex_show_start = Start of the real output
+latex_show_end   = End of the real output
+
+exa_title  = Example
+rem_title  = Remark
+note_title = Note
+tip_title  = Tip
+
+imp_title  = Important
+caut_title = Caution
+warn_title = Warning
+
+chges_tech   = Technical information
+chges_prob   = Problem
+chges_break  = Break
+chges_fix    = Fix
+chges_new    = New
+chges_update = Update
