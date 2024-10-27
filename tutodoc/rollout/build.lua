@@ -47,12 +47,27 @@ uploadconfig = {
 
 -- UNIT TESTS: AUTO VALIDATIONS OF [S]HOW[B]OX COMPARISONS --
 
+-- Source for l3build use of \showbox: https://tex.stackexchange.com/a/729463/6880
+
 cmd_option = "sbunit"
+
+TAG_CHECK  = "check"
+TAG_IGNORE = "standard"
+TAG_TEST   = "test"
+
+TAG_L3BUILD_BOX_START = "> \\box"
+TAG_L3BUILD_BOX_END   = "! OK."
+
 
 function checkSBUNIT(xtra_args)
     if xtra_args == nil or #xtra_args ~= 1
     then
-        print("Showbox comparison unit test: one single test file name needed!")
+        print(
+            "IO.ERROR!"
+            ..
+            "One single test file name needed!"
+        )
+
         return 1
     end
 
@@ -61,24 +76,20 @@ function checkSBUNIT(xtra_args)
     local testfilename = xtra_args[1]
     local logfile      = testfilename .. ".log"
 
-    file  = io.open(testdir .. "/" .. logfile)
-    lines = file:lines()
+    local file  = io.open(testdir .. "/" .. logfile)
+    local lines = file:lines()
 
     local nbline = 0
 
-    TAG_CHECK = "check"
-    TAG_STD   = "standard"
-    TAG_TEST  = "test"
-
-    TAG_L3BUILD_BOX = "> \\box"
     local nbtests = 0
-    local kind    = "std"
+    local kind    = TAG_IGNORE
 
+    local log_test  = ""
+    local log_check = ""
 
     for line in lines
     do
-        nbline = nbline + 1
-
+        nbline    = nbline + 1
         startline = string.sub(line, 1, 9)
 
         if startline == "SB-TESTED"
@@ -88,34 +99,47 @@ function checkSBUNIT(xtra_args)
 
         elseif startline == "SB-WANTED"
         then
-            if kind ~=  TAG_TEST
-            then
-                print("No showbox tested before: see line " .. nbline .. " in the log file.")
-                return 1
-            end
-
             if catego ~= string.sub(line, 11, -1)
             then
-                print("Showbox checker without the same category: see line " .. nbline .. " in the log file.")
+                print(
+                    "Showbox checker without a showbox tested: see line "
+                    .. nbline ..
+                    " in the log file. Tested? Same category"
+                )
+
                 return 1
             end
 
             kind = TAG_CHECK
-        elseif line == "! OK."
+
+        elseif line == TAG_L3BUILD_BOX_END
         then
-            kind = TAG_STD
-            print("--- LET'S WORK! --")
-        elseif kind == TAG_TEST or kind == TAG_CHECK
-        then
-            if string.sub(line, 0, 6) ~= TAG_L3BUILD_BOX
+            if kind == TAG_CHECK
             then
-                print("\t[" .. nbline .. "-" .. kind .. "]" .. line)
+                if _compareSBUNIT(catego, log_test, log_check) == false
+                then
+                    print("\nValidation has failed!")
+                    return 1
+                end
+            end
+
+            kind = TAG_IGNORE
+
+        elseif string.sub(line, 0, 6) ~= TAG_L3BUILD_BOX_START
+        then
+            if kind == TAG_TEST
+            then
+                log_test = log_test .. "\n" .. line
+
+            elseif kind == TAG_CHECK
+            then
+                log_check = log_check .. "\n" .. line
             end
         end
     end
 
-
-  return 0
+    print("\nSuccessful validation.")
+    return 0
 end
 
 
@@ -127,6 +151,24 @@ target_list[cmd_option] = {
 }
 
 
+function _compareSBUNIT(catego, log_test, log_check)
+    local what   = "Showbox " .. catego
+    local result = false
+
+    if log_test == log_check
+    then
+        result = true
+
+        print("    + " .. what .. " [OK]")
+
+      else
+        print("    + " .. what .. " [KO]")
+    end
+
+    return result
+end
+
+
 -- VIEW PDF FROM ONE TEST --
 
 cmd_option = "view"
@@ -134,7 +176,12 @@ cmd_option = "view"
 function viewPDF(xtra_args)
     if xtra_args == nil or #xtra_args ~= 1
     then
-        print("View PDF from one test: one single test file name needed!")
+        print(
+            "IO.ERROR!"
+            ..
+            "One single test file name needed!"
+        )
+
         return 1
     end
 
@@ -145,7 +192,12 @@ function viewPDF(xtra_args)
 
     if fileexists(testdir .. "/" .. pdffile) == false
     then
-        print("No PDF file found.\nSee: " .. pdffile)
+        print(
+            "IO.ERROR!"
+            ..
+            "No PDF file found.\nSee: " .. pdffile
+        )
+
         return 1
     end
 
@@ -158,7 +210,13 @@ function viewPDF(xtra_args)
 
       if trycmd ~= 0
       then
-          print("No command to open PDF files.\nSee: " .. pdffile)
+          print(
+              "OS.ERROR!"
+              ..
+              "No command to open PDF files.\nSee: " .. pdffile
+          )
+
+          return 1
       end
     end
 
