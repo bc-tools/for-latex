@@ -124,6 +124,32 @@ function raiseFileNotCreated(file_name)
 end
 
 
+-------------------
+-- CMD UTILITIES --
+-------------------
+
+function helper(
+    xtra_args,
+    text_helper
+)
+    if (
+        #xtra_args == 1
+        and
+        (
+            xtra_args[1] == "@"
+            or
+            xtra_args[1] == "@@bout"
+        )
+    )
+    then
+        print(text_helper)
+        return 0
+    end
+
+    return nil
+end
+
+
 --------------------------------
 -- L3BUILD EXTRA CMD "sbunit" --
 --------------------------------
@@ -135,6 +161,12 @@ end
 --    + l3build use of \showbox: https://tex.stackexchange.com/a/729463/6880
 ----
 
+SBUNIT_HELPER = [[
+l3build extra command "sbunit"
+
+    GGGG
+]]
+
 cmd_option = "sbunit"
 
 TAG_CHECK  = "check"
@@ -145,12 +177,29 @@ TAG_L3BUILD_BOX_START = "> \\box"
 TAG_L3BUILD_BOX_END   = "! OK."
 
 function checkSBUNIT(xtra_args)
-    if xtra_args == nil or #xtra_args ~= 1
+    if (
+        xtra_args == nil
+        or (
+            #xtra_args == 0
+            or
+            #xtra_args > 1
+        )
+    )
     then
         return raise(
             "IO",
             "One single test file name needed!"
         )
+    end
+
+    -- local help =
+
+    if helper(
+        xtra_args,
+        SBUNIT_HELPER
+    ) ~= nil
+    then
+        return 0
     end
 
     print("SHOWBOX COMPARISON validated?")
