@@ -56,6 +56,7 @@ def lang_long_name_in(
 # --------------------------- #
 
 def prebuild_single_tex(
+    projname,
     source,
     temp_dir,
     sorted_useful_files,

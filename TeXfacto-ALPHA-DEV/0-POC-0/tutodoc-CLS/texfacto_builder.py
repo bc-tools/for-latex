@@ -311,7 +311,7 @@ for srcfile in metadata[TAG_SRC].glob("*/css/*.sty"):
             break
 
     tmp_css_path = ROLLOUT_CSS_PATH.format(
-        projname = etadata[TAG_PROJ_NAME],
+        projname = metadata[TAG_PROJ_NAME],
         texvar   = kind,
         catego   = catego
     )

@@ -13,6 +13,14 @@
 Version and \chges: use of ''\paragraph'' for the kind of \chge (this will let \latex manage anwanted cut).
 
 
+--------
+:fordev:
+--------
+
+[[:tech:]]
+XXX: yyy.
+
+
 // ---------- //
 
 

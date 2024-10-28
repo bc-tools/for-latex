@@ -128,6 +128,7 @@ def prepare_CLS(
 
             if match:
                 line = TEMPL_INPUT_CSS.format(
+                    projname = metadata[TAG_PROJ_NAME],
                     catego = match.group(1),
                     texvar = match.group(2),
                 )

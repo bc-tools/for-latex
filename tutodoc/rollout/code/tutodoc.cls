@@ -281,7 +281,7 @@
 % -- LINKS AND CO. -- %
 % ------------------- %
 
-\input{css-\tutodoc@theme-main.cls.sty}
+\input{tutodoc-\tutodoc@theme-main.css.cls.sty}
 
 \hypersetup{
   colorlinks,
@@ -391,7 +391,7 @@
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
 % -------------------------------------- %
 
-\input{css-\tutodoc@theme-admonitions.cls.sty}
+\input{tutodoc-\tutodoc@theme-admonitions.css.cls.sty}
 
 
 %%%
@@ -634,7 +634,7 @@
 % -- GENERAL FORMATTING -- %
 % ------------------------ %
 
-\input{css-\tutodoc@theme-showcase.cls.sty}
+\input{tutodoc-\tutodoc@theme-showcase.css.cls.sty}
 
 
 % :::::::::::::::::::::::: %
@@ -866,7 +866,7 @@
 
 \newcommand{\tutodoc@latex@lexer}{latex}
 
-\input{css-\tutodoc@theme-listing.cls.sty}
+\input{tutodoc-\tutodoc@theme-listing.css.cls.sty}
 
 
 % :::::::::::::::::::::::: %
@@ -1163,7 +1163,7 @@
 % :: VERSION AND DATE :: %
 % :::::::::::::::::::::: %
 
-\input{css-\tutodoc@theme-version-n-change.cls.sty}
+\input{tutodoc-\tutodoc@theme-version-n-change.css.cls.sty}
 
 %%%
 % prototype::
@@ -1249,11 +1249,12 @@
     \msg_fatal:nn { tutodoc ~ (version-n-change) }
       { version-n-change : topic-missing-title }
   }%
-  \paragraph{%
+%  \paragraph{%
+  \par
+  \textbf{%
     \IfBlankF{#2}{\tdocicon{#2}}%
     \textsc{#1.}
   }
-
   \begin{itemize}
 }{
   \end{itemize}
