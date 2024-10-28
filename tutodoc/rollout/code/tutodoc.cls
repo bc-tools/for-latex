@@ -1250,7 +1250,6 @@
       { version-n-change : topic-missing-title }
   }%
 %  \paragraph{%
-  \par
   \textbf{%
     \IfBlankF{#2}{\tdocicon{#2}}%
     \textsc{#1.}
