@@ -1,7 +1,7 @@
 % ********************************************************* %
 % ** This is file `tutodoc.cls' generated automatically. ** %
 % **                                                     ** %
-% ** Copyright (C) 2023-2024 by Christophe BAL           ** %
+% ** Copyright (C) 2023-2024 by Christophe, BAL          ** %
 % **                                                     ** %
 % ** This file may be distributed and/or modified under  ** %
 % ** the conditions of the GNU 3 License.                ** %
@@ -9,9 +9,9 @@
 
 \ProvidesExplClass
   {tutodoc}
-  {2024-10-27}  % Creation: 2023-11-29
-  {1.6.0}
-  {This LaTeX class proposes tools for writing "human friendly" PDF documentations of LaTeX packages and classes.}
+  {2024-10-28}  % Creation: 2023-11-29
+  {1.6.1}
+  {This package proposes tools for writing "human friendly" documentations of LaTeX packages.}
 
 
 % =================== %
@@ -78,6 +78,9 @@
 
 \RequirePackage{tocbasic}
 
+\RequirePackage{xcolor}%
+               [2022/06/12]
+
 \RequirePackage{hyperref}% To load after titlesec!
                [2023-02-07]
 
@@ -101,6 +104,9 @@
 \RequirePackage{tcolorbox}%
                [2024/07/10]
 
+\tcbuselibrary{breakable,
+               skins}
+
 
 \RequirePackage{clrstrip}%
                [2021-08-28]
@@ -110,9 +116,16 @@
                {minted}%
                [2024/09/22]
 
+\RequirePackage{tcolorbox}%
+               [2024/07/10]
+
 \tcbuselibrary{minted,
                breakable,
                skins}
+
+
+\RequirePackage{fontawesome5}%
+               [2022-05-02]
 
 \RequirePackage{marginnote}%
                [2023-09-07]
@@ -268,7 +281,7 @@
 % -- LINKS AND CO. -- %
 % ------------------- %
 
-\input{css-\tutodoc@theme-main.cls.sty}
+\input{tutodoc-\tutodoc@theme-main.css.cls.sty}
 
 \hypersetup{
   colorlinks,
@@ -378,7 +391,7 @@
 % -- COLORFUL HIGHLIGHTING OF CONTENT -- %
 % -------------------------------------- %
 
-\input{css-\tutodoc@theme-admonitions.cls.sty}
+\input{tutodoc-\tutodoc@theme-admonitions.css.cls.sty}
 
 
 %%%
@@ -621,7 +634,7 @@
 % -- GENERAL FORMATTING -- %
 % ------------------------ %
 
-\input{css-\tutodoc@theme-showcase.cls.sty}
+\input{tutodoc-\tutodoc@theme-showcase.css.cls.sty}
 
 
 % :::::::::::::::::::::::: %
@@ -853,7 +866,7 @@
 
 \newcommand{\tutodoc@latex@lexer}{latex}
 
-\input{css-\tutodoc@theme-listing.cls.sty}
+\input{tutodoc-\tutodoc@theme-listing.css.cls.sty}
 
 
 % :::::::::::::::::::::::: %
@@ -1150,7 +1163,7 @@
 % :: VERSION AND DATE :: %
 % :::::::::::::::::::::: %
 
-\input{css-\tutodoc@theme-version-n-change.cls.sty}
+\input{tutodoc-\tutodoc@theme-version-n-change.css.cls.sty}
 
 %%%
 % prototype::
@@ -1236,11 +1249,11 @@
     \msg_fatal:nn { tutodoc ~ (version-n-change) }
       { version-n-change : topic-missing-title }
   }%
+%  \paragraph{%
   \textbf{%
     \IfBlankF{#2}{\tdocicon{#2}}%
     \textsc{#1.}
   }
-
   \begin{itemize}
 }{
   \end{itemize}

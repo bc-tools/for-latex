@@ -275,6 +275,7 @@ for kind, prebuilder, hooks in [
     )
 
     prebuilder(
+        projname            = metadata[TAG_PROJ_NAME],
         source              = metadata[TAG_SRC],
         temp_dir            = metadata[TAG_TEMP],
         sorted_useful_files = sorted_useful_files,
@@ -311,8 +312,9 @@ for srcfile in metadata[TAG_SRC].glob("*/css/*.sty"):
             break
 
     tmp_css_path = ROLLOUT_CSS_PATH.format(
-        texvar = kind,
-        catego = catego
+        projname = metadata[TAG_PROJ_NAME],
+        texvar   = kind,
+        catego   = catego
     )
 
     destfile = metadata[TAG_TEMP] / tmp_css_path

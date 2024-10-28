@@ -162,7 +162,7 @@ TITLE_PATTERNS = [
 
 
 INPUT_CSS_PATTERN = re.compile(r"\\input\{../(.+)/css/(.+).cls.sty\}")
-ROLLOUT_CSS_PATH  = r"css-{texvar}-{catego}.cls.sty"
+ROLLOUT_CSS_PATH  = r"{projname}-{texvar}-{catego}.css.cls.sty"
 TEMPL_INPUT_CSS   = f"\\input{{{{{ROLLOUT_CSS_PATH}}}}}"
 
 

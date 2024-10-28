@@ -7,6 +7,7 @@ from .misc      import *
 # --------------------------- #
 
 def prebuild_single_sty(
+    projname,
     source,
     temp_dir,
     sorted_useful_files,
@@ -23,7 +24,7 @@ def prebuild_single_sty(
             print(f"   * Analyzing ''{srcfile.name}''")
 
             pieces = extract_from_DEV_STY(srcfile)
-            prepare_STY(onedir, temp_dir, *pieces)
+            prepare_STY(projname, onedir, temp_dir, *pieces)
 
         else:
             print(f"   * [RES-STY] Copying ''{srcfile.name}'")
@@ -94,6 +95,7 @@ def extract_from_DEV_STY(srcfile):
 
 
 def prepare_STY(
+    projname,
     curdir,
     tmpdir,
     pack_import,
@@ -124,8 +126,9 @@ def prepare_STY(
 
             if match:
                 line = TEMPL_INPUT_CSS.format(
-                    catego = match.group(1),
-                    texvar = match.group(2),
+                    projname = projname,
+                    catego   = match.group(1),
+                    texvar   = match.group(2),
                 )
 
             new_code.append(line)

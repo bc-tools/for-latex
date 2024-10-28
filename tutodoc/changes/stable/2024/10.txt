@@ -2,6 +2,21 @@
 
 
 ==
+28  (1.6.1)
+==
+
+--------
+:fordev:
+--------
+
+[[:tech:]]
+\Ctan: the naming rules of \ctan needs the use of \css files named path::''tutodoc-*.css.cls.sty''.
+
+
+// ---------- //
+
+
+==
 27  (1.6.0)
 ==
 

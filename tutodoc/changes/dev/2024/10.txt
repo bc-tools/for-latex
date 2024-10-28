@@ -1,3 +1,29 @@
+// ---------- //
+
+
+==
+28  (1.6.1)
+==
+
+--------
+:update:
+--------
+
+[[:format:]]
+Version and \chges: use of ''\paragraph'' for the kind of \chge (this will let \latex manage anwanted cut).
+
+
+--------
+:fordev:
+--------
+
+[[:tech:]]
+\Ctan: the process needs the use of \css file named path::''tutodoc-*.css.cls.sty''.
+
+
+// ---------- //
+
+
 ==
 27  (1.6.0)
 ==

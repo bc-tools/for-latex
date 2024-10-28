@@ -7,6 +7,7 @@ from .misc      import *
 # --------------------------- #
 
 def prebuild_single_cls(
+    projname,
     source,
     temp_dir,
     sorted_useful_files,
@@ -26,7 +27,7 @@ def prebuild_single_cls(
             print(f"   * Analyzing ''{srcfile.name}''")
 
             pieces = extract_from_DEV_CLS(srcfile)
-            prepare_CLS(onedir, temp_dir, *pieces)
+            prepare_CLS(projname, onedir, temp_dir, *pieces)
 
         else:
             print(f"   * [RES-CLS] Copying ''{srcfile.name}'")
@@ -98,6 +99,7 @@ def extract_from_DEV_CLS(srcfile):
 
 
 def prepare_CLS(
+    projname,
     curdir,
     tmpdir,
     pack_import,
@@ -128,8 +130,9 @@ def prepare_CLS(
 
             if match:
                 line = TEMPL_INPUT_CSS.format(
-                    catego = match.group(1),
-                    texvar = match.group(2),
+                    projname = projname,
+                    catego   = match.group(1),
+                    texvar   = match.group(2),
                 )
 
             new_code.append(line)

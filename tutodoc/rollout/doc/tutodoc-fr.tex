@@ -6,6 +6,8 @@
 \begin{filecontents*}[overwrite]{gallery-showcase-bw.tex}
 \documentclass[10pt, a4paper, theme = bw]{tutodoc}
 
+% -- FORDOC -- %
+
 \newcommand\thisstyle{bw}
 
 \newcommand\myexrmktext{
@@ -98,6 +100,8 @@ $\pi \neq \frac{3}{14}$.
 
 \begin{filecontents*}[overwrite]{gallery-showcase-color.tex}
 \documentclass[10pt, a4paper, theme = color]{tutodoc}
+
+% -- FORDOC -- %
 
 \newcommand\thisstyle{color}
 
@@ -192,6 +196,8 @@ $\pi \neq \frac{3}{14}$.
 \begin{filecontents*}[overwrite]{gallery-showcase-dark.tex}
 \documentclass[10pt, a4paper, theme = dark]{tutodoc}
 
+% -- FORDOC -- %
+
 \newcommand\thisstyle{dark}
 
 \newcommand\myexrmktext{
@@ -284,6 +290,8 @@ $\pi \neq \frac{3}{14}$.
 
 \begin{filecontents*}[overwrite]{gallery-showcase-draft.tex}
 \documentclass[10pt, a4paper, theme = draft]{tutodoc}
+
+% -- FORDOC -- %
 
 \newcommand\thisstyle{draft}
 
@@ -751,8 +759,6 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 }
 
 
-% == FORDOC == %
-
 \NewDocumentCommand{\mailsubject}{m}%  <-- Translate me!
   {sujet \tdocquote{\texttt{tutodoc - CONTRIB - #1}}}
 
@@ -822,8 +828,8 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 
 \title{La classe \texttt{tutodoc} - Documentation de type tutoriel}
-\author{Christophe BAL}
-\date{27 oct. 2024 - Version 1.6.0}
+\author{Christophe, BAL}
+\date{28 oct. 2024 - Version 1.6.1}
 
 \maketitle
 
@@ -875,35 +881,9 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \small
 \begin{minipage}{.9\textwidth}
 \begin{tdocnote}[Derniers changements]
-\begin{tdocbreak}
-    \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{color} a été renommée \tdocinlatex{colstripe}.
-
-    \item La macro \tdocmacro{tdoclinkcolor} devient la couleur \tdocinlatex{tutodoc@link@color} destinée à un usage interne.
-\end{tdocbreak}
-
-
-\begin{tdocnew}
-    \item L'option de classe \tdocinlatex{theme} permet de choisir différents thèmes de mise en forme.
-
-	\item Journal des modifications : ajout de l'environnement \tdocenv*{tdoctech} pour les informations techniques.
-
-    \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{coltext} permet de changer aussi la couleur du texte.
-
-    \item Les nouvelles fonctionnalités ont été documentées.
-\end{tdocnew}
-
-
-\begin{tdocupdate}
-    \item Journal des modifications : l'environnement \tdocenv*{tdocupdate} utilise l'icône
-    \raisebox{0pt}[0pt][0pt]{\fbox{\reflectbox{\faHistory}}}
-    au lieu de
-    \raisebox{0pt}[0pt][0pt]{\fbox{\faMagic}}\,.
-\end{tdocupdate}
-
-
-\begin{tdocfix}
-    \item Les traductions espagnoles n'avaient pas été livrées dans la précédente version ! Ne pas rire trop fort...
-\end{tdocfix}
+\begin{tdoctech}
+    \item Les règles de nommage de \ctan\ nécessitent l'usage de noms du type \verb+tutodoc-*.css.cls.sty+ pour les fichiers à-la \trademark{CSS}.
+\end{tdoctech}
 \end{tdocnote}
 \end{minipage}
 \end{center}
@@ -1906,6 +1886,18 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 \section{Historique}
 
 \small
+
+\tdocversion{1.6.1}[2024-10-28]
+
+\begin{tdoctech}
+    \item Les règles de nommage de \ctan\ nécessitent l'usage de noms du type \verb+tutodoc-*.css.cls.sty+ pour les fichiers à-la \trademark{CSS}.
+\end{tdoctech}
+
+\tdocsep
+
+
+% ------------------ %
+
 
 \tdocversion{1.6.0}[2024-10-27]
 

@@ -223,7 +223,7 @@ for srcfile in (SRC_DIR / TAG_CHGE_LOG).glob("*/*/*.tex"):
 
     content = srcfile.read_text().strip()
     content = f"""
-\\documentclass[12pt, a4paper]{{article}}
+\\documentclass[12pt, a4paper, theme = color]{{tutodoc}}
 
 \\input{{../../preamble.cfg.tex}}
 
@@ -269,7 +269,7 @@ for srcfile in all_tex_files:
         fordoc = f"\n{fordoc}\n"
 
     content = f"""
-\\documentclass[10pt, a4paper]{{tutodoc}}
+\\documentclass[10pt, a4paper, theme = color]{{tutodoc}}
 
 \\input{{../preamble.cfg.tex}}
 {fordoc}

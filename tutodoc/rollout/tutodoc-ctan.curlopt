@@ -12,5 +12,5 @@ form-string="summary=This class proposes tools for writing \"human friendly\" do
 form-string="topic=doc-tool"
 form-string="update=true"
 form-string="uploader=Christophe BAL"
-form-string="version=1.6.0 [2024-10-27]"
+form-string="version=1.6.1 [2024-10-28]"
 form="file=@tutodoc-ctan.zip;filename=tutodoc-ctan.zip"

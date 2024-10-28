@@ -1,8 +1,5 @@
 \documentclass{tutodoc}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-
 \usepackage[spanish]{babel}
 
 \input{regression-test}
