@@ -1,8 +1,7 @@
-About `tutodoc`
----------------
+About `l3build-xtras`
+---------------------
 
-This class proposes some settings and macros to write human documentations of `LaTeX` packages and classes with a tutorial-like flavour.
-
+This project brings together a number of tools to make `l3build` easier to use.
 
 License
 -------
@@ -13,11 +12,10 @@ This project may be distributed and/or modified under the conditions of the GNU 
 WEB pages
 ---------
 
-  * `CTAN`: https://ctan.org/pkg/tutodoc
-  * Repository: https://github.com/bc-tools/for-latex/tree/main/tutodoc
+  * Repository: https://github.com/bc-tools/for-latex/tree/main/l3build_xtras
 
 
-Where is the documentation?
----------------------------
+How to us this epository?
+-------------------------
 
-Documentation is currently available in French and English, they are writing with a tutorial-like flavor (in the repository, see the folder [`rollout/doc`](https://github.com/bc-tools/for-latex/tree/main/tutodoc/rollout/doc)).
+XXX

@@ -1,0 +1,17 @@
+\documentclass{tutodoc}
+
+\usepackage[french]{babel}
+
+\input{regression-test}
+
+\begin{document}
+
+\makeatletter
+
+\START
+
+\tutodoc@trans@date{2024}{10}{27}
+
+\showoutput
+
+\end{document}

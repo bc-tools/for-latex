@@ -1,2 +1,2 @@
-The `LaTeX` class `tutodoc`
+The project `l3build-xtras`
 ===========================
