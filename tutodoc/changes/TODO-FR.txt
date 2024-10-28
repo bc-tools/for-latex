@@ -9,6 +9,14 @@ NOW
 
 > ---------------------------- <
 
+LaTeX Warning: You have requested, on input line 95, version                `2023-09-07' of package marginnote,                but only version                `2018/08/09 1.4b non floating margin notes for LaTeX'                is available. expected?
+
+David Carlisle
+
+
+
+> ---------------------------- <
+
 ??? script fabriquant les examples tdoc warn and co à partir d'un donné (cec évite de redander des trads déjà faites !) + idem pour chge what è!!
 
 

@@ -41,9 +41,73 @@ uploadconfig = {
 }
 
 
--------------------
--- GENERAL TOOLS --
--------------------
+---------------
+-- DIFF TOOL --
+---------------
+
+DIFF_OPTION_SIDE_BY_SIDE  = "-y"
+DIFF_OPTION_FULL_ONE_PAGE = "-u"
+
+
+function diff_files(
+    initial_name, initial_content,
+    final_name  , final_content,
+    options
+)
+    local initial_file = io.open(initial_name, "w")
+
+    if initial_file == nil
+    then
+        return raiseFileNotCreated(initial_name)
+    end
+
+    local final_file = io.open(final_name, "w")
+
+    if final_file == nil
+    then
+        os.remove(initial_file)
+
+        return raiseFileNotCreated(final_name)
+    end
+
+    initial_file:write(initial_content)
+    final_file:write(final_content)
+
+    local iostream = assert(
+        io.popen(
+            "diff "
+            -- .. DIFF_OPTION_SIDE_BY_SIDE ..
+            .. DIFF_OPTION_FULL_ONE_PAGE ..
+            " "
+            .. initial_name ..
+            " "
+            .. final_name,
+            'r'
+        )
+    )
+
+    local infos = assert(iostream:read('a'))
+
+    iostream:close()
+
+    infos = string.gsub(infos, '^%s+', '')
+    infos = string.gsub(infos, '%s+$', '')
+
+    print("`diff -u test check` gives:")
+    print("")
+
+    print(infos)
+
+    os.remove(initial_name)
+    os.remove(final_name)
+
+    return false
+end
+
+
+--------------------
+-- RAISING ERRORS --
+--------------------
 
 function raise(kind, message)
     print("")
@@ -52,13 +116,24 @@ function raise(kind, message)
     return 1
 end
 
------------------
--- CMD OPTIONS --
------------------
+function raiseFileNotCreated(file_name)
+    return raise(
+        "IO",
+        "File ''" .. file_name .. "'' can't be created."
+    )
+end
 
--- UNIT TESTS: AUTO VALIDATIONS OF [S]HOW[B]OX COMPARISONS --
 
--- Source for l3build use of \showbox: https://tex.stackexchange.com/a/729463/6880
+--------------------------------
+-- L3BUILD EXTRA CMD "sbunit" --
+--------------------------------
+
+----
+-- This extra unit-testing command validates [s]how[b]ox comparisons?
+--
+-- Source.
+--    + l3build use of \showbox: https://tex.stackexchange.com/a/729463/6880
+----
 
 cmd_option = "sbunit"
 
@@ -68,9 +143,6 @@ TAG_TEST   = "test"
 
 TAG_L3BUILD_BOX_START = "> \\box"
 TAG_L3BUILD_BOX_END   = "! OK."
-
-DIFF_OPTION_SIDE_BY_SIDE  = "-y"
-DIFF_OPTION_FULL_ONE_PAGE = "-u"
 
 function checkSBUNIT(xtra_args)
     if xtra_args == nil or #xtra_args ~= 1
@@ -203,77 +275,23 @@ function _compareSBUNIT(
     print("LOG FILE. Test starts at line " .. line_test .. ".")
     print("          Check starts at line " .. line_check .. ".")
 
-    -- io.write("UNIX ONLY. Do you want to `diff` the contents (y/n)? ")
-    -- answer = io.read()
-
-    -- if answer == "y"
-    -- then
-    local logtestfile_name = "build/test/" .. "@_@test_@_l3build@_@"
-    local logtestfile      = io.open(logtestfile_name, "w")
-
-    if logtestfile == nil
-    then
-        return raise(
-            "IO",
-            "Temp file ''"
-            .. logtestfile_name ..
-            "'' can't be created."
-        )
-    end
-
-    local logcheckfile_name = "build/test/" .."@_@check_@_l3build@_@"
-    local logcheckfile      = io.open(logcheckfile_name, "w")
-
-    if logcheckfile == nil
-    then
-        os.remove(logtestfile)
-
-        return raise(
-            "IO",
-            "Temp file ''"
-            .. logcheckfile_name ..
-            "'' can't be created."
-        )
-    end
-
-    logtestfile:write(log_test)
-    logcheckfile:write(log_check)
-
-    local iostream = assert(
-        io.popen(
-                "diff "
-            .. DIFF_OPTION_SIDE_BY_SIDE ..
-            -- .. DIFF_OPTION_FULL_ONE_PAGE ..
-            " "
-            .. logtestfile_name ..
-            " "
-            .. logcheckfile_name,
-            'r'
-        )
+    diff_files(
+        "build/test/" .. "@_@test_@_l3build@_@",
+        log_test,
+        "build/test/" .."@_@check_@_l3build@_@",
+        log_check,
+        nil
     )
-
-    local infos = assert(iostream:read('a'))
-
-    iostream:close()
-
-    infos = string.gsub(infos, '^%s+', '')
-    infos = string.gsub(infos, '%s+$', '')
-
-    print("`diff -u test check` gives:")
-    print("")
-
-    print(infos)
-
-    os.remove(logtestfile_name)
-    os.remove(logcheckfile_name)
-    -- end
-
-    return false
 end
 
 
--- VIEW PDF FROM ONE TEST --
+------------------------------
+-- L3BUILD EXTRA CMD "view" --
+------------------------------
 
+----
+-- This extra command allow to quickly view one PDF associated to one test.
+----
 cmd_option = "view"
 
 function viewPDF(xtra_args)
