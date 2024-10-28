@@ -24,12 +24,12 @@ def build_metadata(project_dir):
     ) as f:
         about_cfg = safe_load(f)
 
-    gene_cfg = about_cfg["general"]
+    proj_cfg = about_cfg["project"]
 
     metadata = {
-        TAG_AUTHOR         : gene_cfg["author"],
-        TAG_DESC           : gene_cfg["desc"],
-        TAG_MANUAL_DEV_LANG: gene_cfg["lang"]["doc"],
+        TAG_AUTHOR         : proj_cfg["author"],
+        TAG_DESC           : proj_cfg["desc"],
+        TAG_MANUAL_DEV_LANG: proj_cfg["lang"]["doc"],
     }
 
     metadata[TAG_MANUAL_OTHER_LANG] = manual_other_lang(
