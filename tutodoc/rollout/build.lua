@@ -24,7 +24,7 @@ checkopts   = "-interaction=nonstopmode --shell-escape"
 typesetopts = checkopts
 
 uploadconfig = {
-    version      = "1.6.0 [2024-10-27]",
+    version      = "1.6.1 [2024-10-28]",
     announcement = "The main change is the ability to choose a layout from 4 themes.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
