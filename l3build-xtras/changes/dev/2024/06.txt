@@ -1,0 +1,17 @@
+// ---------- //
+
+
+==
+23  (1.2.0-beta.1)
+==
+
+--------
+:update:
+--------
+
+[[:format:]]
+Macro ''\tdocversion''.
+
+    1) Version number printed above the date (more useful).
+
+    2) Better management of the spacing when the date is unused.

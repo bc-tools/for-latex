@@ -1,0 +1,43 @@
+// ---------- //
+
+
+==
+29
+==
+
+--------
+:fordev:
+--------
+
+[[:facto:]]
+**Complete** automation of the building process, making this last one usable for other projects.
+
+
+// ---------- //
+
+
+==
+23  (1.2.0-rc.1)
+==
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Change log: new released version documented.
+
+
+// ---------- //
+
+
+==
+23  (1.2.0-beta.2)
+==
+
+-----
+:fix:
+-----
+
+[[:format:]]
+Highlighting: the French translations of “caution” and “danger” were wrong.

@@ -1,0 +1,2 @@
+The `LaTeX` class `tutodoc`
+===========================

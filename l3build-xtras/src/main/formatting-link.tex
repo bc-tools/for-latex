@@ -1,0 +1,28 @@
+\documentclass[10pt, a4paper]{main}
+
+\input{../preamble.cfg.tex}
+
+\usepackage{../listing/listing.cls}
+\usepackage{../macroenv/macroenv.cls}
+
+
+\begin{document}
+
+\subsection{Liens dynamiques}
+
+Le package \tdocpack{hyperref} est importé en coulisse avec les réglages ci-dessous.
+
+
+\begin{tdoclatex}[code]
+\newcommand{\tdoclinkcolor}{NavyBlue!85!white}
+
+\hypersetup{
+  colorlinks,
+  citecolor = \tdoclinkcolor,
+  filecolor = \tdoclinkcolor,
+  linkcolor = \tdoclinkcolor,
+  urlcolor  = \tdoclinkcolor
+}
+\end{tdoclatex}
+
+\end{document}

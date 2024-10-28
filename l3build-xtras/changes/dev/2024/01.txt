@@ -1,0 +1,28 @@
+// ---------- //
+
+
+==
+06  (1.1.0-rc.1)
+==
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Change log: new released version documented.
+
+
+// ---------- //
+
+
+==
+06  (1.0.1-beta.7)
+==
+
+-----
+:new:
+-----
+
+[[:format:]]
+Macro ''\tdocinlatex'': the background is now slightly coloured.

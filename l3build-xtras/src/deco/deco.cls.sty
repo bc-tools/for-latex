@@ -1,0 +1,21 @@
+% == TOOLS == %
+
+% -- DECORATIONS -- %
+
+% Source
+%    * https://tex.stackexchange.com/a/705938/6880
+%      (for \addvspace{\medskipamount} instead of \medskip)
+
+%%%
+% prototype::
+%     :action: this macro draws a centered horizontal rule with a height
+%              of qty::''0.75 pt'', and a width equal to half of the current
+%              text width, and extra vertical spaces are added above and 
+%              below the rule.
+%%%
+\NewDocumentCommand{\tdocsep}{}{
+  \par\addvspace{\medskipamount}
+  \hfill\rule{0.5\textwidth}{0.75pt}\hfill\null
+  \medskip
+  \smallskip
+}
