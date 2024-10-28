@@ -9,7 +9,7 @@ project:
   url:
     repo: https://github.com/bc-tools/for-latex/tree/main/tutodoc
 
-  lang   :
+  lang:
     doc:
       manual: fr
 

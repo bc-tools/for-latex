@@ -311,8 +311,9 @@ for srcfile in metadata[TAG_SRC].glob("*/css/*.sty"):
             break
 
     tmp_css_path = ROLLOUT_CSS_PATH.format(
-        texvar = kind,
-        catego = catego
+        projname = etadata[TAG_PROJ_NAME],
+        texvar   = kind,
+        catego   = catego
     )
 
     destfile = metadata[TAG_TEMP] / tmp_css_path
