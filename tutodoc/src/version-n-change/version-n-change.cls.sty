@@ -103,9 +103,7 @@
 %              to use the format expected for a "localised" date.
 %%%
 \cs_new:Npn \__tutodoc_translate_date_process:w #1 - #2 - #3 \q_stop {
-    \tutodoc@trans@date{#1}
-                       {#2}
-                       {#3}
+    \tutodoc@trans@date{#1}{#2}{#3}
 }
 
 \ExplSyntaxOff
@@ -223,9 +221,9 @@
 %          a title that will be followed by a colon.
 %     #2 : (aws-icon)
 %          one material that expects to be an icon command from the
-%          ''fontawsome5'' \pack.
+%          ''fontawsome5'' \pack
 %     #3 : (key-val options)
-%          :see: XXXX
+%          see above
 %
 %     :action: this environment prints some \infos about specific changes
 %              achieved in a new version (no special formatting is applied).
@@ -240,18 +238,22 @@
 
   \keys_set:nn { tutodoc / version-n-change / topic / options } { #3 }
 
+  \tl_clear:N      \l_tmpa_tl
+  \tl_set_eq:NN    \l_tmpa_tl \l_tutodoc_topic_version_tl
+  \tl_put_right:Nn \l_tmpa_tl { \l_tutodoc_topic_date_tl }
+
   \paragraph{%
     \IfBlankF{#2}{\tdocicon{#2}}
     \textsc{#1.}
-
-%% Just a date
-    \exp_args:NNee \tutodoc@new@change@margin%
-      {\l_tutodoc_topic_when_color_tl}
-      {\l_tutodoc_topic_version_tl}
-      {\l_tutodoc_topic_date_tl}
-%      {2000-01-02}
-      {\tutodoc@version@vsep@len}
-      {\tutodoc@topic@voffset@len}
+    \exp_args:Ne \IfBlankF{\l_tmpa_tl}{
+% A date and/or a version.
+      \exp_args:NNee \tutodoc@new@change@margin%
+        {\l_tutodoc_topic_when_color_tl}
+        {\l_tutodoc_topic_version_tl}
+        {\l_tutodoc_topic_date_tl}
+        {\tutodoc@version@vsep@len}
+        {\tutodoc@topic@voffset@len}
+    }
   }
 
   \begin{itemize}
