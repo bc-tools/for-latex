@@ -14,16 +14,19 @@ Version and \chges: the macros ''\tdocdate'' and ''\tdocversion'' has a new fina
 
 
 [[:doc:]]
-Manual: fro version and \chges, a new warning explains the side effects of the vertical offsets of \nbver and date materials, and it also give an hand-made solution.
+Manual: for version and \chges, a new warning explains the side effects of the vertical offsets of \nbver and date materials, and it also give an hand-made solution.
 
 
+--------
+:update:
+--------
 
------
-:new:
------
+[[:format:]]
+Here are the small important \chges made.
 
-[[:api:]]
-Version and \chges: the font of the margin notes will always be ''\normalfont''.
+    1) Version and \chges: the font of the margin notes will always be ''\normalfont''.
+
+    1) Ornament: use of a ''\cleaders'' to avoid orphean rules at the bottom of a page.
 
 
 // ---------- //
