@@ -60,7 +60,7 @@ About the structure of the small projects.
 [[:api:]]
 Translations of the human ¨doc.
 
-    1) The metainfos in the file path::``about.peuf`` has a new key to indicate the language used by the developper coding the project.
+    1) The metainfos in the (file path)::``about.peuf`` has a new key to indicate the language used by the developper coding the project.
 
     1) The process for translating the human ¨doc has been siplified.
 

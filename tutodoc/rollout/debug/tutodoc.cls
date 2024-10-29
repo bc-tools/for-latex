@@ -838,7 +838,7 @@
 % prototype::
 %     #1 : (key-val)
 %          :see: env.tdocshowcase
-%     #2 : (file-path)
+%     #2 : (file path)
 %          the path of a file
 %%%
 \NewDocumentCommand{\tdocshowcaseinput}{O{} m}{
@@ -985,7 +985,7 @@
 % prototype::
 %     #1 : (tdoclatex-style)
 %          :see: ''\newtcblisting{tdoclatex}''
-%     #2 : (file-path)
+%     #2 : (file path)
 %          the path of the file to input and format.
 %
 % note::
@@ -1033,7 +1033,7 @@
 %          the key-value options supported by the ''tdocshowcase'' \env,
 %          plus one allowing you to change the description of a line
 %          printed between the code and its highlighted output.
-%     #2 : (file-path)
+%     #2 : (file path)
 %          the path of a file
 %
 %     :see: env.tdocshowcase ,

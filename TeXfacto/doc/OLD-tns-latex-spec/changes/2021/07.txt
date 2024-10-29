@@ -105,7 +105,7 @@ Metainfos: the ¨specs are clearer now.
 [[:api:]]
 New ¨specs.
 
-    1) A ¨latex package of the ¨tnstex series is indicated via peuf::``tnslatex = yes`` in the block peuf::``gene::...`` of the file path::``about.peuf``.
+    1) A ¨latex package of the ¨tnstex series is indicated via peuf::``tnslatex = yes`` in the block peuf::``gene::...`` of the (file path)::``about.peuf``.
 
     1) Files and folders with a name respecting the pattern path::``x-...-x`` are ignored.
 
@@ -136,7 +136,7 @@ New ¨specs added.
 
     1) Languages: ¨api and rules to name internal translating macros.
 
-    1) The file path::``test-one-date.tex`` allows to test the displaying of changes in the user's ¨doc.
+    1) The (file path)::``test-one-date.tex`` allows to test the displaying of changes in the user's ¨doc.
 
 
 --------
@@ -150,7 +150,7 @@ Changes made.
 
     1) Options use new ¨specs (this is simpler now).
 
-    1) The file path::``about.peuf`` replaces the previous path::``infos.peuf``.
+    1) The (file path)::``about.peuf`` replaces the previous path::``infos.peuf``.
 
     1) The two folders path::``change-log`` for the technical ¨doc, and path::``99-major-change-log`` for the user ¨doc have been both renamed path::``changes``.
 
