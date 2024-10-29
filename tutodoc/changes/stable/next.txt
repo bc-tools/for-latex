@@ -1,1 +1,26 @@
-TODO
+// ---------- //
+
+
+==
+???  (1.6.1)
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+Version and \chges: the macros ''\tdocdate'' and ''\tdocversion'' has a new final optional argument ''<voffset>'' to choose a specific vertical offset.
+
+
+[[:doc:]]
+Manual: fro version and \chges, a new warning explains the side effects of the vertical offsets of \nbver and date materials, and it also give an hand-made solution.
+
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+Version and \chges: the font of the margin notes will always be ''\normalfont''.

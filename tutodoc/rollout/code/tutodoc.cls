@@ -128,7 +128,7 @@
                [2022-05-02]
 
 \RequirePackage{marginnote}%
-               [2023-09-07]
+               [2018/08/09]
 
 
 % =============== %
@@ -447,7 +447,7 @@
 %              we use a ''tcolorbox'' style given to the ''\newkeytheorem''
 %              macro from the ''keytheorems'' \pack, and icons from the
 %              ''fontawesome5'' \pack.
-%%%
+%%%  
   \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
     \newkeytheorem{tdoc#1}[
       numbered  = false,
@@ -456,7 +456,7 @@
       name      = {
         \tdocicon{ \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } }
         \use:c { tutodoc@trans@#1@title }
-      },
+      }
     ]
   }
 } {
@@ -1087,16 +1087,19 @@
 %          the second material (a date or nothing)
 %     #4 : (spacing)
 %          the last negative vertical spacing for the 2nd rule
+%     #5 : (vertical offset)
+%          algebraic distance to move vertically the material
 %
 %     :action: this macro factorizes the printing of the changes
 %              in the left margin.
 %
 %     :see: \__tutodoc_translate_date:n
 %%%
-\NewDocumentCommand{\tutodoc@new@change@margin}{m m m m}{
+\NewDocumentCommand{\tutodoc@new@change@margin}{m m m m m}{
   \marginnote{
     \color{#1}
     \scriptsize
+    \normalfont
     \centering
 
     \vspace{0pt}
@@ -1121,7 +1124,7 @@
 
     \vspace{#4}
     \rule{1.65cm}{.95pt}
-  }[-.345cm]
+  }[#5]
 }
 
 
@@ -1173,6 +1176,8 @@
 %          a version number
 %     #3 : (date)
 %          a date ''YYYY-MM-DD''
+%     #4 : (vertical offset)
+%          algebraic distance to move vertically the material
 %
 %     :action: this macro prints a margin note showing a version number
 %              below a date, and the optional argument is used to colorize
@@ -1183,11 +1188,12 @@
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
 %%%
-\NewDocumentCommand{\tdocversion}{O{\tutodoc@changes@version@color} m O{}}{
+\NewDocumentCommand{\tdocversion}{O{\tutodoc@changes@version@color} m O{} D<>{-.345cm}}{
   \tutodoc@new@change@margin{#1}      % Color
                             {#2}      % Version
                             {#3}      % Date
                             {-4.25pt} % Last negative vertical spacing
+                            {#4}      % Vertical offset
 }
 
 
@@ -1201,15 +1207,18 @@
 %          the color of the margin note
 %     #2 : (date)
 %          a date ''YYYY-MM-DD''
+%     #3 : (vertical offset)
+%          algebraic distance to move vertically the material
 %
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@date@color} m}{
+\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@date@color} m D<>{-.345cm}}{
   \tutodoc@new@change@margin{#1}      % Color
                             {}        % Version
                             {#2}      % Date
                             {-5.35pt} % Last negative spacing
+                            {#3}      % Vertical offset
 }
 
 

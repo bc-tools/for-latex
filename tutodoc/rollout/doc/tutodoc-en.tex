@@ -434,6 +434,32 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-version-n-change-side-effect.tex}
+\tdocversion[red]{1.2.3}[2024-10-29]%
+\paragraph{Before it's problematic.}
+Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+
+
+\paragraph{After it's misplaced}%
+\tdocversion[red]{1.2.3}[2024-10-29]
+
+Ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
+
+
+\paragraph{No miracle solution.\tdocversion[red]{1.2.3}[2024-10-29]}
+
+Bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli,
+bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli,
+bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli,
+bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli...
+
+
+\paragraph{Manual problem management.\tdocversion{1.2.3}[2024-10-29]<-.7cm>}
+
+Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-version-n-change-first.tex}
 \tdocstartproj{1st version of the project.}
 \end{filecontents*}
@@ -1702,13 +1728,23 @@ You can either date something, or version it, in which case the version number c
 \end{tdocimp}
 
 
-\begin{tdocwarn}
+\begin{tdoccaut}
     Only the use of the digital format \tdocinlatex+YYYY-MM-DD+ is verified,
     \footnote{
         Technically, checking the validity of a date using \LaTeX3 presents no difficulty.
     }
     and this is a choice! Why? Quite simply because dating and versioning explanations should be done semi-automatically to avoid any human bugs.
+\end{tdoccaut}
+
+
+\begin{tdocwarn}
+    Behind the scenes, most of the work is done by the \tdocmacro{marginnote} macro in the eponymous package. 
+    The \tdocmacro{tdocdate} and \tdocmacro{tdocversion} macros therefore suffer from the same side effects as in the following example.
+	However, these problems can be solved using an optional argument \tdocinlatex{<vertical-displacement>}, as at the end of the following example. It's ugly, but functional.
 \end{tdocwarn}
+
+\tdoclatexshow{examples-version-n-change-side-effect.tex}
+
 
 
 \subsection{What's new?}

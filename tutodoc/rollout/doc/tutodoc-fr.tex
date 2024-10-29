@@ -446,6 +446,32 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-version-n-change-side-effect.tex}
+\tdocversion[red]{1.2.3}[2024-10-29]%
+\paragraph{Avant c'est problématique.}
+Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+
+
+\paragraph{Après c'est mal placé.}%
+\tdocversion[red]{1.2.3}[2024-10-29]
+
+Ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
+
+
+\paragraph{Aucune solution miracle.\tdocversion[red]{1.2.3}[2024-10-29]}
+
+Bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli,
+bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli,
+bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli,
+bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli...
+
+
+\paragraph{Gestion manuelle du problème.\tdocversion{1.2.3}[2024-10-29]<-.745cm>}
+
+Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-version-n-change-first.tex}
 \tdocstartproj{Première version du projet.}
 \end{filecontents*}
@@ -1663,7 +1689,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 \end{tdocimp}
 
 
-\begin{tdocwarn}
+\begin{tdoccaut}
     Seul l'emploi du format numérique \tdocinlatex+YYYY-MM-DD+ est vérifié,
     \footnote{
         Techniquement, vérifier la validité d'une date, via \LaTeX3, ne présente pas de difficulté.
@@ -1672,7 +1698,17 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 %    \footnote{
 %        L'auteur de \thispack{} est entrain de mettre en place un ensemble d'outils permettant une telle semi-automatisation.
 %    }.
+\end{tdoccaut}
+
+
+\begin{tdocwarn}
+    En coulisse, le gros du travail est fait par la macro \tdocmacro{\marginnote} du package éponyme.
+    Les macros \tdocmacro{tdocdate} et \tdocmacro{tdocversion} souffrent donc des même effets de bord comme dans l'exemple suivant.
+    On peut tout de même régler ces problèmes via un argument optionnel \tdocinlatex{<déplacement-vertical>} comme à la fin de l'exemple ci-après. C'est moche, mais fonctionnel.
 \end{tdocwarn}
+
+\tdoclatexshow{examples-version-n-change-side-effect.tex}
+
 
 
 \subsection{Quoi de neuf ?}

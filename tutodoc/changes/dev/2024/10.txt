@@ -14,7 +14,7 @@ Version and \chges: the macros ''\tdocdate'' and ''\tdocversion'' has a new fina
 
 
 [[:doc:]]
-Version and \chges: a new warning explains the side effects of the vertical offsets of \nbver and date materials, and it also give an hand-made solution.
+Manual: fro version and \chges, a new warning explains the side effects of the vertical offsets of \nbver and date materials, and it also give an hand-made solution.
 
 
 
