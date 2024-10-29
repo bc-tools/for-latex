@@ -10,7 +10,12 @@
 -----
 
 [[:api:]]
-Version and \chges: the macros ''\tdocdate'' and ''\tdocversion'' has a new final optional argument ''<voffset>'' to choose a specific vertical offset.
+Version and \chges.
+
+    1) The macros ''\tdocdate'' and ''\tdocversion'' has a new final optional argument ''<voffset>'' to choose a specific vertical offset.
+
+    2) ????
+    The optional keys ''col'', ''date'' and ''version'' allow to date and version a \chge of a specific topic.
 
 
 [[:doc:]]
@@ -375,7 +380,7 @@ Dates untranslated: the \args was not correctly sent to ''\tutodoc@new@change@ma
 --------
 
 [[:doc:]]
-Manual: examples like ''\tdocinlatex{\mymacro[...]{...}}'' have been added to show the power of the macro ''\tdocinlatex''.
+Manual: examples like ''''\mymacro[...]{...}}'' have been added to show the power of the macro ''\tdocinlatex''.
 
 
 --------

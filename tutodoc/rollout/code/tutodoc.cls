@@ -447,7 +447,7 @@
 %              we use a ''tcolorbox'' style given to the ''\newkeytheorem''
 %              macro from the ''keytheorems'' \pack, and icons from the
 %              ''fontawesome5'' \pack.
-%%%  
+%%%
   \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
     \newkeytheorem{tdoc#1}[
       numbered  = false,
@@ -1213,7 +1213,7 @@
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@date@color} m D<>{-.345cm}}{
+\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@when@color} m D<>{-.345cm}}{
   \tutodoc@new@change@margin{#1}      % Color
                             {}        % Version
                             {#2}      % Date
@@ -1323,19 +1323,38 @@
 % ----------------- %
 
 % Source
-%    * https://tex.stackexchange.com/a/705938/6880
+%    + https://tex.stackexchange.com/a/705938/6880
 %      (for \addvspace{\medskipamount} instead of \medskip)
+%    + https://tex.stackexchange.com/a/130529/6880
+%      (for the leaders trick)
+%    + https://tex.stackexchange.com/a/269887/6880
+%      (for the \hrule width)
+%    + https://tex.stackexchange.com/a/729710/6880
+%      (centering the \hrule)
+
+\newlength{\tutodoc@vsep@deco@len}
+\setlength{\tutodoc@vsep@deco@len}{\dimeval{2\medskipamount+1.25pt}}
 
 %%%
 % prototype::
-%     :action: this macro draws a centered horizontal rule with a height
+%     :action: ????  this macro draws a centered horizontal rule with a height
 %              of qty::''0.75 pt'', and a width equal to half of the current
-%              text width, and extra vertical spaces are added above and 
+%              text width, and extra vertical spaces are added above and
 %              below the rule.
 %%%
 \NewDocumentCommand{\tdocsep}{}{
-  \par\addvspace{\medskipamount}
-  \hfill\rule{0.5\textwidth}{0.75pt}\hfill\null
-  \medskip
-  \smallskip
+%  \par
+%  \addvspace{\medskipamount}\smallskip
+%  \hfill\leaders\hrule width0.5\textwidth\vskip.75pt
+%  \smallskip\smallskip
+%
+%  \par\addvspace{\medskipamount}
+%  \hfill\rule{0.5\textwidth}{0.75pt}\hfill\null
+%  \medskip
+%  \smallskip
+  \par
+  \cleaders
+    \vbox to \tutodoc@vsep@deco@len{
+      \vfill\centerline{\vrule width 0.5\hsize height 0.75pt}\vfill
+    }\vskip\tutodoc@vsep@deco@len
 }

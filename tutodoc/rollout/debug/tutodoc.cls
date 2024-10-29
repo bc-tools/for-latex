@@ -1205,7 +1205,7 @@
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@date@color} m}{
+\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@when@color} m}{
   \tutodoc@new@change@margin{#1}      % Color
                             {}        % Version
                             {#2}      % Date
@@ -1321,7 +1321,7 @@
 % prototype::
 %     :action: this macro draws a centered horizontal rule with a height
 %              of qty::''0.75 pt'', and a width equal to half of the current
-%              text width, and extra vertical spaces are added above and 
+%              text width, and extra vertical spaces are added above and
 %              below the rule.
 %%%
 \NewDocumentCommand{\tdocsep}{}{

@@ -17,21 +17,14 @@
 
 %%%
 % prototype::
-%     :action: ????  this macro draws a centered horizontal rule with a height
+%     :action: this macro draws a centered horizontal rule with a height
 %              of qty::''0.75 pt'', and a width equal to half of the current
 %              text width, and extra vertical spaces are added above and 
 %              below the rule.
+%
+%     :see: len.tutodoc@vsep@deco@len
 %%%
 \NewDocumentCommand{\tdocsep}{}{
-%  \par
-%  \addvspace{\medskipamount}\smallskip
-%  \hfill\leaders\hrule width0.5\textwidth\vskip.75pt
-%  \smallskip\smallskip
-%
-%  \par\addvspace{\medskipamount}
-%  \hfill\rule{0.5\textwidth}{0.75pt}\hfill\null
-%  \medskip
-%  \smallskip
   \par
   \cleaders
     \vbox to \tutodoc@vsep@deco@len{

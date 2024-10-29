@@ -134,7 +134,7 @@
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
 %%%
-\NewDocumentCommand{\tdocversion}{O{\tutodoc@changes@version@color} m O{} D<>{-.345cm}}{
+\NewDocumentCommand{\tdocversion}{O{\tutodoc@changes@when@color} m O{} D<>{-.345cm}}{
   \tutodoc@new@change@margin{#1}      % Color
                             {#2}      % Version
                             {#3}      % Date
@@ -157,7 +157,7 @@
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@date@color} m D<>{-.345cm}}{
+\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@when@color} m D<>{-.345cm}}{
   \tutodoc@new@change@margin{#1}      % Color
                             {}        % Version
                             {#2}      % Date
@@ -178,7 +178,24 @@
   { One ~ single ~ title ~ must ~ be ~ indicated. }
 
 
-% :: CHANGES - TOPIC :: %
+% :: GENERIC TOPIC :: %
+
+\tl_new:N \l_tutodoc_topic_when_color_tl
+\tl_new:N \l_tutodoc_topic_date_tl
+\tl_new:N \l_tutodoc_topic_version_tl
+
+\keys_define:nn { tutodoc / version-n-change / topic / options } {
+% Colors.
+  col .tl_set:N  = \l_tutodoc_topic_when_color_tl,
+  col .initial:n = \tutodoc@changes@when@color,
+% Date.
+  date .tl_set:N  = \l_tutodoc_topic_date_tl,
+  date .initial:n = {},
+% Version.
+  version .tl_set:N  = \l_tutodoc_topic_version_tl,
+  version .initial:n = {},
+}
+
 
 %%%
 % prototype::
@@ -187,19 +204,31 @@
 %     #2 : (aws-icon)
 %          one material that expects to be an icon command from the
 %          ''fontawsome5'' \pack.
+%     #3 : (key-val options)
+%          :see: XXXX
 %
 %     :action: this environment prints some \infos about specific changes
 %              achieved in a new version (no special formatting is applied).
+%              Key-val options allow to add a date \andor a \nbver with
+%              a specific color if needed.
 %%%
-\NewDocumentEnvironment{tdoctopic}{ m O{} }{
+\NewDocumentEnvironment{tdoctopic}{ m D<>{} O{} }{
   \IfBlankT{#1}{
     \msg_fatal:nn { tutodoc ~ (version-n-change) }
       { version-n-change : topic-missing-title }
-  }%
-%  \paragraph{%
-  \textbf{%
-    \IfBlankF{#2}{\tdocicon{#2}}%
+  }
+
+  \keys_set:nn { tutodoc / version-n-change / topic / options } { #3 }
+
+  \paragraph{%
+%  \textbf{%
+    \IfBlankF{#2}{\tdocicon{#2}}
     \textsc{#1.}
+
+	\tl_if_empty:nTF {\tl_use:N \l_tutodoc_topic_date_tl} { DATE VIDE } { DATE OK }
+
+%      \tdocversion[red]{1.2.3}[2024-10-29]<-.745cm>
+
   }
   \begin{itemize}
 }{
@@ -207,7 +236,7 @@
 }
 
 
-% :: CHANGES - NEW THINGS :: %
+% :: CLASSICAL TOPICS :: %
 
 %%%
 % We use a ''prop'' variable to factorize the code just after.
@@ -232,8 +261,8 @@
 %              (the title used is translated into the good language).
 %%%
 \prop_map_inline:Nn \__g_tutodoc_topic_change_prop {
-  \NewDocumentEnvironment{ tdoc#1 } {} {
-    \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } [ #2 ]
+  \NewDocumentEnvironment{ tdoc#1 } { O{} } {
+    \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } < #2 > [##1]
   }{
     \end{tdoctopic}
   }

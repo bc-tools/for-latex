@@ -134,11 +134,6 @@
 % ''tdocshowcase''.
 %%%
 \keys_define:nn { tutodoc / showcase } {
-% Texts.
-  before .tl_set:N  = \l_tutodoc_showcase_before_tl,
-  before .initial:n = \tutodoc@trans@latex@show@start,
-  after  .tl_set:N  = \l_tutodoc_showcase_after_tl,
-  after  .initial:n = \tutodoc@trans@latex@show@end,
 % Colors.
   colstripe .tl_set:N  = \l_tutodoc_showcase_stripe_color_tl,
   colstripe .initial:n = \tutodoc@showcase@stripe@color,
@@ -147,6 +142,11 @@
 % Stripe?
   nostripe .bool_set:N = \l_tutodoc_showcase_nostripe_bool,
   nostripe .initial:n  = false,
+% Texts.
+  before .tl_set:N  = \l_tutodoc_showcase_before_tl,
+  before .initial:n = \tutodoc@trans@latex@show@start,
+  after  .tl_set:N  = \l_tutodoc_showcase_after_tl,
+  after  .initial:n = \tutodoc@trans@latex@show@end,
 }
 
 
