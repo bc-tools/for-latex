@@ -3,45 +3,45 @@
 \usepackage[french]{babel}
 
 \NewDocumentCommand{\what}{m}{%
-	\fbox{\texttt{#1 = ...}}\smallskip%
+    \fbox{\texttt{#1 = ...}}\smallskip%
 }
 
 
 \NewDocumentCommand{\isjust}{m m}{%
-	\fbox{\texttt{#1}} = #2
+    \fbox{\texttt{#1}} = #2
 }
 
 
 \NewDocumentCommand{\onearg}{m m}{
-	\begin{enumerate}
-		\item \texttt{\#1 = #2}\smallskip
+    \begin{enumerate}
+        \item \texttt{\#1 = #2}\smallskip
 
-		\item #1{#2}
-	\end{enumerate}
+        \item #1{#2}
+    \end{enumerate}
 }
 
 
 \NewDocumentCommand{\twoargs}{m m m}{
-	\begin{enumerate}
-		\item \texttt{\#1 = #2}\smallskip
+    \begin{enumerate}
+        \item \texttt{\#1 = #2}\smallskip
 
-		\item \texttt{\#2 = #3}\smallskip
+        \item \texttt{\#2 = #3}\smallskip
 
-		\item #1{#2}{#3}
-	\end{enumerate}
+        \item #1{#2}{#3}
+    \end{enumerate}
 }
 
 
 \NewDocumentCommand{\threeargs}{m m m m}{
-	\begin{enumerate}
-		\item \texttt{\#1 = #2}\smallskip
+    \begin{enumerate}
+        \item \texttt{\#1 = #2}\smallskip
 
-		\item \texttt{\#2 = #3}\smallskip
+        \item \texttt{\#2 = #3}\smallskip
 
-		\item \texttt{\#3 = #4}\smallskip
+        \item \texttt{\#3 = #4}\smallskip
 
-		\item #1{#2}{#3}{#4}
-	\end{enumerate}
+        \item #1{#2}{#3}{#4}
+    \end{enumerate}
 }
 
 
@@ -54,85 +54,85 @@
 \subsection*{The files \texttt{macros.txt}}
 
 \begin{enumerate}
-	\item \what{date}
-		  \threeargs{\tutodoc@trans@date}{2024}{10}{25}
+    \item \what{date}
+          \threeargs{\tutodoc@trans@date}{2024}{10}{25}
 
 
-	\item \what{in\_EN}
-		  \onearg{\tutodoc@trans@in@EN}{\tdocquote{something}}
-	      
-	      
-	\item \what{this\_gives}
-		  \onearg{\tutodoc@trans@this@gives}{quelque chose...}
+    \item \what{in\_EN}
+          \onearg{\tutodoc@trans@in@EN}{\tdocquote{something}}
+
+
+    \item \what{this\_gives}
+          \onearg{\tutodoc@trans@this@gives}{quelque chose...}
 \end{enumerate}
 
 
 
 \subsection*{The files \texttt{sentences.txt}}
 
-\begin{enumerate}		
-	\item \isjust{latex\_show\_start}%
-	             {\tutodoc@trans@latex@show@start} 
+\begin{enumerate}
+    \item \isjust{latex\_show\_start}%
+                 {\tutodoc@trans@latex@show@start}
 
-	
-	\item \isjust{latex\_show\_end}%
-	             {\tutodoc@trans@latex@show@end} 
 
-	
-	\item \isjust{exa\_title}%
-	             {\tutodoc@trans@exa@title} 
+    \item \isjust{latex\_show\_end}%
+                 {\tutodoc@trans@latex@show@end}
 
-	
-	\item \isjust{rem\_title}%
-	             {\tutodoc@trans@rem@title} 
 
-	
-	\item \isjust{note\_title}%
-	             {\tutodoc@trans@note@title} 
+    \item \isjust{exa\_title}%
+                 {\tutodoc@trans@exa@title}
 
-	
-	\item \isjust{tip\_title}%
-	             {\tutodoc@trans@tip@title} 
 
-	
-	\item \isjust{imp\_title}%
-	             {\tutodoc@trans@imp@title} 
+    \item \isjust{rem\_title}%
+                 {\tutodoc@trans@rem@title}
 
-	
-	\item \isjust{caut\_title}%
-	             {\tutodoc@trans@caut@title} 
 
-	
-	\item \isjust{warn\_title}%
-	             {\tutodoc@trans@warn@title} 
+    \item \isjust{note\_title}%
+                 {\tutodoc@trans@note@title}
 
-	
-	\item \isjust{chges\_prob}%
-	             {\tutodoc@trans@chges@prob} 
 
-	
-	\item \isjust{chges\_break}%
-	             {\tutodoc@trans@chges@break} 
+    \item \isjust{tip\_title}%
+                 {\tutodoc@trans@tip@title}
 
-	
-	\item \isjust{chges\_prob}%
-	             {\tutodoc@trans@chges@prob} 
 
-	
-	\item \isjust{chges\_tech}%
-	             {\tutodoc@trans@chges@tech} 
+    \item \isjust{imp\_title}%
+                 {\tutodoc@trans@imp@title}
 
-	
-	\item \isjust{chges\_fix}%
-	             {\tutodoc@trans@chges@fix} 
 
-	
-	\item \isjust{chges\_new}%
-	             {\tutodoc@trans@chges@new} 
+    \item \isjust{caut\_title}%
+                 {\tutodoc@trans@caut@title}
 
-	
-	\item \isjust{chges\_update}%
-	             {\tutodoc@trans@chges@update} 
+
+    \item \isjust{warn\_title}%
+                 {\tutodoc@trans@warn@title}
+
+
+    \item \isjust{chges\_prob}%
+                 {\tutodoc@trans@chges@prob}
+
+
+    \item \isjust{chges\_break}%
+                 {\tutodoc@trans@chges@break}
+
+
+    \item \isjust{chges\_prob}%
+                 {\tutodoc@trans@chges@prob}
+
+
+    \item \isjust{chges\_tech}%
+                 {\tutodoc@trans@chges@tech}
+
+
+    \item \isjust{chges\_fix}%
+                 {\tutodoc@trans@chges@fix}
+
+
+    \item \isjust{chges\_new}%
+                 {\tutodoc@trans@chges@new}
+
+
+    \item \isjust{chges\_update}%
+                 {\tutodoc@trans@chges@update}
 \end{enumerate}
 
 \makeatother

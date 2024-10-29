@@ -42,9 +42,9 @@ mettre aussi
 
 
     \begin{itemize}
-    	\item La couleur de fond est fournie par \tdocmacro{tdocbackcolor}.
+        \item La couleur de fond est fournie par \tdocmacro{tdocbackcolor}.
 
-    	\item La couleur des titres et des lignes est fournie par \tdocmacro{tdocdarkcolor}.
+        \item La couleur des titres et des lignes est fournie par \tdocmacro{tdocdarkcolor}.
     \end{itemize}
 
     Ces macros développables admettent les codes suivants.

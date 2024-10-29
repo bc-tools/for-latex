@@ -881,7 +881,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
     {\small\itshape
         \vspace{-5pt}
         \begin{center}
-        	\textbf{Abstract.}
+            \textbf{Abstract.}
         \end{center}
 
         The \thisproj{} class\,%
@@ -893,9 +893,9 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
             The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
         }
         using a sober rendering for reading on screen.
-    
+
         \smallskip
-    
+
         \noindent
         \emph{\textbf{Remark :} this documentation is also available in French.}
     }
@@ -1024,7 +1024,7 @@ Comme cette langue fait partie de la liste des langues prises en compte, voir ci
         \item \tdocinlatex|fr| : français.
     \end{itemize}
 \end{multicols}
-                    
+
 
 
 \begin{tdoccaut}
@@ -1124,23 +1124,23 @@ Pour modifier la mise en forme générale, la classe \thisproj\ propose l'option
 
 % The gallery starts here...
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-bw}
 
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-color}
 
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-dark}
 
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-draft}
 
 }
@@ -1202,7 +1202,7 @@ Tout se passe via \tdocenv{tdocrem} avec un fonctionnement identique à l'enviro
 \label{tutodoc-admonitions}
 
 \begin{tdocnote}
-	La mise en forme proposée ici est celle par défaut, mais d'autres sont possible en changeant de thème : voir la galerie de cas d'utilisation dans l'annexe page \pageref{tutodoc-theme-gallery}.
+    La mise en forme proposée ici est celle par défaut, mais d'autres sont possible en changeant de thème : voir la galerie de cas d'utilisation dans l'annexe page \pageref{tutodoc-theme-gallery}.
     Quant aux icônes, elles sont obtenues via le package \tdocpack{fontawesome5}, et la macro \tdocmacro{tdocicon} gère l'espacement vis-à-vis du texte.
     \footnote{
         Par exemple,
@@ -1228,7 +1228,7 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 \begin{tdoctip}
     Quelque fois, un contenu mis en avant peut se réduire à une liste. Dans ce cas, la mise en forme peut être améliorée comme suit où nous utilisons l'option \tdocinlatex{wide} du package \tdocpack{enumitem}.
 
-	\tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
+    \tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
 
 \end{tdoctip}
 
@@ -1726,24 +1726,24 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 
 \foreach \exatitle/\filename in {
     {Juste pour la toute première version}/%<-- Translate me!
-    	first,
+        first,
     {Pour les nouveautés}/% <-- Translate me!
-    	new,
+        new,
     {Pour les mises à jour}/% <-- Translate me!
-    	update,
+        update,
     {Pour les bifurcations}/% <-- Translate me!
-    	break,
+        break,
     {Pour les problèmes}/% <-- Translate me!
-    	pb,
+        pb,
     {Pour les réparations}/% <-- Translate me!
-    	fix,
+        fix,
     {Informations techniques}/% <-- Translate me!
-    	tech,
+        tech,
     %
     {Thématiques aux choix avec une icône}/%<-- Translate me!
-    	user-choice-icon,
+        user-choice-icon,
     {Thématiques aux choix sans icône}/% <-- Translate me!
-    	user-choice%
+        user-choice%
 } {
     \begin{tdocexa}[\exatitle]
         \leavevmode
@@ -1800,7 +1800,7 @@ Ble, ble, ble...
 \end{tdoccaut}
 
 \begin{figure}[ht]
-	\centering
+    \centering
     \contribtranslatedirtree\
     \caption{Vue simplifiée du dossier des traductions}
     \label{tutodoc-contrib-translate-dir}
@@ -1947,7 +1947,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 \begin{tdocnew}
     \item L'option de classe \tdocinlatex{theme} permet de choisir différents thèmes de mise en forme.
 
-	\item Journal des modifications : ajout de l'environnement \tdocenv*{tdoctech} pour les informations techniques.
+    \item Journal des modifications : ajout de l'environnement \tdocenv*{tdoctech} pour les informations techniques.
 
     \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{coltext} permet de changer aussi la couleur du texte.
 

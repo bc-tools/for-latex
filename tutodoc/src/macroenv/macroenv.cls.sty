@@ -65,7 +65,7 @@
 % Cleaner code from https://tex.stackexchange.com/a/703379/6880 .
 \NewDocumentCommand{\tdocenv}{s O{} m}{%
   \IfBooleanTF{#1}{%
-  	\texttt{#3}%
+      \texttt{#3}%
   }{%
     \texttt{\string\begin\string{#3\string}#2 %
             \!\!...\@\!\!\! %

@@ -213,12 +213,12 @@
   \makeatletter
 
   \InputIfFileExists{tutodoc-main-locale-\tdoclang.cfg.cls.sty}{}{
-	  \input{tutodoc-main-locale-en.cfg.cls.sty}
+      \input{tutodoc-main-locale-en.cfg.cls.sty}
 
-	  \msg_critical:nnx { tutodoc ~ (main) }
+      \msg_critical:nnx { tutodoc ~ (main) }
         { main : unsupported-lang }
         { \tdoclang }
-	}
+    }
 
   \makeatother
 }
@@ -551,7 +551,7 @@
 % Cleaner code from https://tex.stackexchange.com/a/703379/6880 .
 \NewDocumentCommand{\tdocenv}{s O{} m}{%
   \IfBooleanTF{#1}{%
-  	\texttt{#3}%
+      \texttt{#3}%
   }{%
     \texttt{\string\begin\string{#3\string}#2 %
             \!\!...\@\!\!\! %

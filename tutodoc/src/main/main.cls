@@ -137,12 +137,12 @@
   \makeatletter
 
   \InputIfFileExists{../main/tutodoc-main-locale-\tdoclang.cfg.cls.sty}{}{
-	  \input{../main/tutodoc-main-locale-en.cfg.cls.sty}
+      \input{../main/tutodoc-main-locale-en.cfg.cls.sty}
 
-	  \msg_critical:nnx { tutodoc ~ (main) }
+      \msg_critical:nnx { tutodoc ~ (main) }
         { main : unsupported-lang }
         { \tdoclang }
-	}
+    }
 
   \makeatother
 }

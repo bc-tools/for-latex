@@ -875,33 +875,33 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \small
 
 \begin{tdocbreak}
-	\item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{color} key has been renamed \tdocinlatex{colstripe}.
+    \item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{color} key has been renamed \tdocinlatex{colstripe}.
 
-	\item The macro \tdocmacro{tdoclinkcolor} has been renamed \tdocinlatex{tutodoc@link@color} for internal use.
+    \item The macro \tdocmacro{tdoclinkcolor} has been renamed \tdocinlatex{tutodoc@link@color} for internal use.
 \end{tdocbreak}
 
 
 \begin{tdocnew}
-	\item The \tdocinlatex{theme} class option allows you to choose different formatting themes.
+    \item The \tdocinlatex{theme} class option allows you to choose different formatting themes.
 
-	\item Change log: addition of the \tdocenv*{tdoctech} environment for technical information.
+    \item Change log: addition of the \tdocenv*{tdoctech} environment for technical information.
 
-	\item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{coltext} key can also be used to change the text color.
+    \item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{coltext} key can also be used to change the text color.
 
-	\item The new functionalities have been documented.
+    \item The new functionalities have been documented.
 \end{tdocnew}
 
 
 \begin{tdocupdate}
-	\item Change log: the \tdocenv*{tdocupdate} environment uses the icon
-	\raisebox{0pt}[0pt][0pt]{\fbox{\reflectbox{\faHistory}}} 
-	instead of
-	\raisebox{0pt}[0pt][0pt]{\fbox{\faMagic}}\,.
+    \item Change log: the \tdocenv*{tdocupdate} environment uses the icon
+    \raisebox{0pt}[0pt][0pt]{\fbox{\reflectbox{\faHistory}}}
+    instead of
+    \raisebox{0pt}[0pt][0pt]{\fbox{\faMagic}}\,.
 \end{tdocupdate}
 
 
 \begin{tdocfix}
-	\item The Spanish translations were not included in the previous version! Don't laugh too hard...
+    \item The Spanish translations were not included in the previous version! Don't laugh too hard...
 \end{tdocfix}
 \end{tdocnote}
 \end{minipage}
@@ -1017,7 +1017,7 @@ As this language is included in the list of languages taken into account, see be
         \item \tdocinlatex|fr| : French.
     \end{itemize}
 \end{multicols}
-                    
+
 
 
 \begin{tdoccaut}
@@ -1117,23 +1117,23 @@ To modify the general layout, there is the \thisproj\ class option \tdocinlatex{
 
 % The gallery starts here...
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-bw}
 
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-color}
 
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-dark}
 
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-draft}
 
 }
@@ -1202,14 +1202,14 @@ Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocen
 \label{tutodoc-admonitions}
 
 \begin{tdocnote}
-	The formatting proposed here is the default one, but others are possible by changing the theme: see the gallery of use cases in the appendix page \pageref{tutodoc-theme-gallery}.
-	As for the icons, they are obtained via the \tdocpack{fontawesome5} package, and the \tdocmacro{tdocicon} macro manages the spacing in relation to the text.
-	\footnote{
-		For example,
-		\tdocinlatex|\fbox{tdocicon{faBed}{Fatigued}}|
-		produces
-		\fbox{\tdocicon{\faBed}{Fatigued}},.
-	}
+    The formatting proposed here is the default one, but others are possible by changing the theme: see the gallery of use cases in the appendix page \pageref{tutodoc-theme-gallery}.
+    As for the icons, they are obtained via the \tdocpack{fontawesome5} package, and the \tdocmacro{tdocicon} macro manages the spacing in relation to the text.
+    \footnote{
+        For example,
+        \tdocinlatex|\fbox{tdocicon{faBed}{Fatigued}}|
+        produces
+        \fbox{\tdocicon{\faBed}{Fatigued}},.
+    }
 \end{tdocnote}
 
 
@@ -1227,7 +1227,7 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 \begin{tdoctip}
     Sometimes, highlighted content can be reduced to a list. In this case, the formatting can be improved as follows where we use the \tdocinlatex{wide} option from the \tdocpack{enumitem} package.
 
-	\tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
+    \tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
 
 \end{tdoctip}
 
@@ -1752,23 +1752,23 @@ You can either date something, or version it, in which case the version number c
 
 \foreach \exatitle/\filename in {
     {Just for the very first version}/%<-- Translate me!
-    	first,
+        first,
     {For new features}/% <-- Translate me!
-    	new,
+        new,
     {For updates}/% <-- Translate me!
-    	update,
+        update,
     {For breaks}/% <-- Translate me!
-    	break,
+        break,
     {For problems}/% <-- Translate me!
-    	pb,
+        pb,
     {For fixes}/% <-- Translate me!
-    	fix,
+        fix,
     {Technical information}/% <-- Translate me!
-    	tech,
+        tech,
     {Selectable themes with an icon}/% <-- Translate me!
-    	user-choice-icon,
+        user-choice-icon,
     {Selectable themes without icons}/%<-- Translate me!
-    	user-choice%
+        user-choice%
 } {
     \begin{tdocexa}[\exatitle]
         \leavevmode
@@ -1826,7 +1826,7 @@ Ble, ble, ble...
 
 
 \begin{figure}[ht]
-	\centering
+    \centering
     \contribtranslatedirtree\
     \caption{Simplified view of the translation folder}
     \label{tutodoc-contrib-translate-dir}
@@ -1951,33 +1951,33 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \small
 
 \begin{tdocbreak}
-	\item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{color} key has been renamed \tdocinlatex{colstripe}.
+    \item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{color} key has been renamed \tdocinlatex{colstripe}.
 
-	\item The macro \tdocmacro{tdoclinkcolor} has been renamed \tdocinlatex{tutodoc@link@color} for internal use.
+    \item The macro \tdocmacro{tdoclinkcolor} has been renamed \tdocinlatex{tutodoc@link@color} for internal use.
 \end{tdocbreak}
 
 
 \begin{tdocnew}
-	\item The \tdocinlatex{theme} class option allows you to choose different formatting themes.
+    \item The \tdocinlatex{theme} class option allows you to choose different formatting themes.
 
-	\item Change log: addition of the \tdocenv*{tdoctech} environment for technical information.
+    \item Change log: addition of the \tdocenv*{tdoctech} environment for technical information.
 
-	\item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{coltext} key can also be used to change the text color.
+    \item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{coltext} key can also be used to change the text color.
 
-	\item The new functionalities have been documented.
+    \item The new functionalities have been documented.
 \end{tdocnew}
 
 
 \begin{tdocupdate}
-	\item Change log: the \tdocenv*{tdocupdate} environment uses the icon
-	\raisebox{0pt}[0pt][0pt]{\fbox{\reflectbox{\faHistory}}} 
-	instead of
-	\raisebox{0pt}[0pt][0pt]{\fbox{\faMagic}}\,.
+    \item Change log: the \tdocenv*{tdocupdate} environment uses the icon
+    \raisebox{0pt}[0pt][0pt]{\fbox{\reflectbox{\faHistory}}}
+    instead of
+    \raisebox{0pt}[0pt][0pt]{\fbox{\faMagic}}\,.
 \end{tdocupdate}
 
 
 \begin{tdocfix}
-	\item The Spanish translations were not included in the previous version! Don't laugh too hard...
+    \item The Spanish translations were not included in the previous version! Don't laugh too hard...
 \end{tdocfix}
 
 \tdocsep

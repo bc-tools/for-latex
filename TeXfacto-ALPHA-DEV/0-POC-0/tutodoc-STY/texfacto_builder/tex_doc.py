@@ -121,7 +121,7 @@ def prebuild_single_tex(
     {{\\small\\itshape
         \\vspace{{-5pt}}
         \\begin{{center}}
-        	\\textbf{{Abstract.}}
+            \\textbf{{Abstract.}}
         \\end{{center}}
 
         {abstract_EN}
