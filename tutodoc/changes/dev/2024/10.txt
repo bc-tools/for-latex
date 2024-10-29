@@ -2,7 +2,7 @@
 
 
 ==
-29  (1.6.1-beta.1)
+29  (1.6.2-beta.1)
 ==
 
 -----
@@ -43,14 +43,6 @@ Here are the small important \chges made.
 ==
 28  (1.6.1)
 ==
-
---------
-:update:
---------
-
-[[:format:]]
-Version and \chges: use of ''\paragraph'' for the kind of \chge (this will let \latex manage anwanted cut).
-
 
 --------
 :fordev:

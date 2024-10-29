@@ -1784,7 +1784,7 @@ Les clés optionnelles \tdocinlatex{col}\,, \tdocinlatex{date} et \tdocinlatex{v
 }
 Voici des exemples d'utilisation.
 
-\tdoclatexshow{examples-version-n-change-\jobname.tex}
+\tdoclatexshow{examples-version-n-change-what-n-when.tex}
 
 
 
@@ -1957,9 +1957,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 
 \small
 
-\tdocversion{1.6.1}[2024-10-28]
-
-\begin{tdoctech}
+\begin{tdoctech}[version = 1.6.1, date = 2024-10-28]
     \item Les règles de nommage de \ctan\ nécessitent l'usage de noms du type \verb+tutodoc-*.css.cls.sty+ pour les fichiers à-la \trademark{CSS}.
 \end{tdoctech}
 
@@ -1969,9 +1967,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.6.0}[2024-10-27]
-
-\begin{tdocbreak}
+\begin{tdocbreak}[version = 1.6.0, date = 2024-10-27]
     \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{color} a été renommée \tdocinlatex{colstripe}.
 
     \item La macro \tdocmacro{tdoclinkcolor} devient la couleur \tdocinlatex{tutodoc@link@color} destinée à un usage interne.
@@ -2007,9 +2003,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.5.0}[2024-10-19]
-
-\begin{tdoctech}
+\begin{tdoctech}[version = 1.5.0, date = 2024-10-19]
     \item La version 3 de \tdocpack{minted} est prise en compte.
 \end{tdoctech}
 
@@ -2039,9 +2033,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.4.0}[2024-09-28]
-
-\begin{tdocbreak}
+\begin{tdocbreak}[version = 1.4.0, date = 2024-09-28]
     \item L'environnement \tdocenv*{tdoccaution} a été renommé \tdocenv*{tdoccaut} pour une saisie simplifiée.
 
     \item Mise en avant de contenus : les exemples et remarques, indiqués via les environnements \tdocenv*{tdocexa} et \tdocenv*{tdocrem}, sont toujours numérotés via un compteur commun.
@@ -2076,9 +2068,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.3.1}[2024-09-26]
-
-\begin{tdocnew}
+\begin{tdocnew}[version = 1.3.1, date = 2024-09-26]
     \item Version étoilée de \tdocmacro{tdocenv} pour n'avoir que le nom de l'environnement.
 \end{tdocnew}
 
@@ -2088,9 +2078,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.3.0}[2024-09-25]
-
-\begin{tdoctech}
+\begin{tdoctech}[version = 1.3.0, date = 2024-09-25]
     \item La version 3 de \tdocpack{minted} ne peut pas être prise en compte pour le moment car elle comporte des bugs : voir \url{https://github.com/gpoore/minted/issues/401}. On force donc temporairement l'usage de la version 2 de \tdocpack{minted}.
 \end{tdoctech}
 
@@ -2125,9 +2113,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.2.0-a}[2024-08-23]
-
-\begin{tdocupdate}
+\begin{tdocupdate}[version = 1.2.0-a, date = 2024-08-23]
     \item \tdocmacro{tdocversion}
     \begin{enumerate}
         \item Le numéro de version est au-dessus de la date.
@@ -2147,9 +2133,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.1.0}[2024-01-06]
-
-\begin{tdocnew}
+\begin{tdocnew}[version = 1.1.0, date = 2024-01-06]
     \item Journal des changements : deux nouveaux environnements.
     \begin{enumerate}
         \item \tdocenv{tdocbreak} pour les \tdocquote{bifurcations}\,, soit les modifications non rétrocompatibles.
@@ -2166,9 +2150,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.0.1}[2023-12-08]
-
-\begin{tdocfix}
+\begin{tdocfix}[version = 1.0.1, date = 2023-12-08]
     \item \tdocmacro{tdocenv}: l'espacement est maintenant correct, même si le paquet \tdocpack{babel} n'est pas chargé avec la langue française.
 
     \item \tdocenv[{[nostripe]}]{tdocshowcase}: les sauts de page autour des lignes \tdocquote{cadrantes} devraient être rares dorénavant.
@@ -2181,7 +2163,6 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 
 
 \tdocversion{1.0.0}[2023-11-29]
-
 \tdocstartproj{Première version publique du projet.}
 
 \end{document}

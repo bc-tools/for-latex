@@ -275,6 +275,7 @@ for kind, prebuilder, hooks in [
     )
 
     prebuilder(
+        projname            = metadata[TAG_PROJ_NAME],
         source              = metadata[TAG_SRC],
         temp_dir            = metadata[TAG_TEMP],
         sorted_useful_files = sorted_useful_files,

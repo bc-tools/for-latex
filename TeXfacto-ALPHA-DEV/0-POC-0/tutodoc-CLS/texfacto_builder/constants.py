@@ -140,6 +140,23 @@ CMDS_FOR_FILE_PATTERNS = [
 ]
 
 
+BEGIN_WHAT_ENV_PATTERNS = [
+    re.compile(
+          r"^\\begin\{tdoc"
+        + envname
+        + r"\}$"
+    )
+    for envname in [
+        "break",
+        "fix",
+        "new",
+        "prob",
+        "tech",
+        "update",
+    ]
+]
+
+
 CMD_ARG_PATTERN = re.compile('#(\d+)')
 
 
@@ -162,7 +179,7 @@ TITLE_PATTERNS = [
 
 
 INPUT_CSS_PATTERN = re.compile(r"\\input\{../(.+)/css/(.+).cls.sty\}")
-ROLLOUT_CSS_PATH  = r"css-{texvar}-{catego}.cls.sty"
+ROLLOUT_CSS_PATH  = r"{projname}-{texvar}-{catego}.css.cls.sty"
 TEMPL_INPUT_CSS   = f"\\input{{{{{ROLLOUT_CSS_PATH}}}}}"
 
 

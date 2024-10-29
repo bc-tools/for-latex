@@ -1714,6 +1714,7 @@ To make it easier to monitor a project, it is essential to provide a history ind
 
 
 \subsection{When?}
+\label{tutodoc-changes-when}
 
 You can either date something, or version it, in which case the version number can be dated.
 
@@ -1818,7 +1819,7 @@ The optional keys \tdocinlatex{col}\,, \tdocinlatex{date} and \tdocinlatex{versi
 }
 Here are some examples of use.
 
-\tdoclatexshow{examples-version-n-change-\jobname.tex}
+\tdoclatexshow{examples-version-n-change-what-n-when.tex}
 
 
 
@@ -1989,11 +1990,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 \small
 
-\tdocversion{1.6.1}[2024-10-28]
-
-\small
-
-\begin{tdoctech}
+\begin{tdoctech}[version = 1.6.1, date = 2024-10-28]
     \item The naming rules of \ctan\ need the use of \trademark{CSS} files named \verb+tutodoc-*.css.cls.sty+\,.
 \end{tdoctech}
 
@@ -2003,11 +2000,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 % ------------------ %
 
 
-\tdocversion{1.6.0}[2024-10-27]
-
-\small
-
-\begin{tdocbreak}
+\begin{tdocbreak}[version = 1.6.0, date = 2024-10-27]
     \item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{color} key has been renamed \tdocinlatex{colstripe}.
 
     \item The macro \tdocmacro{tdoclinkcolor} has been renamed \tdocinlatex{tutodoc@link@color} for internal use.
@@ -2043,11 +2036,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 % ------------------ %
 
 
-\tdocversion{1.5.0}[2024-10-19]
-
-\small
-
-\begin{tdoctech}
+\begin{tdoctech}[version = 1.5.0, date = 2024-10-19]
     \item Version 3 of \tdocpack{minted} is taken into account.
 \end{tdoctech}
 
@@ -2078,11 +2067,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 % ------------------ %
 
 
-\tdocversion{1.4.0}[2024-09-28]
-
-\small
-
-\begin{tdocbreak}
+\begin{tdocbreak}[version = 1.4.0, date = 2024-09-28]
     \item The \tdocenv*{tdoccaution} environment has been renamed \tdocenv*{tdoccaut} for simplified input.
 
     \item Content highlighting: examples and remarks, indicated via the \tdocenv*{tdocexa} and \tdocenv*{tdocrem} environments, are always numbered using a common counter.
@@ -2117,11 +2102,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 % ------------------ %
 
 
-\tdocversion{1.3.1}[2024-09-26]
-
-\small
-
-\begin{tdocnew}
+\begin{tdocnew}[version = 1.3.1, date = 2024-09-26]
     \item Star version of \tdocmacro{tdocenv} to display only the environment name.
 \end{tdocnew}
 
@@ -2131,11 +2112,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 % ------------------ %
 
 
-\tdocversion{1.3.0}[2024-09-25]
-
-\small
-
-\begin{tdoctech}
+\begin{tdoctech}[version = 1.3.0, date = 2024-09-25]
     \item Version 3 of \tdocpack{minted} cannot be used for the moment as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force temporarily the use of version 2 of \tdocpack{minted}.
 \end{tdoctech}
 
@@ -2170,11 +2147,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 % ------------------ %
 
 
-\tdocversion{1.2.0-a}[2024-08-23]
-
-\small
-
-\begin{tdocupdate}
+\begin{tdocupdate}[version = 1.2.0-a, date = 2024-08-23]
     \item \tdocmacro{tdocversion}
     \begin{enumerate}
         \item The version number is above the date.
@@ -2194,11 +2167,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 % ------------------ %
 
 
-\tdocversion{1.1.0}[2024-01-06]
-
-\small
-
-\begin{tdocnew}
+\begin{tdocnew}[version = 1.1.0, date = 2024-01-06]
     \item Change log: two new environments.
     \begin{enumerate}
         \item \tdocenv{tdocbreak} for breaking changes which are not backward compatible.
@@ -2215,11 +2184,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 % ------------------ %
 
 
-\tdocversion{1.0.1}[2023-12-08]
-
-\small
-
-\begin{tdocfix}
+\begin{tdocfix}[version = 1.0.1, date = 2023-12-08]
     \item \tdocmacro{tdocenv}: spacing is now correct, even if the \tdocpack{babel} package is not loaded with the French language.
 
     \item \tdocenv[{[nostripe]}]{tdocshowcase} : page breaks around \tdocquote{framing} lines should be rare from now on.
@@ -2232,9 +2197,6 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 
 \tdocversion{1.0.0}[2023-11-29]
-
-\small
-
 \tdocstartproj{First public version of the project.}
 
 \end{document}

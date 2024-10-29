@@ -836,7 +836,7 @@
 
 %%%
 % prototype::
-%     #1 : (key-val)
+%     #1 : (key-val options)
 %          :see: env.tdocshowcase
 %     #2 : (file path)
 %          the path of a file
@@ -1029,7 +1029,7 @@
 
 %%%
 % prototype::
-%     #1 : (key-val)
+%     #1 : (key-val options)
 %          the key-value options supported by the ''tdocshowcase'' \env,
 %          plus one allowing you to change the description of a line
 %          printed between the code and its highlighted output.
@@ -1362,7 +1362,7 @@
 %%%
 % prototype::
 %     #1 : (short-desc)
-%          a short text expected t indicate the very first version of a project.
+%          a short text expected to indicate the very first version of a project.
 %
 %     :action: the short text printed will be preceded by a pretty anchor icon.
 %%%
@@ -1394,7 +1394,7 @@
 % prototype::
 %     :action: this macro draws a centered horizontal rule with a height
 %              of qty::''0.75 pt'', and a width equal to half of the current
-%              text width, and extra vertical spaces are added above and
+%              text width, and extra vertical spaces are added above and 
 %              below the rule.
 %
 %     :see: len.tutodoc@vsep@deco@len
