@@ -206,10 +206,10 @@
   col .initial:n = \tutodoc@changes@when@color,
 % Date.
   date .tl_set:N  = \l_tutodoc_topic_date_tl,
-  date .initial:n = {},
+  date .initial:n = \c_empty_tl,
 % Version.
   version .tl_set:N  = \l_tutodoc_topic_version_tl,
-  version .initial:n = {},
+  version .initial:n = \c_empty_tl,
 }
 
 
@@ -245,15 +245,15 @@
     \textsc{#1.}
 
 %% Just a date
-    \tutodoc@new@change@margin%
-      {\tl_use:N \l_tutodoc_topic_when_color_tl}                           
-      {\tl_use:N \l_tutodoc_topic_version_tl}
-%      {\tl_use:N \l_tutodoc_topic_date_tl}
-      {2000-01-02}
+    \exp_args:NNee \tutodoc@new@change@margin%
+      {\l_tutodoc_topic_when_color_tl}
+      {\l_tutodoc_topic_version_tl}
+      {\l_tutodoc_topic_date_tl}
+%      {2000-01-02}
       {\tutodoc@version@vsep@len}
-      {\tutodoc@topic@voffset@len} 
+      {\tutodoc@topic@voffset@len}
   }
- 
+
   \begin{itemize}
 }{
   \end{itemize}
