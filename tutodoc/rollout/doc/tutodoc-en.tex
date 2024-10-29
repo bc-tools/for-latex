@@ -394,7 +394,7 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 
 
 \begin{filecontents*}[overwrite]{examples-version-n-change-user-choice-icon.tex}
-\begin{tdoctopic}{To hide}[\faEyeSlash]
+\begin{tdoctopic}{To hide}<\faEyeSlash>
 % An icon from fontawesome5.
     \item Info 1...
     \item Info 2...
@@ -470,6 +470,27 @@ Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
     \item Info 1...
     \item Info 2...
 \end{tdoctech}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-what-n-when.tex}
+\begin{tdoctech}[col  = red,
+                 date = 2024-10-29]
+    \item Info 1...
+    \item Info 2...
+\end{tdoctech}
+
+\begin{tdocupdate}[col     = ForestGreen,
+                   version = 1.2.3]
+    \item Info 1...
+    \item Info 2...
+\end{tdocupdate}
+
+\begin{tdocfix}[date    = 2025-11-30,
+                version = 4.5.6]
+    \item Info 1...
+    \item Info 2...
+\end{tdocfix}
 \end{filecontents*}
 
 
@@ -1017,7 +1038,7 @@ As this language is included in the list of languages taken into account, see be
         \item \tdocinlatex|fr| : French.
     \end{itemize}
 \end{multicols}
-
+                    
 
 
 \begin{tdoccaut}
@@ -1742,7 +1763,7 @@ You can either date something, or version it, in which case the version number c
     The \tdocmacro{tdocdate} and \tdocmacro{tdocversion} macros therefore suffer from the same side effects as in the following example.
     However, these problems can be solved using an optional argument \tdocinlatex{<vertical-displacement>}, as at the end of the following example. It's ugly, but functional.
 
-    \tdoclatexshow[nostripe]{examples-version-n-change-side-effect.tex}
+    \tdoclatexshow[nostripe, colstripe=red]{examples-version-n-change-side-effect.tex}
 
 \end{tdocwarn}
 
@@ -1787,6 +1808,18 @@ You can either date something, or version it, in which case the version number c
 
     \end{tdocexa}
 }
+
+
+\subsection{The what and the when}
+
+The optional keys \tdocinlatex{col}\,, \tdocinlatex{date} and \tdocinlatex{version} allow to date and version a change of a particular type.%
+\footnote{
+	The warning at the end of the section \ref{tutodoc-changes-when} gives the technique used behind the scene, while showing the need to offer specialized keys.
+}
+Here are some examples of use.
+
+\tdoclatexshow{examples-version-n-change-\jobname.tex}
+
 
 
 \section{Ornament}

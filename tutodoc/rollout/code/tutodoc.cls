@@ -766,11 +766,6 @@
 % ''tdocshowcase''.
 %%%
 \keys_define:nn { tutodoc / showcase } {
-% Texts.
-  before .tl_set:N  = \l_tutodoc_showcase_before_tl,
-  before .initial:n = \tutodoc@trans@latex@show@start,
-  after  .tl_set:N  = \l_tutodoc_showcase_after_tl,
-  after  .initial:n = \tutodoc@trans@latex@show@end,
 % Colors.
   colstripe .tl_set:N  = \l_tutodoc_showcase_stripe_color_tl,
   colstripe .initial:n = \tutodoc@showcase@stripe@color,
@@ -779,6 +774,11 @@
 % Stripe?
   nostripe .bool_set:N = \l_tutodoc_showcase_nostripe_bool,
   nostripe .initial:n  = false,
+% Texts.
+  before .tl_set:N  = \l_tutodoc_showcase_before_tl,
+  before .initial:n = \tutodoc@trans@latex@show@start,
+  after  .tl_set:N  = \l_tutodoc_showcase_after_tl,
+  after  .initial:n = \tutodoc@trans@latex@show@end,
 }
 
 
@@ -787,7 +787,7 @@
 % :::::::::::::::::::::::::::::: %
 
 % prototype::
-%     #1 : (key-val)
+%     #1 : (key-val options)
 %          the key-value options (see above).
 %
 %     :action: this \env formats \latex code, given as an argument,
@@ -1118,7 +1118,8 @@
       }
 
       \par
-        \__tutodoc_translate_date:n { #3 }\vphantom{Mp}
+        \__tutodoc_translate_date:n { #3 }
+        \vphantom{Mp}
       \par
     }
 
@@ -1154,9 +1155,7 @@
 %              to use the format expected for a "localised" date.
 %%%
 \cs_new:Npn \__tutodoc_translate_date_process:w #1 - #2 - #3 \q_stop {
-    \tutodoc@trans@date{#1}
-                       {#2}
-                       {#3}
+    \tutodoc@trans@date{#1}{#2}{#3}
 }
 
 \ExplSyntaxOff
@@ -1167,6 +1166,13 @@
 % :::::::::::::::::::::: %
 
 \input{tutodoc-\tutodoc@theme-version-n-change.css.cls.sty}
+
+\newlength{\tutodoc@version@vsep@len}
+\setlength{\tutodoc@version@vsep@len}{-4.25pt}
+
+\newlength{\tutodoc@version@voffset@len}
+\setlength{\tutodoc@version@voffset@len}{-.345cm}
+
 
 %%%
 % prototype::
@@ -1188,18 +1194,25 @@
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
 %%%
-\NewDocumentCommand{\tdocversion}{O{\tutodoc@changes@version@color} m O{} D<>{-.345cm}}{
-  \tutodoc@new@change@margin{#1}      % Color
-                            {#2}      % Version
-                            {#3}      % Date
-                            {-4.25pt} % Last negative vertical spacing
-                            {#4}      % Vertical offset
+\NewDocumentCommand{\tdocversion}{O{\tutodoc@changes@when@color} m O{} D<>{\tutodoc@version@voffset@len}}{
+  \tutodoc@new@change@margin%
+    {#1}                        % Color
+    {#2}                        % Version
+    {#3}                        % Date
+    {\tutodoc@version@vsep@len} % Last negative vertical spacing
+    {#4}                        % Vertical offset
 }
 
 
 % :::::::::: %
 % :: DATE :: %
 % :::::::::: %
+
+\newlength{\tutodoc@date@vsep@len}
+\setlength{\tutodoc@date@vsep@len}{-5.35pt}
+
+\newlength{\tutodoc@date@voffset@len}
+\setlength{\tutodoc@date@voffset@len}{-.345cm}
 
 %%%
 % prototype::
@@ -1213,12 +1226,13 @@
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@when@color} m D<>{-.345cm}}{
-  \tutodoc@new@change@margin{#1}      % Color
-                            {}        % Version
-                            {#2}      % Date
-                            {-5.35pt} % Last negative spacing
-                            {#3}      % Vertical offset
+\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@when@color} m D<>{\tutodoc@date@voffset@len}}{
+  \tutodoc@new@change@margin%
+    {#1}                     % Color
+    {}                       % Version
+    {#2}                     % Date
+    {\tutodoc@date@vsep@len} % Last negative spacing
+    {#3}                     % Vertical offset
 }
 
 
@@ -1238,9 +1252,30 @@
   { One ~ single ~ title ~ must ~ be ~ indicated. }
 
 
-% ::::::::::::::::::::: %
-% :: CHANGES - TOPIC :: %
-% ::::::::::::::::::::: %
+% ::::::::::::::::::: %
+% :: GENERIC TOPIC :: %
+% ::::::::::::::::::: %
+
+\tl_new:N \l_tutodoc_topic_when_color_tl
+\tl_new:N \l_tutodoc_topic_date_tl
+\tl_new:N \l_tutodoc_topic_version_tl
+
+\keys_define:nn { tutodoc / version-n-change / topic / options } {
+% Colors.
+  col .tl_set:N  = \l_tutodoc_topic_when_color_tl,
+  col .initial:n = \tutodoc@changes@when@color,
+% Date.
+  date .tl_set:N  = \l_tutodoc_topic_date_tl,
+  date .initial:n = \c_empty_tl,
+% Version.
+  version .tl_set:N  = \l_tutodoc_topic_version_tl,
+  version .initial:n = \c_empty_tl,
+}
+
+
+\newlength{\tutodoc@topic@voffset@len}
+\setlength{\tutodoc@topic@voffset@len}{-.745cm}
+
 
 %%%
 % prototype::
@@ -1248,30 +1283,50 @@
 %          a title that will be followed by a colon.
 %     #2 : (aws-icon)
 %          one material that expects to be an icon command from the
-%          ''fontawsome5'' \pack.
+%          ''fontawsome5'' \pack
+%     #3 : (key-val options)
+%          see above
 %
 %     :action: this environment prints some \infos about specific changes
 %              achieved in a new version (no special formatting is applied).
+%              Key-val options allow to add a date \andor a \nbver with
+%              a specific color if needed.
 %%%
-\NewDocumentEnvironment{tdoctopic}{ m O{} }{
+\NewDocumentEnvironment{tdoctopic}{ m D<>{} O{} }{
   \IfBlankT{#1}{
     \msg_fatal:nn { tutodoc ~ (version-n-change) }
       { version-n-change : topic-missing-title }
-  }%
-%  \paragraph{%
-  \textbf{%
-    \IfBlankF{#2}{\tdocicon{#2}}%
-    \textsc{#1.}
   }
+
+  \keys_set:nn { tutodoc / version-n-change / topic / options } { #3 }
+
+  \tl_clear:N      \l_tmpa_tl
+  \tl_set_eq:NN    \l_tmpa_tl \l_tutodoc_topic_version_tl
+  \tl_put_right:Nn \l_tmpa_tl { \l_tutodoc_topic_date_tl }
+
+  \paragraph{%
+    \IfBlankF{#2}{\tdocicon{#2}}
+    \textsc{#1.}
+    \exp_args:Ne \IfBlankF{\l_tmpa_tl}{
+% A date and/or a version.
+      \exp_args:NNee \tutodoc@new@change@margin%
+        {\l_tutodoc_topic_when_color_tl}
+        {\l_tutodoc_topic_version_tl}
+        {\l_tutodoc_topic_date_tl}
+        {\tutodoc@version@vsep@len}
+        {\tutodoc@topic@voffset@len}
+    }
+  }
+
   \begin{itemize}
 }{
   \end{itemize}
 }
 
 
-% :::::::::::::::::::::::::: %
-% :: CHANGES - NEW THINGS :: %
-% :::::::::::::::::::::::::: %
+% :::::::::::::::::::::: %
+% :: CLASSICAL TOPICS :: %
+% :::::::::::::::::::::: %
 
 %%%
 % We use a ''prop'' variable to factorize the code just after.
@@ -1296,8 +1351,8 @@
 %              (the title used is translated into the good language).
 %%%
 \prop_map_inline:Nn \__g_tutodoc_topic_change_prop {
-  \NewDocumentEnvironment{ tdoc#1 } {} {
-    \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } [ #2 ]
+  \NewDocumentEnvironment{ tdoc#1 } { O{} } {
+    \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } < #2 > [##1]
   }{
     \end{tdoctopic}
   }
@@ -1337,21 +1392,14 @@
 
 %%%
 % prototype::
-%     :action: ????  this macro draws a centered horizontal rule with a height
+%     :action: this macro draws a centered horizontal rule with a height
 %              of qty::''0.75 pt'', and a width equal to half of the current
-%              text width, and extra vertical spaces are added above and
+%              text width, and extra vertical spaces are added above and 
 %              below the rule.
+%
+%     :see: len.tutodoc@vsep@deco@len
 %%%
 \NewDocumentCommand{\tdocsep}{}{
-%  \par
-%  \addvspace{\medskipamount}\smallskip
-%  \hfill\leaders\hrule width0.5\textwidth\vskip.75pt
-%  \smallskip\smallskip
-%
-%  \par\addvspace{\medskipamount}
-%  \hfill\rule{0.5\textwidth}{0.75pt}\hfill\null
-%  \medskip
-%  \smallskip
   \par
   \cleaders
     \vbox to \tutodoc@vsep@deco@len{

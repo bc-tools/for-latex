@@ -406,7 +406,7 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 
 
 \begin{filecontents*}[overwrite]{examples-version-n-change-user-choice-icon.tex}
-\begin{tdoctopic}{À cacher}[\faEyeSlash]
+\begin{tdoctopic}{À cacher}<\faEyeSlash>
 % Une icône venant de fontawesome5.
     \item Info 1...
     \item Info 2...
@@ -458,7 +458,7 @@ Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 Ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 
-\paragraph{Aucune solution miracle.\tdocversion[red]{1.2.3}[2024-10-29]}
+\paragraph{Pas de solution miracle.\tdocversion[red]{1.2.3}[2024-10-29]}
 
 Bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli,
 bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli,
@@ -482,6 +482,27 @@ Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
     \item Info 1...
     \item Info 2...
 \end{tdoctech}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-what-n-when.tex}
+\begin{tdoctech}[col  = red,
+                 date = 2024-10-29]
+    \item Info 1...
+    \item Info 2...
+\end{tdoctech}
+
+\begin{tdocupdate}[col     = ForestGreen,
+                   version = 1.2.3]
+    \item Info 1...
+    \item Info 2...
+\end{tdocupdate}
+
+\begin{tdocfix}[date    = 2025-11-30,
+                version = 4.5.6]
+    \item Info 1...
+    \item Info 2...
+\end{tdocfix}
 \end{filecontents*}
 
 
@@ -893,9 +914,9 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
             The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
         }
         using a sober rendering for reading on screen.
-
+    
         \smallskip
-
+    
         \noindent
         \emph{\textbf{Remark :} this documentation is also available in French.}
     }
@@ -1024,7 +1045,7 @@ Comme cette langue fait partie de la liste des langues prises en compte, voir ci
         \item \tdocinlatex|fr| : français.
     \end{itemize}
 \end{multicols}
-
+                    
 
 
 \begin{tdoccaut}
@@ -1660,6 +1681,7 @@ Afin de faciliter le suivi d'un projet, il est indispensable de fournir un histo
 
 
 \subsection{À quel moment ?}
+\label{tutodoc-changes-when}
 
 On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas le numéro de version pourra éventuellement être daté.
 
@@ -1705,10 +1727,10 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
     En coulisse, le gros du travail est fait par la macro \tdocmacro{\marginnote} du package éponyme.
     Les macros \tdocmacro{tdocdate} et \tdocmacro{tdocversion} souffrent donc des même effets de bord comme dans l'exemple suivant.
     On peut tout de même régler ces problèmes via un argument optionnel \tdocinlatex{<déplacement-vertical>} comme à la fin de l'exemple ci-après. C'est moche, mais fonctionnel.
+
+    \tdoclatexshow[nostripe, colstripe=red]{examples-version-n-change-side-effect.tex}
+
 \end{tdocwarn}
-
-\tdoclatexshow{examples-version-n-change-side-effect.tex}
-
 
 
 \subsection{Quoi de neuf ?}
@@ -1754,7 +1776,19 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 }
 
 
-\section{Décorations}
+\subsection{Le quoi et le quand}
+
+Les clés optionnelles \tdocinlatex{col}\,, \tdocinlatex{date} et \tdocinlatex{version} permettent de dater et versionner un changement d'un type particulier.%
+\footnote{
+    L'avertissement à la fin de la section \ref{tutodoc-changes-when} donne la technique utilisée en coulisse, tout en montrant la nécessité de proposer des clés spécialisées.
+}
+Voici des exemples d'utilisation.
+
+\tdoclatexshow{examples-version-n-change-\jobname.tex}
+
+
+
+\section{Décoration}
 
 Finissons cette documentation avec un petit outil de mise en forme qui rend de grands services.
 
