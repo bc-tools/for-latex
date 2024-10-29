@@ -66,7 +66,8 @@
       }
 
       \par
-        \__tutodoc_translate_date:n { #3 }\vphantom{Mp}
+        \__tutodoc_translate_date:n { #3 }
+        \vphantom{Mp}
       \par
     }
 
@@ -114,6 +115,13 @@
 
 \input{../version-n-change/css/\tutodoc@theme.cls.sty}
 
+\newlength{\tutodoc@version@vsep@len}
+\setlength{\tutodoc@version@vsep@len}{-4.25pt}
+
+\newlength{\tutodoc@version@voffset@len}
+\setlength{\tutodoc@version@voffset@len}{-.345cm}
+
+
 %%%
 % prototype::
 %     #1 : (color)
@@ -134,16 +142,23 @@
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
 %%%
-\NewDocumentCommand{\tdocversion}{O{\tutodoc@changes@when@color} m O{} D<>{-.345cm}}{
-  \tutodoc@new@change@margin{#1}      % Color
-                            {#2}      % Version
-                            {#3}      % Date
-                            {-4.25pt} % Last negative vertical spacing
-                            {#4}      % Vertical offset
+\NewDocumentCommand{\tdocversion}{O{\tutodoc@changes@when@color} m O{} D<>{\tutodoc@version@voffset@len}}{
+  \tutodoc@new@change@margin%
+    {#1}                        % Color
+    {#2}                        % Version
+    {#3}                        % Date
+    {\tutodoc@version@vsep@len} % Last negative vertical spacing
+    {#4}                        % Vertical offset
 }
 
 
 % :: DATE :: %
+
+\newlength{\tutodoc@date@vsep@len}
+\setlength{\tutodoc@date@vsep@len}{-5.35pt}
+
+\newlength{\tutodoc@date@voffset@len}
+\setlength{\tutodoc@date@voffset@len}{-.345cm}
 
 %%%
 % prototype::
@@ -157,12 +172,13 @@
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@when@color} m D<>{-.345cm}}{
-  \tutodoc@new@change@margin{#1}      % Color
-                            {}        % Version
-                            {#2}      % Date
-                            {-5.35pt} % Last negative spacing
-                            {#3}      % Vertical offset
+\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@when@color} m D<>{\tutodoc@date@voffset@len}}{
+  \tutodoc@new@change@margin%
+    {#1}                     % Color
+    {}                       % Version
+    {#2}                     % Date
+    {\tutodoc@date@vsep@len} % Last negative spacing
+    {#3}                     % Vertical offset
 }
 
 
@@ -197,6 +213,10 @@
 }
 
 
+\newlength{\tutodoc@topic@voffset@len}
+\setlength{\tutodoc@topic@voffset@len}{-.745cm}
+
+
 %%%
 % prototype::
 %     #1 : (title)
@@ -221,15 +241,19 @@
   \keys_set:nn { tutodoc / version-n-change / topic / options } { #3 }
 
   \paragraph{%
-%  \textbf{%
     \IfBlankF{#2}{\tdocicon{#2}}
     \textsc{#1.}
 
-	\tl_if_empty:nTF {\tl_use:N \l_tutodoc_topic_date_tl} { DATE VIDE } { DATE OK }
-
-%      \tdocversion[red]{1.2.3}[2024-10-29]<-.745cm>
-
+%% Just a date
+    \tutodoc@new@change@margin%
+      {\tl_use:N \l_tutodoc_topic_when_color_tl}                           
+      {\tl_use:N \l_tutodoc_topic_version_tl}
+%      {\tl_use:N \l_tutodoc_topic_date_tl}
+      {2000-01-02}
+      {\tutodoc@version@vsep@len}
+      {\tutodoc@topic@voffset@len} 
   }
+ 
   \begin{itemize}
 }{
   \end{itemize}
