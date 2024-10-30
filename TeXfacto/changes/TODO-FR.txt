@@ -1,0 +1,393 @@
+========
+TeXfacto - TODO
+========
+
+---
+NOW
+---
+
+
+> ---------------------------- <
+
+pack et/ou class
+
+    ---> CLASSE: on doit passer via un main.cls et des *.cls.sty
+         Ici le main.cls va prendre en main ce qui n'est pas séquable, mais du coup certaines choses vont s'imposer : par exemple, la langue doit être régalble via une macro , laquelle macro sera appelle par main.cls via \AtBeginDocument{...} pour utiliser le \BCPdata{language} valant en, fr, ...
+
+
+    ---> du coup, le main.sty devient une bonne pratique mais pas obligé !!!
+
+
+> ---------------------------- <
+
+\pack "agrégateur" réunissant différents \packs
+
+    ---> ???
+
+
+> ---------------------------- <
+
+README efficace
+
+    --> le tutirel court en MD est à intégrer dans la doc !!!!
+
+
+> ---------------------------- <
+
+texfacto-poc
+
+    ---> package avec els options non gérés pour le moment, le faire : pour la gestion de l'ordre des packages, si pb, on passe voia about.yaml dans le source
+
+    ---> besoin de régeler bug du au chemin via fichier importé !!! voir si faisable sans hook sinon on se la joue brutale en attendnat de passer al amin a texfacto
+
+
+> ---------------------------- <
+
+If the body of your code is in L3 syntax you may prefer to use \ProvidesExplClass rather than \ProvideClass at the start of the file as this will take care of switching to L3 syntax and save explicit use of \ExplSyntaxOn.
+
+
+> ---------------------------- <
+
+L'outil \tnsdoc produit une \doc \tech \auto^t à partir du code \src, lors de cette phase, un fichier path::''signature.yaml'' est produit pour donner l'\ens des \signs des objets codés.
+Le projet \texfacto sait utiliser path::''signature.yaml'' afin de vérifier qu'il n'y a pas de conflits de noms \etou de \signs au sein d'un \pack, mais aussi avec ceux disponibles sur \ctan.
+
+
+> ---------------------------- <
+
+???? tempdoc directement compilable et du coup rollour just du copier coller
+
+
+> ---------------------------- <
+
+migration depuis specs générales vers ici de nouveau MAIS en grardant juste parties sur le workflow !!!
+
+    ---> produire un fichier TOOUT_EN_UN compilable dans .temp pour debug sévré à la main : on passe de la structa arbo à une strucplate et en ajoutant l'extenasion exadoc afin de ne pas être traité par l3build...
+
+    ---> resource : clarifier que ce qui est vu comme resource ne pas pas être au niveau des stys !!! Cf doc de tns_latex et aussi texfacto
+
+    ---> build.lua construit auto et/ou mis à jour
+
+    ---> syst semi auto des dépendances avec explications possibles dans lang de la doc :
+
+            + fichier dep.yaml ou clé dep dans about ???
+
+            + indiquer les dép au tout début de la doc.
+
+    ---> gérer chemin idniquer en multiligne...
+
+    ---> gestion d'un README avant le about : cf nettoyage du src !!!!
+
+    ---> fichier sty vide : ignorer mais info log
+
+
+
+-----
+LATER
+-----
+
+> ---------------------------- <
+
+on doit aussi prendre en compte les classes
+
+
+> ---------------------------- <
+
+A VOIR
+
+    https://indymotion.fr/w/emm8R7vgGaVnqsrpPqqHe9
+
+    https://indymotion.fr/w/cuHcQwgkNmDRXhKT8tR2Ty
+
+    https://indymotion.fr/w/qWWMC6HxhSxT2zCm4j6Kfh
+
+    https://indymotion.fr/w/wx2DkkjVZY1HRBe8bhh2UQ
+
+    https://indymotion.fr/w/fSw4eSj7kQRACGDbfTLWWR
+
+    https://indymotion.fr/w/j7sNkSW1NfXE3ciL9SBTB9
+
+    https://indymotion.fr/w/j7sNkSW1NfXE3ciL9SBTB9
+
+    https://indymotion.fr/w/u4SqW31ntqpQG6oFYMYQWz
+
+    https://indymotion.fr/w/hDiKqbm3JVbXUX1tTAkFt7
+
+    https://indymotion.fr/w/hRC4xvR8uZCo9gCrN5x4Ch
+
+    https://indymotion.fr/w/kVGZboTuEucHo2A5eDMoMB
+
+    https://indymotion.fr/w/kKFA25V4bNSUirH6SmKkY7
+
+    https://indymotion.fr/w/q2wnEbZmmDAazV7dTVbVeS
+
+    https://indymotion.fr/w/oNELa1J19gaics86hxTonK
+
+    https://indymotion.fr/w/f7TXMYc5PjRep8Yssa7Gvm
+
+    https://indymotion.fr/w/f4LNF5rxseG8V1yRFyZy82
+
+    https://indymotion.fr/w/orJRgHsst8MwNEfpdsF6cA
+
+    https://indymotion.fr/w/eA4SFNYbfF4du4J3t5ocjc
+
+    https://indymotion.fr/w/vvSZVHwZqAcRyKnUCsGgg8
+
+    https://indymotion.fr/w/qoYHPe48fbuYbHAKnSGv3n
+
+    https://indymotion.fr/w/7ZN6k7KKG1wab3g9Fh8h1E
+
+    https://indymotion.fr/w/wpaDkJzENJ1vdQmn4pzTgQ
+
+    https://indymotion.fr/w/j3C47dzkfT9bBhY11CzHzG
+
+    https://indymotion.fr/w/7ZN6k7KKG1wab3g9Fh8h1E
+
+    https://indymotion.fr/w/wpaDkJzENJ1vdQmn4pzTgQ
+
+    https://indymotion.fr/w/j3C47dzkfT9bBhY11CzHzG
+
+    https://indymotion.fr/w/rEV1qrdYoTa4FGqQTTAGAt
+
+    https://indymotion.fr/w/wojwqX2bkp4PWcsSDQhMoE
+
+
+> ---------------------------- <
+
+gestion automatisée de l'ajout de la version associée à un cangement, caharge ua codeur de varifier via git a qu'il n'a pas oublié queluqe chose
+
+ceci se fait via un commentaire magique du type %% :new: %% qui sera remplacé par la macro avec la bonne date et le bon numéro de version, charge à la dite macro de caché cette information au-delà d'un durée fixée (cf bdoc)
+
+
+> ---------------------------- <
+
+pour gestion plus fine si besoin
+
+toc:
+  - config.*
+
+alias de
+
+toc:
+  - config.{sty|tex}
+
+
+> ---------------------------- <
+
+gestion autre fichiers que sty à réunir ?
+
+
+> ---------------------------- <
+
+compile maison
+
+extra::
+    compile = latexmk --shell-escape -output-directory=_texfactory_temp 01-listing-direct-FR.tex
+
+
+> ---------------------------- <
+
+lancement via arg en ligne de commande !!!!
+
+    ---> pour le futur makefile !!!
+
+
+> ---------------------------- <
+
+gestions manquantes
+
+    --> fichiers dans about (tex associé à sty + mode mixte sty + tex)
+
+    --> class
+
+    --> agregate
+
+    --> netoygae doit virere pdf encas d'échec ou si demandé (cf git push en mide dégradé)
+
+
+> ---------------------------- <
+
+proposer un mode compile petit bout avec diagnostique de ce quie ne marche même pas en local
+
+
+> ---------------------------- <
+
+log TeX Live pour source dépendance en dur et non au vol car trop long !!!
+
+    --->  /usr/local/texlive/2013/texmf-var/web2c/tlmgr.log.
+
+    ---> stocker dans une BdD sqlite : si demande on vérifie que rieen de nouveau si c'est le cas, on met à jour
+
+
+> ---------------------------- <
+
+nettoyer aussi les _minted !!!!
+
+
+> ---------------------------- <
+
+automatisation des licence
+
+    --> récperer code entier via request http
+
+    --> metre texte court au début de tous les fichiers du src aussi
+
+
+> ---------------------------- <
+
+Standardized workflow
+---------------------
+
+Let's consider the project [`bdoc`](https://github.com/projetmbc/tools-for-latex/tree/master/bdoc) which is developped using the workflow imposed by `TeXfactory`. The structure of the source code of [`bdoc`](https://github.com/projetmbc/tools-for-latex/tree/master/bdoc) was partially the following one on April 29, 2023.
+
+~~~
++ src
+    * about.yaml
+    * LICENSE.txt
+    + intro
+        * intro.tex
+        * intro.pdf
+    + main
+        * about.yaml
+        * main.sty
+        * lang.tex
+        * lang.pdf
+        * formatting-geo.tex
+        * formatting-geo.pdf
+        * formatting-title-n-toc.tex
+        * formatting-title-n-toc.pdf
+        * formatting-link.tex
+        * formatting-link.pdf
+        + locale
+            * FR.sty
+            + fr
+                * macros.txt
+                * sentences.txt
+    + version-n-change
+        * version-n-change.sty
+        * version-n-change.tex
+        * version-n-change.pdf
+        + examples
+            + version-n-change
+                * new.tex
+                * topic.tex
+                * version.tex
+    + ...
+~~~
+
+
+Thanks to `TeXfactory`, the following final product is obtained automatically.
+
+~~~
++ bdoc
+    * bdoc.sty
+    * bdoc.tex
+    * bdoc.pdf
+    + examples
+        + version-n-change
+            * new.tex
+            * topic.tex
+            * version.tex
+    + locale
+        * FR.sty
+    * LICENSE.txt
+~~~
+
+
+Here is what `TeXfactory` does for us.
+
+  1. The file `bdoc.sty` gathers all the codes developped in `main.sty` and `version-n-change.sty` (see the last point below about the order used to build the final file). The source files must be directly inside a subfolder of the directory `src`.
+
+  1. The file `bdoc.tex` gathers the files `....tex` inside a subfolder of the directory `src` (see the last point below about the order used to build this file). The `PDF` file `bdoc.pdf` is automatically compiled via `LaTeX`, or `LuaTeX` as needed.
+
+  1. Extra files are copied except the `PDFs` associated to small parts of the documentation (you can choose which folders and files have to be ignored regarding some patterns about their names).
+
+  1. In the folder `src`, there is a special file `about.yaml` which gives the order to follow to produce the final `bdoc.sty` and `bdoc.tex` files. The content of `about.yaml` could be the one given below. You can also use such a file inside subfolders of the directory `src`, as it is the case inside the folder `main`. If you don't do that, the construction will use a natural order.
+
+~~~yaml
+toc:
+  - intro
+  - main
+  - version-n-change
+~~~
+
+
+
+
+
+
+### One `about.yaml` file for the source folder
+
+doc:
+  header: doc-header.tex
+
+
+How to use packages, macros, or environments just for the documentation? To acheive that, you can complete or use an `about.yaml` file in the source folder with the block `extra` to give the path of a file with lines of code that will be simply imported just before `\begin{document}`.
+
+
+
+
+
+
+toc:
+  - intro
+  - some-tools
+  - other-tools
+
+
+
+What is the purpose of the `doc` key? It is used to specify specific parameters to the `TEX` file producing the user documentation. Here, we give a file containing the header part of the file, i.e. the lines before `\begin{document}`, more precisely those in the header placed before the instructions automatically built by `TeXfactory` from the source code.
+
+
+
+
+pour  -tools sty et tex auto si indiqué via toc
+
+~~~
++ other-tools
+    * config.sty
+    * config.tex
+    * other.sty
+    * other.tex
+    * utils.py
+    + images
+~~~
+`src/other-tools/about.yaml`
+
+~~~yaml
+toc:
+  - config.*
+  - other.*
+~~~
+
+
+
+
+
+### One `about.yaml` file for the source folder
+
+One optional `about.yaml` file can be added to change the default behavior of `TeXfactory`. Let's give again the general structure of our source code.
+
+~~~
++ src
+    * about.yaml
+    * doc-header.tex
+    + changelog
+    + intro
+    + other-tools
+    + some-tools
+~~~
+
+Without the use of `src/about.yaml`, all folders will be processed in alphabetical order, except for the very special subfolder `changelog` which will be used to produce the change log for the user (we will explain this later). If we want to choose the order of analysis, we have to use an `about.yaml` file like the one below where the value of the `toc` key indicates the ordered list of folders to be treated.
+
+~~~yaml
+doc:
+  header: doc-header.tex
+
+toc:
+  - intro
+  - some-tools
+  - other-tools
+~~~
+
+
+What is the purpose of the `doc` key? It is used to specify specific parameters to the `TEX` file producing the user documentation. Here, we give a file containing the header part of the file, i.e. the lines before `\begin{document}`, more precisely those in the header placed before the instructions automatically built by `TeXfactory` from the source code.

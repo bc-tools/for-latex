@@ -1,0 +1,18 @@
+this::
+    date = 2023-10-31
+
+
+===========================================================
+\Docs différenciées pour un \pack et une classe de même nom
+===========================================================
+
+Dans le cas d'un \dev en parallèle d'une classe et d'un \pack ayant le même nom, \texfacto va produire par défaut une unique \doc sauf si l'on utilise les préfixes verb::''-sty'' et verb::''-cls'' pour cibler les parties de la \doc pour le \pack et celles pour la classe \resp comme dans l'exemple suivant.
+
+dirtree::
+    ---
+    path = ?/example/class-n-pack/dirtree.txt
+    ---
+
+
+tip::
+    Il est possibile de produire une \doc commune et deux séparées. Ceci peut permettre de présenter rapidement le \pack et la classe pour ensuite se concentrer sur les particularités de chacun.

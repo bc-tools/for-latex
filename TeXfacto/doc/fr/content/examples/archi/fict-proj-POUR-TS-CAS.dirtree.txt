@@ -1,0 +1,10 @@
+fict-proj:
+    + about.yaml
+    + README.md
+    + readme
+    + changes
+    + contrib
+    + demos
+    + rollout
+    + src
+    + tools

@@ -1,0 +1,34 @@
+this::
+    date = 2024-09-04
+
+
+abrev::
+    content = :this.name:
+
+
+====================
+\thisproj, quèsaco ?
+====================
+
+Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu'il existe un écosystème de \dev poposé par \latex, \thisproj propose une autre façon de coder plus proche de ce qui fait dans les \langs de \prog plus \stds comme \python. Dans les \gdes lignes, voici quelques fonctionnalités proposées par \thisproj pour fabriquer un \pack
+((
+    La gestion des classes viendra plus tard lorsque l'auteur de \thisproj en codera une...
+)).
+
+    1) Le codage se fait de façon modulaire et non d'un seul tenant. Ceci facilite grandement la phase de \dev initial, puis ensuite la maintenance.
+
+    1) La \doc destinée aux utilisateurs est écritre parallèlement au code et non dans le code lui-même
+    ((
+        L'auteur de \thisproj garde la \doc dans le code uniquement à destination d'autres codeurs éventuels. Pour ce faire, il utilise la syntaxe \tnsdoc qui est en cours de \dev.
+    )).
+    Ce choix évite de produire une \doc austère et peu utile à de "simples" utilisateurs : on peut ainsi proposer des cas d'utilisation complexes. De plus, documenter dans le code rend la tache de maintenance très vite pénible.
+
+    1) La proposition de \trads à faire côté \api et côté \doc se fait de façon automatisée.
+
+
+note::
+    \texfacto utilisant activement \src2prod, les fonctionnalités venant de ce dernier seront présentées succinctement, charge au lecteur de consulter la \doc de \src2prod pour plus de détails.
+
+
+caution::
+    \texfacto impose un certain \nbre de règles: style de codage, \orga "commune" des dossiers et des fichiers, cycle de \dev fixé. Ces choix permettent d'automatiser pas mal de choses...

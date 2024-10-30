@@ -1,0 +1,35 @@
+this::
+    date = 2023-12-10
+
+
+============================
+Comment tester et déployer ?
+============================
+
+L'outil \l3build disponible dans les \distribs \latex \stds est très puissant pour le test et le dépôt sur \ctan de \projs \latex.
+Le sous-dossier path::''rollout'' est destiné à \l3build avec le choix de \struct suivant.
+
+dirtree::
+    + rollout
+        * build.lua
+        * README.md
+        + code
+        + doc
+        + testfiles
+
+
+Expliquons rapidement le rôle des \elts indiqués.
+
+    1) Le fichier path::''build.lua'' est un fichier de \config destiné à \l3build ; il est personnalisable via le \lang de \prog \lua.
+
+    1) Le fichier path::''README.md'' est destiné au site \ctan.
+
+    1) Le dossier path::''doc'' doit contenir la \doc du \proj.
+
+    1) Le dossier path::''code'' sert à accueillir le code \src du \proj.
+
+    1) Le dossier path::''tests'' permet de produire des fichiers ext::''lvt'' de tests.
+
+
+note::
+    Le \proj \texfacto est capable de produire automatiquement tout le contenu du sous-dossier path::''rollout'' excepté bien entendu le dossier des tests.

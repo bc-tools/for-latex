@@ -1,0 +1,13 @@
+// ---------- //
+
+
+==
+10
+==
+
+--------
+:fordev:
+--------
+
+[[:doc:]]
+Start-up of the \doc: we have just extracted \doc files from general personal \specs.
