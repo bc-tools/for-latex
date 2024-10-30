@@ -296,16 +296,25 @@ def version_date_changes(about_vers, about_changes):
             if not shortline and not finalcontent:
                 continue
 
-            for pattern in BEGIN_WHAT_ENV_PATTERNS:
-                m = pattern.match(line.strip())
+            if shortline.startswith("\\tdocstartproj{"):
+                dateadded = True
 
-                if m:
-                    dateadded = True
+                line = f"""
+\\tdocversion{{{about_vers[TAG_NB]}}}[{nb_date_EN(about_vers)}]
+{line}
+                """.strip()
 
-                    line += (
-                        f"[version = {about_vers[TAG_NB]}, "
-                        f"date = {nb_date_EN(about_vers)}]"
-                    )
+            else:
+                for pattern in BEGIN_WHAT_ENV_PATTERNS:
+                    m = pattern.match(line.strip())
+
+                    if m:
+                        dateadded = True
+
+                        line += (
+                            f"[version = {about_vers[TAG_NB]}, "
+                            f"date = {nb_date_EN(about_vers)}]"
+                        )
 
         finalcontent.append(line)
 
