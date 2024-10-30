@@ -9,10 +9,8 @@ NOW
 
 > ---------------------------- <
 
-LaTeX Warning: You have requested, on input line 95, version                `2023-09-07' of package marginnote,                but only version                `2018/08/09 1.4b non floating margin notes for LaTeX'                is available. expected?
-
-David Carlisle
-
+répare les passages options à article !!!
+changer de classe article pour ????
 
 
 > ---------------------------- <
@@ -23,8 +21,6 @@ David Carlisle
 > ---------------------------- <
 
 texfacto-poc
-
-    ---> Templates to be translated but not used directly by the manual \doc.
 
     ---> prise en compte desc pour build.lua
 
@@ -37,9 +33,9 @@ mettre aussi
 
 
     \begin{itemize}
-    	\item La couleur de fond est fournie par \tdocmacro{tdocbackcolor}.
+        \item La couleur de fond est fournie par \tdocmacro{tdocbackcolor}.
 
-    	\item La couleur des titres et des lignes est fournie par \tdocmacro{tdocdarkcolor}.
+        \item La couleur des titres et des lignes est fournie par \tdocmacro{tdocdarkcolor}.
     \end{itemize}
 
     Ces macros développables admettent les codes suivants.

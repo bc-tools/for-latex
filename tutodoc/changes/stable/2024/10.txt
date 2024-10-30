@@ -2,6 +2,45 @@
 
 
 ==
+30  (1.6.2)
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+Version and \chges.
+
+    1) The macros ''\tdocdate'' and ''\tdocversion'' has a new final optional argument ''<voffset>'' to choose a specific vertical offset.
+
+    2) Better what-has-changed \envs.
+
+        * The new optional keys ''col'', ''date'' and ''version'' allow to date and version a \chge of a specific topic.
+
+        * Use of \paragraph for the title.
+
+
+[[:doc:]]
+Manual: for version and \chges, a new warning explains the side effects of the vertical offsets of \nbver and date materials, and it also gives an hand-made solution.
+
+
+--------
+:update:
+--------
+
+[[:format:]]
+Here are the small important \chges made.
+
+    1) Version and \chges: the font of the margin notes will always be normal.
+
+    1) Ornament: use of a ''\cleaders'' to avoid orphean rules at the bottom of a page.
+
+
+// ---------- //
+
+
+==
 28  (1.6.1)
 ==
 

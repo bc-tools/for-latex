@@ -151,15 +151,8 @@ def prebuild_single_tex(
             if not last_chges_explained:
                 last_chges_explained = about_this_change
 
-            # print(f"{chge_file=}")
-            # input(about_this_change)
-
             content.append(
-                f"""
-\\tdocversion{{{vers[TAG_NB]}}}[{nb_date_EN(vers)}]
-
-{about_this_change}
-                """.strip()
+                version_date_changes(vers, about_this_change)
             )
 
         content = "\n\n\\tdocsep\n\n\n% ------------------ %\n\n\n".join(content)
@@ -182,7 +175,7 @@ def prebuild_single_tex(
     {{\\small\\itshape
         \\vspace{{-5pt}}
         \\begin{{center}}
-        	\\textbf{{Abstract.}}
+            \\textbf{{Abstract.}}
         \\end{{center}}
 
         {abstract_EN}
@@ -287,6 +280,48 @@ def prebuild_single_tex(
                     srcfile  = srcfile,
                     destfile = lang_temp_dir / relpath
                 )
+
+
+def version_date_changes(about_vers, about_changes):
+    finalcontent = []
+    dateadded    = False
+
+    for i, line in enumerate(about_changes.split("\n")):
+        if not dateadded:
+            shortline = line.strip()
+
+            if i == 0 and shortline == r"\small":
+                continue
+
+            if not shortline and not finalcontent:
+                continue
+
+            if shortline.startswith("\\tdocstartproj{"):
+                dateadded = True
+
+                line = f"""
+\\tdocversion{{{about_vers[TAG_NB]}}}[{nb_date_EN(about_vers)}]
+{line}
+                """.strip()
+
+            else:
+                for pattern in BEGIN_WHAT_ENV_PATTERNS:
+                    m = pattern.match(line.strip())
+
+                    if m:
+                        dateadded = True
+
+                        line += (
+                            f"[version = {about_vers[TAG_NB]}, "
+                            f"date = {nb_date_EN(about_vers)}]"
+                        )
+
+        finalcontent.append(line)
+
+
+    finalcontent = "\n".join(finalcontent)
+
+    return finalcontent
 
 
 def content_from_TEX(

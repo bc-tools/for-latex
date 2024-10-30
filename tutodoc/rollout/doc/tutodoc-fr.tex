@@ -37,7 +37,7 @@
 
 \ExplSyntaxOn
 
-\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+\seq_map_inline:Nn \g__tutodoc_focus_std_seq {
     \subsection*{tdoc#1}
 
     \myexrmktext
@@ -49,8 +49,8 @@
     \myexrmktext
 }
 
-\ifcsundef{__g_tutodoc_focus_color_seq}{
-    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+\ifcsundef{g__tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -62,7 +62,7 @@
         \myadmotext
     }
 } {
-    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+    \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -132,7 +132,7 @@ $\pi \neq \frac{3}{14}$.
 
 \ExplSyntaxOn
 
-\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+\seq_map_inline:Nn \g__tutodoc_focus_std_seq {
     \subsection*{tdoc#1}
 
     \myexrmktext
@@ -144,8 +144,8 @@ $\pi \neq \frac{3}{14}$.
     \myexrmktext
 }
 
-\ifcsundef{__g_tutodoc_focus_color_seq}{
-    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+\ifcsundef{g__tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -157,7 +157,7 @@ $\pi \neq \frac{3}{14}$.
         \myadmotext
     }
 } {
-    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+    \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -227,7 +227,7 @@ $\pi \neq \frac{3}{14}$.
 
 \ExplSyntaxOn
 
-\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+\seq_map_inline:Nn \g__tutodoc_focus_std_seq {
     \subsection*{tdoc#1}
 
     \myexrmktext
@@ -239,8 +239,8 @@ $\pi \neq \frac{3}{14}$.
     \myexrmktext
 }
 
-\ifcsundef{__g_tutodoc_focus_color_seq}{
-    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+\ifcsundef{g__tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -252,7 +252,7 @@ $\pi \neq \frac{3}{14}$.
         \myadmotext
     }
 } {
-    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+    \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -322,7 +322,7 @@ $\pi \neq \frac{3}{14}$.
 
 \ExplSyntaxOn
 
-\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+\seq_map_inline:Nn \g__tutodoc_focus_std_seq {
     \subsection*{tdoc#1}
 
     \myexrmktext
@@ -334,8 +334,8 @@ $\pi \neq \frac{3}{14}$.
     \myexrmktext
 }
 
-\ifcsundef{__g_tutodoc_focus_color_seq}{
-    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+\ifcsundef{g__tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -347,7 +347,7 @@ $\pi \neq \frac{3}{14}$.
         \myadmotext
     }
 } {
-    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+    \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -406,7 +406,7 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 
 
 \begin{filecontents*}[overwrite]{examples-version-n-change-user-choice-icon.tex}
-\begin{tdoctopic}{À cacher}[\faEyeSlash]
+\begin{tdoctopic}{À cacher}<\faEyeSlash>
 % Une icône venant de fontawesome5.
     \item Info 1...
     \item Info 2...
@@ -446,6 +446,32 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-version-n-change-side-effect.tex}
+\tdocversion[red]{1.2.3}[2024-10-29]%
+\paragraph{Avant c'est problématique.}
+Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+
+
+\paragraph{Après c'est mal placé.}%
+\tdocversion[red]{1.2.3}[2024-10-29]
+
+Ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
+
+
+\paragraph{Pas de solution miracle.\tdocversion[red]{1.2.3}[2024-10-29]}
+
+Bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli,
+bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli,
+bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli,
+bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli...
+
+
+\paragraph{Gestion manuelle du problème.\tdocversion{1.2.3}[2024-10-29]<-.745cm>}
+
+Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-version-n-change-first.tex}
 \tdocstartproj{Première version du projet.}
 \end{filecontents*}
@@ -456,6 +482,27 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
     \item Info 1...
     \item Info 2...
 \end{tdoctech}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-what-n-when.tex}
+\begin{tdoctech}[col  = red,
+                 date = 2024-10-29]
+    \item Info 1...
+    \item Info 2...
+\end{tdoctech}
+
+\begin{tdocupdate}[col     = ForestGreen,
+                   version = 1.2.3]
+    \item Info 1...
+    \item Info 2...
+\end{tdocupdate}
+
+\begin{tdoctopic}{À cacher}<\faEyeSlash>%
+                           [version = 4.5.6, date = 2025-11-30]
+    \item Info 1...
+    \item Info 2...
+\end{tdoctopic}
 \end{filecontents*}
 
 
@@ -829,7 +876,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \title{La classe \texttt{tutodoc} - Documentation de type tutoriel}
 \author{Christophe, BAL}
-\date{28 oct. 2024 - Version 1.6.1}
+\date{30 oct. 2024 - Version 1.6.2}
 
 \maketitle
 
@@ -855,7 +902,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
     {\small\itshape
         \vspace{-5pt}
         \begin{center}
-        	\textbf{Abstract.}
+            \textbf{Abstract.}
         \end{center}
 
         The \thisproj{} class\,%
@@ -881,9 +928,23 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \small
 \begin{minipage}{.9\textwidth}
 \begin{tdocnote}[Derniers changements]
-\begin{tdoctech}
-    \item Les règles de nommage de \ctan\ nécessitent l'usage de noms du type \verb+tutodoc-*.css.cls.sty+ pour les fichiers à-la \trademark{CSS}.
-\end{tdoctech}
+\begin{tdocnew}
+	\item Les macros \tdocmacro{tdocdate} et \tdocmacro{tdocversion} ont un nouvel argument final facultatif \tdocinlatex{<voffset>} pour choisir un décalage vertical spécifique.
+
+	\item De meilleurs environnements pour indiquer les modifications apportées.
+	\begin{enumerate}
+		\item Les nouvelles clés facultatives \tdocinlatex{col}\,, \tdocinlatex{date} et \tdocinlatex{version} permettent d'indiquer la date et la version d'une modification apportée à un sujet spécifique.
+
+		\item Utilisation de \tdocmacro{paragraph} pour le titre.
+	\end{enumerate}
+\end{tdocnew} 
+
+
+\begin{tdocupdate}
+	\item Changements : la police des notes de marge aura toujours une forme normale.
+
+	\item Ornement : utilisation d'un \tdocinlatex{\cleaders} pour éviter les lignes orphelines en bas de page.
+\end{tdocupdate}
 \end{tdocnote}
 \end{minipage}
 \end{center}
@@ -1098,23 +1159,23 @@ Pour modifier la mise en forme générale, la classe \thisproj\ propose l'option
 
 % The gallery starts here...
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-bw}
 
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-color}
 
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-dark}
 
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-draft}
 
 }
@@ -1176,7 +1237,7 @@ Tout se passe via \tdocenv{tdocrem} avec un fonctionnement identique à l'enviro
 \label{tutodoc-admonitions}
 
 \begin{tdocnote}
-	La mise en forme proposée ici est celle par défaut, mais d'autres sont possible en changeant de thème : voir la galerie de cas d'utilisation dans l'annexe page \pageref{tutodoc-theme-gallery}.
+    La mise en forme proposée ici est celle par défaut, mais d'autres sont possible en changeant de thème : voir la galerie de cas d'utilisation dans l'annexe page \pageref{tutodoc-theme-gallery}.
     Quant aux icônes, elles sont obtenues via le package \tdocpack{fontawesome5}, et la macro \tdocmacro{tdocicon} gère l'espacement vis-à-vis du texte.
     \footnote{
         Par exemple,
@@ -1202,7 +1263,7 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 \begin{tdoctip}
     Quelque fois, un contenu mis en avant peut se réduire à une liste. Dans ce cas, la mise en forme peut être améliorée comme suit où nous utilisons l'option \tdocinlatex{wide} du package \tdocpack{enumitem}.
 
-	\tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
+    \tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
 
 \end{tdoctip}
 
@@ -1634,6 +1695,7 @@ Afin de faciliter le suivi d'un projet, il est indispensable de fournir un histo
 
 
 \subsection{À quel moment ?}
+\label{tutodoc-changes-when}
 
 On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas le numéro de version pourra éventuellement être daté.
 
@@ -1663,7 +1725,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 \end{tdocimp}
 
 
-\begin{tdocwarn}
+\begin{tdoccaut}
     Seul l'emploi du format numérique \tdocinlatex+YYYY-MM-DD+ est vérifié,
     \footnote{
         Techniquement, vérifier la validité d'une date, via \LaTeX3, ne présente pas de difficulté.
@@ -1672,6 +1734,16 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 %    \footnote{
 %        L'auteur de \thispack{} est entrain de mettre en place un ensemble d'outils permettant une telle semi-automatisation.
 %    }.
+\end{tdoccaut}
+
+
+\begin{tdocwarn}
+    En coulisse, le gros du travail est fait par la macro \tdocmacro{\marginnote} du package éponyme.
+    Les macros \tdocmacro{tdocdate} et \tdocmacro{tdocversion} souffrent donc des même effets de bord comme dans l'exemple suivant.
+    On peut tout de même régler ces problèmes via un argument optionnel \tdocinlatex{<déplacement-vertical>} comme à la fin de l'exemple ci-après. C'est moche, mais fonctionnel.
+
+    \tdoclatexshow[nostripe, colstripe=red]{examples-version-n-change-side-effect.tex}
+
 \end{tdocwarn}
 
 
@@ -1690,24 +1762,24 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 
 \foreach \exatitle/\filename in {
     {Juste pour la toute première version}/%<-- Translate me!
-    	first,
+        first,
     {Pour les nouveautés}/% <-- Translate me!
-    	new,
+        new,
     {Pour les mises à jour}/% <-- Translate me!
-    	update,
+        update,
     {Pour les bifurcations}/% <-- Translate me!
-    	break,
+        break,
     {Pour les problèmes}/% <-- Translate me!
-    	pb,
+        pb,
     {Pour les réparations}/% <-- Translate me!
-    	fix,
+        fix,
     {Informations techniques}/% <-- Translate me!
-    	tech,
+        tech,
     %
     {Thématiques aux choix avec une icône}/%<-- Translate me!
-    	user-choice-icon,
+        user-choice-icon,
     {Thématiques aux choix sans icône}/% <-- Translate me!
-    	user-choice%
+        user-choice%
 } {
     \begin{tdocexa}[\exatitle]
         \leavevmode
@@ -1718,7 +1790,19 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 }
 
 
-\section{Décorations}
+\subsection{Le quoi et le quand}
+
+Les clés optionnelles \tdocinlatex{col}\,, \tdocinlatex{date} et \tdocinlatex{version} permettent de dater et versionner un changement d'un type particulier.%
+\footnote{
+    L'avertissement à la fin de la section \ref{tutodoc-changes-when} donne la technique utilisée en coulisse, tout en montrant la nécessité de proposer des clés spécialisées.
+}
+Voici des exemples d'utilisation.
+
+\tdoclatexshow{examples-version-n-change-what-n-when.tex}
+
+
+
+\section{Décoration}
 
 Finissons cette documentation avec un petit outil de mise en forme qui rend de grands services.
 
@@ -1764,7 +1848,7 @@ Ble, ble, ble...
 \end{tdoccaut}
 
 \begin{figure}[ht]
-	\centering
+    \centering
     \contribtranslatedirtree\
     \caption{Vue simplifiée du dossier des traductions}
     \label{tutodoc-contrib-translate-dir}
@@ -1887,9 +1971,31 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 
 \small
 
-\tdocversion{1.6.1}[2024-10-28]
+\begin{tdocnew}[version = 1.6.2, date = 2024-10-30]
+	\item Les macros \tdocmacro{tdocdate} et \tdocmacro{tdocversion} ont un nouvel argument final facultatif \tdocinlatex{<voffset>} pour choisir un décalage vertical spécifique.
 
-\begin{tdoctech}
+	\item De meilleurs environnements pour indiquer les modifications apportées.
+	\begin{enumerate}
+		\item Les nouvelles clés facultatives \tdocinlatex{col}\,, \tdocinlatex{date} et \tdocinlatex{version} permettent d'indiquer la date et la version d'une modification apportée à un sujet spécifique.
+
+		\item Utilisation de \tdocmacro{paragraph} pour le titre.
+	\end{enumerate}
+\end{tdocnew} 
+
+
+\begin{tdocupdate}
+	\item Changements : la police des notes de marge aura toujours une forme normale.
+
+	\item Ornement : utilisation d'un \tdocinlatex{\cleaders} pour éviter les lignes orphelines en bas de page.
+\end{tdocupdate}
+
+\tdocsep
+
+
+% ------------------ %
+
+
+\begin{tdoctech}[version = 1.6.1, date = 2024-10-28]
     \item Les règles de nommage de \ctan\ nécessitent l'usage de noms du type \verb+tutodoc-*.css.cls.sty+ pour les fichiers à-la \trademark{CSS}.
 \end{tdoctech}
 
@@ -1899,9 +2005,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.6.0}[2024-10-27]
-
-\begin{tdocbreak}
+\begin{tdocbreak}[version = 1.6.0, date = 2024-10-27]
     \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{color} a été renommée \tdocinlatex{colstripe}.
 
     \item La macro \tdocmacro{tdoclinkcolor} devient la couleur \tdocinlatex{tutodoc@link@color} destinée à un usage interne.
@@ -1911,7 +2015,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 \begin{tdocnew}
     \item L'option de classe \tdocinlatex{theme} permet de choisir différents thèmes de mise en forme.
 
-	\item Journal des modifications : ajout de l'environnement \tdocenv*{tdoctech} pour les informations techniques.
+    \item Journal des modifications : ajout de l'environnement \tdocenv*{tdoctech} pour les informations techniques.
 
     \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{coltext} permet de changer aussi la couleur du texte.
 
@@ -1937,9 +2041,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.5.0}[2024-10-19]
-
-\begin{tdoctech}
+\begin{tdoctech}[version = 1.5.0, date = 2024-10-19]
     \item La version 3 de \tdocpack{minted} est prise en compte.
 \end{tdoctech}
 
@@ -1969,9 +2071,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.4.0}[2024-09-28]
-
-\begin{tdocbreak}
+\begin{tdocbreak}[version = 1.4.0, date = 2024-09-28]
     \item L'environnement \tdocenv*{tdoccaution} a été renommé \tdocenv*{tdoccaut} pour une saisie simplifiée.
 
     \item Mise en avant de contenus : les exemples et remarques, indiqués via les environnements \tdocenv*{tdocexa} et \tdocenv*{tdocrem}, sont toujours numérotés via un compteur commun.
@@ -2006,9 +2106,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.3.1}[2024-09-26]
-
-\begin{tdocnew}
+\begin{tdocnew}[version = 1.3.1, date = 2024-09-26]
     \item Version étoilée de \tdocmacro{tdocenv} pour n'avoir que le nom de l'environnement.
 \end{tdocnew}
 
@@ -2018,9 +2116,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.3.0}[2024-09-25]
-
-\begin{tdoctech}
+\begin{tdoctech}[version = 1.3.0, date = 2024-09-25]
     \item La version 3 de \tdocpack{minted} ne peut pas être prise en compte pour le moment car elle comporte des bugs : voir \url{https://github.com/gpoore/minted/issues/401}. On force donc temporairement l'usage de la version 2 de \tdocpack{minted}.
 \end{tdoctech}
 
@@ -2055,9 +2151,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.2.0-a}[2024-08-23]
-
-\begin{tdocupdate}
+\begin{tdocupdate}[version = 1.2.0-a, date = 2024-08-23]
     \item \tdocmacro{tdocversion}
     \begin{enumerate}
         \item Le numéro de version est au-dessus de la date.
@@ -2077,9 +2171,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.1.0}[2024-01-06]
-
-\begin{tdocnew}
+\begin{tdocnew}[version = 1.1.0, date = 2024-01-06]
     \item Journal des changements : deux nouveaux environnements.
     \begin{enumerate}
         \item \tdocenv{tdocbreak} pour les \tdocquote{bifurcations}\,, soit les modifications non rétrocompatibles.
@@ -2096,9 +2188,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 % ------------------ %
 
 
-\tdocversion{1.0.1}[2023-12-08]
-
-\begin{tdocfix}
+\begin{tdocfix}[version = 1.0.1, date = 2023-12-08]
     \item \tdocmacro{tdocenv}: l'espacement est maintenant correct, même si le paquet \tdocpack{babel} n'est pas chargé avec la langue française.
 
     \item \tdocenv[{[nostripe]}]{tdocshowcase}: les sauts de page autour des lignes \tdocquote{cadrantes} devraient être rares dorénavant.
@@ -2111,7 +2201,6 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 
 
 \tdocversion{1.0.0}[2023-11-29]
-
 \tdocstartproj{Première version publique du projet.}
 
 \end{document}

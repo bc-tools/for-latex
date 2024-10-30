@@ -140,6 +140,23 @@ CMDS_FOR_FILE_PATTERNS = [
 ]
 
 
+BEGIN_WHAT_ENV_PATTERNS = [
+    re.compile(
+          r"^\\begin\{tdoc"
+        + envname
+        + r"\}$"
+    )
+    for envname in [
+        "break",
+        "fix",
+        "new",
+        "prob",
+        "tech",
+        "update",
+    ]
+]
+
+
 CMD_ARG_PATTERN = re.compile('#(\d+)')
 
 

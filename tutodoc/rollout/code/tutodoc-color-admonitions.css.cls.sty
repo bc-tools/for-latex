@@ -28,10 +28,10 @@
 %%%
 % We use two ''prop'' variables to factorize the code just after.
 %%%
-\prop_new:N \__g_tutodoc_focus_color_prop
-\prop_new:N \__g_tutodoc_focus_icon_prop
+\prop_new:N \g__tutodoc_focus_color_prop
+\prop_new:N \g__tutodoc_focus_icon_prop
 
-\prop_set_from_keyval:Nn \__g_tutodoc_focus_color_prop {
+\prop_set_from_keyval:Nn \g__tutodoc_focus_color_prop {
   note = cyan,
   tip  = ForestGreen,
   imp  = orange,
@@ -39,7 +39,7 @@
   warn = red,
 }
 
-\prop_set_from_keyval:Nn \__g_tutodoc_focus_icon_prop {
+\prop_set_from_keyval:Nn \g__tutodoc_focus_icon_prop {
   note = \faInfoCircle,
   tip  = \faLightbulb,
   imp  = \faHighlighter,

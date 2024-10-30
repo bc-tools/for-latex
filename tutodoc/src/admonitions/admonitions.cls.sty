@@ -28,8 +28,8 @@
 %%%
 % We use a ''seq'' variable to factorize the code just after.
 %%%
-\seq_new:N             \__g_tutodoc_focus_std_seq
-\seq_set_from_clist:Nn \__g_tutodoc_focus_std_seq {
+\seq_new:N             \g__tutodoc_focus_std_seq
+\seq_set_from_clist:Nn \g__tutodoc_focus_std_seq {
   exa,
   rem
 }
@@ -37,12 +37,12 @@
 
 %%%
 % prototype::
-%     :action: looping over ''\__g_tutodoc_focus_std_seq'' to build new
+%     :action: looping over ''\g__tutodoc_focus_std_seq'' to build new
 %              numbered theorems sharing the same section level counter.
 %              To achieve that, we use the ''\newkeytheorem'' macro from
 %              the ''keytheorems'' \pack.
 %%%
-\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+\seq_map_inline:Nn \g__tutodoc_focus_std_seq {
   \str_if_eq:nnTF { #1 } { exa } {
     \newkeytheorem{tdoc#1}[
       name   = \use:c { tutodoc@trans@#1@title },
@@ -70,22 +70,21 @@
 % note::
 %     We provide two ways to define admonitions.
 %
-%         1) ''\__g_tutodoc_focus_color_prop'' and ''__g_tutodoc_focus_icon_prop''
+%         1) ''\g__tutodoc_focus_color_prop'' and ''g__tutodoc_focus_icon_prop''
 %         are for iconised and colored frames.
 %
-%         1) ''\__g_tutodoc_focus_color_seq'' is to use a dedicated basic theorem
+%         1) ''\g__tutodoc_focus_color_seq'' is to use a dedicated basic theorem
 %         (this should be only useful for the draft theme).
 %
 % warning::
 %     The variables should be defined inside the themes!
 %%%
-\ifcsundef{__g_tutodoc_focus_color_seq}{
+\ifcsundef{g__tutodoc_focus_color_seq}{
 %%%
-% note::
-%     The settings used come from the following sources.
-%         * https://tex.stackexchange.com/a/727022/6880
-%         * https://tex.stackexchange.com/a/682332/6880
-%         * https://tex.stackexchange.com/a/623232/6880
+% source::
+%     + https://tex.stackexchange.com/a/727022/6880
+%     + https://tex.stackexchange.com/a/682332/6880
+%     + https://tex.stackexchange.com/a/623232/6880
 %%%
   \tcbset{
     tutodoc-focus-color-style/.style = {
@@ -111,35 +110,35 @@
 
 \ExplSyntaxOn
 
-\ifcsundef{__g_tutodoc_focus_color_seq}{
+\ifcsundef{g__tutodoc_focus_color_seq}{
 %%%
 % prototype::
-%     :action: ''key/value'' iteration over ''\__g_tutodoc_focus_color_prop''
+%     :action: ''key/value'' iteration over ''\g__tutodoc_focus_color_prop''
 %              to build new colorful unumbered theorems. To achieve that,
 %              we use a ''tcolorbox'' style given to the ''\newkeytheorem''
 %              macro from the ''keytheorems'' \pack, and icons from the
 %              ''fontawesome5'' \pack.
 %%%
-  \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+  \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
     \newkeytheorem{tdoc#1}[
       numbered  = false,
 % tcolorbox-no-titlebar can be used.
       tcolorbox = {tutodoc-focus-color-style=#2},
       name      = {
-        \tdocicon{ \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } }
+        \tdocicon{ \prop_item:Nn \g__tutodoc_focus_icon_prop { #1 } }
         \use:c { tutodoc@trans@#1@title }
-      },
+      }
     ]
   }
 } {
 %%%
 % prototype::
-%     :action: looping over ''\__g_tutodoc_focus_color_seq'' to build new
+%     :action: looping over ''\g__tutodoc_focus_color_seq'' to build new
 %              numbered theorems sharing the same section level counter.
 %              To achieve that, we use the ''\newkeytheorem'' macro from
 %              the ''keytheorems'' \pack.
 %%%
-  \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+  \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
     \newkeytheorem{tdoc#1}[
       name       = \use:c { tutodoc@trans@#1@title },
       numberlike = tdocexa,

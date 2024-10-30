@@ -44,8 +44,8 @@ TEX_BUILD_CMD = r"""
 
 TMPL_INCLUDE_PDF = r"""
 \includepdf[
-	pages=1-2,
-	fitpaper=true
+    pages=1-2,
+    fitpaper=true
 ]{gallery-showcase-<<THEME>>}
 """.strip()
 

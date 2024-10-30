@@ -31,7 +31,7 @@
 %%%
 \newmintinline[tdocinlatex]{\tutodoc@latex@lexer}{%
   bgcolor            = tutodoc@latex@back@color,%
-  style/.expand once = \tutodoc@latex@style% <-- This needs minted3!
+  style/.expand once = \tutodoc@latex@style     % <-- This needs minted3!
 }
 
 
@@ -57,7 +57,7 @@
 %
 %     See the pgfkeys package documentation for explanation.
 %%%
-\NewExpandableDocumentCommand{\tutodoc@latex@listing@formating}{ m }{
+\NewExpandableDocumentCommand{\tutodoc@latex@listing@format@option}{ m }{
   \str_case:nnF { #1 } {
     { sbs  } { listing ~ side ~ text }
     { code } { listing ~ only }
@@ -85,20 +85,20 @@
     colupper = tutodoc@latex@text@color,
     collower = tutodoc@latex@text@color,
 % Padding.
-    left   = \tutodoc@latex@left,
-    right  = \tutodoc@latex@right,
-    bottom = \tutodoc@latex@bottom,
-    top    = \tutodoc@latex@top,
+    left   = \tutodoc@latex@left@len,
+    right  = \tutodoc@latex@right@len,
+    bottom = \tutodoc@latex@bottom@len,
+    top    = \tutodoc@latex@top@len,
 % Frame.
-    shadow     = {\tutodoc@latex@shadow@xshift}%
-                 {\tutodoc@latex@shadow@yshift}%
-                 {\tutodoc@latex@shadow@offset}%
+    shadow     = {\tutodoc@latex@shadow@xshift@len}%
+                 {\tutodoc@latex@shadow@yshift@len}%
+                 {\tutodoc@latex@shadow@offset@len}%
                  {tutodoc@latex@shadow@color},
-    arc        = \tutodoc@latex@arc,
-    leftrule   = \tutodoc@latex@left@rule,
-    rightrule  = \tutodoc@latex@right@rule,
-    bottomrule = \tutodoc@latex@bottom@rule,
-    toprule    = \tutodoc@latex@top@rule,
+    arc        = \tutodoc@latex@arc@len,
+    leftrule   = \tutodoc@latex@left@rule@len,
+    rightrule  = \tutodoc@latex@right@rule@len,
+    bottomrule = \tutodoc@latex@bottom@rule@len,
+    toprule    = \tutodoc@latex@top@rule@len,
 % Separating line.
     segmentation style = {
       tutodoc@latex@segment@color,
@@ -123,7 +123,7 @@
 %     ''tcolorbox'' to have \infos about the environment ''tdoclatex''.
 %%%
 \newtcblisting{tdoclatex}[1][std]{%
-  tutodoc-latex-listing-style = \tutodoc@latex@listing@formating{#1}
+  tutodoc-latex-listing-style = \tutodoc@latex@listing@format@option{#1}
 }
 
 
@@ -133,7 +133,7 @@
 % prototype::
 %     #1 : (tdoclatex-style)
 %          :see: ''\newtcblisting{tdoclatex}''
-%     #2 : (file-path)
+%     #2 : (file path)
 %          the path of the file to input and format.
 %
 % note::
@@ -142,7 +142,7 @@
 %%%
 \newtcbinputlisting{\tdoclatexinput}[2][std]{
   listing file                = {#2},
-  tutodoc-latex-listing-style = \tutodoc@latex@listing@formating{#1}
+  tutodoc-latex-listing-style = \tutodoc@latex@listing@format@option{#1}
 }
 
 
@@ -169,13 +169,16 @@
 
 % :: LATEXSHOW MACRO :: %
 
+\tl_new:N \l__tutodoc_showcase_options_passed_tl
+
+
 %%%
 % prototype::
-%     #1 : (key-val)
+%     #1 : (key-val options)
 %          the key-value options supported by the ''tdocshowcase'' \env,
 %          plus one allowing you to change the description of a line
 %          printed between the code and its highlighted output.
-%     #2 : (file-path)
+%     #2 : (file path)
 %          the path of a file
 %
 %     :see: env.tdocshowcase ,
@@ -185,14 +188,14 @@
   \group_begin:
     \keys_set_known:nnN { tutodoc / listing / latexshow }
       { #1 }
-      \l_tmpa_tl
+      \l__tutodoc_showcase_options_passed_tl
 
     \tdoclatexinput[code]{#2}
 
     \tl_use:N \l_tutodoc_listing_explain_tl
 
 % Source: https://tex.stackexchange.com/a/696700/6880
-    \exp_last_unbraced:NNV \tdocshowcaseinput [\l_tmpa_tl] {#2}
+    \exp_last_unbraced:NNV \tdocshowcaseinput [\l__tutodoc_showcase_options_passed_tl] {#2}
   \group_end:
 }
 

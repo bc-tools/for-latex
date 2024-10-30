@@ -112,7 +112,7 @@ sorted_useful_files = files_2_analyze(
 SRC_DIR = metadata[TAG_SRC]
 
 TRANSLATE_DIR            = metadata[TAG_PROJ_DIR] / TAG_CONTRIB / TAG_TRANSLATE / metadata[TAG_MANUAL_DEV_LANG]
-TRANSLATE_API_DIR        = TRANSLATE_DIR / TAG_API / TAG_LOCALE
+TRANSLATE_API_DIR        = TRANSLATE_DIR / TAG_API
 TRANSLATE_DEV_MANUAL_DIR = TRANSLATE_DIR / TAG_DOC / TAG_MANUAL
 
 
@@ -142,12 +142,15 @@ for locale_dir in metadata[TAG_SRC].glob(glob_search):
 
     print(f"+ Working in ''src/{locale_dir.relative_to(metadata[TAG_SRC])}''")
 
-    this_contrib_dir = TRANSLATE_API_DIR / ctxt
+    this_contrib_dir = TRANSLATE_API_DIR / ctxt / TAG_LOCALE
 
     emptydir(
         folder  = this_contrib_dir,
         rel_dir = TRANSLATE_DIR
     )
+
+    # print(this_contrib_dir)
+    # exit()
 
     for locale_file in locale_dir.glob("*"):
         if (
@@ -267,6 +270,9 @@ for srcfile in all_tex_files:
 
     if fordoc:
         fordoc = f"\n{fordoc}\n"
+
+        if srcfile.stem.startswith('tmpl-'):
+            fordoc =  f"\n% -- FORDOC -- %\n{fordoc}"
 
     content = f"""
 \\documentclass[10pt, a4paper, theme = color]{{tutodoc}}
