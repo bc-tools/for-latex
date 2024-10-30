@@ -1,7 +1,7 @@
 // ---------- //
 
 ==
-30  (1.6.2-beta.2)
+30  (1.6.2)
 ==
 
 --------
@@ -48,7 +48,7 @@ Manual: for version and \chges, a new warning explains the side effects of the v
 [[:format:]]
 Here are the small important \chges made.
 
-    1) Version and \chges: the font of the margin notes will allways be normal.
+    1) Version and \chges: the font of the margin notes will always be normal.
 
     1) Ornament: use of a ''\cleaders'' to avoid orphean rules at the bottom of a page.
 
