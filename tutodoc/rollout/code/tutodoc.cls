@@ -354,8 +354,8 @@
 %%%
 % We use a ''seq'' variable to factorize the code just after.
 %%%
-\seq_new:N             \__g_tutodoc_focus_std_seq
-\seq_set_from_clist:Nn \__g_tutodoc_focus_std_seq {
+\seq_new:N             \g__tutodoc_focus_std_seq
+\seq_set_from_clist:Nn \g__tutodoc_focus_std_seq {
   exa,
   rem
 }
@@ -363,12 +363,12 @@
 
 %%%
 % prototype::
-%     :action: looping over ''\__g_tutodoc_focus_std_seq'' to build new
+%     :action: looping over ''\g__tutodoc_focus_std_seq'' to build new
 %              numbered theorems sharing the same section level counter.
 %              To achieve that, we use the ''\newkeytheorem'' macro from
 %              the ''keytheorems'' \pack.
 %%%
-\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+\seq_map_inline:Nn \g__tutodoc_focus_std_seq {
   \str_if_eq:nnTF { #1 } { exa } {
     \newkeytheorem{tdoc#1}[
       name   = \use:c { tutodoc@trans@#1@title },
@@ -398,16 +398,16 @@
 % note::
 %     We provide two ways to define admonitions.
 %
-%         1) ''\__g_tutodoc_focus_color_prop'' and ''__g_tutodoc_focus_icon_prop''
+%         1) ''\g__tutodoc_focus_color_prop'' and ''g__tutodoc_focus_icon_prop''
 %         are for iconised and colored frames.
 %
-%         1) ''\__g_tutodoc_focus_color_seq'' is to use a dedicated basic theorem
+%         1) ''\g__tutodoc_focus_color_seq'' is to use a dedicated basic theorem
 %         (this should be only useful for the draft theme).
 %
 % warning::
 %     The variables should be defined inside the themes!
 %%%
-\ifcsundef{__g_tutodoc_focus_color_seq}{
+\ifcsundef{g__tutodoc_focus_color_seq}{
 %%%
 % note::
 %     The settings used come from the following sources.
@@ -439,22 +439,22 @@
 
 \ExplSyntaxOn
 
-\ifcsundef{__g_tutodoc_focus_color_seq}{
+\ifcsundef{g__tutodoc_focus_color_seq}{
 %%%
 % prototype::
-%     :action: ''key/value'' iteration over ''\__g_tutodoc_focus_color_prop''
+%     :action: ''key/value'' iteration over ''\g__tutodoc_focus_color_prop''
 %              to build new colorful unumbered theorems. To achieve that,
 %              we use a ''tcolorbox'' style given to the ''\newkeytheorem''
 %              macro from the ''keytheorems'' \pack, and icons from the
 %              ''fontawesome5'' \pack.
 %%%
-  \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+  \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
     \newkeytheorem{tdoc#1}[
       numbered  = false,
 % tcolorbox-no-titlebar can be used.
       tcolorbox = {tutodoc-focus-color-style=#2},
       name      = {
-        \tdocicon{ \prop_item:Nn \__g_tutodoc_focus_icon_prop { #1 } }
+        \tdocicon{ \prop_item:Nn \g__tutodoc_focus_icon_prop { #1 } }
         \use:c { tutodoc@trans@#1@title }
       }
     ]
@@ -462,12 +462,12 @@
 } {
 %%%
 % prototype::
-%     :action: looping over ''\__g_tutodoc_focus_color_seq'' to build new
+%     :action: looping over ''\g__tutodoc_focus_color_seq'' to build new
 %              numbered theorems sharing the same section level counter.
 %              To achieve that, we use the ''\newkeytheorem'' macro from
 %              the ''keytheorems'' \pack.
 %%%
-  \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+  \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
     \newkeytheorem{tdoc#1}[
       name       = \use:c { tutodoc@trans@#1@title },
       numberlike = tdocexa,
@@ -907,7 +907,7 @@
 %
 %     See the pgfkeys package documentation for explanation.
 %%%
-\NewExpandableDocumentCommand{\tutodoc@latex@listing@formating}{ m }{
+\NewExpandableDocumentCommand{\tutodoc@latex@listing@format@option}{ m }{
   \str_case:nnF { #1 } {
     { sbs  } { listing ~ side ~ text }
     { code } { listing ~ only }
@@ -935,20 +935,20 @@
     colupper = tutodoc@latex@text@color,
     collower = tutodoc@latex@text@color,
 % Padding.
-    left   = \tutodoc@latex@left,
-    right  = \tutodoc@latex@right,
-    bottom = \tutodoc@latex@bottom,
-    top    = \tutodoc@latex@top,
+    left   = \tutodoc@latex@left@len,
+    right  = \tutodoc@latex@right@len,
+    bottom = \tutodoc@latex@bottom@len,
+    top    = \tutodoc@latex@top@len,
 % Frame.
-    shadow     = {\tutodoc@latex@shadow@xshift}%
-                 {\tutodoc@latex@shadow@yshift}%
-                 {\tutodoc@latex@shadow@offset}%
+    shadow     = {\tutodoc@latex@shadow@xshift@len}%
+                 {\tutodoc@latex@shadow@yshift@len}%
+                 {\tutodoc@latex@shadow@offset@len}%
                  {tutodoc@latex@shadow@color},
-    arc        = \tutodoc@latex@arc,
-    leftrule   = \tutodoc@latex@left@rule,
-    rightrule  = \tutodoc@latex@right@rule,
-    bottomrule = \tutodoc@latex@bottom@rule,
-    toprule    = \tutodoc@latex@top@rule,
+    arc        = \tutodoc@latex@arc@len,
+    leftrule   = \tutodoc@latex@left@rule@len,
+    rightrule  = \tutodoc@latex@right@rule@len,
+    bottomrule = \tutodoc@latex@bottom@rule@len,
+    toprule    = \tutodoc@latex@top@rule@len,
 % Separating line.
     segmentation style = {
       tutodoc@latex@segment@color,
@@ -973,7 +973,7 @@
 %     ''tcolorbox'' to have \infos about the environment ''tdoclatex''.
 %%%
 \newtcblisting{tdoclatex}[1][std]{%
-  tutodoc-latex-listing-style = \tutodoc@latex@listing@formating{#1}
+  tutodoc-latex-listing-style = \tutodoc@latex@listing@format@option{#1}
 }
 
 
@@ -994,7 +994,7 @@
 %%%
 \newtcbinputlisting{\tdoclatexinput}[2][std]{
   listing file                = {#2},
-  tutodoc-latex-listing-style = \tutodoc@latex@listing@formating{#1}
+  tutodoc-latex-listing-style = \tutodoc@latex@listing@format@option{#1}
 }
 
 
@@ -1167,11 +1167,11 @@
 
 \input{tutodoc-\tutodoc@theme-version-n-change.css.cls.sty}
 
-\newlength{\tutodoc@version@vsep@len}
-\setlength{\tutodoc@version@vsep@len}{-4.25pt}
+\newlength{\tutodoc@version@vertical@sep@len}
+\setlength{\tutodoc@version@vertical@sep@len}{-4.25pt}
 
-\newlength{\tutodoc@version@voffset@len}
-\setlength{\tutodoc@version@voffset@len}{-.345cm}
+\newlength{\tutodoc@version@vertical@offset@len}
+\setlength{\tutodoc@version@vertical@offset@len}{-.345cm}
 
 
 %%%
@@ -1194,12 +1194,12 @@
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
 %%%
-\NewDocumentCommand{\tdocversion}{O{\tutodoc@changes@when@color} m O{} D<>{\tutodoc@version@voffset@len}}{
+\NewDocumentCommand{\tdocversion}{O{\tutodoc@changes@when@color} m O{} D<>{\tutodoc@version@vertical@offset@len}}{
   \tutodoc@new@change@margin%
     {#1}                        % Color
     {#2}                        % Version
     {#3}                        % Date
-    {\tutodoc@version@vsep@len} % Last negative vertical spacing
+    {\tutodoc@version@vertical@sep@len} % Last negative vertical spacing
     {#4}                        % Vertical offset
 }
 
@@ -1208,11 +1208,11 @@
 % :: DATE :: %
 % :::::::::: %
 
-\newlength{\tutodoc@date@vsep@len}
-\setlength{\tutodoc@date@vsep@len}{-5.35pt}
+\newlength{\tutodoc@date@vertical@sep@len}
+\setlength{\tutodoc@date@vertical@sep@len}{-5.35pt}
 
-\newlength{\tutodoc@date@voffset@len}
-\setlength{\tutodoc@date@voffset@len}{-.345cm}
+\newlength{\tutodoc@date@vertical@offset@len}
+\setlength{\tutodoc@date@vertical@offset@len}{-.345cm}
 
 %%%
 % prototype::
@@ -1226,12 +1226,12 @@
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@when@color} m D<>{\tutodoc@date@voffset@len}}{
+\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@when@color} m D<>{\tutodoc@date@vertical@offset@len}}{
   \tutodoc@new@change@margin%
     {#1}                     % Color
     {}                       % Version
     {#2}                     % Date
-    {\tutodoc@date@vsep@len} % Last negative spacing
+    {\tutodoc@date@vertical@sep@len} % Last negative spacing
     {#3}                     % Vertical offset
 }
 
@@ -1273,8 +1273,8 @@
 }
 
 
-\newlength{\tutodoc@topic@voffset@len}
-\setlength{\tutodoc@topic@voffset@len}{-.745cm}
+\newlength{\tutodoc@topic@vertical@offset@len}
+\setlength{\tutodoc@topic@vertical@offset@len}{-.745cm}
 
 
 %%%
@@ -1313,8 +1313,8 @@
         {\l_tutodoc_topic_when_color_tl}
         {\l_tutodoc_topic_version_tl}
         {\l_tutodoc_topic_date_tl}
-        {\tutodoc@version@vsep@len}
-        {\tutodoc@topic@voffset@len}
+        {\tutodoc@version@vertical@sep@len}
+        {\tutodoc@topic@vertical@offset@len}
     }
   }
 
@@ -1331,8 +1331,8 @@
 %%%
 % We use a ''prop'' variable to factorize the code just after.
 %%%
-\prop_new:N              \__g_tutodoc_topic_change_prop
-\prop_set_from_keyval:Nn \__g_tutodoc_topic_change_prop {
+\prop_new:N              \g__tutodoc_topic_change_prop
+\prop_set_from_keyval:Nn \g__tutodoc_topic_change_prop {
   break  = \faCodeBranch,
   fix    = \faWrench,
   new    = \faGem,
@@ -1346,11 +1346,11 @@
 % prototype::
 %     :see: env.tdoctopic
 %
-%     :action: ''key/value'' iteration over ''\__g_tutodoc_topic_change_prop''
+%     :action: ''key/value'' iteration over ''\g__tutodoc_topic_change_prop''
 %              to build topic-like \envs using the \env ''tdoctopic''
 %              (the title used is translated into the good language).
 %%%
-\prop_map_inline:Nn \__g_tutodoc_topic_change_prop {
+\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
   \NewDocumentEnvironment{ tdoc#1 } { O{} } {
     \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } < #2 > [##1]
   }{
@@ -1394,7 +1394,7 @@
 % prototype::
 %     :action: this macro draws a centered horizontal rule with a height
 %              of qty::''0.75 pt'', and a width equal to half of the current
-%              text width, and extra vertical spaces are added above and 
+%              text width, and extra vertical spaces are added above and
 %              below the rule.
 %
 %     :see: len.tutodoc@vsep@deco@len

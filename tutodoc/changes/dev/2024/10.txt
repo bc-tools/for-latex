@@ -1,5 +1,21 @@
 // ---------- //
 
+==
+30  (1.6.2-beta.2)
+==
+
+--------
+:fordev:
+--------
+
+[[:facto:]]
+The code has been cleaned another time.
+
+
+
+
+// ---------- //
+
 
 ==
 29  (1.6.2-beta.1)

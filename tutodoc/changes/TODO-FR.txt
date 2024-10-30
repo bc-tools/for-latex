@@ -9,15 +9,8 @@ NOW
 
 > ---------------------------- <
 
-col, date et version pour les tdc-what à case du placement à faire à la main!
-
-
-> ---------------------------- <
-
-LaTeX Warning: You have requested, on input line 95, version                `2023-09-07' of package marginnote,                but only version                `2018/08/09 1.4b non floating margin notes for LaTeX'                is available. expected?
-
-David Carlisle
-
+répare les passages options à article !!!
+changer de classe article pour ????
 
 
 > ---------------------------- <
@@ -28,8 +21,6 @@ David Carlisle
 > ---------------------------- <
 
 texfacto-poc
-
-    ---> Templates to be translated but not used directly by the manual \doc.
 
     ---> prise en compte desc pour build.lua
 

@@ -4,7 +4,7 @@
 
 \ExplSyntaxOn
 
-\tl_new:N \l__tutodoc_remaining_cls_options_tl
+\tl_new:N \l__tutodoc_other_cls_options_tl
 
 \newcommand{ \tutodoc@theme } { color }
 
@@ -20,13 +20,13 @@
     }
   },
   unknown .code:n = {
-    \tl_set:Nn \l__tutodoc_remaining_cls_options_tl { #1 }
+    \tl_set:Nn \l__tutodoc_other_cls_options_tl { #1 }
   }
 }
 
 \ProcessKeyOptions[tutodoc / main / class / options]
 
-\LoadClass[ \tl_use:N \l__tutodoc_remaining_cls_options_tl ]%
+\exp_last_unbraced:NNV \LoadClass[ \l__tutodoc_other_cls_options_tl ]%
           { article }%
           [ 2022-06-01 ]
 

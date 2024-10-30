@@ -3,8 +3,6 @@
 % -- DECORATIONS -- %
 
 % Source
-%    + https://tex.stackexchange.com/a/705938/6880
-%      (for \addvspace{\medskipamount} instead of \medskip)
 %    + https://tex.stackexchange.com/a/130529/6880
 %      (for the leaders trick)
 %    + https://tex.stackexchange.com/a/269887/6880
@@ -12,22 +10,22 @@
 %    + https://tex.stackexchange.com/a/729710/6880
 %      (centering the \hrule)
 
-\newlength{\tutodoc@vsep@deco@len}
-\setlength{\tutodoc@vsep@deco@len}{\dimeval{2\medskipamount+1.25pt}}
+\newlength{\tutodoc@vertical@space@deco@len}
+\setlength{\tutodoc@vertical@space@deco@len}{\dimeval{2\medskipamount+1.25pt}}
 
 %%%
 % prototype::
 %     :action: this macro draws a centered horizontal rule with a height
 %              of qty::''0.75 pt'', and a width equal to half of the current
-%              text width, and extra vertical spaces are added above and 
+%              text width, and extra vertical spaces are added above and
 %              below the rule.
 %
-%     :see: len.tutodoc@vsep@deco@len
+%     :see: len.tutodoc@vertical@space@deco@len
 %%%
 \NewDocumentCommand{\tdocsep}{}{
   \par
   \cleaders
-    \vbox to \tutodoc@vsep@deco@len{
+    \vbox to \tutodoc@vertical@space@deco@len{
       \vfill\centerline{\vrule width 0.5\hsize height 0.75pt}\vfill
-    }\vskip\tutodoc@vsep@deco@len
+    }\vskip\tutodoc@vertical@space@deco@len
 }

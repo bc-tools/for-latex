@@ -15,6 +15,10 @@
 
 \ExplSyntaxOn
 
+\box_new:N \l__tutodoc_content_box
+\dim_new:N \l__tutodoc_content_dim
+
+
 %%%
 % prototype::
 %     #1 : (color)
@@ -31,7 +35,7 @@
 %           https://tex.stackexchange.com/a/604708/6880''.
 %%%
 
-\NewDocumentCommand{\tdocruler}{O{\tutodoc@showcase@rule@color} m}{
+\NewDocumentCommand{\tdocruler}{ O{\tutodoc@showcase@rule@color} m }{
   \par
   {
     \centering
@@ -40,15 +44,15 @@
       \bfseries
       \color{#1}
 
-      \hbox_set:Nn \l_tmpa_box { \,\, #2 \,\, }
-      \dim_set:Nn  \l_tmpa_dim {
-        .35 \linewidth - .5 \box_wd:N \l_tmpa_box
+      \hbox_set:Nn \l__tutodoc_content_box { \,\, #2 \,\, }
+      \dim_set:Nn  \l__tutodoc_content_dim {
+        .35 \linewidth - .5 \box_wd:N \l__tutodoc_content_box
       }
 
-      \rule[.75pt] { \dim_use:N \l_tmpa_dim }
+      \rule[.75pt] { \dim_use:N \l__tutodoc_content_dim }
                    { 2.5pt }
-      \box_use:N   \l_tmpa_box
-      \rule[.75pt] { \dim_use:N \l_tmpa_dim }
+      \box_use:N   \l__tutodoc_content_box
+      \rule[.75pt] { \dim_use:N \l__tutodoc_content_dim }
                    { 2.5pt }
       \par
   }
@@ -70,9 +74,9 @@
 %          This color is used to set the one for the decorated texts printed
 %          corresponding to the two first arguments.
 %     #4 : (text color)
-%          XXXXX
+%          color of the content
 %     #5 : (rule color builder)
-%          YYY
+%          the macro used to build the color from the user's rule color
 %
 %     :action: this environment just adds its content processed by \latex
 %              between centered materials produced by the macro ''\tdocruler''
@@ -198,6 +202,9 @@
 
 % :: SHOWCASE FROM FILE :: %
 
+\tl_new:N \l__tutodoc_showcase_options_tl
+
+
 %%%
 % prototype::
 %     #1 : (key-val options)
@@ -205,13 +212,13 @@
 %     #2 : (file path)
 %          the path of a file
 %%%
-\NewDocumentCommand{\tdocshowcaseinput}{O{} m}{
+\NewDocumentCommand{\tdocshowcaseinput}{ O{} m }{
   \group_begin:
     \keys_set_known:nnN { tutodoc / showcase }
       { #1 }
-      \l_tmpa_tl
+      \l__tutodoc_showcase_options_tl
 
-    \exp_last_unbraced:NNV \tdocshowcase [\l_tmpa_tl]
+    \exp_last_unbraced:NNV \tdocshowcase [\l__tutodoc_showcase_options_tl]
       \input{#2}
     \endtdocshowcase
   \group_end:

@@ -35,7 +35,7 @@
 
 \ExplSyntaxOn
 
-\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+\seq_map_inline:Nn \g__tutodoc_focus_std_seq {
     \subsection*{tdoc#1}
 
     \myexrmktext
@@ -47,8 +47,8 @@
     \myexrmktext
 }
 
-\ifcsundef{__g_tutodoc_focus_color_seq}{
-    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+\ifcsundef{g__tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -60,7 +60,7 @@
         \myadmotext
     }
 } {
-    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+    \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -127,7 +127,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 
 \ExplSyntaxOn
 
-\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+\seq_map_inline:Nn \g__tutodoc_focus_std_seq {
     \subsection*{tdoc#1}
 
     \myexrmktext
@@ -139,8 +139,8 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
     \myexrmktext
 }
 
-\ifcsundef{__g_tutodoc_focus_color_seq}{
-    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+\ifcsundef{g__tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -152,7 +152,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
         \myadmotext
     }
 } {
-    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+    \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -219,7 +219,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 
 \ExplSyntaxOn
 
-\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+\seq_map_inline:Nn \g__tutodoc_focus_std_seq {
     \subsection*{tdoc#1}
 
     \myexrmktext
@@ -231,8 +231,8 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
     \myexrmktext
 }
 
-\ifcsundef{__g_tutodoc_focus_color_seq}{
-    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+\ifcsundef{g__tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -244,7 +244,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
         \myadmotext
     }
 } {
-    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+    \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -311,7 +311,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 
 \ExplSyntaxOn
 
-\seq_map_inline:Nn \__g_tutodoc_focus_std_seq {
+\seq_map_inline:Nn \g__tutodoc_focus_std_seq {
     \subsection*{tdoc#1}
 
     \myexrmktext
@@ -323,8 +323,8 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
     \myexrmktext
 }
 
-\ifcsundef{__g_tutodoc_focus_color_seq}{
-    \prop_map_inline:Nn \__g_tutodoc_focus_color_prop {
+\ifcsundef{g__tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -336,7 +336,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
         \myadmotext
     }
 } {
-    \seq_map_inline:Nn \__g_tutodoc_focus_color_seq {
+    \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
         \subsection*{tdoc#1}
 
         \myadmotext
@@ -1038,7 +1038,7 @@ As this language is included in the list of languages taken into account, see be
         \item \tdocinlatex|fr| : French.
     \end{itemize}
 \end{multicols}
-                    
+
 
 
 \begin{tdoccaut}

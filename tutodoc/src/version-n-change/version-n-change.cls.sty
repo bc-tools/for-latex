@@ -113,11 +113,11 @@
 
 \input{../version-n-change/css/\tutodoc@theme.cls.sty}
 
-\newlength{\tutodoc@version@vsep@len}
-\setlength{\tutodoc@version@vsep@len}{-4.25pt}
+\newlength{\tutodoc@version@vertical@sep@len}
+\setlength{\tutodoc@version@vertical@sep@len}{-4.25pt}
 
-\newlength{\tutodoc@version@voffset@len}
-\setlength{\tutodoc@version@voffset@len}{-.345cm}
+\newlength{\tutodoc@version@vertical@offset@len}
+\setlength{\tutodoc@version@vertical@offset@len}{-.345cm}
 
 
 %%%
@@ -140,23 +140,23 @@
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
 %%%
-\NewDocumentCommand{\tdocversion}{O{\tutodoc@changes@when@color} m O{} D<>{\tutodoc@version@voffset@len}}{
+\NewDocumentCommand{\tdocversion}{ O{\tutodoc@changes@when@color} m O{} D<>{\tutodoc@version@vertical@offset@len} }{
   \tutodoc@new@change@margin%
-    {#1}                        % Color
-    {#2}                        % Version
-    {#3}                        % Date
-    {\tutodoc@version@vsep@len} % Last negative vertical spacing
-    {#4}                        % Vertical offset
+    {#1}                                % Color
+    {#2}                                % Version
+    {#3}                                % Date
+    {\tutodoc@version@vertical@sep@len} % Last negative vertical spacing
+    {#4}                                % Vertical offset
 }
 
 
 % :: DATE :: %
 
-\newlength{\tutodoc@date@vsep@len}
-\setlength{\tutodoc@date@vsep@len}{-5.35pt}
+\newlength{\tutodoc@date@vertical@sep@len}
+\setlength{\tutodoc@date@vertical@sep@len}{-5.35pt}
 
-\newlength{\tutodoc@date@voffset@len}
-\setlength{\tutodoc@date@voffset@len}{-.345cm}
+\newlength{\tutodoc@date@vertical@offset@len}
+\setlength{\tutodoc@date@vertical@offset@len}{-.345cm}
 
 %%%
 % prototype::
@@ -170,13 +170,13 @@
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@when@color} m D<>{\tutodoc@date@voffset@len}}{
+\NewDocumentCommand{\tdocdate}{ O{\tutodoc@changes@when@color} m D<>{\tutodoc@date@vertical@offset@len} }{
   \tutodoc@new@change@margin%
-    {#1}                     % Color
-    {}                       % Version
-    {#2}                     % Date
-    {\tutodoc@date@vsep@len} % Last negative spacing
-    {#3}                     % Vertical offset
+    {#1}                             % Color
+    {}                               % Version
+    {#2}                             % Date
+    {\tutodoc@date@vertical@sep@len} % Last negative spacing
+    {#3}                             % Vertical offset
 }
 
 
@@ -211,8 +211,11 @@
 }
 
 
-\newlength{\tutodoc@topic@voffset@len}
-\setlength{\tutodoc@topic@voffset@len}{-.745cm}
+\tl_new:N \l__tutodoc_topic_all_user_options_tl
+
+
+\newlength{\tutodoc@topic@vertical@offset@len}
+\setlength{\tutodoc@topic@vertical@offset@len}{-.745cm}
 
 
 %%%
@@ -238,21 +241,21 @@
 
   \keys_set:nn { tutodoc / version-n-change / topic / options } { #3 }
 
-  \tl_clear:N      \l_tmpa_tl
-  \tl_set_eq:NN    \l_tmpa_tl \l_tutodoc_topic_version_tl
-  \tl_put_right:Nn \l_tmpa_tl { \l_tutodoc_topic_date_tl }
+  \tl_clear:N      \l__tutodoc_topic_all_user_options_tl
+  \tl_set_eq:NN    \l__tutodoc_topic_all_user_options_tl \l_tutodoc_topic_version_tl
+  \tl_put_right:Nn \l__tutodoc_topic_all_user_options_tl { \l_tutodoc_topic_date_tl }
 
   \paragraph{%
     \IfBlankF{#2}{\tdocicon{#2}}
     \textsc{#1.}
-    \exp_args:Ne \IfBlankF{\l_tmpa_tl}{
+    \exp_args:Ne \IfBlankF{\l__tutodoc_topic_all_user_options_tl}{
 % A date and/or a version.
       \exp_args:NNee \tutodoc@new@change@margin%
         {\l_tutodoc_topic_when_color_tl}
         {\l_tutodoc_topic_version_tl}
         {\l_tutodoc_topic_date_tl}
-        {\tutodoc@version@vsep@len}
-        {\tutodoc@topic@voffset@len}
+        {\tutodoc@version@vertical@sep@len}
+        {\tutodoc@topic@vertical@offset@len}
     }
   }
 
@@ -267,8 +270,8 @@
 %%%
 % We use a ''prop'' variable to factorize the code just after.
 %%%
-\prop_new:N              \__g_tutodoc_topic_change_prop
-\prop_set_from_keyval:Nn \__g_tutodoc_topic_change_prop {
+\prop_new:N              \g__tutodoc_topic_change_prop
+\prop_set_from_keyval:Nn \g__tutodoc_topic_change_prop {
   break  = \faCodeBranch,
   fix    = \faWrench,
   new    = \faGem,
@@ -282,11 +285,11 @@
 % prototype::
 %     :see: env.tdoctopic
 %
-%     :action: ''key/value'' iteration over ''\__g_tutodoc_topic_change_prop''
+%     :action: ''key/value'' iteration over ''\g__tutodoc_topic_change_prop''
 %              to build topic-like \envs using the \env ''tdoctopic''
 %              (the title used is translated into the good language).
 %%%
-\prop_map_inline:Nn \__g_tutodoc_topic_change_prop {
+\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
   \NewDocumentEnvironment{ tdoc#1 } { O{} } {
     \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } < #2 > [##1]
   }{
