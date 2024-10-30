@@ -24,7 +24,7 @@
 
 \ExplSyntaxOn
 
-\tl_new:N \l__tutodoc_remaining_cls_options_tl
+\tl_new:N \l__tutodoc_other_cls_options_tl
 
 \newcommand{ \tutodoc@theme } { color }
 
@@ -40,13 +40,13 @@
     }
   },
   unknown .code:n = {
-    \tl_set:Nn \l__tutodoc_remaining_cls_options_tl { #1 }
+    \tl_set:Nn \l__tutodoc_other_cls_options_tl { #1 }
   }
 }
 
 \ProcessKeyOptions[tutodoc / main / class / options]
 
-\LoadClass[ \tl_use:N \l__tutodoc_remaining_cls_options_tl ]%
+\exp_last_unbraced:NNV \LoadClass[ \l__tutodoc_other_cls_options_tl ]%
           { article }%
           [ 2022-06-01 ]
 
@@ -314,7 +314,7 @@
 
 %%%
 % prototype::
-%     #1 : (text-en)
+%     #1 : (EN-text)
 %          an english text that will be explained in another \lang.
 %
 %     :extra: this macro has a star version.
@@ -409,11 +409,10 @@
 %%%
 \ifcsundef{g__tutodoc_focus_color_seq}{
 %%%
-% note::
-%     The settings used come from the following sources.
-%         * https://tex.stackexchange.com/a/727022/6880
-%         * https://tex.stackexchange.com/a/682332/6880
-%         * https://tex.stackexchange.com/a/623232/6880
+% source::
+%     + https://tex.stackexchange.com/a/727022/6880
+%     + https://tex.stackexchange.com/a/682332/6880
+%     + https://tex.stackexchange.com/a/623232/6880
 %%%
   \tcbset{
     tutodoc-focus-color-style/.style = {
@@ -551,7 +550,7 @@
 % Cleaner code from https://tex.stackexchange.com/a/703379/6880 .
 \NewDocumentCommand{\tdocenv}{s O{} m}{%
   \IfBooleanTF{#1}{%
-      \texttt{#3}%
+    \texttt{#3}%
   }{%
     \texttt{\string\begin\string{#3\string}#2 %
             \!\!...\@\!\!\! %
@@ -580,6 +579,11 @@
 % :: PREFIX FROM... :: %
 % :::::::::::::::::::: %
 
+\seq_new:N \l__tutodoc_prewhy_parts_seq
+\int_new:N \l__tutodoc_prewhy_nbparts_int
+\tl_new:N  \l__tutodoc_pretext_tl
+\tl_new:N  \l__tutodoc_posttext_tl
+
 %%%
 % prototype::
 %     #1 : (pre.fix)
@@ -589,22 +593,28 @@
 %%%
 \NewDocumentCommand{\tdocprewhy}{m}{%
 % Do we have 2 parts?
-  \seq_set_split:Nnn \l_tmpa_seq { . } { #1 }
+  \seq_set_split:Nnn \l__tutodoc_prewhy_parts_seq { . } { #1 }
 
-  \int_set:Nn \l_tmpa_int
-              {\int_eval:n {\seq_count:N \l_tmpa_seq}}
+  \int_set:Nn \l__tutodoc_prewhy_nbparts_int
+              {\int_eval:n {\seq_count:N \l__tutodoc_prewhy_parts_seq}}
 
-  \if_int_compare:w \l_tmpa_int = 2
+  \if_int_compare:w \l__tutodoc_prewhy_nbparts_int = 2
   \else:
     \msg_error:nn { tutodoc ~ (macroenv) }
       { macroenv : prefix-why-bad-format }
   \fi:
 
 % Let's go.
-  \seq_pop:NN \l_tmpa_seq \l_tmpa_tl
-  \seq_pop:NN \l_tmpa_seq \l_tmpb_tl
+  \seq_pop:NN \l__tutodoc_prewhy_parts_seq \l__tutodoc_pretext_tl
+  \seq_pop:NN \l__tutodoc_prewhy_parts_seq \l__tutodoc_posttext_tl
 
-  \textbf{\tdocpre{\tl_use:N \l_tmpa_tl}\kern.5pt\textperiodcentered\kern.5pt{\tl_use:N \l_tmpb_tl}}
+  \textbf{
+    \tdocpre{\tl_use:N \l__tutodoc_pretext_tl}
+    \kern.5pt
+    \textperiodcentered
+    \kern.5pt
+    {\tl_use:N \l__tutodoc_posttext_tl}
+  }
 }
 
 \ExplSyntaxOff
@@ -643,6 +653,10 @@
 
 \ExplSyntaxOn
 
+\box_new:N \l__tutodoc_content_box
+\dim_new:N \l__tutodoc_content_dim
+
+
 %%%
 % prototype::
 %     #1 : (color)
@@ -659,7 +673,7 @@
 %           https://tex.stackexchange.com/a/604708/6880''.
 %%%
 
-\NewDocumentCommand{\tdocruler}{O{\tutodoc@showcase@rule@color} m}{
+\NewDocumentCommand{\tdocruler}{ O{\tutodoc@showcase@rule@color} m }{
   \par
   {
     \centering
@@ -668,15 +682,15 @@
       \bfseries
       \color{#1}
 
-      \hbox_set:Nn \l_tmpa_box { \,\, #2 \,\, }
-      \dim_set:Nn  \l_tmpa_dim {
-        .35 \linewidth - .5 \box_wd:N \l_tmpa_box
+      \hbox_set:Nn \l__tutodoc_content_box { \,\, #2 \,\, }
+      \dim_set:Nn  \l__tutodoc_content_dim {
+        .35 \linewidth - .5 \box_wd:N \l__tutodoc_content_box
       }
 
-      \rule[.75pt] { \dim_use:N \l_tmpa_dim }
+      \rule[.75pt] { \dim_use:N \l__tutodoc_content_dim }
                    { 2.5pt }
-      \box_use:N   \l_tmpa_box
-      \rule[.75pt] { \dim_use:N \l_tmpa_dim }
+      \box_use:N   \l__tutodoc_content_box
+      \rule[.75pt] { \dim_use:N \l__tutodoc_content_dim }
                    { 2.5pt }
       \par
   }
@@ -700,9 +714,9 @@
 %          This color is used to set the one for the decorated texts printed
 %          corresponding to the two first arguments.
 %     #4 : (text color)
-%          XXXXX
+%          color of the content
 %     #5 : (rule color builder)
-%          YYY
+%          the macro used to build the color from the user's rule color
 %
 %     :action: this environment just adds its content processed by \latex
 %              between centered materials produced by the macro ''\tdocruler''
@@ -834,6 +848,9 @@
 % :: SHOWCASE FROM FILE :: %
 % :::::::::::::::::::::::: %
 
+\tl_new:N \l__tutodoc_showcase_options_tl
+
+
 %%%
 % prototype::
 %     #1 : (key-val options)
@@ -841,13 +858,13 @@
 %     #2 : (file path)
 %          the path of a file
 %%%
-\NewDocumentCommand{\tdocshowcaseinput}{O{} m}{
+\NewDocumentCommand{\tdocshowcaseinput}{ O{} m }{
   \group_begin:
     \keys_set_known:nnN { tutodoc / showcase }
       { #1 }
-      \l_tmpa_tl
+      \l__tutodoc_showcase_options_tl
 
-    \exp_last_unbraced:NNV \tdocshowcase [\l_tmpa_tl]
+    \exp_last_unbraced:NNV \tdocshowcase [\l__tutodoc_showcase_options_tl]
       \input{#2}
     \endtdocshowcase
   \group_end:
@@ -879,7 +896,7 @@
 %%%
 \newmintinline[tdocinlatex]{\tutodoc@latex@lexer}{%
   bgcolor            = tutodoc@latex@back@color,%
-  style/.expand once = \tutodoc@latex@style% <-- This needs minted3!
+  style/.expand once = \tutodoc@latex@style     % <-- This needs minted3!
 }
 
 
@@ -1027,6 +1044,9 @@
 % :: LATEXSHOW MACRO :: %
 % ::::::::::::::::::::: %
 
+\tl_new:N \l__tutodoc_showcase_options_passed_tl
+
+
 %%%
 % prototype::
 %     #1 : (key-val options)
@@ -1043,14 +1063,14 @@
   \group_begin:
     \keys_set_known:nnN { tutodoc / listing / latexshow }
       { #1 }
-      \l_tmpa_tl
+      \l__tutodoc_showcase_options_passed_tl
 
     \tdoclatexinput[code]{#2}
 
     \tl_use:N \l_tutodoc_listing_explain_tl
 
 % Source: https://tex.stackexchange.com/a/696700/6880
-    \exp_last_unbraced:NNV \tdocshowcaseinput [\l_tmpa_tl] {#2}
+    \exp_last_unbraced:NNV \tdocshowcaseinput [\l__tutodoc_showcase_options_passed_tl] {#2}
   \group_end:
 }
 
@@ -1194,13 +1214,13 @@
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
 %%%
-\NewDocumentCommand{\tdocversion}{O{\tutodoc@changes@when@color} m O{} D<>{\tutodoc@version@vertical@offset@len}}{
+\NewDocumentCommand{\tdocversion}{ O{\tutodoc@changes@when@color} m O{} D<>{\tutodoc@version@vertical@offset@len} }{
   \tutodoc@new@change@margin%
-    {#1}                        % Color
-    {#2}                        % Version
-    {#3}                        % Date
+    {#1}                                % Color
+    {#2}                                % Version
+    {#3}                                % Date
     {\tutodoc@version@vertical@sep@len} % Last negative vertical spacing
-    {#4}                        % Vertical offset
+    {#4}                                % Vertical offset
 }
 
 
@@ -1226,13 +1246,13 @@
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\tdocdate}{O{\tutodoc@changes@when@color} m D<>{\tutodoc@date@vertical@offset@len}}{
+\NewDocumentCommand{\tdocdate}{ O{\tutodoc@changes@when@color} m D<>{\tutodoc@date@vertical@offset@len} }{
   \tutodoc@new@change@margin%
-    {#1}                     % Color
-    {}                       % Version
-    {#2}                     % Date
+    {#1}                             % Color
+    {}                               % Version
+    {#2}                             % Date
     {\tutodoc@date@vertical@sep@len} % Last negative spacing
-    {#3}                     % Vertical offset
+    {#3}                             % Vertical offset
 }
 
 
@@ -1273,6 +1293,9 @@
 }
 
 
+\tl_new:N \l__tutodoc_topic_all_user_options_tl
+
+
 \newlength{\tutodoc@topic@vertical@offset@len}
 \setlength{\tutodoc@topic@vertical@offset@len}{-.745cm}
 
@@ -1300,14 +1323,14 @@
 
   \keys_set:nn { tutodoc / version-n-change / topic / options } { #3 }
 
-  \tl_clear:N      \l_tmpa_tl
-  \tl_set_eq:NN    \l_tmpa_tl \l_tutodoc_topic_version_tl
-  \tl_put_right:Nn \l_tmpa_tl { \l_tutodoc_topic_date_tl }
+  \tl_clear:N      \l__tutodoc_topic_all_user_options_tl
+  \tl_set_eq:NN    \l__tutodoc_topic_all_user_options_tl \l_tutodoc_topic_version_tl
+  \tl_put_right:Nn \l__tutodoc_topic_all_user_options_tl { \l_tutodoc_topic_date_tl }
 
   \paragraph{%
     \IfBlankF{#2}{\tdocicon{#2}}
     \textsc{#1.}
-    \exp_args:Ne \IfBlankF{\l_tmpa_tl}{
+    \exp_args:Ne \IfBlankF{\l__tutodoc_topic_all_user_options_tl}{
 % A date and/or a version.
       \exp_args:NNee \tutodoc@new@change@margin%
         {\l_tutodoc_topic_when_color_tl}
@@ -1378,8 +1401,6 @@
 % ----------------- %
 
 % Source
-%    + https://tex.stackexchange.com/a/705938/6880
-%      (for \addvspace{\medskipamount} instead of \medskip)
 %    + https://tex.stackexchange.com/a/130529/6880
 %      (for the leaders trick)
 %    + https://tex.stackexchange.com/a/269887/6880
@@ -1387,8 +1408,8 @@
 %    + https://tex.stackexchange.com/a/729710/6880
 %      (centering the \hrule)
 
-\newlength{\tutodoc@vsep@deco@len}
-\setlength{\tutodoc@vsep@deco@len}{\dimeval{2\medskipamount+1.25pt}}
+\newlength{\tutodoc@vertical@space@deco@len}
+\setlength{\tutodoc@vertical@space@deco@len}{\dimeval{2\medskipamount+1.25pt}}
 
 %%%
 % prototype::
@@ -1397,12 +1418,12 @@
 %              text width, and extra vertical spaces are added above and
 %              below the rule.
 %
-%     :see: len.tutodoc@vsep@deco@len
+%     :see: len.tutodoc@vertical@space@deco@len
 %%%
 \NewDocumentCommand{\tdocsep}{}{
   \par
   \cleaders
-    \vbox to \tutodoc@vsep@deco@len{
+    \vbox to \tutodoc@vertical@space@deco@len{
       \vfill\centerline{\vrule width 0.5\hsize height 0.75pt}\vfill
-    }\vskip\tutodoc@vsep@deco@len
+    }\vskip\tutodoc@vertical@space@deco@len
 }
