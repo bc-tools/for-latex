@@ -486,11 +486,11 @@ Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
     \item Info 2...
 \end{tdocupdate}
 
-\begin{tdocfix}[date    = 2025-11-30,
-                version = 4.5.6]
+\begin{tdoctopic}{To hide}<\faEyeSlash>%
+                          [version = 4.5.6, date = 2025-11-30]
     \item Info 1...
     \item Info 2...
-\end{tdocfix}
+\end{tdoctopic}
 \end{filecontents*}
 
 
@@ -892,7 +892,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \title{The \texttt{tutodoc} class - Tutorial-style documentation}
 \author{Christophe, BAL}
-\date{Oct 28, 2024 - Version 1.6.1}
+\date{Oct 30, 2024 - Version 1.6.2}
 
 \maketitle
 
@@ -921,9 +921,23 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \begin{tdocnote}[Last changes]
 \small
 
-\begin{tdoctech}
-    \item The naming rules of \ctan\ need the use of \trademark{CSS} files named \verb+tutodoc-*.css.cls.sty+\,.
-\end{tdoctech}
+\begin{tdocnew}
+	\item The macros \tdocmacro{tdocdate} and \tdocmacro{tdocversion} has a new final optional argument \tdocinlatex{<voffset>} to choose a specific vertical offset.
+
+	\item Better environments to indicate the changes made.
+	\begin{enumerate}
+        \item The new optional keys \tdocinlatex{col}\,, \tdocinlatex{date} and \tdocinlatex{version} allow to date and version a change of a specific topic.
+
+        \item Use of \tdocmacro{paragraph} for the title.
+	\end{enumerate}
+\end{tdocnew}
+
+
+\begin{tdocupdate}
+	\item Version and changes: the font of the margin notes will always have a normal shape.
+
+	\item Ornament: use of a \tdocinlatex{\cleaders} to avoid orphean rules at the bottom of a page.
+\end{tdocupdate}
 \end{tdocnote}
 \end{minipage}
 \end{center}
@@ -1989,6 +2003,30 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \section{History}
 
 \small
+
+\begin{tdocnew}[version = 1.6.2, date = 2024-10-30]
+	\item The macros \tdocmacro{tdocdate} and \tdocmacro{tdocversion} has a new final optional argument \tdocinlatex{<voffset>} to choose a specific vertical offset.
+
+	\item Better environments to indicate the changes made.
+	\begin{enumerate}
+        \item The new optional keys \tdocinlatex{col}\,, \tdocinlatex{date} and \tdocinlatex{version} allow to date and version a change of a specific topic.
+
+        \item Use of \tdocmacro{paragraph} for the title.
+	\end{enumerate}
+\end{tdocnew}
+
+
+\begin{tdocupdate}
+	\item Version and changes: the font of the margin notes will always have a normal shape.
+
+	\item Ornament: use of a \tdocinlatex{\cleaders} to avoid orphean rules at the bottom of a page.
+\end{tdocupdate}
+
+\tdocsep
+
+
+% ------------------ %
+
 
 \begin{tdoctech}[version = 1.6.1, date = 2024-10-28]
     \item The naming rules of \ctan\ need the use of \trademark{CSS} files named \verb+tutodoc-*.css.cls.sty+\,.
