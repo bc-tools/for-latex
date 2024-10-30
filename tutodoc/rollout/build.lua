@@ -25,7 +25,7 @@ typesetopts = checkopts
 
 uploadconfig = {
     version      = "1.6.2 [2024-10-30]",
-    announcement = "The main change is the ability to choose a layout from 4 themes.",
+    announcement = "More robust environments for the changes indicated.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",
