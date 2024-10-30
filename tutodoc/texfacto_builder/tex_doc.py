@@ -297,6 +297,8 @@ def version_date_changes(about_vers, about_changes):
                 continue
 
             if shortline.startswith("\\tdocstartproj{"):
+                dateadded = True
+
                 line = f"""
 \\tdocversion{{{about_vers[TAG_NB]}}}[{nb_date_EN(about_vers)}]
 {line}
