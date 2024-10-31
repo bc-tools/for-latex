@@ -1,4 +1,4 @@
-general:
+project:
   desc   : This project automates the production of a TeX project
            from a source directory using a standarized workflow.
   acronym: "[TeX] [facto]-ry"

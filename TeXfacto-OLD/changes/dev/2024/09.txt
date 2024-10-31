@@ -2,21 +2,6 @@
 
 
 ==
-03  ??
-==
-
---------
-:fordev:
---------
-
-[[:doc:]]  ??
-\Doc before the code: software \archi constraints explained.
-
-
-// ---------- //
-
-
-==
 02
 ==
 

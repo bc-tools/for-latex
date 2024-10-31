@@ -9,6 +9,16 @@ NOW
 
 > ---------------------------- <
 
+--------
+:fordev:
+--------
+
+[[:doc:]]  ??
+\Doc before the code: software \archi constraints explained.
+
+
+> ---------------------------- <
+
 pack et/ou class
 
     ---> CLASSE: on doit passer via un main.cls et des *.cls.sty

@@ -1,0 +1,8 @@
+// ---------- //
+
+
+==
+31  (0.0.0-alpha.0)
+==
+
+This project will automate the production of a \tex code project from a \src \dir using a standarized workflow (the idea is to code easily small parts of the project rather than working on big path::''STY'' \andor path::''CLS'' files).
