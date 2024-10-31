@@ -6,6 +6,19 @@ tutodoc - TODO
 NOW
 ---
 
+> ---------------------------- <
+
+Loading `hyperref`
+
+I will integrate this into the next minor version via `\AtBeginDocument`. ;-) The use of `\hypersetup` is limited to the colors of the links to obtain a coherent color system.
+
+> ---------------------------- <
+
+template theme
+
+    ---> url pour la couleur
+
+    ---> date et version de quoi change
 
 > ---------------------------- <
 
