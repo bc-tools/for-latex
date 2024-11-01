@@ -714,6 +714,11 @@ log TeX Live pour source dépendance en dur et non au vol car trop long !!!
 
 > ---------------------------- <
 
+debug folder from test folder sucha as to easily test something : we simply copy tlv file by adding  .tex extension : it is the rsponsability of the dev to chnage the code of the original tlv if needed
+
+
+> ---------------------------- <
+
 A VOIR
 
     https://indymotion.fr/w/emm8R7vgGaVnqsrpPqqHe9
