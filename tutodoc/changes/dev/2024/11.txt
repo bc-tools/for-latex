@@ -1,0 +1,12 @@
+// ---------- //
+
+==
+01  (1.6.3.beta-1)
+==
+
+-----
+:fix:
+-----
+
+[[:doc:]]
+The bad ''\tdocmacro{\marginnote}'' has been changed to the good ''\tdocmacro{marginnote}''.
