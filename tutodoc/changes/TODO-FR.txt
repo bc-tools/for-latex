@@ -9,7 +9,8 @@ NOW
 
 > ---------------------------- <
 
-CLASS options
+CLASS options + changer de classe article pour ????
+
 
 % Source.
 %     + https://tex.stackexchange.com/a/729929/6880
@@ -59,12 +60,6 @@ template theme
 
 > ---------------------------- <
 
-répare les passages options à article !!!
-changer de classe article pour ????
-
-
-> ---------------------------- <
-
 ??? script fabriquant les examples tdoc warn and co à partir d'un donné (cec évite de redander des trads déjà faites !) + idem pour chge what è!!
 
 
@@ -78,31 +73,6 @@ texfacto-poc
 > ---------------------------- <
 
 THÈMES
-
-mettre aussi
-
-
-    \begin{itemize}
-        \item La couleur de fond est fournie par \tdocmacro{tdocbackcolor}.
-
-        \item La couleur des titres et des lignes est fournie par \tdocmacro{tdocdarkcolor}.
-    \end{itemize}
-
-    Ces macros développables admettent les codes suivants.
-
-    \begin{tdoclatex}[code]
-% Argument 1 : de façon optionnelle, on peut indiquer la quantité de couleur
-%              relativement au noir.
-%              Il est en général inutile de modifier ce paramètre !
-% Argument 2 : une couleur au format xcolor.
-\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
-
-% Argument 1 : de façon optionnelle, on peut indiquer le taux de transparence.
-%              Il est en général inutile de modifier ce paramètre !
-% Argument 2 : une couleur au format xcolor.
-\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
-    \end{tdoclatex}
-
 
     --> intégerre cela dans tefacto-POC
 
@@ -125,8 +95,6 @@ IMPORTS
 
 LANG
 
-    --> les trads dans la doc : faire uns cript qui gère cela automatiquement !
-
     --> ref à https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags ???
 
 
@@ -143,26 +111,4 @@ une fois macroenvsign ok, ajouter les fiches technqiues "utilisateurs" ùais dan
 
 > ---------------------------- <
 
-a warning will tell to the user to load babel in case this has not been done.
-
-
-> ---------------------------- <
-
 \RequirePackage[numbered]{bookmark} utile ???
-
-
-> ---------------------------- <
-
-mise en place d'un package de type CSS (bdoc sert de test !)
-
-    ---> créer un package tnsstyle : on utilise des noms sémantiques et non des couleurs, penser aussi aux style de traits ou autre...
-
-    ---> gére emph note, warning...etc
-
-    ---> faire un truc modulable comme cela d'autres peuvent contribuer
-
-+
-
-scinder en deux mais tout livrer ensemble !
-
-    ---> gestion noir & blanc par défaut et garder ancennes couleurs car sympa !
