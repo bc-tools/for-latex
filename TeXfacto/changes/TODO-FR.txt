@@ -9,6 +9,15 @@ NOW
 
 > ---------------------------- <
 
+on commence par analyse des require pour les listere et si besoin ordonne en porduisant un yaml modifiabel car ectaines situations ne sont pas automatisables
+
+    ---> coéherence des versions et des options si doublons
+    ---> possibilité de mise en commentaire de la vesrion minimale souhaitée
+    ---> gestion des tikzlibrray et similaiere : anticiper de nouveaux cas propres à de nouveaux package
+
+
+> ---------------------------- <
+
 --------
 :fordev:
 --------
