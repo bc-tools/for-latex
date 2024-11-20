@@ -29,8 +29,10 @@ test_str = r"""
     """
 
 pattern = re.compile(
-    r"\\RequirePackage(\[(.*?)\])?([^{]*?)?{(.*?)}",
-    flags = re.S
+    # r"\\RequirePackage(\[(.*?)\])?([^{]*?)?{(.*?)}", flags = re.S
+    r"\\RequirePackage(\[([^][]*)\])?([^{]*){([^{}]*)}.*(?:\n\s*\[([^][]*)])?",
+    # r"\\RequirePackage(?:\[([^][]*)\])?[^{]*{([^{}]*)}.*(?:\n\s*\[([^][]*)])?",
+    # r"\\RequirePackage(\[(.*?)\])?([^{]*?)?{(.*?)}?\[([0-9\-\/]*?)\]", flags = re.S
 )
 
 matches = pattern.finditer(test_str)
@@ -38,7 +40,9 @@ matches = pattern.finditer(test_str)
 for m in matches:
     print('---')
 
-    for i in [0, 2, 4]:
+    for i in range(6):
         print(f"m.group({i}):")
         print(m.group(i))
         print()
+
+    input()
