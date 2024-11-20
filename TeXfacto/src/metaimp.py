@@ -45,9 +45,9 @@ matches = pattern.finditer(test_str)
 for m in matches:
     print('---')
 
-    for i in range(len(m.groups()) + 1):
+    for i, mg in enumerate(m.groups()):
         print(f"m.group({i}):")
-        print(m.group(i))
+        print(mg)
         print()
 
     input()
