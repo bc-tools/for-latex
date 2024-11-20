@@ -29,7 +29,15 @@ test_str = r"""
     """
 
 pattern = re.compile(
-    r"\\(RequirePackage|LoadClass)(\[([^][]*)\])?([^{]*){([^{}]*)}.*(?:\n\s*\[([^][]*)])?",
+    r"""
+        \\(RequirePackage|LoadClass) #
+        (\[([^][]*)\])?              #
+        ([^{]*)                      #
+        {([^{}]*)}                   #
+        .*                           #
+        (?:\n\s*\[([^][]*)])?        #
+    """.strip(),
+    re.VERBOSE
 )
 
 matches = pattern.finditer(test_str)
@@ -37,7 +45,7 @@ matches = pattern.finditer(test_str)
 for m in matches:
     print('---')
 
-    for i in range(len(m.groups())):
+    for i in range(len(m.groups()) + 1):
         print(f"m.group({i}):")
         print(m.group(i))
         print()
