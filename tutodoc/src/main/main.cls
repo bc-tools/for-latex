@@ -27,17 +27,42 @@
 \ProcessKeyOptions[tutodoc / main / class / options]
 
 \exp_last_unbraced:NNV \LoadClass[ \l__tutodoc_other_cls_options_tl ]%
-          { article }%
-          [ 2022-06-01 ]
+          { article }
 
 \ExplSyntaxOff
 
 
 % -- IMPORTS -- %
 
+% :: LOCALE :: %
+
+% We delegate the management of quoting to the ''csquotes'' package,
+% which takes care of the locale settings.
+\RequirePackage{csquotes}
+
+% :: STYLES :: %
+
 \RequirePackage[svgnames]%
-               {xcolor}%
-               [2023/11/15]
+               {xcolor}
+
+\RequirePackage{fontawesome5}
+
+\RequirePackage{keytheorems}
+
+\RequirePackage{tcolorbox}
+
+\tcbuselibrary{minted,
+               breakable,
+               skins}
+
+\RequirePackage{clrstrip}
+
+\RequirePackage{fontawesome5}
+
+\RequirePackage{marginnote}
+
+\RequirePackage[highlightmode = immediate]%
+               {minted}
 
 \RequirePackage[
   top            = 2.5cm,
@@ -47,20 +72,14 @@
   marginparwidth = 2cm,
   marginparsep   = 2mm,
   heightrounded
-]{geometry}%
- [2020-01-02]
+]{geometry}
 
 \RequirePackage[raggedright]%
-               {titlesec}%
-               [2023/10/27]
+               {titlesec}
 
 \RequirePackage{tocbasic}
 
-\RequirePackage{xcolor}%
-               [2022/06/12]
-
 \RequirePackage{hyperref}% To load after titlesec!
-               [2023-02-07]
 
 
 % == TOOLS == %

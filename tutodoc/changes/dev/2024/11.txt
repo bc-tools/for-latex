@@ -1,6 +1,22 @@
 // ---------- //
 
 ==
+21  (1.6.3.beta-2)
+==
+
+-----
+:fix:
+-----
+
+[[:tech:]]
+From now on, package imports will be carried out cleanly via the path::''src/main/main.cls'' file.
+
+plus de dates : elle sont ajouté auto dans la doc qui indquen que test faits su
+
+
+// ---------- //
+
+==
 01  (1.6.3.beta-1)
 ==
 

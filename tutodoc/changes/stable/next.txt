@@ -1,1 +1,6 @@
-TODO
+-----
+:fix:
+-----
+
+[[:tech:]]
+From now on, package imports will be carried out cleanly via the path::''src/main/main.cls'' file.
