@@ -9,6 +9,11 @@ NOW
 
 > ---------------------------- <
 
+main pour les imports !!!
+
+
+> ---------------------------- <
+
 on commence par analyse des require pour les listere et si besoin ordonne en porduisant un yaml modifiabel car ectaines situations ne sont pas automatisables
 
     ---> coéherence des versions et des options si doublons
