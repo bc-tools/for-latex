@@ -34,11 +34,7 @@
 
 % -- IMPORTS -- %
 
-% :: LOCALE :: %
 
-% We delegate the management of quoting to the ''csquotes'' package,
-% which takes care of the locale settings.
-\RequirePackage{csquotes}
 
 % :: STYLES :: %
 
@@ -58,6 +54,14 @@
 \tcbuselibrary{minted,
                breakable,
                skins}
+
+% :: LOCALE :: %
+
+\RequirePackage[utf8]{inputenc}% Load 'inputenc' before 'csquotes'
+% We delegate the management of quoting to the ''csquotes'' package,
+% which takes care of the locale settings.
+\RequirePackage{csquotes} % csquotes should be loaded after fvextra, to avoid a warning from the lineno package on input line 36.
+
 
 \RequirePackage{clrstrip}
 

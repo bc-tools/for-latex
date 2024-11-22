@@ -254,7 +254,7 @@ Completed box being shipped out [2]
 ............\pdfcolorstack 1 current
 ............\vbox(43.9833+2.85002)x457.49547
 .............\pdfcolorstack 1 push {0.25 0 0.25 rg 0.25 0 0.25 RG}
-.............\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdoccaut}{}{keythms_unnumbered_dummyctr.unnumbered.9}{1}{}{note={}}{}}}}
+.............\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdoccaut}{}{keythms_unnumbered_dummyctr.unnumbered.9}{1}{}{note={}}{}}}}
 .............\glue(\parskip) 0.0
 .............\glue(\parskip) 0.0
 .............\hbox(6.83331+0.0)x457.49547, glue set 414.04022fil
@@ -651,7 +651,7 @@ Completed box being shipped out [2]
 ............\pdfcolorstack 1 current
 ............\vbox(46.03888+2.85002)x457.49547
 .............\pdfcolorstack 1 push {0.5 0 0 rg 0.5 0 0 RG}
-.............\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocwarn}{}{keythms_unnumbered_dummyctr.unnumbered.10}{2}{}{note={}}{}}}}
+.............\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocwarn}{}{keythms_unnumbered_dummyctr.unnumbered.10}{2}{}{note={}}{}}}}
 .............\glue(\parskip) 0.0
 .............\glue(\parskip) 0.0
 .............\hbox(6.94444+1.94444)x457.49547, glue set 405.86249fil

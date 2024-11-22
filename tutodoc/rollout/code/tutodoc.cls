@@ -75,6 +75,10 @@
 
 \RequirePackage{keytheorems}
 
+
+\RequirePackage[highlightmode = immediate]% Before the tcolorbox library minted minted
+               {minted}
+
 \RequirePackage{tcolorbox}
 
 \tcbuselibrary{minted,
@@ -86,9 +90,6 @@
 \RequirePackage{fontawesome5}
 
 \RequirePackage{marginnote}
-
-\RequirePackage[highlightmode = immediate]%
-               {minted}
 
 \RequirePackage[
   top            = 2.5cm,

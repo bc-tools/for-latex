@@ -83,7 +83,7 @@ Completed box being shipped out [1]
 ....\glue 9.90276 plus 0.86108
 ....\glue 0.0
 ....\glue 0.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{I.1}{tdocexa.1.1}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocexa}{I.1}{tdocexa.1.1}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\lineskip) 1.0
@@ -129,7 +129,7 @@ Completed box being shipped out [1]
 ....\penalty -51
 ....\glue 1.94444
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{I.2}{tdocexa.1.2}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocexa}{I.2}{tdocexa.1.2}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 3.11111
@@ -175,7 +175,7 @@ Completed box being shipped out [1]
 ....\penalty -51
 ....\glue 1.94444
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{I.3}{tdocrem.1.3}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{I.3}{tdocrem.1.3}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 3.11111
@@ -219,7 +219,7 @@ Completed box being shipped out [1]
 ....\glue -8.0 plus -2.0 minus -4.0
 ....\penalty -51
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{I.4}{tdocexa.1.4}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocexa}{I.4}{tdocexa.1.4}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.05556
@@ -265,7 +265,7 @@ Completed box being shipped out [1]
 ....\penalty -51
 ....\glue 1.94444
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{I.5}{tdocrem.1.5}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{I.5}{tdocrem.1.5}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 3.11111
@@ -309,7 +309,7 @@ Completed box being shipped out [1]
 ....\glue -8.0 plus -2.0 minus -4.0
 ....\penalty -51
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{I.6}{tdocrem.1.6}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{I.6}{tdocrem.1.6}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.05556
@@ -401,7 +401,7 @@ Completed box being shipped out [1]
 ....\glue 9.90276 plus 0.86108
 ....\glue 0.0
 ....\glue 0.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{II.1}{tdocrem.2.1}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{II.1}{tdocrem.2.1}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\lineskip) 1.0
@@ -447,7 +447,7 @@ Completed box being shipped out [1]
 ....\glue -8.0 plus -2.0 minus -4.0
 ....\penalty -51
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{II.2}{tdocrem.2.2}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{II.2}{tdocrem.2.2}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.05556
@@ -493,7 +493,7 @@ Completed box being shipped out [1]
 ....\glue -8.0 plus -2.0 minus -4.0
 ....\penalty -51
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{II.3}{tdocrem.2.3}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{II.3}{tdocrem.2.3}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.05556
@@ -539,7 +539,7 @@ Completed box being shipped out [1]
 ....\glue -8.0 plus -2.0 minus -4.0
 ....\penalty -51
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{II.4}{tdocexa.2.4}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocexa}{II.4}{tdocexa.2.4}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 5.05556
@@ -651,7 +651,7 @@ Completed box being shipped out [1]
 ....\glue 9.90276 plus 0.86108
 ....\glue 0.0
 ....\glue 0.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{III.1}{tdocexa.3.1}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocexa}{III.1}{tdocexa.3.1}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\lineskip) 1.0
@@ -766,7 +766,7 @@ Completed box being shipped out [1]
 ....\glue 9.90276 plus 0.86108
 ....\glue 0.0
 ....\glue 0.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{IV.1}{tdocrem.4.1}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{IV.1}{tdocrem.4.1}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\lineskip) 1.0

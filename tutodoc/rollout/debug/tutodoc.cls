@@ -55,41 +55,6 @@
 % ------------- %
 % -- IMPORTS -- %
 % ------------- %
-
-% :::::::::::: %
-% :: LOCALE :: %
-% :::::::::::: %
-
-% We delegate the management of quoting to the ''csquotes'' package,
-% which takes care of the locale settings.
-\RequirePackage{csquotes}
-
-% :::::::::::: %
-% :: STYLES :: %
-% :::::::::::: %
-
-\RequirePackage[svgnames]%
-               {xcolor}
-
-\RequirePackage{fontawesome5}
-
-\RequirePackage{keytheorems}
-
-\RequirePackage{tcolorbox}
-
-\tcbuselibrary{minted,
-               breakable,
-               skins}
-
-\RequirePackage{clrstrip}
-
-\RequirePackage{fontawesome5}
-
-\RequirePackage{marginnote}
-
-\RequirePackage[highlightmode = immediate]%
-               {minted}
-
 \RequirePackage[
   top            = 2.5cm,
   bottom         = 2.5cm,
@@ -106,6 +71,43 @@
 \RequirePackage{tocbasic}
 
 \RequirePackage{hyperref}% To load after titlesec!
+% :::::::::::: %
+% :: LOCALE :: %
+% :::::::::::: %
+
+% :::::::::::: %
+% :: STYLES :: %
+% :::::::::::: %
+
+\RequirePackage[svgnames]%
+               {xcolor}
+
+\RequirePackage{fontawesome5}
+
+\RequirePackage{keytheorems}
+
+
+\RequirePackage[highlightmode = immediate]% Before the tcolorbox library minted minted
+               {minted}
+
+\RequirePackage{tcolorbox}
+
+\tcbuselibrary{minted,
+               breakable,
+               skins}
+
+
+\RequirePackage[utf8]{inputenc}% Load 'inputenc' before 'csquotes'
+% We delegate the management of quoting to the ''csquotes'' package,
+% which takes care of the locale settings.
+\RequirePackage{csquotes} % csquotes should be loaded after fvextra, to avoid a warning from the lineno package on input line 36.
+\RequirePackage{clrstrip}
+
+\RequirePackage{fontawesome5}
+
+\RequirePackage{marginnote}
+
+
 
 
 % =============== %
