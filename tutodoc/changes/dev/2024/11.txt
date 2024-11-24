@@ -30,7 +30,7 @@ Admonitions.
 
 
 [[:tech:]]
-Themes: two new colors ''tutodoc@page@color'' and ''tutodoc@text@color'' allow finer setting everywhere.
+Themes: two new color \vars ''tutodoc@page@color'' and ''tutodoc@text@color'' allow finer setting everywhere.
 
 
 --------

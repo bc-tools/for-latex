@@ -25,7 +25,9 @@
   },
 }
 
-\PassOptionsToClass{ fontsize = 10pt, DIV = 12 }{ scrartcl }
+% \PassOptionsToClass{ fontsize = 10pt }{ scrartcl }
+
+% \PassOptionsToClass{ DIV = 12 }{ scrartcl }
 
 \DeclareUnknownKeyHandler[ tutodoc / main / class / options ]{
   \PassOptionsToClass{ \CurrentOption }{ scrartcl }
@@ -43,7 +45,7 @@
 % :: TO REMOVE :: %
 
 \RequirePackage[svgnames]%
-{xcolor}
+               {xcolor}
 
 
 
