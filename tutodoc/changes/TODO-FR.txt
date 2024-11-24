@@ -12,7 +12,21 @@ NOW
 
 doc : plus d'usage de xcolor
 
-    --> l3 color à la palce, y compris pour les thèmes !
+\documentclass{article}
+
+\ExplSyntaxOn
+\color_set:nn {test} {red!80!black}
+\ExplSyntaxOff
+
+\begin{document}
+
+\ExplSyntaxOn
+COULEUR : \color_select:n {test} OK ?
+\ExplSyntaxOff
+
+COOL
+\end{document}
+
 
 > ---------------------------- <
 
