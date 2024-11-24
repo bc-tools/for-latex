@@ -184,14 +184,17 @@
 
 % :: GENERIC TOPIC :: %
 
+\tl_new:N \l_tutodoc_topic_what_color_tl
 \tl_new:N \l_tutodoc_topic_when_color_tl
 \tl_new:N \l_tutodoc_topic_date_tl
 \tl_new:N \l_tutodoc_topic_version_tl
 
 \keys_define:nn { tutodoc / version-n-change / topic / options } {
 % Colors.
-  col .tl_set:N  = \l_tutodoc_topic_when_color_tl,
-  col .initial:n = \tutodoc@changes@when@color,
+  col      .tl_set:N  = \l_tutodoc_topic_what_color_tl,
+  col      .initial:n = tutodoc@text@color,
+  colchges .tl_set:N  = \l_tutodoc_topic_when_color_tl,
+  colchges .initial:n = \tutodoc@changes@when@color,
 % Date.
   date .tl_set:N  = \l_tutodoc_topic_date_tl,
   date .initial:n = \c_empty_tl,
@@ -231,12 +234,16 @@
   \tl_set_eq:NN    \l__tutodoc_topic_all_user_options_tl \l_tutodoc_topic_version_tl
   \tl_put_right:Nn \l__tutodoc_topic_all_user_options_tl { \l_tutodoc_topic_date_tl }
 
-  \paragraph{%
+  \group_begin:
+  \color{\tl_use:N \l_tutodoc_topic_what_color_tl}
+
+  \paragraph{
+    \color{\tl_use:N \l_tutodoc_topic_what_color_tl}
     \IfBlankF{#2}{\tdocicon{#2}}
     \textsc{#1.}
     \exp_args:Ne \IfBlankF{\l__tutodoc_topic_all_user_options_tl}{
 % A date and/or a version.
-      \exp_args:NNee \tutodoc@new@change@margin%
+      \exp_args:NNee \tutodoc@new@change@margin
         {\l_tutodoc_topic_when_color_tl}
         {\l_tutodoc_topic_version_tl}
         {\l_tutodoc_topic_date_tl}
@@ -248,6 +255,7 @@
   \begin{itemize}
 }{
   \end{itemize}
+  \group_end:
 }
 
 
@@ -264,6 +272,7 @@
   prob   = \faFire*,
   tech   = \faFlask,
   update = \reflectbox{\faHistory},
+  todo   = \faCompass[regular],
 }
 
 
@@ -286,13 +295,18 @@
 
 %%%
 % prototype::
-%     #1 : (short-desc)
+%     #1 : (color-material)
+%          one ''xcolor'' for the text
+%     #2 : (short-desc)
 %          a short text expected to indicate the very first version of a project.
 %
 %     :action: the short text printed will be preceded by a pretty anchor icon.
 %%%
-\NewDocumentCommand{ \tdocstartproj }{ m } {
-  \tdocicon{\faAnchor}#1
+\NewDocumentCommand{ \tdocstartproj }{ O{tutodoc@text@color} m } {
+  \group_begin:
+  \color{#1}
+  \tdocicon{\faAnchor}#2
+  \group_end:
 }
 
 \ExplSyntaxOff

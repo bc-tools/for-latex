@@ -25,11 +25,11 @@
   },
 }
 
+\PassOptionsToClass{ fontsize = 10pt, DIV = 12 }{ scrartcl }
+
 \DeclareUnknownKeyHandler[ tutodoc / main / class / options ]{
   \PassOptionsToClass{ \CurrentOption }{ scrartcl }
 }
-
-\PassOptionsToClass{ fontsize = 10pt, DIV = 12 }{ scrartcl }
 
 \ProcessKeyOptions[ tutodoc / main / class / options ]
 
@@ -245,6 +245,9 @@
 % -- LINKS AND CO. -- %
 
 \input{../main/css/\tutodoc@theme.cls.sty}
+
+\pagecolor{tutodoc@page@color}
+\color{tutodoc@text@color}
 
 \hypersetup{
   colorlinks,

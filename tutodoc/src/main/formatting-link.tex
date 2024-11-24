@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{main}
+\documentclass{main}
 
 \input{../preamble.cfg.tex}
 
@@ -10,17 +10,6 @@
 
 \subsection{Liens dynamiques}
 
-Le package \tdocpack{hyperref} est importé avec juste les réglages suivants où \tdocinlatex{tutodoc@link@color} est une couleur définie par le thème choisi.
-
-
-\begin{tdoclatex}[code]
-\hypersetup{
-  colorlinks,
-  citecolor = tutodoc@link@color,
-  filecolor = tutodoc@link@color,
-  linkcolor = tutodoc@link@color,
-  urlcolor  = tutodoc@link@color
-}
-\end{tdoclatex}
+Le package \tdocpack{hyperref} est importé, si besoin, en réglant juste la couleur des liens relatifs aux citations, aux fichiers, aux liens internes, et enfin aux \verb#url# (cette couleur dépendra du thème choisi).
 
 \end{document}

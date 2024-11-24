@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{main}
+\documentclass{main}
 
 \input{../preamble.cfg.tex}
 
@@ -10,39 +10,6 @@
 
 \subsection{Titres et table des matières}
 
-Dans les réglages suivants, les macros \tdocmacro{DeclareTOCStyleEntries} et \tdocmacro{DeclareTOCStyleEntry} viennent du package \tdocpack{tocbasic}.
-
-
-\begin{tdoclatex}[code]
-% ...
-\ifcsundef{chapter}%
-          {}%
-          {\renewcommand{\thechapter}{\Alph{chapter}}}
-
-\renewcommand{\thesection}{\Roman{section}}
-\renewcommand{\thesubsection}{\arabic{subsection}}
-\renewcommand{\thesubsubsection}{\roman{subsubsection}}
-
-% Source
-%  * https://tex.stackexchange.com/a/558025/6880
-\DeclareTOCStyleEntries[
-  raggedentrytext,
-  linefill = \hfill,
-  indent   = 0pt,
-  dynindent,
-  numwidth = 0pt,
-  numsep   = 1ex,
-  dynnumwidth
-]{tocline}{
-  chapter,
-  section,
-  subsection,
-  subsubsection,
-  paragraph,
-  subparagraph
-}
-
-\DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
-\end{tdoclatex}
+Les réglages choisis sont directement visibles dans cette documentation.
 
 \end{document}

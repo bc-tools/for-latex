@@ -6,9 +6,24 @@ tutodoc - TODO
 NOW
 ---
 
+
+
+> ---------------------------- <
+
+doc : plus de réglage imposé de xcolor
+
+on vire dépendnace à xcolor mais il reste utilisable pour le sthèmes par exemples
+
+  --> via l3 color ?
+
 > ---------------------------- <
 
 maj de la doc !!!
+
+
+> ---------------------------- <
+
+inenglish : gestion de la ponctuation !
 
 
 > ---------------------------- <

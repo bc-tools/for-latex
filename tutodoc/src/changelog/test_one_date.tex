@@ -46,7 +46,7 @@
     \rule\linewidth{1pt}
 
     \vspace{-1em}
-    \section*{Test: \when}
+    \section*{\color{red!75!black} Test: \when}
     \ExplSyntaxOff
     \vspace{-.75em}
     \rule\linewidth{1pt}
@@ -57,19 +57,14 @@
 
 \bigskip
 
-\bgroup
-
-\color{DarkBlue}
-
-\begin{tdoctopic}{Pour info.}<\faCompass[regular]>[
-    col     = ForestGreen,
-    date    = 5678-90-12,
-    version = 1.2.3-rc.4
+\begin{tdoctodo}[
+    col      = ForestGreen,
+    colchges = Goldenrod,
+    date     = 5678-90-12,
+    version  = 1.2.3-rc.4
 ]
     \item Voilà comment sera daté le tout premier type de changements.
-\end{tdoctopic}
-
-\egroup
+\end{tdoctodo}
 
 
 \input{\filepath}

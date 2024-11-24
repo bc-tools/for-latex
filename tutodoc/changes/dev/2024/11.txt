@@ -13,6 +13,34 @@
 The ‘’scrartcl‘’ class replaces the venerable ‘’article‘’. This means better placement of the margins with the options retained for loading ‘’scrartcl‘’.
 
 
+[[:api:]]
+Admonitions: the ''col'' option of the \envs has been renamed ''colchges''.
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+Admonitions.
+
+    1) A new ''tdoctodo'' \env has been added.
+
+    1) Each \env has a new ''col'' option for color of the material indicating \chges.
+
+
+[[:tech:]]
+Themes: two new colors ''tutodoc@page@color'' and ''tutodoc@text@color'' allow finer setting everywhere.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+General formatting settings are briefly explained without going into implementation details.
+
+
 // ---------- //
 
 
