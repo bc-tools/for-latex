@@ -76,12 +76,12 @@
 %              between centered materials produced by the macro ''\tdocruler''
 %              such as to stress the start and the end of the content.
 %%%
-\NewDocumentEnvironment{tutodoc@showcase@basic}{m m m m m}{
+\NewDocumentEnvironment{tutodoc@showcase@basic}{m m m m m}{%
   \tdocruler[#5{#3}]{#1}%
   \nopagebreak\medskip\nopagebreak\color{#4}%
-}{
-  \nopagebreak\medskip\nopagebreak
-  \tdocruler[#5{#3}]{#2}
+}{%
+  \nopagebreak\medskip\nopagebreak%
+  \tdocruler[#5{#3}]{#2}%
 }
 
 
@@ -108,10 +108,10 @@
 %%%
 
 \NewDocumentEnvironment{tutodoc@showcase@colorstrip}{m m m m m m}{
-  \begin{colorstrip}{#6{#3}}
-    \begin{tutodoc@showcase@basic}{#1}{#2}{#3}{#4}{#5}
-}{
-    \end{tutodoc@showcase@basic}
+  \begin{colorstrip}{#6{#3}}%
+    \begin{tutodoc@showcase@basic}{#1}{#2}{#3}{#4}{#5}%
+}{%
+    \end{tutodoc@showcase@basic}%
   \end{colorstrip}
 }
 

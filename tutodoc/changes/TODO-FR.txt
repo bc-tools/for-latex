@@ -18,10 +18,18 @@ doc : plus d'usage de xcolor
 
 maj de la doc !!!
 
+> ---------------------------- <
+
+pb de options : on interdit fontsize et div
+
+    --> les mettre en option de tutodoc, et lancer un warning si on les emploie, on ignore alors car on les manges avant de passer la main à koma
+
 
 > ---------------------------- <
 
 inenglish : gestion de la ponctuation !
+
+    --> nécessairement polyglossai ou babele utilisé donc on regarde commen régler localement dans chaque cas en adapatant la macro à cet effet
 
 
 > ---------------------------- <
