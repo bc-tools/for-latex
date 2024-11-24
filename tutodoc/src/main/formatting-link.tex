@@ -10,18 +10,16 @@
 
 \subsection{Liens dynamiques}
 
-Le package \tdocpack{hyperref} est importé en coulisse avec les réglages ci-dessous.
+Le package \tdocpack{hyperref} est importé avec juste les réglages suivants où \tdocinlatex{tutodoc@link@color} est une couleur définie par le thème choisi.
 
 
 \begin{tdoclatex}[code]
-\newcommand{\tdoclinkcolor}{NavyBlue!85!white}
-
 \hypersetup{
   colorlinks,
-  citecolor = \tdoclinkcolor,
-  filecolor = \tdoclinkcolor,
-  linkcolor = \tdoclinkcolor,
-  urlcolor  = \tdoclinkcolor
+  citecolor = tutodoc@link@color,
+  filecolor = tutodoc@link@color,
+  linkcolor = tutodoc@link@color,
+  urlcolor  = tutodoc@link@color
 }
 \end{tdoclatex}
 

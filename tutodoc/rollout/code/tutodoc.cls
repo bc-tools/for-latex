@@ -56,6 +56,23 @@
 % -- IMPORTS -- %
 % ------------- %
 
+\RequirePackage[
+  top            = 2.5cm,
+  bottom         = 2.5cm,
+  left           = 2.5cm,
+  right          = 2.5cm,
+  marginparwidth = 2cm,
+  marginparsep   = 2mm,
+  heightrounded
+]{geometry}
+
+\RequirePackage[raggedright]%
+               {titlesec}
+
+\RequirePackage{tocbasic}
+
+\RequirePackage{hyperref}% To load after titlesec!
+
 % :::::::::::: %
 % :: LOCALE :: %
 % :::::::::::: %
@@ -91,22 +108,7 @@
 
 \RequirePackage{marginnote}
 
-\RequirePackage[
-  top            = 2.5cm,
-  bottom         = 2.5cm,
-  left           = 2.5cm,
-  right          = 2.5cm,
-  marginparwidth = 2cm,
-  marginparsep   = 2mm,
-  heightrounded
-]{geometry}
 
-\RequirePackage[raggedright]%
-               {titlesec}
-
-\RequirePackage{tocbasic}
-
-\RequirePackage{hyperref}% To load after titlesec!
 
 
 % =============== %

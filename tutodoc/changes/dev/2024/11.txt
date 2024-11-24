@@ -1,7 +1,46 @@
 // ---------- //
 
+
 ==
-21  (1.6.3.beta-2)
+24  (1.6.3.beta-4)
+==
+
+-------
+:break:
+-------
+
+[[:format:]]
+The ‘’scrartcl‘’ class replaces the venerable ‘’article‘’. This means better placement of the margins with the options retained for loading ‘’scrartcl‘’.
+
+
+// ---------- //
+
+
+==
+23  (1.6.3.beta-3)
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+\Cls options: options not specific to \thisproj are passed on to the class in charge of general formatting.
+
+
+-----
+:fix:
+-----
+
+[[:tech:]]
+\Cls options: use of ''\exp_args:NNV \renewcommand \tutodoc@theme \l_keys_choice_tl'' instead of ''\renewcommand{ \tutodoc@theme } { \tl_use:N \l_keys_choice_tl }''.
+
+
+// ---------- //
+
+
+==
+22  (1.6.3.beta-2)
 ==
 
 -----
@@ -9,12 +48,11 @@
 -----
 
 [[:tech:]]
-From now on, package imports will be carried out cleanly via the path::''src/main/main.cls'' file.
-
-plus de dates : elle sont ajouté auto dans la doc qui indquen que test faits su
+From now on, \pack imports \cls loading will be carried out cleanly via the path::''src/main/main.cls'' file.
 
 
 // ---------- //
+
 
 ==
 01  (1.6.3.beta-1)

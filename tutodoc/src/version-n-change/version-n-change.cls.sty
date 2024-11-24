@@ -104,11 +104,11 @@
 
 \input{../version-n-change/css/\tutodoc@theme.cls.sty}
 
-\newlength{\tutodoc@version@vertical@sep@len}
-\setlength{\tutodoc@version@vertical@sep@len}{-4.25pt}
+\newlength{\tutodoc@version@date@vertical@sep@len}
+\setlength{\tutodoc@version@date@vertical@sep@len}{-4.25pt}
 
-\newlength{\tutodoc@version@vertical@offset@len}
-\setlength{\tutodoc@version@vertical@offset@len}{-.345cm}
+\newlength{\tutodoc@version@date@vertical@offset@len}
+\setlength{\tutodoc@version@date@vertical@offset@len}{-8pt}
 
 
 %%%
@@ -131,23 +131,22 @@
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
 %%%
-\NewDocumentCommand{\tdocversion}{ O{\tutodoc@changes@when@color} m O{} D<>{\tutodoc@version@vertical@offset@len} }{
+\NewDocumentCommand{\tdocversion}{ %
+  O{\tutodoc@changes@when@color} %
+  m %
+  O{} %
+  D<>{\tutodoc@version@date@vertical@offset@len}%
+}{
   \tutodoc@new@change@margin%
     {#1}                                % Color
     {#2}                                % Version
     {#3}                                % Date
-    {\tutodoc@version@vertical@sep@len} % Last negative vertical spacing
+    {\tutodoc@version@date@vertical@sep@len} % Last negative vertical spacing
     {#4}                                % Vertical offset
 }
 
 
 % :: DATE :: %
-
-\newlength{\tutodoc@date@vertical@sep@len}
-\setlength{\tutodoc@date@vertical@sep@len}{-5.35pt}
-
-\newlength{\tutodoc@date@vertical@offset@len}
-\setlength{\tutodoc@date@vertical@offset@len}{-.345cm}
 
 %%%
 % prototype::
@@ -161,12 +160,12 @@
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\tdocdate}{ O{\tutodoc@changes@when@color} m D<>{\tutodoc@date@vertical@offset@len} }{
+\NewDocumentCommand{\tdocdate}{ O{\tutodoc@changes@when@color} m D<>{\tutodoc@version@date@vertical@offset@len} }{
   \tutodoc@new@change@margin%
     {#1}                             % Color
     {}                               % Version
     {#2}                             % Date
-    {\tutodoc@date@vertical@sep@len} % Last negative spacing
+    {\tutodoc@version@date@vertical@sep@len} % Last negative spacing
     {#3}                             % Vertical offset
 }
 
@@ -205,10 +204,6 @@
 \tl_new:N \l__tutodoc_topic_all_user_options_tl
 
 
-\newlength{\tutodoc@topic@vertical@offset@len}
-\setlength{\tutodoc@topic@vertical@offset@len}{-.745cm}
-
-
 %%%
 % prototype::
 %     #1 : (title)
@@ -245,8 +240,8 @@
         {\l_tutodoc_topic_when_color_tl}
         {\l_tutodoc_topic_version_tl}
         {\l_tutodoc_topic_date_tl}
-        {\tutodoc@version@vertical@sep@len}
-        {\tutodoc@topic@vertical@offset@len}
+        {\tutodoc@version@date@vertical@sep@len}
+        {\tutodoc@version@date@vertical@offset@len}
     }
   }
 

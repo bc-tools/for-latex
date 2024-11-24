@@ -6,6 +6,20 @@ tutodoc - TODO
 NOW
 ---
 
+> ---------------------------- <
+
+maj de la doc !!!
+
+
+> ---------------------------- <
+
+extraction version/date des classe chargées eployés lors des tests
+
+
+> ---------------------------- <
+
+plus de dates : elle sont ajouté auto dans la doc qui indquen que test faits su
+
 
 > ---------------------------- <
 

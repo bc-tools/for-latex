@@ -2,6 +2,12 @@
 
 % -- OPTIONS -- %
 
+%%%
+% refs::
+%     + https://tex.stackexchange.com/a/729929/6880
+%     + https://tex.stackexchange.com/a/729913/6880
+%%%
+
 \ExplSyntaxOn
 
 \tl_new:N \l__tutodoc_other_cls_options_tl
@@ -15,28 +21,44 @@
     dark,
     draft
   } {
-    \renewcommand{ \tutodoc@theme } {
-      \tl_use:N \l_keys_choice_tl
-    }
+    \exp_args:NNV \renewcommand \tutodoc@theme \l_keys_choice_tl
   },
-  unknown .code:n = {
-    \tl_set:Nn \l__tutodoc_other_cls_options_tl { #1 }
-  }
 }
 
-\ProcessKeyOptions[tutodoc / main / class / options]
+\DeclareUnknownKeyHandler[ tutodoc / main / class / options ]{
+  \PassOptionsToClass{ \CurrentOption }{ scrartcl }
+}
 
-\exp_last_unbraced:NNV \LoadClass[ \l__tutodoc_other_cls_options_tl ]%
-          { article }
+\PassOptionsToClass{ fontsize = 10pt, DIV = 12 }{ scrartcl }
+
+\ProcessKeyOptions[ tutodoc / main / class / options ]
+
+\LoadClass{ scrartcl }
 
 \ExplSyntaxOff
 
 
 % -- IMPORTS -- %
 
+% :: XXX :: %
+
+% \RequirePackage[
+%   top            = 2.5cm,
+%   bottom         = 2.5cm,
+%   left           = 2.5cm,
+%   right          = 2.5cm,
+%   marginparwidth = 2cm,
+%   marginparsep   = 2mm,
+%   heightrounded
+% ]{geometry}
+
+\RequirePackage{hyperref}% To load after titlesec!
 
 
-% :: STYLES :: %
+
+
+
+% :: XXX :: %
 
 \RequirePackage[svgnames]%
                {xcolor}
@@ -69,25 +91,33 @@
 
 \RequirePackage{marginnote}
 
-\RequirePackage[
-  top            = 2.5cm,
-  bottom         = 2.5cm,
-  left           = 2.5cm,
-  right          = 2.5cm,
-  marginparwidth = 2cm,
-  marginparsep   = 2mm,
-  heightrounded
-]{geometry}
 
-\RequirePackage[raggedright]%
-               {titlesec}
 
-\RequirePackage{tocbasic}
+% \RequirePackage{tocbasic}
 
-\RequirePackage{hyperref}% To load after titlesec!
+
+
+
+
+
+
+
+
 
 
 % == TOOLS == %
+
+% -- XXXX -- %
+
+% https://www.tug.org/pipermail/tex-live/2016-July/038985.html
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+\DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
+\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+\DeclareOldFontCommand{\sl}{\normalfont\slshape}{\@nomath\sl}
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+
 
 % -- COLOR TRANSFORMATIONS -- %
 
@@ -123,7 +153,7 @@
 %          one material that expects to be an icon command from the
 %          ''fontawsome5'' \pack.
 %
-%     :return: the icon followed by a small insecable  space.
+%     :return: the icon followed by a small insecable space.
 %%%
 \NewDocumentCommand{\tdocicon}{m}{%
   #1\kern.45em%
@@ -183,21 +213,11 @@
 
 \ifcsundef{chapter}%
           {}%
-          {\renewcommand{\thechapter}{\Alph{chapter}.}}
+          {\renewcommand{\thechapter}{\Alph{chapter}}}
 
-\renewcommand{\thesection}{\Roman{section}.}
-\renewcommand{\thesubsection}{\arabic{subsection}.}
-\renewcommand{\thesubsubsection}{\roman{subsubsection}.}
-
-\titleformat{\paragraph}[hang]%
-            {\normalfont\normalsize\bfseries}%
-            {\theparagraph}{1em}%
-            {}
-
-\titlespacing*{\paragraph}%
-              {0pt}%
-              {3.25ex plus 1ex minus .2ex}%
-              {0.5em}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\roman{subsubsection}}
 
 % Source
 %  * https://tex.stackexchange.com/a/558025/6880
@@ -219,6 +239,7 @@
 }
 
 \DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
+
 
 
 % -- LINKS AND CO. -- %

@@ -1,7 +1,8 @@
-\documentclass[10pt, a4paper]{main}
+\documentclass{main}
 
 \input{../preamble.cfg.tex}
 
+\usepackage{../admonitions/admonitions.cls}
 \usepackage{../listing/listing.cls}
 \usepackage{../macroenv/macroenv.cls}
 
@@ -10,21 +11,13 @@
 
 \section{Mises en forme générales imposées}
 
-\subsection{Géométrie de la page}
+\subsection{Taille de la police et géométrie de la page}
 
-Le package \tdocpack{geometry} est chargé avec les réglages suivants.
+La classe \tdoccls{scrartcl} est chargée via les options \tdocinlatex{fontsize = 10pt} et \tdocinlatex{DIV = 12}\,.
 
 
-\begin{tdoclatex}[code]
-\RequirePackage[
-  top            = 2.5cm,
-  bottom         = 2.5cm,
-  left           = 2.5cm,
-  right          = 2.5cm,
-  marginparwidth = 2cm,
-  marginparsep   = 2mm,
-  heightrounded
-]{geometry}
-\end{tdoclatex}
+\begin{tdocwarn}
+	Pour le moment, les macros pour dater et versionner présentées dans la section  \ref{tutodoc-changes} ne sont pas adaptatives, autrement dit changer \tdocinlatex{fontsize = 10pt} et \tdocinlatex{DIV = 12} cassera le rendu de ces macros.
+\end{tdocwarn}
 
 \end{document}
