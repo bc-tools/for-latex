@@ -10,11 +10,9 @@ NOW
 
 > ---------------------------- <
 
-doc : plus de réglage imposé de xcolor
+doc : plus d'usage de xcolor
 
-on vire dépendnace à xcolor mais il reste utilisable pour le sthèmes par exemples
-
-  --> via l3 color ?
+    --> l3 color à la palce, y compris pour les thèmes !
 
 > ---------------------------- <
 

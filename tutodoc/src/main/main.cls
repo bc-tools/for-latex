@@ -40,28 +40,19 @@
 
 % -- IMPORTS -- %
 
-% :: XXX :: %
-
-% \RequirePackage[
-%   top            = 2.5cm,
-%   bottom         = 2.5cm,
-%   left           = 2.5cm,
-%   right          = 2.5cm,
-%   marginparwidth = 2cm,
-%   marginparsep   = 2mm,
-%   heightrounded
-% ]{geometry}
-
-\RequirePackage{hyperref}% To load after titlesec!
-
-
-
-
-
-% :: XXX :: %
+% :: TO REMOVE :: %
 
 \RequirePackage[svgnames]%
-               {xcolor}
+{xcolor}
+
+
+
+
+% :: USEFUL :: %
+
+
+\RequirePackage{hyperref}
+
 
 \RequirePackage{fontawesome5}
 
@@ -86,8 +77,6 @@
 
 
 \RequirePackage{clrstrip}
-
-\RequirePackage{fontawesome5}
 
 \RequirePackage{marginnote}
 
