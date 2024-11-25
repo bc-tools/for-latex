@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper, theme = color]{tutodoc}
+\documentclass{tutodoc}
 
 \input{../preamble.cfg.tex}
 
@@ -7,8 +7,8 @@
 
 \section{Quelle langue est utilisée par la classe \thisproj\ ?}
 
-Cette documentation charge le package \tdocpack{babel} via \tdocinlatex|\usepackage[french]{babel}|\,.
-Dès lors, la classe \thisproj\ repère \tdocinlatex|fr| comme langue principale utilisée par \tdocpack{babel}.%
+Cette documentation charge le package \tdocpack{babel} via \tdocinlatex|\usepackage[french]{babel}|\,, un package que ne charge pas \thisproj.
+Par contre, la classe \thisproj\ repère \tdocinlatex|fr| comme langue principale utilisée par \tdocpack{babel}.%
 \footnote{
     Techniquement, on utilise \tdocinlatex|\BCPdata{language}| qui renvoie une langue au format court.
 }

@@ -7,21 +7,13 @@
 
 \section{General formatting imposed}
 
-\subsection{Page geometry}
+\subsection{Font size and page geometry}
 
-The \tdocpack{geometry} package is loaded with the following settings.
+The \tdoccls{scrartcl} class is loaded via the \tdocinlatex{fontsize = 10pt} and \tdocinlatex{DIV = 12} options.
 
 
-\begin{tdoclatex}[code]
-\RequirePackage[
-  top            = 2.5cm,
-  bottom         = 2.5cm,
-  left           = 2.5cm,
-  right          = 2.5cm,
-  marginparwidth = 2cm,
-  marginparsep   = 2mm,
-  heightrounded
-]{geometry}
-\end{tdoclatex}
+\begin{tdocwarn}
+	For the moment, the macros for dating and versioning presented in the \ref{tutodoc-changes} section are not adaptive, i.e. changing \tdocinlatex{fontsize = 10pt} and \tdocinlatex{DIV = 12} will break the rendering of these macros.
+\end{tdocwarn}
 
 \end{document}

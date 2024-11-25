@@ -7,7 +7,7 @@
 
 \subsection{What's new?}
 
-\thisproj\ offers the macro \tdocmacro{tdocstartproj} and different environments to indicate quickly and clearly what has been done during the latest changes.%
+\thisproj\ offers the macro \tdocmacro{tdocstartproj} and different environments to indicate quickly and clearly what has been done during the changes made, or to come.%
 \footnote{
     The user doesn't need all the technical details.
 }
@@ -17,6 +17,8 @@
     For icons, see the note at the beginning of the section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
 \end{tdocnote}
 
+
+\subsubsection{Sobriety first}
 
 \foreach \exatitle/\filename in {
     {Just for the very first version}/%<-- Translate me!
@@ -31,6 +33,8 @@
         pb,
     {For fixes}/% <-- Translate me!
         fix,
+    {Roadmap}/% <-- Translate me!
+        todo,
     {Technical information}/% <-- Translate me!
         tech,
     {Selectable themes with an icon}/% <-- Translate me!
@@ -41,7 +45,27 @@
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput[sbs]{examples/version-n-change/\filename.tex}
+        \tdoclatexinput[sbs]{examples/version-n-change/chges-\filename.tex}
+    \end{tdocexa}
+}
+
+
+\subsubsection{De la couleur si besoin}
+
+\subsubsection{Color if necessary}
+
+It may be useful to highlight certain changes: this can only be done by modifying the content color.
+
+\foreach \exatitle/\filename in {
+    {A flashy first version}/%<-- Translate me!
+        first,
+    {Outstanding fixes}/% <-- Translate me!
+        fix%
+} {
+    \begin{tdocexa}[\exatitle]
+        \leavevmode
+
+        \tdoclatexinput[sbs]{examples/version-n-change/color-chges-\filename.tex}
     \end{tdocexa}
 }
 
