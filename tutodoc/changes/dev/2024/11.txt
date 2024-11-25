@@ -2,6 +2,24 @@
 
 
 ==
+?????  (1.6.3.beta-6)
+==
+
+-----
+:new:
+-----
+
+[[:api:]] ????
+OK
+    ---> inenglish : gestion de la ponctuation via babel ou polyglossia
+KO
+    ---> doc avec un exemple
+
+
+// ---------- //
+
+
+==
 25  (1.6.3.beta-5)
 ==
 
@@ -9,8 +27,20 @@
 :update:
 --------
 
-[[:doc:]] ??????
-Manual: the English trnaslations has been updated.
+[[:doc:]]
+Manual: the English translations has been updated.
+
+
+[[:api:]]
+\Cls options: the options ''fontsize'' and ''DIV'' can't be used because their values are fixed by \thisproj.
+
+
+-------
+:break:
+-------
+
+[[:api:]]
+Admonitions: the ''colchges'' option of the \envs has been renamed ''col-chges''.
 
 
 // ---------- //

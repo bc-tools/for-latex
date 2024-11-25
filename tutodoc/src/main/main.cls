@@ -10,6 +10,13 @@
 
 \ExplSyntaxOn
 
+
+\msg_set:nnnn { tutodoc ~ (main) }
+  { main : scrartcl-illegal-option }
+  { The ~ option ~ << ~ #1 ~ >> ~ is ~ not ~ allowed. }
+  { \msg_see_documentation_text:n { tutodoc } }
+
+
 \tl_new:N \l__tutodoc_other_cls_options_tl
 
 \newcommand{ \tutodoc@theme } { color }
@@ -22,6 +29,16 @@
     draft
   } {
     \exp_args:NNV \renewcommand \tutodoc@theme \l_keys_choice_tl
+  },
+  fontsize .code:n = {
+    \msg_error:nnn { tutodoc ~ (main) }
+      { main : scrartcl-illegal-option }
+      { fontsize }
+  },
+  DIV .code:n = {
+    \msg_error:nnn { tutodoc ~ (main) }
+      { main : scrartcl-illegal-option }
+      { DIV }
   },
 }
 
@@ -79,17 +96,6 @@
 \RequirePackage{clrstrip}
 
 \RequirePackage{marginnote}
-
-
-
-% \RequirePackage{tocbasic}
-
-
-
-
-
-
-
 
 
 
@@ -186,8 +192,15 @@
         { main : unsupported-lang }
         { \tdoclang }
     }
-
   \makeatother
+
+% If polyglossia is used, we must load english if the user has not done it
+% (see the ''\tdocinEN'' macro).
+  \@ifpackageloaded{polyglossia}{%
+    \iflanguageloaded{english}{}{
+      \setotherlanguage{english}
+    }
+  }{}%
 }
 
 \ExplSyntaxOff

@@ -5,6 +5,9 @@
 [[:format:]]
 The ‘’scrartcl‘’ class replaces the venerable ‘’article‘’. This means better placement of the margins with the options retained for loading ‘’scrartcl‘’.
 
+[[:api:]]
+Admonitions: the ''colchges'' option of the \envs has been renamed ''col-chges''.
+
 
 -----
 :fix:
@@ -21,4 +24,13 @@ From now on, package imports will be carried out cleanly via the path::''src/mai
 [[:api:]]
 \Cls options: options not specific to \thisproj are passed on to the class in charge of general formatting.
 
-Admonitions: a new ''tdoctodo'' \env has been added.
+
+[[:api:]]
+\Cls options: the options ''fontsize'' and ''DIV'' can't be used because their values are fixed by \thisproj.
+
+
+Admonitions.
+
+    1) A new ''tdoctodo'' \env has been added.
+
+    1) Each \env has a new ''col'' option for color of the material indicating \chges.

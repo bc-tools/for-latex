@@ -10,92 +10,30 @@ NOW
 
 > ---------------------------- <
 
-doc : plus d'usage de xcolor
+doc sur options passées !!!
 
-\documentclass{article}
++
 
-\ExplSyntaxOn
-\color_set:nn {test} {red!80!black}
-\ExplSyntaxOff
-
-\begin{document}
-
-\ExplSyntaxOn
-COULEUR : \color_select:n {test} OK ?
-\ExplSyntaxOff
-
-COOL
-\end{document}
+liste option avec une ref vers leur doc
 
 
 > ---------------------------- <
 
-maj de la doc !!!
-
-> ---------------------------- <
-
-pb de options : on interdit fontsize et div
-
-    --> les mettre en option de tutodoc, et lancer un warning si on les emploie, on ignore alors car on les manges avant de passer la main à koma
-
-
-> ---------------------------- <
-
-inenglish : gestion de la ponctuation !
-
-    --> nécessairement polyglossai ou babele utilisé donc on regarde commen régler localement dans chaque cas en adapatant la macro à cet effet
+prototype pour les key-vals dans le code source
 
 
 > ---------------------------- <
 
 extraction version/date des classe chargées eployés lors des tests
 
-
-> ---------------------------- <
++
 
 plus de dates : elle sont ajouté auto dans la doc qui indquen que test faits su
 
++
 
-> ---------------------------- <
-
-CLASS options + changer de classe article pour ????
-
-
-% Source.
-%     + https://tex.stackexchange.com/a/729929/6880
-%     + https://tex.stackexchange.com/a/729913/6880
-
-\ExplSyntaxOn
-
-\ProvidesExplClass{ main }
-                  { 2024-11-01 }
-                  { 0.0.0 }
-                  { Passing unprocessed options to another class }
-
-\newcommand{ \selectedoptions }{ color }
-
-\keys_define:nn { class / options }{
-  theme .choices:nn = { bw, color, dark, draft } {
-    \exp_args:NNV \renewcommand \selectedoptions \l_keys_choice_tl
-  }
-}
-
-\DeclareUnknownKeyHandler[ class / options ]{
-  \PassOptionsToClass{ \CurrentOption }{ article }
-}
-
-\ProcessKeyOptions[ class / options ]
-
-\LoadClass{ article }
-
-\ExplSyntaxOff
-
-
-> ---------------------------- <
-
-Loading `hyperref`
-
-I will integrate this into the next minor version via `\AtBeginDocument`. ;-) The use of `\hypersetup` is limited to the colors of the links to obtain a coherent color system.
+créer au passage un fichier  DEPENNDS.yaml des dépendances ventuellement vide pour indiquer els depndances ordonnées !
+    on le construit auto pour ce qui est utilisé, et on propose un clé pour indiquer des ordres d'imports imposés, cette partie n'atant jmaais touchée par texfacto
 
 
 > ---------------------------- <
@@ -130,14 +68,22 @@ THÈMES
 
 > ---------------------------- <
 
-IMPORTS
+doc : plus d'usage de xcolor
 
-    --> ATTENTION le lieu des imports est aussi celui de la gestiond es options : il faut donc aussi une section dédier à le gestiond es options de pack/cls qui sera toujours au début ????
+\documentclass{article}
 
-    --> nettoyer les doublons en les comprant
+\ExplSyntaxOn
+\color_set:nn {test} {red!80!black}
+\ExplSyntaxOff
 
-    --> créer au passage un fichier  DEPENNDS.yaml des dépendances ventuellement vide pour indiquer els depndances ordonnées !
-    on le construit auto pour ce qui est utilisé, et on propose un clé pour indiquer des ordres d'imports imposés, cette partie n'atant jmaais touchée par texfacto
+\begin{document}
+
+\ExplSyntaxOn
+COULEUR : \color_select:n {test} OK ?
+\ExplSyntaxOff
+
+COOL
+\end{document}
 
 
 > ---------------------------- <
