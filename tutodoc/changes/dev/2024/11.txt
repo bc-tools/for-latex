@@ -2,6 +2,21 @@
 
 
 ==
+25  (1.6.3.beta-5)
+==
+
+--------
+:update:
+--------
+
+[[:doc:]] ??????
+Manual: the English trnaslations has been updated.
+
+
+// ---------- //
+
+
+==
 24  (1.6.3.beta-4)
 ==
 

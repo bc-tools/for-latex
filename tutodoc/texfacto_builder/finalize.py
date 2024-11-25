@@ -135,7 +135,7 @@ def tex_header(
 
     header = f"""{title}
 
-\\documentclass[10pt, a4paper]{{tutodoc}}
+\\documentclass{{tutodoc}}
 
 {preamble}
 

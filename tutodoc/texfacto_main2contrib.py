@@ -275,7 +275,7 @@ for srcfile in all_tex_files:
             fordoc =  f"\n% -- FORDOC -- %\n{fordoc}"
 
     content = f"""
-\\documentclass[10pt, a4paper, theme = color]{{tutodoc}}
+\\documentclass{{tutodoc}}
 
 \\input{{../preamble.cfg.tex}}
 {fordoc}

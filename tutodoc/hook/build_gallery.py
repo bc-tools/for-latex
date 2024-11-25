@@ -122,7 +122,7 @@ def theme_gallery(
 \usepackage{../version-n-change/version-n-change.cls}
             """.strip(),
             r"""
-\documentclass[10pt, a4paper, theme = color]{tutotoc}
+\documentclass{tutotoc}
 
 \input{../preamble.cfg.tex}
             """.strip()
