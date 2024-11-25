@@ -1,0 +1,32 @@
+\documentclass[12pt, a4paper, theme = color]{tutodoc}
+
+\input{../../preamble.cfg.tex}
+
+
+\begin{document}
+
+\begin{tdoctech}
+    \item La version 3 de \tdocpack{minted} est prise en compte.
+\end{tdoctech}
+
+\begin{tdocbreak}
+    \item La classe \thisproj\ remplace le défunt package \thisproj\ (pour le moment, la toute jeune classe ne propose aucune option spécifique).
+
+    \item La macro \tdocmacro{tdocruler} s'emploie dorénavant via \tdocinlatex{\tdocruler[<color>]{<text>}} (avant il fallait utiliser \tdocinlatex{\tdocruler{<text>}{<color>}}).
+\end{tdocbreak}
+
+
+\begin{tdocnew}
+    \item La classe est utilisable en langue espagnole.
+
+    \item La documentation contient une nouvelle section expliquant comment contribuer.
+\end{tdocnew}
+
+
+\begin{tdocfix}
+    \item La macro \tdocmacro{tdocdate} ne gérait pas le format et la mise en forme de la date.
+
+    \item Les cadres colorés ne coloraient pas le texte après un saut de page.
+\end{tdocfix}
+
+\end{document}

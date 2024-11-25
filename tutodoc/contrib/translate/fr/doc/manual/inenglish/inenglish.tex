@@ -1,0 +1,25 @@
+\documentclass[10pt, a4paper, theme = color]{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\section{Cela veut dire quoi en \tdocquote{anglais}}
+
+Penser aux non-anglophones est bien, même si ces derniers se font de plus en plus rares.
+
+
+\begin{tdoclatex}
+Cool et top signifient \tdocinEN*{cool} et \tdocinEN{top}.
+\end{tdoclatex}
+
+
+La macro \tdocmacro{tdocinEN} et sa version étoilée s'appuient sur \tdocmacro{tdocquote} : par exemple, \tdocquote{sémantique} s'obtient via \tdocinlatex|\tdocquote{sémantique}| .
+
+
+\begin{tdocnote}
+    Le texte \tdocquote{en anglais} est traduit dans la langue détectée par \thisproj.
+\end{tdocnote}
+
+\end{document}
