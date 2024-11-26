@@ -169,15 +169,38 @@
   { \msg_see_documentation_text:n { tutodoc } }
 
 
+% For the English rules for typesetting.
+\newcommand{\tutodoc@use@english}{\relax}
+
+% Babel imposes the managment of the colon for our translations.
 \newcommand{\tutodoc@colon}{:}
 
 \AtBeginDocument{
-% We must take care of colons and spacing.
+% Babel is used.
   \@ifpackageloaded{babel}{
+% We must take care of English rules for English contents.
+    \renewcommand\tutodoc@use@english{%
+      \foreignlanguage{english}%
+    }
+
+% We must take care of colons and spacing.
     \iflanguage{french}{
       \renewcommand{\tutodoc@colon}{\babelshorthand{:}}
     }{}
   }{}
+
+% Polyglossia is used.
+  \@ifpackageloaded{polyglossia}{
+% If polyglossia is used, we must load english if the user has not done it
+% (see the ''\tutodoc@use@english'' macro below).
+    \iflanguageloaded{english}{}{
+      \setotherlanguage{english}
+    }
+% We must take care of English rules for English contents.
+    \renewcommand\tutodoc@use@english{%
+      \foreignlanguage{english}%
+    }
+  }{}%
 
   \newcommand{\tdoclang}{\BCPdata{language}}
 
@@ -186,21 +209,14 @@
   \makeatletter
 
   \InputIfFileExists{../main/tutodoc-main-locale-\tdoclang.cfg.cls.sty}{}{
-      \input{../main/tutodoc-main-locale-en.cfg.cls.sty}
+    \input{../main/tutodoc-main-locale-en.cfg.cls.sty}
 
-      \msg_critical:nnx { tutodoc ~ (main) }
-        { main : unsupported-lang }
-        { \tdoclang }
-    }
+    \msg_critical:nnx { tutodoc ~ (main) }
+      { main : unsupported-lang }
+      { \tdoclang }
+  }
+
   \makeatother
-
-% If polyglossia is used, we must load english if the user has not done it
-% (see the ''\tdocinEN'' macro).
-  \@ifpackageloaded{polyglossia}{%
-    \iflanguageloaded{english}{}{
-      \setotherlanguage{english}
-    }
-  }{}%
 }
 
 \ExplSyntaxOff

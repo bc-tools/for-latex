@@ -16,18 +16,6 @@
 
 % -- EXPLAINING ENGLISH NAMES -- %
 
-\@ifpackageloaded{babel}{%
-  \newcommand\tutodoc@use@english{%
-    \foreignlanguage{english}%
-  }%
-}{%
-  \@ifpackageloaded{polyglossia}{%
-    \newcommand\tutodoc@use@english{%
-      \foreignlanguage{english}%
-    }
-  }{}%
-}%
-
 %%%
 % prototype::
 %     #1 : (EN-text)
@@ -50,7 +38,7 @@
 %%%
 \NewDocumentCommand{\tdocinEN}{s m}{%
   \IfBooleanTF{#1}{}{\tutodoc@trans@in@EN}%
-% We must activate the English rules for typesetting if we can do this.
+% We must activate the English rules for typesetting.
   {%
     \tdocquote{\tutodoc@use@english{#2}}%
   }%
