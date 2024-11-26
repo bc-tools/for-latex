@@ -10,17 +10,23 @@
 
 \ExplSyntaxOn
 
-
 \msg_set:nnnn { tutodoc ~ (main) }
   { main : scrartcl-illegal-option }
   { The ~ option ~ << ~ #1 ~ >> ~ is ~ not ~ allowed. }
   { \msg_see_documentation_text:n { tutodoc } }
 
 
-\tl_new:N \l__tutodoc_other_cls_options_tl
+\newcommand{\tutodoc@theme}{color}
 
-\newcommand{ \tutodoc@theme } { color }
 
+%%%
+% prototype::
+%     theme    : the theme to format the document.
+%     fontsize : this key is one of those of the '''scrartcl'' class.
+%                As \tutodoc imposes the value of this key, we must
+%                forbid its use.
+%     DIV      : similar to the preceding key.
+%%%
 \keys_define:nn { tutodoc / main / class / options } {
   theme .choices:nn = {
     bw,
@@ -55,105 +61,48 @@
 \ExplSyntaxOff
 
 
+
+
+
+
+
 % -- IMPORTS -- %
-
-% :: TO REMOVE :: %
-
-\RequirePackage[svgnames]%
-               {xcolor}
-
 
 
 
 % :: USEFUL :: %
 
+\RequirePackage[svgnames]%
+               {xcolor}
 
-\RequirePackage{hyperref}
-
-
+\RequirePackage{marginnote}
 \RequirePackage{fontawesome5}
-
 \RequirePackage{keytheorems}
 
-
+\RequirePackage{clrstrip}
 \RequirePackage[highlightmode = immediate]% Before the tcolorbox library minted minted
                {minted}
-
 \RequirePackage{tcolorbox}
 
 \tcbuselibrary{minted,
                breakable,
                skins}
 
-% :: LOCALE :: %
+\RequirePackage{hyperref}
 
-\RequirePackage[utf8]{inputenc}% Load 'inputenc' before 'csquotes'
+
+%%%
 % We delegate the management of quoting to the ''csquotes'' package,
 % which takes care of the locale settings.
-\RequirePackage{csquotes} % csquotes should be loaded after fvextra, to avoid a warning from the lineno package on input line 36.
-
-
-\RequirePackage{clrstrip}
-
-\RequirePackage{marginnote}
-
-
+%
+% warning::
+%     We must load ''inputenc'' before ''csquotes''
+%%%
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{csquotes}
 
 
 % == TOOLS == %
-
-% -- XXXX -- %
-
-% https://www.tug.org/pipermail/tex-live/2016-July/038985.html
-\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
-\DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
-\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
-\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
-\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
-\DeclareOldFontCommand{\sl}{\normalfont\slshape}{\@nomath\sl}
-\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
-
-
-% -- COLOR TRANSFORMATIONS -- %
-
-%%%
-% prototype::
-%     #1 : (black-rate)
-%          the amount of color relative to black.
-%     #2 : (color)
-%          one color following the ''xcolor'' format.
-%
-%     :return: a "darker" version of the color ''#1''.
-%%%
-\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
-
-
-%%%
-% prototype::
-%     #1 : (transparency)
-%          the transparency rate.
-%     #2 : (color)
-%          one color following the ''xcolor'' format.
-%
-%     :return: a "transparent" version of the color `#1`.
-%%%
-\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
-
-
-% -- ICONS -- %
-
-%%%
-% prototype::
-%     #1 : (aws-icon)
-%          one material that expects to be an icon command from the
-%          ''fontawsome5'' \pack.
-%
-%     :return: the icon followed by a small insecable space.
-%%%
-\NewDocumentCommand{\tdocicon}{m}{%
-  #1\kern.45em%
-}
-
 
 % -- LOCALE SETTINGS -- %
 
@@ -169,10 +118,10 @@
   { \msg_see_documentation_text:n { tutodoc } }
 
 
-% For the English rules for typesetting.
+% Management of English composition rules.
 \newcommand{\tutodoc@use@english}{\relax}
 
-% Babel imposes the managment of the colon for our translations.
+% Babel requires colon management for our translations.
 \newcommand{\tutodoc@colon}{:}
 
 \AtBeginDocument{
@@ -260,8 +209,48 @@
 \DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
 
 
+% -- COLOR TRANSFORMATIONS -- %
 
-% -- LINKS AND CO. -- %
+%%%
+% prototype::
+%     #1 : (black-rate)
+%          the amount of color relative to black.
+%     #2 : (color)
+%          one color following the ''color'' format.
+%
+%     :return: a "darker" version of the color ''#1''.
+%%%
+\NewExpandableDocumentCommand{\tdocdarkcolor}{ O{50} m }{#2!#1!black}
+
+
+%%%
+% prototype::
+%     #1 : (transparency)
+%          the transparency rate.
+%     #2 : (color)
+%          one color following the ''color'' format.
+%
+%     :return: a "transparent" version of the color `#1`.
+%%%
+\NewExpandableDocumentCommand{\tdoclightcolor}{ O{5} m }{#2!#1}
+
+
+% -- ICONS -- %
+
+%%%
+% prototype::
+%     #1 : (aws-icon)
+%          one material that expects to be an icon command from the
+%          ''fontawsome5'' \pack.
+%
+%     :return: the icon followed by a small insecable space.
+%%%
+\NewDocumentCommand{\tdocicon}{ m }{%
+  #1\kern.45em%
+}
+
+
+% -- THEME -- %
 
 \input{../main/css/\tutodoc@theme.cls.sty}
 

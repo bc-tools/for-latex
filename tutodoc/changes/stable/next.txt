@@ -6,7 +6,12 @@
 The ‘’scrartcl‘’ class replaces the venerable ‘’article‘’. This means better placement of the margins with the options retained for loading ‘’scrartcl‘’.
 
 [[:api:]]
-Admonitions: the ''colchges'' option of the \envs has been renamed ''col-chges''.
+Color key names will be hyphenated where necessary: this implies the following changes.
+
+    1) Admonitions: the ''colchges'' option of the \envs has been renamed ''col-chges''.
+
+    1) Showcases: the ''colstripe'' and  ''coltext'' options of the \env ''tdocshowcase'' and the macro ''\tdocshowcaseinput'' have been renamed ''col-stripe'' and  ''col-text''.
+
 
 
 -----

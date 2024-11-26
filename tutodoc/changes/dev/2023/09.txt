@@ -169,7 +169,7 @@ The \tech \docs in the \src have been updated.
 [[:api:]]
 A few things to know...
 
-    1) The package ''xcolor'' is loaded instead of ''pgf'', this last on was used only for colors (keys are now managed with \latex3).
+    1) The package ''color'' is loaded instead of ''pgf'', this last on was used only for colors (keys are now managed with \latex3).
 
     1) The setting of ''\thechapter'' is made only if it is necessary.
 

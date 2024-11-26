@@ -34,7 +34,7 @@
 %
 %     :see: \__tutodoc_translate_date:n
 %%%
-\NewDocumentCommand{\tutodoc@new@change@margin}{m m m m m}{
+\NewDocumentCommand{\tutodoc@new@change@margin}{ m m m m m }{
   \marginnote{
     \color{#1}
     \scriptsize
@@ -70,10 +70,14 @@
 
 %%%
 % prototype::
+%     #1 : (EN-num-date)
+%          a content that should have the numerical English date
+%          format ''YYYY-MM-DD''.
+%
 %     :action: this function checks if we have something like
-%              ''YYYY-MM-DD'' and then it calls the function
-%              ''\__tutodoc_translate_date_process:w'' to finish
-%              the job.
+%              ''YYYY-MM-DD'', and then it calls the function
+%              ''\__tutodoc_translate_date_process:w'' to
+%              activate the transformation to the locale format.
 %
 %     :see: \__tutodoc_translate_date_process:w
 %%%
@@ -89,6 +93,13 @@
 
 %%%
 % prototype::
+%     #1 : (year-extracted)
+%          a 1 to 4 digits integer
+%     #2 : (month-extracted)
+%          a 2 digits integer
+%     #3 : (day-extracted)
+%          a 2 digits integer
+%
 %     :action: this function extracts year, month and day in something
 %              like ''YYYY-MM-DD'' and then it calls ''\tutodoc@trans@date''
 %              to use the format expected for a "localised" date.
@@ -160,7 +171,11 @@
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\tdocdate}{ O{\tutodoc@changes@when@color} m D<>{\tutodoc@version@date@vertical@offset@len} }{
+\NewDocumentCommand{\tdocdate}{
+  O{\tutodoc@changes@when@color}
+  m
+  D<>{\tutodoc@version@date@vertical@offset@len}
+}{
   \tutodoc@new@change@margin%
     {#1}                             % Color
     {}                               % Version
@@ -189,6 +204,14 @@
 \tl_new:N \l_tutodoc_topic_date_tl
 \tl_new:N \l_tutodoc_topic_version_tl
 
+
+%%%
+% prototype::
+%     col       : the color of the full content of a topic \env
+%     col-chges : the color of the material for changes for a topic \env
+%     date      : the date of the changes a topic \env
+%     version   : the number version of the changes a topic \env
+%%%
 \keys_define:nn { tutodoc / version-n-change / topic / options } {
 % Colors.
   col       .tl_set:N  = \l_tutodoc_topic_what_color_tl,
@@ -203,7 +226,6 @@
   version .initial:n = \c_empty_tl,
 }
 
-
 \tl_new:N \l__tutodoc_topic_all_user_options_tl
 
 
@@ -215,7 +237,7 @@
 %          one material that expects to be an icon command from the
 %          ''fontawsome5'' \pack
 %     #3 : (key-val options)
-%          see above
+%          :see: \keys_define:nn { tutodoc / version-n-change / topic / options }
 %
 %     :action: this environment prints some \infos about specific changes
 %              achieved in a new version (no special formatting is applied).
@@ -282,7 +304,7 @@
 %
 %     :action: ''key/value'' iteration over ''\g__tutodoc_topic_change_prop''
 %              to build topic-like \envs using the \env ''tdoctopic''
-%              (the title used is translated into the good language).
+%              (the title respects the locale settings).
 %%%
 \prop_map_inline:Nn \g__tutodoc_topic_change_prop {
   \NewDocumentEnvironment{ tdoc#1 } { O{} } {
@@ -295,8 +317,8 @@
 
 %%%
 % prototype::
-%     #1 : (color-material)
-%          one ''xcolor'' for the text
+%     #1 : (color-content)
+%          the color of the full content
 %     #2 : (short-desc)
 %          a short text expected to indicate the very first version of a project.
 %

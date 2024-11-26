@@ -9,7 +9,7 @@
 %
 % For example, ''\tdocquote{Something}'' prints **"Something"**.
 %%%
-\NewDocumentCommand{\tdocquote}{m}{%
+\NewDocumentCommand{\tdocquote}{ m }{%
   \enquote{\emph{#1}}%
 }
 
@@ -36,7 +36,7 @@
 %        gives
 %        **"Something" et "Another thing" en anglais**.
 %%%
-\NewDocumentCommand{\tdocinEN}{s m}{%
+\NewDocumentCommand{\tdocinEN}{ s m }{%
   \IfBooleanTF{#1}{}{\tutodoc@trans@in@EN}%
 % We must activate the English typesetting rules.
   {%

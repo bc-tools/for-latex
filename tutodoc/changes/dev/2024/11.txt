@@ -5,12 +5,24 @@
 26  (1.6.3.beta-6)
 ==
 
+-------
+:break:
+-------
+
+[[:api:]]
+Color key names will be hyphenated where necessary: this implies the following changes.
+
+    1) Admonitions: the ''colchges'' option of the \envs has been renamed ''col-chges''.
+
+    1) Showcases: the ''colstripe'' and  ''coltext'' options of the \env ''tdocshowcase'' and the macro ''\tdocshowcaseinput'' have been renamed ''col-stripe'' and  ''col-text''.
+
+
 -----
 :new:
 -----
 
 [[:api:]]
-''\tdocinEN'' macro: the English linguistic rules are respected between the quotes.
+''\tdocinEN'' macro: inside the quotes, the English linguistic rules are followed.
 
 
 // ---------- //
@@ -30,14 +42,6 @@ Manual: the English translation has been updated.
 
 [[:api:]]
 \Cls options: the options ''fontsize'' and ''DIV'' can't be used because their values are fixed by \thisproj.
-
-
--------
-:break:
--------
-
-[[:api:]]
-Admonitions: the ''colchges'' option of the \envs has been renamed ''col-chges''.
 
 
 // ---------- //

@@ -186,10 +186,10 @@ Completed box being shipped out [2]
 ......\glue 0.0 plus 1.0fil
 .....\pdfcolorstack 0 pop
 .\kern 0.0
-(pdf-showcase-no-stripe-page-break-2.aux)
-Package rerunfilecheck Warning: File `pdf-showcase-no-stripe-page-break-2.out' has changed.
+(pdf-showcase-nostripe-page-break-2.aux)
+Package rerunfilecheck Warning: File `pdf-showcase-nostripe-page-break-2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
-Package rerunfilecheck Info: Checksums for `pdf-showcase-no-stripe-page-break-2.out':
+Package rerunfilecheck Info: Checksums for `pdf-showcase-nostripe-page-break-2.out':
 (rerunfilecheck)             Before: <no file>
 (rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.

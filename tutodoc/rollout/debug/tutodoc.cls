@@ -123,7 +123,7 @@
 %     #1 : (black-rate)
 %          the amount of color relative to black.
 %     #2 : (color)
-%          one color following the ''xcolor'' format.
+%          one color following the ''color'' format.
 %
 %     :return: a "darker" version of the color ''#1''.
 %%%
@@ -135,7 +135,7 @@
 %     #1 : (transparency)
 %          the transparency rate.
 %     #2 : (color)
-%          one color following the ''xcolor'' format.
+%          one color following the ''color'' format.
 %
 %     :return: a "transparent" version of the color `#1`.
 %%%
@@ -689,7 +689,7 @@
 %     #2 : (down-text)
 %          the descriptive text after the real output
 %     #3 : (color)
-%          one color following the ''xcolor'' format.
+%          one color following the ''color'' format.
 %          This color is used to set the one for the decorated texts printed
 %          corresponding to the two first arguments.
 %     #4 : (text color)
@@ -751,7 +751,7 @@
 \tl_new:N   \l_tutodoc_showcase_after_tl
 \tl_new:N   \l_tutodoc_showcase_stripe_color_tl
 \tl_new:N   \l_tutodoc_showcase_text_color_tl
-\bool_new:N \l_tutodoc_showcase_nostripe_bool
+\bool_new:N \l_tutodoc_showcase_no_stripe_bool
 
 
 %%%
@@ -760,12 +760,12 @@
 %%%
 \keys_define:nn { tutodoc / showcase } {
 % Colors.
-  colstripe .tl_set:N  = \l_tutodoc_showcase_stripe_color_tl,
-  colstripe .initial:n = \tutodoc@showcase@stripe@color,
-  coltext .tl_set:N    = \l_tutodoc_showcase_text_color_tl,
-  coltext .initial:n   = \tutodoc@showcase@text@color,
+  col-stripe .tl_set:N  = \l_tutodoc_showcase_stripe_color_tl,
+  col-stripe .initial:n = \tutodoc@showcase@stripe@color,
+  col-text .tl_set:N    = \l_tutodoc_showcase_text_color_tl,
+  col-text .initial:n   = \tutodoc@showcase@text@color,
 % Stripe?
-  nostripe .bool_set:N = \l_tutodoc_showcase_nostripe_bool,
+  nostripe .bool_set:N = \l_tutodoc_showcase_no_stripe_bool,
   nostripe .initial:n  = false,
 % Texts.
   before .tl_set:N  = \l_tutodoc_showcase_before_tl,
@@ -797,7 +797,7 @@
   \group_begin:
     \keys_set:nn { tutodoc / showcase } { #1 }
 
-    \bool_if:NTF \l_tutodoc_showcase_nostripe_bool {
+    \bool_if:NTF \l_tutodoc_showcase_no_stripe_bool {
       \begin{tutodoc@showcase@basic}
         { \tl_use:N \l_tutodoc_showcase_before_tl }
         { \tl_use:N \l_tutodoc_showcase_after_tl }
@@ -814,7 +814,7 @@
         { \tutodoc@showcase@build@back@color }
     }
 }{
-    \bool_if:NTF \l_tutodoc_showcase_nostripe_bool {
+    \bool_if:NTF \l_tutodoc_showcase_no_stripe_bool {
       \end{tutodoc@showcase@basic}
     }{
       \end{tutodoc@showcase@colorstrip}

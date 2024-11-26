@@ -141,6 +141,6 @@ Completed box being shipped out [2]
 ......\glue 0.0 plus 1.0fil
 .....\special{color pop}
 .\kern 0.0
-(pdf-showcase-no-stripe-page-break-1.aux)
-Package rerunfilecheck Info: File `pdf-showcase-no-stripe-page-break-1.out' has not changed.
+(pdf-showcase-nostripe-page-break-1.aux)
+Package rerunfilecheck Info: File `pdf-showcase-nostripe-page-break-1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.

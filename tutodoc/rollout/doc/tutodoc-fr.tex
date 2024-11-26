@@ -648,8 +648,8 @@ VERSUS.
 \tdoclatexshow[explain   = Ce qui vient est coloré...,
                before    = Rendu ci-après.,
                after     = Rendu fini.,
-               colstripe = orange,
-               coltext   = blue!70!black]
+               col-stripe = orange,
+               col-text   = blue!70!black]
                {examples-listing-xyz.tex}
 \end{filecontents*}
 
@@ -684,8 +684,8 @@ $x y z = 1$
 \begin{filecontents*}[overwrite]{examples-showcase-customized.tex}
 \begin{tdocshowcase}[before    = Mon début,
                      after     = Ma fin à moi,
-                     colstripe = red,
-                     coltext   = orange!75!black]
+                     col-stripe = red,
+                     col-text   = orange!75!black]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 \end{tdocshowcase}
 \end{filecontents*}
@@ -702,8 +702,8 @@ $x y z = 1$
 \begin{tdocshowcase}[nostripe,
                      before    = Mon début,
                      after     = Ma fin à moi,
-                     colstripe = green,
-                     coltext   = purple]
+                     col-stripe = green,
+                     col-text   = purple]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 \end{tdocshowcase}
 \end{filecontents*}
@@ -1402,7 +1402,7 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 \begin{tdocnote}
     Dans l'exemple précédent, le texte utilise bien l'orange assombri proposé. Par contre, le rouge sert de base pour obtenir les couleurs utilisées pour la bande : les transformations utilisées dépendent du thème choisi.%
     \footnote{
-        Par exemple, les thèmes \tdocinlatex{bw} et \tdocinlatex{draft} ne tiennent pas compte de la clé \tdocinlatex{colstripe} !
+        Par exemple, les thèmes \tdocinlatex{bw} et \tdocinlatex{draft} ne tiennent pas compte de la clé \tdocinlatex{col-stripe} !
     }
     %
     Il faut également savoir qu'en coulisse, la macro \tdocmacro{tdocruler} est employée.
@@ -1478,11 +1478,11 @@ Pour obtenir des rendus en important le code depuis un fichier externe, au lieu 
 
     \medskip
 
-    Quant à \tdocinlatex+\tdocshowcaseinput[colstripe = red, coltext = orange!75!black]{external.tex}+\,, ceci produira le changement de couleur observable ci-après.
+    Quant à \tdocinlatex+\tdocshowcaseinput[col-stripe = red, col-text = orange!75!black]{external.tex}+\,, ceci produira le changement de couleur observable ci-après.
 
     \medskip
 
-    \tdocshowcaseinput[colstripe = red, coltext = orange!75!black]{examples-showcase-external.tex}
+    \tdocshowcaseinput[col-stripe = red, col-text = orange!75!black]{examples-showcase-external.tex}
 
 \end{tdocexa}
 
@@ -1742,7 +1742,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
     Les macros \tdocmacro{tdocdate} et \tdocmacro{tdocversion} souffrent donc des même effets de bord comme dans l'exemple suivant.
     On peut tout de même régler ces problèmes via un argument optionnel \tdocinlatex{<déplacement-vertical>} comme à la fin de l'exemple ci-après. C'est moche, mais fonctionnel.
 
-    \tdoclatexshow[nostripe, colstripe=red]{examples-version-n-change-side-effect.tex}
+    \tdoclatexshow[nostripe, col-stripe=red]{examples-version-n-change-side-effect.tex}
 
 \end{tdocwarn}
 
@@ -2006,7 +2006,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 
 
 \begin{tdocbreak}[version = 1.6.0, date = 2024-10-27]
-    \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{color} a été renommée \tdocinlatex{colstripe}.
+    \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{color} a été renommée \tdocinlatex{col-stripe}.
 
     \item La macro \tdocmacro{tdoclinkcolor} devient la couleur \tdocinlatex{tutodoc@link@color} destinée à un usage interne.
 \end{tdocbreak}
@@ -2017,7 +2017,7 @@ Ne pas passer via la branche \verb#main# qui sert à figer les dernières versio
 
     \item Journal des modifications : ajout de l'environnement \tdocenv*{tdoctech} pour les informations techniques.
 
-    \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{coltext} permet de changer aussi la couleur du texte.
+    \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{col-text} permet de changer aussi la couleur du texte.
 
     \item Les nouvelles fonctionnalités ont été documentées.
 \end{tdocnew}

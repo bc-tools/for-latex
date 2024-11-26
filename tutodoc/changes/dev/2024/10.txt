@@ -164,7 +164,7 @@ Manual: a section talks about the themes, and also adds at the very end of the m
 [[:api:]]
 Here are the breaking changes.
 
-    1) Showcase: the key ''color'' has been renamed ''colstripe''.
+    1) Showcase: the key ''color'' has been renamed ''col-stripe''.
 
     1) Themes: the color ''tdoclinkcolor'' becomes ''tutodoc@link@color'' such as to avoid unwanted changes by a common user.
 
@@ -184,7 +184,7 @@ Themes.
         * path::''showcase''
         * path::''version-n-change''
 
-    1) Showcase: addition of a new missing option ''coltext'' to change the text color (the themes need this new option).
+    1) Showcase: addition of a new missing option ''col-text'' to change the text color (the themes need this new option).
 
 
 --------

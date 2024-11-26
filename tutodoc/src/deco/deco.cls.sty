@@ -13,6 +13,7 @@
 \newlength{\tutodoc@vertical@space@deco@len}
 \setlength{\tutodoc@vertical@space@deco@len}{\dimeval{2\medskipamount+1.25pt}}
 
+
 %%%
 % prototype::
 %     :action: this macro draws a centered horizontal rule with a height
@@ -22,7 +23,7 @@
 %
 %     :see: len.tutodoc@vertical@space@deco@len
 %%%
-\NewDocumentCommand{\tdocsep}{}{
+\newcommand{\tdocsep}{
   \par
   \cleaders
     \vbox to \tutodoc@vertical@space@deco@len{

@@ -140,12 +140,15 @@
 
 \tl_new:N \l_tutodoc_listing_explain_tl
 
+
 %%%
 % prototype::
-%     :see: macro.tdoclatexshow
+%     explain : the text between the code and its highlighted output.
 %
-% We add a key-val option specific to ''\tdoclatexshow'', the other ones
-% will be sent to ''\tdocshowcaseinput''.
+%
+% note::
+%     This key can be used in addition to those of the ''tdocshowcase''
+%     \env,
 %%%
 \keys_define:nn { tutodoc / listing / latexshow } {
   explain .tl_set:N  = \l_tutodoc_listing_explain_tl,
@@ -161,16 +164,15 @@
 %%%
 % prototype::
 %     #1 : (key-val options)
-%          the key-value options supported by the ''tdocshowcase'' \env,
-%          plus one allowing you to change the description of a line
-%          printed between the code and its highlighted output.
+%          :see: \keys_define:nn { tutodoc / listing / latexshow } ,
+%                \keys_define:nn { tutodoc / showcase }
 %     #2 : (file path)
 %          the path of a file
 %
 %     :see: env.tdocshowcase ,
 %           macro.tdoclatexinput
 %%%
-\NewDocumentCommand{\tdoclatexshow}{O{} m}{
+\NewDocumentCommand{\tdoclatexshow}{ O{} m} {
   \group_begin:
     \keys_set_known:nnN { tutodoc / listing / latexshow }
       { #1 }
