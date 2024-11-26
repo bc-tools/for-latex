@@ -698,7 +698,7 @@ $x y z = 1$
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-showcase-no-clrstrip-customized.tex}
+\begin{filecontents*}[overwrite]{examples-showcase-nostripe-customized.tex}
 \begin{tdocshowcase}[nostripe,
                      before    = Mon début,
                      after     = Ma fin à moi,
@@ -725,7 +725,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-showcase-no-clrstrip.tex}
+\begin{filecontents*}[overwrite]{examples-showcase-nostripe.tex}
 \begin{tdocshowcase}[nostripe]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 \end{tdocshowcase}
@@ -1436,14 +1436,14 @@ Il est possible de ne pas utiliser une bande colorée comme nous allons le voir 
     L'emploi de \tdocenv[{[nostripe]}]{tdocshowcase} demande de ne pas faire appel à \tdocpack{clrstrip}.
     Voici un exemple d'utilisation.
 
-    \tdoclatexinput[code]{examples-showcase-no-clrstrip.tex}
+    \tdoclatexinput[code]{examples-showcase-nostripe.tex}
 
 
     Ceci produira ce qui suit.
 
     \medskip
 
-    \input{examples-showcase-no-clrstrip.tex}
+    \input{examples-showcase-nostripe.tex}
 
 \end{tdocexa}
 
@@ -1451,14 +1451,14 @@ Il est possible de ne pas utiliser une bande colorée comme nous allons le voir 
 \begin{tdocexa}[Changer les couleurs et/ou les textes par défaut]
     \leavevmode
 
-    \tdoclatexinput[code]{examples-showcase-no-clrstrip-customized.tex}
+    \tdoclatexinput[code]{examples-showcase-nostripe-customized.tex}
 
 
     Ceci produira l'horreur suivante.
 
     \medskip
 
-    \input{examples-showcase-no-clrstrip-customized.tex}
+    \input{examples-showcase-nostripe-customized.tex}
 
 \end{tdocexa}
 
