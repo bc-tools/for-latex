@@ -7,14 +7,19 @@
 
 \section{Quelle langue est utilisée par la classe \thisproj\ ?}
 
-Cette documentation charge le package \tdocpack{babel} via \tdocinlatex|\usepackage[french]{babel}|\,, un package que ne charge pas \thisproj.
-Par contre, la classe \thisproj\ repère \tdocinlatex|fr| comme langue principale utilisée par \tdocpack{babel}.%
+This documentation loads the \tdocpack{babel} package via \tdocinlatex|\usepackage[english]{babel}|\, a package that \thisproj does not load.
+On the other hand, the \thisproj\ class identifies \tdocinlatex|fr| as the main language used by \tdocpack{babel}.%.
 \footnote{
     Techniquement, on utilise \tdocinlatex|\BCPdata{language}| qui renvoie une langue au format court.
 }
 Comme cette langue fait partie de la liste des langues prises en compte, voir ci-dessous, la classe \thisproj\ produira les effets attendus.
 % Do not touch the following placeholder.
 <<API-LANGS>>
+
+
+\begin{tdocnote}
+    Les packages \tdocpack{babel} et \tdocpack{polyglossia} sont pris en compte.
+\end{tdocnote}
 
 
 \begin{tdoccaut}
@@ -25,10 +30,5 @@ Comme cette langue fait partie de la liste des langues prises en compte, voir ci
 \begin{tdocwarn}
     Lorsqu'une langue n'est pas prise en compte par \thisproj, un message d'avertissement est émis, et l'anglais est alors choisi comme langue vis-à-vis de \thisproj.
 \end{tdocwarn}
-
-
-\begin{tdocnote}
-    Le mécanisme utilisé devrait être compatible avec le package \tdocpack{polyglossia}.
-\end{tdocnote}
 
 \end{document}
