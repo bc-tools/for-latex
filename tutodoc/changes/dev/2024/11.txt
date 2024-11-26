@@ -2,18 +2,15 @@
 
 
 ==
-?????  (1.6.3.beta-6)
+26  (1.6.3.beta-6)
 ==
 
 -----
 :new:
 -----
 
-[[:api:]] ????
-OK
-    ---> inenglish : gestion de la ponctuation via babel ou polyglossia
-KO
-    ---> doc avec un exemple
+[[:api:]]
+''\tdocinEN'' macro: the English linguistic rules are respected between the quotes.
 
 
 // ---------- //
@@ -28,7 +25,7 @@ KO
 --------
 
 [[:doc:]]
-Manual: the English translations has been updated.
+Manual: the English translation has been updated.
 
 
 [[:api:]]

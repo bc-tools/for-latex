@@ -196,7 +196,8 @@
     \iflanguageloaded{english}{}{
       \setotherlanguage{english}
     }
-% We must take care of English rules for English contents.
+
+% We must take care of the English typesetting rules.
     \renewcommand\tutodoc@use@english{%
       \foreignlanguage{english}%
     }
