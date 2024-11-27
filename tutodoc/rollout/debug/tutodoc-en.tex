@@ -372,19 +372,40 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-version-n-change-chges-tech.tex}
+\begin{tdoctech}
+    \item Info 1...
+    \item Info 2...
+\end{tdoctech}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-para-title.tex}
+\paragraph{A well-versioned title.}
+\tdocversion{1.2.3}[2024-11-23]
+Blah, blah, blah, blah, blah, blah, blah, blah, blah, blah, blah...
+Stay, stay, stay, stay, stay, stay, stay, stay, stay, stay, stay, stay, stay, stay...
+
+Stay, stay, stay, stay, stay, stay, stay, stay, stay, stay, stay, stay, stay...
+Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
+
+\tdocdate{2024-11-23}
+\paragraph{A badly versioned title.}
+Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-version-n-change-dating.tex}
 Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 
 \medskip % CAUTION! This prevents overlapping.
 
 \tdocdate{2023-09-24}
-
 Ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 \medskip % CAUTION! This prevents overlapping.
 
 \tdocdate[gray]{2020-05-08}
-
 Bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli...
 
 Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
@@ -393,7 +414,7 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-version-n-change-user-choice-icon.tex}
+\begin{filecontents*}[overwrite]{examples-version-n-change-chges-user-choice-icon.tex}
 \begin{tdoctopic}{To hide}<\faEyeSlash>
 % An icon from fontawesome5.
     \item Info 1...
@@ -402,7 +423,7 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-version-n-change-user-choice.tex}
+\begin{filecontents*}[overwrite]{examples-version-n-change-chges-user-choice.tex}
 \begin{tdoctopic}{End of icons}
     \item Info 1...
     \item Info 2...
@@ -410,23 +431,13 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-version-n-change-update.tex}
-\begin{tdocupdate}
-    \item Info 1...
-    \item Info 2...
-\end{tdocupdate}
-\end{filecontents*}
-
-
 \begin{filecontents*}[overwrite]{examples-version-n-change-versioning.tex}
 \tdocversion[red]{10.2.0-beta}[2023-12-01]
-
 Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 
 \bigskip % CAUTION! This prevents overlapping.
 
 \tdocversion{10.2.0-alpha}
-
 Ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble,
 ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble,
 ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble,
@@ -434,75 +445,7 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-version-n-change-side-effect.tex}
-\tdocversion[red]{1.2.3}[2024-10-29]%
-\paragraph{Before it's problematic.}
-Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
-
-
-\paragraph{After it's misplaced}%
-\tdocversion[red]{1.2.3}[2024-10-29]
-
-Ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
-
-
-\paragraph{No miracle solution.\tdocversion[red]{1.2.3}[2024-10-29]}
-
-Bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli,
-bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli,
-bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli,
-bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli, bli...
-
-
-\paragraph{Manual problem management.\tdocversion{1.2.3}[2024-10-29]<-.7cm>}
-
-Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-version-n-change-first.tex}
-\tdocstartproj{1st version of the project.}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-version-n-change-tech.tex}
-\begin{tdoctech}
-    \item Info 1...
-    \item Info 2...
-\end{tdoctech}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-version-n-change-what-n-when.tex}
-\begin{tdoctech}[date = 2024-10-29,
-                 col  = red]
-    \item Info 1...
-    \item Info 2...
-\end{tdoctech}
-
-\begin{tdocupdate}[version = 1.2.3,
-                   col     = ForestGreen]
-    \item Info 1...
-    \item Info 2...
-\end{tdocupdate}
-
-\begin{tdoctopic}{To hide}<\faEyeSlash>%
-                 [version = 4.5.6, date = 2025-11-30]
-    \item Info 1...
-    \item Info 2...
-\end{tdoctopic}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-version-n-change-break.tex}
-\begin{tdocbreak}
-    \item Info 1...
-    \item Info 2...
-\end{tdocbreak}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-version-n-change-pb.tex}
+\begin{filecontents*}[overwrite]{examples-version-n-change-chges-pb.tex}
 \begin{tdocprob}
     \item Info 1...
     \item Info 2...
@@ -510,7 +453,46 @@ Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-version-n-change-new.tex}
+\begin{filecontents*}[overwrite]{examples-version-n-change-chges-todo.tex}
+\begin{tdoctodo}
+    \item Info 1...
+    \item Info 2...
+\end{tdoctodo}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-chges-update.tex}
+\begin{tdocupdate}
+    \item Info 1...
+    \item Info 2...
+\end{tdocupdate}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-what-n-when.tex}
+\begin{tdoctech}[date      = 2024-10-29,
+                 col-chges = red]
+    \item Info 1...
+    \item Info 2...
+\end{tdoctech}
+
+\begin{tdocupdate}[version   = 1.2.3,
+                   col-chges = ForestGreen,
+                   col       = ForestGreen]
+    \item Info 1...
+    \item Info 2...
+\end{tdocupdate}
+
+\begin{tdoctopic}{To hide}<\faEyeSlash>%
+                 [version = 4.5.6,
+                  date    = 2025-11-30]
+    \item Info 1...
+    \item Info 2...
+\end{tdoctopic}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-chges-new.tex}
 \begin{tdocnew}
     \item Info 1...
     \item Info 2...
@@ -518,7 +500,52 @@ Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-version-n-change-fix.tex}
+\begin{filecontents*}[overwrite]{examples-version-n-change-manual-setting.tex}
+Voilà ce que cela donne sans déplacement vertical.
+
+\paragraph{Un réglage maison}%
+\tdocversion{1.2.3}[2024-10-29]<0pt>
+
+Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
+
+
+This is what it looks like without vertical movement.
+
+\paragraph{A home-made setting}%
+\tdocversion{1.2.3}[2024-10-29]<0pt>
+
+Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-chges-first.tex}
+\tdocstartproj{1st version of the project.}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-color-chges-first.tex}
+\tdocstartproj[DarkOrchid]%
+              {Brightly colored version 1.}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-chges-break.tex}
+\begin{tdocbreak}
+    \item Info 1...
+    \item Info 2...
+\end{tdocbreak}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-color-chges-fix.tex}
+\begin{tdocfix}[col = CadetBlue]
+    \item Info 1...
+    \item Info 2...
+\end{tdocfix}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-version-n-change-chges-fix.tex}
 \begin{tdocfix}
     \item Info 1...
     \item Info 2...
@@ -674,8 +701,8 @@ $x y z = 1$
 
 
 \begin{filecontents*}[overwrite]{examples-showcase-customized.tex}
-\begin{tdocshowcase}[before    = My beginning,
-                     after     = My end,
+\begin{tdocshowcase}[before     = My beginning,
+                     after      = My end,
                      col-stripe = red,
                      col-text   = orange!75!black]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
@@ -692,8 +719,8 @@ $x y z = 1$
 
 \begin{filecontents*}[overwrite]{examples-showcase-nostripe-customized.tex}
 \begin{tdocshowcase}[nostripe,
-                     before    = My beginning,
-                     after     = My end,
+                     before     = My beginning,
+                     after      = My end,
                      col-stripe = green,
                      col-text   = purple]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
@@ -731,7 +758,6 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \documentclass{tutodoc}
 
 % Community tools
-\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
 \usepackage[english]{babel, varioref}
@@ -847,7 +873,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \def\FTfile(#1,#2){%
   node(tmp){}
   (#1|-tmp)++(0.6em,0)
-  node(tmp)[anchor=west,black]{\tt #2}
+  node(tmp)[anchor=west,black]{\texttt{#2}}
   (#1)|-(tmp.west)
   ++(0,-1.2em)
 }
@@ -890,7 +916,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \begin{document}
 
 
-\title{The \texttt{tutodoc} class - Tutorial-style documentation}
+\title{The \texttt{tutodoc} class \\ Tutorial-style documentation}
 \author{Christophe, BAL}
 \date{Oct 30, 2024 - Version 1.6.2}
 
@@ -950,96 +976,30 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \section{General formatting imposed}
 
-\subsection{Page geometry}
+\subsection{Font size and page geometry}
 
-The \tdocpack{geometry} package is loaded with the following settings.
-
-
-\begin{tdoclatex}[code]
-\RequirePackage[
-  top            = 2.5cm,
-  bottom         = 2.5cm,
-  left           = 2.5cm,
-  right          = 2.5cm,
-  marginparwidth = 2cm,
-  marginparsep   = 2mm,
-  heightrounded
-]{geometry}
-\end{tdoclatex}
+The \tdoccls{scrartcl} class is loaded via the \tdocinlatex{fontsize = 10pt} and \tdocinlatex{DIV = 12} options.
 
 
-\subsection{Title and table of contents}
+\begin{tdocwarn}
+	For the moment, the macros for dating and versioning presented in the \ref{tutodoc-changes} section are not adaptive, i.e. changing \tdocinlatex{fontsize = 10pt} and \tdocinlatex{DIV = 12} will break the rendering of these macros.
+\end{tdocwarn}
 
-The \tdocpack{titlesec} and \tdocpack{tocbasic} packages are set as follows.
 
+\subsection{Titles and table of contents}
 
-\begin{tdoclatex}[code]
-\RequirePackage[raggedright]{titlesec}
-
-% ...
-\ifcsundef{chapter}%
-          {}%
-          {\renewcommand\thechapter{\Alph{chapter}.}}
-
-\renewcommand\thesection{\Roman{section}.}
-\renewcommand\thesubsection{\arabic{subsection}.}
-\renewcommand\thesubsubsection{\roman{subsubsection}.}
-
-\titleformat{\paragraph}[hang]%
-            {\normalfont\normalsize\bfseries}%
-            {\theparagraph}{1em}%
-            {}
-
-\titlespacing*{\paragraph}%
-              {0pt}%
-              {3.25ex plus 1ex minus .2ex}%
-              {0.5em}
-
-% Source
-%    * https://tex.stackexchange.com/a/558025/6880
-\DeclareTOCStyleEntries[
-  raggedentrytext,
-  linefill = \hfill,
-  indent   = 0pt,
-  dynindent,
-  numwidth = 0pt,
-  numsep   = 1ex,
-  dynnumwidth
-]{tocline}{
-  chapter,
-  section,
-  subsection,
-  subsubsection,
-  paragraph,
-  subparagraph
-}
-
-\DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
-\end{tdoclatex}
+The selected settings are directly visible in this documentation.
 
 
 \subsection{Dynamic links}
 
-The \tdocpack{hyperref} package is imported behind the scenes with the settings below.
-
-
-\begin{tdoclatex}[code]
-\newcommand{\tdoclinkcolor}{NavyBlue!85!white}
-
-\hypersetup{
-  colorlinks,
-  citecolor = \tdoclinkcolor,
-  filecolor = \tdoclinkcolor,
-  linkcolor = \tdoclinkcolor,
-  urlcolor  = \tdoclinkcolor
-}
-\end{tdoclatex}
+The \tdocpack{hyperref} package is imported, if required, just by adjusting the color of links relating to citations, files, internal links, and finally \verb#url# (this color will depend on the theme chosen).
 
 
 \section{What language is used by the \thisproj\ class?}
 
-This documentation loads the \tdocpack{babel} package via \tdocinlatex|\usepackage[english]{babel}|\,.
-As a result, the \thisproj\ class identifies \tdocinlatex|en| as the main language used by \tdocpack{babel}.%.
+This documentation loads the \tdocpack{babel} package via \tdocinlatex|\usepackage[english]{babel}|\, a package that \thisproj\ does not load.
+On the other hand, the \thisproj\ class identifies \tdocinlatex|fr| as the main language used by \tdocpack{babel}.%.
 \footnote{
     Technically, we use \tdocinlatex|\BCPdata{language}| which returns a language in short format.
 }
@@ -1052,7 +1012,12 @@ As this language is included in the list of languages taken into account, see be
         \item \tdocinlatex|fr| : French.
     \end{itemize}
 \end{multicols}
+                    
 
+
+\begin{tdocnote}
+    Packages \tdocpack{babel} and \tdocpack{polyglossia} are taken into account.
+\end{tdocnote}
 
 
 \begin{tdoccaut}
@@ -1063,11 +1028,6 @@ As this language is included in the list of languages taken into account, see be
 \begin{tdocwarn}
     When a language is not supported by \thisproj, a warning message is issued, and English is selected as the language for \thisproj.
 \end{tdocwarn}
-
-
-\begin{tdocnote}
-    The mechanism used should be compatible with the \tdocpack{polyglossia} package.
-\end{tdocnote}
 
 
 \section{What does that mean in \tdocquote{English}?}
@@ -1097,7 +1057,7 @@ To modify the general layout, there is the \thisproj\ class option \tdocinlatex{
     this is a black-and-white theme with some shades of gray.
 
     \item \tdocinlatex|color| :
-    this theme is colored, \emph{it's the default value}.
+    this colored theme is \emph{the default value}.
 
     \item \tdocinlatex|dark| :
     this theme is dark, ideal for resting the eyes.
@@ -1127,7 +1087,8 @@ To modify the general layout, there is the \thisproj\ class option \tdocinlatex{
 % Source.
 %     + https://tex.stackexchange.com/a/8547/6880
 \bgroup
-    \titleformat{\section}[block]{\Huge\bfseries\filcenter}{}{1em}{}
+    \setkomafont{section}{\Huge\bfseries}
+    \addtokomafont{section}{\centering}
     \phantomsection\section*{Appendix -- Theme gallery}%
     \label{tutodoc-theme-gallery}
     \addcontentsline{toc}{section}{Appendix -- Theme gallery}%
@@ -1306,6 +1267,7 @@ Here's what you can type semantically.
 \tdocenv[{[opt1]<opt2>}]{env}            \\
 Just \tdocenv*{env}...                   \\
 Finally \tdocenv*[{[opt1]<opt2>}]{env}...
+        % For copy and paste.
 \end{tdoclatex}
 
 
@@ -1685,12 +1647,12 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
 
 \begin{tdocexa}[Changing the explanatory text]
-    Using the key \tdocinlatex|explain|, you can use custom text. Thus, \tdocinlatex|tdoclatexshow[explain = Here is the actual rendering.]{examples-listing-xyz.tex}| will produce the following.
+    Using the key \tdocinlatex|explain|, you can use custom text. Thus, \tdocinlatex|tdoclatexshow[explain = Here is the rendering.]{examples-listing-xyz.tex}| will give the following.
 
     \medskip
 
     \begin{tdocshowcaseDOC}
-        \tdoclatexshow[explain = Here is the actual rendering.]{examples-listing-xyz.tex}
+        \tdoclatexshow[explain = Here is the rendering.]{examples-listing-xyz.tex}
 
     \end{tdocshowcaseDOC}
 \end{tdocexa}
@@ -1722,6 +1684,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
 
 \section{Indicate changes}
+\label{tutodoc-changes}
 
 To make it easier to monitor a project, it is essential to provide a history indicating the changes made when a new version is published.
 
@@ -1755,6 +1718,22 @@ You can either date something, or version it, in which case the version number c
 \end{tdocexa}
 
 
+\begin{tdocexa}[Caution with paragraph titles]
+	The following example shows that a date and/or version must be placed just after a paragraph title, and not before it.
+
+	\tdoclatexshow{examples-version-n-change-para-title.tex}
+
+\end{tdocexa}
+
+
+\begin{tdocexa}[Adjust vertical positioning]
+	If required, you can modify the vertical offset used to place dates and versions in the margin, the default value being $(-8\,\mathit{pt})$.
+
+	\tdoclatexshow{examples-version-n-change-manual-setting.tex}
+
+\end{tdocexa}
+
+
 \begin{tdocimp}
     \begin{enumerate}[wide]
         \item The \tdocmacro{tdocdate} and \tdocmacro{tdocversion} macros require two compilations.
@@ -1773,19 +1752,9 @@ You can either date something, or version it, in which case the version number c
 \end{tdoccaut}
 
 
-\begin{tdocwarn}
-    Behind the scenes, most of the work is done by the \tdocmacro{marginnote} macro in the eponymous package.
-    The \tdocmacro{tdocdate} and \tdocmacro{tdocversion} macros therefore suffer from the same side effects as in the following example.
-    However, these problems can be solved using an optional argument \tdocinlatex{<vertical-displacement>}, as at the end of the following example. It's ugly, but functional.
-
-    \tdoclatexshow[nostripe, col-stripe=red]{examples-version-n-change-side-effect.tex}
-
-\end{tdocwarn}
-
-
 \subsection{What's new?}
 
-\thisproj\ offers the macro \tdocmacro{tdocstartproj} and different environments to indicate quickly and clearly what has been done during the latest changes.%
+\thisproj\ offers the macro \tdocmacro{tdocstartproj} and different environments to indicate quickly and clearly what has been done during the changes made, or to come.%
 \footnote{
     The user doesn't need all the technical details.
 }
@@ -1795,6 +1764,8 @@ You can either date something, or version it, in which case the version number c
     For icons, see the note at the beginning of the section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
 \end{tdocnote}
 
+
+\subsubsection{Sobriety first}
 
 \foreach \exatitle/\filename in {
     {Just for the very first version}/%<-- Translate me!
@@ -1809,6 +1780,8 @@ You can either date something, or version it, in which case the version number c
         pb,
     {For fixes}/% <-- Translate me!
         fix,
+    {Roadmap}/% <-- Translate me!
+        todo,
     {Technical information}/% <-- Translate me!
         tech,
     {Selectable themes with an icon}/% <-- Translate me!
@@ -1819,7 +1792,28 @@ You can either date something, or version it, in which case the version number c
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput[sbs]{examples-version-n-change-\filename.tex}
+        \tdoclatexinput[sbs]{examples-version-n-change-chges-\filename.tex}
+
+    \end{tdocexa}
+}
+
+
+\subsubsection{De la couleur si besoin}
+
+\subsubsection{Color if necessary}
+
+It may be useful to highlight certain changes: this can only be done by modifying the content color.
+
+\foreach \exatitle/\filename in {
+    {A flashy first version}/%<-- Translate me!
+        first,
+    {Outstanding fixes}/% <-- Translate me!
+        fix%
+} {
+    \begin{tdocexa}[\exatitle]
+        \leavevmode
+
+        \tdoclatexinput[sbs]{examples-version-n-change-color-chges-\filename.tex}
 
     \end{tdocexa}
 }
@@ -1827,10 +1821,7 @@ You can either date something, or version it, in which case the version number c
 
 \subsection{The what and the when}
 
-The optional keys \tdocinlatex{col}\,, \tdocinlatex{date} and \tdocinlatex{version} allow to date and version a change of a particular type.%
-\footnote{
-	The warning at the end of the section \ref{tutodoc-changes-when} gives the technique used behind the scene, while showing the need to offer specialized keys.
-}
+The optional keys \tdocinlatex{col}\,, \tdocinlatex{date} and \tdocinlatex{version} allow to date and version a change of a particular type.
 Here are some examples of use.
 
 \tdoclatexshow{examples-version-n-change-what-n-when.tex}
@@ -1997,7 +1988,11 @@ The \texttt{LICENSE.txt} file is aptly named, while the \texttt{README.md} file 
 
 
 Participation as a coder is made via the \thisrepo\ repository corresponding to the \verb#tutodoc# development branch.
+
+
+\begin{tdoccaut}
 Do not use the \verb#main# branch, which is used to freeze the latest stable versions of projects in the single \thismonorepo\ repository.
+\end{tdoccaut}
 
 
 \section{History}
