@@ -31,7 +31,7 @@ créer au passage un fichier  DEPENNDS.yaml des dépendances ventuellement vide 
 
 > ---------------------------- <
 
-template theme BUG pour la doc !!!!
+template theme
 
     --> url pour la couleur
 

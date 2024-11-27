@@ -995,8 +995,8 @@ As this language is included in the list of languages taken into account, see be
 
 \begin{tasks}[label=\small\textbullet](3)
     \task \tdocinlatex|en| : English.
-        \item \tdocinlatex|es| : Spanish.
-        \item \tdocinlatex|fr| : French.
+        \task \tdocinlatex|es| : Spanish.
+        \task \tdocinlatex|fr| : French.
 \end{tasks}
                     
 
@@ -2146,18 +2146,14 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 
     \item Content highlighting: colored frames with icons are proposed for the following environments.
-    \bgroup
-    \setlength\multicolsep{5pt}
-    \begin{multicols}{3}
-        \begin{enumerate}[topsep=0pt]
-            \item \tdocenv*{tdoccaution}
-            \item \tdocenv*{tdocimp}
-            \item \tdocenv*{tdocnote}
-            \item \tdocenv*{tdoctip}
-            \item \tdocenv*{tdocwarn}
-        \end{enumerate}
-    \end{multicols}
-    \egroup
+    %
+    \begin{tasks}[label=\arabic*.](3)
+        \task \tdocenv*{tdoccaution}
+        \task \tdocenv*{tdocimp}
+        \task \tdocenv*{tdocnote}
+        \task \tdocenv*{tdoctip}
+        \task \tdocenv*{tdocwarn}
+    \end{tasks}
 \end{tdocnew}
 
 \tdocsep

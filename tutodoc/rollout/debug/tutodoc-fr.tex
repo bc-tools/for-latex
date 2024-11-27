@@ -4,7 +4,7 @@
 
 
 \begin{filecontents*}[overwrite]{gallery-showcase-bw.tex}
-\documentclass{tutodoc}
+\documentclass[theme = bw]{tutodoc}
 
 % -- FORDOC -- %
 
@@ -99,7 +99,7 @@ $\pi \neq \frac{3}{14}$.
 \end{filecontents*}
 
 \begin{filecontents*}[overwrite]{gallery-showcase-color.tex}
-\documentclass{tutodoc}
+\documentclass[theme = color]{tutodoc}
 
 % -- FORDOC -- %
 
@@ -194,7 +194,7 @@ $\pi \neq \frac{3}{14}$.
 \end{filecontents*}
 
 \begin{filecontents*}[overwrite]{gallery-showcase-dark.tex}
-\documentclass{tutodoc}
+\documentclass[theme = dark]{tutodoc}
 
 % -- FORDOC -- %
 
@@ -289,7 +289,7 @@ $\pi \neq \frac{3}{14}$.
 \end{filecontents*}
 
 \begin{filecontents*}[overwrite]{gallery-showcase-draft.tex}
-\documentclass{tutodoc}
+\documentclass[theme = draft]{tutodoc}
 
 % -- FORDOC -- %
 
@@ -1001,8 +1001,8 @@ Comme cette langue fait partie de la liste des langues prises en compte, voir ci
 
 \begin{tasks}[label=\small\textbullet](3)
     \task \tdocinlatex|en| : anglais.
-        \item \tdocinlatex|es| : espagnol.
-        \item \tdocinlatex|fr| : français.
+        \task \tdocinlatex|es| : espagnol.
+        \task \tdocinlatex|fr| : français.
 \end{tasks}
                     
 
@@ -2114,18 +2114,14 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 
 
     \item Mise en avant de contenus : des cadres colorés avec des icônes sont proposés pour les environnements suivants.
-    \bgroup
-    \setlength\multicolsep{5pt}
-    \begin{multicols}{3}
-        \begin{enumerate}
-            \item \tdocenv*{tdoccaution}
-            \item \tdocenv*{tdocimp}
-            \item \tdocenv*{tdocnote}
-            \item \tdocenv*{tdoctip}
-            \item \tdocenv*{tdocwarn}
-        \end{enumerate}
-    \end{multicols}
-    \egroup
+    %
+    \begin{tasks}[label=\arabic*.](3)
+        \task \tdocenv*{tdoccaution}
+        \task \tdocenv*{tdocimp}
+        \task \tdocenv*{tdocnote}
+        \task \tdocenv*{tdoctip}
+        \task \tdocenv*{tdocwarn}
+    \end{tasks}
 \end{tdocnew}
 
 \tdocsep
