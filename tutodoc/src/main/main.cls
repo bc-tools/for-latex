@@ -72,6 +72,8 @@
 
 % :: USEFUL :: %
 
+\RequirePackage{geometry}%
+
 \RequirePackage[svgnames]%
                {xcolor}
 
@@ -172,7 +174,18 @@
 \ExplSyntaxOff
 
 
-% -- GENERAL SETTINGS -- %
+% -- GEOMETRY SETTINGS -- %
+
+\geometry{
+  top            = 1.9cm,
+  bottom         = 1.9cm,
+  left           = 2.25cm,
+  right          = 2.25cm,
+  marginparwidth = 2cm,
+  marginparsep   = 2mm,
+  heightrounded
+}%
+
 
 \setlength{\parindent}{0cm}
 
