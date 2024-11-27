@@ -31,7 +31,7 @@
 
 \begin{document}
 
-{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
+\textsf{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
 
 \section{Mettre en avant, versionner et dater}
 
@@ -126,7 +126,7 @@ $\pi \neq \frac{3}{14}$.
 
 \begin{document}
 
-{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
+\textsf{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
 
 \section{Mettre en avant, versionner et dater}
 
@@ -221,7 +221,7 @@ $\pi \neq \frac{3}{14}$.
 
 \begin{document}
 
-{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
+\textsf{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
 
 \section{Mettre en avant, versionner et dater}
 
@@ -316,7 +316,7 @@ $\pi \neq \frac{3}{14}$.
 
 \begin{document}
 
-{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
+\textsf{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
 
 \section{Mettre en avant, versionner et dater}
 
@@ -484,22 +484,19 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 \begin{filecontents*}[overwrite]{examples-version-n-change-what-n-when.tex}
 \begin{tdoctech}[date      = 2024-10-29,
                  col-chges = red]
-    \item Info 1...
-    \item Info 2...
+    \item Info...
 \end{tdoctech}
 
 \begin{tdocupdate}[version   = 1.2.3,
                    col-chges = ForestGreen,
                    col       = ForestGreen]
-    \item Info 1...
-    \item Info 2...
+    \item Info...
 \end{tdocupdate}
 
 \begin{tdoctopic}{À cacher}<\faEyeSlash>%
                  [version = 4.5.6,
                   date    = 2025-11-30]
-    \item Info 1...
-    \item Info 2...
+    \item Info...
 \end{tdoctopic}
 \end{filecontents*}
 
@@ -543,8 +540,7 @@ Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
 
 \begin{filecontents*}[overwrite]{examples-version-n-change-color-chges-fix.tex}
 \begin{tdocfix}[col = CadetBlue]
-    \item Info 1...
-    \item Info 2...
+    \item Info...
 \end{tdocfix}
 \end{filecontents*}
 
@@ -976,12 +972,10 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \subsection{Taille de la police et géométrie de la page}
 
-La classe \tdoccls{scrartcl} est chargée via les options \tdocinlatex{fontsize = 10pt} et \tdocinlatex{DIV = 12}\,.
-
-
-\begin{tdocwarn}
-	Pour le moment, les macros pour dater et versionner présentées dans la section  \ref{tutodoc-changes} ne sont pas adaptatives, autrement dit changer \tdocinlatex{fontsize = 10pt} et \tdocinlatex{DIV = 12} cassera le rendu de ces macros.
-\end{tdocwarn}
+La classe \tdoccls{scrartcl} est chargée via les options \tdocinlatex{fontsize = 10pt} et \tdocinlatex{DIV = 12}\,.%
+\footnote{
+	Pour le moment, les macros pour dater et versionner présentées dans la section  \ref{tutodoc-changes} ne sont pas adaptatives, autrement dit changer les valeurs de \tdocinlatex{fontsize} et \tdocinlatex{DIV} casse le rendu de ces macros.
+}
 
 
 \subsection{Titres et table des matières}
@@ -996,8 +990,8 @@ Le package \tdocpack{hyperref} est importé, si besoin, en réglant juste la cou
 
 \section{Quelle langue est utilisée par la classe \thisproj\ ?}
 
-This documentation loads the \tdocpack{babel} package via \tdocinlatex|\usepackage[english]{babel}|\, a package that \thisproj does not load.
-On the other hand, the \thisproj\ class identifies \tdocinlatex|fr| as the main language used by \tdocpack{babel}.%.
+Cette documentation charge le package \tdocpack{babel} via \tdocinlatex|\tusepackage[english]{babel}|\, un package que \thisproj\ ne charge pas.
+En revanche, la classe \thisproj\ identifie \tdocinlatex|fr| comme la langue principale utilisée par \tdocpack{babel}.%.
 \footnote{
     Techniquement, on utilise \tdocinlatex|\BCPdata{language}| qui renvoie une langue au format court.
 }
@@ -2037,7 +2031,7 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 \begin{tdocbreak}
     \item La classe \thisproj\ remplace le défunt package \thisproj\ (pour le moment, la toute jeune classe ne propose aucune option spécifique).
 
-    \item La macro \tdocmacro{tdocruler} s'emploie dorénavant via \tdocinlatex{\tdocruler[<color>]{<text>}} (avant il fallait utiliser \tdocinlatex{\tdocruler{<text>}{<color>}}).
+    \item La macro \tdocmacro{tdocruler} s'emploie via \tdocinlatex{\tdocruler[<color>]{<text>}} au lieu de \tdocinlatex{\tdocruler{<text>}{<color>}}\,.
 \end{tdocbreak}
 
 

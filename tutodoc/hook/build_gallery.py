@@ -113,7 +113,7 @@ def theme_gallery(
     if not fordebug:
         tmpl_showcase_code = tmpl_showcase_code.replace(
             r"""
-\documentclass[10pt, a4paper, theme = color]{../main/main}
+\documentclass[theme = color]{../main/main}
 
 \input{../preamble.cfg.tex}
 

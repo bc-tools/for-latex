@@ -48,7 +48,7 @@
   },
 }
 
-\PassOptionsToClass{ fontsize = 10pt,  DIV = 12 }{ scrartcl }
+\PassOptionsToClass{ fontsize = 10pt }{ scrartcl }
 
 \DeclareUnknownKeyHandler[ tutodoc / main / class / options ]{
   \PassOptionsToClass{ \CurrentOption }{ scrartcl }
@@ -184,7 +184,7 @@
   marginparwidth = 2cm,
   marginparsep   = 2pt,
   heightrounded
-}%
+}
 
 \setlength{\parindent}{0cm}
 
