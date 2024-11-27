@@ -250,10 +250,8 @@ def prebuild_single_tex(
 <<API-LANGS>>
                     """.strip(),
                     f"""
-\\begin{{multicols}}{{3}}
-    \\begin{{itemize}}
-        \\item {api_lang_items}
-    \\end{{itemize}}
+\\begin{{tasks}}[label=\\small\\textbullet](3)
+    \\task {api_lang_items}
 \\end{{multicols}}
                     """
                 )

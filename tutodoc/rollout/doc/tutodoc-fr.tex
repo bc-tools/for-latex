@@ -972,10 +972,12 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \subsection{Taille de la police et géométrie de la page}
 
-La classe \tdoccls{scrartcl} est chargée via les options \tdocinlatex{fontsize = 10pt} et \tdocinlatex{DIV = 12}\,.%
-\footnote{
-	Pour le moment, les macros pour dater et versionner présentées dans la section  \ref{tutodoc-changes} ne sont pas adaptatives, autrement dit changer les valeurs de \tdocinlatex{fontsize} et \tdocinlatex{DIV} casse le rendu de ces macros.
-}
+La classe \tdoccls{scrartcl} est chargée via l'option \tdocinlatex{fontsize = 10pt}\,, et le package \tdocpack{geometry} gère les dimensions de la page.
+
+
+\begin{tdocwarn}
+	Les macros pour dater et versionner présentées dans la section  \ref{tutodoc-changes} ont besoin de réglages fixes pour la géométrie des pages et la taille de la police.
+\end{tdocwarn}
 
 
 \subsection{Titres et table des matières}

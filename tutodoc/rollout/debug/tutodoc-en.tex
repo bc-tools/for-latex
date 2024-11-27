@@ -966,10 +966,12 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \subsection{Font size and page geometry}
 
-The \tdoccls{scrartcl} class is loaded via the \tdocinlatex{fontsize = 10pt} and \tdocinlatex{DIV = 12} options.%
-\footnote{
-	For the moment, the macros for dating and versioning presented in the \ref{tutodoc-changes} section are not adaptive, i.e. changing the values of \tdocinlatex{fontsize} and \tdocinlatex{DIV} breaks the rendering of these macros.
-}
+The \tdoccls{scrartcl} class is loaded via the \tdocinlatex{fontsize = 10pt} option, and the \tdocpack{geometry} package manages the page dimensions.
+
+
+\begin{tdocwarn}
+	The macros for dating and versioning presented in the \ref{tutodoc-changes} section require fixed settings for page geometry and font size.
+\end{tdocwarn}
 
 
 \subsection{Titles and table of contents}
