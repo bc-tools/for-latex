@@ -252,7 +252,7 @@ def prebuild_single_tex(
                     f"""
 \\begin{{tasks}}[label=\\small\\textbullet](3)
     \\task {api_lang_items}
-\\end{{multicols}}
+\\end{{tasks}}
                     """
                 )
 

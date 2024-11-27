@@ -761,7 +761,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \usepackage[french]{babel, varioref}
 \frenchsetup{StandardItemLabels=true}
 
-\usepackage{multicol}
+\usepackage{tasks}
 
 \usepackage{pdfpages}
 
@@ -987,12 +987,12 @@ Les réglages choisis sont directement visibles dans cette documentation.
 
 \subsection{Liens dynamiques}
 
-Le package \tdocpack{hyperref} est importé, si besoin, en réglant juste la couleur des liens relatifs aux citations, aux fichiers, aux liens internes, et enfin aux \verb#url# (cette couleur dépendra du thème choisi).
+Le package \tdocpack{hyperref} est importé, si ce n'est pas fait, et les réglages choisis portent juste sur les couleurs des liens relatifs aux citations, aux fichiers, aux liens internes, et enfin aux \verb#url# (cette couleur dépendra du thème choisi).
 
 
 \section{Quelle langue est utilisée par la classe \thisproj\ ?}
 
-Cette documentation charge le package \tdocpack{babel} via \tdocinlatex|\tusepackage[english]{babel}|\, un package que \thisproj\ ne charge pas.
+Cette documentation charge le package \tdocpack{babel} via \tdocinlatex|\usepackage[english]{babel}|\, un package que \thisproj\ ne charge pas.
 En revanche, la classe \thisproj\ identifie \tdocinlatex|fr| comme la langue principale utilisée par \tdocpack{babel}.%.
 \footnote{
     Techniquement, on utilise \tdocinlatex|\BCPdata{language}| qui renvoie une langue au format court.
@@ -1003,7 +1003,7 @@ Comme cette langue fait partie de la liste des langues prises en compte, voir ci
     \task \tdocinlatex|en| : anglais.
         \item \tdocinlatex|es| : espagnol.
         \item \tdocinlatex|fr| : français.
-\end{multicols}
+\end{tasks}
                     
 
 
