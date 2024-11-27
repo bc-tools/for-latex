@@ -883,7 +883,6 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
       };
   \end{tikzpicture}
 }
-\usepackage{tasks}
 
 
 \begin{document}
@@ -999,12 +998,12 @@ En revanche, la classe \thisproj\ identifie \tdocinlatex|fr| comme la langue pri
     Techniquement, on utilise \tdocinlatex|\BCPdata{language}| qui renvoie une langue au format court.
 }
 Comme cette langue fait partie de la liste des langues prises en compte, voir ci-dessous, la classe \thisproj\ produira les effets attendus.
-%
+
 \begin{tasks}[label=\small\textbullet](3)
-\task \tdocinlatex|en| : anglais.
-        \task \tdocinlatex|es| : espagnol.
-        \task \tdocinlatex|fr| : français.
-    \end{tasks}
+    \task \tdocinlatex|en| : anglais.
+        \item \tdocinlatex|es| : espagnol.
+        \item \tdocinlatex|fr| : français.
+\end{multicols}
                     
 
 
