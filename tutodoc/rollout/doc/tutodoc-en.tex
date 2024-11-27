@@ -29,7 +29,7 @@
 
 \begin{document}
 
-{\Huge\bfseries The theme \texttt{"\thisstyle"}}
+\textsf{\Huge\bfseries The theme \texttt{"\thisstyle"}}
 
 \section{Highlighting, versioning and dating}
 
@@ -121,7 +121,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 
 \begin{document}
 
-{\Huge\bfseries The theme \texttt{"\thisstyle"}}
+\textsf{\Huge\bfseries The theme \texttt{"\thisstyle"}}
 
 \section{Highlighting, versioning and dating}
 
@@ -213,7 +213,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 
 \begin{document}
 
-{\Huge\bfseries The theme \texttt{"\thisstyle"}}
+\textsf{\Huge\bfseries The theme \texttt{"\thisstyle"}}
 
 \section{Highlighting, versioning and dating}
 
@@ -305,7 +305,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 
 \begin{document}
 
-{\Huge\bfseries The theme \texttt{"\thisstyle"}}
+\textsf{\Huge\bfseries The theme \texttt{"\thisstyle"}}
 
 \section{Highlighting, versioning and dating}
 
@@ -501,14 +501,6 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 
 \begin{filecontents*}[overwrite]{examples-version-n-change-manual-setting.tex}
-Voilà ce que cela donne sans déplacement vertical.
-
-\paragraph{Un réglage maison}%
-\tdocversion{1.2.3}[2024-10-29]<0pt>
-
-Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
-
-
 This is what it looks like without vertical movement.
 
 \paragraph{A home-made setting}%
@@ -978,12 +970,10 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \subsection{Font size and page geometry}
 
-The \tdoccls{scrartcl} class is loaded via the \tdocinlatex{fontsize = 10pt} and \tdocinlatex{DIV = 12} options.
-
-
-\begin{tdocwarn}
-	For the moment, the macros for dating and versioning presented in the \ref{tutodoc-changes} section are not adaptive, i.e. changing \tdocinlatex{fontsize = 10pt} and \tdocinlatex{DIV = 12} will break the rendering of these macros.
-\end{tdocwarn}
+The \tdoccls{scrartcl} class is loaded via the \tdocinlatex{fontsize = 10pt} and \tdocinlatex{DIV = 12} options.%
+\footnote{
+	For the moment, the macros for dating and versioning presented in the \ref{tutodoc-changes} section are not adaptive, i.e. changing the values of \tdocinlatex{fontsize} and \tdocinlatex{DIV} breaks the rendering of these macros.
+}
 
 
 \subsection{Titles and table of contents}
@@ -999,7 +989,7 @@ The \tdocpack{hyperref} package is imported, if required, just by adjusting the 
 \section{What language is used by the \thisproj\ class?}
 
 This documentation loads the \tdocpack{babel} package via \tdocinlatex|\usepackage[english]{babel}|\, a package that \thisproj\ does not load.
-On the other hand, the \thisproj\ class identifies \tdocinlatex|fr| as the main language used by \tdocpack{babel}.%.
+On the other hand, the \thisproj\ class identifies \tdocinlatex|en| as the main language used by \tdocpack{babel}.%.
 \footnote{
     Technically, we use \tdocinlatex|\BCPdata{language}| which returns a language in short format.
 }

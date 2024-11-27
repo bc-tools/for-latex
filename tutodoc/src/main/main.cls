@@ -182,10 +182,9 @@
   left           = 2.25cm,
   right          = 2.25cm,
   marginparwidth = 2cm,
-  marginparsep   = 2mm,
+  marginparsep   = 2pt,
   heightrounded
 }%
-
 
 \setlength{\parindent}{0cm}
 
