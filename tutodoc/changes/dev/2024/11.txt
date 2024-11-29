@@ -2,7 +2,7 @@
 
 
 ==
-26  (1.6.3.beta-6)
+26  (1.7.0.beta-3)
 ==
 
 -------
@@ -22,14 +22,14 @@ Color key names will be hyphenated where necessary: this implies the following c
 -----
 
 [[:api:]]
-''\tdocinEN'' macro: inside the quotes, the English linguistic rules are followed.
+''\tdocinEN'' macro: inside the quotes, the English linguistic rules are applied.
 
 
 // ---------- //
 
 
 ==
-25  (1.6.3.beta-5)
+25  (1.7.0.beta-2)
 ==
 
 --------
@@ -48,7 +48,7 @@ Manual: the English translation has been updated.
 
 
 ==
-24  (1.6.3.beta-4)
+24  (1.7.0.beta-1)
 ==
 
 -------

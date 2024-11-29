@@ -33,6 +33,8 @@ créer au passage un fichier  DEPENNDS.yaml des dépendances ventuellement vide 
 
 template theme
 
+    --> améliorer le template, le rendre plus efficace et court !
+
     --> url pour la couleur
 
     --> date et version de quoi change

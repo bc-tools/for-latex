@@ -61,20 +61,11 @@
 \ExplSyntaxOff
 
 
-
-
-
-
-
 % -- IMPORTS -- %
 
+\RequirePackage{geometry}
 
-
-% :: USEFUL :: %
-
-\RequirePackage{geometry}%
-
-\RequirePackage[svgnames]%
+\RequirePackage[svgnames]
                {xcolor}
 
 \RequirePackage{marginnote}
@@ -82,10 +73,12 @@
 \RequirePackage{keytheorems}
 
 \RequirePackage{clrstrip}
-\RequirePackage[highlightmode = immediate]% Before the tcolorbox library minted minted
-               {minted}
-\RequirePackage{tcolorbox}
 
+% Before the tcolorbox library minted minted
+\RequirePackage[highlightmode = immediate]
+               {minted}
+
+\RequirePackage{tcolorbox}
 \tcbuselibrary{minted,
                breakable,
                skins}
@@ -129,11 +122,6 @@
 \AtBeginDocument{
 % Babel is used.
   \@ifpackageloaded{babel}{
-% We must take care of English rules for English contents.
-    \renewcommand\tutodoc@use@english{%
-      \foreignlanguage{english}%
-    }
-
 % We must take care of colons and spacing.
     \iflanguage{french}{
       \renewcommand{\tutodoc@colon}{\babelshorthand{:}}
@@ -142,19 +130,19 @@
 
 % Polyglossia is used.
   \@ifpackageloaded{polyglossia}{
-% If polyglossia is used, we must load english if the user has not done it
+% If polyglossia is used, we must load english if necessary
 % (see the ''\tutodoc@use@english'' macro below).
     \iflanguageloaded{english}{}{
       \setotherlanguage{english}
     }
-
-% We must take care of the English typesetting rules.
-    \renewcommand\tutodoc@use@english{%
-      \foreignlanguage{english}%
-    }
   }{}%
 
   \newcommand{\tdoclang}{\BCPdata{language}}
+
+% We must take care of English rules for English contents.
+  \renewcommand\tutodoc@use@english{%
+    \foreignlanguage{english}%
+  }
 
 % If the lang is not supported, we emit a warning and just turn
 % to the english language.
