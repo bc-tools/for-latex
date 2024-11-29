@@ -25,7 +25,8 @@
 %     fontsize : this key is one of those of the '''scrartcl'' class.
 %                As \tutodoc imposes the value of this key, we must
 %                forbid its use.
-%     DIV      : similar to the preceding key.
+%     DIV      : similar to the preceding key but here we just want
+%                to avoid any use of special ''DIV'' value.
 %%%
 \keys_define:nn { tutodoc / main / class / options } {
   theme .choices:nn = {
@@ -61,12 +62,15 @@
 \ExplSyntaxOff
 
 
+% -- OPTIONS FOR PACKAGES IMPORTED BY OTHER ONES -- %
+
+% xcolor is loaded by minted and tcolorbox.
+\PassOptionsToPackage{svgnames}{xcolor}
+
+
 % -- IMPORTS -- %
 
 \RequirePackage{geometry}
-
-\RequirePackage[svgnames]
-               {xcolor}
 
 \RequirePackage{marginnote}
 \RequirePackage{fontawesome5}
@@ -74,14 +78,16 @@
 
 \RequirePackage{clrstrip}
 
-% Before the tcolorbox library minted minted
+% Before the tcolorbox library minted.
 \RequirePackage[highlightmode = immediate]
                {minted}
 
 \RequirePackage{tcolorbox}
-\tcbuselibrary{minted,
-               breakable,
-               skins}
+\tcbuselibrary{
+  minted,
+  breakable,
+  skins
+}
 
 \RequirePackage{hyperref}
 
@@ -93,7 +99,9 @@
 % warning::
 %     We must load ''inputenc'' before ''csquotes''
 %%%
-\RequirePackage[utf8]{inputenc}
+\RequirePackage[utf8]
+               {inputenc}
+
 \RequirePackage{csquotes}
 
 

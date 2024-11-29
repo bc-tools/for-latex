@@ -1,7 +1,16 @@
+# all pacjkges installed
+
+# tlmgr list --only-installed > installed_texlive_packages.txt
+
 from collections import defaultdict
 from copy        import deepcopy
+from pathlib     import Path
+from yaml        import dump
 
 import re
+
+PATH_FILE = Path(__file__).parent.parent.parent / "tutodoc" / "src" / "main" / "main.cls"
+YAML_FILE = Path(__file__).parent.parent.parent / "tutodoc" / "src" / "DEPENDS.yaml"
 
 test_str = r"""
 % ********************************************************* %
@@ -139,7 +148,7 @@ test_str = r"""
 
     """
 
-pattern = re.compile(
+pack_require_like_pattern = re.compile(
     r"""
         \\(?P<kind>RequirePackage|LoadClass|tcbuselibrary) #
         (\[(?P<options>[^][]*)\])?              #
@@ -151,19 +160,47 @@ pattern = re.compile(
     re.VERBOSE
 )
 
-matches = pattern.finditer(test_str)
+cls_pass_option_pattern = re.compile(
+    r"""
+        \\(?:PassOptionsToClass) #
+        (?:[^{]*)                #
+        {(?P<options>[^{}]*)}    #
+        (?:[^{]*)                #
+        {(?P<name>[^{}]*)}       #
+    """.strip(),
+    re.VERBOSE
+)
 
-metaimports     = defaultdict(dict)
-specificimports = {
+if not PATH_FILE is None:
+    test_str = PATH_FILE.read_text()
+
+
+content = []
+
+for line in test_str.split("\n"):
+    line = line.strip()
+
+    if not line or line.startswith("%"):
+        continue
+
+    content.append(line)
+
+content = "\n".join(content)
+
+matches = pack_require_like_pattern.finditer(content)
+
+metaimports      = defaultdict(dict)
+specific_actions = {
     "tcbuselibrary": set(),
+    "geometry": set(),
 }
 
 for m in matches:
-    kind = m["kind"]
+    kind = m["kind"].strip()
 
 # Library import.
-    if kind in specificimports:
-        specificimports[kind] = specificimports[kind].union(
+    if kind in specific_actions:
+        specific_actions[kind] = specific_actions[kind].union(
             set(
                 x.strip()
                 for x in m["name"].split(',')
@@ -175,25 +212,108 @@ for m in matches:
 # Standard import.
     metakind = metaimports[kind]
 
+    name = m["name"].strip()
+
 # We keep the last import!
-    if m["name"] in metakind:
-        thismeta = deepcopy(metakind[m["name"]])
-        del metakind[m["name"]]
+    if name in metakind:
+        thismeta = deepcopy(metakind[name])
+        del metakind[names]
 
     else:
-        thismeta = defaultdict(list)
+        thismeta = {
+            "options": set(),
+            "date": set(),
+        }
 
     for i in ["options", "date"]:
         if not m[i] is None:
-            thismeta[i].append(m[i])
+            thismeta[i].add(m[i])
 
-    metaimports[kind][m["name"]] = deepcopy(thismeta)
+    metaimports[kind][name] = deepcopy(thismeta)
 
 
 
-print(f"\n{specificimports=}")
+
+
+matches = cls_pass_option_pattern.finditer(content)
+
+for m in matches:
+    name = m["name"].strip()
+
+    if not name in metaimports["LoadClass"]:
+        raise ValueError(f"the class '{name}' has not been loaded!")
+
+    options = m["options"].strip()
+
+    metaimports["LoadClass"][name]["options"].add(options)
+
+
+alltexnames = {
+    "cls"  : ["LoadClass"],
+    "packs": [
+        "RequirePackage",
+        "usepackage",
+    ],
+}
+
+yaml_storing = {}
+
+for kind, texnames in alltexnames.items():
+    thiskind = []
+
+    print(f"-- {kind}")
+
+    for tname in texnames:
+        for what, metawhat in metaimports[tname].items():
+            if not(
+                metawhat["options"]
+                or
+                metawhat["date"]
+            ):
+                thiskind.append(what)
+
+            else:
+                about = {}
+
+                for x in [
+                    "options",
+                    "date"
+                ]:
+                  if metawhat[x]:
+                      about[x] = metawhat[x]
+
+                thiskind.append({
+                  what: deepcopy(about)
+                })
+
+
+
+    yaml_storing[kind] = deepcopy(thiskind)
+
+
+print(yaml_storing)
+
+
+print(f"\n{specific_actions=}")
+
+exit()
 
 print("\nmetaimports")
 
-from pprint import pprint
-pprint(metaimports)
+# from pprint import pprint;pprint(metaimports)
+
+print(metaimports)
+
+
+exit()
+
+yaml_storing = {}
+
+
+
+YAML_FILE.touch()
+
+with YAML_FILE.open(
+    mode = 'w',
+) as f:
+    dump(metaimports, f)

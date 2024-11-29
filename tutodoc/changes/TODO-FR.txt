@@ -31,6 +31,11 @@ créer au passage un fichier  DEPENNDS.yaml des dépendances ventuellement vide 
 
 > ---------------------------- <
 
+env pour code via minted car on peut aussi parler de perl, pyhon et lua voire plus
+
+
+> ---------------------------- <
+
 template theme
 
     --> améliorer le template, le rendre plus efficace et court !
