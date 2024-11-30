@@ -53,4 +53,7 @@ while content.name != "for-latex":
 content = content / "tutodoc" / "src" / "main" / "main.cls"
 content = content.read_text()
 
-meta = extract_dep(content)
+data, errors = extract_dep(content)
+
+print(f"{data = }")
+print(f"{errors = }")
