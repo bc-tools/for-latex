@@ -15,4 +15,4 @@
 17
 ==
 
-This project will automate the production of a \tex code project from a \src \dir using a standarized workflow (the idea is to code easily small parts of the project rather than working on big path::''STY'' \andor path::''CLS'' files).
+The aim of \thisproj is to automate the \prod of a \tex code \proj from a \src \dir using a standarized workflow (the idea is to code easily small parts of the \proj rather than working on big path::''STY'' \andor path::''CLS'' files).
