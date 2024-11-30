@@ -31,6 +31,21 @@ créer au passage un fichier  DEPENNDS.yaml des dépendances ventuellement vide 
 
 > ---------------------------- <
 
+un seul fichier css par thème chargé dans le main
+
+    ---> vérifier tous les CSS pour noms std évientant les collisions de noms
+         +
+         voir aussi ce qui peut aller dans main car en commun !
+
+    ---> faire un post HOOK agissant sur rollout directement, car trop particulier et risqué à automatiser
+
+         simple car on met tout dans main.css et on vire le input correspondant
+
+    ---> fgérer commentaire spéciaux des css.sty !
+
+
+> ---------------------------- <
+
 env pour code via minted car on peut aussi parler de perl, pyhon et lua voire plus
 
 

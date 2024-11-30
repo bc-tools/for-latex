@@ -1,20 +1,20 @@
 cls:
-  - scrartcl:
-    options:
-      - \CurrentOption
-      - fontsize = 10pt
+- scrartcl:
+    options: !!set
+      \CurrentOption: null
+      fontsize = 10pt: null
 packs:
-  - geometry
-  - marginnote
-  - fontawesome5
-  - keytheorems
-  - clrstrip
-  - minted:
-    options:
-      - highlightmode = immediate
-  - tcolorbox
-  - hyperref
-  - inputenc:
-    options:
-      - utf8
-  - csquotes
+- geometry
+- marginnote
+- fontawesome5
+- keytheorems
+- clrstrip
+- minted:
+    options: !!set
+      highlightmode = immediate: null
+- tcolorbox
+- hyperref
+- inputenc:
+    options: !!set
+      utf8: null
+- csquotes

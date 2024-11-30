@@ -9,13 +9,13 @@ from yaml        import dump
 
 import re
 
-PATH_FILE = Path(__file__).parent.parent.parent / "tutodoc" / "src" / "main" / "main.cls"
-YAML_FILE = Path(__file__).parent.parent.parent / "tutodoc" / "src" / "DEPENDS.yaml"
+PATH_FILE = Path(__file__).parent.parent / "tutodoc" / "src" / "main" / "main.cls"
+YAML_FILE = Path(__file__).parent.parent / "tutodoc" / "src" / "DEPENDS.yaml"
 
 
 pack_require_like_pattern = re.compile(
     r"""
-        \\(?P<kind>RequirePackage|LoadClass|tcbuselibrary|geometry) #
+        \\(?P<kind>RequirePackage|LoadClass|tcbuselibrary|geometry|hypersetup) #
         (\[(?P<options>[^][]*)\])?              #
         (?P<xtra_1>[^{]*)                      #
         {(?P<name>[^{}]*)}                   #
@@ -57,6 +57,7 @@ matches = pack_require_like_pattern.finditer(content)
 metaimports      = defaultdict(dict)
 specific_actions = {
     "tcbuselibrary": set(),
+    "hypersetup": set(),
     "geometry": set(),
 }
 
