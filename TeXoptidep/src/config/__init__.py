@@ -1,1 +1,1 @@
-from .patterns import *
+from .texcmds import *

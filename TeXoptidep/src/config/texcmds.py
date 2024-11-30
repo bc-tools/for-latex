@@ -1,28 +1,29 @@
 import re
 
 
-TEX_STD_CMDS = """
+TEX_IMPORT_CMDS = """
 LoadClass
 
 RequirePackage
 usepackage
 """
 
-TEX_STD_CMDS = [
+TEX_IMPORT_CMDS = [
     x
-    for x in TEX_STD_CMDS.split('\n')
+    for x in TEX_IMPORT_CMDS.split('\n')
     if x
 ]
 
 
-TEX_SPECIAL_CMDS = {
+TEX_SETUP_LIBS_OR_OPTS_CMDS = {
     "geometry"      : "geometry",
     "hypersetup"    : "hyperref",
     "tcbuselibrary" : "tcolorbox",
     "usetikzlibrary": "tikz",
 }
 
-TEX_ALL_CMDS = TEX_STD_CMDS + list(TEX_SPECIAL_CMDS)
+
+TEX_ALL_CMDS = TEX_IMPORT_CMDS + list(TEX_SETUP_LIBS_OR_OPTS_CMDS)
 
 
 IMPORT_PATTERN = re.compile(
@@ -38,7 +39,8 @@ IMPORT_PATTERN = re.compile(
     re.VERBOSE
 )
 
-CLASS_OPTIONS_PASSED_PATTERN = re.compile(
+
+CLASS_OPTS_PASSED_PATTERN = re.compile(
     r"""
         \\(?:PassOptionsToClass) #  XXXX
         (?:[^{]*)                #  XXXX

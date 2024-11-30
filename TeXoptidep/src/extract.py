@@ -1,6 +1,6 @@
 from copy import deepcopy
 
-from .config.patterns import *
+from .config.texcmds import *
 
 
 def shorten(content):
