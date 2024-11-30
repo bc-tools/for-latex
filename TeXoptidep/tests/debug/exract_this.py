@@ -53,7 +53,14 @@ while content.name != "for-latex":
 content = content / "tutodoc" / "src" / "main" / "main.cls"
 content = content.read_text()
 
-data, errors = extract_dep(content)
 
-print(f"{data = }")
-print(f"{errors = }")
+lazy_extract_dep = LazyExtractDep()
+
+data = lazy_extract_dep(content = content)
+
+from pprint import pprint
+print()
+print("data:")
+pprint(data)
+print()
+print(list(data[TAG_STD_IMPORTS]['RequirePackage']))

@@ -1,62 +1,142 @@
-from copy import deepcopy
+from copy   import deepcopy
+from typing import *
 
 from .config.texcmds import *
+from .config.tags    import *
 
 
-def shorten(content: str) -> str:
-    useful_content = []
+class LazyExtractDep:
+    def __init__(self):
+        self._content        = None
+        self._useful_content = None
+        self._data           = None
 
-    for line in content.split("\n"):
-        short_line = line.strip()
+    def __call__(
+        self,
+        content: str
+    ):
+        self._content = content
+        self._data    = {}
 
-        if not short_line or short_line.startswith("%"):
-            continue
+        self._build_short_content()
+        self._extract_std_imports()
+        self._extract_special_setup()
 
-        useful_content.append(line)
-
-    useful_content = "\n".join(useful_content)
-
-    return useful_content
-
-
-def clean_options(option: str) -> str:
-    option = option.split("=")
-    option = [x.strip() for x in option]
-    option = " = ".join(option)
-
-    return option
+        return self._data
 
 
-def extract_dep(content: str) -> dict:
-    data   = {}
-    errors = {}
+    def _build_short_content(self):
+        self._useful_content = []
 
-    useful_content = shorten(content)
+        for line in self._content.split("\n"):
+            short_line = line.strip()
 
-    matches = IMPORT_PATTERN.finditer(useful_content)
+            if not short_line or short_line.startswith("%"):
+                continue
 
-    if matches is None:
-        return data, errors
+            self._useful_content.append(line)
 
-    setup_libs_or_opts = {}
-
-    for m in matches:
-        kind = m["kind"].strip()
-
-# Library import / Setup options lately.
-        if kind in TEX_SETUP_LIBS_OR_OPTS_CMDS:
-            last_settings = setup_libs_or_opts.get(kind, [])
-            this_settings = [
-                clean_options(x)
-                for x in m["name"].split(',')
-            ]
-
-            print(this_settings)
-
-            continue
-
-    print(setup_libs_or_opts)
+        self._useful_content = "\n".join(self._useful_content)
 
 
 
-    return data, errors
+    def get_keyval_options(
+        self,
+        options: str
+    ) -> List[str]:
+        dict_options = {}
+
+        for oneopt in options.split(","):
+            oneopt = oneopt.strip()
+
+            if "=" in oneopt:
+                key, _, val = oneopt.partition("=")
+
+                key = key.strip()
+                val = val.strip()
+
+            else:
+                key, val = oneopt, None
+
+            dict_options[key] = val
+
+        return dict_options
+
+
+
+    def _extract_std_imports(self):
+        matches = IMPORT_PATTERN.finditer(self._useful_content)
+
+        setup_libs_or_opts = {}
+        std_imports        = {
+            k: {}
+            for k in TEX_IMPORT_CMDS
+        }
+
+        for m in matches:
+            kind = m["kind"].strip()
+
+    # Library import / Setup options lately.
+            if kind in TEX_SETUP_LIBS_OR_OPTS_CMDS:
+                last_settings = setup_libs_or_opts.get(kind, {})
+
+                this_settings = self.get_keyval_options(m["name"])
+
+                for k, v in this_settings.items():
+                    if k in last_settings:
+                        last_settings[k].append(v)
+
+                    elif not v is None:
+                        last_settings[k] = [v]
+
+                    else:
+                        last_settings[k] = []
+
+
+                setup_libs_or_opts[kind] = last_settings
+
+                continue
+
+    # Standard import.
+            thisname = m["name"].strip()
+            thismeta = {
+                TAG_OPTIONS: [],
+                TAG_DATE   : [],
+            }
+
+            for x in [TAG_OPTIONS, TAG_DATE]:
+                if not m[x] is None:
+                    thismeta[x].append(
+                        m[x].strip()
+                        if x == TAG_DATE else
+                        self.get_keyval_options(m[x])
+                    )
+
+            if thisname in std_imports[kind]:
+                std_imports[kind][thisname].append(thismeta)
+
+            else:
+                std_imports[kind][thisname] = [thismeta]
+
+    # Job done!
+        self._data[TAG_STD_IMPORTS] = std_imports
+
+
+    def _extract_special_setup(self):
+        setup_libs_or_opts = {}
+
+# Loding options for classes.
+        matches = CLASS_OPTS_PASSED_PATTERN.finditer(self._useful_content)
+
+        for m in matches:
+            name = m["name"].strip()
+
+            if not name in self._data[TAG_STD_IMPORTS][TAG_LOAD_CLASS]:
+                raise ValueError(f"class '{name}' not loaded!")
+
+    #         options = self._get_keyval_options(m["options"])
+
+    #         self._data[TAG_SETUP_LIBS_OPTS]["LoadClass"][name]["options"].add(options)
+
+    # # Job done!
+    #     self._data[TAG_SETUP_LIBS_OPTS] = setup_libs_or_opts
