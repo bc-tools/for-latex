@@ -1,0 +1,8 @@
+// ---------- //
+
+
+==
+30
+==
+
+The aim of \thisproj is to optimize imports into a \latex class, package or document.

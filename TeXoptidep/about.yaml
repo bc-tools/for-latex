@@ -1,7 +1,7 @@
 project:
-  desc   : This project automates the production of a TeX project
-           from a source directory using a standarized workflow.
-  acronym: "[TeX] [facto]-ry"
+  desc   : This project optimizes imports into a LaTeX class, package
+           or document.
+  acronym: "[TeX] [opti]-mized [dep]-endencies"
   author : Christophe, BAL
 
   licence: gnu 3

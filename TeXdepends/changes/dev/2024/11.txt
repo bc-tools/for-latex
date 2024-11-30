@@ -1,8 +1,0 @@
-// ---------- //
-
-
-==
-30
-==
-
-The aim of \thisproj is to help the optimization of imports into a class, package or document.
