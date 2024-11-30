@@ -1,4 +1,4 @@
-The `Python` module `TeXfacto`
-==============================
+The `Python` module `TeXoptidep`
+================================
 
-This document is a *not-so-short* tutorial presenting the most useful features, without being exhaustive.
+This document is a self-contained tutorial presenting all features.
