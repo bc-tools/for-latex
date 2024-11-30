@@ -1,11 +1,11 @@
-TAG_ERRORS = "errors"
-TAG_TWICE  = "used-twice-or-more"
+TAG_IMPORTS = "imports"
+TAG_OPTIONS = "options"
+TAG_DATE    = "date"
+TAG_SETUP   = "setup"
 
-TAG_SETUP_LIBS_OPTS = "setup-libs-or-opts"
+TAG_PACK          = "packages"
+TAG_CLS           = "classes"
+TAG_CLS_PASS_OPTS = "classes-pass-options"
 
-TAG_STD_IMPORTS = "std-imports"
-TAG_OPTIONS     = "options"
-TAG_DATE        = "date"
-
-TAG_LOAD_CLASS        = "LoadClass"
-TAG_CLASS_OPTS_PASSED = "class-options-passed"
+# TAG_ERRORS = "errors"
+# TAG_TWICE  = "used-twice-or-more"

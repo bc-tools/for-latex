@@ -19,8 +19,8 @@ class LazyExtractDep:
         self._data    = {}
 
         self._build_short_content()
-        self._extract_std_imports()
-        self._extract_special_setup()
+        self._extract_cmd_actions()
+        self._extract_cls_pass_opts()
 
         return self._data
 
@@ -37,7 +37,6 @@ class LazyExtractDep:
             self._useful_content.append(line)
 
         self._useful_content = "\n".join(self._useful_content)
-
 
 
     def get_keyval_options(
@@ -63,14 +62,13 @@ class LazyExtractDep:
         return dict_options
 
 
-
-    def _extract_std_imports(self):
+    def _extract_cmd_actions(self):
         matches = IMPORT_PATTERN.finditer(self._useful_content)
 
         setup_libs_or_opts = {}
         std_imports        = {
             k: {}
-            for k in TEX_IMPORT_CMDS
+            for k in TEX_IMPORT_CMDS.values()
         }
 
         for m in matches:
@@ -79,7 +77,6 @@ class LazyExtractDep:
     # Library import / Setup options lately.
             if kind in TEX_SETUP_LIBS_OR_OPTS_CMDS:
                 last_settings = setup_libs_or_opts.get(kind, {})
-
                 this_settings = self.get_keyval_options(m["name"])
 
                 for k, v in this_settings.items():
@@ -98,6 +95,8 @@ class LazyExtractDep:
                 continue
 
     # Standard import.
+            kind = TEX_IMPORT_CMDS[kind]
+
             thisname = m["name"].strip()
             thismeta = {
                 TAG_OPTIONS: [],
@@ -105,6 +104,10 @@ class LazyExtractDep:
             }
 
             for x in [TAG_OPTIONS, TAG_DATE]:
+
+                if x == TAG_DATE:
+                    print(f"{ m[0]=}")
+
                 if not m[x] is None:
                     thismeta[x].append(
                         m[x].strip()
@@ -119,11 +122,12 @@ class LazyExtractDep:
                 std_imports[kind][thisname] = [thismeta]
 
     # Job done!
-        self._data[TAG_STD_IMPORTS] = std_imports
+        self._data[TAG_IMPORTS]     = std_imports
+        self._data[TAG_SETUP] = setup_libs_or_opts
 
 
-    def _extract_special_setup(self):
-        setup_libs_or_opts = {}
+    def _extract_cls_pass_opts(self):
+        setup_cls_opts = {}
 
 # Loding options for classes.
         matches = CLASS_OPTS_PASSED_PATTERN.finditer(self._useful_content)
@@ -131,12 +135,15 @@ class LazyExtractDep:
         for m in matches:
             name = m["name"].strip()
 
-            if not name in self._data[TAG_STD_IMPORTS][TAG_LOAD_CLASS]:
+            if not name in self._data[TAG_IMPORTS][TAG_CLS]:
                 raise ValueError(f"class '{name}' not loaded!")
 
-    #         options = self._get_keyval_options(m["options"])
+            last_settings = setup_cls_opts.get(name, [])
+            this_settings = self.get_keyval_options(m["options"])
 
-    #         self._data[TAG_SETUP_LIBS_OPTS]["LoadClass"][name]["options"].add(options)
+            last_settings.append(this_settings)
 
-    # # Job done!
-    #     self._data[TAG_SETUP_LIBS_OPTS] = setup_libs_or_opts
+            setup_cls_opts[name] = last_settings
+
+    # Job done!
+        self._data[TAG_SETUP][TAG_CLS_PASS_OPTS] = setup_cls_opts
