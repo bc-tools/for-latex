@@ -14,6 +14,8 @@ Here are the first features.
 
     1) Imports made: extracting imports of \clss and \packs of one given ext::''sty'' or ext::''cls'' file (the options selected are captured).
 
-    1) \yaml file reports of the \cls and \pack used.
+    1) \yaml file reports.
 
-    1) \yaml file reports of the version of the \cls and \pack used (useful when unit tests are made).
+        + List of the \cls and \pack used.
+
+        + Versions of the \cls and \pack used (useful when unit tests are made).

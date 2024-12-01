@@ -10,23 +10,11 @@ NOW
 
 > ---------------------------- <
 
-doc sur...
+doc sur les importations
 
-    + les importations
+    ---> dates ajouté auto dans la doc
 
-
-> ---------------------------- <
-
-extraction version/date des classe chargées eployés lors des tests
-
-+
-
-plus de dates : elle sont ajouté auto dans la doc qui indquen que test faits su
-
-+
-
-créer au passage un fichier  DEPENNDS.yaml des dépendances ventuellement vide pour indiquer els depndances ordonnées !
-    on le construit auto pour ce qui est utilisé, et on propose un clé pour indiquer des ordres d'imports imposés, cette partie n'atant jmaais touchée par texfacto
+    ---> Faire un script qui vérifie que l'on parle bien de ttes les importations dans la doc : on cherche bêtementd ans les lignes non commentés l'usage de \tdoccls{...} ou \tdocpack{...}
 
 
 > ---------------------------- <
