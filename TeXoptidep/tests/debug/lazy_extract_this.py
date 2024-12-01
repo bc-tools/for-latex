@@ -45,17 +45,20 @@ MODULE_DIR = addfindsrc(
 
 from src import *
 
-tutodoc_src_dir = Path(__file__)
+content = Path(__file__)
 
-while tutodoc_src_dir.name != "for-latex":
-    tutodoc_src_dir = tutodoc_src_dir.parent
+while content.name != "for-latex":
+    content = content.parent
 
-tutodoc_src_dir = tutodoc_src_dir / "tutodoc" / "src"
-
-yaml_file = tutodoc_src_dir / "DEPENDS.yaml"
-
-content = tutodoc_src_dir / "main" / "main.cls"
+content = content / "tutodoc" / "src" / "main" / "main.cls"
 content = content.read_text()
 
-extract_dep = ExtractDep(content = content)
-extract_dep.save(yaml_file)
+
+lazy_extract_dep = LazyExtract()
+
+data = lazy_extract_dep(content = content)
+
+from pprint import pprint
+print()
+print("data:")
+pprint(data)

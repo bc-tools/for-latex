@@ -1,6 +1,6 @@
 import re
 
-from .tags import TAG_CLS, TAG_PACK
+from .tags import  TAG_PACK, TAG_CLS, TAG_CLS_PASS_OPTS
 
 TEX_IMPORT_CMDS = {
     "LoadClass"     : TAG_CLS,
@@ -8,8 +8,7 @@ TEX_IMPORT_CMDS = {
     "usepackage"    : TAG_PACK,
 }
 
-
-TEX_SETUP_LIBS_OR_OPTS_CMDS = {
+TEX_SETUP_CMDS = {
     "geometry"      : "geometry",
     "hypersetup"    : "hyperref",
     "tcbuselibrary" : "tcolorbox",
@@ -17,7 +16,7 @@ TEX_SETUP_LIBS_OR_OPTS_CMDS = {
 }
 
 
-TEX_ALL_CMDS = list(TEX_IMPORT_CMDS) + list(TEX_SETUP_LIBS_OR_OPTS_CMDS)
+TEX_ALL_CMDS = list(TEX_IMPORT_CMDS) + list(TEX_SETUP_CMDS)
 
 
 IMPORT_PATTERN = re.compile(
@@ -28,7 +27,7 @@ IMPORT_PATTERN = re.compile(
         (?P<xtra_1>[^{]*)             #  XXXX
         {(?P<name>[^{}]*)}            #  XXXX
         (?P<xtra_2>.*)                #  XXXX
-        (?:\n\s*\[(?P<date>[^][]*)])? #  XXXX
+        (?:\n\s*\[(?P<version>[^][]*)])? #  XXXX
     """.strip(),
     re.VERBOSE
 )
@@ -44,3 +43,15 @@ CLASS_OPTS_PASSED_PATTERN = re.compile(
     """.strip(),
     re.VERBOSE
 )
+
+
+TEX_KIND_2_CMDS = {
+    TAG_CLS_PASS_OPTS: ["PassOptionsToClass"],
+}
+
+for cmd, kind in TEX_IMPORT_CMDS.items():
+    if kind in TEX_KIND_2_CMDS:
+        TEX_KIND_2_CMDS[kind].append(cmd)
+
+    else:
+        TEX_KIND_2_CMDS[kind] = [cmd]
