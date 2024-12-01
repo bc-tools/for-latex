@@ -13,6 +13,7 @@ class CleanedDep(LazyExtract):
         return self._data
 
     def _finalize(self):
+# Standard imports.
         self._data = {
             k: []
             for k in self._raw_data[TAG_IMPORTS]
@@ -30,6 +31,25 @@ class CleanedDep(LazyExtract):
                 else:
                     self._data[kind].append(name)
 
+# Pass options to classes.
+        for clsname, clsopts in self._raw_data[TAG_SETUP][TAG_CLS_PASS_OPTS].items():
+            self._add_to(
+                clsname,
+                {TAG_OPTIONS: clsopts},
+                self._data[TAG_CLS],
+            )
+
+# Extra option settings.
+        for cmd in self._raw_data[TAG_SETUP]:
+            if cmd == TAG_CLS_PASS_OPTS:
+                continue
+
+            kind, _, parent_cmd = TEX_SETUP_CMDS[cmd].partition(':')
+            kind = TAG_CMD_SET_ABREVS[kind]
+            print(f"{cmd=} ; {parent_cmd}[{kind}]",)
+
+        # from pprint import pprint;pprint(self._raw_data[TAG_SETUP]);exit()
+
     def _final_options_n_version(
         self,
         infos
@@ -39,7 +59,11 @@ class CleanedDep(LazyExtract):
         version  = None
 
         for oneinfo in infos:
-            if oneinfo[TAG_VERSION]:
+            if (
+                TAG_VERSION in oneinfo
+                and
+                oneinfo[TAG_VERSION]
+            ):
                 if (
                     len(oneinfo[TAG_VERSION]) > 1
                     or
@@ -49,12 +73,14 @@ class CleanedDep(LazyExtract):
 
                 version = oneinfo[TAG_VERSION][0]
 
-            for someopts in oneinfo[TAG_OPTIONS]:
-                for opt, val in someopts.items():
-                    if opt in options:
-                        TODO_PB
 
-                    options[opt] = val
+            if TAG_OPTIONS in oneinfo:
+                for someopts in oneinfo[TAG_OPTIONS]:
+                    for opt, val in someopts.items():
+                        if opt in options:
+                            TODO_PB
+
+                        options[opt] = val
 
         if version:
             settings[TAG_VERSION] = version
@@ -75,3 +101,20 @@ class CleanedDep(LazyExtract):
             settings = None
 
         return settings
+
+    def _add_to(
+        self,
+        name,
+        what,
+        data,
+    ):
+        for i, iname in enumerate(data):
+            if iname == name:
+                data[i] = {
+                    name: self._final_options_n_version([what])
+                }
+
+                break
+
+            else:
+                TODO

@@ -2,7 +2,18 @@
 
 
 ==
-??  (0.0.0-alpha.0)
+01  (0.0.0-alpha.0)
 ==
 
-???
+-----
+:new:
+-----
+
+[[:api:]]
+Here are the first features.
+
+    1) Imports made: from a given \sty file, construction of a \yaml file obtained by extracting imports of \clss and \packs, indicating the options chosen.
+
+    1) Local versions: XXXX
+
+    (useful when unit tests are made).

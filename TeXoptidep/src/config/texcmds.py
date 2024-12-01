@@ -1,6 +1,6 @@
 import re
 
-from .tags import  TAG_PACK, TAG_CLS, TAG_CLS_PASS_OPTS
+from .tags import *
 
 TEX_IMPORT_CMDS = {
     "LoadClass"     : TAG_CLS,
@@ -8,11 +8,18 @@ TEX_IMPORT_CMDS = {
     "usepackage"    : TAG_PACK,
 }
 
+TAG_CMD_SET_ABREVS = {
+    "opt": TAG_OPTIONS,
+    "lib": TAG_LIBRARIES,
+}
+
 TEX_SETUP_CMDS = {
-    "geometry"      : "geometry",
-    "hypersetup"    : "hyperref",
-    "tcbuselibrary" : "tcolorbox",
-    "usetikzlibrary": "tikz",
+# Special option settings.
+    "geometry"      : "opt:geometry",
+    "hypersetup"    : "opt:hyperref",
+# Additional libraries.
+    "tcbuselibrary" : "lib:tcolorbox",
+    "usetikzlibrary": "lib:tikz",
 }
 
 
