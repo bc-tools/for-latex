@@ -69,7 +69,7 @@ class LazyExtract:
         for m in matches:
             kind = m["kind"].strip()
 
-    # Library import / Setup options lately.
+# Library import / Setup options lately.
             if kind in TEX_SETUP_CMDS:
                 last_settings = setup_cmds.get(kind, [])
                 last_settings.append(self.get_keyval_options(m["name"]))
@@ -78,17 +78,17 @@ class LazyExtract:
 
                 continue
 
-    # Standard import.
+# Standard import.
             kind = TEX_IMPORT_CMDS[kind]
 
             this_name = m["name"].strip()
 
             this_meta = {
-                TAG_OPTIONS: [],
+                TAG_OPTION: [],
                 TAG_VERSION   : [],
             }
 
-            for x in [TAG_OPTIONS, TAG_VERSION]:
+            for x in [TAG_OPTION, TAG_VERSION]:
                 if not m[x] is None:
                     this_meta[x].append(
                         m[x].strip()
@@ -102,29 +102,29 @@ class LazyExtract:
             else:
                 std_imports[kind][this_name] = [this_meta]
 
-    # Job done!
-        self._raw_data[TAG_IMPORTS] = std_imports
+# Job done!
+        self._raw_data[TAG_IMPORT] = std_imports
         self._raw_data[TAG_SETUP]   = setup_cmds
 
 
     def _extract_cls_pass_opts(self):
         setup_cls_opts = {}
 
-# Loding options for classes.
+# Loading options for classes.
         matches = CLASS_OPTS_PASSED_PATTERN.finditer(self._useful_content)
 
         for m in matches:
             name = m["name"].strip()
 
-            if not name in self._raw_data[TAG_IMPORTS][TAG_CLS]:
+            if not name in self._raw_data[TAG_IMPORT][TAG_CLS]:
                 raise ValueError(f"class '{name}' not loaded!")
 
             last_settings = setup_cls_opts.get(name, [])
-            this_settings = self.get_keyval_options(m["options"])
+            this_settings = self.get_keyval_options(m[TAG_OPTION])
 
             last_settings.append(this_settings)
 
             setup_cls_opts[name] = last_settings
 
-    # Job done!
-        self._raw_data[TAG_SETUP][TAG_CLS_PASS_OPTS] = setup_cls_opts
+# Job done!
+        self._raw_data[TAG_SETUP][TAG_CLS_PASS_OPT] = setup_cls_opts

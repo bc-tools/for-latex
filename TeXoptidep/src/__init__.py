@@ -1,4 +1,4 @@
-from .check   import *
-from .lazy_extract import *
+from .lazyextract import *
+from .fulldep     import *
 
-from .extract import *
+from .dump import *

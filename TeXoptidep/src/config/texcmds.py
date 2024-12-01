@@ -9,8 +9,8 @@ TEX_IMPORT_CMDS = {
 }
 
 TAG_CMD_SET_ABREVS = {
-    "opt": TAG_OPTIONS,
-    "lib": TAG_LIBRARIES,
+    "opt": TAG_OPTION,
+    "lib": TAG_LIBRARY,
 }
 
 TEX_SETUP_CMDS = {
@@ -30,7 +30,7 @@ IMPORT_PATTERN = re.compile(
     r"\\(?P<kind>" + "|".join(TEX_ALL_CMDS) + ")"
     +                                 #  XXXX
     r"""
-        (\[(?P<options>[^][]*)\])?    #  XXXX
+        (\[(?P<option>[^][]*)\])?    #  XXXX
         (?P<xtra_1>[^{]*)             #  XXXX
         {(?P<name>[^{}]*)}            #  XXXX
         (?P<xtra_2>.*)                #  XXXX
@@ -44,7 +44,7 @@ CLASS_OPTS_PASSED_PATTERN = re.compile(
     r"""
         \\(?:PassOptionsToClass) #  XXXX
         (?:[^{]*)                #  XXXX
-        {(?P<options>[^{}]*)}    #  XXXX
+        {(?P<option>[^{}]*)}    #  XXXX
         (?:[^{]*)                #  XXXX
         {(?P<name>[^{}]*)}       #  XXXX
     """.strip(),
@@ -53,7 +53,7 @@ CLASS_OPTS_PASSED_PATTERN = re.compile(
 
 
 TEX_KIND_2_CMDS = {
-    TAG_CLS_PASS_OPTS: ["PassOptionsToClass"],
+    TAG_CLS_PASS_OPT: ["PassOptionsToClass"],
 }
 
 for cmd, kind in TEX_IMPORT_CMDS.items():
@@ -62,3 +62,15 @@ for cmd, kind in TEX_IMPORT_CMDS.items():
 
     else:
         TEX_KIND_2_CMDS[kind] = [cmd]
+
+
+TEXLOG_INFOS_PATTERN = re.compile(
+    r"""
+        (?P<name>[a-zA-Z-][a-zA-Z-\d]*)
+        .
+        (?P<ext>[a-zA-Z]+)
+        \s*
+        (?P<date>\d+[/-]\d+[/-]\d+)
+    """.strip(),
+    re.VERBOSE
+)

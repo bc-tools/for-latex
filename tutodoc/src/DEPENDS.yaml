@@ -1,28 +1,27 @@
-# ------------------------------------------------- #
-# -- File generated automatically by TeXoptidep. -- #
-# --                                             -- #
-# -- The classes, the packages, and the option   -- #
-# -- settings are sorted alphabetically.         -- #
-# ------------------------------------------------- #
+# ----------------------------------------------------------- #
+# --      File generated automatically by TeXoptidep.      -- #
+# --                                                       -- #
+# -- WARNING! The alphabetical order used does not reflect -- #
+# -- the order used in the source code.                    -- #
+# ----------------------------------------------------------- #
 
-classes:
-  - scrartcl:
-      options:
-        - \CurrentOption
-        - fontsize = 10pt
+class:
+  - scrartcl
 
-packages:
+package:
   - clrstrip
   - csquotes
   - fontawesome5
   - geometry
   - hyperref
-  - inputenc:
-      options:
-        - utf8
+  - inputenc
   - keytheorems
   - marginnote
-  - minted:
-      options:
-        - highlightmode = immediate
+  - minted
   - tcolorbox
+
+library:
+  tcolorbox:
+    - breakable
+    - minted
+    - skins

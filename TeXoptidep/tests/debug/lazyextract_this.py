@@ -53,8 +53,9 @@ while content.name != "for-latex":
 content = content / "tutodoc" / "src" / "main" / "main.cls"
 content = content.read_text()
 
-cleaned_dep = CleanedDep()
-data        = cleaned_dep(content = content)
+
+lazyextract = LazyExtract()
+data        = lazyextract(content = content)
 
 from pprint import pprint
 print()
