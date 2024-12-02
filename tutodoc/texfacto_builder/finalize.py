@@ -205,14 +205,32 @@ def deps_in_manual(
     manual,
     deps
 ):
-# List of dependances
+    content = [
+        "%",
+        r"\begin{tasks}[style=itemize](2)"
+    ]
+
+
+    for kind, tools in deps.items():
+        ext = "cls" if kind == "class" else "sty"
+
+        for name, version in tools.items():
+            content.append(
+                f"    \\task \\texttt{{{name}.{ext}}}"
+                 "\n"
+                f"    \\hfill {{\small ({version})}}\\kern10pt"
+            )
+
+            content.append("")
+
+    content[-1] =r"\end{tasks}"
+
+    content = "\n".join(content)
 
     manual = manual.replace(
         "<DEPENDS>",
-        repr(deps)
+        content
     )
-
-# <DEPENDS-VERSIONS>
 
     return manual
 

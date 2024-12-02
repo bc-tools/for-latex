@@ -1,0 +1,18 @@
+% -- COLORFUL HIGHLIGHTING OF CONTENT -- %
+
+\ExplSyntaxOn
+
+%%%
+% We use a ''seq'' variable to factorize the code just after.
+%%%
+\seq_new:N \g__tutodoc_focus_color_seq
+
+\seq_set_from_clist:Nn \g__tutodoc_focus_color_seq {
+  note,
+  tip,
+  imp,
+  caut,
+  warn,
+}
+
+\ExplSyntaxOff

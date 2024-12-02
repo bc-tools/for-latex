@@ -7,14 +7,6 @@ NOW
 ---
 
 
-
-> ---------------------------- <
-
-doc sur les importations
-
-    ---> Faire un script qui vérifie que l'on parle bien de ttes les importations dans la doc : on cherche bêtementd ans les lignes non commentés l'usage de \tdoccls{...} ou \tdocpack{...}
-
-
 > ---------------------------- <
 
 un seul fichier css par thème chargé dans le main
