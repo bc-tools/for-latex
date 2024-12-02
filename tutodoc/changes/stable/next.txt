@@ -26,6 +26,10 @@ From now on, package imports will be carried out cleanly via the path::''src/mai
 :new:
 -----
 
+[[:doc:]]
+Addition of a section listing dependencies.
+
+
 [[:api:]]
 \Cls options.
 

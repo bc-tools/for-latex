@@ -9,6 +9,11 @@ NOW
 
 > ---------------------------- <
 
+draft ==> bug si enumerate à la fin ???
+
+
+> ---------------------------- <
+
 un seul fichier css par thème chargé dans le main
 
     ---> vérifier tous les CSS pour noms std évientant les collisions de noms
