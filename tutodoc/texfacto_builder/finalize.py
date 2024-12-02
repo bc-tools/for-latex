@@ -205,7 +205,14 @@ def deps_in_manual(
     manual,
     deps
 ):
-    input(manual)
+# List of dependances
+
+    manual = manual.replace(
+        "<DEPENDS>",
+        repr(deps)
+    )
+
+# <DEPENDS-VERSIONS>
 
     return manual
 

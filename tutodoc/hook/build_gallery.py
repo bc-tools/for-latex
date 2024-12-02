@@ -207,7 +207,7 @@ if __name__ == "__main__":
     tmpl_debug_file = r"""
 <<THE-FILE-CONTENTS>>
 
-\documentclass{../main/main}
+\documentclass[theme = color]{../main/main}
 
 \input{../preamble.cfg.tex}
 

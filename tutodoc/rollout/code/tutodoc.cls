@@ -45,7 +45,8 @@
 %     fontsize : this key is one of those of the '''scrartcl'' class.
 %                As \tutodoc imposes the value of this key, we must
 %                forbid its use.
-%     DIV      : similar to the preceding key.
+%     DIV      : similar to the preceding key but here we just want
+%                to avoid any use of special ''DIV'' value.
 %%%
 \keys_define:nn { tutodoc / main / class / options } {
   theme .choices:nn = {
@@ -81,38 +82,36 @@
 \ExplSyntaxOff
 
 
+% ------------------------------------------------- %
+% -- OPTIONS FOR PACKAGES IMPORTED BY OTHER ONES -- %
+% ------------------------------------------------- %
 
-
-
+% xcolor is loaded by minted and tcolorbox.
+\PassOptionsToPackage{svgnames}{xcolor}
 
 
 % ------------- %
 % -- IMPORTS -- %
 % ------------- %
 
-
-
-% :::::::::::: %
-% :: USEFUL :: %
-% :::::::::::: %
-
-\RequirePackage{geometry}%
-
-\RequirePackage[svgnames]%
-               {xcolor}
+\RequirePackage{geometry}
 
 \RequirePackage{marginnote}
 \RequirePackage{fontawesome5}
 \RequirePackage{keytheorems}
 
 \RequirePackage{clrstrip}
-\RequirePackage[highlightmode = immediate]% Before the tcolorbox library minted minted
-               {minted}
-\RequirePackage{tcolorbox}
 
-\tcbuselibrary{minted,
-               breakable,
-               skins}
+% Before the tcolorbox library minted.
+\RequirePackage[highlightmode = immediate]
+               {minted}
+
+\RequirePackage{tcolorbox}
+\tcbuselibrary{
+  minted,
+  breakable,
+  skins
+}
 
 \RequirePackage{hyperref}
 
@@ -124,7 +123,9 @@
 % warning::
 %     We must load ''inputenc'' before ''csquotes''
 %%%
-\RequirePackage[utf8]{inputenc}
+\RequirePackage[utf8]
+               {inputenc}
+
 \RequirePackage{csquotes}
 
 
@@ -157,11 +158,6 @@
 \AtBeginDocument{
 % Babel is used.
   \@ifpackageloaded{babel}{
-% We must take care of English rules for English contents.
-    \renewcommand\tutodoc@use@english{%
-      \foreignlanguage{english}%
-    }
-
 % We must take care of colons and spacing.
     \iflanguage{french}{
       \renewcommand{\tutodoc@colon}{\babelshorthand{:}}
@@ -170,19 +166,19 @@
 
 % Polyglossia is used.
   \@ifpackageloaded{polyglossia}{
-% If polyglossia is used, we must load english if the user has not done it
+% If polyglossia is used, we must load english if necessary
 % (see the ''\tutodoc@use@english'' macro below).
     \iflanguageloaded{english}{}{
       \setotherlanguage{english}
     }
-
-% We must take care of the English typesetting rules.
-    \renewcommand\tutodoc@use@english{%
-      \foreignlanguage{english}%
-    }
   }{}%
 
   \newcommand{\tdoclang}{\BCPdata{language}}
+
+% We must take care of English rules for English contents.
+  \renewcommand\tutodoc@use@english{%
+    \foreignlanguage{english}%
+  }
 
 % If the lang is not supported, we emit a warning and just turn
 % to the english language.
