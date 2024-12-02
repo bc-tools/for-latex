@@ -157,6 +157,10 @@ def tex_main(
 
     manual = (lang_dir / TAG_TMP_TEX_THE_DOC).read_text()
     manual = manual.strip()
+    manual = deps_in_manual(
+        manual,
+        metadata[TAG_DEPS]
+    )
 
     abstract = (lang_dir / f"{TAG_ABSTRACT}.tex").read_text()
     abstract = abstract.strip()
@@ -169,7 +173,6 @@ def tex_main(
         ),
     }.items():
         abstract = abstract.replace(f"<<{old}>>", new)
-
 
     chgelog = (lang_dir / f"{TAG_CHGE_LOG}.tex").read_text()
     chgelog = chgelog.strip()
@@ -198,6 +201,13 @@ def tex_main(
     return main
 
 
+def deps_in_manual(
+    manual,
+    deps
+):
+    input(manual)
+
+    return manual
 
 def tex_resrc(
     lang,

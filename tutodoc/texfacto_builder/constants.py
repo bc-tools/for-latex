@@ -32,6 +32,9 @@ TAG_CLS = "cls"
 TAG_STY = "sty"
 TAG_TEX = "tex"
 
+TAG_DEPS      = "depends"
+TAG_DEPS_FILE = "DEPENDS-VERSIONS.yaml"
+
 TAG_RESRC     = "resource"
 TAG_CLS_RESRC = f"{TAG_CLS}-{TAG_RESRC}"
 TAG_STY_RESRC = f"{TAG_STY}-{TAG_RESRC}"

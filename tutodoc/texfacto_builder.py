@@ -147,7 +147,7 @@ metadata = build_metadata(project_dir = THIS_DIR)
 # if DEBUG:
 #     print("# -- METADATA -- #")
 
-#     pprint(metadata)
+#     pprint(metadata[TAG_DEPS])
 #     exit()
 
 print(f"""

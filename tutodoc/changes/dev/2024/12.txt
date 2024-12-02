@@ -1,0 +1,13 @@
+// ---------- //
+
+
+==
+02  (1.7.0.beta-4)
+==
+
+-----
+:new:
+-----
+
+[[:doc:]]
+Addition of a section listing dependencies.

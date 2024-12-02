@@ -52,7 +52,7 @@ while tutodoc_src_dir.name != "for-latex":
 
 tutodoc_src_dir = tutodoc_src_dir / "tutodoc" / "src"
 
-yaml_file = tutodoc_src_dir / "DEPENDS-TESTED-VERSIONS.yaml"
+yaml_file = tutodoc_src_dir / "DEPENDS-VERSIONS.yaml"
 
 content = tutodoc_src_dir / "main" / "main.cls"
 content = content.read_text()
