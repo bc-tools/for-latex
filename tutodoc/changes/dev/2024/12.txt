@@ -10,7 +10,7 @@
 -----
 
 [[:api:]]
-Admonitions: for the ''\newkeytheorem'' used with the ''draft'' theme, we have added ''postheadhook = \leavevmode''.
+Admonitions: for the ''\newkeytheorem'' used with the ''draft'' theme, we have added ''postheadhook = \leavevmode'' (this is necessary because the content can naturally be of the list type).
 
 
 // ---------- //

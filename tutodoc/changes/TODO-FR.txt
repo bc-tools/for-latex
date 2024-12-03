@@ -9,7 +9,13 @@ NOW
 
 > ---------------------------- <
 
-draft ==> bug si enumerate à la fin ???
+template theme
+
+    --> améliorer le template, le rendre plus efficace et court !
+
+    --> url pour la couleur
+
+    --> date et version de quoi change
 
 
 > ---------------------------- <
@@ -29,18 +35,12 @@ un seul fichier css par thème chargé dans le main
 
 > ---------------------------- <
 
-env pour code via minted car on peut aussi parler de perl, pyhon et lua voire plus
+Admonitions: the icons are no longer used with the ''draft'' theme.
 
 
 > ---------------------------- <
 
-template theme
-
-    --> améliorer le template, le rendre plus efficace et court !
-
-    --> url pour la couleur
-
-    --> date et version de quoi change
+env pour code via minted car on peut aussi parler de perl, pyhon et lua voire plus
 
 
 > ---------------------------- <
