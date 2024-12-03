@@ -9,17 +9,6 @@ NOW
 
 > ---------------------------- <
 
-template theme
-
-    --> améliorer le template, le rendre plus efficace et court !
-
-    --> url pour la couleur
-
-    --> date et version de quoi change
-
-
-> ---------------------------- <
-
 un seul fichier css par thème chargé dans le main
 
     ---> vérifier tous les CSS pour noms std évientant les collisions de noms

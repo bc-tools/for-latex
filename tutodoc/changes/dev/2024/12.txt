@@ -13,6 +13,20 @@
 Admonitions: for the ''\newkeytheorem'' used with the ''draft'' theme, we have added ''postheadhook = \leavevmode'' (this is necessary because the content can naturally be of the list type).
 
 
+--------
+:update:
+--------
+
+[[:doc:]]
+template theme
+
+    --> améliorer le template, le rendre plus efficace et court !
+
+    --> url pour la couleur
+
+    --> date et version de quoi change
+
+
 // ---------- //
 
 
