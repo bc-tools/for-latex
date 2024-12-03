@@ -6,76 +6,77 @@
 \begin{filecontents*}[overwrite]{gallery-showcase-bw.tex}
 \documentclass[theme = bw]{tutodoc}
 
-% -- FORDOC -- %
-
-\newcommand\thisstyle{bw}
-
-\newcommand\myexrmktext{
-    \tdocdate{2024-10-23}
-    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
-}
-
-\newcommand\myadmotext{
-    \tdocversion{1.6.0}[2024-10-23]
-    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
-}
-
-\newcommand\myhighlightedtext{
-    Que dire\,%
-    \footnote{
-        N'oublions pas les notes de bas de page...
-    }?
-    Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
-}
-
 
 \begin{document}
 
 \textsf{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
 
+
+\section{Liens}
+
+{\Large\bfseries \href{https://github.com/bc-tools/for-latex/tree/main/tutodoc}{Un lien très gros}}, mais au moins on le voit.
+
+
 \section{Mettre en avant, versionner et dater}
+
+\subsection{tdocexa, tdocrem}
+
+\myexrmktext
 
 \ExplSyntaxOn
 
 \seq_map_inline:Nn \g__tutodoc_focus_std_seq {
-    \subsection*{tdoc#1}
-
-    \myexrmktext
-
     \begin{tdoc#1}
         \myhighlightedtext
     \end{tdoc#1}
-
-    \myexrmktext
 }
+
+\ExplSyntaxOff
+
+\myexrmktext
+
+
+\subsection{tdocnote, tdoctip...}
+
+\myadmotext
+
+\ExplSyntaxOn
 
 \ifcsundef{g__tutodoc_focus_color_seq}{
     \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
-        \subsection*{tdoc#1}
-
-        \myadmotext
+        \medskip
 
         \begin{tdoc#1}
             \myhighlightedtext
         \end{tdoc#1}
-
-        \myadmotext
     }
 } {
     \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
-        \subsection*{tdoc#1}
-
-        \myadmotext
+        \medskip
 
         \begin{tdoc#1}
             \myhighlightedtext
         \end{tdoc#1}
-
-        \myadmotext
     }
 }
 
 \ExplSyntaxOff
+
+
+\subsection{tdocbreak, tdocfix...}
+
+\myexrmktext
+
+\ExplSyntaxOn
+
+\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
+    \begin{tdoc#1}
+        \item Infos...
+    \end{tdoc#1}
+}
+
+\ExplSyntaxOff
+
 
 \section{Des codes \LaTeX}
 
@@ -101,76 +102,77 @@ $\pi \neq \frac{3}{14}$.
 \begin{filecontents*}[overwrite]{gallery-showcase-color.tex}
 \documentclass[theme = color]{tutodoc}
 
-% -- FORDOC -- %
-
-\newcommand\thisstyle{color}
-
-\newcommand\myexrmktext{
-    \tdocdate{2024-10-23}
-    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
-}
-
-\newcommand\myadmotext{
-    \tdocversion{1.6.0}[2024-10-23]
-    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
-}
-
-\newcommand\myhighlightedtext{
-    Que dire\,%
-    \footnote{
-        N'oublions pas les notes de bas de page...
-    }?
-    Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
-}
-
 
 \begin{document}
 
 \textsf{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
 
+
+\section{Liens}
+
+{\Large\bfseries \href{https://github.com/bc-tools/for-latex/tree/main/tutodoc}{Un lien très gros}}, mais au moins on le voit.
+
+
 \section{Mettre en avant, versionner et dater}
+
+\subsection{tdocexa, tdocrem}
+
+\myexrmktext
 
 \ExplSyntaxOn
 
 \seq_map_inline:Nn \g__tutodoc_focus_std_seq {
-    \subsection*{tdoc#1}
-
-    \myexrmktext
-
     \begin{tdoc#1}
         \myhighlightedtext
     \end{tdoc#1}
-
-    \myexrmktext
 }
+
+\ExplSyntaxOff
+
+\myexrmktext
+
+
+\subsection{tdocnote, tdoctip...}
+
+\myadmotext
+
+\ExplSyntaxOn
 
 \ifcsundef{g__tutodoc_focus_color_seq}{
     \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
-        \subsection*{tdoc#1}
-
-        \myadmotext
+        \medskip
 
         \begin{tdoc#1}
             \myhighlightedtext
         \end{tdoc#1}
-
-        \myadmotext
     }
 } {
     \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
-        \subsection*{tdoc#1}
-
-        \myadmotext
+        \medskip
 
         \begin{tdoc#1}
             \myhighlightedtext
         \end{tdoc#1}
-
-        \myadmotext
     }
 }
 
 \ExplSyntaxOff
+
+
+\subsection{tdocbreak, tdocfix...}
+
+\myexrmktext
+
+\ExplSyntaxOn
+
+\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
+    \begin{tdoc#1}
+        \item Infos...
+    \end{tdoc#1}
+}
+
+\ExplSyntaxOff
+
 
 \section{Des codes \LaTeX}
 
@@ -196,76 +198,77 @@ $\pi \neq \frac{3}{14}$.
 \begin{filecontents*}[overwrite]{gallery-showcase-dark.tex}
 \documentclass[theme = dark]{tutodoc}
 
-% -- FORDOC -- %
-
-\newcommand\thisstyle{dark}
-
-\newcommand\myexrmktext{
-    \tdocdate{2024-10-23}
-    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
-}
-
-\newcommand\myadmotext{
-    \tdocversion{1.6.0}[2024-10-23]
-    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
-}
-
-\newcommand\myhighlightedtext{
-    Que dire\,%
-    \footnote{
-        N'oublions pas les notes de bas de page...
-    }?
-    Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
-}
-
 
 \begin{document}
 
 \textsf{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
 
+
+\section{Liens}
+
+{\Large\bfseries \href{https://github.com/bc-tools/for-latex/tree/main/tutodoc}{Un lien très gros}}, mais au moins on le voit.
+
+
 \section{Mettre en avant, versionner et dater}
+
+\subsection{tdocexa, tdocrem}
+
+\myexrmktext
 
 \ExplSyntaxOn
 
 \seq_map_inline:Nn \g__tutodoc_focus_std_seq {
-    \subsection*{tdoc#1}
-
-    \myexrmktext
-
     \begin{tdoc#1}
         \myhighlightedtext
     \end{tdoc#1}
-
-    \myexrmktext
 }
+
+\ExplSyntaxOff
+
+\myexrmktext
+
+
+\subsection{tdocnote, tdoctip...}
+
+\myadmotext
+
+\ExplSyntaxOn
 
 \ifcsundef{g__tutodoc_focus_color_seq}{
     \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
-        \subsection*{tdoc#1}
-
-        \myadmotext
+        \medskip
 
         \begin{tdoc#1}
             \myhighlightedtext
         \end{tdoc#1}
-
-        \myadmotext
     }
 } {
     \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
-        \subsection*{tdoc#1}
-
-        \myadmotext
+        \medskip
 
         \begin{tdoc#1}
             \myhighlightedtext
         \end{tdoc#1}
-
-        \myadmotext
     }
 }
 
 \ExplSyntaxOff
+
+
+\subsection{tdocbreak, tdocfix...}
+
+\myexrmktext
+
+\ExplSyntaxOn
+
+\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
+    \begin{tdoc#1}
+        \item Infos...
+    \end{tdoc#1}
+}
+
+\ExplSyntaxOff
+
 
 \section{Des codes \LaTeX}
 
@@ -291,76 +294,77 @@ $\pi \neq \frac{3}{14}$.
 \begin{filecontents*}[overwrite]{gallery-showcase-draft.tex}
 \documentclass[theme = draft]{tutodoc}
 
-% -- FORDOC -- %
-
-\newcommand\thisstyle{draft}
-
-\newcommand\myexrmktext{
-    \tdocdate{2024-10-23}
-    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
-}
-
-\newcommand\myadmotext{
-    \tdocversion{1.6.0}[2024-10-23]
-    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
-}
-
-\newcommand\myhighlightedtext{
-    Que dire\,%
-    \footnote{
-        N'oublions pas les notes de bas de page...
-    }?
-    Je ne sais pas, mais en tout cas, il semble sympathique de montrer ce que peut donner telle mise en forme, ou telle autre. Non ?
-}
-
 
 \begin{document}
 
 \textsf{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
 
+
+\section{Liens}
+
+{\Large\bfseries \href{https://github.com/bc-tools/for-latex/tree/main/tutodoc}{Un lien très gros}}, mais au moins on le voit.
+
+
 \section{Mettre en avant, versionner et dater}
+
+\subsection{tdocexa, tdocrem}
+
+\myexrmktext
 
 \ExplSyntaxOn
 
 \seq_map_inline:Nn \g__tutodoc_focus_std_seq {
-    \subsection*{tdoc#1}
-
-    \myexrmktext
-
     \begin{tdoc#1}
         \myhighlightedtext
     \end{tdoc#1}
-
-    \myexrmktext
 }
+
+\ExplSyntaxOff
+
+\myexrmktext
+
+
+\subsection{tdocnote, tdoctip...}
+
+\myadmotext
+
+\ExplSyntaxOn
 
 \ifcsundef{g__tutodoc_focus_color_seq}{
     \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
-        \subsection*{tdoc#1}
-
-        \myadmotext
+        \medskip
 
         \begin{tdoc#1}
             \myhighlightedtext
         \end{tdoc#1}
-
-        \myadmotext
     }
 } {
     \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
-        \subsection*{tdoc#1}
-
-        \myadmotext
+        \medskip
 
         \begin{tdoc#1}
             \myhighlightedtext
         \end{tdoc#1}
-
-        \myadmotext
     }
 }
 
 \ExplSyntaxOff
+
+
+\subsection{tdocbreak, tdocfix...}
+
+\myexrmktext
+
+\ExplSyntaxOn
+
+\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
+    \begin{tdoc#1}
+        \item Infos...
+    \end{tdoc#1}
+}
+
+\ExplSyntaxOff
+
 
 \section{Des codes \LaTeX}
 
@@ -1092,19 +1096,23 @@ Test: \tdocquote{OK?}
 
 Pour modifier la mise en forme générale, la classe \thisproj\ propose l'option \tdocinlatex{theme = <choix>} où \tdocinlatex{<choix>} peut prendre les valeurs suivantes.
 
-\begin{itemize}
-    \item \tdocinlatex|bw| :
-    ce thème est de type noir-et-blanc avec certaines nuances de gris.
-
-    \item \tdocinlatex|color| :
-    ce thème coloré est \emph{la valeur par défaut}.
-
-    \item \tdocinlatex|dark| :
-    ce thème est sombre, idéal pour se reposer les yeux.
-
-    \item \tdocinlatex|draft| :
-    ce thème est juste pour une impression papier à la recherche d'erreurs de contenu pas forcément simples à débusquer devant son écran.
-\end{itemize}
+\begin{center}
+    \begin{minipage}{.925\linewidth}
+        \begin{description}[wide]
+            \item[bw]
+            Un thème de type noir-et-blanc avec certaines nuances de gris.
+        
+            \item[color]
+            Un thème coloré : c'est \emph{la valeur par défaut}.
+        
+            \item[dark]
+            Un thème sombre idéal pour se reposer les yeux.
+        
+            \item[draft]
+            Un thème pour une impression papier à la recherche d'erreurs de contenu pas forcément simples à débusquer devant un écran.
+        \end{description}
+    \end{minipage}
+\end{center}
 
 
 \begin{tdocnote}
