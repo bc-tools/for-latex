@@ -2,6 +2,21 @@
 
 
 ==
+03  (1.7.0.beta-5)
+==
+
+-----
+:fix:
+-----
+
+[[:api:]]
+Admonitions: for the ''\newkeytheorem'' used with the ''draft'' theme, we have added ''postheadhook = \leavevmode''.
+
+
+// ---------- //
+
+
+==
 02  (1.7.0.beta-4)
 ==
 
