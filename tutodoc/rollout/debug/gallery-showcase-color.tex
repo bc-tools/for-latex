@@ -1,31 +1,4 @@
-\documentclass[theme = color]{../main/main}
-
-\input{../preamble.cfg.tex}
-
-\usepackage{../admonitions/admonitions.cls}
-\usepackage{../listing/listing.cls}
-\usepackage{../version-n-change/version-n-change.cls}
-
-% == FORDOC == %
-\newcommand\thisstyle{color}
-
-\newcommand\myexrmktext{
-    \tdocversion{1.7.0}[2024-12-04]
-    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
-}
-
-\newcommand\myadmotext{
-    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
-}
-
-\newcommand\myhighlightedtext{
-    Que dire\,%
-    \footnote{
-        N'oublions pas les notes de bas de page...
-    }?
-    Je ne sais pas, mais c'est sympathique. Non ?
-}
-
+\documentclass[theme = color]{tutodoc}
 
 
 \begin{document}
@@ -90,24 +63,18 @@
 
 \ExplSyntaxOn
 
-\begin{multicols}{2}
-
 \prop_map_inline:Nn \g__tutodoc_topic_change_prop {
     \begin{tdoc#1}
         \item Infos...
     \end{tdoc#1}
 }
 
-\vfill\null
-
-\end{multicols}
-
 \ExplSyntaxOff
 
 
 \section{Des codes \LaTeX}
 
-Taper du code \LaTeX\ en ligne comme \tdocinlatex{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
+Il est indispensable de pouvoir montrer des cas d'utilisation en \LaTeX.
 
 \begin{tdoclatex}
 Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
@@ -123,3 +90,4 @@ $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
 
 \end{document}
+

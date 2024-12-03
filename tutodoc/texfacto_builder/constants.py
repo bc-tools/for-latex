@@ -11,6 +11,8 @@ LAST_CHGES_IN = {
     'fr': "Derniers changements",
 }
 
+TAG_MAIN = "main"
+
 TAG_LANG_EN = "en"
 TAG_LOCALE  = "locale"
 

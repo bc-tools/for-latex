@@ -297,9 +297,6 @@ for kind, prebuilder, hooks in [
 # -- CSS FILES -- #
 # --------------- #
 
-exit()
-
-
 for srcfile in metadata[TAG_SRC].glob("*/css/*.sty"):
     catego = srcfile.parent.parent.name
 
@@ -353,6 +350,15 @@ def ugly_hack(content):
 finalize(
     metadata  = metadata,
     ugly_hack = ugly_hack,
+)
+
+
+# ---------------- #
+# -- MINIFY CSS -- #
+# ---------------- #
+
+minicss_cls(
+    metadata  = metadata,
 )
 
 

@@ -7,3 +7,5 @@ from .misc        import *
 from .cls_proj import *
 from .sty_proj import *
 from .tex_doc  import *
+
+from .minicss import *
