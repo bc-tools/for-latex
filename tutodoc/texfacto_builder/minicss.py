@@ -34,13 +34,12 @@ def minicss_cls(
     for cssname, contents in main_contents.items():
         contents =  "\n\n\n".join(contents)
 
-        cssmainfile = code_dir / f"{projname}-{cssname}-main.css.{longext}"
+        cssmainfile = code_dir / f"{projname}-{cssname}.css.{longext}"
         cssmainfile.write_text(contents)
 
     for cssname, srcinfos in csspaths.items():
         for srcname in sorted(srcinfos):
-            if srcname != TAG_MAIN:
-                srcinfos[srcname].unlink()
+            srcinfos[srcname].unlink()
 
     projfile = code_dir / f"{projname}.cls"
 
@@ -59,14 +58,13 @@ def minicss_cls(
         keep = True
 
         for cssname in all_cssnames:
-            if (
-                short_line.startswith(
-                    f"\\input{{{projname}-\\{projname}@theme-"
-                )
-                and
-                not short_line.startswith(
-                    f"\\input{{{projname}-\\{projname}@theme-main"
-                )
+            if short_line.startswith(
+                 f"\\input{{{projname}-\\{projname}@theme-main"
+            ):
+                line = f"\\input{{{projname}-\\{projname}@theme.css.{longext}}}"
+
+            elif short_line.startswith(
+               f"\\input{{{projname}-\\{projname}@theme-"
             ):
                 keep = False
                 break

@@ -298,7 +298,7 @@
 % -- THEME -- %
 % ----------- %
 
-\input{tutodoc-\tutodoc@theme-main.css.cls.sty}
+\input{tutodoc-\tutodoc@theme.css.cls.sty}
 
 \pagecolor{tutodoc@page@color}
 \color{tutodoc@text@color}

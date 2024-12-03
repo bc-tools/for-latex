@@ -6,6 +6,27 @@
 \begin{filecontents*}[overwrite]{gallery-showcase-bw.tex}
 \documentclass[theme = bw]{tutodoc}
 
+% -- FORDOC -- %
+
+\newcommand\thisstyle{bw}
+
+\newcommand\myexrmktext{
+    \tdocversion{1.7.0}[2024-12-04]
+    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
+}
+
+\newcommand\myadmotext{
+    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
+}
+
+\newcommand\myhighlightedtext{
+    Que dire\,%
+    \footnote{
+        N'oublions pas les notes de bas de page...
+    }?
+    Je ne sais pas, mais c'est sympathique. Non ?
+}
+
 
 \begin{document}
 
@@ -69,18 +90,24 @@
 
 \ExplSyntaxOn
 
+\begin{multicols}{2}
+
 \prop_map_inline:Nn \g__tutodoc_topic_change_prop {
     \begin{tdoc#1}
         \item Infos...
     \end{tdoc#1}
 }
 
+\vfill\null
+
+\end{multicols}
+
 \ExplSyntaxOff
 
 
 \section{Des codes \LaTeX}
 
-Il est indispensable de pouvoir montrer des cas d'utilisation en \LaTeX.
+Taper du code \LaTeX\ en ligne comme \tdocinlatex{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
 
 \begin{tdoclatex}
 Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
@@ -102,6 +129,27 @@ $\pi \neq \frac{3}{14}$.
 \begin{filecontents*}[overwrite]{gallery-showcase-color.tex}
 \documentclass[theme = color]{tutodoc}
 
+% -- FORDOC -- %
+
+\newcommand\thisstyle{color}
+
+\newcommand\myexrmktext{
+    \tdocversion{1.7.0}[2024-12-04]
+    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
+}
+
+\newcommand\myadmotext{
+    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
+}
+
+\newcommand\myhighlightedtext{
+    Que dire\,%
+    \footnote{
+        N'oublions pas les notes de bas de page...
+    }?
+    Je ne sais pas, mais c'est sympathique. Non ?
+}
+
 
 \begin{document}
 
@@ -165,18 +213,24 @@ $\pi \neq \frac{3}{14}$.
 
 \ExplSyntaxOn
 
+\begin{multicols}{2}
+
 \prop_map_inline:Nn \g__tutodoc_topic_change_prop {
     \begin{tdoc#1}
         \item Infos...
     \end{tdoc#1}
 }
 
+\vfill\null
+
+\end{multicols}
+
 \ExplSyntaxOff
 
 
 \section{Des codes \LaTeX}
 
-Il est indispensable de pouvoir montrer des cas d'utilisation en \LaTeX.
+Taper du code \LaTeX\ en ligne comme \tdocinlatex{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
 
 \begin{tdoclatex}
 Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
@@ -198,6 +252,27 @@ $\pi \neq \frac{3}{14}$.
 \begin{filecontents*}[overwrite]{gallery-showcase-dark.tex}
 \documentclass[theme = dark]{tutodoc}
 
+% -- FORDOC -- %
+
+\newcommand\thisstyle{dark}
+
+\newcommand\myexrmktext{
+    \tdocversion{1.7.0}[2024-12-04]
+    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
+}
+
+\newcommand\myadmotext{
+    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
+}
+
+\newcommand\myhighlightedtext{
+    Que dire\,%
+    \footnote{
+        N'oublions pas les notes de bas de page...
+    }?
+    Je ne sais pas, mais c'est sympathique. Non ?
+}
+
 
 \begin{document}
 
@@ -261,18 +336,24 @@ $\pi \neq \frac{3}{14}$.
 
 \ExplSyntaxOn
 
+\begin{multicols}{2}
+
 \prop_map_inline:Nn \g__tutodoc_topic_change_prop {
     \begin{tdoc#1}
         \item Infos...
     \end{tdoc#1}
 }
 
+\vfill\null
+
+\end{multicols}
+
 \ExplSyntaxOff
 
 
 \section{Des codes \LaTeX}
 
-Il est indispensable de pouvoir montrer des cas d'utilisation en \LaTeX.
+Taper du code \LaTeX\ en ligne comme \tdocinlatex{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
 
 \begin{tdoclatex}
 Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
@@ -294,6 +375,27 @@ $\pi \neq \frac{3}{14}$.
 \begin{filecontents*}[overwrite]{gallery-showcase-draft.tex}
 \documentclass[theme = draft]{tutodoc}
 
+% -- FORDOC -- %
+
+\newcommand\thisstyle{draft}
+
+\newcommand\myexrmktext{
+    \tdocversion{1.7.0}[2024-12-04]
+    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
+}
+
+\newcommand\myadmotext{
+    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
+}
+
+\newcommand\myhighlightedtext{
+    Que dire\,%
+    \footnote{
+        N'oublions pas les notes de bas de page...
+    }?
+    Je ne sais pas, mais c'est sympathique. Non ?
+}
+
 
 \begin{document}
 
@@ -357,18 +459,24 @@ $\pi \neq \frac{3}{14}$.
 
 \ExplSyntaxOn
 
+\begin{multicols}{2}
+
 \prop_map_inline:Nn \g__tutodoc_topic_change_prop {
     \begin{tdoc#1}
         \item Infos...
     \end{tdoc#1}
 }
 
+\vfill\null
+
+\end{multicols}
+
 \ExplSyntaxOff
 
 
 \section{Des codes \LaTeX}
 
-Il est indispensable de pouvoir montrer des cas d'utilisation en \LaTeX.
+Taper du code \LaTeX\ en ligne comme \tdocinlatex{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
 
 \begin{tdoclatex}
 Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
@@ -765,6 +873,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \usepackage[french]{babel, varioref}
 \frenchsetup{StandardItemLabels=true}
 
+\usepackage{multicol}
 \usepackage{tasks}
 
 \usepackage{pdfpages}
@@ -1096,23 +1205,19 @@ Test: \tdocquote{OK?}
 
 Pour modifier la mise en forme générale, la classe \thisproj\ propose l'option \tdocinlatex{theme = <choix>} où \tdocinlatex{<choix>} peut prendre les valeurs suivantes.
 
-\begin{center}
-    \begin{minipage}{.925\linewidth}
-        \begin{description}[wide]
-            \item[bw]
-            Un thème de type noir-et-blanc avec certaines nuances de gris.
-        
-            \item[color]
-            Un thème coloré : c'est \emph{la valeur par défaut}.
-        
-            \item[dark]
-            Un thème sombre idéal pour se reposer les yeux.
-        
-            \item[draft]
-            Un thème pour une impression papier à la recherche d'erreurs de contenu pas forcément simples à débusquer devant un écran.
-        \end{description}
-    \end{minipage}
-\end{center}
+\begin{tasks}[style=itemize]
+    \task \tdocinlatex{bw}:
+          un thème de type noir-et-blanc avec certaines nuances de gris.
+
+    \task \tdocinlatex{color}:
+          un thème coloré : c'est \emph{la valeur par défaut}.
+
+    \task \tdocinlatex{dark}:
+          un thème sombre idéal pour se reposer les yeux.
+
+    \task \tdocinlatex{draft}:
+          un thème pour une impression papier à la recherche d'erreurs de contenu pas forcément simples à débusquer devant un écran.
+\end{tasks}
 
 
 \begin{tdocnote}
