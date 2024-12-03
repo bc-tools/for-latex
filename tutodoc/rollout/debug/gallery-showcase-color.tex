@@ -1,19 +1,37 @@
 \documentclass[theme = color]{tutodoc}
 
-\input{../preamble.cfg.tex}
+\newcommand\thisstyle{color}
+
+\newcommand\myexrmktext{
+    In the flow of the text, it is always useful to be able to indicate examples and comments to supplement the main content.
+}
+
+\newcommand\myadmotext{
+    Depending on the context of use, it is sometimes necessary to be able to highlight content by indicating its degree of importance.
+}
+
+\newcommand\myhighlightedtext{
+    What to say
+    \footnote{
+        Let's not forget the footnotes...
+    }?
+    I don't know, but it's nice. No ?
+}
+
 
 
 \begin{document}
 
-\textsf{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
+\textsf{\Huge\bfseries The theme \texttt{"\thisstyle"}}
 
 
-\section{Liens}
+\section{Links}
 
-{\Large\bfseries \href{https://github.com/bc-tools/for-latex/tree/main/tutodoc}{Un lien très gros}}, mais au moins on le voit.
+{\Large\bfseries \href{https://github.com/bc-tools/for-latex/tree/main/tutodoc}{A very large link}}, but at least you can see it.
 
 
-\section{Mettre en avant, versionner et dater}
+
+\section{Highlight, version and date}
 
 \subsection{tdocexa, tdocrem}
 
@@ -74,21 +92,22 @@
 \ExplSyntaxOff
 
 
-\section{Des codes \LaTeX}
+\section{LaTeX codes}
 
-Il est indispensable de pouvoir montrer des cas d'utilisation en \LaTeX.
+It is essential to be able to show use cases in \LaTeX.
 
 \begin{tdoclatex}
-Voir du code \LaTeX\ mis en forme, c'est sympa : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+Seeing some \LaTeX code formatted is nice: $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
 
 
-On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
+There's also a less intrusive side-by-side mode. Nice! No ?
 
 \begin{tdoclatex}[sbs]
-Voir du code \LaTeX\ mis en forme,
-c'est sympa : $E = m c^2$ ou
+View formatted code,
+is nice: $E = m c^2$ or
 $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
 
 \end{document}
+

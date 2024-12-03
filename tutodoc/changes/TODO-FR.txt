@@ -24,7 +24,9 @@ un seul fichier css par thème chargé dans le main
 
 > ---------------------------- <
 
-Admonitions: the icons are no longer used with the ''draft'' theme.
+???
+
+    Admonitions: the icons are no longer used with the ''draft'' theme.
 
 
 > ---------------------------- <

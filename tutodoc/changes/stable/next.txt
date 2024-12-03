@@ -46,3 +46,11 @@ Admonitions.
     1) A new ''tdoctodo'' \env has been added.
 
     1) Each \env has a new ''col'' option for color of the material indicating \chges.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Theme gallery: the "example" code has been improved.

@@ -1,0 +1,113 @@
+\documentclass[theme = bw]{tutodoc}
+
+\newcommand\thisstyle{bw}
+
+\newcommand\myexrmktext{
+    In the flow of the text, it is always useful to be able to indicate examples and comments to supplement the main content.
+}
+
+\newcommand\myadmotext{
+    Depending on the context of use, it is sometimes necessary to be able to highlight content by indicating its degree of importance.
+}
+
+\newcommand\myhighlightedtext{
+    What to say
+    \footnote{
+        Let's not forget the footnotes...
+    }?
+    I don't know, but it's nice. No ?
+}
+
+
+
+\begin{document}
+
+\textsf{\Huge\bfseries The theme \texttt{"\thisstyle"}}
+
+
+\section{Links}
+
+{\Large\bfseries \href{https://github.com/bc-tools/for-latex/tree/main/tutodoc}{A very large link}}, but at least you can see it.
+
+
+
+\section{Highlight, version and date}
+
+\subsection{tdocexa, tdocrem}
+
+\myexrmktext
+
+\ExplSyntaxOn
+
+\seq_map_inline:Nn \g__tutodoc_focus_std_seq {
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
+}
+
+\ExplSyntaxOff
+
+\myexrmktext
+
+
+\subsection{tdocnote, tdoctip...}
+
+\myadmotext
+
+\ExplSyntaxOn
+
+\ifcsundef{g__tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
+        \medskip
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+    }
+} {
+    \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
+        \medskip
+
+        \begin{tdoc#1}
+            \myhighlightedtext
+        \end{tdoc#1}
+    }
+}
+
+\ExplSyntaxOff
+
+
+\subsection{tdocbreak, tdocfix...}
+
+\myexrmktext
+
+\ExplSyntaxOn
+
+\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
+    \begin{tdoc#1}
+        \item Infos...
+    \end{tdoc#1}
+}
+
+\ExplSyntaxOff
+
+
+\section{LaTeX codes}
+
+It is essential to be able to show use cases in \LaTeX.
+
+\begin{tdoclatex}
+Seeing some \LaTeX code formatted is nice: $E = m c^2$ or $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+There's also a less intrusive side-by-side mode. Nice! No ?
+
+\begin{tdoclatex}[sbs]
+View formatted code,
+is nice: $E = m c^2$ or
+$\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+\end{document}
+

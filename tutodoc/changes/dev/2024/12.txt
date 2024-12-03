@@ -18,13 +18,7 @@ Admonitions: for the ''\newkeytheorem'' used with the ''draft'' theme, we have a
 --------
 
 [[:doc:]]
-template theme
-
-    --> améliorer le template, le rendre plus efficace et court !
-
-    --> url pour la couleur
-
-    --> date et version de quoi change
+Theme gallery: the "example" code has been improved.
 
 
 // ---------- //
