@@ -90,11 +90,17 @@
 
 \ExplSyntaxOn
 
+\begin{multicols}{2}
+
 \prop_map_inline:Nn \g__tutodoc_topic_change_prop {
     \begin{tdoc#1}
         \item Infos...
     \end{tdoc#1}
 }
+
+\vfill\null
+
+\end{multicols}
 
 \ExplSyntaxOff
 

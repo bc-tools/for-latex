@@ -57,7 +57,7 @@ THÈMES
 
 > ---------------------------- <
 
-doc : plus d'usage de xcolor
+doc : plus d'usage de xcolor ????
 
 \documentclass{article}
 
@@ -91,8 +91,3 @@ LATER
 > ---------------------------- <
 
 une fois macroenvsign ok, ajouter les fiches technqiues "utilisateurs" ùais dans un doc a part bien netdnu !!!
-
-
-> ---------------------------- <
-
-\RequirePackage[numbered]{bookmark} utile ???
