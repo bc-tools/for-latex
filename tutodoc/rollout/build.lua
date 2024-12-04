@@ -25,7 +25,7 @@ typesetopts = checkopts
 
 uploadconfig = {
     version      = "1.7.0 [2024-12-04]",
-    announcement = "More robust environments for the changes indicated.",
+    announcement = "The most important changes are the use of the scrartcl class, and the simplification of the organisation of configuration files in the source code. See the documentation for other interesting things.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",
