@@ -9,18 +9,6 @@ NOW
 
 > ---------------------------- <
 
-maj des tests unitaires !!!!
-
-
-> ---------------------------- <
-
-???
-
-    Admonitions: the icons are no longer used with the ''draft'' theme.
-
-
-> ---------------------------- <
-
 env pour code via minted car on peut aussi parler de perl, pyhon et lua voire plus
 
 

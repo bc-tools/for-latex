@@ -65,6 +65,10 @@ Here are the new fetaures.
 :update:
 --------
 
+[[:format:]]
+Draft theme and \chges: the \envs for the kind of \chges stop to use icons.
+
+
 [[:doc:]]
 Theme gallery: the "example" code has been improved.
 
