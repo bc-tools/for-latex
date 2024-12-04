@@ -1,0 +1,19 @@
+abrev::
+    fakeproj = \proj fictif
+    fakename = ''fict-proj''
+
+    content = :this.name:
+
+
+
+===============================================
+\Archi logicielle, ou comment organiser le code
+===============================================
+
+
+content::
+    content/dirtree.txt     ??????????
+    content/XXX.txt         ????????
+    content/XXX.txt         ??????
+    content/XXX.txt         ????
+    content/XXX.txt         ??

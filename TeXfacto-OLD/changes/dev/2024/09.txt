@@ -1,0 +1,13 @@
+// ---------- //
+
+
+==
+02
+==
+
+--------
+:fordev:
+--------
+
+[[:doc:]]
+\Doc before the code: \1st version of the \intro.

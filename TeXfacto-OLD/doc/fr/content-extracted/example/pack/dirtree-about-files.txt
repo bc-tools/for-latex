@@ -1,0 +1,7 @@
++ poor-lonesome-cowboy
+    * about.yaml
+    * lucky-1.tex
+    * lucky-2.tex
+    * lucky.sty
+    * rantanplan.tex
+    * rantanplan.sty
