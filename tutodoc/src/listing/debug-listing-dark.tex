@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper, theme = dark]{../main/main}
+\documentclass[theme = dark]{../main/main}
 
 \input{../preamble.cfg.tex}
 
@@ -9,15 +9,15 @@
 
 \begin{document}
 
-\tdocinlatex{\LaTeX} : \LaTeX
+\tdoclatexin{\LaTeX} : \LaTeX
 
-\tdocinlatex{aaa}
-\tdocinlatex{bbb}
-\tdocinlatex{ppp}
+\tdoclatexin{aaa}
+\tdoclatexin{bbb}
+\tdoclatexin{ppp}
 
 \begin{tdoclatex}
     $A = B + C$
-    
+
     \begin{equation}
         A(x)^2 = C(x,y)
     \end{equation}
@@ -25,7 +25,7 @@
 
 \begin{tdoclatex}[sbs]
     $A = B + C$
-    
+
     \begin{equation}
         A(x)^2 = C(x,y)
     \end{equation}
@@ -33,7 +33,7 @@
 
 \begin{tdoclatex}[code]
     $A = B + C$
-    
+
     \begin{equation}
         A(x)^2 = C(x,y)
     \end{equation}

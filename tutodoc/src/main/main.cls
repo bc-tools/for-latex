@@ -2,12 +2,32 @@
 
 % -- OPTIONS -- %
 
+%%%
+% refs::
+%     + https://tex.stackexchange.com/a/729929/6880
+%     + https://tex.stackexchange.com/a/729913/6880
+%%%
+
 \ExplSyntaxOn
 
-\tl_new:N \l__tutodoc_other_cls_options_tl
+\msg_set:nnnn { tutodoc ~ (main) }
+  { main : scrartcl-illegal-option }
+  { The ~ option ~ << ~ #1 ~ >> ~ is ~ not ~ allowed. }
+  { \msg_see_documentation_text:n { tutodoc } }
 
-\newcommand{ \tutodoc@theme } { color }
 
+\newcommand{\tutodoc@theme}{color}
+
+
+%%%
+% prototype::
+%     theme    : the theme to format the document.
+%     fontsize : this key is one of those of the '''scrartcl'' class.
+%                As \tutodoc imposes the value of this key, we must
+%                forbid its use.
+%     DIV      : similar to the preceding key but here we just want
+%                to avoid any use of special ''DIV'' value.
+%%%
 \keys_define:nn { tutodoc / main / class / options } {
   theme .choices:nn = {
     bw,
@@ -15,96 +35,77 @@
     dark,
     draft
   } {
-    \renewcommand{ \tutodoc@theme } {
-      \tl_use:N \l_keys_choice_tl
-    }
+    \exp_args:NNV \renewcommand \tutodoc@theme \l_keys_choice_tl
   },
-  unknown .code:n = {
-    \tl_set:Nn \l__tutodoc_other_cls_options_tl { #1 }
-  }
+  fontsize .code:n = {
+    \msg_error:nnn { tutodoc ~ (main) }
+      { main : scrartcl-illegal-option }
+      { fontsize }
+  },
+  DIV .code:n = {
+    \msg_error:nnn { tutodoc ~ (main) }
+      { main : scrartcl-illegal-option }
+      { DIV }
+  },
 }
 
-\ProcessKeyOptions[tutodoc / main / class / options]
+\PassOptionsToClass{ fontsize = 10pt }{ scrartcl }
 
-\exp_last_unbraced:NNV \LoadClass[ \l__tutodoc_other_cls_options_tl ]%
-          { article }%
-          [ 2022-06-01 ]
+\DeclareUnknownKeyHandler[ tutodoc / main / class / options ]{
+  \PassOptionsToClass{ \CurrentOption }{ scrartcl }
+}
+
+\ProcessKeyOptions[ tutodoc / main / class / options ]
+
+\LoadClass{ scrartcl }
 
 \ExplSyntaxOff
 
 
+% -- OPTIONS FOR PACKAGES IMPORTED BY OTHER ONES -- %
+
+% xcolor is loaded by minted and tcolorbox.
+\PassOptionsToPackage{svgnames}{xcolor}
+
+
 % -- IMPORTS -- %
 
-\RequirePackage[svgnames]%
-               {xcolor}%
-               [2023/11/15]
+\RequirePackage{geometry}
 
-\RequirePackage[
-  top            = 2.5cm,
-  bottom         = 2.5cm,
-  left           = 2.5cm,
-  right          = 2.5cm,
-  marginparwidth = 2cm,
-  marginparsep   = 2mm,
-  heightrounded
-]{geometry}%
- [2020-01-02]
+\RequirePackage{marginnote}
+\RequirePackage{fontawesome5}
+\RequirePackage{keytheorems}
 
-\RequirePackage[raggedright]%
-               {titlesec}%
-               [2023/10/27]
+\RequirePackage{clrstrip}
 
-\RequirePackage{tocbasic}
+% Before the tcolorbox library minted.
+\RequirePackage[highlightmode = immediate]
+               {minted}
 
-\RequirePackage{xcolor}%
-               [2022/06/12]
+\RequirePackage{tcolorbox}
+\tcbuselibrary{
+  minted,
+  breakable,
+  skins
+}
 
-\RequirePackage{hyperref}% To load after titlesec!
-               [2023-02-07]
+\RequirePackage{hyperref}
+
+
+%%%
+% We delegate the management of quoting to the ''csquotes'' package,
+% which takes care of the locale settings.
+%
+% warning::
+%     We must load ''inputenc'' before ''csquotes''
+%%%
+\RequirePackage[utf8]
+               {inputenc}
+
+\RequirePackage{csquotes}
 
 
 % == TOOLS == %
-
-% -- COLOR TRANSFORMATIONS -- %
-
-%%%
-% prototype::
-%     #1 : (black-rate)
-%          the amount of color relative to black.
-%     #2 : (color)
-%          one color following the ''xcolor'' format.
-%
-%     :return: a "darker" version of the color ''#1''.
-%%%
-\NewExpandableDocumentCommand{\tdocdarkcolor}{O{50}m}{#2!#1!black}
-
-
-%%%
-% prototype::
-%     #1 : (transparency)
-%          the transparency rate.
-%     #2 : (color)
-%          one color following the ''xcolor'' format.
-%
-%     :return: a "transparent" version of the color `#1`.
-%%%
-\NewExpandableDocumentCommand{\tdoclightcolor}{O{5}m}{#2!#1}
-
-
-% -- ICONS -- %
-
-%%%
-% prototype::
-%     #1 : (aws-icon)
-%          one material that expects to be an icon command from the
-%          ''fontawsome5'' \pack.
-%
-%     :return: the icon followed by a small insecable  space.
-%%%
-\NewDocumentCommand{\tdocicon}{m}{%
-  #1\kern.45em%
-}
-
 
 % -- LOCALE SETTINGS -- %
 
@@ -120,29 +121,48 @@
   { \msg_see_documentation_text:n { tutodoc } }
 
 
+% Management of English composition rules.
+\newcommand{\tutodoc@use@english}{\relax}
+
+% Babel requires colon management for our translations.
 \newcommand{\tutodoc@colon}{:}
 
 \AtBeginDocument{
-% We must take care of colons and spacing.
+% Babel is used.
   \@ifpackageloaded{babel}{
+% We must take care of colons and spacing.
     \iflanguage{french}{
       \renewcommand{\tutodoc@colon}{\babelshorthand{:}}
     }{}
   }{}
 
+% Polyglossia is used.
+  \@ifpackageloaded{polyglossia}{
+% If polyglossia is used, we must load english if necessary
+% (see the ''\tutodoc@use@english'' macro below).
+    \iflanguageloaded{english}{}{
+      \setotherlanguage{english}
+    }
+  }{}%
+
   \newcommand{\tdoclang}{\BCPdata{language}}
+
+% We must take care of English rules for English contents.
+  \renewcommand\tutodoc@use@english{%
+    \foreignlanguage{english}%
+  }
 
 % If the lang is not supported, we emit a warning and just turn
 % to the english language.
   \makeatletter
 
   \InputIfFileExists{../main/tutodoc-main-locale-\tdoclang.cfg.cls.sty}{}{
-      \input{../main/tutodoc-main-locale-en.cfg.cls.sty}
+    \input{../main/tutodoc-main-locale-en.cfg.cls.sty}
 
-      \msg_critical:nnx { tutodoc ~ (main) }
-        { main : unsupported-lang }
-        { \tdoclang }
-    }
+    \msg_critical:nnx { tutodoc ~ (main) }
+      { main : unsupported-lang }
+      { \tdoclang }
+  }
 
   \makeatother
 }
@@ -150,7 +170,17 @@
 \ExplSyntaxOff
 
 
-% -- GENERAL SETTINGS -- %
+% -- GEOMETRY SETTINGS -- %
+
+\geometry{
+  top            = 1.9cm,
+  bottom         = 1.9cm,
+  left           = 2.25cm,
+  right          = 2.25cm,
+  marginparwidth = 2cm,
+  marginparsep   = 2pt,
+  heightrounded
+}
 
 \setlength{\parindent}{0cm}
 
@@ -159,21 +189,11 @@
 
 \ifcsundef{chapter}%
           {}%
-          {\renewcommand{\thechapter}{\Alph{chapter}.}}
+          {\renewcommand{\thechapter}{\Alph{chapter}}}
 
-\renewcommand{\thesection}{\Roman{section}.}
-\renewcommand{\thesubsection}{\arabic{subsection}.}
-\renewcommand{\thesubsubsection}{\roman{subsubsection}.}
-
-\titleformat{\paragraph}[hang]%
-            {\normalfont\normalsize\bfseries}%
-            {\theparagraph}{1em}%
-            {}
-
-\titlespacing*{\paragraph}%
-              {0pt}%
-              {3.25ex plus 1ex minus .2ex}%
-              {0.5em}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\roman{subsubsection}}
 
 % Source
 %  * https://tex.stackexchange.com/a/558025/6880
@@ -197,9 +217,53 @@
 \DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
 
 
-% -- LINKS AND CO. -- %
+% -- COLOR TRANSFORMATIONS -- %
+
+%%%
+% prototype::
+%     #1 : (black-rate)
+%          the amount of color relative to black.
+%     #2 : (color)
+%          one color following the ''color'' format.
+%
+%     :return: a "darker" version of the color ''#1''.
+%%%
+\NewExpandableDocumentCommand{\tdocdarkcolor}{ O{50} m }{#2!#1!black}
+
+
+%%%
+% prototype::
+%     #1 : (transparency)
+%          the transparency rate.
+%     #2 : (color)
+%          one color following the ''color'' format.
+%
+%     :return: a "transparent" version of the color `#1`.
+%%%
+\NewExpandableDocumentCommand{\tdoclightcolor}{ O{5} m }{#2!#1}
+
+
+% -- ICONS -- %
+
+%%%
+% prototype::
+%     #1 : (aws-icon)
+%          one material that expects to be an icon command from the
+%          ''fontawsome5'' \pack.
+%
+%     :return: the icon followed by a small insecable space.
+%%%
+\NewDocumentCommand{\tdocicon}{ m }{%
+  #1\kern.45em%
+}
+
+
+% -- THEME -- %
 
 \input{../main/css/\tutodoc@theme.cls.sty}
+
+\pagecolor{tutodoc@page@color}
+\color{tutodoc@text@color}
 
 \hypersetup{
   colorlinks,

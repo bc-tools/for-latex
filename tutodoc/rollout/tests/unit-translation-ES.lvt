@@ -28,7 +28,7 @@
 \BEGINTEST{Macros - inEN}
 
 \sbox0{\tdocinEN{OK?}}
-\sbox2{\tdocquote{OK?} en inglés}
+\sbox2{\tdocquote{\tutodoc@use@english{OK?}} en inglés}
 
 \TYPE{SB-TESTED ''inEN''}
 \showbox0

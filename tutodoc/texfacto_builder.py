@@ -147,7 +147,7 @@ metadata = build_metadata(project_dir = THIS_DIR)
 # if DEBUG:
 #     print("# -- METADATA -- #")
 
-#     pprint(metadata)
+#     pprint(metadata[TAG_DEPS])
 #     exit()
 
 print(f"""
@@ -350,6 +350,24 @@ def ugly_hack(content):
 finalize(
     metadata  = metadata,
     ugly_hack = ugly_hack,
+)
+
+
+# ---------------- #
+# -- MINIFY CSS -- #
+# ---------------- #
+
+minicss(
+    metadata  = metadata,
+)
+
+
+# ------------------------- #
+# -- PRETTY LOCALE ORGA. -- #
+# ------------------------- #
+
+prettyloc(
+    metadata  = metadata,
 )
 
 

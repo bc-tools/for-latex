@@ -23,9 +23,12 @@ l. ...\showbox2
 ============================================================
 TEST 2: Macros - inEN
 ============================================================
+(../babel-english.tex)
+Package babel Info: Importing data for english
+(babel)             from babel-en.ini. Reported on input line ....
 SB-TESTED ''inEN''
 > \box...=
-\hbox(7.16+2.05998)x85.82799
+\hbox(7.16+2.05998)x85.148
 .\special{color push gray 0}
 .\TU/lmr/m/n/10 ^^ab
 .\penalty 10000
@@ -33,15 +36,12 @@ SB-TESTED ''inEN''
 .\penalty 10000
 .\glue -0.0002
 .\glue 0.0002
-.\TU/lmr/m/it/10 OK
-.\penalty 10000
-.\glue 1.79
-.\TU/lmr/m/it/10 ?
+.\TU/lmr/m/it/10 OK?
 .\kern 0.4
 .\penalty 10000
 .\glue 2.664 plus 0.4995 minus 0.333
 .\TU/lmr/m/n/10 ^^bb
-.\glue 3.33 plus 1.6783 minus 1.10118
+.\glue 4.44 plus 4.99498 minus 0.37
 .\TU/lmr/m/n/10 en
 .\glue 3.33 plus 1.665 minus 1.11
 .\TU/lmr/m/n/10 anglais
@@ -50,7 +50,7 @@ SB-TESTED ''inEN''
 l. ...\showbox0
 SB-WANTED ''inEN''
 > \box...=
-\hbox(7.16+2.05998)x85.82799
+\hbox(7.16+2.05998)x85.148
 .\special{color push gray 0}
 .\TU/lmr/m/n/10 ^^ab
 .\penalty 10000
@@ -58,15 +58,12 @@ SB-WANTED ''inEN''
 .\penalty 10000
 .\glue -0.0002
 .\glue 0.0002
-.\TU/lmr/m/it/10 OK
-.\penalty 10000
-.\glue 1.79
-.\TU/lmr/m/it/10 ?
+.\TU/lmr/m/it/10 OK?
 .\kern 0.4
 .\penalty 10000
 .\glue 2.664 plus 0.4995 minus 0.333
 .\TU/lmr/m/n/10 ^^bb
-.\glue 3.33 plus 1.6783 minus 1.10118
+.\glue 4.44 plus 4.99498 minus 0.37
 .\TU/lmr/m/n/10 en
 .\glue 3.33 plus 1.665 minus 1.11
 .\TU/lmr/m/n/10 anglais

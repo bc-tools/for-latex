@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{tutodoc}
+\documentclass{tutodoc}
 
 \input{../preamble.cfg.tex}
 
@@ -7,19 +7,6 @@
 
 \subsection{Dynamic links}
 
-The \tdocpack{hyperref} package is imported behind the scenes with the settings below.
-
-
-\begin{tdoclatex}[code]
-\newcommand{\tdoclinkcolor}{NavyBlue!85!white}
-
-\hypersetup{
-  colorlinks,
-  citecolor = \tdoclinkcolor,
-  filecolor = \tdoclinkcolor,
-  linkcolor = \tdoclinkcolor,
-  urlcolor  = \tdoclinkcolor
-}
-\end{tdoclatex}
+The \tdocpack{hyperref} package is imported, if it hasn't already been, and the settings chosen are just for the colors of links relating to citations, files, internal links, and finally \verb#url# (this color will depend on the theme chosen).
 
 \end{document}

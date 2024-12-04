@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{tutodoc}
+\documentclass{tutodoc}
 
 \input{../preamble.cfg.tex}
 
@@ -6,6 +6,7 @@
 \begin{document}
 
 \section{Indicate changes}
+\label{tutodoc-changes}
 
 To make it easier to monitor a project, it is essential to provide a history indicating the changes made when a new version is published.
 
@@ -37,6 +38,20 @@ You can either date something, or version it, in which case the version number c
 \end{tdocexa}
 
 
+\begin{tdocexa}[Caution with paragraph titles]
+	The following example shows that a date and/or version must be placed just after a paragraph title, and not before it.
+
+	\tdoclatexshow{examples/version-n-change/para-title.tex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[Adjust vertical positioning]
+	If required, you can modify the vertical offset used to place dates and versions in the margin, the default value being $(-8\,\mathit{pt})$.
+
+	\tdoclatexshow{examples/version-n-change/manual-setting.tex}
+\end{tdocexa}
+
+
 \begin{tdocimp}
     \begin{enumerate}[wide]
         \item The \tdocmacro{tdocdate} and \tdocmacro{tdocversion} macros require two compilations.
@@ -47,20 +62,11 @@ You can either date something, or version it, in which case the version number c
 
 
 \begin{tdoccaut}
-    Only the use of the digital format \tdocinlatex+YYYY-MM-DD+ is verified,
+    Only the use of the digital format \tdoclatexin+YYYY-MM-DD+ is verified,
     \footnote{
         Technically, checking the validity of a date using \LaTeX3 presents no difficulty.
     }
     and this is a choice! Why? Quite simply because dating and versioning explanations should be done semi-automatically to avoid any human bugs.
 \end{tdoccaut}
-
-
-\begin{tdocwarn}
-    Behind the scenes, most of the work is done by the \tdocmacro{marginnote} macro in the eponymous package.
-    The \tdocmacro{tdocdate} and \tdocmacro{tdocversion} macros therefore suffer from the same side effects as in the following example.
-    However, these problems can be solved using an optional argument \tdocinlatex{<vertical-displacement>}, as at the end of the following example. It's ugly, but functional.
-
-    \tdoclatexshow[nostripe, colstripe=red]{examples/version-n-change/side-effect.tex}
-\end{tdocwarn}
 
 \end{document}

@@ -1,11 +1,3 @@
-% == PACKAGES == %
-
-% We delegate the management of quoting to the ''csquotes'' package,
-% which takes care of the locale settings.
-\RequirePackage{csquotes}%
-               [2022-09-14]
-
-
 % == TOOLS == %
 
 % -- QUOTING -- %
@@ -17,7 +9,7 @@
 %
 % For example, ''\tdocquote{Something}'' prints **"Something"**.
 %%%
-\NewDocumentCommand{\tdocquote}{m}{%
+\NewDocumentCommand{\tdocquote}{ m }{%
   \enquote{\emph{#1}}%
 }
 
@@ -44,10 +36,10 @@
 %        gives
 %        **"Something" et "Another thing" en anglais**.
 %%%
-\NewDocumentCommand{\tdocinEN}{s m}{%
-  \IfBooleanTF{#1}{% No star used.
-    \tdocquote{#2}%
-  }{% Star used.
-    \tutodoc@trans@in@EN{\tdocquote{#2}}%
+\NewDocumentCommand{\tdocinEN}{ s m }{%
+  \IfBooleanTF{#1}{}{\tutodoc@trans@in@EN}%
+% We must activate the English typesetting rules.
+  {%
+    \tdocquote{\tutodoc@use@english{#2}}%
   }%
 }

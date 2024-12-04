@@ -226,7 +226,7 @@ for srcfile in (SRC_DIR / TAG_CHGE_LOG).glob("*/*/*.tex"):
 
     content = srcfile.read_text().strip()
     content = f"""
-\\documentclass[12pt, a4paper, theme = color]{{tutodoc}}
+\\documentclass{{tutodoc}}
 
 \\input{{../../preamble.cfg.tex}}
 
@@ -266,7 +266,11 @@ for onedir, sorted2analyze in sorted_useful_files.items():
 
 
 for srcfile in all_tex_files:
+    is_theme_tmp = srcfile.stem.startswith('tmpl-')
+
     fordoc, thedoc = extract_from_DEV_TEX(srcfile)
+
+    option = "[theme = color]" if is_theme_tmp else ""
 
     if fordoc:
         fordoc = f"\n{fordoc}\n"
@@ -275,7 +279,7 @@ for srcfile in all_tex_files:
             fordoc =  f"\n% -- FORDOC -- %\n{fordoc}"
 
     content = f"""
-\\documentclass[10pt, a4paper, theme = color]{{tutodoc}}
+\\documentclass{option}{{tutodoc}}
 
 \\input{{../preamble.cfg.tex}}
 {fordoc}

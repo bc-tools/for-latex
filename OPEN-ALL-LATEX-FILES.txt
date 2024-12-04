@@ -1,0 +1,1 @@
+find . -type f -depth 2 -name '*.tex' -exec open {} \;

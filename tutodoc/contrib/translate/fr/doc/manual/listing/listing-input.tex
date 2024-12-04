@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper, theme = color]{tutodoc}
+\documentclass{tutodoc}
 
 \input{../preamble.cfg.tex}
 
@@ -67,7 +67,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 \tdoclatexinput{examples/listing/xyz.tex}
     \end{tdoclatex}
 
-    Ceci produit la mise en forme suivante où l'option employée par défaut est \tdocinlatex#std#.
+    Ceci produit la mise en forme suivante où l'option employée par défaut est \tdoclatexin#std#.
 
     \tdoclatexinput{examples/listing/xyz.tex}
 \end{tdocexa}
@@ -91,7 +91,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 \label{tutodoc-latexshow}
 
 \begin{tdocexa}[Mise en situation]
-    Ce qui suit s'obtient via \tdocinlatex+\tdoclatexshow{examples-listing-xyz.tex}+.
+    \tdoclatexin+\tdoclatexshow{examples-listing-xyz.tex}+ produit ce qui suit.
 
     \medskip
 
@@ -107,7 +107,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
 
 \begin{tdocexa}[Changer le texte explicatif]
-    Via la clé \tdocinlatex|explain|, on peut utiliser un texte personnalisé. Ainsi, \tdocinlatex|\tdoclatexshow[explain = Voici le rendu réel.]{examples-listing-xyz.tex}| produira ce qui suit.
+    Via la clé \tdoclatexin|explain|, on peut utiliser un texte personnalisé. Ainsi, \tdoclatexin|\tdoclatexshow[explain = Voici le rendu réel.]{examples-listing-xyz.tex}| produira ce qui suit.
 
     \medskip
 

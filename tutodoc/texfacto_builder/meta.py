@@ -53,7 +53,25 @@ def build_metadata(project_dir):
 
     metadata[TAG_API_LANGS] = api_langs(project_dir)
 
+    metadata[TAG_DEPS] = depends(project_dir)
+
     return metadata
+
+
+# ------------- #
+# -- DEPENDS -- #
+# ------------- #
+
+def depends(project_dir):
+    deps_yaml = project_dir / "src" / TAG_DEPS_FILE
+
+    with deps_yaml.open(
+        encoding = 'utf8',
+        mode     = 'r',
+    ) as f:
+        deps = safe_load(f)
+
+    return deps
 
 
 # --------------- #

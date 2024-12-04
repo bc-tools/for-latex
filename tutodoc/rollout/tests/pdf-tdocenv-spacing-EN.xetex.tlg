@@ -1,7 +1,7 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 Completed box being shipped out [1]
-\vbox(686.8619+0.0)x470.89313
+\vbox(765.79007+0.0)x461.21925
 .\hbox(0.0+0.0)x0.0
 ..\special{pdf:docinfo<</Title()/Subject()/Creator(LaTeX with hyperref)/Author()/Keywords()>>}
 .\hbox(0.0+0.0)x0.0
@@ -17,39 +17,41 @@ Completed box being shipped out [1]
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\vbox(0.0+0.0)x0.0, glue set 39.14185fil
+.\vbox(0.0+0.0)x0.0, glue set 52.21367fil
 ..\kern 0.0
-..\kern -38.1381
+..\kern -51.20993
 ..\kern -1.00374
-..\hbox(0.0+0.0)x0.0, glue set 2.14185fil
+..\hbox(0.0+0.0)x0.0, glue set 9.25504fil
 ...\kern 0.0
-...\kern -1.1381
+...\kern -8.2513
 ...\kern -1.00374
 ...\special{pdf:dest (page.1) [@thispage /XYZ @xpos @ypos null]}
 ...\penalty 10000
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 ..\glue 0.0 plus 1.0fil minus 1.0fil
 .\glue(\lineskip) 0.0
-.\vbox(686.8619+0.0)x470.89313
-..\glue -38.1381
-..\vbox(725.0+0.0)x472.03123, shifted -1.1381
-...\vbox(12.0+0.0)x472.03123, glue set 12.0fil
+.\vbox(765.79007+0.0)x461.21925
+..\glue -51.20993
+..\vbox(817.0+0.0)x469.47055, shifted -8.2513
+...\vbox(15.0+0.0)x469.47055, glue set 15.0fil
 ....\glue 0.0 plus 1.0fil
-....\hbox(0.0+0.0)x472.03123
+....\hbox(0.0+0.0)x469.47055
 .....\special{color push gray 0}
-.....\hbox(0.0+0.0)x472.03123
+.....\hbox(0.0+0.0)x469.47055
 .....\special{color pop}
-...\glue 25.0
+...\glue 18.0
 ...\glue(\lineskip) 0.0
-...\vbox(658.0+0.0)x472.03123, glue set 647.93079fil
+...\vbox(742.0+0.0)x469.47055, glue set 731.92183fil
 ....\write-{}
 ....\special{color push gray 0}
 ....\special{pdf:majorversion 1}
 ....\special{pdf:minorversion 5}
+....\special{background gray 1}
+....\special{color push gray 0}
 ....\special{pdf:docview<</OpenAction[@page1/Fit]/PageMode/UseOutlines>>}
 ....\special{pdf:dest (Doc-Start) [@thispage /XYZ @xpos @ypos null]}
 ....\glue(\topskip) 3.06
-....\hbox(6.94+2.28998)x472.03123, glue set 349.11482fil
+....\hbox(6.94+2.28998)x469.47055, glue set 346.55414fil
 .....\hbox(0.0+0.0)x0.0
 .....\TU/lmtt/m/n/10 \begin{env}
 .....\glue 5.25
@@ -69,16 +71,23 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ....\glue 0.0
 ....\glue 0.0 plus 0.0001fil
-...\glue(\baselineskip) 23.34
-...\hbox(6.66+0.0)x472.03123
+...\glue(\baselineskip) 35.34
+...\hbox(6.66+0.0)x469.47055
 ....\special{color push gray 0}
-....\hbox(6.66+0.0)x472.03123, glue set 233.51563fil
-.....\glue 0.0 plus 1.0fil
-.....\TU/lmr/m/n/10 1
-.....\glue 0.0 plus 1.0fil
+....\hbox(6.66+0.0)x469.47055
+.....\hbox(6.66+0.0)x469.47055
+......\vbox(6.66+0.0)x469.47055
+.......\hbox(6.66+0.0)x469.47055, glue set 232.23528fil
+........\glue 0.0 plus 1.0fil
+........\special{color push gray 0}
+........\TU/lmr/m/n/10 1
+........\special{color pop}
+........\glue 0.0 plus 1.0fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
 ....\special{color pop}
 .\kern 0.0
 .\kern 0.0
+runsystem(latexminted cleantemp  --timestamp 20160520090000Z 4EE09C476C914C332615EB3CF7C4F2D0)...executed.
 (pdf-tdocenv-spacing-EN.aux)
 Package rerunfilecheck Info: File `pdf-tdocenv-spacing-EN.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.

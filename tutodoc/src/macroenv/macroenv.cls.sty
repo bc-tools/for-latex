@@ -9,7 +9,7 @@
 %
 %     :action: ''\tdoccls{myclass}'' prints verb::''myclass''.
 %%%
-\NewDocumentCommand{\tdoccls}{m}{%
+\NewDocumentCommand{\tdoccls}{ m }{%
   \texttt{#1}%
 }
 
@@ -21,7 +21,7 @@
 %
 %     :action:''\tdocpack{mypack}'' prints verb::''mypack''.
 %%%
-\NewDocumentCommand{\tdocpack}{m}{%
+\NewDocumentCommand{\tdocpack}{ m }{%
   \texttt{#1}%
 }
 
@@ -33,7 +33,7 @@
 %
 %     :action: ''\tdocmacro{mymacro}'' prints verb::''\mymacro''.
 %%%
-\NewDocumentCommand{\tdocmacro}{m}{%
+\NewDocumentCommand{\tdocmacro}{ m }{%
   \texttt{\textbackslash{}#1}%
 }
 
@@ -63,7 +63,7 @@
 %%%
 %
 % Cleaner code from https://tex.stackexchange.com/a/703379/6880 .
-\NewDocumentCommand{\tdocenv}{s O{} m}{%
+\NewDocumentCommand{\tdocenv}{ s O{} m }{%
   \IfBooleanTF{#1}{%
     \texttt{#3}%
   }{%
@@ -100,7 +100,7 @@
 %
 %     :action: ''\tdocprewhy{pre.fix}'' prints verb::''pre''.fix.
 %%%
-\NewDocumentCommand{\tdocprewhy}{m}{%
+\NewDocumentCommand{\tdocprewhy}{ m }{%
 % Do we have 2 parts?
   \seq_set_split:Nnn \l__tutodoc_prewhy_parts_seq { . } { #1 }
 
@@ -142,6 +142,6 @@
 %              which prints:
 %              verb::''pre'' comes from verb::''pre''-fix.
 %%%
-\NewDocumentCommand{\tdocpre}{m}{%
+\NewDocumentCommand{\tdocpre}{ m }{%
   \texttt{#1}%
 }

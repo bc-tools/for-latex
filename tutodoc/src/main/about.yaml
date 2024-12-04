@@ -1,5 +1,6 @@
 toc:
   - main.cls
+  - depends.tex
   - formatting-geo.tex
   - formatting-title-n-toc.tex
   - formatting-link.tex

@@ -1,12 +1,3 @@
-% == PACKAGES == %
-
-\RequirePackage{fontawesome5}%
-               [2022-05-02]
-
-\RequirePackage{marginnote}%
-               [2018/08/09]
-
-
 % == TOOLS == %
 
 % -- CHANGES - WHEN? --%
@@ -43,7 +34,7 @@
 %
 %     :see: \__tutodoc_translate_date:n
 %%%
-\NewDocumentCommand{\tutodoc@new@change@margin}{m m m m m}{
+\NewDocumentCommand{\tutodoc@new@change@margin}{ m m m m m }{
   \marginnote{
     \color{#1}
     \scriptsize
@@ -79,10 +70,14 @@
 
 %%%
 % prototype::
+%     #1 : (EN-num-date)
+%          a content that should have the numerical English date
+%          format ''YYYY-MM-DD''.
+%
 %     :action: this function checks if we have something like
-%              ''YYYY-MM-DD'' and then it calls the function
-%              ''\__tutodoc_translate_date_process:w'' to finish
-%              the job.
+%              ''YYYY-MM-DD'', and then it calls the function
+%              ''\__tutodoc_translate_date_process:w'' to
+%              activate the transformation to the locale format.
 %
 %     :see: \__tutodoc_translate_date_process:w
 %%%
@@ -98,6 +93,13 @@
 
 %%%
 % prototype::
+%     #1 : (year-extracted)
+%          a 1 to 4 digits integer
+%     #2 : (month-extracted)
+%          a 2 digits integer
+%     #3 : (day-extracted)
+%          a 2 digits integer
+%
 %     :action: this function extracts year, month and day in something
 %              like ''YYYY-MM-DD'' and then it calls ''\tutodoc@trans@date''
 %              to use the format expected for a "localised" date.
@@ -113,11 +115,11 @@
 
 \input{../version-n-change/css/\tutodoc@theme.cls.sty}
 
-\newlength{\tutodoc@version@vertical@sep@len}
-\setlength{\tutodoc@version@vertical@sep@len}{-4.25pt}
+\newlength{\tutodoc@version@date@vertical@sep@len}
+\setlength{\tutodoc@version@date@vertical@sep@len}{-4.25pt}
 
-\newlength{\tutodoc@version@vertical@offset@len}
-\setlength{\tutodoc@version@vertical@offset@len}{-.345cm}
+\newlength{\tutodoc@version@date@vertical@offset@len}
+\setlength{\tutodoc@version@date@vertical@offset@len}{-8pt}
 
 
 %%%
@@ -140,23 +142,22 @@
 %     to parse the date such as to display it following the standard convention
 %     of the language chosen when loading the package.
 %%%
-\NewDocumentCommand{\tdocversion}{ O{\tutodoc@changes@when@color} m O{} D<>{\tutodoc@version@vertical@offset@len} }{
+\NewDocumentCommand{\tdocversion}{ %
+  O{\tutodoc@changes@when@color} %
+  m %
+  O{} %
+  D<>{\tutodoc@version@date@vertical@offset@len}%
+}{
   \tutodoc@new@change@margin%
     {#1}                                % Color
     {#2}                                % Version
     {#3}                                % Date
-    {\tutodoc@version@vertical@sep@len} % Last negative vertical spacing
+    {\tutodoc@version@date@vertical@sep@len} % Last negative vertical spacing
     {#4}                                % Vertical offset
 }
 
 
 % :: DATE :: %
-
-\newlength{\tutodoc@date@vertical@sep@len}
-\setlength{\tutodoc@date@vertical@sep@len}{-5.35pt}
-
-\newlength{\tutodoc@date@vertical@offset@len}
-\setlength{\tutodoc@date@vertical@offset@len}{-.345cm}
 
 %%%
 % prototype::
@@ -170,12 +171,16 @@
 %     :action: this macro is similar to ''\tdocversion'' except that it just
 %              prints a date.
 %%%
-\NewDocumentCommand{\tdocdate}{ O{\tutodoc@changes@when@color} m D<>{\tutodoc@date@vertical@offset@len} }{
+\NewDocumentCommand{\tdocdate}{
+  O{\tutodoc@changes@when@color}
+  m
+  D<>{\tutodoc@version@date@vertical@offset@len}
+}{
   \tutodoc@new@change@margin%
     {#1}                             % Color
     {}                               % Version
     {#2}                             % Date
-    {\tutodoc@date@vertical@sep@len} % Last negative spacing
+    {\tutodoc@version@date@vertical@sep@len} % Last negative spacing
     {#3}                             % Vertical offset
 }
 
@@ -194,14 +199,25 @@
 
 % :: GENERIC TOPIC :: %
 
+\tl_new:N \l_tutodoc_topic_what_color_tl
 \tl_new:N \l_tutodoc_topic_when_color_tl
 \tl_new:N \l_tutodoc_topic_date_tl
 \tl_new:N \l_tutodoc_topic_version_tl
 
+
+%%%
+% prototype::
+%     col       : the color of the full content of a topic \env
+%     col-chges : the color of the material for changes for a topic \env
+%     date      : the date of the changes a topic \env
+%     version   : the number version of the changes a topic \env
+%%%
 \keys_define:nn { tutodoc / version-n-change / topic / options } {
 % Colors.
-  col .tl_set:N  = \l_tutodoc_topic_when_color_tl,
-  col .initial:n = \tutodoc@changes@when@color,
+  col       .tl_set:N  = \l_tutodoc_topic_what_color_tl,
+  col       .initial:n = tutodoc@text@color,
+  col-chges .tl_set:N  = \l_tutodoc_topic_when_color_tl,
+  col-chges .initial:n = \tutodoc@changes@when@color,
 % Date.
   date .tl_set:N  = \l_tutodoc_topic_date_tl,
   date .initial:n = \c_empty_tl,
@@ -210,12 +226,7 @@
   version .initial:n = \c_empty_tl,
 }
 
-
 \tl_new:N \l__tutodoc_topic_all_user_options_tl
-
-
-\newlength{\tutodoc@topic@vertical@offset@len}
-\setlength{\tutodoc@topic@vertical@offset@len}{-.745cm}
 
 
 %%%
@@ -226,7 +237,7 @@
 %          one material that expects to be an icon command from the
 %          ''fontawsome5'' \pack
 %     #3 : (key-val options)
-%          see above
+%          :see: \keys_define:nn { tutodoc / version-n-change / topic / options }
 %
 %     :action: this environment prints some \infos about specific changes
 %              achieved in a new version (no special formatting is applied).
@@ -245,41 +256,32 @@
   \tl_set_eq:NN    \l__tutodoc_topic_all_user_options_tl \l_tutodoc_topic_version_tl
   \tl_put_right:Nn \l__tutodoc_topic_all_user_options_tl { \l_tutodoc_topic_date_tl }
 
-  \paragraph{%
+  \group_begin:
+  \color{\tl_use:N \l_tutodoc_topic_what_color_tl}
+
+  \paragraph{
+    \color{\tl_use:N \l_tutodoc_topic_what_color_tl}
     \IfBlankF{#2}{\tdocicon{#2}}
     \textsc{#1.}
     \exp_args:Ne \IfBlankF{\l__tutodoc_topic_all_user_options_tl}{
 % A date and/or a version.
-      \exp_args:NNee \tutodoc@new@change@margin%
+      \exp_args:NNee \tutodoc@new@change@margin
         {\l_tutodoc_topic_when_color_tl}
         {\l_tutodoc_topic_version_tl}
         {\l_tutodoc_topic_date_tl}
-        {\tutodoc@version@vertical@sep@len}
-        {\tutodoc@topic@vertical@offset@len}
+        {\tutodoc@version@date@vertical@sep@len}
+        {\tutodoc@version@date@vertical@offset@len}
     }
   }
 
   \begin{itemize}
 }{
   \end{itemize}
+  \group_end:
 }
 
 
 % :: CLASSICAL TOPICS :: %
-
-%%%
-% We use a ''prop'' variable to factorize the code just after.
-%%%
-\prop_new:N              \g__tutodoc_topic_change_prop
-\prop_set_from_keyval:Nn \g__tutodoc_topic_change_prop {
-  break  = \faCodeBranch,
-  fix    = \faWrench,
-  new    = \faGem,
-  prob   = \faFire*,
-  tech   = \faFlask,
-  update = \reflectbox{\faHistory},
-}
-
 
 %%%
 % prototype::
@@ -287,7 +289,7 @@
 %
 %     :action: ''key/value'' iteration over ''\g__tutodoc_topic_change_prop''
 %              to build topic-like \envs using the \env ''tdoctopic''
-%              (the title used is translated into the good language).
+%              (the title respects the locale settings).
 %%%
 \prop_map_inline:Nn \g__tutodoc_topic_change_prop {
   \NewDocumentEnvironment{ tdoc#1 } { O{} } {
@@ -300,13 +302,18 @@
 
 %%%
 % prototype::
-%     #1 : (short-desc)
+%     #1 : (color-content)
+%          the color of the full content
+%     #2 : (short-desc)
 %          a short text expected to indicate the very first version of a project.
 %
 %     :action: the short text printed will be preceded by a pretty anchor icon.
 %%%
-\NewDocumentCommand{ \tdocstartproj }{ m } {
-  \tdocicon{\faAnchor}#1
+\NewDocumentCommand{ \tdocstartproj }{ O{tutodoc@text@color} m } {
+  \group_begin:
+  \color{#1}
+  \tdocicon{\tutodoc@changes@start@project@icon}#2
+  \group_end:
 }
 
 \ExplSyntaxOff

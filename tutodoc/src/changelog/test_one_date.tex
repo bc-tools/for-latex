@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{../main/main}
+\documentclass{../main/main}
 
 
 % -------------------------- %
@@ -6,8 +6,8 @@
 % -------------------------- %
 
 \newcommand\docyear {2024}
-\newcommand\docmonth{10}
-\newcommand\docday  {30}
+\newcommand\docmonth{12}
+\newcommand\docday  {04}
 
 % Preparing next release
 %\renewcommand\docday{0}
@@ -46,7 +46,7 @@
     \rule\linewidth{1pt}
 
     \vspace{-1em}
-    \section*{Test: \when}
+    \section*{\color{red!75!black} Test: \when}
     \ExplSyntaxOff
     \vspace{-.75em}
     \rule\linewidth{1pt}
@@ -57,19 +57,14 @@
 
 \bigskip
 
-\bgroup
-
-\color{DarkBlue}
-
-\begin{tdoctopic}{Pour info.}<\faCompass[regular]>[
-    col     = ForestGreen,
-    date    = 5678-90-12,
-    version = 1.2.3-rc.4
+\begin{tdoctodo}[
+    col       = ForestGreen,
+    col-chges = Goldenrod,
+    date      = 5678-90-12,
+    version   = 1.2.3-rc.4
 ]
-    \item Voilà comment sera daté le tout premier type de changements.
-\end{tdoctopic}
-
-\egroup
+    \item Voilà comment sera daté le tout premier type de changements, mais avec des couleurs plus sobres.
+\end{tdoctodo}
 
 
 \input{\filepath}

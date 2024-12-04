@@ -90,7 +90,7 @@ def multireplace(
 # -- TOOLS -- #
 # ----------- #
 
-# We have to work with the folder conaining the hooks real file.
+# We have to work with the folder containing the hooks real file.
 # TeXfacto will only send us the folder conaining the fole associated to the hooks.
 def theme_gallery(
     curdir,
@@ -113,7 +113,7 @@ def theme_gallery(
     if not fordebug:
         tmpl_showcase_code = tmpl_showcase_code.replace(
             r"""
-\documentclass[10pt, a4paper, theme = color]{../main/main}
+\documentclass[theme = color]{../main/main}
 
 \input{../preamble.cfg.tex}
 
@@ -122,13 +122,13 @@ def theme_gallery(
 \usepackage{../version-n-change/version-n-change.cls}
             """.strip(),
             r"""
-\documentclass[10pt, a4paper, theme = color]{tutotoc}
+\documentclass[theme = color]{tutotoc}
 
 \input{../preamble.cfg.tex}
             """.strip()
         )
 
-    # print(tmpl_showcase_code);exit()
+    # input(tmpl_showcase_code.split('\n')[0])
 
 # Template for the annex front page.
     tmpl_annex_code = curdir / "tmpl-theme-annex-page.tex"
@@ -207,7 +207,7 @@ if __name__ == "__main__":
     tmpl_debug_file = r"""
 <<THE-FILE-CONTENTS>>
 
-\documentclass[10pt, a4paper]{../main/main}
+\documentclass[theme = color]{../main/main}
 
 \input{../preamble.cfg.tex}
 

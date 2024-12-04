@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{tutodoc}
+\documentclass{tutodoc}
 
 \input{../preamble.cfg.tex}
 
@@ -7,21 +7,13 @@
 
 \section{General formatting imposed}
 
-\subsection{Page geometry}
+\subsection{Font size and page geometry}
 
-The \tdocpack{geometry} package is loaded with the following settings.
+The \tdoccls{scrartcl} class is loaded via the \tdoclatexin{fontsize = 10pt} option, and the \tdocpack{geometry} package manages the page dimensions.
 
 
-\begin{tdoclatex}[code]
-\RequirePackage[
-  top            = 2.5cm,
-  bottom         = 2.5cm,
-  left           = 2.5cm,
-  right          = 2.5cm,
-  marginparwidth = 2cm,
-  marginparsep   = 2mm,
-  heightrounded
-]{geometry}
-\end{tdoclatex}
+\begin{tdocwarn}
+	The macros for dating and versioning presented in the \ref{tutodoc-changes} section require fixed settings for page geometry and font size.
+\end{tdocwarn}
 
 \end{document}

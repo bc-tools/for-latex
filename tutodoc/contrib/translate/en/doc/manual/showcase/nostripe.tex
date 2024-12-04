@@ -1,0 +1,43 @@
+\documentclass{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\subsection{Without a coloured strip}
+
+The rendering of \tdocenv{tdocshowcase} with a coloured strip may not be suitable, or sometimes may not be acceptable despite the work done by \tdocpack{clrstrip}.
+It is possible not to use a coloured strip, as we will see straight away.
+
+
+\begin{tdocexa}
+    The use of \tdocenv[{[nostripe]}]{tdocshowcase} indicate to not use \tdocpack{clrstrip}.
+    Here is an example.
+
+    \tdoclatexinput[code]{examples/showcase/nostripe.tex}
+
+    This will produce the following.
+
+    \medskip
+
+    \input{examples/showcase/nostripe.tex}
+\end{tdocexa}
+
+
+% ------------------ %
+
+
+\begin{tdocexa}[Change the colors and/or the texts]
+    \leavevmode
+
+    \tdoclatexinput[code]{examples/showcase/nostripe-customized.tex}
+
+    This will produce the following horror.
+
+    \medskip
+
+    \input{examples/showcase/nostripe-customized.tex}
+\end{tdocexa}
+
+\end{document}

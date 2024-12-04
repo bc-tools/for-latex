@@ -1,0 +1,71 @@
+\documentclass{tutodoc}
+
+\input{../../preamble.cfg.tex}
+
+
+\begin{document}
+
+\small
+
+\begin{tdocbreak}
+	\item Format: the \tdoccls{scrartcl} class replaces the venerable \tdoccls{article}. This implies better placement of the margin notes with the options retained for loading \tdoccls{scrartcl}.
+
+	\item \LaTeX\ code: the macro \tdocmacro{tdocinlatex} has been renamed \tdocmacro{tdoclatexin}.
+
+	\item Color key names will be hyphenated where necessary: this implies the following changes.
+	%
+	\begin{enumerate}
+		\item Admonitions: the \tdoclatexin{colchges} option of the environments has been renamed \tdoclatexin{col-chges}.
+
+		\item Showcases: for the environment \tdocenv*{tdocshowcase} and the macro \tdocmacro{tdocshowcaseinput}, the \tdoclatexin{colstripe} and  \tdoclatexin{coltext} options have been renamed \tdoclatexin{col-stripe} and \tdoclatexin{col-text}\,.
+	\end{enumerate}
+\end{tdocbreak}
+
+
+\begin{tdocfix}
+	\item Admonitions: for the \tdocmacro{newkeytheorem} used with the \tdoclatexin{draft} theme, \tdoclatexin{postheadhook = \leavevmode} has been added (this is necessary because the content can naturally be of the list type).
+\end{tdocfix}
+
+
+\begin{tdocnew}
+	\item Documentation: addition of a section listing dependencies.
+
+	\item Class options.
+	%
+	\begin{enumerate}
+		\item Options not specific to \thisproj\ are passed on to the class in charge of general formatting.
+
+		\item The \tdoccls{scrartcl} options \tdoclatexin{fontsize} and \tdoclatexin{DIV} can't be used because their values are fixed by \thisproj.
+	\end{enumerate}
+
+	\item The macro \tdocmacro{tdocinEN} respects the English linguistic rules.
+
+	\item Admonitions.
+	%
+	\begin{enumerate}
+		\item A new environment \tdocenv{tdoctodo} has been added.
+
+		\item Each environment has a new option \tdoclatexin{col} for the color of the content indicating changes.
+	\end{enumerate}
+\end{tdocnew}
+
+
+\begin{tdocupdate}
+	\item \tdoclatexin{draft} theme and changes: the environments for the kind of changes stop to use icons.
+
+	\item Documentation: the theme gallery uses a better fake example.
+\end{tdocupdate}
+
+
+
+\begin{tdoctech}
+	\item Simplified organisation of configuration files in the final project.
+	%
+	\begin{enumerate}
+		\item \texttt{CSS}-like: use of one file per theme with a name like \texttt{tutodoc-bw.css.cls}\,.
+
+		\item Locale: use of names like \texttt{tutodoc-en.loc.cls}\,.
+	\end{enumerate}
+\end{tdoctech}
+
+\end{document}

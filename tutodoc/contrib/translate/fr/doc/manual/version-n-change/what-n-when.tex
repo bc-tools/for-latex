@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper, theme = color]{tutodoc}
+\documentclass{tutodoc}
 
 \input{../preamble.cfg.tex}
 
@@ -7,11 +7,7 @@
 
 \subsection{Le quoi et le quand}
 
-Les clés optionnelles \tdocinlatex{col}\,, \tdocinlatex{date} et \tdocinlatex{version} permettent de dater et versionner un changement d'un type particulier.%
-\footnote{
-    L'avertissement à la fin de la section \ref{tutodoc-changes-when} donne la technique utilisée en coulisse, tout en montrant la nécessité de proposer des clés spécialisées.
-}
-Voici des exemples d'utilisation.
+Les clés optionnelles \tdoclatexin{col-chges}\,, \tdoclatexin{date} et \tdoclatexin{version} permettent de dater et versionner directement un changement d'un type particulier. Voici des exemples d'utilisation.
 
 \tdoclatexshow{examples/version-n-change/what-n-when.tex}
 

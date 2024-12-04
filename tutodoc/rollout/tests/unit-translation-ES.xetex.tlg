@@ -23,9 +23,12 @@ l. ...\showbox2
 ============================================================
 TEST 2: Macros - inEN
 ============================================================
+(../babel-english.tex)
+Package babel Info: Importing data for english
+(babel)             from babel-en.ini. Reported on input line ....
 SB-TESTED ''inEN''
 > \box...=
-\hbox(7.16+2.05998)x73.15
+\hbox(7.16+2.05998)x74.26
 .\special{color push gray 0}
 .\TU/lmr/m/n/10 ^^ab
 .\penalty 10000
@@ -34,7 +37,7 @@ SB-TESTED ''inEN''
 .\TU/lmr/m/it/10 OK?
 .\kern 0.4
 .\TU/lmr/m/n/10 ^^bb
-.\glue 3.33 plus 1.6783 minus 1.10118
+.\glue 4.44 plus 4.99498 minus 0.37
 .\TU/lmr/m/n/10 en
 .\glue 3.33 plus 1.665 minus 1.11
 .\TU/lmr/m/n/10 ingl^^e9s
@@ -43,7 +46,7 @@ SB-TESTED ''inEN''
 l. ...\showbox0
 SB-WANTED ''inEN''
 > \box...=
-\hbox(7.16+2.05998)x73.15
+\hbox(7.16+2.05998)x74.26
 .\special{color push gray 0}
 .\TU/lmr/m/n/10 ^^ab
 .\penalty 10000
@@ -52,7 +55,7 @@ SB-WANTED ''inEN''
 .\TU/lmr/m/it/10 OK?
 .\kern 0.4
 .\TU/lmr/m/n/10 ^^bb
-.\glue 3.33 plus 1.6783 minus 1.10118
+.\glue 4.44 plus 4.99498 minus 0.37
 .\TU/lmr/m/n/10 en
 .\glue 3.33 plus 1.665 minus 1.11
 .\TU/lmr/m/n/10 ingl^^e9s

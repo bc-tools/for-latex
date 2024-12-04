@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper, theme = color]{tutodoc}
+\documentclass{tutodoc}
 
 \input{../preamble.cfg.tex}
 
@@ -6,6 +6,7 @@
 \begin{document}
 
 \section{Indiquer les changements}
+\label{tutodoc-changes}
 
 Afin de faciliter le suivi d'un projet, il est indispensable de fournir un historique indiquant les changements effectués lors de la publication d'une nouvelle version.
 
@@ -31,6 +32,20 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 \end{tdocexa}
 
 
+\begin{tdocexa}[Attention avec les titres de paragraphe]
+	L'exemple suivant montre qu'il faut placer une dates et/ou une version juste après un titre de paragraphe, et non avant.
+
+	\tdoclatexshow{examples/version-n-change/para-title.tex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[Régler le positionnement vertical]
+	Si besoin, on peut modifier le décalage vertical utilisé pour bien placer les dates et les versions dans la marge, la valeur par défaut étant $(-8\,\mathit{pt})$.
+
+	\tdoclatexshow{examples/version-n-change/manual-setting.tex}
+\end{tdocexa}
+
+
 \begin{tdocimp}
     \begin{enumerate}[wide]
         \item Les macros \tdocmacro{tdocdate} et \tdocmacro{tdocversion} nécessitent deux compilations.
@@ -41,7 +56,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 
 
 \begin{tdoccaut}
-    Seul l'emploi du format numérique \tdocinlatex+YYYY-MM-DD+ est vérifié,
+    Seul l'emploi du format numérique \tdoclatexin+YYYY-MM-DD+ est vérifié,
     \footnote{
         Techniquement, vérifier la validité d'une date, via \LaTeX3, ne présente pas de difficulté.
     }
@@ -50,14 +65,5 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 %        L'auteur de \thispack{} est entrain de mettre en place un ensemble d'outils permettant une telle semi-automatisation.
 %    }.
 \end{tdoccaut}
-
-
-\begin{tdocwarn}
-    En coulisse, le gros du travail est fait par la macro \tdocmacro{\marginnote} du package éponyme.
-    Les macros \tdocmacro{tdocdate} et \tdocmacro{tdocversion} souffrent donc des même effets de bord comme dans l'exemple suivant.
-    On peut tout de même régler ces problèmes via un argument optionnel \tdocinlatex{<déplacement-vertical>} comme à la fin de l'exemple ci-après. C'est moche, mais fonctionnel.
-
-    \tdoclatexshow[nostripe, colstripe=red]{examples/version-n-change/side-effect.tex}
-\end{tdocwarn}
 
 \end{document}

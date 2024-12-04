@@ -1,13 +1,28 @@
-\documentclass[10pt, a4paper, theme = draft]{../main/main}
+\documentclass[theme = draft]{../main/main}
 
 \input{../preamble.cfg.tex}
 
 % TESTING LOCAL IMPLEMENTATION %
 
+\usepackage{../admonitions/admonitions.cls}
 \usepackage{version-n-change.cls}
 
 
 \begin{document}
+
+\section{Test}
+
+\begin{tdocrem}
+	Something...
+\end{tdocrem}
+
+
+\begin{tdocnote}
+\begin{tdocnew}	
+	\item One
+	\item Two
+\end{tdocnew}
+\end{tdocnote}
 
 \tdocversion{1.2.3-alpha.10}[1010-10-10]
 \tdocstartproj{TODO}

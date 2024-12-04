@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{../main/main}
+\documentclass{../main/main}
 
 \input{../preamble.cfg.tex}
 
@@ -10,21 +10,21 @@
 
 \section{Choisir son thème}
 
-Pour modifier la mise en forme générale, la classe \thisproj\ propose l'option \tdocinlatex{theme = <choix>} où \tdocinlatex{<choix>} peut prendre les valeurs suivantes.
+Pour modifier la mise en forme générale, la classe \thisproj\ propose l'option \tdoclatexin{theme = <choix>} où \tdoclatexin{<choix>} peut prendre les valeurs suivantes.
 
-\begin{itemize}
-    \item \tdocinlatex|bw| :
-    ce thème est de type noir-et-blanc avec certaines nuances de gris.
+\begin{tasks}[style=itemize]
+    \task \tdoclatexin{bw}:
+          un thème de type noir-et-blanc avec certaines nuances de gris.
 
-    \item \tdocinlatex|color| :
-    ce thème est coloré, \emph{c'est la valeur par défaut}.
+    \task \tdoclatexin{color}:
+          un thème coloré : c'est \emph{la valeur par défaut}.
 
-    \item \tdocinlatex|dark| :
-    ce thème est sombre, idéal pour se reposer les yeux.
+    \task \tdoclatexin{dark}:
+          un thème sombre idéal pour se reposer les yeux.
 
-    \item \tdocinlatex|draft| :
-    ce thème est juste pour une impression papier à la recherche d'erreurs de contenu pas forcément simples à débusquer devant son écran.
-\end{itemize}
+    \task \tdoclatexin{draft}:
+          un thème pour une impression papier à la recherche d'erreurs de contenu pas forcément simples à débusquer devant un écran.
+\end{tasks}
 
 
 \begin{tdocnote}

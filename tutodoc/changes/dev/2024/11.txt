@@ -1,0 +1,140 @@
+// ---------- //
+
+
+==
+26  (1.7.0.beta-3)
+==
+
+-------
+:break:
+-------
+
+[[:api:]]
+Color key names will be hyphenated where necessary: this implies the following changes.
+
+    1) Admonitions: the ''colchges'' option of the \envs has been renamed ''col-chges''.
+
+    1) Showcases: the ''colstripe'' and  ''coltext'' options of the \env ''tdocshowcase'' and the macro ''\tdocshowcaseinput'' have been renamed ''col-stripe'' and  ''col-text''.
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+''\tdocinEN'' macro: inside the quotes, the English linguistic rules are applied.
+
+
+// ---------- //
+
+
+==
+25  (1.7.0.beta-2)
+==
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: the English translation has been updated.
+
+
+[[:api:]]
+\Cls options: the options ''fontsize'' and ''DIV'' can't be used because their values are fixed by \thisproj.
+
+
+// ---------- //
+
+
+==
+24  (1.7.0.beta-1)
+==
+
+-------
+:break:
+-------
+
+[[:format:]]
+The ‘’scrartcl‘’ class replaces the venerable ‘’article‘’. This means better placement of the margins with the options retained for loading ‘’scrartcl‘’.
+
+
+[[:api:]]
+Admonitions: the ''col'' option of the \envs has been renamed ''colchges''.
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+Admonitions.
+
+    1) A new ''tdoctodo'' \env has been added.
+
+    1) Each \env has a new ''col'' option for color of the content indicating \chges.
+
+
+[[:tech:]]
+Themes: two new color \vars ''tutodoc@page@color'' and ''tutodoc@text@color'' allow finer setting everywhere.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+General formatting settings are briefly explained without going into implementation details.
+
+
+// ---------- //
+
+
+==
+23  (1.6.3.beta-3)
+==
+
+-----
+:new:
+-----
+
+[[:api:]]
+\Cls options: options not specific to \thisproj are passed on to the class in charge of general formatting.
+
+
+-----
+:fix:
+-----
+
+[[:tech:]]
+\Cls options: use of ''\exp_args:NNV \renewcommand \tutodoc@theme \l_keys_choice_tl'' instead of ''\renewcommand{ \tutodoc@theme } { \tl_use:N \l_keys_choice_tl }''.
+
+
+// ---------- //
+
+
+==
+22  (1.6.3.beta-2)
+==
+
+-----
+:fix:
+-----
+
+[[:tech:]]
+From now on, \pack imports \cls loading will be carried out cleanly via the path::''src/main/main.cls'' file.
+
+
+// ---------- //
+
+
+==
+01  (1.6.3.beta-1)
+==
+
+-----
+:fix:
+-----
+
+[[:doc:]]
+The bad ''\tdocmacro{\marginnote}'' has been changed to the good ''\tdocmacro{marginnote}''.

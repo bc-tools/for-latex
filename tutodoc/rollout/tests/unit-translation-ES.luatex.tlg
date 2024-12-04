@@ -41,9 +41,12 @@ l. ...\showbox2
 ============================================================
 TEST 2: Macros - inEN
 ============================================================
+(../babel-english.tex)
+Package babel Info: Importing data for english
+(babel)             from babel-en.ini. Reported on input line ....
 SB-TESTED ''inEN''
 > \box...=
-\hbox(7.16+2.06)x73.35, direction TLT
+\hbox(7.16+2.06)x74.46, direction TLT
 .\pdfcolorstack 0 push {0 g 0 G}
 .\TU/lmr/m/n/10 ^^ab
 .\penalty 10000
@@ -54,7 +57,7 @@ SB-TESTED ''inEN''
 .\TU/lmr/m/it/10 ?
 .\kern0.6 (italic)
 .\TU/lmr/m/n/10 ^^bb
-.\glue(\spaceskip) 3.33 plus 1.6783 minus 1.10118
+.\glue(\spaceskip) 4.44 plus 4.99498 minus 0.37
 .\TU/lmr/m/n/10 e
 .\TU/lmr/m/n/10 n
 .\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
@@ -71,7 +74,7 @@ SB-TESTED ''inEN''
 l. ...\showbox0
 SB-WANTED ''inEN''
 > \box...=
-\hbox(7.16+2.06)x73.35, direction TLT
+\hbox(7.16+2.06)x74.46, direction TLT
 .\pdfcolorstack 0 push {0 g 0 G}
 .\TU/lmr/m/n/10 ^^ab
 .\penalty 10000
@@ -82,7 +85,7 @@ SB-WANTED ''inEN''
 .\TU/lmr/m/it/10 ?
 .\kern0.6 (italic)
 .\TU/lmr/m/n/10 ^^bb
-.\glue(\spaceskip) 3.33 plus 1.6783 minus 1.10118
+.\glue(\spaceskip) 4.44 plus 4.99498 minus 0.37
 .\TU/lmr/m/n/10 e
 .\TU/lmr/m/n/10 n
 .\glue(\spaceskip) 3.33 plus 1.665 minus 1.11

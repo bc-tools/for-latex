@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{../main/main}
+\documentclass[theme=color]{../main/main}
 
 \input{../preamble.cfg.tex}
 
@@ -16,16 +16,22 @@
 
 \subsection{Quoi de neuf ?}
 
-\thisproj\ propose la macro \tdocmacro{tdocstartproj} et différents environnements pour indiquer rapidement et clairement ce qui a été fait lors des derniers changements.%
+\thisproj\ propose la macro \tdocmacro{tdocstartproj} et différents environnements pour indiquer rapidement et clairement ce qui a été fait lors des changements faits, ou à venir.%
 \footnote{
     L'utilisateur n'a pas besoin de tous les détails techniques.
 }
 
 
 \begin{tdocnote}
-    Concernant les icônes, voir la note au début de la section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
+\begin{tdocnew}
+    \item Info 1...
+    \item Info 2...
+\end{tdocnew}
+%    Concernant les icônes, voir la note au début de la section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
 \end{tdocnote}
 
+
+\subsubsection{La sobriété avant tout}
 
 \foreach \exatitle/\filename in {
     {Juste pour la toute première version}/%<-- Translate me!
@@ -40,6 +46,8 @@
         pb,
     {Pour les réparations}/% <-- Translate me!
         fix,
+    {Feuille de route}/% <-- Translate me!
+        todo,
     {Informations techniques}/% <-- Translate me!
         tech,
     %
@@ -51,7 +59,25 @@
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput[sbs]{examples/version-n-change/\filename.tex}
+        \tdoclatexinput[sbs]{examples/version-n-change/chges-\filename.tex}
+    \end{tdocexa}
+}
+
+
+\subsubsection{De la couleur si besoin}
+
+Il peut être utile de mettre en avant certains changements : ceci n'est faisable qu'en modifiant la couleur du contenu.
+
+\foreach \exatitle/\filename in {
+    {Une première version tape-à-l'oeil}/%<-- Translate me!
+        first,
+    {Des réparations exceptionnelles}/% <-- Translate me!
+        fix%
+} {
+    \begin{tdocexa}[\exatitle]
+        \leavevmode
+
+        \tdoclatexinput[sbs]{examples/version-n-change/color-chges-\filename.tex}
     \end{tdocexa}
 }
 

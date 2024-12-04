@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{tutodoc}
+\documentclass{tutodoc}
 
 \input{../../preamble.cfg.tex}
 
@@ -8,11 +8,11 @@
 \small
 
 \begin{tdocnew}
-	\item The macros \tdocmacro{tdocdate} and \tdocmacro{tdocversion} has a new final optional argument \tdocinlatex{<voffset>} to choose a specific vertical offset.
+	\item The macros \tdocmacro{tdocdate} and \tdocmacro{tdocversion} has a new final optional argument \tdoclatexin{<voffset>} to choose a specific vertical offset.
 
 	\item Better environments to indicate the changes made.
 	\begin{enumerate}
-        \item The new optional keys \tdocinlatex{col}\,, \tdocinlatex{date} and \tdocinlatex{version} allow to date and version a change of a specific topic.
+        \item The new optional keys \tdoclatexin{col}\,, \tdoclatexin{date} and \tdoclatexin{version} allow to date and version a change of a specific topic.
 
         \item Use of \tdocmacro{paragraph} for the title.
 	\end{enumerate}
@@ -22,7 +22,7 @@
 \begin{tdocupdate}
 	\item Version and changes: the font of the margin notes will always have a normal shape.
 
-	\item Ornament: use of a \tdocinlatex{\cleaders} to avoid orphean rules at the bottom of a page.
+	\item Ornament: use of a \tdoclatexin{\cleaders} to avoid orphean rules at the bottom of a page.
 \end{tdocupdate}
 
 \end{document}

@@ -1,0 +1,71 @@
+// ---------- //
+
+
+==
+04  (1.7.0)
+==
+
+-------
+:break:
+-------
+
+[[:api:]]
+\latex code: the macro ''\tdocinlatex'' has been renamed ''\tdoclatexin''.
+
+
+--------
+:update:
+--------
+
+[[:format:]]
+Draft theme and \chges: the \envs for the kind of \chges stop to use icons.
+
+
+--------
+:fordev:
+--------
+
+[[:facto:]]
+Simplified \orga of \cfg files in the final \proj.
+
+    1) \Css-like: one file per theme with a name like path::''tutodoc-bw.css.cls''.
+
+    1) Locale: use of names like path::''tutodoc-en.loc.cls''.
+
+
+// ---------- //
+
+
+==
+03  (1.7.0.beta-5)
+==
+
+-----
+:fix:
+-----
+
+[[:api:]]
+Admonitions: for the ''\newkeytheorem'' used with the ''draft'' theme, we have added ''postheadhook = \leavevmode'' (this is necessary because the content can naturally be of the list type).
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Theme gallery: the "example" code has been improved.
+
+
+// ---------- //
+
+
+==
+02  (1.7.0.beta-4)
+==
+
+-----
+:new:
+-----
+
+[[:doc:]]
+Addition of a section listing dependencies.

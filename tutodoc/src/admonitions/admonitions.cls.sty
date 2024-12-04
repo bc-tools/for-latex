@@ -1,22 +1,3 @@
-% == PACKAGES == %
-
-\RequirePackage{fontawesome5}%
-               [2022-05-02]
-
-\RequirePackage{keytheorems}%
-               [2024/09/19]
-
-\RequirePackage[svgnames]%
-               {xcolor}%
-               [2023/11/15]
-
-\RequirePackage{tcolorbox}%
-               [2024/07/10]
-
-\tcbuselibrary{breakable,
-               skins}
-
-
 % == TOOLS == %
 
 % -- SOBER HIGHLIGHTING OF CONTENT -- %
@@ -55,7 +36,7 @@
     ]
   }
 
-  \cs_set:cpn { the tdoc #1 } { \thesection\arabic{tdoc#1} }
+  \cs_set:cpn { the tdoc #1 } { \thesection.\arabic{tdoc#1} }
 }
 
 \ExplSyntaxOff
@@ -142,11 +123,9 @@
     \newkeytheorem{tdoc#1}[
       name       = \use:c { tutodoc@trans@#1@title },
       numberlike = tdocexa,
-% We could have used
-% \AddToHook{env/tdoc#1/before}{\small}
-% and
-% \AddToHook{env/tdoc#1/after}{\normalsize}.
+% Some hooks...
       preheadhook  = \small,
+      postheadhook = \leavevmode,
       postfoothook = \normalsize
     ]
   }

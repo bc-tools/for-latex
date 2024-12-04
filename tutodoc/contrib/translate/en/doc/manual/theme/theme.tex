@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{tutodoc}
+\documentclass{tutodoc}
 
 \input{../preamble.cfg.tex}
 
@@ -7,21 +7,21 @@
 
 \section{Choose your theme}
 
-To modify the general layout, there is the \thisproj\ class option \tdocinlatex{theme = <choice>} where \tdocinlatex{<choice>} can take the following values.
+To modify the general layout, there is the \thisproj\ class option \tdoclatexin{theme = <choice>} where \tdoclatexin{<choice>} can take the following values.
 
-\begin{itemize}
-    \item \tdocinlatex|bw| :
-    this is a black-and-white theme with some shades of gray.
+\begin{tasks}[style=itemize]
+    \task \tdoclatexin{bw}:
+          a black-and-white theme with some shades of grey.
 
-    \item \tdocinlatex|color| :
-    this theme is colored, \emph{it's the default value}.
+    \task \tdoclatexin{color}:
+          a coloured theme : this is the default value.
 
-    \item \tdocinlatex|dark| :
-    this theme is dark, ideal for resting the eyes.
+    \task \tdoclatexin{dark}:
+          a dark theme ideal for resting the eyes.
 
-    \item \tdocinlatex|draft|:
-    this theme is just right for a printout to look for content errors that aren't necessarily easy to spot in front of a screen.
-\end{itemize}
+    \task \tdoclatexin{draft}:
+          a theme for a printout such as to look for content errors that aren't necessarily easy to spot in front of a screen.
+\end{tasks}
 
 
 \begin{tdocnote}

@@ -1,14 +1,13 @@
-\documentclass[10pt, a4paper, theme = color]{tutodoc}
+\documentclass[theme = color]{tutodoc}
 
 \input{../preamble.cfg.tex}
 
 
 \begin{document}
 
-% Source.
-%     + https://tex.stackexchange.com/a/8547/6880
 \bgroup
-    \titleformat{\section}[block]{\Huge\bfseries\filcenter}{}{1em}{}
+    \setkomafont{section}{\Huge\bfseries}
+    \addtokomafont{section}{\centering}
     \phantomsection\section*{Annexe -- Galerie des thèmes}%
     \label{tutodoc-theme-gallery}
     \addcontentsline{toc}{section}{Annexe -- Galerie des thèmes}%

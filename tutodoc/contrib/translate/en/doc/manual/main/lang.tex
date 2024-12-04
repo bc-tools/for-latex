@@ -1,4 +1,4 @@
-\documentclass[10pt, a4paper]{tutodoc}
+\documentclass{tutodoc}
 
 \input{../preamble.cfg.tex}
 
@@ -15,14 +15,19 @@
 
 \section{What language is used by the \thisproj\ class?}
 
-This documentation loads the \tdocpack{babel} package via \tdocinlatex|\usepackage[english]{babel}|\,.
-As a result, the \thisproj\ class identifies \tdocinlatex|en| as the main language used by \tdocpack{babel}.%.
+This documentation loads the \tdocpack{babel} package via \tdoclatexin|\usepackage[english]{babel}|\, a package that \thisproj\ does not load.
+On the other hand, the \thisproj\ class identifies \tdoclatexin|en| as the main language used by \tdocpack{babel}.%.
 \footnote{
-    Technically, we use \tdocinlatex|\BCPdata{language}| which returns a language in short format.
+    Technically, we use \tdoclatexin|\BCPdata{language}| which returns a language in short format.
 }
 As this language is included in the list of languages taken into account, see below, the \thisproj\ class will produce the expected effects.
 % Do not touch the following placeholder.
 <<API-LANGS>>
+
+
+\begin{tdocnote}
+    Packages \tdocpack{babel} and \tdocpack{polyglossia} are taken into account.
+\end{tdocnote}
 
 
 \begin{tdoccaut}
@@ -33,10 +38,5 @@ As this language is included in the list of languages taken into account, see be
 \begin{tdocwarn}
     When a language is not supported by \thisproj, a warning message is issued, and English is selected as the language for \thisproj.
 \end{tdocwarn}
-
-
-\begin{tdocnote}
-    The mechanism used should be compatible with the \tdocpack{polyglossia} package.
-\end{tdocnote}
 
 \end{document}
