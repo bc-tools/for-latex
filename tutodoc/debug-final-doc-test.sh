@@ -28,9 +28,11 @@ function nocompile {
 
 cd "rollout/debug"
 
-rm *
+ls *
 
-cd ../
+exit 1
+
+cd "rollout"
 
 for f in code/*
 do
