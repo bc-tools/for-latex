@@ -181,7 +181,9 @@ def prebuild_single_tex(
     \\end{{center}}
 
     {abstract_EN}
-                """.rstrip()
+            """.rstrip()
+
+            abstract += "\n\\end{abstract}"
 
         abstract = other_manual_langs(
             content   = abstract,
@@ -190,14 +192,19 @@ def prebuild_single_tex(
         )
 
         abstract += f"""
+
 \\tdocsep
+
+{{
 \\small
+
 \\bgroup
     \\addtokomafont{{subsection}}{{\\centering}}
     \\subsection*{{{LAST_CHGES_IN[lang]}}}
 \\egroup
 
 {last_chges_explained}
+}}
         """.rstrip()
 
         abstract_file = lang_temp_dir / f"{TAG_ABSTRACT}.tex"
