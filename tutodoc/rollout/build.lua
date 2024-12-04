@@ -202,7 +202,7 @@ function checkSBUNIT(xtra_args)
         return 0
     end
 
-    print("SHOWBOX COMPARISON validated?")
+    print("SHOWBOX COMPARISON CHECKING\n")
 
     local testfilename = xtra_args[1]
     local logfile      = testfilename .. ".log"
@@ -287,7 +287,7 @@ function checkSBUNIT(xtra_args)
         end
     end
 
-    print("SHOWBOX COMPARISON: OK!")
+    print("\nSHOWBOX COMPARISON FINISHED.")
 
     return 0
 end
@@ -388,6 +388,62 @@ end
 target_list[cmd_option] = {
     func = viewPDF,
     desc = "Open a PDF of tested files",
+--   pre = function(xtra_args)
+--   end
+}
+
+
+-------------------------------
+-- L3BUILD EXTRA CMD "cplog" --
+-------------------------------
+
+----
+-- This extra command simply copy luatex and xetex log files as tlg ones.
+----
+cmd_option = "cplog"
+
+function cplog(xtra_args)
+    if xtra_args == nil or #xtra_args ~= 1
+    then
+        return raise(
+            "IO",
+            "One single test file name needed!"
+        )
+    end
+
+    local testfilename = xtra_args[1]
+
+    local allexts = {"luatex", "xetex"}
+
+    for _ , ext in ipairs(allexts) do
+        local srclog_path = testdir .. "/" .. testfilename .. "." .. ext .. ".log"
+
+        if fileexists(srclog_path) == false
+        then
+            return raise(
+                "IO",
+                "No xetex LOG file found.\nSee: " .. srclog_path
+            )
+        end
+
+        local desttlg_path = testfiledir .. "/" .. testfilename .. "." .. ext .. ".tlg"
+
+        local srcfile = io.open(srclog_path, "r")
+        srcfile_content = srcfile:read("*a")
+        srcfile:close()
+
+        local destfile = io.open(desttlg_path, "w")
+        destfile:write(srcfile_content)
+        destfile:close()
+    end
+
+    return 0
+end
+
+
+target_list[cmd_option] = {
+    func = cplog,
+    desc = "Copy luatex and xetex lof files as tlg ones",
 --   pre = function(xtra_args)
 --   end
 }

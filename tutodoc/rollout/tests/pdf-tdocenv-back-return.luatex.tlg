@@ -1,89 +1,97 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 Completed box being shipped out [1]
-\vbox(686.8619+0.0)x533.48917, direction TLT
+\vbox(765.79007+0.0)x520.12476, direction TLT
 .\hbox(0.0+0.0)x0.0, direction TLT
 .\hbox(0.0+0.0)x0.0, direction TLT
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
 ...\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(845.04694+0.0)x0.0, glue set - 597.50793fil, shifted 845.04694, direction TLT
+.....\kern0.0
+.....\pdfcolorstack 0 push {1 g 1 G}
+.....\hbox(845.04694+0.0)x597.50793, direction TLT
+......\rule(845.04694+0.0)x597.50793
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, glue set 72.26999fil, shifted 72.26999, direction TLT
 .....\kern-72.26999
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\vbox(0.0+0.0)x533.48917, direction TLT
-..\vbox(0.0+0.0)x534.62727, glue set - 687.2619fil, shifted -1.1381, direction TLT
-...\glue -38.1381
-...\vbox(0.0+0.0)x472.03123, glue set - 0.2fil, direction TLT
+.\vbox(0.0+0.0)x520.12476, direction TLT
+..\vbox(0.0+0.0)x528.37605, glue set - 766.19006fil, shifted -8.2513, direction TLT
+...\glue -51.20993
+...\vbox(0.0+0.0)x469.47055, glue set - 0.2fil, direction TLT
 ....\glue 0.0 plus 1.0fil minus 1.0fil
-....\rule(0.2+0.0)x472.03123
-...\glue 12.0
+....\rule(0.2+0.0)x469.47055
+...\glue 15.0
 ...\glue(\baselineskip) 0.0
-...\vbox(0.0+0.2)x472.03123, direction TLT
+...\vbox(0.0+0.2)x469.47055, direction TLT
 ....\glue 0.0 plus 1.0fil minus 1.0fil
-....\rule(0.0+0.2)x472.03123
-...\glue 25.0
+....\rule(0.0+0.2)x469.47055
+...\glue 18.0
 ...\glue(\lineskip) 0.0
-...\vbox(0.0+0.0)x472.03123, glue set - 0.2fil, direction TLT
+...\vbox(0.0+0.0)x469.47055, glue set - 0.2fil, direction TLT
 ....\glue 0.0 plus 1.0fil minus 1.0fil
-....\rule(0.2+0.0)x472.03123
+....\rule(0.2+0.0)x469.47055
 ...\glue(\lineskip) 0.0
-...\hbox(658.0+0.0)x534.62727, glue set 56.50551fil, direction TLT
-....\hbox(658.0+0.0)x0.0, glue set - 0.2fil, direction TLT
+...\hbox(742.0+0.0)x528.37605, glue set 56.50551fil, direction TLT
+....\hbox(742.0+0.0)x0.0, glue set - 0.2fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
-.....\rule(658.0+0.0)x0.2
-....\glue 472.03123
-....\rule(658.0+0.0)x0.2
-....\glue 5.69054
-....\hbox(658.0+0.0)x0.0, glue set - 0.2fil, direction TLT
+.....\rule(742.0+0.0)x0.2
+....\glue 469.47055
+....\rule(742.0+0.0)x0.2
+....\glue 2.0
+....\hbox(742.0+0.0)x0.0, glue set - 0.2fil, direction TLT
 .....\glue 0.0 plus 1.0fil minus 1.0fil
-.....\rule(658.0+0.0)x0.2
+.....\rule(742.0+0.0)x0.2
 ....\glue 0.0 plus 1.0fil
-....\rule(658.0+0.0)x0.2
+....\rule(742.0+0.0)x0.2
 ...\glue(\baselineskip) 0.0
-...\vbox(0.0+0.0)x472.03123, glue set - 0.2fil, direction TLT
+...\vbox(0.0+0.0)x469.47055, glue set - 0.2fil, direction TLT
 ....\glue 0.0 plus 1.0fil minus 1.0fil
-....\rule(0.2+0.0)x472.03123
-...\glue 30.0
+....\rule(0.2+0.0)x469.47055
+...\glue 42.0
 ...\glue(\baselineskip) 0.0
-...\vbox(0.0+0.2)x472.03123, direction TLT
+...\vbox(0.0+0.2)x469.47055, direction TLT
 ....\glue 0.0 plus 1.0fil minus 1.0fil
-....\rule(0.0+0.2)x472.03123
+....\rule(0.0+0.2)x469.47055
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 .\glue(\lineskip) 0.0
-.\vbox(686.8619+0.0)x470.89313, direction TLT
-..\vbox(0.0+0.0)x0.0, glue set 39.14185fil, direction TLT
+.\vbox(765.79007+0.0)x461.21925, direction TLT
+..\vbox(0.0+0.0)x0.0, glue set 52.21367fil, direction TLT
 ...\kern0.0
-...\kern-38.1381
+...\kern-51.20993
 ...\kern-1.00374
-...\hbox(0.0+0.0)x0.0, glue set 2.14185fil, direction TLT
+...\hbox(0.0+0.0)x0.0, glue set 9.25504fil, direction TLT
 ....\kern0.0
-....\kern-1.1381
+....\kern-8.2513
 ....\kern-1.00374
 ....\pdfdest name{page.1} xyz
 ....\penalty 10000
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 ..\glue(\lineskip) 0.0
-..\vbox(686.8619+0.0)x470.89313, direction TLT
-...\glue -38.1381
-...\vbox(725.0+0.0)x472.03123, shifted -1.1381, direction TLT
-....\vbox(12.0+0.0)x472.03123, glue set 12.0fil, direction TLT
+..\vbox(765.79007+0.0)x461.21925, direction TLT
+...\glue -51.20993
+...\vbox(817.0+0.0)x469.47055, shifted -8.2513, direction TLT
+....\vbox(15.0+0.0)x469.47055, glue set 15.0fil, direction TLT
 .....\glue 0.0 plus 1.0fil
-.....\hbox(0.0+0.0)x472.03123, direction TLT
+.....\hbox(0.0+0.0)x469.47055, direction TLT
 ......\pdfcolorstack 0 push {0 g 0 G}
-......\hbox(0.0+0.0)x472.03123, direction TLT
+......\hbox(0.0+0.0)x469.47055, direction TLT
 ......\pdfcolorstack 0 pop
-....\glue 25.0
+....\glue 18.0
 ....\glue(\lineskip) 0.0
-....\vbox(658.0+0.0)x472.03123, glue set 611.93463fil, direction TLT
+....\vbox(742.0+0.0)x469.47055, glue set 695.92566fil, direction TLT
 .....\write-{}
+.....\pdfcolorstack 0 push {0 g 0 G}
 .....\pdfcolorstack 0 push {0 g 0 G}
 .....\pdfdest name{Doc-Start} xyz
 .....\glue(\topskip) 3.06
-.....\hbox(6.94+2.29)x472.03123, glue set 0.33498, direction TLT
+.....\hbox(6.94+2.29)x469.47055, glue set 0.3008, direction TLT
 ......\localpar
 .......\localinterlinepenalty=0
 .......\localbrokenpenalty=0
@@ -204,7 +212,7 @@ Completed box being shipped out [1]
 ......\glue(\rightskip) 0.0
 .....\penalty 300
 .....\glue(\baselineskip) 2.77
-.....\hbox(6.94+0.83)x472.03123, glue set 424.78125fil, direction TLT
+.....\hbox(6.94+0.83)x469.47055, glue set 422.22055fil, direction TLT
 ......\TU/lmtt/m/n/10 \
 ......\TU/lmtt/m/n/10 e
 ......\TU/lmtt/m/n/10 n
@@ -221,7 +229,7 @@ Completed box being shipped out [1]
 .....\glue(\parskip) 0.0 plus 1.0
 .....\glue(\parskip) 0.0
 .....\glue(\baselineskip) 4.23
-.....\hbox(6.94+2.29)x472.03123, glue set 0.01363, direction TLT
+.....\hbox(6.94+2.29)x469.47055, glue set - 0.02666, direction TLT
 ......\localpar
 .......\localinterlinepenalty=0
 .......\localbrokenpenalty=0
@@ -342,7 +350,7 @@ Completed box being shipped out [1]
 ......\glue(\rightskip) 0.0
 .....\penalty 300
 .....\glue(\baselineskip) 2.77
-.....\hbox(6.94+0.83)x472.03123, glue set 408.78137fil, direction TLT
+.....\hbox(6.94+0.83)x469.47055, glue set 406.2207fil, direction TLT
 ......\TU/lmtt/m/n/10 .
 ......\TU/lmtt/m/n/10 .
 ......\TU/lmtt/m/n/10 .
@@ -367,16 +375,23 @@ Completed box being shipped out [1]
 .....\glue 0.0 plus 1.0fil
 .....\glue 0.0
 .....\glue 0.0 plus 0.0001fil
-....\glue(\baselineskip) 23.34
-....\hbox(6.66+0.0)x472.03123, direction TLT
+....\glue(\baselineskip) 35.34
+....\hbox(6.66+0.0)x469.47055, direction TLT
 .....\pdfcolorstack 0 push {0 g 0 G}
-.....\hbox(6.66+0.0)x472.03123, glue set 233.51563fil, direction TLT
-......\glue 0.0 plus 1.0fil
-......\TU/lmr/m/n/10 1
-......\glue 0.0 plus 1.0fil
+.....\hbox(6.66+0.0)x469.47055, direction TLT
+......\hbox(6.66+0.0)x469.47055, direction TLT
+.......\vbox(6.66+0.0)x469.47055, direction TLT
+........\hbox(6.66+0.0)x469.47055, glue set 232.23528fil, direction TLT
+.........\glue 0.0 plus 1.0fil
+.........\pdfcolorstack 0 push {0 g 0 G}
+.........\TU/lmr/m/n/10 1
+.........\pdfcolorstack 0 pop
+.........\glue 0.0 plus 1.0fil
+......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 pop
 .\kern0.0
 .\kern0.0
+runsystem(latexminted cleantemp  --timestamp 20160520090000Z 0E9BC9F9D90BFC761802A0E7B49DD542)...executed.
 (pdf-tdocenv-back-return.aux)
 Package rerunfilecheck Info: File `pdf-tdocenv-back-return.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.

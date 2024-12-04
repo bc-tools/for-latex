@@ -1,102 +1,101 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 Completed box being shipped out [1]
-\vbox(686.8619+0.0)x470.89313, direction TLT
+\vbox(765.79007+0.0)x461.21925, direction TLT
 .\hbox(0.0+0.0)x0.0, direction TLT
 .\hbox(0.0+0.0)x0.0, direction TLT
 ..\kern-72.26999
 ..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
 ...\kern-72.26999
 ...\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(845.04694+0.0)x0.0, glue set - 597.50793fil, shifted 845.04694, direction TLT
+.....\kern0.0
+.....\pdfcolorstack 0 push {1 g 1 G}
+.....\hbox(845.04694+0.0)x597.50793, direction TLT
+......\rule(845.04694+0.0)x597.50793
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+....\pdfcolorstack 0 pop
 ....\hbox(0.0+0.0)x0.0, glue set 72.26999fil, shifted 72.26999, direction TLT
 .....\kern-72.26999
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\vbox(0.0+0.0)x0.0, glue set 39.14185fil, direction TLT
+.\vbox(0.0+0.0)x0.0, glue set 52.21367fil, direction TLT
 ..\kern0.0
-..\kern-38.1381
+..\kern-51.20993
 ..\kern-1.00374
-..\hbox(0.0+0.0)x0.0, glue set 2.14185fil, direction TLT
+..\hbox(0.0+0.0)x0.0, glue set 9.25504fil, direction TLT
 ...\kern0.0
-...\kern-1.1381
+...\kern-8.2513
 ...\kern-1.00374
 ...\pdfdest name{page.1} xyz
 ...\penalty 10000
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 ..\glue 0.0 plus 1.0fil minus 1.0fil
 .\glue(\lineskip) 0.0
-.\vbox(686.8619+0.0)x470.89313, direction TLT
-..\glue -38.1381
-..\vbox(725.0+0.0)x472.03123, shifted -1.1381, direction TLT
-...\vbox(12.0+0.0)x472.03123, glue set 12.0fil, direction TLT
+.\vbox(765.79007+0.0)x461.21925, direction TLT
+..\glue -51.20993
+..\vbox(817.0+0.0)x469.47055, shifted -8.2513, direction TLT
+...\vbox(15.0+0.0)x469.47055, glue set 15.0fil, direction TLT
 ....\glue 0.0 plus 1.0fil
-....\hbox(0.0+0.0)x472.03123, direction TLT
+....\hbox(0.0+0.0)x469.47055, direction TLT
 .....\pdfcolorstack 0 push {0 g 0 G}
-.....\hbox(0.0+0.0)x472.03123, direction TLT
+.....\hbox(0.0+0.0)x469.47055, direction TLT
 .....\pdfcolorstack 0 pop
-...\glue 25.0
+...\glue 18.0
 ...\glue(\lineskip) 0.0
-...\vbox(658.0+0.0)x472.03123, glue set 284.88245fil, direction TLT
+...\vbox(742.0+0.0)x469.47055, glue set 377.05276fil, direction TLT
 ....\write-{}
+....\pdfcolorstack 0 push {0 g 0 G}
 ....\pdfcolorstack 0 push {0 g 0 G}
 ....\pdfdest name{Doc-Start} xyz
 ....\pdfdest name{section.1} xyz
-....\glue(\topskip) 0.0
-....\hbox(12.59995+5.40005)x472.03123, glue set 156.37645fil, direction TLT
+....\pdfcolorstack 0 push {0 g 0 G}
+....\glue(\topskip) 0.00641
+....\hbox(9.99359+2.7936)x469.47055, glue set 164.72968fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
 ......\localleftbox=null
 ......\localrightbox=null
-.....\rule(12.59995+5.40005)x0.0
-.....\hbox(12.59995+5.40005)x24.9408, direction TLT
-......\pdfcolorstack 0 push {0 g 0 G}
-......\TU/lmr/bx/n/14.4 I
-......\TU/lmr/bx/n/14.4 .
-......\glue 14.4
-......\rule(12.59995+5.40005)x0.0
+.....\hbox(9.99359+0.0)x16.3728, direction TLT
 ......\glue 0.0
-......\pdfcolorstack 0 pop
-.....\TU/lmr/bx/n/14.4 E
-.....\TU/lmr/bx/n/14.4 x
+......\TU/lmss/bx/n/14.4 I
+......\TU/lmss/bx/n/14.4 .
+......\glue 7.2
+.....\TU/lmss/bx/n/14.4 E
+.....\TU/lmss/bx/n/14.4 x
 .....\discretionary (penalty 50)
-......< \TU/lmr/bx/n/14.4 -
-.....\TU/lmr/bx/n/14.4 a
-.....\TU/lmr/bx/n/14.4 m
+......< \TU/lmss/bx/n/14.4 -
+.....\TU/lmss/bx/n/14.4 a
+.....\TU/lmss/bx/n/14.4 m
 .....\discretionary (penalty 50)
-......< \TU/lmr/bx/n/14.4 -
-.....\TU/lmr/bx/n/14.4 p
-.....\TU/lmr/bx/n/14.4 l
-.....\TU/lmr/bx/n/14.4 e
-.....\glue(\spaceskip) 5.4 plus 2.7 minus 1.8
-.....\TU/lmr/bx/n/14.4 a
-.....\TU/lmr/bx/n/14.4 n
-.....\TU/lmr/bx/n/14.4 d
-.....\glue(\spaceskip) 5.4 plus 2.7 minus 1.8
-.....\TU/lmr/bx/n/14.4 t
-.....\TU/lmr/bx/n/14.4 h
-.....\TU/lmr/bx/n/14.4 e
-.....\TU/lmr/bx/n/14.4 n
-.....\TU/lmr/bx/n/14.4 .
-.....\kern0.0
-.....\rule(12.59995+5.40005)x0.0
+......< \TU/lmss/bx/n/14.4 -
+.....\TU/lmss/bx/n/14.4 p
+.....\TU/lmss/bx/n/14.4 l
+.....\TU/lmss/bx/n/14.4 e
+.....\glue(\spaceskip) 5.2848 plus 2.6424 minus 1.7616
+.....\TU/lmss/bx/n/14.4 a
+.....\TU/lmss/bx/n/14.4 n
+.....\TU/lmss/bx/n/14.4 d
+.....\glue(\spaceskip) 5.2848 plus 2.6424 minus 1.7616
+.....\TU/lmss/bx/n/14.4 t
+.....\TU/lmss/bx/n/14.4 h
+.....\TU/lmss/bx/n/14.4 e
+.....\TU/lmss/bx/n/14.4 n
+.....\TU/lmss/bx/n/14.4 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0 plus 1.0fil
-....\penalty 10000
-....\write5{\protect \BOOKMARK [1][-]{section.1}{\376\377\000E\000x\000a\000m\000p\000l\000e\000\040\000a\000n\000d\000\040\000t\000h\000e\000n\000.}{}% 1}
-....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {I.}Example and then.}{\thepage }{section.1}\protected@file@percent }}
-....\penalty 10000
+....\pdfcolorstack 0 pop
+....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {I}Example and then.}{\thepage }{section.1}\protected@file@percent }}
 ....\penalty 10000
 ....\glue 9.913 plus 0.86198
-....\glue 0.0
-....\glue 0.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{I.1}{tdocexa.1.1}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocexa}{I.1}{tdocexa.1.1}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\lineskip) 1.0
-....\hbox(6.94+1.94)x472.03123, glue set 357.4112fil, direction TLT
+....\glue(\baselineskip) 2.2664
+....\hbox(6.94+1.94)x469.47055, glue set 354.85052fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
@@ -149,11 +148,11 @@ Completed box being shipped out [1]
 ....\penalty -51
 ....\glue 1.94
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{I.2}{tdocexa.1.2}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocexa}{I.2}{tdocexa.1.2}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 3.12
-....\hbox(6.94+1.94)x472.03123, glue set 357.4112fil, direction TLT
+....\hbox(6.94+1.94)x469.47055, glue set 354.85052fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
@@ -206,11 +205,11 @@ Completed box being shipped out [1]
 ....\penalty -51
 ....\glue 1.94
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{I.3}{tdocrem.1.3}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{I.3}{tdocrem.1.3}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 3.12
-....\hbox(6.94+0.22)x472.03123, glue set 361.18121fil, direction TLT
+....\hbox(6.94+0.22)x469.47055, glue set 358.62051fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
@@ -260,11 +259,11 @@ Completed box being shipped out [1]
 ....\penalty -51
 ....\glue 0.22
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{I.4}{tdocexa.1.4}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocexa}{I.4}{tdocexa.1.4}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.84
-....\hbox(6.94+1.94)x472.03123, glue set 357.4112fil, direction TLT
+....\hbox(6.94+1.94)x469.47055, glue set 354.85052fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
@@ -317,11 +316,11 @@ Completed box being shipped out [1]
 ....\penalty -51
 ....\glue 1.94
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{I.5}{tdocrem.1.5}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{I.5}{tdocrem.1.5}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 3.12
-....\hbox(6.94+0.22)x472.03123, glue set 361.18121fil, direction TLT
+....\hbox(6.94+0.22)x469.47055, glue set 358.62051fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
@@ -371,11 +370,11 @@ Completed box being shipped out [1]
 ....\penalty -51
 ....\glue 0.22
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{I.6}{tdocrem.1.6}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{I.6}{tdocrem.1.6}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.84
-....\hbox(6.94+0.22)x472.03123, glue set 361.18121fil, direction TLT
+....\hbox(6.94+0.22)x469.47055, glue set 358.62051fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
@@ -431,64 +430,57 @@ Completed box being shipped out [1]
 ....\penalty 10000
 ....\glue -15.08499 plus -4.31 minus -0.86198
 ....\glue 15.08499 plus 4.31 minus 0.86198
+....\pdfcolorstack 0 push {0 g 0 G}
+....\penalty 10000
+....\penalty 10000
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 5.18005
-....\hbox(12.59995+5.40005)x472.03123, glue set 168.04765fil, direction TLT
+....\glue(\baselineskip) 7.628
+....\hbox(10.152+2.7936)x469.47055, glue set 175.82489fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
 ......\localleftbox=null
 ......\localrightbox=null
-.....\rule(12.59995+5.40005)x0.0
-.....\hbox(12.59995+5.40005)x31.42079, direction TLT
-......\pdfcolorstack 0 push {0 g 0 G}
-......\TU/lmr/bx/n/14.4 I
-......\kern0.4464 (font)
-......\TU/lmr/bx/n/14.4 I
-......\TU/lmr/bx/n/14.4 .
-......\glue 14.4
-......\rule(12.59995+5.40005)x0.0
+.....\hbox(9.99359+0.0)x21.5856, direction TLT
 ......\glue 0.0
-......\pdfcolorstack 0 pop
-.....\TU/lmr/bx/n/14.4 E
-.....\TU/lmr/bx/n/14.4 x
+......\TU/lmss/bx/n/14.4 I
+......\kern0.4464 (font)
+......\TU/lmss/bx/n/14.4 I
+......\TU/lmss/bx/n/14.4 .
+......\glue 7.2
+.....\TU/lmss/bx/n/14.4 E
+.....\TU/lmss/bx/n/14.4 x
 .....\discretionary (penalty 50)
-......< \TU/lmr/bx/n/14.4 -
-.....\TU/lmr/bx/n/14.4 a
-.....\TU/lmr/bx/n/14.4 m
+......< \TU/lmss/bx/n/14.4 -
+.....\TU/lmss/bx/n/14.4 a
+.....\TU/lmss/bx/n/14.4 m
 .....\discretionary (penalty 50)
-......< \TU/lmr/bx/n/14.4 -
-.....\TU/lmr/bx/n/14.4 p
-.....\TU/lmr/bx/n/14.4 l
-.....\TU/lmr/bx/n/14.4 e
-.....\glue(\spaceskip) 5.4 plus 2.7 minus 1.8
-.....\TU/lmr/bx/n/14.4 a
-.....\TU/lmr/bx/n/14.4 f
+......< \TU/lmss/bx/n/14.4 -
+.....\TU/lmss/bx/n/14.4 p
+.....\TU/lmss/bx/n/14.4 l
+.....\TU/lmss/bx/n/14.4 e
+.....\glue(\spaceskip) 5.2848 plus 2.6424 minus 1.7616
+.....\TU/lmss/bx/n/14.4 a
+.....\TU/lmss/bx/n/14.4 f
 .....\discretionary (penalty 50)
-......< \TU/lmr/bx/n/14.4 -
-.....\TU/lmr/bx/n/14.4 t
-.....\TU/lmr/bx/n/14.4 e
-.....\TU/lmr/bx/n/14.4 r
-.....\TU/lmr/bx/n/14.4 .
-.....\kern0.0
-.....\rule(12.59995+5.40005)x0.0
+......< \TU/lmss/bx/n/14.4 -
+.....\TU/lmss/bx/n/14.4 t
+.....\TU/lmss/bx/n/14.4 e
+.....\TU/lmss/bx/n/14.4 r
+.....\TU/lmss/bx/n/14.4 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0 plus 1.0fil
-....\penalty 10000
-....\write5{\protect \BOOKMARK [1][-]{section.2}{\376\377\000E\000x\000a\000m\000p\000l\000e\000\040\000a\000f\000t\000e\000r\000.}{}% 2}
-....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {II.}Example after.}{\thepage }{section.2}\protected@file@percent }}
-....\penalty 10000
+....\pdfcolorstack 0 pop
+....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {II}Example after.}{\thepage }{section.2}\protected@file@percent }}
 ....\penalty 10000
 ....\glue 9.913 plus 0.86198
-....\glue 0.0
-....\glue 0.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{II.1}{tdocrem.2.1}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{II.1}{tdocrem.2.1}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\lineskip) 1.0
-....\hbox(6.94+0.11)x472.03123, glue set 356.50119fil, direction TLT
+....\glue(\baselineskip) 2.2664
+....\hbox(6.94+0.11)x469.47055, glue set 353.94049fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
@@ -540,11 +532,11 @@ Completed box being shipped out [1]
 ....\penalty -51
 ....\glue 0.11
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{II.2}{tdocrem.2.2}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{II.2}{tdocrem.2.2}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.95
-....\hbox(6.94+0.22)x472.03123, glue set 356.50119fil, direction TLT
+....\hbox(6.94+0.22)x469.47055, glue set 353.94049fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
@@ -596,11 +588,11 @@ Completed box being shipped out [1]
 ....\penalty -51
 ....\glue 0.22
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{II.3}{tdocrem.2.3}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{II.3}{tdocrem.2.3}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.84
-....\hbox(6.94+0.22)x472.03123, glue set 356.50119fil, direction TLT
+....\hbox(6.94+0.22)x469.47055, glue set 353.94049fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
@@ -652,11 +644,11 @@ Completed box being shipped out [1]
 ....\penalty -51
 ....\glue 0.22
 ....\glue 8.0 plus 2.0 minus 4.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{II.4}{tdocexa.2.4}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocexa}{II.4}{tdocexa.2.4}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
 ....\glue(\baselineskip) 4.84
-....\hbox(6.94+1.94)x472.03123, glue set 352.7312fil, direction TLT
+....\hbox(6.94+1.94)x469.47055, glue set 350.17053fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
@@ -717,81 +709,72 @@ Completed box being shipped out [1]
 ....\penalty 10000
 ....\glue -15.08499 plus -4.31 minus -0.86198
 ....\glue 15.08499 plus 4.31 minus 0.86198
+....\pdfcolorstack 0 push {0 g 0 G}
+....\penalty 10000
+....\penalty 10000
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 3.46005
-....\hbox(12.59995+5.40005)x472.03123, glue set 124.99167fil, direction TLT
+....\glue(\baselineskip) 5.7496
+....\hbox(10.3104+2.9664)x469.47055, glue set 136.05206fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
 ......\localleftbox=null
 ......\localrightbox=null
-.....\rule(12.59995+5.40005)x0.0
-.....\hbox(12.59995+5.40005)x37.90079, direction TLT
-......\pdfcolorstack 0 push {0 g 0 G}
-......\TU/lmr/bx/n/14.4 I
-......\kern0.4464 (font)
-......\TU/lmr/bx/n/14.4 I
-......\kern0.4464 (font)
-......\TU/lmr/bx/n/14.4 I
-......\TU/lmr/bx/n/14.4 .
-......\glue 14.4
-......\rule(12.59995+5.40005)x0.0
+.....\hbox(9.99359+0.0)x26.7984, direction TLT
 ......\glue 0.0
-......\pdfcolorstack 0 pop
-.....\TU/lmr/bx/n/14.4 E
-.....\TU/lmr/bx/n/14.4 x
+......\TU/lmss/bx/n/14.4 I
+......\kern0.4464 (font)
+......\TU/lmss/bx/n/14.4 I
+......\kern0.4464 (font)
+......\TU/lmss/bx/n/14.4 I
+......\TU/lmss/bx/n/14.4 .
+......\glue 7.2
+.....\TU/lmss/bx/n/14.4 E
+.....\TU/lmss/bx/n/14.4 x
 .....\discretionary (penalty 50)
-......< \TU/lmr/bx/n/14.4 -
-.....\TU/lmr/bx/n/14.4 a
-.....\TU/lmr/bx/n/14.4 m
+......< \TU/lmss/bx/n/14.4 -
+.....\TU/lmss/bx/n/14.4 a
+.....\TU/lmss/bx/n/14.4 m
 .....\discretionary (penalty 50)
-......< \TU/lmr/bx/n/14.4 -
-.....\TU/lmr/bx/n/14.4 p
-.....\TU/lmr/bx/n/14.4 l
-.....\TU/lmr/bx/n/14.4 e
-.....\glue(\spaceskip) 5.4 plus 2.7 minus 1.8
-.....\TU/lmr/bx/n/14.4 -
-.....\glue(\spaceskip) 5.4 plus 2.7 minus 1.8
-.....\TU/lmr/bx/n/14.4 S
-.....\TU/lmr/bx/n/14.4 i
-.....\TU/lmr/bx/n/14.4 n
+......< \TU/lmss/bx/n/14.4 -
+.....\TU/lmss/bx/n/14.4 p
+.....\TU/lmss/bx/n/14.4 l
+.....\TU/lmss/bx/n/14.4 e
+.....\glue(\spaceskip) 5.2848 plus 2.6424 minus 1.7616
+.....\TU/lmss/bx/n/14.4 -
+.....\glue(\spaceskip) 5.2848 plus 2.6424 minus 1.7616
+.....\TU/lmss/bx/n/14.4 S
+.....\TU/lmss/bx/n/14.4 i
+.....\TU/lmss/bx/n/14.4 n
 .....\discretionary (penalty 50)
-......< \TU/lmr/bx/n/14.4 -
-.....\TU/lmr/bx/n/14.4 g
-.....\TU/lmr/bx/n/14.4 l
-.....\TU/lmr/bx/n/14.4 e
-.....\glue(\spaceskip) 5.4 plus 2.7 minus 1.8
-.....\TU/lmr/bx/n/14.4 n
-.....\kern-0.4464 (font)
-.....\TU/lmr/bx/n/14.4 u
-.....\TU/lmr/bx/n/14.4 m
+......< \TU/lmss/bx/n/14.4 -
+.....\TU/lmss/bx/n/14.4 g
+.....\TU/lmss/bx/n/14.4 l
+.....\TU/lmss/bx/n/14.4 e
+.....\glue(\spaceskip) 5.2848 plus 2.6424 minus 1.7616
+.....\TU/lmss/bx/n/14.4 n
+.....\TU/lmss/bx/n/14.4 u
+.....\TU/lmss/bx/n/14.4 m
 .....\discretionary (penalty 50)
-......< \TU/lmr/bx/n/14.4 -
-......= \kern-0.4464 (font)
-.....\TU/lmr/bx/n/14.4 b
+......< \TU/lmss/bx/n/14.4 -
+.....\TU/lmss/bx/n/14.4 b
 .....\kern0.4464 (font)
-.....\TU/lmr/bx/n/14.4 e
-.....\TU/lmr/bx/n/14.4 r
-.....\TU/lmr/bx/n/14.4 .
-.....\kern0.0
-.....\rule(12.59995+5.40005)x0.0
+.....\TU/lmss/bx/n/14.4 e
+.....\TU/lmss/bx/n/14.4 r
+.....\TU/lmss/bx/n/14.4 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0 plus 1.0fil
-....\penalty 10000
-....\write5{\protect \BOOKMARK [1][-]{section.3}{\376\377\000E\000x\000a\000m\000p\000l\000e\000\040\000-\000\040\000S\000i\000n\000g\000l\000e\000\040\000n\000u\000m\000b\000e\000r\000.}{}% 3}
-....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {III.}Example - Single number.}{\thepage }{section.3}\protected@file@percent }}
-....\penalty 10000
+....\pdfcolorstack 0 pop
+....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {III}Example - Single number.}{\thepage }{section.3}\protected@file@percent }}
 ....\penalty 10000
 ....\glue 9.913 plus 0.86198
-....\glue 0.0
-....\glue 0.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocexa}{III.1}{tdocexa.3.1}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocexa}{III.1}{tdocexa.3.1}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\lineskip) 1.0
-....\hbox(7.05+2.05)x472.03123, glue set 328.90118fil, direction TLT
+....\glue(\baselineskip) 1.9836
+....\hbox(7.05+2.05)x469.47055, glue set 326.34052fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
@@ -861,75 +844,67 @@ Completed box being shipped out [1]
 ....\penalty 10000
 ....\glue -15.08499 plus -4.31 minus -0.86198
 ....\glue 15.08499 plus 4.31 minus 0.86198
+....\pdfcolorstack 0 push {0 g 0 G}
+....\penalty 10000
+....\penalty 10000
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\baselineskip) 3.35005
-....\hbox(12.59995+5.40005)x472.03123, glue set 128.06607fil, direction TLT
+....\glue(\baselineskip) 5.6396
+....\hbox(10.3104+2.9664)x469.47055, glue set 138.75208fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
 ......\localleftbox=null
 ......\localrightbox=null
-.....\rule(12.59995+5.40005)x0.0
-.....\hbox(12.59995+5.40005)x37.18079, direction TLT
-......\pdfcolorstack 0 push {0 g 0 G}
-......\TU/lmr/bx/n/14.4 I
-......\TU/lmr/bx/n/14.4 V
-......\TU/lmr/bx/n/14.4 .
-......\glue 14.4
-......\rule(12.59995+5.40005)x0.0
+.....\hbox(9.99359+0.0)x26.928, direction TLT
 ......\glue 0.0
-......\pdfcolorstack 0 pop
-.....\TU/lmr/bx/n/14.4 R
-.....\TU/lmr/bx/n/14.4 e
+......\TU/lmss/bx/n/14.4 I
+......\TU/lmss/bx/n/14.4 V
+......\TU/lmss/bx/n/14.4 .
+......\glue 7.2
+.....\TU/lmss/bx/n/14.4 R
+.....\TU/lmss/bx/n/14.4 e
 .....\discretionary (penalty 50)
-......< \TU/lmr/bx/n/14.4 -
-.....\TU/lmr/bx/n/14.4 m
-.....\TU/lmr/bx/n/14.4 a
-.....\TU/lmr/bx/n/14.4 r
-.....\TU/lmr/bx/n/14.4 k
-.....\glue(\spaceskip) 5.4 plus 2.7 minus 1.8
-.....\TU/lmr/bx/n/14.4 -
-.....\glue(\spaceskip) 5.4 plus 2.7 minus 1.8
-.....\TU/lmr/bx/n/14.4 S
-.....\TU/lmr/bx/n/14.4 i
-.....\TU/lmr/bx/n/14.4 n
-.....\discretionary (penalty 50)
-......< \TU/lmr/bx/n/14.4 -
-.....\TU/lmr/bx/n/14.4 g
-.....\TU/lmr/bx/n/14.4 l
-.....\TU/lmr/bx/n/14.4 e
-.....\glue(\spaceskip) 5.4 plus 2.7 minus 1.8
-.....\TU/lmr/bx/n/14.4 n
+......< \TU/lmss/bx/n/14.4 -
+.....\TU/lmss/bx/n/14.4 m
+.....\TU/lmss/bx/n/14.4 a
 .....\kern-0.4464 (font)
-.....\TU/lmr/bx/n/14.4 u
-.....\TU/lmr/bx/n/14.4 m
+.....\TU/lmss/bx/n/14.4 r
+.....\TU/lmss/bx/n/14.4 k
+.....\glue(\spaceskip) 5.2848 plus 2.6424 minus 1.7616
+.....\TU/lmss/bx/n/14.4 -
+.....\glue(\spaceskip) 5.2848 plus 2.6424 minus 1.7616
+.....\TU/lmss/bx/n/14.4 S
+.....\TU/lmss/bx/n/14.4 i
+.....\TU/lmss/bx/n/14.4 n
 .....\discretionary (penalty 50)
-......< \TU/lmr/bx/n/14.4 -
-......= \kern-0.4464 (font)
-.....\TU/lmr/bx/n/14.4 b
+......< \TU/lmss/bx/n/14.4 -
+.....\TU/lmss/bx/n/14.4 g
+.....\TU/lmss/bx/n/14.4 l
+.....\TU/lmss/bx/n/14.4 e
+.....\glue(\spaceskip) 5.2848 plus 2.6424 minus 1.7616
+.....\TU/lmss/bx/n/14.4 n
+.....\TU/lmss/bx/n/14.4 u
+.....\TU/lmss/bx/n/14.4 m
+.....\discretionary (penalty 50)
+......< \TU/lmss/bx/n/14.4 -
+.....\TU/lmss/bx/n/14.4 b
 .....\kern0.4464 (font)
-.....\TU/lmr/bx/n/14.4 e
-.....\TU/lmr/bx/n/14.4 r
-.....\TU/lmr/bx/n/14.4 .
-.....\kern0.0
-.....\rule(12.59995+5.40005)x0.0
+.....\TU/lmss/bx/n/14.4 e
+.....\TU/lmss/bx/n/14.4 r
+.....\TU/lmss/bx/n/14.4 .
 .....\penalty 10000
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0 plus 1.0fil
-....\penalty 10000
-....\write5{\protect \BOOKMARK [1][-]{section.4}{\376\377\000R\000e\000m\000a\000r\000k\000\040\000-\000\040\000S\000i\000n\000g\000l\000e\000\040\000n\000u\000m\000b\000e\000r\000.}{}% 4}
-....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {IV.}Remark - Single number.}{\thepage }{section.4}\protected@file@percent }}
-....\penalty 10000
+....\pdfcolorstack 0 pop
+....\write1{\@writefile{toc}{\protect \contentsline {section}{\protect \numberline {IV}Remark - Single number.}{\thepage }{section.4}\protected@file@percent }}
 ....\penalty 10000
 ....\glue 9.913 plus 0.86198
-....\glue 0.0
-....\glue 0.0
-....\write1{\exp_not:n {\@writefile {thlist}{\KeyThmsSavedTheorem {tdocrem}{IV.1}{tdocrem.4.1}{1}{}{note={}}{}}}}
+....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{IV.1}{tdocrem.4.1}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
-....\glue(\lineskip) 1.0
-....\hbox(7.05+2.05)x472.03123, glue set 333.34119fil, direction TLT
+....\glue(\baselineskip) 1.9836
+....\hbox(7.05+2.05)x469.47055, glue set 330.78052fil, direction TLT
 .....\localpar
 ......\localinterlinepenalty=0
 ......\localbrokenpenalty=0
@@ -987,16 +962,23 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ....\glue 0.0
 ....\glue 0.0 plus 0.0001fil
-...\glue(\baselineskip) 23.34
-...\hbox(6.66+0.0)x472.03123, direction TLT
+...\glue(\baselineskip) 35.34
+...\hbox(6.66+0.0)x469.47055, direction TLT
 ....\pdfcolorstack 0 push {0 g 0 G}
-....\hbox(6.66+0.0)x472.03123, glue set 233.51563fil, direction TLT
-.....\glue 0.0 plus 1.0fil
-.....\TU/lmr/m/n/10 1
-.....\glue 0.0 plus 1.0fil
+....\hbox(6.66+0.0)x469.47055, direction TLT
+.....\hbox(6.66+0.0)x469.47055, direction TLT
+......\vbox(6.66+0.0)x469.47055, direction TLT
+.......\hbox(6.66+0.0)x469.47055, glue set 232.23528fil, direction TLT
+........\glue 0.0 plus 1.0fil
+........\pdfcolorstack 0 push {0 g 0 G}
+........\TU/lmr/m/n/10 1
+........\pdfcolorstack 0 pop
+........\glue 0.0 plus 1.0fil
+.....\glue 0.0 plus 1.0fil minus 1.0fil
 ....\pdfcolorstack 0 pop
 .\kern0.0
 .\kern0.0
+runsystem(latexminted cleantemp  --timestamp 20160520090000Z 8D808B0693A7C1ADAAE6CF9CFC1B5BF4)...executed.
 (pdf-highlight-same-counter.aux)
 Package rerunfilecheck Info: File `pdf-highlight-same-counter.out' has not changed.
-(rerunfilecheck)             Checksum: C7689A3BB73181864CA6BDFBD1F5A1FE;589.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.

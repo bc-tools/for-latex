@@ -1,7 +1,7 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 Completed box being shipped out [1]
-\vbox(686.8619+0.0)x533.48917
+\vbox(765.79007+0.0)x520.12476
 .\hbox(0.0+0.0)x0.0
 ..\special{pdf:docinfo<</Title()/Subject()/Creator(LaTeX with hyperref)/Author()/Keywords()>>}
 .\hbox(0.0+0.0)x0.0
@@ -17,80 +17,82 @@ Completed box being shipped out [1]
 .....\glue 0.0 plus 1.0fil minus 1.0fil
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
-.\vbox(0.0+0.0)x533.48917
-..\vbox(0.0+0.0)x534.62727, glue set - 687.26189fil, shifted -1.1381
-...\glue -38.1381
-...\vbox(0.0+0.0)x472.03123, glue set - 0.2fil
+.\vbox(0.0+0.0)x520.12476
+..\vbox(0.0+0.0)x528.37605, glue set - 766.19006fil, shifted -8.2513
+...\glue -51.20993
+...\vbox(0.0+0.0)x469.47055, glue set - 0.2fil
 ....\glue 0.0 plus 1.0fil minus 1.0fil
-....\rule(0.2+0.0)x472.03123
-...\glue 12.0
+....\rule(0.2+0.0)x469.47055
+...\glue 15.0
 ...\glue(\baselineskip) 0.0
-...\vbox(0.0+0.2)x472.03123
+...\vbox(0.0+0.2)x469.47055
 ....\glue 0.0 plus 1.0fil minus 1.0fil
-....\rule(0.0+0.2)x472.03123
-...\glue 25.0
+....\rule(0.0+0.2)x469.47055
+...\glue 18.0
 ...\glue(\lineskip) 0.0
-...\vbox(0.0+0.0)x472.03123, glue set - 0.2fil
+...\vbox(0.0+0.0)x469.47055, glue set - 0.2fil
 ....\glue 0.0 plus 1.0fil minus 1.0fil
-....\rule(0.2+0.0)x472.03123
+....\rule(0.2+0.0)x469.47055
 ...\glue(\lineskip) 0.0
-...\hbox(658.0+0.0)x534.62727, glue set 56.50551fil
-....\hbox(658.0+0.0)x0.0, glue set - 0.2fil
+...\hbox(742.0+0.0)x528.37605, glue set 56.50551fil
+....\hbox(742.0+0.0)x0.0, glue set - 0.2fil
 .....\glue 0.0 plus 1.0fil minus 1.0fil
-.....\rule(658.0+0.0)x0.2
-....\glue 472.03123
-....\rule(658.0+0.0)x0.2
-....\glue 5.69054
-....\hbox(658.0+0.0)x0.0, glue set - 0.2fil
+.....\rule(742.0+0.0)x0.2
+....\glue 469.47055
+....\rule(742.0+0.0)x0.2
+....\glue 2.0
+....\hbox(742.0+0.0)x0.0, glue set - 0.2fil
 .....\glue 0.0 plus 1.0fil minus 1.0fil
-.....\rule(658.0+0.0)x0.2
+.....\rule(742.0+0.0)x0.2
 ....\glue 0.0 plus 1.0fil
-....\rule(658.0+0.0)x0.2
+....\rule(742.0+0.0)x0.2
 ...\glue(\baselineskip) 0.0
-...\vbox(0.0+0.0)x472.03123, glue set - 0.2fil
+...\vbox(0.0+0.0)x469.47055, glue set - 0.2fil
 ....\glue 0.0 plus 1.0fil minus 1.0fil
-....\rule(0.2+0.0)x472.03123
-...\glue 30.0
+....\rule(0.2+0.0)x469.47055
+...\glue 42.0
 ...\glue(\baselineskip) 0.0
-...\vbox(0.0+0.2)x472.03123
+...\vbox(0.0+0.2)x469.47055
 ....\glue 0.0 plus 1.0fil minus 1.0fil
-....\rule(0.0+0.2)x472.03123
+....\rule(0.0+0.2)x469.47055
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 .\glue(\lineskip) 0.0
-.\vbox(686.8619+0.0)x470.89313
-..\vbox(0.0+0.0)x0.0, glue set 39.14185fil
+.\vbox(765.79007+0.0)x461.21925
+..\vbox(0.0+0.0)x0.0, glue set 52.21367fil
 ...\kern 0.0
-...\kern -38.1381
+...\kern -51.20993
 ...\kern -1.00374
-...\hbox(0.0+0.0)x0.0, glue set 2.14185fil
+...\hbox(0.0+0.0)x0.0, glue set 9.25504fil
 ....\kern 0.0
-....\kern -1.1381
+....\kern -8.2513
 ....\kern -1.00374
 ....\special{pdf:dest (page.1) [@thispage /XYZ @xpos @ypos null]}
 ....\penalty 10000
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 ..\glue(\lineskip) 0.0
-..\vbox(686.8619+0.0)x470.89313
-...\glue -38.1381
-...\vbox(725.0+0.0)x472.03123, shifted -1.1381
-....\vbox(12.0+0.0)x472.03123, glue set 12.0fil
+..\vbox(765.79007+0.0)x461.21925
+...\glue -51.20993
+...\vbox(817.0+0.0)x469.47055, shifted -8.2513
+....\vbox(15.0+0.0)x469.47055, glue set 15.0fil
 .....\glue 0.0 plus 1.0fil
-.....\hbox(0.0+0.0)x472.03123
+.....\hbox(0.0+0.0)x469.47055
 ......\special{color push gray 0}
-......\hbox(0.0+0.0)x472.03123
+......\hbox(0.0+0.0)x469.47055
 ......\special{color pop}
-....\glue 25.0
+....\glue 18.0
 ....\glue(\lineskip) 0.0
-....\vbox(658.0+0.0)x472.03123, glue set 611.93463fil
+....\vbox(742.0+0.0)x469.47055, glue set 695.92567fil
 .....\write-{}
 .....\special{color push gray 0}
 .....\special{pdf:majorversion 1}
 .....\special{pdf:minorversion 5}
+.....\special{background gray 1}
+.....\special{color push gray 0}
 .....\special{pdf:docview<</OpenAction[@page1/Fit]/PageMode/UseOutlines>>}
 .....\special{pdf:dest (Doc-Start) [@thispage /XYZ @xpos @ypos null]}
 .....\glue(\topskip) 3.06
-.....\hbox(6.94+2.28998)x472.03123, glue set 0.33498
+.....\hbox(6.94+2.28998)x469.47055, glue set 0.3008
 ......\hbox(0.0+0.0)x0.0
 ......\TU/lmr/m/n/10 a
 ......\glue 3.33 plus 1.665 minus 1.11
@@ -194,7 +196,7 @@ Completed box being shipped out [1]
 ......\glue(\rightskip) 0.0
 .....\penalty 300
 .....\glue(\baselineskip) 2.77002
-.....\hbox(6.94+0.82999)x472.03123, glue set 424.78123fil
+.....\hbox(6.94+0.82999)x469.47055, glue set 422.22055fil
 ......\TU/lmtt/m/n/10 \end{env}
 ......\kern 0.0
 ......\penalty 10000
@@ -203,7 +205,7 @@ Completed box being shipped out [1]
 .....\glue(\parskip) 0.0 plus 1.0
 .....\glue(\parskip) 0.0
 .....\glue(\baselineskip) 4.23001
-.....\hbox(6.94+2.28998)x472.03123, glue set 0.01363
+.....\hbox(6.94+2.28998)x469.47055, glue set - 0.02666
 ......\hbox(0.0+0.0)x0.0
 ......\TU/lmr/m/n/10 a
 ......\glue 3.33 plus 1.665 minus 1.11
@@ -309,7 +311,7 @@ Completed box being shipped out [1]
 ......\glue(\rightskip) 0.0
 .....\penalty 300
 .....\glue(\baselineskip) 2.77002
-.....\hbox(6.94+0.82999)x472.03123, glue set 408.78139fil
+.....\hbox(6.94+0.82999)x469.47055, glue set 406.2207fil
 ......\TU/lmtt/m/n/10 ...
 ......\kern -1.66672
 ......\kern -1.66672
@@ -324,16 +326,23 @@ Completed box being shipped out [1]
 .....\glue 0.0 plus 1.0fil
 .....\glue 0.0
 .....\glue 0.0 plus 0.0001fil
-....\glue(\baselineskip) 23.34
-....\hbox(6.66+0.0)x472.03123
+....\glue(\baselineskip) 35.34
+....\hbox(6.66+0.0)x469.47055
 .....\special{color push gray 0}
-.....\hbox(6.66+0.0)x472.03123, glue set 233.51563fil
-......\glue 0.0 plus 1.0fil
-......\TU/lmr/m/n/10 1
-......\glue 0.0 plus 1.0fil
+.....\hbox(6.66+0.0)x469.47055
+......\hbox(6.66+0.0)x469.47055
+.......\vbox(6.66+0.0)x469.47055
+........\hbox(6.66+0.0)x469.47055, glue set 232.23528fil
+.........\glue 0.0 plus 1.0fil
+.........\special{color push gray 0}
+.........\TU/lmr/m/n/10 1
+.........\special{color pop}
+.........\glue 0.0 plus 1.0fil
+......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\special{color pop}
 .\kern 0.0
 .\kern 0.0
+runsystem(latexminted cleantemp  --timestamp 20160520090000Z 0E9BC9F9D90BFC761802A0E7B49DD542)...executed.
 (pdf-tdocenv-back-return.aux)
 Package rerunfilecheck Info: File `pdf-tdocenv-back-return.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.

@@ -3,3 +3,23 @@
 \NewExpandableDocumentCommand{\tutodoc@changes@when@color}{}{%
   black%
 }
+
+
+% -- (NO) ICONS -- %
+
+\newcommand{\tutodoc@changes@start@project@icon}{}
+
+\ExplSyntaxOn
+
+\prop_new:N              \g__tutodoc_topic_change_prop
+\prop_set_from_keyval:Nn \g__tutodoc_topic_change_prop {
+  break  = ,
+  fix    = ,
+  new    = ,
+  prob   = ,
+  tech   = ,
+  update = ,
+  todo   = ,
+}
+
+\ExplSyntaxOff
