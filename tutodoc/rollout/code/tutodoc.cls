@@ -1381,21 +1381,6 @@
 % :::::::::::::::::::::: %
 
 %%%
-% We use a ''prop'' variable to factorize the code just after.
-%%%
-\prop_new:N              \g__tutodoc_topic_change_prop
-\prop_set_from_keyval:Nn \g__tutodoc_topic_change_prop {
-  break  = \faCodeBranch,
-  fix    = \faWrench,
-  new    = \faGem,
-  prob   = \faFire*,
-  tech   = \faFlask,
-  update = \reflectbox{\faHistory},
-  todo   = \faCompass[regular],
-}
-
-
-%%%
 % prototype::
 %     :see: env.tdoctopic
 %
@@ -1424,7 +1409,7 @@
 \NewDocumentCommand{ \tdocstartproj }{ O{tutodoc@text@color} m } {
   \group_begin:
   \color{#1}
-  \tdocicon{\faAnchor}#2
+  \tdocicon{\tutodoc@changes@start@project@icon}#2
   \group_end:
 }
 

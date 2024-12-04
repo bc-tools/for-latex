@@ -125,3 +125,23 @@
 \NewExpandableDocumentCommand{\tutodoc@changes@when@color}{}{%
   gray%
 }
+
+
+% -- ICONS -- %
+
+\newcommand{\tutodoc@changes@start@project@icon}{\faAnchor}
+
+\ExplSyntaxOn
+
+\prop_new:N              \g__tutodoc_topic_change_prop
+\prop_set_from_keyval:Nn \g__tutodoc_topic_change_prop {
+  break  = \faCodeBranch,
+  fix    = \faWrench,
+  new    = \faGem,
+  prob   = \faFire*,
+  tech   = \faFlask,
+  update = \reflectbox{\faHistory},
+  todo   = \faCompass[regular],
+}
+
+\ExplSyntaxOff
