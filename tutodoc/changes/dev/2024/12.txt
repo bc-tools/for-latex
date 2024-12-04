@@ -12,7 +12,7 @@
 [[:facto:]]
 Simplified \orga of \cfg files in the final \proj.
 
-    1) \Css-like: one file per theme, with names like path::''tutodoc-bw.css.cls''.
+    1) \Css-like: one file per theme with a name like path::''tutodoc-bw.css.cls''.
 
     1) Locale: use of names like path::''tutodoc-en.loc.cls''.
 

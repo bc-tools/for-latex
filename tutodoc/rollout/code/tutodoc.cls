@@ -184,8 +184,8 @@
 % to the english language.
   \makeatletter
 
-  \InputIfFileExists{tutodoc-main-locale-\tdoclang.cfg.cls.sty}{}{
-    \input{tutodoc-main-locale-en.cfg.cls.sty}
+  \InputIfFileExists{tutodoc-\tdoclang.loc.cls}{}{
+    \input{tutodoc-en.loc.cls}
 
     \msg_critical:nnx { tutodoc ~ (main) }
       { main : unsupported-lang }
@@ -298,7 +298,7 @@
 % -- THEME -- %
 % ----------- %
 
-\input{tutodoc-\tutodoc@theme.css.cls.sty}
+\input{tutodoc-\tutodoc@theme.css.cls}
 
 \pagecolor{tutodoc@page@color}
 \color{tutodoc@text@color}

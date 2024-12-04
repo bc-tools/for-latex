@@ -8,7 +8,7 @@ from .misc      import *
 # -- END IS COMING SOON... -- #
 # --------------------------- #
 
-def minicss_cls(
+def minicss(
     metadata,
 ):
     projname = metadata[TAG_PROJ_NAME]
@@ -16,7 +16,7 @@ def minicss_cls(
     code_dir = metadata[TAG_ROLLOUT] / "code"
     csspaths = defaultdict(dict)
 
-    for p in code_dir.glob("*.css.*.sty"):
+    for p in code_dir.glob("*.css.*"):
         name, _ , longext    = p.name.partition(".css.")
         name                 = name[len(projname)+1:]
         cssname, _ , srcname = name.partition("-")
@@ -34,7 +34,7 @@ def minicss_cls(
     for cssname, contents in main_contents.items():
         contents =  "\n\n\n".join(contents)
 
-        cssmainfile = code_dir / f"{projname}-{cssname}.css.{longext}"
+        cssmainfile = code_dir / f"{projname}-{cssname}.css.cls"
         cssmainfile.write_text(contents)
 
     for cssname, srcinfos in csspaths.items():

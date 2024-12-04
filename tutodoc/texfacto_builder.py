@@ -357,7 +357,16 @@ finalize(
 # -- MINIFY CSS -- #
 # ---------------- #
 
-minicss_cls(
+minicss(
+    metadata  = metadata,
+)
+
+
+# ------------------------- #
+# -- PRETTY LOCALE ORGA. -- #
+# ------------------------- #
+
+prettyloc(
     metadata  = metadata,
 )
 
