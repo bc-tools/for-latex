@@ -5,6 +5,14 @@
 04  (1.7.0.beta-6)
 ==
 
+-------
+:break:
+-------
+
+[[:api:]]
+\latex code: the macro ''\tdocinlatex'' has been renamed ''\tdoclatexin''.
+
+
 --------
 :fordev:
 --------

@@ -1039,15 +1039,16 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
     \noindent
     \emph{\textbf{Remarque :} cette documentation est aussi disponible en anglais.}
 
+    \smallskip
     \tdocsep
+    \small
+    \itshape
+    \vspace{-5pt}
+    \begin{center}
+        \textbf{Abstract.}
+    \end{center}
 
-    {\small\itshape
-        \vspace{-5pt}
-        \begin{center}
-            \textbf{Abstract.}
-        \end{center}
-
-        The \thisproj{} class\,%
+    The \thisproj{} class\,%
         \footnote{
             The name comes from \tdocquote{\tdocprewhy{tuto.rial-type} \tdocprewhy{doc.umentation}}.
         }
@@ -1061,15 +1062,13 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
     
         \noindent
         \emph{\textbf{Remark :} this documentation is also available in French.}
-    }
-\end{abstract}
-
-\medskip
-
-\begin{center}
+\tdocsep
 \small
-\begin{minipage}{.9\textwidth}
-\begin{tdocnote}[Derniers changements]
+\bgroup
+    \addtokomafont{subsection}{\centering}
+    \subsection*{Derniers changements}
+\egroup
+
 \begin{tdocbreak}
 	\item Mise en forme : la classe \tdoccls{scrartcl} remplace la vénérable \tdoccls{article}. Cela implique un meilleur positionnement des notes de marge avec les options retenues pour charger \tdoccls{scrartcl}.
 
@@ -1128,9 +1127,6 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 		\item Locale : utilisation de noms comme \texttt{tutodoc-fr.loc.cls}\,.
 	\end{enumerate}
 \end{tdoctech}
-\end{tdocnote}
-\end{minipage}
-\end{center}
 
 
 \newpage

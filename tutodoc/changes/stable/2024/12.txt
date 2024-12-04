@@ -14,11 +14,15 @@ The ‘’scrartcl‘’ class replaces the venerable ‘’article‘’. This 
 
 
 [[:api:]]
-Color key names will be hyphenated where necessary: this implies the following changes.
+Here are the breaking chges.
 
-    1) Admonitions: the ''colchges'' option of the \envs has been renamed ''col-chges''.
+    1) \latex code: the macro ''\tdocinlatex'' has been renamed ''\tdoclatexin''.
 
-    1) Showcases: the ''colstripe'' and  ''coltext'' options of the \env ''tdocshowcase'' and the macro ''\tdocshowcaseinput'' have been renamed ''col-stripe'' and  ''col-text''.
+    1) Color key names will be hyphenated where necessary: this implies the following changes.
+
+        * Admonitions: the ''colchges'' option of the \envs has been renamed ''col-chges''.
+
+        * Showcases: the ''colstripe'' and  ''coltext'' options of the \env ''tdocshowcase'' and the macro ''\tdocshowcaseinput'' have been renamed ''col-stripe'' and  ''col-text''.
 
 
 -----

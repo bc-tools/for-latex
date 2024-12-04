@@ -166,10 +166,11 @@ def prebuild_single_tex(
             srcfile = lang_dir_manual / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
         )
 
+
+
         if lang != TAG_LANG_EN:
-            abstract = abstract.replace(
-                "\\end{abstract}",
-                f"""
+            abstract  = abstract.replace(r"\end{abstract}", "")
+            abstract += f"""
     \\smallskip
     \\tdocsep
     \\small
@@ -181,7 +182,6 @@ def prebuild_single_tex(
 
     {abstract_EN}
                 """.rstrip()
-            )
 
         abstract = other_manual_langs(
             content   = abstract,
@@ -190,12 +190,14 @@ def prebuild_single_tex(
         )
 
         abstract += f"""
-    \\smallskip
-    \\tdocsep
-    \\small
+\\tdocsep
+\\small
+\\bgroup
+    \\addtokomafont{{subsection}}{{\\centering}}
     \\subsection*{{{LAST_CHGES_IN[lang]}}}
-    {last_chges_explained}
-\\end{abstract}
+\\egroup
+
+{last_chges_explained}
         """.rstrip()
 
         abstract_file = lang_temp_dir / f"{TAG_ABSTRACT}.tex"

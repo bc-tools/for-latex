@@ -9,13 +9,6 @@ NOW
 
 > ---------------------------- <
 
-\tdocinlatex
--->
-\tdoclatexin
-
-
-> ---------------------------- <
-
 maj des tests unitaires !!!!
 
 
