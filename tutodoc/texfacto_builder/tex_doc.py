@@ -170,17 +170,16 @@ def prebuild_single_tex(
             abstract = abstract.replace(
                 "\\end{abstract}",
                 f"""
+    \\smallskip
     \\tdocsep
+    \\small
+    \\itshape
+    \\vspace{{-5pt}}
+    \\begin{{center}}
+        \\textbf{{Abstract.}}
+    \\end{{center}}
 
-    {{\\small\\itshape
-        \\vspace{{-5pt}}
-        \\begin{{center}}
-            \\textbf{{Abstract.}}
-        \\end{{center}}
-
-        {abstract_EN}
-    }}
-\\end{{abstract}}
+    {abstract_EN}
                 """.rstrip()
             )
 
@@ -191,17 +190,12 @@ def prebuild_single_tex(
         )
 
         abstract += f"""
-
-\\medskip
-
-\\begin{{center}}
-\\small
-\\begin{{minipage}}{{.9\\textwidth}}
-\\begin{{tdocnote}}[{LAST_CHGES_IN[lang]}]
-{last_chges_explained}
-\\end{{tdocnote}}
-\\end{{minipage}}
-\\end{{center}}
+    \\smallskip
+    \\tdocsep
+    \\small
+    \\subsection*{{{LAST_CHGES_IN[lang]}}}
+    {last_chges_explained}
+\\end{abstract}
         """.rstrip()
 
         abstract_file = lang_temp_dir / f"{TAG_ABSTRACT}.tex"
@@ -240,7 +234,7 @@ def prebuild_single_tex(
                 thedoc = thedoc.strip()
 
                 api_lang_items = '\n        \\task '.join(
-                    f"\\tdocinlatex|{l}| : {lang_long_name_in(l, lang)}."
+                    f"\\tdoclatexin|{l}| : {lang_long_name_in(l, lang)}."
                     for l in sorted(about_langs[TAG_API_LANGS])
                 )
 

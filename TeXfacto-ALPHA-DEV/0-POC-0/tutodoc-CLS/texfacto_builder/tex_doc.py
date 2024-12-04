@@ -240,7 +240,7 @@ def prebuild_single_tex(
                 thedoc = thedoc.strip()
 
                 api_lang_items = '\n        \\item '.join(
-                    f"\\tdocinlatex|{l}| : {lang_long_name_in(l, lang)}."
+                    f"\\tdoclatexin|{l}| : {lang_long_name_in(l, lang)}."
                     for l in sorted(about_langs[TAG_API_LANGS])
                 )
 
