@@ -54,7 +54,7 @@ Here are the new fetaures.
 
         * A new ''tdoctodo'' \env has been added.
 
-        * Each \env has a new ''col'' option for color of the material indicating \chges.
+        * Each \env has a new ''col'' option for color of the content indicating \chges.
 
 
 --------

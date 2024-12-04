@@ -35,27 +35,27 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 \subsection{Codes \tdocquote{en ligne}}
 \label{tutodoc-listing-inline}
 
-La macro \tdocmacro{tdocinlatex}
+La macro \tdocmacro{tdoclatexin}
 \footnote{
-    Le nom de la macro \tdocmacro{tdocinlatex} vient de \tdocquote{\tdocprewhy{in.line} \LaTeX} soit \tdocinEN{\LaTeX\ en ligne}.
+    Le nom de la macro \tdocmacro{tdoclatexin} vient de \tdocquote{\tdocprewhy{in.line} \LaTeX} soit \tdocinEN{\LaTeX\ en ligne}.
 }
 permet de taper du code en ligne via un usage similaire à \tdocmacro{verb} ou bien comme une macro standard (voir la gestion des accolades dans le dernier cas ci-dessous).
 Voici des exemples d'utilisation.
 
 
 \begin{tdoclatex}[sbs]
-    1: \tdocinlatex|$a^b = c$|               \\
-    2: \tdocinlatex+\tdocinlatex|$a^b = c$|+ \\
-    3: \tdocinlatex{\tdocinlatex{$a^b = c$}}
+    1: \tdoclatexin|$a^b = c$|               \\
+    2: \tdoclatexin+\tdoclatexin|$a^b = c$|+ \\
+    3: \tdoclatexin{\tdoclatexin{$a^b = c$}}
 \end{tdoclatex}
 
 
 \begin{tdocnote}
-    La macro \tdocmacro{tdocinlatex} est utilisable dans une note de pied de page : voir ci-dessous.
+    La macro \tdocmacro{tdoclatexin} est utilisable dans une note de pied de page : voir ci-dessous.
     \footnote{
-        \tdocinlatex+$minted = TOP$+ a été tapé \tdocinlatex|\tdocinlatex+$minted = TOP$+| dans cette note de bas de page..
+        \tdoclatexin+$minted = TOP$+ a été tapé \tdoclatexin|\tdoclatexin+$minted = TOP$+| dans cette note de bas de page..
     }
-    De plus, une couleur de fond est volontairement utilisée pour subtilement faire ressortir les codes \tdocinlatex#\LaTeX#\,.
+    De plus, une couleur de fond est volontairement utilisée pour subtilement faire ressortir les codes \tdoclatexin#\LaTeX#\,.
 \end{tdocnote}
 
 
@@ -64,15 +64,15 @@ Voici des exemples d'utilisation.
 
 \begin{tdocexa}[Face à face]
     Via \tdocenv[{[sbs]}]{tdoclatex}, on affichera un code et son rendu côte à côte.
-    Indiquons que \tdocinlatex#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}.
+    Indiquons que \tdoclatexin#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}.
     \tdocbasicinputDOC{examples/listing/ABC.tex}
 \end{tdocexa}
 
 
 \begin{tdocexa}[À la suite]
-    \tdocenv{tdoclatex} produit le résultat suivant qui correspond à l'option par défaut \tdocinlatex#std#\,.
+    \tdocenv{tdoclatex} produit le résultat suivant qui correspond à l'option par défaut \tdoclatexin#std#\,.
     \footnote{
-        \tdocinlatex{std} fait référence au comportement \tdocquote{standard} de \tdocpack{tcolorbox} vis à vis de la librairie \tdocpack{minted}.
+        \tdoclatexin{std} fait référence au comportement \tdocquote{standard} de \tdocpack{tcolorbox} vis à vis de la librairie \tdocpack{minted}.
     }
 
     \begin{tdoclatex}

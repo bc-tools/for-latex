@@ -112,7 +112,7 @@
 
 \section{Des codes \LaTeX}
 
-Taper du code \LaTeX\ en ligne comme \tdocinlatex{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
+Taper du code \LaTeX\ en ligne comme \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
 
 \begin{tdoclatex}
 Du code \LaTeX\ mis en forme, c'est top : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
@@ -239,7 +239,7 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 
 \section{Des codes \LaTeX}
 
-Taper du code \LaTeX\ en ligne comme \tdocinlatex{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
+Taper du code \LaTeX\ en ligne comme \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
 
 \begin{tdoclatex}
 Du code \LaTeX\ mis en forme, c'est top : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
@@ -366,7 +366,7 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 
 \section{Des codes \LaTeX}
 
-Taper du code \LaTeX\ en ligne comme \tdocinlatex{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
+Taper du code \LaTeX\ en ligne comme \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
 
 \begin{tdoclatex}
 Du code \LaTeX\ mis en forme, c'est top : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
@@ -493,7 +493,7 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 
 \section{Des codes \LaTeX}
 
-Taper du code \LaTeX\ en ligne comme \tdocinlatex{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
+Taper du code \LaTeX\ en ligne comme \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
 
 \begin{tdoclatex}
 Du code \LaTeX\ mis en forme, c'est top : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
@@ -1056,9 +1056,9 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
             The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
         }
         using a sober rendering for reading on screen.
-    
+
         \smallskip
-    
+
         \noindent
         \emph{\textbf{Remark :} this documentation is also available in French.}
     }
@@ -1077,15 +1077,15 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 	\item Les noms des clés pour les couleurs utiliseront des traits d'union lorsque cela sera nécessaire : cela implique les changements suivants.
 	%
 	\begin{enumerate}
-		\item Mise en avant colorée de contenus : l'option \tdocinlatex{colchges} des environnements a été renommée \tdocinlatex{col-chges}.
+		\item Mise en avant colorée de contenus : l'option \tdoclatexin{colchges} des environnements a été renommée \tdoclatexin{col-chges}.
 
-		\item Démonstration de codes \LaTeX\ : pour l'environnement \tdocenv*{tdocshowcase} et la macro \tdocmacro{tdocshowcaseinput}, les options \tdocinlatex{colstripe} et \tdocinlatex{coltext} ont été renommées \tdocinlatex{col-stripe} et \tdocinlatex{col-text}\,.
+		\item Démonstration de codes \LaTeX\ : pour l'environnement \tdocenv*{tdocshowcase} et la macro \tdocmacro{tdocshowcaseinput}, les options \tdoclatexin{colstripe} et \tdoclatexin{coltext} ont été renommées \tdoclatexin{col-stripe} et \tdoclatexin{col-text}\,.
 	\end{enumerate}
 \end{tdocbreak}
 
 
 \begin{tdocfix}
-	\item Mise en avant colorée de contenus : pour les \tdocmacro{newkeytheorem} utilisés avec le thème \tdocinlatex{draft}, il a fallu ajouter \tdocinlatex{postheadhook = \leavevmode} (ceci est nécessaire car le contenu peut juste être de type liste).
+	\item Mise en avant colorée de contenus : pour les \tdocmacro{newkeytheorem} utilisés avec le thème \tdoclatexin{draft}, il a fallu ajouter \tdoclatexin{postheadhook = \leavevmode} (ceci est nécessaire car le contenu peut juste être de type liste).
 \end{tdocfix}
 
 
@@ -1097,7 +1097,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 	\begin{enumerate}
 		\item Les options qui ne sont pas spécifiques à \thisproj\ sont transmises à la classe chargée de la mise en forme générale.
 
-		\item Les options \tdocinlatex{fontsize} et \tdocinlatex{DIV} de la classe \tdoccls{scrartcl} ne peuvent pas être utilisées, car leurs valeurs sont fixées par \thisproj.
+		\item Les options \tdoclatexin{fontsize} et \tdoclatexin{DIV} de la classe \tdoccls{scrartcl} ne peuvent pas être utilisées, car leurs valeurs sont fixées par \thisproj.
 	\end{enumerate}
 
 	\item La macro \tdocmacro{tdocinEN} respecte les règles linguistiques anglaises.
@@ -1107,7 +1107,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 	\begin{enumerate}
 		\item Un nouvel environnement \tdocenv{tdoctodo} a été ajouté.
 
-		\item Chaque environnement dispose d'une nouvelle option \tdocinlatex{col} pour la couleur du contenu indiquant les changements.
+		\item Chaque environnement dispose d'une nouvelle option \tdoclatexin{col} pour la couleur du contenu indiquant les changements.
 	\end{enumerate}
 \end{tdocnew}
 
@@ -1182,7 +1182,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \subsection{Taille de la police et géométrie de la page}
 
-La classe \tdoccls{scrartcl} est chargée via l'option \tdocinlatex{fontsize = 10pt}\,, et le package \tdocpack{geometry} gère les dimensions de la page.
+La classe \tdoccls{scrartcl} est chargée via l'option \tdoclatexin{fontsize = 10pt}\,, et le package \tdocpack{geometry} gère les dimensions de la page.
 
 
 \begin{tdocwarn}
@@ -1202,19 +1202,19 @@ Le package \tdocpack{hyperref} est importé, si ce n'est pas fait, et les régla
 
 \section{Quelle langue est utilisée par la classe \thisproj\ ?}
 
-Cette documentation charge le package \tdocpack{babel} via \tdocinlatex|\usepackage[english]{babel}|\, un package que \thisproj\ ne charge pas.
-En revanche, la classe \thisproj\ identifie \tdocinlatex|fr| comme la langue principale utilisée par \tdocpack{babel}.%.
+Cette documentation charge le package \tdocpack{babel} via \tdoclatexin|\usepackage[english]{babel}|\, un package que \thisproj\ ne charge pas.
+En revanche, la classe \thisproj\ identifie \tdoclatexin|fr| comme la langue principale utilisée par \tdocpack{babel}.%.
 \footnote{
-    Techniquement, on utilise \tdocinlatex|\BCPdata{language}| qui renvoie une langue au format court.
+    Techniquement, on utilise \tdoclatexin|\BCPdata{language}| qui renvoie une langue au format court.
 }
 Comme cette langue fait partie de la liste des langues prises en compte, voir ci-dessous, la classe \thisproj\ produira les effets attendus.
 
 \begin{tasks}[label=\small\textbullet](3)
-    \task \tdocinlatex|en| : anglais.
-        \task \tdocinlatex|es| : espagnol.
-        \task \tdocinlatex|fr| : français.
+    \task \tdoclatexin|en| : anglais.
+        \task \tdoclatexin|es| : espagnol.
+        \task \tdoclatexin|fr| : français.
 \end{tasks}
-                    
+
 
 
 \begin{tdocnote}
@@ -1241,7 +1241,7 @@ Cool et top signifient \tdocinEN*{cool} et \tdocinEN{top}.
 \end{tdoclatex}
 
 
-La macro \tdocmacro{tdocinEN} et sa version étoilée s'appuient sur \tdocmacro{tdocquote} : par exemple, \tdocquote{sémantique} s'obtient via \tdocinlatex|\tdocquote{sémantique}| .
+La macro \tdocmacro{tdocinEN} et sa version étoilée s'appuient sur \tdocmacro{tdocquote} : par exemple, \tdocquote{sémantique} s'obtient via \tdoclatexin|\tdocquote{sémantique}| .
 
 
 \begin{tdocnote}
@@ -1254,25 +1254,25 @@ Dans le contenu entre guillemets, les règles linguistiques anglaises sont respe
 \begin{tdoclatex}
 Test: \tdocquote{OK?}
 
-\tdocinEN{Test: \tdocquote{OK?}}          
+\tdocinEN{Test: \tdocquote{OK?}}
 \end{tdoclatex}
 
 
 \section{Choisir son thème}
 
-Pour modifier la mise en forme générale, la classe \thisproj\ propose l'option \tdocinlatex{theme = <choix>} où \tdocinlatex{<choix>} peut prendre les valeurs suivantes.
+Pour modifier la mise en forme générale, la classe \thisproj\ propose l'option \tdoclatexin{theme = <choix>} où \tdoclatexin{<choix>} peut prendre les valeurs suivantes.
 
 \begin{tasks}[style=itemize]
-    \task \tdocinlatex{bw}:
+    \task \tdoclatexin{bw}:
           un thème de type noir-et-blanc avec certaines nuances de gris.
 
-    \task \tdocinlatex{color}:
+    \task \tdoclatexin{color}:
           un thème coloré : c'est \emph{la valeur par défaut}.
 
-    \task \tdocinlatex{dark}:
+    \task \tdoclatexin{dark}:
           un thème sombre idéal pour se reposer les yeux.
 
-    \task \tdocinlatex{draft}:
+    \task \tdoclatexin{draft}:
           un thème pour une impression papier à la recherche d'erreurs de contenu pas forcément simples à débusquer devant un écran.
 \end{tasks}
 
@@ -1362,7 +1362,7 @@ Pour modifier la mise en forme générale, la classe \thisproj\ propose l'option
 \subsection{Du contenu dans le flot de la lecture}
 
 \begin{tdocimp}
-    Tous les environnements présentés dans cette section partagent le même compteur qui sera remis à zéro dès qu'une section de niveau au moins égale à une \tdocinlatex|\section| sera ouverte.
+    Tous les environnements présentés dans cette section partagent le même compteur qui sera remis à zéro dès qu'une section de niveau au moins égale à une \tdoclatexin|\section| sera ouverte.
 \end{tdocimp}
 
 
@@ -1403,7 +1403,7 @@ Tout se passe via \tdocenv{tdocrem} avec un fonctionnement identique à l'enviro
     Quant aux icônes, elles sont obtenues via le package \tdocpack{fontawesome5}, et la macro \tdocmacro{tdocicon} gère l'espacement vis-à-vis du texte.
     \footnote{
         Par exemple,
-        \tdocinlatex|\fbox{\tdocicon{\faBed}{Fatigué}}|
+        \tdoclatexin|\fbox{\tdocicon{\faBed}{Fatigué}}|
         produit\,
         \fbox{\tdocicon{\faBed}{Fatigué}}\,.
     }
@@ -1423,7 +1423,7 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 
 
 \begin{tdoctip}
-    Quelque fois, un contenu mis en avant peut se réduire à une liste. Dans ce cas, la mise en forme peut être améliorée comme suit où nous utilisons l'option \tdocinlatex{wide} du package \tdocpack{enumitem}.
+    Quelque fois, un contenu mis en avant peut se réduire à une liste. Dans ce cas, la mise en forme peut être améliorée comme suit où nous utilisons l'option \tdoclatexin{wide} du package \tdocpack{enumitem}.
 
     \tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
 
@@ -1468,14 +1468,14 @@ Voici ce qu'il est possible de taper de façon sémantique.
 \tdocenv{env} produit...               \\
 \tdocenv[{[opt1]<opt2>}]{env}          \\
 Juste \tdocenv*{env}...                \\
-Enfin \tdocenv*[{[opt1]<opt2>}]{env}... 
+Enfin \tdocenv*[{[opt1]<opt2>}]{env}...
       % Pour les copier-coller.
 \end{tdoclatex}
 
 
 \begin{tdocrem}
-    Contrairement à \tdocmacro{tdocinlatex}, les macros \tdocmacro{tdocenv} et \tdocmacro{tdocenv*} ne colorent pas le texte produit.
-    De plus, \tdocinlatex{\tdocenv{monenv}} produit \tdocenv{monenv} avec des espaces afin d'autoriser des retours à la ligne si besoin.
+    Contrairement à \tdocmacro{tdoclatexin}, les macros \tdocmacro{tdocenv} et \tdocmacro{tdocenv*} ne colorent pas le texte produit.
+    De plus, \tdoclatexin{\tdocenv{monenv}} produit \tdocenv{monenv} avec des espaces afin d'autoriser des retours à la ligne si besoin.
 \end{tdocrem}
 
 
@@ -1502,7 +1502,7 @@ Pour expliquer les noms retenus, rien de tel que d'indiquer et expliciter les co
 
 
 \begin{tdocrem}
-    Le choix du point pour scinder un mot permet d'utiliser des mots avec un tiret comme dans \tdocinlatex+\tdocprewhy{ca.sse-brique}+ qui donne \tdocprewhy{ca.sse-brique}.
+    Le choix du point pour scinder un mot permet d'utiliser des mots avec un tiret comme dans \tdoclatexin+\tdocprewhy{ca.sse-brique}+ qui donne \tdocprewhy{ca.sse-brique}.
 \end{tdocrem}
 
 
@@ -1565,7 +1565,7 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 \begin{tdocnote}
     Dans l'exemple précédent, le texte utilise bien l'orange assombri proposé. Par contre, le rouge sert de base pour obtenir les couleurs utilisées pour la bande : les transformations utilisées dépendent du thème choisi.%
     \footnote{
-        Par exemple, les thèmes \tdocinlatex{bw} et \tdocinlatex{draft} ne tiennent pas compte de la clé \tdocinlatex{col-stripe} !
+        Par exemple, les thèmes \tdoclatexin{bw} et \tdoclatexin{draft} ne tiennent pas compte de la clé \tdoclatexin{col-stripe} !
     }
     %
     Il faut également savoir qu'en coulisse, la macro \tdocmacro{tdocruler} est employée.
@@ -1632,7 +1632,7 @@ Pour obtenir des rendus en important le code depuis un fichier externe, au lieu 
 
 
 \begin{tdocexa}
-    Ce qui suit a été obtenu via \tdocinlatex+\tdocshowcaseinput{external.tex}+.
+    Ce qui suit a été obtenu via \tdoclatexin+\tdocshowcaseinput{external.tex}+.
 
     \medskip
 
@@ -1641,7 +1641,7 @@ Pour obtenir des rendus en important le code depuis un fichier externe, au lieu 
 
     \medskip
 
-    Via \tdocinlatex+\tdocshowcaseinput[col-stripe = red, col-text = orange!75!black]{external.tex}+\,, on obtient le changement de couleur observable ci-après.
+    Via \tdoclatexin+\tdocshowcaseinput[col-stripe = red, col-text = orange!75!black]{external.tex}+\,, on obtient le changement de couleur observable ci-après.
 
     \medskip
 
@@ -1667,27 +1667,27 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 \subsection{Codes \tdocquote{en ligne}}
 \label{tutodoc-listing-inline}
 
-La macro \tdocmacro{tdocinlatex}
+La macro \tdocmacro{tdoclatexin}
 \footnote{
-    Le nom de la macro \tdocmacro{tdocinlatex} vient de \tdocquote{\tdocprewhy{in.line} \LaTeX} soit \tdocinEN{\LaTeX\ en ligne}.
+    Le nom de la macro \tdocmacro{tdoclatexin} vient de \tdocquote{\tdocprewhy{in.line} \LaTeX} soit \tdocinEN{\LaTeX\ en ligne}.
 }
 permet de taper du code en ligne via un usage similaire à \tdocmacro{verb} ou bien comme une macro standard (voir la gestion des accolades dans le dernier cas ci-dessous).
 Voici des exemples d'utilisation.
 
 
 \begin{tdoclatex}[sbs]
-    1: \tdocinlatex|$a^b = c$|               \\
-    2: \tdocinlatex+\tdocinlatex|$a^b = c$|+ \\
-    3: \tdocinlatex{\tdocinlatex{$a^b = c$}}
+    1: \tdoclatexin|$a^b = c$|               \\
+    2: \tdoclatexin+\tdoclatexin|$a^b = c$|+ \\
+    3: \tdoclatexin{\tdoclatexin{$a^b = c$}}
 \end{tdoclatex}
 
 
 \begin{tdocnote}
-    La macro \tdocmacro{tdocinlatex} est utilisable dans une note de pied de page : voir ci-dessous.
+    La macro \tdocmacro{tdoclatexin} est utilisable dans une note de pied de page : voir ci-dessous.
     \footnote{
-        \tdocinlatex+$minted = TOP$+ a été tapé \tdocinlatex|\tdocinlatex+$minted = TOP$+| dans cette note de bas de page..
+        \tdoclatexin+$minted = TOP$+ a été tapé \tdoclatexin|\tdoclatexin+$minted = TOP$+| dans cette note de bas de page..
     }
-    De plus, une couleur de fond est volontairement utilisée pour subtilement faire ressortir les codes \tdocinlatex#\LaTeX#\,.
+    De plus, une couleur de fond est volontairement utilisée pour subtilement faire ressortir les codes \tdoclatexin#\LaTeX#\,.
 \end{tdocnote}
 
 
@@ -1696,16 +1696,16 @@ Voici des exemples d'utilisation.
 
 \begin{tdocexa}[Face à face]
     Via \tdocenv[{[sbs]}]{tdoclatex}, on affichera un code et son rendu côte à côte.
-    Indiquons que \tdocinlatex#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}.
+    Indiquons que \tdoclatexin#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}.
     \tdocbasicinputDOC{examples-listing-ABC.tex}
 
 \end{tdocexa}
 
 
 \begin{tdocexa}[À la suite]
-    \tdocenv{tdoclatex} produit le résultat suivant qui correspond à l'option par défaut \tdocinlatex#std#\,.
+    \tdocenv{tdoclatex} produit le résultat suivant qui correspond à l'option par défaut \tdoclatexin#std#\,.
     \footnote{
-        \tdocinlatex{std} fait référence au comportement \tdocquote{standard} de \tdocpack{tcolorbox} vis à vis de la librairie \tdocpack{minted}.
+        \tdoclatexin{std} fait référence au comportement \tdocquote{standard} de \tdocpack{tcolorbox} vis à vis de la librairie \tdocpack{minted}.
     }
 
     \begin{tdoclatex}
@@ -1774,7 +1774,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \end{tdoclatex}
 
-    Ceci produit la mise en forme suivante où l'option employée par défaut est \tdocinlatex#std#.
+    Ceci produit la mise en forme suivante où l'option employée par défaut est \tdoclatexin#std#.
 
     \tdoclatexinput{examples-listing-xyz.tex}
 
@@ -1801,7 +1801,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 \label{tutodoc-latexshow}
 
 \begin{tdocexa}[Mise en situation]
-    \tdocinlatex+\tdoclatexshow{examples-listing-xyz.tex}+ produit ce qui suit.
+    \tdoclatexin+\tdoclatexshow{examples-listing-xyz.tex}+ produit ce qui suit.
 
     \medskip
 
@@ -1818,7 +1818,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
 
 \begin{tdocexa}[Changer le texte explicatif]
-    Via la clé \tdocinlatex|explain|, on peut utiliser un texte personnalisé. Ainsi, \tdocinlatex|\tdoclatexshow[explain = Voici le rendu réel.]{examples-listing-xyz.tex}| produira ce qui suit.
+    Via la clé \tdoclatexin|explain|, on peut utiliser un texte personnalisé. Ainsi, \tdoclatexin|\tdoclatexshow[explain = Voici le rendu réel.]{examples-listing-xyz.tex}| produira ce qui suit.
 
     \medskip
 
@@ -1906,7 +1906,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 
 
 \begin{tdoccaut}
-    Seul l'emploi du format numérique \tdocinlatex+YYYY-MM-DD+ est vérifié,
+    Seul l'emploi du format numérique \tdoclatexin+YYYY-MM-DD+ est vérifié,
     \footnote{
         Techniquement, vérifier la validité d'une date, via \LaTeX3, ne présente pas de difficulté.
     }
@@ -1989,7 +1989,7 @@ Il peut être utile de mettre en avant certains changements : ceci n'est faisabl
 
 \subsection{Le quoi et le quand}
 
-Les clés optionnelles \tdocinlatex{col-chges}\,, \tdocinlatex{date} et \tdocinlatex{version} permettent de dater et versionner directement un changement d'un type particulier. Voici des exemples d'utilisation.
+Les clés optionnelles \tdoclatexin{col-chges}\,, \tdoclatexin{date} et \tdoclatexin{version} permettent de dater et versionner directement un changement d'un type particulier. Voici des exemples d'utilisation.
 
 \tdoclatexshow{examples-version-n-change-what-n-when.tex}
 
@@ -2175,15 +2175,15 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 	\item Les noms des clés pour les couleurs utiliseront des traits d'union lorsque cela sera nécessaire : cela implique les changements suivants.
 	%
 	\begin{enumerate}
-		\item Mise en avant colorée de contenus : l'option \tdocinlatex{colchges} des environnements a été renommée \tdocinlatex{col-chges}.
+		\item Mise en avant colorée de contenus : l'option \tdoclatexin{colchges} des environnements a été renommée \tdoclatexin{col-chges}.
 
-		\item Démonstration de codes \LaTeX\ : pour l'environnement \tdocenv*{tdocshowcase} et la macro \tdocmacro{tdocshowcaseinput}, les options \tdocinlatex{colstripe} et \tdocinlatex{coltext} ont été renommées \tdocinlatex{col-stripe} et \tdocinlatex{col-text}\,.
+		\item Démonstration de codes \LaTeX\ : pour l'environnement \tdocenv*{tdocshowcase} et la macro \tdocmacro{tdocshowcaseinput}, les options \tdoclatexin{colstripe} et \tdoclatexin{coltext} ont été renommées \tdoclatexin{col-stripe} et \tdoclatexin{col-text}\,.
 	\end{enumerate}
 \end{tdocbreak}
 
 
 \begin{tdocfix}
-	\item Mise en avant colorée de contenus : pour les \tdocmacro{newkeytheorem} utilisés avec le thème \tdocinlatex{draft}, il a fallu ajouter \tdocinlatex{postheadhook = \leavevmode} (ceci est nécessaire car le contenu peut juste être de type liste).
+	\item Mise en avant colorée de contenus : pour les \tdocmacro{newkeytheorem} utilisés avec le thème \tdoclatexin{draft}, il a fallu ajouter \tdoclatexin{postheadhook = \leavevmode} (ceci est nécessaire car le contenu peut juste être de type liste).
 \end{tdocfix}
 
 
@@ -2195,7 +2195,7 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 	\begin{enumerate}
 		\item Les options qui ne sont pas spécifiques à \thisproj\ sont transmises à la classe chargée de la mise en forme générale.
 
-		\item Les options \tdocinlatex{fontsize} et \tdocinlatex{DIV} de la classe \tdoccls{scrartcl} ne peuvent pas être utilisées, car leurs valeurs sont fixées par \thisproj.
+		\item Les options \tdoclatexin{fontsize} et \tdoclatexin{DIV} de la classe \tdoccls{scrartcl} ne peuvent pas être utilisées, car leurs valeurs sont fixées par \thisproj.
 	\end{enumerate}
 
 	\item La macro \tdocmacro{tdocinEN} respecte les règles linguistiques anglaises.
@@ -2205,7 +2205,7 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 	\begin{enumerate}
 		\item Un nouvel environnement \tdocenv{tdoctodo} a été ajouté.
 
-		\item Chaque environnement dispose d'une nouvelle option \tdocinlatex{col} pour la couleur du contenu indiquant les changements.
+		\item Chaque environnement dispose d'une nouvelle option \tdoclatexin{col} pour la couleur du contenu indiquant les changements.
 	\end{enumerate}
 \end{tdocnew}
 
@@ -2234,21 +2234,21 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 
 
 \begin{tdocnew}[version = 1.6.2, date = 2024-10-30]
-	\item Les macros \tdocmacro{tdocdate} et \tdocmacro{tdocversion} ont un nouvel argument final facultatif \tdocinlatex{<voffset>} pour choisir un décalage vertical spécifique.
+	\item Les macros \tdocmacro{tdocdate} et \tdocmacro{tdocversion} ont un nouvel argument final facultatif \tdoclatexin{<voffset>} pour choisir un décalage vertical spécifique.
 
 	\item De meilleurs environnements pour indiquer les modifications apportées.
 	\begin{enumerate}
-		\item Les nouvelles clés facultatives \tdocinlatex{col}\,, \tdocinlatex{date} et \tdocinlatex{version} permettent d'indiquer la date et la version d'une modification apportée à un sujet spécifique.
+		\item Les nouvelles clés facultatives \tdoclatexin{col}\,, \tdoclatexin{date} et \tdoclatexin{version} permettent d'indiquer la date et la version d'une modification apportée à un sujet spécifique.
 
 		\item Utilisation de \tdocmacro{paragraph} pour le titre.
 	\end{enumerate}
-\end{tdocnew} 
+\end{tdocnew}
 
 
 \begin{tdocupdate}
 	\item Changements : la police des notes de marge aura toujours une forme normale.
 
-	\item Ornement : utilisation d'un \tdocinlatex{\cleaders} pour éviter les lignes orphelines en bas de page.
+	\item Ornement : utilisation d'un \tdoclatexin{\cleaders} pour éviter les lignes orphelines en bas de page.
 \end{tdocupdate}
 
 \tdocsep
@@ -2268,18 +2268,18 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 
 
 \begin{tdocbreak}[version = 1.6.0, date = 2024-10-27]
-    \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{color} a été renommée \tdocinlatex{col-stripe}.
+    \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdoclatexin{color} a été renommée \tdoclatexin{col-stripe}.
 
-    \item La macro \tdocmacro{tdoclinkcolor} devient la couleur \tdocinlatex{tutodoc@link@color} destinée à un usage interne.
+    \item La macro \tdocmacro{tdoclinkcolor} devient la couleur \tdoclatexin{tutodoc@link@color} destinée à un usage interne.
 \end{tdocbreak}
 
 
 \begin{tdocnew}
-    \item L'option de classe \tdocinlatex{theme} permet de choisir différents thèmes de mise en forme.
+    \item L'option de classe \tdoclatexin{theme} permet de choisir différents thèmes de mise en forme.
 
     \item Journal des modifications : ajout de l'environnement \tdocenv*{tdoctech} pour les informations techniques.
 
-    \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdocinlatex{col-text} permet de changer aussi la couleur du texte.
+    \item L'environnement \tdocenv*{showcase} et ses descendants : la clé \tdoclatexin{col-text} permet de changer aussi la couleur du texte.
 
     \item Les nouvelles fonctionnalités ont été documentées.
 \end{tdocnew}
@@ -2310,7 +2310,7 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 \begin{tdocbreak}
     \item La classe \thisproj\ remplace le défunt package \thisproj\ (pour le moment, la toute jeune classe ne propose aucune option spécifique).
 
-    \item La macro \tdocmacro{tdocruler} s'emploie via \tdocinlatex{\tdocruler[<color>]{<text>}} au lieu de \tdocinlatex{\tdocruler{<text>}{<color>}}\,.
+    \item La macro \tdocmacro{tdocruler} s'emploie via \tdoclatexin{\tdocruler[<color>]{<text>}} au lieu de \tdoclatexin{\tdocruler{<text>}{<color>}}\,.
 \end{tdocbreak}
 
 
@@ -2437,7 +2437,7 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
         \item \tdocenv{tdocprob} pour les problèmes repérés.
     \end{enumerate}
 
-    \item \tdocmacro{tdocinlatex}: un jaune léger est utilisé comme couleur de fond.
+    \item \tdocmacro{tdoclatexin}: un jaune léger est utilisé comme couleur de fond.
 \end{tdocnew}
 
 \tdocsep

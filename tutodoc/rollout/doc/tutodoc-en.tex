@@ -111,7 +111,7 @@
 
 \section{LaTeX codes}
 
-Typing an inline code such as \tdocinlatex{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is demonstrating use cases such as the following one.
+Typing an inline code such as \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is demonstrating use cases such as the following one.
 
 \begin{tdoclatex}
 Seeing \LaTeX\ code formatted is nice: $E = m c^2$ or $\pi \neq \frac{3}{14}$.
@@ -237,7 +237,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 
 \section{LaTeX codes}
 
-Typing an inline code such as \tdocinlatex{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is demonstrating use cases such as the following one.
+Typing an inline code such as \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is demonstrating use cases such as the following one.
 
 \begin{tdoclatex}
 Seeing \LaTeX\ code formatted is nice: $E = m c^2$ or $\pi \neq \frac{3}{14}$.
@@ -363,7 +363,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 
 \section{LaTeX codes}
 
-Typing an inline code such as \tdocinlatex{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is demonstrating use cases such as the following one.
+Typing an inline code such as \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is demonstrating use cases such as the following one.
 
 \begin{tdoclatex}
 Seeing \LaTeX\ code formatted is nice: $E = m c^2$ or $\pi \neq \frac{3}{14}$.
@@ -489,7 +489,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 
 \section{LaTeX codes}
 
-Typing an inline code such as \tdocinlatex{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is demonstrating use cases such as the following one.
+Typing an inline code such as \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is demonstrating use cases such as the following one.
 
 \begin{tdoclatex}
 Seeing \LaTeX\ code formatted is nice: $E = m c^2$ or $\pi \neq \frac{3}{14}$.
@@ -1079,15 +1079,15 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 	\item Color key names will be hyphenated where necessary: this implies the following changes.
 	%
 	\begin{enumerate}
-		\item Admonitions: the \tdocinlatex{colchges} option of the environments has been renamed \tdocinlatex{col-chges}.
+		\item Admonitions: the \tdoclatexin{colchges} option of the environments has been renamed \tdoclatexin{col-chges}.
 
-		\item Showcases: for the environment \tdocenv*{tdocshowcase} and the macro \tdocmacro{tdocshowcaseinput}, the \tdocinlatex{colstripe} and  \tdocinlatex{coltext} options have been renamed \tdocinlatex{col-stripe} and \tdocinlatex{col-text}\,.
+		\item Showcases: for the environment \tdocenv*{tdocshowcase} and the macro \tdocmacro{tdocshowcaseinput}, the \tdoclatexin{colstripe} and  \tdoclatexin{coltext} options have been renamed \tdoclatexin{col-stripe} and \tdoclatexin{col-text}\,.
 	\end{enumerate}
 \end{tdocbreak}
 
 
 \begin{tdocfix}
-	\item Admonitions: for the \tdocmacro{newkeytheorem} used with the \tdocinlatex{draft} theme, we have added \tdocinlatex{postheadhook = \leavevmode} (this is necessary because the content can naturally be of the list type).
+	\item Admonitions: for the \tdocmacro{newkeytheorem} used with the \tdoclatexin{draft} theme, we have added \tdoclatexin{postheadhook = \leavevmode} (this is necessary because the content can naturally be of the list type).
 \end{tdocfix}
 
 
@@ -1099,7 +1099,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 	\begin{enumerate}
 		\item Options not specific to \thisproj\ are passed on to the class in charge of general formatting.
 
-		\item The \tdoccls{scrartcl} options \tdocinlatex{fontsize} and \tdocinlatex{DIV} can't be used because their values are fixed by \thisproj.
+		\item The \tdoccls{scrartcl} options \tdoclatexin{fontsize} and \tdoclatexin{DIV} can't be used because their values are fixed by \thisproj.
 	\end{enumerate}
 
 	\item The macro \tdocmacro{tdocinEN} respects the English linguistic rules.
@@ -1109,7 +1109,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 	\begin{enumerate}
 		\item A new environment \tdocenv{tdoctodo} has been added.
 
-		\item Each environment has a new option \tdocinlatex{col} for the color of the material indicating changes.
+		\item Each environment has a new option \tdoclatexin{col} for the color of the material indicating changes.
 	\end{enumerate}
 \end{tdocnew}
 
@@ -1183,7 +1183,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 \subsection{Font size and page geometry}
 
-The \tdoccls{scrartcl} class is loaded via the \tdocinlatex{fontsize = 10pt} option, and the \tdocpack{geometry} package manages the page dimensions.
+The \tdoccls{scrartcl} class is loaded via the \tdoclatexin{fontsize = 10pt} option, and the \tdocpack{geometry} package manages the page dimensions.
 
 
 \begin{tdocwarn}
@@ -1203,19 +1203,19 @@ The \tdocpack{hyperref} package is imported, if it hasn't already been, and the 
 
 \section{What language is used by the \thisproj\ class?}
 
-This documentation loads the \tdocpack{babel} package via \tdocinlatex|\usepackage[english]{babel}|\, a package that \thisproj\ does not load.
-On the other hand, the \thisproj\ class identifies \tdocinlatex|en| as the main language used by \tdocpack{babel}.%.
+This documentation loads the \tdocpack{babel} package via \tdoclatexin|\usepackage[english]{babel}|\, a package that \thisproj\ does not load.
+On the other hand, the \thisproj\ class identifies \tdoclatexin|en| as the main language used by \tdocpack{babel}.%.
 \footnote{
-    Technically, we use \tdocinlatex|\BCPdata{language}| which returns a language in short format.
+    Technically, we use \tdoclatexin|\BCPdata{language}| which returns a language in short format.
 }
 As this language is included in the list of languages taken into account, see below, the \thisproj\ class will produce the expected effects.
 
 \begin{tasks}[label=\small\textbullet](3)
-    \task \tdocinlatex|en| : English.
-        \task \tdocinlatex|es| : Spanish.
-        \task \tdocinlatex|fr| : French.
+    \task \tdoclatexin|en| : English.
+        \task \tdoclatexin|es| : Spanish.
+        \task \tdoclatexin|fr| : French.
 \end{tasks}
-                    
+
 
 
 \begin{tdocnote}
@@ -1243,7 +1243,7 @@ Cool and top stand for \tdocinEN*{cool} and \tdocinEN{top}.
 \end{tdoclatex}
 
 
-The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{tdocquote} : for example, \tdocquote{semantic} is obtained via \tdocinlatex|tdocquote{semantic}| .
+The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{tdocquote} : for example, \tdocquote{semantic} is obtained via \tdoclatexin|tdocquote{semantic}| .
 
 
 \begin{tdocnote}
@@ -1253,19 +1253,19 @@ The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{t
 
 \section{Choose your theme}
 
-To modify the general layout, there is the \thisproj\ class option \tdocinlatex{theme = <choice>} where \tdocinlatex{<choice>} can take the following values.
+To modify the general layout, there is the \thisproj\ class option \tdoclatexin{theme = <choice>} where \tdoclatexin{<choice>} can take the following values.
 
 \begin{tasks}[style=itemize]
-    \task \tdocinlatex{bw}:
+    \task \tdoclatexin{bw}:
           a black-and-white theme with some shades of grey.
 
-    \task \tdocinlatex{color}:
+    \task \tdoclatexin{color}:
           a coloured theme : this is the default value.
 
-    \task \tdocinlatex{dark}:
+    \task \tdoclatexin{dark}:
           a dark theme ideal for resting the eyes.
 
-    \task \tdocinlatex{draft}:
+    \task \tdoclatexin{draft}:
           a theme for a printout such as to look for content errors that aren't necessarily easy to spot in front of a screen.
 \end{tasks}
 
@@ -1360,7 +1360,7 @@ To modify the general layout, there is the \thisproj\ class option \tdocinlatex{
 
 
 \begin{tdocimp}
-    All the environments presented in this section share the same counter, which will be reset to zero as soon as a section with a level at least equal to a \tdocinlatex|\section| is opened.
+    All the environments presented in this section share the same counter, which will be reset to zero as soon as a section with a level at least equal to a \tdoclatexin|\section| is opened.
 \end{tdocimp}
 
 
@@ -1405,7 +1405,7 @@ Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocen
     As for the icons, they are obtained via the \tdocpack{fontawesome5} package, and the \tdocmacro{tdocicon} macro manages the spacing in relation to the text.
     \footnote{
         For example,
-        \tdocinlatex|\fbox{tdocicon{faBed}{Fatigued}}|
+        \tdoclatexin|\fbox{tdocicon{faBed}{Fatigued}}|
         produces
         \fbox{\tdocicon{\faBed}{Fatigued}}\,.
     }
@@ -1424,7 +1424,7 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
 
 \begin{tdoctip}
-    Sometimes, highlighted content can be reduced to a list. In this case, the formatting can be improved as follows where we use the \tdocinlatex{wide} option from the \tdocpack{enumitem} package.
+    Sometimes, highlighted content can be reduced to a list. In this case, the formatting can be improved as follows where we use the \tdoclatexin{wide} option from the \tdocpack{enumitem} package.
 
     \tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
 
@@ -1475,8 +1475,8 @@ Finally \tdocenv*[{[opt1]<opt2>}]{env}...
 
 
 \begin{tdocrem}
-    Unlike \tdocmacro{tdocinlatex}, \tdocmacro{tdocenv} and \tdocmacro{tdocenv*} macros don't color the text they produce.
-    In addition, \tdocinlatex{\tdocenv{monenv}} produces \tdocenv{monenv} with spaces to allow line breaks if required.
+    Unlike \tdocmacro{tdoclatexin}, \tdocmacro{tdocenv} and \tdocmacro{tdocenv*} macros don't color the text they produce.
+    In addition, \tdoclatexin{\tdocenv{monenv}} produces \tdocenv{monenv} with spaces to allow line breaks if required.
 \end{tdocrem}
 
 
@@ -1503,7 +1503,7 @@ To explain the names chosen, there is nothing like indicating and explaining the
 
 
 \begin{tdocrem}
-    The choice of a full stop to split a word allows words with a hyphen to be used, as in \tdocinlatex+\tdocprewhy{bric.k-breaker}+ which gives \tdocprewhy{bric.k-breaker}.
+    The choice of a full stop to split a word allows words with a hyphen to be used, as in \tdoclatexin+\tdocprewhy{bric.k-breaker}+ which gives \tdocprewhy{bric.k-breaker}.
 \end{tdocrem}
 
 
@@ -1569,7 +1569,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 \begin{tdocnote}
     In the previous example, the text uses the proposed darkened orange. On the other hand, red is used as a base to obtain the colors used for the strip: the transformations used depend on the theme chosen.%
     \footnote{
-        For example, the themes \tdocinlatex{bw} and \tdocinlatex{draft} ignore the key \tdocinlatex{col-stripe}!
+        For example, the themes \tdoclatexin{bw} and \tdoclatexin{draft} ignore the key \tdoclatexin{col-stripe}!
     }
     %
     You should also be aware that behind the scenes, the macro \tdocmacro{tdocruler} is used.
@@ -1643,7 +1643,7 @@ To obtain renderings by importing the code from an external file, simply use the
 
 
 \begin{tdocexa}
-    The following was obtained via \tdocinlatex+\tdocshowcaseinput{external.tex}+.
+    The following was obtained via \tdoclatexin+\tdocshowcaseinput{external.tex}+.
 
     \medskip
 
@@ -1652,7 +1652,7 @@ To obtain renderings by importing the code from an external file, simply use the
 
     \medskip
 
-    As for \tdocinlatex+\tdocshowcaseinput[col-stripe = red, col-text = orange!75!black]{external.tex}+\,, this will produce the color change shown below.
+    As for \tdoclatexin+\tdocshowcaseinput[col-stripe = red, col-text = orange!75!black]{external.tex}+\,, this will produce the color change shown below.
 
     \medskip
 
@@ -1678,27 +1678,27 @@ Documenting a package or class is best done through use cases showing both the c
 \subsection{\tdocquote{Inline} codes}
 \label{tutodoc-listing-inline}
 
-The \tdocmacro{tdocinlatex} macro
+The \tdocmacro{tdoclatexin} macro
 \footnote{
-    The name of the macro \tdocmacro{tdocinlatex} comes from \tdocquote{\tdocprewhy{in.line} \LaTeX}.
+    The name of the macro \tdocmacro{tdoclatexin} comes from \tdocquote{\tdocprewhy{in.line} \LaTeX}.
 }
 can be used to type inline code in a similar way to \tdocmacro{verb} or like a standard macro (see brace management in the last case below).
 Here are some examples.
 
 
 \begin{tdoclatex}[sbs]
-    1: \tdocinlatex|$a^b = c$|               \\
-    2: \tdocinlatex+\tdocinlatex|$a^b = c$|+ \\
-    3: \tdocinlatex{\tdocinlatex{$a^b = c$}}
+    1: \tdoclatexin|$a^b = c$|               \\
+    2: \tdoclatexin+\tdoclatexin|$a^b = c$|+ \\
+    3: \tdoclatexin{\tdoclatexin{$a^b = c$}}
 \end{tdoclatex}
 
 
 \begin{tdocnote}
-    The \tdocmacro{tdocinlatex} macro can be used in a footnote: see below.
+    The \tdocmacro{tdoclatexin} macro can be used in a footnote: see below.
     \footnote{
-        \tdocinlatex+$minted = TOP$+ has been typed \tdocinlatex|\tdocinlatex+$minted = TOP$+| in this footnote...
+        \tdoclatexin+$minted = TOP$+ has been typed \tdoclatexin|\tdoclatexin+$minted = TOP$+| in this footnote...
     }
-    In addition, a background color is deliberately used to subtly highlight the codes \tdocinlatex#\LaTeX#\,.
+    In addition, a background color is deliberately used to subtly highlight the codes \tdoclatexin#\LaTeX#\,.
 \end{tdocnote}
 
 
@@ -1718,9 +1718,9 @@ Here are some examples.
 
 
 \begin{tdocexa}[Following]
-    \tdocenv{tdoclatex} produces the following result, which corresponds to the default option \tdocinlatex#std#\,.
+    \tdocenv{tdoclatex} produces the following result, which corresponds to the default option \tdoclatexin#std#\,.
     \footnote{
-        \tdocinlatex{std} refers to the \tdocquote{standard} behaviour of \tdocpack{tcolorbox} in relation to the \tdocpack{minted} library.
+        \tdoclatexin{std} refers to the \tdocquote{standard} behaviour of \tdocpack{tcolorbox} in relation to the \tdocpack{minted} library.
     }
 
     \begin{tdoclatex}
@@ -1798,7 +1798,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
     \end{tdoclatex}
 
-    This produces the following formatting where the default option is \tdocinlatex#std#.
+    This produces the following formatting where the default option is \tdoclatexin#std#.
 
     \tdoclatexinput{examples-listing-xyz.tex}
 
@@ -1830,7 +1830,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \label{tutodoc-latexshow}
 
 \begin{tdocexa}[Showcase]
-    The following comes from \tdocinlatex+\tdoclatexshow{examples-listing-xyz.tex}+.
+    The following comes from \tdoclatexin+\tdoclatexshow{examples-listing-xyz.tex}+.
 
     \medskip
 
@@ -1850,7 +1850,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
 
 \begin{tdocexa}[Changing the explanatory text]
-    Using the key \tdocinlatex|explain|, you can use custom text. Thus, \tdocinlatex|tdoclatexshow[explain = Here is the rendering.]{examples-listing-xyz.tex}| will give the following.
+    Using the key \tdoclatexin|explain|, you can use custom text. Thus, \tdoclatexin|tdoclatexshow[explain = Here is the rendering.]{examples-listing-xyz.tex}| will give the following.
 
     \medskip
 
@@ -1947,7 +1947,7 @@ You can either date something, or version it, in which case the version number c
 
 
 \begin{tdoccaut}
-    Only the use of the digital format \tdocinlatex+YYYY-MM-DD+ is verified,
+    Only the use of the digital format \tdoclatexin+YYYY-MM-DD+ is verified,
     \footnote{
         Technically, checking the validity of a date using \LaTeX3 presents no difficulty.
     }
@@ -2024,7 +2024,7 @@ It may be useful to highlight certain changes: this can only be done by modifyin
 
 \subsection{The what and the when}
 
-The optional keys \tdocinlatex{col}\,, \tdocinlatex{date} and \tdocinlatex{version} allow to date and version a change of a particular type.
+The optional keys \tdoclatexin{col}\,, \tdoclatexin{date} and \tdoclatexin{version} allow to date and version a change of a particular type.
 Here are some examples of use.
 
 \tdoclatexshow{examples-version-n-change-what-n-when.tex}
@@ -2209,15 +2209,15 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 	\item Color key names will be hyphenated where necessary: this implies the following changes.
 	%
 	\begin{enumerate}
-		\item Admonitions: the \tdocinlatex{colchges} option of the environments has been renamed \tdocinlatex{col-chges}.
+		\item Admonitions: the \tdoclatexin{colchges} option of the environments has been renamed \tdoclatexin{col-chges}.
 
-		\item Showcases: for the environment \tdocenv*{tdocshowcase} and the macro \tdocmacro{tdocshowcaseinput}, the \tdocinlatex{colstripe} and  \tdocinlatex{coltext} options have been renamed \tdocinlatex{col-stripe} and \tdocinlatex{col-text}\,.
+		\item Showcases: for the environment \tdocenv*{tdocshowcase} and the macro \tdocmacro{tdocshowcaseinput}, the \tdoclatexin{colstripe} and  \tdoclatexin{coltext} options have been renamed \tdoclatexin{col-stripe} and \tdoclatexin{col-text}\,.
 	\end{enumerate}
 \end{tdocbreak}
 
 
 \begin{tdocfix}
-	\item Admonitions: for the \tdocmacro{newkeytheorem} used with the \tdocinlatex{draft} theme, we have added \tdocinlatex{postheadhook = \leavevmode} (this is necessary because the content can naturally be of the list type).
+	\item Admonitions: for the \tdocmacro{newkeytheorem} used with the \tdoclatexin{draft} theme, we have added \tdoclatexin{postheadhook = \leavevmode} (this is necessary because the content can naturally be of the list type).
 \end{tdocfix}
 
 
@@ -2229,7 +2229,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 	\begin{enumerate}
 		\item Options not specific to \thisproj\ are passed on to the class in charge of general formatting.
 
-		\item The \tdoccls{scrartcl} options \tdocinlatex{fontsize} and \tdocinlatex{DIV} can't be used because their values are fixed by \thisproj.
+		\item The \tdoccls{scrartcl} options \tdoclatexin{fontsize} and \tdoclatexin{DIV} can't be used because their values are fixed by \thisproj.
 	\end{enumerate}
 
 	\item The macro \tdocmacro{tdocinEN} respects the English linguistic rules.
@@ -2239,7 +2239,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 	\begin{enumerate}
 		\item A new environment \tdocenv{tdoctodo} has been added.
 
-		\item Each environment has a new option \tdocinlatex{col} for the color of the material indicating changes.
+		\item Each environment has a new option \tdoclatexin{col} for the color of the material indicating changes.
 	\end{enumerate}
 \end{tdocnew}
 
@@ -2267,11 +2267,11 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 
 \begin{tdocnew}[version = 1.6.2, date = 2024-10-30]
-	\item The macros \tdocmacro{tdocdate} and \tdocmacro{tdocversion} has a new final optional argument \tdocinlatex{<voffset>} to choose a specific vertical offset.
+	\item The macros \tdocmacro{tdocdate} and \tdocmacro{tdocversion} has a new final optional argument \tdoclatexin{<voffset>} to choose a specific vertical offset.
 
 	\item Better environments to indicate the changes made.
 	\begin{enumerate}
-        \item The new optional keys \tdocinlatex{col}\,, \tdocinlatex{date} and \tdocinlatex{version} allow to date and version a change of a specific topic.
+        \item The new optional keys \tdoclatexin{col}\,, \tdoclatexin{date} and \tdoclatexin{version} allow to date and version a change of a specific topic.
 
         \item Use of \tdocmacro{paragraph} for the title.
 	\end{enumerate}
@@ -2281,7 +2281,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \begin{tdocupdate}
 	\item Version and changes: the font of the margin notes will always have a normal shape.
 
-	\item Ornament: use of a \tdocinlatex{\cleaders} to avoid orphean rules at the bottom of a page.
+	\item Ornament: use of a \tdoclatexin{\cleaders} to avoid orphean rules at the bottom of a page.
 \end{tdocupdate}
 
 \tdocsep
@@ -2301,18 +2301,18 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 
 \begin{tdocbreak}[version = 1.6.0, date = 2024-10-27]
-    \item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{color} key has been renamed \tdocinlatex{col-stripe}.
+    \item The \tdocenv*{showcase} environment and its descendants: the \tdoclatexin{color} key has been renamed \tdoclatexin{col-stripe}.
 
-    \item The macro \tdocmacro{tdoclinkcolor} has been renamed \tdocinlatex{tutodoc@link@color} for internal use.
+    \item The macro \tdocmacro{tdoclinkcolor} has been renamed \tdoclatexin{tutodoc@link@color} for internal use.
 \end{tdocbreak}
 
 
 \begin{tdocnew}
-    \item The \tdocinlatex{theme} class option allows you to choose different formatting themes.
+    \item The \tdoclatexin{theme} class option allows you to choose different formatting themes.
 
     \item Change log: addition of the \tdocenv*{tdoctech} environment for technical information.
 
-    \item The \tdocenv*{showcase} environment and its descendants: the \tdocinlatex{col-text} key can also be used to change the text color.
+    \item The \tdocenv*{showcase} environment and its descendants: the \tdoclatexin{col-text} key can also be used to change the text color.
 
     \item The new functionalities have been documented.
 \end{tdocnew}
@@ -2344,7 +2344,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \begin{tdocbreak}
     \item The \thisproj\ class replaces the now-defunct \thisproj\ package (for the moment, the young class offers no specific options).
 
-    \item The \tdocmacro{tdocruler} macro is now used via \tdocinlatex{\tdocruler[<color>]{<text>}} (remember that the old syntax was \tdocinlatex{\tdocruler{<text>}{<color>}}).
+    \item The \tdocmacro{tdocruler} macro is now used via \tdoclatexin{\tdocruler[<color>]{<text>}} (remember that the old syntax was \tdoclatexin{\tdocruler{<text>}{<color>}}).
 \end{tdocbreak}
 
 
@@ -2471,7 +2471,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
         \item \tdocenv{tdocprob} for identified problems.
     \end{enumerate}
 
-    \item \tdocmacro{tdocinlatex}: a light yellow is used as the background color.
+    \item \tdocmacro{tdoclatexin}: a light yellow is used as the background color.
 \end{tdocnew}
 
 \tdocsep
