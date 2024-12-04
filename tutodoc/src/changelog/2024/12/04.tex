@@ -1,8 +1,8 @@
 \begin{tdocbreak}
-	\item Mise en forme : la classe \tdoccls{scrartcl} remplace la vénérable \tdoccls{article}. Cela implique un meilleur positionnement des marges avec les options retenues pour le chargement de \tdoccls{scrartcl}.
+	\item Mise en forme : la classe \tdoccls{scrartcl} remplace la vénérable \tdoccls{article}. Cela implique un meilleur positionnement des notes de marge avec les options retenues pour charger \tdoccls{scrartcl}.
 
 
-	\item Les noms des clés pour les couleurs seront séparés par un trait d'union lorsque cela sera nécessaire : cela implique les changements suivants.
+	\item Les noms des clés pour les couleurs utiliseront des traits d'union lorsque cela sera nécessaire : cela implique les changements suivants.
 	%
 	\begin{enumerate}
 		\item Mise en avant colorée de contenus : l'option \tdocinlatex{colchges} des environnements a été renommée \tdocinlatex{col-chges}.
@@ -13,7 +13,7 @@
 
 
 \begin{tdocfix}
-	\item Mise en avant colorée de contenus : pour les \tdocmacro{newkeytheorem} utilisés avec le thème \tdocinlatex{draft}, nous avons ajouté \tdocinlatex{postheadhook = \leavevmode} (ceci est nécessaire car le contenu peut naturellement être de type liste).
+	\item Mise en avant colorée de contenus : pour les \tdocmacro{newkeytheorem} utilisés avec le thème \tdocinlatex{draft}, il a fallu ajouter \tdocinlatex{postheadhook = \leavevmode} (ceci est nécessaire car le contenu peut juste être de type liste).
 \end{tdocfix}
 
 
@@ -35,13 +35,13 @@
 	\begin{enumerate}
 		\item Un nouvel environnement \tdocenv{tdoctodo} a été ajouté.
 
-		\item Chaque environnement dispose d'une nouvelle option \tdocinlatex{col} pour la couleur de l'article indiquant les changements.
+		\item Chaque environnement dispose d'une nouvelle option \tdocinlatex{col} pour la couleur du contenu indiquant les changements.
 	\end{enumerate}
 \end{tdocnew}
 
 
 \begin{tdocupdate}
-	\item Documentation : la galerie des thèmes utilise un meilleur faux exemple.
+	\item Documentation : la galerie des thèmes utilise un meilleur exemple factice.
 \end{tdocupdate}
 
 
@@ -50,7 +50,7 @@
 	\item Organisation simplifiée des fichiers de configuration dans le projet final.
 	%
 	\begin{enumerate}
-		\item \texttt{CSS}-like : un fichier par thème avec un nom du type \texttt{tutodoc-bw.css.cls}\,.
+		\item Comme du \texttt{CSS} : emploi d'un fichier par thème avec des noms du type \texttt{tutodoc-bw.css.cls}\,.
 
 
 		\item Locale : utilisation de noms comme \texttt{tutodoc-fr.loc.cls}\,.
