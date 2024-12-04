@@ -61,7 +61,7 @@ def minicss_cls(
             if short_line.startswith(
                  f"\\input{{{projname}-\\{projname}@theme-main"
             ):
-                line = f"\\input{{{projname}-\\{projname}@theme.css.{longext}}}"
+                line = f"\\input{{{projname}-\\{projname}@theme.css.cls}}"
 
             elif short_line.startswith(
                f"\\input{{{projname}-\\{projname}@theme-"

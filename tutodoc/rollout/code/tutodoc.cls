@@ -889,8 +889,6 @@
 % :: STYLES OF THE LISTING ENV. AND THE MACRO :: %
 % :::::::::::::::::::::::::::::::::::::::::::::: %
 
-\newcommand{\tutodoc@latex@lexer}{latex}
-
 
 % :::::::::::::::::::::::: %
 % :: INLINE LATEX MACRO :: %

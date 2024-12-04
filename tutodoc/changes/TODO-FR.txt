@@ -9,6 +9,19 @@ NOW
 
 > ---------------------------- <
 
+dev  CSS : plus de css/*.cls.sty mais just css/*.cls
+prod CSS : plus de *-css.cls.sty mais just *-css.cls
+
+
+> ---------------------------- <
+
+tutodoc-main-locale-en.cfg.cls.sty
+-->
+tutodoc-locale-en.cfg.cls
+
+
+> ---------------------------- <
+
 maj des tests unitaires !!!!
 
 
