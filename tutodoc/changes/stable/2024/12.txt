@@ -1,0 +1,77 @@
+// ---------- //
+
+
+==
+04  (1.7.0)
+==
+
+-------
+:break:
+-------
+
+[[:format:]]
+The ‘’scrartcl‘’ class replaces the venerable ‘’article‘’. This means better placement of the margins with the options retained for loading ‘’scrartcl‘’.
+
+
+[[:api:]]
+Color key names will be hyphenated where necessary: this implies the following changes.
+
+    1) Admonitions: the ''colchges'' option of the \envs has been renamed ''col-chges''.
+
+    1) Showcases: the ''colstripe'' and  ''coltext'' options of the \env ''tdocshowcase'' and the macro ''\tdocshowcaseinput'' have been renamed ''col-stripe'' and  ''col-text''.
+
+
+-----
+:fix:
+-----
+
+[[:api:]]
+Admonitions: for the ''\newkeytheorem'' used with the ''draft'' theme, we have added ''postheadhook = \leavevmode'' (this is necessary because the content can naturally be of the list type).
+
+
+-----
+:new:
+-----
+
+[[:doc:]]
+Addition of a section listing dependencies.
+
+
+[[:api:]]
+Here are the new fetaures.
+
+    1) \Cls options.
+
+        * Options not specific to \thisproj are passed on to the class in charge of general formatting.
+
+        * The options ''fontsize'' and ''DIV'' can't be used because their values are fixed by \thisproj.
+
+
+    1) ''\tdocinEN'' macro: the English linguistic rules are respected between the quotes.
+
+
+    1) Admonitions.
+
+        * A new ''tdoctodo'' \env has been added.
+
+        * Each \env has a new ''col'' option for color of the material indicating \chges.
+
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Theme gallery: the "example" code has been improved.
+
+
+--------
+:fordev:
+--------
+
+[[:facto:]]
+Simplified \orga of \cfg files in the final \proj.
+
+    1) \Css-like: one file per theme with a name like path::''tutodoc-bw.css.cls''.
+
+    1) Locale: use of names like path::''tutodoc-en.loc.cls''.

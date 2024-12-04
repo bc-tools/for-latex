@@ -7,18 +7,9 @@ NOW
 ---
 
 
-> ---------------------------- <
-
-dev  CSS : plus de css/*.cls.sty mais just css/*.cls
-prod CSS : plus de *-css.cls.sty mais just *-css.cls
-
-
-> ---------------------------- <
-
-tutodoc-main-locale-en.cfg.cls.sty
+\tdocinlatex
 -->
-tutodoc-locale-en.cfg.cls
-
+\tdoclatexin
 
 > ---------------------------- <
 
