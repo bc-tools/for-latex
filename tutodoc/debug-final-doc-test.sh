@@ -26,12 +26,6 @@ function nocompile {
     exit 1
 }
 
-cd "rollout/debug"
-
-ls *
-
-exit 1
-
 cd "rollout"
 
 for f in code/*
