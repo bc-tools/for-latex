@@ -9,6 +9,15 @@ NOW
 
 > ---------------------------- <
 
+draft theme
+
+    --> what chges : besoin de faire encore plus sobre et d'ajouter une ref, donc un truc de type rmk aussi même pour newporj
+
+    --> pb espacement de Note II.3. , Astuce II.4. : voir gallerie
+
+
+> ---------------------------- <
+
 env pour code via minted car on peut aussi parler de perl, pyhon et lua voire plus
 
 
