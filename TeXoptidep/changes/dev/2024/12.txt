@@ -12,9 +12,9 @@
 [[:api:]]
 Here are the first features.
 
-    1) Imports made: extracting imports of \clss and \packs of one given ext::''sty'' or ext::''cls'' file (the options selected are captured).
+    1) Imports made: extracting imports of \clss and \packs inside one file (the options selected are captured).
 
-    1) \yaml file reports.
+    1) \yaml file reports available.
 
         + List of the \cls and \pack used.
 

@@ -1,0 +1,18 @@
+this::
+    title  = XXX
+    author = Christophe, BAL
+    mail   = projetmbc@gmail.com
+    lang   = fr
+
+    licence = cc by-nc-sa 4.0
+    out     = html | pdf
+
+    lexic = python
+
+
+abrev::
+    content = /content
+
+
+content::
+    \content/intro.txt

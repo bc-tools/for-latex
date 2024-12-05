@@ -9,6 +9,20 @@ NOW
 
 > ---------------------------- <
 
+début de l'api avec mise en place de tests unitaires
+
+
+> ---------------------------- <
+
+doc à la tnsdoc
+
++
+
+README showcase non exhaustif, et non rop long
+
+
+> ---------------------------- <
+
 gestioon des retours à la ligne optionnes pour otpions, date des require et co !
 
 
