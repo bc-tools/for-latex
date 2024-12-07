@@ -1592,13 +1592,25 @@ w
 \immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-draft}
 
 % The gallery starts here...
-\includepdf[fitpaper=true]{gallery-showcase-bw}
+\includepdf[
+    pages=1-2,
+    fitpaper=true
+]{gallery-showcase-bw}
 
-\includepdf[fitpaper=true]{gallery-showcase-color}
+\includepdf[
+    pages=1-2,
+    fitpaper=true
+]{gallery-showcase-color}
 
-\includepdf[fitpaper=true]{gallery-showcase-dark}
+\includepdf[
+    pages=1-2,
+    fitpaper=true
+]{gallery-showcase-dark}
 
-\includepdf[fitpaper=true]{gallery-showcase-draft}
+\includepdf[
+    pages=1,
+    fitpaper=true
+]{gallery-showcase-draft}
 
 }
 

@@ -43,7 +43,10 @@ TEX_BUILD_CMD = r"""
 """.strip()
 
 TMPL_INCLUDE_PDF = r"""
-\includepdf[fitpaper=true]{gallery-showcase-<<THEME>>}
+\includepdf[
+    pages=<<PAGES_RANGE>>,
+    fitpaper=true
+]{gallery-showcase-<<THEME>>}
 """.strip()
 
 TMPL_VIRTUAL_PATH = r"gallery-showcase-<<THEME>>.tex"
@@ -174,9 +177,19 @@ def theme_gallery(
             TEX_BUILD_CMD.replace(rafterit("THEME"), theme)
         )
 
-        include_pdfs.append(
-            TMPL_INCLUDE_PDF.replace(rafterit("THEME"), theme)
+        pages_range = "1" if theme == "draft" else "1-2"
+
+        contents = multireplace(
+            text         = TMPL_INCLUDE_PDF,
+            replacements = {
+                rafterit("THEME")      : theme,
+                rafterit("PAGES_RANGE"): pages_range,
+            },
         )
+
+        # print(contents[:200]);exit()
+
+        include_pdfs.append(contents)
 
     tex_code = multireplace(
         text         = TMPL_CONTENT_CODE,

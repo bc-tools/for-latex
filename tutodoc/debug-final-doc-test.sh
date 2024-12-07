@@ -5,6 +5,8 @@
 THISDIR=$(dirname "$0")
 WORKINGDIR=$(pwd)
 
+PROJECTNAME=$(basename "$WORKINGDIR")
+
 
 # ----------------------- #
 # -- ONE FOLDER NEEDED -- #
@@ -49,9 +51,12 @@ do
     cd ../
 done # for f in doc/*tex;
 
-for f in debug/*.pdf
-do
-    open "$f"
-done # for f in doc/*tex;
-
 cd debug
+
+for f in *.pdf
+do
+    echo "$PROJECTNAME  ||  $f"
+    case $f in
+      ("$PROJECTNAME"*) open "$f";;
+    esac
+done # for f in doc/*tex;
