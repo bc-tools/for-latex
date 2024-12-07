@@ -14,9 +14,15 @@
 \usepackage{multicol}
 \usepackage{lastpage}
 
+\makeatletter
+
 \renewcommand*\pagemark{%
-  \usekomafont{pagenumber}{\thepage\kern1pt/\kern1pt\pageref{LastPage}}%
+  	\usekomafont{pagenumber}{%
+  		\thepage\kern1pt/\kern1pt\pageref*{LastPage}%
+	}%
 }
+
+\makeatother
 
 
 \newcommand\thisstyle{bw}
@@ -216,9 +222,15 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 \usepackage{multicol}
 \usepackage{lastpage}
 
+\makeatletter
+
 \renewcommand*\pagemark{%
-  \usekomafont{pagenumber}{\thepage\kern1pt/\kern1pt\pageref{LastPage}}%
+  	\usekomafont{pagenumber}{%
+  		\thepage\kern1pt/\kern1pt\pageref*{LastPage}%
+	}%
 }
+
+\makeatother
 
 
 \newcommand\thisstyle{color}
@@ -418,9 +430,15 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 \usepackage{multicol}
 \usepackage{lastpage}
 
+\makeatletter
+
 \renewcommand*\pagemark{%
-  \usekomafont{pagenumber}{\thepage\kern1pt/\kern1pt\pageref{LastPage}}%
+  	\usekomafont{pagenumber}{%
+  		\thepage\kern1pt/\kern1pt\pageref*{LastPage}%
+	}%
 }
+
+\makeatother
 
 
 \newcommand\thisstyle{dark}
@@ -620,9 +638,15 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 \usepackage{multicol}
 \usepackage{lastpage}
 
+\makeatletter
+
 \renewcommand*\pagemark{%
-  \usekomafont{pagenumber}{\thepage\kern1pt/\kern1pt\pageref{LastPage}}%
+  	\usekomafont{pagenumber}{%
+  		\thepage\kern1pt/\kern1pt\pageref*{LastPage}%
+	}%
 }
+
+\makeatother
 
 
 \newcommand\thisstyle{draft}
