@@ -18,7 +18,7 @@
 --------
 
 [[:format:]]
-Draft theme and \chges: the \envs for the kind of \chges stop to use icons.
+Draft theme and \chges: the \envs for the latest \chges stop to use icons.
 
 
 --------

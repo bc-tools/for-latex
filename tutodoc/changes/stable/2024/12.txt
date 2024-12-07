@@ -20,7 +20,7 @@ Here are the breaking chges.
 
     1) Color key names will be hyphenated where necessary: this implies the following changes.
 
-        * Admonitions: the ''colchges'' option of the \envs has been renamed ''col-chges''.
+        * \Envs for latest \chges: the ''colchges'' option of the \envs has been renamed ''col-chges''.
 
         * Showcases: the ''colstripe'' and  ''coltext'' options of the \env ''tdocshowcase'' and the macro ''\tdocshowcaseinput'' have been renamed ''col-stripe'' and  ''col-text''.
 
@@ -53,8 +53,7 @@ Here are the new fetaures.
 
     1) ''\tdocinEN'' macro: the English linguistic rules are respected between the quotes.
 
-
-    1) Admonitions.
+    1) \Envs for latest \chges.
 
         * A new ''tdoctodo'' \env has been added.
 

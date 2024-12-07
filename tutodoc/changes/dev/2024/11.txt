@@ -12,7 +12,7 @@
 [[:api:]]
 Color key names will be hyphenated where necessary: this implies the following changes.
 
-    1) Admonitions: the ''colchges'' option of the \envs has been renamed ''col-chges''.
+    1) \Envs for latest \chges: the ''colchges'' option of the \envs has been renamed ''col-chges''.
 
     1) Showcases: the ''colstripe'' and  ''coltext'' options of the \env ''tdocshowcase'' and the macro ''\tdocshowcaseinput'' have been renamed ''col-stripe'' and  ''col-text''.
 
@@ -60,7 +60,7 @@ The ‘’scrartcl‘’ class replaces the venerable ‘’article‘’. This 
 
 
 [[:api:]]
-Admonitions: the ''col'' option of the \envs has been renamed ''colchges''.
+\Envs for latest \chges: the ''col'' option of the \envs has been renamed ''colchges''.
 
 
 -----
@@ -68,7 +68,7 @@ Admonitions: the ''col'' option of the \envs has been renamed ''colchges''.
 -----
 
 [[:api:]]
-Admonitions.
+\Envs for latest \chges.
 
     1) A new ''tdoctodo'' \env has been added.
 
