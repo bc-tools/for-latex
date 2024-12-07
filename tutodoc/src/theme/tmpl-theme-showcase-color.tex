@@ -49,14 +49,15 @@
 \ExplSyntaxOff
 
 
+
 \begin{document}
 
 \textsf{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
 
-
 \section{Liens}
 
 {\Large\bfseries \href{https://github.com/bc-tools/for-latex/tree/main/tutodoc}{Un lien très gros}}, mais au moins on le voit.
+
 
 
 \section{Des codes \LaTeX}
@@ -139,11 +140,15 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 	\item Une galerie serait bienvenue...
 \end{tdoctodo}
 
-\bigskip
+\ifcsundef{g__tutodoc_topic_change_seq}{
+ 	\medskip
+}{}
 
 \mychgestext
 
-\medskip
+\ifcsundef{g__tutodoc_topic_change_seq}{
+	\medskip
+}{}
 
 \ExplSyntaxOn
 
@@ -153,19 +158,36 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 	@{\hskip 0pt}p{.26\linewidth}%
 	*{3}{@{\hskip 7pt}p{.23\linewidth}}@{\hskip 0pt}%
 }
-	\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
-      	\int_gincr:N \g__tutodoc_for_doc_int
-
-      	\vspace{-15pt}
-
-	  	\begin{tdoc#1}
-       		\item Infos... 
-	  	\end{tdoc#1}
-	    
-	  	\int_compare:nTF 
-	    	{\g__tutodoc_for_doc_int = 4 }
-	    	{ \\ }
-	    	{ & }
+	\ifcsundef{g__tutodoc_topic_change_seq}{
+    	\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
+          	\int_gincr:N \g__tutodoc_for_doc_int
+    
+          	\vspace{-15pt}
+    
+    	  	\begin{tdoc#1}
+           		\item Infos... 
+    	  	\end{tdoc#1}
+    	    
+    	  	\int_compare:nTF 
+    	    	{\g__tutodoc_for_doc_int = 4 }
+    	    	{ \\ }
+    	    	{ & }
+    	}
+	}{
+    	\seq_map_inline:Nn \g__tutodoc_topic_change_seq {
+          	\int_gincr:N \g__tutodoc_for_doc_int
+    
+          	\vspace{-5pt}
+    
+    	  	\begin{tdoc#1}
+           		\item Infos... 
+    	  	\end{tdoc#1}
+    	    
+    	  	\int_compare:nTF 
+    	    	{\g__tutodoc_for_doc_int = 4 }
+    	    	{ \\ }
+    	    	{ & }
+    	}
 	}
 \end{tabular}
 
