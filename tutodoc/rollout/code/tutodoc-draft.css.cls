@@ -101,7 +101,7 @@
 
 % -- NO ICONS USED -- %
 
-\newcommand{\tutodoc@changes@start@project@icon}{}
+% \newcommand{\tutodoc@changes@start@project@icon}{} % Not used!
 
 \ExplSyntaxOn
 
