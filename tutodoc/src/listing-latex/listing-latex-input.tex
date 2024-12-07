@@ -9,7 +9,7 @@
 
 % TESTING LOCAL IMPLEMENTATION %
 
-\usepackage{listing.cls}
+\usepackage{listing-latex.cls}
 
 
 % == FORDOC == %
@@ -50,7 +50,7 @@
 Pour les codes suivants, on considère un fichier de chemin relatif \verb+examples-listing-xyz.tex+, et ayant le contenu suivant.
 
 
-\tdoclatexinput[code]{examples/listing/xyz.tex}
+\tdoclatexinput[code]{examples/listing-latex/xyz.tex}
 
 
 \medskip
@@ -63,12 +63,12 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
     \leavevmode
 
     \begin{tdoclatex}[code]
-\tdoclatexinput[sbs]{examples/listing/xyz.tex}
+\tdoclatexinput[sbs]{examples/listing-latex/xyz.tex}
     \end{tdoclatex}
 
     Ceci produit la mise en forme suivante.
 
-    \tdoclatexinput[sbs]{examples/listing/xyz.tex}
+    \tdoclatexinput[sbs]{examples/listing-latex/xyz.tex}
 \end{tdocexa}
 
 
@@ -76,12 +76,12 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
     \leavevmode
 
     \begin{tdoclatex}[code]
-\tdoclatexinput{examples/listing/xyz.tex}
+\tdoclatexinput{examples/listing-latex/xyz.tex}
     \end{tdoclatex}
 
     Ceci produit la mise en forme suivante où l'option employée par défaut est \tdoclatexin#std#.
 
-    \tdoclatexinput{examples/listing/xyz.tex}
+    \tdoclatexinput{examples/listing-latex/xyz.tex}
 \end{tdocexa}
 
 
@@ -89,12 +89,12 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
     \leavevmode
 
     \begin{tdoclatex}[code]
-\tdoclatexinput[code]{examples/listing/xyz.tex}
+\tdoclatexinput[code]{examples/listing-latex/xyz.tex}
     \end{tdoclatex}
 
     Ceci produit la mise en forme suivante.
 
-    \tdoclatexinput[code]{examples/listing/xyz.tex}
+    \tdoclatexinput[code]{examples/listing-latex/xyz.tex}
 \end{tdocexa}
 
 
@@ -108,7 +108,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
     \medskip
 
     \begin{tdocshowcaseDOC}
-        \tdoclatexshow{examples/listing/xyz.tex}
+        \tdoclatexshow{examples/listing-latex/xyz.tex}
     \end{tdocshowcaseDOC}
 \end{tdocexa}
 
@@ -124,7 +124,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
     \medskip
 
     \begin{tdocshowcaseDOC}
-        \tdoclatexshow[explain = Voici le rendu réel.]{examples/listing/xyz.tex}
+        \tdoclatexshow[explain = Voici le rendu réel.]{examples/listing-latex/xyz.tex}
     \end{tdocshowcaseDOC}
 \end{tdocexa}
 
@@ -135,7 +135,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \medskip
 
-    \tdoclatexinput[code]{examples/listing/latexshow-options.tex}
+    \tdoclatexinput[code]{examples/listing-latex/latexshow-options.tex}
 
     \medskip
 
@@ -144,7 +144,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
     \medskip
 
     \begin{tdocshowcaseDOC}
-        \input{examples/listing/latexshow-options.tex}
+        \input{examples/listing-latex/latexshow-options.tex}
     \end{tdocshowcaseDOC}
 \end{tdocexa}
 

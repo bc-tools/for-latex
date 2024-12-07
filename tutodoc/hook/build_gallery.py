@@ -118,7 +118,7 @@ def theme_gallery(
 \input{../preamble.cfg.tex}
 
 \usepackage{../admonitions/admonitions.cls}
-\usepackage{../listing/listing.cls}
+\usepackage{../listing-latex/listing-latex.cls}
 \usepackage{../version-n-change/version-n-change.cls}
             """.strip(),
             r"""

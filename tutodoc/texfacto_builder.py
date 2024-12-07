@@ -336,8 +336,8 @@ print_frame(
 
 def ugly_hack(content):
     content = content.replace(
-        "{examples/listing/xyz.tex}",
-        "{examples-listing-xyz.tex}",
+        "{examples/listing-latex/xyz.tex}",
+        "{examples-listing-latex-xyz.tex}",
     )
 
     content = content.replace(

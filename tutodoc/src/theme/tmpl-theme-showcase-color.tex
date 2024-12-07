@@ -1,7 +1,7 @@
 \documentclass[theme = color]{../main/main}
 
 \usepackage{../admonitions/admonitions.cls}
-\usepackage{../listing/listing.cls}
+\usepackage{../listing-latex/listing-latex.cls}
 \usepackage{../version-n-change/version-n-change.cls}
 
 % == FORDOC == %
@@ -119,9 +119,9 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 \ifcsundef{g__tutodoc_focus_color_seq}{
     \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
         \int_gincr:N \g__tutodoc_for_doc_int
-        
+
         \begin{tdoc#1}
-      	  	\int_compare:nTF 
+      	  	\int_compare:nTF
 	    		{\g__tutodoc_for_doc_int = 1 }
 	    		{ \myhighlightedtext }
 	    		{ \myhighlightedtextnonote }
@@ -130,9 +130,9 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 } {
     \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
         \int_gincr:N \g__tutodoc_for_doc_int
-        
+
         \begin{tdoc#1}
-      	  	\int_compare:nTF 
+      	  	\int_compare:nTF
 	    		{\g__tutodoc_for_doc_int = 1 }
 	    		{ \myhighlightedtext }
 	    		{ \myhighlightedtextnonote }
@@ -173,14 +173,14 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 	\ifcsundef{g__tutodoc_topic_change_seq}{
     	\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
           	\int_gincr:N \g__tutodoc_for_doc_int
-    
+
           	\vspace{-15pt}
-    
+
     	  	\begin{tdoc#1}
-           		\item Infos... 
+           		\item Infos...
     	  	\end{tdoc#1}
-    	    
-    	  	\int_compare:nTF 
+
+    	  	\int_compare:nTF
     	    	{\g__tutodoc_for_doc_int = 4 }
     	    	{ \\ }
     	    	{ & }
@@ -188,14 +188,14 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 	}{
     	\seq_map_inline:Nn \g__tutodoc_topic_change_seq {
           	\int_gincr:N \g__tutodoc_for_doc_int
-    
+
           	\vspace{-5pt}
-    
+
     	  	\begin{tdoc#1}
-           		\item Infos... 
+           		\item Infos...
     	  	\end{tdoc#1}
-    	    
-    	  	\int_compare:nTF 
+
+    	  	\int_compare:nTF
     	    	{\g__tutodoc_for_doc_int = 4 }
     	    	{ \\ }
     	    	{ & }
