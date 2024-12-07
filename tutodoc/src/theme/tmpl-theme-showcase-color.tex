@@ -57,8 +57,6 @@
 
 \ExplSyntaxOff
 
-\myexrmktext
-
 
 \subsection{tdocnote, tdoctip...}
 
@@ -68,16 +66,12 @@
 
 \ifcsundef{g__tutodoc_focus_color_seq}{
     \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
-        \medskip
-
         \begin{tdoc#1}
             \myhighlightedtext
         \end{tdoc#1}
     }
 } {
     \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
-        \medskip
-
         \begin{tdoc#1}
             \myhighlightedtext
         \end{tdoc#1}
@@ -97,19 +91,29 @@
 
 \ExplSyntaxOn
 
-\begin{multicols}{2}
+\int_new:N  \g__tutodoc_col_doc_int
+\int_set:Nn \g__tutodoc_col_doc_int { 0 }
 
-\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
-    \begin{tdoc#1}
-        \item Infos...
-    \end{tdoc#1}
+\begin{tabular}{%
+	@{\hskip 0pt}p{.26\linewidth}%
+	*{3}{@{\hskip 7pt}p{.23\linewidth}}@{\hskip 0pt}%
 }
-
-\vfill\null
-
-\end{multicols}
+	\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
+      \int_gincr:N \g__tutodoc_col_doc_int
+      \vspace{-15pt}
+	  \begin{tdoc#1}
+       	\item Infos... 
+	  \end{tdoc#1}
+	    
+	  \int_compare:nTF 
+	    {\g__tutodoc_col_doc_int = 4 }
+	    { \\ }
+	    { & }
+	}
+\end{tabular}
 
 \ExplSyntaxOff
+
 
 
 \section{Des codes \LaTeX}

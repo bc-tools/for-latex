@@ -2,6 +2,21 @@
 
 
 ==
+07  (1.7.1-beta.1)
+==
+
+-----
+:fix:
+-----
+
+[[:doc:]]
+\Refs to tools for latest \chges was written as admonition features.
+
+
+// ---------- //
+
+
+==
 04  (1.7.0)
 ==
 
