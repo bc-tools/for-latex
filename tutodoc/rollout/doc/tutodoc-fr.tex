@@ -12,6 +12,12 @@
 \frenchsetup{StandardItemLabels=true}
 
 \usepackage{multicol}
+\usepackage{lastpage}
+
+\renewcommand*\pagemark{%
+  \usekomafont{pagenumber}{\thepage\kern1pt/\kern1pt\pageref{LastPage}}%
+}
+
 
 \newcommand\thisstyle{bw}
 
@@ -208,6 +214,12 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 \frenchsetup{StandardItemLabels=true}
 
 \usepackage{multicol}
+\usepackage{lastpage}
+
+\renewcommand*\pagemark{%
+  \usekomafont{pagenumber}{\thepage\kern1pt/\kern1pt\pageref{LastPage}}%
+}
+
 
 \newcommand\thisstyle{color}
 
@@ -404,6 +416,12 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 \frenchsetup{StandardItemLabels=true}
 
 \usepackage{multicol}
+\usepackage{lastpage}
+
+\renewcommand*\pagemark{%
+  \usekomafont{pagenumber}{\thepage\kern1pt/\kern1pt\pageref{LastPage}}%
+}
+
 
 \newcommand\thisstyle{dark}
 
@@ -600,6 +618,12 @@ $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 \frenchsetup{StandardItemLabels=true}
 
 \usepackage{multicol}
+\usepackage{lastpage}
+
+\renewcommand*\pagemark{%
+  \usekomafont{pagenumber}{\thepage\kern1pt/\kern1pt\pageref{LastPage}}%
+}
+
 
 \newcommand\thisstyle{draft}
 
@@ -1602,22 +1626,22 @@ Pour modifier la mise en forme générale, la classe \thisproj\ propose l'option
 
 % The gallery starts here...
 \includepdf[
-    pages=1-2,
+    pages=-,
     fitpaper=true
 ]{gallery-showcase-bw}
 
 \includepdf[
-    pages=1-2,
+    pages=-,
     fitpaper=true
 ]{gallery-showcase-color}
 
 \includepdf[
-    pages=1-2,
+    pages=-,
     fitpaper=true
 ]{gallery-showcase-dark}
 
 \includepdf[
-    pages=1,
+    pages=-,
     fitpaper=true
 ]{gallery-showcase-draft}
 

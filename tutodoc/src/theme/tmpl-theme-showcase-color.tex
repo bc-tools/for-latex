@@ -11,9 +11,15 @@
 \usepackage{multicol}
 \usepackage{lastpage}
 
+\makeatletter
+
 \renewcommand*\pagemark{%
-  \usekomafont{pagenumber}{\thepage\kern1pt/\kern1pt\pageref{LastPage}}%
+  	\usekomafont{pagenumber}{%
+  		\thepage\kern1pt/\kern1pt\pageref*{LastPage}%
+	}%
 }
+
+\makeatother
 
 
 \newcommand\thisstyle{color}

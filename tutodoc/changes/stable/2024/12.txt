@@ -5,6 +5,13 @@
 04  (1.7.0)
 ==
 
+------
+:desc:
+------
+
+The most important changes are the use of the scrartcl class, and the simplification of the organisation of configuration files in the source code. See the documentation for other interesting features.
+
+
 -------
 :break:
 -------
