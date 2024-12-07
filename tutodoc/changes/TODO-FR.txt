@@ -9,11 +9,6 @@ NOW
 
 > ---------------------------- <
 
-draft : que des exemples env avec numérotation à la suite !
-
-
-> ---------------------------- <
-
 env pour code via minted car on peut aussi parler de perl, pyhon et lua voire plus
 
 

@@ -13,6 +13,14 @@
 \Refs to tools for latest \chges was written as admonition features.
 
 
+--------
+:update:
+--------
+
+[[:format:]]
+''draft'' theme and latest \chges: less spaces are consumed.
+
+
 // ---------- //
 
 
