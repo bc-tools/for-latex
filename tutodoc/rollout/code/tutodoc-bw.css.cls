@@ -51,7 +51,7 @@
 
 \newcommand{\tutodoc@latex@lexer}{latex}
 
-% :: INLINE LATEX MACRO :: %
+% :: INLINE CODE MACRO :: %
 
 \newcommand{\tutodoc@latex@style}{friendly_grayscale}
 

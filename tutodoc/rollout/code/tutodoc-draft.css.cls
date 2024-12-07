@@ -23,7 +23,7 @@
 
 \newcommand{\tutodoc@latex@lexer}{text}
 
-% :: INLINE LATEX MACRO :: %
+% :: INLINE CODE MACRO :: %
 
 \newcommand{\tutodoc@latex@style}{default}
 
