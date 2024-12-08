@@ -1,0 +1,99 @@
+\begin{filecontents*}{helloworld.java}
+public class HelloWorld {
+    // A 'Hello World' in Java
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}
+\end{filecontents*}
+
+
+\documentclass{article}
+
+\usepackage[most,minted]{tcolorbox}
+
+% Let's work with styles...
+\tcbset{
+  my-listing-base-style/.style = {
+    listing only,
+    breakable,
+    enhanced jigsaw,
+    sharp corners,
+    boxrule=0.4pt,
+    top=0pt,
+    bottom=0pt,
+    minted language=java,
+    minted style=colorful,
+    minted options={%
+        tabsize=2,
+        fontsize=\footnotesize,
+        xleftmargin=2em,
+        autogobble=true,
+        numbers=left,
+        numbersep=5pt,
+        fontsize=\footnotesize,
+        breaklines=true,
+    },
+    left=-2em,
+    left skip=1em,
+  },
+  my-listing-title-style/.style 2 args= {
+    title={Listing #1: #2}, 
+    label={lst:#1},
+    list text=#2,
+    detach title,
+    listing above comment,
+    comment=\centering\tcbtitletext
+  }
+}
+
+% Let's build our clever env.
+
+\makeatletter
+
+\newtcbinputlisting{\my@listing@no@title}[1]{%
+  listing file = {#1},
+  width=\linewidth-1em,
+  my-listing-base-style
+}
+
+% Source used: https://tex.stackexchange.com/questions/468324/list-of-listings-how-to-add.
+\newtcbinputlisting[auto counter,list inside=lol, list type={lstlisting}]{\my@listing@title}[2]{%
+  listing file = {#2},
+  width=\linewidth-1em,
+  my-listing-base-style,
+  my-listing-title-style = #1,
+}
+
+
+\NewDocumentCommand{\mylisting}{O{}m}{
+	\IfBlankTF{#1}{
+		\my@listing@no@title{#2}	
+	}{
+		\my@listing@title{{\thetcbcounter}{#1}}{#2}
+	}
+}
+
+\makeatother
+    
+    
+\begin{document}
+    
+\lstlistoflistings
+    
+\section{Test 1}
+
+\mylisting{helloworld.java}  % This should not have a caption
+
+\mylisting[Hello world]{helloworld.java}
+
+\newpage
+
+\section{Test 2}
+
+\mylisting{helloworld.java}  % This should not have a caption
+
+\mylisting[Hello world is back!]{helloworld.java}
+
+
+\end{document}

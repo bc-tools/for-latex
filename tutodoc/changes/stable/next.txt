@@ -7,6 +7,9 @@
 ------
 
 ??
+Cette version
+    ??? ajoute la possibilité de présenter des codes informatiques,
+    OK  améliore le rendu de la macro et des environnements pour les changements lorsque le thème ''dark'' est utilisé.
 
 
 -----

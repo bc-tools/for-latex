@@ -1,16 +1,16 @@
+#!/bin/bash
+
 # --------------- #
 # -- CONSTANTS -- #
 # --------------- #
 
-THISDIR=$(dirname "$0")
-WORKINGDIR=$(pwd)
-
-PROJECTNAME=$(basename "$WORKINGDIR")
+THISDIR=`dirname $0 | while read a; do cd $a && pwd && break; done`
+PROJECTNAME=$(basename "$THISDIR")
 
 
-# ----------------------- #
-# -- ONE FOLDER NEEDED -- #
-# ----------------------- #
+# ------------------- #
+# -- NO ARG NEEDED -- #
+# ------------------- #
 
 if [ ! $# -eq 0 ]
 then
@@ -19,16 +19,18 @@ then
 fi
 
 
-# --------------------- #
-# -- LISTED PROJECTS -- #
-# --------------------- #
+# ------------------------------- #
+# -- COMPILATION OF FINAL DOCS -- #
+# ------------------------------- #
 
 function nocompile {
+    echo "LaTeX compilation failed with\n$1"
     open "$1"
-    exit 1
 }
 
-cd "rollout"
+
+cd "$THISDIR/rollout"
+
 
 for f in code/*
 do
@@ -37,6 +39,7 @@ do
 
     cp "$f"  "$dest"
 done # for f in code/*;
+
 
 for f in doc/*.tex
 do
@@ -51,6 +54,11 @@ do
     cd ../
 done # for f in doc/*tex;
 
+
+# ------------------------ #
+# -- OPEN ONLY PDF DOCS -- #
+# ------------------------ #
+
 cd debug
 
 for f in *.pdf
@@ -58,4 +66,4 @@ do
     case $f in
       ("$PROJECTNAME"*) open "$f";;
     esac
-done # for f in doc/*tex;
+done # for f in *.pdf;

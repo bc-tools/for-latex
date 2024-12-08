@@ -33,20 +33,22 @@
 %
 % In the following easy-to-understand macro, we use one fictive ''tcolorbox''
 % style such as to indicate an unknown ''tutodoc'' style to the user.
-% For example, this can give one message similar to the following one.
+% For example, this can give one message similar to the following one where
+% the user has type ''MISTYPED-STYLE''.
 %
 % term::
-%     Package pgfkeys Error: I do not know the key '/tcb/tdoclatex bad option
-%     "MISTYPED-STYLE"' and I am going to ignore it. Perhaps you misspelled it.
+%     Package pgfkeys Error: I do not know the key '/tcb/tutodoc tdoclatex
+%     bad option "MISTYPED-STYLE"' and I am going to ignore it. Perhaps you
+%     misspelled it.
 %
 %     See the pgfkeys package documentation for explanation.
 %%%
-\NewExpandableDocumentCommand{\tutodoc@latex@listing@format@option}{ m }{
+\NewExpandableDocumentCommand{\tutodoc@latex@listing@format@option}{m}{
   \str_case:nnF { #1 } {
     { sbs  } { listing ~ side ~ text }
     { code } { listing ~ only }
     { std  } { listing ~ and ~ text }
-  } { tdoclatex ~ bad ~ option ~ "#1" }
+  } { tutodoc ~ tdoclatex ~ bad ~ option ~ "#1" }
 }
 
 \ExplSyntaxOff

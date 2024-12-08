@@ -1,10 +1,10 @@
 % == TOOLS == %
 
-% % -- LATEX EXAMPLES -- %
+% -- LATEX EXAMPLES -- %
 
-% % :: STYLES OF THE LISTING ENV. AND THE MACRO :: %
+% :: STYLES OF THE LISTING ENV. AND THE MACRO :: %
 
-% \input{../listing-latex/css/\tutodoc@theme.cls.sty}
+\input{../listing-full/css/\tutodoc@theme.cls.sty}
 
 
 % % :: INLINE CODE MACRO :: %
@@ -41,7 +41,7 @@
 % %
 % %     See the pgfkeys package documentation for explanation.
 % %%%
-% \NewExpandableDocumentCommand{\tutodoc@latex@listing@format@option}{ m }{
+% \NewExpandableDocumentCommand{\tutodoc@latex@listing@format@option}{m}{
 %   \str_case:nnF { #1 } {
 %     { sbs  } { listing ~ side ~ text }
 %     { code } { listing ~ only }

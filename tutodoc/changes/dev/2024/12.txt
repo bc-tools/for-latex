@@ -2,6 +2,21 @@
 
 
 ==
+08  (1.7.1-beta.2)
+==
+
+--------
+:fordev:
+--------
+
+[[:flow:]]
+Tools to debug the final docs: creation of the \bash files path::''debug-final-doc-erase.sh'' and path::''tutodoc/debug-final-doc-test.sh''.
+
+
+// ---------- //
+
+
+==
 07  (1.7.1-beta.1)
 ==
 

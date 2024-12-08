@@ -2,10 +2,7 @@
 # -- CONSTANTS -- #
 # --------------- #
 
-CHANGELOGNEXT="changelog/next.tex"
-
-THISDIR=$(dirname "$0")
-WORKINGDIR=$(pwd)
+CHANGELOG_NEXT="changelog/next.tex"
 
 
 # ----------------------- #
@@ -28,18 +25,20 @@ TARGET=$1
 
 if [ ! -d "$TARGET" ]
 then
-    echo "CRITICAL - Missing folder: ''$TARGET''."
+    echo "CRITICAL - Missing absolute target folder: ''$TARGET''."
     exit 1
 fi
 
 
-# --------------------- #
-# -- LISTED PROJECTS -- #
-# --------------------- #
+# ----------------------------------------- #
+# -- COMPILATION OF ALL DEV. LATEX FILES -- #
+# ----------------------------------------- #
 
 function nocompile {
+    echo "LaTeX compilation failed with\n$1"
     open "$1"
 }
+
 
 cd "$TARGET"
 
@@ -47,7 +46,7 @@ for f in */*.tex
 do
     fdir=$(dirname "$f")
 
-    if [ "$f" != "$CHANGELOGNEXT" ]
+    if [ "$f" != "$CHANGELOG_NEXT" ]
     then
         cd "$TARGET/$fdir"
 
@@ -55,7 +54,5 @@ do
         echo "$f"
         echo ""
         SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -quiet -pdf -pdflatex="pdflatex --interaction=nonstopmode --halt-on-error --shell-escape  %O %S" "$TARGET/$f" || nocompile "$TARGET/$f"
-
-        # latexmk -c "$TARGET/$f"
     fi
 done # for f in */*.tex;

@@ -14,6 +14,11 @@ env pour code via minted car on peut aussi parler de perl, pyhon et lua voire pl
 
 > ---------------------------- <
 
+macro de rgélage global en parallèle des options de classe (on prépare terrain pour monorepio à la tns)
+
+
+> ---------------------------- <
+
 ??? script fabriquant les examples tdoc warn and co à partir d'un donné (cec évite de redander des trads déjà faites !) + idem pour chge what è!!
 
 
