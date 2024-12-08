@@ -1083,43 +1083,6 @@ VERSUS.
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-listing-latexshow-options.tex}
-\tdoclatexshow[explain   = What comes next is colorful...,
-               before    = Rendering below.,
-               after     = Finished rendering.,
-               col-stripe = orange,
-               col-text   = blue!70!black]
-               {examples-listing-xyz.tex}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-listing-ABC.tex}
-\begin{tdoclatex}[sbs]
-    $A = B + C$
-\end{tdoclatex}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-listing-xyz.tex}
-% Just one demo.
-$x y z = 1$
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-listing-strange.tex}
-\begin{tdoclatex}[std]
-    [Strange... Or not!]
-\end{tdoclatex}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-listing-strange-bis.tex}
-\begin{tdoclatex}
-    \string[Strange... Or not!]
-\end{tdoclatex}
-\end{filecontents*}
-
-
 \begin{filecontents*}[overwrite]{examples-showcase-customized.tex}
 \begin{tdocshowcase}[before     = My beginning,
                      after      = My end,
@@ -1168,6 +1131,43 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \begin{tdocshowcase}[nostripe]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 \end{tdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-latex-latexshow-options.tex}
+\tdoclatexshow[explain   = What comes next is colorful...,
+               before    = Rendering below.,
+               after     = Finished rendering.,
+               col-stripe = orange,
+               col-text   = blue!70!black]
+               {examples-listing-latex-xyz.tex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-latex-ABC.tex}
+\begin{tdoclatex}[sbs]
+    $A = B + C$
+\end{tdoclatex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-latex-xyz.tex}
+% Just one demo.
+$x y z = 1$
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-latex-strange.tex}
+\begin{tdoclatex}[std]
+    [Strange... Or not!]
+\end{tdoclatex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-latex-strange-bis.tex}
+\begin{tdoclatex}
+    \string[Strange... Or not!]
+\end{tdoclatex}
 \end{filecontents*}
 
 
@@ -2010,7 +2010,7 @@ Here are some examples.
 
 \begin{tdocexa}[Side by side]
     Using \tdocenv[{[sbs]}]{tdoclatex}, we can display a code and its rendering side by side.
-    \tdocbasicinputDOC{examples-listing-ABC.tex}
+    \tdocbasicinputDOC{examples-listing-latex-ABC.tex}
 
 \end{tdocexa}
 
@@ -2047,13 +2047,13 @@ Here are some examples.
 
 \begin{tdocwarn}
     With default formatting, if the code begins with an opening bracket, the default option must be explicitly indicated.
-    \tdocbasicinputDOC{examples-listing-strange.tex}
+    \tdocbasicinputDOC{examples-listing-latex-strange.tex}
 
 
     \smallskip
 
     Another method is to use the \tdocmacro{string} primitive.
-    \tdocbasicinputDOC{examples-listing-strange-bis.tex}
+    \tdocbasicinputDOC{examples-listing-latex-strange-bis.tex}
 
 \end{tdocwarn}
 
@@ -2062,7 +2062,7 @@ Here are some examples.
 
 For the following codes, consider a file with the relative path \verb+examples-listing-xyz.tex+, and with the following contents.
 
-\tdoclatexinput[code]{examples-listing-xyz.tex}
+\tdoclatexinput[code]{examples-listing-latex-xyz.tex}
 
 
 \medskip
@@ -2077,13 +2077,13 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
     \leavevmode
 
     \begin{tdoclatex}[code]
-\tdoclatexinput[sbs]{examples-listing-xyz.tex}
+\tdoclatexinput[sbs]{examples-listing-latex-xyz.tex}
 
     \end{tdoclatex}
 
     This produces the following layout.
 
-    \tdoclatexinput[sbs]{examples-listing-xyz.tex}
+    \tdoclatexinput[sbs]{examples-listing-latex-xyz.tex}
 
 \end{tdocexa}
 
@@ -2095,13 +2095,13 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
     \leavevmode
 
     \begin{tdoclatex}[code]
-\tdoclatexinput{examples-listing-xyz.tex}
+\tdoclatexinput{examples-listing-latex-xyz.tex}
 
     \end{tdoclatex}
 
     This produces the following formatting where the default option is \tdoclatexin#std#.
 
-    \tdoclatexinput{examples-listing-xyz.tex}
+    \tdoclatexinput{examples-listing-latex-xyz.tex}
 
 \end{tdocexa}
 
@@ -2113,13 +2113,13 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
     \leavevmode
 
     \begin{tdoclatex}[code]
-\tdoclatexinput[code]{examples-listing-xyz.tex}
+\tdoclatexinput[code]{examples-listing-latex-xyz.tex}
 
     \end{tdoclatex}
 
     This produces the following layout.
 
-    \tdoclatexinput[code]{examples-listing-xyz.tex}
+    \tdoclatexinput[code]{examples-listing-latex-xyz.tex}
 
 \end{tdocexa}
 
@@ -2136,7 +2136,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
     \medskip
 
     \begin{tdocshowcaseDOC}
-        \tdoclatexshow{examples-listing-xyz.tex}
+        \tdoclatexshow{examples-listing-latex-xyz.tex}
 
     \end{tdocshowcaseDOC}
 \end{tdocexa}
@@ -2156,7 +2156,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
     \medskip
 
     \begin{tdocshowcaseDOC}
-        \tdoclatexshow[explain = Here is the rendering.]{examples-listing-xyz.tex}
+        \tdoclatexshow[explain = Here is the rendering.]{examples-listing-latex-xyz.tex}
 
     \end{tdocshowcaseDOC}
 \end{tdocexa}
@@ -2171,7 +2171,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
     \medskip
 
-    \tdoclatexinput[code]{examples-listing-latexshow-options.tex}
+    \tdoclatexinput[code]{examples-listing-latex-latexshow-options.tex}
 
 
     \medskip
@@ -2181,10 +2181,22 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
     \medskip
 
     \begin{tdocshowcaseDOC}
-        \input{examples-listing-latexshow-options.tex}
+        \input{examples-listing-latex-latexshow-options.tex}
 
     \end{tdocshowcaseDOC}
 \end{tdocexa}
+
+
+\section{XXX}
+
+\subsection{YYT}
+
+ZZZ
+
+
+\subsection{XXX}
+
+YYY
 
 
 \section{Indicate changes}

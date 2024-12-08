@@ -1,9 +1,10 @@
-% -- COLORFUL HIGHLIGHTING OF CONTENT -- %
+% == ADMONITIONS == %
 
 \ExplSyntaxOn
 
 %%%
-% We use a ''seq'' variable to factorize the code just after.
+% Without icons and colors, we just use a ''seq'' variable to give
+% all the suffixes for the environments concerned.
 %%%
 \seq_new:N \g__tutodoc_focus_color_seq
 
@@ -19,11 +20,22 @@
 
 
 
-% :: LEXER USED :: %
+% == LISTING - ANY == %
+
+% -- INLINE CODE -- %
+
+% -- FRAMED LISTING (tcolorbox) -- %
+
+
+
+% == LISTING - LATEX == %
+
+% -- LEXER USED -- %
 
 \newcommand{\tutodoc@latex@lexer}{text}
 
-% :: INLINE CODE MACRO :: %
+
+% -- INLINE CODE -- %
 
 \newcommand{\tutodoc@latex@style}{default}
 
@@ -31,7 +43,7 @@
 \colorlet{tutodoc@latex@text@color}{black}
 
 
-% :: THE TCOLORBOX LISTING STYLE :: %
+% -- FRAMED LISTING (tcolorbox) -- %
 
 \colorlet{tutodoc@latex@frame@color}{darkgray}
 
@@ -56,19 +68,19 @@
 
 
 
-% -- TEXT AND PAGE COLORS -- %
+% == TEXT AND PAGE COLORS == %
 
 \colorlet{tutodoc@page@color}{white}
 \colorlet{tutodoc@text@color}{black}
 
 
-% -- LINKS COLOR -- %
+% == LINKS COLOR == %
 
 \definecolor{tutodoc@link@color}{named}{black}
 
 
 
-% -- SHOWCASE -- %
+% == SHOWCASE == %
 
 \NewExpandableDocumentCommand{\tutodoc@showcase@rule@color}{}{%
   black%
@@ -92,16 +104,22 @@
 
 
 
-% -- VERSION & CHANGES -- %
+% == VERSION & CHANGES == %
+
+% -- DATE & VERSION -- %
 
 \NewExpandableDocumentCommand{\tutodoc@changes@when@color}{}{%
   black%
 }
 
 
-% -- NO ICONS USED -- %
+% -- ENVS FOR CHANGES MADE -- %
 
-% \newcommand{\tutodoc@changes@start@project@icon}{} % Not used!
+%%%
+% The draft theme doesn't use any icon.
+%%%
+
+% \newcommand{\tutodoc@changes@start@project@icon}{}
 
 \ExplSyntaxOn
 

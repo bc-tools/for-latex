@@ -1,28 +1,12 @@
-% -- COLORFUL HIGHLIGHTING OF CONTENT -- %
+% == ADMONITIONS == %
 
-\NewExpandableDocumentCommand{\tutodoc@build@title@color}{m}{%
-  white%
-}
-
-\NewExpandableDocumentCommand{\tutodoc@build@upper@color}{m}{%
-  \tdocdarkcolor[40]{Gray}%
-}
-
-\NewExpandableDocumentCommand{\tutodoc@build@back@color}{m}{%
-  \tdoclightcolor[10]{Gray}%
-}
-
-\NewExpandableDocumentCommand{\tutodoc@build@frame@color}{m}{%
-  Gray!75!black!45%
-}
-
-\colorlet{tutodoc@admonition@shadow@color}{Gray!15}
-
+% -- ICONS & MAIN COLOR -- %
 
 \ExplSyntaxOn
 
 %%%
-% We use two ''prop'' variables to factorize the code just after.
+% We use two ''prop'' variables to associate each \env to its icon
+% and color.
 %%%
 \prop_new:N \g__tutodoc_focus_color_prop
 \prop_new:N \g__tutodoc_focus_icon_prop
@@ -46,12 +30,44 @@
 \ExplSyntaxOff
 
 
+% -- ADDITONAL COLORS -- %
 
-% :: LEXER USED :: %
+\NewExpandableDocumentCommand{\tutodoc@build@title@color}{m}{%
+  white%
+}
+
+\NewExpandableDocumentCommand{\tutodoc@build@upper@color}{m}{%
+  \tdocdarkcolor[40]{Gray}%
+}
+
+\NewExpandableDocumentCommand{\tutodoc@build@back@color}{m}{%
+  \tdoclightcolor[10]{Gray}%
+}
+
+\NewExpandableDocumentCommand{\tutodoc@build@frame@color}{m}{%
+  Gray!75!black!45%
+}
+
+\colorlet{tutodoc@admonition@shadow@color}{Gray!15}
+
+
+
+% == LISTING - ANY == %
+
+% -- INLINE CODE -- %
+
+% -- FRAMED LISTING (tcolorbox) -- %
+
+
+
+% == LISTING - LATEX == %
+
+% -- LEXER USED -- %
 
 \newcommand{\tutodoc@latex@lexer}{latex}
 
-% :: INLINE CODE MACRO :: %
+
+% -- INLINE CODE -- %
 
 \newcommand{\tutodoc@latex@style}{friendly_grayscale}
 
@@ -59,7 +75,7 @@
 \colorlet{tutodoc@latex@text@color}{black}
 
 
-% :: THE TCOLORBOX LISTING STYLE :: %
+% -- FRAMED LISTING (tcolorbox) -- %
 
 \colorlet{tutodoc@latex@frame@color}{darkgray}
 
@@ -84,19 +100,19 @@
 
 
 
-% -- TEXT AND PAGE COLORS -- %
+% == TEXT AND PAGE COLORS == %
 
 \colorlet{tutodoc@page@color}{white}
 \colorlet{tutodoc@text@color}{black}
 
 
-% -- LINKS COLOR -- %
+% == LINKS COLOR == %
 
 \definecolor{tutodoc@link@color}{named}{DimGray}
 
 
 
-% -- SHOWCASE -- %
+% == SHOWCASE == %
 
 \NewExpandableDocumentCommand{\tutodoc@showcase@rule@color}{}{%
   black%
@@ -120,14 +136,16 @@
 
 
 
-% -- VERSION & CHANGES -- %
+% == VERSION & CHANGES == %
+
+% -- DATE & VERSION -- %
 
 \NewExpandableDocumentCommand{\tutodoc@changes@when@color}{}{%
   gray%
 }
 
 
-% -- ICONS -- %
+% -- ENVS FOR CHANGES MADE -- %
 
 \newcommand{\tutodoc@changes@start@project@icon}{\faAnchor}
 

@@ -14,7 +14,7 @@
 -----
 
 [[:doc:]]
-\Refs to tools for latest \chges was written as admonition features.
+\Refs to tools for latest \chges was wrongly written as admonition features.
 
 
 --------
@@ -22,4 +22,4 @@
 --------
 
 [[:format:]]
-''draft'' theme and latest \chges: less spaces are consumed.
+''draft'' theme and latest \chges: less spaces consumed.

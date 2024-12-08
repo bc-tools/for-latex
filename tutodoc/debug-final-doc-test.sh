@@ -55,7 +55,6 @@ cd debug
 
 for f in *.pdf
 do
-    echo "$PROJECTNAME  ||  $f"
     case $f in
       ("$PROJECTNAME"*) open "$f";;
     esac

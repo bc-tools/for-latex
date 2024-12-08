@@ -1,4 +1,36 @@
-% -- COLORFUL HIGHLIGHTING OF CONTENT -- %
+% == ADMONITIONS == %
+
+% -- ICONS & MAIN COLOR -- %
+
+\ExplSyntaxOn
+
+%%%
+% We use two ''prop'' variables to associate each \env to its icon
+% and color.
+%%%
+\prop_new:N \g__tutodoc_focus_color_prop
+\prop_new:N \g__tutodoc_focus_icon_prop
+
+\prop_set_from_keyval:Nn \g__tutodoc_focus_color_prop {
+  note = cyan,
+  tip  = ForestGreen,
+  imp  = orange,
+  caut = violet,
+  warn = red,
+}
+
+\prop_set_from_keyval:Nn \g__tutodoc_focus_icon_prop {
+  note = \faInfoCircle,
+  tip  = \faLightbulb,
+  imp  = \faHighlighter,
+  caut = \faBiohazard,
+  warn = \faSkullCrossbones,
+}
+
+\ExplSyntaxOff
+
+
+% -- ADDITONAL COLORS -- %
 
 \NewExpandableDocumentCommand{\tutodoc@build@title@color}{m}{%
   \tdocdarkcolor[95]{white}%
@@ -23,39 +55,23 @@
 \colorlet{tutodoc@admonition@shadow@color}{black!68}
 
 
-\ExplSyntaxOn
 
-%%%
-% We use two ''prop'' variables to factorize the code just after.
-%%%
-\prop_new:N \g__tutodoc_focus_color_prop
-\prop_new:N \g__tutodoc_focus_icon_prop
+% == LISTING - ANY == %
 
-\prop_set_from_keyval:Nn \g__tutodoc_focus_color_prop {
-  note = cyan,
-  tip  = ForestGreen,
-  imp  = orange,
-  caut = violet,
-  warn = red,
-}
+% -- INLINE CODE -- %
 
-\prop_set_from_keyval:Nn \g__tutodoc_focus_icon_prop {
-  note = \faInfoCircle,
-  tip  = \faLightbulb,
-  imp  = \faHighlighter,
-  caut = \faBiohazard,
-  warn = \faSkullCrossbones,
-}
-
-\ExplSyntaxOff
+% -- FRAMED LISTING (tcolorbox) -- %
 
 
 
-% :: LEXER USED :: %
+% == LISTING - LATEX == %
+
+% -- LEXER USED -- %
 
 \newcommand{\tutodoc@latex@lexer}{latex}
 
-% :: INLINE CODE MACRO :: %
+
+% -- INLINE CODE -- %
 
 \newcommand{\tutodoc@latex@style}{github-dark}
 
@@ -63,7 +79,7 @@
 \colorlet{tutodoc@latex@text@color}{\tdocdarkcolor[80]{white}}
 
 
-% :: THE TCOLORBOX LISTING STYLE :: %
+% -- FRAMED LISTING (tcolorbox) -- %
 
 \colorlet{tutodoc@latex@frame@color}{darkgray}
 
@@ -88,19 +104,19 @@
 
 
 
-% -- TEXT AND PAGE COLORS -- %
+% == TEXT AND PAGE COLORS == %
 
 \colorlet{tutodoc@page@color}{black}
 \colorlet{tutodoc@text@color}{\tdocdarkcolor[80]{white}}
 
 
-% -- LINKS COLOR -- %
+% == LINKS COLOR == %
 
 \definecolor{tutodoc@link@color}{HTML}{9591A6}
 
 
 
-% -- SHOWCASE -- %
+% == SHOWCASE == %
 
 \NewExpandableDocumentCommand{\tutodoc@showcase@rule@color}{}{%
   white%
@@ -124,14 +140,16 @@
 
 
 
-% -- VERSION & CHANGES -- %
+% == VERSION & CHANGES == %
+
+% -- DATE & VERSION -- %
 
 \NewExpandableDocumentCommand{\tutodoc@changes@when@color}{}{%
   \tdoclightcolor[60]{cyan}%
 }
 
 
-% -- ICONS -- %
+% -- ENVS FOR CHANGES MADE -- %
 
 \newcommand{\tutodoc@changes@start@project@icon}{\faAnchor}
 
