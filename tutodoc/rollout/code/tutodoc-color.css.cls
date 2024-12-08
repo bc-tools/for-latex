@@ -75,7 +75,7 @@
 
 \newcommand{\tutodoc@latex@style}{pastie}
 
-\colorlet{tutodoc@latex@back@color}{yellow!4}
+\colorlet{tutodoc@latex@back@color}{gray!5}
 \colorlet{tutodoc@latex@text@color}{black}
 
 

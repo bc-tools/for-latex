@@ -10,8 +10,7 @@
 --------
 
 [[:format:]]
-''color'' theme and \latex listings:
-\colorlet{tutodoc@latex@back@color}{gray!5}%%{yellow!4}
+''color'' theme and \latex listings: the back color changes from ''yellow!4'' to ''gray!5''’.
 
 
 --------
