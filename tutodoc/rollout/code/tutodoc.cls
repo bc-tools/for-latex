@@ -323,7 +323,7 @@
 %
 % For example, ''\tdocquote{Something}'' prints **"Something"**.
 %%%
-\NewDocumentCommand{\tdocquote}{ m }{%
+\NewDocumentCommand{\tdocquote}{m}{%
   \enquote{\emph{#1}}%
 }
 
@@ -510,7 +510,7 @@
 %
 %     :action: ''\tdoccls{myclass}'' prints verb::''myclass''.
 %%%
-\NewDocumentCommand{\tdoccls}{ m }{%
+\NewDocumentCommand{\tdoccls}{m}{%
   \texttt{#1}%
 }
 
@@ -522,7 +522,7 @@
 %
 %     :action:''\tdocpack{mypack}'' prints verb::''mypack''.
 %%%
-\NewDocumentCommand{\tdocpack}{ m }{%
+\NewDocumentCommand{\tdocpack}{m}{%
   \texttt{#1}%
 }
 
@@ -534,7 +534,7 @@
 %
 %     :action: ''\tdocmacro{mymacro}'' prints verb::''\mymacro''.
 %%%
-\NewDocumentCommand{\tdocmacro}{ m }{%
+\NewDocumentCommand{\tdocmacro}{m}{%
   \texttt{\textbackslash{}#1}%
 }
 
@@ -607,7 +607,7 @@
 %
 %     :action: ''\tdocprewhy{pre.fix}'' prints verb::''pre''.fix.
 %%%
-\NewDocumentCommand{\tdocprewhy}{ m }{%
+\NewDocumentCommand{\tdocprewhy}{m}{%
 % Do we have 2 parts?
   \seq_set_split:Nnn \l__tutodoc_prewhy_parts_seq { . } { #1 }
 
@@ -651,7 +651,7 @@
 %              which prints:
 %              verb::''pre'' comes from verb::''pre''-fix.
 %%%
-\NewDocumentCommand{\tdocpre}{ m }{%
+\NewDocumentCommand{\tdocpre}{m}{%
   \texttt{#1}%
 }
 
@@ -920,20 +920,22 @@
 %
 % In the following easy-to-understand macro, we use one fictive ''tcolorbox''
 % style such as to indicate an unknown ''tutodoc'' style to the user.
-% For example, this can give one message similar to the following one.
+% For example, this can give one message similar to the following one where
+% the user has type ''MISTYPED-STYLE''.
 %
 % term::
-%     Package pgfkeys Error: I do not know the key '/tcb/tdoclatex bad option
-%     "MISTYPED-STYLE"' and I am going to ignore it. Perhaps you misspelled it.
+%     Package pgfkeys Error: I do not know the key '/tcb/tutodoc tdoclatex
+%     bad option "MISTYPED-STYLE"' and I am going to ignore it. Perhaps you
+%     misspelled it.
 %
 %     See the pgfkeys package documentation for explanation.
 %%%
-\NewExpandableDocumentCommand{\tutodoc@latex@listing@format@option}{ m }{
+\NewExpandableDocumentCommand{\tutodoc@latex@listing@format@option}{m}{
   \str_case:nnF { #1 } {
     { sbs  } { listing ~ side ~ text }
     { code } { listing ~ only }
     { std  } { listing ~ and ~ text }
-  } { tdoclatex ~ bad ~ option ~ "#1" }
+  } { tutodoc ~ tdoclatex ~ bad ~ option ~ "#1" }
 }
 
 \ExplSyntaxOff
@@ -1130,7 +1132,7 @@
 % %
 % %     See the pgfkeys package documentation for explanation.
 % %%%
-% \NewExpandableDocumentCommand{\tutodoc@latex@listing@format@option}{ m }{
+% \NewExpandableDocumentCommand{\tutodoc@latex@listing@format@option}{m}{
 %   \str_case:nnF { #1 } {
 %     { sbs  } { listing ~ side ~ text }
 %     { code } { listing ~ only }

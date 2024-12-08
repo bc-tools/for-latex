@@ -43,10 +43,7 @@ TEX_BUILD_CMD = r"""
 """.strip()
 
 TMPL_INCLUDE_PDF = r"""
-\includepdf[
-    pages=-,
-    fitpaper=true
-]{gallery-showcase-<<THEME>>}
+\includepdf{gallery-showcase-<<THEME>>}
 """.strip()
 
 TMPL_VIRTUAL_PATH = r"gallery-showcase-<<THEME>>.tex"
