@@ -1083,6 +1083,19 @@ VERSUS.
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.tex}
+\newcommand{\helloyou}[1]{%
+    \IfBlankTF{#1}{%
+        Ah, pas très bavard aujourd'hui !%
+    }{%
+        Bonjour #1.
+
+        Épatant ! En fait, pas du tout...%
+    }
+}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-showcase-customized.tex}
 \begin{tdocshowcase}[before     = My beginning,
                      after      = My end,
@@ -1189,6 +1202,10 @@ $x y z = 1$
 \usepackage{tasks}
 
 \usepackage{pdfpages}
+\includepdfset{
+    pages=-,
+    fitpaper=true
+}
 
 \setlength{\parindent}{0em}
 
@@ -1202,6 +1219,11 @@ $x y z = 1$
 \newcommand\ctan{\href{https://ctan.org/}{\trademark{CTAN}}}
 \newcommand\git{\trademark{git}}
 \newcommand\pdf{\trademark{PDF}}
+
+\newcommand\brainfuck{\trademark{Brainfuck}}
+\newcommand\lua{\trademark{Lua}}
+\newcommand\perl{\trademark{Perl}}
+\newcommand\python{\trademark{Python}}
 
 
 % --------------- %
@@ -1616,25 +1638,13 @@ w
 \immediate\write18{SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -shell-escape -pdflatex gallery-showcase-draft}
 
 % The gallery starts here...
-\includepdf[
-    pages=-,
-    fitpaper=true
-]{gallery-showcase-bw}
+\includepdf{gallery-showcase-bw}
 
-\includepdf[
-    pages=-,
-    fitpaper=true
-]{gallery-showcase-color}
+\includepdf{gallery-showcase-color}
 
-\includepdf[
-    pages=-,
-    fitpaper=true
-]{gallery-showcase-dark}
+\includepdf{gallery-showcase-dark}
 
-\includepdf[
-    pages=-,
-    fitpaper=true
-]{gallery-showcase-draft}
+\includepdf{gallery-showcase-draft}
 
 }
 
