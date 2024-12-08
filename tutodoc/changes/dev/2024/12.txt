@@ -6,6 +6,15 @@
 ==
 
 --------
+:update:
+--------
+
+[[:format:]]
+''color'' theme and \latex listings:
+\colorlet{tutodoc@latex@back@color}{gray!5}%%{yellow!4}
+
+
+--------
 :fordev:
 --------
 
