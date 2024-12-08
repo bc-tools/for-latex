@@ -20,10 +20,16 @@ Certains packages proposent des outils utilisables via le langage \lua\ depuis u
 \footnote{
 	Pour les mathématiques, on peut citer \tdocpack{luacas} et \tdocpack{tkz-éléments}.
 }
-Pour ce type de projet, il est utile de pouvoir présenter des lignes de code \lua. Or, \tdocpack{minted} est chargé en coulisse par \thisproj, donc il est facile de proposer des macros et des environnements pour la mise en forme de codes dans tous les langages supportés par \href{https://pygments.org/}{Pygments}.%
+Pour ce type de projet, il est utile de pouvoir présenter des lignes de code \lua\ ; \thisproj\ permet de faire cela aisément, et bien plus.%
 \footnote{
-	\tdocpack{minted} s'appuie le projet \python\ \trademark{Pygments} pour la coloration des codes informatiques.
+    La mise en forme des codes étant faite via les packages \tdocpack{minted} et \tdocpack{tcolorbox}, les macros et les environnements présentés dans cette section permettent la mise en forme de codes dans tous les langages supportés par \pygmentsREF\ qui est utilisé en coulisse par \tdocpack{minted}.
 }
+
+
+\begin{tdoccaut}
+	Les outils de cette section permettent aussi de présenter du code \LaTeX, mais il ne faut pas les utiliser pour des cas d'utilisation.
+	Les macros et les environnements présentées juste après servent à étudier du code du point de vue du codeur, et non de celui d'un utilisateur standard : se reporter à la section \ref{tutodoc-listing-latex} pour employer les bons outils pour mettre en forme de simples cas d'utilisation.
+\end{tdoccaut}
 
 
 
