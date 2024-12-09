@@ -29,4 +29,4 @@ Themes.
 
     1) ''color'' theme and \latex listings: the back color changes from ''yellow!4'' to ''gray!5''’.
 
-    1) ''draft'' theme and latest \chges: less spaces consumed.
+    1) All themes: less spaces consumed.

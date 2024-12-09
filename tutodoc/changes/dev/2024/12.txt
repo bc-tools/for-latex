@@ -2,6 +2,21 @@
 
 
 ==
+09  (1.7.1-beta.3)
+==
+
+--------
+:update:
+--------
+
+[[:format:]]
+All themes and \latex listings: less spaces are consumed.
+
+
+// ---------- //
+
+
+==
 08  (1.7.1-beta.2)
 ==
 
