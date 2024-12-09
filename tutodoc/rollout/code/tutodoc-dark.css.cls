@@ -1,6 +1,6 @@
 % == ADMONITIONS == %
 
-% -- ICONS & MAIN COLOR -- %
+% -- ICONS & ENV. COLORS -- %
 
 \ExplSyntaxOn
 
@@ -30,7 +30,7 @@
 \ExplSyntaxOff
 
 
-% -- ADDITONAL COLORS -- %
+% -- EXTRA COLORS -- %
 
 \NewExpandableDocumentCommand{\tutodoc@build@title@color}{m}{%
   \tdocdarkcolor[95]{white}%
@@ -53,6 +53,12 @@
 }
 
 \colorlet{tutodoc@admonition@shadow@color}{black!68}
+
+
+% -- VERTICAL SPACINGS -- %
+
+\newcommand{\tutodoc@admonition@space@above}{\medskipamount}
+\newcommand{\tutodoc@admonition@space@below}{\medskipamount}
 
 
 
@@ -88,7 +94,7 @@
 \newcommand{\tutodoc@latex@top@len}{1.5pt}
 \newcommand{\tutodoc@latex@bottom@len}{1.5pt}
 
-\newcommand{\tutodoc@latex@arc@len}{.75mm}
+\newcommand{\tutodoc@latex@arc@len}{2pt}
 
 \newcommand{\tutodoc@latex@left@rule@len}{1pt}
 \newcommand{\tutodoc@latex@right@rule@len}{1pt}

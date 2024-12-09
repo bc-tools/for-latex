@@ -361,9 +361,9 @@
 }
 
 
-% ----------------------------------- %
-% -- SOBER HIGHLIGHTING OF CONTENT -- %
-% ----------------------------------- %
+% --------------------------- %
+% -- HIGHLIGHTING CONTENTS -- %
+% --------------------------- %
 
 % :::::::::::::::::::::: %
 % :: EXAMPLE & REMARK :: %
@@ -382,6 +382,14 @@
 
 
 %%%
+% Themes define specific vertical spacings.
+%%%
+\newkeytheoremstyle{tutodoc@admonition@exa@style}{
+  spaceabove = \tutodoc@admonition@space@below,
+  spacebelow = \tutodoc@admonition@space@below
+}
+
+%%%
 % prototype::
 %     :action: looping over ''\g__tutodoc_focus_std_seq'' to build new
 %              numbered theorems sharing the same section level counter.
@@ -393,11 +401,13 @@
     \newkeytheorem{tdoc#1}[
       name   = \use:c { tutodoc@trans@#1@title },
       within = section,
+      style  = tutodoc@admonition@exa@style
     ]
   } {
     \newkeytheorem{tdoc#1}[
       name       = \use:c { tutodoc@trans@#1@title },
       numberlike = tdocexa,
+      style      = tutodoc@admonition@exa@style
     ]
   }
 
@@ -407,10 +417,9 @@
 \ExplSyntaxOff
 
 
-% -------------------------------------- %
-% -- COLORFUL HIGHLIGHTING OF CONTENT -- %
-% -------------------------------------- %
-
+% ::::::::::::::::: %
+% :: ADMONITIONS :: %
+% ::::::::::::::::: %
 
 %%%
 % note::
@@ -487,7 +496,8 @@
   \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
     \newkeytheorem{tdoc#1}[
       name       = \use:c { tutodoc@trans@#1@title },
-      numberlike = tdocexa,
+      numberlike = tdocexa,,
+      style      = tutodoc@admonition@exa@style,
 % Some hooks...
       preheadhook  = \small,
       postheadhook = \leavevmode,
@@ -562,12 +572,11 @@
 %     4) ''\tdocenv*[{<opt1>[mando2]}]{myenv}'' prints
 %        verb::''myenv''.
 %%%
-%
-% Cleaner code from https://tex.stackexchange.com/a/703379/6880 .
 \NewDocumentCommand{\tdocenv}{ s O{} m }{%
   \IfBooleanTF{#1}{%
     \texttt{#3}%
   }{%
+% Source: https://tex.stackexchange.com/a/703379/6880 .
     \texttt{\string\begin\string{#3\string}#2 %
             \!\!...\@\!\!\! %
             \string\end\string{#3\string}}%
@@ -660,7 +669,6 @@
 % -- GENERAL FORMATTING -- %
 % ------------------------ %
 
-
 % :::::::::::::::::::::::: %
 % :: TEXT INSIDE A RULE :: %
 % :::::::::::::::::::::::: %
@@ -686,7 +694,6 @@
 %     cf::''this post ;
 %           https://tex.stackexchange.com/a/604708/6880''.
 %%%
-
 \NewDocumentCommand{\tdocruler}{ O{\tutodoc@showcase@rule@color} m }{
   \par
   {
@@ -756,7 +763,6 @@
 %              produced by the macro ''\tdocruler'' such as to stress the
 %              start and the end of the content.
 %%%
-
 \NewDocumentEnvironment{tutodoc@showcase@colorstrip}{ m m m m m m }{
   \begin{colorstrip}{#6{#3}}%
     \begin{tutodoc@showcase@basic}{#1}{#2}{#3}{#4}{#5}%
@@ -885,11 +891,6 @@
 % -- LATEX EXAMPLES -- %
 % -------------------- %
 
-% :::::::::::::::::::::::::::::::::::::::::::::: %
-% :: STYLES OF THE LISTING ENV. AND THE MACRO :: %
-% :::::::::::::::::::::::::::::::::::::::::::::: %
-
-
 % ::::::::::::::::::::::: %
 % :: INLINE CODE MACRO :: %
 % ::::::::::::::::::::::: %
@@ -940,11 +941,11 @@
 
 \ExplSyntaxOff
 
-%%
-% source::
+%%%
+% refs::
 %     + https://tex.stackexchange.com/a/604821/6880
 %     + https://tex.stackexchange.com/a/327983/6880
-%%
+%%%
 \tcbset{
   tutodoc-latex-listing-style/.style = {
 % General.
@@ -1651,7 +1652,7 @@
 % -- DECORATIONS -- %
 % ----------------- %
 
-% Source
+% refs::
 %    + https://tex.stackexchange.com/a/130529/6880
 %      (for the leaders trick)
 %    + https://tex.stackexchange.com/a/269887/6880

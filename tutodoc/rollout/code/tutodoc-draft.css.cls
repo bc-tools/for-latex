@@ -1,5 +1,7 @@
 % == ADMONITIONS == %
 
+% -- ONY CLASSICAL THEOREM-LIKE \ENVS -- %
+
 \ExplSyntaxOn
 
 %%%
@@ -17,6 +19,12 @@
 }
 
 \ExplSyntaxOff
+
+
+% -- VERTICAL SPACINGS -- %
+
+\newcommand{\tutodoc@admonition@space@above}{2pt plus 2pt}
+\newcommand{\tutodoc@admonition@space@below}{2pt plus 2pt}
 
 
 
@@ -74,9 +82,14 @@
 \colorlet{tutodoc@text@color}{black}
 
 
-% == LINKS COLOR == %
+% == LINK COLOR == %
 
 \definecolor{tutodoc@link@color}{named}{black}
+
+
+% == VERTICAL SPACINGS == %
+
+\setlength{\parskip}{0.5pt plus 1pt}
 
 
 
