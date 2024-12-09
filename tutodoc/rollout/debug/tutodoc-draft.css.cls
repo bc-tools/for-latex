@@ -47,10 +47,10 @@
 
 \colorlet{tutodoc@latex@frame@color}{darkgray}
 
-\newcommand{\tutodoc@latex@left@len}{1mm}
-\newcommand{\tutodoc@latex@right@len}{1mm}
-\newcommand{\tutodoc@latex@top@len}{1mm}
-\newcommand{\tutodoc@latex@bottom@len}{1mm}
+\newcommand{\tutodoc@latex@left@len}{2pt}
+\newcommand{\tutodoc@latex@right@len}{2pt}
+\newcommand{\tutodoc@latex@top@len}{0pt}
+\newcommand{\tutodoc@latex@bottom@len}{0pt}
 
 \newcommand{\tutodoc@latex@arc@len}{0pt}
 

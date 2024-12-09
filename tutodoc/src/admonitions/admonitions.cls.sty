@@ -1,6 +1,8 @@
 % == TOOLS == %
 
-% -- SOBER HIGHLIGHTING OF CONTENT -- %
+\input{../admonitions/css/\tutodoc@theme.cls.sty}
+
+% -- HIGHLIGHTING CONTENTS -- %
 
 % :: EXAMPLE & REMARK :: %
 
@@ -17,6 +19,14 @@
 
 
 %%%
+% Themes define specific vertical spacings.
+%%%
+\newkeytheoremstyle{tutodoc@admonition@exa@style}{
+  spaceabove = \tutodoc@admonition@space@below,
+  spacebelow = \tutodoc@admonition@space@below
+}
+
+%%%
 % prototype::
 %     :action: looping over ''\g__tutodoc_focus_std_seq'' to build new
 %              numbered theorems sharing the same section level counter.
@@ -28,11 +38,13 @@
     \newkeytheorem{tdoc#1}[
       name   = \use:c { tutodoc@trans@#1@title },
       within = section,
+      style  = tutodoc@admonition@exa@style
     ]
   } {
     \newkeytheorem{tdoc#1}[
       name       = \use:c { tutodoc@trans@#1@title },
       numberlike = tdocexa,
+      style      = tutodoc@admonition@exa@style
     ]
   }
 
@@ -42,10 +54,7 @@
 \ExplSyntaxOff
 
 
-% -- COLORFUL HIGHLIGHTING OF CONTENT -- %
-
-\input{../admonitions/css/\tutodoc@theme.cls.sty}
-
+% :: ADMONITIONS :: %
 
 %%%
 % note::
@@ -122,7 +131,8 @@
   \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
     \newkeytheorem{tdoc#1}[
       name       = \use:c { tutodoc@trans@#1@title },
-      numberlike = tdocexa,
+      numberlike = tdocexa,,
+      style      = tutodoc@admonition@exa@style,
 % Some hooks...
       preheadhook  = \small,
       postheadhook = \leavevmode,

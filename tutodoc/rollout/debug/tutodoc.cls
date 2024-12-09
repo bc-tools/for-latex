@@ -958,6 +958,7 @@
     colupper = tutodoc@latex@text@color,
     collower = tutodoc@latex@text@color,
 % Padding.
+    boxsep = 0pt,
     left   = \tutodoc@latex@left@len,
     right  = \tutodoc@latex@right@len,
     bottom = \tutodoc@latex@bottom@len,

@@ -4,7 +4,6 @@
 
 \input{../showcase/css/\tutodoc@theme.cls.sty}
 
-
 % :: TEXT INSIDE A RULE :: %
 
 \ExplSyntaxOn
@@ -28,7 +27,6 @@
 %     cf::''this post ;
 %           https://tex.stackexchange.com/a/604708/6880''.
 %%%
-
 \NewDocumentCommand{\tdocruler}{ O{\tutodoc@showcase@rule@color} m }{
   \par
   {
@@ -96,7 +94,6 @@
 %              produced by the macro ''\tdocruler'' such as to stress the
 %              start and the end of the content.
 %%%
-
 \NewDocumentEnvironment{tutodoc@showcase@colorstrip}{ m m m m m m }{
   \begin{colorstrip}{#6{#3}}%
     \begin{tutodoc@showcase@basic}{#1}{#2}{#3}{#4}{#5}%

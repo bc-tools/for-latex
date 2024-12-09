@@ -61,12 +61,11 @@
 %     4) ''\tdocenv*[{<opt1>[mando2]}]{myenv}'' prints
 %        verb::''myenv''.
 %%%
-%
-% Cleaner code from https://tex.stackexchange.com/a/703379/6880 .
 \NewDocumentCommand{\tdocenv}{ s O{} m }{%
   \IfBooleanTF{#1}{%
     \texttt{#3}%
   }{%
+% Source: https://tex.stackexchange.com/a/703379/6880 .
     \texttt{\string\begin\string{#3\string}#2 %
             \!\!...\@\!\!\! %
             \string\end\string{#3\string}}%

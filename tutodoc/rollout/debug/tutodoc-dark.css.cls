@@ -83,10 +83,10 @@
 
 \colorlet{tutodoc@latex@frame@color}{darkgray}
 
-\newcommand{\tutodoc@latex@left@len}{1mm}
-\newcommand{\tutodoc@latex@right@len}{1mm}
-\newcommand{\tutodoc@latex@top@len}{1mm}
-\newcommand{\tutodoc@latex@bottom@len}{1mm}
+\newcommand{\tutodoc@latex@left@len}{3pt}
+\newcommand{\tutodoc@latex@right@len}{3pt}
+\newcommand{\tutodoc@latex@top@len}{1.5pt}
+\newcommand{\tutodoc@latex@bottom@len}{1.5pt}
 
 \newcommand{\tutodoc@latex@arc@len}{.75mm}
 
