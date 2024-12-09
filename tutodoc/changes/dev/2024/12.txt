@@ -10,7 +10,11 @@
 --------
 
 [[:format:]]
-All themes and \latex listings: less spaces are consumed.
+Themes and \latex listings.
+
+    1) With all themes, less spaces are consumed.
+
+    1) With all themes but the ''draft'' one, the arc len changes from ''.75mm'' to ''2pt''.
 
 
 // ---------- //
@@ -33,7 +37,7 @@ All themes and \latex listings: less spaces are consumed.
 --------
 
 [[:flow:]]
-Tools to debug the final docs: creation of the \bash files path::''debug-final-doc-erase.sh'' and path::''tutodoc/debug-final-doc-test.sh''.
+Tools to debug the final docs: creation of the \bash files path::''debug-final-doc-erase.sh'' and path::''debug-final-doc-test.sh''.
 
 
 // ---------- //
