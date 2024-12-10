@@ -1530,8 +1530,9 @@
 
 \tl_new:N \l__tutodoc_topic_all_user_options_tl
 
+
 %%%
-% For theme that use icons, we use a specific pargraph with less
+% For theme that use icons, we need a specific paragraph with less
 % vertical space consuming.
 %%%
 \ifcsundef{g__tutodoc_topic_change_seq}{
@@ -1542,10 +1543,10 @@
       {1.5ex \@plus 1ex \@minus .2ex}% Vertical space before:
                                      % 2ex with flexibility (+1ex / -0.2ex)
       {-1em}% Negative spacing after (title slightly aligned to the left)
-      {\normalfont\normalsize\bfseries}% Style: normal font, normal size, bold text
-
+      {\normalfont\normalsize\bfseries\sffamily}% Style: normal font, normal size, bold text
   }
 }{}
+
 
 %%%
 % prototype::
