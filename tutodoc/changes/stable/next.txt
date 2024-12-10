@@ -37,3 +37,7 @@ Themes.
 
 
     1) ''color'' theme and \latex listings: the back color changes from ''yellow!4'' to ''gray!5''’.
+
+    1) Sub-sub-sections are numbered using lower alphabetic letters.
+
+    1) \latex listings: the option can be any legal ''tcblisting'' style, and the macro ''\tdocstyle'' can be use with ''sbs'', ''code'' and ''std'' values to ease the typing.

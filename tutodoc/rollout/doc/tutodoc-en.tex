@@ -77,7 +77,7 @@ Formatted \LaTeX\ code is great: $E = m c^2$ or $pi \neq \frac{3}{14}$.
 
 There's also a less invasive side-by-side mode. Nice! No ?
 
-\begin{tdoclatex}[sbs]
+\begin{tdoclatex}[\tdocstyle{sbs}]
 Formatted \LaTeX\ code is great:       \\
 $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
@@ -113,9 +113,9 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 \ifcsundef{g__tutodoc_focus_color_seq}{
     \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
         \int_gincr:N \g__tutodoc_for_doc_int
-        
+
         \begin{tdoc#1}
-      	  	\int_compare:nTF 
+      	  	\int_compare:nTF
 	    		{\g__tutodoc_for_doc_int = 1 }
 	    		{ \myhighlightedtext }
 	    		{ \myhighlightedtextnonote }
@@ -124,9 +124,9 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 } {
     \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
         \int_gincr:N \g__tutodoc_for_doc_int
-        
+
         \begin{tdoc#1}
-      	  	\int_compare:nTF 
+      	  	\int_compare:nTF
 	    		{\g__tutodoc_for_doc_int = 1 }
 	    		{ \myhighlightedtext }
 	    		{ \myhighlightedtextnonote }
@@ -167,14 +167,14 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 	\ifcsundef{g__tutodoc_topic_change_seq}{
     	\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
           	\int_gincr:N \g__tutodoc_for_doc_int
-    
+
           	\vspace{-12pt}
-    
+
     	  	\begin{tdoc#1}
-           		\item Infos... 
+           		\item Infos...
     	  	\end{tdoc#1}
-    	    
-    	  	\int_compare:nTF 
+
+    	  	\int_compare:nTF
     	    	{\g__tutodoc_for_doc_int = 4 }
     	    	{ \\ }
     	    	{ & }
@@ -182,14 +182,14 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 	}{
     	\seq_map_inline:Nn \g__tutodoc_topic_change_seq {
           	\int_gincr:N \g__tutodoc_for_doc_int
-    
+
           	\vspace{-5pt}
-    
+
     	  	\begin{tdoc#1}
-           		\item Infos... 
+           		\item Infos...
     	  	\end{tdoc#1}
-    	    
-    	  	\int_compare:nTF 
+
+    	  	\int_compare:nTF
     	    	{\g__tutodoc_for_doc_int = 4 }
     	    	{ \\ }
     	    	{ & }
@@ -277,7 +277,7 @@ Formatted \LaTeX\ code is great: $E = m c^2$ or $pi \neq \frac{3}{14}$.
 
 There's also a less invasive side-by-side mode. Nice! No ?
 
-\begin{tdoclatex}[sbs]
+\begin{tdoclatex}[\tdocstyle{sbs}]
 Formatted \LaTeX\ code is great:       \\
 $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
@@ -313,9 +313,9 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 \ifcsundef{g__tutodoc_focus_color_seq}{
     \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
         \int_gincr:N \g__tutodoc_for_doc_int
-        
+
         \begin{tdoc#1}
-      	  	\int_compare:nTF 
+      	  	\int_compare:nTF
 	    		{\g__tutodoc_for_doc_int = 1 }
 	    		{ \myhighlightedtext }
 	    		{ \myhighlightedtextnonote }
@@ -324,9 +324,9 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 } {
     \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
         \int_gincr:N \g__tutodoc_for_doc_int
-        
+
         \begin{tdoc#1}
-      	  	\int_compare:nTF 
+      	  	\int_compare:nTF
 	    		{\g__tutodoc_for_doc_int = 1 }
 	    		{ \myhighlightedtext }
 	    		{ \myhighlightedtextnonote }
@@ -367,14 +367,14 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 	\ifcsundef{g__tutodoc_topic_change_seq}{
     	\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
           	\int_gincr:N \g__tutodoc_for_doc_int
-    
+
           	\vspace{-12pt}
-    
+
     	  	\begin{tdoc#1}
-           		\item Infos... 
+           		\item Infos...
     	  	\end{tdoc#1}
-    	    
-    	  	\int_compare:nTF 
+
+    	  	\int_compare:nTF
     	    	{\g__tutodoc_for_doc_int = 4 }
     	    	{ \\ }
     	    	{ & }
@@ -382,14 +382,14 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 	}{
     	\seq_map_inline:Nn \g__tutodoc_topic_change_seq {
           	\int_gincr:N \g__tutodoc_for_doc_int
-    
+
           	\vspace{-5pt}
-    
+
     	  	\begin{tdoc#1}
-           		\item Infos... 
+           		\item Infos...
     	  	\end{tdoc#1}
-    	    
-    	  	\int_compare:nTF 
+
+    	  	\int_compare:nTF
     	    	{\g__tutodoc_for_doc_int = 4 }
     	    	{ \\ }
     	    	{ & }
@@ -477,7 +477,7 @@ Formatted \LaTeX\ code is great: $E = m c^2$ or $pi \neq \frac{3}{14}$.
 
 There's also a less invasive side-by-side mode. Nice! No ?
 
-\begin{tdoclatex}[sbs]
+\begin{tdoclatex}[\tdocstyle{sbs}]
 Formatted \LaTeX\ code is great:       \\
 $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
@@ -513,9 +513,9 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 \ifcsundef{g__tutodoc_focus_color_seq}{
     \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
         \int_gincr:N \g__tutodoc_for_doc_int
-        
+
         \begin{tdoc#1}
-      	  	\int_compare:nTF 
+      	  	\int_compare:nTF
 	    		{\g__tutodoc_for_doc_int = 1 }
 	    		{ \myhighlightedtext }
 	    		{ \myhighlightedtextnonote }
@@ -524,9 +524,9 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 } {
     \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
         \int_gincr:N \g__tutodoc_for_doc_int
-        
+
         \begin{tdoc#1}
-      	  	\int_compare:nTF 
+      	  	\int_compare:nTF
 	    		{\g__tutodoc_for_doc_int = 1 }
 	    		{ \myhighlightedtext }
 	    		{ \myhighlightedtextnonote }
@@ -567,14 +567,14 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 	\ifcsundef{g__tutodoc_topic_change_seq}{
     	\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
           	\int_gincr:N \g__tutodoc_for_doc_int
-    
+
           	\vspace{-12pt}
-    
+
     	  	\begin{tdoc#1}
-           		\item Infos... 
+           		\item Infos...
     	  	\end{tdoc#1}
-    	    
-    	  	\int_compare:nTF 
+
+    	  	\int_compare:nTF
     	    	{\g__tutodoc_for_doc_int = 4 }
     	    	{ \\ }
     	    	{ & }
@@ -582,14 +582,14 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 	}{
     	\seq_map_inline:Nn \g__tutodoc_topic_change_seq {
           	\int_gincr:N \g__tutodoc_for_doc_int
-    
+
           	\vspace{-5pt}
-    
+
     	  	\begin{tdoc#1}
-           		\item Infos... 
+           		\item Infos...
     	  	\end{tdoc#1}
-    	    
-    	  	\int_compare:nTF 
+
+    	  	\int_compare:nTF
     	    	{\g__tutodoc_for_doc_int = 4 }
     	    	{ \\ }
     	    	{ & }
@@ -677,7 +677,7 @@ Formatted \LaTeX\ code is great: $E = m c^2$ or $pi \neq \frac{3}{14}$.
 
 There's also a less invasive side-by-side mode. Nice! No ?
 
-\begin{tdoclatex}[sbs]
+\begin{tdoclatex}[\tdocstyle{sbs}]
 Formatted \LaTeX\ code is great:       \\
 $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
@@ -713,9 +713,9 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 \ifcsundef{g__tutodoc_focus_color_seq}{
     \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
         \int_gincr:N \g__tutodoc_for_doc_int
-        
+
         \begin{tdoc#1}
-      	  	\int_compare:nTF 
+      	  	\int_compare:nTF
 	    		{\g__tutodoc_for_doc_int = 1 }
 	    		{ \myhighlightedtext }
 	    		{ \myhighlightedtextnonote }
@@ -724,9 +724,9 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 } {
     \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
         \int_gincr:N \g__tutodoc_for_doc_int
-        
+
         \begin{tdoc#1}
-      	  	\int_compare:nTF 
+      	  	\int_compare:nTF
 	    		{\g__tutodoc_for_doc_int = 1 }
 	    		{ \myhighlightedtext }
 	    		{ \myhighlightedtextnonote }
@@ -767,14 +767,14 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 	\ifcsundef{g__tutodoc_topic_change_seq}{
     	\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
           	\int_gincr:N \g__tutodoc_for_doc_int
-    
+
           	\vspace{-12pt}
-    
+
     	  	\begin{tdoc#1}
-           		\item Infos... 
+           		\item Infos...
     	  	\end{tdoc#1}
-    	    
-    	  	\int_compare:nTF 
+
+    	  	\int_compare:nTF
     	    	{\g__tutodoc_for_doc_int = 4 }
     	    	{ \\ }
     	    	{ & }
@@ -782,14 +782,14 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 	}{
     	\seq_map_inline:Nn \g__tutodoc_topic_change_seq {
           	\int_gincr:N \g__tutodoc_for_doc_int
-    
+
           	\vspace{-5pt}
-    
+
     	  	\begin{tdoc#1}
-           		\item Infos... 
+           		\item Infos...
     	  	\end{tdoc#1}
-    	    
-    	  	\int_compare:nTF 
+
+    	  	\int_compare:nTF
     	    	{\g__tutodoc_for_doc_int = 4 }
     	    	{ \\ }
     	    	{ & }
@@ -1158,7 +1158,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-ABC.tex}
-\begin{tdoclatex}[sbs]
+\begin{tdoclatex}[\tdocstyle{sbs}]
     $A = B + C$
 \end{tdoclatex}
 \end{filecontents*}
@@ -1171,7 +1171,7 @@ $x y z = 1$
 
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-strange.tex}
-\begin{tdoclatex}[std]
+\begin{tdoclatex}[\tdocstyle{std}]
     [Strange... Or not!]
 \end{tdoclatex}
 \end{filecontents*}
@@ -1252,7 +1252,7 @@ $x y z = 1$
 \NewDocumentCommand{ \tdocbasicinputDOC }{ m }{%
     Consider the following code.
 
-    \tdoclatexinput[code]{#1}
+    \tdoclatexinput[\tdocstyle{code}]{#1}
 
     This will produce the following.
 
@@ -1540,7 +1540,7 @@ As this language is included in the list of languages taken into account, see be
         \task \tdoclatexin|es| : Spanish.
         \task \tdoclatexin|fr| : French.
 \end{tasks}
-                    
+
 
 
 \begin{tdocnote}
@@ -1685,7 +1685,7 @@ w
 Numbered examples, if required, are indicated via \tdocenv{tdocexa}, which offers an optional argument for adding a mini-title.
 Here are two possible uses.
 
-\tdoclatexinput[sbs]{examples-admonitions-exa.tex}
+\tdoclatexinput[\tdocstyle{sbs}]{examples-admonitions-exa.tex}
 
 
 
@@ -1696,7 +1696,7 @@ Here are two possible uses.
     It can sometimes be useful to return to the line at the start of the content. The code below shows how to proceed (this trick also applies to the \verb#tdocrem# environment presented next). Note in passing that the numbering follows that of the previous example as desired.
 \end{tdoctip}
 
-\tdoclatexinput[sbs]{examples-admonitions-exa-leavevmode.tex}
+\tdoclatexinput[\tdocstyle{sbs}]{examples-admonitions-exa-leavevmode.tex}
 
 
 
@@ -1706,7 +1706,7 @@ Here are two possible uses.
 
 Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocenv*{tdocexa} environment, as shown in the following example.
 
-\tdoclatexinput[sbs]{examples-admonitions-rmk.tex}
+\tdoclatexinput[\tdocstyle{sbs}]{examples-admonitions-rmk.tex}
 
 
 
@@ -1729,7 +1729,7 @@ Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocen
 
 The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
-\tdoclatexinput[sbs]{examples-admonitions-tip.tex}
+\tdoclatexinput[\tdocstyle{sbs}]{examples-admonitions-tip.tex}
 
 
 
@@ -1739,7 +1739,7 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 \begin{tdoctip}
     Sometimes, highlighted content can be reduced to a list. In this case, the formatting can be improved as follows where we use the \tdoclatexin{wide} option from the \tdocpack{enumitem} package.
 
-    \tdoclatexinput[sbs]{examples-admonitions-leavevmode-items.tex}
+    \tdoclatexinput[\tdocstyle{sbs}]{examples-admonitions-leavevmode-items.tex}
 
 \end{tdoctip}
 
@@ -1765,7 +1765,7 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
     \desc
 
-    \tdoclatexinput[sbs]{examples-admonitions-\filename.tex}
+    \tdoclatexinput[\tdocstyle{sbs}]{examples-admonitions-\filename.tex}
 
 }
 
@@ -1775,7 +1775,7 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 Here's what you can type semantically.
 
 
-\begin{tdoclatex}[sbs]
+\begin{tdoclatex}[\tdocstyle{sbs}]
 \tdoccls{myclass} is for...              \\
 \tdocpack{mypackage} is for...           \\
 \tdocmacro{onemacro} is for...           \\
@@ -1808,7 +1808,7 @@ Finally \tdocenv*[{[opt1]<opt2>}]{env}...
 To explain the names chosen, there is nothing like indicating and explaining the short prefixes and suffixes used. This is easily done as follows.
 
 
-\begin{tdoclatex}[sbs]
+\begin{tdoclatex}[\tdocstyle{sbs}]
 \tdocpre{sup} relates to...      \\
 \tdocprewhy{sup.erbe} means...   \\
 \emph{\tdocprewhy{sup.er} for...}
@@ -1836,7 +1836,7 @@ It is sometimes useful to render code directly in the documentation. This type o
     }
     This is done via \tdocenv{tdocshowcase} as follows.
 
-    \tdoclatexinput[code]{examples-showcase-default.tex}
+    \tdoclatexinput[\tdocstyle{code}]{examples-showcase-default.tex}
 
 
     The result is the following rendering.
@@ -1867,7 +1867,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 \begin{tdocexa}[Change the colors and/or the texts]
     \leavevmode
 
-    \tdoclatexinput[code]{examples-showcase-customized.tex}
+    \tdoclatexinput[\tdocstyle{code}]{examples-showcase-customized.tex}
 
 
     This will produce the following.
@@ -1887,7 +1887,7 @@ It is sometimes useful to render code directly in the documentation. This type o
     %
     You should also be aware that behind the scenes, the macro \tdocmacro{tdocruler} is used.
 
-    \begin{tdoclatex}[std]
+    \begin{tdoclatex}[\tdocstyle{std}]
         \tdocruler[red]{A decorated pseudo-title}
     \end{tdoclatex}
 \end{tdocnote}
@@ -1899,7 +1899,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 \begin{tdocwarn}
     With the default settings, if the code to be formatted begins with an opening bracket, use \tdocmacro{string} as in the following example.
 
-    \tdoclatexinput[code]{examples-showcase-hook.tex}
+    \tdoclatexinput[\tdocstyle{code}]{examples-showcase-hook.tex}
 
 
     This will produce the following.
@@ -1920,7 +1920,7 @@ It is possible not to use a coloured strip, as we will see straight away.
     The use of \tdocenv[{[nostripe]}]{tdocshowcase} indicate to not use \tdocpack{clrstrip}.
     Here is an example.
 
-    \tdoclatexinput[code]{examples-showcase-nostripe.tex}
+    \tdoclatexinput[\tdocstyle{code}]{examples-showcase-nostripe.tex}
 
 
     This will produce the following.
@@ -1938,7 +1938,7 @@ It is possible not to use a coloured strip, as we will see straight away.
 \begin{tdocexa}[Change the colors and/or the texts]
     \leavevmode
 
-    \tdoclatexinput[code]{examples-showcase-nostripe-customized.tex}
+    \tdoclatexinput[\tdocstyle{code}]{examples-showcase-nostripe-customized.tex}
 
 
     This will produce the following horror.
@@ -2000,7 +2000,7 @@ can be used to type inline code in a similar way to \tdocmacro{verb} or like a s
 Here are some examples.
 
 
-\begin{tdoclatex}[sbs]
+\begin{tdoclatex}[\tdocstyle{sbs}]
     1: \tdoclatexin|$a^b = c$|               \\
     2: \tdoclatexin+\tdoclatexin|$a^b = c$|+ \\
     3: \tdoclatexin{\tdoclatexin{$a^b = c$}}
@@ -2022,7 +2022,7 @@ Here are some examples.
 \subsection{Directly typed codes}
 
 \begin{tdocexa}[Side by side]
-    Using \tdocenv[{[sbs]}]{tdoclatex}, we can display a code and its rendering side by side.
+    Using \tdocenv[{[\tdocstyle{sbs}]}]{tdoclatex}, we can display a code and its rendering side by side.
     \tdocbasicinputDOC{examples-listing-latex-ABC.tex}
 
 \end{tdocexa}
@@ -2047,9 +2047,9 @@ Here are some examples.
 
 
 \begin{tdocexa}[Just the code]
-    Via \tdocenv[{[code]}]{tdoclatex}, we'll just get the code as shown below.
+    Via \tdocenv[{[\tdocstyle{code}]}]{tdoclatex}, we'll just get the code as shown below.
 
-    \begin{tdoclatex}[code]
+    \begin{tdoclatex}[\tdocstyle{code}]
         $A = B + C$
     \end{tdoclatex}
 \end{tdocexa}
@@ -2075,7 +2075,7 @@ Here are some examples.
 
 For the following codes, consider a file with the relative path \verb+examples-listing-xyz.tex+, and with the following contents.
 
-\tdoclatexinput[code]{examples-listing-latex-xyz.tex}
+\tdoclatexinput[\tdocstyle{code}]{examples-listing-latex-xyz.tex}
 
 
 \medskip
@@ -2089,14 +2089,14 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \begin{tdocexa}[Side by side]
     \leavevmode
 
-    \begin{tdoclatex}[code]
-\tdoclatexinput[sbs]{examples-listing-latex-xyz.tex}
+    \begin{tdoclatex}[\tdocstyle{code}]
+\tdoclatexinput[\tdocstyle{sbs}]{examples-listing-latex-xyz.tex}
 
     \end{tdoclatex}
 
     This produces the following layout.
 
-    \tdoclatexinput[sbs]{examples-listing-latex-xyz.tex}
+    \tdoclatexinput[\tdocstyle{sbs}]{examples-listing-latex-xyz.tex}
 
 \end{tdocexa}
 
@@ -2107,7 +2107,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \begin{tdocexa}[Following]
     \leavevmode
 
-    \begin{tdoclatex}[code]
+    \begin{tdoclatex}[\tdocstyle{code}]
 \tdoclatexinput{examples-listing-latex-xyz.tex}
 
     \end{tdoclatex}
@@ -2125,14 +2125,14 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \begin{tdocexa}[Just the code]
     \leavevmode
 
-    \begin{tdoclatex}[code]
-\tdoclatexinput[code]{examples-listing-latex-xyz.tex}
+    \begin{tdoclatex}[\tdocstyle{code}]
+\tdoclatexinput[\tdocstyle{code}]{examples-listing-latex-xyz.tex}
 
     \end{tdoclatex}
 
     This produces the following layout.
 
-    \tdoclatexinput[code]{examples-listing-latex-xyz.tex}
+    \tdoclatexinput[\tdocstyle{code}]{examples-listing-latex-xyz.tex}
 
 \end{tdocexa}
 
@@ -2184,7 +2184,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
     \medskip
 
-    \tdoclatexinput[code]{examples-listing-latex-latexshow-options.tex}
+    \tdoclatexinput[\tdocstyle{code}]{examples-listing-latex-latexshow-options.tex}
 
 
     \medskip
@@ -2321,7 +2321,7 @@ You can either date something, or version it, in which case the version number c
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput[sbs]{examples-version-n-change-chges-\filename.tex}
+        \tdoclatexinput[\tdocstyle{sbs}]{examples-version-n-change-chges-\filename.tex}
 
     \end{tdocexa}
 }
@@ -2342,7 +2342,7 @@ It may be useful to highlight certain changes: this can only be done by modifyin
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput[sbs]{examples-version-n-change-color-chges-\filename.tex}
+        \tdoclatexinput[\tdocstyle{sbs}]{examples-version-n-change-color-chges-\filename.tex}
 
     \end{tdocexa}
 }
@@ -2362,7 +2362,7 @@ Here are some examples of use.
 Let's finish this documentation with a small formatting tool that is very useful.
 
 
-\begin{tdoclatex}[sbs]
+\begin{tdoclatex}[\tdocstyle{sbs}]
 Bla, bla, bla...
 
 \tdocsep % Practical for demarcation.
