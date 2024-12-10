@@ -29,6 +29,11 @@ Themes.
 
     1) All themes: less spaces consumed and better shadow colors.
 
-    1) With all themes but the ''draft'' one, the arc len of the frames changes from ''.75mm'' to ''2pt''.
+    1) With all themes but the ''draft'' one, we have the following \chges.
+
+        * The arc len of the frames changes from ''.75mm'' to ''2pt''.
+
+        * Less vertical space is used before the "what" \envs.
+
 
     1) ''color'' theme and \latex listings: the back color changes from ''yellow!4'' to ''gray!5''’.

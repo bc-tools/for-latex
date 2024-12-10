@@ -1531,14 +1531,19 @@
 \tl_new:N \l__tutodoc_topic_all_user_options_tl
 
 %%%
-% XXX
-% Icon used by the theme.
+% For theme that use icons, we use a specific pargraph with less
+% vertical space consuming.
 %%%
 \ifcsundef{g__tutodoc_topic_change_seq}{
   \newcommand{\tutodoc@what@change@paragraph}{%
-    \@startsection{paragraph}{4}%
-    {\z@}{2ex \@plus 1ex \@minus .2ex}{-1em}%
-    {\normalfont\normalsize\bfseries}%
+    \@startsection{paragraph}% Define settings for the "paragraph" section
+      {4}% Hierarchy level 4 (paragraph)
+      {\z@}% No indentation before the title
+      {1.5ex \@plus 1ex \@minus .2ex}% Vertical space before:
+                                     % 2ex with flexibility (+1ex / -0.2ex)
+      {-1em}% Negative spacing after (title slightly aligned to the left)
+      {\normalfont\normalsize\bfseries}% Style: normal font, normal size, bold text
+
   }
 }{}
 

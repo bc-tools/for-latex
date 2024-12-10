@@ -2,6 +2,21 @@
 
 
 ==
+10  (1.7.1-beta.4)
+==
+
+--------
+:update:
+--------
+
+[[:format:]]
+With all themes but the ''draft'' one, less vertical space is used before the "what" \envs.
+
+
+// ---------- //
+
+
+==
 09  (1.7.1-beta.3)
 ==
 
@@ -15,7 +30,6 @@ Themes and \latex listings.
     1) With all themes, less spaces are consumed and better shadow colors.
 
     1) With all themes but the ''draft'' one, the arc len changes from ''.75mm'' to ''2pt''.
-
 
 // ---------- //
 
