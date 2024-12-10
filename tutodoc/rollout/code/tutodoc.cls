@@ -1532,18 +1532,18 @@
 
 
 %%%
-% For theme that use icons, we need a specific paragraph with less
-% vertical space consuming.
+% For themes using icons, we need a specific paragraph with less vertical
+% space consuming.
 %%%
 \ifcsundef{g__tutodoc_topic_change_seq}{
   \newcommand{\tutodoc@what@change@paragraph}{%
     \@startsection{paragraph}% Define settings for the "paragraph" section
-      {4}% Hierarchy level 4 (paragraph)
+      {4}% Level 4 (after section and co)
       {\z@}% No indentation before the title
-      {1.5ex \@plus 1ex \@minus .2ex}% Vertical space before:
+      {1.25ex \@plus 1ex \@minus .2ex}% Vertical space before:
                                      % 2ex with flexibility (+1ex / -0.2ex)
-      {-1em}% Negative spacing after (title slightly aligned to the left)
-      {\normalfont\normalsize\bfseries\sffamily}% Style: normal font, normal size, bold text
+      {-1em}% Negative spacing after ==> Title slightly aligned to the left.
+      {\normalfont\normalsize\bfseries\sffamily}% Title style.
   }
 }{}
 
@@ -1588,7 +1588,10 @@
     }{
 % No icon used by the theme.
       \smallskip
-      {\bfseries\textsc{#1.}}
+      {
+        \normalfont\normalsize\bfseries\sffamily
+        \textsc{#1.}
+      }
     }
 
 % A date and/or a version.
