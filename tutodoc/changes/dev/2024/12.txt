@@ -10,7 +10,11 @@
 --------
 
 [[:format:]]
-With all themes but the ''draft'' one, less vertical space is used before the "what" \envs.
+Here the last \chges.
+
+    1) With all themes but the ''draft'' one, less vertical space is used before the "what" \envs.
+
+    1) Sub sub sections  are numbered using lower alphabetic letters.
 
 
 // ---------- //
