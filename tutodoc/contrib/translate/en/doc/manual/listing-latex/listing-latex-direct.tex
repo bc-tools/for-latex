@@ -70,16 +70,31 @@ Here are some examples.
 
 \begin{tdocexa}[Side by side]
      Displaying code and rendering side by side is done as follows where \tdoclatexin#sbs# is for \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}}, and the macro \tdocmacro{tdocstyle} allows you to type \tdoclatexin{tdocstyle{sbs}} instead of \tdoclatexin{listing side text}.
-    
-    \tdocbasicinputDOC{examples/listing-latex/ABC.tex}
+
+    \tdocbasicinputDOC*{examples/listing-latex/ABC.tex}
 \end{tdocexa}
+
+
+\begin{tdocnote}
+	L'argument optionnel de l'environnement \tdocenv*{tdoclatex} doit être un style pour un \tdocmacro{tcblisting}. Par exemple, on peut faire les modifications suivantes si besoin.%
+	\footnote{
+		Cette documentation utilise ceci pour obtenir des rendus corrects de codes \LaTeX\ produisant des cadres ombrés : voir la section \ref{tutodoc-admonitions}.
+	}
+
+	The optional argument of the \tdocenv*{tdoclatex} environment must be a style for a \tdocmacro{tcblisting}. For example, the following modifications can be made if required.
+	\footnote{
+		This documentation uses this to obtain correct renderings of \LaTeX\ codes producing shaded frames: see the \ref{tutodoc-admonitions} section.
+	}
+
+    \tdocbasicinputDOC*{examples/listing-latex/ABC-custom.tex}
+\end{tdocnote}
 
 
 % ------------------ %
 
 
 \begin{tdocexa}[Following]
-    \tdocenv{tdoclatex} produces the following result via the default option corresponding to \tdoclatexin#tdocstyle{std}#\,.
+    \tdocenv{tdoclatex} produces the following result via the default option corresponding to \tdoclatexin#\tdocstyle{std}#\,.
     \footnote{
         \tdoclatexin{std} refers to the \tdocquote{standard} behaviour of \tdocpack{tcolorbox} in relation to the \tdocpack{minted} library.
     }
