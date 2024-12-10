@@ -219,13 +219,9 @@
 % -- TOC & Co. -- %
 % --------------- %
 
-\ifcsundef{chapter}%
-          {}%
-          {\renewcommand{\thechapter}{\Alph{chapter}}}
-
 \renewcommand{\thesection}{\Roman{section}}
 \renewcommand{\thesubsection}{\arabic{subsection}}
-\renewcommand{\thesubsubsection}{\roman{subsubsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
 
 % Source
 %  * https://tex.stackexchange.com/a/558025/6880
