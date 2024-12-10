@@ -228,6 +228,17 @@
 
 \tl_new:N \l__tutodoc_topic_all_user_options_tl
 
+%%%
+% XXX
+% Icon used by the theme.
+%%%
+\ifcsundef{g__tutodoc_topic_change_seq}{
+  \newcommand{\tutodoc@what@change@paragraph}{%
+    \@startsection{paragraph}{4}%
+    {\z@}{2ex \@plus 1ex \@minus .2ex}{-1em}%
+    {\normalfont\normalsize\bfseries}%
+  }
+}{}
 
 %%%
 % prototype::
@@ -257,34 +268,34 @@
   \tl_put_right:Nn \l__tutodoc_topic_all_user_options_tl { \l_tutodoc_topic_date_tl }
 
   \group_begin:
-  \color{\tl_use:N \l_tutodoc_topic_what_color_tl}
+    \color{\tl_use:N \l_tutodoc_topic_what_color_tl}
 
-  \ifcsundef{g__tutodoc_topic_change_seq}{{}
-% Icon used.
-    \paragraph{
-      \color{\tl_use:N \l_tutodoc_topic_what_color_tl}
-      \IfBlankF{#2}{\tdocicon{#2}}
-      \textsc{#1.}
+    \ifcsundef{g__tutodoc_topic_change_seq}{{}
+% Icon used by the theme.
+      \tutodoc@what@change@paragraph{
+        \color{\tl_use:N \l_tutodoc_topic_what_color_tl}
+        \IfBlankF{#2}{\tdocicon{#2}}
+        \textsc{#1.}
+      }
+    }{
+% No icon used by the theme.
+      \smallskip
+      {\bfseries\textsc{#1.}}
     }
-  }{
-% No icon used.
-    \smallskip
-    {\bfseries\textsc{#1.}}
-  }
 
 % A date and/or a version.
-  \exp_args:Ne \IfBlankF{\l__tutodoc_topic_all_user_options_tl}{
-    \exp_args:NNee \tutodoc@new@change@margin
-      {\l_tutodoc_topic_when_color_tl}
-      {\l_tutodoc_topic_version_tl}
-      {\l_tutodoc_topic_date_tl}
-      {\tutodoc@version@date@vertical@sep@len}
-      {\tutodoc@version@date@vertical@offset@len}
-  }
+    \exp_args:Ne \IfBlankF{\l__tutodoc_topic_all_user_options_tl}{
+      \exp_args:NNee \tutodoc@new@change@margin
+        {\l_tutodoc_topic_when_color_tl}
+        {\l_tutodoc_topic_version_tl}
+        {\l_tutodoc_topic_date_tl}
+        {\tutodoc@version@date@vertical@sep@len}
+        {\tutodoc@version@date@vertical@offset@len}
+    }
 
-  \begin{itemize}
+    \begin{itemize}
 }{
-  \end{itemize}
+    \end{itemize}
   \group_end:
 }
 

@@ -97,7 +97,8 @@
 \newcommand{\tutodoc@latex@top@rule@len}{1pt}
 \newcommand{\tutodoc@latex@bottom@rule@len}{1pt}
 
-\colorlet{tutodoc@latex@shadow@color}{black!30}
+\colorlet{tutodoc@latex@shadow@color}{Gray!25}
+
 \newcommand{\tutodoc@latex@shadow@xshift@len}{.75mm}
 \newcommand{\tutodoc@latex@shadow@yshift@len}{-.75mm}
 \newcommand{\tutodoc@latex@shadow@offset@len}{0mm}
