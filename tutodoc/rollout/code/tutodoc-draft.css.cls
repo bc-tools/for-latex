@@ -92,6 +92,12 @@
 
 \setlength{\parskip}{0.5pt plus 1pt}
 
+\RedeclareSectionCommands[
+  runin=false,
+  afterindent=false,
+  beforeskip=.25\baselineskip,
+  afterskip=5pt]{section, subsection, subsubsection}
+
 
 
 % == SHOWCASE == %

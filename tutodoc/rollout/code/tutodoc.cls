@@ -1537,13 +1537,15 @@
 %%%
 \ifcsundef{g__tutodoc_topic_change_seq}{
   \newcommand{\tutodoc@what@change@paragraph}{%
-    \@startsection{paragraph}% Define settings for the "paragraph" section
-      {4}% Level 4 (after section and co)
-      {\z@}% No indentation before the title
-      {1.25ex \@plus 1ex \@minus .2ex}% Vertical space before:
-                                     % 2ex with flexibility (+1ex / -0.2ex)
-      {-1em}% Negative spacing after ==> Title slightly aligned to the left.
-      {\normalfont\normalsize\bfseries\sffamily}% Title style.
+    \@startsection{paragraph}          %
+      {4}                              % Level 4 (after section and co)
+      {\z@}                            % No indentation before the title
+      {1.25ex \@plus 1ex \@minus .2ex} % Vertical space before:
+                                       % 2ex with flexibility (+1ex / -0.2ex)
+      {-1em}                           % Negative spacing after
+                                       % ==> Title slightly aligned to the left.
+      {\normalfont\normalsize          % Title style
+       \bfseries\sffamily}             %
   }
 }{}
 
