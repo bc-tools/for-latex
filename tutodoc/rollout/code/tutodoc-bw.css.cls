@@ -58,11 +58,39 @@
 
 
 
-% == LISTING - ANY LANGUAGE == %
+% == LISTING - LATEX == %
 
 % -- INLINE CODE -- %
 
+\newcommand{\tutodoc@code@style}{friendly_grayscale}
+
+\colorlet{tutodoc@code@back@color}{gray!5}
+\colorlet{tutodoc@code@text@color}{black}
+
+
 % -- FRAMED LISTING (tcolorbox) -- %
+
+\colorlet{tutodoc@code@frame@color}{darkgray}
+
+\newcommand{\tutodoc@code@left@len}{3pt}
+\newcommand{\tutodoc@code@right@len}{3pt}
+\newcommand{\tutodoc@code@top@len}{1.5pt}
+\newcommand{\tutodoc@code@bottom@len}{1.5pt}
+
+\newcommand{\tutodoc@code@arc@len}{2pt}
+
+\newcommand{\tutodoc@code@left@rule@len}{1pt}
+\newcommand{\tutodoc@code@right@rule@len}{1pt}
+\newcommand{\tutodoc@code@top@rule@len}{1pt}
+\newcommand{\tutodoc@code@bottom@rule@len}{1pt}
+
+\colorlet{tutodoc@code@shadow@color}{Gray!25}
+
+\newcommand{\tutodoc@code@shadow@xshift@len}{.75mm}
+\newcommand{\tutodoc@code@shadow@yshift@len}{-.75mm}
+\newcommand{\tutodoc@code@shadow@offset@len}{0mm}
+
+\colorlet{tutodoc@code@segment@color}{gray}
 
 
 

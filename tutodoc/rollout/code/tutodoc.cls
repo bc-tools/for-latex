@@ -308,9 +308,9 @@
 }
 
 
-% ------------------------------ %
-% -- tcolorbox SHORTCUT MACRO -- %
-% ------------------------------ %
+% -------------------- %
+% -- SHORTCUT MACRO -- %
+% -------------------- %
 
 \ExplSyntaxOn
 
@@ -321,13 +321,12 @@
 %        @ #1 in [code, sbs, std]
 %
 % In the following easy-to-understand macro, we use one fictive ''tcolorbox''
-% style such as to indicate an unknown ''tutodoc'' shortcut style to the user.
-% For example, this can give one message similar to the following one where
-% the user has type ''MISTYPED-STYLE''.
+% style such as to indicate an unknown ''tutodoc'' shortcut style. For example,
+% this will give the following message if the user type ''MISTYPED-STYLE''.
 %
 % term::
 %     Package pgfkeys Error: I do not know the key '/tcb/[[tutodoc : tdoclatex
-%     bad option "MISTYPED-STYLE"']] and I am going to ignore it. Perhaps you
+%     bad option "MISTYPED-STYLE"]]' and I am going to ignore it. Perhaps you
 %     misspelled it.
 %
 %     See the pgfkeys package documentation for explanation.
@@ -1094,202 +1093,119 @@
 % -- LATEX EXAMPLES -- %
 % -------------------- %
 
-% :::::::::::::::::::::::::::::::::::::::::::::: %
-% :: STYLES OF THE LISTING ENV. AND THE MACRO :: %
-% :::::::::::::::::::::::::::::::::::::::::::::: %
+\newif\ifcodenolexer
+\codenolexerfalse
 
+
+\NewExpandableDocumentCommand{\tutodoc@code@lexer}{m}{%
+  \ifcodenolexer text\else #1\fi%
+}
 
 % ::::::::::::::::::::::: %
 % :: INLINE CODE MACRO :: %
 % ::::::::::::::::::::::: %
 
-% %%%
-% % See the \doc of the macro ''\newmintinline'' from the package ''minted''
-% % to have \infos about the macro ''tdoclatexin''.
-% %%%
-% \newmintinline[tdoclatexin]{\tutodoc@latex@lexer}{%
-%   bgcolor            = tutodoc@latex@back@color,%
-%   style/.expand once = \tutodoc@latex@style     % <-- This needs minted3!
-% }
+%%%
+% See the \doc of the macro ''\newmintinline'' from the package ''minted''
+% to have \infos about the macro ''tdocodein''.
+%%%
+
+\NewDocumentCommand{\tdocodein}{m}{%
+  \mintinline{\tutodoc@code@lexer{#1}}%
+}
+
+\setminted{
+  bgcolor            = tutodoc@code@back@color,
+  style/.expand once = \tutodoc@code@style
+}
 
 
 % ::::::::::::::::::::::::::::::::::: %
 % :: TCOLORBOX LISTING ENVIRONMENT :: %
 % ::::::::::::::::::::::::::::::::::: %
 
-% \ExplSyntaxOn
-
-% %%%
-% % prototype::
-% %     #1 : (tdoclatex-style)
-% %          a style of formatting for a \latex listing and its output.
-% %
-% %     :see: macro.tdoclatex ,
-% %           macro.tdoclatexinput
-% %
-% % In the following easy-to-understand macro, we use one fictive ''tcolorbox''
-% % style such as to indicate an unknown ''tutodoc'' style to the user.
-% % For example, this can give one message similar to the following one.
-% %
-% % term::
-% %     Package pgfkeys Error: I do not know the key '/tcb/tdoclatex bad option
-% %     "MISTYPED-STYLE"' and I am going to ignore it. Perhaps you misspelled it.
-% %
-% %     See the pgfkeys package documentation for explanation.
-% %%%
-% \NewExpandableDocumentCommand{\tutodoc@latex@listing@format@option}{m}{
-%   \str_case:nnF { #1 } {
-%     { sbs  } { listing ~ side ~ text }
-%     { code } { listing ~ only }
-%     { std  } { listing ~ and ~ text }
-%   } { tdoclatex ~ bad ~ option ~ "#1" }
-% }
-
-% \ExplSyntaxOff
-
-% %%
-% % source::
-% %     + https://tex.stackexchange.com/a/604821/6880
-% %     + https://tex.stackexchange.com/a/327983/6880
-% %%
-% \tcbset{
-%   tutodoc-latex-listing-style/.style = {
-% % General.
-%     minted language/.expand once = \tutodoc@latex@lexer,
-%     minted style/.expand once    = \tutodoc@latex@style,
-%     breakable,
-%     enhanced,
-% % Colors.
-%     colframe = tutodoc@latex@frame@color,
-%     colback  = tutodoc@latex@back@color,
-%     colupper = tutodoc@latex@text@color,
-%     collower = tutodoc@latex@text@color,
-% % Padding.
-%     left   = \tutodoc@latex@left@len,
-%     right  = \tutodoc@latex@right@len,
-%     bottom = \tutodoc@latex@bottom@len,
-%     top    = \tutodoc@latex@top@len,
-% % Frame.
-%     shadow     = {\tutodoc@latex@shadow@xshift@len}%
-%                  {\tutodoc@latex@shadow@yshift@len}%
-%                  {\tutodoc@latex@shadow@offset@len}%
-%                  {tutodoc@latex@shadow@color},
-%     arc        = \tutodoc@latex@arc@len,
-%     leftrule   = \tutodoc@latex@left@rule@len,
-%     rightrule  = \tutodoc@latex@right@rule@len,
-%     bottomrule = \tutodoc@latex@bottom@rule@len,
-%     toprule    = \tutodoc@latex@top@rule@len,
-% % Separating line.
-%     segmentation style = {
-%       tutodoc@latex@segment@color,
-%       dash pattern = {on 5pt off 2.5pt},
-%       line width   = .75pt
-%     },
-%     #1
-%   },
-% }
+%%%
+% refs::
+%     + https://tex.stackexchange.com/a/604821/6880
+%     + https://tex.stackexchange.com/a/327983/6880
+%%%
+\tcbset{
+  tutodoc-full-listing-style/.style 2 args = {
+% General.
+    minted style/.expand once    = \tutodoc@code@style,
+    minted language/.expand once = \tutodoc@code@lexer{#2},
+    breakable,
+    enhanced,
+% Colors.
+    colframe = tutodoc@code@frame@color,
+    colback  = tutodoc@code@back@color,
+    colupper = tutodoc@code@text@color,
+    collower = tutodoc@code@text@color,
+% Padding.
+    boxsep = 0pt,
+    left   = \tutodoc@code@left@len,
+    right  = \tutodoc@code@right@len,
+    bottom = \tutodoc@code@bottom@len,
+    top    = \tutodoc@code@top@len,
+% Frame.
+    shadow     = {\tutodoc@code@shadow@xshift@len}%
+                 {\tutodoc@code@shadow@yshift@len}%
+                 {\tutodoc@code@shadow@offset@len}%
+                 {tutodoc@code@shadow@color},
+    arc        = \tutodoc@code@arc@len,
+    leftrule   = \tutodoc@code@left@rule@len,
+    rightrule  = \tutodoc@code@right@rule@len,
+    bottomrule = \tutodoc@code@bottom@rule@len,
+    toprule    = \tutodoc@code@top@rule@len,
+% Separating line.
+    segmentation style = {
+      tutodoc@code@segment@color,
+      dash pattern = {on 5pt off 2.5pt},
+      line width   = .75pt
+    },
+    listing only,
+% Extra styles
+    #1
+  },
+}
 
 
-% %%%
-% % prototype::
-% %     #1 : (tdoclatex-style)
-% %          the style to be used (code only, code and output side by side,
-% %          or the standard style corresponding to the code followed by
-% %          its output)
-% %        @ #1 in [code, sbs, std]
-% %
-% % note::
-% %     See the \doc of the macro ''\newtcblisting'' from the package
-% %     ''tcolorbox'' to have \infos about the environment ''tdoclatex''.
-% %%%
-% \newtcblisting{tdoclatex}[1][std]{%
-%   tutodoc-latex-listing-style = \tutodoc@latex@listing@format@option{#1}
-% }
+%%%
+% prototype::
+%     #1 : (tcolorbox-styling-commands)
+%          you can override the defaul settings, and also use the useful
+%          macro ''\tdoctcb''
+%
+%     :see: macro.tdoctcb
+%
+% note::
+%     See the \doc of the macro ''\newtcblisting'' from the package
+%     ''tcolorbox'' to have \infos about the environment ''tdocode''.
+%%%
+\newtcblisting{tdocode}[2][]{%
+  tutodoc-full-listing-style = {#1}{#2}
+}
 
 
 % :::::::::::::::::::::::::::::::::::::: %
 % :: TCOLORBOX IMPORTED LISTING MACRO :: %
 % :::::::::::::::::::::::::::::::::::::: %
 
-% %%%
-% % prototype::
-% %     #1 : (tdoclatex-style)
-% %          :see: ''\newtcblisting{tdoclatex}''
-% %     #2 : (file path)
-% %          the path of the file to input and format.
-% %
-% % note::
-% %     See the \doc of the macro ''\newtcbinputlisting'' from the package
-% %     ''tcolorbox'' to have more \infos about the macro ''\tdoclatexinput''.
-% %%%
-% \newtcbinputlisting{\tdoclatexinput}[2][std]{
-%   listing file                = {#2},
-%   tutodoc-latex-listing-style = \tutodoc@latex@listing@format@option{#1}
-% }
-
-
-% -------------------------- %
-% -- LATEX REAL USE CASES -- %
-% -------------------------- %
-
-% \ExplSyntaxOn
-
-% ::::::::::::::::::::: %
-% :: SETTING THE KEY :: %
-% ::::::::::::::::::::: %
-
-% \tl_new:N \l_tutodoc_listing_explain_tl
-
-
-% %%%
-% % prototype::
-% %     explain : the text between the code and its highlighted output.
-% %
-% %
-% % note::
-% %     This key can be used in addition to those of the ''tdocshowcase''
-% %     \env,
-% %%%
-% \keys_define:nn { tutodoc / listing / latexshow } {
-%   explain .tl_set:N  = \l_tutodoc_listing_explain_tl,
-%   explain .initial:n = { \tutodoc@trans@this@gives \tutodoc@colon },
-% }
-
-
-% ::::::::::::::::::::: %
-% :: LATEXSHOW MACRO :: %
-% ::::::::::::::::::::: %
-
-% \tl_new:N \l__tutodoc_showcase_options_passed_tl
-
-
-% %%%
-% % prototype::
-% %     #1 : (key-val options)
-% %          :see: \keys_define:nn { tutodoc / listing / latexshow } ,
-% %                \keys_define:nn { tutodoc / showcase }
-% %     #2 : (file path)
-% %          the path of a file
-% %
-% %     :see: env.tdocshowcase ,
-% %           macro.tdoclatexinput
-% %%%
-% \NewDocumentCommand{\tdoclatexshow}{ O{} m} {
-%   \group_begin:
-%     \keys_set_known:nnN { tutodoc / listing / latexshow }
-%       { #1 }
-%       \l__tutodoc_showcase_options_passed_tl
-
-%     \tdoclatexinput[code]{#2}
-
-%     \tl_use:N \l_tutodoc_listing_explain_tl
-
-% % Source: https://tex.stackexchange.com/a/696700/6880
-%     \exp_last_unbraced:NNV \tdocshowcaseinput [\l__tutodoc_showcase_options_passed_tl] {#2}
-%   \group_end:
-% }
-
-% \ExplSyntaxOff
+%%%
+% prototype::
+%     #1 : (tcolorbox-styling-commands)
+%          :see: macro.newtcblisting{tdocode}
+%     #2 : (file path)
+%          the path of the file to input and format.
+%
+% note::
+%     See the \doc of the macro ''\newtcbinputlisting'' from the package
+%     ''tcolorbox'' to have more \infos about the macro ''\tdocodeinput''.
+%%%
+\newtcbinputlisting{\tdocodeinput}[3][]{
+  listing file               = {#3},
+  tutodoc-full-listing-style = {#1}{#2},
+}
 
 
 % -- CHANGES - WHEN? --%
