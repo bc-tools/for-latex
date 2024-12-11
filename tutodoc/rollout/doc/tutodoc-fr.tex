@@ -1414,9 +1414,9 @@ $x y z = 1$
             The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
         }
         using a sober rendering for reading on screen.
-
+    
         \smallskip
-
+    
         \noindent
         \emph{\textbf{Remark :} this documentation is also available in French.}
 \end{abstract}
@@ -1576,7 +1576,7 @@ Comme cette langue fait partie de la liste des langues prises en compte, voir ci
         \task \tdoclatexin|es| : espagnol.
         \task \tdoclatexin|fr| : français.
 \end{tasks}
-
+                    
 
 
 \begin{tdocnote}
@@ -1613,9 +1613,8 @@ La macro \tdocmacro{tdocinEN} et sa version étoilée s'appuient sur \tdocmacro{
 
 Dans le contenu entre guillemets, les règles linguistiques anglaises sont respectées comme le montre l'exemple suivant.
 
-\begin{tdoclatex}
-Test: \tdocquote{OK?}
-
+\begin{tdoclatex}[\tdoctcb{sbs}]
+          Test: \tdocquote{OK?}  \\
 \tdocinEN{Test: \tdocquote{OK?}}
 \end{tdoclatex}
 
@@ -2041,7 +2040,7 @@ Voici des exemples d'utilisation.
 \subsection{Codes tapés directement}
 
 \begin{tdocexa}[Face à face]
-    Afficher un code et son rendu côte à côte se fait comme suit où \tdoclatexin#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}, et la macro \tdocmacro{tdoctcb} permet de taper \tdoclatexin{\tdoctcb{sbs}} au lieu de \tdoclatexin{listing side text}.
+    Afficher un code et son rendu côte à côte se fait comme suit où la macro \tdocmacro{tdoctcb} permet de juste taper \tdoclatexin{\tdoctcb{sbs}} au lieu de \tdoclatexin{listing side text} (\tdoclatexin#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}, tandis que \tdoclatexin#tcb# est l'abréviation standard de \texttt{tcolorbox}).
 
     \tdocbasicinputDOC*{examples-listing-latex-ABC.tex}
 
