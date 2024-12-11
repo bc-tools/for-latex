@@ -270,7 +270,14 @@
 }
 
 
-% -- SHORTCUT MACRO -- %
+% -- FOR LISTINGS -- %
+
+%%%
+% ????
+%%%
+\newif\ifcodenolexer
+\codenolexerfalse
+
 
 \ExplSyntaxOn
 

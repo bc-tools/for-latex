@@ -16,11 +16,6 @@ code avec ligne vide ajouté à tors !!!
 
 > ---------------------------- <
 
-env pour code via minted car on peut aussi parler de perl, pyhon et lua voire plus
-
-
-> ---------------------------- <
-
 macro de rgélage global en parallèle des options de classe (on prépare terrain pour monorepio à la tns)
 
 

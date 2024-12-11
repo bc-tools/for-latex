@@ -5,16 +5,24 @@
 11  (1.7.1-beta.4)
 ==
 
------
-:new:
------
+-------
+:break:
+-------
 
 [[:api:]]
 \Envs using ''tcolorbox''.
 
-    1) The new ''\tdoctcb'' macro allows to use a shortcut for regularly used styles.
+    1) The new ''\tdoctcb'' macro allows to use shortcuts for regularly used styles.
 
     1) \latex listings: the option can be any legal ''tcolorbox'' styling commands.
+
+
+-----
+:new:
+-----
+
+[[:api:]]    DOc KO !!!! ??????
+New feature: display any kind of code for any language supported by \minted.
 
 
 --------
