@@ -254,22 +254,6 @@
 }
 
 
-% -- THEME -- %
-
-\input{../main/css/\tutodoc@theme.cls.sty}
-
-\pagecolor{tutodoc@page@color}
-\color{tutodoc@text@color}
-
-\hypersetup{
-  colorlinks,
-  citecolor = tutodoc@link@color,
-  filecolor = tutodoc@link@color,
-  linkcolor = tutodoc@link@color,
-  urlcolor  = tutodoc@link@color
-}
-
-
 % -- FOR LISTINGS -- %
 
 %%%
@@ -310,3 +294,20 @@
 }
 
 \ExplSyntaxOff
+
+
+% -- THEME -- %
+
+\input{../main/css/\tutodoc@theme.cls.sty}
+
+\pagecolor{tutodoc@page@color}
+\color{tutodoc@text@color}
+
+\hypersetup{
+  colorlinks,
+  citecolor = tutodoc@link@color,
+  filecolor = tutodoc@link@color,
+  linkcolor = tutodoc@link@color,
+  urlcolor  = tutodoc@link@color
+}
+
