@@ -929,7 +929,7 @@
 %     See the pgfkeys package documentation for explanation.
 %%%
 
-\NewExpandableDocumentCommand{\tdocstyle}{m}{
+\NewExpandableDocumentCommand{\tdoctcb}{m}{
   \str_case:nnF { #1 } {
     { sbs  } { listing ~ side ~ text }
     { code } { listing ~ only }
@@ -1076,7 +1076,7 @@
       { #1 }
       \l__tutodoc_showcase_options_passed_tl
 
-    \tdoclatexinput[\tdocstyle{code}]{#2}
+    \tdoclatexinput[\tdoctcb{code}]{#2}
 
     \tl_use:N \l_tutodoc_listing_explain_tl
 

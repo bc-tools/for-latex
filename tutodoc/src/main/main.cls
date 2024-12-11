@@ -268,3 +268,39 @@
   linkcolor = tutodoc@link@color,
   urlcolor  = tutodoc@link@color
 }
+
+
+% -- tcolorbox SHORTCUT MACRO -- %
+
+\ExplSyntaxOn
+
+%%%
+% prototype::
+%     #1 : (tdoclatex-style)
+%          a shortcut for ''tcolorbox'' style.
+%        @ #1 in [code, sbs, std]
+%
+% In the following easy-to-understand macro, we use one fictive ''tcolorbox''
+% style such as to indicate an unknown ''tutodoc'' shortcut style to the user.
+% For example, this can give one message similar to the following one where
+% the user has type ''MISTYPED-STYLE''.
+%
+% term::
+%     Package pgfkeys Error: I do not know the key '/tcb/[[tutodoc : tdoclatex
+%     bad option "MISTYPED-STYLE"']] and I am going to ignore it. Perhaps you
+%     misspelled it.
+%
+%     See the pgfkeys package documentation for explanation.
+%%%
+
+\NewExpandableDocumentCommand{\tdoctcb}{m}{
+  \str_case:nnF { #1 } {
+    { sbs  } { listing ~ side ~ text }
+    { code } { listing ~ only }
+    { std  } { listing ~ and ~ text }
+  } {
+    [[tutodoc ~ : ~ LaTeX ~ listing ~ illegal ~ style ~ "#1"]]
+  }
+}
+
+\ExplSyntaxOff

@@ -7,9 +7,6 @@
 ------
 
 ??
-Cette version
-    ??? ajoute la possibilité de présenter des codes informatiques,
-    OK  améliore le rendu de la macro et des environnements pour les changements lorsque le thème ''dark'' est utilisé.
 
 
 -----
@@ -27,17 +24,26 @@ Cette version
 [[:format:]]
 Themes.
 
-    1) All themes: less spaces consumed and better shadow colors.
+    1) Spacing.
 
-    1) With all themes but the ''draft'' one, we have the following \chges.
+        * With all themes, we have the following \chges.
 
-        * The arc len of the frames changes from ''.75mm'' to ''2pt''.
+            + Less spaces are consumedand.
 
-        * Less vertical space is used before the "what" \envs.
+            + Shadow colors is better.
 
+        * With all themes but the ''draft'' one, we have the following \chges.
 
-    1) ''color'' theme and \latex listings: the back color changes from ''yellow!4'' to ''gray!5''’.
+            + The arc len of the frames changes from ''.75mm'' to ''2pt''.
+
+            + Less vertical space is used before the "what" \envs.
 
     1) Sub-sub-sections are numbered using lower alphabetic letters.
 
-    1) \latex listings: the option can be any legal ''tcblisting'' style, and the macro ''\tdocstyle'' can be use with ''sbs'', ''code'' and ''std'' values to ease the typing.
+    1) \latex listings.
+
+        * The option can be any legal ''tcblisting'' style.
+
+        * With the ''color'' theme, the back color changes from ''yellow!4'' to ''gray!5''’.
+
+    1) The new ''\tdoctcb'' macro allows to use a shortcut for regularly used styles.

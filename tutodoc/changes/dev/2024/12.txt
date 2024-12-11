@@ -16,7 +16,9 @@ Here the last \chges.
 
     1) Sub-sub-sections are numbered using lower alphabetic letters.
 
-    1) \latex listings: the option can be any legal ''tcblisting'' style, and the macro ''\tdocstyle'' can be use with ''sbs'', ''code'' and ''std'' values to ease the typing.
+    1) \latex listings: the option can be any legal ''tcblisting'' style.
+
+    1) The new ''\tdoctcb'' macro allows to use a shortcut for regularly used styles.
 
 
 // ---------- //

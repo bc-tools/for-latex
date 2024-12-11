@@ -9,7 +9,9 @@ NOW
 
 > ---------------------------- <
 
-padding haut/bas/drte/gauche comme option des listings : la doc montre que cela peut rendre service !
+code avec ligne vide ajouté à tors !!!
+
+    ---> \tdoclatexinput{examples-listing-latex-xyz.tex}
 
 
 > ---------------------------- <

@@ -21,7 +21,7 @@ It is sometimes useful to render code directly in the documentation. This type o
     }
     This is done via \tdocenv{tdocshowcase} as follows.
 
-    \tdoclatexinput[\tdocstyle{code}]{examples/showcase/default.tex}
+    \tdoclatexinput[\tdoctcb{code}]{examples/showcase/default.tex}
 
     The result is the following rendering.
     \footnote{
@@ -50,7 +50,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 \begin{tdocexa}[Change the colors and/or the texts]
     \leavevmode
 
-    \tdoclatexinput[\tdocstyle{code}]{examples/showcase/customized.tex}
+    \tdoclatexinput[\tdoctcb{code}]{examples/showcase/customized.tex}
 
     This will produce the following.
 
@@ -68,7 +68,7 @@ It is sometimes useful to render code directly in the documentation. This type o
     %
     You should also be aware that behind the scenes, the macro \tdocmacro{tdocruler} is used.
 
-    \begin{tdoclatex}[\tdocstyle{std}]
+    \begin{tdoclatex}[\tdoctcb{std}]
         \tdocruler[red]{A decorated pseudo-title}
     \end{tdoclatex}
 \end{tdocnote}
@@ -80,7 +80,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 \begin{tdocwarn}
     With the default settings, if the code to be formatted begins with an opening bracket, use \tdocmacro{string} as in the following example.
 
-    \tdoclatexinput[\tdocstyle{code}]{examples/showcase/hook.tex}
+    \tdoclatexinput[\tdoctcb{code}]{examples/showcase/hook.tex}
 
     This will produce the following.
 \end{tdocwarn}

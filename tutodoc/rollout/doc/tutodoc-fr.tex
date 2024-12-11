@@ -85,7 +85,7 @@ Du code \LaTeX\ mis en forme, c'est top : $E = m c^2$ ou $\pi \neq \frac{3}{14}$
 
 On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
 
-\begin{tdoclatex}[\tdocstyle{sbs}]
+\begin{tdoclatex}[\tdoctcb{sbs}]
 Du code \LaTeX\ mis en forme, c'est top : \\
 $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
@@ -293,7 +293,7 @@ Du code \LaTeX\ mis en forme, c'est top : $E = m c^2$ ou $\pi \neq \frac{3}{14}$
 
 On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
 
-\begin{tdoclatex}[\tdocstyle{sbs}]
+\begin{tdoclatex}[\tdoctcb{sbs}]
 Du code \LaTeX\ mis en forme, c'est top : \\
 $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
@@ -501,7 +501,7 @@ Du code \LaTeX\ mis en forme, c'est top : $E = m c^2$ ou $\pi \neq \frac{3}{14}$
 
 On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
 
-\begin{tdoclatex}[\tdocstyle{sbs}]
+\begin{tdoclatex}[\tdoctcb{sbs}]
 Du code \LaTeX\ mis en forme, c'est top : \\
 $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
@@ -709,7 +709,7 @@ Du code \LaTeX\ mis en forme, c'est top : $E = m c^2$ ou $\pi \neq \frac{3}{14}$
 
 On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
 
-\begin{tdoclatex}[\tdocstyle{sbs}]
+\begin{tdoclatex}[\tdoctcb{sbs}]
 Du code \LaTeX\ mis en forme, c'est top : \\
 $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
@@ -1186,7 +1186,7 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-ABC.tex}
-\begin{tdoclatex}[\tdocstyle{sbs}]
+\begin{tdoclatex}[\tdoctcb{sbs}]
     $A = B + C$
 \end{tdoclatex}
 \end{filecontents*}
@@ -1199,15 +1199,15 @@ $x y z = 1$
 
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-strange.tex}
-\begin{tdoclatex}[\tdocstyle{std}]
+\begin{tdoclatex}[\tdoctcb{std}]
     [Étrange... Ou pas !]
 \end{tdoclatex}
 \end{filecontents*}
 
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-ABC-custom.tex}
-\begin{tdoclatex}[\tdocstyle{sbs}, 
-                  top    = 10pt, 
+\begin{tdoclatex}[\tdoctcb{sbs},
+                  top    = 10pt,
                   bottom = 10pt]
     $A = B + C$
 \end{tdoclatex}
@@ -1269,7 +1269,7 @@ $x y z = 1$
 \NewDocumentCommand{ \tdocbasicinputDOC }{ sm }{%
     \IfBooleanF{#1}{Considérons le code suivant.}
 
-    \tdoclatexinput[\tdocstyle{code}]{#2}
+    \tdoclatexinput[\tdoctcb{code}]{#2}
 
     Ceci produira ce qui suit.
 
@@ -1414,9 +1414,9 @@ $x y z = 1$
             The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
         }
         using a sober rendering for reading on screen.
-    
+
         \smallskip
-    
+
         \noindent
         \emph{\textbf{Remark :} this documentation is also available in French.}
 \end{abstract}
@@ -1576,7 +1576,7 @@ Comme cette langue fait partie de la liste des langues prises en compte, voir ci
         \task \tdoclatexin|es| : espagnol.
         \task \tdoclatexin|fr| : français.
 \end{tasks}
-                    
+
 
 
 \begin{tdocnote}
@@ -1722,7 +1722,7 @@ Pour modifier la mise en forme générale, la classe \thisproj\ propose l'option
 Des exemples numérotés, si besoin, s'indiquent via \tdocenv{tdocexa} qui propose un argument optionnel pour ajouter un mini-titre.
 Voici deux usages possibles.
 
-\tdoclatexinput[\tdocstyle{sbs}]{examples-admonitions-exa.tex}
+\tdoclatexinput[\tdoctcb{sbs}]{examples-admonitions-exa.tex}
 
 
 
@@ -1730,7 +1730,7 @@ Voici deux usages possibles.
     Il peut parfois être utile de revenir à la ligne dès le début du contenu. Le code suivant montre comment faire (ce tour de passe-passe reste valable pour l'environnement \verb#tdocrem# présenté juste après). Noter au passage que la numérotation suit celle de l'exemple précédent comme souhaité.
 \end{tdoctip}
 
-\tdoclatexinput[\tdocstyle{sbs}]{examples-admonitions-exa-leavevmode.tex}
+\tdoclatexinput[\tdoctcb{sbs}]{examples-admonitions-exa-leavevmode.tex}
 
 
 
@@ -1741,7 +1741,7 @@ Voici deux usages possibles.
 Tout se passe via \tdocenv{tdocrem} avec un fonctionnement identique à l'environnement \tdocenv*{tdocexa} comme le montre l'exemple suivant.
 
 
-\tdoclatexinput[\tdocstyle{sbs}]{examples-admonitions-rmk.tex}
+\tdoclatexinput[\tdoctcb{sbs}]{examples-admonitions-rmk.tex}
 
 
 
@@ -1765,7 +1765,7 @@ Tout se passe via \tdocenv{tdocrem} avec un fonctionnement identique à l'enviro
 
 L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'employer.
 
-\tdoclatexinput[\tdocstyle{sbs},bottom=3pt,top=3pt]{examples-admonitions-tip.tex}
+\tdoclatexinput[\tdoctcb{sbs},bottom=3pt,top=3pt]{examples-admonitions-tip.tex}
 
 
 
@@ -1775,7 +1775,7 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 \begin{tdoctip}
     Quelque fois, un contenu mis en avant peut se réduire à une liste. Dans ce cas, la mise en forme peut être améliorée comme suit où nous utilisons l'option \tdoclatexin{wide} du package \tdocpack{enumitem}.
 
-    \tdoclatexinput[\tdocstyle{sbs},bottom=3pt,top=3pt]{examples-admonitions-leavevmode-items.tex}
+    \tdoclatexinput[\tdoctcb{sbs},bottom=3pt,top=3pt]{examples-admonitions-leavevmode-items.tex}
 
 \end{tdoctip}
 
@@ -1801,7 +1801,7 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 
     \desc
 
-    \tdoclatexinput[\tdocstyle{sbs},bottom=3pt,top=3pt]{examples-admonitions-\filename.tex}
+    \tdoclatexinput[\tdoctcb{sbs},bottom=3pt,top=3pt]{examples-admonitions-\filename.tex}
 
 }
 
@@ -1811,7 +1811,7 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 Voici ce qu'il est possible de taper de façon sémantique.
 
 
-\begin{tdoclatex}[\tdocstyle{sbs}]
+\begin{tdoclatex}[\tdoctcb{sbs}]
 \tdoccls{maclasse} sert à...           \\
 \tdocpack{monpackage} est pour...      \\
 \tdocmacro{unemacro} permet de...      \\
@@ -1844,7 +1844,7 @@ Enfin \tdocenv*[{[opt1]<opt2>}]{env}...
 Pour expliquer les noms retenus, rien de tel que d'indiquer et expliciter les courts préfixes et suffixes employés. Ceci se fait facilement comme suit.
 
 
-\begin{tdoclatex}[\tdocstyle{sbs}]
+\begin{tdoclatex}[\tdoctcb{sbs}]
 \tdocpre{sup} est relatif à...    \\
 \tdocprewhy{sup.erbe} signifie... \\
 \emph{\tdocprewhy{sup.er} pour...}
@@ -1872,7 +1872,7 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
     }
     Ceci se tape via \tdocenv{tdocshowcase} comme suit.
 
-    \tdoclatexinput[\tdocstyle{code}]{examples-showcase-default.tex}
+    \tdoclatexinput[\tdoctcb{code}]{examples-showcase-default.tex}
 
 
     On obtient alors le rendu suivant.
@@ -1900,7 +1900,7 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 \begin{tdocexa}[Changer les couleurs et/ou les textes par défaut]
     \leavevmode
 
-    \tdoclatexinput[\tdocstyle{code}]{examples-showcase-customized.tex}
+    \tdoclatexinput[\tdoctcb{code}]{examples-showcase-customized.tex}
 
 
     Ceci produira ce qui suit.
@@ -1920,7 +1920,7 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
     %
     Il faut également savoir qu'en coulisse, la macro \tdocmacro{tdocruler} est employée.
 
-    \begin{tdoclatex}[\tdocstyle{std}]
+    \begin{tdoclatex}[\tdoctcb{std}]
         \tdocruler[red]{Un pseudo-titre décoré}
     \end{tdoclatex}
 \end{tdocnote}
@@ -1929,7 +1929,7 @@ Il est parfois utile d'obtenir directement le rendu d'un code dans la documentat
 \begin{tdocwarn}
     Avec les réglages par défaut, si le code \LaTeX\ à mettre en forme commence par un crochet ouvrant, il faudra user de \tdocmacro{string} comme dans l'exemple suivant.
 
-    \tdoclatexinput[\tdocstyle{code}]{examples-showcase-hook.tex}
+    \tdoclatexinput[\tdoctcb{code}]{examples-showcase-hook.tex}
 
 
     Ceci produira ce qui suit.
@@ -1949,7 +1949,7 @@ Il est possible de ne pas utiliser une bande colorée comme nous allons le voir 
     L'emploi de \tdocenv[{[nostripe]}]{tdocshowcase} demande de ne pas faire appel à \tdocpack{clrstrip}.
     Voici un exemple d'utilisation.
 
-    \tdoclatexinput[\tdocstyle{code}]{examples-showcase-nostripe.tex}
+    \tdoclatexinput[\tdoctcb{code}]{examples-showcase-nostripe.tex}
 
 
     Ceci produira ce qui suit.
@@ -1964,7 +1964,7 @@ Il est possible de ne pas utiliser une bande colorée comme nous allons le voir 
 \begin{tdocexa}[Changer les couleurs et/ou les textes par défaut]
     \leavevmode
 
-    \tdoclatexinput[\tdocstyle{code}]{examples-showcase-nostripe-customized.tex}
+    \tdoclatexinput[\tdoctcb{code}]{examples-showcase-nostripe-customized.tex}
 
 
     Ceci produira l'horreur suivante.
@@ -2021,7 +2021,7 @@ permet de taper du code en ligne via un usage similaire à \tdocmacro{verb} ou b
 Voici des exemples d'utilisation.
 
 
-\begin{tdoclatex}[\tdocstyle{sbs}]
+\begin{tdoclatex}[\tdoctcb{sbs}]
     1: \tdoclatexin|$a^b = c$|               \\
     2: \tdoclatexin+\tdoclatexin|$a^b = c$|+ \\
     3: \tdoclatexin{\tdoclatexin{$a^b = c$}}
@@ -2041,9 +2041,10 @@ Voici des exemples d'utilisation.
 \subsection{Codes tapés directement}
 
 \begin{tdocexa}[Face à face]
-    Afficher un code et son rendu côte à côte se fait comme suit où \tdoclatexin#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}, et la macro \tdocmacro{tdocstyle} permet de taper \tdoclatexin{\tdocstyle{sbs}} au lieu de \tdoclatexin{listing side text}.
+    Afficher un code et son rendu côte à côte se fait comme suit où \tdoclatexin#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}, et la macro \tdocmacro{tdoctcb} permet de taper \tdoclatexin{\tdoctcb{sbs}} au lieu de \tdoclatexin{listing side text}.
 
-    \tdocbasicinputDOC*{examples/listing-latex/ABC.tex}
+    \tdocbasicinputDOC*{examples-listing-latex-ABC.tex}
+
 \end{tdocexa}
 
 
@@ -2053,12 +2054,13 @@ Voici des exemples d'utilisation.
 		Cette documentation utilise ceci pour obtenir des rendus corrects de codes \LaTeX\ produisant des cadres ombrés : voir la section \ref{tutodoc-admonitions}.
 	}
 
-    \tdocbasicinputDOC*{examples/listing-latex/ABC-custom.tex}
+    \tdocbasicinputDOC*{examples-listing-latex-ABC-custom.tex}
+
 \end{tdocnote}
 
 
 \begin{tdocexa}[À la suite]
-    \tdocenv{tdoclatex} produit le résultat suivant où l'option par défaut correspondant à \tdoclatexin#\tdocstyle{std}#\,.
+    \tdocenv{tdoclatex} produit le résultat suivant où l'option par défaut correspondant à \tdoclatexin#\tdoctcb{std}#\,.
     \footnote{
         \tdoclatexin{std} fait référence au comportement \tdocquote{standard} de \tdocpack{tcolorbox} vis à vis de la librairie \tdocpack{minted}.
     }
@@ -2070,9 +2072,9 @@ Voici des exemples d'utilisation.
 
 
 \begin{tdocexa}[Juste le code]
-    Via l'option \tdoclatexin#\tdocstyle{code}#, on aura juste le code comme ci-après.
+    Via l'option \tdoclatexin#\tdoctcb{code}#, on aura juste le code comme ci-après.
 
-    \begin{tdoclatex}[\tdocstyle{code}]
+    \begin{tdoclatex}[\tdoctcb{code}]
         $A = B + C$
     \end{tdoclatex}
 \end{tdocexa}
@@ -2096,7 +2098,7 @@ Voici des exemples d'utilisation.
 Pour les codes suivants, on considère un fichier de chemin relatif \verb+examples-listing-xyz.tex+, et ayant le contenu suivant.
 
 
-\tdoclatexinput[\tdocstyle{code}]{examples-listing-latex-xyz.tex}
+\tdoclatexinput[\tdoctcb{code}]{examples-listing-latex-xyz.tex}
 
 
 
@@ -2109,14 +2111,14 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 \begin{tdocexa}[Face à face]
     \leavevmode
 
-    \begin{tdoclatex}[\tdocstyle{code}]
-\tdoclatexinput[\tdocstyle{sbs}]{examples-listing-latex-xyz.tex}
+    \begin{tdoclatex}[\tdoctcb{code}]
+\tdoclatexinput[\tdoctcb{sbs}]{examples-listing-latex-xyz.tex}
 
     \end{tdoclatex}
 
     Ceci produit la mise en forme suivante.
 
-    \tdoclatexinput[\tdocstyle{sbs}]{examples-listing-latex-xyz.tex}
+    \tdoclatexinput[\tdoctcb{sbs}]{examples-listing-latex-xyz.tex}
 
 \end{tdocexa}
 
@@ -2124,12 +2126,12 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 \begin{tdocexa}[À la suite]
     \leavevmode
 
-    \begin{tdoclatex}[\tdocstyle{code}]
+    \begin{tdoclatex}[\tdoctcb{code}]
 \tdoclatexinput{examples-listing-latex-xyz.tex}
 
     \end{tdoclatex}
 
-    Ceci produit la mise en forme suivante où l'option par défaut est \tdoclatexin#\tdocstyle{std}#\,.
+    Ceci produit la mise en forme suivante où l'option par défaut est \tdoclatexin#\tdoctcb{std}#\,.
 
     \tdoclatexinput{examples-listing-latex-xyz.tex}
 
@@ -2139,14 +2141,14 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 \begin{tdocexa}[Juste le code]
     \leavevmode
 
-    \begin{tdoclatex}[\tdocstyle{code}]
-\tdoclatexinput[\tdocstyle{code}]{examples-listing-latex-xyz.tex}
+    \begin{tdoclatex}[\tdoctcb{code}]
+\tdoclatexinput[\tdoctcb{code}]{examples-listing-latex-xyz.tex}
 
     \end{tdoclatex}
 
     Ceci produit la mise en forme suivante.
 
-    \tdoclatexinput[\tdocstyle{code}]{examples-listing-latex-xyz.tex}
+    \tdoclatexinput[\tdoctcb{code}]{examples-listing-latex-xyz.tex}
 
 \end{tdocexa}
 
@@ -2190,7 +2192,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \medskip
 
-    \tdoclatexinput[\tdocstyle{code}]{examples-listing-latex-latexshow-options.tex}
+    \tdoclatexinput[\tdoctcb{code}]{examples-listing-latex-latexshow-options.tex}
 
 
     \medskip
@@ -2342,7 +2344,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput[\tdocstyle{sbs}]{examples-version-n-change-chges-\filename.tex}
+        \tdoclatexinput[\tdoctcb{sbs}]{examples-version-n-change-chges-\filename.tex}
 
     \end{tdocexa}
 }
@@ -2361,7 +2363,7 @@ Il peut être utile de mettre en avant certains changements : ceci n'est faisabl
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput[\tdocstyle{sbs}]{examples-version-n-change-color-chges-\filename.tex}
+        \tdoclatexinput[\tdoctcb{sbs}]{examples-version-n-change-color-chges-\filename.tex}
 
     \end{tdocexa}
 }
@@ -2380,7 +2382,7 @@ Les clés optionnelles \tdoclatexin{col-chges}\,, \tdoclatexin{date} et \tdoclat
 Finissons cette documentation avec un petit outil de mise en forme qui rend de grands services.
 
 
-\begin{tdoclatex}[\tdocstyle{sbs}]
+\begin{tdoclatex}[\tdoctcb{sbs}]
 Bla, bla, bla...
 
 \tdocsep % Pratique pour délimiter.

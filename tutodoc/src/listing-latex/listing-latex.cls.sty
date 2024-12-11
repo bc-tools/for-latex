@@ -18,42 +18,6 @@
 
 % :: TCOLORBOX LISTING ENVIRONMENT :: %
 
-\ExplSyntaxOn
-
-%%%
-% prototype::
-%     #1 : (tdoclatex-style)
-%          a style of formatting for a \latex listing and its output.
-%
-%     :see: macro.tdoclatex ,
-%           macro.tdoclatexinput
-%
-% In the following easy-to-understand macro, we use one fictive ''tcolorbox''
-% style such as to indicate an unknown ''tutodoc'' style to the user.
-% For example, this can give one message similar to the following one where
-% the user has type ''MISTYPED-STYLE''.
-%
-% term::
-%     Package pgfkeys Error: I do not know the key '/tcb/[tutodoc] tdoclatex
-%     bad option "MISTYPED-STYLE"' and I am going to ignore it. Perhaps you
-%     misspelled it.
-%
-%     See the pgfkeys package documentation for explanation.
-%%%
-
-\NewExpandableDocumentCommand{\tdocstyle}{m}{
-  \str_case:nnF { #1 } {
-    { sbs  } { listing ~ side ~ text }
-    { code } { listing ~ only }
-    { std  } { listing ~ and ~ text }
-  } {
-    [tutodoc] ~ LaTeX ~ listing ~ illegal ~ style ~ "#1"
-  }
-}
-
-\ExplSyntaxOff
-
-
 %%%
 % refs::
 %     + https://tex.stackexchange.com/a/604821/6880
@@ -100,11 +64,11 @@
 
 %%%
 % prototype::
-%     #1 : (tdoclatex-style)
-%          the style to be used (code only, code and output side by side,
-%          or the standard style corresponding to the code followed by
-%          its output)
-%        @ #1 in [code, sbs, std]
+%     #1 : (tcolorbox-style)
+%          you can override the defaul settings, and also use the useful
+%          macro ''\tdoctcb''
+%
+%     :see: macro.tdoctcb
 %
 % note::
 %     See the \doc of the macro ''\newtcblisting'' from the package
@@ -119,8 +83,8 @@
 
 %%%
 % prototype::
-%     #1 : (tdoclatex-style)
-%          :see: ''\newtcblisting{tdoclatex}''
+%     #1 : (tcolorbox-style)
+%          :see: macro.newtcblisting{tdoclatex}
 %     #2 : (file path)
 %          the path of the file to input and format.
 %
@@ -180,7 +144,7 @@
       { #1 }
       \l__tutodoc_showcase_options_passed_tl
 
-    \tdoclatexinput[\tdocstyle{code}]{#2}
+    \tdoclatexinput[\tdoctcb{code}]{#2}
 
     \tl_use:N \l_tutodoc_listing_explain_tl
 

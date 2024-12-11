@@ -141,6 +141,7 @@ CMDS_FOR_FILE_PATTERNS = [
         "tdoclatexinput",
         "tdocshowcaseinput",
         "tdocbasicinputDOC",
+        "tdocbasicinputDOC\*",
     ]
 ]
 

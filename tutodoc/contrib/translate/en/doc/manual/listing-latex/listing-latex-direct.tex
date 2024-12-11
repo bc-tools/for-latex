@@ -11,7 +11,7 @@
 \NewDocumentCommand{ \tdocbasicinputDOC }{ sm }{%
     \IfBooleanF{#1}{Consider the following code.}
 
-    \tdoclatexinput[\tdocstyle{code}]{#2}
+    \tdoclatexinput[\tdoctcb{code}]{#2}
 
     This will produce the following.
 
@@ -47,7 +47,7 @@ can be used to type inline code in a similar way to \tdocmacro{verb} or like a s
 Here are some examples.
 
 
-\begin{tdoclatex}[\tdocstyle{sbs}]
+\begin{tdoclatex}[\tdoctcb{sbs}]
     1: \tdoclatexin|$a^b = c$|               \\
     2: \tdoclatexin+\tdoclatexin|$a^b = c$|+ \\
     3: \tdoclatexin{\tdoclatexin{$a^b = c$}}
@@ -69,7 +69,7 @@ Here are some examples.
 \subsection{Directly typed codes}
 
 \begin{tdocexa}[Side by side]
-     Displaying code and rendering side by side is done as follows where \tdoclatexin#sbs# is for \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}}, and the macro \tdocmacro{tdocstyle} allows you to type \tdoclatexin{tdocstyle{sbs}} instead of \tdoclatexin{listing side text}.
+     Displaying code and rendering side by side is done as follows where \tdoclatexin#sbs# is for \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}}, and the macro \tdocmacro{tdoctcb} allows you to type \tdoclatexin{tdocstyle{sbs}} instead of \tdoclatexin{listing side text}.
 
     \tdocbasicinputDOC*{examples/listing-latex/ABC.tex}
 \end{tdocexa}
@@ -94,7 +94,7 @@ Here are some examples.
 
 
 \begin{tdocexa}[Following]
-    \tdocenv{tdoclatex} produces the following result via the default option corresponding to \tdoclatexin#\tdocstyle{std}#\,.
+    \tdocenv{tdoclatex} produces the following result via the default option corresponding to \tdoclatexin#\tdoctcb{std}#\,.
     \footnote{
         \tdoclatexin{std} refers to the \tdocquote{standard} behaviour of \tdocpack{tcolorbox} in relation to the \tdocpack{minted} library.
     }
@@ -109,9 +109,9 @@ Here are some examples.
 
 
 \begin{tdocexa}[Just the code]
-    Via the option \tdoclatexin#\tdocstyle{code}#, we'll just get the code as shown below.
+    Via the option \tdoclatexin#\tdoctcb{code}#, we'll just get the code as shown below.
 
-    \begin{tdoclatex}[\tdocstyle{code}]
+    \begin{tdoclatex}[\tdoctcb{code}]
         $A = B + C$
     \end{tdoclatex}
 \end{tdocexa}
