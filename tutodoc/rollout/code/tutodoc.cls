@@ -922,21 +922,25 @@
 % the user has type ''MISTYPED-STYLE''.
 %
 % term::
-%     Package pgfkeys Error: I do not know the key '/tcb/tutodoc tdoclatex
+%     Package pgfkeys Error: I do not know the key '/tcb/[tutodoc] tdoclatex
 %     bad option "MISTYPED-STYLE"' and I am going to ignore it. Perhaps you
 %     misspelled it.
 %
 %     See the pgfkeys package documentation for explanation.
 %%%
-\NewExpandableDocumentCommand{\tutodoc@latex@listing@format@option}{m}{
+
+\NewExpandableDocumentCommand{\tdocstyle}{m}{
   \str_case:nnF { #1 } {
     { sbs  } { listing ~ side ~ text }
     { code } { listing ~ only }
     { std  } { listing ~ and ~ text }
-  } { tutodoc ~ tdoclatex ~ bad ~ option ~ "#1" }
+  } {
+    [tutodoc] ~ LaTeX ~ listing ~ illegal ~ style ~ "#1"
+  }
 }
 
 \ExplSyntaxOff
+
 
 %%%
 % refs::
@@ -994,8 +998,8 @@
 %     See the \doc of the macro ''\newtcblisting'' from the package
 %     ''tcolorbox'' to have \infos about the environment ''tdoclatex''.
 %%%
-\newtcblisting{tdoclatex}[1][std]{%
-  tutodoc-latex-listing-style = \tutodoc@latex@listing@format@option{#1}
+\newtcblisting{tdoclatex}[1][]{%
+  tutodoc-latex-listing-style = #1
 }
 
 
@@ -1014,9 +1018,9 @@
 %     See the \doc of the macro ''\newtcbinputlisting'' from the package
 %     ''tcolorbox'' to have more \infos about the macro ''\tdoclatexinput''.
 %%%
-\newtcbinputlisting{\tdoclatexinput}[2][std]{
-  listing file                = {#2},
-  tutodoc-latex-listing-style = \tutodoc@latex@listing@format@option{#1}
+\newtcbinputlisting{\tdoclatexinput}[2][]{
+  listing file = {#2},
+  tutodoc-latex-listing-style = #1,
 }
 
 
@@ -1072,7 +1076,7 @@
       { #1 }
       \l__tutodoc_showcase_options_passed_tl
 
-    \tdoclatexinput[code]{#2}
+    \tdoclatexinput[\tdocstyle{code}]{#2}
 
     \tl_use:N \l_tutodoc_listing_explain_tl
 

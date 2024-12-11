@@ -97,4 +97,17 @@ public class HelloWorld {
 \mylisting[Hello world is back!]{helloworld.java}
 
 
+\begin{tcblisting}{listing only, minted style = emacs, minted language = python, hbox}
+from math import sin, exp
+# Avec hbox 
+def Suite(n):
+    U = 3
+    for k in range(n):
+        U = sin(U)+1/(exp(U)+1)
+    return U
+ 
+# Exemple
+Suite(13)
+\end{tcblisting}
+
 \end{document}

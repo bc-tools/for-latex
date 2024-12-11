@@ -1205,6 +1205,15 @@ $x y z = 1$
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-listing-latex-ABC-custom.tex}
+\begin{tdoclatex}[\tdocstyle{sbs}, 
+                  top    = 10pt, 
+                  bottom = 10pt]
+    $A = B + C$
+\end{tdoclatex}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-listing-latex-strange-bis.tex}
 \begin{tdoclatex}
     \string[Étrange... Ou pas !]
@@ -1257,14 +1266,14 @@ $x y z = 1$
 % Source.
 %    * https://tex.stackexchange.com/a/604698/6880
 
-\NewDocumentCommand{ \tdocbasicinputDOC }{ m }{%
-    Considérons le code suivant.
+\NewDocumentCommand{ \tdocbasicinputDOC }{ sm }{%
+    \IfBooleanF{#1}{Considérons le code suivant.}
 
-    \tdoclatexinput[\tdocstyle{code}]{#1}
+    \tdoclatexinput[\tdocstyle{code}]{#2}
 
     Ceci produira ce qui suit.
 
-    \input{#1}
+    \input{#2}
 }
 
 
@@ -1405,9 +1414,9 @@ $x y z = 1$
             The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
         }
         using a sober rendering for reading on screen.
-
+    
         \smallskip
-
+    
         \noindent
         \emph{\textbf{Remark :} this documentation is also available in French.}
 \end{abstract}
@@ -1567,7 +1576,7 @@ Comme cette langue fait partie de la liste des langues prises en compte, voir ci
         \task \tdoclatexin|es| : espagnol.
         \task \tdoclatexin|fr| : français.
 \end{tasks}
-
+                    
 
 
 \begin{tdocnote}
@@ -1756,7 +1765,7 @@ Tout se passe via \tdocenv{tdocrem} avec un fonctionnement identique à l'enviro
 
 L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'employer.
 
-\tdoclatexinput[\tdocstyle{sbs}]{examples-admonitions-tip.tex}
+\tdoclatexinput[\tdocstyle{sbs},bottom=3pt,top=3pt]{examples-admonitions-tip.tex}
 
 
 
@@ -1766,7 +1775,7 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 \begin{tdoctip}
     Quelque fois, un contenu mis en avant peut se réduire à une liste. Dans ce cas, la mise en forme peut être améliorée comme suit où nous utilisons l'option \tdoclatexin{wide} du package \tdocpack{enumitem}.
 
-    \tdoclatexinput[\tdocstyle{sbs}]{examples-admonitions-leavevmode-items.tex}
+    \tdoclatexinput[\tdocstyle{sbs},bottom=3pt,top=3pt]{examples-admonitions-leavevmode-items.tex}
 
 \end{tdoctip}
 
@@ -1792,7 +1801,7 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 
     \desc
 
-    \tdoclatexinput[\tdocstyle{sbs}]{examples-admonitions-\filename.tex}
+    \tdoclatexinput[\tdocstyle{sbs},bottom=3pt,top=3pt]{examples-admonitions-\filename.tex}
 
 }
 
@@ -2032,15 +2041,24 @@ Voici des exemples d'utilisation.
 \subsection{Codes tapés directement}
 
 \begin{tdocexa}[Face à face]
-    Via \tdocenv[{[\tdocstyle{sbs}]}]{tdoclatex}, on affichera un code et son rendu côte à côte.
-    Indiquons que \tdoclatexin#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}.
-    \tdocbasicinputDOC{examples-listing-latex-ABC.tex}
+    Afficher un code et son rendu côte à côte se fait comme suit où \tdoclatexin#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}, et la macro \tdocmacro{tdocstyle} permet de taper \tdoclatexin{\tdocstyle{sbs}} au lieu de \tdoclatexin{listing side text}.
 
+    \tdocbasicinputDOC*{examples/listing-latex/ABC.tex}
 \end{tdocexa}
 
 
+\begin{tdocnote}
+	L'argument optionnel de l'environnement \tdocenv*{tdoclatex} doit être un style pour un \tdocmacro{tcblisting}. Par exemple, on peut faire les modifications suivantes si besoin.%
+	\footnote{
+		Cette documentation utilise ceci pour obtenir des rendus corrects de codes \LaTeX\ produisant des cadres ombrés : voir la section \ref{tutodoc-admonitions}.
+	}
+
+    \tdocbasicinputDOC*{examples/listing-latex/ABC-custom.tex}
+\end{tdocnote}
+
+
 \begin{tdocexa}[À la suite]
-    \tdocenv{tdoclatex} produit le résultat suivant qui correspond à l'option par défaut \tdoclatexin#std#\,.
+    \tdocenv{tdoclatex} produit le résultat suivant où l'option par défaut correspondant à \tdoclatexin#\tdocstyle{std}#\,.
     \footnote{
         \tdoclatexin{std} fait référence au comportement \tdocquote{standard} de \tdocpack{tcolorbox} vis à vis de la librairie \tdocpack{minted}.
     }
@@ -2052,7 +2070,7 @@ Voici des exemples d'utilisation.
 
 
 \begin{tdocexa}[Juste le code]
-    Via \tdocenv[{[\tdocstyle{code}]}]{tdoclatex}, on aura juste le code comme ci-après.
+    Via l'option \tdoclatexin#\tdocstyle{code}#, on aura juste le code comme ci-après.
 
     \begin{tdoclatex}[\tdocstyle{code}]
         $A = B + C$
@@ -2111,7 +2129,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \end{tdoclatex}
 
-    Ceci produit la mise en forme suivante où l'option employée par défaut est \tdoclatexin#std#.
+    Ceci produit la mise en forme suivante où l'option par défaut est \tdoclatexin#\tdocstyle{std}#\,.
 
     \tdoclatexinput{examples-listing-latex-xyz.tex}
 
