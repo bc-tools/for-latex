@@ -316,8 +316,8 @@
 
 %%%
 % prototype::
-%     #1 : (tdoclatex-style)
-%          a shortcut for ''tcolorbox'' style.
+%     #1 : (style-abbrev)
+%          a shortcut for a ''tcolorbox'' styling command.
 %        @ #1 in [code, sbs, std]
 %
 % In the following easy-to-understand macro, we use one fictive ''tcolorbox''
@@ -990,7 +990,7 @@
 
 %%%
 % prototype::
-%     #1 : (tcolorbox-style)
+%     #1 : (tcolorbox-styling-commands)
 %          you can override the defaul settings, and also use the useful
 %          macro ''\tdoctcb''
 %
@@ -1011,7 +1011,7 @@
 
 %%%
 % prototype::
-%     #1 : (tcolorbox-style)
+%     #1 : (tcolorbox-styling-commands)
 %          :see: macro.newtcblisting{tdoclatex}
 %     #2 : (file path)
 %          the path of the file to input and format.
@@ -1021,7 +1021,7 @@
 %     ''tcolorbox'' to have more \infos about the macro ''\tdoclatexinput''.
 %%%
 \newtcbinputlisting{\tdoclatexinput}[2][]{
-  listing file = {#2},
+  listing file                = {#2},
   tutodoc-latex-listing-style = #1,
 }
 

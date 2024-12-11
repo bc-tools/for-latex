@@ -1,4 +1,4 @@
-name = input("Qui êtes-vous ?")
+name = input("Qui êtes-vous ? ")
 
 if not name:
     print("Ah, pas très bavard aujourd'hui !")

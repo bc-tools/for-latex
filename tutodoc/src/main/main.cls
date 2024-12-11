@@ -270,7 +270,7 @@
 }
 
 
-% -- tcolorbox SHORTCUT MACRO -- %
+% -- SHORTCUT MACRO -- %
 
 \ExplSyntaxOn
 
@@ -281,13 +281,12 @@
 %        @ #1 in [code, sbs, std]
 %
 % In the following easy-to-understand macro, we use one fictive ''tcolorbox''
-% style such as to indicate an unknown ''tutodoc'' shortcut style to the user.
-% For example, this can give one message similar to the following one where
-% the user has type ''MISTYPED-STYLE''.
+% style such as to indicate an unknown ''tutodoc'' shortcut style. For example,
+% this will give the following message if the user type ''MISTYPED-STYLE''.
 %
 % term::
 %     Package pgfkeys Error: I do not know the key '/tcb/[[tutodoc : tdoclatex
-%     bad option "MISTYPED-STYLE"']] and I am going to ignore it. Perhaps you
+%     bad option "MISTYPED-STYLE"]]' and I am going to ignore it. Perhaps you
 %     misspelled it.
 %
 %     See the pgfkeys package documentation for explanation.
