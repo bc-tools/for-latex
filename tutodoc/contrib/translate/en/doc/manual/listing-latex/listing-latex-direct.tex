@@ -30,12 +30,6 @@ Documenting a package or class is best done through use cases showing both the c
 }
 
 
-%\begin{tdoccaut}
-%    Version 3 of \tdocpack{minted} cannot be used at the moment, as it contains bugs: see \url{https://github.com/gpoore/minted/issues/401}. We therefore force the use of version 2 of minted.
-%
-%\end{tdoccaut}
-
-
 \subsection{\tdocquote{Inline} codes}
 \label{tutodoc-listing-latex-inline}
 
@@ -69,7 +63,7 @@ Here are some examples.
 \subsection{Directly typed codes}
 
 \begin{tdocexa}[Side by side]
-     Displaying code and rendering side by side is done as follows where \tdoclatexin#sbs# is for \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}}, and the macro \tdocmacro{tdoctcb} allows you to type \tdoclatexin{tdocstyle{sbs}} instead of \tdoclatexin{listing side text}.
+    Displaying a code and its rendering side by side is done as follows where the macro \tdocmacro{tdoctcb} allows you to just type \tdoclatexin{\tdoctcb{sbs}} instead of \tdoclatexin{listing side text} (\tdoclatexin#sbs# is for \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}}\,, while \tdoclatexin#tcb# is the standard abbreviation for \texttt{tcolorbox}).
 
     \tdocbasicinputDOC*{examples/listing-latex/ABC.tex}
 \end{tdocexa}
