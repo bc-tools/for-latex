@@ -308,9 +308,16 @@
 }
 
 
-% -------------------- %
-% -- SHORTCUT MACRO -- %
-% -------------------- %
+% ------------------ %
+% -- FOR LISTINGS -- %
+% ------------------ %
+
+%%%
+% ????
+%%%
+\newif\ifcodenolexer
+\codenolexerfalse
+
 
 \ExplSyntaxOn
 
@@ -1092,9 +1099,6 @@
 % -------------------- %
 % -- LATEX EXAMPLES -- %
 % -------------------- %
-
-\newif\ifcodenolexer
-\codenolexerfalse
 
 
 \NewExpandableDocumentCommand{\tutodoc@code@lexer}{m}{%
