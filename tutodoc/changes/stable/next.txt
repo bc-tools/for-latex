@@ -17,6 +17,18 @@
 \Refs to tools for latest \chges was wrongly written as admonition features.
 
 
+-----
+:new:
+-----
+
+[[:api:]]
+\Envs using ''tcolorbox''.
+
+    1) The new ''\tdoctcb'' macro allows to use a shortcut for regularly used styles.
+
+    1) \latex listings: the option can be any legal ''tcolorbox'' styling commands.
+
+
 --------
 :update:
 --------
@@ -40,10 +52,4 @@ Themes.
 
     1) Sub-sub-sections are numbered using lower alphabetic letters.
 
-    1) \latex listings.
-
-        * The option can be any legal ''tcblisting'' style.
-
-        * With the ''color'' theme, the back color changes from ''yellow!4'' to ''gray!5''’.
-
-    1) The new ''\tdoctcb'' macro allows to use a shortcut for regularly used styles.
+    1) \latex listings: with the ''color'' theme, the back color changes from ''yellow!4'' to ''gray!5''’.

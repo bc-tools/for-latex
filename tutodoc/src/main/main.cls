@@ -276,8 +276,8 @@
 
 %%%
 % prototype::
-%     #1 : (tdoclatex-style)
-%          a shortcut for ''tcolorbox'' style.
+%     #1 : (style-abbrev)
+%          a shortcut for a ''tcolorbox'' styling command.
 %        @ #1 in [code, sbs, std]
 %
 % In the following easy-to-understand macro, we use one fictive ''tcolorbox''

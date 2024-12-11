@@ -5,6 +5,18 @@
 11  (1.7.1-beta.4)
 ==
 
+-----
+:new:
+-----
+
+[[:api:]]
+\Envs using ''tcolorbox''.
+
+    1) The new ''\tdoctcb'' macro allows to use a shortcut for regularly used styles.
+
+    1) \latex listings: the option can be any legal ''tcolorbox'' styling commands.
+
+
 --------
 :update:
 --------
@@ -15,10 +27,6 @@ Here the last \chges.
     1) With all themes but the ''draft'' one, less vertical space is used before the "what" \envs.
 
     1) Sub-sub-sections are numbered using lower alphabetic letters.
-
-    1) \latex listings: the option can be any legal ''tcblisting'' style.
-
-    1) The new ''\tdoctcb'' macro allows to use a shortcut for regularly used styles.
 
 
 // ---------- //
