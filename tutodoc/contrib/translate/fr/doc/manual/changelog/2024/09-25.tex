@@ -1,0 +1,33 @@
+\documentclass{tutodoc}
+
+\input{../../preamble.cfg.tex}
+
+
+\begin{document}
+
+\begin{tdoctech}
+    \item La version 3 de \tdocpack{minted} ne peut pas être prise en compte pour le moment car elle comporte des bugs : voir \url{https://github.com/gpoore/minted/issues/401}. On force donc temporairement l'usage de la version 2 de \tdocpack{minted}.
+\end{tdoctech}
+
+
+\begin{tdocbreak}
+    \item L'environnement \tdocenv*{tdocimportant} a été renommé \tdocenv*{tdocimp} pour une saisie simplifiée.
+\end{tdocbreak}
+
+
+\begin{tdocnew}
+    \item Journal des changements : les environnements proposés utilisent des icônes.
+
+
+    \item Mise en avant de contenus : des cadres colorés avec des icônes sont proposés pour les environnements suivants.
+    %
+    \begin{tasks}[label=\arabic*.](3)
+        \task \tdocenv*{tdoccaution}
+        \task \tdocenv*{tdocimp}
+        \task \tdocenv*{tdocnote}
+        \task \tdocenv*{tdoctip}
+        \task \tdocenv*{tdocwarn}
+    \end{tasks}
+\end{tdocnew}
+
+\end{document}

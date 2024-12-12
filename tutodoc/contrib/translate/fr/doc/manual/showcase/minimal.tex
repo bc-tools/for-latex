@@ -1,0 +1,41 @@
+\documentclass{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\section{Un rendu en situation réelle}
+\label{tutodoc-showcase}
+
+Il est parfois utile d'obtenir directement le rendu d'un code dans la documentation. Ceci nécessite que ce type de rendu soit dissociable du texte donnant des explications.
+
+
+
+\subsection{Un rendu minimaliste par défaut}
+
+\begin{tdocexa}[Avec les textes par défaut]
+    Il peut être utile de montrer un rendu réel directement dans un document.%
+    \footnote{
+        Typiquement lorsque l'on fait une démo.
+    }
+    Ceci se tape via \tdocenv{tdocshowcase} comme suit.
+
+    \tdoclatexshow[explain = {On obtient alors le rendu suivant qui est juste la combinaison d'un faible espacement vertical et d'une simple importation.}]%
+                  {examples/showcase/default.tex}
+\end{tdocexa}
+
+
+\begin{tdocrem}
+    La section \ref{tutodoc-listing-latexshow} page \pageref{tutodoc-listing-latexshow} explique comment obtenir, via la macro \tdocmacro{tdoclatexshow}, un code suivi de son rendu réel comme dans l'exemple précédent.
+\end{tdocrem}
+
+
+\begin{tdocwarn}
+    Avec les paramètres par défaut, si le code à formater commence par un crochet ouvrant, utilisez l'une des astuces suivantes.
+
+    \tdoclatexshow[explain = {Ceci produira ce qui suit.}]%{
+    		      {examples/showcase/hook.tex}
+\end{tdocwarn}
+
+\end{document}

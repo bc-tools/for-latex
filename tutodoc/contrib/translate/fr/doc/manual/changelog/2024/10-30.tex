@@ -1,0 +1,26 @@
+\documentclass{tutodoc}
+
+\input{../../preamble.cfg.tex}
+
+
+\begin{document}
+
+\begin{tdocnew}
+	\item Les macros \tdocmacro{tdocdate} et \tdocmacro{tdocversion} ont un nouvel argument final facultatif \tdoclatexin{<voffset>} pour choisir un décalage vertical spécifique.
+
+	\item De meilleurs environnements pour indiquer les modifications apportées.
+	\begin{enumerate}
+		\item Les nouvelles clés facultatives \tdoclatexin{col}\,, \tdoclatexin{date} et \tdoclatexin{version} permettent d'indiquer la date et la version d'une modification apportée à un sujet spécifique.
+
+		\item Utilisation de \tdocmacro{paragraph} pour le titre.
+	\end{enumerate}
+\end{tdocnew}
+
+
+\begin{tdocupdate}
+	\item Changements : la police des notes de marge aura toujours une forme normale.
+
+	\item Ornement : utilisation d'un \tdoclatexin{\cleaders} pour éviter les lignes orphelines en bas de page.
+\end{tdocupdate}
+
+\end{document}

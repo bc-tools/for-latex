@@ -1,0 +1,36 @@
+\documentclass{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\subsection{Avec une bande colorée}
+
+Il est des situations où l'on doit pouvoir clairement identifier un exemple de code \LaTeX\ mis en forme. Ceci est faisable comme le montrent les exemples suivants.%
+\footnote{
+    En coulisse, les bandes sont créées sans effort grâce au package \tdocpack{clrstrip}.
+}
+
+
+\begin{tdocexa}
+	L'option \tdoclatexin{style=stripe} fournit ce qui suit.
+
+	\input{examples/showcase/stripe.tex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[Du texte et des couleurs modifiables]
+	On peut produire facilement une belle horreur comme celle qui arrive.
+
+	\input{examples/showcase/stripe-custom.tex}
+	
+	Voici le code qui a été employé.%
+	\footnote{
+		On comprend maintenant le choix de \tdoclatexin{col-stripe} au lieu de \tdoclatexin{col-rule}\,.
+	}
+
+	\tdoclatexinput<\tdoctcb{code}>{examples/showcase/stripe-custom.tex}
+\end{tdocexa}
+
+\end{document}

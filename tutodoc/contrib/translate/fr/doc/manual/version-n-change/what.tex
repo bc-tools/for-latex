@@ -1,0 +1,71 @@
+\documentclass{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\subsection{Quoi de neuf ?}
+
+\thisproj\ propose la macro \tdocmacro{tdocstartproj} et différents environnements pour indiquer rapidement et clairement ce qui a été fait lors des changements faits, ou à venir.%
+\footnote{
+    L'utilisateur n'a pas besoin de tous les détails techniques.
+}
+
+
+\begin{tdocnote}
+	Concernant les icônes, voir la note au début de la section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
+\end{tdocnote}
+
+
+\subsubsection{La sobriété avant tout}
+
+\foreach \exatitle/\filename in {
+    {Juste pour la toute première version}/%<-- Translate me!
+        first,
+    {Pour les nouveautés}/% <-- Translate me!
+        new,
+    {Pour les mises à jour}/% <-- Translate me!
+        update,
+    {Pour les bifurcations}/% <-- Translate me!
+        break,
+    {Pour les problèmes}/% <-- Translate me!
+        pb,
+    {Pour les réparations}/% <-- Translate me!
+        fix,
+    {Feuille de route}/% <-- Translate me!
+        todo,
+    {Informations techniques}/% <-- Translate me!
+        tech,
+    %
+    {Thématiques aux choix avec une icône}/%<-- Translate me!
+        user-choice-icon,
+    {Thématiques aux choix sans icône}/% <-- Translate me!
+        user-choice%
+} {
+    \begin{tdocexa}[\exatitle]
+        \leavevmode
+
+        \tdoclatexinput<\tdoctcb{sbs}>{examples/version-n-change/chges-\filename.tex}
+    \end{tdocexa}
+}
+
+
+\subsubsection{De la couleur si besoin}
+
+Il peut être utile de mettre en avant certains changements : ceci n'est faisable qu'en modifiant la couleur du contenu.
+
+\foreach \exatitle/\filename in {
+    {Une première version tape-à-l'oeil}/%<-- Translate me!
+        first,
+    {Des réparations exceptionnelles}/% <-- Translate me!
+        fix%
+} {
+    \begin{tdocexa}[\exatitle]
+        \leavevmode
+
+        \tdoclatexinput<\tdoctcb{sbs}>{examples/version-n-change/color-chges-\filename.tex}
+    \end{tdocexa}
+}
+
+\end{document}
