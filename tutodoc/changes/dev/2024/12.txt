@@ -5,6 +5,22 @@
 12  (1.7.1-beta.5)
 ==
 
+
+code prootype and co a à reprendre !!!
+
+
+-------
+:break:
+-------
+
+OK avec doc
+\tdocshowcase chaneg pour la sobriété
+
+    minmal par déaafut
+    rule
+    stripe
+
+
 --------
 :update:
 --------

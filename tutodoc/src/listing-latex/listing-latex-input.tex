@@ -12,37 +12,6 @@
 \usepackage{listing-latex.cls}
 
 
-% == FORDOC == %
-
-% Source.
-%    * https://tex.stackexchange.com/a/604698/6880
-
-\NewDocumentCommand{ \tdocextrarulerDOC }{ m }{%
-    \par
-    {
-        \centering
-        \color{green!50!black}%
-        \leavevmode
-        \kern.075\linewidth
-        \leaders\hrule height3.25pt\hfill\kern0pt
-        \footnotesize\itshape\bfseries\space\ignorespaces#1\unskip\space
-        \leaders\hrule height3.25pt\hfill\kern0pt
-        \kern.075\linewidth
-        \par
-    }
-}
-
-\NewDocumentEnvironment{ tdocshowcaseDOC }
-                       { O{ Début du rendu dans cette doc. }
-                         O{ Fin du rendu dans cette doc. } }{
-        \tdocextrarulerDOC{#1}
-        \nopagebreak\smallskip\nopagebreak
-}{
-        \nopagebreak\smallskip\nopagebreak
-        \tdocextrarulerDOC{#2}
-}
-
-
 \begin{document}
 
 \subsection{Codes importés}
@@ -115,30 +84,26 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 \subsection{Codes importés et mis en situation}
 \label{tutodoc-listing-latexshow}
 
+\begin{tdocnote}
+    Les textes par défaut de la macro \tdocmacro{tdoclatexshow} tiennent compte de la langue détectée par \thisproj.
+\end{tdocnote}
+
+
 \begin{tdocexa}[Mise en situation]
     \tdoclatexin+\tdoclatexshow{examples-listing-xyz.tex}+ produit ce qui suit.
 
-    \medskip
-
-    \begin{tdocshowcaseDOC}
-        \tdoclatexshow{examples/listing-latex/xyz.tex}
-    \end{tdocshowcaseDOC}
+    \smallskip
+    
+    \tdoclatexshow{examples/listing-latex/xyz.tex}
 \end{tdocexa}
-
-
-\begin{tdocnote}
-    Les textes par défaut tiennent compte de la langue détectée par \thisproj.
-\end{tdocnote}
 
 
 \begin{tdocexa}[Changer le texte explicatif]
     Via la clé \tdoclatexin|explain|, on peut utiliser un texte personnalisé. Ainsi, \tdoclatexin|\tdoclatexshow[explain = Voici le rendu réel.]{examples-listing-xyz.tex}| produira ce qui suit.
 
-    \medskip
+    \smallskip
 
-    \begin{tdocshowcaseDOC}
-        \tdoclatexshow[explain = Voici le rendu réel.]{examples/listing-latex/xyz.tex}
-    \end{tdocshowcaseDOC}
+    \tdoclatexshow[explain = Voici le rendu réel.]{examples/listing-latex/xyz.tex}
 \end{tdocexa}
 
 
@@ -150,15 +115,13 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \tdoclatexinput<\tdoctcb{code}>{examples/listing-latex/latexshow-options.tex}
 
-    \medskip
+    \smallskip
 
     Ceci va produire ce qui suit.
 
-    \medskip
+    \smallskip
 
-    \begin{tdocshowcaseDOC}
-        \input{examples/listing-latex/latexshow-options.tex}
-    \end{tdocshowcaseDOC}
+    \input{examples/listing-latex/latexshow-options.tex}
 \end{tdocexa}
 
 \end{document}

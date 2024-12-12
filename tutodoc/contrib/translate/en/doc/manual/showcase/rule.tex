@@ -1,0 +1,46 @@
+\documentclass{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\subsection{With framing lines}
+
+To make the formatted \LaTeX\ code more visible, you can use the \tdoclatexin{rule} style, as in the following examples.
+
+
+\begin{tdocexa}
+	The \tdoclatexin{style=rule} option provides the following where the automatically added texts will adapt to the language found by \thisproj.
+
+	\input{examples/showcase/rule.tex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[Editable text and colours]
+	You can easily obtain the following horror.
+
+	\input{examples/showcase/rule-custom.tex}
+	
+	Here's the code that was used.%
+	\footnote{
+		The next section will normalise the a priori strange choice of \tdoclatexin{col-stripe} instead of \tdoclatexin{col-rule}\,.
+	}
+
+	\tdoclatexinput<tdoctcb{code}>{examples/showcase/rule-custom.tex}
+\end{tdocexa}
+
+
+\begin{tdocnote}
+    In the previous example, the text uses the proposed darkened orange. However, the red is used as a base to obtain the colors used for the strip: the transformations used depend on the theme chosen.%
+    \footnote{
+        For example, the themes \tdoclatexin{bw} and \tdoclatexin{draft} ignore the key \tdoclatexin{col-stripe}!
+    }
+    You should also be aware that behind the scenes, the macro \tdocmacro{tdocruler} is used.
+
+    \begin{tdoclatex}<tdoctcb{std}>
+\tdocruler[red]{A decorated pseudo-title}
+    \end{tdoclatex}
+\end{tdocnote}
+
+\end{document}

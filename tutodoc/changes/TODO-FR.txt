@@ -9,18 +9,6 @@ NOW
 
 > ---------------------------- <
 
-showcase : norule aussi car utile aussi : cf la doc sur les listing
-
-
-> ---------------------------- <
-
-code avec ligne vide ajouté à tors !!!
-
-    ---> \tdoclatexinput{examples-listing-latex-xyz.tex}
-
-
-> ---------------------------- <
-
 macro de rgélage global en parallèle des options de classe (on prépare terrain pour monorepio à la tns)
 
 

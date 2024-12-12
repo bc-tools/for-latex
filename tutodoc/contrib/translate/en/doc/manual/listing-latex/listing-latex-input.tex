@@ -3,37 +3,6 @@
 \input{../preamble.cfg.tex}
 
 
-% == FORDOC == %
-
-% Source.
-%    * https://tex.stackexchange.com/a/604698/6880
-
-\NewDocumentCommand{ \tdocextrarulerDOC }{ m }{%
-    \par
-    {
-        \centering
-        \color{green!50!black}%
-        \leavevmode
-        \kern.075\linewidth
-        \leaders\hrule height3.25pt\hfill\kern0pt
-        \footnotesize\itshape\bfseries\space\ignorespaces#1\unskip\space
-        \leaders\hrule height3.25pt\hfill\kern0pt
-        \kern.075\linewidth
-        \par
-    }
-}
-
-\NewDocumentEnvironment{ tdocshowcaseDOC }
-                       { O{ Start of the rendering in this doc. }
-                         O{ End of rendering in this doc. } }{
-        \tdocextrarulerDOC{#1}
-        \nopagebreak\smallskip\nopagebreak
-}{
-        \nopagebreak\smallskip\nopagebreak
-        \tdocextrarulerDOC{#2}
-}
-
-
 \begin{document}
 
 \subsection{Imported codes}
@@ -117,11 +86,9 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \begin{tdocexa}[Showcase]
     The following comes from \tdoclatexin+\tdoclatexshow{examples-listing-xyz.tex}+.
 
-    \medskip
+    \smallskip
 
-    \begin{tdocshowcaseDOC}
-        \tdoclatexshow{examples/listing-latex/xyz.tex}
-    \end{tdocshowcaseDOC}
+    \tdoclatexshow{examples/listing-latex/xyz.tex}
 \end{tdocexa}
 
 
@@ -136,11 +103,9 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \begin{tdocexa}[Changing the explanatory text]
     Using the key \tdoclatexin|explain|, you can use custom text. Thus, \tdoclatexin|tdoclatexshow[explain = Here is the rendering.]{examples-listing-xyz.tex}| will give the following.
 
-    \medskip
+    \smallskip
 
-    \begin{tdocshowcaseDOC}
-        \tdoclatexshow[explain = Here is the rendering.]{examples/listing-latex/xyz.tex}
-    \end{tdocshowcaseDOC}
+    \tdoclatexshow[explain = Here is the rendering.]{examples/listing-latex/xyz.tex}
 \end{tdocexa}
 
 
@@ -155,15 +120,13 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
     \tdoclatexinput<\tdoctcb{code}>{examples/listing-latex/latexshow-options.tex}
 
-    \medskip
+    \smallskip
 
     This will produce the following.
 
-    \medskip
+    \smallskip
 
-    \begin{tdocshowcaseDOC}
-        \input{examples/listing-latex/latexshow-options.tex}
-    \end{tdocshowcaseDOC}
+    \input{examples/listing-latex/latexshow-options.tex}
 \end{tdocexa}
 
 \end{document}

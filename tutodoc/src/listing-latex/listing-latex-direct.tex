@@ -5,26 +5,11 @@
 \usepackage{../admonitions/admonitions.cls}
 \usepackage{../inenglish/inenglish.cls}
 \usepackage{../macroenv/macroenv.cls}
+\usepackage{../showcase/showcase.cls}
 
 % TESTING LOCAL IMPLEMENTATION %
 
 \usepackage{listing-latex.cls}
-
-
-% == FORDOC == %
-
-% Source.
-%    * https://tex.stackexchange.com/a/604698/6880
-
-\NewDocumentCommand{ \tdocbasicinputDOC }{ sm }{%
-    \IfBooleanF{#1}{Considérons le code suivant.}
-
-    \tdoclatexinput<\tdoctcb{code}>{#2}
-
-    Ceci produira ce qui suit.
-
-    \input{#2}
-}
 
 
 \begin{document}
@@ -88,7 +73,7 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 \begin{tdocexa}[Face à face]
     Afficher un code et son rendu côte à côte se fait comme suit où la macro \tdocmacro{tdoctcb} permet de juste taper \tdoclatexin{\tdoctcb{sbs}} au lieu de \tdoclatexin{listing side text} (\tdoclatexin#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}, tandis que \tdoclatexin#tcb# est l'abréviation standard de \texttt{tcolorbox}). Bien noter l'emploi de chevrons, et non de crochets (nous revenons sur ceci un plus bas).
 
-    \tdocbasicinputDOC*{examples/listing-latex/ABC.tex}
+    \tdoclatexshow{examples/listing-latex/ABC.tex}
 \end{tdocexa}
 
 
@@ -127,19 +112,19 @@ $A = B + C$
 		Cette documentation utilise les options entre chevrons pour obtenir des rendus corrects de codes \LaTeX\ produisant des cadres ombrés : voir la section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
 	}
 
-    \tdocbasicinputDOC*{examples/listing-latex/ABC-custom.tex}
+    \tdoclatexshow{examples/listing-latex/ABC-custom.tex}
 \end{tdocexa}
 
 \medskip
 
 \begin{tdocwarn}
     Pour obtenir la mise en forme par défaut d'un code commençant par un crochet, ou un chevron, il faudra bidouiller un peu comme ci-dessous.
-    \tdocbasicinputDOC*{examples/listing-latex/strange.tex}
+    \tdoclatexshow{examples/listing-latex/strange.tex}
 
     \smallskip
 
     Une autre méthode consiste à utiliser la primitive \tdocmacro{string} comme ci-après.
-    \tdocbasicinputDOC*{examples/listing-latex/strange-bis.tex}
-\end{tdocwarn}
+    \tdoclatexshow{examples/listing-latex/strange-bis.tex}
+    \end{tdocwarn}
 
 \end{document}

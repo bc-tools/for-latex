@@ -3,22 +3,6 @@
 \input{../preamble.cfg.tex}
 
 
-% == FORDOC == %
-
-% Source.
-%    * https://tex.stackexchange.com/a/604698/6880
-
-\NewDocumentCommand{ \tdocbasicinputDOC }{ sm }{%
-    \IfBooleanF{#1}{Consider the following code.}
-
-    \tdoclatexinput<\tdoctcb{code}>{#2}
-
-    This will produce the following.
-
-    \input{#2}
-}
-
-
 \begin{document}
 
 \section{Use cases in \LaTeX}
@@ -81,7 +65,7 @@ Documenting a package or class is best done through use cases showing both the c
 \begin{tdocexa}[Face to face]
     Displaying a code and its rendering side by side is done as follows where the macro \tdocmacro{tdoctcb} allows you to just type \tdoclatexin{tdoctcb{sbs}} instead of \tdoclatexin{listing side text} (\tdoclatexin#sbs# is for \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}}, while \tdoclatexin#tcb# is the standard abbreviation for \texttt{tcolorbox}). Note the use of rafters, not square brackets (more on this later).
 
-    \tdocbasicinputDOC*{examples/listing-latex/ABC.tex}
+    \tdoclatexshow{examples/listing-latex/ABC.tex}
 \end{tdocexa}
 
 
@@ -120,19 +104,19 @@ $A = B + C$
 		This documentation uses the options between rafters to obtain correct rendering of code producing shaded frames: see the section \ref{tutodoc-admonitions} on page \pageref{tutodoc-admonitions}.
 	}
 
-    \tdocbasicinputDOC*{examples/listing-latex/ABC-custom.tex}
+    \tdoclatexshow{examples/listing-latex/ABC-custom.tex}
 \end{tdocexa}
 
 \medskip
 
 \begin{tdocwarn}
     To obtain the default formatting for a code beginning with a bracket or a rafter, you'll need to do a bit of fiddling, as shown below.
-    \tdocbasicinputDOC*{examples/listing-latex/strange.tex}
+    \tdoclatexshow{examples/listing-latex/strange.tex}
 
     \smallskip
 
     Another method is to use the \tdocmacro{string} primitive, as shown below.
-    \tdocbasicinputDOC*{examples/listing-latex/strange-bis.tex}
+    \tdoclatexshow{examples/listing-latex/strange-bis.tex}
 \end{tdocwarn}
 
 \end{document}

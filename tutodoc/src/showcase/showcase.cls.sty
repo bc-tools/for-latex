@@ -64,28 +64,26 @@
 %     #3 : (color)
 %          one color used to set the one for the decorated texts printed
 %          corresponding to the two first arguments.
-%     #4 : (text color)
-%          color of the content
-%     #5 : (rule color builder)
+%     #4 : (rule color builder)
 %          the macro used to build the color from the user's rule color
 %
 %     :action: this environment just adds its content processed by \latex
 %              between centered materials produced by the macro ''\tdocruler''
 %              such as to stress the start and the end of the content.
 %%%
-\NewDocumentEnvironment{tutodoc@showcase@basic}{ m m m m m }{%
-  \tdocruler[#5{#3}]{#1}%
-  \nopagebreak\medskip\nopagebreak\color{#4}%
+\NewDocumentEnvironment{tutodoc@showcase@rules}{ m m m m }{%
+  \tdocruler[#4{#3}]{#1}%
+  \nopagebreak\medskip\nopagebreak%
 }{%
   \nopagebreak\medskip\nopagebreak%
-  \tdocruler[#5{#3}]{#2}%
+  \tdocruler[#4{#3}]{#2}%
 }
 
 
 %%%
 % prototype::
-%     #1 .. #5 : :see: env.tutodoc@showcase@basic
-%     #6       : (back color builder)
+%     #1 .. #4 : :see: env.tutodoc@showcase@rules
+%     #5       : (back color builder)
 %                the macro used to build the color from the user's back color
 %
 %     :action: this environment adds a page-width colored stripe in the
@@ -94,11 +92,11 @@
 %              produced by the macro ''\tdocruler'' such as to stress the
 %              start and the end of the content.
 %%%
-\NewDocumentEnvironment{tutodoc@showcase@colorstrip}{ m m m m m m }{
-  \begin{colorstrip}{#6{#3}}%
-    \begin{tutodoc@showcase@basic}{#1}{#2}{#3}{#4}{#5}%
+\NewDocumentEnvironment{tutodoc@showcase@colorstrip}{ m m m m m }{
+  \begin{colorstrip}{#5{#3}}%
+    \begin{tutodoc@showcase@rules}{#1}{#2}{#3}{#4}%
 }{%
-    \end{tutodoc@showcase@basic}%
+    \end{tutodoc@showcase@rules}%
   \end{colorstrip}
 }
 
@@ -107,11 +105,13 @@
 
 % :: SETTING SOME KEYS :: %
 
-\tl_new:N   \l_tutodoc_showcase_before_tl
-\tl_new:N   \l_tutodoc_showcase_after_tl
-\tl_new:N   \l_tutodoc_showcase_stripe_color_tl
-\tl_new:N   \l_tutodoc_showcase_text_color_tl
-\bool_new:N \l_tutodoc_showcase_no_stripe_bool
+\tl_new:N   \g_tutodoc_showcase_style_tl
+\tl_gset:Nn \g_tutodoc_showcase_style_tl {minimal}
+
+\tl_new:N \l_tutodoc_showcase_before_tl
+\tl_new:N \l_tutodoc_showcase_after_tl
+\tl_new:N \l_tutodoc_showcase_stripe_color_tl
+\tl_new:N \l_tutodoc_showcase_text_color_tl
 
 
 %%%
@@ -123,14 +123,19 @@
 %     after      : the descriptive text after the real output
 %%%
 \keys_define:nn { tutodoc / showcase } {
+% Style?
+  style .choices:nn = {
+    minimal,
+    rule,
+    stripe
+  } {
+    \tl_gset:Nn \g_tutodoc_showcase_style_tl {#1}
+  },
 % Colors.
   col-stripe .tl_set:N  = \l_tutodoc_showcase_stripe_color_tl,
   col-stripe .initial:n = \tutodoc@showcase@stripe@color,
   col-text .tl_set:N    = \l_tutodoc_showcase_text_color_tl,
   col-text .initial:n   = \tutodoc@showcase@text@color,
-% Stripe?
-  nostripe .bool_set:N = \l_tutodoc_showcase_no_stripe_bool,
-  nostripe .initial:n  = false,
 % Texts.
   before .tl_set:N  = \l_tutodoc_showcase_before_tl,
   before .initial:n = \tutodoc@trans@latex@show@start,
@@ -152,35 +157,45 @@
 %              It is also possible to have a coloured strip of the width
 %              of the page in the background of the content.
 %
-%     :see: env.tutodoc@showcase@basic ,
+%     :see: env.tutodoc@showcase@rules ,
 %           env.tutodoc@showcase@colorstrip
 %%%
 \NewDocumentEnvironment{tdocshowcase}{ O{} }{
   \group_begin:
     \keys_set:nn { tutodoc / showcase } { #1 }
 
-    \bool_if:NTF \l_tutodoc_showcase_no_stripe_bool {
-      \begin{tutodoc@showcase@basic}
-        { \tl_use:N \l_tutodoc_showcase_before_tl }
-        { \tl_use:N \l_tutodoc_showcase_after_tl }
-        { \tl_use:N \l_tutodoc_showcase_stripe_color_tl }
-        { \tl_use:N \l_tutodoc_showcase_text_color_tl }
-        { \tutodoc@showcase@build@rule@color }
-    }{
-      \begin{tutodoc@showcase@colorstrip}
-        { \tl_use:N \l_tutodoc_showcase_before_tl }
-        { \tl_use:N \l_tutodoc_showcase_after_tl }
-        { \tl_use:N \l_tutodoc_showcase_stripe_color_tl }
-        { \tl_use:N \l_tutodoc_showcase_text_color_tl }
-        { \tutodoc@showcase@build@rule@color }
-        { \tutodoc@showcase@build@back@color }
+    \str_case:Nn { \g_tutodoc_showcase_style_tl } {
+      { minimal } {
+        \smallskip\par
+      }
+      { rule } {
+        \smallskip
+        \begin{tutodoc@showcase@rules}
+          { \tl_use:N \l_tutodoc_showcase_before_tl }
+          { \tl_use:N \l_tutodoc_showcase_after_tl }
+          { \tl_use:N \l_tutodoc_showcase_stripe_color_tl }
+          { \tutodoc@showcase@build@rule@color }
+      }
+      { stripe } {
+        \begin{tutodoc@showcase@colorstrip}
+          { \tl_use:N \l_tutodoc_showcase_before_tl }
+          { \tl_use:N \l_tutodoc_showcase_after_tl }
+          { \tl_use:N \l_tutodoc_showcase_stripe_color_tl }
+          { \tutodoc@showcase@build@rule@color }
+          { \tutodoc@showcase@build@back@color }
+      }
     }
+
+    \color{ \tl_use:N \l_tutodoc_showcase_text_color_tl }
 }{
-    \bool_if:NTF \l_tutodoc_showcase_no_stripe_bool {
-      \end{tutodoc@showcase@basic}
-    }{
+  \str_case:Nn { \g_tutodoc_showcase_style_tl } {
+    { rule } {
+      \end{tutodoc@showcase@rules}
+    }
+    { stripe } {
       \end{tutodoc@showcase@colorstrip}
     }
+  }
   \group_end:
 }
 
