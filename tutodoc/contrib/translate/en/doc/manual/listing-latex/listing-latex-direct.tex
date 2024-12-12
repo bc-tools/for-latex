@@ -33,27 +33,43 @@ Documenting a package or class is best done through use cases showing both the c
 \subsection{\tdocquote{Inline} codes}
 \label{tutodoc-listing-latex-inline}
 
-The \tdocmacro{tdoclatexin} macro
-\footnote{
-    The name of the macro \tdocmacro{tdoclatexin} comes from \tdocquote{\tdocprewhy{in.line} \LaTeX}.
-}
-can be used to type inline code in a similar way to \tdocmacro{verb} or like a standard macro (see brace management in the last case below).
-Here are some examples.
+\begin{tdocexa}[Standard usage]
+    The \tdocmacro{tdoclatexin} macro\,%
+    \footnote{
+        The name of the macro \tdocmacro{tdoclatexin} comes from \tdocquote{\tdocprewhy{in.line} \LaTeX}\,.
+    }
+    can be used to type code in line in a similar way to \tdocmacro{verb}, or as a standard macro (see the handling of braces in the latter case below).
+    Here are some examples of use.%
+    \footnote{
+    	A background colour is deliberately used to subtly highlight the \tdoclatexin{\LaTeX} codes.
+    }
+
+    \begin{tdoclatex}<\tdoctcb{sbs}>
+1: \tdoclatexin|$a^b = c$|               \\
+2: \tdoclatexin+\tdoclatexin|$a^b = c$|+ \\
+3: \tdoclatexin{\tdoclatexin{$a^b = c$}}
+	\end{tdoclatex}
+\end{tdocexa}
 
 
-\begin{tdoclatex}<\tdoctcb{sbs}>
-    1: \tdoclatexin|$a^b = c$|               \\
-    2: \tdoclatexin+\tdoclatexin|$a^b = c$|+ \\
-    3: \tdoclatexin{\tdoclatexin{$a^b = c$}}
-\end{tdoclatex}
+\begin{tdocexa}[Possible options]
+    As the \tdocmacro{tdoclatexin} macro is based on \tdocpack{minted}, you can use all the options taken into account by \tdocpack{minted}.
+    Here are some examples.
+
+    \begin{tdoclatex}<\tdoctcb{sbs}>
+1: \tdoclatexin{$a^b = c$}             \\
+2: \tdoclatexin[style = bw]{$a^b = c$} \\
+3: \tdoclatexin[style = igor,
+                showspaces]{$a^b = c$}
+	\end{tdoclatex}
+\end{tdocexa}
 
 
 \begin{tdocnote}
-    The \tdocmacro{tdoclatexin} macro can be used in a footnote: see below.
+    The \tdocmacro{tdoclatexin} macro can be used in a footnote: see below.%
     \footnote{
-        \tdoclatexin+$minted = TOP$+ has been typed \tdoclatexin|\tdoclatexin+$minted = TOP$+| in this footnote...
+        \tdoclatexin+$minted = TOP$+ has been typed \tdoclatexin|\tdoclatexin+$minted = TOP$+| in this footnote.
     }
-    In addition, a background color is deliberately used to subtly highlight the codes \tdoclatexin#\LaTeX#\,.
 \end{tdocnote}
 
 
@@ -62,66 +78,61 @@ Here are some examples.
 
 \subsection{Directly typed codes}
 
-\begin{tdocexa}[Side by side]
-    Displaying a code and its rendering side by side is done as follows where the macro \tdocmacro{tdoctcb} allows you to just type \tdoclatexin{\tdoctcb{sbs}} instead of \tdoclatexin{listing side text} (\tdoclatexin#sbs# is for \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}}\,, while \tdoclatexin#tcb# is the standard abbreviation for \texttt{tcolorbox}).
+\begin{tdocexa}[Face to face]
+    Displaying a code and its rendering side by side is done as follows where the macro \tdocmacro{tdoctcb} allows you to just type \tdoclatexin{tdoctcb{sbs}} instead of \tdoclatexin{listing side text} (\tdoclatexin#sbs# is for \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}}, while \tdoclatexin#tcb# is the standard abbreviation for \texttt{tcolorbox}). Note the use of rafters, not square brackets (more on this later).
 
     \tdocbasicinputDOC*{examples/listing-latex/ABC.tex}
 \end{tdocexa}
 
 
-\begin{tdocnote}
-	L'argument optionnel de l'environnement \tdocenv*{tdoclatex} doit être un style pour un \tdocmacro{tcblisting}. Par exemple, on peut faire les modifications suivantes si besoin.%
-	\footnote{
-		Cette documentation utilise ceci pour obtenir des rendus corrects de codes \LaTeX\ produisant des cadres ombrés : voir la section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
-	}
-
-	The optional argument of the \tdocenv*{tdoclatex} environment must be a style for a \tdocmacro{tcblisting}. For example, the following modifications can be made if required.
-	\footnote{
-		This documentation uses this to obtain correct renderings of \LaTeX\ codes producing shaded frames: see the section \ref{tutodoc-admonitions} on page \pageref{tutodoc-admonitions}.
-	}
-
-    \tdocbasicinputDOC*{examples/listing-latex/ABC-custom.tex}
-\end{tdocnote}
-
-
-% ------------------ %
-
-
 \begin{tdocexa}[Following]
-    \tdocenv{tdoclatex} produces the following result via the default option corresponding to \tdoclatexin#\tdoctcb{std}#\,.
+    \tdocenv{tdoclatex} produces the following result (this default setting is also obtained by using \tdoclatexin#\tdoctcb{std}#).%
     \footnote{
         \tdoclatexin{std} refers to the \tdocquote{standard} behaviour of \tdocpack{tcolorbox} in relation to the \tdocpack{minted} library.
     }
 
     \begin{tdoclatex}
-        $A = B + C$
+$A = B + C$
     \end{tdoclatex}
 \end{tdocexa}
-
-
-% ------------------ %
 
 
 \begin{tdocexa}[Just the code]
-    Via the option \tdoclatexin#\tdoctcb{code}#, we'll just get the code as shown below.
+    Via \tdoclatexin#\tdoctcb{code}#, we'll just get the code as below.
 
     \begin{tdoclatex}<\tdoctcb{code}>
-        $A = B + C$
+$A = B + C$
     \end{tdoclatex}
 \end{tdocexa}
 
 
-% ------------------ %
+\begin{tdocexa}[Customise]
+	The \tdocenv*{tdoclatex} environment accepts two types of optional argument.
+	%
+	\begin{enumerate}
+		\item Between classic square brackets, you can use any option taken into account by \tdocpack{minted}.
 
+		\item Between rafters, you can use any option taken into account by the environments obtained via \tdocpack{tcolorbox}.
+	\end{enumerate}
+
+	For example, the following modifications can be made if required.%
+	\footnote{
+		This documentation uses the options between rafters to obtain correct rendering of code producing shaded frames: see the section \ref{tutodoc-admonitions} on page \pageref{tutodoc-admonitions}.
+	}
+
+    \tdocbasicinputDOC*{examples/listing-latex/ABC-custom.tex}
+\end{tdocexa}
+
+\medskip
 
 \begin{tdocwarn}
-    With default formatting, if the code begins with an opening bracket, the default option must be explicitly indicated.
-    \tdocbasicinputDOC{examples/listing-latex/strange.tex}
+    To obtain the default formatting for a code beginning with a bracket or a rafter, you'll need to do a bit of fiddling, as shown below.
+    \tdocbasicinputDOC*{examples/listing-latex/strange.tex}
 
     \smallskip
 
-    Another method is to use the \tdocmacro{string} primitive.
-    \tdocbasicinputDOC{examples/listing-latex/strange-bis.tex}
+    Another method is to use the \tdocmacro{string} primitive, as shown below.
+    \tdocbasicinputDOC*{examples/listing-latex/strange-bis.tex}
 \end{tdocwarn}
 
 \end{document}

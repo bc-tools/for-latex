@@ -43,7 +43,7 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 \label{tutodoc-listing-latex-inline}
 
 \begin{tdocexa}[Usage standard]
-    La macro \tdocmacro{tdoclatexin}
+    La macro \tdocmacro{tdoclatexin}\,%
     \footnote{
         Le nom de la macro \tdocmacro{tdoclatexin} vient de \tdocquote{\tdocprewhy{in.line} \LaTeX} soit \tdocinEN{\LaTeX\ en ligne}.
     }
@@ -60,8 +60,9 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 	\end{tdoclatex}
 \end{tdocexa}
 
+
 \begin{tdocexa}[Des options possibles]
-    Comme la macro \tdocmacro{tdoclatexin} s'appuie sur \tdocpack{minted}, on peut utiliser toutes les options prises en compte par \tdocpack{minted}. 
+    Comme la macro \tdocmacro{tdoclatexin} s'appuie sur \tdocpack{minted}, on peut utiliser toutes les options prises en compte par \tdocpack{minted}.
     Voici des exemples d'utilisation.
 
     \begin{tdoclatex}<\tdoctcb{sbs}>
@@ -76,7 +77,7 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 \begin{tdocnote}
     La macro \tdocmacro{tdoclatexin} est utilisable dans une note de pied de page : voir ci-dessous.
     \footnote{
-        \tdoclatexin+$minted = TOP$+ a été tapé \tdoclatexin|\tdoclatexin+$minted = TOP$+| dans cette note de bas de page..
+        \tdoclatexin+$minted = TOP$+ a été tapé \tdoclatexin|\tdoclatexin+$minted = TOP$+| dans cette note de bas de page.
     }
 \end{tdocnote}
 
@@ -116,11 +117,11 @@ $A = B + C$
 	L'environnement \tdocenv*{tdoclatex} accepte deux types d'argument optionnel.
 	%
 	\begin{enumerate}
-		\item Entre des chevrons, on peut employer toute option prise en compte par les environnements obtenus via \tdocpack{tcolorbox}.
-
 		\item Entre de classiques crochets, on peut employer toute option prise en compte par \tdocpack{minted}.
+
+        \item Entre des chevrons, on peut employer toute option prise en compte par les environnements obtenus via \tdocpack{tcolorbox}.
 	\end{enumerate}
-	
+
 	Par exemple, on peut faire les modifications suivantes si besoin.%
 	\footnote{
 		Cette documentation utilise les options entre chevrons pour obtenir des rendus corrects de codes \LaTeX\ produisant des cadres ombrés : voir la section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
@@ -132,7 +133,7 @@ $A = B + C$
 \medskip
 
 \begin{tdocwarn}
-    Pour obtenir la mise en forme par défaut d'un code commençant par un crochet, ou un chevron, ouvrant, il faudra bidouiller un peu comme ci-dessous.
+    Pour obtenir la mise en forme par défaut d'un code commençant par un crochet, ou un chevron, il faudra bidouiller un peu comme ci-dessous.
     \tdocbasicinputDOC*{examples/listing-latex/strange.tex}
 
     \smallskip
