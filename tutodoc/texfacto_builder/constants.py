@@ -260,6 +260,8 @@ if __name__ == "__main__":
 \tdoclatexinput[opt1]{examples/admonitions/exa.tex}
 \tdoclatexinput<opt2>{examples/admonitions/exa.tex}
 \tdoclatexinput[opt1]<opt2>{examples/admonitions/exa.tex}
+
+\tdoclatexinput<tdoctcb{code}>{examples-showcase-rule-custom.tex}
     """.split("\n"):
         texline = texline.strip()
 

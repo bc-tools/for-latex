@@ -1525,7 +1525,7 @@ As this language is included in the list of languages taken into account, see be
         \task \tdoclatexin|es| : Spanish.
         \task \tdoclatexin|fr| : French.
 \end{tasks}
-                    
+
 
 
 \begin{tdocnote}
@@ -1815,8 +1815,7 @@ It is sometimes useful to render code directly in the documentation. This requir
     }
     This is typed via \tdocenv{tdocshowcase} as follows.
 
-    \tdoclatexshow[explain = {This results in the following rendering, which is just a combination of low vertical spacing and simple import.}]%.
-                  {examples/showcase/default.tex}
+    \tdoclatexshow[explain = {This results in the following rendering, which is just a combination of low vertical spacing and simple import.}]{examples-showcase-default.tex}
 \end{tdocexa}
 
 
@@ -1828,8 +1827,7 @@ It is sometimes useful to render code directly in the documentation. This requir
 \begin{tdocwarn}
     With the default settings, if the code to be formatted begins with an opening bracket, use one of the following trick.
 
-    \tdoclatexshow[explain = {This will produce the following.}]%{
-    		      {examples/showcase/hook.tex}
+    \tdoclatexshow[explain = {This will produce the following.}]{examples-showcase-hook.tex}
 \end{tdocwarn}
 
 
@@ -1849,13 +1847,13 @@ To make the formatted \LaTeX\ code more visible, you can use the \tdoclatexin{ru
 	You can easily obtain the following horror.
 
 	\input{examples-showcase-rule-custom.tex}
-	
+
 	Here's the code that was used.%
 	\footnote{
 		The next section will normalise the a priori strange choice of \tdoclatexin{col-stripe} instead of \tdoclatexin{col-rule}\,.
 	}
 
-	\tdoclatexinput<tdoctcb{code}>{examples-showcase-rule-custom.tex}
+	\tdoclatexinput<\tdoctcb{code}>{examples-showcase-rule-custom.tex}
 \end{tdocexa}
 
 
@@ -1866,7 +1864,7 @@ To make the formatted \LaTeX\ code more visible, you can use the \tdoclatexin{ru
     }
     You should also be aware that behind the scenes, the macro \tdocmacro{tdocruler} is used.
 
-    \begin{tdoclatex}<tdoctcb{std}>
+    \begin{tdoclatex}<\tdoctcb{std}>
 \tdocruler[red]{A decorated pseudo-title}
     \end{tdoclatex}
 \end{tdocnote}
@@ -1891,7 +1889,7 @@ There are situations where you need to be able to clearly identify an example of
 	You can easily produce a beautiful horror like the one below.
 
 	\input{examples-showcase-stripe-custom.tex}
-	
+
 	Here's the code that was used.%
 	\footnote{
 		Now we understand why we chose \tdoclatexin{col-stripe} instead of \tdoclatexin{col-rule}\,.
@@ -1917,11 +1915,11 @@ To obtain renderings by importing the code from an external file, instead of typ
 	\begin{tdocexa}[\exatitle]
 		\expandafter\IfBlankTF\expandafter{\option}{
 			Here is the edifying content of the example chosen.
-			
+
 	    	\tdocshowcaseinput{examples-showcase-external.tex}
 		}{
 	    	The option \expandafter\tdoclatexinexpandafter{\option} provides the following.
-		
+
 			\smallskip
 			\expandaftertdocshowcaseinputexpandafter[\option]{examples/showcase/external.tex}
 		}
