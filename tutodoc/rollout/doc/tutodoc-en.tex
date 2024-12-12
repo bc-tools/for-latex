@@ -1097,6 +1097,12 @@ VERSUS.
 
 
 \begin{filecontents*}[overwrite]{examples-showcase-hook.tex}
+\begin{tdocshowcase}[]
+    [This works...]
+\end{tdocshowcase}
+
+OR.
+
 \begin{tdocshowcase}
     \string[This works...]
 \end{tdocshowcase}
@@ -1919,6 +1925,29 @@ To obtain renderings by importing the code from an external file, instead of typ
 	    	\tdocshowcaseinput{examples-showcase-external.tex}
 		}{
 	    	The option \expandafter\tdoclatexin\expandafter{\option} provides the following.
+		
+			\smallskip
+			\expandafter\tdocshowcaseinput\expandafter[\option]{examples-showcase-external.tex}
+		}
+	\end{tdocexa}
+}
+
+
+\foreach \exatitle/\option in {
+    {Sans option}/% <-- Translate me!
+    {},
+    {Juste les lignes cadrantes}/% <-- Translate me!
+    {style=rule},
+    {Une bande colorée}/% <-- Translate me!
+    {style=stripe, col-stripe=red, col-text=LightCoral}%
+}{
+	\begin{tdocexa}[\exatitle]
+		\expandafter\IfBlankTF\expandafter{\option}{
+			Voici le contenu édifiant de l'exemple choisi.
+			
+	    	\tdocshowcaseinput{examples-showcase-external.tex}
+		}{
+	    	L'option \expandafter\tdoclatexin\expandafter{\option} fournit ce qui suit.
 		
 			\smallskip
 			\expandafter\tdocshowcaseinput\expandafter[\option]{examples-showcase-external.tex}

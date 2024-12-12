@@ -839,7 +839,7 @@
     rule,
     stripe
   } {
-    \tl_gset:Nn \g_tutodoc_showcase_style_tl {#1}
+    \tl_gset:Nx \g_tutodoc_showcase_style_tl {#1}
   },
 % Colors.
   col-stripe .tl_set:N  = \l_tutodoc_showcase_stripe_color_tl,
@@ -928,15 +928,9 @@
 %          the path of a file
 %%%
 \NewDocumentCommand{\tdocshowcaseinput}{ O{} m }{
-  \group_begin:
-    \keys_set_known:nnN { tutodoc / showcase }
-      { #1 }
-      \l__tutodoc_showcase_options_tl
-
-    \exp_last_unbraced:NNV \tdocshowcase [\l__tutodoc_showcase_options_tl]
-      \input{#2}
-    \endtdocshowcase
-  \group_end:
+  \begin{tdocshowcase}[#1]
+    \input{#2}
+  \end{tdocshowcase}
 }
 
 \ExplSyntaxOff
