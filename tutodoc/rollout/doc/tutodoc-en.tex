@@ -1525,7 +1525,7 @@ As this language is included in the list of languages taken into account, see be
         \task \tdoclatexin|es| : Spanish.
         \task \tdoclatexin|fr| : French.
 \end{tasks}
-
+                    
 
 
 \begin{tdocnote}
@@ -1889,7 +1889,7 @@ There are situations where you need to be able to clearly identify an example of
 	You can easily produce a beautiful horror like the one below.
 
 	\input{examples-showcase-stripe-custom.tex}
-
+	
 	Here's the code that was used.%
 	\footnote{
 		Now we understand why we chose \tdoclatexin{col-stripe} instead of \tdoclatexin{col-rule}\,.
@@ -1915,13 +1915,13 @@ To obtain renderings by importing the code from an external file, instead of typ
 	\begin{tdocexa}[\exatitle]
 		\expandafter\IfBlankTF\expandafter{\option}{
 			Here is the edifying content of the example chosen.
-
+			
 	    	\tdocshowcaseinput{examples-showcase-external.tex}
 		}{
-	    	The option \expandafter\tdoclatexinexpandafter{\option} provides the following.
-
+	    	The option \expandafter\tdoclatexin\expandafter{\option} provides the following.
+		
 			\smallskip
-			\expandaftertdocshowcaseinputexpandafter[\option]{examples/showcase/external.tex}
+			\expandafter\tdocshowcaseinput\expandafter[\option]{examples-showcase-external.tex}
 		}
 	\end{tdocexa}
 }

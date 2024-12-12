@@ -335,15 +335,21 @@ print_frame(
 )
 
 def ugly_hack(content):
-    content = content.replace(
-        "{examples/listing-latex/xyz.tex}",
-        "{examples-listing-latex-xyz.tex}",
-    )
-
-    content = content.replace(
-        "{../main/tutodoc-main-locale",
-        "{tutodoc-main-locale",
-    )
+    for old, new in [
+        (
+            "{examples/listing-latex/xyz.tex}",
+            "{examples-listing-latex-xyz.tex}",
+        ),
+        (
+            "examples/showcase/external.tex",
+            "examples-showcase-external.tex",
+        ),
+        (
+            "{../main/tutodoc-main-locale",
+            "{tutodoc-main-locale",
+        ),
+    ]:
+        content = content.replace(old, new)
 
     return content
 
