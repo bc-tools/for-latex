@@ -817,9 +817,7 @@
 % :: SETTING SOME KEYS :: %
 % ::::::::::::::::::::::: %
 
-\tl_new:N   \g_tutodoc_showcase_style_tl
-\tl_gset:Nn \g_tutodoc_showcase_style_tl {minimal}
-
+\tl_new:N \l_tutodoc_showcase_style_tl
 \tl_new:N \l_tutodoc_showcase_before_tl
 \tl_new:N \l_tutodoc_showcase_after_tl
 \tl_new:N \l_tutodoc_showcase_stripe_color_tl
@@ -841,7 +839,7 @@
     rule,
     stripe
   } {
-    \tl_gset:Nn \g_tutodoc_showcase_style_tl {#1}
+    \tl_set:Nn \l_tutodoc_showcase_style_tl {#1}
   },
 % Colors.
   col-stripe .tl_set:N  = \l_tutodoc_showcase_stripe_color_tl,
@@ -876,6 +874,7 @@
 %%%
 \NewDocumentEnvironment{tdocshowcase}{ O{} }{
   \group_begin:
+    \tl_set:Nn \l_tutodoc_showcase_style_tl {minimal}
     \keys_set:nn { tutodoc / showcase } { #1 }
 
     \str_case:Nn { \g_tutodoc_showcase_style_tl } {
