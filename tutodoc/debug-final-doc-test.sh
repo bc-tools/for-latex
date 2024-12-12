@@ -6,6 +6,7 @@
 
 THISDIR=`dirname $0 | while read a; do cd $a && pwd && break; done`
 PROJECTNAME=$(basename "$THISDIR")
+COMPILE_FAILED_FILES=()
 
 
 # ------------------- #
@@ -24,7 +25,15 @@ fi
 # ------------------------------- #
 
 function nocompile {
-    echo "LaTeX compilation failed with\n$1"
+    COMPILE_FAILED_FILES=(${COMPILE_FAILED_FILES[@]} $1)
+    
+    echo "LaTeX compilation failed with..."
+    
+    for fname in ${COMPILE_FAILED_FILES[@]}
+    do
+        echo "    + $fname"
+    done
+    
     open "$1"
 }
 

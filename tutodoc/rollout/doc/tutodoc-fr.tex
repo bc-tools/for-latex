@@ -1707,14 +1707,14 @@ Pour modifier la mise en forme générale, la classe \thisproj\ propose l'option
 Des exemples numérotés, si besoin, s'indiquent via \tdocenv{tdocexa} qui propose un argument optionnel pour ajouter un mini-titre.
 Voici deux usages possibles.
 
-\tdoclatexinput<\tdoctcb{sbs}>{examples/admonitions/exa.tex}
+\tdoclatexinput<\tdoctcb{sbs}>{examples-admonitions-exa.tex}
 
 
 \begin{tdoctip}
     Il peut parfois être utile de revenir à la ligne dès le début du contenu. Le code suivant montre comment faire (ce tour de passe-passe reste valable pour l'environnement \verb#tdocrem# présenté juste après). Noter au passage que la numérotation suit celle de l'exemple précédent comme souhaité.
 \end{tdoctip}
 
-\tdoclatexinput<\tdoctcb{sbs}>{examples/admonitions/exa-leavevmode.tex}
+\tdoclatexinput<\tdoctcb{sbs}>{examples-admonitions-exa-leavevmode.tex}
 
 
 %\subsection{Du contenu dans le flot de la lecture}
@@ -1724,7 +1724,7 @@ Voici deux usages possibles.
 Tout se passe via \tdocenv{tdocrem} avec un fonctionnement identique à l'environnement \tdocenv*{tdocexa} comme le montre l'exemple suivant.
 
 
-\tdoclatexinput<\tdoctcb{sbs}>{examples/admonitions/rmk.tex}
+\tdoclatexinput<\tdoctcb{sbs}>{examples-admonitions-rmk.tex}
 
 
 \subsection{Du contenu tape-à-l'oeil}
@@ -1747,7 +1747,7 @@ Tout se passe via \tdocenv{tdocrem} avec un fonctionnement identique à l'enviro
 
 L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'employer.
 
-\tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples/admonitions/tip.tex}
+\tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples-admonitions-tip.tex}
 
 
 \smallskip
@@ -1756,7 +1756,7 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 \begin{tdoctip}
     Quelque fois, un contenu mis en avant peut se réduire à une liste. Dans ce cas, la mise en forme peut être améliorée comme suit où nous utilisons l'option \tdoclatexin{wide} du package \tdocpack{enumitem} qui est importé par cette documentation.
 
-    \tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples/admonitions/leavevmode-items.tex}
+    \tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples-admonitions-leavevmode-items.tex}
 \end{tdoctip}
 
 
@@ -1781,7 +1781,7 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
 
     \desc
 
-    \tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples/admonitions/\filename.tex}
+    \tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples-admonitions-\filename.tex}
 }
 
 
@@ -1877,21 +1877,21 @@ Pour rendre plus visible le code \LaTeX\ mis en forme de façon sombre, on peut 
 \begin{tdocexa}
 	L'option \tdoclatexin{style=rule} permet d'obtenir ce qui suit ce qui suit où les textes ajoutés automatiquement s'adapteront à la langue repéré par \thisproj.
 
-	\input{examples/showcase/rule.tex}
+	\input{examples-showcase-rule.tex}
 \end{tdocexa}
 
 
 \begin{tdocexa}[Du texte et des couleurs modifiables]
 	On peut obtenir facilement l'horreur suivante.
 
-	\input{examples/showcase/rule-custom.tex}
+	\input{examples-showcase-rule-custom.tex}
 	
 	Voici le code qui a été employé.%
 	\footnote{
 		La section suivante va normaliser le choix, a priori étrange, de \tdoclatexin{col-stripe} au lieu de \tdoclatexin{col-rule}\,.
 	}
 
-	\tdoclatexinput<\tdoctcb{code}>{examples/showcase/rule-custom.tex}
+	\tdoclatexinput<\tdoctcb{code}>{examples-showcase-rule-custom.tex}
 \end{tdocexa}
 
 
@@ -1920,21 +1920,21 @@ Il est des situations où l'on doit pouvoir clairement identifier un exemple de 
 \begin{tdocexa}
 	L'option \tdoclatexin{style=stripe} fournit ce qui suit.
 
-	\input{examples/showcase/stripe.tex}
+	\input{examples-showcase-stripe.tex}
 \end{tdocexa}
 
 
 \begin{tdocexa}[Du texte et des couleurs modifiables]
 	On peut produire facilement une belle horreur comme celle qui arrive.
 
-	\input{examples/showcase/stripe-custom.tex}
+	\input{examples-showcase-stripe-custom.tex}
 	
 	Voici le code qui a été employé.%
 	\footnote{
 		On comprend maintenant le choix de \tdoclatexin{col-stripe} au lieu de \tdoclatexin{col-rule}\,.
 	}
 
-	\tdoclatexinput<\tdoctcb{code}>{examples/showcase/stripe-custom.tex}
+	\tdoclatexinput<\tdoctcb{code}>{examples-showcase-stripe-custom.tex}
 \end{tdocexa}
 
 
@@ -1955,7 +1955,7 @@ Pour obtenir des rendus en important le code depuis un fichier externe, au lieu 
 		\expandafter\IfBlankTF\expandafter{\option}{
 			Voici le contenu édifiant de l'exemple choisi.
 			
-	    	\tdocshowcaseinput{examples/showcase/external.tex}
+	    	\tdocshowcaseinput{examples-showcase-external.tex}
 		}{
 	    	L'option \expandafter\tdoclatexin\expandafter{\option} fournit ce qui suit.
 		
@@ -2025,7 +2025,7 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 \begin{tdocexa}[Face à face]
     Afficher un code et son rendu côte à côte se fait comme suit où la macro \tdocmacro{tdoctcb} permet de juste taper \tdoclatexin{\tdoctcb{sbs}} au lieu de \tdoclatexin{listing side text} (\tdoclatexin#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}, tandis que \tdoclatexin#tcb# est l'abréviation standard de \texttt{tcolorbox}). Bien noter l'emploi de chevrons, et non de crochets (nous revenons sur ceci un plus bas).
 
-    \tdoclatexshow{examples/listing-latex/ABC.tex}
+    \tdoclatexshow{examples-listing-latex-ABC.tex}
 \end{tdocexa}
 
 
@@ -2064,19 +2064,19 @@ $A = B + C$
 		Cette documentation utilise les options entre chevrons pour obtenir des rendus corrects de codes \LaTeX\ produisant des cadres ombrés : voir la section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
 	}
 
-    \tdoclatexshow{examples/listing-latex/ABC-custom.tex}
+    \tdoclatexshow{examples-listing-latex-ABC-custom.tex}
 \end{tdocexa}
 
 \medskip
 
 \begin{tdocwarn}
     Pour obtenir la mise en forme par défaut d'un code commençant par un crochet, ou un chevron, il faudra bidouiller un peu comme ci-dessous.
-    \tdoclatexshow{examples/listing-latex/strange.tex}
+    \tdoclatexshow{examples-listing-latex-strange.tex}
 
     \smallskip
 
     Une autre méthode consiste à utiliser la primitive \tdocmacro{string} comme ci-après.
-    \tdoclatexshow{examples/listing-latex/strange-bis.tex}
+    \tdoclatexshow{examples-listing-latex-strange-bis.tex}
     \end{tdocwarn}
 
 
@@ -2179,7 +2179,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \medskip
 
-    \tdoclatexinput<\tdoctcb{code}>{examples/listing-latex/latexshow-options.tex}
+    \tdoclatexinput<\tdoctcb{code}>{examples-listing-latex-latexshow-options.tex}
 
     \smallskip
 
@@ -2187,7 +2187,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 
     \smallskip
 
-    \input{examples/listing-latex/latexshow-options.tex}
+    \input{examples-listing-latex-latexshow-options.tex}
 \end{tdocexa}
 
 
@@ -2252,28 +2252,28 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 \begin{tdocexa}[Dater des nouveautés]
     La macro \tdocmacro{tdocdate} permet d'indiquer une date dans la marge comme dans l'exemple suivant.
 
-    \tdoclatexshow{examples/version-n-change/dating.tex}
+    \tdoclatexshow{examples-version-n-change-dating.tex}
 \end{tdocexa}
 
 
 \begin{tdocexa}[Versionner des nouveautés en les datant événtuellement]
     Associer un numéro de version à une nouveauté se fait via la macro \tdocmacro{tdocversion}, la couleur et la date étant des arguments optionnels.
 
-    \tdoclatexshow{examples/version-n-change/versioning.tex}
+    \tdoclatexshow{examples-version-n-change-versioning.tex}
 \end{tdocexa}
 
 
 \begin{tdocexa}[Attention avec les titres de paragraphe]
 	L'exemple suivant montre qu'il faut placer une dates et/ou une version juste après un titre de paragraphe, et non avant.
 
-	\tdoclatexshow{examples/version-n-change/para-title.tex}
+	\tdoclatexshow{examples-version-n-change-para-title.tex}
 \end{tdocexa}
 
 
 \begin{tdocexa}[Régler le positionnement vertical]
 	Si besoin, on peut modifier le décalage vertical utilisé pour bien placer les dates et les versions dans la marge, la valeur par défaut étant $(-8\,\mathit{pt})$.
 
-	\tdoclatexshow{examples/version-n-change/manual-setting.tex}
+	\tdoclatexshow{examples-version-n-change-manual-setting.tex}
 \end{tdocexa}
 
 
@@ -2336,7 +2336,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput<\tdoctcb{sbs}>{examples/version-n-change/chges-\filename.tex}
+        \tdoclatexinput<\tdoctcb{sbs}>{examples-version-n-change-chges-\filename.tex}
     \end{tdocexa}
 }
 
@@ -2354,7 +2354,7 @@ Il peut être utile de mettre en avant certains changements : ceci n'est faisabl
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput<\tdoctcb{sbs}>{examples/version-n-change/color-chges-\filename.tex}
+        \tdoclatexinput<\tdoctcb{sbs}>{examples-version-n-change-color-chges-\filename.tex}
     \end{tdocexa}
 }
 
@@ -2363,7 +2363,7 @@ Il peut être utile de mettre en avant certains changements : ceci n'est faisabl
 
 Les clés optionnelles \tdoclatexin{col-chges}\,, \tdoclatexin{date} et \tdoclatexin{version} permettent de dater et versionner directement un changement d'un type particulier. Voici des exemples d'utilisation.
 
-\tdoclatexshow{examples/version-n-change/what-n-when.tex}
+\tdoclatexshow{examples-version-n-change-what-n-when.tex}
 
 
 \section{Décoration}
