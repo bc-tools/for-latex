@@ -264,7 +264,6 @@ def tex_resrc(
 
             old_2_new_path[old_path] = new_path
 
-
             resrc.append(
                 f"""
 \\begin{{filecontents*}}[overwrite]{{{new_path}}}

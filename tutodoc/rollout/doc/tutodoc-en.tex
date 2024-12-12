@@ -35,7 +35,7 @@
 }
 
 \newcommand\myhighlightedtext{
-    What to say
+    What to say\,%
     \footnote{
         Let's not forget the footnotes...
     }?
@@ -235,7 +235,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 }
 
 \newcommand\myhighlightedtext{
-    What to say
+    What to say\,%
     \footnote{
         Let's not forget the footnotes...
     }?
@@ -435,7 +435,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 }
 
 \newcommand\myhighlightedtext{
-    What to say
+    What to say\,%
     \footnote{
         Let's not forget the footnotes...
     }?
@@ -635,7 +635,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 }
 
 \newcommand\myhighlightedtext{
-    What to say
+    What to say\,%
     \footnote{
         Let's not forget the footnotes...
     }?
@@ -1096,16 +1096,6 @@ VERSUS.
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-showcase-customized.tex}
-\begin{tdocshowcase}[before     = My beginning,
-                     after      = My end,
-                     col-stripe = red,
-                     col-text   = orange!75!black]
-    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
-\end{tdocshowcase}
-\end{filecontents*}
-
-
 \begin{filecontents*}[overwrite]{examples-showcase-hook.tex}
 \begin{tdocshowcase}
     \string[This works...]
@@ -1113,12 +1103,30 @@ VERSUS.
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-showcase-nostripe-customized.tex}
-\begin{tdocshowcase}[nostripe,
-                     before     = My beginning,
-                     after      = My end,
+\begin{filecontents*}[overwrite]{examples-showcase-rule.tex}
+\begin{tdocshowcase}[style = rule]
+    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+\end{tdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-showcase-stripe-custom.tex}
+\begin{tdocshowcase}[style      = stripe,
                      col-stripe = green,
-                     col-text   = purple]
+                     col-text   = purple,
+                     before     = Mon début,
+                     after      = Ma fin à moi]
+    Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
+\end{tdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-showcase-rule-custom.tex}
+\begin{tdocshowcase}[style      = rule,
+                     col-stripe = red,
+                     col-text   = orange!75!black,
+                     before     = My beginning,
+                     after      = My end]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 \end{tdocshowcase}
 \end{filecontents*}
@@ -1140,26 +1148,27 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-showcase-nostripe.tex}
-\begin{tdocshowcase}[nostripe]
+\begin{filecontents*}[overwrite]{examples-showcase-stripe.tex}
+\begin{tdocshowcase}[style = stripe]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 \end{tdocshowcase}
 \end{filecontents*}
 
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-latexshow-options.tex}
-\tdoclatexshow[explain   = What comes next is colorful...,
-               before    = Rendering below.,
-               after     = Finished rendering.,
+\tdoclatexshow[style      = stripe,
                col-stripe = orange,
-               col-text   = blue!70!black]
+               col-text   = blue!70!black,
+               before     = Rendering below.,
+               explain    = What comes next is colorful...,
+               after      = Finished rendering.]
                {examples-listing-latex-xyz.tex}
 \end{filecontents*}
 
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-ABC.tex}
 \begin{tdoclatex}<\tdoctcb{sbs}>
-    $A = B + C$
+$A = B + C$
 \end{tdoclatex}
 \end{filecontents*}
 
@@ -1171,24 +1180,38 @@ $x y z = 1$
 
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-strange.tex}
-\begin{tdoclatex}<\tdoctcb{std}>
-    [Strange... Or not!]
+\begin{tdoclatex}[]
+[Strange... Or not!]
+\end{tdoclatex}
+OR.
+\begin{tdoclatex}<>
+\string<Strange... Or not!>
 \end{tdoclatex}
 \end{filecontents*}
 
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-ABC-custom.tex}
-\begin{tdoclatex}<\tdoctcb{sbs},
-                  top    = 10pt,
-                  bottom = 10pt>
-    $A = B + C$
+\begin{tdoclatex}%
+    [linenos, style = igor]%
+    <\tdoctcb{sbs},
+     attach boxed title to top left = {yshift = -9pt},
+     fonttitle                      = \bfseries,
+     title                          = Local modifications,
+     top                            = 10pt>
+% Sometimes useful, but don't overuse it!
+$A = B + C$
+% End of this demonstration.
 \end{tdoclatex}
 \end{filecontents*}
 
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-strange-bis.tex}
 \begin{tdoclatex}
-    \string[Strange... Or not!]
+\string[Strange... Or not!]
+\end{tdoclatex}
+OR.
+\begin{tdoclatex}
+\string<Strange... Or not!>
 \end{tdoclatex}
 \end{filecontents*}
 
@@ -1251,53 +1274,6 @@ $x y z = 1$
 %
 % See the French version of this file for the text to be used
 % for languages other than English.
-
-
-% == FORDOC == %
-
-% Source.
-%    * https://tex.stackexchange.com/a/604698/6880
-
-\NewDocumentCommand{ \tdocbasicinputDOC }{ sm }{%
-    \IfBooleanF{#1}{Consider the following code.}
-
-    \tdoclatexinput<\tdoctcb{code}>{#2}
-
-    This will produce the following.
-
-    \input{#2}
-}
-
-
-% == FORDOC == %
-
-% Source.
-%    * https://tex.stackexchange.com/a/604698/6880
-
-\NewDocumentCommand{ \tdocextrarulerDOC }{ m }{%
-    \par
-    {
-        \centering
-        \color{green!50!black}%
-        \leavevmode
-        \kern.075\linewidth
-        \leaders\hrule height3.25pt\hfill\kern0pt
-        \footnotesize\itshape\bfseries\space\ignorespaces#1\unskip\space
-        \leaders\hrule height3.25pt\hfill\kern0pt
-        \kern.075\linewidth
-        \par
-    }
-}
-
-\NewDocumentEnvironment{ tdocshowcaseDOC }
-                       { O{ Start of the rendering in this doc. }
-                         O{ End of rendering in this doc. } }{
-        \tdocextrarulerDOC{#1}
-        \nopagebreak\smallskip\nopagebreak
-}{
-        \nopagebreak\smallskip\nopagebreak
-        \tdocextrarulerDOC{#2}
-}
 
 
 % == FORDOC == %
@@ -1666,7 +1642,7 @@ w
 \section{Highlighting content}
 
 \begin{tdocnote}
-    The environments presented in this section
+    The environments presented in this section\,%
     \footnote{
         The formatting comes from the \tdocpack{keytheorems} package.
     }
@@ -1694,7 +1670,7 @@ w
 Numbered examples, if required, are indicated via \tdocenv{tdocexa}, which offers an optional argument for adding a mini-title.
 Here are two possible uses.
 
-\tdoclatexinput<\tdoctcb{sbs}>{examples-admonitions-exa.tex}
+\tdoclatexinput<\tdoctcb{sbs}>{examples/admonitions/exa.tex}
 
 
 % ------------------ %
@@ -1704,7 +1680,7 @@ Here are two possible uses.
     It can sometimes be useful to return to the line at the start of the content. The code below shows how to proceed (this trick also applies to the \verb#tdocrem# environment presented next). Note in passing that the numbering follows that of the previous example as desired.
 \end{tdoctip}
 
-\tdoclatexinput<\tdoctcb{sbs}>{examples-admonitions-exa-leavevmode.tex}
+\tdoclatexinput<\tdoctcb{sbs}>{examples/admonitions/exa-leavevmode.tex}
 
 
 % \subsection{Content in the reading flow}
@@ -1713,7 +1689,7 @@ Here are two possible uses.
 
 Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocenv*{tdocexa} environment, as shown in the following example.
 
-\tdoclatexinput<\tdoctcb{sbs}>{examples-admonitions-rmk.tex}
+\tdoclatexinput<\tdoctcb{sbs}>{examples/admonitions/rmk.tex}
 
 
 \subsection{Flashy content}
@@ -1721,7 +1697,7 @@ Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocen
 
 \begin{tdocnote}
     The formatting proposed here is the default one, but others are possible by changing the theme: see the gallery of use cases in the appendix page \pageref{tutodoc-theme-gallery}.
-    As for the icons, they are obtained via the \tdocpack{fontawesome5} package, and the \tdocmacro{tdocicon} macro manages the spacing in relation to the text.
+    As for the icons, they are obtained via the \tdocpack{fontawesome5} package, and the \tdocmacro{tdocicon} macro manages the spacing in relation to the text.%
     \footnote{
         For example,
         \tdoclatexin|\fbox{tdocicon{faBed}{Fatigued}}|
@@ -1735,7 +1711,7 @@ Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocen
 
 The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
-\tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples-admonitions-tip.tex}
+\tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples/admonitions/tip.tex}
 
 
 \smallskip
@@ -1744,7 +1720,7 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 \begin{tdoctip}
     Sometimes, highlighted content can be reduced to a list. In this case, the formatting can be improved as follows where we use the \tdoclatexin{wide} option from the \tdocpack{enumitem} package imported by this documentation.
 
-    \tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples-admonitions-leavevmode-items.tex}
+    \tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples/admonitions/leavevmode-items.tex}
 \end{tdoctip}
 
 
@@ -1769,7 +1745,7 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
     \desc
 
-    \tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples-admonitions-\filename.tex}
+    \tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples/admonitions/\filename.tex}
 }
 
 
@@ -1797,7 +1773,7 @@ Finally \tdocenv*[{[opt1]<opt2>}]{env}...
 
 
 \begin{tdocwarn}
-    The optional argument of the \tdocmacro{tdocenv} macro is copied and pasted
+    The optional argument of the \tdocmacro{tdocenv} macro is copied and pasted\,%
     \footnote{
         Remember that almost anything is possible from now on.
     }
@@ -1826,149 +1802,137 @@ To explain the names chosen, there is nothing like indicating and explaining the
 \section{A real-life rendering}
 \label{tutodoc-showcase}
 
-It is sometimes useful to render code directly in the documentation. This type of rendering must be dissociable from the explanatory text.
+It is sometimes useful to render code directly in the documentation. This requires the rendering to be dissociable from the explanatory text.
 
 
 
-\subsection{With a colored stripe}
+\subsection{A minimalist rendering by default}
 
-\begin{tdocexa} [With default text]
+\begin{tdocexa}[With default text]
     It can be useful to show a real rendering directly in a document.
     \footnote{
         Typically when making a demo.
     }
-    This is done via \tdocenv{tdocshowcase} as follows.
+    This is typed via \tdocenv{tdocshowcase} as follows.
 
-    \tdoclatexinput<\tdoctcb{code}>{examples-showcase-default.tex}
-
-    The result is the following rendering.
-    \footnote{
-        Behind the scenes, the strip is created effortlessly using the \tdocpack{clrstrip} package.
-    }
+    \tdoclatexshow[explain = {This results in the following rendering, which is just a combination of low vertical spacing and simple import.}]%.
+                  {examples/showcase/default.tex}
 \end{tdocexa}
 
-\input{examples-showcase-default.tex}
-
-
-\smallskip
 
 \begin{tdocrem}
-    See the section \ref{tutodoc-listing-latexshow} on page \pageref{tutodoc-listing-latexshow} to easily obtain code followed by its actual rendering as in the previous example.
+    The section \ref{tutodoc-listing-latexshow} on page \pageref{tutodoc-listing-latexshow} explains how to obtain, via the macro \tdocmacro{tdoclatexshow}, a code followed by its actual rendering as in the previous example.
 \end{tdocrem}
 
 
-\begin{tdocnote}
-    The explanatory texts adapt to the language detected by \thisproj.
-\end{tdocnote}
+\begin{tdocwarn}
+    With the default settings, if the code to be formatted begins with an opening bracket, use one of the following trick.
+
+    \tdoclatexshow[explain = {This will produce the following.}]%{
+    		      {examples/showcase/hook.tex}
+\end{tdocwarn}
 
 
-% ------------------ %
+\subsection{With framing lines}
+
+To make the formatted \LaTeX\ code more visible, you can use the \tdoclatexin{rule} style, as in the following examples.
 
 
-\begin{tdocexa}[Change the colors and/or the texts]
-    \leavevmode
+\begin{tdocexa}
+	The \tdoclatexin{style=rule} option provides the following where the automatically added texts will adapt to the language found by \thisproj.
 
-    \tdoclatexinput<\tdoctcb{code}>{examples-showcase-customized.tex}
+	\input{examples/showcase/rule.tex}
+\end{tdocexa}
 
-    This will produce the following.
 
-    \medskip
+\begin{tdocexa}[Editable text and colours]
+	You can easily obtain the following horror.
 
-    \input{examples-showcase-customized.tex}
+	\input{examples/showcase/rule-custom.tex}
+	
+	Here's the code that was used.%
+	\footnote{
+		The next section will normalise the a priori strange choice of \tdoclatexin{col-stripe} instead of \tdoclatexin{col-rule}\,.
+	}
+
+	\tdoclatexinput<tdoctcb{code}>{examples/showcase/rule-custom.tex}
 \end{tdocexa}
 
 
 \begin{tdocnote}
-    In the previous example, the text uses the proposed darkened orange. On the other hand, red is used as a base to obtain the colors used for the strip: the transformations used depend on the theme chosen.%
+    In the previous example, the text uses the proposed darkened orange. However, the red is used as a base to obtain the colors used for the strip: the transformations used depend on the theme chosen.%
     \footnote{
         For example, the themes \tdoclatexin{bw} and \tdoclatexin{draft} ignore the key \tdoclatexin{col-stripe}!
     }
-    %
     You should also be aware that behind the scenes, the macro \tdocmacro{tdocruler} is used.
 
-    \begin{tdoclatex}<\tdoctcb{std}>
-        \tdocruler[red]{A decorated pseudo-title}
+    \begin{tdoclatex}<tdoctcb{std}>
+\tdocruler[red]{A decorated pseudo-title}
     \end{tdoclatex}
 \end{tdocnote}
 
 
-% ------------------ %
+\subsection{With colored stripe}
 
-
-\begin{tdocwarn}
-    With the default settings, if the code to be formatted begins with an opening bracket, use \tdocmacro{string} as in the following example.
-
-    \tdoclatexinput<\tdoctcb{code}>{examples-showcase-hook.tex}
-
-    This will produce the following.
-\end{tdocwarn}
-
-
-\input{examples-showcase-hook.tex}
-
-
-\subsection{Without a coloured strip}
-
-The rendering of \tdocenv{tdocshowcase} with a coloured strip may not be suitable, or sometimes may not be acceptable despite the work done by \tdocpack{clrstrip}.
-It is possible not to use a coloured strip, as we will see straight away.
+There are situations where you need to be able to clearly identify an example of formatted \LaTeX\ code. This can be done, as the following examples show.%
+\footnote{
+    Behind the scenes, the strips are created effortlessly using the \tdocpack{clrstrip} package.
+}
 
 
 \begin{tdocexa}
-    The use of \tdocenv[{[nostripe]}]{tdocshowcase} indicate to not use \tdocpack{clrstrip}.
-    Here is an example.
+	The \tdoclatexin{style=stripe} option provides the following.
 
-    \tdoclatexinput<\tdoctcb{code}>{examples-showcase-nostripe.tex}
-
-    This will produce the following.
-
-    \medskip
-
-    \input{examples-showcase-nostripe.tex}
+	\input{examples/showcase/stripe.tex}
 \end{tdocexa}
 
 
-% ------------------ %
+\begin{tdocexa}[Editable text and colors]
+	You can easily produce a beautiful horror like the one below.
 
+	\input{examples/showcase/stripe-custom.tex}
+	
+	Here's the code that was used.%
+	\footnote{
+		Now we understand why we chose \tdoclatexin{col-stripe} instead of \tdoclatexin{col-rule}\,.
+	}
 
-\begin{tdocexa}[Change the colors and/or the texts]
-    \leavevmode
-
-    \tdoclatexinput<\tdoctcb{code}>{examples-showcase-nostripe-customized.tex}
-
-    This will produce the following horror.
-
-    \medskip
-
-    \input{examples-showcase-nostripe-customized.tex}
+	\tdoclatexinput<\tdoctcb{code}>{examples/showcase/stripe-custom.tex}
 \end{tdocexa}
 
 
 \subsection{By importing the \LaTeX\ code}
 
-To obtain renderings by importing the code from an external file, simply use the \tdocmacro{tdocshowcaseinput} macro whose option uses the syntax of that of \tdocenv{tdocshowcase} and the mandatory argument corresponds to the path of the file.
+To obtain renderings by importing the code from an external file, instead of typing it, simply use the macro \tdocmacro{tdocshowcaseinput} whose option uses the same syntax as that of the environment \tdocenv*{tdocshowcase} and the mandatory argument corresponds to the path of the file. Here are some examples of the use of \tdoclatexin+\tdocshowcaseinput{external.tex}+ with or without an option.
 
 
-\begin{tdocexa}
-    The following was obtained via \tdoclatexin+\tdocshowcaseinput{external.tex}+.
-
-    \medskip
-
-    \tdocshowcaseinput{examples-showcase-external.tex}
-
-    \medskip
-
-    As for \tdoclatexin+\tdocshowcaseinput[col-stripe = red, col-text = orange!75!black]{external.tex}+\,, this will produce the color change shown below.
-
-    \medskip
-
-    \tdocshowcaseinput[col-stripe = red, col-text = orange!75!black]{examples-showcase-external.tex}
-\end{tdocexa}
+\foreach \exatitle/\option in {
+    {Without option}/% <-- Translate me!
+    {},
+    {Just the framing lines}/% <-- Translate me!
+    {style=rule},
+    {A colored stripe}/% <-- Translate me!
+    {style=stripe, col-stripe=red, col-text=LightCoral}%
+}{
+	\begin{tdocexa}[\exatitle]
+		\expandafter\IfBlankTF\expandafter{\option}{
+			Here is the edifying content of the example chosen.
+			
+	    	\tdocshowcaseinput{examples/showcase/external.tex}
+		}{
+	    	The option \expandafter\tdoclatexinexpandafter{\option} provides the following.
+		
+			\smallskip
+			\expandaftertdocshowcaseinputexpandafter[\option]{examples/showcase/external.tex}
+		}
+	\end{tdocexa}
+}
 
 
 \section{Use cases in \LaTeX}
 \label{tutodoc-listing-latex}
 
-Documenting a package or class is best done through use cases showing both the code and the corresponding result.
+Documenting a package or class is best done through use cases showing both the code and the corresponding result.%
 \footnote{
     Code is formatted using the \tdocpack{minted} and \tdocpack{tcolorbox} packages.
 }
@@ -1977,27 +1941,43 @@ Documenting a package or class is best done through use cases showing both the c
 \subsection{\tdocquote{Inline} codes}
 \label{tutodoc-listing-latex-inline}
 
-The \tdocmacro{tdoclatexin} macro
-\footnote{
-    The name of the macro \tdocmacro{tdoclatexin} comes from \tdocquote{\tdocprewhy{in.line} \LaTeX}.
-}
-can be used to type inline code in a similar way to \tdocmacro{verb} or like a standard macro (see brace management in the last case below).
-Here are some examples.
+\begin{tdocexa}[Standard usage]
+    The \tdocmacro{tdoclatexin} macro\,%
+    \footnote{
+        The name of the macro \tdocmacro{tdoclatexin} comes from \tdocquote{\tdocprewhy{in.line} \LaTeX}\,.
+    }
+    can be used to type code in line in a similar way to \tdocmacro{verb}, or as a standard macro (see the handling of braces in the latter case below).
+    Here are some examples of use.%
+    \footnote{
+    	A background colour is deliberately used to subtly highlight the \tdoclatexin{\LaTeX} codes.
+    }
+
+    \begin{tdoclatex}<\tdoctcb{sbs}>
+1: \tdoclatexin|$a^b = c$|               \\
+2: \tdoclatexin+\tdoclatexin|$a^b = c$|+ \\
+3: \tdoclatexin{\tdoclatexin{$a^b = c$}}
+	\end{tdoclatex}
+\end{tdocexa}
 
 
-\begin{tdoclatex}<\tdoctcb{sbs}>
-    1: \tdoclatexin|$a^b = c$|               \\
-    2: \tdoclatexin+\tdoclatexin|$a^b = c$|+ \\
-    3: \tdoclatexin{\tdoclatexin{$a^b = c$}}
-\end{tdoclatex}
+\begin{tdocexa}[Possible options]
+    As the \tdocmacro{tdoclatexin} macro is based on \tdocpack{minted}, you can use all the options taken into account by \tdocpack{minted}.
+    Here are some examples.
+
+    \begin{tdoclatex}<\tdoctcb{sbs}>
+1: \tdoclatexin{$a^b = c$}             \\
+2: \tdoclatexin[style = bw]{$a^b = c$} \\
+3: \tdoclatexin[style = igor,
+                showspaces]{$a^b = c$}
+	\end{tdoclatex}
+\end{tdocexa}
 
 
 \begin{tdocnote}
-    The \tdocmacro{tdoclatexin} macro can be used in a footnote: see below.
+    The \tdocmacro{tdoclatexin} macro can be used in a footnote: see below.%
     \footnote{
-        \tdoclatexin+$minted = TOP$+ has been typed \tdoclatexin|\tdoclatexin+$minted = TOP$+| in this footnote...
+        \tdoclatexin+$minted = TOP$+ has been typed \tdoclatexin|\tdoclatexin+$minted = TOP$+| in this footnote.
     }
-    In addition, a background color is deliberately used to subtly highlight the codes \tdoclatexin#\LaTeX#\,.
 \end{tdocnote}
 
 
@@ -2006,66 +1986,61 @@ Here are some examples.
 
 \subsection{Directly typed codes}
 
-\begin{tdocexa}[Side by side]
-    Displaying a code and its rendering side by side is done as follows where the macro \tdocmacro{tdoctcb} allows you to just type \tdoclatexin{\tdoctcb{sbs}} instead of \tdoclatexin{listing side text} (\tdoclatexin#sbs# is for \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}}\,, while \tdoclatexin#tcb# is the standard abbreviation for \texttt{tcolorbox}).
+\begin{tdocexa}[Face to face]
+    Displaying a code and its rendering side by side is done as follows where the macro \tdocmacro{tdoctcb} allows you to just type \tdoclatexin{tdoctcb{sbs}} instead of \tdoclatexin{listing side text} (\tdoclatexin#sbs# is for \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}}, while \tdoclatexin#tcb# is the standard abbreviation for \texttt{tcolorbox}). Note the use of rafters, not square brackets (more on this later).
 
-    \tdocbasicinputDOC*{examples-listing-latex-ABC.tex}
+    \tdoclatexshow{examples/listing-latex/ABC.tex}
 \end{tdocexa}
 
 
-\begin{tdocnote}
-	L'argument optionnel de l'environnement \tdocenv*{tdoclatex} doit être un style pour un \tdocmacro{tcblisting}. Par exemple, on peut faire les modifications suivantes si besoin.%
-	\footnote{
-		Cette documentation utilise ceci pour obtenir des rendus corrects de codes \LaTeX\ produisant des cadres ombrés : voir la section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
-	}
-
-	The optional argument of the \tdocenv*{tdoclatex} environment must be a style for a \tdocmacro{tcblisting}. For example, the following modifications can be made if required.
-	\footnote{
-		This documentation uses this to obtain correct renderings of \LaTeX\ codes producing shaded frames: see the section \ref{tutodoc-admonitions} on page \pageref{tutodoc-admonitions}.
-	}
-
-    \tdocbasicinputDOC*{examples-listing-latex-ABC-custom.tex}
-\end{tdocnote}
-
-
-% ------------------ %
-
-
 \begin{tdocexa}[Following]
-    \tdocenv{tdoclatex} produces the following result via the default option corresponding to \tdoclatexin#\tdoctcb{std}#\,.
+    \tdocenv{tdoclatex} produces the following result (this default setting is also obtained by using \tdoclatexin#\tdoctcb{std}#).%
     \footnote{
         \tdoclatexin{std} refers to the \tdocquote{standard} behaviour of \tdocpack{tcolorbox} in relation to the \tdocpack{minted} library.
     }
 
     \begin{tdoclatex}
-        $A = B + C$
+$A = B + C$
     \end{tdoclatex}
 \end{tdocexa}
-
-
-% ------------------ %
 
 
 \begin{tdocexa}[Just the code]
-    Via the option \tdoclatexin#\tdoctcb{code}#, we'll just get the code as shown below.
+    Via \tdoclatexin#\tdoctcb{code}#, we'll just get the code as below.
 
     \begin{tdoclatex}<\tdoctcb{code}>
-        $A = B + C$
+$A = B + C$
     \end{tdoclatex}
 \end{tdocexa}
 
 
-% ------------------ %
+\begin{tdocexa}[Customise]
+	The \tdocenv*{tdoclatex} environment accepts two types of optional argument.
+	%
+	\begin{enumerate}
+		\item Between classic square brackets, you can use any option taken into account by \tdocpack{minted}.
 
+		\item Between rafters, you can use any option taken into account by the environments obtained via \tdocpack{tcolorbox}.
+	\end{enumerate}
+
+	For example, the following modifications can be made if required.%
+	\footnote{
+		This documentation uses the options between rafters to obtain correct rendering of code producing shaded frames: see the section \ref{tutodoc-admonitions} on page \pageref{tutodoc-admonitions}.
+	}
+
+    \tdoclatexshow{examples/listing-latex/ABC-custom.tex}
+\end{tdocexa}
+
+\medskip
 
 \begin{tdocwarn}
-    With default formatting, if the code begins with an opening bracket, the default option must be explicitly indicated.
-    \tdocbasicinputDOC{examples-listing-latex-strange.tex}
+    To obtain the default formatting for a code beginning with a bracket or a rafter, you'll need to do a bit of fiddling, as shown below.
+    \tdoclatexshow{examples/listing-latex/strange.tex}
 
     \smallskip
 
-    Another method is to use the \tdocmacro{string} primitive.
-    \tdocbasicinputDOC{examples-listing-latex-strange-bis.tex}
+    Another method is to use the \tdocmacro{string} primitive, as shown below.
+    \tdoclatexshow{examples/listing-latex/strange-bis.tex}
 \end{tdocwarn}
 
 
@@ -2077,7 +2052,7 @@ For the following codes, consider a file with the relative path \verb+examples-l
 
 \medskip
 
-The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file and offers the same options as the \tdocenv*{tdoclatex} environment.
+The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file and offers the same system of options between square brackets, or rafters, as the environment \tdocenv*{tdoclatex}.
 
 
 % ------------------ %
@@ -2106,7 +2081,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \tdoclatexinput{examples-listing-latex-xyz.tex}
     \end{tdoclatex}
 
-    This produces the following formatting where the default option is \tdoclatexin#\tdoctcb{std}#.
+    This produces the following formatting, which also corresponds to the option \tdoclatexin#tdoctcb{std}#\,.
 
     \tdoclatexinput{examples-listing-latex-xyz.tex}
 \end{tdocexa}
@@ -2128,6 +2103,19 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \end{tdocexa}
 
 
+\begin{tdocexa}[Customise]
+    \leavevmode
+
+    \begin{tdoclatex}<\tdoctcb{code}>
+\tdoclatexinput[style=igor, showspaces]<\tdoctcb{code}>{examples-listing-latex-xyz.tex}
+    \end{tdoclatex}
+
+    This produces the following layout.
+
+	\tdoclatexinput[style = igor, showspaces]<\tdoctcb{code}>{examples-listing-latex-xyz.tex}
+\end{tdocexa}
+
+
 % ------------------ %
 
 
@@ -2137,11 +2125,9 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \begin{tdocexa}[Showcase]
     The following comes from \tdoclatexin+\tdoclatexshow{examples-listing-xyz.tex}+.
 
-    \medskip
+    \smallskip
 
-    \begin{tdocshowcaseDOC}
-        \tdoclatexshow{examples-listing-latex-xyz.tex}
-    \end{tdocshowcaseDOC}
+    \tdoclatexshow{examples-listing-latex-xyz.tex}
 \end{tdocexa}
 
 
@@ -2156,11 +2142,9 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \begin{tdocexa}[Changing the explanatory text]
     Using the key \tdoclatexin|explain|, you can use custom text. Thus, \tdoclatexin|tdoclatexshow[explain = Here is the rendering.]{examples-listing-xyz.tex}| will give the following.
 
-    \medskip
+    \smallskip
 
-    \begin{tdocshowcaseDOC}
-        \tdoclatexshow[explain = Here is the rendering.]{examples-listing-latex-xyz.tex}
-    \end{tdocshowcaseDOC}
+    \tdoclatexshow[explain = Here is the rendering.]{examples-listing-latex-xyz.tex}
 \end{tdocexa}
 
 
@@ -2173,17 +2157,15 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
     \medskip
 
-    \tdoclatexinput<\tdoctcb{code}>{examples-listing-latex-latexshow-options.tex}
+    \tdoclatexinput<\tdoctcb{code}>{examples/listing-latex/latexshow-options.tex}
 
-    \medskip
+    \smallskip
 
     This will produce the following.
 
-    \medskip
+    \smallskip
 
-    \begin{tdocshowcaseDOC}
-        \input{examples-listing-latex-latexshow-options.tex}
-    \end{tdocshowcaseDOC}
+    \input{examples/listing-latex/latexshow-options.tex}
 \end{tdocexa}
 
 
@@ -2218,7 +2200,7 @@ You can either date something, or version it, in which case the version number c
 \begin{tdocexa}[Dating new products]
     The \tdocmacro{tdocdate} macro is used to indicate a date in the margin, as in the following example.
 
-    \tdoclatexshow{examples-version-n-change-dating.tex}
+    \tdoclatexshow{examples/version-n-change/dating.tex}
 \end{tdocexa}
 
 
@@ -2228,21 +2210,21 @@ You can either date something, or version it, in which case the version number c
 \begin{tdocexa}[Versioning new features, possibly with a date]
     Associating a version number with a new feature is done using the \tdocmacro{tdocversion} macro, with the colour and date being optional arguments.
 
-    \tdoclatexshow{examples-version-n-change-versioning.tex}
+    \tdoclatexshow{examples/version-n-change/versioning.tex}
 \end{tdocexa}
 
 
 \begin{tdocexa}[Caution with paragraph titles]
 	The following example shows that a date and/or version must be placed just after a paragraph title, and not before it.
 
-	\tdoclatexshow{examples-version-n-change-para-title.tex}
+	\tdoclatexshow{examples/version-n-change/para-title.tex}
 \end{tdocexa}
 
 
 \begin{tdocexa}[Adjust vertical positioning]
 	If required, you can modify the vertical offset used to place dates and versions in the margin, the default value being $(-8\,\mathit{pt})$.
 
-	\tdoclatexshow{examples-version-n-change-manual-setting.tex}
+	\tdoclatexshow{examples/version-n-change/manual-setting.tex}
 \end{tdocexa}
 
 
@@ -2256,7 +2238,7 @@ You can either date something, or version it, in which case the version number c
 
 
 \begin{tdoccaut}
-    Only the use of the digital format \tdoclatexin+YYYY-MM-DD+ is verified,
+    Only the use of the digital format \tdoclatexin+YYYY-MM-DD+ is verified,%
     \footnote{
         Technically, checking the validity of a date using \LaTeX3 presents no difficulty.
     }
@@ -2304,7 +2286,7 @@ You can either date something, or version it, in which case the version number c
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput<\tdoctcb{sbs}>{examples-version-n-change-chges-\filename.tex}
+        \tdoclatexinput<\tdoctcb{sbs}>{examples/version-n-change/chges-\filename.tex}
     \end{tdocexa}
 }
 
@@ -2324,7 +2306,7 @@ It may be useful to highlight certain changes: this can only be done by modifyin
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput<\tdoctcb{sbs}>{examples-version-n-change-color-chges-\filename.tex}
+        \tdoclatexinput<\tdoctcb{sbs}>{examples/version-n-change/color-chges-\filename.tex}
     \end{tdocexa}
 }
 
@@ -2334,7 +2316,7 @@ It may be useful to highlight certain changes: this can only be done by modifyin
 The optional keys \tdoclatexin{col}\,, \tdoclatexin{date} and \tdoclatexin{version} allow to date and version a change of a particular type.
 Here are some examples of use.
 
-\tdoclatexshow{examples-version-n-change-what-n-when.tex}
+\tdoclatexshow{examples/version-n-change/what-n-when.tex}
 
 
 \section{Ornament}
@@ -2391,7 +2373,7 @@ Ble, ble, ble...
 \end{figure}
 
 
-The translations are roughly organized as in figure \ref{tutodoc-contrib-translate-dir} where only the folders important for the translations have been \tdocquote{opened}\,.%}.
+The translations are roughly organized as in figure \ref{tutodoc-contrib-translate-dir} where only the folders important for the translations have been \tdocquote{opened}\,.%
 \footnote{
     This was the organization on October 5, 2024, but it's still relevant today.
 }
