@@ -1114,8 +1114,8 @@
 % to have \infos about the macro ''tdocodein''.
 %%%
 
-\NewDocumentCommand{\tdocodein}{m}{%
-  \mintinline{\tutodoc@code@lexer{#1}}%
+\NewDocumentCommand{\tdocodein}{ D<>{} m }{%
+  \mintinline[#1]{\tutodoc@code@lexer{#2}}%
 }
 
 \setminted{

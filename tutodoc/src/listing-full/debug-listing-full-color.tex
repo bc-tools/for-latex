@@ -9,32 +9,49 @@
 
 \begin{document}
 
+\section{En ligne}
+
+Sans option : 
+
 \tdocodein{py}{print("Hello!") if i == 0 else None}
 
-\begin{tdocode}[minted style=solarized-light]{lua}
-io.write("Qui êtes-vous ? ")
-local name = io.read()
-
-if name == "" then
-    print("Ah, pas très bavard aujourd'hui !")
-
-else
-    print("Bonjour " .. name .. ".")
-    print("Épatant ! En fait, pas du tout...")
-end
-\end{tdocode}
+\tdocodein{py}{error == True !!!}
 
 
-\tdocodeinput{lua}{examples/listing-full/hello-you.lua}
+Avec des options : 
 
-\tdocodeinput[minted style=solarized-light]{java}{examples/listing-full/hello-you.java}
+\tdocodein[style=bw]{py}{print("Hello!") if i == 0 else None}
 
-\tdocodeinput{tex}{examples/listing-full/hello-you.tex}
-
-\tdocodeinput{perl}{examples/listing-full/hello-you.pl}
-
-\tdocodeinput{python}{examples/listing-full/hello-you.py}
-
-\tdocodeinput{brainfuck}{examples/listing-full/hello-world.b}
+\tdocodein[ignorelexererrors=true]{py}{error == True !!!}
+%
+%
+%
+%\section{Blocs}
+%
+%\begin{tdocode}[minted style=solarized-light]{lua}
+%io.write("Qui êtes-vous ? ")
+%local name = io.read()
+%
+%if name == "" then
+%    print("Ah, pas très bavard aujourd'hui !")
+%
+%else
+%    print("Bonjour " .. name .. ".")
+%    print("Épatant ! En fait, pas du tout...")
+%end
+%\end{tdocode}
+%
+%
+%\tdocodeinput{lua}{examples/listing-full/hello-you.lua}
+%
+%\tdocodeinput[minted style=solarized-light]{java}{examples/listing-full/hello-you.java}
+%
+%\tdocodeinput{tex}{examples/listing-full/hello-you.tex}
+%
+%\tdocodeinput{perl}{examples/listing-full/hello-you.pl}
+%
+%\tdocodeinput{python}{examples/listing-full/hello-you.py}
+%
+%\tdocodeinput{brainfuck}{examples/listing-full/hello-world.b}
 
 \end{document}

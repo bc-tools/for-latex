@@ -12,13 +12,13 @@
 [[:api:]]    DOC KO !!!! ??????
 Listings.
 
-    1) Inline macros: extra \minted options must be indicated inside rafters ''< ... >''.
+    1) Inline macros: extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way inside.
 
     1) Inline \envs.
 
-        * Extra \tcolorbox options must be indicated inside hooks ''[ ... ]'' in the traditional way inside.
+        * Extra \minted options must be indicated inside hooks ''[ ... ]'' in the traditional way inside.
 
-        * Extra \minted options must be indicated inside rafters ''< ... >''.
+        * Extra \tcolorbox options must be indicated inside rafters ''< ... >''.
 
 
 -----

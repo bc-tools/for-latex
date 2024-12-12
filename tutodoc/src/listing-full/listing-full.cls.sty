@@ -11,18 +11,19 @@
 
 % :: INLINE CODE MACRO :: %
 
+
+
 %%%
 % See the \doc of the macro ''\newmintinline'' from the package \minted
 % to have \infos about the macro ''tdocodein''.
 %%%
 
-\NewDocumentCommand{\tdocodein}{ D<>{} m }{%
-  \mintinline[#1]{\tutodoc@code@lexer{#2}}%
-}
-
-\setminted{
-  bgcolor            = tutodoc@code@back@color,
-  style/.expand once = \tutodoc@code@style
+\NewDocumentCommand{\tdocodein}{ O{} m }{%
+  \mintinline[
+    bgcolor            = tutodoc@code@back@color,
+    style/.expand once = \tutodoc@code@style,
+    #1
+  ]{\tutodoc@code@lexer{#2}}%
 }
 
 
@@ -36,13 +37,13 @@
 \tcbset{
   tutodoc-full-listing-style/.style 2 args = {
 % General.
-    minted style/.expand once    = \tutodoc@code@style,
+    % minted style/.expand once    = \tutodoc@code@style,
     minted language/.expand once = \tutodoc@code@lexer{#2},
     breakable,
     enhanced,
 % Colors.
     colframe = tutodoc@code@frame@color,
-    colback  = tutodoc@code@back@color,
+    % colback  = tutodoc@code@back@color,
     colupper = tutodoc@code@text@color,
     collower = tutodoc@code@text@color,
 % Padding.
