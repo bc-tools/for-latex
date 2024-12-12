@@ -1,5 +1,3 @@
 find . -type f -depth 2 -name '*.tex' -exec open {} \;
 
-find . -type f -depth 2 -name '**/examples/**.tex' -exec open {} \;
-
 find . -type f -depth 2 -name '*.pdf' -exec open {} \;

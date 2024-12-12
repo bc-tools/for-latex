@@ -9,6 +9,11 @@ NOW
 
 > ---------------------------- <
 
+showcase : norule aussi car utile aussi : cf la doc sur les listing
+
+
+> ---------------------------- <
+
 code avec ligne vide ajouté à tors !!!
 
     ---> \tdoclatexinput{examples-listing-latex-xyz.tex}

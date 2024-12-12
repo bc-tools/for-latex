@@ -2,7 +2,7 @@
 
 
 ==
-11  (1.7.1-beta.5)
+12  (1.7.1-beta.5)
 ==
 
 --------
@@ -10,25 +10,27 @@
 --------
 
 [[:api:]]
-Generalist and \latex Listings.
+Generalist and \latex listings.
 
-    1) Inline macros: extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way inside.
+    1) Inline code macros: extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way.
 
-    1) Inline \envs.
+    1) Block code \envs.
 
-        * Extra \minted options must be indicated inside hooks ''[ ... ]'' in the traditional way inside.
+        * Extra \minted options must be indicated inside hooks ''[ ... ]'' in the traditional way.
 
         * Extra \tcolorbox options must be indicated inside rafters ''< ... >''.
-
-
-
-[[:doc:]]    ??????
-Manual : XXXX
 
 
 -----
 :new:
 -----
+
+[[:doc:]]
+Manual.
+
+    1) New explanations about the \minted and \tcolorbox options for \latex listings.
+
+    1) A new section for the generalist listings.
 
 
 // ---------- //

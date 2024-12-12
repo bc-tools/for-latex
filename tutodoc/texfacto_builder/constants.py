@@ -133,13 +133,14 @@ CMDS_FOR_FILE_PATTERNS = [
     re.compile(
           r"^([^%\\]*)(.*)(\\"
         + macroname
-        + ")(\[.*\][\t ]*\n?[\t ]*)?{(.*)}(.*)$"
+        + ")(\[.*\][\t ]*\n?[\t ]*)?(<.*>[\t ]*\n?[\t ]*)?{(.*)}(.*)$"
     )
     for macroname in [
         "input",
         "tdoclatexshow",
         "tdoclatexinput",
         "tdocshowcaseinput",
+        "tdocodeinput",
         "tdocbasicinputDOC",
         "tdocbasicinputDOC\*",
     ]

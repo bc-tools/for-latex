@@ -56,7 +56,7 @@ Pour les codes suivants, on considère un fichier de chemin relatif \verb+exampl
 \medskip
 
 
-La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'un fichier et propose les mêmes options que l'environnement \tdocenv*{tdoclatex}.
+La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'un fichier et propose le même système d'options entre crochets, ou entre chevrons, que l'environnement \tdocenv*{tdoclatex}.
 
 
 \begin{tdocexa}[Face à face]
@@ -79,7 +79,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 \tdoclatexinput{examples/listing-latex/xyz.tex}
     \end{tdoclatex}
 
-    Ceci produit la mise en forme suivante où l'option par défaut est \tdoclatexin#\tdoctcb{std}#\,.
+    Ceci produit la mise en forme suivante qui correspond aussi à l'option \tdoclatexin#\tdoctcb{std}#\,.
 
     \tdoclatexinput{examples/listing-latex/xyz.tex}
 \end{tdocexa}
@@ -95,6 +95,19 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
     Ceci produit la mise en forme suivante.
 
     \tdoclatexinput<\tdoctcb{code}>{examples/listing-latex/xyz.tex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[Personnaliser]
+    \leavevmode
+
+    \begin{tdoclatex}<\tdoctcb{code}>
+\tdoclatexinput[style=igor, showspaces]<\tdoctcb{code}>{examples/listing-latex/xyz.tex}
+    \end{tdoclatex}
+
+    Ceci produit la mise en forme suivante.
+
+	\tdoclatexinput[style = igor, showspaces]<\tdoctcb{code}>{examples/listing-latex/xyz.tex}
 \end{tdocexa}
 
 
