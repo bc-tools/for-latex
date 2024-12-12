@@ -1084,7 +1084,7 @@
       { #1 }
       \l__tutodoc_showcase_options_passed_tl
 
-    \tdoclatexinput[\tdoctcb{code}]{#2}
+    \tdoclatexinput<\tdoctcb{code}>{#2}
 
     \tl_use:N \l_tutodoc_listing_explain_tl
 

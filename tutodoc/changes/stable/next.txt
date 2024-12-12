@@ -36,6 +36,18 @@
 [[:api:]]
 New feature: display any kind of code for any language supported by \minted.
 
++
+
+Generalist and \latex Listings.
+
+    1) Inline macros: extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way inside.
+
+    1) Inline \envs.
+
+        * Extra \minted options must be indicated inside hooks ''[ ... ]'' in the traditional way inside.
+
+        * Extra \tcolorbox options must be indicated inside rafters ''< ... >''.
+
 
 --------
 :update:

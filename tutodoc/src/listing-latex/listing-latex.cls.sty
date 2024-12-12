@@ -4,7 +4,7 @@
 
 \input{../listing-latex/css/\tutodoc@theme.cls.sty}
 
-% :: INLINE CODE MACRO :: %
+% :: INLINE LATEX CODE MACRO :: %
 
 %%%
 % See the \doc of the macro ''\newmintinline'' from the package \minted
@@ -16,7 +16,7 @@
 }
 
 
-% :: TCOLORBOX LISTING ENVIRONMENT :: %
+% :: MINTED/TCOLORBOX LATEX LISTING ENVIRONMENT :: %
 
 %%%
 % refs::
@@ -24,7 +24,7 @@
 %     + https://tex.stackexchange.com/a/327983/6880
 %%%
 \tcbset{
-  tutodoc-latex-listing-style/.style = {
+  tutodoc-latex-listing-style/.style 2 args = {
 % General.
     minted language/.expand once = \tutodoc@latex@lexer,
     minted style/.expand once    = \tutodoc@latex@style,
@@ -57,7 +57,10 @@
       dash pattern = {on 5pt off 2.5pt},
       line width   = .75pt
     },
-    #1
+% Extra minted otpions.
+    minted options = {#1},
+% Extra tcolorbox styles.
+    #2
   },
 }
 
@@ -74,8 +77,8 @@
 %     See the \doc of the macro ''\newtcblisting'' from the package
 %     \tcolorbox to have \infos about the environment ''tdoclatex''.
 %%%
-\newtcblisting{tdoclatex}[1][]{%
-  tutodoc-latex-listing-style = #1
+\NewTCBListing{tdoclatex}{ O{} D<>{} }{%
+  tutodoc-latex-listing-style = {#1}{#2}
 }
 
 
@@ -92,9 +95,9 @@
 %     See the \doc of the macro ''\newtcbinputlisting'' from the package
 %     \tcolorbox to have more \infos about the macro ''\tdoclatexinput''.
 %%%
-\newtcbinputlisting{\tdoclatexinput}[2][]{
-  listing file                = {#2},
-  tutodoc-latex-listing-style = #1,
+\NewTCBInputListing{\tdoclatexinput}{ O{} D<>{} m }{
+  listing file                = {#3},
+  tutodoc-latex-listing-style = {#1}{#2}
 }
 
 
@@ -144,7 +147,7 @@
       { #1 }
       \l__tutodoc_showcase_options_passed_tl
 
-    \tdoclatexinput[\tdoctcb{code}]{#2}
+    \tdoclatexinput<\tdoctcb{code}>{#2}
 
     \tl_use:N \l_tutodoc_listing_explain_tl
 

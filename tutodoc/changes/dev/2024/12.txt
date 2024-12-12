@@ -9,8 +9,8 @@
 :update:
 --------
 
-[[:api:]]    DOC KO !!!! ??????
-Listings.
+[[:api:]]
+Generalist and \latex Listings.
 
     1) Inline macros: extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way inside.
 
@@ -19,6 +19,11 @@ Listings.
         * Extra \minted options must be indicated inside hooks ''[ ... ]'' in the traditional way inside.
 
         * Extra \tcolorbox options must be indicated inside rafters ''< ... >''.
+
+
+
+[[:doc:]]    ??????
+Manual : XXXX
 
 
 -----

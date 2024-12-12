@@ -9,9 +9,54 @@
 
 \begin{document}
 
+\section{En ligne}
+
+Sans option : 
+
 \tdocodein{py}{print("Hello!") if i == 0 else None}
 
-\begin{tdocode}[minted style=solarized-light]{lua}
+\tdocodein{py}{error == True !!!}
+
+
+Avec des options : 
+
+\tdocodein[style=bw]{py}{print("Hello!") if i == 0 else None}
+
+\tdocodein[ignorelexererrors=true]{py}{error == True !!!}
+
+
+
+\section{Blocs - Importation}
+
+\subsection{Sans option}
+
+\tdocodeinput{lua}{examples/listing-full/hello-you.lua}
+
+\tdocodeinput{java}{examples/listing-full/hello-you.java}
+
+\tdocodeinput{tex}{examples/listing-full/hello-you.tex}
+
+\tdocodeinput{perl}{examples/listing-full/hello-you.pl}
+
+\tdocodeinput{python}{examples/listing-full/hello-you.py}
+
+\tdocodeinput{brainfuck}{examples/listing-full/hello-world.b}
+
+
+
+\subsection{Avec des options}
+
+\tdocodeinput[style=solarized-light, linenos]%
+             <top = 1cm, leftrule=5pt>%
+             {python}{examples/listing-full/hello-you.py}
+
+
+
+\section{Blocs - Direct}
+
+\subsection{Sans option}
+
+\begin{tdocode}{lua}
 io.write("Qui êtes-vous ? ")
 local name = io.read()
 
@@ -25,16 +70,22 @@ end
 \end{tdocode}
 
 
-\tdocodeinput{lua}{examples/listing-full/hello-you.lua}
 
-\tdocodeinput[minted style=solarized-light]{java}{examples/listing-full/hello-you.java}
+\subsection{Avec des options}
 
-\tdocodeinput{tex}{examples/listing-full/hello-you.tex}
+\begin{tdocode}[style=solarized-light, linenos]%
+             <top = 1cm, leftrule=5pt>%
+             {lua}
+io.write("Qui êtes-vous ? ")
+local name = io.read()
 
-\tdocodeinput{perl}{examples/listing-full/hello-you.pl}
+if name == "" then
+    print("Ah, pas très bavard aujourd'hui !")
 
-\tdocodeinput{python}{examples/listing-full/hello-you.py}
-
-\tdocodeinput{brainfuck}{examples/listing-full/hello-world.b}
+else
+    print("Bonjour " .. name .. ".")
+    print("Épatant ! En fait, pas du tout...")
+end
+\end{tdocode}
 
 \end{document}
