@@ -443,7 +443,7 @@
 % prototype::
 %     :action: ''key/value'' iteration over ''\g__tutodoc_focus_color_prop''
 %              to build new colorful unumbered theorems. To achieve that,
-%              we use a ''tcolorbox'' style given to the ''\newkeytheorem''
+%              we use a \tcolorbox style given to the ''\newkeytheorem''
 %              macro from the ''keytheorems'' \pack, and icons from the
 %              ''fontawesome5'' \pack.
 %%%
@@ -891,7 +891,7 @@
 % :::::::::::::::::::::::: %
 
 %%%
-% See the \doc of the macro ''\newmintinline'' from the package ''minted''
+% See the \doc of the macro ''\newmintinline'' from the package \minted
 % to have \infos about the macro ''tdocinlatex''.
 %%%
 \newmintinline[tdocinlatex]{\tutodoc@latex@lexer}{%
@@ -914,7 +914,7 @@
 %     :see: macro.tdoclatex ,
 %           macro.tdoclatexinput
 %
-% In the following easy-to-understand macro, we use one fictive ''tcolorbox''
+% In the following easy-to-understand macro, we use one fictive \tcolorbox
 % style such as to indicate an unknown ''tutodoc'' style to the user.
 % For example, this can give one message similar to the following one.
 %
@@ -987,7 +987,7 @@
 %
 % note::
 %     See the \doc of the macro ''\newtcblisting'' from the package
-%     ''tcolorbox'' to have \infos about the environment ''tdoclatex''.
+%     \tcolorbox to have \infos about the environment ''tdoclatex''.
 %%%
 \newtcblisting{tdoclatex}[1][std]{%
   tutodoc-latex-listing-style = \tutodoc@latex@listing@format@option{#1}
@@ -1007,7 +1007,7 @@
 %
 % note::
 %     See the \doc of the macro ''\newtcbinputlisting'' from the package
-%     ''tcolorbox'' to have more \infos about the macro ''\tdoclatexinput''.
+%     \tcolorbox to have more \infos about the macro ''\tdoclatexinput''.
 %%%
 \newtcbinputlisting{\tdoclatexinput}[2][std]{
   listing file                = {#2},

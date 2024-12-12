@@ -22,11 +22,11 @@
 -------
 
 [[:api:]]
-\Envs using ''tcolorbox''.
+\Envs using \tcolorbox.
 
     1) The new ''\tdoctcb'' macro allows to use shortcuts for regularly used styles.
 
-    1) \latex listings: the option can be any legal ''tcolorbox'' styling commands.
+    1) \latex listings: the option can be any legal \tcolorbox styling commands.
 
 
 -----

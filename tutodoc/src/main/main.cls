@@ -268,10 +268,10 @@
 %%%
 % prototype::
 %     #1 : (style-abbrev)
-%          a shortcut for a ''tcolorbox'' styling command.
+%          a shortcut for a \tcolorbox styling command.
 %        @ #1 in [code, sbs, std]
 %
-% In the following easy-to-understand macro, we use one fictive ''tcolorbox''
+% In the following easy-to-understand macro, we use one fictive \tcolorbox
 % style such as to indicate an unknown ''tutodoc'' shortcut style. For example,
 % this will give the following message if the user type ''MISTYPED-STYLE''.
 %
@@ -310,4 +310,3 @@
   linkcolor = tutodoc@link@color,
   urlcolor  = tutodoc@link@color
 }
-

@@ -306,10 +306,10 @@
 %%%
 % prototype::
 %     #1 : (style-abbrev)
-%          a shortcut for a ''tcolorbox'' styling command.
+%          a shortcut for a \tcolorbox styling command.
 %        @ #1 in [code, sbs, std]
 %
-% In the following easy-to-understand macro, we use one fictive ''tcolorbox''
+% In the following easy-to-understand macro, we use one fictive \tcolorbox
 % style such as to indicate an unknown ''tutodoc'' shortcut style. For example,
 % this will give the following message if the user type ''MISTYPED-STYLE''.
 %
@@ -511,7 +511,7 @@
 % prototype::
 %     :action: ''key/value'' iteration over ''\g__tutodoc_focus_color_prop''
 %              to build new colorful unumbered theorems. To achieve that,
-%              we use a ''tcolorbox'' style given to the ''\newkeytheorem''
+%              we use a \tcolorbox style given to the ''\newkeytheorem''
 %              macro from the ''keytheorems'' \pack, and icons from the
 %              ''fontawesome5'' \pack.
 %%%
@@ -937,7 +937,7 @@
 % ::::::::::::::::::::::: %
 
 %%%
-% See the \doc of the macro ''\newmintinline'' from the package ''minted''
+% See the \doc of the macro ''\newmintinline'' from the package \minted
 % to have \infos about the macro ''tdoclatexin''.
 %%%
 \newmintinline[tdoclatexin]{\tutodoc@latex@lexer}{
@@ -1004,7 +1004,7 @@
 %
 % note::
 %     See the \doc of the macro ''\newtcblisting'' from the package
-%     ''tcolorbox'' to have \infos about the environment ''tdoclatex''.
+%     \tcolorbox to have \infos about the environment ''tdoclatex''.
 %%%
 \newtcblisting{tdoclatex}[1][]{%
   tutodoc-latex-listing-style = #1
@@ -1024,7 +1024,7 @@
 %
 % note::
 %     See the \doc of the macro ''\newtcbinputlisting'' from the package
-%     ''tcolorbox'' to have more \infos about the macro ''\tdoclatexinput''.
+%     \tcolorbox to have more \infos about the macro ''\tdoclatexinput''.
 %%%
 \newtcbinputlisting{\tdoclatexinput}[2][]{
   listing file                = {#2},
@@ -1110,7 +1110,7 @@
 % ::::::::::::::::::::::: %
 
 %%%
-% See the \doc of the macro ''\newmintinline'' from the package ''minted''
+% See the \doc of the macro ''\newmintinline'' from the package \minted
 % to have \infos about the macro ''tdocodein''.
 %%%
 
@@ -1184,7 +1184,7 @@
 %
 % note::
 %     See the \doc of the macro ''\newtcblisting'' from the package
-%     ''tcolorbox'' to have \infos about the environment ''tdocode''.
+%     \tcolorbox to have \infos about the environment ''tdocode''.
 %%%
 \newtcblisting{tdocode}[2][]{%
   tutodoc-full-listing-style = {#1}{#2}
@@ -1204,7 +1204,7 @@
 %
 % note::
 %     See the \doc of the macro ''\newtcbinputlisting'' from the package
-%     ''tcolorbox'' to have more \infos about the macro ''\tdocodeinput''.
+%     \tcolorbox to have more \infos about the macro ''\tdocodeinput''.
 %%%
 \newtcbinputlisting{\tdocodeinput}[3][]{
   listing file               = {#3},

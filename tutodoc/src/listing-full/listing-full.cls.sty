@@ -12,12 +12,12 @@
 % :: INLINE CODE MACRO :: %
 
 %%%
-% See the \doc of the macro ''\newmintinline'' from the package ''minted''
+% See the \doc of the macro ''\newmintinline'' from the package \minted
 % to have \infos about the macro ''tdocodein''.
 %%%
 
-\NewDocumentCommand{\tdocodein}{m}{%
-  \mintinline{\tutodoc@code@lexer{#1}}%
+\NewDocumentCommand{\tdocodein}{ D<>{} m }{%
+  \mintinline[#1]{\tutodoc@code@lexer{#2}}%
 }
 
 \setminted{
@@ -84,7 +84,7 @@
 %
 % note::
 %     See the \doc of the macro ''\newtcblisting'' from the package
-%     ''tcolorbox'' to have \infos about the environment ''tdocode''.
+%     \tcolorbox to have \infos about the environment ''tdocode''.
 %%%
 \newtcblisting{tdocode}[2][]{%
   tutodoc-full-listing-style = {#1}{#2}
@@ -102,7 +102,7 @@
 %
 % note::
 %     See the \doc of the macro ''\newtcbinputlisting'' from the package
-%     ''tcolorbox'' to have more \infos about the macro ''\tdocodeinput''.
+%     \tcolorbox to have more \infos about the macro ''\tdocodeinput''.
 %%%
 \newtcbinputlisting{\tdocodeinput}[3][]{
   listing file               = {#3},

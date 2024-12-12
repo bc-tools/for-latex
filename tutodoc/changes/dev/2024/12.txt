@@ -2,6 +2,34 @@
 
 
 ==
+11  (1.7.1-beta.5)
+==
+
+--------
+:update:
+--------
+
+[[:api:]]    DOC KO !!!! ??????
+Listings.
+
+    1) Inline macros: extra \minted options must be indicated inside rafters ''< ... >''.
+
+    1) Inline \envs.
+
+        * Extra \tcolorbox options must be indicated inside hooks ''[ ... ]'' in the traditional way inside.
+
+        * Extra \minted options must be indicated inside rafters ''< ... >''.
+
+
+-----
+:new:
+-----
+
+
+// ---------- //
+
+
+==
 11  (1.7.1-beta.4)
 ==
 
@@ -10,18 +38,18 @@
 -------
 
 [[:api:]]
-\Envs using ''tcolorbox''.
+\Envs using \tcolorbox.
 
     1) The new ''\tdoctcb'' macro allows to use shortcuts for regularly used styles.
 
-    1) \latex listings: the option can be any legal ''tcolorbox'' styling commands.
+    1) \latex listings: the option can be any legal \tcolorbox styling commands.
 
 
 -----
 :new:
 -----
 
-[[:api:]]    DOc KO !!!! ??????
+[[:api:]]
 New feature: display any kind of code for any language supported by \minted.
 
 
