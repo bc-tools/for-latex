@@ -1933,29 +1933,6 @@ To obtain renderings by importing the code from an external file, instead of typ
 }
 
 
-\foreach \exatitle/\option in {
-    {Sans option}/% <-- Translate me!
-    {},
-    {Juste les lignes cadrantes}/% <-- Translate me!
-    {style=rule},
-    {Une bande colorée}/% <-- Translate me!
-    {style=stripe, col-stripe=red, col-text=LightCoral}%
-}{
-	\begin{tdocexa}[\exatitle]
-		\expandafter\IfBlankTF\expandafter{\option}{
-			Voici le contenu édifiant de l'exemple choisi.
-			
-	    	\tdocshowcaseinput{examples-showcase-external.tex}
-		}{
-	    	L'option \expandafter\tdoclatexin\expandafter{\option} fournit ce qui suit.
-		
-			\smallskip
-			\expandafter\tdocshowcaseinput\expandafter[\option]{examples-showcase-external.tex}
-		}
-	\end{tdocexa}
-}
-
-
 \section{Use cases in \LaTeX}
 \label{tutodoc-listing-latex}
 
@@ -2196,16 +2173,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \end{tdocexa}
 
 
-\section{XXX}
-
-\subsection{YYT}
-
-ZZZ
-
-
-\subsection{XXX}
-
-YYY
+\section{TODO}
 
 
 \section{Indicate changes}
