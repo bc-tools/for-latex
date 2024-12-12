@@ -1178,9 +1178,9 @@ $x y z = 1$
 
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-ABC-custom.tex}
-\begin{tdoclatex}[\tdoctcb{sbs},
+\begin{tdoclatex}<\tdoctcb{sbs},
                   top    = 10pt,
-                  bottom = 10pt]
+                  bottom = 10pt>
     $A = B + C$
 \end{tdoclatex}
 \end{filecontents*}
@@ -1549,7 +1549,7 @@ As this language is included in the list of languages taken into account, see be
         \task \tdoclatexin|es| : Spanish.
         \task \tdoclatexin|fr| : French.
 \end{tasks}
-
+                    
 
 
 \begin{tdocnote}
@@ -1694,8 +1694,7 @@ w
 Numbered examples, if required, are indicated via \tdocenv{tdocexa}, which offers an optional argument for adding a mini-title.
 Here are two possible uses.
 
-\tdoclatexinput<\tdoctcb{sbs}>{examples-admonitions-exa.tex}
-
+\tdoclatexinput<\tdoctcb{sbs}>{examples/admonitions/exa.tex}
 
 
 % ------------------ %
@@ -1705,8 +1704,7 @@ Here are two possible uses.
     It can sometimes be useful to return to the line at the start of the content. The code below shows how to proceed (this trick also applies to the \verb#tdocrem# environment presented next). Note in passing that the numbering follows that of the previous example as desired.
 \end{tdoctip}
 
-\tdoclatexinput<\tdoctcb{sbs}>{examples-admonitions-exa-leavevmode.tex}
-
+\tdoclatexinput<\tdoctcb{sbs}>{examples/admonitions/exa-leavevmode.tex}
 
 
 % \subsection{Content in the reading flow}
@@ -1715,8 +1713,7 @@ Here are two possible uses.
 
 Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocenv*{tdocexa} environment, as shown in the following example.
 
-\tdoclatexinput<\tdoctcb{sbs}>{examples-admonitions-rmk.tex}
-
+\tdoclatexinput<\tdoctcb{sbs}>{examples/admonitions/rmk.tex}
 
 
 \subsection{Flashy content}
@@ -1738,18 +1735,16 @@ Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocen
 
 The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
-\tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples-admonitions-tip.tex}
-
+\tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples/admonitions/tip.tex}
 
 
 \smallskip
 
 
 \begin{tdoctip}
-    Sometimes, highlighted content can be reduced to a list. In this case, the formatting can be improved as follows where we use the \tdoclatexin{wide} option from the \tdocpack{enumitem} package.
+    Sometimes, highlighted content can be reduced to a list. In this case, the formatting can be improved as follows where we use the \tdoclatexin{wide} option from the \tdocpack{enumitem} package imported by this documentation.
 
-    \tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples-admonitions-leavevmode-items.tex}
-
+    \tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples/admonitions/leavevmode-items.tex}
 \end{tdoctip}
 
 
@@ -1774,8 +1769,7 @@ The \tdocenv*{tdoctip} environment is used to give tips. Here's how to use it.
 
     \desc
 
-    \tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples-admonitions-\filename.tex}
-
+    \tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples/admonitions/\filename.tex}
 }
 
 
@@ -1845,8 +1839,7 @@ It is sometimes useful to render code directly in the documentation. This type o
     }
     This is done via \tdocenv{tdocshowcase} as follows.
 
-    \tdoclatexinput<\tdoctcb{code}>{examples-showcase-default.tex}
-
+    \tdoclatexinput<\tdoctcb{code}>{examples/showcase/default.tex}
 
     The result is the following rendering.
     \footnote{
@@ -1876,8 +1869,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 \begin{tdocexa}[Change the colors and/or the texts]
     \leavevmode
 
-    \tdoclatexinput<\tdoctcb{code}>{examples-showcase-customized.tex}
-
+    \tdoclatexinput<\tdoctcb{code}>{examples/showcase/customized.tex}
 
     This will produce the following.
 
@@ -1908,8 +1900,7 @@ It is sometimes useful to render code directly in the documentation. This type o
 \begin{tdocwarn}
     With the default settings, if the code to be formatted begins with an opening bracket, use \tdocmacro{string} as in the following example.
 
-    \tdoclatexinput<\tdoctcb{code}>{examples-showcase-hook.tex}
-
+    \tdoclatexinput<\tdoctcb{code}>{examples/showcase/hook.tex}
 
     This will produce the following.
 \end{tdocwarn}
@@ -1929,8 +1920,7 @@ It is possible not to use a coloured strip, as we will see straight away.
     The use of \tdocenv[{[nostripe]}]{tdocshowcase} indicate to not use \tdocpack{clrstrip}.
     Here is an example.
 
-    \tdoclatexinput<\tdoctcb{code}>{examples-showcase-nostripe.tex}
-
+    \tdoclatexinput<\tdoctcb{code}>{examples/showcase/nostripe.tex}
 
     This will produce the following.
 
@@ -1947,8 +1937,7 @@ It is possible not to use a coloured strip, as we will see straight away.
 \begin{tdocexa}[Change the colors and/or the texts]
     \leavevmode
 
-    \tdoclatexinput<\tdoctcb{code}>{examples-showcase-nostripe-customized.tex}
-
+    \tdoclatexinput<\tdoctcb{code}>{examples/showcase/nostripe-customized.tex}
 
     This will produce the following horror.
 
@@ -2097,7 +2086,6 @@ For the following codes, consider a file with the relative path \verb+examples-l
 
 \tdoclatexinput<\tdoctcb{code}>{examples-listing-latex-xyz.tex}
 
-
 \medskip
 
 The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file and offers the same options as the \tdocenv*{tdoclatex} environment.
@@ -2111,13 +2099,11 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
     \begin{tdoclatex}<\tdoctcb{code}>
 \tdoclatexinput<\tdoctcb{sbs}>{examples-listing-latex-xyz.tex}
-
     \end{tdoclatex}
 
     This produces the following layout.
 
     \tdoclatexinput<\tdoctcb{sbs}>{examples-listing-latex-xyz.tex}
-
 \end{tdocexa}
 
 
@@ -2147,13 +2133,11 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
     \begin{tdoclatex}<\tdoctcb{code}>
 \tdoclatexinput<\tdoctcb{code}>{examples-listing-latex-xyz.tex}
-
     \end{tdoclatex}
 
     This produces the following layout.
 
     \tdoclatexinput<\tdoctcb{code}>{examples-listing-latex-xyz.tex}
-
 \end{tdocexa}
 
 
@@ -2204,8 +2188,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
     \medskip
 
-    \tdoclatexinput<\tdoctcb{code}>{examples-listing-latex-latexshow-options.tex}
-
+    \tdoclatexinput<\tdoctcb{code}>{examples/listing-latex/latexshow-options.tex}
 
     \medskip
 
@@ -2341,8 +2324,7 @@ You can either date something, or version it, in which case the version number c
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput<\tdoctcb{sbs}>{examples-version-n-change-chges-\filename.tex}
-
+        \tdoclatexinput<\tdoctcb{sbs}>{examples/version-n-change/chges-\filename.tex}
     \end{tdocexa}
 }
 
@@ -2362,8 +2344,7 @@ It may be useful to highlight certain changes: this can only be done by modifyin
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput<\tdoctcb{sbs}>{examples-version-n-change-color-chges-\filename.tex}
-
+        \tdoclatexinput<\tdoctcb{sbs}>{examples/version-n-change/color-chges-\filename.tex}
     \end{tdocexa}
 }
 

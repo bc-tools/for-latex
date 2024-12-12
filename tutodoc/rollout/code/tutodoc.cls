@@ -932,9 +932,9 @@
 % -- LATEX EXAMPLES -- %
 % -------------------- %
 
-% ::::::::::::::::::::::: %
-% :: INLINE CODE MACRO :: %
-% ::::::::::::::::::::::: %
+% ::::::::::::::::::::::::::::: %
+% :: INLINE LATEX CODE MACRO :: %
+% ::::::::::::::::::::::::::::: %
 
 %%%
 % See the \doc of the macro ''\newmintinline'' from the package \minted
@@ -946,9 +946,9 @@
 }
 
 
-% ::::::::::::::::::::::::::::::::::: %
-% :: TCOLORBOX LISTING ENVIRONMENT :: %
-% ::::::::::::::::::::::::::::::::::: %
+% :::::::::::::::::::::::::::::::::::::::::::::::: %
+% :: MINTED/TCOLORBOX LATEX LISTING ENVIRONMENT :: %
+% :::::::::::::::::::::::::::::::::::::::::::::::: %
 
 %%%
 % refs::
@@ -956,7 +956,7 @@
 %     + https://tex.stackexchange.com/a/327983/6880
 %%%
 \tcbset{
-  tutodoc-latex-listing-style/.style = {
+  tutodoc-latex-listing-style/.style 2 args = {
 % General.
     minted language/.expand once = \tutodoc@latex@lexer,
     minted style/.expand once    = \tutodoc@latex@style,
@@ -989,7 +989,10 @@
       dash pattern = {on 5pt off 2.5pt},
       line width   = .75pt
     },
-    #1
+% Extra minted otpions.
+    minted options = {#1},
+% Extra tcolorbox styles.
+    #2
   },
 }
 
@@ -1006,8 +1009,8 @@
 %     See the \doc of the macro ''\newtcblisting'' from the package
 %     \tcolorbox to have \infos about the environment ''tdoclatex''.
 %%%
-\newtcblisting{tdoclatex}[1][]{%
-  tutodoc-latex-listing-style = #1
+\NewTCBListing{tdoclatex}{ O{} D<>{} }{%
+  tutodoc-latex-listing-style = {#1}{#2}
 }
 
 
@@ -1026,9 +1029,9 @@
 %     See the \doc of the macro ''\newtcbinputlisting'' from the package
 %     \tcolorbox to have more \infos about the macro ''\tdoclatexinput''.
 %%%
-\newtcbinputlisting{\tdoclatexinput}[2][]{
-  listing file                = {#2},
-  tutodoc-latex-listing-style = #1,
+\NewTCBInputListing{\tdoclatexinput}{ O{} D<>{} m }{
+  listing file                = {#3},
+  tutodoc-latex-listing-style = {#1}{#2}
 }
 
 
@@ -1101,32 +1104,44 @@
 % -------------------- %
 
 
+% :::::::::::::::::::::::::::::::::: %
+% :: DOES THE THEME AVOID LEXERS? :: %
+% :::::::::::::::::::::::::::::::::: %
+
 \NewExpandableDocumentCommand{\tutodoc@code@lexer}{m}{%
   \ifcodenolexer text\else #1\fi%
 }
 
-% ::::::::::::::::::::::: %
-% :: INLINE CODE MACRO :: %
-% ::::::::::::::::::::::: %
+
+% :::::::::::::::::::::::::::::::::: %
+% :: INLINE GENERALIST CODE MACRO :: %
+% :::::::::::::::::::::::::::::::::: %
 
 %%%
-% See the \doc of the macro ''\newmintinline'' from the package \minted
-% to have \infos about the macro ''tdocodein''.
+% prototype::
+%     #1 : (minted-options)
+%          XXX
+%     #2 : (coding-lang)
+%          XXX
+%
+%     :action: this macro
+%
+%
+% warning::
+%     just 2 args car !!
 %%%
-
-\NewDocumentCommand{\tdocodein}{ D<>{} m }{%
-  \mintinline[#1]{\tutodoc@code@lexer{#2}}%
+\NewDocumentCommand{\tdocodein}{ O{} m }{%
+  \mintinline[
+    bgcolor            = tutodoc@code@back@color,
+    style/.expand once = \tutodoc@code@style,
+    #1
+  ]{\tutodoc@code@lexer{#2}}%
 }
 
-\setminted{
-  bgcolor            = tutodoc@code@back@color,
-  style/.expand once = \tutodoc@code@style
-}
 
-
-% ::::::::::::::::::::::::::::::::::: %
-% :: TCOLORBOX LISTING ENVIRONMENT :: %
-% ::::::::::::::::::::::::::::::::::: %
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::: %
+% :: MINTED/TCOLORBOX GENERALIST LISTING ENVIRONMENT :: %
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::: %
 
 %%%
 % refs::
@@ -1134,10 +1149,10 @@
 %     + https://tex.stackexchange.com/a/327983/6880
 %%%
 \tcbset{
-  tutodoc-full-listing-style/.style 2 args = {
+  tutodoc-full-listing-style/.style n args = {3}{
 % General.
     minted style/.expand once    = \tutodoc@code@style,
-    minted language/.expand once = \tutodoc@code@lexer{#2},
+    minted language/.expand once = \tutodoc@code@lexer{#3},
     breakable,
     enhanced,
 % Colors.
@@ -1168,8 +1183,10 @@
       line width   = .75pt
     },
     listing only,
-% Extra styles
-    #1
+% Extra minted otpions.
+    minted options = {#1},
+% Extra tcolorbox styles.
+    #2
   },
 }
 
@@ -1186,8 +1203,8 @@
 %     See the \doc of the macro ''\newtcblisting'' from the package
 %     \tcolorbox to have \infos about the environment ''tdocode''.
 %%%
-\newtcblisting{tdocode}[2][]{%
-  tutodoc-full-listing-style = {#1}{#2}
+\NewTCBListing{tdocode}{ O{} D<>{} m }{%
+  tutodoc-full-listing-style = {#1}{#2}{#3}
 }
 
 
@@ -1206,9 +1223,9 @@
 %     See the \doc of the macro ''\newtcbinputlisting'' from the package
 %     \tcolorbox to have more \infos about the macro ''\tdocodeinput''.
 %%%
-\newtcbinputlisting{\tdocodeinput}[3][]{
-  listing file               = {#3},
-  tutodoc-full-listing-style = {#1}{#2},
+\NewTCBInputListing{\tdocodeinput}{ O{} D<>{} m m }{
+  listing file               = {#4},
+  tutodoc-full-listing-style = {#1}{#2}{#3}
 }
 
 
