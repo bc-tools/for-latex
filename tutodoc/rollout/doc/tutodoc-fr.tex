@@ -1111,6 +1111,32 @@ VERSUS.
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-listing-full-hello-world.b}
+# Source: https://en.wikibooks.org/wiki/Computer_Programming/Hello_world#brainfuck
++++++ +++++             # initialize counter (cell #0) to 10
+[                       # use loop to set the next four cells to 70/100/30/10
+    > +++++ ++          #     add  7 to cell #1
+    > +++++ +++++       #     add 10 to cell #2
+    > +++               #     add  3 to cell #3
+    > +                 #     add  1 to cell #4
+    <<<< -              #     decrement counter (cell #0)
+]
+> ++ .                  # print 'H' (see the .)
+> + .                   # print 'e'
++++++ ++ .              # print 'l'
+.                       # print 'l'
++++ .                   # print 'o'
+> ++ .                  # print ' '
+<< +++++ +++++ +++++ .  # print 'W'
+> .                     # print 'o'
++++ .                   # print 'r'
+----- - .               # print 'l'
+----- --- .             # print 'd'
+> + .                   # print '!'
+> .
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-listing-full-hello-you.tex}
 \newcommand{\helloyou}[1]{%
     \IfBlankTF{#1}{%
@@ -1119,6 +1145,73 @@ VERSUS.
         Bonjour $#1$.
 
         Épatant ! En fait, pas du tout...%
+    }
+}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.lua}
+io.write("Qui êtes-vous ? ")
+local name = io.read()
+
+if name == "" then
+    print("Ah, pas très bavard aujourd'hui !")
+
+else
+    print("Bonjour " .. name .. ".")
+    print("Épatant ! En fait, pas du tout...")
+end
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.pl}
+print "Qui êtes-vous ? ";
+my $name = <STDIN>;
+
+chomp($name);
+
+if ($name eq "") {
+    print "Ah, pas très bavard aujourd'hui !\n";
+
+} else {
+    print "Bonjour $name.\n";
+    print "Épatant ! En fait, pas du tout...\n";
+}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.py}
+name = input("Qui êtes-vous ? ")
+
+if not name:
+    print("Ah, pas très bavard aujourd'hui !")
+
+else:
+    print(f"Bonjour {name}.")
+    print("Épatant ! En fait, pas du tout...")
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.java}
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Qui êtes-vous ? ");
+
+        String name = scanner.nextLine().trim();
+
+        if (name.isEmpty()) {
+            System.out.println("Ah, pas très bavard aujourd'hui !");
+
+        } else {
+            System.out.println("Bonjour " + name + ".");
+            System.out.println("Épatant ! En fait, pas du tout...");
+        }
+
+        scanner.close();
     }
 }
 \end{filecontents*}

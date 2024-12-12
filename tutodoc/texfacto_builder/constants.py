@@ -262,6 +262,8 @@ if __name__ == "__main__":
 \tdoclatexinput[opt1]<opt2>{examples/admonitions/exa.tex}
 
 \tdoclatexinput<tdoctcb{code}>{examples-showcase-rule-custom.tex}
+
+\tdocodeinput{brainfuck}{examples/listing-full/hello-world.b}
     """.split("\n"):
         texline = texline.strip()
 

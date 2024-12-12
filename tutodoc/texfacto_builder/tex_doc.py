@@ -166,8 +166,6 @@ def prebuild_single_tex(
             srcfile = lang_dir_manual / TAG_ABSTRACT / f"{TAG_ABSTRACT}.tex"
         )
 
-
-
         if lang != TAG_LANG_EN:
             abstract  = abstract.replace(r"\end{abstract}", "")
             abstract += f"""
