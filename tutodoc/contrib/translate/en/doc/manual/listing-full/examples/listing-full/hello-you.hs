@@ -1,12 +1,12 @@
 main :: IO ()
 
 main = do
-    putStr "Qui êtes-vous ? "
+    putStr "Who are you? "
     name <- getLine
 
     if name == ""
-        then putStrLn "Ah, pas très bavard aujourd'hui !"
+        then putStrLn "Ah, not very chatty today!"
 
     else do
-        putStrLn ("Bonjour " ++ name ++ ".")
-        putStrLn "Épatant ! En fait, pas du tout..."
+        putStrLn ("Hello " ++ name ++ ".")
+        putStrLn "Amazing! Actually, not at all..."

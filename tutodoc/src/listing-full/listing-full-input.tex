@@ -18,24 +18,21 @@
 
 La macro \tdoclatexin{\tdoccodeinput} attend le langage et le chemin d'un fichier à mettre en forme, et éventuellement d'options similaires à ce que propose l'environnement \tdocenv*{tdoccode}\,.
 
-\tdoccodeinput{hs}{examples/listing-full/hello-you.hs}
-
 
 % Strings "..." in the codes must be translated.
 \begin{tdocexa}[Fonctionnement standard]
 	\leavevmode
 
-    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
+    \begin{tdoclatex}<bottom = 3pt, top = 3pt>
 \tdoccodeinput{hs}{examples/listing-full/hello-you.hs}
     \end{tdoclatex}
 \end{tdocexa}
 
 
-
 \begin{tdocexa}[Personnalisation ponctuelle du rendu]
 	\leavevmode
 
-    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
+    \begin{tdoclatex}<bottom = 3pt, top = 3pt>
 \tdoccodeinput[style = solarized-light, linenos]%
               <leftrule = 22pt, colback = orange!5, colframe = red!35>%
               {tex}{examples/listing-full/hello-you.tex}

@@ -23,7 +23,7 @@ For these projects, the documentation must be able to present lines of code; thi
 
 
 
-\subsection{Codes \tdocquote{online}}
+\subsection{\tdocquote{Inline} codes}
 
 The \tdocmacro{tdoccodein} macro expects two arguments: the 1\st\ indicates the programming language, and the 2\nd\ gives the code to be formatted.
 It is possible to use an option identical to that proposed by \tdocmacro{tdoclatexin}: see the section \ref{tutodoc-listing-latex-inline} on page \pageref{tutodoc-listing-latex-inline}.
@@ -52,12 +52,13 @@ Here are some possible use cases.%
 \subsection{Codes typed directly}
 
 Code can be typed directly into a document via \tdocenv{tdoccode} which expects an argument indicating the programming language, and any options between parenthesis and/or square brackets identical to those offered by \tdocenv{tdoclatex}: see the section \ref{tutodoc-listing-latex-direct} on page \pageref{tutodoc-listing-latex-direct}.
+In the following examples, the \LaTeX\ codes for \thisproj\ are displayed in verbatim mode because the coloring of \LaTeX\ codes is not correct.
 
 % Strings "..." in the codes must be translated.
 \begin{tdocexa}[Standard Operation]
 	\leavevmode
 
-    \begin{tdoclatex}<minted language = text>
+    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
 \begin{tdoccode}{pl}
 print "Who are you? ";
 my $name = <STDIN>;

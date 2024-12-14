@@ -61,12 +61,13 @@ Voici des cas d'utilisation possibles.%
 \subsection{Codes tapés directement}
 
 On peut taper directement du code dans un document \LaTeX\ via \tdocenv{tdoccode} qui attend un argument indiquant le langage de programmation, et d'éventuelles options entre crochets et/ou entre chevrons de fonctionnements identiques à ce que propose \tdocenv{tdoclatex} : voir la section \ref{tutodoc-listing-latex-direct} page \pageref{tutodoc-listing-latex-direct}.
+Dans les exemples qui suivent, les codes \LaTeX\ à destination de \thisproj\ sont affichés en mode verbatim, car la coloration \LaTeX\ n'est pas correcte.
 
 % Strings "..." in the codes must be translated.
 \begin{tdocexa}[Fonctionnement standard]
 	\leavevmode
 
-    \begin{tdoclatex}<minted language = text>
+    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
 \begin{tdoccode}{pl}
 print "Qui êtes-vous ? ";
 my $name = <STDIN>;
