@@ -1321,7 +1321,7 @@ OU.
 \begin{tdoclatex}%
     [linenos, style = igor]%
     <\tdoctcb{sbs},
-     attach boxed title to top left = {yshift = -9pt}, 
+     attach boxed title to top left = {yshift = -9pt},
      fonttitle                      = \bfseries,
      title                          = Modifications locales,
      top                            = 10pt>
@@ -1493,9 +1493,9 @@ OU.
             The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
         }
         using a sober rendering for reading on screen.
-    
+
         \smallskip
-    
+
         \noindent
         \emph{\textbf{Remark :} this documentation is also available in French.}
 \end{abstract}
@@ -1655,7 +1655,7 @@ Comme cette langue fait partie de la liste des langues prises en compte, voir ci
         \task \tdoclatexin|es| : espagnol.
         \task \tdoclatexin|fr| : français.
 \end{tasks}
-                    
+
 
 
 \begin{tdocnote}
@@ -1976,7 +1976,7 @@ Pour rendre plus visible le code \LaTeX\ mis en forme de façon sombre, on peut 
 	On peut obtenir facilement l'horreur suivante.
 
 	\input{examples-showcase-rule-custom.tex}
-	
+
 	Voici le code qui a été employé.%
 	\footnote{
 		La section suivante va normaliser le choix, a priori étrange, de \tdoclatexin{col-stripe} au lieu de \tdoclatexin{col-rule}\,.
@@ -2019,7 +2019,7 @@ Il est des situations où l'on doit pouvoir clairement identifier un exemple de 
 	On peut produire facilement une belle horreur comme celle qui arrive.
 
 	\input{examples-showcase-stripe-custom.tex}
-	
+
 	Voici le code qui a été employé.%
 	\footnote{
 		On comprend maintenant le choix de \tdoclatexin{col-stripe} au lieu de \tdoclatexin{col-rule}\,.
@@ -2045,11 +2045,11 @@ Pour obtenir des rendus en important le code depuis un fichier externe, au lieu 
 	\begin{tdocexa}[\exatitle]
 		\expandafter\IfBlankTF\expandafter{\option}{
 			Voici le contenu édifiant de l'exemple choisi.
-			
+
 	    	\tdocshowcaseinput{examples-showcase-external.tex}
 		}{
 	    	L'option \expandafter\tdoclatexin\expandafter{\option} fournit ce qui suit.
-		
+
 			\smallskip
 			\expandafter\tdocshowcaseinput\expandafter[\option]{examples-showcase-external.tex}
 		}
@@ -2250,7 +2250,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
     \tdoclatexin+\tdoclatexshow{examples-listing-xyz.tex}+ produit ce qui suit.
 
     \smallskip
-    
+
     \tdoclatexshow{examples-listing-latex-xyz.tex}
 \end{tdocexa}
 
@@ -2306,25 +2306,25 @@ Pour ce type de projet, il est utile de pouvoir présenter des lignes de code \l
 ZZZ
 
 
-\tdocodein{py}{print("Hello!")}
+\tdoccodein{py}{print("Hello!")}
 
 
-\tdocodeinput{py}{examples-listing-full-hello-you.py}
+\tdoccodeinput{py}{examples-listing-full-hello-you.py}
 
 
 \subsection{Codes importés}
 
-\tdocodeinput{lua}{examples-listing-full-hello-you.lua}
+\tdoccodeinput{lua}{examples-listing-full-hello-you.lua}
 
-\tdocodeinput{java}{examples-listing-full-hello-you.java}
+\tdoccodeinput{java}{examples-listing-full-hello-you.java}
 
-\tdocodeinput{tex}{examples-listing-full-hello-you.tex}
+\tdoccodeinput{tex}{examples-listing-full-hello-you.tex}
 
-\tdocodeinput{pl}{examples-listing-full-hello-you.pl}
+\tdoccodeinput{pl}{examples-listing-full-hello-you.pl}
 
-\tdocodeinput{python}{examples-listing-full-hello-you.py}
+\tdoccodeinput{python}{examples-listing-full-hello-you.py}
 
-\tdocodeinput{brainfuck}{examples-listing-full-hello-world.b}
+\tdoccodeinput{brainfuck}{examples-listing-full-hello-world.b}
 
 
 \section{Indiquer les changements}

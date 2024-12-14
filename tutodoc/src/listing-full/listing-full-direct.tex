@@ -16,49 +16,82 @@
 
 \section{Présenter du code informatique}
 
-Certains packages proposent des outils utilisables via le langage \lua\ depuis un document \LaTeX.%
+Certains packages proposent des fonctionnalités nécessitant de coder un peu en \lua.%
 \footnote{
 	Pour les mathématiques, on peut citer \tdocpack{luacas} et \tdocpack{tkz-elements}.
 }
-Pour ce type de projet, il est utile de pouvoir présenter des lignes de code \lua.
-Pour cette raison, \thisproj\ permet de faire cela aisément, et bien plus.%
+Pour ces projets, la documentation doit pouvoir présenter des lignes de code \lua\,; c'est pour cette raison que \thisproj\ permet de faire cela aisément, et bien plus.%
 \footnote{
     La mise en forme des codes étant faite via les packages \tdocpack{minted} et \tdocpack{tcolorbox}, les macros et les environnements présentés dans cette section permettent la mise en forme de codes dans tous les langages supportés par \pygmentsREF, un projet \python\ utilisé en coulisse par \tdocpack{minted}.
 }
 
 
-\begin{tdoccaut}
+\begin{tdocimp}
 	Les outils de cette section permettent aussi de présenter du code \LaTeX, mais il ne faut pas les utiliser pour de simples cas d'utilisation, car les macros et les environnements présentées juste après servent à étudier du code, et non juste à l'employer : se reporter à la section \ref{tutodoc-listing-latex} page \pageref{tutodoc-listing-latex} pour faire appel aux bons outils pour la mise en forme de cas d'utilisation \LaTeX.
-\end{tdoccaut}
+\end{tdocimp}
 
 
 
 \subsection{Codes \tdocquote{en ligne}}
 
-La macro \tdocmacro{tdocodein} attend deux arguments : le 1\ier\ indique le langage de programmation, et le 2\ieme\ donne le code à mettre en forme.
+La macro \tdocmacro{tdoccodein} attend deux arguments : le 1\ier\ indique le langage de programmation, et le 2\ieme\ donne le code à mettre en forme.
 Il est possible d'utiliser une option de fonctionnement identique à ce que propose \tdocmacro{tdoclatexin} : voir la section \ref{tutodoc-listing-latex-inline} page \pageref{tutodoc-listing-latex-inline}.
-Voici des cas d'utilisation possibles..%
+Voici des cas d'utilisation possibles.%
     \footnote{
-    	Une couleur de fond est volontairement utilisée pour subtilement faire ressortir les codes \tdocodein{py}{mis.en.forme}\,.
+    	Une couleur de fond est volontairement utilisée pour subtilement faire ressortir les codes mis en forme.
+		Par exemple, taper \tdoclatexin{\tdoccodein{py}{funny = "ah"*3}} produira \tdoccodein{py}{funny = "ah"*3}\,.
     }
 
 \begin{tdoclatex}
-1: \tdocodein{py}{print("OK" if i=0 else "KO")}             \\
-2: \tdocodein[style = bw]{py}{print("OK" if i=0 else "KO")} \\
-3: \tdocodein[style = igor, showspaces]%
-             {py}{print("OK" if i=0 else "KO")}
+1: \tdoccodein{py}{print("OK" if i = 0 else "KO")}             \\
+2: \tdoccodein[style = bw]{py}{print("OK" if i = 0 else "KO")} \\
+3: \tdoccodein[style = igor, showspaces]%
+             {py}{print("OK" if i = 0 else "KO")}
 \end{tdoclatex}
+
+\medskip
+
+\begin{tdocnote}
+	Sur la page \url{https://pygments.org/languages/} se trouve la liste complète des langages supportés avec leur nom court.
+	Par exemple, il est possible de mettre en forme du \brainfuck\ comme cette séquence \tdoccodein{bf}{++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.} qui sert à afficher \tdoccodein{text}{Hello}\,.
+\end{tdocnote}
 
 
 
 \subsection{Codes tapés directement}
 
-XXX
+On peut taper directement du code dans un document \LaTeX\ via \tdocenv{tdoccode} qui attend un argument indiquant le langage de programmation, et d'éventuelles options entre crochets et/ou entre chevrons de fonctionnements identiques à ce que propose \tdocenv{tdoclatex} : voir la section \ref{tutodoc-listing-latex-direct} page \pageref{tutodoc-listing-latex-direct}. 
 
-\begin{tdoclatex}<\tdoctcb{code}>
-\begin{tdocode}[style=solarized-light, linenos]%
-               <top = 1cm, leftrule=5pt>%
-               {lua}
+% Strings "..." in the codes must be translated.
+\begin{tdocexa}[Fonctionnement standard]
+	\leavevmode
+	
+    \begin{tdoclatex}<minted language = text>
+\begin{tdoccode}{pl}
+print "Qui êtes-vous ? ";
+my $name = <STDIN>;
+
+chomp($name);
+
+if ($name eq "") {
+    print "Ah, pas très bavard aujourd'hui !\n";
+
+} else {
+    print "Bonjour $name.\n";
+    print "Épatant ! En fait, pas du tout...\n";
+}
+\end{tdoccode}
+    \end{tdoclatex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[Personnalisation ponctuelle du rendu]
+	\leavevmode
+	
+    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
+\begin{tdoccode}[style = solarized-light, linenos]%
+                <leftrule = 22pt, colback = orange!5, colframe = red!35>%
+                {lua}
 io.write("Qui êtes-vous ? ")
 local name = io.read()
 
@@ -69,23 +102,8 @@ else
     print("Bonjour " .. name .. ".")
     print("Épatant ! En fait, pas du tout...")
 end
-\end{tdocode}
-\end{tdoclatex}
-
-
-\begin{tdocode}[style=solarized-light, linenos]%
-               <top = 8pt, bottom = 8pt, leftrule=5pt>%
-               {lua}
-io.write("Qui êtes-vous ? ")
-local name = io.read()
-
-if name == "" then
-    print("Ah, pas très bavard aujourd'hui !")
-
-else
-    print("Bonjour " .. name .. ".")
-    print("Épatant ! En fait, pas du tout...")
-end
-\end{tdocode}
+\end{tdoccode}
+    \end{tdoclatex}
+\end{tdocexa}
 
 \end{document}

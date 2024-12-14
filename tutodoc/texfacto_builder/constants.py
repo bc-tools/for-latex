@@ -152,7 +152,7 @@ CMDS_FOR_FILE_PATTERNS += [
         + ")(\[.*\][\t ]*\n?[\t ]*)?({.*}[\t ]*\n?[\t ]*)?{(.*)}(.*)$"
     )
     for macroname in [
-        "tdocodeinput",
+        "tdoccodeinput",
     ]
 ]
 
@@ -263,7 +263,7 @@ if __name__ == "__main__":
 
 \tdoclatexinput<tdoctcb{code}>{examples-showcase-rule-custom.tex}
 
-\tdocodeinput{brainfuck}{examples/listing-full/hello-world.b}
+\tdoccodeinput{brainfuck}{examples/listing-full/hello-world.b}
     """.split("\n"):
         texline = texline.strip()
 

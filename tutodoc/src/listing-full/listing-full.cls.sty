@@ -1,9 +1,8 @@
 % == TOOLS == %
 
-% -- LATEX EXAMPLES -- %
-
 \input{../listing-full/css/\tutodoc@theme.cls.sty}
 
+% -- LATEX EXAMPLES -- %
 
 % :: DOES THE THEME AVOID LEXERS? :: %
 
@@ -27,7 +26,7 @@
 % warning::
 %     just 2 args car !!
 %%%
-\NewDocumentCommand{\tdocodein}{ O{} m }{%
+\NewDocumentCommand{\tdoccodein}{ O{} m }{%
   \mintinline[
     bgcolor            = tutodoc@code@back@color,
     style/.expand once = \tutodoc@code@style,
@@ -96,9 +95,9 @@
 %
 % note::
 %     See the \doc of the macro ''\newtcblisting'' from the package
-%     \tcolorbox to have \infos about the environment ''tdocode''.
+%     \tcolorbox to have \infos about the environment ''tdoccode''.
 %%%
-\NewTCBListing{tdocode}{ O{} D<>{} m }{%
+\NewTCBListing{tdoccode}{ O{} D<>{} m }{%
   tutodoc-full-listing-style = {#1}{#2}{#3}
 }
 
@@ -108,15 +107,15 @@
 %%%
 % prototype::
 %     #1 : (tcolorbox-styling-commands)
-%          :see: macro.newtcblisting{tdocode}
+%          :see: macro.newtcblisting{tdoccode}
 %     #2 : (file path)
 %          the path of the file to input and format.
 %
 % note::
 %     See the \doc of the macro ''\newtcbinputlisting'' from the package
-%     \tcolorbox to have more \infos about the macro ''\tdocodeinput''.
+%     \tcolorbox to have more \infos about the macro ''\tdoccodeinput''.
 %%%
-\NewTCBInputListing{\tdocodeinput}{ O{} D<>{} m m }{
+\NewTCBInputListing{\tdoccodeinput}{ O{} D<>{} m m }{
   listing file               = {#4},
   tutodoc-full-listing-style = {#1}{#2}{#3}
 }
