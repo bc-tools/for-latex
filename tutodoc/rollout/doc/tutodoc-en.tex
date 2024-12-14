@@ -867,7 +867,7 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 \tdocversion[red]{10.2.0-beta}[2023-12-01]
 Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 
-\bigskip % CAUTION! This prevents overlapping.
+\smallskip\bigskip % CAUTION! This prevents overlapping.
 
 \tdocversion{10.2.0-alpha}
 Ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble,
@@ -1083,38 +1083,12 @@ VERSUS.
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-listing-full-hello-world.b}
-# Source: https://en.wikibooks.org/wiki/Computer_Programming/Hello_world#brainfuck
-+++++ +++++             # initialize counter (cell #0) to 10
-[                       # use loop to set the next four cells to 70/100/30/10
-    > +++++ ++          #     add  7 to cell #1
-    > +++++ +++++       #     add 10 to cell #2
-    > +++               #     add  3 to cell #3
-    > +                 #     add  1 to cell #4
-    <<<< -              #     decrement counter (cell #0)
-]
-> ++ .                  # print 'H' (see the .)
-> + .                   # print 'e'
-+++++ ++ .              # print 'l'
-.                       # print 'l'
-+++ .                   # print 'o'
-> ++ .                  # print ' '
-<< +++++ +++++ +++++ .  # print 'W'
-> .                     # print 'o'
-+++ .                   # print 'r'
------ - .               # print 'l'
------ --- .             # print 'd'
-> + .                   # print '!'
-> .
-\end{filecontents*}
-
-
 \begin{filecontents*}[overwrite]{examples-listing-full-hello-you.tex}
 \newcommand{\helloyou}[1]{%
     \IfBlankTF{#1}{%
         Ah, pas très bavard aujourd'hui !%
     }{%
-        Bonjour #1.
+        Bonjour $#1$.
 
         Épatant ! En fait, pas du tout...%
     }
@@ -1122,70 +1096,19 @@ VERSUS.
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.lua}
-io.write("Qui êtes-vous ? ")
-local name = io.read()
+\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.hs}
+main :: IO ()
 
-if name == "" then
-    print("Ah, pas très bavard aujourd'hui !")
+main = do
+    putStr "Qui êtes-vous ? "
+    name <- getLine
 
-else
-    print("Bonjour " .. name .. ".")
-    print("Épatant ! En fait, pas du tout...")
-end
-\end{filecontents*}
+    if name == ""
+        then putStrLn "Ah, pas très bavard aujourd'hui !"
 
-
-\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.pl}
-print "Qui êtes-vous ? ";
-my $name = <STDIN>;
-
-chomp($name);
-
-if ($name eq "") {
-    print "Ah, pas très bavard aujourd'hui !\n";
-
-} else {
-    print "Bonjour $name.\n";
-    print "Épatant ! En fait, pas du tout...\n";
-}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.py}
-name = input("Qui êtes-vous ?")
-
-if not name:
-    print("Ah, pas très bavard aujourd'hui !")
-
-else:
-    print(f"Bonjour {name}.")
-    print("Épatant ! En fait, pas du tout...")
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.java}
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Qui êtes-vous ? ");
-
-        String name = scanner.nextLine().trim();
-
-        if (name.isEmpty()) {
-            System.out.println("Ah, pas très bavard aujourd'hui !");
-
-        } else {
-            System.out.println("Bonjour " + name + ".");
-            System.out.println("Épatant ! En fait, pas du tout...");
-        }
-
-        scanner.close();
-    }
-}
+    else do
+        putStrLn ("Bonjour " ++ name ++ ".")
+        putStrLn "Épatant ! En fait, pas du tout..."
 \end{filecontents*}
 
 
@@ -1291,7 +1214,7 @@ OR.
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-ABC-custom.tex}
 \begin{tdoclatex}%
-    [linenos, style = igor]%
+    [linenos, style = igor, showspaces]%
     <\tdoctcb{sbs},
      attach boxed title to top left = {yshift = -9pt},
      fonttitle                      = \bfseries,
@@ -2267,6 +2190,9 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
 
 \section{TODO}
+
+
+TODO
 
 
 \section{Indicate changes}

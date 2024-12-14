@@ -1111,32 +1111,6 @@ VERSUS.
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-listing-full-hello-world.b}
-# Source: https://en.wikibooks.org/wiki/Computer_Programming/Hello_world#brainfuck
-+++++ +++++             # initialize counter (cell #0) to 10
-[                       # use loop to set the next four cells to 70/100/30/10
-    > +++++ ++          #     add  7 to cell #1
-    > +++++ +++++       #     add 10 to cell #2
-    > +++               #     add  3 to cell #3
-    > +                 #     add  1 to cell #4
-    <<<< -              #     decrement counter (cell #0)
-]
-> ++ .                  # print 'H' (see the .)
-> + .                   # print 'e'
-+++++ ++ .              # print 'l'
-.                       # print 'l'
-+++ .                   # print 'o'
-> ++ .                  # print ' '
-<< +++++ +++++ +++++ .  # print 'W'
-> .                     # print 'o'
-+++ .                   # print 'r'
------ - .               # print 'l'
------ --- .             # print 'd'
-> + .                   # print '!'
-> .
-\end{filecontents*}
-
-
 \begin{filecontents*}[overwrite]{examples-listing-full-hello-you.tex}
 \newcommand{\helloyou}[1]{%
     \IfBlankTF{#1}{%
@@ -1150,70 +1124,19 @@ VERSUS.
 \end{filecontents*}
 
 
-\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.lua}
-io.write("Qui êtes-vous ? ")
-local name = io.read()
+\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.hs}
+main :: IO ()
 
-if name == "" then
-    print("Ah, pas très bavard aujourd'hui !")
+main = do
+    putStr "Qui êtes-vous ? "
+    name <- getLine
 
-else
-    print("Bonjour " .. name .. ".")
-    print("Épatant ! En fait, pas du tout...")
-end
-\end{filecontents*}
+    if name == ""
+        then putStrLn "Ah, pas très bavard aujourd'hui !"
 
-
-\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.pl}
-print "Qui êtes-vous ? ";
-my $name = <STDIN>;
-
-chomp($name);
-
-if ($name eq "") {
-    print "Ah, pas très bavard aujourd'hui !\n";
-
-} else {
-    print "Bonjour $name.\n";
-    print "Épatant ! En fait, pas du tout...\n";
-}
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.py}
-name = input("Qui êtes-vous ? ")
-
-if not name:
-    print("Ah, pas très bavard aujourd'hui !")
-
-else:
-    print(f"Bonjour {name}.")
-    print("Épatant ! En fait, pas du tout...")
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-listing-full-hello-you.java}
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Qui êtes-vous ? ");
-
-        String name = scanner.nextLine().trim();
-
-        if (name.isEmpty()) {
-            System.out.println("Ah, pas très bavard aujourd'hui !");
-
-        } else {
-            System.out.println("Bonjour " + name + ".");
-            System.out.println("Épatant ! En fait, pas du tout...");
-        }
-
-        scanner.close();
-    }
-}
+    else do
+        putStrLn ("Bonjour " ++ name ++ ".")
+        putStrLn "Épatant ! En fait, pas du tout..."
 \end{filecontents*}
 
 
@@ -1321,7 +1244,7 @@ OU.
 \begin{tdoclatex}%
     [linenos, style = igor]%
     <\tdoctcb{sbs},
-     attach boxed title to top left = {yshift = -9pt},
+     attach boxed title to top left = {yshift = -9pt}, 
      fonttitle                      = \bfseries,
      title                          = Modifications locales,
      top                            = 10pt>
@@ -1493,9 +1416,9 @@ OU.
             The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
         }
         using a sober rendering for reading on screen.
-
+    
         \smallskip
-
+    
         \noindent
         \emph{\textbf{Remark :} this documentation is also available in French.}
 \end{abstract}
@@ -1655,7 +1578,7 @@ Comme cette langue fait partie de la liste des langues prises en compte, voir ci
         \task \tdoclatexin|es| : espagnol.
         \task \tdoclatexin|fr| : français.
 \end{tasks}
-
+                    
 
 
 \begin{tdocnote}
@@ -1976,7 +1899,7 @@ Pour rendre plus visible le code \LaTeX\ mis en forme de façon sombre, on peut 
 	On peut obtenir facilement l'horreur suivante.
 
 	\input{examples-showcase-rule-custom.tex}
-
+	
 	Voici le code qui a été employé.%
 	\footnote{
 		La section suivante va normaliser le choix, a priori étrange, de \tdoclatexin{col-stripe} au lieu de \tdoclatexin{col-rule}\,.
@@ -2019,7 +1942,7 @@ Il est des situations où l'on doit pouvoir clairement identifier un exemple de 
 	On peut produire facilement une belle horreur comme celle qui arrive.
 
 	\input{examples-showcase-stripe-custom.tex}
-
+	
 	Voici le code qui a été employé.%
 	\footnote{
 		On comprend maintenant le choix de \tdoclatexin{col-stripe} au lieu de \tdoclatexin{col-rule}\,.
@@ -2045,11 +1968,11 @@ Pour obtenir des rendus en important le code depuis un fichier externe, au lieu 
 	\begin{tdocexa}[\exatitle]
 		\expandafter\IfBlankTF\expandafter{\option}{
 			Voici le contenu édifiant de l'exemple choisi.
-
+			
 	    	\tdocshowcaseinput{examples-showcase-external.tex}
 		}{
 	    	L'option \expandafter\tdoclatexin\expandafter{\option} fournit ce qui suit.
-
+		
 			\smallskip
 			\expandafter\tdocshowcaseinput\expandafter[\option]{examples-showcase-external.tex}
 		}
@@ -2250,7 +2173,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
     \tdoclatexin+\tdoclatexshow{examples-listing-xyz.tex}+ produit ce qui suit.
 
     \smallskip
-
+    
     \tdoclatexshow{examples-listing-latex-xyz.tex}
 \end{tdocexa}
 
@@ -2282,49 +2205,10 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 \end{tdocexa}
 
 
-\section{Présenter du code informatique}
-
-Certains packages proposent des outils utilisables via le langage \lua\ depuis un document \LaTeX.%
-\footnote{
-	Pour les mathématiques, on peut citer \tdocpack{luacas} et \tdocpack{tkz-elements}.
-}
-Pour ce type de projet, il est utile de pouvoir présenter des lignes de code \lua\ ; \thisproj\ permet de faire cela aisément, et bien plus.%
-\footnote{
-    La mise en forme des codes étant faite via les packages \tdocpack{minted} et \tdocpack{tcolorbox}, les macros et les environnements présentés dans cette section permettent la mise en forme de codes dans tous les langages supportés par \pygmentsREF, un projet \python\ utilisé en coulisse par \tdocpack{minted}.
-}
+\section{TODO}
 
 
-\begin{tdoccaut}
-	Les outils de cette section permettent aussi de présenter du code \LaTeX, mais il ne faut pas les utiliser pour de simples cas d'utilisation.
-	Les macros et les environnements présentées juste après servent à étudier du code, et non juste à l'employer : se reporter à la section \ref{tutodoc-listing-latex} page \pageref{tutodoc-listing-latex} pour employer les bons outils pour mettre en forme de simples cas d'utilisation.
-\end{tdoccaut}
-
-
-
-\subsection{Codes \tdocquote{en ligne}}
-
-ZZZ
-
-
-\tdoccodein{py}{print("Hello!")}
-
-
-\tdoccodeinput{py}{examples-listing-full-hello-you.py}
-
-
-\subsection{Codes importés}
-
-\tdoccodeinput{lua}{examples-listing-full-hello-you.lua}
-
-\tdoccodeinput{java}{examples-listing-full-hello-you.java}
-
-\tdoccodeinput{tex}{examples-listing-full-hello-you.tex}
-
-\tdoccodeinput{pl}{examples-listing-full-hello-you.pl}
-
-\tdoccodeinput{python}{examples-listing-full-hello-you.py}
-
-\tdoccodeinput{brainfuck}{examples-listing-full-hello-world.b}
+TODO
 
 
 \section{Indiquer les changements}
