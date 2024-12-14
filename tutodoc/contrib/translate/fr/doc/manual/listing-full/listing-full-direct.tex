@@ -51,51 +51,22 @@ Voici des cas d'utilisation possibles.%
 
 \subsection{Codes tapés directement}
 
-On peut taper directement du code dans un document \LaTeX\ via \tdocenv{tdoccode} qui attend un argument indiquant le langage de programmation, et d'éventuelles options entre crochets et/ou entre chevrons de fonctionnements identiques à ce que propose \tdocenv{tdoclatex} : voir la section \ref{tutodoc-listing-latex-direct} page \pageref{tutodoc-listing-latex-direct}.
-Dans les exemples qui suivent, les codes \LaTeX\ à destination de \thisproj\ sont affichés en mode verbatim, car la coloration \LaTeX\ n'est pas correcte.
+On peut taper directement du code dans un document \LaTeX\ via \tdocenv{tdoccode} qui attend un argument indiquant le langage de programmation, et d'éventuelles options entre crochets et/ou entre chevrons de fonctionnements identiques à ce que propose \tdocenv{tdoclatex} : voir la section \ref{tutodoc-listing-latex-direct} page \pageref{tutodoc-listing-latex-direct}.%
+\footnote{
+	Noter que la coloration des codes \LaTeX\ est correcte du point de vue lexical, mais fausse sémantiquement parlant.
+}
+
 
 % Strings "..." in the codes must be translated.
 \begin{tdocexa}[Fonctionnement standard]
 	\leavevmode
-
-    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
-\begin{tdoccode}{pl}
-print "Qui êtes-vous ? ";
-my $name = <STDIN>;
-
-chomp($name);
-
-if ($name eq "") {
-    print "Ah, pas très bavard aujourd'hui !\n";
-
-} else {
-    print "Bonjour $name.\n";
-    print "Épatant ! En fait, pas du tout...\n";
-}
-\end{tdoccode}
-    \end{tdoclatex}
+	\tdoclatexshow{examples/listing-full/hello-you-perl.tex}
 \end{tdocexa}
 
 
 \begin{tdocexa}[Personnalisation ponctuelle du rendu]
 	\leavevmode
-
-    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
-\begin{tdoccode}[style = solarized-light, linenos]%
-                <leftrule = 22pt, colback = orange!5, colframe = red!35>%
-                {lua}
-io.write("Qui êtes-vous ? ")
-local name = io.read()
-
-if name == "" then
-    print("Ah, pas très bavard aujourd'hui !")
-
-else
-    print("Bonjour " .. name .. ".")
-    print("Épatant ! En fait, pas du tout...")
-end
-\end{tdoccode}
-    \end{tdoclatex}
+	\tdoclatexshow{examples/listing-full/hello-you-lua.tex}
 \end{tdocexa}
 
 \end{document}

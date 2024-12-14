@@ -7,27 +7,20 @@
 
 \subsection{Codes importés}
 
-La macro \tdoclatexin{\tdoccodeinput} attend le langage et le chemin d'un fichier à mettre en forme, et éventuellement d'options similaires à ce que propose l'environnement \tdocenv*{tdoccode}\,.
+La macro \tdocmacro{tdoccodeinput} attend le langage et le chemin d'un fichier à mettre en forme, et éventuellement d'options similaires à ce que propose l'environnement \tdocenv*{tdoccode}\,.
 
 
 % Strings "..." in the codes must be translated.
 \begin{tdocexa}[Fonctionnement standard]
-	\leavevmode
+	Via le simple emploi de \tdocmacro{tdoccodeinput}, on obtient facilement un rendu comme le suivant.
 
-    \begin{tdoclatex}<bottom = 3pt, top = 3pt>
-\tdoccodeinput{hs}{examples/listing-full/hello-you.hs}
-    \end{tdoclatex}
+    \tdoccodeinput{hs}{examples/listing-full/hello-you.hs}
 \end{tdocexa}
 
 
 \begin{tdocexa}[Personnalisation ponctuelle du rendu]
 	\leavevmode
-
-    \begin{tdoclatex}<bottom = 3pt, top = 3pt>
-\tdoccodeinput[style = solarized-light, linenos]%
-              <leftrule = 22pt, colback = orange!5, colframe = red!35>%
-              {tex}{examples/listing-full/hello-you.tex}
-    \end{tdoclatex}
+	\tdoclatexshow{examples/listing-full/custom-hello-you-tex.tex}
 \end{tdocexa}
 
 \end{document}
