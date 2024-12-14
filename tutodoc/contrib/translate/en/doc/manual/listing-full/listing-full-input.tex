@@ -5,6 +5,32 @@
 
 \begin{document}
 
-TODO
+\subsection{Imported codes}
+
+The \tdoclatexin{tdoccodeinput} macro expects the language and path of a file to be formatted, and possibly options similar to those offered by the \tdocenv*{tdoccode} environment.
+
+\tdoccodeinput{hs}{examples/listing-full/hello-you.hs}
+
+
+% Strings "..." in the codes must be translated.
+\begin{tdocexa}{Standard features}
+	\leavevmode
+
+    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
+\tdoccodeinput{hs}{examples/listing-full/hello-you.hs}
+    \end{tdoclatex}
+\end{tdocexa}
+
+
+
+\begin{tdocexa}[Customize rendering on occasion]
+	\leavevmode
+
+    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
+\tdoccodeinput[style = solarized-light, linenos]%
+              <leftrule = 22pt, colback = orange!5, colframe = red!35%>
+              {tex}{examples/listing-full/hello-you.tex}
+    \end{tdoclatex}
+\end{tdocexa}
 
 \end{document}
