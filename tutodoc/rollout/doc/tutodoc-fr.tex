@@ -1112,31 +1112,29 @@ VERSUS.
 
 
 \begin{filecontents*}[overwrite]{examples-listing-full-hello-you.tex}
-\newcommand{\helloyou}[1]{%
+\NewDocumentCommand{\helloyou}{m}{%
     \IfBlankTF{#1}{%
         Ah, pas très bavard aujourd'hui !%
     }{%
         Bonjour $#1$.
 
         Épatant ! En fait, pas du tout...%
-    }
+    }%
 }
 \end{filecontents*}
 
 
 \begin{filecontents*}[overwrite]{examples-listing-full-hello-you.hs}
 main :: IO ()
-
 main = do
-    putStr "Qui êtes-vous ? "
-    name <- getLine
+  putStr "Qui êtes-vous ? "
+  name <- getLine
 
-    if name == ""
-        then putStrLn "Ah, pas très bavard aujourd'hui !"
-
+  if name == ""
+    then putStrLn "Ah, pas très bavard aujourd'hui !"
     else do
-        putStrLn ("Bonjour " ++ name ++ ".")
-        putStrLn "Épatant ! En fait, pas du tout..."
+      putStrLn ("Bonjour " ++ name ++ ".")
+      putStrLn "Épatant ! En fait, pas du tout..."
 \end{filecontents*}
 
 
@@ -2229,16 +2227,16 @@ Pour ces projets, la documentation doit pouvoir présenter des lignes de code \l
 La macro \tdocmacro{tdoccodein} attend deux arguments : le 1\ier\ indique le langage de programmation, et le 2\ieme\ donne le code à mettre en forme.
 Il est possible d'utiliser une option de fonctionnement identique à ce que propose \tdocmacro{tdoclatexin} : voir la section \ref{tutodoc-listing-latex-inline} page \pageref{tutodoc-listing-latex-inline}.
 Voici des cas d'utilisation possibles.%
-    \footnote{
-    	Une couleur de fond est volontairement utilisée pour subtilement faire ressortir les codes mis en forme.
-		Par exemple, taper \tdoclatexin{\tdoccodein{py}{funny = "ah"*3}} produira \tdoccodein{py}{funny = "ah"*3}\,.
-    }
+\footnote{
+    Une couleur de fond est volontairement utilisée pour subtilement faire ressortir les codes mis en forme.
+    Par exemple, taper \tdoclatexin{\tdoccodein{py}{funny = "ah"*3}} produira \tdoccodein{py}{funny = "ah"*3}\,.
+}
 
 \begin{tdoclatex}
 1: \tdoccodein{py}{print("OK" if i = 0 else "KO")}             \\
 2: \tdoccodein[style = bw]{py}{print("OK" if i = 0 else "KO")} \\
 3: \tdoccodein[style = igor, showspaces]%
-             {py}{print("OK" if i = 0 else "KO")}
+              {py}{print("OK" if i = 0 else "KO")}
 \end{tdoclatex}
 
 \medskip
@@ -2252,13 +2250,14 @@ Voici des cas d'utilisation possibles.%
 
 \subsection{Codes tapés directement}
 
-On peut taper directement du code dans un document \LaTeX\ via \tdocenv{tdoccode} qui attend un argument indiquant le langage de programmation, et d'éventuelles options entre crochets et/ou entre chevrons de fonctionnements identiques à ce que propose \tdocenv{tdoclatex} : voir la section \ref{tutodoc-listing-latex-direct} page \pageref{tutodoc-listing-latex-direct}. 
+On peut taper directement du code dans un document \LaTeX\ via \tdocenv{tdoccode} qui attend un argument indiquant le langage de programmation, et d'éventuelles options entre crochets et/ou entre chevrons de fonctionnements identiques à ce que propose \tdocenv{tdoclatex} : voir la section \ref{tutodoc-listing-latex-direct} page \pageref{tutodoc-listing-latex-direct}.
+Dans les exemples qui suivent, les codes \LaTeX\ à destination de \thisproj\ sont affichés en mode verbatim, car la coloration \LaTeX\ n'est pas correcte.
 
 % Strings "..." in the codes must be translated.
 \begin{tdocexa}[Fonctionnement standard]
 	\leavevmode
-	
-    \begin{tdoclatex}<minted language = text>
+
+    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
 \begin{tdoccode}{pl}
 print "Qui êtes-vous ? ";
 my $name = <STDIN>;
@@ -2279,7 +2278,7 @@ if ($name eq "") {
 
 \begin{tdocexa}[Personnalisation ponctuelle du rendu]
 	\leavevmode
-	
+
     \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
 \begin{tdoccode}[style = solarized-light, linenos]%
                 <leftrule = 22pt, colback = orange!5, colframe = red!35>%
@@ -2301,26 +2300,23 @@ end
 
 \subsection{Codes importés}
 
-La macro \tdoclatexin{\tdoccodeinput} attend le langage et le chemin d'un fichier à mettre en forme, et éventuellement d'options similaires à ce que propose l'environnement \tdocenv{tdoccode}\,. 
-
-\tdoccodeinput{hs}{examples-listing-full-hello-you.hs}
+La macro \tdoclatexin{\tdoccodeinput} attend le langage et le chemin d'un fichier à mettre en forme, et éventuellement d'options similaires à ce que propose l'environnement \tdocenv*{tdoccode}\,.
 
 
 % Strings "..." in the codes must be translated.
 \begin{tdocexa}[Fonctionnement standard]
 	\leavevmode
-	
-    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
+
+    \begin{tdoclatex}<bottom = 3pt, top = 3pt>
 \tdoccodeinput{hs}{examples-listing-full-hello-you.hs}
     \end{tdoclatex}
 \end{tdocexa}
 
 
-
 \begin{tdocexa}[Personnalisation ponctuelle du rendu]
 	\leavevmode
-	
-    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
+
+    \begin{tdoclatex}<bottom = 3pt, top = 3pt>
 \tdoccodeinput[style = solarized-light, linenos]%
               <leftrule = 22pt, colback = orange!5, colframe = red!35>%
               {tex}{examples-listing-full-hello-you.tex}

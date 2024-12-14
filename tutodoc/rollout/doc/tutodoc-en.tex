@@ -1084,14 +1084,14 @@ VERSUS.
 
 
 \begin{filecontents*}[overwrite]{examples-listing-full-hello-you.tex}
-\newcommand{\helloyou}[1]{%
+\NewDocumentCommand{\helloyou}{m}{%
     \IfBlankTF{#1}{%
-        Ah, pas très bavard aujourd'hui !%
+        Ah, not very chatty today!
     }{%
-        Bonjour $#1$.
+        Hello $#1$.
 
-        Épatant ! En fait, pas du tout...%
-    }
+        Amazing! Actually, not at all...%
+    }%
 }
 \end{filecontents*}
 
@@ -1100,15 +1100,15 @@ VERSUS.
 main :: IO ()
 
 main = do
-    putStr "Qui êtes-vous ? "
+    putStr "Who are you? "
     name <- getLine
 
     if name == ""
-        then putStrLn "Ah, pas très bavard aujourd'hui !"
+        then putStrLn "Ah, not very chatty today!"
 
     else do
-        putStrLn ("Bonjour " ++ name ++ ".")
-        putStrLn "Épatant ! En fait, pas du tout..."
+        putStrLn ("Hello " ++ name ++ ".")
+        putStrLn "Amazing! Actually, not at all..."
 \end{filecontents*}
 
 
@@ -2207,7 +2207,7 @@ For these projects, the documentation must be able to present lines of code; thi
 
 
 
-\subsection{Codes \tdocquote{online}}
+\subsection{\tdocquote{Inline} codes}
 
 The \tdocmacro{tdoccodein} macro expects two arguments: the 1\st\ indicates the programming language, and the 2\nd\ gives the code to be formatted.
 It is possible to use an option identical to that proposed by \tdocmacro{tdoclatexin}: see the section \ref{tutodoc-listing-latex-inline} on page \pageref{tutodoc-listing-latex-inline}.
@@ -2236,12 +2236,13 @@ Here are some possible use cases.%
 \subsection{Codes typed directly}
 
 Code can be typed directly into a document via \tdocenv{tdoccode} which expects an argument indicating the programming language, and any options between parenthesis and/or square brackets identical to those offered by \tdocenv{tdoclatex}: see the section \ref{tutodoc-listing-latex-direct} on page \pageref{tutodoc-listing-latex-direct}.
+In the following examples, the \LaTeX\ codes for \thisproj\ are displayed in verbatim mode because the coloring of \LaTeX\ codes is not correct.
 
 % Strings "..." in the codes must be translated.
 \begin{tdocexa}[Standard Operation]
 	\leavevmode
 
-    \begin{tdoclatex}<minted language = text>
+    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
 \begin{tdoccode}{pl}
 print "Who are you? ";
 my $name = <STDIN>;
@@ -2286,8 +2287,6 @@ end
 
 The \tdoclatexin{tdoccodeinput} macro expects the language and path of a file to be formatted, and possibly options similar to those offered by the \tdocenv*{tdoccode} environment.
 
-\tdoccodeinput{hs}{examples-listing-full-hello-you.hs}
-
 
 % Strings "..." in the codes must be translated.
 \begin{tdocexa}{Standard features}
@@ -2297,7 +2296,6 @@ The \tdoclatexin{tdoccodeinput} macro expects the language and path of a file to
 \tdoccodeinput{hs}{examples-listing-full-hello-you.hs}
     \end{tdoclatex}
 \end{tdocexa}
-
 
 
 \begin{tdocexa}[Customize rendering on occasion]
