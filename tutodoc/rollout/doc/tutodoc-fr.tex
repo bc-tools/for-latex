@@ -899,7 +899,7 @@ Blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu, blu...
 \tdocversion[red]{10.2.0-beta}[2023-12-01]
 Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 
-\bigskip % ATTENTION ! Ceci évite le chevauchement.
+\smallskip\bigskip % ATTENTION ! Ceci évite le chevauchement.
 
 \tdocversion{10.2.0-alpha}
 Ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble,
@@ -1242,7 +1242,7 @@ OU.
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-ABC-custom.tex}
 \begin{tdoclatex}%
-    [linenos, style = igor]%
+    [linenos, style = igor, showspaces]%
     <\tdoctcb{sbs},
      attach boxed title to top left = {yshift = -9pt}, 
      fonttitle                      = \bfseries,
@@ -2035,6 +2035,7 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 
 
 \subsection{Codes tapés directement}
+\label{tutodoc-listing-latex-direct}
 
 \begin{tdocexa}[Face à face]
     Afficher un code et son rendu côte à côte se fait comme suit où la macro \tdocmacro{tdoctcb} permet de juste taper \tdoclatexin{\tdoctcb{sbs}} au lieu de \tdoclatexin{listing side text} (\tdoclatexin#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}, tandis que \tdoclatexin#tcb# est l'abréviation standard de \texttt{tcolorbox}). Bien noter l'emploi de chevrons, et non de crochets (nous revenons sur ceci un plus bas).
@@ -2205,10 +2206,126 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
 \end{tdocexa}
 
 
-\section{TODO}
+\section{Présenter du code informatique}
+
+Certains packages proposent des fonctionnalités nécessitant de coder un peu en \lua.%
+\footnote{
+	Pour les mathématiques, on peut citer \tdocpack{luacas} et \tdocpack{tkz-elements}.
+}
+Pour ces projets, la documentation doit pouvoir présenter des lignes de code \lua\,; c'est pour cette raison que \thisproj\ permet de faire cela aisément, et bien plus.%
+\footnote{
+    La mise en forme des codes étant faite via les packages \tdocpack{minted} et \tdocpack{tcolorbox}, les macros et les environnements présentés dans cette section permettent la mise en forme de codes dans tous les langages supportés par \pygmentsREF, un projet \python\ utilisé en coulisse par \tdocpack{minted}.
+}
 
 
-TODO
+\begin{tdocimp}
+	Les outils de cette section permettent aussi de présenter du code \LaTeX, mais il ne faut pas les utiliser pour de simples cas d'utilisation, car les macros et les environnements présentées juste après servent à étudier du code, et non juste à l'employer : se reporter à la section \ref{tutodoc-listing-latex} page \pageref{tutodoc-listing-latex} pour faire appel aux bons outils pour la mise en forme de cas d'utilisation \LaTeX.
+\end{tdocimp}
+
+
+
+\subsection{Codes \tdocquote{en ligne}}
+
+La macro \tdocmacro{tdoccodein} attend deux arguments : le 1\ier\ indique le langage de programmation, et le 2\ieme\ donne le code à mettre en forme.
+Il est possible d'utiliser une option de fonctionnement identique à ce que propose \tdocmacro{tdoclatexin} : voir la section \ref{tutodoc-listing-latex-inline} page \pageref{tutodoc-listing-latex-inline}.
+Voici des cas d'utilisation possibles.%
+    \footnote{
+    	Une couleur de fond est volontairement utilisée pour subtilement faire ressortir les codes mis en forme.
+		Par exemple, taper \tdoclatexin{\tdoccodein{py}{funny = "ah"*3}} produira \tdoccodein{py}{funny = "ah"*3}\,.
+    }
+
+\begin{tdoclatex}
+1: \tdoccodein{py}{print("OK" if i = 0 else "KO")}             \\
+2: \tdoccodein[style = bw]{py}{print("OK" if i = 0 else "KO")} \\
+3: \tdoccodein[style = igor, showspaces]%
+             {py}{print("OK" if i = 0 else "KO")}
+\end{tdoclatex}
+
+\medskip
+
+\begin{tdocnote}
+	Sur la page \url{https://pygments.org/languages/} se trouve la liste complète des langages supportés avec leur nom court.
+	Par exemple, il est possible de mettre en forme du \brainfuck\ comme cette séquence \tdoccodein{bf}{++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.} qui sert à afficher \tdoccodein{text}{Hello}\,.
+\end{tdocnote}
+
+
+
+\subsection{Codes tapés directement}
+
+On peut taper directement du code dans un document \LaTeX\ via \tdocenv{tdoccode} qui attend un argument indiquant le langage de programmation, et d'éventuelles options entre crochets et/ou entre chevrons de fonctionnements identiques à ce que propose \tdocenv{tdoclatex} : voir la section \ref{tutodoc-listing-latex-direct} page \pageref{tutodoc-listing-latex-direct}. 
+
+% Strings "..." in the codes must be translated.
+\begin{tdocexa}[Fonctionnement standard]
+	\leavevmode
+	
+    \begin{tdoclatex}<minted language = text>
+\begin{tdoccode}{pl}
+print "Qui êtes-vous ? ";
+my $name = <STDIN>;
+
+chomp($name);
+
+if ($name eq "") {
+    print "Ah, pas très bavard aujourd'hui !\n";
+
+} else {
+    print "Bonjour $name.\n";
+    print "Épatant ! En fait, pas du tout...\n";
+}
+\end{tdoccode}
+    \end{tdoclatex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[Personnalisation ponctuelle du rendu]
+	\leavevmode
+	
+    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
+\begin{tdoccode}[style = solarized-light, linenos]%
+                <leftrule = 22pt, colback = orange!5, colframe = red!35>%
+                {lua}
+io.write("Qui êtes-vous ? ")
+local name = io.read()
+
+if name == "" then
+    print("Ah, pas très bavard aujourd'hui !")
+
+else
+    print("Bonjour " .. name .. ".")
+    print("Épatant ! En fait, pas du tout...")
+end
+\end{tdoccode}
+    \end{tdoclatex}
+\end{tdocexa}
+
+
+\subsection{Codes importés}
+
+La macro \tdoclatexin{\tdoccodeinput} attend le langage et le chemin d'un fichier à mettre en forme, et éventuellement d'options similaires à ce que propose l'environnement \tdocenv{tdoccode}\,. 
+
+\tdoccodeinput{hs}{examples-listing-full-hello-you.hs}
+
+
+% Strings "..." in the codes must be translated.
+\begin{tdocexa}[Fonctionnement standard]
+	\leavevmode
+	
+    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
+\tdoccodeinput{hs}{examples-listing-full-hello-you.hs}
+    \end{tdoclatex}
+\end{tdocexa}
+
+
+
+\begin{tdocexa}[Personnalisation ponctuelle du rendu]
+	\leavevmode
+	
+    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
+\tdoccodeinput[style = solarized-light, linenos]%
+              <leftrule = 22pt, colback = orange!5, colframe = red!35>%
+              {tex}{examples/listing-full/hello-you.tex}
+    \end{tdoclatex}
+\end{tdocexa}
 
 
 \section{Indiquer les changements}
@@ -2231,7 +2348,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 \end{tdocexa}
 
 
-\begin{tdocexa}[Versionner des nouveautés en les datant événtuellement]
+\begin{tdocexa}[Versionner des nouveautés en les datant éventuellement]
     Associer un numéro de version à une nouveauté se fait via la macro \tdocmacro{tdocversion}, la couleur et la date étant des arguments optionnels.
 
     \tdoclatexshow{examples-version-n-change-versioning.tex}

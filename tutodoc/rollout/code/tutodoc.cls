@@ -401,13 +401,13 @@
 }
 
 
-% --------------------------- %
-% -- HIGHLIGHTING CONTENTS -- %
-% --------------------------- %
+% =========================== %
+% == HIGHLIGHTING CONTENTS == %
+% =========================== %
 
-% :::::::::::::::::::::: %
-% :: EXAMPLE & REMARK :: %
-% :::::::::::::::::::::: %
+% ---------------------- %
+% -- EXAMPLE & REMARK -- %
+% ---------------------- %
 
 \ExplSyntaxOn
 
@@ -457,9 +457,9 @@
 \ExplSyntaxOff
 
 
-% ::::::::::::::::: %
-% :: ADMONITIONS :: %
-% ::::::::::::::::: %
+% ----------------- %
+% -- ADMONITIONS -- %
+% ----------------- %
 
 %%%
 % note::
@@ -471,16 +471,17 @@
 %         1) ''\g__tutodoc_focus_color_seq'' is to use a dedicated basic theorem
 %         (this should be only useful for the draft theme).
 %
+%
 % warning::
 %     The variables should be defined inside the themes!
-%%%
-\ifcsundef{g__tutodoc_focus_color_seq}{
-%%%
-% source::
+%
+%
+% refs::
 %     + https://tex.stackexchange.com/a/727022/6880
 %     + https://tex.stackexchange.com/a/682332/6880
 %     + https://tex.stackexchange.com/a/623232/6880
 %%%
+\ifcsundef{g__tutodoc_focus_color_seq}{
   \tcbset{
     tutodoc-focus-color-style/.style = {
 % General.
@@ -1110,7 +1111,6 @@
 % -------------------- %
 % -- LATEX EXAMPLES -- %
 % -------------------- %
-
 
 % :::::::::::::::::::::::::::::::::: %
 % :: DOES THE THEME AVOID LEXERS? :: %
