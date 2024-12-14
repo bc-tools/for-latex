@@ -2189,10 +2189,126 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \end{tdocexa}
 
 
-\section{TODO}
+\section{Presenting computer code}
+
+Some packages offer functions that require to code a little in \lua.%.
+\footnote{
+	For mathematics, these include \tdocpack{luacas} and \tdocpack{tkz-elements}.
+}
+For these projects, the documentation must be able to present lines of code; this is why \thisproj\ makes it easy to do this, and much more.%
+\footnote{
+    As code formatting is done via the packages \tdocpack{minted} and \tdocpack{tcolorbox}, the macros and environments presented in this section allow code to be formatted in all the languages supported by \pygmentsREF, a \python\ project used behind the scenes by \tdocpack{minted}.
+}
 
 
-TODO
+\begin{tdocimp}
+	The tools in this section can also be used to present \LaTeX code, but they should not be used for simple use cases, as the macros and environments presented next are for studying code, not just for using it: see the section \ref{tutodoc-listing-latex} on page \pageref{tutodoc-listing-latex} to use the right tools for formatting \LaTeX use cases.
+\end{tdocimp}
+
+
+
+\subsection{Codes \tdocquote{online}}
+
+The \tdocmacro{tdoccodein} macro expects two arguments: the 1\st\ indicates the programming language, and the 2\nd\ gives the code to be formatted.
+It is possible to use an option identical to that proposed by \tdocmacro{tdoclatexin}: see the section \ref{tutodoc-listing-latex-inline} on page \pageref{tutodoc-listing-latex-inline}.
+Here are some possible use cases.%
+\footnote{
+    A background color is deliberately used to subtly highlight the formatted codes.
+    For example, typing \tdoclatexin{tdoccodein{py}{funny = "ah"*3}} will produce \tdoccodein{py}{funny = "ah"*3}\,.
+}
+
+\begin{tdoclatex}
+1: \tdoccodein{py}{print("OK" if i = 0 else "KO")}             \\
+2: \tdoccodein[style = bw]{py}{print("OK" if i = 0 else "KO")} \\
+3: \tdoccodein[style = igor, showspaces]%
+              {py}{print("OK" if i = 0 else "KO")}
+\end{tdoclatex}
+
+\medskip
+
+\begin{tdocnote}
+	The \url{https://pygments.org/languages/} page contains a complete list of supported languages with their short names.
+	For example, it is possible to format \brainfuck like this sequence \tdoccodein{bf}{++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.} which is used to display \tdoccodein{text}{Hello}\,.
+\end{tdocnote}
+
+
+
+\subsection{Codes typed directly}
+
+Code can be typed directly into a document via \tdocenv{tdoccode} which expects an argument indicating the programming language, and any options between parenthesis and/or square brackets identical to those offered by \tdocenv{tdoclatex}: see the section \ref{tutodoc-listing-latex-direct} on page \pageref{tutodoc-listing-latex-direct}.
+
+% Strings "..." in the codes must be translated.
+\begin{tdocexa}[Standard Operation]
+	\leavevmode
+
+    \begin{tdoclatex}<minted language = text>
+\begin{tdoccode}{pl}
+print "Who are you? ";
+my $name = <STDIN>;
+
+chomp($name);
+
+if ($name eq "") {
+    print "Ah, not very chatty today!";
+
+} else {
+    print "Hello $name";
+    print "Amazing! Actually, not at all...";
+}
+\end{tdoccode}
+    \end{tdoclatex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[One-off rendering customisation]
+	\leavevmode
+
+    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
+\begin{tdoccode}[style = solarized-light, linenos]%
+                <leftrule = 22pt, colback = orange!5, colframe = red!35%>
+                {lua}
+io.write("Who are you?")
+local name = io.read()
+
+if name == "" then
+    print("Ah, not very chatty today!")
+
+else
+    print("Hello “ .. name .. ”.")
+    print("Amazing! Actually, not at all...")
+end
+\end{tdoccode}
+    \end{tdoclatex}
+\end{tdocexa}
+
+
+\subsection{Imported codes}
+
+The \tdoclatexin{tdoccodeinput} macro expects the language and path of a file to be formatted, and possibly options similar to those offered by the \tdocenv*{tdoccode} environment.
+
+\tdoccodeinput{hs}{examples-listing-full-hello-you.hs}
+
+
+% Strings "..." in the codes must be translated.
+\begin{tdocexa}{Standard features}
+	\leavevmode
+
+    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
+\tdoccodeinput{hs}{examples-listing-full-hello-you.hs}
+    \end{tdoclatex}
+\end{tdocexa}
+
+
+
+\begin{tdocexa}[Customize rendering on occasion]
+	\leavevmode
+
+    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
+\tdoccodeinput[style = solarized-light, linenos]%
+              <leftrule = 22pt, colback = orange!5, colframe = red!35%>
+              {tex}{examples-listing-full-hello-you.tex}
+    \end{tdoclatex}
+\end{tdocexa}
 
 
 \section{Indicate changes}
