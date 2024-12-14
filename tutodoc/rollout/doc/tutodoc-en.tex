@@ -1112,6 +1112,49 @@ main = do
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-listing-full-custom-hello-you-tex.tex}
+\tdoccodeinput[style = solarized-light, linenos]%
+              <leftrule = 22pt, colback = orange!5, colframe = red!35>%
+              {tex}{examples-listing-full-hello-you.tex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-full-hello-you-lua.tex}
+\begin{tdoccode}[style = solarized-light, linenos]%
+                <leftrule = 22pt, colback = orange!5, colframe = red!35>%
+                {lua}
+io.write("Who are you?")
+local name = io.read()
+
+if name == "" then
+    print("Ah, not very chatty today!")
+
+else
+    print("Hello “ .. name .. ”.")
+    print("Amazing! Actually, not at all...")
+end
+\end{tdoccode}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-full-hello-you-perl.tex}
+\begin{tdoccode}{pl}
+print "Who are you? ";
+my $name = <STDIN>;
+
+chomp($name);
+
+if ($name eq "") {
+    print "Ah, not very chatty today!";
+
+} else {
+    print "Hello $name";
+    print "Amazing! Actually, not at all...";
+}
+\end{tdoccode}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-showcase-hook.tex}
 \begin{tdocshowcase}[]
     [This works...]
@@ -2236,50 +2279,22 @@ Here are some possible use cases.%
 \subsection{Codes typed directly}
 
 Code can be typed directly into a document via \tdocenv{tdoccode} which expects an argument indicating the programming language, and any options between parenthesis and/or square brackets identical to those offered by \tdocenv{tdoclatex}: see the section \ref{tutodoc-listing-latex-direct} on page \pageref{tutodoc-listing-latex-direct}.
-In the following examples, the \LaTeX\ codes for \thisproj\ are displayed in verbatim mode because the coloring of \LaTeX\ codes is not correct.
+In the following examples, the \LaTeX\ codes for \thisproj\ are displayed in verbatim mode because the coloring of \LaTeX\ codes is not correct.%
+\footnote{
+	Note that the coloring of the \LaTeX\ codes is lexically correct, but semantically wrong.
+}
+
 
 % Strings "..." in the codes must be translated.
-\begin{tdocexa}[Standard Operation]
+\begin{tdocexa}[Standard feature]
 	\leavevmode
-
-    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
-\begin{tdoccode}{pl}
-print "Who are you? ";
-my $name = <STDIN>;
-
-chomp($name);
-
-if ($name eq "") {
-    print "Ah, not very chatty today!";
-
-} else {
-    print "Hello $name";
-    print "Amazing! Actually, not at all...";
-}
-\end{tdoccode}
-    \end{tdoclatex}
+	\tdoclatexshow{examples-listing-full-hello-you-perl.tex}
 \end{tdocexa}
 
 
-\begin{tdocexa}[One-off rendering customisation]
+\begin{tdocexa}[One-off rendering customization]
 	\leavevmode
-
-    \begin{tdoclatex}<minted language = text, bottom = 3pt, top = 3pt>
-\begin{tdoccode}[style = solarized-light, linenos]%
-                <leftrule = 22pt, colback = orange!5, colframe = red!35>%
-                {lua}
-io.write("Who are you?")
-local name = io.read()
-
-if name == "" then
-    print("Ah, not very chatty today!")
-
-else
-    print("Hello “ .. name .. ”.")
-    print("Amazing! Actually, not at all...")
-end
-\end{tdoccode}
-    \end{tdoclatex}
+	\tdoclatexshow{examples-listing-full-hello-you-lua.tex}
 \end{tdocexa}
 
 
@@ -2290,22 +2305,15 @@ The \tdoclatexin{tdoccodeinput} macro expects the language and path of a file to
 
 % Strings "..." in the codes must be translated.
 \begin{tdocexa}{Standard features}
-	\leavevmode
+	By simply using \tdocmacro{tdoccodeinput}, you can easily obtain a rendering like the following.
 
-    \begin{tdoclatex}<bottom = 3pt, top = 3pt>
-\tdoccodeinput{hs}{examples-listing-full-hello-you.hs}
-    \end{tdoclatex}
+    \tdoccodeinput{hs}{examples-listing-full-hello-you.hs}
 \end{tdocexa}
 
 
 \begin{tdocexa}[Customize rendering on occasion]
 	\leavevmode
-
-    \begin{tdoclatex}<bottom = 3pt, top = 3pt>
-\tdoccodeinput[style = solarized-light, linenos]%
-              <leftrule = 22pt, colback = orange!5, colframe = red!35>%
-              {tex}{examples-listing-full-hello-you.tex}
-    \end{tdoclatex}
+	\tdoclatexshow{examples-listing-full-custom-hello-you-tex.tex}
 \end{tdocexa}
 
 
