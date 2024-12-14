@@ -349,6 +349,10 @@ def ugly_hack(content):
             "{../main/tutodoc-main-locale",
             "{tutodoc-main-locale",
         ),
+        (
+            "examples/listing-full/hello-you.tex",
+            "examples-listing-full-hello-you.tex",
+        ),
     ]:
         content = content.replace(old, new)
 
