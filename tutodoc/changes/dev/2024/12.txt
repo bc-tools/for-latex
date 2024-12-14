@@ -1,7 +1,20 @@
-texfacto = prise en compte de tout type de ficher resourec ????
-+
 src code : proto and co a à reprendre !!!
 
+
+
+// ---------- //
+
+
+==
+??  (1.7.1-beta.6)
+==
+
+-----
+:new:
+-----
+
+[[:doc:]] ????
+Manual: a new section for the generalist listings.
 
 
 // ---------- //
@@ -44,11 +57,7 @@ Generalist and \latex listings.
 -----
 
 [[:doc:]]
-Manual.
-
-    1) New explanations about the \minted and \tcolorbox options for \latex listings.
-
-    1) A new section for the generalist listings.
+Manual: new explanations about the \minted and \tcolorbox options for \latex listings.
 
 
 // ---------- //
