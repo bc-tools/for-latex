@@ -60,7 +60,7 @@
 \ExplSyntaxOff
 
 
-% == OPTIONS FOR PACKAGES IMPORTED BY OTHER ONES == %
+% == OPTIONS FOR \PACKS IMPORTED BY OTHER ONES == %
 
 % xcolor is loaded by minted and tcolorbox.
 \PassOptionsToPackage{svgnames}{xcolor}
