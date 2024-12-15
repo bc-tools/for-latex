@@ -2,9 +2,9 @@
 % == ADMONITIONS == %
 % ================= %
 
-% ====================================== %
-% == ONY CLASSICAL THEOREM-LIKE \ENVS == %
-% ====================================== %
+% -------------------------------------- %
+% -- ONY CLASSICAL THEOREM-LIKE \ENVS -- %
+% -------------------------------------- %
 
 \ExplSyntaxOn
 
@@ -25,22 +25,22 @@
 \ExplSyntaxOff
 
 
-% ======================= %
-% == VERTICAL SPACINGS == %
-% ======================= %
+% ----------------------- %
+% -- VERTICAL SPACINGS -- %
+% ----------------------- %
 
 \newcommand{\tutodoc@admonition@space@above}{2pt plus 2pt}
 \newcommand{\tutodoc@admonition@space@below}{2pt plus 2pt}
 
 
 
-% ===================== %
-% == LISTING - LATEX == %
-% ===================== %
+% ========================= %
+% == LISTINGS - AGNOSTIC == %
+% ========================= %
 
-% ================= %
-% == INLINE CODE == %
-% ================= %
+% ----------------- %
+% -- INLINE CODE -- %
+% ----------------- %
 
 \codenolexertrue
 \newcommand{\tutodoc@code@style}{default}
@@ -49,9 +49,9 @@
 \colorlet{tutodoc@code@text@color}{black}
 
 
-% ================================ %
-% == FRAMED LISTING (tcolorbox) == %
-% ================================ %
+% -------------------------------- %
+% -- FRAMED LISTING (tcolorbox) -- %
+% -------------------------------- %
 
 \colorlet{tutodoc@code@frame@color}{darkgray}
 
@@ -77,20 +77,20 @@
 
 
 
-% ===================== %
-% == LISTING - LATEX == %
-% ===================== %
+% ====================== %
+% == LISTINGS - LATEX == %
+% ====================== %
 
-% ================ %
-% == LEXER USED == %
-% ================ %
+% ---------------- %
+% -- LEXER USED -- %
+% ---------------- %
 
 \newcommand{\tutodoc@latex@lexer}{text}
 
 
-% ================= %
-% == INLINE CODE == %
-% ================= %
+% ----------------- %
+% -- INLINE CODE -- %
+% ----------------- %
 
 \newcommand{\tutodoc@latex@style}{default}
 
@@ -98,9 +98,9 @@
 \colorlet{tutodoc@latex@text@color}{black}
 
 
-% ================================ %
-% == FRAMED LISTING (tcolorbox) == %
-% ================================ %
+% -------------------------------- %
+% -- FRAMED LISTING (tcolorbox) -- %
+% -------------------------------- %
 
 \colorlet{tutodoc@latex@frame@color}{darkgray}
 
@@ -186,18 +186,18 @@
 % == VERSION & CHANGES == %
 % ======================= %
 
-% ==================== %
-% == DATE & VERSION == %
-% ==================== %
+% -------------------- %
+% -- DATE & VERSION -- %
+% -------------------- %
 
 \NewExpandableDocumentCommand{\tutodoc@changes@when@color}{}{%
   black%
 }
 
 
-% =========================== %
-% == ENVS FOR CHANGES MADE == %
-% =========================== %
+% --------------------------- %
+% -- ENVS FOR CHANGES MADE -- %
+% --------------------------- %
 
 %%%
 % The draft theme doesn't use any icon.

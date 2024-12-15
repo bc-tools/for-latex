@@ -363,7 +363,7 @@
 
 
 % ============================== %
-% == EXPLAINING ENGLISH NAMES == %
+% == EXPLAINING ENGLISH WORDS == %
 % ============================== %
 
 %%%
@@ -400,9 +400,9 @@
 % == HIGHLIGHTING CONTENTS == %
 % =========================== %
 
-% ====================== %
-% == EXAMPLE & REMARK == %
-% ====================== %
+% ---------------------- %
+% -- EXAMPLE & REMARK -- %
+% ---------------------- %
 
 \ExplSyntaxOn
 
@@ -452,9 +452,9 @@
 \ExplSyntaxOff
 
 
-% ================= %
-% == ADMONITIONS == %
-% ================= %
+% ----------------- %
+% -- ADMONITIONS -- %
+% ----------------- %
 
 %%%
 % note::
@@ -628,10 +628,6 @@
 
 \ExplSyntaxOn
 
-% -------------- %
-% -- MESSAGES -- %
-% -------------- %
-
 \msg_set:nnnn { tutodoc ~ (macroenv) }
   { macroenv : prefix-why-bad-format }
   { Bad ~ format, ~ something ~ like ~ ''pre.fix'' ~ expected. }
@@ -705,12 +701,8 @@
 
 
 % ======================== %
-% == GENERAL FORMATTING == %
+% == TEXT INSIDE A RULE == %
 % ======================== %
-
-% ------------------------ %
-% -- TEXT INSIDE A RULE -- %
-% ------------------------ %
 
 \ExplSyntaxOn
 
@@ -758,6 +750,10 @@
 
 \ExplSyntaxOff
 
+
+% ============== %
+% == SHOWCASE == %
+% ============== %
 
 % --------------------------- %
 % -- INTERNAL ENVIRONMENTS -- %
@@ -1042,9 +1038,9 @@
 }
 
 
-% ========================== %
-% == LATEX REAL USE CASES == %
-% ========================== %
+% ===================== %
+% == LATEX USE CASES == %
+% ===================== %
 
 \ExplSyntaxOn
 
@@ -1107,9 +1103,9 @@
 
 
 
-% ==================== %
-% == LATEX EXAMPLES == %
-% ==================== %
+% ========================= %
+% == LISTINGS - AGNOSTIC == %
+% ========================= %
 
 % ---------------------------------- %
 % -- DOES THE THEME AVOID LEXERS? -- %
@@ -1240,10 +1236,6 @@
 % == CHANGES - WHEN? --%
 
 \ExplSyntaxOn
-
-% -------------- %
-% -- MESSAGES -- %
-% -------------- %
 
 \msg_set:nnnn { tutodoc ~ (version-n-change) }
   { version-n-change : date-bad-format }
@@ -1434,10 +1426,6 @@
 
 \ExplSyntaxOn
 
-% -------------- %
-% -- MESSAGES -- %
-% -------------- %
-
 \msg_set:nnnn { tutodoc ~ (version-n-change) }
   { version-n-change : topic-missing-title }
   { Missing ~ title. }
@@ -1619,9 +1607,9 @@
 
 
 
-% ================= %
-% == DECORATIONS == %
-% ================= %
+% ================ %
+% == DECORATION == %
+% ================ %
 
 % refs::
 %    + https://tex.stackexchange.com/a/130529/6880
