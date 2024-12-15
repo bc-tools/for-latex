@@ -1,4 +1,11 @@
+
+texfacto : \input{../main/css/\tutodoc@theme.cls.sty} à géréer plus de magic comment sauf pour doc !
+
 src code : proto and co a à reprendre !!!
+
+doc : utiliser au maximume latexshow qui simplifie le code !!!
+
+
 
 
 
@@ -6,15 +13,31 @@ src code : proto and co a à reprendre !!!
 
 
 ==
-??  (1.7.1-beta.6)
+15  (1.7.1-beta.6)
 ==
 
 -----
 :new:
 -----
 
-[[:doc:]] ????
+[[:doc:]]
 Manual: a new section for the generalist listings.
+
+
+--------
+:update:
+--------
+
+[[:format:]]
+\Chges: with the ''dark'' theme, the font of the text ''[Init]'' used by the ''\tdocstartproj'' macro is identical to that of \envs for typing \chges.
+
+
+--------
+:fordev:
+--------
+
+[[:doc:]]
+Maunual: simplification of the \latex codes.
 
 
 // ---------- //

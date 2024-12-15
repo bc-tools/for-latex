@@ -49,6 +49,11 @@ Generalist and \latex Listings.
         * Extra \tcolorbox options must be indicated inside rafters ''< ... >''.
 
 
+
+[[:doc:]]
+Manual: a new section for the generalist listings.
+
+
 --------
 :update:
 --------

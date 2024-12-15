@@ -15,69 +15,26 @@ For the following codes, consider a file with the relative path \verb+examples-l
 
 The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file and offers the same system of options between square brackets, or rafters, as the environment \tdocenv*{tdoclatex}.
 
+\foreach \title/\extra/\fname in {%
+	{Side by side}/%
+		{}/%
+		sbs,
+	{Following}/%
+		{, which also corresponds to the option \tdoclatexin#tdoctcb{std}#\,}/%
+		std,%
+	{Only the code}/%
+		{}/%
+		code,%
+	{Customise}/%
+		{}/%
+		perso%
+}{
+	\begin{tdocexa}[\title]
+    	\leavevmode
+		\tdoclatexshow[explain=This produces the following formatting\extra.]{examples/listing-latex/latexinput-option-\fname.tex}
+	\end{tdocexa}
+}
 
-% ------------------ %
-
-
-\begin{tdocexa}[Side by side]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput<\tdoctcb{sbs}>{examples/listing-latex/xyz.tex}
-    \end{tdoclatex}
-
-    This produces the following layout.
-
-    \tdoclatexinput<\tdoctcb{sbs}>{examples/listing-latex/xyz.tex}
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[Following]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput{examples/listing-latex/xyz.tex}
-    \end{tdoclatex}
-
-    This produces the following formatting, which also corresponds to the option \tdoclatexin#tdoctcb{std}#\,.
-
-    \tdoclatexinput{examples/listing-latex/xyz.tex}
-\end{tdocexa}
-
-
-% ------------------ %
-
-
-\begin{tdocexa}[Just the code]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput<\tdoctcb{code}>{examples/listing-latex/xyz.tex}
-    \end{tdoclatex}
-
-    This produces the following layout.
-
-    \tdoclatexinput<\tdoctcb{code}>{examples/listing-latex/xyz.tex}
-\end{tdocexa}
-
-
-\begin{tdocexa}[Customise]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput[style=igor, showspaces]<\tdoctcb{code}>{examples/listing-latex/xyz.tex}
-    \end{tdoclatex}
-
-    This produces the following layout.
-
-	\tdoclatexinput[style = igor, showspaces]<\tdoctcb{code}>{examples/listing-latex/xyz.tex}
-\end{tdocexa}
-
-
-% ------------------ %
 
 
 \subsection{Imported codes put into practice}
@@ -97,9 +54,6 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \end{tdocnote}
 
 
-% ------------------ %
-
-
 \begin{tdocexa}[Changing the explanatory text]
     Using the key \tdoclatexin|explain|, you can use custom text. Thus, \tdoclatexin|tdoclatexshow[explain = Here is the rendering.]{examples-listing-xyz.tex}| will give the following.
 
@@ -107,9 +61,6 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 
     \tdoclatexshow[explain = Here is the rendering.]{examples/listing-latex/xyz.tex}
 \end{tdocexa}
-
-
-% ------------------ %
 
 
 \begin{tdocexa}[The options available]

@@ -58,16 +58,17 @@ In the following examples, the \LaTeX\ codes for \thisproj\ are displayed in ver
 }
 
 
-% Strings "..." in the codes must be translated.
-\begin{tdocexa}[Standard feature]
-	\leavevmode
-	\tdoclatexshow{examples/listing-full/hello-you-perl.tex}
-\end{tdocexa}
-
-
-\begin{tdocexa}[One-off rendering customization]
-	\leavevmode
-	\tdoclatexshow{examples/listing-full/hello-you-lua.tex}
-\end{tdocexa}
+% Strings "..." in the source codes must also be translated.
+\foreach \title/\lang in {%
+	{Standard feature}/%
+		perl,%
+	{One-off rendering customization}/%
+		lua%
+}{
+    \begin{tdocexa}[\title]
+    	\leavevmode
+    	\tdoclatexshow{examples/listing-full/hello-you-\lang}
+    \end{tdocexa}
+}
 
 \end{document}

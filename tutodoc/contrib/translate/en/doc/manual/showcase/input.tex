@@ -12,20 +12,20 @@ To obtain renderings by importing the code from an external file, instead of typ
 
 \foreach \exatitle/\option in {
     {Without option}/% <-- Translate me!
-    {},
+    	{},
     {Just the framing lines}/% <-- Translate me!
-    {style=rule},
+    	{style=rule},
     {A colored stripe}/% <-- Translate me!
-    {style=stripe, col-stripe=red, col-text=LightCoral}%
+    	{style=stripe, col-stripe=red, col-text=LightCoral}%
 }{
 	\begin{tdocexa}[\exatitle]
 		\expandafter\IfBlankTF\expandafter{\option}{
 			Here is the edifying content of the example chosen.
-			
+
 	    	\tdocshowcaseinput{examples/showcase/external.tex}
 		}{
 	    	The option \expandafter\tdoclatexin\expandafter{\option} provides the following.
-		
+
 			\smallskip
 			\expandafter\tdocshowcaseinput\expandafter[\option]{examples/showcase/external.tex}
 		}

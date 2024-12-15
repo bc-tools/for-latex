@@ -28,56 +28,25 @@ Pour les codes suivants, on considère un fichier de chemin relatif \verb+exampl
 La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'un fichier et propose le même système d'options entre crochets, ou entre chevrons, que l'environnement \tdocenv*{tdoclatex}.
 
 
-\begin{tdocexa}[Face à face]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput<\tdoctcb{sbs}>{examples/listing-latex/xyz.tex}
-    \end{tdoclatex}
-
-    Ceci produit la mise en forme suivante.
-
-    \tdoclatexinput<\tdoctcb{sbs}>{examples/listing-latex/xyz.tex}
-\end{tdocexa}
-
-
-\begin{tdocexa}[À la suite]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput{examples/listing-latex/xyz.tex}
-    \end{tdoclatex}
-
-    Ceci produit la mise en forme suivante qui correspond aussi à l'option \tdoclatexin#\tdoctcb{std}#\,.
-
-    \tdoclatexinput{examples/listing-latex/xyz.tex}
-\end{tdocexa}
-
-
-\begin{tdocexa}[Juste le code]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput<\tdoctcb{code}>{examples/listing-latex/xyz.tex}
-    \end{tdoclatex}
-
-    Ceci produit la mise en forme suivante.
-
-    \tdoclatexinput<\tdoctcb{code}>{examples/listing-latex/xyz.tex}
-\end{tdocexa}
-
-
-\begin{tdocexa}[Personnaliser]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput[style=igor, showspaces]<\tdoctcb{code}>{examples/listing-latex/xyz.tex}
-    \end{tdoclatex}
-
-    Ceci produit la mise en forme suivante.
-
-	\tdoclatexinput[style = igor, showspaces]<\tdoctcb{code}>{examples/listing-latex/xyz.tex}
-\end{tdocexa}
+\foreach \title/\extra/\fname in {%
+	{Face à face}/%
+		{}/%
+		sbs,
+	{À la suite}/%
+		{ qui correspond aussi à l'option \tdoclatexin{\tdoctcb{std}}\,}/%
+		std,%
+	{Juste le code}/%
+		{}/%
+		code,%
+	{Personnaliser}/%
+		{}/%
+		perso%
+}{
+	\begin{tdocexa}[\title]
+    	\leavevmode
+		\tdoclatexshow[explain=Ceci produit la mise en forme suivante\extra.]{examples/listing-latex/latexinput-option-\fname.tex}
+	\end{tdocexa}
+}
 
 
 
