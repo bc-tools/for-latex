@@ -1,10 +1,10 @@
 \input{../version-n-change/css/\tutodoc@theme.cls.sty}
 
-% -- CHANGES - WHEN? --%
+% == CHANGES - WHEN? --%
 
 \ExplSyntaxOn
 
-% :: MESSAGES :: %
+% -- MESSAGES -- %
 
 \msg_set:nnnn { tutodoc ~ (version-n-change) }
   { version-n-change : date-bad-format }
@@ -12,7 +12,7 @@
   { Use ~ YYYY-MM-DD. }
 
 
-% :: MARGIN NOTE :: %
+% -- MARGIN NOTE -- %
 
 \reversemarginpar{}
 
@@ -111,7 +111,7 @@
 \ExplSyntaxOff
 
 
-% :: VERSION AND DATE :: %
+% -- VERSION AND DATE -- %
 
 \newlength{\tutodoc@version@date@vertical@sep@len}
 \setlength{\tutodoc@version@date@vertical@sep@len}{-4.25pt}
@@ -155,7 +155,7 @@
 }
 
 
-% :: DATE :: %
+% -- DATE -- %
 
 %%%
 % prototype::
@@ -183,11 +183,11 @@
 }
 
 
-% -- CHANGES - WHAT? -- %
+% == CHANGES - WHAT? == %
 
 \ExplSyntaxOn
 
-% :: MESSAGES :: %
+% -- MESSAGES -- %
 
 \msg_set:nnnn { tutodoc ~ (version-n-change) }
   { version-n-change : topic-missing-title }
@@ -195,7 +195,7 @@
   { One ~ single ~ title ~ must ~ be ~ indicated. }
 
 
-% :: GENERIC TOPIC :: %
+% -- GENERIC TOPIC -- %
 
 \tl_new:N \l_tutodoc_topic_what_color_tl
 \tl_new:N \l_tutodoc_topic_when_color_tl
@@ -309,7 +309,7 @@
 }
 
 
-% :: CLASSICAL TOPICS :: %
+% -- CLASSICAL TOPICS -- %
 
 %%%
 % prototype::

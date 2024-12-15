@@ -1,4 +1,4 @@
-% -- NAMES OF PACKAGES, MACROS & ENVIRONMENTS -- %
+% == NAMES OF PACKAGES, MACROS & ENVIRONMENTS == %
 
 %%%
 % prototype::
@@ -71,11 +71,11 @@
 }
 
 
-% -- EXPLAINING PREFIXES -- %
+% == EXPLAINING PREFIXES == %
 
 \ExplSyntaxOn
 
-% :: MESSAGES :: %
+% -- MESSAGES -- %
 
 \msg_set:nnnn { tutodoc ~ (macroenv) }
   { macroenv : prefix-why-bad-format }
@@ -83,7 +83,7 @@
   { You ~ must ~ use ~ one ~ single ~ point. }
 
 
-% :: PREFIX FROM... :: %
+% -- PREFIX FROM... -- %
 
 \seq_new:N \l__tutodoc_prewhy_parts_seq
 \int_new:N \l__tutodoc_prewhy_nbparts_int
@@ -126,7 +126,7 @@
 \ExplSyntaxOff
 
 
-% :: JUST ONE PREFIX :: %
+% -- JUST ONE PREFIX -- %
 
 %%%
 % prototype::

@@ -375,7 +375,7 @@ def sty_header(metadata):
 {about}
 
 {provide}
-    """.strip()
+    """.strip() + "\n"
 
 
 def final_cls(metadata, ugly_hack):
@@ -468,7 +468,7 @@ def cls_header(metadata):
 {about}
 
 {provide}
-    """.strip()
+    """.strip() + "\n"
 
 
 def prettify_all_titles(code):
@@ -476,27 +476,27 @@ def prettify_all_titles(code):
     not_ignore = False
 
     for line in code.split('\n'):
-        if line in [
-            r"\ProvidesExplPackage",
-            r"\ProvidesExplClass"
-        ]:
-            not_ignore = True
+        # if line in [
+        #     r"\ProvidesExplPackage",
+        #     r"\ProvidesExplClass"
+        # ]:
+        #     not_ignore = True
 
-        if not_ignore:
-            for pattern in TITLE_PATTERNS:
-                match = re.search(pattern, line)
+        # if not_ignore:
+        for pattern in TITLE_PATTERNS:
+            match = re.search(pattern, line)
 
-                if match:
-                    title     = match.group(2)
-                    pre_deco  = match.group(1)
-                    # post_deco = match.group(3)
+            if match:
+                title     = match.group(2)
+                pre_deco  = match.group(1)
+                # post_deco = match.group(3)
 
-                    line = pretty_title(
-                        pre_deco[0],
-                        title
-                    )
+                line = pretty_title(
+                    pre_deco[0],
+                    title
+                )
 
-                    break
+                break
 
         new_code.append(line)
 

@@ -1,6 +1,10 @@
+% ================= %
 % == ADMONITIONS == %
+% ================= %
 
+% ------------------------- %
 % -- ICONS & ENV. COLORS -- %
+% ------------------------- %
 
 \ExplSyntaxOn
 
@@ -30,7 +34,9 @@
 \ExplSyntaxOff
 
 
+% ------------------ %
 % -- EXTRA COLORS -- %
+% ------------------ %
 
 \NewExpandableDocumentCommand{\tutodoc@build@title@color}{m}{%
   \tdocdarkcolor[95]{white}%
@@ -55,16 +61,22 @@
 \colorlet{tutodoc@admonition@shadow@color}{black!80}
 
 
+% ----------------------- %
 % -- VERTICAL SPACINGS -- %
+% ----------------------- %
 
 \newcommand{\tutodoc@admonition@space@above}{\medskipamount}
 \newcommand{\tutodoc@admonition@space@below}{\medskipamount}
 
 
 
+% ===================== %
 % == LISTING - LATEX == %
+% ===================== %
 
+% ----------------- %
 % -- INLINE CODE -- %
+% ----------------- %
 
 \newcommand{\tutodoc@code@style}{github-dark}
 
@@ -72,7 +84,9 @@
 \colorlet{tutodoc@code@text@color}{\tdocdarkcolor[80]{white}}
 
 
+% -------------------------------- %
 % -- FRAMED LISTING (tcolorbox) -- %
+% -------------------------------- %
 
 \colorlet{tutodoc@code@frame@color}{darkgray}
 
@@ -98,14 +112,20 @@
 
 
 
+% ===================== %
 % == LISTING - LATEX == %
+% ===================== %
 
+% ---------------- %
 % -- LEXER USED -- %
+% ---------------- %
 
 \newcommand{\tutodoc@latex@lexer}{latex}
 
 
+% ----------------- %
 % -- INLINE CODE -- %
+% ----------------- %
 
 \newcommand{\tutodoc@latex@style}{github-dark}
 
@@ -113,7 +133,9 @@
 \colorlet{tutodoc@latex@text@color}{\tdocdarkcolor[80]{white}}
 
 
+% -------------------------------- %
 % -- FRAMED LISTING (tcolorbox) -- %
+% -------------------------------- %
 
 \colorlet{tutodoc@latex@frame@color}{darkgray}
 
@@ -139,19 +161,25 @@
 
 
 
+% ========================== %
 % == TEXT AND PAGE COLORS == %
+% ========================== %
 
 \colorlet{tutodoc@page@color}{black}
 \colorlet{tutodoc@text@color}{\tdocdarkcolor[80]{white}}
 
 
+% ================= %
 % == LINKS COLOR == %
+% ================= %
 
 \definecolor{tutodoc@link@color}{HTML}{9591A6}
 
 
 
+% ============== %
 % == SHOWCASE == %
+% ============== %
 
 \NewExpandableDocumentCommand{\tutodoc@showcase@rule@color}{}{%
   white%
@@ -175,16 +203,22 @@
 
 
 
+% ======================= %
 % == VERSION & CHANGES == %
+% ======================= %
 
+% -------------------- %
 % -- DATE & VERSION -- %
+% -------------------- %
 
 \NewExpandableDocumentCommand{\tutodoc@changes@when@color}{}{%
   \tdoclightcolor[60]{cyan}%
 }
 
 
+% --------------------------- %
 % -- ENVS FOR CHANGES MADE -- %
+% --------------------------- %
 
 \newcommand{\tutodoc@changes@start@project@icon}{\faAnchor}
 

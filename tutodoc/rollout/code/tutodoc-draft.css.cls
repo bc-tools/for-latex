@@ -1,6 +1,10 @@
+% ================= %
 % == ADMONITIONS == %
+% ================= %
 
+% -------------------------------------- %
 % -- ONY CLASSICAL THEOREM-LIKE \ENVS -- %
+% -------------------------------------- %
 
 \ExplSyntaxOn
 
@@ -21,16 +25,22 @@
 \ExplSyntaxOff
 
 
+% ----------------------- %
 % -- VERTICAL SPACINGS -- %
+% ----------------------- %
 
 \newcommand{\tutodoc@admonition@space@above}{2pt plus 2pt}
 \newcommand{\tutodoc@admonition@space@below}{2pt plus 2pt}
 
 
 
+% ===================== %
 % == LISTING - LATEX == %
+% ===================== %
 
+% ----------------- %
 % -- INLINE CODE -- %
+% ----------------- %
 
 \codenolexertrue
 \newcommand{\tutodoc@code@style}{default}
@@ -39,7 +49,9 @@
 \colorlet{tutodoc@code@text@color}{black}
 
 
+% -------------------------------- %
 % -- FRAMED LISTING (tcolorbox) -- %
+% -------------------------------- %
 
 \colorlet{tutodoc@code@frame@color}{darkgray}
 
@@ -65,14 +77,20 @@
 
 
 
+% ===================== %
 % == LISTING - LATEX == %
+% ===================== %
 
+% ---------------- %
 % -- LEXER USED -- %
+% ---------------- %
 
 \newcommand{\tutodoc@latex@lexer}{text}
 
 
+% ----------------- %
 % -- INLINE CODE -- %
+% ----------------- %
 
 \newcommand{\tutodoc@latex@style}{default}
 
@@ -80,7 +98,9 @@
 \colorlet{tutodoc@latex@text@color}{black}
 
 
+% -------------------------------- %
 % -- FRAMED LISTING (tcolorbox) -- %
+% -------------------------------- %
 
 \colorlet{tutodoc@latex@frame@color}{darkgray}
 
@@ -106,18 +126,24 @@
 
 
 
+% ========================== %
 % == TEXT AND PAGE COLORS == %
+% ========================== %
 
 \colorlet{tutodoc@page@color}{white}
 \colorlet{tutodoc@text@color}{black}
 
 
+% ================ %
 % == LINK COLOR == %
+% ================ %
 
 \definecolor{tutodoc@link@color}{named}{black}
 
 
+% ======================= %
 % == VERTICAL SPACINGS == %
+% ======================= %
 
 \setlength{\parskip}{0.5pt plus 1pt}
 
@@ -130,7 +156,9 @@
 
 
 
+% ============== %
 % == SHOWCASE == %
+% ============== %
 
 \NewExpandableDocumentCommand{\tutodoc@showcase@rule@color}{}{%
   black%
@@ -154,16 +182,22 @@
 
 
 
+% ======================= %
 % == VERSION & CHANGES == %
+% ======================= %
 
+% -------------------- %
 % -- DATE & VERSION -- %
+% -------------------- %
 
 \NewExpandableDocumentCommand{\tutodoc@changes@when@color}{}{%
   black%
 }
 
 
+% --------------------------- %
 % -- ENVS FOR CHANGES MADE -- %
+% --------------------------- %
 
 %%%
 % The draft theme doesn't use any icon.

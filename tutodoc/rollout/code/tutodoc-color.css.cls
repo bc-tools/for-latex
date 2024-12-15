@@ -1,6 +1,10 @@
+% ================= %
 % == ADMONITIONS == %
+% ================= %
 
+% ------------------------- %
 % -- ICONS & ENV. COLORS -- %
+% ------------------------- %
 
 \ExplSyntaxOn
 
@@ -30,7 +34,9 @@
 \ExplSyntaxOff
 
 
+% ------------------ %
 % -- EXTRA COLORS -- %
+% ------------------ %
 
 \NewExpandableDocumentCommand{\tutodoc@build@title@color}{m}{%
   white%
@@ -55,16 +61,22 @@
 \colorlet{tutodoc@admonition@shadow@color}{Gray!17}
 
 
+% ----------------------- %
 % -- VERTICAL SPACINGS -- %
+% ----------------------- %
 
 \newcommand{\tutodoc@admonition@space@above}{\medskipamount}
 \newcommand{\tutodoc@admonition@space@below}{\medskipamount}
 
 
 
+% ===================== %
 % == LISTING - LATEX == %
+% ===================== %
 
+% ----------------- %
 % -- INLINE CODE -- %
+% ----------------- %
 
 \newcommand{\tutodoc@code@style}{pastie}
 
@@ -72,7 +84,9 @@
 \colorlet{tutodoc@code@text@color}{black}
 
 
+% -------------------------------- %
 % -- FRAMED LISTING (tcolorbox) -- %
+% -------------------------------- %
 
 \colorlet{tutodoc@code@frame@color}{darkgray}
 
@@ -98,14 +112,20 @@
 
 
 
+% ===================== %
 % == LISTING - LATEX == %
+% ===================== %
 
+% ---------------- %
 % -- LEXER USED -- %
+% ---------------- %
 
 \newcommand{\tutodoc@latex@lexer}{latex}
 
 
+% ----------------- %
 % -- INLINE CODE -- %
+% ----------------- %
 
 \newcommand{\tutodoc@latex@style}{pastie}
 
@@ -113,7 +133,9 @@
 \colorlet{tutodoc@latex@text@color}{black}
 
 
+% -------------------------------- %
 % -- FRAMED LISTING (tcolorbox) -- %
+% -------------------------------- %
 
 \colorlet{tutodoc@latex@frame@color}{darkgray}
 
@@ -139,19 +161,25 @@
 
 
 
+% ========================== %
 % == TEXT AND PAGE COLORS == %
+% ========================== %
 
 \colorlet{tutodoc@page@color}{white}
 \colorlet{tutodoc@text@color}{black}
 
 
+% ================= %
 % == LINKS COLOR == %
+% ================= %
 
 \colorlet{tutodoc@link@color}{NavyBlue!85!white}
 
 
 
+% ============== %
 % == SHOWCASE == %
+% ============== %
 
 \NewExpandableDocumentCommand{\tutodoc@showcase@rule@color}{}{%
   black%
@@ -175,16 +203,22 @@
 
 
 
+% ======================= %
 % == VERSION & CHANGES == %
+% ======================= %
 
+% -------------------- %
 % -- DATE & VERSION -- %
+% -------------------- %
 
 \NewExpandableDocumentCommand{\tutodoc@changes@when@color}{}{%
   \tdoclightcolor[60]{DarkBlue}%
 }
 
 
+% --------------------------- %
 % -- ENVS FOR CHANGES MADE -- %
+% --------------------------- %
 
 \newcommand{\tutodoc@changes@start@project@icon}{\faAnchor}
 

@@ -1,0 +1,205 @@
+\documentclass[theme = bw]{tutodoc}
+
+% -- FORDOC -- %
+
+\usepackage[french]{babel}
+\frenchsetup{StandardItemLabels=true}
+
+\usepackage{multicol}
+\usepackage{lastpage}
+
+\makeatletter
+
+\renewcommand*\pagemark{%
+   \usekomafont{pagenumber}{%
+    \thepage\kern1pt/\kern1pt\pageref*{LastPage}%
+ }%
+}
+
+\makeatother
+
+
+\newcommand\thisstyle{bw}
+
+
+\newcommand\myexrmktext{
+    \tdocversion{1.7.0}[2024-12-04]
+    Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
+}
+
+
+\newcommand\myadmotext{
+    Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
+}
+
+\newcommand\myhighlightedtextnonote{
+    Que dire ?
+    Je ne sais pas, mais c'est sympathique. Non ?
+}
+
+\newcommand\myhighlightedtext{
+    Que dire\,%
+    \footnote{
+        N'oublions pas les notes de bas de page...
+    }?
+    Je ne sais pas, mais c'est sympathique. Non ?
+}
+
+
+\newcommand\mychgestext{
+    Dans un journal de bord, il est important de bien visualiser les types de changements. Ceci rend plus efficace la lecture côté utilisateur !
+}
+
+
+\ExplSyntaxOn
+
+\int_new:N \g__tutodoc_for_doc_int
+
+\ExplSyntaxOff
+
+
+\begin{document}
+
+\textsf{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
+
+\section{Liens}
+
+{\Large\bfseries \href{https://github.com/bc-tools/for-latex/tree/main/tutodoc}{Un lien très gros}}, mais au moins on le voit.
+
+
+
+\section{Des codes \LaTeX}
+
+Taper du code \LaTeX\ en ligne comme \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
+
+\begin{tdoclatex}
+Du code \LaTeX\ mis en forme, c'est top : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
+
+\begin{tdoclatex}<\tdoctcb{sbs}>
+Du code \LaTeX\ mis en forme, c'est top : \\
+$E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+
+\section{Mettre en avant, versionner et dater}
+
+\subsection{tdocexa, tdocrem}
+
+\myexrmktext
+
+\ExplSyntaxOn
+
+\seq_map_inline:Nn \g__tutodoc_focus_std_seq {
+    \begin{tdoc#1}
+        \myhighlightedtext
+    \end{tdoc#1}
+}
+
+\ExplSyntaxOff
+
+
+
+\subsection{tdocnote, tdoctip...}
+
+\myadmotext
+
+\ExplSyntaxOn
+
+\int_set:Nn \g__tutodoc_for_doc_int { 0 }
+
+\ifcsundef{g__tutodoc_focus_color_seq}{
+    \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
+        \int_gincr:N \g__tutodoc_for_doc_int
+
+        \begin{tdoc#1}
+          \int_compare:nTF
+       {\g__tutodoc_for_doc_int = 1 }
+       { \myhighlightedtext }
+       { \myhighlightedtextnonote }
+        \end{tdoc#1}
+    }
+} {
+    \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
+        \int_gincr:N \g__tutodoc_for_doc_int
+
+        \begin{tdoc#1}
+          \int_compare:nTF
+       {\g__tutodoc_for_doc_int = 1 }
+       { \myhighlightedtext }
+       { \myhighlightedtextnonote }
+        \end{tdoc#1}
+    }
+}
+
+\ExplSyntaxOff
+
+
+
+\subsection{tdocbreak, tdocfix...}
+
+\tdocstartproj{Une nouvelle section démonstrative...}
+
+\begin{tdoctodo}
+ \item Une galerie serait bienvenue...
+\end{tdoctodo}
+
+\ifcsundef{g__tutodoc_topic_change_seq}{
+  \medskip
+}{}
+
+\mychgestext
+
+\ifcsundef{g__tutodoc_topic_change_seq}{
+ \medskip
+}{}
+
+\ExplSyntaxOn
+
+\int_set:Nn \g__tutodoc_for_doc_int { 0 }
+
+\begin{tabular}{%
+ @{\hskip 0pt}p{.26\linewidth}%
+ *{3}{@{\hskip 7pt}p{.23\linewidth}}@{\hskip 0pt}%
+}
+ \ifcsundef{g__tutodoc_topic_change_seq}{
+     \prop_map_inline:Nn \g__tutodoc_topic_change_prop {
+           \int_gincr:N \g__tutodoc_for_doc_int
+
+           \vspace{-12pt}
+
+        \begin{tdoc#1}
+             \item Infos...
+        \end{tdoc#1}
+
+        \int_compare:nTF
+          {\g__tutodoc_for_doc_int = 4 }
+          { \\ }
+          { & }
+     }
+ }{
+     \seq_map_inline:Nn \g__tutodoc_topic_change_seq {
+           \int_gincr:N \g__tutodoc_for_doc_int
+
+           \vspace{-5pt}
+
+        \begin{tdoc#1}
+             \item Infos...
+        \end{tdoc#1}
+
+        \int_compare:nTF
+          {\g__tutodoc_for_doc_int = 4 }
+          { \\ }
+          { & }
+     }
+ }
+\end{tabular}
+
+\ExplSyntaxOff
+
+\end{document}
+

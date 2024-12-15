@@ -9,6 +9,11 @@ NOW
 
 > ---------------------------- <
 
+src code : proto and co a à reprendre !!!
+
+
+> ---------------------------- <
+
 macro de rgélage global en parallèle des options de classe (on prépare terrain pour monorepio à la tns)
 
 

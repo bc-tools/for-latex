@@ -1,6 +1,7 @@
 from collections import defaultdict
 
 from .constants import *
+from .finalize  import prettify_all_titles
 from .misc      import *
 
 
@@ -32,7 +33,8 @@ def minicss(
             )
 
     for cssname, contents in main_contents.items():
-        contents =  "\n\n\n".join(contents)
+        contents = "\n\n\n".join(contents)
+        contents = prettify_all_titles(contents)
 
         cssmainfile = code_dir / f"{projname}-{cssname}.css.cls"
         cssmainfile.write_text(contents)
@@ -72,4 +74,6 @@ def minicss(
         if keep:
             cleaned_content.append(line)
 
-    projfile.write_text("\n".join(cleaned_content))
+    cleaned_content = "\n".join(cleaned_content)
+
+    projfile.write_text(cleaned_content)
