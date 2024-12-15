@@ -350,6 +350,10 @@ def ugly_hack(content):
             "{tutodoc-main-locale",
         ),
         (
+            r"{../main/css/\tutodoc@theme.cls.sty}",
+            r"{tutodoc-\tutodoc@theme.css.cls}",
+        ),
+        (
             "examples/listing-full/hello-you.tex",
             "examples-listing-full-hello-you.tex",
         ),

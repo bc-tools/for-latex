@@ -1,9 +1,6 @@
 
-texfacto : \input{../main/css/\tutodoc@theme.cls.sty} à géréer plus de magic comment sauf pour doc !
-
+texfacto : plus de magic comment sauf pour doc !
 src code : proto and co a à reprendre !!!
-
-doc : utiliser au maximume latexshow qui simplifie le code !!!
 
 
 
