@@ -343,7 +343,10 @@
 %
 %     :action: the short text printed will be preceded by a pretty anchor icon.
 %%%
-\NewDocumentCommand{ \tdocstartproj }{ O{tutodoc@text@color} m } {
+\NewDocumentCommand{ \tdocstartproj }{
+  O{tutodoc@text@color}
+  m
+} {
   \group_begin:
     \color{#1}
     \ifcsundef{g__tutodoc_topic_change_seq}{

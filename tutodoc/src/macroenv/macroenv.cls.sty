@@ -1,4 +1,4 @@
-% == NAMES OF PACKAGES, MACROS & ENVIRONMENTS == %
+% == \PACKS, \CLSS, MACROS & \ENVS NAMES == %
 
 %%%
 % prototype::
@@ -7,7 +7,7 @@
 %
 %     :action: ''\tdoccls{myclass}'' prints verb::''myclass''.
 %%%
-\NewDocumentCommand{\tdoccls}{m}{%
+\NewDocumentCommand{\tdoccls}{ m }{%
   \texttt{#1}%
 }
 
@@ -19,7 +19,7 @@
 %
 %     :action:''\tdocpack{mypack}'' prints verb::''mypack''.
 %%%
-\NewDocumentCommand{\tdocpack}{m}{%
+\NewDocumentCommand{\tdocpack}{ m }{%
   \texttt{#1}%
 }
 
@@ -31,7 +31,7 @@
 %
 %     :action: ''\tdocmacro{mymacro}'' prints verb::''\mymacro''.
 %%%
-\NewDocumentCommand{\tdocmacro}{m}{%
+\NewDocumentCommand{\tdocmacro}{ m }{%
   \texttt{\textbackslash{}#1}%
 }
 
@@ -88,6 +88,7 @@
 \tl_new:N  \l__tutodoc_pretext_tl
 \tl_new:N  \l__tutodoc_posttext_tl
 
+
 %%%
 % prototype::
 %     #1 : (pre.fix)
@@ -95,7 +96,7 @@
 %
 %     :action: ''\tdocprewhy{pre.fix}'' prints verb::''pre''.fix.
 %%%
-\NewDocumentCommand{\tdocprewhy}{m}{%
+\NewDocumentCommand{\tdocprewhy}{ m }{%
 % Do we have 2 parts?
   \seq_set_split:Nnn \l__tutodoc_prewhy_parts_seq { . } { #1 }
 
@@ -137,6 +138,6 @@
 %              which prints:
 %              verb::''pre'' comes from verb::''pre''-fix.
 %%%
-\NewDocumentCommand{\tdocpre}{m}{%
+\NewDocumentCommand{\tdocpre}{ m }{%
   \texttt{#1}%
 }

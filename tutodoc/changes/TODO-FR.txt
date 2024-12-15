@@ -9,11 +9,7 @@ NOW
 
 > ---------------------------- <
 
-src code : proto and co a à reprendre !!!
-
-src des docs aà vavlider : par exemple, y a un doublon dans la ca en
-
-pb espacement de bw vs color/dark dans les listings  !!!
+relecture sur papier des docs
 
 ensuite on publie une nouveal version
 

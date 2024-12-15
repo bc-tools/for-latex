@@ -78,3 +78,5 @@ Themes.
     1) Sub-sub-sections are numbered using lower alphabetic letters.
 
     1) \latex listings: with the ''color'' theme, the back color changes from ''yellow!4'' to ''gray!5''’.
+
+    1) \Chges: with the ''dark'' theme, the font of the text ''[Init]'' used by the ''\tdocstartproj'' macro is identical to that of \envs for typing \chges.

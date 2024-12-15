@@ -14,6 +14,10 @@
   { \msg_see_documentation_text:n { tutodoc } }
 
 
+%%%
+% The theme is identified by the following macro that can be changed
+% when the class is loaded.
+%%%
 \newcommand{\tutodoc@theme}{color}
 
 
@@ -62,7 +66,7 @@
 
 % == OPTIONS FOR \PACKS IMPORTED BY OTHER ONES == %
 
-% xcolor is loaded by minted and tcolorbox.
+% ''xcolor'' will be loaded by ''minted'' and ''tcolorbox'' below.
 \PassOptionsToPackage{svgnames}{xcolor}
 
 
@@ -76,8 +80,8 @@
 
 \RequirePackage{clrstrip}
 
-% Special settings for minted need to be done before the loading of
-% the tcolorbox library minted.
+% Special settings for ''minted'' need to be done before the loading
+% of the ''tcolorbox'' library ''minted''.
 \RequirePackage[highlightmode = immediate]
                {minted}
 
@@ -118,39 +122,41 @@
   { \msg_see_documentation_text:n { tutodoc } }
 
 
-% Management of English composition rules.
-\newcommand{\tutodoc@use@english}{\relax}
-
 % Babel requires colon management for our translations.
 \newcommand{\tutodoc@colon}{:}
 
 \AtBeginDocument{
-% Babel is used.
+%%%
+% Settings if ''babel'' \pack is used.
+%%%
   \@ifpackageloaded{babel}{
-% We must take care of colons and spacing.
+% We must take care of spacings with colons.
     \iflanguage{french}{
       \renewcommand{\tutodoc@colon}{\babelshorthand{:}}
     }{}
   }{}
 
-% Polyglossia is used.
+%%%
+% Settings if ''polyglossia'' \pack is used.
+%%%
   \@ifpackageloaded{polyglossia}{
-% If polyglossia is used, we must load english if necessary
+% If ''polyglossia'' is used, we must load english if necessary
 % (see the ''\tutodoc@use@english'' macro below).
     \iflanguageloaded{english}{}{
       \setotherlanguage{english}
     }
   }{}%
 
+% Standard way to find the \lang to use.
   \newcommand{\tdoclang}{\BCPdata{language}}
 
 % We must take care of English rules for English contents.
-  \renewcommand\tutodoc@use@english{%
+  \newcommand\tutodoc@use@english{%
     \foreignlanguage{english}%
   }
 
-% If the lang is not supported, we emit a warning and just turn
-% to the english language.
+% If the \lang is not supported, we emit a warning and just use
+% the english language.
   \makeatletter
 
   \InputIfFileExists{../main/tutodoc-main-locale-\tdoclang.cfg.cls.sty}{}{
@@ -167,7 +173,7 @@
 \ExplSyntaxOff
 
 
-% == GEOMETRY SETTINGS == %
+% == PAGE GEOMETRY == %
 
 \geometry{
   top            = 1.9cm,
@@ -182,7 +188,7 @@
 \setlength{\parindent}{0cm}
 
 
-% == TOC & Co. == %
+% == TITLES & TOC == %
 
 \renewcommand{\thesection}{\Roman{section}}
 \renewcommand{\thesubsection}{\arabic{subsection}}
@@ -206,8 +212,6 @@
   paragraph,
   subparagraph
 }
-
-\DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
 
 
 % == COLOR TRANSFORMATIONS == %
@@ -251,10 +255,11 @@
 }
 
 
-% == FOR LISTINGS == %
+% == LISTINGS == %
 
 %%%
-% ????
+% We use a \std \latex boolean to switch on or off lexers for listings
+% (this allows the ''draft'' mode to display listings in verbatim).
 %%%
 \newif\ifcodenolexer
 \codenolexerfalse
@@ -280,7 +285,7 @@
 %     See the pgfkeys package documentation for explanation.
 %%%
 
-\NewExpandableDocumentCommand{\tdoctcb}{m}{
+\NewExpandableDocumentCommand{\tdoctcb}{ m }{
   \str_case:nnF { #1 } {
     { sbs  } { listing ~ side ~ text }
     { code } { listing ~ only }
@@ -293,7 +298,7 @@
 \ExplSyntaxOff
 
 
-% == THEME == %
+% == THEME - GENERAL SETTINGS == %
 
 \input{../main/css/\tutodoc@theme.cls.sty}
 
