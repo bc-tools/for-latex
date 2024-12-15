@@ -64,27 +64,28 @@ def extract_from_DEV_CLS(srcfile):
 
     for oneline in content.split('\n'):
         shortline = oneline.strip()
+        pack_src.append(oneline)
 
-        if shortline == TAG_MC_PACKAGES:
-            store_in = store_import
-            continue
+        # if shortline == TAG_MC_PACKAGES:
+        #     store_in = store_import
+        #     continue
 
-        if shortline == TAG_MC_OPTIONS:
-            store_in = store_options
-            continue
+        # if shortline == TAG_MC_OPTIONS:
+        #     store_in = store_options
+        #     continue
 
-        if shortline == TAG_MC_TOOLS:
-            store_in = store_src
-            continue
+        # if shortline == TAG_MC_TOOLS:
+        #     store_in = store_src
+        #     continue
 
-        if store_in == store_import:
-            pack_import.append(oneline)
+        # if store_in == store_import:
+        #     pack_import.append(oneline)
 
-        elif store_in == store_options:
-            pack_options.append(oneline)
+        # elif store_in == store_options:
+        #     pack_options.append(oneline)
 
-        elif store_in == store_src:
-            pack_src.append(oneline)
+        # elif store_in == store_src:
+        #     pack_src.append(oneline)
 
     pack_import = '\n'.join(pack_import)
     pack_import = pack_import.strip()

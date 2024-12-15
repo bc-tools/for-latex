@@ -1,5 +1,3 @@
-% == PACKAGES == %
-
 % -- OPTIONS -- %
 
 %%%
