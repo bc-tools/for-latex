@@ -295,19 +295,15 @@ def final_sty(metadata, ugly_hack):
     code = [sty_header(metadata)]
 
     for kind, temp_file in [
-        ("PACKAGES USED"    , TAG_TMP_STY_IMPORT),
-        ("AVAILABLE OPTIONS", TAG_TMP_STY_OPTIONS),
+        # ("PACKAGES USED"    , TAG_TMP_STY_IMPORT),
+        # ("AVAILABLE OPTIONS", TAG_TMP_STY_OPTIONS),
         ("MAIN CODE"        , TAG_TMP_STY_SRC),
     ]:
         if not (metadata[TAG_TEMP] / temp_file).is_file():
             continue
 
         code.append(
-            f"""
-% == {kind} == %
-
-{(metadata[TAG_TEMP] / temp_file).read_text()}
-            """.rstrip()
+            (metadata[TAG_TEMP] / temp_file).read_text()
         )
 
     code = '\n\n'.join(code)
@@ -392,19 +388,15 @@ def final_cls(metadata, ugly_hack):
     code = [cls_header(metadata)]
 
     for kind, temp_file in [
-        ("PACKAGES USED"    , TAG_TMP_CLS_IMPORT),
-        ("AVAILABLE OPTIONS", TAG_TMP_CLS_OPTIONS),
+        # ("PACKAGES USED"    , TAG_TMP_CLS_IMPORT),
+        # ("AVAILABLE OPTIONS", TAG_TMP_CLS_OPTIONS),
         ("MAIN CODE"        , TAG_TMP_CLS_SRC),
     ]:
         if not (metadata[TAG_TEMP] / temp_file).is_file():
             continue
 
         code.append(
-            f"""
-% == {kind} == %
-
-{(metadata[TAG_TEMP] / temp_file).read_text()}
-            """.rstrip()
+            (metadata[TAG_TEMP] / temp_file).read_text()
         )
 
     code = '\n\n'.join(code)

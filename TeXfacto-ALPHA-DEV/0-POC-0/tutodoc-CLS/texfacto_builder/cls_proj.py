@@ -26,8 +26,8 @@ def prebuild_single_cls(
         if kind == TAG_FILE:
             print(f"   * Analyzing ''{srcfile.name}''")
 
-            pieces = extract_from_DEV_CLS(srcfile)
-            prepare_CLS(projname, onedir, temp_dir, *pieces)
+            content = extract_from_DEV_CLS(srcfile)
+            prepare_CLS(projname, onedir, temp_dir, content)
 
         else:
             print(f"   * [RES-CLS] Copying ''{srcfile.name}'")
@@ -51,6 +51,8 @@ def extract_from_DEV_CLS(srcfile):
         mode     = "r"
     ) as f:
         content = f.read()
+
+    return content
 
     pack_import  = []
     pack_options = []
@@ -102,8 +104,6 @@ def prepare_CLS(
     projname,
     curdir,
     tmpdir,
-    pack_import,
-    pack_options,
     pack_src
 ):
     if pack_import:

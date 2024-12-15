@@ -23,8 +23,8 @@ def prebuild_single_sty(
         if kind == TAG_FILE:
             print(f"   * Analyzing ''{srcfile.name}''")
 
-            pieces = extract_from_DEV_STY(srcfile)
-            prepare_STY(projname, onedir, temp_dir, *pieces)
+            content = extract_from_DEV_STY(srcfile)
+            prepare_STY(projname, onedir, temp_dir, content)
 
         else:
             print(f"   * [RES-STY] Copying ''{srcfile.name}'")
@@ -47,6 +47,8 @@ def extract_from_DEV_STY(srcfile):
         mode     = "r"
     ) as f:
         content = f.read()
+
+    return content
 
     pack_import  = []
     pack_options = []
@@ -99,26 +101,8 @@ def prepare_STY(
     projname,
     curdir,
     tmpdir,
-    pack_import,
-    pack_options,
     pack_src
 ):
-    if pack_import:
-        pack_import += '\n'*3
-
-        addcontentto(
-            content  = pack_import,
-            destfile = tmpdir / TAG_TMP_STY_IMPORT
-        )
-
-    if pack_options:
-        pack_options += '\n'*3
-
-        addcontentto(
-            content  = pack_options,
-            destfile = tmpdir / TAG_TMP_STY_OPTIONS
-        )
-
     if pack_src:
         new_code = []
 
