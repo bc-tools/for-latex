@@ -57,16 +57,17 @@ On peut taper directement du code dans un document \LaTeX\ via \tdocenv{tdoccode
 }
 
 
-% Strings "..." in the codes must be translated.
-\begin{tdocexa}[Fonctionnement standard]
-	\leavevmode
-	\tdoclatexshow{examples/listing-full/hello-you-perl.tex}
-\end{tdocexa}
-
-
-\begin{tdocexa}[Personnalisation ponctuelle du rendu]
-	\leavevmode
-	\tdoclatexshow{examples/listing-full/hello-you-lua.tex}
-\end{tdocexa}
+% Strings "..." in the source codes must also be translated.
+\foreach \title/\lang in {%
+	{Fonctionnement standard}/%
+		perl,%
+	{Personnalisation ponctuelle du rendu}/%
+		lua%
+}{
+    \begin{tdocexa}[\title]
+    	\leavevmode
+    	\tdoclatexshow{examples/listing-full/hello-you-\lang}
+    \end{tdocexa}
+}
 
 \end{document}

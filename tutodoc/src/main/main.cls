@@ -1,6 +1,6 @@
-% == TOOLS == %
+% == PACKAGES == %
 
-% == OPTIONS == %
+% -- OPTIONS -- %
 
 %%%
 % refs::
@@ -62,13 +62,13 @@
 \ExplSyntaxOff
 
 
-% == OPTIONS FOR PACKAGES IMPORTED BY OTHER ONES == %
+% -- OPTIONS FOR PACKAGES IMPORTED BY OTHER ONES -- %
 
 % xcolor is loaded by minted and tcolorbox.
 \PassOptionsToPackage{svgnames}{xcolor}
 
 
-% == IMPORTS == %
+% -- IMPORTS -- %
 
 \RequirePackage{geometry}
 
@@ -106,7 +106,7 @@
 \RequirePackage{csquotes}
 
 
-% == LOCALE SETTINGS == %
+% -- LOCALE SETTINGS -- %
 
 \ExplSyntaxOn
 
@@ -169,7 +169,7 @@
 \ExplSyntaxOff
 
 
-% == GEOMETRY SETTINGS == %
+% -- GEOMETRY SETTINGS -- %
 
 \geometry{
   top            = 1.9cm,
@@ -184,7 +184,7 @@
 \setlength{\parindent}{0cm}
 
 
-% == TOC & Co. == %
+% -- TOC & Co. -- %
 
 \renewcommand{\thesection}{\Roman{section}}
 \renewcommand{\thesubsection}{\arabic{subsection}}
@@ -212,7 +212,7 @@
 \DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
 
 
-% == COLOR TRANSFORMATIONS == %
+% -- COLOR TRANSFORMATIONS -- %
 
 %%%
 % prototype::
@@ -238,7 +238,7 @@
 \NewExpandableDocumentCommand{\tdoclightcolor}{ O{5} m }{#2!#1}
 
 
-% == ICONS == %
+% -- ICONS -- %
 
 %%%
 % prototype::
@@ -253,7 +253,7 @@
 }
 
 
-% == FOR LISTINGS == %
+% -- FOR LISTINGS -- %
 
 %%%
 % ????
@@ -295,7 +295,7 @@
 \ExplSyntaxOff
 
 
-% == THEME == %
+% -- THEME -- %
 
 \input{../main/css/\tutodoc@theme.cls.sty}
 

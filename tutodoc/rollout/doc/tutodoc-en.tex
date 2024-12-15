@@ -1244,6 +1244,11 @@ $x y z = 1$
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-listing-latex-latexinput-option-std.tex}
+\tdoclatexinput{examples-listing-latex-xyz.tex}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-listing-latex-strange.tex}
 \begin{tdoclatex}[]
 [Strange... Or not!]
@@ -1267,6 +1272,22 @@ OR.
 $A = B + C$
 % End of this demonstration.
 \end{tdoclatex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-latex-latexinput-option-sbs.tex}
+\tdoclatexinput<\tdoctcb{sbs}>{examples-listing-latex-xyz.tex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-latex-latexinput-option-code.tex}
+\tdoclatexinput{examples-listing-latex-xyz.tex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-latex-latexinput-option-perso.tex}
+\tdoclatexinput[style = igor, showspaces]<\tdoctcb{code}>%
+               {examples-listing-latex-xyz.tex}
 \end{filecontents*}
 
 
@@ -1590,7 +1611,7 @@ As this language is included in the list of languages taken into account, see be
         \task \tdoclatexin|es| : Spanish.
         \task \tdoclatexin|fr| : French.
 \end{tasks}
-
+                    
 
 
 \begin{tdocnote}
@@ -1945,7 +1966,7 @@ There are situations where you need to be able to clearly identify an example of
 	You can easily produce a beautiful horror like the one below.
 
 	\input{examples-showcase-stripe-custom.tex}
-
+	
 	Here's the code that was used.%
 	\footnote{
 		Now we understand why we chose \tdoclatexin{col-stripe} instead of \tdoclatexin{col-rule}\,.
@@ -1962,11 +1983,11 @@ To obtain renderings by importing the code from an external file, instead of typ
 
 \foreach \exatitle/\option in {
     {Without option}/% <-- Translate me!
-    {},
+    	{},
     {Just the framing lines}/% <-- Translate me!
-    {style=rule},
+    	{style=rule},
     {A colored stripe}/% <-- Translate me!
-    {style=stripe, col-stripe=red, col-text=LightCoral}%
+    	{style=stripe, col-stripe=red, col-text=LightCoral}%
 }{
 	\begin{tdocexa}[\exatitle]
 		\expandafter\IfBlankTF\expandafter{\option}{
@@ -2105,57 +2126,26 @@ For the following codes, consider a file with the relative path \verb+examples-l
 
 The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file and offers the same system of options between square brackets, or rafters, as the environment \tdocenv*{tdoclatex}.
 
+\foreach \title/\extra/\fname in {%
+	{Side by side}/%
+		{}/%
+		sbs,
+	{Following}/%
+		{, which also corresponds to the option \tdoclatexin#tdoctcb{std}#\,}/%
+		std,%
+	{Only the code}/%
+		{}/%
+		code,%
+	{Customise}/%
+		{}/%
+		perso%
+}{
+	\begin{tdocexa}[\title]
+    	\leavevmode
+		\tdoclatexshow[explain=This produces the following formatting\extra.]{examples-listing-latex-latexinput-option-\fname.tex}
+	\end{tdocexa}
+}
 
-\begin{tdocexa}[Side by side]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput<\tdoctcb{sbs}>{examples-listing-latex-xyz.tex}
-    \end{tdoclatex}
-
-    This produces the following layout.
-
-    \tdoclatexinput<\tdoctcb{sbs}>{examples-listing-latex-xyz.tex}
-\end{tdocexa}
-
-
-\begin{tdocexa}[Following]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput{examples-listing-latex-xyz.tex}
-    \end{tdoclatex}
-
-    This produces the following formatting, which also corresponds to the option \tdoclatexin#tdoctcb{std}#\,.
-
-    \tdoclatexinput{examples-listing-latex-xyz.tex}
-\end{tdocexa}
-
-
-\begin{tdocexa}[Just the code]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput<\tdoctcb{code}>{examples-listing-latex-xyz.tex}
-    \end{tdoclatex}
-
-    This produces the following layout.
-
-    \tdoclatexinput<\tdoctcb{code}>{examples-listing-latex-xyz.tex}
-\end{tdocexa}
-
-
-\begin{tdocexa}[Customise]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput[style=igor, showspaces]<\tdoctcb{code}>{examples-listing-latex-xyz.tex}
-    \end{tdoclatex}
-
-    This produces the following layout.
-
-	\tdoclatexinput[style = igor, showspaces]<\tdoctcb{code}>{examples-listing-latex-xyz.tex}
-\end{tdocexa}
 
 
 \subsection{Imported codes put into practice}
@@ -2255,17 +2245,18 @@ In the following examples, the \LaTeX\ codes for \thisproj\ are displayed in ver
 }
 
 
-% Strings "..." in the codes must be translated.
-\begin{tdocexa}[Standard feature]
-	\leavevmode
-	\tdoclatexshow{examples-listing-full-hello-you-perl.tex}
-\end{tdocexa}
-
-
-\begin{tdocexa}[One-off rendering customization]
-	\leavevmode
-	\tdoclatexshow{examples-listing-full-hello-you-lua.tex}
-\end{tdocexa}
+% Strings "..." in the source codes must also be translated.
+\foreach \title/\lang in {%
+	{Standard feature}/%
+		perl,%
+	{One-off rendering customization}/%
+		lua%
+}{
+    \begin{tdocexa}[\title]
+    	\leavevmode
+    	\tdoclatexshow{examples-listing-full-hello-you-\lang}
+    \end{tdocexa}
+}
 
 
 \subsection{Imported codes}
@@ -2362,6 +2353,7 @@ You can either date something, or version it, in which case the version number c
 \subsubsection{Sobriety first}
 
 \foreach \exatitle/\filename in {
+% Standard.
     {Just for the very first version}/%<-- Translate me!
         first,
     {For new features}/% <-- Translate me!
@@ -2378,6 +2370,7 @@ You can either date something, or version it, in which case the version number c
         todo,
     {Technical information}/% <-- Translate me!
         tech,
+% Customized.
     {Selectable themes with an icon}/% <-- Translate me!
         user-choice-icon,
     {Selectable themes without icons}/%<-- Translate me!
@@ -2654,6 +2647,9 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \tdocsep
 
 
+% ------------------ %
+
+
 \begin{tdocnew}[version = 1.6.2, date = 2024-10-30]
 	\item The macros \tdocmacro{tdocdate} and \tdocmacro{tdocversion} has a new final optional argument \tdoclatexin{<voffset>} to choose a specific vertical offset.
 
@@ -2675,11 +2671,17 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \tdocsep
 
 
+% ------------------ %
+
+
 \begin{tdoctech}[version = 1.6.1, date = 2024-10-28]
     \item The naming rules of \ctan\ need the use of \trademark{CSS} files named \verb+tutodoc-*.css.cls.sty+\,.
 \end{tdoctech}
 
 \tdocsep
+
+
+% ------------------ %
 
 
 \begin{tdocbreak}[version = 1.6.0, date = 2024-10-27]
@@ -2715,6 +2717,9 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \tdocsep
 
 
+% ------------------ %
+
+
 \begin{tdoctech}[version = 1.5.0, date = 2024-10-19]
     \item Version 3 of \tdocpack{minted} is taken into account.
 \end{tdoctech}
@@ -2741,6 +2746,9 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \end{tdocfix}
 
 \tdocsep
+
+
+% ------------------ %
 
 
 \begin{tdocbreak}[version = 1.4.0, date = 2024-09-28]
@@ -2775,11 +2783,17 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \tdocsep
 
 
+% ------------------ %
+
+
 \begin{tdocnew}[version = 1.3.1, date = 2024-09-26]
     \item Star version of \tdocmacro{tdocenv} to display only the environment name.
 \end{tdocnew}
 
 \tdocsep
+
+
+% ------------------ %
 
 
 \begin{tdoctech}[version = 1.3.0, date = 2024-09-25]
@@ -2810,6 +2824,9 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \tdocsep
 
 
+% ------------------ %
+
+
 \begin{tdocupdate}[version = 1.2.0-a, date = 2024-08-23]
     \item \tdocmacro{tdocversion}
     \begin{enumerate}
@@ -2827,6 +2844,9 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \tdocsep
 
 
+% ------------------ %
+
+
 \begin{tdocnew}[version = 1.1.0, date = 2024-01-06]
     \item Change log: two new environments.
     \begin{enumerate}
@@ -2841,6 +2861,9 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \tdocsep
 
 
+% ------------------ %
+
+
 \begin{tdocfix}[version = 1.0.1, date = 2023-12-08]
     \item \tdocmacro{tdocenv}: spacing is now correct, even if the \tdocpack{babel} package is not loaded with the French language.
 
@@ -2848,6 +2871,9 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \end{tdocfix}
 
 \tdocsep
+
+
+% ------------------ %
 
 
 \tdocversion{1.0.0}[2023-11-29]

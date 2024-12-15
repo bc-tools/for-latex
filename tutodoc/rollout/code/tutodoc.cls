@@ -1605,7 +1605,7 @@
       \tdocicon{\tutodoc@changes@start@project@icon}
     }{
 % No icon used.
-      \raisebox{4pt}{\bfseries\tiny\textsc{[Init]}}\kern2pt
+      \raisebox{4pt}{\normalfont\tiny\bfseries\sffamily[Init]}\kern2pt
     }
 
     #2

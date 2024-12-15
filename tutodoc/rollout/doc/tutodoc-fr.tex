@@ -1270,6 +1270,11 @@ $x y z = 1$
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-listing-latex-latexinput-option-std.tex}
+\tdoclatexinput{examples-listing-latex-xyz.tex}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-listing-latex-strange.tex}
 \begin{tdoclatex}[]
 [Étrange... Ou pas !]
@@ -1285,7 +1290,7 @@ OU.
 \begin{tdoclatex}%
     [linenos, style = igor, showspaces]%
     <\tdoctcb{sbs},
-     attach boxed title to top left = {yshift = -9pt},
+     attach boxed title to top left = {yshift = -9pt}, 
      fonttitle                      = \bfseries,
      title                          = Modifications locales,
      top                            = 10pt>
@@ -1293,6 +1298,22 @@ OU.
 $A = B + C$
 % Fin de cette démonstration.
 \end{tdoclatex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-latex-latexinput-option-sbs.tex}
+\tdoclatexinput<\tdoctcb{sbs}>{examples-listing-latex-xyz.tex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-latex-latexinput-option-code.tex}
+\tdoclatexinput{examples-listing-latex-xyz.tex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-listing-latex-latexinput-option-perso.tex}
+\tdoclatexinput[style = igor, showspaces]<\tdoctcb{code}>%
+               {examples-listing-latex-xyz.tex}
 \end{filecontents*}
 
 
@@ -1457,9 +1478,9 @@ OU.
             The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
         }
         using a sober rendering for reading on screen.
-
+    
         \smallskip
-
+    
         \noindent
         \emph{\textbf{Remark :} this documentation is also available in French.}
 \end{abstract}
@@ -1619,7 +1640,7 @@ Comme cette langue fait partie de la liste des langues prises en compte, voir ci
         \task \tdoclatexin|es| : espagnol.
         \task \tdoclatexin|fr| : français.
 \end{tasks}
-
+                    
 
 
 \begin{tdocnote}
@@ -1940,7 +1961,7 @@ Pour rendre plus visible le code \LaTeX\ mis en forme de façon sombre, on peut 
 	On peut obtenir facilement l'horreur suivante.
 
 	\input{examples-showcase-rule-custom.tex}
-
+	
 	Voici le code qui a été employé.%
 	\footnote{
 		La section suivante va normaliser le choix, a priori étrange, de \tdoclatexin{col-stripe} au lieu de \tdoclatexin{col-rule}\,.
@@ -1983,7 +2004,7 @@ Il est des situations où l'on doit pouvoir clairement identifier un exemple de 
 	On peut produire facilement une belle horreur comme celle qui arrive.
 
 	\input{examples-showcase-stripe-custom.tex}
-
+	
 	Voici le code qui a été employé.%
 	\footnote{
 		On comprend maintenant le choix de \tdoclatexin{col-stripe} au lieu de \tdoclatexin{col-rule}\,.
@@ -2000,20 +2021,20 @@ Pour obtenir des rendus en important le code depuis un fichier externe, au lieu 
 
 \foreach \exatitle/\option in {
     {Sans option}/% <-- Translate me!
-    {},
+    	{},
     {Juste les lignes cadrantes}/% <-- Translate me!
-    {style=rule},
+    	{style=rule},
     {Une bande colorée}/% <-- Translate me!
-    {style=stripe, col-stripe=red, col-text=LightCoral}%
+    	{style=stripe, col-stripe=red, col-text=LightCoral}%
 }{
 	\begin{tdocexa}[\exatitle]
 		\expandafter\IfBlankTF\expandafter{\option}{
 			Voici le contenu édifiant de l'exemple choisi.
-
+			
 	    	\tdocshowcaseinput{examples-showcase-external.tex}
 		}{
 	    	L'option \expandafter\tdoclatexin\expandafter{\option} fournit ce qui suit.
-
+		
 			\smallskip
 			\expandafter\tdocshowcaseinput\expandafter[\option]{examples-showcase-external.tex}
 		}
@@ -2150,56 +2171,25 @@ Pour les codes suivants, on considère un fichier de chemin relatif \verb+exampl
 La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'un fichier et propose le même système d'options entre crochets, ou entre chevrons, que l'environnement \tdocenv*{tdoclatex}.
 
 
-\begin{tdocexa}[Face à face]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput<\tdoctcb{sbs}>{examples-listing-latex-xyz.tex}
-    \end{tdoclatex}
-
-    Ceci produit la mise en forme suivante.
-
-    \tdoclatexinput<\tdoctcb{sbs}>{examples-listing-latex-xyz.tex}
-\end{tdocexa}
-
-
-\begin{tdocexa}[À la suite]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput{examples-listing-latex-xyz.tex}
-    \end{tdoclatex}
-
-    Ceci produit la mise en forme suivante qui correspond aussi à l'option \tdoclatexin#\tdoctcb{std}#\,.
-
-    \tdoclatexinput{examples-listing-latex-xyz.tex}
-\end{tdocexa}
-
-
-\begin{tdocexa}[Juste le code]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput<\tdoctcb{code}>{examples-listing-latex-xyz.tex}
-    \end{tdoclatex}
-
-    Ceci produit la mise en forme suivante.
-
-    \tdoclatexinput<\tdoctcb{code}>{examples-listing-latex-xyz.tex}
-\end{tdocexa}
-
-
-\begin{tdocexa}[Personnaliser]
-    \leavevmode
-
-    \begin{tdoclatex}<\tdoctcb{code}>
-\tdoclatexinput[style=igor, showspaces]<\tdoctcb{code}>{examples-listing-latex-xyz.tex}
-    \end{tdoclatex}
-
-    Ceci produit la mise en forme suivante.
-
-	\tdoclatexinput[style = igor, showspaces]<\tdoctcb{code}>{examples-listing-latex-xyz.tex}
-\end{tdocexa}
+\foreach \title/\extra/\fname in {%
+	{Face à face}/%
+		{}/%
+		sbs,
+	{À la suite}/%
+		{ qui correspond aussi à l'option \tdoclatexin{\tdoctcb{std}}\,}/%
+		std,%
+	{Juste le code}/%
+		{}/%
+		code,%
+	{Personnaliser}/%
+		{}/%
+		perso%
+}{
+	\begin{tdocexa}[\title]
+    	\leavevmode
+		\tdoclatexshow[explain=Ceci produit la mise en forme suivante\extra.]{examples-listing-latex-latexinput-option-\fname.tex}
+	\end{tdocexa}
+}
 
 
 
@@ -2215,7 +2205,7 @@ La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'
     \tdoclatexin+\tdoclatexshow{examples-listing-xyz.tex}+ produit ce qui suit.
 
     \smallskip
-
+    
     \tdoclatexshow{examples-listing-latex-xyz.tex}
 \end{tdocexa}
 
@@ -2299,17 +2289,18 @@ On peut taper directement du code dans un document \LaTeX\ via \tdocenv{tdoccode
 }
 
 
-% Strings "..." in the codes must be translated.
-\begin{tdocexa}[Fonctionnement standard]
-	\leavevmode
-	\tdoclatexshow{examples-listing-full-hello-you-perl.tex}
-\end{tdocexa}
-
-
-\begin{tdocexa}[Personnalisation ponctuelle du rendu]
-	\leavevmode
-	\tdoclatexshow{examples-listing-full-hello-you-lua.tex}
-\end{tdocexa}
+% Strings "..." in the source codes must also be translated.
+\foreach \title/\lang in {%
+	{Fonctionnement standard}/%
+		perl,%
+	{Personnalisation ponctuelle du rendu}/%
+		lua%
+}{
+    \begin{tdocexa}[\title]
+    	\leavevmode
+    	\tdoclatexshow{examples-listing-full-hello-you-\lang}
+    \end{tdocexa}
+}
 
 
 \subsection{Codes importés}
@@ -2317,7 +2308,7 @@ On peut taper directement du code dans un document \LaTeX\ via \tdocenv{tdoccode
 La macro \tdocmacro{tdoccodeinput} attend le langage et le chemin d'un fichier à mettre en forme, et éventuellement d'options similaires à ce que propose l'environnement \tdocenv*{tdoccode}\,.
 
 
-% Strings "..." in the codes must be translated.
+% Strings "..." in the source codes must also be translated.
 \begin{tdocexa}[Fonctionnement standard]
 	Via le simple emploi de \tdocmacro{tdoccodeinput}, on obtient facilement un rendu comme le suivant.
 
@@ -2406,6 +2397,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 \subsubsection{La sobriété avant tout}
 
 \foreach \exatitle/\filename in {
+% Standard.
     {Juste pour la toute première version}/%<-- Translate me!
         first,
     {Pour les nouveautés}/% <-- Translate me!
@@ -2422,7 +2414,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
         todo,
     {Informations techniques}/% <-- Translate me!
         tech,
-    %
+% Customized.
     {Thématiques aux choix avec une icône}/%<-- Translate me!
         user-choice-icon,
     {Thématiques aux choix sans icône}/% <-- Translate me!
@@ -2699,6 +2691,9 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 \tdocsep
 
 
+% ------------------ %
+
+
 \begin{tdocnew}[version = 1.6.2, date = 2024-10-30]
 	\item Les macros \tdocmacro{tdocdate} et \tdocmacro{tdocversion} ont un nouvel argument final facultatif \tdoclatexin{<voffset>} pour choisir un décalage vertical spécifique.
 
@@ -2720,11 +2715,17 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 \tdocsep
 
 
+% ------------------ %
+
+
 \begin{tdoctech}[version = 1.6.1, date = 2024-10-28]
     \item Les règles de nommage de \ctan\ nécessitent l'usage de noms du type \verb+tutodoc-*.css.cls.sty+ pour les fichiers à-la \trademark{CSS}.
 \end{tdoctech}
 
 \tdocsep
+
+
+% ------------------ %
 
 
 \begin{tdocbreak}[version = 1.6.0, date = 2024-10-27]
@@ -2760,6 +2761,9 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 \tdocsep
 
 
+% ------------------ %
+
+
 \begin{tdoctech}[version = 1.5.0, date = 2024-10-19]
     \item La version 3 de \tdocpack{minted} est prise en compte.
 \end{tdoctech}
@@ -2785,6 +2789,9 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 \end{tdocfix}
 
 \tdocsep
+
+
+% ------------------ %
 
 
 \begin{tdocbreak}[version = 1.4.0, date = 2024-09-28]
@@ -2819,11 +2826,17 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 \tdocsep
 
 
+% ------------------ %
+
+
 \begin{tdocnew}[version = 1.3.1, date = 2024-09-26]
     \item Version étoilée de \tdocmacro{tdocenv} pour n'avoir que le nom de l'environnement.
 \end{tdocnew}
 
 \tdocsep
+
+
+% ------------------ %
 
 
 \begin{tdoctech}[version = 1.3.0, date = 2024-09-25]
@@ -2854,6 +2867,9 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 \tdocsep
 
 
+% ------------------ %
+
+
 \begin{tdocupdate}[version = 1.2.0-a, date = 2024-08-23]
     \item \tdocmacro{tdocversion}
     \begin{enumerate}
@@ -2871,6 +2887,9 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 \tdocsep
 
 
+% ------------------ %
+
+
 \begin{tdocnew}[version = 1.1.0, date = 2024-01-06]
     \item Journal des changements : deux nouveaux environnements.
     \begin{enumerate}
@@ -2885,6 +2904,9 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 \tdocsep
 
 
+% ------------------ %
+
+
 \begin{tdocfix}[version = 1.0.1, date = 2023-12-08]
     \item \tdocmacro{tdocenv}: l'espacement est maintenant correct, même si le paquet \tdocpack{babel} n'est pas chargé avec la langue française.
 
@@ -2892,6 +2914,9 @@ La participation en tant que codeuse, ou codeur, se fait via le dépôt \thisrep
 \end{tdocfix}
 
 \tdocsep
+
+
+% ------------------ %
 
 
 \tdocversion{1.0.0}[2023-11-29]
