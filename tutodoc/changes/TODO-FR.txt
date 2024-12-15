@@ -11,6 +11,12 @@ NOW
 
 src code : proto and co a à reprendre !!!
 
+src des docs aà vavlider : par exemple, y a un doublon dans la ca en
+
+pb espacement de bw vs color/dark dans les listings  !!!
+
+ensuite on publie une nouveal version
+
 
 > ---------------------------- <
 
