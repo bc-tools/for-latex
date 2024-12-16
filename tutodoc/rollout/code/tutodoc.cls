@@ -32,6 +32,10 @@
   { \msg_see_documentation_text:n { tutodoc } }
 
 
+%%%
+% The theme is identified by the following macro that can be changed
+% when the class is loaded.
+%%%
 \newcommand{\tutodoc@theme}{color}
 
 
@@ -82,7 +86,7 @@
 % == OPTIONS FOR \PACKS IMPORTED BY OTHER ONES == %
 % =============================================== %
 
-% xcolor is loaded by minted and tcolorbox.
+% ''xcolor'' will be loaded by ''minted'' and ''tcolorbox'' below.
 \PassOptionsToPackage{svgnames}{xcolor}
 
 
@@ -98,8 +102,8 @@
 
 \RequirePackage{clrstrip}
 
-% Special settings for minted need to be done before the loading of
-% the tcolorbox library minted.
+% Special settings for ''minted'' need to be done before the loading
+% of the ''tcolorbox'' library ''minted''.
 \RequirePackage[highlightmode = immediate]
                {minted}
 
@@ -142,39 +146,41 @@
   { \msg_see_documentation_text:n { tutodoc } }
 
 
-% Management of English composition rules.
-\newcommand{\tutodoc@use@english}{\relax}
-
 % Babel requires colon management for our translations.
 \newcommand{\tutodoc@colon}{:}
 
 \AtBeginDocument{
-% Babel is used.
+%%%
+% Settings if ''babel'' \pack is used.
+%%%
   \@ifpackageloaded{babel}{
-% We must take care of colons and spacing.
+% We must take care of spacings with colons.
     \iflanguage{french}{
       \renewcommand{\tutodoc@colon}{\babelshorthand{:}}
     }{}
   }{}
 
-% Polyglossia is used.
+%%%
+% Settings if ''polyglossia'' \pack is used.
+%%%
   \@ifpackageloaded{polyglossia}{
-% If polyglossia is used, we must load english if necessary
+% If ''polyglossia'' is used, we must load english if necessary
 % (see the ''\tutodoc@use@english'' macro below).
     \iflanguageloaded{english}{}{
       \setotherlanguage{english}
     }
   }{}%
 
+% Standard way to find the \lang to use.
   \newcommand{\tdoclang}{\BCPdata{language}}
 
 % We must take care of English rules for English contents.
-  \renewcommand\tutodoc@use@english{%
+  \newcommand\tutodoc@use@english{%
     \foreignlanguage{english}%
   }
 
-% If the lang is not supported, we emit a warning and just turn
-% to the english language.
+% If the \lang is not supported, we emit a warning and just use
+% the english language.
   \makeatletter
 
   \InputIfFileExists{tutodoc-\tdoclang.loc.cls}{}{
@@ -191,9 +197,9 @@
 \ExplSyntaxOff
 
 
-% ======================= %
-% == GEOMETRY SETTINGS == %
-% ======================= %
+% =================== %
+% == PAGE GEOMETRY == %
+% =================== %
 
 \geometry{
   top            = 1.9cm,
@@ -208,9 +214,9 @@
 \setlength{\parindent}{0cm}
 
 
-% =============== %
-% == TOC & Co. == %
-% =============== %
+% ================== %
+% == TITLES & TOC == %
+% ================== %
 
 \renewcommand{\thesection}{\Roman{section}}
 \renewcommand{\thesubsection}{\arabic{subsection}}
@@ -234,8 +240,6 @@
   paragraph,
   subparagraph
 }
-
-\DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
 
 
 % =========================== %
@@ -283,12 +287,13 @@
 }
 
 
-% ================== %
-% == FOR LISTINGS == %
-% ================== %
+% ============== %
+% == LISTINGS == %
+% ============== %
 
 %%%
-% ????
+% We use a \std \latex boolean to switch on or off lexers for listings
+% (this allows the ''draft'' mode to display listings in verbatim).
 %%%
 \newif\ifcodenolexer
 \codenolexerfalse
@@ -314,7 +319,7 @@
 %     See the pgfkeys package documentation for explanation.
 %%%
 
-\NewExpandableDocumentCommand{\tdoctcb}{m}{
+\NewExpandableDocumentCommand{\tdoctcb}{ m }{
   \str_case:nnF { #1 } {
     { sbs  } { listing ~ side ~ text }
     { code } { listing ~ only }
@@ -327,9 +332,9 @@
 \ExplSyntaxOff
 
 
-% =========== %
-% == THEME == %
-% =========== %
+% ============================== %
+% == THEME - GENERAL SETTINGS == %
+% ============================== %
 
 \input{tutodoc-\tutodoc@theme.css.cls}
 
@@ -357,7 +362,7 @@
 %
 % For example, ''\tdocquote{Something}'' prints **"Something"**.
 %%%
-\NewDocumentCommand{\tdocquote}{m}{%
+\NewDocumentCommand{\tdocquote}{ m }{%
   \enquote{\emph{#1}}%
 }
 
@@ -547,9 +552,9 @@
 
 
 
-% ============================================== %
-% == NAMES OF PACKAGES, MACROS & ENVIRONMENTS == %
-% ============================================== %
+% ========================================= %
+% == \PACKS, \CLSS, MACROS & \ENVS NAMES == %
+% ========================================= %
 
 %%%
 % prototype::
@@ -558,7 +563,7 @@
 %
 %     :action: ''\tdoccls{myclass}'' prints verb::''myclass''.
 %%%
-\NewDocumentCommand{\tdoccls}{m}{%
+\NewDocumentCommand{\tdoccls}{ m }{%
   \texttt{#1}%
 }
 
@@ -570,7 +575,7 @@
 %
 %     :action:''\tdocpack{mypack}'' prints verb::''mypack''.
 %%%
-\NewDocumentCommand{\tdocpack}{m}{%
+\NewDocumentCommand{\tdocpack}{ m }{%
   \texttt{#1}%
 }
 
@@ -582,7 +587,7 @@
 %
 %     :action: ''\tdocmacro{mymacro}'' prints verb::''\mymacro''.
 %%%
-\NewDocumentCommand{\tdocmacro}{m}{%
+\NewDocumentCommand{\tdocmacro}{ m }{%
   \texttt{\textbackslash{}#1}%
 }
 
@@ -643,6 +648,7 @@
 \tl_new:N  \l__tutodoc_pretext_tl
 \tl_new:N  \l__tutodoc_posttext_tl
 
+
 %%%
 % prototype::
 %     #1 : (pre.fix)
@@ -650,7 +656,7 @@
 %
 %     :action: ''\tdocprewhy{pre.fix}'' prints verb::''pre''.fix.
 %%%
-\NewDocumentCommand{\tdocprewhy}{m}{%
+\NewDocumentCommand{\tdocprewhy}{ m }{%
 % Do we have 2 parts?
   \seq_set_split:Nnn \l__tutodoc_prewhy_parts_seq { . } { #1 }
 
@@ -694,14 +700,14 @@
 %              which prints:
 %              verb::''pre'' comes from verb::''pre''-fix.
 %%%
-\NewDocumentCommand{\tdocpre}{m}{%
+\NewDocumentCommand{\tdocpre}{ m }{%
   \texttt{#1}%
 }
 
 
 
 % ======================== %
-% == TEXT INSIDE A RULE == %
+% == TEXT BETWEEN RULES == %
 % ======================== %
 
 \ExplSyntaxOn
@@ -725,7 +731,10 @@
 %     cf::''this post ;
 %           https://tex.stackexchange.com/a/604708/6880''.
 %%%
-\NewDocumentCommand{\tdocruler}{ O{\tutodoc@showcase@rule@color} m }{
+\NewDocumentCommand{\tdocruler}{
+  O{\tutodoc@showcase@rule@color}
+  m
+}{
   \par
   {
     \centering
@@ -1111,7 +1120,7 @@
 % -- DOES THE THEME AVOID LEXERS? -- %
 % ---------------------------------- %
 
-\NewExpandableDocumentCommand{\tutodoc@code@lexer}{m}{%
+\NewExpandableDocumentCommand{\tutodoc@code@lexer}{ m }{%
   \ifcodenolexer text\else #1\fi%
 }
 
@@ -1588,7 +1597,10 @@
 %
 %     :action: the short text printed will be preceded by a pretty anchor icon.
 %%%
-\NewDocumentCommand{ \tdocstartproj }{ O{tutodoc@text@color} m } {
+\NewDocumentCommand{ \tdocstartproj }{
+  O{tutodoc@text@color}
+  m
+} {
   \group_begin:
     \color{#1}
     \ifcsundef{g__tutodoc_topic_change_seq}{
