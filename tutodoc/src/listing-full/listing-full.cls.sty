@@ -13,16 +13,15 @@
 
 %%%
 % prototype::
-%     #1 : (minted-options)
-%          XXX
+%     #1 : (minted-like-options)
+%          a list of legal \minted options.
 %     #2 : (coding-lang)
-%          XXX
-%
-%     :action: this macro
-%
+%          the name of the \minted lexer corresponding to the coding langage
+%          for the formating.
 %
 % warning::
-%     just 2 args car !!
+%     There are only two arguments, because the \mintinline macro will eat
+%     the bit of inline code to be colored.
 %%%
 \NewDocumentCommand{\tdoccodein}{ O{} m }{%
   \mintinline[
@@ -36,6 +35,17 @@
 % -- MINTED/TCOLORBOX GENERALIST LISTING ENVIRONMENT -- %
 
 %%%
+% prototype::
+%     #1 : (minted-like-options)
+%          :see: macro.tdoccodein
+%     #2 : (tcolorbox-styling-commands)
+%          you can override the default \tcolorbox settings with the help
+%          of the macro ''\tdoctcb''.
+%     #3 : (coding-lang)
+%          :see: macro.tdoccodein
+%
+%     :see: macro.tdoctcb
+%
 % refs::
 %     + https://tex.stackexchange.com/a/604821/6880
 %     + https://tex.stackexchange.com/a/327983/6880
@@ -85,14 +95,15 @@
 
 %%%
 % prototype::
-%     #1 : (tcolorbox-styling-commands)
-%          you can override the defaul settings, and also use the useful
-%          macro ''\tdoctcb''
-%
-%     :see: macro.tdoctcb
+%     #1 : (minted-like-options)
+%          :see: macro.tdoccodein
+%     #2 : (tcolorbox-styling-commands)
+%          :see: \tcbset{tutodoc-full-listing-style}
+%     #3 : (coding-lang)
+%          :see: macro.tdoccodein
 %
 % note::
-%     See the \doc of the macro ''\newtcblisting'' from the package
+%     See the \doc of the macro ''\NewTCBListing'' from the package
 %     \tcolorbox to have \infos about the environment ''tdoccode''.
 %%%
 \NewTCBListing{tdoccode}{ O{} D<>{} m }{%
@@ -104,13 +115,17 @@
 
 %%%
 % prototype::
-%     #1 : (tcolorbox-styling-commands)
-%          :see: macro.newtcblisting{tdoccode}
-%     #2 : (file path)
+%     #1 : (minted-like-options)
+%          :see: macro.tdoccodein
+%     #2 : (tcolorbox-styling-commands)
+%          :see: \tcbset{tutodoc-full-listing-style}
+%     #3 : (coding-lang)
+%          :see: macro.tdoccodein
+%     #4 : (file path)
 %          the path of the file to input and format.
 %
 % note::
-%     See the \doc of the macro ''\newtcbinputlisting'' from the package
+%     See the \doc of the macro ''\NewTCBInputListing'' from the package
 %     \tcolorbox to have more \infos about the macro ''\tdoccodeinput''.
 %%%
 \NewTCBInputListing{\tdoccodeinput}{ O{} D<>{} m m }{

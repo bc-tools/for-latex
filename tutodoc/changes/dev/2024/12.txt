@@ -2,6 +2,21 @@
 
 
 ==
+17  (1.7.1-rc.1)
+==
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: the change log has been updated.
+
+
+// ---------- //
+
+
+==
 15  (1.7.1-beta.6)
 ==
 
@@ -63,9 +78,9 @@ Generalist and \latex listings.
 
     1) Block code \envs.
 
-        * Extra \minted options must be indicated inside hooks ''[ ... ]'' in the traditional way.
+        * Extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way.
 
-        * Extra \tcolorbox options must be indicated inside rafters ''< ... >''.
+        * Extra \tcolorbox options can be indicated inside rafters ''< ... >''.
 
 
 -----
@@ -131,7 +146,7 @@ Themes and \latex listings.
 
     1) With all themes, less spaces consumed and better shadow colors.
 
-    1) With all themes but the ''draft'' one, the arc len changes from ''.75mm'' to ''2pt''.
+    1) With all themes but the ''draft'' one, the arc length changes from ''.75mm'' to ''2pt''.
 
 
 // ---------- //

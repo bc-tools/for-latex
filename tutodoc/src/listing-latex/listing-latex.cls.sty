@@ -17,6 +17,15 @@
 % -- MINTED/TCOLORBOX LATEX LISTING ENVIRONMENT -- %
 
 %%%
+% prototype::
+%     #1 : (minted-like-options)
+%          a list of legal \minted options.
+%     #2 : (tcolorbox-styling-commands)
+%          you can override the default \tcolorbox settings with the help
+%          of the macro ''\tdoctcb''.
+%
+%     :see: macro.tdoctcb
+%
 % refs::
 %     + https://tex.stackexchange.com/a/604821/6880
 %     + https://tex.stackexchange.com/a/327983/6880
@@ -65,11 +74,10 @@
 
 %%%
 % prototype::
-%     #1 : (tcolorbox-styling-commands)
-%          you can override the defaul settings, and also use the useful
-%          macro ''\tdoctcb''
-%
-%     :see: macro.tdoctcb
+%     #1 : (minted-like-options)
+%          :see: tcbset(tutodoc-latex-listing-style)
+%     #2 : (tcolorbox-styling-commands)
+%          :see: tcbset(tutodoc-latex-listing-style)
 %
 % note::
 %     See the \doc of the macro ''\newtcblisting'' from the package
@@ -84,9 +92,11 @@
 
 %%%
 % prototype::
-%     #1 : (tcolorbox-styling-commands)
-%          :see: macro.newtcblisting{tdoclatex}
-%     #2 : (file path)
+%     #1 : (minted-like-options)
+%          :see: tcbset(tutodoc-latex-listing-style)
+%     #2 : (tcolorbox-styling-commands)
+%          :see: tcbset(tutodoc-latex-listing-style)
+%     #3 : (file path)
 %          the path of the file to input and format.
 %
 % note::
@@ -112,7 +122,6 @@
 % prototype::
 %     explain : the text between the code and its highlighted output.
 %
-%
 % note::
 %     This key can be used in addition to those of the ''tdocshowcase''
 %     \env,
@@ -131,8 +140,8 @@
 %%%
 % prototype::
 %     #1 : (key-val options)
-%          :see: \keys_define:nn { tutodoc / listing / latexshow } ,
-%                \keys_define:nn { tutodoc / showcase }
+%          :see: l3keys(tutodoc / listing / latexshow) ,
+%                l3keys(tutodoc / showcase)
 %     #2 : (file path)
 %          the path of a file
 %

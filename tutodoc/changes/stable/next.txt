@@ -17,37 +17,22 @@
 \Refs to tools for latest \chges was wrongly written as admonition features.
 
 
--------
-:break:
--------
-
-[[:api:]]
-\Envs using \tcolorbox.
-
-    1) The new ''\tdoctcb'' macro allows to use shortcuts for regularly used styles.
-
-    1) \latex listings: the option can be any legal \tcolorbox styling commands.
-
-
 -----
 :new:
 -----
 
 [[:api:]]
-New feature: display any kind of code for any language supported by \minted.
+\latex and also any kind of code listings can be formatted with optional custom settings.
 
-+
-
-Generalist and \latex Listings.
-
-    1) Inline macros: extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way inside.
+    1) Inline macros: extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way.
 
     1) Block code \envs.
 
-        * Extra \minted options must be indicated inside hooks ''[ ... ]'' in the traditional way inside.
+        * Extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way.
 
-        * Extra \tcolorbox options must be indicated inside rafters ''< ... >''.
+        * Extra \tcolorbox options can be indicated inside rafters ''< ... >''.
 
+    1) The new ''\tdoctcb'' macro allows to use shortcuts for regularly used styles.
 
 
 [[:doc:]]
@@ -65,13 +50,13 @@ Themes.
 
         * With all themes, we have the following \chges.
 
-            + Less spaces are consumedand.
+            + Less spaces consumed.
 
-            + Shadow colors is better.
+            + Better shadow colors.
 
         * With all themes but the ''draft'' one, we have the following \chges.
 
-            + The arc len of the frames changes from ''.75mm'' to ''2pt''.
+            + The arc length of the frames has changed from ''.75mm'' to ''2pt''.
 
             + Less vertical space is used before the "what" \envs.
 
