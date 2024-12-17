@@ -9,13 +9,6 @@ NOW
 
 > ---------------------------- <
 
-relecture sur papier des docs
-
-ensuite on publie une nouveal version
-
-
-> ---------------------------- <
-
 macro de rgélage global en parallèle des options de classe (on prépare terrain pour monorepio à la tns)
 
 
