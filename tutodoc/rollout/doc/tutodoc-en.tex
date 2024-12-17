@@ -1408,7 +1408,7 @@ OR.
 
 \title{The \texttt{tutodoc} class \\ Tutorial-style documentation}
 \author{Christophe, BAL}
-\date{Dec 4, 2024 - Version 1.7.0}
+\date{Dec 17, 2024 - Version 1.7.1}
 
 \maketitle
 
@@ -1441,66 +1441,50 @@ OR.
 
 \small
 
-\begin{tdocbreak}
-	\item Format: the \tdoccls{scrartcl} class replaces the venerable \tdoccls{article}. This implies better placement of the margin notes with the options retained for loading \tdoccls{scrartcl}.
-
-	\item \LaTeX\ code: the macro \tdocmacro{tdocinlatex} has been renamed \tdocmacro{tdoclatexin}.
-
-	\item Color key names will be hyphenated where necessary: this implies the following changes.
-	%
-	\begin{enumerate}
-		\item Indicate the latest changes: the \tdoclatexin{colchges} option of the environments has been renamed \tdoclatexin{col-chges}.
-
-		\item Showcases: for the environment \tdocenv*{tdocshowcase} and the macro \tdocmacro{tdocshowcaseinput}, the \tdoclatexin{colstripe} and  \tdoclatexin{coltext} options have been renamed \tdoclatexin{col-stripe} and \tdoclatexin{col-text}\,.
-	\end{enumerate}
-\end{tdocbreak}
-
-
 \begin{tdocfix}
-	\item Admonitions: for the \tdocmacro{newkeytheorem} used with the \tdoclatexin{draft} theme, \tdoclatexin{postheadhook = \leavevmode} has been added (this is necessary because the content can naturally be of the list type).
+	\item Documentation: references to tools to indicate changes have been incorrectly written as characteristics of highlighted colored content.
 \end{tdocfix}
 
 
+\begin{tdocbreak}
+	\item Code formatting just in \LaTeX: the options system changes as shown next.
+\end{tdocbreak}
+
+
 \begin{tdocnew}
-	\item Documentation: addition of a section listing dependencies.
-
-	\item Class options.
+	\item Formatting of computer codes in addition to those specifically in LaTeX.
 	%
 	\begin{enumerate}
-		\item Options not specific to \thisproj\ are passed on to the class in charge of general formatting.
+		\item Creation of \tdocenv{tdoccode} and \tdocmacro{tdoccodein}.
 
-		\item The \tdoccls{scrartcl} options \tdoclatexin{fontsize} and \tdoclatexin{DIV} can't be used because their values are fixed by \thisproj.
+		\item For macros for inline code, and environments for blocks of code, \tdocpack{minted} options are indicated inside square brackets in the traditional way: \tdoclatexin{[minted options]}\,.
+
+		\item For code block environments, \tdocpack{tcolorbox} options are indicated inside rafters: \tdoclatexin{<tcolorbox options>}\,.
+
+		\item The new macro \tdocmacro{tdoctcb} allows you to use shortcuts for regularly used \tdocpack{tcolorbox} styles.
 	\end{enumerate}
 
-	\item The macro \tdocmacro{tdocinEN} respects the English linguistic rules.
-
-	\item Indicate the latest changes.
-	%
-	\begin{enumerate}
-		\item Add the environment \tdocenv{tdoctodo}\,.
-
-		\item Each environment has a new option \tdoclatexin{col} for the colour of the content indicating changes.
-	\end{enumerate}
+	\item Documentation: a new section presents tools for formatting computer codes other than those in LaTeX.
 \end{tdocnew}
 
 
 \begin{tdocupdate}
-	\item \tdoclatexin{draft} theme and changes: the environments for the latest changes stop to use icons.
+	\item Sub-sub-sections are numbered in lower case.
 
-	\item Documentation: the theme gallery uses a better fake example.
-\end{tdocupdate}
-
-
-
-\begin{tdoctech}
-	\item Simplified organisation of configuration files in the final project.
+	\item Themes.
 	%
 	\begin{enumerate}
-		\item \texttt{CSS}-like: use of one file per theme with a name like \texttt{tutodoc-bw.css.cls}\,.
+		\item Less space consumed.
 
-		\item Locale: use of names like \texttt{tutodoc-en.loc.cls}\,.
+		\item Shadows have better coloring.
+
+		\item For all themes except the \tdoclatexin{draft} one, the radius of the arcs of the corners of the frames increases from \tdoclatexin{.75mm} to \tdoclatexin{.2pt},.
+
+ 		\item Codes just in \LaTeX: with the theme \tdoclatexin{color}, the background color changes from \tdoclatexin[bgcolor = yellow!4]{yellow!4} to \tdoclatexin{gray!5}.
+
+		\item Changes: with the \tdoclatexin{dark} theme, the font of the \tdoclatexin{[Init]} text used by the \tdocmacro{tdocstartproj} macro is identical to that of the environment titles for typing changes.
 	\end{enumerate}
-\end{tdoctech}
+\end{tdocupdate}
 }
 
 
@@ -1585,7 +1569,7 @@ As this language is included in the list of languages taken into account, see be
         \task \tdoclatexin|es| : Spanish.
         \task \tdoclatexin|fr| : French.
 \end{tasks}
-
+                    
 
 
 \begin{tdocnote}
@@ -1940,7 +1924,7 @@ There are situations where you need to be able to clearly identify an example of
 	You can easily produce a beautiful horror like the one below.
 
 	\input{examples-showcase-stripe-custom.tex}
-
+	
 	Here's the code that was used.%
 	\footnote{
 		Now we understand why we chose \tdoclatexin{col-stripe} instead of \tdoclatexin{col-rule}\,.
@@ -2556,6 +2540,57 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \section{History}
 
 \small
+
+\begin{tdocfix}[version = 1.7.1, date = 2024-12-17]
+	\item Documentation: references to tools to indicate changes have been incorrectly written as characteristics of highlighted colored content.
+\end{tdocfix}
+
+
+\begin{tdocbreak}
+	\item Code formatting just in \LaTeX: the options system changes as shown next.
+\end{tdocbreak}
+
+
+\begin{tdocnew}
+	\item Formatting of computer codes in addition to those specifically in LaTeX.
+	%
+	\begin{enumerate}
+		\item Creation of \tdocenv{tdoccode} and \tdocmacro{tdoccodein}.
+
+		\item For macros for inline code, and environments for blocks of code, \tdocpack{minted} options are indicated inside square brackets in the traditional way: \tdoclatexin{[minted options]}\,.
+
+		\item For code block environments, \tdocpack{tcolorbox} options are indicated inside rafters: \tdoclatexin{<tcolorbox options>}\,.
+
+		\item The new macro \tdocmacro{tdoctcb} allows you to use shortcuts for regularly used \tdocpack{tcolorbox} styles.
+	\end{enumerate}
+
+	\item Documentation: a new section presents tools for formatting computer codes other than those in LaTeX.
+\end{tdocnew}
+
+
+\begin{tdocupdate}
+	\item Sub-sub-sections are numbered in lower case.
+
+	\item Themes.
+	%
+	\begin{enumerate}
+		\item Less space consumed.
+
+		\item Shadows have better coloring.
+
+		\item For all themes except the \tdoclatexin{draft} one, the radius of the arcs of the corners of the frames increases from \tdoclatexin{.75mm} to \tdoclatexin{.2pt},.
+
+ 		\item Codes just in \LaTeX: with the theme \tdoclatexin{color}, the background color changes from \tdoclatexin[bgcolor = yellow!4]{yellow!4} to \tdoclatexin{gray!5}.
+
+		\item Changes: with the \tdoclatexin{dark} theme, the font of the \tdoclatexin{[Init]} text used by the \tdocmacro{tdocstartproj} macro is identical to that of the environment titles for typing changes.
+	\end{enumerate}
+\end{tdocupdate}
+
+\tdocsep
+
+
+% ------------------ %
+
 
 \begin{tdocbreak}[version = 1.7.0, date = 2024-12-04]
 	\item Format: the \tdoccls{scrartcl} class replaces the venerable \tdoccls{article}. This implies better placement of the margin notes with the options retained for loading \tdoccls{scrartcl}.

@@ -24,7 +24,7 @@ checkopts   = "-interaction=nonstopmode --shell-escape"
 typesetopts = checkopts
 
 uploadconfig = {
-    version      = "1.7.0 [2024-12-04]",
+    version      = "1.7.1 [2024-12-17]",
     announcement = "Ability to format code written in a language supported by minted, and improved themes.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",

@@ -9,8 +9,8 @@
 
 \ProvidesExplClass
   {tutodoc}
-  {2024-12-04}  % Creation: 2023-11-29
-  {1.7.0}
+  {2024-12-17}  % Creation: 2023-11-29
+  {1.7.1}
   {This package proposes tools for writing "human friendly" documentations of LaTeX packages.}
 
 
@@ -863,7 +863,7 @@
 
 % prototype::
 %     #1 : (key-val options)
-%          :see: \keys_define:nn { tutodoc / showcase }
+%          :see: l3keys(tutodoc / showcase)
 %
 %     :action: this \env formats \latex code, given as an argument,
 %              by framing it with texts decorated by ''\tdocruler'',
@@ -963,6 +963,15 @@
 % ------------------------------------------------ %
 
 %%%
+% prototype::
+%     #1 : (minted-like-options)
+%          a list of legal \minted options.
+%     #2 : (tcolorbox-styling-commands)
+%          you can override the default \tcolorbox settings with the help
+%          of the macro ''\tdoctcb''.
+%
+%     :see: macro.tdoctcb
+%
 % refs::
 %     + https://tex.stackexchange.com/a/604821/6880
 %     + https://tex.stackexchange.com/a/327983/6880
@@ -1011,11 +1020,10 @@
 
 %%%
 % prototype::
-%     #1 : (tcolorbox-styling-commands)
-%          you can override the defaul settings, and also use the useful
-%          macro ''\tdoctcb''
-%
-%     :see: macro.tdoctcb
+%     #1 : (minted-like-options)
+%          :see: tcbset(tutodoc-latex-listing-style)
+%     #2 : (tcolorbox-styling-commands)
+%          :see: tcbset(tutodoc-latex-listing-style)
 %
 % note::
 %     See the \doc of the macro ''\newtcblisting'' from the package
@@ -1032,9 +1040,11 @@
 
 %%%
 % prototype::
-%     #1 : (tcolorbox-styling-commands)
-%          :see: macro.newtcblisting{tdoclatex}
-%     #2 : (file path)
+%     #1 : (minted-like-options)
+%          :see: tcbset(tutodoc-latex-listing-style)
+%     #2 : (tcolorbox-styling-commands)
+%          :see: tcbset(tutodoc-latex-listing-style)
+%     #3 : (file path)
 %          the path of the file to input and format.
 %
 % note::
@@ -1064,7 +1074,6 @@
 % prototype::
 %     explain : the text between the code and its highlighted output.
 %
-%
 % note::
 %     This key can be used in addition to those of the ''tdocshowcase''
 %     \env,
@@ -1085,8 +1094,8 @@
 %%%
 % prototype::
 %     #1 : (key-val options)
-%          :see: \keys_define:nn { tutodoc / listing / latexshow } ,
-%                \keys_define:nn { tutodoc / showcase }
+%          :see: l3keys(tutodoc / listing / latexshow) ,
+%                l3keys(tutodoc / showcase)
 %     #2 : (file path)
 %          the path of a file
 %
@@ -1131,16 +1140,15 @@
 
 %%%
 % prototype::
-%     #1 : (minted-options)
-%          XXX
+%     #1 : (minted-like-options)
+%          a list of legal \minted options.
 %     #2 : (coding-lang)
-%          XXX
-%
-%     :action: this macro
-%
+%          the name of the \minted lexer corresponding to the coding langage
+%          for the formating.
 %
 % warning::
-%     just 2 args car !!
+%     There are only two arguments, because the \mintinline macro will eat
+%     the bit of inline code to be colored.
 %%%
 \NewDocumentCommand{\tdoccodein}{ O{} m }{%
   \mintinline[
@@ -1156,6 +1164,17 @@
 % ----------------------------------------------------- %
 
 %%%
+% prototype::
+%     #1 : (minted-like-options)
+%          :see: macro.tdoccodein
+%     #2 : (tcolorbox-styling-commands)
+%          you can override the default \tcolorbox settings with the help
+%          of the macro ''\tdoctcb''.
+%     #3 : (coding-lang)
+%          :see: macro.tdoccodein
+%
+%     :see: macro.tdoctcb
+%
 % refs::
 %     + https://tex.stackexchange.com/a/604821/6880
 %     + https://tex.stackexchange.com/a/327983/6880
@@ -1205,14 +1224,15 @@
 
 %%%
 % prototype::
-%     #1 : (tcolorbox-styling-commands)
-%          you can override the defaul settings, and also use the useful
-%          macro ''\tdoctcb''
-%
-%     :see: macro.tdoctcb
+%     #1 : (minted-like-options)
+%          :see: macro.tdoccodein
+%     #2 : (tcolorbox-styling-commands)
+%          :see: \tcbset{tutodoc-full-listing-style}
+%     #3 : (coding-lang)
+%          :see: macro.tdoccodein
 %
 % note::
-%     See the \doc of the macro ''\newtcblisting'' from the package
+%     See the \doc of the macro ''\NewTCBListing'' from the package
 %     \tcolorbox to have \infos about the environment ''tdoccode''.
 %%%
 \NewTCBListing{tdoccode}{ O{} D<>{} m }{%
@@ -1226,13 +1246,17 @@
 
 %%%
 % prototype::
-%     #1 : (tcolorbox-styling-commands)
-%          :see: macro.newtcblisting{tdoccode}
-%     #2 : (file path)
+%     #1 : (minted-like-options)
+%          :see: macro.tdoccodein
+%     #2 : (tcolorbox-styling-commands)
+%          :see: \tcbset{tutodoc-full-listing-style}
+%     #3 : (coding-lang)
+%          :see: macro.tdoccodein
+%     #4 : (file path)
 %          the path of the file to input and format.
 %
 % note::
-%     See the \doc of the macro ''\newtcbinputlisting'' from the package
+%     See the \doc of the macro ''\NewTCBInputListing'' from the package
 %     \tcolorbox to have more \infos about the macro ''\tdoccodeinput''.
 %%%
 \NewTCBInputListing{\tdoccodeinput}{ O{} D<>{} m m }{
@@ -1502,7 +1526,7 @@
 %          one material that expects to be an icon command from the
 %          ''fontawsome5'' \pack
 %     #3 : (key-val options)
-%          :see: \keys_define:nn { tutodoc / version-n-change / topic / options }
+%          :see: l3keys(tutodoc / version-n-change / topic / options)
 %
 %     :action: this environment prints some \infos about specific changes
 %              achieved in a new version (no special formatting is applied).
