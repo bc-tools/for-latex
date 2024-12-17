@@ -1,12 +1,12 @@
 ==
-??  (1.7.1)
+17  (1.7.1)
 ==
 
 ------
 :desc:
 ------
 
-??
+Ability to format code written in a language supported by \minted, and improved themes.
 
 
 -----
@@ -24,9 +24,9 @@
 [[:api:]]
 \latex and also any kind of code listings can be formatted with optional custom settings.
 
-    1) Inline macros: extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way.
+    1) "Inline" macros: extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way.
 
-    1) Block code \envs.
+    1) "Block code" \envs.
 
         * Extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way.
 
@@ -44,9 +44,11 @@ Manual: a new section for the generalist listings.
 --------
 
 [[:format:]]
-Themes.
+Here are the \chges.
 
-    1) Spacing.
+    1) Sub-sub-sections are numbered using lower alphabetic letters.
+
+    1) Themes.
 
         * With all themes, we have the following \chges.
 
@@ -60,8 +62,6 @@ Themes.
 
             + Less vertical space is used before the "what" \envs.
 
-    1) Sub-sub-sections are numbered using lower alphabetic letters.
+    1) \latex listings: with the ''color'' theme, the back color changes from ''yellow!4'' to ''gray!5''.
 
-    1) \latex listings: with the ''color'' theme, the back color changes from ''yellow!4'' to ''gray!5''’.
-
-    1) \Chges: with the ''dark'' theme, the font of the text ''[Init]'' used by the ''\tdocstartproj'' macro is identical to that of \envs for typing \chges.
+    1) \Chges: with the ''dark'' theme, the font of the text ''[Init]'' used by the ''\tdocstartproj'' macro is identical to that of the titles of the \envs for typing \chges.

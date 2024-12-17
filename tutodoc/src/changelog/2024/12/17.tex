@@ -1,50 +1,44 @@
 \begin{tdocfix}
-	\item Documentation : les références aux outils pour les dernières modifications ont été incorrectement écrites comme caractéristiques des contenus colorés mis en avant.
+	\item Documentation: les références aux outils pour indiquer des changements ont été incorrectement écrites comme caractéristiques des contenus colorés mis en avant.
 \end{tdocfix}
 
 
+\begin{tdocbreak}
+	\item Mise en forme de codes juste en \LaTeX: le système d'options change comme indiqué juste après.
+\end{tdocbreak}
+
+
 \begin{tdocnew}
-	\item Les listes de code de typelatex et de tout autre type peuvent être formatées avec des paramètres personnalisés optionnels.
+	\item Mise en forme de codes informatiques en plus de ceux spécifiquement en \LaTeX.
 	%
 	\begin{enumerate}
-		\item Macros en ligne : des options supplémentaires peuvent être indiquées à l'intérieur des crochets ''[ ... ]'' de manière traditionnelle.
+		\item Création de \tdocenv{tdoccode} et de \tdocmacro{tdoccodein}.
 
-		\item Block code \envs.
+		\item Pour les macros pour du code en ligne, et les environnements pour des blocs de code, des options de type \tdocpack{minted} s'indiquent à l'intérieur de crochet de manière traditionnelle: \tdoclatexin{[options minted]}\,.
 
-		* Des options supplémentaires peuvent être indiquées à l'intérieur des crochets ''[ ... ]'' de manière traditionnelle.
+		\item Pour les environnements pour des blocs de code, des options de type \tdocpack{tcolorbox} s'indiquent à l'intérieur de chevrons: \tdoclatexin{<options tcolorbox>}\,.
 
-		* Des options supplémentaires \tcolorbox peuvent être indiquées à l'intérieur des chevrons ''< ... >''.
-
-		\item La nouvelle macro ''\tdoctcb'' permet d'utiliser des raccourcis pour les styles régulièrement utilisés.
+		\item La nouvelle macro \tdocmacro{tdoctcb} permet d'utiliser des raccourcis pour les styles \tdocpack{tcolorbox} régulièrement utilisés.
 	\end{enumerate}
 
-	\item Manuel : une nouvelle section pour les listes généralistes.
+	\item Documentation: une nouvelle section présente les outils de mise en forme de codes informatiques autres que ceux en \LaTeX.
 \end{tdocnew}
 
 
 \begin{tdocupdate}
+	\item Les sous-sous-sections sont numérotées en lettres minuscules.
+
 	\item Thèmes.
 	%
 	\begin{enumerate}
-		\item Espacement.
+		\item Moins d'espace consommé.
 
-			* Avec tous les thèmes, nous avons les changements suivants.
+		\item Les ombres ont une meilleure coloration.
 
-				+ Moins d'espaces consommés.
+		\item Pour tous les thèmes sauf le \tdoclatexin{draft}, le rayon des arcs des coins des cadres passe de \tdoclatexin{.75mm} à \tdoclatexin{.2pt}\,.
 
-				+ Meilleures couleurs d'ombre.
+ 		\item Codes juste en \LaTeX: avec le thème \tdoclatexin{color}, la couleur du fond passe de \tdoclatexin[bgcolor = yellow!4]{yellow!4} à \tdoclatexin{gray!5}.
 
-			* Avec tous les thèmes sauf le ''draft'', nous avons les changements suivants.
-
-				+ La longueur de l'arc des cadres est passée de ''.75mm'' à ''.2pt''.
-
-				+ Moins d'espace vertical est utilisé avant les \Névènements « quoi ».
-
-
-		\item Les sous-sous-sections sont numérotées en lettres minuscules.
-
-		\item Listes \latex : avec le thème « couleur », la couleur du dos passe de « jaune!4 » à « gris!5 ».
-
-		\item \Chges : avec le thème « dark », la police du texte « [Init] » utilisé par la macro « \tdocstartproj » est identique à celle de \envs pour taper \chges.
+		\item Changements: avec le thème \tdoclatexin{dark}, la police du texte \tdoclatexin{[Init]} utilisé par la macro \tdocmacro{tdocstartproj} est identique à celle des titres des environnements pour taper des changements.
 	\end{enumerate}
 \end{tdocupdate}
