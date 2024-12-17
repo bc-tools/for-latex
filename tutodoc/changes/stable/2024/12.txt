@@ -9,7 +9,7 @@
 :desc:
 ------
 
-Ability to format code written in a language supported by \minted, and improved themes.
+Ability to format code written in a language supported by \minted, and improved layouts with less wasted space and more sober colors.
 
 
 -----
@@ -18,6 +18,13 @@ Ability to format code written in a language supported by \minted, and improved 
 
 [[:doc:]]
 \Refs to tools for latest \chges was wrongly written as admonition features.
+
+
+-------
+:break:
+-------
+
+\latex showcases: the default layout is more sober, and there are options for having just the rulers, or the colored stripe.
 
 
 -----

@@ -25,7 +25,7 @@ typesetopts = checkopts
 
 uploadconfig = {
     version      = "1.7.1 [2024-12-17]",
-    announcement = "Ability to format code written in a language supported by minted, and improved themes.",
+    announcement = "Ability to format code written in a language supported by minted, and improved layouts with less wasted space and more sober colors.",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
     email        = "projetmbc@gmail.com",

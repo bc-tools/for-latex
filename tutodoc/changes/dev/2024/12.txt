@@ -41,7 +41,7 @@ Manual: a new section for the generalist listings.
 --------
 
 [[:doc:]]
-Maunual: simplification of the \latex codes.
+Manual: simplification of the \latex codes.
 
 
 [[:flow:]]
@@ -59,12 +59,7 @@ No more magic comments needed for the \src codes.
 :break:
 -------
 
-OK avec doc
-\tdocshowcase chaneg pour la sobriété
-
-    minmal par déaafut
-    rule
-    stripe
+\latex showcases: the default layout is more sober, and there are options for having just the rulers, or the colored stripe.
 
 
 --------
