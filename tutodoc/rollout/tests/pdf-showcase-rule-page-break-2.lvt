@@ -7,9 +7,9 @@
 \START
 
 \null
-\vspace{21cm}
+\vspace{23cm}
 
-\begin{tdocshowcase}[nostripe]
+\begin{tdocshowcase}[style=rule]
     Line 1
 
     Line 2

@@ -44,7 +44,7 @@ Completed box being shipped out [1]
 .....\pdfcolorstack 0 pop
 ...\glue 18.0
 ...\glue(\lineskip) 0.0
-...\vbox(742.0+0.0)x469.47055, glue set 377.1405fil
+...\vbox(742.0+0.0)x469.47055, glue set 395.13858fil
 ....\write-{}
 ....\pdfcolorstack 0 push {0 g 0 G}
 ....\pdfcolorstack 0 push {0 g 0 G}
@@ -99,12 +99,10 @@ Completed box being shipped out [1]
 .....\OT1/cmr/bx/n/10 p
 .....\OT1/cmr/bx/n/10 l
 .....\OT1/cmr/bx/n/10 e
-.....\kern 0.0
 .....\glue 3.83331 plus 1.91666 minus 1.27777
 .....\OT1/cmr/bx/n/10 I
 .....\OT1/cmr/bx/n/10 .
 .....\OT1/cmr/bx/n/10 1
-.....\kern 0.0
 .....\OT1/cmr/bx/n/10 .
 .....\glue 5.0 plus 1.0 minus 1.0
 .....\pdfcolorstack 0 pop
@@ -122,11 +120,11 @@ Completed box being shipped out [1]
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
-....\glue -9.94444 plus -2.0 minus -4.0
+....\glue 6.0 plus 2.0 minus 2.0
+....\glue -7.94444 plus -2.0 minus -2.0
 ....\penalty -51
 ....\glue 1.94444
-....\glue 8.0 plus 2.0 minus 4.0
+....\glue 6.0 plus 2.0 minus 2.0
 ....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocexa}{I.2}{tdocexa.1.2}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -145,12 +143,10 @@ Completed box being shipped out [1]
 .....\OT1/cmr/bx/n/10 p
 .....\OT1/cmr/bx/n/10 l
 .....\OT1/cmr/bx/n/10 e
-.....\kern 0.0
 .....\glue 3.83331 plus 1.91666 minus 1.27777
 .....\OT1/cmr/bx/n/10 I
 .....\OT1/cmr/bx/n/10 .
 .....\OT1/cmr/bx/n/10 2
-.....\kern 0.0
 .....\OT1/cmr/bx/n/10 .
 .....\glue 5.0 plus 1.0 minus 1.0
 .....\pdfcolorstack 0 pop
@@ -168,11 +164,11 @@ Completed box being shipped out [1]
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
-....\glue -9.94444 plus -2.0 minus -4.0
+....\glue 6.0 plus 2.0 minus 2.0
+....\glue -7.94444 plus -2.0 minus -2.0
 ....\penalty -51
 ....\glue 1.94444
-....\glue 8.0 plus 2.0 minus 4.0
+....\glue 6.0 plus 2.0 minus 2.0
 ....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{I.3}{tdocrem.1.3}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -190,12 +186,10 @@ Completed box being shipped out [1]
 .....\OT1/cmr/bx/n/10 a
 .....\OT1/cmr/bx/n/10 r
 .....\OT1/cmr/bx/n/10 k
-.....\kern 0.0
 .....\glue 3.83331 plus 1.91666 minus 1.27777
 .....\OT1/cmr/bx/n/10 I
 .....\OT1/cmr/bx/n/10 .
 .....\OT1/cmr/bx/n/10 3
-.....\kern 0.0
 .....\OT1/cmr/bx/n/10 .
 .....\glue 5.0 plus 1.0 minus 1.0
 .....\pdfcolorstack 0 pop
@@ -213,10 +207,10 @@ Completed box being shipped out [1]
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
-....\glue -8.0 plus -2.0 minus -4.0
+....\glue 6.0 plus 2.0 minus 2.0
+....\glue -6.0 plus -2.0 minus -2.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
+....\glue 6.0 plus 2.0 minus 2.0
 ....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocexa}{I.4}{tdocexa.1.4}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -235,12 +229,10 @@ Completed box being shipped out [1]
 .....\OT1/cmr/bx/n/10 p
 .....\OT1/cmr/bx/n/10 l
 .....\OT1/cmr/bx/n/10 e
-.....\kern 0.0
 .....\glue 3.83331 plus 1.91666 minus 1.27777
 .....\OT1/cmr/bx/n/10 I
 .....\OT1/cmr/bx/n/10 .
 .....\OT1/cmr/bx/n/10 4
-.....\kern 0.0
 .....\OT1/cmr/bx/n/10 .
 .....\glue 5.0 plus 1.0 minus 1.0
 .....\pdfcolorstack 0 pop
@@ -258,11 +250,11 @@ Completed box being shipped out [1]
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
-....\glue -9.94444 plus -2.0 minus -4.0
+....\glue 6.0 plus 2.0 minus 2.0
+....\glue -7.94444 plus -2.0 minus -2.0
 ....\penalty -51
 ....\glue 1.94444
-....\glue 8.0 plus 2.0 minus 4.0
+....\glue 6.0 plus 2.0 minus 2.0
 ....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{I.5}{tdocrem.1.5}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -280,12 +272,10 @@ Completed box being shipped out [1]
 .....\OT1/cmr/bx/n/10 a
 .....\OT1/cmr/bx/n/10 r
 .....\OT1/cmr/bx/n/10 k
-.....\kern 0.0
 .....\glue 3.83331 plus 1.91666 minus 1.27777
 .....\OT1/cmr/bx/n/10 I
 .....\OT1/cmr/bx/n/10 .
 .....\OT1/cmr/bx/n/10 5
-.....\kern 0.0
 .....\OT1/cmr/bx/n/10 .
 .....\glue 5.0 plus 1.0 minus 1.0
 .....\pdfcolorstack 0 pop
@@ -303,10 +293,10 @@ Completed box being shipped out [1]
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
-....\glue -8.0 plus -2.0 minus -4.0
+....\glue 6.0 plus 2.0 minus 2.0
+....\glue -6.0 plus -2.0 minus -2.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
+....\glue 6.0 plus 2.0 minus 2.0
 ....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{I.6}{tdocrem.1.6}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -324,12 +314,10 @@ Completed box being shipped out [1]
 .....\OT1/cmr/bx/n/10 a
 .....\OT1/cmr/bx/n/10 r
 .....\OT1/cmr/bx/n/10 k
-.....\kern 0.0
 .....\glue 3.83331 plus 1.91666 minus 1.27777
 .....\OT1/cmr/bx/n/10 I
 .....\OT1/cmr/bx/n/10 .
 .....\OT1/cmr/bx/n/10 6
-.....\kern 0.0
 .....\OT1/cmr/bx/n/10 .
 .....\glue 5.0 plus 1.0 minus 1.0
 .....\pdfcolorstack 0 pop
@@ -347,11 +335,11 @@ Completed box being shipped out [1]
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
-....\glue -8.0 plus -2.0 minus -4.0
+....\glue 6.0 plus 2.0 minus 2.0
+....\glue -6.0 plus -2.0 minus -2.0
 ....\penalty -300
-....\glue 8.0 plus 2.0 minus 4.0
-....\glue -8.0 plus -2.0 minus -4.0
+....\glue 6.0 plus 2.0 minus 2.0
+....\glue -6.0 plus -2.0 minus -2.0
 ....\glue 15.0694 plus 4.30554 minus 0.86108
 ....\pdfdest name{section.2} xyz
 ....\penalty 10000
@@ -408,14 +396,12 @@ Completed box being shipped out [1]
 .....\OT1/cmr/bx/n/10 a
 .....\OT1/cmr/bx/n/10 r
 .....\OT1/cmr/bx/n/10 k
-.....\kern 0.0
 .....\glue 3.83331 plus 1.91666 minus 1.27777
 .....\OT1/cmr/bx/n/10 I
 .....\kern0.31944
 .....\OT1/cmr/bx/n/10 I
 .....\OT1/cmr/bx/n/10 .
 .....\OT1/cmr/bx/n/10 1
-.....\kern 0.0
 .....\OT1/cmr/bx/n/10 .
 .....\glue 5.0 plus 1.0 minus 1.0
 .....\pdfcolorstack 0 pop
@@ -433,10 +419,10 @@ Completed box being shipped out [1]
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
-....\glue -8.0 plus -2.0 minus -4.0
+....\glue 6.0 plus 2.0 minus 2.0
+....\glue -6.0 plus -2.0 minus -2.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
+....\glue 6.0 plus 2.0 minus 2.0
 ....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{II.2}{tdocrem.2.2}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -454,14 +440,12 @@ Completed box being shipped out [1]
 .....\OT1/cmr/bx/n/10 a
 .....\OT1/cmr/bx/n/10 r
 .....\OT1/cmr/bx/n/10 k
-.....\kern 0.0
 .....\glue 3.83331 plus 1.91666 minus 1.27777
 .....\OT1/cmr/bx/n/10 I
 .....\kern0.31944
 .....\OT1/cmr/bx/n/10 I
 .....\OT1/cmr/bx/n/10 .
 .....\OT1/cmr/bx/n/10 2
-.....\kern 0.0
 .....\OT1/cmr/bx/n/10 .
 .....\glue 5.0 plus 1.0 minus 1.0
 .....\pdfcolorstack 0 pop
@@ -479,10 +463,10 @@ Completed box being shipped out [1]
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
-....\glue -8.0 plus -2.0 minus -4.0
+....\glue 6.0 plus 2.0 minus 2.0
+....\glue -6.0 plus -2.0 minus -2.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
+....\glue 6.0 plus 2.0 minus 2.0
 ....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocrem}{II.3}{tdocrem.2.3}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -500,14 +484,12 @@ Completed box being shipped out [1]
 .....\OT1/cmr/bx/n/10 a
 .....\OT1/cmr/bx/n/10 r
 .....\OT1/cmr/bx/n/10 k
-.....\kern 0.0
 .....\glue 3.83331 plus 1.91666 minus 1.27777
 .....\OT1/cmr/bx/n/10 I
 .....\kern0.31944
 .....\OT1/cmr/bx/n/10 I
 .....\OT1/cmr/bx/n/10 .
 .....\OT1/cmr/bx/n/10 3
-.....\kern 0.0
 .....\OT1/cmr/bx/n/10 .
 .....\glue 5.0 plus 1.0 minus 1.0
 .....\pdfcolorstack 0 pop
@@ -525,10 +507,10 @@ Completed box being shipped out [1]
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
-....\glue -8.0 plus -2.0 minus -4.0
+....\glue 6.0 plus 2.0 minus 2.0
+....\glue -6.0 plus -2.0 minus -2.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
+....\glue 6.0 plus 2.0 minus 2.0
 ....\write1{\exp_not:n {\@writefile{thlist}{\KeyThmsSavedTheorem{tdocexa}{II.4}{tdocexa.2.4}{1}{}{note={}}{}}}}
 ....\glue(\parskip) 0.0 plus 1.0
 ....\glue(\parskip) 0.0
@@ -547,14 +529,12 @@ Completed box being shipped out [1]
 .....\OT1/cmr/bx/n/10 p
 .....\OT1/cmr/bx/n/10 l
 .....\OT1/cmr/bx/n/10 e
-.....\kern 0.0
 .....\glue 3.83331 plus 1.91666 minus 1.27777
 .....\OT1/cmr/bx/n/10 I
 .....\kern0.31944
 .....\OT1/cmr/bx/n/10 I
 .....\OT1/cmr/bx/n/10 .
 .....\OT1/cmr/bx/n/10 4
-.....\kern 0.0
 .....\OT1/cmr/bx/n/10 .
 .....\glue 5.0 plus 1.0 minus 1.0
 .....\pdfcolorstack 0 pop
@@ -572,12 +552,12 @@ Completed box being shipped out [1]
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
-....\glue -9.94444 plus -2.0 minus -4.0
+....\glue 6.0 plus 2.0 minus 2.0
+....\glue -7.94444 plus -2.0 minus -2.0
 ....\penalty -300
 ....\glue 1.94444
-....\glue 8.0 plus 2.0 minus 4.0
-....\glue -8.0 plus -2.0 minus -4.0
+....\glue 6.0 plus 2.0 minus 2.0
+....\glue -6.0 plus -2.0 minus -2.0
 ....\glue 15.0694 plus 4.30554 minus 0.86108
 ....\pdfdest name{section.3} xyz
 ....\penalty 10000
@@ -649,7 +629,6 @@ Completed box being shipped out [1]
 .....\OT1/cmr/bx/n/10 p
 .....\OT1/cmr/bx/n/10 l
 .....\OT1/cmr/bx/n/10 e
-.....\kern 0.0
 .....\glue 3.83331 plus 1.91666 minus 1.27777
 .....\OT1/cmr/bx/n/10 I
 .....\kern0.31944
@@ -658,7 +637,6 @@ Completed box being shipped out [1]
 .....\OT1/cmr/bx/n/10 I
 .....\OT1/cmr/bx/n/10 .
 .....\OT1/cmr/bx/n/10 1
-.....\kern 0.0
 .....\OT1/cmr/bx/n/10 .
 .....\glue 5.0 plus 1.0 minus 1.0
 .....\pdfcolorstack 0 pop
@@ -681,12 +659,12 @@ Completed box being shipped out [1]
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
-....\glue -9.94444 plus -2.0 minus -4.0
+....\glue 6.0 plus 2.0 minus 2.0
+....\glue -7.94444 plus -2.0 minus -2.0
 ....\penalty -300
 ....\glue 1.94444
-....\glue 8.0 plus 2.0 minus 4.0
-....\glue -8.0 plus -2.0 minus -4.0
+....\glue 6.0 plus 2.0 minus 2.0
+....\glue -6.0 plus -2.0 minus -2.0
 ....\glue 15.0694 plus 4.30554 minus 0.86108
 ....\pdfdest name{section.4} xyz
 ....\penalty 10000
@@ -754,13 +732,11 @@ Completed box being shipped out [1]
 .....\OT1/cmr/bx/n/10 a
 .....\OT1/cmr/bx/n/10 r
 .....\OT1/cmr/bx/n/10 k
-.....\kern 0.0
 .....\glue 3.83331 plus 1.91666 minus 1.27777
 .....\OT1/cmr/bx/n/10 I
 .....\OT1/cmr/bx/n/10 V
 .....\OT1/cmr/bx/n/10 .
 .....\OT1/cmr/bx/n/10 1
-.....\kern 0.0
 .....\OT1/cmr/bx/n/10 .
 .....\glue 5.0 plus 1.0 minus 1.0
 .....\pdfcolorstack 0 pop
@@ -783,7 +759,7 @@ Completed box being shipped out [1]
 .....\glue(\parfillskip) 0.0 plus 1.0fil
 .....\glue(\rightskip) 0.0
 ....\penalty -51
-....\glue 8.0 plus 2.0 minus 4.0
+....\glue 6.0 plus 2.0 minus 2.0
 ....\glue -1.94444
 ....\glue 0.0 plus 1.0fil
 ....\glue 0.0

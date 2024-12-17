@@ -176,16 +176,16 @@ Completed box being shipped out [2]
 ........\glue 0.0
 ........\special{pdf:code Q }
 ........\special{pdf:code q }
-........\special{color push gray 0.7}
-........\special{pdf:code 2.12599 3.18898 m }
-........\special{pdf:code 2.12599 79.12546 l }
-........\special{pdf:code 2.12599 82.06088 4.50555 84.44044 7.44098 84.44044 c }
-........\special{pdf:code 464.53365 84.44044 l }
-........\special{pdf:code 467.46907 84.44044 469.84863 82.06088 469.84863 79.12546 c }
-........\special{pdf:code 469.84863 3.18898 l }
-........\special{pdf:code 469.84863 0.25356 467.46907 -2.12599 464.53365 -2.12599 c }
-........\special{pdf:code 7.44098 -2.12599 l }
-........\special{pdf:code 4.50555 -2.12599 2.12599 0.25356 2.12599 3.18898 c }
+........\special{color push rgb 0.915 0.915 0.915}
+........\special{pdf:code 2.12599 2.34688 m }
+........\special{pdf:code 2.12599 79.96756 l }
+........\special{pdf:code 2.12599 82.43788 4.12854 84.44044 6.59886 84.44044 c }
+........\special{pdf:code 465.37575 84.44044 l }
+........\special{pdf:code 467.84607 84.44044 469.84863 82.43788 469.84863 79.96756 c }
+........\special{pdf:code 469.84863 2.34688 l }
+........\special{pdf:code 469.84863 -0.12343 467.84607 -2.12599 465.37575 -2.12599 c }
+........\special{pdf:code 6.59886 -2.12599 l }
+........\special{pdf:code 4.12854 -2.12599 2.12599 -0.12343 2.12599 2.34688 c }
 ........\special{pdf:code h }
 ........\special{pdf:code f }
 ........\glue 0.0
@@ -194,15 +194,15 @@ Completed box being shipped out [2]
 ........\special{pdf:code q }
 ........\special{pdf:code 0.8875 0.55 0.55 rg }
 ........\special{pdf:code /pgf@ca1.0 gs }
-........\special{pdf:code 0.0 4.25198 m }
-........\special{pdf:code 0.0 82.31447 l }
-........\special{pdf:code 0.0 84.66281 1.90364 86.56645 4.25198 86.56645 c }
-........\special{pdf:code 463.47064 86.56645 l }
-........\special{pdf:code 465.81898 86.56645 467.72264 84.66281 467.72264 82.31447 c }
-........\special{pdf:code 467.72264 4.25198 l }
-........\special{pdf:code 467.72264 1.90364 465.81898 0.0 463.47064 0.0 c }
-........\special{pdf:code 4.25198 0.0 l }
-........\special{pdf:code 1.90364 0.0 0.0 1.90364 0.0 4.25198 c }
+........\special{pdf:code 0.0 3.40987 m }
+........\special{pdf:code 0.0 83.15657 l }
+........\special{pdf:code 0.0 85.03981 1.52664 86.56645 3.40987 86.56645 c }
+........\special{pdf:code 464.31276 86.56645 l }
+........\special{pdf:code 466.196 86.56645 467.72264 85.03981 467.72264 83.15657 c }
+........\special{pdf:code 467.72264 3.40987 l }
+........\special{pdf:code 467.72264 1.52664 466.196 0.0 464.31276 0.0 c }
+........\special{pdf:code 3.40987 0.0 l }
+........\special{pdf:code 1.52664 0.0 0.0 1.52664 0.0 3.40987 c }
 ........\special{pdf:code h }
 ........\special{pdf:code f }
 ........\glue 0.0
@@ -210,13 +210,13 @@ Completed box being shipped out [2]
 ........\special{pdf:code q }
 ........\special{pdf:code 1 0.95 0.95 rg }
 ........\special{pdf:code /pgf@ca1.0 gs }
-........\special{pdf:code 1.41731 4.25198 m }
+........\special{pdf:code 1.41731 3.40987 m }
 ........\special{pdf:code 1.41731 67.34256 l }
 ........\special{pdf:code 466.30531 67.34256 l }
-........\special{pdf:code 466.30531 4.25198 l }
-........\special{pdf:code 466.30531 2.68643 465.03621 1.41731 463.47064 1.41731 c }
-........\special{pdf:code 4.25198 1.41731 l }
-........\special{pdf:code 2.68643 1.41731 1.41731 2.68643 1.41731 4.25198 c }
+........\special{pdf:code 466.30531 3.40987 l }
+........\special{pdf:code 466.30531 2.3094 465.41322 1.41731 464.31276 1.41731 c }
+........\special{pdf:code 3.40987 1.41731 l }
+........\special{pdf:code 2.3094 1.41731 1.41731 2.3094 1.41731 3.40987 c }
 ........\special{pdf:code h }
 ........\special{pdf:code f }
 ........\glue 0.0

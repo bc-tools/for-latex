@@ -9,7 +9,7 @@
 \null
 \vspace{24cm}
 
-\begin{tdocshowcase}[nostripe]
+\begin{tdocshowcase}[style=rule]
     Line 1
 
     Line 2

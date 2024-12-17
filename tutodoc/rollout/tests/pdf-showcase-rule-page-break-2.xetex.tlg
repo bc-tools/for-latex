@@ -82,7 +82,7 @@ Completed box being shipped out [1]
 ......\special{color pop}
 ....\glue 18.0
 ....\glue(\lineskip) 0.0
-....\vbox(742.0+0.0)x469.47055, glue set 70.4846fil
+....\vbox(742.0+0.0)x469.47055, glue set 10.5855fil
 .....\write-{}
 .....\special{color push gray 0}
 .....\special{pdf:majorversion 1}
@@ -93,7 +93,9 @@ Completed box being shipped out [1]
 .....\special{pdf:dest (Doc-Start) [@thispage /XYZ @xpos @ypos null]}
 .....\glue(\topskip) 10.0
 .....\hbox(0.0+0.0)x0.0
-.....\glue 597.50787
+.....\glue 654.41338
+.....\glue 0.0
+.....\glue 3.0 plus 1.0 minus 1.0
 .....\glue 0.0
 .....\special{color push cmyk 0.5 0 0 0.5}
 .....\glue(\parskip) 0.0 plus 1.0
@@ -219,7 +221,7 @@ Completed box being shipped out [1]
 .....\special{color pop}
 .\kern 0.0
 .\kern 0.0
-runsystem(latexminted cleantemp  --timestamp 20160520090000Z A116CD040DB533D2E63E2F805EC67E6A)...executed.
-(pdf-showcase-no-stripe-page-break-1.aux)
-Package rerunfilecheck Info: File `pdf-showcase-no-stripe-page-break-1.out' has not changed.
+runsystem(latexminted cleantemp  --timestamp 20160520090000Z 22C919FFA291AFC260E7413BC01DE3D3)...executed.
+(pdf-showcase-rule-page-break-2.aux)
+Package rerunfilecheck Info: File `pdf-showcase-rule-page-break-2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.

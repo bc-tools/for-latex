@@ -182,7 +182,7 @@ Completed box being shipped out [2]
 ......\glue 0.0 plus 1.0fil minus 1.0fil
 .....\pdfcolorstack 0 pop
 .\kern0.0
-runsystem(latexminted cleantemp  --timestamp 20160520090000Z D34DCD9F445652AD56DCBAD074136346)...executed.
-(pdf-showcase-no-stripe-page-break-3.aux)
-Package rerunfilecheck Info: File `pdf-showcase-no-stripe-page-break-3.out' has not changed.
+runsystem(latexminted cleantemp  --timestamp 20160520090000Z DE9EF43FB6046126CE0A3C3EDB0A3AF5)...executed.
+(pdf-showcase-rule-page-break-3.aux)
+Package rerunfilecheck Info: File `pdf-showcase-rule-page-break-3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
