@@ -79,7 +79,7 @@ def final_tex(
                 if not match:
                     continue
 
-                start, comment, macroname, options, input_file, end = match[0]
+                start, comment, macroname, options_1, options_2, input_file, end = match[0]
 
                 if input_file == '#1':
                     continue
@@ -90,7 +90,7 @@ def final_tex(
                 for old in "./":
                     input_file_cleaned = input_file.replace(old, '-')
 
-                newline = f"{start}{macroname}{options}{{{input_file_cleaned}}}{end}\n"
+                newline = f"{start}{macroname}{options_1}{options_2}{{{input_file_cleaned}}}{end}"
 
                 break
 
@@ -135,7 +135,7 @@ def tex_header(
 
     header = f"""{title}
 
-\\documentclass[10pt, a4paper]{{tutodoc}}
+\\documentclass{{tutodoc}}
 
 {preamble}
 
@@ -157,6 +157,10 @@ def tex_main(
 
     manual = (lang_dir / TAG_TMP_TEX_THE_DOC).read_text()
     manual = manual.strip()
+    manual = deps_in_manual(
+        manual,
+        metadata[TAG_DEPS]
+    )
 
     abstract = (lang_dir / f"{TAG_ABSTRACT}.tex").read_text()
     abstract = abstract.strip()
@@ -169,7 +173,6 @@ def tex_main(
         ),
     }.items():
         abstract = abstract.replace(f"<<{old}>>", new)
-
 
     chgelog = (lang_dir / f"{TAG_CHGE_LOG}.tex").read_text()
     chgelog = chgelog.strip()
@@ -198,6 +201,38 @@ def tex_main(
     return main
 
 
+def deps_in_manual(
+    manual,
+    deps
+):
+    content = [
+        "%",
+        r"\begin{tasks}[style=itemize](2)"
+    ]
+
+
+    for kind, tools in deps.items():
+        ext = "cls" if kind == "class" else "sty"
+
+        for name, version in tools.items():
+            content.append(
+                f"    \\task \\texttt{{{name}.{ext}}}"
+                 "\n"
+                f"    \\hfill {{\small ({version})}}\\kern10pt"
+            )
+
+            content.append("")
+
+    content[-1] =r"\end{tasks}"
+
+    content = "\n".join(content)
+
+    manual = manual.replace(
+        "<DEPENDS>",
+        content
+    )
+
+    return manual
 
 def tex_resrc(
     lang,
@@ -260,19 +295,15 @@ def final_sty(metadata, ugly_hack):
     code = [sty_header(metadata)]
 
     for kind, temp_file in [
-        ("PACKAGES USED"    , TAG_TMP_STY_IMPORT),
-        ("AVAILABLE OPTIONS", TAG_TMP_STY_OPTIONS),
+        # ("PACKAGES USED"    , TAG_TMP_STY_IMPORT),
+        # ("AVAILABLE OPTIONS", TAG_TMP_STY_OPTIONS),
         ("MAIN CODE"        , TAG_TMP_STY_SRC),
     ]:
         if not (metadata[TAG_TEMP] / temp_file).is_file():
             continue
 
         code.append(
-            f"""
-% == {kind} == %
-
-{(metadata[TAG_TEMP] / temp_file).read_text()}
-            """.rstrip()
+            (metadata[TAG_TEMP] / temp_file).read_text()
         )
 
     code = '\n\n'.join(code)
@@ -344,7 +375,7 @@ def sty_header(metadata):
 {about}
 
 {provide}
-    """.strip()
+    """.strip() + "\n"
 
 
 def final_cls(metadata, ugly_hack):
@@ -357,19 +388,15 @@ def final_cls(metadata, ugly_hack):
     code = [cls_header(metadata)]
 
     for kind, temp_file in [
-        ("PACKAGES USED"    , TAG_TMP_CLS_IMPORT),
-        ("AVAILABLE OPTIONS", TAG_TMP_CLS_OPTIONS),
+        # ("PACKAGES USED"    , TAG_TMP_CLS_IMPORT),
+        # ("AVAILABLE OPTIONS", TAG_TMP_CLS_OPTIONS),
         ("MAIN CODE"        , TAG_TMP_CLS_SRC),
     ]:
         if not (metadata[TAG_TEMP] / temp_file).is_file():
             continue
 
         code.append(
-            f"""
-% == {kind} == %
-
-{(metadata[TAG_TEMP] / temp_file).read_text()}
-            """.rstrip()
+            (metadata[TAG_TEMP] / temp_file).read_text()
         )
 
     code = '\n\n'.join(code)
@@ -441,7 +468,7 @@ def cls_header(metadata):
 {about}
 
 {provide}
-    """.strip()
+    """.strip() + "\n"
 
 
 def prettify_all_titles(code):
@@ -449,27 +476,27 @@ def prettify_all_titles(code):
     not_ignore = False
 
     for line in code.split('\n'):
-        if line in [
-            r"\ProvidesExplPackage",
-            r"\ProvidesExplClass"
-        ]:
-            not_ignore = True
+        # if line in [
+        #     r"\ProvidesExplPackage",
+        #     r"\ProvidesExplClass"
+        # ]:
+        #     not_ignore = True
 
-        if not_ignore:
-            for pattern in TITLE_PATTERNS:
-                match = re.search(pattern, line)
+        # if not_ignore:
+        for pattern in TITLE_PATTERNS:
+            match = re.search(pattern, line)
 
-                if match:
-                    title     = match.group(2)
-                    pre_deco  = match.group(1)
-                    # post_deco = match.group(3)
+            if match:
+                title     = match.group(2)
+                pre_deco  = match.group(1)
+                # post_deco = match.group(3)
 
-                    line = pretty_title(
-                        pre_deco[0],
-                        title
-                    )
+                line = pretty_title(
+                    pre_deco[0],
+                    title
+                )
 
-                    break
+                break
 
         new_code.append(line)
 

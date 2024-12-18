@@ -167,22 +167,21 @@ def prebuild_single_tex(
         )
 
         if lang != TAG_LANG_EN:
-            abstract = abstract.replace(
-                "\\end{abstract}",
-                f"""
+            abstract  = abstract.replace(r"\end{abstract}", "")
+            abstract += f"""
+    \\smallskip
     \\tdocsep
+    \\small
+    \\itshape
+    \\vspace{{-5pt}}
+    \\begin{{center}}
+        \\textbf{{Abstract.}}
+    \\end{{center}}
 
-    {{\\small\\itshape
-        \\vspace{{-5pt}}
-        \\begin{{center}}
-            \\textbf{{Abstract.}}
-        \\end{{center}}
+    {abstract_EN}
+            """.rstrip()
 
-        {abstract_EN}
-    }}
-\\end{{abstract}}
-                """.rstrip()
-            )
+            abstract += "\n\\end{abstract}"
 
         abstract = other_manual_langs(
             content   = abstract,
@@ -192,16 +191,18 @@ def prebuild_single_tex(
 
         abstract += f"""
 
-\\medskip
+\\tdocsep
 
-\\begin{{center}}
+{{
 \\small
-\\begin{{minipage}}{{.9\\textwidth}}
-\\begin{{tdocnote}}[{LAST_CHGES_IN[lang]}]
+
+\\bgroup
+    \\addtokomafont{{subsection}}{{\\centering}}
+    \\subsection*{{{LAST_CHGES_IN[lang]}}}
+\\egroup
+
 {last_chges_explained}
-\\end{{tdocnote}}
-\\end{{minipage}}
-\\end{{center}}
+}}
         """.rstrip()
 
         abstract_file = lang_temp_dir / f"{TAG_ABSTRACT}.tex"
@@ -239,7 +240,7 @@ def prebuild_single_tex(
                 fordoc = fordoc.strip()
                 thedoc = thedoc.strip()
 
-                api_lang_items = '\n        \\item '.join(
+                api_lang_items = '\n        \\task '.join(
                     f"\\tdoclatexin|{l}| : {lang_long_name_in(l, lang)}."
                     for l in sorted(about_langs[TAG_API_LANGS])
                 )
@@ -250,12 +251,10 @@ def prebuild_single_tex(
 <<API-LANGS>>
                     """.strip(),
                     f"""
-\\begin{{multicols}}{{3}}
-    \\begin{{itemize}}
-        \\item {api_lang_items}
-    \\end{{itemize}}
-\\end{{multicols}}
-                    """
+\\begin{{tasks}}[label=\\small\\textbullet](3)
+    \\task {api_lang_items}
+\\end{{tasks}}
+                    """.strip()
                 )
 
                 pieces = extract_from_DEV_TEX(srcfile)

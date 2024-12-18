@@ -54,48 +54,49 @@ def extract_from_DEV_CLS(srcfile):
 
     return content
 
-    pack_import  = []
-    pack_options = []
-    pack_src     = []
+    # pack_import  = []
+    # pack_options = []
+    # pack_src     = []
 
-    store_import  = "import"
-    store_options = "options"
-    store_src     = "src"
-    store_ignore  = "ignore"
-    store_in      = store_ignore
+    # store_import  = "import"
+    # store_options = "options"
+    # store_src     = "src"
+    # store_ignore  = "ignore"
+    # store_in      = store_ignore
 
-    for oneline in content.split('\n'):
-        shortline = oneline.strip()
+    # for oneline in content.split('\n'):
+    #     shortline = oneline.strip()
+    #     pack_src.append(oneline)
 
-        if shortline == TAG_MC_PACKAGES:
-            store_in = store_import
-            continue
+        # if shortline == TAG_MC_PACKAGES:
+        #     store_in = store_import
+        #     continue
 
-        if shortline == TAG_MC_OPTIONS:
-            store_in = store_options
-            continue
+        # if shortline == TAG_MC_OPTIONS:
+        #     store_in = store_options
+        #     continue
 
-        if shortline == TAG_MC_TOOLS:
-            store_in = store_src
-            continue
+        # if shortline == TAG_MC_TOOLS:
+        #     store_in = store_src
+        #     continue
 
-        if store_in == store_import:
-            pack_import.append(oneline)
+        # if store_in == store_import:
+        #     pack_import.append(oneline)
 
-        elif store_in == store_options:
-            pack_options.append(oneline)
+        # elif store_in == store_options:
+        #     pack_options.append(oneline)
 
-        elif store_in == store_src:
-            pack_src.append(oneline)
+        # elif store_in == store_src:
+        #     pack_src.append(oneline)
 
-    pack_import = '\n'.join(pack_import)
-    pack_import = pack_import.strip()
+    # pack_import = '\n'.join(pack_import)
+    # pack_import = pack_import.strip()
 
-    pack_options = '\n'.join(pack_options)
-    pack_options = pack_options.strip()
+    # pack_options = '\n'.join(pack_options)
+    # pack_options = pack_options.strip()
 
-    pack_src = '\n'.join(pack_src)
-    pack_src = pack_src.strip()
+    # pack_src = '\n'.join(pack_src)
+    # pack_src = pack_src.strip()
 
     return pack_import, pack_options, pack_src
 
@@ -106,22 +107,6 @@ def prepare_CLS(
     tmpdir,
     pack_src
 ):
-    if pack_import:
-        pack_import += '\n'*3
-
-        addcontentto(
-            content  = pack_import,
-            destfile = tmpdir / TAG_TMP_CLS_IMPORT
-        )
-
-    if pack_options:
-        pack_options += '\n'*3
-
-        addcontentto(
-            content  = pack_options,
-            destfile = tmpdir / TAG_TMP_CLS_OPTIONS
-        )
-
     if pack_src:
         new_code = []
 
