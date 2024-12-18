@@ -1,0 +1,11 @@
+abrev::
+    content = user-doc
+
+
+================================
+Langues de la ¨doc "utilisateur"
+================================
+
+content::
+    ¨content/manual.txt
+    ¨content/changelog.txt

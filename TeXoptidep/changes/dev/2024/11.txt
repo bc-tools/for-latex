@@ -1,0 +1,8 @@
+// ---------- //
+
+
+==
+30
+==
+
+The aim of \thisproj is to optimize \cls and \pack imports into a \latex \cls, \pack or \docu.

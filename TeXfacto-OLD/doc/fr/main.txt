@@ -1,0 +1,31 @@
+this::
+    title  = Coder en \latex via la \methodo \thisproj
+    author = Christophe, BAL
+    mail   = projetmbc@gmail.com
+    lang   = fr
+
+    licence = by nc sa 4.0
+    out     = html, pdf
+
+    lexic = python
+
+
+abrev::
+    thisproj = cf::''TeXfacto ;
+                     https://github.com/bc-tools/for-latex/tree/main/TeXfacto''
+
+    isolang = cf::''norme ISO 639-1 ;
+                    https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1#Liste_des_codes_ISO_639-1/2/3''
+
+    content = /content
+
+
+content::
+    \content/intro.txt      ????
+    \content/archi.txt      ??
+
+
+/* TODO
+
+manual-doc.txt
+*/
