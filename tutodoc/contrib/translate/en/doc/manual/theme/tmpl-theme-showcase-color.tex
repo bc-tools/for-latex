@@ -1,22 +1,33 @@
 \documentclass[theme = color]{tutodoc}
 
-% -- FORDOC -- %
-
 \usepackage{multicol}
+\usepackage{lastpage}
+
+\renewcommand*\pagemark{%
+  \usekomafont{pagenumber}{\thepage\kern1pt/\kern1pt\pageref*{LastPage}}%
+}
+
 
 \newcommand\thisstyle{color}
 
+
 \newcommand\myexrmktext{
     \tdocversion{1.7.0}[2024-12-04]
-    In the flow of the text, it is always useful to be able to indicate examples and comments to supplement the main content.
+    In the flow of the text, it is always useful to be able to provide examples and comments to supplement the main content.
 }
+
 
 \newcommand\myadmotext{
     Depending on the context of use, it is sometimes necessary to be able to highlight content by indicating its degree of importance.
 }
 
+\newcommand\myhighlightedtextnonote{
+    What to say?
+    I don't know, but it's nice. No ?
+}
+
 \newcommand\myhighlightedtext{
-    What to say
+    What to say\,%
     \footnote{
         Let's not forget the footnotes...
     }?
@@ -24,19 +35,48 @@
 }
 
 
+\newcommand\mychgestext{
+    In a change log, it is important to visualise the types of changes clearly. This makes it easier for the user to read!
+}
+
+
+\ExplSyntaxOn
+
+\int_new:N \g__tutodoc_for_doc_int
+
+\ExplSyntaxOff
+
+
 
 \begin{document}
 
-\textsf{\Huge\bfseries The theme \texttt{"\thisstyle"}}
+\textsf{\Huge\bfseries The \texttt{"\thisstyle"} theme}
+
+\section{Liens}
+
+{\Large\bfseries \href{https://github.com/bc-tools/for-latex/tree/main/tutodoc}{A very big link}}, but at least we can see it.
 
 
-\section{Links}
 
-{\Large\bfseries \href{https://github.com/bc-tools/for-latex/tree/main/tutodoc}{A very large link}}, but at least you can see it.
+\section{\LaTeX\ listings}
+
+Typing inline code such as \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is showing use cases such as the following one.
+
+\begin{tdoclatex}
+Formatted \LaTeX\ code is great: $E = m c^2$ or $pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+There's also a less invasive side-by-side mode. Nice! No ?
+
+\begin{tdoclatex}<\tdoctcb{sbs}>
+Formatted \LaTeX\ code is great:       \\
+$E = m c^2$ or $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
 
 
 
-\section{Highlight, version and date}
+\section{Highlighting, versioning and dating}
 
 \subsection{tdocexa, tdocrem}
 
@@ -52,7 +92,6 @@
 
 \ExplSyntaxOff
 
-\myexrmktext
 
 
 \subsection{tdocnote, tdoctip...}
@@ -61,20 +100,28 @@
 
 \ExplSyntaxOn
 
+\int_set:Nn \g__tutodoc_for_doc_int { 0 }
+
 \ifcsundef{g__tutodoc_focus_color_seq}{
     \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
-        \medskip
+        \int_gincr:N \g__tutodoc_for_doc_int
 
         \begin{tdoc#1}
-            \myhighlightedtext
+      	  	\int_compare:nTF
+	    		{\g__tutodoc_for_doc_int = 1 }
+	    		{ \myhighlightedtext }
+	    		{ \myhighlightedtextnonote }
         \end{tdoc#1}
     }
 } {
     \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
-        \medskip
+        \int_gincr:N \g__tutodoc_for_doc_int
 
         \begin{tdoc#1}
-            \myhighlightedtext
+      	  	\int_compare:nTF
+	    		{\g__tutodoc_for_doc_int = 1 }
+	    		{ \myhighlightedtext }
+	    		{ \myhighlightedtextnonote }
         \end{tdoc#1}
     }
 }
@@ -82,45 +129,66 @@
 \ExplSyntaxOff
 
 
+
 \subsection{tdocbreak, tdocfix...}
 
-\tdocstartproj{New demo section...}
+\tdocstartproj{A new demonstration section...}
 
-\medskip
+\begin{tdoctodo}
+	\item A gallery would be welcome...
+\end{tdoctodo}
 
-\myexrmktext
+\ifcsundef{g__tutodoc_topic_change_seq}{
+ 	\medskip
+}{}
+
+\mychgestext
+
+\ifcsundef{g__tutodoc_topic_change_seq}{
+	\medskip
+}{}
 
 \ExplSyntaxOn
 
-\begin{multicols}{2}
+\int_set:Nn \g__tutodoc_for_doc_int { 0 }
 
-\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
-    \begin{tdoc#1}
-        \item Infos...
-    \end{tdoc#1}
+\begin{tabular}{%
+	@{\hskip 0pt}p{.26\linewidth}%
+	*{3}{@{\hskip 7pt}p{.23\linewidth}}@{\hskip 0pt}%
 }
+	\ifcsundef{g__tutodoc_topic_change_seq}{
+    	\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
+          	\int_gincr:N \g__tutodoc_for_doc_int
 
-\vfill\null
+          	\vspace{-12pt}
 
-\end{multicols}
+    	  	\begin{tdoc#1}
+           		\item Infos...
+    	  	\end{tdoc#1}
+
+    	  	\int_compare:nTF
+    	    	{\g__tutodoc_for_doc_int = 4 }
+    	    	{ \\ }
+    	    	{ & }
+    	}
+	}{
+    	\seq_map_inline:Nn \g__tutodoc_topic_change_seq {
+          	\int_gincr:N \g__tutodoc_for_doc_int
+
+          	\vspace{-5pt}
+
+    	  	\begin{tdoc#1}
+           		\item Infos...
+    	  	\end{tdoc#1}
+
+    	  	\int_compare:nTF
+    	    	{\g__tutodoc_for_doc_int = 4 }
+    	    	{ \\ }
+    	    	{ & }
+    	}
+	}
+\end{tabular}
 
 \ExplSyntaxOff
-
-
-\section{LaTeX codes}
-
-Typing an inline code such as \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is demonstrating use cases such as the following one.
-
-\begin{tdoclatex}
-Seeing \LaTeX\ code formatted is nice: $E = m c^2$ or $\pi \neq \frac{3}{14}$.
-\end{tdoclatex}
-
-
-There's also a less intrusive side-by-side mode. Nice! No ?
-
-\begin{tdoclatex}[sbs]
-Seeing \LaTeX\ code formatted is nice: \\
-$E = m c^2$ or $\pi \neq \frac{3}{14}$.
-\end{tdoclatex}
 
 \end{document}

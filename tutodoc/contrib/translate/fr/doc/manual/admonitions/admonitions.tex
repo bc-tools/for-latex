@@ -10,7 +10,7 @@
 
 \begin{tdocnote}
     La mise en forme proposée ici est celle par défaut, mais d'autres sont possible en changeant de thème : voir la galerie de cas d'utilisation dans l'annexe page \pageref{tutodoc-theme-gallery}.
-    Quant aux icônes, elles sont obtenues via le package \tdocpack{fontawesome5}, et la macro \tdocmacro{tdocicon} gère l'espacement vis-à-vis du texte.
+    Quant aux icônes, elles sont obtenues via le package \tdocpack{fontawesome5} et la macro \tdocmacro{tdocicon} qui gère l'espacement vis-à-vis du texte.%
     \footnote{
         Par exemple,
         \tdoclatexin|\fbox{\tdocicon{\faBed}{Fatigué}}|
@@ -25,16 +25,16 @@
 
 L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'employer.
 
-\tdoclatexinput[sbs]{examples/admonitions/tip.tex}
+\tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples/admonitions/tip.tex}
 
 
 \smallskip
 
 
 \begin{tdoctip}
-    Quelque fois, un contenu mis en avant peut se réduire à une liste. Dans ce cas, la mise en forme peut être améliorée comme suit où nous utilisons l'option \tdoclatexin{wide} du package \tdocpack{enumitem}.
+    Quelque fois, un contenu mis en avant peut se réduire à une liste. Dans ce cas, la mise en forme peut être améliorée comme suit où nous utilisons l'option \tdoclatexin{wide} du package \tdocpack{enumitem} qui est importé par cette documentation.
 
-    \tdoclatexinput[sbs]{examples/admonitions/leavevmode-items.tex}
+    \tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples/admonitions/leavevmode-items.tex}
 \end{tdoctip}
 
 
@@ -48,18 +48,18 @@ L'environnement \tdocenv*{tdoctip} sert à donner des astuces. Voici comment l'e
     important,
     %
     {Avertir d'un point très délicat}/% <-- Translate me!
-    {L'environnement \tdocenv*{tdoccaut} sert à indiquer un point délicat à  l'utilisateur. Voici comment l'employer.}/%<-- Translate me!
+    {L'environnement \tdocenv*{tdoccaut} sert à pointer quelque chose de délicat. Voici comment l'employer.}/%<-- Translate me!
     caution,
     %
     {Avertir d'un danger}/% <-- Translate me!
-    {L'environnement \tdocenv*{tdocwarn} sert à avertir l'utilisateur d'un piège à éviter. Voici comment l'employer.}/% <-- Translate me!
+    {L'environnement \tdocenv*{tdocwarn} permet d'avertir l'utilisateur d'un piège à éviter. Voici comment l'employer.}/% <-- Translate me!
     warn%
 } {
     \subsubsection{\sectitle}
 
     \desc
 
-    \tdoclatexinput[sbs]{examples/admonitions/\filename.tex}
+    \tdoclatexinput<\tdoctcb{sbs}, bottom = 3pt, top = 3pt>{examples/admonitions/\filename.tex}
 }
 
 \end{document}

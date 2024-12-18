@@ -1,0 +1,39 @@
+\documentclass{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\section{A real-life rendering}
+\label{tutodoc-showcase}
+
+It is sometimes useful to render code directly in the documentation. This requires the rendering to be dissociable from the explanatory text.
+
+
+
+\subsection{A minimalist rendering by default}
+
+\begin{tdocexa}
+    It can be useful to show a real rendering directly in a document.%
+    \footnote{
+        Typically when making a demo.
+    }
+    This is typed via the environment \tdocenv*{tdocshowcase} as follows.
+
+    \tdoclatexshow[explain = {This results in the following rendering, which is a combination of low vertical spacing and simple import.}]{examples/showcase/default.tex}
+\end{tdocexa}
+
+
+\begin{tdocrem}
+    The section \ref{tutodoc-listing-latexshow} on page \pageref{tutodoc-listing-latexshow} explains how to obtain, via the macro \tdocmacro{tdoclatexshow}, a code followed by its actual rendering as in the previous example.
+\end{tdocrem}
+
+
+\begin{tdocwarn}
+    With the default settings, if the code to be formatted begins with an opening bracket, we must use one of the following tricks.
+
+    \tdoclatexshow[explain = {This will produce the following.}]{examples/showcase/hook.tex}
+\end{tdocwarn}
+
+\end{document}

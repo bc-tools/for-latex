@@ -1,0 +1,83 @@
+\documentclass{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\subsection{Imported codes}
+
+For the following codes, consider a file with the relative path \verb+examples-listing-xyz.tex+, and with the following contents.
+
+\tdoclatexinput<\tdoctcb{code}>{examples/listing-latex/xyz.tex}
+
+\medskip
+
+The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file and offers the same system of options between square brackets, or rafters, as the environment \tdocenv*{tdoclatex}.
+
+\foreach \title/\extra/\fname in {%
+	{Side by side}/%
+		{}/%
+		sbs,
+	{Following}/%
+		{, which also corresponds to the option \tdoclatexin{\tdoctcb{std}}\,}/%
+		std,%
+	{Only the code}/%
+		{}/%
+		code,%
+	{Customise}/%
+		{}/%
+		perso%
+}{
+	\begin{tdocexa}[\title]
+    	\leavevmode
+		\tdoclatexshow[explain=This produces the following formatting\extra.]{examples/listing-latex/latexinput-option-\fname.tex}
+	\end{tdocexa}
+}
+
+
+
+\subsection{Imported codes put into practice}
+\label{tutodoc-listing-latexshow}
+
+\begin{tdocnote}
+    The default texts take into account the language detected by \thisproj.
+\end{tdocnote}
+
+
+\begin{tdocexa}[Showcase]
+    The following comes from \tdoclatexin+\tdoclatexshow{examples-listing-xyz.tex}+.
+
+    \smallskip
+
+    \tdoclatexshow{examples/listing-latex/xyz.tex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[Changing the explanatory text]
+    Using the key \tdoclatexin|explain|, you can use a custom text. Thus, \tdoclatexin|\tdoclatexshow[explain = Here is the rendering.]{examples-listing-xyz.tex}| will give the following.
+
+    \smallskip
+
+    \tdoclatexshow[explain = Here is the rendering.]{examples/listing-latex/xyz.tex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[The options available]
+    In addition to the explanatory text, it is also possible to use all the options of \tdocenv*{tdocshowcase} environment, see \ref{tutodoc-showcase} on page \pageref{tutodoc-showcase}.
+    Here is an example to illustrate this.
+
+    \medskip
+
+    \tdoclatexinput<\tdoctcb{code}>{examples/listing-latex/latexshow-options.tex}
+
+    \smallskip
+
+    This will produce the following.
+
+    \smallskip
+
+    \input{examples/listing-latex/latexshow-options.tex}
+\end{tdocexa}
+
+\end{document}

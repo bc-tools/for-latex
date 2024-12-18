@@ -26,8 +26,8 @@ def prebuild_single_cls(
         if kind == TAG_FILE:
             print(f"   * Analyzing ''{srcfile.name}''")
 
-            pieces = extract_from_DEV_CLS(srcfile)
-            prepare_CLS(projname, onedir, temp_dir, *pieces)
+            content = extract_from_DEV_CLS(srcfile)
+            prepare_CLS(projname, onedir, temp_dir, content)
 
         else:
             print(f"   * [RES-CLS] Copying ''{srcfile.name}'")
@@ -52,48 +52,51 @@ def extract_from_DEV_CLS(srcfile):
     ) as f:
         content = f.read()
 
-    pack_import  = []
-    pack_options = []
-    pack_src     = []
+    return content
 
-    store_import  = "import"
-    store_options = "options"
-    store_src     = "src"
-    store_ignore  = "ignore"
-    store_in      = store_ignore
+    # pack_import  = []
+    # pack_options = []
+    # pack_src     = []
 
-    for oneline in content.split('\n'):
-        shortline = oneline.strip()
+    # store_import  = "import"
+    # store_options = "options"
+    # store_src     = "src"
+    # store_ignore  = "ignore"
+    # store_in      = store_ignore
 
-        if shortline == TAG_MC_PACKAGES:
-            store_in = store_import
-            continue
+    # for oneline in content.split('\n'):
+    #     shortline = oneline.strip()
+    #     pack_src.append(oneline)
 
-        if shortline == TAG_MC_OPTIONS:
-            store_in = store_options
-            continue
+        # if shortline == TAG_MC_PACKAGES:
+        #     store_in = store_import
+        #     continue
 
-        if shortline == TAG_MC_TOOLS:
-            store_in = store_src
-            continue
+        # if shortline == TAG_MC_OPTIONS:
+        #     store_in = store_options
+        #     continue
 
-        if store_in == store_import:
-            pack_import.append(oneline)
+        # if shortline == TAG_MC_TOOLS:
+        #     store_in = store_src
+        #     continue
 
-        elif store_in == store_options:
-            pack_options.append(oneline)
+        # if store_in == store_import:
+        #     pack_import.append(oneline)
 
-        elif store_in == store_src:
-            pack_src.append(oneline)
+        # elif store_in == store_options:
+        #     pack_options.append(oneline)
 
-    pack_import = '\n'.join(pack_import)
-    pack_import = pack_import.strip()
+        # elif store_in == store_src:
+        #     pack_src.append(oneline)
 
-    pack_options = '\n'.join(pack_options)
-    pack_options = pack_options.strip()
+    # pack_import = '\n'.join(pack_import)
+    # pack_import = pack_import.strip()
 
-    pack_src = '\n'.join(pack_src)
-    pack_src = pack_src.strip()
+    # pack_options = '\n'.join(pack_options)
+    # pack_options = pack_options.strip()
+
+    # pack_src = '\n'.join(pack_src)
+    # pack_src = pack_src.strip()
 
     return pack_import, pack_options, pack_src
 
@@ -102,26 +105,8 @@ def prepare_CLS(
     projname,
     curdir,
     tmpdir,
-    pack_import,
-    pack_options,
     pack_src
 ):
-    if pack_import:
-        pack_import += '\n'*3
-
-        addcontentto(
-            content  = pack_import,
-            destfile = tmpdir / TAG_TMP_CLS_IMPORT
-        )
-
-    if pack_options:
-        pack_options += '\n'*3
-
-        addcontentto(
-            content  = pack_options,
-            destfile = tmpdir / TAG_TMP_CLS_OPTIONS
-        )
-
     if pack_src:
         new_code = []
 

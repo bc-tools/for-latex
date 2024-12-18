@@ -1,0 +1,83 @@
+\documentclass[theme = bw]{../main/main}
+
+\input{../preamble.cfg.tex}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{listing-full.cls}
+
+
+\begin{document}
+
+\section{En ligne}
+
+Sans option :
+
+\tdoccodein{py}{print("Hello!") if i == 0 else None}
+
+\tdoccodein{py}{error == True !!!}
+
+
+Avec des options :
+
+\tdoccodein[style=bw]{py}{print("Hello!") if i == 0 else None}
+
+\tdoccodein[ignorelexererrors=true]{py}{error == True !!!}
+
+
+
+\section{Blocs - Importation}
+
+\subsection{Sans option}
+
+\tdoccodeinput{tex}{examples/listing-full/hello-you.tex}
+
+\tdoccodeinput{hs}{examples/listing-full/hello-you.hs}
+
+
+
+\subsection{Avec des options}
+
+\tdoccodeinput[style=solarized-light, linenos]%
+              <top = 1cm, leftrule=5pt>%
+              {hs}{examples/listing-full/hello-you.hs}
+
+
+
+\section{Blocs - Direct}
+
+\subsection{Sans option}
+
+\begin{tdoccode}{lua}
+io.write("Qui êtes-vous ? ")
+local name = io.read()
+
+if name == "" then
+    print("Ah, pas très bavard aujourd'hui !")
+
+else
+    print("Bonjour " .. name .. ".")
+    print("Épatant ! En fait, pas du tout...")
+end
+\end{tdoccode}
+
+
+
+\subsection{Avec des options}
+
+\begin{tdoccode}[style=solarized-light, linenos]%
+             <top = 1cm, leftrule=5pt>%
+             {lua}
+io.write("Qui êtes-vous ? ")
+local name = io.read()
+
+if name == "" then
+    print("Ah, pas très bavard aujourd'hui !")
+
+else
+    print("Bonjour " .. name .. ".")
+    print("Épatant ! En fait, pas du tout...")
+end
+\end{tdoccode}
+
+\end{document}

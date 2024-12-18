@@ -1,25 +1,32 @@
-% -- VERSION & CHANGES -- %
+% == VERSION & CHANGES == %
+
+% -- DATE & VERSION -- %
 
 \NewExpandableDocumentCommand{\tutodoc@changes@when@color}{}{%
   black%
 }
 
 
-% -- (NO) ICONS -- %
+% -- ENVS FOR CHANGES MADE -- %
 
-\newcommand{\tutodoc@changes@start@project@icon}{}
+%%%
+% The draft theme doesn't use any icon.
+%%%
+
+% \newcommand{\tutodoc@changes@start@project@icon}{}
 
 \ExplSyntaxOn
 
-\prop_new:N              \g__tutodoc_topic_change_prop
-\prop_set_from_keyval:Nn \g__tutodoc_topic_change_prop {
-  break  = ,
-  fix    = ,
-  new    = ,
-  prob   = ,
-  tech   = ,
-  update = ,
-  todo   = ,
+\seq_new:N \g__tutodoc_topic_change_seq
+
+\seq_set_from_clist:Nn \g__tutodoc_topic_change_seq {
+  break ,
+  fix   ,
+  new   ,
+  prob  ,
+  tech  ,
+  update,
+  todo  ,
 }
 
 \ExplSyntaxOff

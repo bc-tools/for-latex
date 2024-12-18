@@ -1,0 +1,55 @@
+\documentclass{../main/main}
+
+\input{../preamble.cfg.tex}
+
+\usepackage{../admonitions/admonitions.cls}
+\usepackage{../listing-latex/listing-latex.cls}
+\usepackage{../macroenv/macroenv.cls}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{showcase.cls}
+
+
+\begin{document}
+
+\subsection{Avec des lignes cadrantes}
+
+Pour rendre plus visible le code \LaTeX\ mis en forme, on peut faire appel au style \tdoclatexin{rule} comme dans les exemple suivants.
+
+
+\begin{tdocexa}
+	L'option \tdoclatexin{style = rule} permet d'obtenir ce qui suit ce qui suit où les textes ajoutés automatiquement s'adapteront à la langue repéré par \thisproj.
+
+	\input{examples/showcase/rule.tex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[Du texte et des couleurs modifiables]
+	On peut obtenir facilement l'horreur suivante.
+
+	\input{examples/showcase/rule-custom.tex}
+
+	Voici le code qui a été employé.%
+	\footnote{
+		La section suivante va justifier le choix, a priori étrange, de \tdoclatexin{col-stripe} au lieu de \tdoclatexin{col-rule}\,.
+	}
+
+	\tdoclatexinput<\tdoctcb{code}>{examples/showcase/rule-custom.tex}
+\end{tdocexa}
+
+
+\begin{tdocnote}
+    Dans l'exemple précédent, le texte utilise bien l'orange assombri proposé. Par contre, le rouge sert de base pour obtenir les couleurs utilisées pour les lignes cadrantes: les transformations utilisées dépendent du thème choisi.%
+    \footnote{
+        Par exemple, les thèmes \tdoclatexin{bw} et \tdoclatexin{draft} ne tiennent pas compte de la clé \tdoclatexin{col-stripe} !
+    }
+    %
+    Il faut également savoir qu'en coulisse, la macro \tdocmacro{tdocruler} est employée, elle fonctionne comme suit.
+
+    \begin{tdoclatex}<\tdoctcb{std}>
+\tdocruler[red]{Un pseudo-titre décoré}
+    \end{tdoclatex}
+\end{tdocnote}
+
+\end{document}

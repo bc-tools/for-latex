@@ -1,0 +1,30 @@
+\documentclass{tutodoc}
+
+\input{../preamble.cfg.tex}
+
+
+\begin{document}
+
+\subsection{Codes importés}
+
+La macro \tdocmacro{tdoccodeinput} attend le langage et le chemin d'un fichier à mettre en forme, et éventuellement d'options similaires à ce que propose l'environnement \tdocenv*{tdoccode}\,.
+
+
+% Strings "..." in the source codes must also be translated.
+\foreach \title/\lang in {%
+	{Fonctionnement standard}/%
+		hs,%
+	{Personnalisation ponctuelle du rendu}/%
+		tex%
+}{
+    \begin{tdocexa}[\title]
+    	\leavevmode
+    	\tdoclatexinput<\tdoctcb{code}>{examples/listing-full/input-hello-you-\lang}
+
+		Ceci donne:
+
+		\input{examples/listing-full/input-hello-you-\lang}
+    \end{tdocexa}
+}
+
+\end{document}

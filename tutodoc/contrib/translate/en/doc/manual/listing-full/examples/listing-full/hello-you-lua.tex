@@ -1,0 +1,14 @@
+\begin{tdoccode}[style = solarized-light, linenos]%
+                <leftrule = 22pt, colback = orange!5, colframe = red!35>%
+                {lua}
+io.write("Who are you?")
+local name = io.read()
+
+if name == "" then
+    print("Ah, not very chatty today!")
+
+else
+    print("Hello “ .. name .. ”.")
+    print("Amazing! Actually, not at all...")
+end
+\end{tdoccode}

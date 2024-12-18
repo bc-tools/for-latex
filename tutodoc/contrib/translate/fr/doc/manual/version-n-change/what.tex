@@ -14,17 +14,14 @@
 
 
 \begin{tdocnote}
-\begin{tdocnew}
-    \item Info 1...
-    \item Info 2...
-\end{tdocnew}
-%    Concernant les icônes, voir la note au début de la section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
+	Concernant les icônes, voir la note au début de la section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
 \end{tdocnote}
 
 
 \subsubsection{La sobriété avant tout}
 
 \foreach \exatitle/\filename in {
+% Standard.
     {Juste pour la toute première version}/%<-- Translate me!
         first,
     {Pour les nouveautés}/% <-- Translate me!
@@ -41,7 +38,7 @@
         todo,
     {Informations techniques}/% <-- Translate me!
         tech,
-    %
+% Customized.
     {Thématiques aux choix avec une icône}/%<-- Translate me!
         user-choice-icon,
     {Thématiques aux choix sans icône}/% <-- Translate me!
@@ -50,7 +47,7 @@
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput[sbs]{examples/version-n-change/chges-\filename.tex}
+        \tdoclatexinput<\tdoctcb{sbs}>{examples/version-n-change/chges-\filename.tex}
     \end{tdocexa}
 }
 
@@ -68,7 +65,7 @@ Il peut être utile de mettre en avant certains changements : ceci n'est faisabl
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput[sbs]{examples/version-n-change/color-chges-\filename.tex}
+        \tdoclatexinput<\tdoctcb{sbs}>{examples/version-n-change/color-chges-\filename.tex}
     \end{tdocexa}
 }
 

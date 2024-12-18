@@ -3,10 +3,9 @@
 \input{../preamble.cfg.tex}
 
 \usepackage{../admonitions/admonitions.cls}
-\usepackage{../listing/listing.cls}
+\usepackage{../listing-latex/listing-latex.cls}
 \usepackage{../macroenv/macroenv.cls}
 \usepackage{../showcase/showcase.cls}
-
 
 % TESTING LOCAL IMPLEMENTATION %
 
@@ -25,7 +24,7 @@ Afin de faciliter le suivi d'un projet, il est indispensable de fournir un histo
 \subsection{À quel moment ?}
 \label{tutodoc-changes-when}
 
-On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas le numéro de version pourra éventuellement être daté.
+On peut dater et/ou versionner quelque chose.
 
 
 \begin{tdocexa}[Dater des nouveautés]
@@ -35,7 +34,7 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 \end{tdocexa}
 
 
-\begin{tdocexa}[Versionner des nouveautés en les datant événtuellement]
+\begin{tdocexa}[Versionner des nouveautés en les datant éventuellement]
     Associer un numéro de version à une nouveauté se fait via la macro \tdocmacro{tdocversion}, la couleur et la date étant des arguments optionnels.
 
     \tdoclatexshow{examples/version-n-change/versioning.tex}
@@ -66,14 +65,11 @@ On peut au choix dater quelque chose, ou bien le versionner, dans ce second cas 
 
 
 \begin{tdoccaut}
-    Seul l'emploi du format numérique \tdoclatexin+YYYY-MM-DD+ est vérifié,
+    Seul l'emploi du format numérique \tdoclatexin+YYYY-MM-DD+ est vérifié,%
     \footnote{
         Techniquement, vérifier la validité d'une date, via \LaTeX3, ne présente pas de difficulté.
     }
     et ceci est un choix ! Pourquoi cela ? Tout simplement car dater et versionner des explications devrait se faire de façon semi-automatisée afin d'éviter tout bug humain.
-%    \footnote{
-%        L'auteur de \thispack{} est entrain de mettre en place un ensemble d'outils permettant une telle semi-automatisation.
-%    }.
 \end{tdoccaut}
 
 \end{document}

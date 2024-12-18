@@ -1,32 +1,12 @@
-% -- COLORFUL HIGHLIGHTING OF CONTENT -- %
+% == ADMONITIONS == %
 
-\NewExpandableDocumentCommand{\tutodoc@build@title@color}{m}{%
-  white%
-}
-
-\NewExpandableDocumentCommand{\tutodoc@build@upper@color}{m}{%
-  \tdocdarkcolor{#1}%
-}
-
-\NewExpandableDocumentCommand{\tutodoc@build@lower@color}{m}{%
-  \tdocdarkcolor{#1}%
-}
-
-\NewExpandableDocumentCommand{\tutodoc@build@back@color}{m}{%
-  \tdoclightcolor{#1}%
-}
-
-\NewExpandableDocumentCommand{\tutodoc@build@frame@color}{m}{%
-  #1!75!black!45%
-}
-
-\colorlet{tutodoc@admonition@shadow@color}{black!30}
-
+% -- ICONS & ENV. COLORS -- %
 
 \ExplSyntaxOn
 
 %%%
-% We use two ''prop'' variables to factorize the code just after.
+% We use two ''prop'' variables to associate each \env to its icon
+% and color.
 %%%
 \prop_new:N \g__tutodoc_focus_color_prop
 \prop_new:N \g__tutodoc_focus_icon_prop
@@ -48,3 +28,34 @@
 }
 
 \ExplSyntaxOff
+
+
+% -- EXTRA COLORS -- %
+
+\NewExpandableDocumentCommand{\tutodoc@build@title@color}{m}{%
+  white%
+}
+
+\NewExpandableDocumentCommand{\tutodoc@build@upper@color}{m}{%
+  \tdocdarkcolor{#1}%
+}
+
+\NewExpandableDocumentCommand{\tutodoc@build@lower@color}{m}{%
+  \tdocdarkcolor{#1}%
+}
+
+\NewExpandableDocumentCommand{\tutodoc@build@back@color}{m}{%
+  \tdoclightcolor{#1}%
+}
+
+\NewExpandableDocumentCommand{\tutodoc@build@frame@color}{m}{%
+  #1!75!black!45%
+}
+
+\colorlet{tutodoc@admonition@shadow@color}{Gray!17}
+
+
+% -- VERTICAL SPACINGS -- %
+
+\newcommand{\tutodoc@admonition@space@above}{\medskipamount}
+\newcommand{\tutodoc@admonition@space@below}{\medskipamount}

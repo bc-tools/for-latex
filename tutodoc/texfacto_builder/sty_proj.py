@@ -23,8 +23,8 @@ def prebuild_single_sty(
         if kind == TAG_FILE:
             print(f"   * Analyzing ''{srcfile.name}''")
 
-            pieces = extract_from_DEV_STY(srcfile)
-            prepare_STY(projname, onedir, temp_dir, *pieces)
+            content = extract_from_DEV_STY(srcfile)
+            prepare_STY(projname, onedir, temp_dir, content)
 
         else:
             print(f"   * [RES-STY] Copying ''{srcfile.name}'")
@@ -48,6 +48,8 @@ def extract_from_DEV_STY(srcfile):
     ) as f:
         content = f.read()
 
+    return content
+
     pack_import  = []
     pack_options = []
     pack_src     = []
@@ -60,27 +62,28 @@ def extract_from_DEV_STY(srcfile):
 
     for oneline in content.split('\n'):
         shortline = oneline.strip()
+        pack_src.append(oneline)
 
-        if shortline == TAG_MC_PACKAGES:
-            store_in = store_import
-            continue
+        # if shortline == TAG_MC_PACKAGES:
+        #     store_in = store_import
+        #     continue
 
-        if shortline == TAG_MC_OPTIONS:
-            store_in = store_options
-            continue
+        # if shortline == TAG_MC_OPTIONS:
+        #     store_in = store_options
+        #     continue
 
-        if shortline == TAG_MC_TOOLS:
-            store_in = store_src
-            continue
+        # if shortline == TAG_MC_TOOLS:
+        #     store_in = store_src
+        #     continue
 
-        if store_in == store_import:
-            pack_import.append(oneline)
+        # if store_in == store_import:
+        #     pack_import.append(oneline)
 
-        elif store_in == store_options:
-            pack_options.append(oneline)
+        # elif store_in == store_options:
+        #     pack_options.append(oneline)
 
-        elif store_in == store_src:
-            pack_src.append(oneline)
+        # elif store_in == store_src:
+        #     pack_src.append(oneline)
 
     pack_import = '\n'.join(pack_import)
     pack_import = pack_import.strip()
@@ -98,26 +101,8 @@ def prepare_STY(
     projname,
     curdir,
     tmpdir,
-    pack_import,
-    pack_options,
     pack_src
 ):
-    if pack_import:
-        pack_import += '\n'*3
-
-        addcontentto(
-            content  = pack_import,
-            destfile = tmpdir / TAG_TMP_STY_IMPORT
-        )
-
-    if pack_options:
-        pack_options += '\n'*3
-
-        addcontentto(
-            content  = pack_options,
-            destfile = tmpdir / TAG_TMP_STY_OPTIONS
-        )
-
     if pack_src:
         new_code = []
 

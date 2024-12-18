@@ -10,32 +10,19 @@
 Here's what you can type semantically.
 
 
-\begin{tdoclatex}[sbs]
-\tdoccls{myclass} is for...              \\
-\tdocpack{mypackage} is for...           \\
-\tdocmacro{onemacro} is for...           \\
-\tdocenv{env} produces...                \\
-\tdocenv[{[opt1]<opt2>}]{env}            \\
-Just \tdocenv*{env}...                   \\
-Finally \tdocenv*[{[opt1]<opt2>}]{env}...
-        % For copy and paste.
+\begin{tdoclatex}<\tdoctcb{sbs}>
+\tdoccls{myclass} is for...    \\
+\tdocpack{mypackage} is for... \\
+\tdocmacro{onemacro} is for... \\
+\tdocenv{env} produces...      \\
+Just \tdocenv*{env}...
 \end{tdoclatex}
 
 
 \begin{tdocrem}
-    Unlike \tdocmacro{tdoclatexin}, \tdocmacro{tdocenv} and \tdocmacro{tdocenv*} macros don't color the text they produce.
-    In addition, \tdoclatexin{\tdocenv{monenv}} produces \tdocenv{monenv} with spaces to allow line breaks if required.
+    Unlike \tdocmacro{tdoclatexin}, the \tdocmacro{tdocmacro}, \tdocmacro{tdocenv} and \tdocmacro{tdocenv*} macros don't color the text they produce.
+    In addition, \tdoclatexin{\tdocenv{monenv}} produces \tdocenv{monenv} with breakable spaces to allow line breaks if required.
 \end{tdocrem}
-
-
-\begin{tdocwarn}
-    The optional argument of the \tdocmacro{tdocenv} macro is copied and pasted
-    \footnote{
-        Remember that almost anything is possible from now on.
-    }
-    when rendering. This may sometimes require the use of protective braces, as in the example above.
-\end{tdocwarn}
-
 
 
 \section{Origin of a prefix or suffix}
@@ -43,7 +30,7 @@ Finally \tdocenv*[{[opt1]<opt2>}]{env}...
 To explain the names chosen, there is nothing like indicating and explaining the short prefixes and suffixes used. This is easily done as follows.
 
 
-\begin{tdoclatex}[sbs]
+\begin{tdoclatex}<\tdoctcb{sbs}>
 \tdocpre{sup} relates to...      \\
 \tdocprewhy{sup.erbe} means...   \\
 \emph{\tdocprewhy{sup.er} for...}

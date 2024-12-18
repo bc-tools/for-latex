@@ -5,80 +5,32 @@
 
 \begin{document}
 
-\section{Un rendu en situation réelle}
-\label{tutodoc-showcase}
-
-Il est parfois utile d'obtenir directement le rendu d'un code dans la documentation. Ceci nécessite que ce type de rendu soit dissociable du texte donnant des explications.
-
-
-
 \subsection{Avec une bande colorée}
 
-\begin{tdocexa}[Avec les textes par défaut]
-    Il peut être utile de montrer un rendu réel directement dans un document.
-    \footnote{
-        Typiquement lorsque l'on fait une démo.
-    }
-    Ceci se tape via \tdocenv{tdocshowcase} comme suit.
+Il est des situations où l'on doit pouvoir clairement identifier un exemple de code \LaTeX\ mis en forme. Ceci est faisable comme le montrent les exemples suivants.%
+\footnote{
+    En coulisse, les bandes sont créées sans effort grâce au package \tdocpack{clrstrip}.
+}
 
-    \tdoclatexinput[code]{examples/showcase/default.tex}
 
-    On obtient alors le rendu suivant.
-    \footnote{
-        En coulisse, la bande est créée sans effort grâce au package \tdocpack{clrstrip}.
-    }
+\begin{tdocexa}
+	L'option \tdoclatexin{style = stripe} fournit ce qui suit.
 
-    \medskip
-
-    \input{examples/showcase/default.tex}
+	\input{examples/showcase/stripe.tex}
 \end{tdocexa}
 
 
-\begin{tdocrem}
-    Voir la section \ref{tutodoc-latexshow} page \pageref{tutodoc-latexshow} pour obtenir facilement un code suivi de son rendu réel comme dans l'exemple précédent.
-\end{tdocrem}
+\begin{tdocexa}[Du texte et des couleurs modifiables]
+	On peut produire facilement une belle horreur comme celle qui arrive.
 
+	\input{examples/showcase/stripe-custom.tex}
 
-\begin{tdocnote}
-    Les textes explicatifs s'adaptent à la langue détectée par \thisproj.
-\end{tdocnote}
+	Voici le code qui a été employé.%
+	\footnote{
+		On comprend maintenant le choix de \tdoclatexin{col-stripe} au lieu de \tdoclatexin{col-rule}\,.
+	}
 
-
-\begin{tdocexa}[Changer les couleurs et/ou les textes par défaut]
-    \leavevmode
-
-    \tdoclatexinput[code]{examples/showcase/customized.tex}
-
-    Ceci produira ce qui suit.
-
-    \medskip
-
-    \input{examples/showcase/customized.tex}
+	\tdoclatexinput<\tdoctcb{code}>{examples/showcase/stripe-custom.tex}
 \end{tdocexa}
-
-
-\begin{tdocnote}
-    Dans l'exemple précédent, le texte utilise bien l'orange assombri proposé. Par contre, le rouge sert de base pour obtenir les couleurs utilisées pour la bande : les transformations utilisées dépendent du thème choisi.%
-    \footnote{
-        Par exemple, les thèmes \tdoclatexin{bw} et \tdoclatexin{draft} ne tiennent pas compte de la clé \tdoclatexin{col-stripe} !
-    }
-    %
-    Il faut également savoir qu'en coulisse, la macro \tdocmacro{tdocruler} est employée.
-
-    \begin{tdoclatex}[std]
-        \tdocruler[red]{Un pseudo-titre décoré}
-    \end{tdoclatex}
-\end{tdocnote}
-
-
-\begin{tdocwarn}
-    Avec les réglages par défaut, si le code \LaTeX\ à mettre en forme commence par un crochet ouvrant, il faudra user de \tdocmacro{string} comme dans l'exemple suivant.
-
-    \tdoclatexinput[code]{examples/showcase/hook.tex}
-
-    Ceci produira ce qui suit.
-\end{tdocwarn}
-
-\input{examples/showcase/hook.tex}
 
 \end{document}

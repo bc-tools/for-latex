@@ -1,10 +1,8 @@
-% == TOOLS == %
+\input{../version-n-change/css/\tutodoc@theme.cls.sty}
 
-% -- CHANGES - WHEN? --%
+% == CHANGES - WHEN? --%
 
 \ExplSyntaxOn
-
-% :: MESSAGES :: %
 
 \msg_set:nnnn { tutodoc ~ (version-n-change) }
   { version-n-change : date-bad-format }
@@ -12,7 +10,7 @@
   { Use ~ YYYY-MM-DD. }
 
 
-% :: MARGIN NOTE :: %
+% -- MARGIN NOTE -- %
 
 \reversemarginpar{}
 
@@ -111,9 +109,7 @@
 \ExplSyntaxOff
 
 
-% :: VERSION AND DATE :: %
-
-\input{../version-n-change/css/\tutodoc@theme.cls.sty}
+% -- VERSION AND DATE -- %
 
 \newlength{\tutodoc@version@date@vertical@sep@len}
 \setlength{\tutodoc@version@date@vertical@sep@len}{-4.25pt}
@@ -157,7 +153,7 @@
 }
 
 
-% :: DATE :: %
+% -- DATE -- %
 
 %%%
 % prototype::
@@ -185,11 +181,9 @@
 }
 
 
-% -- CHANGES - WHAT? -- %
+% == CHANGES - WHAT? == %
 
 \ExplSyntaxOn
-
-% :: MESSAGES :: %
 
 \msg_set:nnnn { tutodoc ~ (version-n-change) }
   { version-n-change : topic-missing-title }
@@ -197,7 +191,7 @@
   { One ~ single ~ title ~ must ~ be ~ indicated. }
 
 
-% :: GENERIC TOPIC :: %
+% -- GENERIC TOPIC -- %
 
 \tl_new:N \l_tutodoc_topic_what_color_tl
 \tl_new:N \l_tutodoc_topic_when_color_tl
@@ -230,6 +224,25 @@
 
 
 %%%
+% For themes using icons, we need a specific paragraph with less vertical
+% space consuming.
+%%%
+\ifcsundef{g__tutodoc_topic_change_seq}{
+  \newcommand{\tutodoc@what@change@paragraph}{%
+    \@startsection{paragraph}          %
+      {4}                              % Level 4 (after section and co)
+      {\z@}                            % No indentation before the title
+      {1.25ex \@plus 1ex \@minus .2ex} % Vertical space before:
+                                       % 2ex with flexibility (+1ex / -0.2ex)
+      {-1em}                           % Negative spacing after
+                                       % ==> Title slightly aligned to the left.
+      {\normalfont\normalsize          % Title style
+       \bfseries\sffamily}             %
+  }
+}{}
+
+
+%%%
 % prototype::
 %     #1 : (title)
 %          a title that will be followed by a colon.
@@ -237,7 +250,7 @@
 %          one material that expects to be an icon command from the
 %          ''fontawsome5'' \pack
 %     #3 : (key-val options)
-%          :see: \keys_define:nn { tutodoc / version-n-change / topic / options }
+%          :see: l3keys(tutodoc / version-n-change / topic / options)
 %
 %     :action: this environment prints some \infos about specific changes
 %              achieved in a new version (no special formatting is applied).
@@ -257,14 +270,26 @@
   \tl_put_right:Nn \l__tutodoc_topic_all_user_options_tl { \l_tutodoc_topic_date_tl }
 
   \group_begin:
-  \color{\tl_use:N \l_tutodoc_topic_what_color_tl}
-
-  \paragraph{
     \color{\tl_use:N \l_tutodoc_topic_what_color_tl}
-    \IfBlankF{#2}{\tdocicon{#2}}
-    \textsc{#1.}
-    \exp_args:Ne \IfBlankF{\l__tutodoc_topic_all_user_options_tl}{
+
+    \ifcsundef{g__tutodoc_topic_change_seq}{{}
+% Icon used by the theme.
+      \tutodoc@what@change@paragraph{
+        \color{\tl_use:N \l_tutodoc_topic_what_color_tl}
+        \IfBlankF{#2}{\tdocicon{#2}}
+        \textsc{#1.}
+      }
+    }{
+% No icon used by the theme.
+      \smallskip
+      {
+        \normalfont\normalsize\bfseries\sffamily
+        \textsc{#1.}
+      }
+    }
+
 % A date and/or a version.
+    \exp_args:Ne \IfBlankF{\l__tutodoc_topic_all_user_options_tl}{
       \exp_args:NNee \tutodoc@new@change@margin
         {\l_tutodoc_topic_when_color_tl}
         {\l_tutodoc_topic_version_tl}
@@ -272,16 +297,15 @@
         {\tutodoc@version@date@vertical@sep@len}
         {\tutodoc@version@date@vertical@offset@len}
     }
-  }
 
-  \begin{itemize}
+    \begin{itemize}
 }{
-  \end{itemize}
+    \end{itemize}
   \group_end:
 }
 
 
-% :: CLASSICAL TOPICS :: %
+% -- CLASSICAL TOPICS -- %
 
 %%%
 % prototype::
@@ -291,11 +315,21 @@
 %              to build topic-like \envs using the \env ''tdoctopic''
 %              (the title respects the locale settings).
 %%%
-\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
-  \NewDocumentEnvironment{ tdoc#1 } { O{} } {
-    \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } < #2 > [##1]
-  }{
-    \end{tdoctopic}
+\ifcsundef{g__tutodoc_topic_change_seq}{
+  \prop_map_inline:Nn \g__tutodoc_topic_change_prop {
+    \NewDocumentEnvironment{ tdoc#1 } { O{} } {
+      \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } < #2 > [##1]
+    }{
+      \end{tdoctopic}
+    }
+  }
+}{
+  \seq_map_inline:Nn \g__tutodoc_topic_change_seq {
+    \NewDocumentEnvironment{ tdoc#1 } { O{} } {
+      \begin{tdoctopic}{ \use:c { tutodoc@trans@chges@#1 } } [##1]
+    }{
+      \end{tdoctopic}
+    }
   }
 }
 
@@ -309,10 +343,21 @@
 %
 %     :action: the short text printed will be preceded by a pretty anchor icon.
 %%%
-\NewDocumentCommand{ \tdocstartproj }{ O{tutodoc@text@color} m } {
+\NewDocumentCommand{ \tdocstartproj }{
+  O{tutodoc@text@color}
+  m
+} {
   \group_begin:
-  \color{#1}
-  \tdocicon{\tutodoc@changes@start@project@icon}#2
+    \color{#1}
+    \ifcsundef{g__tutodoc_topic_change_seq}{
+% Icon used.
+      \tdocicon{\tutodoc@changes@start@project@icon}
+    }{
+% No icon used.
+      \raisebox{4pt}{\normalfont\tiny\bfseries\sffamily[Init]}\kern2pt
+    }
+
+    #2
   \group_end:
 }
 

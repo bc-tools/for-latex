@@ -14,13 +14,14 @@
 
 
 \begin{tdocnote}
-    For icons, see the note at the beginning of the section \ref{tutodoc-admonitions} page \pageref{tutodoc-admonitions}.
+    For icons, see the note at the beginning of the section \ref{tutodoc-admonitions} on page \pageref{tutodoc-admonitions}.
 \end{tdocnote}
 
 
 \subsubsection{Sobriety first}
 
 \foreach \exatitle/\filename in {
+% Standard.
     {Just for the very first version}/%<-- Translate me!
         first,
     {For new features}/% <-- Translate me!
@@ -37,6 +38,7 @@
         todo,
     {Technical information}/% <-- Translate me!
         tech,
+% Customized.
     {Selectable themes with an icon}/% <-- Translate me!
         user-choice-icon,
     {Selectable themes without icons}/%<-- Translate me!
@@ -45,16 +47,14 @@
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput[sbs]{examples/version-n-change/chges-\filename.tex}
+        \tdoclatexinput<\tdoctcb{sbs}>{examples/version-n-change/chges-\filename.tex}
     \end{tdocexa}
 }
 
 
-\subsubsection{De la couleur si besoin}
-
 \subsubsection{Color if necessary}
 
-It may be useful to highlight certain changes: this can only be done by modifying the content color.
+It may be useful to highlight some changes: this can only be done by modifying the content color.
 
 \foreach \exatitle/\filename in {
     {A flashy first version}/%<-- Translate me!
@@ -65,7 +65,7 @@ It may be useful to highlight certain changes: this can only be done by modifyin
     \begin{tdocexa}[\exatitle]
         \leavevmode
 
-        \tdoclatexinput[sbs]{examples/version-n-change/color-chges-\filename.tex}
+        \tdoclatexinput<\tdoctcb{sbs}>{examples/version-n-change/color-chges-\filename.tex}
     \end{tdocexa}
 }
 

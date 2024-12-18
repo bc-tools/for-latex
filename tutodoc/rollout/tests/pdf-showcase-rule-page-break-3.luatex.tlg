@@ -1,0 +1,188 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+[1
+]
+Completed box being shipped out [2]
+\vbox(765.79007+0.0)x520.12476, direction TLT
+.\hbox(0.0+0.0)x0.0, direction TLT
+..\kern-72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil, direction TLT
+...\kern-72.26999
+...\hbox(0.0+0.0)x0.0, direction TLT
+....\hbox(845.04694+0.0)x0.0, glue set - 597.50793fil, shifted 845.04694, direction TLT
+.....\kern0.0
+.....\pdfcolorstack 0 push {1 g 1 G}
+.....\hbox(845.04694+0.0)x597.50793, direction TLT
+......\rule(845.04694+0.0)x597.50793
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+....\pdfcolorstack 0 pop
+....\hbox(0.0+0.0)x0.0, glue set 72.26999fil, shifted 72.26999, direction TLT
+.....\kern-72.26999
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\vbox(0.0+0.0)x520.12476, direction TLT
+..\vbox(0.0+0.0)x528.37605, glue set - 766.19006fil, shifted -8.2513, direction TLT
+...\glue -51.20993
+...\vbox(0.0+0.0)x469.47055, glue set - 0.2fil, direction TLT
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\rule(0.2+0.0)x469.47055
+...\glue 15.0
+...\glue(\baselineskip) 0.0
+...\vbox(0.0+0.2)x469.47055, direction TLT
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\rule(0.0+0.2)x469.47055
+...\glue 18.0
+...\glue(\lineskip) 0.0
+...\vbox(0.0+0.0)x469.47055, glue set - 0.2fil, direction TLT
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\rule(0.2+0.0)x469.47055
+...\glue(\lineskip) 0.0
+...\hbox(742.0+0.0)x528.37605, glue set 56.50551fil, direction TLT
+....\hbox(742.0+0.0)x0.0, glue set - 0.2fil, direction TLT
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\rule(742.0+0.0)x0.2
+....\glue 469.47055
+....\rule(742.0+0.0)x0.2
+....\glue 2.0
+....\hbox(742.0+0.0)x0.0, glue set - 0.2fil, direction TLT
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+.....\rule(742.0+0.0)x0.2
+....\glue 0.0 plus 1.0fil
+....\rule(742.0+0.0)x0.2
+...\glue(\baselineskip) 0.0
+...\vbox(0.0+0.0)x469.47055, glue set - 0.2fil, direction TLT
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\rule(0.2+0.0)x469.47055
+...\glue 42.0
+...\glue(\baselineskip) 0.0
+...\vbox(0.0+0.2)x469.47055, direction TLT
+....\glue 0.0 plus 1.0fil minus 1.0fil
+....\rule(0.0+0.2)x469.47055
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue(\lineskip) 0.0
+.\vbox(765.79007+0.0)x461.21925, direction TLT
+..\vbox(0.0+0.0)x0.0, glue set 52.21367fil, direction TLT
+...\kern0.0
+...\kern-51.20993
+...\kern-1.00374
+...\hbox(0.0+0.0)x0.0, glue set 9.25504fil, direction TLT
+....\kern0.0
+....\kern-8.2513
+....\kern-1.00374
+....\pdfdest name{page.2} xyz
+....\penalty 10000
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\glue(\lineskip) 0.0
+..\vbox(765.79007+0.0)x461.21925, direction TLT
+...\glue -51.20993
+...\vbox(817.0+0.0)x469.47055, shifted -8.2513, direction TLT
+....\vbox(15.0+0.0)x469.47055, glue set 15.0fil, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\hbox(0.0+0.0)x469.47055, direction TLT
+......\pdfcolorstack 0 push {0 g 0 G}
+......\hbox(0.0+0.0)x469.47055, direction TLT
+......\pdfcolorstack 0 pop
+....\glue 18.0
+....\glue(\lineskip) 0.0
+....\vbox(742.0+0.0)x469.47055, glue set 717.92334fil, direction TLT
+.....\glue(\topskip) 3.17
+.....\hbox(6.83+0.22)x469.47055, glue set 438.78055fil, direction TLT
+......\localpar
+.......\localinterlinepenalty=0
+.......\localbrokenpenalty=0
+.......\localleftbox=null
+.......\localrightbox=null
+......\hbox(0.0+0.0)x0.0, direction TLT
+......\TU/lmr/m/n/10 L
+......\TU/lmr/m/n/10 i
+......\TU/lmr/m/n/10 n
+......\TU/lmr/m/n/10 e
+......\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+......\TU/lmr/m/n/10 3
+......\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+......\penalty 10000
+......\glue 0.0
+......\penalty 10000
+......\glue(\parfillskip) 0.0 plus 1.0fil
+......\glue(\rightskip) 0.0
+.....\penalty 10000
+.....\glue 6.0 plus 2.0 minus 2.0
+.....\glue 0.0
+.....\penalty 10000
+.....\pdfcolorstack 0 push {0.5 0 0 0.5 k 0.5 0 0 0.5 K}
+.....\glue(\parskip) 0.0 plus 1.0
+.....\glue(\parskip) 0.0
+.....\glue(\baselineskip) 2.866
+.....\hbox(4.914+1.414)x469.47055, glue set 70.41772fil, direction TLT
+......\glue(\leftskip) 0.0 plus 1.0fil
+......\localpar
+.......\localinterlinepenalty=0
+.......\localbrokenpenalty=0
+.......\localleftbox=null
+.......\localrightbox=null
+......\hbox(0.0+0.0)x0.0, direction TLT
+......\hbox(3.25+0.0)x122.95566, direction TLT
+.......\rule(3.25+-0.75)x122.95566
+......\hbox(4.914+1.414)x82.72379, direction TLT
+.......\kern1.1667
+.......\kern1.1667
+.......\TU/lmr/bx/it/7 E
+.......\TU/lmr/bx/it/7 n
+.......\TU/lmr/bx/it/7 d
+.......\glue(\spaceskip) 2.898 plus 1.449 minus 0.966
+.......\TU/lmr/bx/it/7 o
+.......\TU/lmr/bx/it/7 f
+.......\glue(\spaceskip) 2.898 plus 1.449 minus 0.966
+.......\TU/lmr/bx/it/7 t
+.......\TU/lmr/bx/it/7 h
+.......\TU/lmr/bx/it/7 e
+.......\glue(\spaceskip) 2.898 plus 1.449 minus 0.966
+.......\TU/lmr/bx/it/7 r
+.......\kern-0.413 (font)
+.......\TU/lmr/bx/it/7 e
+.......\kern-0.413 (font)
+.......\TU/lmr/bx/it/7 a
+.......\TU/lmr/bx/it/7 l
+.......\glue(\spaceskip) 2.898 plus 1.449 minus 0.966
+.......\TU/lmr/bx/it/7 o
+.......\TU/lmr/bx/it/7 u
+.......\TU/lmr/bx/it/7 t
+.......\discretionary (penalty 50)
+........< \TU/lmr/bx/it/7 -
+.......\TU/lmr/bx/it/7 p
+.......\TU/lmr/bx/it/7 u
+.......\TU/lmr/bx/it/7 t
+.......\kern1.1667
+.......\kern1.1667
+......\hbox(3.25+0.0)x122.95566, direction TLT
+.......\rule(3.25+-0.75)x122.95566
+......\penalty 10000
+......\glue(\parfillskip) 0.0
+......\glue(\rightskip) 0.0 plus 1.0fil
+.....\pdfcolorstack 0 pop
+.....\pdfcolorstack 0 pop
+.....\glue -1.414
+.....\glue 0.0 plus 1.0fil
+.....\glue 0.0
+.....\glue 0.0 plus 0.0001fil
+....\glue(\baselineskip) 35.34
+....\hbox(6.66+0.0)x469.47055, direction TLT
+.....\pdfcolorstack 0 push {0 g 0 G}
+.....\hbox(6.66+0.0)x469.47055, direction TLT
+......\hbox(6.66+0.0)x469.47055, direction TLT
+.......\vbox(6.66+0.0)x469.47055, direction TLT
+........\hbox(6.66+0.0)x469.47055, glue set 232.23528fil, direction TLT
+.........\glue 0.0 plus 1.0fil
+.........\pdfcolorstack 0 push {0 g 0 G}
+.........\TU/lmr/m/n/10 2
+.........\pdfcolorstack 0 pop
+.........\glue 0.0 plus 1.0fil
+......\glue 0.0 plus 1.0fil minus 1.0fil
+.....\pdfcolorstack 0 pop
+.\kern0.0
+runsystem(latexminted cleantemp  --timestamp 20160520090000Z DE9EF43FB6046126CE0A3C3EDB0A3AF5)...executed.
+(pdf-showcase-rule-page-break-3.aux)
+Package rerunfilecheck Info: File `pdf-showcase-rule-page-break-3.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.

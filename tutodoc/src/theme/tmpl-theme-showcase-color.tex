@@ -1,24 +1,44 @@
 \documentclass[theme = color]{../main/main}
 
 \usepackage{../admonitions/admonitions.cls}
-\usepackage{../listing/listing.cls}
+\usepackage{../listing-latex/listing-latex.cls}
 \usepackage{../version-n-change/version-n-change.cls}
 
 % == FORDOC == %
+
 \usepackage[french]{babel}
 \frenchsetup{StandardItemLabels=true}
 
 \usepackage{multicol}
+\usepackage{lastpage}
+
+\makeatletter
+
+\renewcommand*\pagemark{%
+  	\usekomafont{pagenumber}{%
+  		\thepage\kern1pt/\kern1pt\pageref*{LastPage}%
+	}%
+}
+
+\makeatother
+
 
 \newcommand\thisstyle{color}
+
 
 \newcommand\myexrmktext{
     \tdocversion{1.7.0}[2024-12-04]
     Dans le flot du texte, il est toujours utile de pouvoir indiquer des exemples et des remarques qui viennent compléter le contenu principal.
 }
 
+
 \newcommand\myadmotext{
     Suivant le contexte d'utilisation, il est parfois nécessaire de pouvoir mettre en avant des contenus en indiquant leur degré d'importance.
+}
+
+\newcommand\myhighlightedtextnonote{
+    Que dire ?
+    Je ne sais pas, mais c'est sympathique. Non ?
 }
 
 \newcommand\myhighlightedtext{
@@ -30,15 +50,45 @@
 }
 
 
+\newcommand\mychgestext{
+    Dans un journal de bord, il est important de bien visualiser les types de changements. Ceci rend plus efficace la lecture côté utilisateur !
+}
+
+
+\ExplSyntaxOn
+
+\int_new:N \g__tutodoc_for_doc_int
+
+\ExplSyntaxOff
+
+
 
 \begin{document}
 
 \textsf{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
 
-
 \section{Liens}
 
 {\Large\bfseries \href{https://github.com/bc-tools/for-latex/tree/main/tutodoc}{Un lien très gros}}, mais au moins on le voit.
+
+
+
+\section{Des codes \LaTeX}
+
+Taper du code \LaTeX\ en ligne comme \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
+
+\begin{tdoclatex}
+Du code \LaTeX\ mis en forme, c'est top : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
+
+On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
+
+\begin{tdoclatex}<\tdoctcb{sbs}>
+Du code \LaTeX\ mis en forme, c'est top: \\
+$E = m c^2$ ou $\pi \neq \frac{3}{14}$.
+\end{tdoclatex}
+
 
 
 \section{Mettre en avant, versionner et dater}
@@ -57,7 +107,6 @@
 
 \ExplSyntaxOff
 
-\myexrmktext
 
 
 \subsection{tdocnote, tdoctip...}
@@ -66,20 +115,28 @@
 
 \ExplSyntaxOn
 
+\int_set:Nn \g__tutodoc_for_doc_int { 0 }
+
 \ifcsundef{g__tutodoc_focus_color_seq}{
     \prop_map_inline:Nn \g__tutodoc_focus_color_prop {
-        \medskip
+        \int_gincr:N \g__tutodoc_for_doc_int
 
         \begin{tdoc#1}
-            \myhighlightedtext
+      	  	\int_compare:nTF
+	    		{\g__tutodoc_for_doc_int = 1 }
+	    		{ \myhighlightedtext }
+	    		{ \myhighlightedtextnonote }
         \end{tdoc#1}
     }
 } {
     \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
-        \medskip
+        \int_gincr:N \g__tutodoc_for_doc_int
 
         \begin{tdoc#1}
-            \myhighlightedtext
+      	  	\int_compare:nTF
+	    		{\g__tutodoc_for_doc_int = 1 }
+	    		{ \myhighlightedtext }
+	    		{ \myhighlightedtextnonote }
         \end{tdoc#1}
     }
 }
@@ -87,45 +144,66 @@
 \ExplSyntaxOff
 
 
+
 \subsection{tdocbreak, tdocfix...}
 
-\tdocstartproj{Nouvelle section démonstrative...}
+\tdocstartproj{Une nouvelle section démonstrative...}
 
-\medskip
+\begin{tdoctodo}
+	\item Une galerie serait bienvenue...
+\end{tdoctodo}
 
-\myexrmktext
+\ifcsundef{g__tutodoc_topic_change_seq}{
+ 	\medskip
+}{}
+
+\mychgestext
+
+\ifcsundef{g__tutodoc_topic_change_seq}{
+	\medskip
+}{}
 
 \ExplSyntaxOn
 
-\begin{multicols}{2}
+\int_set:Nn \g__tutodoc_for_doc_int { 0 }
 
-\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
-    \begin{tdoc#1}
-        \item Infos...
-    \end{tdoc#1}
+\begin{tabular}{%
+	@{\hskip 0pt}p{.26\linewidth}%
+	*{3}{@{\hskip 7pt}p{.23\linewidth}}@{\hskip 0pt}%
 }
+	\ifcsundef{g__tutodoc_topic_change_seq}{
+    	\prop_map_inline:Nn \g__tutodoc_topic_change_prop {
+          	\int_gincr:N \g__tutodoc_for_doc_int
 
-\vfill\null
+          	\vspace{-12pt}
 
-\end{multicols}
+    	  	\begin{tdoc#1}
+           		\item Infos...
+    	  	\end{tdoc#1}
+
+    	  	\int_compare:nTF
+    	    	{\g__tutodoc_for_doc_int = 4 }
+    	    	{ \\ }
+    	    	{ & }
+    	}
+	}{
+    	\seq_map_inline:Nn \g__tutodoc_topic_change_seq {
+          	\int_gincr:N \g__tutodoc_for_doc_int
+
+          	\vspace{-5pt}
+
+    	  	\begin{tdoc#1}
+           		\item Infos...
+    	  	\end{tdoc#1}
+
+    	  	\int_compare:nTF
+    	    	{\g__tutodoc_for_doc_int = 4 }
+    	    	{ \\ }
+    	    	{ & }
+    	}
+	}
+\end{tabular}
 
 \ExplSyntaxOff
-
-
-\section{Des codes \LaTeX}
-
-Taper du code \LaTeX\ en ligne comme \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} est utile, tout comme montrer des cas d'utilisation comme le suivant.
-
-\begin{tdoclatex}
-Du code \LaTeX\ mis en forme, c'est top : $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
-\end{tdoclatex}
-
-
-On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
-
-\begin{tdoclatex}[sbs]
-Du code \LaTeX\ mis en forme, c'est top : \\
-$E = m c^2$ ou $\pi \neq \frac{3}{14}$.
-\end{tdoclatex}
 
 \end{document}

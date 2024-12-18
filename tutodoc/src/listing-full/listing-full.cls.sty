@@ -1,0 +1,134 @@
+\input{../listing-full/css/\tutodoc@theme.cls.sty}
+
+% == LISTINGS - AGNOSTIC == %
+
+% -- DOES THE THEME AVOID LEXERS? -- %
+
+\NewExpandableDocumentCommand{\tutodoc@code@lexer}{ m }{%
+  \ifcodenolexer text\else #1\fi%
+}
+
+
+% -- INLINE GENERALIST CODE MACRO -- %
+
+%%%
+% prototype::
+%     #1 : (minted-like-options)
+%          a list of legal \minted options.
+%     #2 : (coding-lang)
+%          the name of the \minted lexer corresponding to the coding langage
+%          for the formating.
+%
+% warning::
+%     There are only two arguments, because the \mintinline macro will eat
+%     the bit of inline code to be colored.
+%%%
+\NewDocumentCommand{\tdoccodein}{ O{} m }{%
+  \mintinline[
+    bgcolor            = tutodoc@code@back@color,
+    style/.expand once = \tutodoc@code@style,
+    #1
+  ]{\tutodoc@code@lexer{#2}}%
+}
+
+
+% -- MINTED/TCOLORBOX GENERALIST LISTING ENVIRONMENT -- %
+
+%%%
+% prototype::
+%     #1 : (minted-like-options)
+%          :see: macro.tdoccodein
+%     #2 : (tcolorbox-styling-commands)
+%          you can override the default \tcolorbox settings with the help
+%          of the macro ''\tdoctcb''.
+%     #3 : (coding-lang)
+%          :see: macro.tdoccodein
+%
+%     :see: macro.tdoctcb
+%
+% refs::
+%     + https://tex.stackexchange.com/a/604821/6880
+%     + https://tex.stackexchange.com/a/327983/6880
+%%%
+\tcbset{
+  tutodoc-full-listing-style/.style n args = {3}{
+% General.
+    minted style/.expand once    = \tutodoc@code@style,
+    minted language/.expand once = \tutodoc@code@lexer{#3},
+    breakable,
+    enhanced,
+% Colors.
+    colframe = tutodoc@code@frame@color,
+    colback  = tutodoc@code@back@color,
+    colupper = tutodoc@code@text@color,
+    collower = tutodoc@code@text@color,
+% Padding.
+    boxsep = 0pt,
+    left   = \tutodoc@code@left@len,
+    right  = \tutodoc@code@right@len,
+    bottom = \tutodoc@code@bottom@len,
+    top    = \tutodoc@code@top@len,
+% Frame.
+    shadow     = {\tutodoc@code@shadow@xshift@len}%
+                 {\tutodoc@code@shadow@yshift@len}%
+                 {\tutodoc@code@shadow@offset@len}%
+                 {tutodoc@code@shadow@color},
+    arc        = \tutodoc@code@arc@len,
+    leftrule   = \tutodoc@code@left@rule@len,
+    rightrule  = \tutodoc@code@right@rule@len,
+    bottomrule = \tutodoc@code@bottom@rule@len,
+    toprule    = \tutodoc@code@top@rule@len,
+% Separating line.
+    segmentation style = {
+      tutodoc@code@segment@color,
+      dash pattern = {on 5pt off 2.5pt},
+      line width   = .75pt
+    },
+    listing only,
+% Extra minted otpions.
+    minted options = {#1},
+% Extra tcolorbox styles.
+    #2
+  },
+}
+
+
+%%%
+% prototype::
+%     #1 : (minted-like-options)
+%          :see: macro.tdoccodein
+%     #2 : (tcolorbox-styling-commands)
+%          :see: \tcbset{tutodoc-full-listing-style}
+%     #3 : (coding-lang)
+%          :see: macro.tdoccodein
+%
+% note::
+%     See the \doc of the macro ''\NewTCBListing'' from the package
+%     \tcolorbox to have \infos about the environment ''tdoccode''.
+%%%
+\NewTCBListing{tdoccode}{ O{} D<>{} m }{%
+  tutodoc-full-listing-style = {#1}{#2}{#3}
+}
+
+
+% -- TCOLORBOX IMPORTED LISTING MACRO -- %
+
+%%%
+% prototype::
+%     #1 : (minted-like-options)
+%          :see: macro.tdoccodein
+%     #2 : (tcolorbox-styling-commands)
+%          :see: \tcbset{tutodoc-full-listing-style}
+%     #3 : (coding-lang)
+%          :see: macro.tdoccodein
+%     #4 : (file path)
+%          the path of the file to input and format.
+%
+% note::
+%     See the \doc of the macro ''\NewTCBInputListing'' from the package
+%     \tcolorbox to have more \infos about the macro ''\tdoccodeinput''.
+%%%
+\NewTCBInputListing{\tdoccodeinput}{ O{} D<>{} m m }{
+  listing file               = {#4},
+  tutodoc-full-listing-style = {#1}{#2}{#3}
+}

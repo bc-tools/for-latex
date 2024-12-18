@@ -3,7 +3,7 @@
 \input{../preamble.cfg.tex}
 
 \usepackage{../admonitions/admonitions.cls}
-\usepackage{../listing/listing.cls}
+\usepackage{../listing-latex/listing-latex.cls}
 \usepackage{../macroenv/macroenv.cls}
 
 % TESTING LOCAL IMPLEMENTATION %
@@ -22,7 +22,7 @@ Cool et top signifient \tdocinEN*{cool} et \tdocinEN{top}.
 \end{tdoclatex}
 
 
-La macro \tdocmacro{tdocinEN} et sa version étoilée s'appuient sur \tdocmacro{tdocquote} : par exemple, \tdocquote{sémantique} s'obtient via \tdoclatexin|\tdocquote{sémantique}| .
+La macro \tdocmacro{tdocinEN} et sa version étoilée s'appuient sur \tdocmacro{tdocquote} : par exemple, \tdocquote{sémantique} s'obtient via \tdoclatexin|\tdocquote{sémantique}|\,.
 
 
 \begin{tdocnote}
@@ -32,9 +32,8 @@ La macro \tdocmacro{tdocinEN} et sa version étoilée s'appuient sur \tdocmacro{
 
 Dans le contenu entre guillemets, les règles linguistiques anglaises sont respectées comme le montre l'exemple suivant.
 
-\begin{tdoclatex}
-Test: \tdocquote{OK?}
-
+\begin{tdoclatex}<\tdoctcb{sbs}>
+          Test: \tdocquote{OK?}  \\
 \tdocinEN{Test: \tdocquote{OK?}}
 \end{tdoclatex}
 

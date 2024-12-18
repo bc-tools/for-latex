@@ -3,7 +3,7 @@
 \input{../preamble.cfg.tex}
 
 \usepackage{../admonitions/admonitions.cls}
-\usepackage{../listing/listing.cls}
+\usepackage{../listing-latex/listing-latex.cls}
 \usepackage{../macroenv/macroenv.cls}
 
 % TESTING LOCAL IMPLEMENTATION %
@@ -15,23 +15,27 @@
 
 \subsection{En important le code \LaTeX}
 
-Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \tdocmacro{tdocshowcaseinput} dont l'option reprend la syntaxe de celle de \tdocenv{tdocshowcase} et l'argument obligatoire correspond au chemin du fichier.
+Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \tdocmacro{tdocshowcaseinput} dont l'option reprend la syntaxe de celle de l'environnement \tdocenv*{tdocshowcase}, et l'argument obligatoire correspond au chemin du fichier. Voici des exemples d'utilisation.
 
 
-\begin{tdocexa}
-    Ce qui suit a été obtenu via \tdoclatexin+\tdocshowcaseinput{external.tex}+.
+\foreach \exatitle/\style in {
+    {Usage standard}/%            <-- Translate me!
+    	{default},
+    {Avec des lignes cadrantes}/% <-- Translate me!
+    	{rule},
+    {Une bande colorée}/%         <-- Translate me!
+    	{stripe}%
+}{
+	\begin{tdocexa}[\exatitle]
+		\leavevmode
+		\tdoclatexinput<\tdoctcb{code}>{examples/showcase/input-\style.tex}
 
-    \medskip
+		Ceci donne:
 
-    \tdocshowcaseinput{examples/showcase/external.tex}
+		\smallskip
 
-    \medskip
-
-    Via \tdoclatexin+\tdocshowcaseinput[col-stripe = red, col-text = orange!75!black]{external.tex}+\,, on obtient le changement de couleur observable ci-après.
-
-    \medskip
-
-    \tdocshowcaseinput[col-stripe = red, col-text = orange!75!black]{examples/showcase/external.tex}
-\end{tdocexa}
+		\input{examples/showcase/input-\style.tex}
+	\end{tdocexa}
+}
 
 \end{document}

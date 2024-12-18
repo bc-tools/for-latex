@@ -1,0 +1,55 @@
+\documentclass{tutodoc}
+
+\input{../../preamble.cfg.tex}
+
+
+\begin{document}
+
+\begin{tdocfix}
+	\item Documentation: les références aux outils pour indiquer des changements ont été incorrectement écrites comme caractéristiques des contenus colorés mis en avant.
+\end{tdocfix}
+
+
+\begin{tdocbreak}
+	\item La macro \tdocmacro{tdocenv} et sa version étoilée ne proposent plus d'option.
+
+	\item Cas d'utilisation \LaTeX: la présentation par défaut est plus sobre, et des options permettent d'ajouter les lignes cadrantes, ou la bande colorée. Voir juste après.
+\end{tdocbreak}
+
+
+\begin{tdocnew}
+	\item Mise en forme de codes informatiques en plus de ceux spécifiquement en \LaTeX.
+	%
+	\begin{enumerate}
+		\item Création de \tdocenv{tdoccode} et de \tdocmacro{tdoccodein}.
+
+		\item Pour les macros pour du code en ligne, et les environnements pour des blocs de code, des options de type \tdocpack{minted} s'indiquent à l'intérieur de crochet de manière traditionnelle: \tdoclatexin{[options minted]}\,.
+
+		\item Pour les environnements pour des blocs de code, des options de type \tdocpack{tcolorbox} s'indiquent à l'intérieur de chevrons: \tdoclatexin{<options tcolorbox>}\,.
+
+		\item La nouvelle macro \tdocmacro{tdoctcb} permet d'utiliser des raccourcis pour les styles \tdocpack{tcolorbox} régulièrement utilisés.
+	\end{enumerate}
+
+	\item Documentation: une nouvelle section présente les outils de mise en forme de codes informatiques autres que les cas d'utilisation de \LaTeX.
+\end{tdocnew}
+
+
+\begin{tdocupdate}
+	\item Les sous-sous-sections sont numérotées en lettres minuscules.
+
+	\item Thèmes.
+	%
+	\begin{enumerate}
+		\item Moins d'espace consommé.
+
+		\item Les ombres ont une meilleure coloration.
+
+		\item Pour tous les thèmes sauf le \tdoclatexin{draft}, le rayon des arcs des coins des cadres passe de \tdoclatexin{.75mm} à \tdoclatexin{.2pt}\,.
+
+ 		\item Cas d'utilisation de \LaTeX: avec le thème \tdoclatexin{color}, la couleur du fond passe de \tdoclatexin[bgcolor = yellow!4]{yellow!4} à \tdoclatexin{gray!5}.
+
+		\item Dernières modifications: avec le thème \tdoclatexin{dark}, le texte \tdoclatexin{[Init]} produit par la macro \tdocmacro{tdocstartproj} utilise la même police que celle des titres des environnements pour indiquer des changements.
+	\end{enumerate}
+\end{tdocupdate}
+
+\end{document}

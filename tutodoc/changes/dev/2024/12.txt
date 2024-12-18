@@ -2,6 +2,220 @@
 
 
 ==
+18  (1.7.1-rc.2)
+==
+
+-------
+:break:
+-------
+
+Macro ''\tdocenv'': the options are no longer taken into account. If necessary, use the ''\tdoclatexin'' macro.
+
+
+--------
+:update:   ??
+--------
+
+[[:doc:]]
+Manual: several simplifications done.
+
+
+// ---------- //
+
+
+==
+17  (1.7.1-rc.1)
+==
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: the change log has been updated.
+
+
+// ---------- //
+
+
+==
+15  (1.7.1-beta.6)
+==
+
+-----
+:new:
+-----
+
+[[:doc:]]
+Manual: a new section for the generalist listings.
+
+
+--------
+:update:
+--------
+
+[[:format:]]
+\Chges: with the ''dark'' theme, the font of the text ''[Init]'' used by the ''\tdocstartproj'' macro is identical to that of \envs for typing \chges.
+
+
+--------
+:fordev:
+--------
+
+[[:doc:]]
+Manual: simplification of the \latex codes.
+
+
+[[:flow:]]
+No more magic comments needed for the \src codes.
+
+
+// ---------- //
+
+
+==
+12  (1.7.1-beta.5)
+==
+
+-------
+:break:
+-------
+
+\latex showcases: the default layout is more sober, and there are options for having just the rulers, or the colored stripe.
+
+
+--------
+:update:
+--------
+
+[[:api:]]
+Generalist and \latex listings.
+
+    1) Inline code macros: extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way.
+
+    1) Block code \envs.
+
+        * Extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way.
+
+        * Extra \tcolorbox options can be indicated inside rafters ''< ... >''.
+
+
+-----
+:new:
+-----
+
+[[:doc:]]
+Manual: new explanations about the \minted and \tcolorbox options for \latex listings.
+
+
+// ---------- //
+
+
+==
+11  (1.7.1-beta.4)
+==
+
+-------
+:break:
+-------
+
+[[:api:]]
+\Envs using \tcolorbox.
+
+    1) The new ''\tdoctcb'' macro allows to use shortcuts for regularly used styles.
+
+    1) \latex listings: the option can be any legal \tcolorbox styling commands.
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+New feature: display any kind of code for any language supported by \minted.
+
+
+--------
+:update:
+--------
+
+[[:format:]]
+Here the last \chges.
+
+    1) With all themes but the ''draft'' one, less vertical space is used before the "what" \envs.
+
+    1) Sub-sub-sections are numbered using lower alphabetic letters.
+
+
+// ---------- //
+
+
+==
+09  (1.7.1-beta.3)
+==
+
+--------
+:update:
+--------
+
+[[:format:]]
+Themes and \latex listings.
+
+    1) With all themes, less spaces consumed and better shadow colors.
+
+    1) With all themes but the ''draft'' one, the arc length changes from ''.75mm'' to ''2pt''.
+
+
+// ---------- //
+
+
+==
+08  (1.7.1-beta.2)
+==
+
+--------
+:update:
+--------
+
+[[:format:]]
+''color'' theme and \latex listings: the back color changes from ''yellow!4'' to ''gray!5''’.
+
+
+--------
+:fordev:
+--------
+
+[[:flow:]]
+Tools to debug the final docs: creation of the \bash files path::''debug-final-doc-erase.sh'' and path::''debug-final-doc-test.sh''.
+
+
+// ---------- //
+
+
+==
+07  (1.7.1-beta.1)
+==
+
+-----
+:fix:
+-----
+
+[[:doc:]]
+\Refs to tools for latest \chges was written as admonition features.
+
+
+--------
+:update:
+--------
+
+[[:format:]]
+''draft'' theme and latest \chges: less spaces are consumed.
+
+
+// ---------- //
+
+
+==
 04  (1.7.0)
 ==
 
@@ -18,7 +232,7 @@
 --------
 
 [[:format:]]
-Draft theme and \chges: the \envs for the kind of \chges stop to use icons.
+Draft theme and \chges: the \envs for the latest \chges stop to use icons.
 
 
 --------
