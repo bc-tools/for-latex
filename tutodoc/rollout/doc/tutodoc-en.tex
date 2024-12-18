@@ -66,7 +66,7 @@
 
 \section{\LaTeX\ listings}
 
-Typing in on-line code such as \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is showing use cases such as the following one.
+Typing inline code such as \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is showing use cases such as the following one.
 
 \begin{tdoclatex}
 Formatted \LaTeX\ code is great: $E = m c^2$ or $pi \neq \frac{3}{14}$.
@@ -264,7 +264,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 
 \section{\LaTeX\ listings}
 
-Typing in on-line code such as \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is showing use cases such as the following one.
+Typing inline code such as \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is showing use cases such as the following one.
 
 \begin{tdoclatex}
 Formatted \LaTeX\ code is great: $E = m c^2$ or $pi \neq \frac{3}{14}$.
@@ -462,7 +462,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 
 \section{\LaTeX\ listings}
 
-Typing in on-line code such as \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is showing use cases such as the following one.
+Typing inline code such as \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is showing use cases such as the following one.
 
 \begin{tdoclatex}
 Formatted \LaTeX\ code is great: $E = m c^2$ or $pi \neq \frac{3}{14}$.
@@ -660,7 +660,7 @@ $E = m c^2$ or $\pi \neq \frac{3}{14}$.
 
 \section{\LaTeX\ listings}
 
-Typing in on-line code such as \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is showing use cases such as the following one.
+Typing inline code such as \tdoclatexin{E = m c^2 \neq \pi \neq \frac{3}{14}} is useful, as is showing use cases such as the following one.
 
 \begin{tdoclatex}
 Formatted \LaTeX\ code is great: $E = m c^2$ or $pi \neq \frac{3}{14}$.
@@ -922,7 +922,7 @@ ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble, ble...
 
 
 \begin{filecontents*}[overwrite]{examples-version-n-change-manual-setting.tex}
-This is what it looks like without vertical movement.
+This is what it looks like without vertical shift.
 
 \paragraph{A home-made setting.}%
 \tdocversion{1.2.3}[2024-10-29]<0pt>
@@ -982,7 +982,7 @@ Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
     Important and harmless.
 \end{tdocimp}
 
-\begin{tdocimp}[Mini title]
+\begin{tdocimp}[Small title]
     Useful?
 \end{tdocimp}
 \end{filecontents*}
@@ -993,7 +993,7 @@ Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
     Something useful to tell you...
 \end{tdocnote}
 
-\begin{tdocnote}[Mini title]
+\begin{tdocnote}[Small title]
     Useful?
 \end{tdocnote}
 \end{filecontents*}
@@ -1004,7 +1004,7 @@ Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
     Caution, caution...
 \end{tdoccaut}
 
-\begin{tdoccaut}[Mini title]
+\begin{tdoccaut}[Small title]
     Useful?
 \end{tdoccaut}
 \end{filecontents*}
@@ -1015,7 +1015,7 @@ Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
     A tip.
 \end{tdoctip}
 
-\begin{tdoctip}[Mini title]
+\begin{tdoctip}[Small title]
     Useful?
 \end{tdoctip}
 \end{filecontents*}
@@ -1026,7 +1026,7 @@ Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
     Avoid the dangers...
 \end{tdocwarn}
 
-\begin{tdocwarn}[Mini title]
+\begin{tdocwarn}[Small title]
     Useful?
 \end{tdocwarn}
 \end{filecontents*}
@@ -1037,7 +1037,7 @@ Blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo, blo...
     An example...
 \end{tdocexa}
 
-\begin{tdocexa}[Mini title]
+\begin{tdocexa}[Small title]
     Useful?
 \end{tdocexa}
 \end{filecontents*}
@@ -1069,7 +1069,7 @@ VERSUS.
     Another?
 \end{tdocrem}
 
-\begin{tdocrem}[Mini title]
+\begin{tdocrem}[Small title]
     Useful?
 \end{tdocrem}
 \end{filecontents*}
@@ -1088,6 +1088,11 @@ VERSUS.
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-listing-full-input-hello-you-hs.tex}
+\tdoccodeinput{hs}{examples/listing-full/hello-you.hs}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-listing-full-hello-you.hs}
 main :: IO ()
 
@@ -1101,13 +1106,6 @@ main = do
     else do
         putStrLn ("Hello " ++ name ++ ".")
         putStrLn "Amazing! Actually, not at all..."
-\end{filecontents*}
-
-
-\begin{filecontents*}[overwrite]{examples-listing-full-custom-hello-you-tex.tex}
-\tdoccodeinput[style = solarized-light, linenos]%
-              <leftrule = 22pt, colback = orange!5, colframe = red!35>%
-              {tex}{examples-listing-full-hello-you.tex}
 \end{filecontents*}
 
 
@@ -1147,6 +1145,13 @@ if ($name eq "") {
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-listing-full-input-hello-you-tex.tex}
+\tdoccodeinput[style = solarized-light, linenos]%
+              <leftrule = 22pt, colback = orange!5, colframe = red!35>%
+              {tex}{examples-listing-full-hello-you.tex}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-showcase-hook.tex}
 \begin{tdocshowcase}[]
     [This works...]
@@ -1155,7 +1160,7 @@ if ($name eq "") {
 OR.
 
 \begin{tdocshowcase}
-    \string[This works...]
+    \string[This also works...]
 \end{tdocshowcase}
 \end{filecontents*}
 
@@ -1175,6 +1180,14 @@ OR.
                      after      = Ma fin à moi]
     Bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla, bla...
 \end{tdocshowcase}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-showcase-input-stripe.tex}
+\tdocshowcaseinput[style      = stripe,
+                   col-stripe = red,
+                   col-text   = LightCoral]%
+                  {examples-showcase-external.tex}
 \end{filecontents*}
 
 
@@ -1212,13 +1225,23 @@ Blablobli, blablobli, blablobli, blablobli, blablobli, blablobli...
 \end{filecontents*}
 
 
+\begin{filecontents*}[overwrite]{examples-showcase-input-default.tex}
+\tdocshowcaseinput{examples-showcase-external.tex}
+\end{filecontents*}
+
+
+\begin{filecontents*}[overwrite]{examples-showcase-input-rule.tex}
+\tdocshowcaseinput[style = rule]{examples-showcase-external.tex}
+\end{filecontents*}
+
+
 \begin{filecontents*}[overwrite]{examples-listing-latex-latexshow-options.tex}
 \tdoclatexshow[style      = stripe,
                col-stripe = orange,
                col-text   = blue!70!black,
-               before     = Rendering below.,
-               explain    = What comes next is colorful...,
-               after      = Finished rendering.]
+               before     = Rendering hereafter.,
+               explain    = What comes next is coloured...,
+               after      = Finished rendering.,]
                {examples-listing-latex-xyz.tex}
 \end{filecontents*}
 
@@ -1247,7 +1270,7 @@ $x y z = 1$
 \end{tdoclatex}
 OR.
 \begin{tdoclatex}<>
-\string<Strange... Or not!>
+<Strange... Or not!>
 \end{tdoclatex}
 \end{filecontents*}
 
@@ -1273,12 +1296,13 @@ $A = B + C$
 
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-latexinput-option-code.tex}
-\tdoclatexinput{examples-listing-latex-xyz.tex}
+\tdoclatexinput<\tdoctcb{code}>{examples-listing-latex-xyz.tex}
 \end{filecontents*}
 
 
 \begin{filecontents*}[overwrite]{examples-listing-latex-latexinput-option-perso.tex}
-\tdoclatexinput[style = igor, showspaces]<\tdoctcb{code}>%
+\tdoclatexinput[style = igor, showspaces]%
+               <colframe = purple, colback = red!5>%
                {examples-listing-latex-xyz.tex}
 \end{filecontents*}
 
@@ -1335,7 +1359,7 @@ OR.
 \newcommand\perl{\trademark{Perl}}
 \newcommand\python{\trademark{Python}}
 
-\newcommand\pygmentsREF{\href{https://pygments.org/}{Pygments}}
+\newcommand\pygmentsREF{\href{https://pygments.org/}{\trademark{Pygments}}}
 
 
 \NewDocumentCommand{\mailsubject}{m}%  <-- Translate me!
@@ -1408,7 +1432,7 @@ OR.
 
 \title{The \texttt{tutodoc} class \\ Tutorial-style documentation}
 \author{Christophe, BAL}
-\date{Dec 17, 2024 - Version 1.7.1}
+\date{Dec 18, 2024 - Version 1.7.1}
 
 \maketitle
 
@@ -1419,9 +1443,9 @@ OR.
     }
     is used by its author to semantically produce documentation of \LaTeX\ packages and classes in a tutorial style\,%
     \footnote{
-        The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected of coding documentation.
+        The idea is to produce an efficient \texttt{PDF} file that can be browsed for one-off needs. This is generally what is expected for a coding documentation.
     }
-    using a sober rendering for reading on screen.
+    with a sober rendering for reading on screen.
 
     \smallskip
 
@@ -1447,14 +1471,14 @@ OR.
 
 
 \begin{tdocbreak}
-	\item \LaTeX showcases: the default layout is more sober, and there are options for having just the rulers, or the colored stripe.
-
-	\item Code formatting just in \LaTeX: the options system changes as shown next.
+	\item The \tdocmacro{tdocenv} macro and its starred version no longer offer an option.
+	
+	\item \LaTeX\ showcases: the default layout is more sober, and there are options for having just the rulers, or the colored stripe. See just after.
 \end{tdocbreak}
 
 
 \begin{tdocnew}
-	\item Formatting of computer codes in addition to those specifically in LaTeX.
+	\item Formatting of computer codes in addition to those specifically in \LaTeX.
 	%
 	\begin{enumerate}
 		\item Creation of \tdocenv{tdoccode} and \tdocmacro{tdoccodein}.
@@ -1463,10 +1487,10 @@ OR.
 
 		\item For code block environments, \tdocpack{tcolorbox} options are indicated inside rafters: \tdoclatexin{<tcolorbox options>}\,.
 
-		\item The new macro \tdocmacro{tdoctcb} allows you to use shortcuts for regularly used \tdocpack{tcolorbox} styles.
+		\item The new macro \tdocmacro{tdoctcb} allows to use shortcuts for regularly used \tdocpack{tcolorbox} styles.
 	\end{enumerate}
 
-	\item Documentation: a new section presents tools for formatting computer codes other than those in LaTeX.
+	\item Documentation: a new section presents tools for formatting computer codes other than those in \LaTeX.
 \end{tdocnew}
 
 
@@ -1480,11 +1504,11 @@ OR.
 
 		\item Shadows have better coloring.
 
-		\item For all themes except the \tdoclatexin{draft} one, the radius of the arcs of the corners of the frames increases from \tdoclatexin{.75mm} to \tdoclatexin{.2pt},.
+		\item For all themes except the \tdoclatexin{draft} one, the radius of the arcs of the corners of the frames has changed from \tdoclatexin{.75mm} to \tdoclatexin{.2pt},.
 
- 		\item Codes just in \LaTeX: with the theme \tdoclatexin{color}, the background color changes from \tdoclatexin[bgcolor = yellow!4]{yellow!4} to \tdoclatexin{gray!5}.
+ 		\item Use case in \LaTeX: with the theme \tdoclatexin{color}, the background color changes from \tdoclatexin[bgcolor = yellow!4]{yellow!4} to \tdoclatexin{gray!5}.
 
-		\item Changes: with the \tdoclatexin{dark} theme, the font of the \tdoclatexin{[Init]} text used by the \tdocmacro{tdocstartproj} macro is identical to that of the environment titles for typing changes.
+		\item Latest changes: with the \tdoclatexin{dark} theme, the \tdoclatexin{[Init]} text produced by the \tdocmacro{tdocstartproj} macro uses the same font as the environment titles to indicate changes.
 	\end{enumerate}
 \end{tdocupdate}
 }
@@ -1535,7 +1559,7 @@ OR.
 \end{tasks}
 
 
-\section{General formatting imposed}
+\section{General settings}
 
 \subsection{Font size and page geometry}
 
@@ -1554,7 +1578,7 @@ The selected settings are directly visible in this documentation.
 
 \subsection{Dynamic links}
 
-The \tdocpack{hyperref} package is imported, if it hasn't already been, and the settings chosen are just for the colors of links relating to citations, files, internal links, and finally \verb#url# (this color will depend on the theme chosen).
+The \tdocpack{hyperref} package is imported, if it hasn't already been, and the settings chosen are just for the colors of links relating to citations, files, internal links, and finally \verb#url# (this colors will depend on the theme chosen).
 
 
 \section{What language is used by the \thisproj\ class?}
@@ -1565,13 +1589,11 @@ On the other hand, the \thisproj\ class identifies \tdoclatexin|en| as the main 
     Technically, we use \tdoclatexin|\BCPdata{language}| which returns a language in short format.
 }
 As this language is included in the list of languages taken into account, see below, the \thisproj\ class will produce the expected effects.
-
 \begin{tasks}[label=\small\textbullet](3)
     \task \tdoclatexin|en| : English.
         \task \tdoclatexin|es| : Spanish.
         \task \tdoclatexin|fr| : French.
 \end{tasks}
-                    
 
 
 \begin{tdocnote}
@@ -1599,7 +1621,7 @@ Cool and top stand for \tdocinEN*{cool} and \tdocinEN{top}.
 \end{tdoclatex}
 
 
-The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{tdocquote} : for example, \tdocquote{semantic} is obtained via \tdoclatexin|tdocquote{semantic}| .
+The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{tdocquote} : for example, \tdocquote{semantic} is obtained via \tdoclatexin|tdocquote{semantic}|\,.
 
 
 \begin{tdocnote}
@@ -1616,8 +1638,8 @@ To modify the general layout, there is the \thisproj\ class option \tdoclatexin{
           a black-and-white theme with some shades of grey.
 
     \task \tdoclatexin{color}:
-          a coloured theme : this is the default value.
-w
+          a colored theme, this is the default value.
+
     \task \tdoclatexin{dark}:
           a dark theme ideal for resting the eyes.
 
@@ -1653,10 +1675,10 @@ w
     \addcontentsline{toc}{section}{Appendix -- Theme gallery}%
 \egroup
 
-\bigskip
+\bigskip\bigskip
 
 \begin{tdocnote}
-    Each example is exactly a two pages long \pdf\ and has been inserted directly into this document (so don't be surprised by the page numbers).
+    Each example is a \pdf\ directly inserted into this document (so don't be surprised by the page numbers).
 \end{tdocnote}
 
 \newpage
@@ -1701,13 +1723,13 @@ w
 
 
 \begin{tdocimp}
-    All the environments presented in this section share the same counter, which will be reset to zero as soon as a section with a level at least equal to a \tdoclatexin|\section| is opened.
+    All the environments presented in this section share the same counter, which will be reset to zero as soon \tdoclatexin|\section| is used.
 \end{tdocimp}
 
 
 \subsubsection{Examples}
 
-Numbered examples, if required, are indicated via \tdocenv{tdocexa}, which offers an optional argument for adding a mini-title.
+Numbered examples are indicated via \tdocenv{tdocexa}, which offers an optional argument for adding a small title.
 Here are two possible uses.
 
 \tdoclatexinput<\tdoctcb{sbs}>{examples-admonitions-exa.tex}
@@ -1734,7 +1756,7 @@ Everything happens via \tdocenv{tdocrem}, which works identically to the \tdocen
 
 \begin{tdocnote}
     The formatting proposed here is the default one, but others are possible by changing the theme: see the gallery of use cases in the appendix page \pageref{tutodoc-theme-gallery}.
-    As for the icons, they are obtained via the \tdocpack{fontawesome5} package, and the \tdocmacro{tdocicon} macro manages the spacing in relation to the text.%
+    As for the icons, they are obtained via the \tdocpack{fontawesome5} package, and the \tdocmacro{tdocicon} macro which manages the spacing relatively to the text.%
     \footnote{
         For example,
         \tdoclatexin|\fbox{tdocicon{faBed}{Fatigued}}|
@@ -1792,31 +1814,18 @@ Here's what you can type semantically.
 
 
 \begin{tdoclatex}<\tdoctcb{sbs}>
-\tdoccls{myclass} is for...              \\
-\tdocpack{mypackage} is for...           \\
-\tdocmacro{onemacro} is for...           \\
-\tdocenv{env} produces...                \\
-\tdocenv[{[opt1]<opt2>}]{env}            \\
-Just \tdocenv*{env}...                   \\
-Finally \tdocenv*[{[opt1]<opt2>}]{env}...
-        % For copy and paste.
+\tdoccls{myclass} is for...    \\
+\tdocpack{mypackage} is for... \\
+\tdocmacro{onemacro} is for... \\
+\tdocenv{env} produces...      \\
+Just \tdocenv*{env}...
 \end{tdoclatex}
 
 
 \begin{tdocrem}
-    Unlike \tdocmacro{tdoclatexin}, \tdocmacro{tdocenv} and \tdocmacro{tdocenv*} macros don't color the text they produce.
-    In addition, \tdoclatexin{\tdocenv{monenv}} produces \tdocenv{monenv} with spaces to allow line breaks if required.
+    Unlike \tdocmacro{tdoclatexin}, the \tdocmacro{tdocmacro}, \tdocmacro{tdocenv} and \tdocmacro{tdocenv*} macros don't color the text they produce.
+    In addition, \tdoclatexin{\tdocenv{monenv}} produces \tdocenv{monenv} with breakable spaces to allow line breaks if required.
 \end{tdocrem}
-
-
-\begin{tdocwarn}
-    The optional argument of the \tdocmacro{tdocenv} macro is copied and pasted\,%
-    \footnote{
-        Remember that almost anything is possible from now on.
-    }
-    when rendering. This may sometimes require the use of protective braces, as in the example above.
-\end{tdocwarn}
-
 
 
 \section{Origin of a prefix or suffix}
@@ -1845,14 +1854,14 @@ It is sometimes useful to render code directly in the documentation. This requir
 
 \subsection{A minimalist rendering by default}
 
-\begin{tdocexa}[With default text]
-    It can be useful to show a real rendering directly in a document.
+\begin{tdocexa}
+    It can be useful to show a real rendering directly in a document.%
     \footnote{
         Typically when making a demo.
     }
-    This is typed via \tdocenv{tdocshowcase} as follows.
+    This is typed via the environment \tdocenv*{tdocshowcase} as follows.
 
-    \tdoclatexshow[explain = {This results in the following rendering, which is just a combination of low vertical spacing and simple import.}]{examples-showcase-default.tex}
+    \tdoclatexshow[explain = {This results in the following rendering, which is a combination of low vertical spacing and simple import.}]{examples-showcase-default.tex}
 \end{tdocexa}
 
 
@@ -1862,7 +1871,7 @@ It is sometimes useful to render code directly in the documentation. This requir
 
 
 \begin{tdocwarn}
-    With the default settings, if the code to be formatted begins with an opening bracket, use one of the following trick.
+    With the default settings, if the code to be formatted begins with an opening bracket, we must use one of the following tricks.
 
     \tdoclatexshow[explain = {This will produce the following.}]{examples-showcase-hook.tex}
 \end{tdocwarn}
@@ -1874,7 +1883,7 @@ To make the formatted \LaTeX\ code more visible, you can use the \tdoclatexin{ru
 
 
 \begin{tdocexa}
-	The \tdoclatexin{style=rule} option provides the following where the automatically added texts will adapt to the language found by \thisproj.
+	The option \tdoclatexin{style = rule} provides the following where the automatically added texts will adapt to the language found by \thisproj.
 
 	\input{examples-showcase-rule.tex}
 \end{tdocexa}
@@ -1887,7 +1896,7 @@ To make the formatted \LaTeX\ code more visible, you can use the \tdoclatexin{ru
 
 	Here's the code that was used.%
 	\footnote{
-		The next section will normalise the a priori strange choice of \tdoclatexin{col-stripe} instead of \tdoclatexin{col-rule}\,.
+		The next section will justify the a priori strange choice of \tdoclatexin{col-stripe} instead of \tdoclatexin{col-rule}\,.
 	}
 
 	\tdoclatexinput<\tdoctcb{code}>{examples-showcase-rule-custom.tex}
@@ -1895,11 +1904,11 @@ To make the formatted \LaTeX\ code more visible, you can use the \tdoclatexin{ru
 
 
 \begin{tdocnote}
-    In the previous example, the text uses the proposed darkened orange. However, the red is used as a base to obtain the colors used for the strip: the transformations used depend on the theme chosen.%
+    In the previous example, the text uses the proposed darkened orange. However, the red is used as a base to obtain the colors used for the framing lines: the transformations used depend on the theme chosen.%
     \footnote{
         For example, the themes \tdoclatexin{bw} and \tdoclatexin{draft} ignore the key \tdoclatexin{col-stripe}!
     }
-    You should also be aware that behind the scenes, the macro \tdocmacro{tdocruler} is used.
+    You should also be aware that behind the scenes, the macro \tdocmacro{tdocruler} is used, it works as follows.
 
     \begin{tdoclatex}<\tdoctcb{std}>
 \tdocruler[red]{A decorated pseudo-title}
@@ -1916,7 +1925,7 @@ There are situations where you need to be able to clearly identify an example of
 
 
 \begin{tdocexa}
-	The \tdoclatexin{style=stripe} option provides the following.
+	The \tdoclatexin{style = stripe} option provides the following.
 
 	\input{examples-showcase-stripe.tex}
 \end{tdocexa}
@@ -1938,28 +1947,26 @@ There are situations where you need to be able to clearly identify an example of
 
 \subsection{By importing the \LaTeX\ code}
 
-To obtain renderings by importing the code from an external file, instead of typing it, simply use the macro \tdocmacro{tdocshowcaseinput} whose option uses the same syntax as that of the environment \tdocenv*{tdocshowcase} and the mandatory argument corresponds to the path of the file. Here are some examples of the use of \tdoclatexin+\tdocshowcaseinput{external.tex}+ with or without an option.
+To obtain renderings by importing the code from an external file, instead of typing it, simply use the macro \tdocmacro{tdocshowcaseinput} whose option uses the same syntax as that of the environment \tdocenv*{tdocshowcase}, and the mandatory argument corresponds to the path of the file. Here are some examples of use.
 
 
-\foreach \exatitle/\option in {
-    {Without option}/% <-- Translate me!
-    	{},
-    {Just the framing lines}/% <-- Translate me!
-    	{style=rule},
-    {A colored stripe}/% <-- Translate me!
-    	{style=stripe, col-stripe=red, col-text=LightCoral}%
+\foreach \exatitle/\style in {
+    {Standard use}/%            <-- Translate me!
+    	{default},
+    {With framing lines}/% <-- Translate me!
+    	{rule},
+    {A colored stripe}/%         <-- Translate me!
+    	{stripe}%
 }{
 	\begin{tdocexa}[\exatitle]
-		\expandafter\IfBlankTF\expandafter{\option}{
-			Here is the edifying content of the example chosen.
+		\leavevmode
+		\tdoclatexinput<\tdoctcb{code}>{examples-showcase-input-\style.tex}
 
-	    	\tdocshowcaseinput{examples-showcase-external.tex}
-		}{
-	    	The option \expandafter\tdoclatexin\expandafter{\option} provides the following.
+		This gives:
 
-			\smallskip
-			\expandafter\tdocshowcaseinput\expandafter[\option]{examples-showcase-external.tex}
-		}
+		\smallskip
+
+		\input{examples-showcase-input-\style.tex}
 	\end{tdocexa}
 }
 
@@ -1967,7 +1974,7 @@ To obtain renderings by importing the code from an external file, instead of typ
 \section{Use cases in \LaTeX}
 \label{tutodoc-listing-latex}
 
-Documenting a package or class is best done through use cases showing both the code and the corresponding result.%
+Documenting a package, or class, is best done through use cases showing both the code and the corresponding result.%
 \footnote{
     Code is formatted using the \tdocpack{minted} and \tdocpack{tcolorbox} packages.
 }
@@ -1976,7 +1983,7 @@ Documenting a package or class is best done through use cases showing both the c
 \subsection{\tdocquote{Inline} codes}
 \label{tutodoc-listing-latex-inline}
 
-\begin{tdocexa}[Standard usage]
+\begin{tdocexa}[Standard use]
     The \tdocmacro{tdoclatexin} macro\,%
     \footnote{
         The name of the macro \tdocmacro{tdoclatexin} comes from \tdocquote{\tdocprewhy{in.line} \LaTeX}\,.
@@ -1984,7 +1991,7 @@ Documenting a package or class is best done through use cases showing both the c
     can be used to type code in line in a similar way to \tdocmacro{verb}, or as a standard macro (see the handling of braces in the latter case below).
     Here are some examples of use.%
     \footnote{
-    	A background colour is deliberately used to subtly highlight the \tdoclatexin{\LaTeX} codes.
+    	A background color is deliberately used to subtly highlight the \tdoclatexin{\LaTeX} codes.
     }
 
     \begin{tdoclatex}<\tdoctcb{sbs}>
@@ -2000,16 +2007,15 @@ Documenting a package or class is best done through use cases showing both the c
     Here are some examples.
 
     \begin{tdoclatex}<\tdoctcb{sbs}>
-1: \tdoclatexin{$a^b = c$}             \\
-2: \tdoclatexin[style = bw]{$a^b = c$} \\
-3: \tdoclatexin[style = igor,
+1: \tdoclatexin[style = bw]{$a^b = c$} \\
+2: \tdoclatexin[style = igor,
                 showspaces]{$a^b = c$}
 	\end{tdoclatex}
 \end{tdocexa}
 
 
 \begin{tdocnote}
-    The \tdocmacro{tdoclatexin} macro can be used in a footnote: see below.%
+	The \tdocmacro{tdoclatexin} macro can be used in a footnote as shown below.%
     \footnote{
         \tdoclatexin+$minted = TOP$+ has been typed \tdoclatexin|\tdoclatexin+$minted = TOP$+| in this footnote.
     }
@@ -2018,7 +2024,7 @@ Documenting a package or class is best done through use cases showing both the c
 
 \subsection{Directly typed codes}
 
-\begin{tdocexa}[Face to face]
+\begin{tdocexa}[Side by side]
     Displaying a code and its rendering side by side is done as follows where the macro \tdocmacro{tdoctcb} allows you to just type \tdoclatexin{tdoctcb{sbs}} instead of \tdoclatexin{listing side text} (\tdoclatexin#sbs# is for \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}}, while \tdoclatexin#tcb# is the standard abbreviation for \texttt{tcolorbox}). Note the use of rafters, not square brackets (more on this later).
 
     \tdoclatexshow{examples-listing-latex-ABC.tex}
@@ -2091,7 +2097,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 		{}/%
 		sbs,
 	{Following}/%
-		{, which also corresponds to the option \tdoclatexin{tdoctcb{std}}\,}/%
+		{, which also corresponds to the option \tdoclatexin{\tdoctcb{std}}\,}/%
 		std,%
 	{Only the code}/%
 		{}/%
@@ -2111,6 +2117,11 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \subsection{Imported codes put into practice}
 \label{tutodoc-listing-latexshow}
 
+\begin{tdocnote}
+    The default texts take into account the language detected by \thisproj.
+\end{tdocnote}
+
+
 \begin{tdocexa}[Showcase]
     The following comes from \tdoclatexin+\tdoclatexshow{examples-listing-xyz.tex}+.
 
@@ -2120,13 +2131,8 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \end{tdocexa}
 
 
-\begin{tdocnote}
-    The default texts take into account the language detected by \thisproj.
-\end{tdocnote}
-
-
 \begin{tdocexa}[Changing the explanatory text]
-    Using the key \tdoclatexin|explain|, you can use custom text. Thus, \tdoclatexin|tdoclatexshow[explain = Here is the rendering.]{examples-listing-xyz.tex}| will give the following.
+    Using the key \tdoclatexin|explain|, you can use a custom text. Thus, \tdoclatexin|\tdoclatexshow[explain = Here is the rendering.]{examples-listing-xyz.tex}| will give the following.
 
     \smallskip
 
@@ -2165,19 +2171,22 @@ For these projects, the documentation must be able to present lines of code; thi
 
 
 \begin{tdocimp}
-	The tools in this section can also be used to present \LaTeX code, but they should not be used for simple use cases, as the macros and environments presented next are for studying code, not just for using it: see the section \ref{tutodoc-listing-latex} on page \pageref{tutodoc-listing-latex} to use the right tools for formatting \LaTeX use cases.
+	The tools in this section can also be used to present \LaTeX code, but they should not be used for simple use cases, as the macros and environments presented next are for studying code, not just for using it: see the section \ref{tutodoc-listing-latex} on page \pageref{tutodoc-listing-latex} to use the right tools for formatting \LaTeX\ use cases.
 \end{tdocimp}
 
 
 
 \subsection{\tdocquote{Inline} codes}
 
-The \tdocmacro{tdoccodein} macro expects two arguments: the \ordinalnum{1} indicates the programming language, and the \ordinalnum{2} gives the code to be formatted.
+The \tdocmacro{tdoccodein}\,%
+\footnote{
+	The name of the macro \tdocmacro{tdoccodein} comes from \tdocquote{\tdocprewhy{in.line} \tdocpre{code}}\,.
+}
+macro expects two arguments: the \ordinalnum{1} indicates the programming language, and the \ordinalnum{2} gives the code to be formatted.
 It is possible to use an option identical to that proposed by \tdocmacro{tdoclatexin}: see the section \ref{tutodoc-listing-latex-inline} on page \pageref{tutodoc-listing-latex-inline}.
 Here are some possible use cases.%
 \footnote{
-    A background color is deliberately used to subtly highlight the formatted codes.
-    For example, typing \tdoclatexin{tdoccodein{py}{funny = "ah"*3}} will produce \tdoccodein{py}{funny = "ah"*3}\,.
+    A background color is used to subtly highlight the formatted codes. For example, typing \tdoclatexin{\tdoccodein{py}{funny = "ah"*3}} will produce \tdoccodein{py}{funny = "ah"*3}\,.
 }
 
 \begin{tdoclatex}
@@ -2190,16 +2199,15 @@ Here are some possible use cases.%
 \medskip
 
 \begin{tdocnote}
-	The \url{https://pygments.org/languages/} page contains a complete list of supported languages with their short names.
-	For example, it is possible to format \brainfuck like this sequence \tdoccodein{bf}{++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.} which is used to display \tdoccodein{text}{Hello}\,.
+	The page \url{https://pygments.org/languages/} contains a complete list of supported languages with their short names.
+	For example, it is possible to format \brainfuck\ code like this sequence \tdoccodein{bf}{++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.} which displays \tdoccodein{text}{Hello}\,.
 \end{tdocnote}
 
 
 
 \subsection{Codes typed directly}
 
-Code can be typed directly into a document via \tdocenv{tdoccode} which expects an argument indicating the programming language, and any options between parenthesis and/or square brackets identical to those offered by \tdocenv{tdoclatex}: see the section \ref{tutodoc-listing-latex-direct} on page \pageref{tutodoc-listing-latex-direct}.
-In the following examples, the \LaTeX\ codes for \thisproj\ are displayed in verbatim mode because the coloring of \LaTeX\ codes is not correct.%
+Code can be typed directly into a document via \tdocenv{tdoccode} which expects an argument indicating the programming language, and any options between parenthesis and/or square brackets identical to those proposed by \tdocenv{tdoclatex}: see the section \ref{tutodoc-listing-latex} on page \pageref{tutodoc-listing-latex}.%
 \footnote{
 	Note that the coloring of the \LaTeX\ codes is lexically correct, but semantically wrong.
 }
@@ -2224,18 +2232,22 @@ In the following examples, the \LaTeX\ codes for \thisproj\ are displayed in ver
 The \tdoclatexin{tdoccodeinput} macro expects the language and path of a file to be formatted, and possibly options similar to those offered by the \tdocenv*{tdoccode} environment.
 
 
-% Strings "..." in the codes must be translated.
-\begin{tdocexa}{Standard features}
-	By simply using \tdocmacro{tdoccodeinput}, you can easily obtain a rendering like the following.
+% Strings "..." in the source codes must also be translated.
+\foreach \title/\lang in {%
+	{Standard features}/%
+		hs,%
+	{Customize rendering on occasion}/%
+		tex%
+}{
+    \begin{tdocexa}[\title]
+    	\leavevmode
+    	\tdoclatexinput<\tdoctcb{code}>{examples-listing-full-input-hello-you-\lang}
 
-    \tdoccodeinput{hs}{examples-listing-full-hello-you.hs}
-\end{tdocexa}
+		This gives:
 
-
-\begin{tdocexa}[Customize rendering on occasion]
-	\leavevmode
-	\tdoclatexshow{examples-listing-full-custom-hello-you-tex.tex}
-\end{tdocexa}
+		\input{examples-listing-full-input-hello-you-\lang}
+    \end{tdocexa}
+}
 
 
 \section{Indicate changes}
@@ -2248,10 +2260,10 @@ To make it easier to monitor a project, it is essential to provide a history ind
 \subsection{When?}
 \label{tutodoc-changes-when}
 
-You can either date something, or version it, in which case the version number can be dated.
+You can date and/or version something.
 
 
-\begin{tdocexa}[Dating new products]
+\begin{tdocexa}[Dating new features]
     The \tdocmacro{tdocdate} macro is used to indicate a date in the margin, as in the following example.
 
     \tdoclatexshow{examples-version-n-change-dating.tex}
@@ -2259,7 +2271,7 @@ You can either date something, or version it, in which case the version number c
 
 
 \begin{tdocexa}[Versioning new features, possibly with a date]
-    Associating a version number with a new feature is done using the \tdocmacro{tdocversion} macro, with the colour and date being optional arguments.
+    Associating a version number with a new feature is done using the \tdocmacro{tdocversion} macro, with the color and date being optional arguments.
 
     \tdoclatexshow{examples-version-n-change-versioning.tex}
 \end{tdocexa}
@@ -2272,7 +2284,7 @@ You can either date something, or version it, in which case the version number c
 \end{tdocexa}
 
 
-\begin{tdocexa}[Adjust vertical positioning]
+\begin{tdocexa}[Adjust vertical shift]
 	If required, you can modify the vertical offset used to place dates and versions in the margin, the default value being $(-8\,\mathit{pt})$.
 
 	\tdoclatexshow{examples-version-n-change-manual-setting.tex}
@@ -2344,11 +2356,9 @@ You can either date something, or version it, in which case the version number c
 }
 
 
-\subsubsection{De la couleur si besoin}
-
 \subsubsection{Color if necessary}
 
-It may be useful to highlight certain changes: this can only be done by modifying the content color.
+It may be useful to highlight some changes: this can only be done by modifying the content color.
 
 \foreach \exatitle/\filename in {
     {A flashy first version}/%<-- Translate me!
@@ -2366,7 +2376,7 @@ It may be useful to highlight certain changes: this can only be done by modifyin
 
 \subsection{The what and the when}
 
-The optional keys \tdoclatexin{col}\,, \tdoclatexin{date} and \tdoclatexin{version} allow to date and version a change of a particular type.
+The optional keys \tdoclatexin{col-chges}\,, \tdoclatexin{date} and \tdoclatexin{version} allow to date and/or version a change of a particular type.
 Here are some examples of use.
 
 \tdoclatexshow{examples-version-n-change-what-n-when.tex}
@@ -2374,7 +2384,7 @@ Here are some examples of use.
 
 \section{Ornament}
 
-Let's finish this documentation with a small formatting tool that is very useful.
+Let's finish this documentation with a small formatting tool that can be very useful.
 
 
 \begin{tdoclatex}<\tdoctcb{sbs}>
@@ -2385,7 +2395,7 @@ Bla, bla, bla...
 This works with enumerations.
 
 \begin{itemize}
-    \item Underline.
+    \item Focus.
 \end{itemize}
 
 \tdocsep % Uniform behaviour.
@@ -2426,9 +2436,9 @@ Ble, ble, ble...
 \end{figure}
 
 
-The translations are roughly organized as in figure \ref{tutodoc-contrib-translate-dir} where only the folders important for the translations have been \tdocquote{opened}\,.%
+The translations are roughly organized as in figure \ref{tutodoc-contrib-translate-dir} where just the important folders for the translations have been \tdocquote{opened}\,.%
 \footnote{
-    This was the organization on October 5, 2024, but it's still relevant today.
+    This was the organization on October 5, 2024.
 }
 \textbf{A little further down, the section \ref{tutodoc-contrib-translate} explains how to add new translations}.
 
@@ -2458,8 +2468,8 @@ The \texttt{LICENSE.txt} file is aptly named, while the \texttt{README.md} file 
 
 \begin{tdocimp}
     The \verb#api# folder contains translations relating to the functionalities of \thisproj.
-    Here you'll find \verb#TXT# files for editing with a text or code editor, but not with a word processor.
-    The content of these files uses commented lines in English to explain what \thisproj\ will do; these lines begin with \verb#//#\,. Here's an extract from such a file, where translations are made after each \,$=$\ sign, without touching the preceding, as this initial piece is used internally by the \thisproj code.
+    Here you'll find \verb#TXT# files for editing with a text or code editor, but not with a document processor.
+    The content of these files uses commented lines in English to explain what \thisproj\ will do; these lines begin with \verb#//#\,. Here's an extract from such a file, where translations are made after each \,$=$\ sign, without touching the preceding, as this initial piece is used internally by the \thisproj\ code.
 
     \tdocsep
     \vspace{-10pt}
@@ -2476,7 +2486,7 @@ The \texttt{LICENSE.txt} file is aptly named, while the \texttt{README.md} file 
 
 
 \begin{tdocnote}
-    The \verb#doc# folder is reserved for documentation. It contains files of type \verb#TEX# that can be compiled directly for real-time validation of translations.
+    The \verb#doc# folder is reserved for documentation. It contains \verb#TEX# files that can be compiled directly for real-time validation of translations.
 \end{tdocnote}
 
 
@@ -2490,22 +2500,22 @@ The \texttt{LICENSE.txt} file is aptly named, while the \texttt{README.md} file 
 
 \emph{\textbf{Let's say you want to add support for Italian from files written in English.}}%
 \footnote{
-    As mentioned above, there is no real need for the \texttt{doc} documentation folder.
+    As mentioned above, there is no real need for the \texttt{doc} folder.
 }
 
 
-\paragraph{Method 1 : \git.}
+\paragraph{Method 1 : use of \git.}
 
 \begin{enumerate}
-      \item Obtain the entire project folder via \thisrepo\,.
+      \item Recover the entire project folder via \thisrepo\,.
     Do not use the \verb#main# branch, which is used to freeze the latest stable versions of projects in the single \thismonorepo\ repository,.
 
-      \item In the \verb#tutodoc/contrib/translate# folder, create a \verb#it# copy of the \verb#en# folder, with the short name of the language documented in
+      \item In the \verb#tutodoc/contrib/translate# folder, create an \verb#it# copy of the \verb#en# folder, with the short name of the language documented in
       \href{https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags}%
            {the page \tdocquote{IIETF language tag}}
       from \texttt{Wikipedia}.
 
-      \item Once the translation is complete in the \verb#it# folder, you'll need to communicate it via \thisrepo\ using a classic \verb#git push#\,.
+      \item Once the translation is complete in the \verb#it# folder, share it via \thisrepo\ using a classic \verb#git push#\,.
 \end{enumerate}
 
 
@@ -2527,15 +2537,15 @@ The \texttt{LICENSE.txt} file is aptly named, while the \texttt{README.md} file 
 \subsection{Improving the source code}
 
 \begin{tdocimp}
-    If you want to participate in \thisproj\, you'll need to use the \LaTeX3 programming paradigm.
+    If you want to participate to \thisproj\,, you'll need to use the \LaTeX3 programming paradigm.
 \end{tdocimp}
 
 
-Participation as a coder is made via the \thisrepo\ repository corresponding to the \verb#tutodoc# development branch.
+Participation as a coder is made via the repository \thisrepo\ corresponding to the \verb#tutodoc# development branch.
 
 
 \begin{tdoccaut}
-Do not use the \verb#main# branch, which is used to freeze the latest stable versions of projects in the single \thismonorepo\ repository.
+Do not use the \verb#main# branch, which is used to freeze the latest stable versions of projects in the mono repository \thismonorepo.
 \end{tdoccaut}
 
 
@@ -2543,20 +2553,20 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 \small
 
-\begin{tdocfix}[version = 1.7.1, date = 2024-12-17]
+\begin{tdocfix}[version = 1.7.1, date = 2024-12-18]
 	\item Documentation: references to tools to indicate changes have been incorrectly written as characteristics of highlighted colored content.
 \end{tdocfix}
 
 
 \begin{tdocbreak}
-	\item \LaTeX showcases: the default layout is more sober, and there are options for having just the rulers, or the colored stripe.
-
-	\item Code formatting just in \LaTeX: the options system changes as shown next.
+	\item The \tdocmacro{tdocenv} macro and its starred version no longer offer an option.
+	
+	\item \LaTeX\ showcases: the default layout is more sober, and there are options for having just the rulers, or the colored stripe. See just after.
 \end{tdocbreak}
 
 
 \begin{tdocnew}
-	\item Formatting of computer codes in addition to those specifically in LaTeX.
+	\item Formatting of computer codes in addition to those specifically in \LaTeX.
 	%
 	\begin{enumerate}
 		\item Creation of \tdocenv{tdoccode} and \tdocmacro{tdoccodein}.
@@ -2565,10 +2575,10 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 		\item For code block environments, \tdocpack{tcolorbox} options are indicated inside rafters: \tdoclatexin{<tcolorbox options>}\,.
 
-		\item The new macro \tdocmacro{tdoctcb} allows you to use shortcuts for regularly used \tdocpack{tcolorbox} styles.
+		\item The new macro \tdocmacro{tdoctcb} allows to use shortcuts for regularly used \tdocpack{tcolorbox} styles.
 	\end{enumerate}
 
-	\item Documentation: a new section presents tools for formatting computer codes other than those in LaTeX.
+	\item Documentation: a new section presents tools for formatting computer codes other than those in \LaTeX.
 \end{tdocnew}
 
 
@@ -2582,11 +2592,11 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 		\item Shadows have better coloring.
 
-		\item For all themes except the \tdoclatexin{draft} one, the radius of the arcs of the corners of the frames increases from \tdoclatexin{.75mm} to \tdoclatexin{.2pt},.
+		\item For all themes except the \tdoclatexin{draft} one, the radius of the arcs of the corners of the frames has changed from \tdoclatexin{.75mm} to \tdoclatexin{.2pt},.
 
- 		\item Codes just in \LaTeX: with the theme \tdoclatexin{color}, the background color changes from \tdoclatexin[bgcolor = yellow!4]{yellow!4} to \tdoclatexin{gray!5}.
+ 		\item Use case in \LaTeX: with the theme \tdoclatexin{color}, the background color changes from \tdoclatexin[bgcolor = yellow!4]{yellow!4} to \tdoclatexin{gray!5}.
 
-		\item Changes: with the \tdoclatexin{dark} theme, the font of the \tdoclatexin{[Init]} text used by the \tdocmacro{tdocstartproj} macro is identical to that of the environment titles for typing changes.
+		\item Latest changes: with the \tdoclatexin{dark} theme, the \tdoclatexin{[Init]} text produced by the \tdocmacro{tdocstartproj} macro uses the same font as the environment titles to indicate changes.
 	\end{enumerate}
 \end{tdocupdate}
 
@@ -2634,7 +2644,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 	\begin{enumerate}
 		\item Add the environment \tdocenv{tdoctodo}\,.
 
-		\item Each environment has a new option \tdoclatexin{col} for the colour of the content indicating changes.
+		\item Each environment has a new option \tdoclatexin{col} for the color of the content indicating changes.
 	\end{enumerate}
 \end{tdocnew}
 
@@ -2651,9 +2661,9 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 	\item Simplified organisation of configuration files in the final project.
 	%
 	\begin{enumerate}
-		\item \texttt{CSS}-like: use of one file per theme with a name like \texttt{tutodoc-bw.css.cls}\,.
+		\item Use of one file per theme with a name like \texttt{tutodoc-*.css.cls}\,.
 
-		\item Locale: use of names like \texttt{tutodoc-en.loc.cls}\,.
+		\item Locale: use of names like \texttt{tutodoc-*.loc.cls}\,.
 	\end{enumerate}
 \end{tdoctech}
 
@@ -2698,9 +2708,9 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 
 \begin{tdocbreak}[version = 1.6.0, date = 2024-10-27]
-    \item The \tdocenv*{showcase} environment and its descendants: the \tdoclatexin{color} key has been renamed \tdoclatexin{col-stripe}.
+    \item The \tdocenv*{showcase} environment and its descendants: the \tdoclatexin{color} key has been renamed \tdoclatexin{colstripe}.
 
-    \item The macro \tdocmacro{tdoclinkcolor} has been renamed \tdoclatexin{tutodoc@link@color} for internal use.
+    \item The macro \tdocmacro{tdoclinkcolor} becomes the color \tdoclatexin{tutodoc@link@color} for internal use.
 \end{tdocbreak}
 
 
@@ -2709,7 +2719,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
     \item Change log: addition of the \tdocenv*{tdoctech} environment for technical information.
 
-    \item The \tdocenv*{showcase} environment and its descendants: the \tdoclatexin{col-text} key can also be used to change the text color.
+    \item The \tdocenv*{showcase} environment and its descendants: the \tdoclatexin{coltext} key can also be used to change the text color.
 
     \item The new functionalities have been documented.
 \end{tdocnew}
@@ -2724,7 +2734,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 
 
 \begin{tdocfix}
-    \item The Spanish translations were not included in the previous version! Don't laugh too hard...
+    \item The Spanish translations were not included in the previous version! Don't laugh too loud...
 \end{tdocfix}
 
 \tdocsep
@@ -2767,7 +2777,7 @@ Do not use the \verb#main# branch, which is used to freeze the latest stable ver
 \begin{tdocbreak}[version = 1.4.0, date = 2024-09-28]
     \item The \tdocenv*{tdoccaution} environment has been renamed \tdocenv*{tdoccaut} for simplified input.
 
-    \item Content highlighting: examples and remarks, indicated via the \tdocenv*{tdocexa} and \tdocenv*{tdocrem} environments, are always numbered using a common counter.
+    \item Content highlighting: examples and remarks, indicated via the \tdocenv*{tdocexa} and \tdocenv*{tdocrem} environments, are numbered using a common counter.
 
     \item The unused macro \tdocmacro{tdocxspace} has been deleted.
 \end{tdocbreak}

@@ -338,6 +338,14 @@ print_frame(
 def ugly_hack(content):
     for old, new in [
         (
+            "examples/listing-full/hello-you.hs",
+            "examples-listing-full-hello-you.hs",
+        ),
+        (
+            "examples/listing-full/hello-you.tex",
+            "examples-listing-full-hello-you.tex",
+        ),
+        (
             "{examples/listing-latex/xyz.tex}",
             "{examples-listing-latex-xyz.tex}",
         ),
@@ -352,10 +360,6 @@ def ugly_hack(content):
         (
             r"{../main/css/\tutodoc@theme.cls.sty}",
             r"{tutodoc-\tutodoc@theme.css.cls}",
-        ),
-        (
-            "examples/listing-full/hello-you.tex",
-            "examples-listing-full-hello-you.tex",
         ),
     ]:
         content = content.replace(old, new)
