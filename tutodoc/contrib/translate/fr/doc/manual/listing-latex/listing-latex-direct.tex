@@ -8,7 +8,7 @@
 \section{Cas d'utilisation en \LaTeX}
 \label{tutodoc-listing-latex}
 
-Documenter un package ou une classe se fait efficacement via des cas d'utilisation montrant à la fois du code et le résultat correspondant.%
+Documenter un package, ou une classe, se fait efficacement via des cas d'utilisation montrant à la fois du code et le résultat correspondant.%
 \footnote{
     La mise en forme des codes se fait via les packages \tdocpack{minted} et  \tdocpack{tcolorbox}.
 }
@@ -42,16 +42,15 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
     Voici des exemples d'utilisation.
 
     \begin{tdoclatex}<\tdoctcb{sbs}>
-1: \tdoclatexin{$a^b = c$}             \\
-2: \tdoclatexin[style = bw]{$a^b = c$} \\
-3: \tdoclatexin[style = igor,
+1: \tdoclatexin[style = bw]{$a^b = c$} \\
+2: \tdoclatexin[style = igor,
                 showspaces]{$a^b = c$}
 	\end{tdoclatex}
 \end{tdocexa}
 
 
 \begin{tdocnote}
-    La macro \tdocmacro{tdoclatexin} est utilisable dans une note de pied de page : voir ci-dessous.%
+    La macro \tdocmacro{tdoclatexin} est utilisable dans une note de pied de page comme ci-dessous.%
     \footnote{
         \tdoclatexin+$minted = TOP$+ a été tapé \tdoclatexin|\tdoclatexin+$minted = TOP$+| dans cette note de bas de page.
     }
@@ -63,7 +62,7 @@ Documenter un package ou une classe se fait efficacement via des cas d'utilisati
 \label{tutodoc-listing-latex-direct}
 
 \begin{tdocexa}[Face à face]
-    Afficher un code et son rendu côte à côte se fait comme suit où la macro \tdocmacro{tdoctcb} permet de juste taper \tdoclatexin{\tdoctcb{sbs}} au lieu de \tdoclatexin{listing side text} (\tdoclatexin#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}} soit \tdocinEN{côte à côte}, tandis que \tdoclatexin#tcb# est l'abréviation standard de \texttt{tcolorbox}). Bien noter l'emploi de chevrons, et non de crochets (nous revenons sur ceci un plus bas).
+    Afficher un code et son rendu côte à côte se fait comme suit où la macro \tdocmacro{tdoctcb} permet de juste taper \tdoclatexin{\tdoctcb{sbs}} au lieu de \tdoclatexin{listing side text} (\tdoclatexin#sbs# est pour \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}}\,, soit \tdocinEN{côte à côte}, tandis que \tdoclatexin#tcb# est l'abréviation standard de \texttt{tcolorbox}). Bien noter l'emploi de chevrons, et non de crochets (nous revenons sur ceci un plus bas).
 
     \tdoclatexshow{examples/listing-latex/ABC.tex}
 \end{tdocexa}

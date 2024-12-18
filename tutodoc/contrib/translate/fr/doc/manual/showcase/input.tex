@@ -7,28 +7,26 @@
 
 \subsection{En important le code \LaTeX}
 
-Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \tdocmacro{tdocshowcaseinput} dont l'option reprend la syntaxe de celle de l'environnement \tdocenv*{tdocshowcase} et l'argument obligatoire correspond au chemin du fichier. Voici des exemples d'utilisation de \tdoclatexin+\tdocshowcaseinput{external.tex}+ avec ou sans option.
+Pour obtenir des rendus en important le code depuis un fichier externe, au lieu de le taper, il suffit d'employer la macro \tdocmacro{tdocshowcaseinput} dont l'option reprend la syntaxe de celle de l'environnement \tdocenv*{tdocshowcase}, et l'argument obligatoire correspond au chemin du fichier. Voici des exemples d'utilisation.
 
 
-\foreach \exatitle/\option in {
-    {Sans option}/% <-- Translate me!
-    	{},
-    {Juste les lignes cadrantes}/% <-- Translate me!
-    	{style=rule},
-    {Une bande colorée}/% <-- Translate me!
-    	{style=stripe, col-stripe=red, col-text=LightCoral}%
+\foreach \exatitle/\style in {
+    {Usage standard}/%            <-- Translate me!
+    	{default},
+    {Avec des lignes cadrantes}/% <-- Translate me!
+    	{rule},
+    {Une bande colorée}/%         <-- Translate me!
+    	{stripe}%
 }{
 	\begin{tdocexa}[\exatitle]
-		\expandafter\IfBlankTF\expandafter{\option}{
-			Voici le contenu édifiant de l'exemple choisi.
-			
-	    	\tdocshowcaseinput{examples/showcase/external.tex}
-		}{
-	    	L'option \expandafter\tdoclatexin\expandafter{\option} fournit ce qui suit.
-		
-			\smallskip
-			\expandafter\tdocshowcaseinput\expandafter[\option]{examples/showcase/external.tex}
-		}
+		\leavevmode
+		\tdoclatexinput<\tdoctcb{code}>{examples/showcase/input-\style.tex}
+
+		Ceci donne:
+
+		\smallskip
+
+		\input{examples/showcase/input-\style.tex}
 	\end{tdocexa}
 }
 

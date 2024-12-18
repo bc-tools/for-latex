@@ -25,7 +25,11 @@ Pour ces projets, la documentation doit pouvoir présenter des lignes de code \l
 
 \subsection{Codes \tdocquote{en ligne}}
 
-La macro \tdocmacro{tdoccodein} attend deux arguments : le 1\ier\ indique le langage de programmation, et le 2\ieme\ donne le code à mettre en forme.
+La macro \tdocmacro{tdoccodein}\,%
+\footnote{
+	Le nom de la macro \tdocmacro{tdoccodein} vient de \tdocquote{\tdocprewhy{in.line} \tdocpre{code}} soit \tdocinEN{code en ligne}.
+}
+attend deux arguments : le 1\ier\ indique le langage de programmation, et le 2\ieme\ donne le code à mettre en forme.
 Il est possible d'utiliser une option de fonctionnement identique à ce que propose \tdocmacro{tdoclatexin} : voir la section \ref{tutodoc-listing-latex-inline} page \pageref{tutodoc-listing-latex-inline}.
 Voici des cas d'utilisation possibles.%
 \footnote{
@@ -44,7 +48,7 @@ Voici des cas d'utilisation possibles.%
 
 \begin{tdocnote}
 	Sur la page \url{https://pygments.org/languages/} se trouve la liste complète des langages supportés avec leur nom court.
-	Par exemple, il est possible de mettre en forme du \brainfuck\ comme cette séquence \tdoccodein{bf}{++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.} qui sert à afficher \tdoccodein{text}{Hello}\,.
+	Par exemple, il est possible de mettre en forme du code \brainfuck\ comme cette séquence \tdoccodein{bf}{++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.} qui sert à afficher \tdoccodein{text}{Hello}\,.
 \end{tdocnote}
 
 
