@@ -18,30 +18,18 @@ Voici ce qu'il est possible de taper de façon sémantique.
 
 
 \begin{tdoclatex}<\tdoctcb{sbs}>
-\tdoccls{maclasse} sert à...           \\
-\tdocpack{monpackage} est pour...      \\
-\tdocmacro{unemacro} permet de...      \\
-\tdocenv{env} produit...               \\
-\tdocenv[{[opt1]<opt2>}]{env}          \\
-Juste \tdocenv*{env}...                \\
-Enfin \tdocenv*[{[opt1]<opt2>}]{env}...
-      % Pour les copier-coller.
+\tdoccls{maclasse} sert à...      \\
+\tdocpack{monpackage} est pour... \\
+\tdocmacro{unemacro} permet de... \\
+\tdocenv{env} produit...          \\
+Juste \tdocenv*{env}...
 \end{tdoclatex}
 
 
 \begin{tdocrem}
-    Contrairement à \tdocmacro{tdoclatexin}, les macros \tdocmacro{tdocenv} et \tdocmacro{tdocenv*} ne colorent pas le texte produit.
-    De plus, \tdoclatexin{\tdocenv{monenv}} produit \tdocenv{monenv} avec des espaces afin d'autoriser des retours à la ligne si besoin.
+    Contrairement à \tdocmacro{tdoclatexin}, les macros \tdocmacro{tdocmacro}, \tdocmacro{tdocenv} et \tdocmacro{tdocenv*} ne colorent pas le texte produit.
+    De plus, \tdoclatexin{\tdocenv{monenv}} produit \tdocenv{monenv} avec des espaces sécables afin d'autoriser des retours à la ligne si besoin.
 \end{tdocrem}
-
-
-\begin{tdocwarn}
-    L'argument optionnel de la macro \tdocmacro{tdocenv} est copié-collé\,%
-    \footnote{
-        Se souvenir que tout est possible ou presque dorénavant.
-    }
-    lors du rendu. Ceci peut donc parfois nécessiter d'utiliser des accolades protectrices comme dans l'exemple ci-dessus.
-\end{tdocwarn}
 
 
 
@@ -51,8 +39,8 @@ Pour expliquer les noms retenus, rien de tel que d'indiquer et expliciter les co
 
 
 \begin{tdoclatex}<\tdoctcb{sbs}>
-\tdocpre{sup} est relatif à...    \\
-\tdocprewhy{sup.erbe} signifie... \\
+\tdocpre{sup} est relatif à...     \\
+\tdocprewhy{sup.erbe} signifie...  \\
 \emph{\tdocprewhy{sup.er} pour...}
 \end{tdoclatex}
 

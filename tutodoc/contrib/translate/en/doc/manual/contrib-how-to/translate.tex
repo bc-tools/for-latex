@@ -94,9 +94,9 @@
 \end{figure}
 
 
-The translations are roughly organized as in figure \ref{tutodoc-contrib-translate-dir} where only the folders important for the translations have been \tdocquote{opened}\,.%
+The translations are roughly organized as in figure \ref{tutodoc-contrib-translate-dir} where just the important folders for the translations have been \tdocquote{opened}\,.%
 \footnote{
-    This was the organization on October 5, 2024, but it's still relevant today.
+    This was the organization on October 5, 2024.
 }
 \textbf{A little further down, the section \ref{tutodoc-contrib-translate} explains how to add new translations}.
 
@@ -126,8 +126,8 @@ The \texttt{LICENSE.txt} file is aptly named, while the \texttt{README.md} file 
 
 \begin{tdocimp}
     The \verb#api# folder contains translations relating to the functionalities of \thisproj.
-    Here you'll find \verb#TXT# files for editing with a text or code editor, but not with a word processor.
-    The content of these files uses commented lines in English to explain what \thisproj\ will do; these lines begin with \verb#//#\,. Here's an extract from such a file, where translations are made after each \,$=$\ sign, without touching the preceding, as this initial piece is used internally by the \thisproj code.
+    Here you'll find \verb#TXT# files for editing with a text or code editor, but not with a document processor.
+    The content of these files uses commented lines in English to explain what \thisproj\ will do; these lines begin with \verb#//#\,. Here's an extract from such a file, where translations are made after each \,$=$\ sign, without touching the preceding, as this initial piece is used internally by the \thisproj\ code.
 
     \tdocsep
     \vspace{-10pt}
@@ -144,7 +144,7 @@ The \texttt{LICENSE.txt} file is aptly named, while the \texttt{README.md} file 
 
 
 \begin{tdocnote}
-    The \verb#doc# folder is reserved for documentation. It contains files of type \verb#TEX# that can be compiled directly for real-time validation of translations.
+    The \verb#doc# folder is reserved for documentation. It contains \verb#TEX# files that can be compiled directly for real-time validation of translations.
 \end{tdocnote}
 
 
@@ -158,22 +158,22 @@ The \texttt{LICENSE.txt} file is aptly named, while the \texttt{README.md} file 
 
 \emph{\textbf{Let's say you want to add support for Italian from files written in English.}}%
 \footnote{
-    As mentioned above, there is no real need for the \texttt{doc} documentation folder.
+    As mentioned above, there is no real need for the \texttt{doc} folder.
 }
 
 
-\paragraph{Method 1 : \git.}
+\paragraph{Method 1 : use of \git.}
 
 \begin{enumerate}
-      \item Obtain the entire project folder via \thisrepo\,.
+      \item Recover the entire project folder via \thisrepo\,.
     Do not use the \verb#main# branch, which is used to freeze the latest stable versions of projects in the single \thismonorepo\ repository,.
 
-      \item In the \verb#tutodoc/contrib/translate# folder, create a \verb#it# copy of the \verb#en# folder, with the short name of the language documented in
+      \item In the \verb#tutodoc/contrib/translate# folder, create an \verb#it# copy of the \verb#en# folder, with the short name of the language documented in
       \href{https://en.wikipedia.org/wiki/IETF_language_tag#List_of_common_primary_language_subtags}%
            {the page \tdocquote{IIETF language tag}}
       from \texttt{Wikipedia}.
 
-      \item Once the translation is complete in the \verb#it# folder, you'll need to communicate it via \thisrepo\ using a classic \verb#git push#\,.
+      \item Once the translation is complete in the \verb#it# folder, share it via \thisrepo\ using a classic \verb#git push#\,.
 \end{enumerate}
 
 

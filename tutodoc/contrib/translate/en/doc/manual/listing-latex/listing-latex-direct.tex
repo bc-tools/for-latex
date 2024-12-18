@@ -8,7 +8,7 @@
 \section{Use cases in \LaTeX}
 \label{tutodoc-listing-latex}
 
-Documenting a package or class is best done through use cases showing both the code and the corresponding result.%
+Documenting a package, or class, is best done through use cases showing both the code and the corresponding result.%
 \footnote{
     Code is formatted using the \tdocpack{minted} and \tdocpack{tcolorbox} packages.
 }
@@ -17,7 +17,7 @@ Documenting a package or class is best done through use cases showing both the c
 \subsection{\tdocquote{Inline} codes}
 \label{tutodoc-listing-latex-inline}
 
-\begin{tdocexa}[Standard usage]
+\begin{tdocexa}[Standard use]
     The \tdocmacro{tdoclatexin} macro\,%
     \footnote{
         The name of the macro \tdocmacro{tdoclatexin} comes from \tdocquote{\tdocprewhy{in.line} \LaTeX}\,.
@@ -25,7 +25,7 @@ Documenting a package or class is best done through use cases showing both the c
     can be used to type code in line in a similar way to \tdocmacro{verb}, or as a standard macro (see the handling of braces in the latter case below).
     Here are some examples of use.%
     \footnote{
-    	A background colour is deliberately used to subtly highlight the \tdoclatexin{\LaTeX} codes.
+    	A background color is deliberately used to subtly highlight the \tdoclatexin{\LaTeX} codes.
     }
 
     \begin{tdoclatex}<\tdoctcb{sbs}>
@@ -41,16 +41,15 @@ Documenting a package or class is best done through use cases showing both the c
     Here are some examples.
 
     \begin{tdoclatex}<\tdoctcb{sbs}>
-1: \tdoclatexin{$a^b = c$}             \\
-2: \tdoclatexin[style = bw]{$a^b = c$} \\
-3: \tdoclatexin[style = igor,
+1: \tdoclatexin[style = bw]{$a^b = c$} \\
+2: \tdoclatexin[style = igor,
                 showspaces]{$a^b = c$}
 	\end{tdoclatex}
 \end{tdocexa}
 
 
 \begin{tdocnote}
-    The \tdocmacro{tdoclatexin} macro can be used in a footnote: see below.%
+	The \tdocmacro{tdoclatexin} macro can be used in a footnote as shown below.%
     \footnote{
         \tdoclatexin+$minted = TOP$+ has been typed \tdoclatexin|\tdoclatexin+$minted = TOP$+| in this footnote.
     }
@@ -59,7 +58,7 @@ Documenting a package or class is best done through use cases showing both the c
 
 \subsection{Directly typed codes}
 
-\begin{tdocexa}[Face to face]
+\begin{tdocexa}[Side by side]
     Displaying a code and its rendering side by side is done as follows where the macro \tdocmacro{tdoctcb} allows you to just type \tdoclatexin{tdoctcb{sbs}} instead of \tdoclatexin{listing side text} (\tdoclatexin#sbs# is for \tdocquote{\tdocprewhy{s.ide} \tdocprewhy{b.y} \tdocprewhy{s.ide}}, while \tdoclatexin#tcb# is the standard abbreviation for \texttt{tcolorbox}). Note the use of rafters, not square brackets (more on this later).
 
     \tdoclatexshow{examples/listing-latex/ABC.tex}

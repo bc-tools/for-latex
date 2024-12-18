@@ -20,7 +20,7 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 		{}/%
 		sbs,
 	{Following}/%
-		{, which also corresponds to the option \tdoclatexin{tdoctcb{std}}\,}/%
+		{, which also corresponds to the option \tdoclatexin{\tdoctcb{std}}\,}/%
 		std,%
 	{Only the code}/%
 		{}/%
@@ -40,6 +40,11 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \subsection{Imported codes put into practice}
 \label{tutodoc-listing-latexshow}
 
+\begin{tdocnote}
+    The default texts take into account the language detected by \thisproj.
+\end{tdocnote}
+
+
 \begin{tdocexa}[Showcase]
     The following comes from \tdoclatexin+\tdoclatexshow{examples-listing-xyz.tex}+.
 
@@ -49,13 +54,8 @@ The \tdocmacro{tdoclatexinput} macro, shown below, expects the path of a file an
 \end{tdocexa}
 
 
-\begin{tdocnote}
-    The default texts take into account the language detected by \thisproj.
-\end{tdocnote}
-
-
 \begin{tdocexa}[Changing the explanatory text]
-    Using the key \tdoclatexin|explain|, you can use custom text. Thus, \tdoclatexin|tdoclatexshow[explain = Here is the rendering.]{examples-listing-xyz.tex}| will give the following.
+    Using the key \tdoclatexin|explain|, you can use a custom text. Thus, \tdoclatexin|\tdoclatexshow[explain = Here is the rendering.]{examples-listing-xyz.tex}| will give the following.
 
     \smallskip
 

@@ -11,7 +11,7 @@ To make the formatted \LaTeX\ code more visible, you can use the \tdoclatexin{ru
 
 
 \begin{tdocexa}
-	The \tdoclatexin{style=rule} option provides the following where the automatically added texts will adapt to the language found by \thisproj.
+	The option \tdoclatexin{style = rule} provides the following where the automatically added texts will adapt to the language found by \thisproj.
 
 	\input{examples/showcase/rule.tex}
 \end{tdocexa}
@@ -24,7 +24,7 @@ To make the formatted \LaTeX\ code more visible, you can use the \tdoclatexin{ru
 
 	Here's the code that was used.%
 	\footnote{
-		The next section will normalise the a priori strange choice of \tdoclatexin{col-stripe} instead of \tdoclatexin{col-rule}\,.
+		The next section will justify the a priori strange choice of \tdoclatexin{col-stripe} instead of \tdoclatexin{col-rule}\,.
 	}
 
 	\tdoclatexinput<\tdoctcb{code}>{examples/showcase/rule-custom.tex}
@@ -32,11 +32,11 @@ To make the formatted \LaTeX\ code more visible, you can use the \tdoclatexin{ru
 
 
 \begin{tdocnote}
-    In the previous example, the text uses the proposed darkened orange. However, the red is used as a base to obtain the colors used for the strip: the transformations used depend on the theme chosen.%
+    In the previous example, the text uses the proposed darkened orange. However, the red is used as a base to obtain the colors used for the framing lines: the transformations used depend on the theme chosen.%
     \footnote{
         For example, the themes \tdoclatexin{bw} and \tdoclatexin{draft} ignore the key \tdoclatexin{col-stripe}!
     }
-    You should also be aware that behind the scenes, the macro \tdocmacro{tdocruler} is used.
+    You should also be aware that behind the scenes, the macro \tdocmacro{tdocruler} is used, it works as follows.
 
     \begin{tdoclatex}<\tdoctcb{std}>
 \tdocruler[red]{A decorated pseudo-title}

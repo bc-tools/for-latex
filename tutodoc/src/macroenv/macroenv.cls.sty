@@ -38,35 +38,27 @@
 
 %%%
 % prototype::
-%     #1 : (env-options)
-%          hard typed options with the good delimiters
-%     #2 : (env-name)
+%     #1 : (env-name)
 %          the name of an environment
 %
 %     :extra: this macro has a star version.
 %
-% Here are the four kind of outputs.
+% Here are the different outputs available.
 %
 %     1) ''\tdocenv{myenv}'' prints
 %        verb::''\begin{myenv} ... \end{myenv}''.
 %
-%     2) ''\tdocenv[{<opt1>[mando2]}]{myenv}'' prints
-%         verb::''\begin{myenv}<opt1>[mando2] ... \end{myenv}''.
-%
-%     3) ''\tdocenv*{myenv}'' prints
-%        verb::''myenv''.
-%
-%     4) ''\tdocenv*[{<opt1>[mando2]}]{myenv}'' prints
+%     2) ''\tdocenv*{myenv}'' prints
 %        verb::''myenv''.
 %%%
-\NewDocumentCommand{\tdocenv}{ s O{} m }{%
+\NewDocumentCommand{\tdocenv}{ s m }{%
   \IfBooleanTF{#1}{%
-    \texttt{#3}%
+    \texttt{#2}%
   }{%
 % Source: https://tex.stackexchange.com/a/703379/6880 .
-    \texttt{\string\begin\string{#3\string}#2 %
+    \texttt{\string\begin\string{#2\string} %
             \!\!...\@\!\!\! %
-            \string\end\string{#3\string}}%
+            \string\end\string{#2\string}}%
   }%
 }
 

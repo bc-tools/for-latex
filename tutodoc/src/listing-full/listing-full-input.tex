@@ -8,7 +8,6 @@
 \usepackage{../listing-latex/listing-latex.cls}
 \usepackage{../showcase/showcase.cls}
 
-
 % TESTING LOCAL IMPLEMENTATION %
 
 \usepackage{listing-full.cls}
@@ -22,16 +21,20 @@ La macro \tdocmacro{tdoccodeinput} attend le langage et le chemin d'un fichier Ã
 
 
 % Strings "..." in the source codes must also be translated.
-\begin{tdocexa}[Fonctionnement standard]
-	Via le simple emploi de \tdocmacro{tdoccodeinput}, on obtient facilement un rendu comme le suivant.
+\foreach \title/\lang in {%
+	{Fonctionnement standard}/%
+		hs,%
+	{Personnalisation ponctuelle du rendu}/%
+		tex%
+}{
+    \begin{tdocexa}[\title]
+    	\leavevmode
+    	\tdoclatexinput<\tdoctcb{code}>{examples/listing-full/input-hello-you-\lang}
 
-    \tdoccodeinput{hs}{examples/listing-full/hello-you.hs}
-\end{tdocexa}
+		Ceci donne:
 
-
-\begin{tdocexa}[Personnalisation ponctuelle du rendu]
-	\leavevmode
-	\tdoclatexshow{examples/listing-full/custom-hello-you-tex.tex}
-\end{tdocexa}
+		\input{examples/listing-full/input-hello-you-\lang}
+    \end{tdocexa}
+}
 
 \end{document}

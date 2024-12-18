@@ -5,12 +5,19 @@
 18  (1.7.1-rc.2)
 ==
 
+-------
+:break:
+-------
+
+Macro ''\tdocenv'': the options are no longer taken into account. If necessary, use the ''\tdoclatexin'' macro.
+
+
 --------
-:update:   ????
+:update:   ??
 --------
 
 [[:doc:]]
-Manual: several simplifications.
+Manual: several simplifications done.
 
 
 // ---------- //

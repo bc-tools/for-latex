@@ -24,7 +24,11 @@ Ability to format code written in a language supported by \minted, and improved 
 :break:
 -------
 
-\latex showcases: the default layout is more sober, and there are options for having just the rulers, or the colored stripe.
+Two breaking changes.
+
+    1) \latex showcases: the default layout is more sober, and there are options for having just the rulers, or the colored stripe.
+
+    1) Macro ''\tdocenv'': the options are no longer taken into account. If necessary, use the ''\tdoclatexin'' macro.
 
 
 -----

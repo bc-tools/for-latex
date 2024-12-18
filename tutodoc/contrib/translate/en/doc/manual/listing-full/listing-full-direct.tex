@@ -18,19 +18,22 @@ For these projects, the documentation must be able to present lines of code; thi
 
 
 \begin{tdocimp}
-	The tools in this section can also be used to present \LaTeX code, but they should not be used for simple use cases, as the macros and environments presented next are for studying code, not just for using it: see the section \ref{tutodoc-listing-latex} on page \pageref{tutodoc-listing-latex} to use the right tools for formatting \LaTeX use cases.
+	The tools in this section can also be used to present \LaTeX code, but they should not be used for simple use cases, as the macros and environments presented next are for studying code, not just for using it: see the section \ref{tutodoc-listing-latex} on page \pageref{tutodoc-listing-latex} to use the right tools for formatting \LaTeX\ use cases.
 \end{tdocimp}
 
 
 
 \subsection{\tdocquote{Inline} codes}
 
-The \tdocmacro{tdoccodein} macro expects two arguments: the \ordinalnum{1} indicates the programming language, and the \ordinalnum{2} gives the code to be formatted.
+The \tdocmacro{tdoccodein}\,%
+\footnote{
+	The name of the macro \tdocmacro{tdoccodein} comes from \tdocquote{\tdocprewhy{in.line} \tdocpre{code}}\,.
+}
+macro expects two arguments: the \ordinalnum{1} indicates the programming language, and the \ordinalnum{2} gives the code to be formatted.
 It is possible to use an option identical to that proposed by \tdocmacro{tdoclatexin}: see the section \ref{tutodoc-listing-latex-inline} on page \pageref{tutodoc-listing-latex-inline}.
 Here are some possible use cases.%
 \footnote{
-    A background color is deliberately used to subtly highlight the formatted codes.
-    For example, typing \tdoclatexin{tdoccodein{py}{funny = "ah"*3}} will produce \tdoccodein{py}{funny = "ah"*3}\,.
+    A background color is used to subtly highlight the formatted codes. For example, typing \tdoclatexin{\tdoccodein{py}{funny = "ah"*3}} will produce \tdoccodein{py}{funny = "ah"*3}\,.
 }
 
 \begin{tdoclatex}
@@ -43,16 +46,15 @@ Here are some possible use cases.%
 \medskip
 
 \begin{tdocnote}
-	The \url{https://pygments.org/languages/} page contains a complete list of supported languages with their short names.
-	For example, it is possible to format \brainfuck like this sequence \tdoccodein{bf}{++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.} which is used to display \tdoccodein{text}{Hello}\,.
+	The page \url{https://pygments.org/languages/} contains a complete list of supported languages with their short names.
+	For example, it is possible to format \brainfuck\ code like this sequence \tdoccodein{bf}{++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.} which displays \tdoccodein{text}{Hello}\,.
 \end{tdocnote}
 
 
 
 \subsection{Codes typed directly}
 
-Code can be typed directly into a document via \tdocenv{tdoccode} which expects an argument indicating the programming language, and any options between parenthesis and/or square brackets identical to those offered by \tdocenv{tdoclatex}: see the section \ref{tutodoc-listing-latex-direct} on page \pageref{tutodoc-listing-latex-direct}.
-In the following examples, the \LaTeX\ codes for \thisproj\ are displayed in verbatim mode because the coloring of \LaTeX\ codes is not correct.%
+Code can be typed directly into a document via \tdocenv{tdoccode} which expects an argument indicating the programming language, and any options between parenthesis and/or square brackets identical to those proposed by \tdocenv{tdoclatex}: see the section \ref{tutodoc-listing-latex} on page \pageref{tutodoc-listing-latex}.%
 \footnote{
 	Note that the coloring of the \LaTeX\ codes is lexically correct, but semantically wrong.
 }

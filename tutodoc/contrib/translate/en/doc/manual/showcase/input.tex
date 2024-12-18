@@ -7,29 +7,28 @@
 
 \subsection{By importing the \LaTeX\ code}
 
-To obtain renderings by importing the code from an external file, instead of typing it, simply use the macro \tdocmacro{tdocshowcaseinput} whose option uses the same syntax as that of the environment \tdocenv*{tdocshowcase} and the mandatory argument corresponds to the path of the file. Here are some examples of the use of \tdoclatexin+\tdocshowcaseinput{external.tex}+ with or without an option.
+To obtain renderings by importing the code from an external file, instead of typing it, simply use the macro \tdocmacro{tdocshowcaseinput} whose option uses the same syntax as that of the environment \tdocenv*{tdocshowcase}, and the mandatory argument corresponds to the path of the file. Here are some examples of use.
 
 
-\foreach \exatitle/\option in {
-    {Without option}/% <-- Translate me!
-    	{},
-    {Just the framing lines}/% <-- Translate me!
-    	{style=rule},
-    {A colored stripe}/% <-- Translate me!
-    	{style=stripe, col-stripe=red, col-text=LightCoral}%
+\foreach \exatitle/\style in {
+    {Standard use}/%            <-- Translate me!
+    	{default},
+    {With framing lines}/% <-- Translate me!
+    	{rule},
+    {A colored stripe}/%         <-- Translate me!
+    	{stripe}%
 }{
 	\begin{tdocexa}[\exatitle]
-		\expandafter\IfBlankTF\expandafter{\option}{
-			Here is the edifying content of the example chosen.
+		\leavevmode
+		\tdoclatexinput<\tdoctcb{code}>{examples/showcase/input-\style.tex}
 
-	    	\tdocshowcaseinput{examples/showcase/external.tex}
-		}{
-	    	The option \expandafter\tdoclatexin\expandafter{\option} provides the following.
+		This gives:
 
-			\smallskip
-			\expandafter\tdocshowcaseinput\expandafter[\option]{examples/showcase/external.tex}
-		}
+		\smallskip
+
+		\input{examples/showcase/input-\style.tex}
 	\end{tdocexa}
 }
+
 
 \end{document}

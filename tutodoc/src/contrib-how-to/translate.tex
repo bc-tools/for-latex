@@ -102,7 +102,7 @@
 
 Les traductions sont organisées grosso-modo comme dans la figure \ref{tutodoc-contrib-translate-dir} où seuls les dossiers importants pour les traductions ont été \tdocquote{ouverts}\,.%
 \footnote{
-    Cette organisation était celle du 5 octobre 2024, mais elle reste d'actualité.
+    Cette organisation était celle du 5 octobre 2024.
 }
 \textbf{Un peu plus bas, la section \ref{tutodoc-contrib-translate} donne les démarches à suivre pour ajouter de nouvelles traductions.}
 
@@ -126,7 +126,7 @@ Ce dossier permet de savoir où en sont les traductions du point de vue du proje
 
 \subsubsection{Les fichiers \texttt{README.md} et \texttt{LICENSE.txt}}
 
-Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{README.md} reprend en anglais les points importants de ce qui est dit dans cette section sur les nouvelles traductions.
+Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{README.md} reprend en anglais les points importants de ce qui est dit dans cette section à propos des nouvelles traductions.
 
 
 
@@ -153,7 +153,7 @@ Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{R
 
 
 \begin{tdocnote}
-    Le dossier \verb#doc# est réservé aux documentations. Il contient des fichiers de type \verb#TEX# compilables directement pour une validation en temps réel des traductions faites.
+    Le dossier \verb#doc# est réservé aux documentations. Il contient des fichiers \verb#TEX# compilables directement pour une validation en temps réel des traductions faites.
 \end{tdocnote}
 
 
@@ -167,14 +167,14 @@ Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{R
 
 \emph{\textbf{Imaginons que vous souhaitiez ajouter le support de l'italien en partant de fichiers rédigés en anglais.}}%
 \footnote{
-    Comme indiqué plus haut, il n'y a pas de besoin réel du côté du dossier \texttt{doc} de la documentation.
+    Comme indiqué plus haut, il n'y a pas de besoin réel du côté du dossier \texttt{doc}.
 }
 
 
-\paragraph{Méthode 1 : \git.}
+\paragraph{Méthode 1 : utilisation de \git.}
 
 \begin{enumerate}
-    \item Obtenir tout le dossier du projet via \thisrepo\,.
+    \item Récupérer le dossier du projet via \thisrepo\,.
     Ne pas passer via la branche \verb#main# qui sert à figer les dernières versions stables des projets du dépôt unique \thismonorepo\,.
 
     \item Dans le dossier \verb#tutodoc/contrib/translate#, créer une copie \verb#it# du dossier \verb#en#\,, le nom court de la langue étant documenté dans
@@ -182,7 +182,7 @@ Le fichier \texttt{LICENSE.txt} est bien nommé, tandis que le fichier \texttt{R
          {la page \tdocquote{IIETF language tag}}
     de \texttt{Wikipédia}.
 
-    \item Une fois la traduction achevée dans le dossier \verb#it# , il faudra la communiquer via \thisrepo\ en usant d'un classique \verb#git push#\,.
+    \item Une fois la traduction achevée dans le dossier \verb#it#, partager la via \thisrepo\ en usant d'un classique \verb#git push#\,.
 \end{enumerate}
 
 

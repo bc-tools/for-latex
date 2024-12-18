@@ -10,17 +10,21 @@
 The \tdoclatexin{tdoccodeinput} macro expects the language and path of a file to be formatted, and possibly options similar to those offered by the \tdocenv*{tdoccode} environment.
 
 
-% Strings "..." in the codes must be translated.
-\begin{tdocexa}{Standard features}
-	By simply using \tdocmacro{tdoccodeinput}, you can easily obtain a rendering like the following.
+% Strings "..." in the source codes must also be translated.
+\foreach \title/\lang in {%
+	{Standard features}/%
+		hs,%
+	{Customize rendering on occasion}/%
+		tex%
+}{
+    \begin{tdocexa}[\title]
+    	\leavevmode
+    	\tdoclatexinput<\tdoctcb{code}>{examples/listing-full/input-hello-you-\lang}
 
-    \tdoccodeinput{hs}{examples/listing-full/hello-you.hs}
-\end{tdocexa}
+		This gives:
 
-
-\begin{tdocexa}[Customize rendering on occasion]
-	\leavevmode
-	\tdoclatexshow{examples/listing-full/custom-hello-you-tex.tex}
-\end{tdocexa}
+		\input{examples/listing-full/input-hello-you-\lang}
+    \end{tdocexa}
+}
 
 \end{document}

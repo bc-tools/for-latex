@@ -254,7 +254,7 @@ def prebuild_single_tex(
 \\begin{{tasks}}[label=\\small\\textbullet](3)
     \\task {api_lang_items}
 \\end{{tasks}}
-                    """
+                    """.strip()
                 )
 
                 pieces = extract_from_DEV_TEX(srcfile)

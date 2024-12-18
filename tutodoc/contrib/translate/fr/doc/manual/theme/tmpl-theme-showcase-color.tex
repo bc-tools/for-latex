@@ -1,8 +1,10 @@
-\documentclass[theme = color]{tutodoc}
+\documentclass[theme = color]{../main/main}
 
-\input{../preamble.cfg.tex}
+\usepackage{../admonitions/admonitions.cls}
+\usepackage{../listing-latex/listing-latex.cls}
+\usepackage{../version-n-change/version-n-change.cls}
 
-% -- FORDOC -- %
+% == FORDOC == %
 
 \usepackage[french]{babel}
 \frenchsetup{StandardItemLabels=true}
@@ -60,6 +62,7 @@
 \ExplSyntaxOff
 
 
+
 \begin{document}
 
 \textsf{\Huge\bfseries Le thème \texttt{"\thisstyle"}}
@@ -82,7 +85,7 @@ Du code \LaTeX\ mis en forme, c'est top : $E = m c^2$ ou $\pi \neq \frac{3}{14}$
 On dispose aussi d'un mode côte-à-côte moins envahissant. Sympa ! Non ?
 
 \begin{tdoclatex}<\tdoctcb{sbs}>
-Du code \LaTeX\ mis en forme, c'est top : \\
+Du code \LaTeX\ mis en forme, c'est top: \\
 $E = m c^2$ ou $\pi \neq \frac{3}{14}$.
 \end{tdoclatex}
 
