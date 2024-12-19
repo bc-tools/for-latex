@@ -133,7 +133,7 @@ CMDS_FOR_FILE_PATTERNS = [
     re.compile(
           r"^([^%\\]*)(.*)(\\"
         + macroname
-        + ")(\[.*\][\t ]*\n?[\t ]*)?{(.*)}(.*)$"
+        + ")(\[.*\][\t ]*\n?[\t ]*)?(<.*>[\t ]*\n?[\t ]*)?{(.*)}(.*)$"
     )
     for macroname in [
         "input",
@@ -141,6 +141,18 @@ CMDS_FOR_FILE_PATTERNS = [
         "tdoclatexinput",
         "tdocshowcaseinput",
         "tdocbasicinputDOC",
+        "tdocbasicinputDOC\*",
+    ]
+]
+
+CMDS_FOR_FILE_PATTERNS += [
+    re.compile(
+          r"^([^%\\]*)(.*)(\\"
+        + macroname
+        + ")(\[.*\][\t ]*\n?[\t ]*)?({.*}[\t ]*\n?[\t ]*)?{(.*)}(.*)$"
+    )
+    for macroname in [
+        "tdoccodeinput",
     ]
 ]
 
@@ -236,3 +248,33 @@ SRC_CODE_PROVIDE = """
 
 SRC_CODE_PROVIDE_PACK = SRC_CODE_PROVIDE.format(kind = "Package")
 SRC_CODE_PROVIDE_CLS  = SRC_CODE_PROVIDE.format(kind = "Class")
+
+
+# ----------------- #
+# -- LOCAL DEBUG -- #
+# ----------------- #
+
+if __name__ == "__main__":
+    for texline in r"""
+\tdoclatexinput{examples/admonitions/exa.tex}
+\tdoclatexinput[opt1]{examples/admonitions/exa.tex}
+\tdoclatexinput<opt2>{examples/admonitions/exa.tex}
+\tdoclatexinput[opt1]<opt2>{examples/admonitions/exa.tex}
+
+\tdoclatexinput<tdoctcb{code}>{examples-showcase-rule-custom.tex}
+
+\tdoccodeinput{brainfuck}{examples/listing-full/hello-world.b}
+    """.split("\n"):
+        texline = texline.strip()
+
+        if not texline:
+            continue
+
+        print('---')
+        print(texline)
+
+        for pattern in CMDS_FOR_FILE_PATTERNS:
+            match = pattern.findall(texline)
+
+            if match:
+                print(match)

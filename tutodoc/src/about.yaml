@@ -9,7 +9,8 @@ toc:
   - admonitions/
   - macroenv/
   - showcase/
-  - listing/
+  - listing-latex/
+  - listing-full/
   - version-n-change/
   - deco/
   - contrib-how-to/

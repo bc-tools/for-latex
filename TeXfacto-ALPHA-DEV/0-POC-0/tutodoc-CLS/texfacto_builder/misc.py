@@ -207,9 +207,9 @@ def iter_sorted_useful_files(
                     ext_wanted == TAG_CLS
                     and
                     not (
-                        srcfile.suffix == ".cls"
+                        ext == TAG_CLS
                         or (
-                            srcfile.suffix == ".sty"
+                            ext == TAG_STY
                             and
                             Path(srcfile.stem).suffix == ".cls"
                         )
@@ -223,7 +223,7 @@ def iter_sorted_useful_files(
                     ext_wanted == TAG_STY
                     and
                     not (
-                        srcfile.suffix == ".sty"
+                        ext == TAG_STY
                         and
                         Path(srcfile.stem).suffix != ".cls"
                     )
@@ -234,7 +234,7 @@ def iter_sorted_useful_files(
                 if (
                     ext_wanted == TAG_TEX
                     and
-                    ext != TAG_TEX
+                    ext in [TAG_CLS, TAG_STY]
                 ):
                     # input(f"TEST 3: {srcfile.name}")
                     continue

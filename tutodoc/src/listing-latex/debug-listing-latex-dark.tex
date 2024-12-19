@@ -1,0 +1,56 @@
+\documentclass[theme = dark]{../main/main}
+
+\input{../preamble.cfg.tex}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{listing-latex.cls}
+
+
+\begin{document}
+
+\tdoclatexin{\LaTeX : $A = B + C$}
+
+\tdoclatexin[style=default]{\LaTeX : $A = B + C$}
+
+\tdoclatexin{aaa}
+\tdoclatexin{bbb}
+\tdoclatexin{ppp}
+
+\tdoclatexinput<\tdoctcb{code},top=1cm>{examples/listing-latex/latexshow-options.tex}
+
+
+\begin{tdoclatex}
+$A = B + C$
+
+\begin{equation}
+    A(x)^2 = C(x,y)
+\end{equation}
+\end{tdoclatex}
+
+\begin{tdoclatex}[linenos]<leftrule=20pt,\tdoctcb{sbs}>
+$A = B + C$
+
+\begin{equation}
+    A(x)^2 = C(x,y)
+\end{equation}
+\end{tdoclatex}
+
+
+\vspace{10cm}
+
+\begin{tdoclatex}
+$A = B + C$
+
+$A = B + C$
+
+$A = B + C$
+
+$A = B + C$
+
+$A = B + C$
+
+$A = B + C$
+\end{tdoclatex}
+
+\end{document}

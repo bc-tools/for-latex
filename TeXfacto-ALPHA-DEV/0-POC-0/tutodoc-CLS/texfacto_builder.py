@@ -259,6 +259,7 @@ emptydir(
 )
 
 
+
 # ----------------------------------------- #
 # -- TEMP. VERSION - PRE STY & TEX FILES -- #
 # ----------------------------------------- #
@@ -335,21 +336,57 @@ print_frame(
 )
 
 def ugly_hack(content):
-    content = content.replace(
-        "{examples/listing/xyz.tex}",
-        "{examples-listing-xyz.tex}",
-    )
-
-    content = content.replace(
-        "{../main/tutodoc-main-locale",
-        "{tutodoc-main-locale",
-    )
+    for old, new in [
+        (
+            "examples/listing-full/hello-you.hs",
+            "examples-listing-full-hello-you.hs",
+        ),
+        (
+            "examples/listing-full/hello-you.tex",
+            "examples-listing-full-hello-you.tex",
+        ),
+        (
+            "{examples/listing-latex/xyz.tex}",
+            "{examples-listing-latex-xyz.tex}",
+        ),
+        (
+            "examples/showcase/external.tex",
+            "examples-showcase-external.tex",
+        ),
+        (
+            "{../main/tutodoc-main-locale",
+            "{tutodoc-main-locale",
+        ),
+        (
+            r"{../main/css/\tutodoc@theme.cls.sty}",
+            r"{tutodoc-\tutodoc@theme.css.cls}",
+        ),
+    ]:
+        content = content.replace(old, new)
 
     return content
 
 finalize(
     metadata  = metadata,
     ugly_hack = ugly_hack,
+)
+
+
+# ---------------- #
+# -- MINIFY CSS -- #
+# ---------------- #
+
+minicss(
+    metadata  = metadata,
+)
+
+
+# ------------------------- #
+# -- PRETTY LOCALE ORGA. -- #
+# ------------------------- #
+
+prettyloc(
+    metadata  = metadata,
 )
 
 

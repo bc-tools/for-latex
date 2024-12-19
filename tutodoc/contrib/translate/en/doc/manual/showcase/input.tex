@@ -7,23 +7,28 @@
 
 \subsection{By importing the \LaTeX\ code}
 
-To obtain renderings by importing the code from an external file, simply use the \tdocmacro{tdocshowcaseinput} macro whose option uses the syntax of that of \tdocenv{tdocshowcase} and the mandatory argument corresponds to the path of the file.
+To obtain renderings by importing the code from an external file, instead of typing it, simply use the macro \tdocmacro{tdocshowcaseinput} whose option uses the same syntax as that of the environment \tdocenv*{tdocshowcase}, and the mandatory argument corresponds to the path of the file. Here are some examples of use.
 
 
-\begin{tdocexa}
-    The following was obtained via \tdoclatexin+\tdocshowcaseinput{external.tex}+.
+\foreach \exatitle/\style in {
+    {Standard use}/%            <-- Translate me!
+    	{default},
+    {With framing lines}/% <-- Translate me!
+    	{rule},
+    {A colored stripe}/%         <-- Translate me!
+    	{stripe}%
+}{
+	\begin{tdocexa}[\exatitle]
+		\leavevmode
+		\tdoclatexinput<\tdoctcb{code}>{examples/showcase/input-\style.tex}
 
-    \medskip
+		This gives:
 
-    \tdocshowcaseinput{examples/showcase/external.tex}
+		\smallskip
 
-    \medskip
+		\input{examples/showcase/input-\style.tex}
+	\end{tdocexa}
+}
 
-    As for \tdoclatexin+\tdocshowcaseinput[col-stripe = red, col-text = orange!75!black]{external.tex}+\,, this will produce the color change shown below.
-
-    \medskip
-
-    \tdocshowcaseinput[col-stripe = red, col-text = orange!75!black]{examples/showcase/external.tex}
-\end{tdocexa}
 
 \end{document}

@@ -1,0 +1,87 @@
+\documentclass{../main/main}
+
+\input{../preamble.cfg.tex}
+
+\usepackage{../admonitions/admonitions.cls}
+\usepackage{../inenglish/inenglish.cls}
+\usepackage{../macroenv/macroenv.cls}
+\usepackage{../listing-latex/listing-latex.cls}
+\usepackage{../showcase/showcase.cls}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{listing-full.cls}
+
+
+\begin{document}
+
+\section{Présenter du code informatique}
+
+Certains packages proposent des fonctionnalités nécessitant de coder un peu en \lua.%
+\footnote{
+	Pour les mathématiques, on peut citer \tdocpack{luacas} et \tdocpack{tkz-elements}.
+}
+Pour ces projets, la documentation doit pouvoir présenter des lignes de code \lua\,; c'est pour cette raison que \thisproj\ permet de faire cela aisément, et bien plus.%
+\footnote{
+    La mise en forme des codes étant faite via les packages \tdocpack{minted} et \tdocpack{tcolorbox}, les macros et les environnements présentés dans cette section permettent la mise en forme de codes dans tous les langages supportés par \pygmentsREF, un projet \python\ utilisé en coulisse par \tdocpack{minted}.
+}
+
+
+\begin{tdocimp}
+	Les outils de cette section permettent aussi de présenter du code \LaTeX, mais il ne faut pas les utiliser pour de simples cas d'utilisation, car les macros et les environnements présentées juste après servent à étudier du code, et non juste à l'employer : se reporter à la section \ref{tutodoc-listing-latex} page \pageref{tutodoc-listing-latex} pour faire appel aux bons outils pour la mise en forme de cas d'utilisation \LaTeX.
+\end{tdocimp}
+
+
+
+\subsection{Codes \tdocquote{en ligne}}
+
+La macro \tdocmacro{tdoccodein}\,%
+\footnote{
+	Le nom de la macro \tdocmacro{tdoccodein} vient de \tdocquote{\tdocprewhy{in.line} \tdocpre{code}} soit \tdocinEN{code en ligne}.
+}
+attend deux arguments : le 1\ier\ indique le langage de programmation, et le 2\ieme\ donne le code à mettre en forme.
+Il est possible d'utiliser une option de fonctionnement identique à ce que propose \tdocmacro{tdoclatexin} : voir la section \ref{tutodoc-listing-latex-inline} page \pageref{tutodoc-listing-latex-inline}.
+Voici des cas d'utilisation possibles.%
+\footnote{
+    Une couleur de fond est volontairement utilisée pour subtilement faire ressortir les codes mis en forme.
+    Par exemple, taper \tdoclatexin{\tdoccodein{py}{funny = "ah"*3}} produira \tdoccodein{py}{funny = "ah"*3}\,.
+}
+
+\begin{tdoclatex}
+1: \tdoccodein{py}{print("OK" if i = 0 else "KO")}             \\
+2: \tdoccodein[style = bw]{py}{print("OK" if i = 0 else "KO")} \\
+3: \tdoccodein[style = igor, showspaces]%
+              {py}{print("OK" if i = 0 else "KO")}
+\end{tdoclatex}
+
+\medskip
+
+\begin{tdocnote}
+	Sur la page \url{https://pygments.org/languages/} se trouve la liste complète des langages supportés avec leur nom court.
+	Par exemple, il est possible de mettre en forme du code \brainfuck\ comme cette séquence \tdoccodein{bf}{++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.} qui sert à afficher \tdoccodein{text}{Hello}\,.
+\end{tdocnote}
+
+
+
+\subsection{Codes tapés directement}
+
+On peut taper directement du code dans un document \LaTeX\ via \tdocenv{tdoccode} qui attend un argument indiquant le langage de programmation, et d'éventuelles options entre crochets et/ou entre chevrons de fonctionnements identiques à ce que propose \tdocenv{tdoclatex} : voir la section \ref{tutodoc-listing-latex-direct} page \pageref{tutodoc-listing-latex-direct}.%
+\footnote{
+	Noter que la coloration des codes \LaTeX\ est correcte du point de vue lexical, mais fausse sémantiquement parlant.
+}
+
+
+% Strings "..." in the source codes must also be translated.
+\foreach \title/\lang in {%
+	{Fonctionnement standard}/%
+		perl,%
+	{Personnalisation ponctuelle du rendu}/%
+		lua%
+}{
+    \begin{tdocexa}[\title]
+    	\leavevmode
+    	\tdoclatexshow{examples/listing-full/hello-you-\lang}
+    \end{tdocexa}
+}
+
+\end{document}

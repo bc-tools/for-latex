@@ -169,6 +169,9 @@ def loc_files_2_analyze(
 
             sorted2analyze[i] = fp
 
+    # for p in onedir.rglob("*"):
+    #     print(f"{p.name=}")
+
     resources = {
         TAG_STY: [
             p

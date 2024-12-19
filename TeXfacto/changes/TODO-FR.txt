@@ -14,6 +14,10 @@ main pour les imports !!!
 
 > ---------------------------- <
 
+ne plus utiiser commentaire magique dans les cls ou les sty car c'est inutile !!!
+
+> ---------------------------- <
+
 CLASS : on passe de cls.sty à juste cls et on utilise des imports sauf pour le main car les autres ne gèrent plus les options
 
 

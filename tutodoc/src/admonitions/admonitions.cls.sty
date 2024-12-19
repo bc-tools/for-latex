@@ -1,8 +1,8 @@
-% == TOOLS == %
+\input{../admonitions/css/\tutodoc@theme.cls.sty}
 
-% -- SOBER HIGHLIGHTING OF CONTENT -- %
+% == HIGHLIGHTING CONTENTS == %
 
-% :: EXAMPLE & REMARK :: %
+% -- EXAMPLE & REMARK -- %
 
 \ExplSyntaxOn
 
@@ -17,6 +17,14 @@
 
 
 %%%
+% Themes define specific vertical spacings.
+%%%
+\newkeytheoremstyle{tutodoc@admonition@exa@style}{
+  spaceabove = \tutodoc@admonition@space@below,
+  spacebelow = \tutodoc@admonition@space@below
+}
+
+%%%
 % prototype::
 %     :action: looping over ''\g__tutodoc_focus_std_seq'' to build new
 %              numbered theorems sharing the same section level counter.
@@ -28,11 +36,13 @@
     \newkeytheorem{tdoc#1}[
       name   = \use:c { tutodoc@trans@#1@title },
       within = section,
+      style  = tutodoc@admonition@exa@style
     ]
   } {
     \newkeytheorem{tdoc#1}[
       name       = \use:c { tutodoc@trans@#1@title },
       numberlike = tdocexa,
+      style      = tutodoc@admonition@exa@style
     ]
   }
 
@@ -42,10 +52,7 @@
 \ExplSyntaxOff
 
 
-% -- COLORFUL HIGHLIGHTING OF CONTENT -- %
-
-\input{../admonitions/css/\tutodoc@theme.cls.sty}
-
+% -- ADMONITIONS -- %
 
 %%%
 % note::
@@ -57,16 +64,17 @@
 %         1) ''\g__tutodoc_focus_color_seq'' is to use a dedicated basic theorem
 %         (this should be only useful for the draft theme).
 %
+%
 % warning::
 %     The variables should be defined inside the themes!
-%%%
-\ifcsundef{g__tutodoc_focus_color_seq}{
-%%%
-% source::
+%
+%
+% refs::
 %     + https://tex.stackexchange.com/a/727022/6880
 %     + https://tex.stackexchange.com/a/682332/6880
 %     + https://tex.stackexchange.com/a/623232/6880
 %%%
+\ifcsundef{g__tutodoc_focus_color_seq}{
   \tcbset{
     tutodoc-focus-color-style/.style = {
 % General.
@@ -83,6 +91,7 @@
 % Padding.
       left  = 3pt,
       right = 3pt,
+      arc   = 2pt,
 % Frame.
       shadow = {.75mm}{-.75mm}{0mm}{tutodoc@admonition@shadow@color},
    }
@@ -96,7 +105,7 @@
 % prototype::
 %     :action: ''key/value'' iteration over ''\g__tutodoc_focus_color_prop''
 %              to build new colorful unumbered theorems. To achieve that,
-%              we use a ''tcolorbox'' style given to the ''\newkeytheorem''
+%              we use a \tcolorbox style given to the ''\newkeytheorem''
 %              macro from the ''keytheorems'' \pack, and icons from the
 %              ''fontawesome5'' \pack.
 %%%
@@ -122,7 +131,8 @@
   \seq_map_inline:Nn \g__tutodoc_focus_color_seq {
     \newkeytheorem{tdoc#1}[
       name       = \use:c { tutodoc@trans@#1@title },
-      numberlike = tdocexa,
+      numberlike = tdocexa,,
+      style      = tutodoc@admonition@exa@style,
 % Some hooks...
       preheadhook  = \small,
       postheadhook = \leavevmode,

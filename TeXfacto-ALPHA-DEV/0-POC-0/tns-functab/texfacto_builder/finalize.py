@@ -62,7 +62,7 @@ def final_tex(metadata, ugly_hack):
                 if not match:
                     continue
 
-                start, comment, macroname, options, input_file, end = match[0]
+                start, comment, macroname, options_1, options_2, input_file, end = match[0]
 
                 if input_file == '#1':
                     continue
@@ -73,7 +73,7 @@ def final_tex(metadata, ugly_hack):
                 for old in "./":
                     input_file_cleaned = input_file.replace(old, '-')
 
-                newline = f"{start}{macroname}{options}{{{input_file_cleaned}}}{end}\n"
+                newline = f"{start}{macroname}{options_1}{options_2}{{{input_file_cleaned}}}{end}"
 
                 break
 

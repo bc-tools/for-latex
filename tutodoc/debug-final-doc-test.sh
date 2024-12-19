@@ -1,14 +1,17 @@
+#!/bin/bash
+
 # --------------- #
 # -- CONSTANTS -- #
 # --------------- #
 
-THISDIR=$(dirname "$0")
-WORKINGDIR=$(pwd)
+THISDIR=`dirname $0 | while read a; do cd $a && pwd && break; done`
+PROJECTNAME=$(basename "$THISDIR")
+COMPILE_FAILED_FILES=()
 
 
-# ----------------------- #
-# -- ONE FOLDER NEEDED -- #
-# ----------------------- #
+# ------------------- #
+# -- NO ARG NEEDED -- #
+# ------------------- #
 
 if [ ! $# -eq 0 ]
 then
@@ -17,16 +20,26 @@ then
 fi
 
 
-# --------------------- #
-# -- LISTED PROJECTS -- #
-# --------------------- #
+# ------------------------------- #
+# -- COMPILATION OF FINAL DOCS -- #
+# ------------------------------- #
 
 function nocompile {
+    COMPILE_FAILED_FILES=(${COMPILE_FAILED_FILES[@]} $1)
+    
+    echo "LaTeX compilation failed with..."
+    
+    for fname in ${COMPILE_FAILED_FILES[@]}
+    do
+        echo "    + $fname"
+    done
+    
     open "$1"
-    exit 1
 }
 
-cd "rollout"
+
+cd "$THISDIR/rollout"
+
 
 for f in code/*
 do
@@ -35,6 +48,7 @@ do
 
     cp "$f"  "$dest"
 done # for f in code/*;
+
 
 for f in doc/*.tex
 do
@@ -49,9 +63,16 @@ do
     cd ../
 done # for f in doc/*tex;
 
-for f in debug/*.pdf
-do
-    open "$f"
-done # for f in doc/*tex;
+
+# ------------------------ #
+# -- OPEN ONLY PDF DOCS -- #
+# ------------------------ #
 
 cd debug
+
+for f in *.pdf
+do
+    case $f in
+      ("$PROJECTNAME"*) open "$f";;
+    esac
+done # for f in *.pdf;

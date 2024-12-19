@@ -43,10 +43,7 @@ TEX_BUILD_CMD = r"""
 """.strip()
 
 TMPL_INCLUDE_PDF = r"""
-\includepdf[
-    pages=1-2,
-    fitpaper=true
-]{gallery-showcase-<<THEME>>}
+\includepdf{gallery-showcase-<<THEME>>}
 """.strip()
 
 TMPL_VIRTUAL_PATH = r"gallery-showcase-<<THEME>>.tex"
@@ -118,7 +115,7 @@ def theme_gallery(
 \input{../preamble.cfg.tex}
 
 \usepackage{../admonitions/admonitions.cls}
-\usepackage{../listing/listing.cls}
+\usepackage{../listing-latex/listing-latex.cls}
 \usepackage{../version-n-change/version-n-change.cls}
             """.strip(),
             r"""

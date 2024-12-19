@@ -2,8 +2,98 @@
 
 
 ==
+18  (1.7.1)
+==
+
+------
+:desc:
+------
+
+Ability to format code written in a language supported by \minted, and improved layouts with less wasted space and more sober colors.
+
+
+-----
+:fix:
+-----
+
+[[:doc:]]
+\Refs to tools for latest \chges was wrongly written as admonition features.
+
+
+-------
+:break:
+-------
+
+Two breaking changes.
+
+    1) \latex showcases: the default layout is more sober, and there are options for having just the rulers, or the colored stripe.
+
+    1) Macro ''\tdocenv'': the options are no longer taken into account. If necessary, use the ''\tdoclatexin'' macro.
+
+
+-----
+:new:
+-----
+
+[[:api:]]
+\latex and also any kind of code listings can be formatted with optional custom settings.
+
+    1) "Inline" macros: extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way.
+
+    1) "Block code" \envs.
+
+        * Extra \minted options can be indicated inside hooks ''[ ... ]'' in the traditional way.
+
+        * Extra \tcolorbox options can be indicated inside rafters ''< ... >''.
+
+    1) The new ''\tdoctcb'' macro allows to use shortcuts for regularly used styles.
+
+
+[[:doc:]]
+Manual: a new section for the generalist listings.
+
+
+--------
+:update:
+--------
+
+[[:format:]]
+Here are the \chges.
+
+    1) Sub-sub-sections are numbered using lower alphabetic letters.
+
+    1) Themes.
+
+        * With all themes, we have the following \chges.
+
+            + Less spaces consumed.
+
+            + Better shadow colors.
+
+        * With all themes but the ''draft'' one, we have the following \chges.
+
+            + The arc length of the frames has changed from ''.75mm'' to ''2pt''.
+
+            + Less vertical space is used before the "what" \envs.
+
+    1) \latex listings: with the ''color'' theme, the back color changes from ''yellow!4'' to ''gray!5''.
+
+    1) \Chges: with the ''dark'' theme, the font of the text ''[Init]'' used by the ''\tdocstartproj'' macro is identical to that of the titles of the \envs for typing \chges.
+
+
+// ---------- //
+
+
+==
 04  (1.7.0)
 ==
+
+------
+:desc:
+------
+
+The most important changes are the use of the scrartcl class, and the simplification of the organisation of configuration files in the source code. See the documentation for other interesting features.
+
 
 -------
 :break:
@@ -20,7 +110,7 @@ Here are the breaking chges.
 
     1) Color key names will be hyphenated where necessary: this implies the following changes.
 
-        * Admonitions: the ''colchges'' option of the \envs has been renamed ''col-chges''.
+        * \Envs for latest \chges: the ''colchges'' option of the \envs has been renamed ''col-chges''.
 
         * Showcases: the ''colstripe'' and  ''coltext'' options of the \env ''tdocshowcase'' and the macro ''\tdocshowcaseinput'' have been renamed ''col-stripe'' and  ''col-text''.
 
@@ -53,8 +143,7 @@ Here are the new fetaures.
 
     1) ''\tdocinEN'' macro: the English linguistic rules are respected between the quotes.
 
-
-    1) Admonitions.
+    1) \Envs for latest \chges.
 
         * A new ''tdoctodo'' \env has been added.
 

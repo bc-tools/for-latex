@@ -1,0 +1,57 @@
+\documentclass{tutodoc}
+
+\input{../../preamble.cfg.tex}
+
+
+\begin{document}
+
+\small
+
+\begin{tdocfix}
+	\item Documentation: references to tools to indicate changes have been incorrectly written as characteristics of highlighted colored content.
+\end{tdocfix}
+
+
+\begin{tdocbreak}
+	\item The \tdocmacro{tdocenv} macro and its starred version no longer offer an option.
+	
+	\item \LaTeX\ showcases: the default layout is more sober, and there are options for having just the rulers, or the colored stripe. See just after.
+\end{tdocbreak}
+
+
+\begin{tdocnew}
+	\item Formatting of computer codes in addition to those specifically in \LaTeX.
+	%
+	\begin{enumerate}
+		\item Creation of \tdocenv{tdoccode} and \tdocmacro{tdoccodein}.
+
+		\item For macros for inline code, and environments for blocks of code, \tdocpack{minted} options are indicated inside square brackets in the traditional way: \tdoclatexin{[minted options]}\,.
+
+		\item For code block environments, \tdocpack{tcolorbox} options are indicated inside rafters: \tdoclatexin{<tcolorbox options>}\,.
+
+		\item The new macro \tdocmacro{tdoctcb} allows to use shortcuts for regularly used \tdocpack{tcolorbox} styles.
+	\end{enumerate}
+
+	\item Documentation: a new section presents tools for formatting computer codes other than those in \LaTeX.
+\end{tdocnew}
+
+
+\begin{tdocupdate}
+	\item Sub-sub-sections are numbered in lower case.
+
+	\item Themes.
+	%
+	\begin{enumerate}
+		\item Less space consumed.
+
+		\item Shadows have better coloring.
+
+		\item For all themes except the \tdoclatexin{draft} one, the radius of the arcs of the corners of the frames has changed from \tdoclatexin{.75mm} to \tdoclatexin{.2pt},.
+
+ 		\item Use case in \LaTeX: with the theme \tdoclatexin{color}, the background color changes from \tdoclatexin[bgcolor = yellow!4]{yellow!4} to \tdoclatexin{gray!5}.
+
+		\item Latest changes: with the \tdoclatexin{dark} theme, the \tdoclatexin{[Init]} text produced by the \tdocmacro{tdocstartproj} macro uses the same font as the environment titles to indicate changes.
+	\end{enumerate}
+\end{tdocupdate}
+
+\end{document}

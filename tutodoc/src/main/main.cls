@@ -1,6 +1,4 @@
-% == PACKAGES == %
-
-% -- OPTIONS -- %
+% == \CLS OPTIONS == %
 
 %%%
 % refs::
@@ -16,6 +14,10 @@
   { \msg_see_documentation_text:n { tutodoc } }
 
 
+%%%
+% The theme is identified by the following macro that can be changed
+% when the class is loaded.
+%%%
 \newcommand{\tutodoc@theme}{color}
 
 
@@ -62,13 +64,13 @@
 \ExplSyntaxOff
 
 
-% -- OPTIONS FOR PACKAGES IMPORTED BY OTHER ONES -- %
+% == OPTIONS FOR \PACKS IMPORTED BY OTHER ONES == %
 
-% xcolor is loaded by minted and tcolorbox.
+% ''xcolor'' will be loaded by ''minted'' and ''tcolorbox'' below.
 \PassOptionsToPackage{svgnames}{xcolor}
 
 
-% -- IMPORTS -- %
+% == IMPORTS == %
 
 \RequirePackage{geometry}
 
@@ -78,7 +80,8 @@
 
 \RequirePackage{clrstrip}
 
-% Before the tcolorbox library minted.
+% Special settings for ''minted'' need to be done before the loading
+% of the ''tcolorbox'' library ''minted''.
 \RequirePackage[highlightmode = immediate]
                {minted}
 
@@ -105,9 +108,7 @@
 \RequirePackage{csquotes}
 
 
-% == TOOLS == %
-
-% -- LOCALE SETTINGS -- %
+% == LOCALE SETTINGS == %
 
 \ExplSyntaxOn
 
@@ -121,39 +122,41 @@
   { \msg_see_documentation_text:n { tutodoc } }
 
 
-% Management of English composition rules.
-\newcommand{\tutodoc@use@english}{\relax}
-
 % Babel requires colon management for our translations.
 \newcommand{\tutodoc@colon}{:}
 
 \AtBeginDocument{
-% Babel is used.
+%%%
+% Settings if ''babel'' \pack is used.
+%%%
   \@ifpackageloaded{babel}{
-% We must take care of colons and spacing.
+% We must take care of spacings with colons.
     \iflanguage{french}{
       \renewcommand{\tutodoc@colon}{\babelshorthand{:}}
     }{}
   }{}
 
-% Polyglossia is used.
+%%%
+% Settings if ''polyglossia'' \pack is used.
+%%%
   \@ifpackageloaded{polyglossia}{
-% If polyglossia is used, we must load english if necessary
+% If ''polyglossia'' is used, we must load english if necessary
 % (see the ''\tutodoc@use@english'' macro below).
     \iflanguageloaded{english}{}{
       \setotherlanguage{english}
     }
   }{}%
 
+% Standard way to find the \lang to use.
   \newcommand{\tdoclang}{\BCPdata{language}}
 
 % We must take care of English rules for English contents.
-  \renewcommand\tutodoc@use@english{%
+  \newcommand\tutodoc@use@english{%
     \foreignlanguage{english}%
   }
 
-% If the lang is not supported, we emit a warning and just turn
-% to the english language.
+% If the \lang is not supported, we emit a warning and just use
+% the english language.
   \makeatletter
 
   \InputIfFileExists{../main/tutodoc-main-locale-\tdoclang.cfg.cls.sty}{}{
@@ -170,7 +173,7 @@
 \ExplSyntaxOff
 
 
-% -- GEOMETRY SETTINGS -- %
+% == PAGE GEOMETRY == %
 
 \geometry{
   top            = 1.9cm,
@@ -185,15 +188,11 @@
 \setlength{\parindent}{0cm}
 
 
-% -- TOC & Co. -- %
-
-\ifcsundef{chapter}%
-          {}%
-          {\renewcommand{\thechapter}{\Alph{chapter}}}
+% == TITLES & TOC == %
 
 \renewcommand{\thesection}{\Roman{section}}
 \renewcommand{\thesubsection}{\arabic{subsection}}
-\renewcommand{\thesubsubsection}{\roman{subsubsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
 
 % Source
 %  * https://tex.stackexchange.com/a/558025/6880
@@ -214,10 +213,8 @@
   subparagraph
 }
 
-\DeclareTOCStyleEntry[indentfollows = chapter]{tocline}{section}
 
-
-% -- COLOR TRANSFORMATIONS -- %
+% == COLOR TRANSFORMATIONS == %
 
 %%%
 % prototype::
@@ -243,7 +240,7 @@
 \NewExpandableDocumentCommand{\tdoclightcolor}{ O{5} m }{#2!#1}
 
 
-% -- ICONS -- %
+% == ICONS == %
 
 %%%
 % prototype::
@@ -258,7 +255,50 @@
 }
 
 
-% -- THEME -- %
+% == LISTINGS == %
+
+%%%
+% We use a \std \latex boolean to switch on or off lexers for listings
+% (this allows the ''draft'' mode to display listings in verbatim).
+%%%
+\newif\ifcodenolexer
+\codenolexerfalse
+
+
+\ExplSyntaxOn
+
+%%%
+% prototype::
+%     #1 : (style-abbrev)
+%          a shortcut for a \tcolorbox styling command.
+%        @ #1 in [code, sbs, std]
+%
+% In the following easy-to-understand macro, we use one fictive \tcolorbox
+% style such as to indicate an unknown ''tutodoc'' shortcut style. For example,
+% this will give the following message if the user type ''MISTYPED-STYLE''.
+%
+% term::
+%     Package pgfkeys Error: I do not know the key '/tcb/[[tutodoc : tdoclatex
+%     bad option "MISTYPED-STYLE"]]' and I am going to ignore it. Perhaps you
+%     misspelled it.
+%
+%     See the pgfkeys package documentation for explanation.
+%%%
+
+\NewExpandableDocumentCommand{\tdoctcb}{ m }{
+  \str_case:nnF { #1 } {
+    { sbs  } { listing ~ side ~ text }
+    { code } { listing ~ only }
+    { std  } { listing ~ and ~ text }
+  } {
+    [[tutodoc ~ : ~ LaTeX ~ listing ~ illegal ~ style ~ "#1"]]
+  }
+}
+
+\ExplSyntaxOff
+
+
+% == THEME - GENERAL SETTINGS == %
 
 \input{../main/css/\tutodoc@theme.cls.sty}
 

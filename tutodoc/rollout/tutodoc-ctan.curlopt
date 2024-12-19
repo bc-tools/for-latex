@@ -1,5 +1,5 @@
 
-form-string="announcement=The most important changes are the use of the scrartcl class, and the simplification of the organisation of configuration files in the source code. See the documentation for other interesting features."
+form-string="announcement=Ability to format code written in a language supported by minted, and improved layouts with less wasted space and more sober colors..."
 form-string="author=Christophe BAL"
 form-string="bugtracker=https://github.com/bc-tools/for-latex/issues"
 form-string="ctanPath=/macros/latex/contrib/tutodoc"
@@ -12,5 +12,5 @@ form-string="summary=This class proposes tools for writing \"human friendly\" do
 form-string="topic=doc-tool"
 form-string="update=true"
 form-string="uploader=Christophe BAL"
-form-string="version=1.7.0 [2024-12-04]"
+form-string="version=1.7.1 [2024-12-18]"
 form="file=@tutodoc-ctan.zip;filename=tutodoc-ctan.zip"

@@ -7,9 +7,19 @@
 \frenchsetup{StandardItemLabels=true}
 
 \usepackage{multicol}
+
 \usepackage{tasks}
+\settasks{
+	item-indent=17pt,
+	label-width=9pt,
+	label-offset=0em,
+}
 
 \usepackage{pdfpages}
+\includepdfset{
+    pages=-,
+    fitpaper=true
+}
 
 % Some useful commands.
 \newcommand\thisproj{\tdoccls{tutodoc}}
@@ -21,3 +31,10 @@
 \newcommand\ctan{\href{https://ctan.org/}{\trademark{CTAN}}}
 \newcommand\git{\trademark{git}}
 \newcommand\pdf{\trademark{PDF}}
+
+\newcommand\brainfuck{\trademark{Brainfuck}}
+\newcommand\lua{\trademark{Lua}}
+\newcommand\perl{\trademark{Perl}}
+\newcommand\python{\trademark{Python}}
+
+\newcommand\pygmentsREF{\href{https://pygments.org/}{\trademark{Pygments}}}

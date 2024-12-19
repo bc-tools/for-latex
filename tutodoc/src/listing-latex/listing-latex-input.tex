@@ -1,0 +1,96 @@
+\documentclass{../main/main}
+
+\input{../preamble.cfg.tex}
+
+\usepackage{../admonitions/admonitions.cls}
+\usepackage{../inenglish/inenglish.cls}
+\usepackage{../macroenv/macroenv.cls}
+\usepackage{../showcase/showcase.cls}
+
+% TESTING LOCAL IMPLEMENTATION %
+
+\usepackage{listing-latex.cls}
+
+
+\begin{document}
+
+\subsection{Codes importés}
+
+Pour les codes suivants, on considère un fichier de chemin relatif \verb+examples-listing-xyz.tex+, et ayant le contenu suivant.
+
+
+\tdoclatexinput<\tdoctcb{code}>{examples/listing-latex/xyz.tex}
+
+
+\medskip
+
+
+La macro \tdocmacro{tdoclatexinput}, présentée ci-dessous, attend le chemin d'un fichier et propose le même système d'options entre crochets, ou entre chevrons, que l'environnement \tdocenv*{tdoclatex}.
+
+
+\foreach \title/\extra/\fname in {%
+	{Face à face}/%
+		{}/%
+		sbs,
+	{À la suite}/%
+		{ qui correspond aussi à l'option \tdoclatexin{\tdoctcb{std}}\,}/%
+		std,%
+	{Juste le code}/%
+		{}/%
+		code,%
+	{Personnaliser}/%
+		{}/%
+		perso%
+}{
+	\begin{tdocexa}[\title]
+    	\leavevmode
+		\tdoclatexshow[explain=Ceci produit la mise en forme suivante\extra.]{examples/listing-latex/latexinput-option-\fname.tex}
+	\end{tdocexa}
+}
+
+
+
+\subsection{Codes importés et mis en situation}
+\label{tutodoc-listing-latexshow}
+
+\begin{tdocnote}
+    Les textes par défaut de la macro \tdocmacro{tdoclatexshow} tiennent compte de la langue détectée par \thisproj.
+\end{tdocnote}
+
+
+\begin{tdocexa}[Mise en situation]
+    \tdoclatexin+\tdoclatexshow{examples-listing-xyz.tex}+ produit ce qui suit.
+
+    \smallskip
+
+    \tdoclatexshow{examples/listing-latex/xyz.tex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[Changer le texte explicatif]
+    Via la clé \tdoclatexin|explain|, on peut utiliser un texte personnalisé. Ainsi, \tdoclatexin|\tdoclatexshow[explain = Voici le rendu réel.]{examples-listing-xyz.tex}| produira ce qui suit.
+
+    \smallskip
+
+    \tdoclatexshow[explain = Voici le rendu réel.]{examples/listing-latex/xyz.tex}
+\end{tdocexa}
+
+
+\begin{tdocexa}[Les options disponibles]
+    En plus du texte explicatif, il est aussi possible d'utiliser toutes les options de l'environnement \tdocenv*{tdocshowcase}, voir la section \ref{tutodoc-showcase} page \pageref{tutodoc-showcase}.
+    Voici un exemple illustrant ceci.
+
+    \medskip
+
+    \tdoclatexinput<\tdoctcb{code}>{examples/listing-latex/latexshow-options.tex}
+
+    \smallskip
+
+    Ceci va produire ce qui suit.
+
+    \smallskip
+
+    \input{examples/listing-latex/latexshow-options.tex}
+\end{tdocexa}
+
+\end{document}

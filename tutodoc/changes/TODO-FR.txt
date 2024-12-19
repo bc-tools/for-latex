@@ -9,6 +9,7 @@ NOW
 
 > ---------------------------- <
 
+<<<<<<< HEAD
 draft theme
 
     --> what chges : besoin de faire encore plus sobre et d'ajouter une ref, donc un truc de type rmk aussi même pour newporj
@@ -19,6 +20,9 @@ draft theme
 > ---------------------------- <
 
 env pour code via minted car on peut aussi parler de perl, pyhon et lua voire plus
+=======
+macro de rgélage global en parallèle des options de classe (on prépare terrain pour monorepio à la tns)
+>>>>>>> tutodoc
 
 
 > ---------------------------- <
