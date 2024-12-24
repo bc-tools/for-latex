@@ -1,4 +1,4 @@
 About `TeXfacto`
 ----------------
 
-This module proposes tools to automate the production of a `TeX` project from a `STY` and/or `CLS` source directory using a standardized workflow (the idea is to code using small parts of the project rather than big files).
+This project offers tools for automating the creation of `(La)TeX` packages or classes, using a standardised workflow (the principle is to code small parts of the project rather than large files).

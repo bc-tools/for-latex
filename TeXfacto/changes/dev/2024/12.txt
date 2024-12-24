@@ -2,17 +2,7 @@
 
 
 ==
-??  (0.0.0-alpha.0)
-==
-
-???
-
-
-// ---------- //
-
-
-==
 ??
 ==
 
-The aim of \thisproj is to automate the \prod of a \tex code \proj from a \src \dir using a standarized workflow (the idea is to code easily small parts of the \proj rather than working on big path::''STY'' \andor path::''CLS'' files).
+\thisproj will offer tools for automating the creation of \latex packages or classes, using a standardised workflow (the principle is to code small parts of the project rather than large files).
