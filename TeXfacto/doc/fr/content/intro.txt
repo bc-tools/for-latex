@@ -16,9 +16,9 @@ Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu
 
     1) La \doc destinée aux utilisateurs est écritre parallèlement au code, et non dans le code lui-même
     ((
-        L'auteur de \thisproj garde la \doc dans le code uniquement à destination d'autres codeurs contributeurs. Pour ce faire, il utilise la syntaxe \tnsdoc qui est en cours de \dev.
+        L'auteur de \thisproj garde la \doc dans le code uniquement à destination d'autres codeurs contributeurs.
     )).
-    Ce choix évite de produire une \doc austère et peu utile à de "simples" utilisateurs en proposant par exemple des cas d'utilisation complexes. De plus, documenter dans le code rend la tache de maintenance très vite pénible.
+    Ce choix évite de produire une \doc austère, et peu utile à de "simples" utilisateurs en proposant par exemple des cas d'utilisation complexes. De plus, documenter dans le code rend la tache de maintenance très vite pénible.
 
     1) La proposition de \trads à faire côté \api et côté \doc se fait de façon automatisée.
 
@@ -28,4 +28,4 @@ note::
 
 
 caution::
-    \thisproj impose un certain \nbre de règles: style de codage, \orga "commune" des dossiers et des fichiers, cycle de \dev fixé. Ces contraintes permettent d'automatiser pas mal de choses...
+    \thisproj impose un certain \nbre de règles: style de codage, \orga "commune" des dossiers et des fichiers, cycle de \dev fixé. Ces contraintes permettent d'automatiser pas mal de choses, et par conséquent d'économiser du \tmps.
