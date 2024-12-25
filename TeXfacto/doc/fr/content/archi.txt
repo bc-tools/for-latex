@@ -1,11 +1,51 @@
 this::
-    date = 2024-12-??
+    date = 2024-12-25
 
 
 abrev::
     content = :this.name:
 
+    tutodoc_date = date::''2024-12-18''
 
-==================
-???
-==================
+
+==================================================
+\Struct générale imposée pour le dossier de codage
+==================================================
+
+Un code utilisant \ttes les fonctionnalités proposées par \thisproj aura un dossier de \dev de \struct suivante
+((
+    L'absence de dossier path::''doc'' pour la \doc "utilisateur" vient du processus de rédaction de celle-ci : voir cf::''?/workflow/the-docs.txt''.
+    Il n'y pas non plus de classique dossier path::''tests'', car les tests se feront via l'usage de \l3build dans le dossier path::''rollout''.
+)).
+
+dirtree::
+    ---
+    path  = ?/examples/archi/dirtree/full-start.txt
+    title = Structure maximale
+    ---
+
+
+À l'opposé, un \proj peut utiliser la \struct minimaliste ci-après.
+
+dirtree::
+    ---
+    path  = ?/examples/archi/dirtree/minimal-start.txt
+    title = Structure minimale
+    ---
+
+
+Les sections à venir expliquent l'utilité de chacun des dossiers et fichiers imposés.
+
+
+content::
+// Mandatory
+    \content/about.txt
+    \content/src.txt            ????????????????
+    \content/changes.txt        ??????????????
+    \content/rollout.txt        ????????????
+// Optional
+    \content/contrib.txt        ??????????
+    \content/demos.txt          ????????
+    \content/hook.txt           ??????
+    \content/readme.txt         ????
+    \content/tools.txt          ??
