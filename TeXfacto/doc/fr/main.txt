@@ -16,5 +16,6 @@ abrev::
 
 content::
     \content/intro.txt
-    \content/archi.txt      ????
-    \content/workflow.txt   ??
+    \content/archi.txt      ??????
+    \content/workflow.txt   ????
+    \content/translate.txt  ??

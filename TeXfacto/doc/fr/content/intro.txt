@@ -1,5 +1,5 @@
 this::
-    date = 2024-12-24
+    date = 2024-12-25
 
 
 abrev::
@@ -28,4 +28,4 @@ note::
 
 
 caution::
-    \thisproj impose un certain \nbre de règles: style de codage, \orga "commune" des dossiers et des fichiers, cycle de \dev fixé. Ces contraintes permettent d'automatiser pas mal de choses, et par conséquent d'économiser du \tmps.
+    \thisproj impose un certain \nbre de règles: style de codage, \orga "commune" des dossiers et des fichiers, cycle de \dev fixé... Ces contraintes permettent d'automatiser pas mal de choses, et par conséquent d'économiser du \tmps.
