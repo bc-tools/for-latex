@@ -1,0 +1,156 @@
+###
+# this::
+#     date = 2024-12-25
+###
+
+project:
+###
+# prototype::
+#     name    : This allows you to give the name of the distributed
+#               product instead of the name automatically generated
+#               from the folder name containing this YAML file (in
+#               some cases, product names must follow specific naming
+#               rules).
+#
+#     acronym : Most names follow hidden schemas that you can explain
+#               here. For example, typing "[MY] [H]idden [A]cronym"
+#               clearly explains the name of the product ''myha''.
+###
+  KIND* | in("name", "acronym"): >
+    str
+
+###
+# prototype::
+#     desc : This is for a small description of the product.
+###
+  desc: str
+
+
+###
+# prototype::
+#     author  : This is to identify one single author using one of
+#               the format explained below.
+#
+#     authors : This is for a list of several authors indicated via
+#               a list with hyphens.
+#
+#
+# An author can be identified using one of the following schema.
+#
+#     + verb::''<name>''
+#     + verb::''<name> [<mails>]''
+#     + verb::''<fornames>, <name>''
+#     + verb::''<fornames>, <name> [<mails>]''
+#
+# Here are the meaning of each parts.
+#
+#     1) verb::''<fornames>'' can be a coma-separated list of
+#        fornames.
+#
+#     1) verb::''<name>'' is the name of the author.
+#
+#     1) verb::''<mails>'' can be a coma-separated list of emails.
+###
+  author* | not(exist(\this.ANY_KIND.authors)): >
+    author
+
+  authors* | not(exist(\this.ANY_KIND.author)): >
+    list(author)
+
+
+###
+# prototype::
+#     urls : This is for a list of useful urls.
+###
+  urls*:
+###
+# prototype::
+#     repo : The url of the product repository.
+#
+#     home : The url of a dedicated website for the product.
+#
+#     doc  : The url of a dedicated website for the product
+#            documentation.
+###
+    KIND* | in("repo", "home", "doc"): >
+      url
+
+
+###
+# prototype::
+#     licences : This is for the licences used.
+###
+  licences*:
+###
+# prototype::
+#     code   : This is the licence for the code.
+#
+#     manual : This is the licence for the manual.
+#
+#
+# There is two ways to give a licence.
+#
+#     1) You can use an ID that will be managed by the Python project
+#        ''ealic''.
+#
+#     2) You can give the path of one file containing the full text of
+#        the licence with its name, the two informations are mandatory,
+#        like in ''path/to/my/licence.txt [My special licence]''.
+###
+    KIND* | in("code", "manual"): >
+      licence
+
+
+###
+# prototype::
+#     langs : This is for the languages used.
+###
+  langs*:
+###
+# prototype::
+#     readme : This is the language of the ''README'' file(s).
+#
+#     manual : This is the language of the manual documentation.
+#
+#     code   : This is the language of the technical documentation
+#              typed inside the source code.
+#
+#
+# By default, the language is English. If you use another language,
+# just indicate it by using the short standard language ID like
+# ''fr'' or ''es'' for French and Spanish.
+#
+#
+# refs::
+#     * https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
+###
+    KIND* | in("code", "manual", "readme"): >
+      lang
+
+
+###
+# prototype::
+#     require  : This is to indicate several mandatory coding languages.
+#
+#     optional : This is to indicate several optional coding languages.
+###
+  KIND* | in("require", "optional"): >
+    list(str)
+
+###
+# prototype::
+#     ignore : This is to complete the ''git'' list of paths to ignore
+#              when producing the final product. The syntax is the same
+#              as the ''gitignore'' syntax.
+#
+#
+# tip::
+#     The pipe symbol allows you to define one rule per line.
+#
+#     yaml::
+#         ignore: |
+#             rule_1
+#             rule_2
+#             ...
+###
+  ignore*: str
