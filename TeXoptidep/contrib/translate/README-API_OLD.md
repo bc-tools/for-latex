@@ -14,10 +14,10 @@ The contributions made are in the `contribute/api` folder which has the followin
 <!-- FOLDER STRUCT. AUTO - START -->
 
     + api
-        * LICENSE.txt
+        * LICENCE.txt
         * README.md
         + changes
-            * LICENSE.txt
+            * LICENCE.txt
 
 <!-- FOLDER STRUCT. AUTO - END -->
 

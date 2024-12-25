@@ -6,11 +6,9 @@
 project:
 ###
 # prototype::
-#     name    : This allows you to give the name of the distributed
-#               product instead of the name automatically generated
-#               from the folder name containing this YAML file (in
-#               some cases, product names must follow specific naming
-#               rules).
+#     name    : This allows to give the name of the distributed product
+#               to be used instead of the name automatically generated
+#               from the folder name containing this YAML file.
 #
 #     acronym : Most names follow hidden schemas that you can explain
 #               here. For example, typing "[MY] [H]idden [A]cronym"
@@ -31,21 +29,21 @@ project:
 #     author  : This is to identify one single author using one of
 #               the format explained below.
 #
-#     authors : This is for a list of several authors indicated via
-#               a list with hyphens.
+#     authors : This is for several authors indicated via an hyphenated
+#               list.
 #
 #
 # An author can be identified using one of the following schema.
 #
 #     + verb::''<name>''
 #     + verb::''<name> [<mails>]''
-#     + verb::''<fornames>, <name>''
-#     + verb::''<fornames>, <name> [<mails>]''
+#     + verb::''<surnames>, <name>''
+#     + verb::''<surnames>, <name> [<mails>]''
 #
 # Here are the meaning of each parts.
 #
-#     1) verb::''<fornames>'' can be a coma-separated list of
-#        fornames.
+#     1) verb::''<surnames>'' can be a coma-separated list of
+#        surnames.
 #
 #     1) verb::''<name>'' is the name of the author.
 #
@@ -67,10 +65,9 @@ project:
 # prototype::
 #     repo : The url of the product repository.
 #
-#     home : The url of a dedicated website for the product.
+#     home : The url of a website for the product.
 #
-#     doc  : The url of a dedicated website for the product
-#            documentation.
+#     doc  : The url of the product documentation.
 ###
     KIND* | in("repo", "home", "doc"): >
       url
@@ -90,12 +87,12 @@ project:
 #
 # There is two ways to give a licence.
 #
-#     1) You can use an ID that will be managed by the Python project
+#     1) Using an ID that will be managed by the Python project
 #        ''ealic''.
 #
-#     2) You can give the path of one file containing the full text of
-#        the licence with its name, the two informations are mandatory,
-#        like in ''path/to/my/licence.txt [My special licence]''.
+#     2) Giving the path of one file containing the full text of the
+#        licence with its name, both informations are mandatory, like
+#        in ''path/to/my/licence.txt [My special licence]''.
 ###
     KIND* | in("code", "manual"): >
       licence
@@ -145,7 +142,8 @@ project:
 #
 #
 # tip::
-#     The pipe symbol allows you to define one rule per line.
+#     The pipe symbol allows you to define one rule per line as in the
+#     fictive example below.
 #
 #     yaml::
 #         ignore: |

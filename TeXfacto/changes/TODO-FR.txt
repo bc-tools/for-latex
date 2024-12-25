@@ -7,7 +7,24 @@ NOW
 ---
 
 
-// ---------- //
+
+> ---------------------------- <
+
+passer de about-project.vs.yaml à une version utile pour la doc !!!
+
+
+
+
+Voici la spécification complète, commentée en français, du fichier path::''about.yaml'' où les clés se finissant par yaml::''*'' sont optionnelles.
+
+yaml::
+    ---
+    path = ?/examples/archi/specs/about-project.yaml
+    ---
+
+
+
+> ---------------------------- <
 
 
 tip::
@@ -27,7 +44,7 @@ tip::
           tools[!a-zA-Z]*
 
 
-// ---------- //
+> ---------------------------- <
 
 
 Le sous-dossier path::''rollout'' est destiné à \l3build avec le choix de \struct suivant.
@@ -39,8 +56,6 @@ dirtree::
         + code
         + doc
         + testfiles
-
-
 
 
 Expliquons rapidement le rôle des \elts indiqués.
@@ -59,7 +74,7 @@ note::
     Le \proj \texfacto est capable de produire automatiquement tout le contenu du sous-dossier path::''rollout'' excepté bien entendu le dossier des tests.
 
 
-// ---------- //
+> ---------------------------- <
 
 
 Quatre types de \proj sont possibles.
@@ -76,7 +91,7 @@ Quatre types de \proj sont possibles.
     )).
 
 
-// ---------- //
+> ---------------------------- <
 
 
 ==
@@ -456,7 +471,7 @@ Let's consider the project [`bdoc`](https://github.com/projetmbc/tools-for-latex
 ~~~
 + src
     * about.yaml
-    * LICENSE.txt
+    * LICENCE.txt
     + intro
         * intro.tex
         * intro.pdf
@@ -503,7 +518,7 @@ Thanks to `TeXfactory`, the following final product is obtained automatically.
             * version.tex
     + locale
         * FR.sty
-    * LICENSE.txt
+    * LICENCE.txt
 ~~~
 
 
@@ -673,7 +688,7 @@ Let's consider the project [`bdoc`](https://github.com/projetmbc/tools-for-latex
 ~~~
 + src
     * about.yaml
-    * LICENSE.txt
+    * LICENCE.txt
     + intro
         * intro.tex
         * intro.pdf
@@ -720,7 +735,7 @@ Thanks to `TeXfactory`, the following final product is obtained automatically.
             * version.tex
     + locale
         * FR.sty
-    * LICENSE.txt
+    * LICENCE.txt
 ~~~
 
 

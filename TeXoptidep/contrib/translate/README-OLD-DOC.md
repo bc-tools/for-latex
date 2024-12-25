@@ -14,10 +14,10 @@ The translations made are in the `contribute/doc` folder which has the following
 <!-- FOLDER STRUCT. AUTO - START -->
 
     + doc
-        * LICENSE.txt
+        * LICENCE.txt
         * README.md
         + changes
-            * LICENSE.txt
+            * LICENCE.txt
         + user
             + changelog
                 * test_one_date.tex

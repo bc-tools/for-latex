@@ -1,0 +1,112 @@
+name    : Cela permet de donner le nom du produit distribué à
+#               utiliser au lieu du nom généré automatiquement à
+#               partir du nom du dossier contenant ce fichier YAML.
+#
+acronym : La plupart des noms suivent des schémas cachés que
+#               vous pouvez expliquer ici. Par exemple, en tapant
+#               "[M]on [A]cronyme [C]aché", on explique clairement
+#               le nom du produit ''mac''.
+
+
+desc : C'est pour une petite description du produit.
+
+
+
+author  : Ceci permet d'identifier un seul auteur en utilisant
+#               l'un des formats expliqués ci-dessous.
+
+authors : Ceci permet de donner plusieurs auteurs ndiqués via
+#               une liste avec des traits d'union.
+#
+_xtra-1_: >
+  KO
+# Un auteur peut être identifié en utilisant l'un des schémas suivants.
+#
+#      + verb:''<nom>''
+#      + verb:''<nom> [<mails>]''
+#      + verb:''<prénoms>, <nom>''
+#      + verb:''<prénoms>, <nom> [<mails>]''
+#
+# Voici la signification de chaque partie.
+#
+#     1) verb::''<prénoms>'' peut être une liste de prénoms séparés
+#        par des virgules.
+#
+#     1) verb::''<nom>'' est le nom de l'auteur.
+#
+#     1) verb::''<mails>'' peut être une liste de mails séparés par
+#        des virgules.
+###
+
+
+
+urls : Ceci permet de donner une liste d'urls utiles.
+urls::repo : L'url du dépôt du produit.
+#
+urls::home : L'url du site web du produit.
+#
+urls::doc  : L'url de la documentention du produit.
+###
+
+
+licences : C'est pour la liste des licences utilisés.
+
+licences::code   : Ceci est la licence du code.
+#
+licences::manual : Ceci est la licence de la documentation.
+
+_xtra-2_: "???"
+# Il existe deux façons d'indiquer une licence.
+#
+#     1) Utiliser un identifiant qui sera géré par le projet Python
+#        ''ealic''.
+#
+#     2) Donner le chemin d’un fichier contenant le texte complet de
+#        la licence avec son nom, les deux informations étant obligatoires,
+#        comme dans ''chemin/vers/ma/licence.txt [Ma licence spéciale]''.
+###
+
+
+langs : C'est pour les langues employées.
+###
+langs::readme : C'est la langue des fichiers ''README''.
+#
+
+langs::manual : C'est la langue de la documentation.
+#
+langs::code   : C'est la langue de la documentation technique tapée dans
+#              le code source.
+#
+#
+# Par défaut, la langue est l’anglais. Si vous utilisez une autre langue,
+# indiquez-le simplement en utilisant l’identifiant standard court de
+# langue comme ''fr' ou ''es' pour le français et l’espagnol.
+#
+#
+# refs::
+#     * https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
+###
+
+
+
+require  : Ceci sert à donner des languages de codage nécessaires.
+#
+optional : Ceci sert à donner des languages de codage optionnels.
+###
+
+
+ignore : Ceci permet de compléter la liste ''git'' des chemins à
+#              ignorer lors de la production du produit final. La syntaxe
+#              est la même que celle de 'gitignore'.
+#
+_xtra-3_: F
+# tip::
+#     La barre verticale permet de définir une règle par ligne comme dans
+#     l'exemple fictif suivant.
+#
+#     yaml::
+#         ignore: |
+#             rule_1
+#             rule_2
+#             ...
+###
