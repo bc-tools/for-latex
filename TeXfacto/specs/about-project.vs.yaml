@@ -1,154 +1,177 @@
 ###
 # this::
-#     date = 2024-12-25
+#     date = 2024-12-27
 ###
 
 project:
+# -------------- #
+# -- THE WHAT -- #
+# -------------- #
+
 ###
 # prototype::
-#     name    : This allows to give the name of the distributed product
-#               to be used instead of the name automatically generated
-#               from the folder name containing this YAML file.
+#     name    : A name replacing the one automatically generated from
+#               the name of the main folder.
 #
-#     acronym : Most names follow hidden schemas that you can explain
-#               here. For example, typing "[MY] [H]idden [A]cronym"
-#               clearly explains the name of the product ''myha''.
+#     acronym : A possible naming scheme for the project. For example,
+#               typing yaml::''acronym: "[MY] [H]idden [A]cronym"''
+#               willclearly explain the product name ''myha''.
 ###
   KIND* | in("name", "acronym"): >
     str
 
 ###
 # prototype::
-#     desc : This is for a small description of the product.
+#     desc : A brief description of the product.
 ###
   desc: str
 
 
+# ------------- #
+# -- THE WHO -- #
+# ------------- #
+
 ###
 # prototype::
-#     author  : This is to identify one single author using one of
-#               the format explained below.
+#     author : Identification of a single author.
 #
-#     authors : This is for several authors indicated via an hyphenated
-#               list.
+# You can use one of the following formats.
 #
+#     + verb:''<name>''
+#     + verb:''<name> [<mails>]''
+#     + verb:''<first names>, <last name>''
+#     + verb:''<first names>, <last name> [<mails>]''
 #
-# An author can be identified using one of the following schema.
+# Here's what each part means.
 #
-#     + verb::''<name>''
-#     + verb::''<name> [<mails>]''
-#     + verb::''<surnames>, <name>''
-#     + verb::''<surnames>, <name> [<mails>]''
+#     1) verb:''<first names>'' can be a comma-separated list of first
+#        names.
 #
-# Here are the meaning of each parts.
+#     1) verb:''<name>'' is the author's name.
 #
-#     1) verb::''<surnames>'' can be a coma-separated list of
-#        surnames.
-#
-#     1) verb::''<name>'' is the name of the author.
-#
-#     1) verb::''<mails>'' can be a coma-separated list of emails.
+#     1) verb::''<mails>'' can be a comma-separated list of emails.
 ###
   author* | not(exist(\this.ANY_KIND.authors)): >
     author
 
+###
+# prototype::
+#     authors : Identification of several authors indicated via a list
+#               à la "\yaml. See above for available input formats.
+###
   authors* | not(exist(\this.ANY_KIND.author)): >
     list(author)
 
 
+# --------------- #
+# -- THE WHERE -- #
+# --------------- #
+
 ###
 # prototype::
-#     urls : This is for a list of useful urls.
+#     urls : A dictionary for filling in certain urls.
 ###
   urls*:
 ###
 # prototype::
-#     repo : The url of the product repository.
+#     repo : The url of the project's repository site.
 #
-#     home : The url of a website for the product.
+#     home : The url of the project website.
 #
-#     doc  : The url of the product documentation.
+#     doc  : The url of the project manual.
 ###
     KIND* | in("repo", "home", "doc"): >
       url
 
 
+# -------------- #
+# -- LICENCES -- #
+# -------------- #
+
 ###
 # prototype::
-#     licences : This is for the licences used.
+#     licences : A dictionary to give the licences used.
+#
+# You can use one of the following formats.
+#
+#     1) Use of a short identifier.
+#
+#     2) The relative or absolute path of a file containing the full
+#        text of the licence, and also the name of the licence as in
+#        ''path/to/my/licence.txt [My special licence]''. Both pieces
+#        of information must be provided.
 ###
   licences*:
 ###
 # prototype::
-#     code   : This is the licence for the code.
+#     code   : The code licence.
 #
-#     manual : This is the licence for the manual.
-#
-#
-# There is two ways to give a licence.
-#
-#     1) Using an ID that will be managed by the Python project
-#        ''ealic''.
-#
-#     2) Giving the path of one file containing the full text of the
-#        licence with its name, both informations are mandatory, like
-#        in ''path/to/my/licence.txt [My special licence]''.
+#     manual : The manual licence.
 ###
     KIND* | in("code", "manual"): >
       licence
 
 
+# ----------- #
+# -- LANGS -- #
+# ----------- #
+
 ###
 # prototype::
-#     langs : This is for the languages used.
+#     langs : A dictionary for the languages used, the default language
+#             being English. To indicate languages, use a comma separated
+#             list of short standard codes: see
+#             cf:''https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes''.
+#             For example, ''manual = "fr, es"'' indicates that the manual
+#             is written in French and Spanish.
 ###
   langs*:
 ###
 # prototype::
-#     readme : This is the language of the ''README'' file(s).
+#     code   : The language of the technical documentation typed into
+#              the source code.
 #
-#     manual : This is the language of the manual documentation.
+#     manual : The language of the manual.
 #
-#     code   : This is the language of the technical documentation
-#              typed inside the source code.
-#
-#
-# By default, the language is English. If you use another language,
-# just indicate it by using the short standard language ID like
-# ''fr'' or ''es'' for French and Spanish.
-#
-#
-# refs::
-#     * https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
+#     readme : The language of the ''README'' files.
 ###
     KIND* | in("code", "manual", "readme"): >
-      lang
+      lang | csv(lang)
 
+
+# ------------------ #
+# -- CODING LANGS -- #
+# ------------------ #
 
 ###
 # prototype::
-#     require  : This is to indicate several mandatory coding languages.
+#     require  : The programming languages required to run the project.
 #
-#     optional : This is to indicate several optional coding languages.
+#     optional : Optional programming languages to enhance the operation
+#                of the project.
 ###
   KIND* | in("require", "optional"): >
     list(str)
 
+
+# -------------------- #
+# -- FILES ANALYSED -- #
+# -------------------- #
+
 ###
 # prototype::
-#     ignore : This is to complete the ''git'' list of paths to ignore
-#              when producing the final product. The syntax is the same
-#              as the ''gitignore'' syntax.
-#
+#     ignore : Rules of type \gitignore to exclude files from the final
+#              product. The list provided here complements that used by
+#              \git if the latter is used.
 #
 # tip::
-#     The pipe symbol allows you to define one rule per line as in the
-#     fictive example below.
+#     The vertical bar is used to define one rule per line, as in the
+#     following fictitious example.
 #
 #     yaml::
 #         ignore: |
-#             rule_1
-#             rule_2
-#             ...
+#           rule_1
+#           rule_2
+#           ...
 ###
   ignore*: str

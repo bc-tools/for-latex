@@ -1,91 +1,116 @@
-name    : This allows to give the name of the distributed product
-#               to be used instead of the name automatically generated
-#               from the folder name containing this YAML file.
-#
-acronym : Most names follow hidden schemas that you can explain
-#               here. For example, typing "[MY] [H]idden [A]cronym"
-#               clearly explains the name of the product ''myha''.
-desc : This is for a small description of the product.
+# -------------- #
+# -- THE WHAT -- #
+# -------------- #
+
+name: >
+  A name replacing the one automatically generated from the name of the main folder.
+
+acronym: >
+  A possible naming scheme for the project. For example, typing yaml::''acronym: "[MY] [H]idden [A]cronym"'' will clearly explain the product name ''myha''.
+
+desc: >
+  A brief description of the product.
 
 
-author  : This is to identify one single author using one of
-#               the format explained below.
-#
-authors : This is for a list of several authors indicated via
-#               a list with hyphens.
-#
-_xtra-1_: >
-  KO
-# An author can be identified using one of the following schema.
+# ------------- #
+# -- THE WHO -- #
+# ------------- #
 
-      # + verb::''<name>''
-      # + verb::''<name> [<mails>]''
-      # + verb::''<surnames>, <name>''
-      # + verb::''<surnames>, <name> [<mails>]''"
+author: >
+  Identification of a single author using one of the following formats.
 
-# Here are the meaning of each parts.
-#
-#     1) verb::''<surnames>'' can be a coma-separated list of
-#        surnames.
-#
-#     1) verb::''<name>'' is the name of the author.
-#
-#     1) verb::''<mails>'' can be a coma-separated list of emails.
-###
+      + verb:''<name>''
+      + verb:''<name> [<mails>]''
+      + verb:''<first names>, <last name>''
+      + verb:''<first names>, <last name> [<mails>]''
+
+  Here's what each part means.
+
+      1) verb:''<first names>'' can be a comma-separated list of first names.
+
+      1) verb:''<name>'' is the author's name.
+
+      1) verb::''<mails>'' can be a comma-separated list of emails.
+
+authors: >
+  Identification of several authors indicated via a list à la "\yaml. See above for available input formats.
 
 
+# --------------- #
+# -- THE WHERE -- #
+# --------------- #
 
-urls: This is for a list of useful urls.
+urls: >
+  A dictionary for filling in certain urls.
 
-urls::repo : The url of the product repository.
+urls::repo: >
+  The url of the project's repository site.
 
-urls::home : The url of a website for the product.
+urls::home: >
+  The url of the project website.
 
-urls::doc  : The url of the product documentation.
-
-licences : This is for the licences used.
-licences::code   : This is the licence for the code.
-licences::manual : This is the licence for the manual.
-#
-#
-# There is two ways to give a licence.
-#
-#     1) Using an ID that will be managed by the Python project
-#        ''ealic''.
-#
-#     2) Giving the path of one file containing the full text of the
-#        licence with its name, both informations are mandatory, like
-#        in ''path/to/my/licence.txt [My special licence]''.
-###
-
-langs : This is for the languages used.
-langs::readme : This is the language of the ''README'' file(s).
-langs::manual : This is the language of the manual documentation.
-langs::code   : This is the language of the technical documentation
-_xtra-2_: By default, the language is English. If you use another language,
-# just indicate it by using the short standard language ID like
-# ''fr'' or ''es'' for French and Spanish.
-#
-#
-# refs::
-#     * https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
+urls::doc: >
+  The url of the project manual.
 
 
-require  : This is to indicate several mandatory coding languages.
+# -------------- #
+# -- LICENCES -- #
+# -------------- #
 
-optional : This is to indicate several optional coding languages.
+licences: >
+  A dictionary to give the licences used using one of the following methods.
+
+      1) Use of a short identifier.
+
+      2) Indication of the path, relative or absolute, to a file containing the full text of the licence, and also the name of the licence as in ''path/to/my/licence.txt [My special licence]''. Both pieces of information must be provided.
+
+licences::code: >
+  The code licence.
+
+licences::manual: >
+  The manual licence.
 
 
-ignore : This is to complete the ''git'' list of paths to ignore
-#              when producing the final product. The syntax is the same
-#              as the ''gitignore'' syntax.
-_xtra-3_: FFF
-# tip::
-#     The pipe symbol allows you to define one rule per line.
-#
-#     yaml::
-#         ignore: |
-#             rule_1
-#             rule_2
-#             ...
-###
+# ----------- #
+# -- LANGS -- #
+# ----------- #
+
+langs: >
+  A dictionary for the languages used, the default language being English. To indicate a language, use a short standard identifier: see cf:''https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes''. For example ''fr" and “”es’ identify French and Spanish respectively.
+
+langs::readme: >
+  The language of the ''README'' files.
+
+langs::manual: >
+  The language of the manual.
+
+langs::code: >
+  The language of the technical documentation typed into the source code.
+
+
+# ------------------ #
+# -- CODING LANGS -- #
+# ------------------ #
+
+require: >
+  The programming languages required to run the project.
+
+optional: >
+  Optional programming languages to enhance the operation of the project.
+
+
+# -------------------- #
+# -- FILES ANALYSED -- #
+# -------------------- #
+
+ignore: >
+  Rules of type \gitignore to exclude files from the final product. The list provided here complements that used by \git if the latter is used.
+
+  tip::
+      The vertical bar is used to define one rule per line, as in the following fictitious example.
+
+      yaml::
+          ignore: |
+            rule_1
+            rule_2
+            ...
