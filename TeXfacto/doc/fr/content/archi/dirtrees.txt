@@ -1,10 +1,10 @@
 this::
-    date = 2024-12-27 ????
+    date = 2024-12-27
 
 
-========================
-Organisations "imposées"
-========================
+===================
+\Structs "imposées"
+===================
 
 Un code utilisant \ttes les fonctionnalités proposées par \thisproj aura un dossier de \dev de \struct suivante.
 
@@ -16,11 +16,11 @@ dirtree::
 
 
 note::
-    L'absence de dossier path::''doc'' pour la \doc "utilisateur" vient du processus de rédaction de celle-ci : voir cf::''docs.txt''.
-    Il n'y pas non plus de classique dossier path::''tests'', car les tests se feront via l'usage de \l3build dans le dossier path::''rollout'' : voir cf::''rollout.txt''.
+    L'absence de dossier path::''doc'' pour la \doc "utilisateur" vient du processus de rédaction spécifique à \thisproj de celle-ci : voir cf::''docs.txt''.
+    Il n'y a pas non plus de classique dossier path::''tests'', car les tests se feront via l'usage de \l3build dans le dossier path::''rollout'' : voir cf::''rollout.txt''.
 
 
-À l'opposé, un \proj peut utiliser la \struct minimaliste ci-après avec tous les dossiers devant obligatoirement exister.
+À l'opposé, un \proj peut utiliser la \struct minimaliste ci-après où les dossiers obligatoires sont les seuls utilisés.
 
 dirtree::
     ---
@@ -29,37 +29,22 @@ dirtree::
     ---
 
 
-Les sections à venir expliquent en détails comment employer chacun des dossiers et fichiers spéciaux. Voyons rapidement l'utilité des ces dossiers et fichiers.
+Les sections à venir expliquent en détails comment employer chacun des dossiers et fichiers spéciaux. Voyons rapidement l'utilité de ceux-ci.
 
-    1) ???
-    path::''about.yaml''
+    1) Le fichier path::''about.yaml'' sert à donner des \infos générales sur le \proj.
 
-    1) ???
-    Fichier \readme via path::''readme''
+    1) Le dossier path::''readme'' permet la rédaction du fichier \readme par petits bouts.
 
-    1) ???
-    path::''changes''
-    Journaux des \chgts \techs et publiques dans le dossier path::''changes''.
+    1) Le dossier path::''changes'' est dédier au journal complet des \chgts \techs.
 
-    1) ???
-    path::''contrib''
+    1) Le dossier path::''contrib'' accueille les \contribs éventuelles.
 
-    1) ???
-    path::''demos''
+    1) Le dossier path::''demos'' est dédié aux \demos non destinées à être distribuées via \ctan.
 
-    1) ???
-    path::''src''
+    1) Le dossier path::''src'' contient le code \src, mais aussi la \doc "utilisateur".
 
-    code sty + Le \proj \textfacto permet quant à lui de coder par petites touches son \proj en gérant en parallèle le code \src et la \doc "utilisateur" ==>  Le dossier path::''doc'' pour la \doc "utilisateur" a disparu.
+    1) Le dossier path::''tools'' accueille des scripts pour aider au \dev. Aucun \lang de \prog n'est imposé.
 
-    1) ???
-    path::''tools''
+    1) Le dossier path::''rollout'' sera celui employé pour lancer les tests, ou distribuer le projet final sur \ctan via \l3build.
 
-    1) ???
-    path::''rollout''
-    dossier path::''rollout'' est apparu ; ce dernier est dédié à l'utilisation de \l3build pour tester son projet, puis déployer ce dernier sur \ctan. Voir la section cf::''test-n-deploy.txt'' à ce sujet. ==> Le dossier path::''tests'' est aussi absent
-
-    Outils spécifiques d'automatisation
-
-    1) ???
-    path::''hook''
+    1) Le dossier path::''hook'' permet de compléter le processus d'automatisation de \thisproj en fournissant des mécanismes d'interception codés en \python.
