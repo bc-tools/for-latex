@@ -1,12 +1,12 @@
 this::
-    date = 2024-12-25
+    date = 2024-12-27
 
 
 ===========================
 Un petit exemple instructif
 ===========================
 
-Tout \pack \etou classe doit **obligatoirement** indiquer un certain \nbre d'\infos générales via un fichier path::''about.yaml''. Pour un codeur français, il est conseillé d'indiquer le contenu minimal suivant.
+Tout \pack \etou classe doit **obligatoirement** indiquer un certain \nbre d'\infos générales via un fichier path::''about.yaml'' placé à la racine du dossier. Pour un codeur français, il est conseillé d'indiquer le contenu minimal suivant.
 
 yaml::
     ---
@@ -23,12 +23,12 @@ Le contenu du fichier path::''about.yaml'' peut sembler minimal, mais c'est suff
 
     1) La date de création et le \numver en cours, lui aussi daté, sont des \infos déjà indiquées dans les journaux des \chgts \techs
     ((
-        Voir cf::''?/workflow/changes.txt''.
+        Voir cf::''changes.txt''.
     )).
 
     1) Les dépendances sont repérées \auto^t dans les codes des fichiers ext::''sty'' \etou ext::''cls''
     ((
-        Voir cf::''?/workflow/src.txt''.
+        Voir cf::''src.txt''.
     )).
 
     1) La langue par défaut est l'anglais ; ceci nous évite ici d'indiquer la langue utilisée pour le fichier \readme et la \doc \tech, mais par contre, cela nous impose d'indiquer que la \doc "utilisateur" est en français.

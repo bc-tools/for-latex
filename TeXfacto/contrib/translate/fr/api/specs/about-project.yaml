@@ -111,6 +111,6 @@ ignore: >
 
       yaml::
           ignore: |
-            rule_1
-            rule_2
+            règle_1
+            règle_2
             ...

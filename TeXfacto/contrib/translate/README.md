@@ -1,5 +1,5 @@
-Contribute to the `API` of `TeXfacto`
-=====================================
+Transalte the `API` of `TeXfacto`
+=================================
 
 The tanslations must be done inside folders like the `en` one above corresponding to the English version.
 

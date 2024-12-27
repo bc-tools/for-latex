@@ -1,0 +1,12 @@
+abrev::
+    content = :this.name:
+
+
+=========================
+Code source côté "codeur"
+=========================
+
+content::
+    \content/general.txt
+    \content/sorting.txt        ????
+    \content/resources.txt      ??
