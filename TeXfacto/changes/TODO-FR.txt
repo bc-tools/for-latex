@@ -10,18 +10,12 @@ NOW
 
 > ---------------------------- <
 
-passer de about-project.vs.yaml à une version utile pour la doc !!!
+reprendre contrib des  specs
 
 
+> ---------------------------- <
 
-
-Voici la spécification complète, commentée en français, du fichier path::''about.yaml'' où les clés se finissant par yaml::''*'' sont optionnelles.
-
-yaml::
-    ---
-    path = ?/examples/archi/specs/about-project.yaml
-    ---
-
+tool python pour passer de about-project.vs.yaml à une version utile pour la doc !!!
 
 
 > ---------------------------- <

@@ -1,0 +1,14 @@
+this::
+    date = 2024-12-27
+
+
+==============
+\Spec compléte
+==============
+
+Voici la \spec complète, commentée en français, du fichier principal path::''about.yaml'' où les clés se finissant par yaml::''*'' sont optionnelles.
+
+yaml::
+    ---
+    path = ?/examples/archi/specs/about-project.yaml
+    ---

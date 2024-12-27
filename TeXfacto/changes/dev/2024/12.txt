@@ -2,7 +2,21 @@
 
 
 ==
-??
+27  (0.0.0-alpha.1)
+==
+
+-----
+:new:
+-----
+
+\Doc: the section for the main path::''about.yaml'' file looks good.
+
+
+// ---------- //
+
+
+==
+25  (0.0.0-alpha.0)
 ==
 
 \thisproj will offer tools for automating the creation of \latex packages or classes, using a standardised workflow (the principle is to code small parts of the project rather than large files).
