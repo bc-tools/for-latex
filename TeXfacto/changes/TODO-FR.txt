@@ -7,6 +7,38 @@ NOW
 ---
 
 
+> ---------------------------- <
+
+tip::
+    Via la \pyglob et un bloc yaml::''ignore'' mis dans le fichier path::''src/about.yaml'', il est possible d'indiquer des dossiers et des fichiers à ignorer en plus de ceux indiqués à \git via un fichier \gitignore.
+    Par défaut, \texfacto ignore les dossiers et fichiers ayant un nom commençant par path::''test'', path::''tests'', path::''tool'' ou path::''tools'', ce préfixe devant être suivi a minima d'un caractère autre qu'une lettre. Ceci se ferait à la main comme suit.
+
+    yaml::
+        ---
+        extract = yes
+        title   = Le fichier path::''src/about.yaml''
+        ---
+        ignore: |
+          test[!a-zA-Z]*
+          tests[!a-zA-Z]*
+
+          tool[!a-zA-Z]*
+          tools[!a-zA-Z]*
+
+
+> ---------------------------- <
+
+Dans le cas le plus basique, on obtiendra un dossier comme le suivant
+((
+    Si besoin, un \chgt de nom du projet pourra être fait afin d'obtenir un nom acceptable pour un \pack \latex.
+))
+où le fichier de \cfg path::''build.lua'' est fourni clés en main.
+
+dirtree::
+    ---
+    path = ?/example/pack/dirtree-final-basic.txt
+    ---
+
 
 > ---------------------------- <
 
