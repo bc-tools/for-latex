@@ -1,0 +1,18 @@
++ src
+    * preamble.sty
+    + intro
+        * intro.tex
+    + alpha-et-omega3
+        * alpha.tex
+        * alpha.sty
+        * omega3.tex
+        * omega3.sty
+    + main
+        * main.tex
+        * main.sty
+    + poor-lonesome-cowboy
+        * lucky-1.tex
+        * lucky-2.tex
+        * lucky.sty
+        * rantanplan.tex
+        * rantanplan.sty

@@ -7,8 +7,9 @@ Code source côté "codeur"
 =========================
 
 content::
-    \content/general.txt                ??????????
+    \content/general.txt
     \content/pack-vs-class.txt          ????????
+
     \content/sorting.txt                ??????
     \content/docs.txt                   ????
     \content/resources.txt              ??

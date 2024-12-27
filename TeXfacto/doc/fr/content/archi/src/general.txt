@@ -1,22 +1,25 @@
 this::
-    date = 2024-12-27  ??
+    date = 2024-12-27
 
 
-==========
-Où coder ?
-==========
+=====================
+Où et comment coder ?
+=====================
 
-Le \dev "morceau par morceau" se fait dans le sous-dossier path::''src'' via des "bouts" de fichiers ext::''sty'' \etou ext::''cls''
-((
-    Il est possible de développer en parallèle une classe et un \pack ayant le même nom.
-))
-placés obligatoirement dans des sous-dossiers directs de path::''src''. Ces différents morceaux seront recollés \auto^t pour bâtir le \pack \etou la classe à distribuer dans le dossier path::''rollout'' : voir cf::''?/workflow/build.txt''.
+Dans le sous-dossier path::''src'' devront être codés à la fois des morceaux de code, et des parties de la \doc "utilisateur". Ceci se fera en resepctant les contraintes suivantes.
 
+    1) Il faut travailler dans des sous-dossiers directs de path::''src'' sans passer via des "sous-sous-dossiers". Ceci vient de \tex qui travaille avec une \struct virtuelle plate, c'est donc une contrainte \tech forte qui nous est imposée.
 
-caution::
-    On travaille dans des sous-dossiers directs de path::''src'' sans passer via des "sous-sous-dossiers" car \tex travaille avec une \struct virtuelle plate, c'est donc une contrainte \tech forte qui nous est imposée.
+    1) Il n'est pas possible de coder des fonctionnalités dans un sous-dossier nommé path::''changelog'', car ce sous-dossier spécial sert à la rédaction du journal des \chgts "stables" pour la \doc "utilisateur" : voir cf::''docs.txt'' à ce propos.
 
+    1) Un sous-dossier path::''main'' doit \tjrs être utilisé comme point d'entrée utilisé par \thisproj : voir cf::''pack-vs-class.txt''.
 
-warning::
-    Un sous-dossier spécial path::''changelog'' est utilisé pour le journal des \chgts destiné à la \doc "utilisateur" : voir cf::''docs.txt'' à ce propos.
-    Ceci rend impossible le codage de fonctionnalités dans un sous-dossier nommé path::''changelog''.
+    1) Les fichiers destinés à un produit final de type \pack, et ceux pour un produit final de type \cls devront utilisés des extensions spécifiques : voir cf::''pack-vs-class.txt''
+    ((
+        Il est possible de développer en parallèle une classe et un \pack ayant le même nom.
+    )).
+    Les différents morceaux seront recollés \auto^t pour bâtir le \pack \etou la classe à distribuer dans le dossier path::''rollout'' : voir cf::''rollout.txt''.
+
+    1) Les parties de la \doc "utilisateur" seront recollés \auto^t pour bâtir la \doc finale dans le dossier path::''rollout'' : voir cf::''docs.txt'' et cf::''?/workflow/build.txt''. Il est possible de proposer des \docs dans différentes langues.
+
+    1) Des resources de type fichiers "exemples" pour la \doc, ou de \config pour le code sont utilisables : voir cf::''resources.txt''.
