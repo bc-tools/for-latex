@@ -9,6 +9,17 @@ NOW
 
 > ---------------------------- <
 
+hook = ??? propo de chatgpt
+
+    - Point d'accroche
+    - Crochet
+    - Mécanisme d'interception
+    - Accroche d'événement
+    - Crochet du cycle de vie
+
+
+> ---------------------------- <
+
     1) Il est possible de rédiger des fichiers path::''TEX'' pour documenter des fonctionnalités.
     Dans ce cas, il faut aussi respecter une profondeur de '1' comme pour les fichiers path::''STY''.
     Dans notre exemple fictif, path::''intro/intro.tex'' est considéré comme étant une \doc écrite dans la langue indiquée dans le fichier path:''src/about.yaml'', voir cf::''?../metainfos/allpacks.txt'' à ce propos.

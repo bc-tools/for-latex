@@ -17,7 +17,7 @@ dirtree::
 
 Le principe est similaire au \dev d'un \pack aux deux différences importantes suivantes.
 
-    1) A minima, il faudra coder un fichier path::''main/main.cls''. D'un point de vue pratique, ce fichier va centraliser les chargements de \clss, les importations de \packs, et la gestion des options.
+    1) A minima, il faudra \tjrs coder un fichier path::''main/main.cls''. D'un point de vue pratique, ce fichier va centraliser les chargements de \clss, les importations de \packs, et la gestion des options de la classe.
 
     1) Les fonctionnalités spécifiques seront codées dans des fichiers ext::''cls.sty'', et non ext::''sty''. Voici pourquoi.
 

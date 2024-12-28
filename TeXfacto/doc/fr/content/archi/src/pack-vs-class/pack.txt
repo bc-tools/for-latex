@@ -26,7 +26,7 @@ Voici ce qu'il faut faire pour coder un package \latex.
 
     1) Chaque fichier ext::''sty'' codant un morceau du package doit se trouver dans un sous-dossier de profondeur '1' de path::''src''.
 
-    1) A minima, il faudra coder un fichier path::''main/main.sty''. D'un point de vue pratique, ce fichier va centraliser les importations de \packs, et la gestion des options.
+    1) A minima, il faudra \tjrs coder un fichier path::''main/main.sty''. D'un point de vue pratique, ce fichier va centraliser les importations de \packs, et la gestion des options du package.
 
 
 Lors de la fabrication du \proj final, les fichiers \src seront collés dans un unique fichier ext::''sty'' en respectant l'ordre "naturel" suivant
