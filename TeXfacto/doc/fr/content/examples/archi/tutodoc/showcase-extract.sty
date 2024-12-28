@@ -1,0 +1,30 @@
+\ExplSyntaxOn
+
+\box_new:N \l__tutodoc_content_box
+\dim_new:N \l__tutodoc_content_dim
+
+
+%%%
+% prototype::
+%     #1 : (color)
+%          the color for the rule and the text
+%     #2 : (text)
+%          the text surrounded by two horizontal rules
+%
+%     :action: this macro adds two horizontal lines on either side of the text.
+%              The final output is centered.
+%
+% note::
+%     The code used comes from
+%     cf::''this post ;
+%           https://tex.stackexchange.com/a/604708/6880''.
+%%%
+\NewDocumentCommand{\tdocruler}{
+  O{\tutodoc@showcase@rule@color}
+  m
+}{
+  % ...
+  }
+}
+
+\ExplSyntaxOff

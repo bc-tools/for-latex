@@ -1,0 +1,34 @@
+this::
+    date = 2024-12-28   ????
+
+
+abrev::
+    content = :this.name:
+
+
+=============================================
+Une \doc "utilisateur" sans haine, ni violence
+=============================================
+
+???
+
+Pour aider le simple
+((
+    Aucune saveur péjorative n'est à soupoudrer sur cet adjectif.
+))
+utilisateur, la \redac d'une \doc "utilisateur" doit être faite via des fichiers ext::''tex'' tapés à coté des fichiers ext::''sty'', ext::''cls.sty'' \etou ext::''cls'' du code \src.
+
+
+
+
+note::
+    Nous commençons par des exemples laissant \thisproj ordonner les morceaux à coller via un ordre "naturel" usuel sauf pour la partie path::''main'' qui est \tjrs traitée en premier. En fait, il est possible d'imposer son propre ordre : voir cf::''sorting.txt''.
+
+    Aucune ressource n'est utilisée ici bien que cela soit possible : voir cf::''?/resources.txt''.
+
+
+content::
+    \content/abstract.txt       ????????????
+    \content/pack-n-class.txt   ??????
+    \content/changelog.txt      ????
+    \content/writing.txt        ??

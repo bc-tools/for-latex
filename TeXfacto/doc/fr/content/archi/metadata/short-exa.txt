@@ -11,7 +11,8 @@ Tout \pack \etou classe doit **obligatoirement** indiquer un certain \nbre d'\in
 yaml::
     ---
     path  = ?/examples/archi/tutodoc/about.yaml
-    title = Le fichier path::''about.yaml'' du projet \tutodoc du \tutodoc_date.
+    title = Le fichier path::''about.yaml'' du projet \tutodoc
+    date  = \tutodoc_date
     ---
 
 
@@ -41,6 +42,8 @@ Avec toutes ces \infos utiles découvertes, et en supposant que le code \src ne 
 
 latex::
     ---
-    path  = ?/examples/archi/tutodoc/start.cls
-    title = Le début du fichier path::''tutodoc.cls'' le \tutodoc_date.
+    path    = ?/examples/archi/tutodoc/start.cls
+    extract = start
+    title   = Le début du fichier path::''tutodoc.cls''
+    date    = \tutodoc_date
     ---
