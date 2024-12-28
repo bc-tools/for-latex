@@ -1,0 +1,71 @@
+\documentclass{../main/main}
+
+% -------------------------- %
+% -- DATE TO TEST - START -- %
+% -------------------------- %
+
+\newcommand\docyear {2024}
+\newcommand\docmonth{12}
+\newcommand\docday  {18}
+
+% Preparing next release
+%\renewcommand\docday{0}
+
+
+% ------------------------ %
+% -- DATE TO TEST - END -- %
+% ------------------------ %
+
+\input{../preamble.cfg.tex}
+
+\usepackage{../deco/deco.cls}
+\usepackage{../admonitions/admonitions.cls}
+\usepackage{../inenglish/inenglish.cls}
+\usepackage{../listing-latex/listing-latex.cls}
+\usepackage{../macroenv/macroenv.cls}
+\usepackage{../showcase/showcase.cls}
+\usepackage{../version-n-change/version-n-change.cls}
+
+
+\ExplSyntaxOn
+  \int_compare:nTF { \docday = 0 } {
+      \newcommand\when{NEXT ~ (draft)}
+      \newcommand\filepath{next}
+  } {
+      \newcommand\when{\docyear-\docmonth-\docday}
+      \newcommand\filepath{\docyear/\docmonth/\docday}
+  }
+\ExplSyntaxOff
+
+
+\begin{document}
+
+{
+    \color{red!75!black}
+    \rule\linewidth{1pt}
+
+    \vspace{-1em}
+    \section*{\color{red!75!black} Test: \when}
+    \ExplSyntaxOff
+    \vspace{-.75em}
+    \rule\linewidth{1pt}
+}
+
+
+\small
+
+\bigskip
+
+\begin{tdoctodo}[
+    col       = ForestGreen,
+    col-chges = Goldenrod,
+    date      = 5678-90-12,
+    version   = 1.2.3-rc.4
+]
+    \item Voilà comment sera daté le tout premier type de changements, mais avec des couleurs plus sobres.
+\end{tdoctodo}
+
+
+\input{\filepath}
+
+\end{document}
