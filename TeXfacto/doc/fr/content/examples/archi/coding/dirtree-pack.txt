@@ -1,5 +1,5 @@
 + src
-    * preamble.sty
+    * preamble.cfg.sty
     + alpha-et-omega3
         * alpha.sty
         * omega3.sty

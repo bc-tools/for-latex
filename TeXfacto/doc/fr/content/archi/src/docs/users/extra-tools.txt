@@ -1,0 +1,15 @@
+this::
+    date = 2024-12-28
+
+
+===========================================
+Des outils juste pour la \doc "utilisateur"
+===========================================
+
+De tels outils se codent entre le commentaire spécial latex::''% == FORDOC == %'' et la balise latex::''\begin{document}'' comme dans l'exemple fictif suivant.
+Les lignes de code ainsi produites seront intégréese dans la \doc complète produite par \thisproj.
+
+latex::
+    ---
+    path = ?/examples/archi/doc/extra-tools.tex
+    ---

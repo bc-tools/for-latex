@@ -6,6 +6,24 @@ this::
 Le journal des \chgts
 =====================
 
+???
+
+dirtree::
+    ---
+    path  = ?/examples/archi/tutodoc/dirtree-changelog.txt
+    title = Le dossier path::''changelog'' de \tutodoc
+    date  = 2023-12-28
+    ---
+
+dirtree::
+    ---
+    path  = ?/examples/archi/tutodoc/dirtree-contrib-changelog.txt
+    title = ????
+    date  = 2023-12-28
+    ---
+
+
+
 Le codeur doit aussi maintenir un journal des \chgts dans le même esprit que celui du manuel d'utilisation
 ((
     La langue des \chgts est celle de la \doc.
