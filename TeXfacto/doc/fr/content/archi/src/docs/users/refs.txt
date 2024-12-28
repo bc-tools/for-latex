@@ -1,0 +1,17 @@
+this::
+    date = 2024-12-29
+
+
+==================================
+Un conseil pour les \refs internes
+==================================
+
+Voici une façon de nommer les \refs internes permettant d'éviter les doublons.
+
+    1) Un premier préfixe sert à indiquer le nom du \proj comme dans ''my-fict-proj-...'' par exemple.
+
+    1) Un deuxième fichier identifie le dossier dans le code \src du fichier concerné pour obtenir ''my-fict-proj-main'' par exemple.
+
+    1) Si la \ref est relative à une macro spéciale comme ''\mycmd'', ou un \env spécifique tel que ''\begin{myenv} ... \end{myenv}`, alors un \2e préfixe "typé" est utilisé comme dans ''fict-proj-main-macro-mycmd'' et ''fict-proj-main-env-myenv-'' par exemple.
+
+    1) Si besoin, un \id supplémentaire laissé au libre choix du codeur sera ajouté comme dans ''my-fict-proj-main-geo'' et ''fict-proj-main-macro-mycmd-options''. À ce stade, les éventuels conflits ne seront plus que très locaux, et donc faciles à résoudre.

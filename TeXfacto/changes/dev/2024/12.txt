@@ -2,6 +2,34 @@
 
 
 ==
+??  (0.0.0-alpha.3)
+==
+
+-----
+:new:  ??
+-----
+
+\Doc: the section about writing the manual look good.
+
+
+// ---------- //
+
+
+==
+28  (0.0.0-alpha.2)
+==
+
+-----
+:new:
+-----
+
+\Doc: the sections about coding ext::''sty'' \andor ext::''cls'' files look good.
+
+
+// ---------- //
+
+
+==
 27  (0.0.0-alpha.1)
 ==
 

@@ -1,0 +1,20 @@
+this::
+    date = 2024-12-29   ????
+
+
+=====================================
+Utile : des variables de substitution
+=====================================
+
+YYY
+
+
+tout ce qui est dans le about est accessible : prendfe un schéma de noms automatiquement
+
++
+
+versions et date du cghange tech
+
++
+
+d'autre variable construites

@@ -36,10 +36,11 @@ dirtree::
     ---
 
 
+// ORDONNER!!!
 content::
     \content/preamble.txt
     \content/changelog.txt
-
-    \content/XXX.txt        ??????
-    \content/XXX.txt        ????
-    \content/XXX.txt        ??
+    \content/refs.txt
+    \content/placeholders.txt       ????????
+    \content/abstract.txt           ??????
+    \content/style.txt              ????
