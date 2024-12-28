@@ -1,0 +1,52 @@
+\documentclass{article}
+
+\usepackage{xcolor}
+
+
+% -------------------------- %
+% -- DATE TO TEST - START -- %
+% -------------------------- %
+
+\newcommand\docyear {2024}
+\newcommand\docmonth{12}
+\newcommand\docday  {28}
+
+% Preparing next release
+%\renewcommand\docday{0}
+
+% ------------------------ %
+% -- DATE TO TEST - END -- %
+% ------------------------ %
+
+
+\ExplSyntaxOn
+
+\int_compare:nTF { \docday = 0 } {
+    \newcommand\when{NEXT ~ (draft)}
+    \newcommand\filepath{next}
+} {
+    \newcommand\when{\docyear-\docmonth-\docday}
+    \newcommand\filepath{\docyear/\docmonth/\docday}
+}
+
+\ExplSyntaxOff
+
+
+\begin{document}
+
+\bgroup
+    \color{red!75!black}
+    \noindent\rule\linewidth{1pt}
+
+    \vspace{-1em}
+    \section*{\color{red!75!black} Test: \when}
+
+    \vspace{-.75em}
+    \noindent\rule\linewidth{1pt}
+\egroup
+
+\bigskip
+
+\input{\filepath}
+
+\end{document}

@@ -20,13 +20,13 @@ dirtree::
 
 Voici ce qu'il faut faire pour coder un package \latex.
 
-    1) Le fichier path::''src/preamble.cfg.sty'', et les fichiers ext::''tex'' directement dans les sous-dossiers sont destinées à la \doc "utilisateur" : ce sujet est abordé dans cf::''?/docs.txt''.
+    1) Le dossir path::''src/changelog'', le fichier path::''src/preamble.cfg.sty'', et les fichiers ext::''tex'' directement dans les sous-dossiers sont destinées à la \doc "utilisateur" : ce sujet est abordé dans cf::''?/docs.txt''.
 
     1) Le \dev "morceau par morceau" se fait directement dans le sous-dossier path::''src''. Il est interdit de passer via des "sous-sous-dossiers".
 
     1) Chaque fichier ext::''sty'' codant un morceau du package doit se trouver dans un sous-dossier de profondeur '1' de path::''src''.
 
-    1) A minima, il faudra \tjrs coder un fichier path::''main/main.sty''. D'un point de vue pratique, ce fichier va centraliser les importations de \packs, et la gestion des options du package.
+    1) Il faudra \tjrs coder un fichier path::''main/main.sty''. D'un point de vue pratique, ce fichier va centraliser les importations de \packs, et la gestion des options du package.
 
 
 Lors de la fabrication du \proj final, les fichiers \src seront collés dans un unique fichier ext::''sty'' en respectant l'ordre "naturel" suivant

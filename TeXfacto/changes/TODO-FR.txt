@@ -8,7 +8,15 @@ NOW
 
 > ---------------------------- <
 
-FORDOC
+note::
+    Dans le dossier des \trads de la \doc, les changements sont organisés différement comme suit où chaque fichier path::''tex'' est directement compilable par le traducteur.
+
+    dirtree::
+        ---
+        path  = ?/examples/archi/tutodoc/dirtree-contrib-changelog.txt
+        title = Le dossier path::''changelog'' pour les traductions de \tutodoc
+        date  = 2023-12-28
+        ---
 
 
 > ---------------------------- <

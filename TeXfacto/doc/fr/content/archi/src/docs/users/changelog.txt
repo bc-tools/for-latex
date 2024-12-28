@@ -1,67 +1,54 @@
 this::
-    date = 2024-12-28   ????
+    date = 2024-12-28
 
 
 =====================
 Le journal des \chgts
 =====================
 
-???
+Le \proj dispose d'un dossier path::''change'' où indiquer, \tjrs en anglais, les \chgts des versions en \dev, et aussi ceux importants uniquement pour les versions stables publiées : voir cf::''?/archi/changes.txt''.
+
+
+caution::
+    \thisproj lèvera une erreur en cas de non cohérence entre les \chgts stables côté path::''change'', et ceux rédigés dans path::''src/changelog''.
+
+
+Pour la \doc "utilisateur", les \chgts "stables" doivent être renseignés via une \orga similaire à la suivante.
 
 dirtree::
     ---
     path  = ?/examples/archi/tutodoc/dirtree-changelog.txt
-    title = Le dossier path::''changelog'' de \tutodoc
-    date  = 2023-12-28
-    ---
-
-dirtree::
-    ---
-    path  = ?/examples/archi/tutodoc/dirtree-contrib-changelog.txt
-    title = ????
+    title = Le dossier path::''src/changelog'' de \tutodoc
     date  = 2023-12-28
     ---
 
 
-
-Le codeur doit aussi maintenir un journal des \chgts dans le même esprit que celui du manuel d'utilisation
-((
-    La langue des \chgts est celle de la \doc.
-)),
-\cad sans entrer dans certains détails très \techs.
-Ce journal se tape dans le sous-dossier path::''changelog'' du dossier path::''src'' qui admet la structure suivante où un dossier par année contiendra les \chgts au jour le jour stockés dans des dossiers mensuels.
-
-dirtree::
-    ---
-    path = ?/example/changelog/dirtree.txt
-    ---
-
-
-À la date du \bdocdate, le dossier path::''changelog'' du projet \bdoc avait la contenu suivant.
-Noter au passage les noms utilisés pour les dossiers "année" et "mois" ainsi que ceux pour les fichiers "jour" où les deux fichiers path::''18-a.tex'' et path::''18-b.tex'' correspondent à deux versions différentes publiées le même jour
-((
-    Il arrive quelques fois qu'une version soit publiée un peu hâtivement à tors...
-)).
-
-dirtree::
-    ---
-    path = ?/example/changelog/bdoc/dirtree.txt
-    ---
-
-
-Voici le contenu de l'un des fichiers rédigés en s'appuyant sur le \proj \bdoc lui-même.
+Expliquons un peu la scène du crime en commençant par les fichiers path::''test_one_date.tex'' et path::''next.tex'' qui s'obtiennent via \thisproj.
+Le fichier path::''next.tex'' est initialement vide, tandis que le contenu du fichier path::''test_one_date.tex'' produit par \thisproj est le suivant.
 
 latex::
     ---
-    title = Fichier path::''2021/09/09.tex''
-    path  = ?/example/changelog/bdoc/2021-09-09.tex
+    path  = ?/examples/archi/doc/test_one_date.tex
+    title = Code de path::''test_one_date.tex'' produit auto^t.
     ---
 
 
-La méthodologie à suivre est la suivante.
+Dans ce fichier, directement compilable, une date à tester se règle via les lignes suivantes où le fait de choisir un numéro de jour nul, par exemple, en décommentant la ligne latex::''%\renewcommand\docday{0}'', indique de tester le contenu du fichier path::''next.tex''. L'utilité de ce dernier est de permettre la \redac à la demande des \chgts avant même que la version stable soit publiée.
 
-    1) Contrairement à la \doc \tech, les \modifs se tapent jour par jour, et non mois par mois. Ceci permet notamment de tester la bonne rédaction de l'écriture des \chgts pour une date donnée via le fichier path::''test_one_date.tex'' directement compilable.
+latex::
+    ---
+    path    = ?/examples/archi/doc/test_one_date-settings.tex
+    extract = yes
+    title   = Tester le contenu pour une date précise.
+    ---
 
-    1) Si plusieurs versions sont publiées le même jour, il faudra suffixer le numéro du jour avec quelque chose du type path::''-a'', path::''-b'', path::''-c''... \etc.
 
-    1) Le \numver n'est jamais indiqué puisque cette \info est connue via les \chgts \techs.
+Les autres fichiers servent à indiquer les \chgts pour un jour donné à l'intérieur d'un dossier "mois", lui-même contenu dans un dossier "année". La méthodologie à suivre est la suivante.
+
+    1) Si plusieurs versions sont publiées le même jour
+    ((
+        Penser à un bug critique vite découvert.
+    )),
+    il faudra suffixer le numéro du jour avec path::''-a'', path::''-b'', path::''-c''...
+
+    1) Comme \thisproj connaît les \chgts indiqués dans path::''change'', les numéros de version n'ont pas à être indiqués lors de la \redac de la \doc "utilisateur".

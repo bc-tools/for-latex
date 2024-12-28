@@ -1,0 +1,12 @@
+this::
+    date = 2024-12-28
+
+
+==================
+Un préambule \tech
+==================
+
+La \doc "utilisateur" nécessite des \packs, ainsi que des \envs et \cmds "maison". Ceci se codera dans le fichier path::''src/preamble.cfg.sty'' qui sera employé via latex::''\usepackage{../preamble.cfg}'' dans les morceaux de \doc
+((
+    Rappelons que la \doc se tape dans des fichiers ext::''tex'' au même niveau que le code \src.
+)).

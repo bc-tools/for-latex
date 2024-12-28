@@ -7,11 +7,7 @@ Un \pack et une \cls de même nom
 ================================
 
 L'existence des fichiers path::''main/main.sty'' path::''main/main.cls'' indique un projet aboutissant à un \pack et une \cls homonyme.
-C'est le cas dans le dossier path::''src'' fictif basique ci-dessous où la possibilité de coder deux \docs différentes pour le \pack et la \cls n'est pas utilisée
-((
-    Nous reviendrons sur ce point dans cf::''?/docs.txt''.
-)).
-Noter au passage l'utilisation de fichiers ext::''cls.sty'' codant les fonctionnalités pour la \cls, et ceux juste de type ext::''sty'' à destination du \pack.
+C'est le cas dans le dossier path::''src'' fictif basique ci-dessous où vous noterez au passage l'utilisation de fichiers ext::''cls.sty'' codant les fonctionnalités pour la \cls, et ceux de type ext::''sty'' uniquement à destination du \pack.
 
 dirtree::
     ---
