@@ -2,13 +2,17 @@
     * preamble.sty
     + alpha-et-omega3
         * alpha.sty
-        * omega3.sty
+        * omega3.cls.sty
         * alpha.tex
-        * omega3.tex
+        * omega3.cls.tex
     + main
+        * main.cls
         * main.sty
         * main.tex
+        * main.cls.tex
     + poor-lonesome-cowboy
         * lucky.sty
+        * rantanplan.cls.sty
         * lucky-1.tex
         * lucky-2.tex
+        * rantanplan.cls.tex

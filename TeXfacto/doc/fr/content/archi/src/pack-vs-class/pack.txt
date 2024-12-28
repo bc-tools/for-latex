@@ -1,12 +1,15 @@
 this::
-    date = 2024-12-27  ??
+    date = 2024-12-28
 
 
 ===============
 Un simple \pack
 ===============
 
-Considérons le dossier path::''src'' fictif minimaliste suivant.
+Considérons le dossier path::''src'' fictif basique suivant
+((
+    Aucune ressource n'est utilisée ici bien que cela soit possible : voir cf::''?/resources.txt''.
+)).
 
 dirtree::
     ---
@@ -15,36 +18,30 @@ dirtree::
     ---
 
 
+Voici ce qu'il faut faire pour coder un package \latex.
+
+    1) Le fichier path::''src/preamble.sty'', et les fichiers ext::''tex'' directement dans les sous-dossiers sont destinées à la \doc "utilisateur" : ce sujet est abordé dans cf::''?/docs.txt''.
+
+    1) Le \dev "morceau par morceau" se fait directement dans le sous-dossier path::''src''. Il est interdit de passer via des "sous-sous-dossiers".
+
+    1) Chaque fichier ext::''sty'' codant un morceau du package doit se trouver dans un sous-dossier de profondeur '1' de path::''src''.
+
+    1) A minima, il faudra coder un fichier path::''main/main.sty''. D'un point de vue pratique, ce fichier va centraliser les importations de \packs, et la gestion des options.
 
 
+Lors de la fabrication du \proj final, les fichiers \src seront collés dans un unique fichier ext::''sty'' en respectant l'ordre "naturel" suivant
+((
+    Pour le processus de fabrication finale, voir cf::''?/workflow/build.txt''.
+)).
+
+    1) path::''main/main.sty''
+
+    1) path::''alpha-et-omega3/alpha.sty''
+
+    1) path::''alpha-et-omega3/omega3.sty''
+
+    1) path::''poor-lonesome-cowboy/lucky.sty''
 
 
-????
-
-Voici des choses importantes à connaître et respecter.
-
-    1) Le ¨dev "morceau par morceau" se fait dans le sous-dossier path::``src``.
-
-    1) Chaque fichier path::``STY`` codant un morceau du package doit se trouver dans un sous-dossier de profondeur `1` de path::``src``.
-    Bien noter que l'on travaille directement dans un sous-dossier sans passer via des sous-sous-dossiers contenant le fichier path::``STY``.
-
-    1) Il est possible de rédiger des fichiers path::``TEX`` pour documenter des fonctionnalités.
-    Dans ce cas, il faut aussi respecter une profondeur de `1` comme pour les fichiers path::``STY``.
-    Dans notre exemple fictif, path::``intro/intro.tex`` est considéré comme étant une ¨doc écrite dans la langue indiquée dans le fichier path:``src/about.yaml``, voir cf::``?../metainfos/allpacks.txt`` à ce propos.
-
-    1) Des fichiers ressources peuvent être utilisés : voir cf::``:?../resource.txt`` pour en savoir plus.
-
-    1) Deux types de lecture ordonnée des dossiers et fichiers sont possibles
-    ((
-        Ceci est important pour la ¨doc finale à destination des utilisateurs, ou bien pour organiser du code si cela est indispensable.
-    )).
-
-        * Un dossier sans fichier path::``about.yaml`` sera analysé en utilisant l'ordre ¨lexico usuel.
-        Dans notre exemple fictif, le dossier path::``alpha-et-omega3`` sera analysé en prenant path::``alpha.sty``, puis path::``omega3.sty`` ainsi que path::``alpha.tex`` suivi de path::``omega3.tex``.
-
-        * Dans un dossier source, un fichier path::``about.yaml`` permet d'imposer un ordre à suivre. Nous allons revenir sur ceci dans les deux sections suivantes.
-
-
-warning::
-    Le dossier path::``tnsfictive`` ne peut pas contenir un sous-dossier path::``tnsfictive`` où seront codées des fonctionnalités.
-    Cela vient tout simplement du fait que le projet final sera créé automatiqument dans le sous-dossier path::``tnsfictive/tnsfictive``.
+caution::
+    Bien noter que l'on travaille directement dans un sous-dossier sans passer via des sous-sous-dossiers, et qu'il faut \tjrs utiliser un fichier path::''main/main.sty''.

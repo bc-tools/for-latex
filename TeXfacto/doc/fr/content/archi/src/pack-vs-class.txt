@@ -1,5 +1,5 @@
 this::
-    date = 2024-12-27
+    date = 2024-12-28
 
 
 abrev::
@@ -24,10 +24,10 @@ abrev::
 
 
 note::
-    Nous commençons par des exemples laissant \thisproj ordonner les morceaux à coller. En fait, il est possble d'imposer son propre ordre : voir cf::''sorting.txt''.
+    Nous commençons par des exemples laissant \thisproj ordonner les morceaux à coller via un ordre "naturel" usuel sauf pour la partie path::''main'' qui est \tjrs traitée en premier. En fait, il est possible d'imposer son propre ordre : voir cf::''sorting.txt''.
 
 
 content::
-    \content/pack.txt               ????????
-    \content/class.txt              ??????
-    \content/both.txt               ????
+    \content/pack.txt
+    \content/class.txt
+    \content/both.txt

@@ -6,6 +6,16 @@ TeXfacto - TODO
 NOW
 ---
 
+
+> ---------------------------- <
+
+    1) Il est possible de rédiger des fichiers path::''TEX'' pour documenter des fonctionnalités.
+    Dans ce cas, il faut aussi respecter une profondeur de '1' comme pour les fichiers path::''STY''.
+    Dans notre exemple fictif, path::''intro/intro.tex'' est considéré comme étant une \doc écrite dans la langue indiquée dans le fichier path:''src/about.yaml'', voir cf::''?../metainfos/allpacks.txt'' à ce propos.
+
+    1) Des fichiers ressources peuvent être utilisés : voir cf::'':?../resource.txt'' pour en savoir plus.
+
+
 > ---------------------------- <
 
 tip::

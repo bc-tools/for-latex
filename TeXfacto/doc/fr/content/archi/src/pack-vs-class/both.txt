@@ -1,9 +1,37 @@
 this::
-    date = 2024-12-27  ??
+    date = 2024-12-28
 
 
 ================================
 Un \pack et une \cls de même nom
 ================================
 
-????
+Voici dossier path::''src'' fictif basique où l'on note l'emploi d'extensions ext::''cls'', ext::''cls.sty'' et ext::''sty'', et aussi l'usage de l'extension étendue ext::''cls.tex'' pour la \doc destinée à la \cls
+((
+    Nous reviendrons sur ce point dans cf::''?/docs.txt''.
+)).
+
+dirtree::
+    ---
+    path  = ?/examples/archi/coding/dirtree-both.txt
+    title = Un dossier path::''src'' fictif.
+    ---
+
+
+La fabrication du \proj final aboutira à deux fichiers ext::''cls'' et ext::''sty'' de même nom en collant les bouts de code comme suit.
+
+    + Pour l'unique fichier ext::''sty''.
+
+        1) path::''main/main.sty''
+
+        1) path::''alpha-et-omega3/alpha.sty''
+
+        1) path::''poor-lonesome-cowboy/lucky.sty''
+
+    + Pour l'unique fichier ext::''cls''.
+
+        1) path::''main/main.cls''
+
+        1) path::''alpha-et-omega3/omega3.cls.sty''
+
+        1) path::''poor-lonesome-cowboy/rantanplan.cls.sty''
