@@ -9,7 +9,9 @@ NOW
 
 > ---------------------------- <
 
-passage à preamble.cfg.sty (choix de texfacto)
+passage à preamble.cfg.sty (choix de texfacto) en mettant tous dedeans
+
+    --> plus de commentaire magique FORDOC !!!!
 
 +
 
