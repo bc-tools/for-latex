@@ -2,7 +2,26 @@
 
 
 ==
-18  (1.7.1-rc.2)
+29  (1.7.2-beta.1)
+==
+
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual.
+
+    1) The English version indicates the use of English rules inside quoted content build by the macro ''\tdocinEN''.
+
+    1) Use of a centralising path::''preamble.cfg.sty'' file with the abandonment of the magic comments ''% == FORDOC == %''.
+
+
+// ---------- //
+
+
+==
+18  (1.7.1)
 ==
 
 -------
@@ -13,7 +32,7 @@ Macro ''\tdocenv'': the options are no longer taken into account. If necessary, 
 
 
 --------
-:update:   ??
+:update:
 --------
 
 [[:doc:]]

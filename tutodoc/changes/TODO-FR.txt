@@ -9,21 +9,6 @@ NOW
 
 > ---------------------------- <
 
-passage à preamble.cfg.sty (choix de texfacto) en mettant tous dedeans
-
-    --> plus de commentaire magique FORDOC !!!!
-
-+
-
-cor de code hore de astuce : voir doc après en anglais
-
-+
-
-en anglais : règle anglaise ok MAIS uniquement si polygllosssia ou babel chargé !
-
-
-> ---------------------------- <
-
 macro de rgélage global en parallèle des options de classe (on prépare terrain pour monorepio à la tns)
 
 

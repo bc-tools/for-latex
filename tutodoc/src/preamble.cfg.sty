@@ -1,0 +1,104 @@
+% Community tools
+
+\usepackage[T1]{fontenc}
+
+\usepackage{enumitem}
+
+\usepackage[french]{babel, varioref}
+\frenchsetup{StandardItemLabels=true}
+
+\usepackage{multicol}
+\usepackage{tasks}
+
+\usepackage{pdfpages}
+\includepdfset{
+    pages=-,
+    fitpaper=true
+}
+
+% Some abbreviations.
+
+\newcommand\thisproj{\tdoccls{tutodoc}}
+\newcommand\thisrepo{\url{https://github.com/bc-tools/for-latex/tree/tutodoc}}
+\newcommand\thismonorepo{\url{https://github.com/bc-tools/for-latex}}
+
+\NewDocumentCommand{\trademark}{m}{\texttt{#1}}
+
+\newcommand\ctan{\href{https://ctan.org/}{\trademark{CTAN}}}
+\newcommand\git{\trademark{git}}
+\newcommand\pdf{\trademark{PDF}}
+
+\newcommand\brainfuck{\trademark{Brainfuck}}
+\newcommand\lua{\trademark{Lua}}
+\newcommand\perl{\trademark{Perl}}
+\newcommand\python{\trademark{Python}}
+
+\newcommand\pygmentsREF{\href{https://pygments.org/}{\trademark{Pygments}}}
+
+% Useful command.
+
+\NewDocumentCommand{\mailsubject}{m}%  <-- Translate me!
+  {sujet \tdocquote{\texttt{tutodoc - CONTRIB - #1}}}
+
+% Drawing a pretty dirtree.
+%
+% Source: https://tex.stackexchange.com/a/424061/6880
+
+\newcommand{\FTdirO}{}
+\def\FTdirO(#1,#2,#3){%
+  \FTfile(#1,{\color{blue!40!black}\faFolderOpen\hspace{-.35pt}}{\hspace{0.2em}#3})
+  (tmp.west)++(0.8em,-0.4em)node(#2){}
+  (tmp.west)++(1.5em,0)
+  ++(0,-1.3em)
+}
+
+\newcommand{\FTdirC}{}
+\def\FTdirC(#1,#2,#3){%
+  \FTfile(#1,{\color{blue!40!black}\faFolder\hspace{.75pt}}{\hspace{0.2em}#3})
+  (tmp.west)++(0.8em,-0.4em)node(#2){}
+  (tmp.west)++(1.5em,0)
+  ++(0,-1.3em)
+}
+
+\newcommand{\FTfile}{}
+\def\FTfile(#1,#2){%
+  node(tmp){}
+  (#1|-tmp)++(0.6em,0)
+  node(tmp)[anchor=west,black]{\texttt{#2}}
+  (#1)|-(tmp.west)
+  ++(0,-1.2em)
+}
+
+\newcommand{\FTroot}{}
+\def\FTroot{tmp.west}
+
+\newcommand\contribtranslatedirtree{
+  \begin{tikzpicture}%
+    \draw[color=black, thick]
+% en        : parent = \FTroot
+% normal dir: (parentID, currentID, label)
+% file      :       (parentID, label)
+      \FTdirO(\FTroot,root,translate){
+        \FTdirC(root,changes,changes){
+        }
+        \FTdirO(root,en,en) {
+          \FTdirC(en,api,api) {
+          }
+          \FTdirC(en,doc,doc) {
+          }
+        }
+        \FTdirC(root,fr,fr){
+        }
+        \FTdirC(root,status,status){
+          \FTdirO(status,en,en) {
+            \FTfile(en,api.yaml)
+            \FTfile(en,manual.yaml)
+          }
+          \FTdirC(status,fr,fr){
+          }
+        }
+        \FTfile(root,README.md)
+        \FTfile(root,LICENSE.txt)
+      };
+  \end{tikzpicture}
+}

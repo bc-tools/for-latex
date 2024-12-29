@@ -1,6 +1,6 @@
 \documentclass{tutodoc}
 
-\input{../preamble.cfg.tex}
+\usepackage{../preamble.cfg}
 
 
 \begin{document}
@@ -21,5 +21,10 @@ The macro \tdocmacro{tdocinEN} and its starred version are based on \tdocmacro{t
 \begin{tdocnote}
     As the text \tdocquote{in English} is translated into the language detected by \thisproj, the macro \tdocmacro{tdocinEN} and its starred version become useful for non-English speakers.
 \end{tdocnote}
+
+
+\begin{tdocimp}	
+	For documents written in a language other than English, if one of the packages \tdocpack{babel} and \tdocpack{polyglossia} is loaded, then, in \tdocquote{the quoted content}\,, the English linguistic rules are respected.
+\end{tdocimp}
 
 \end{document}
