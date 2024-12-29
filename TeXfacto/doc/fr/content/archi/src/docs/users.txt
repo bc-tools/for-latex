@@ -44,3 +44,4 @@ content::
     \content/placeholders.txt       ????????
     \content/abstract.txt           ??????
     \content/style.txt              ????
+    \content/class-for-doc.txt      ??

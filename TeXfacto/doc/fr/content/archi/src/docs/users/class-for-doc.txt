@@ -1,0 +1,11 @@
+this::
+    date = 2024-12-28 ???
+
+
+=================================
+\cls \latex utilisée pour la \doc
+=================================
+
+???
+
+OK: détecté auto dans les tex et on doit utiliser la même classe avec les memes réglages, ceci permet au passage de ne pas avoir un rendu non conforme au proj fial
