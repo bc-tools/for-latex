@@ -2,14 +2,16 @@ this::
     date = 2024-12-29   ????
 
 
-=====================================
-Utile : des variables de substitution
-=====================================
+=========================
+Des \vars de substitution
+=========================
 
 YYY
 
 
-tout ce qui est dans le about est accessible : prendfe un schéma de noms automatiquement
+tout ce qui est dans le about
+cf::''?/metadata/full-specs.txt''
+est accessible : prendfe un schéma de noms automatiquement
 
 +
 
