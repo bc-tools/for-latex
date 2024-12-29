@@ -1,1 +1,6 @@
-???
+--------
+:update:
+--------
+
+[[:doc:]]
+Manual: the English version indicates the use of English rules inside quoted content build by the macro ''\tdocinEN''.

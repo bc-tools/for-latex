@@ -1,6 +1,6 @@
 \documentclass{../main/main}
 
-\input{../preamble.cfg.tex}
+\usepackage{../preamble.cfg}
 
 \usepackage{../admonitions/admonitions.cls}
 \usepackage{../listing-latex/listing-latex.cls}
@@ -30,11 +30,13 @@ La macro \tdocmacro{tdocinEN} et sa version étoilée s'appuient sur \tdocmacro{
 \end{tdocnote}
 
 
-Dans le contenu entre guillemets, les règles linguistiques anglaises sont respectées comme le montre l'exemple suivant.
+\begin{tdocimp}
+	Si l'un des packages \tdocpack{babel} et \tdocpack{polyglossia} est chargé, alors, dans le contenu entre guillemets, les règles linguistiques anglaises sont respectées comme le montre l'exemple suivant.
 
-\begin{tdoclatex}<\tdoctcb{sbs}>
+	\begin{tdoclatex}<\tdoctcb{sbs}>
           Test: \tdocquote{OK?}  \\
 \tdocinEN{Test: \tdocquote{OK?}}
-\end{tdoclatex}
+	\end{tdoclatex}
+\end{tdocimp}
 
 \end{document}
