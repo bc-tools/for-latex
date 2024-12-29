@@ -8,7 +8,14 @@
 \frenchsetup{StandardItemLabels=true}
 
 \usepackage{multicol}
+
 \usepackage{tasks}
+\settasks{
+	before-skip=4pt,
+	item-indent=17pt,
+	label-width=9pt,
+	label-offset=0em,
+}
 
 \usepackage{pdfpages}
 \includepdfset{
@@ -21,6 +28,7 @@
 \newcommand\thisproj{\tdoccls{tutodoc}}
 \newcommand\thisrepo{\url{https://github.com/bc-tools/for-latex/tree/tutodoc}}
 \newcommand\thismonorepo{\url{https://github.com/bc-tools/for-latex}}
+
 
 \NewDocumentCommand{\trademark}{m}{\texttt{#1}}
 

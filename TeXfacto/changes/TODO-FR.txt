@@ -33,6 +33,12 @@ note::
           preamble:
             ...
 
+
+> ---------------------------- <
+
+attention : templ besoin d'outils maison non présnet dans le pramble.cgf.sty
+
+
 > ---------------------------- <
 
 hook = ??? propo de chatgpt
