@@ -17,18 +17,22 @@ from babel.dates import format_date
 # TODO
 def tex_depends(
     lang : str,
-    infos: list(tuple(str, tuple(int, int, int)))
+    infos,#: list(tuple(str, tuple(int, int, int)))
 ) -> str:
     texcode = []
 
     for n, d in infos:
         d = format_date(
             date   = date(*d),
+            format = "dd/MM/yyyy",
             locale = lang
         )
 
-        texcode.append(fr"    \task \texttt{{{n}}}")
-        texcode.append(fr"    \hfill {{\small ({d})}}\kern10pt")
+        texcode.append(
+            fr"    \task \texttt{{{n}}}"
+              "\n"
+            fr"    \hfill {{\small ({d})}}\kern10pt"
+        )
 
     texcode = "\n\n".join(texcode)
     texcode = fr"""
@@ -44,6 +48,7 @@ def tex_depends(
 print(
     tex_depends(
         "en",
-        [("XXX", (2024, 12, 30))]
+        [("XXX", (2024, 12, 30)),
+        ("XXX", (2024, 12, 30))]
     )
 )
