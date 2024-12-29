@@ -1,20 +1,48 @@
 this::
-    date = 2024-12-29   ????
+    date = 2024-12-30   ????
 
 
 ======================
 Les textes "complexes"
 ======================
 
-???
+En plus des contenus présents dans le fichier path::''about.yaml'' du projet, \texfacto donne accès à d'autres \infos découvertes automatiquement comme la liste des \clss et des \packs utilisés, la date et le \numver en cours...
+Dans l'exemple suivant, latex::''<<DEPENDS>>'' fait justement \ref à la liste des \clss et des \packs utilisés.
 
 latex::
     ---
     path    = ?/examples/archi/tutodoc/depends-extract.tex
+    extract = yes
+    title   = Un extrait du fichier path::''depends.tex'' du code \src du projet \tutodoc
+    date    = \tutodoc_date
+    ---
+
+
+Ce cas est intéressant, car le contenu proposé par défaut est peu pertinent. En effet, sans intervention de notre part, nous aboutissons au contenu final suivant.
+
+latex::
+    ---
+    path  = ?/examples/archi/tutodoc/depends-extract-default.tex
+    title = Le rendu par défaut
+    ---
+
+
+Nous allons expliquer comment obtenir le contenu plus utile ci-après via quelques lignes de code \python peu violentes.
+
+latex::
+    ---
+    path    = ?/examples/archi/tutodoc/depends-extract-final.tex
     extract = yes
     title   = Un extrait du fichier path::''tutodoc-fr.tex'' du projet \tutodoc
     date    = \tutodoc_date
     ---
 
 
-YYY
+?????
+
+
+python::
+    ---
+    path  = ?/examples/archi/tutodoc/depends-extract-hook.py
+    title = Un fichier path::''hook/placeholders.py'' simplifié
+    ---

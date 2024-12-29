@@ -10,9 +10,10 @@ abrev::
 Des \vars de substitution
 =========================
 
-Pour faciliter la \redacde la \doc, \texfacto propose quelques \vars qui seront remplacées par du texte lors de la construction de la \doc finale.
+Pour faciliter la \redac de la \doc, \texfacto propose un \syst de \vars de substitution de contenus finaux en lien avec le \proj comme sa date, son \numver, ses \deps...
 
 
 content::
-    \content/simple.txt     ????
-    \content/complex.txt     ??
+    \content/simple.txt
+    \content/complex.txt        ????
+    \content/full-list.txt      ??

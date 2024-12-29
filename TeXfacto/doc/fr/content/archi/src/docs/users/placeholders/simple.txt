@@ -1,40 +1,44 @@
 this::
-    date = 2024-12-29   ????
-
+    date = 2024-12-29
 
 
 ====================
 Les textes "simples"
 ====================
 
-
-
-============================================================
-Les textes renseignés dans le path::''about.yaml'' du projet
-============================================================
-
-???
-
-
-
+Commençons par l'exemple simple ci-après où est utilisé la \var de substitution latex::''<<AUTHOR>>'' afin d'utiliser le nom de l'auteur du \proj, avec éventuellement son email, tel qu'il a été renseigné dans le fichier path::''about.yaml'' du projet
+((
+    Voir cf::''?/metadata.txt'' pour des \infos sur ce ficheir.
+)).
 
 latex::
     ---
     path    = ?/examples/archi/tutodoc/abstract-extract.tex
+    extract = yes
+    title   = Un extrait du fichier path::''abstract.tex'' du code \src du projet \tutodoc
+    date    = \tutodoc_date
+    ---
+
+
+Lors de la \fabric de la \doc finale, les lignes précédentes étaient transformées comme suit, car yaml::''author : Christophe, BAL'' était employé dans le fichier path::''about.yaml'' du projet.
+
+latex::
+    ---
+    path    = ?/examples/archi/tutodoc/abstract-extract-final.tex
     extract = yes
     title   = Un extrait du fichier path::''tutodoc-fr.tex'' du projet \tutodoc
     date    = \tutodoc_date
     ---
 
 
-tout ce qui est dans le about
-cf::''?/metadata/full-specs.txt''
-est accessible : prendfe un schéma de noms automatiquement
+Il faut retenir que tout contenu tapé dans le fichier path::''about.yaml'' du projet donne naissance à un texte par défaut produit par \thisproj
+((
+    La section qui suit montre comment modifier les textes de remplacement.
+)),
+et utilisable via une \var de substitution nommée en respectant les étapes suivantes.
 
-+
+    1) Il faut construire le chemin virtuel relatif sous la clé yaml::''project'' du contenu souhaité.
+    Par exemple, yaml::''author'' et yaml::''langs/manual'' sont deux chemins virtuels valides.
 
-versions et date du cghange tech
-
-+
-
-d'autre variable construites
+    1) À partir du chemin virtuel, on construit le nom en passant aux majuscules, et en changeant \ttes les obliques yaml::''/'' en des tirets latex::''-'', puis on encadre le tout par des doubles chevrons latex::''<< ... >>''.
+    Pour les deux exemples précédents, nous obtenons les noms latex::''<<AUTHOR>>'' et  latex::''<<LANGS-MANUAL>>''.

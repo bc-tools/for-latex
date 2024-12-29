@@ -1,0 +1,16 @@
+this::
+    date = 2024-12-30   ????
+
+
+==============
+XXX
+==============
+
+YYY
+ création auto mais besoin de mettre où contenu existe, où s'il est construit, comment cela est fait
+
+    --> non var
+
+    --> type de contenu
+
+    --> type de donnés de la var infos
