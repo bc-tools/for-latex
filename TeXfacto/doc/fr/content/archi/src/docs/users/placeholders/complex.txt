@@ -1,0 +1,20 @@
+this::
+    date = 2024-12-29   ????
+
+
+======================
+Les textes "complexes"
+======================
+
+???
+
+latex::
+    ---
+    path    = ?/examples/archi/tutodoc/depends-extract.tex
+    extract = yes
+    title   = Un extrait du fichier path::''tutodoc-fr.tex'' du projet \tutodoc
+    date    = \tutodoc_date
+    ---
+
+
+YYY

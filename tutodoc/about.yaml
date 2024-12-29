@@ -5,7 +5,7 @@ project:
   author : Christophe, BAL
 
   licences:
-    code: gnu 3
+    code  : gnu 3
     manual: gnu 3
 
   urls:

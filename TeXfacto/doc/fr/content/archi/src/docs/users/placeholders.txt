@@ -14,5 +14,5 @@ Pour faciliter la \redacde la \doc, \texfacto propose quelques \vars qui seront 
 
 
 content::
-    \content/auto-build.txt     ????
-    \content/from-about.txt     ??
+    \content/simple.txt     ????
+    \content/complex.txt     ??

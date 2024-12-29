@@ -2,28 +2,20 @@ this::
     date = 2024-12-29   ????
 
 
-=========================
-XXX
-=========================
 
-Pour faciliter la \redac, \texfacto propose quelques \vars qui seront remplacées par du texte lors de la construction de la \doc finale.
-
-
-content::
+====================
+Les textes "simples"
+====================
 
 
 
-Voici un exemple d'utilisation.
+============================================================
+Les textes renseignés dans le path::''about.yaml'' du projet
+============================================================
+
+???
 
 
-
-latex::
-    ---
-    path    = ?/examples/archi/tutodoc/depends-extract.tex
-    extract = yes
-    title   = Un extrait du fichier path::''tutodoc-fr.tex'' du projet \tutodoc
-    date    = \tutodoc_date
-    ---
 
 
 latex::
@@ -33,8 +25,6 @@ latex::
     title   = Un extrait du fichier path::''tutodoc-fr.tex'' du projet \tutodoc
     date    = \tutodoc_date
     ---
-
-YYY
 
 
 tout ce qui est dans le about
