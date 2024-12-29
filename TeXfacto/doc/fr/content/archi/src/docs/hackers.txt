@@ -13,7 +13,6 @@ Par exemple, l'auteur de \thisproj utilise une syntaxe très intuitive, et lisib
     Il rendra possible l'automatisation de certaines tâches comme la création de versions \html et \pdf des \docs \techs.
 )).
 
-
 latex::
     ---
     path    = ?/examples/archi/tutodoc/showcase-extract.sty

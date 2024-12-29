@@ -9,6 +9,11 @@ NOW
 
 > ---------------------------- <
 
+chgt preamble à intégrer dans les contribs EN en validant la mise à jour aut de FR par texfacto
+
+
+> ---------------------------- <
+
 macro de rgélage global en parallèle des options de classe (on prépare terrain pour monorepio à la tns)
 
 

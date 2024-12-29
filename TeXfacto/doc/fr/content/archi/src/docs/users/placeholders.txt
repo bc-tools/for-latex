@@ -1,22 +1,18 @@
 this::
-    date = 2024-12-29   ????
+    date = 2024-12-29
+
+
+abrev::
+    content = :this.name:
 
 
 =========================
 Des \vars de substitution
 =========================
 
-YYY
+Pour faciliter la \redacde la \doc, \texfacto propose quelques \vars qui seront remplacées par du texte lors de la construction de la \doc finale.
 
 
-tout ce qui est dans le about
-cf::''?/metadata/full-specs.txt''
-est accessible : prendfe un schéma de noms automatiquement
-
-+
-
-versions et date du cghange tech
-
-+
-
-d'autre variable construites
+content::
+    \content/auto-build.txt     ????
+    \content/from-about.txt     ??
