@@ -1,31 +1,37 @@
-# on fr-ournit de type alias du type TXF_..._Type ce qui permet de faire au passage de l'introspection et sera facile d'mploi
-#
-#
-#  Il vaut mieux employer le typage à la Python. Ici nous devons indiquer un type
-# >>> from typing import TypeAlias
-# >>> Vector: TypeAlias =List[Tuple[str, Tuple[int, int, int]]]
-# >>> print(get_args(Vector))
-# (typing.Tuple[str, typing.Tuple[int, int, int]],)
-# >>> print(get_origin(Vector))
-# <class 'list'>
-from typing import List
-
-# TODO
+# Deux modules pour nous aider à gérer le format des dates pour
+# la langue de la documentation.
 from datetime    import date
 from babel.dates import format_date
 
-# TODO
-def tex_depends(
-    lang : str,
-    infos,#: list(tuple(str, tuple(int, int, int)))
-) -> str:
+# La fonction codée est nommée en utilisant le préfixe ''tex_''
+# suivi de la version minuscule du nom de la variable de
+# substitution, sans les chevrons bien entendu.
+# De plus, ce type de fonction doit toujours utiliser les deux
+# variables ''lang'' et ''infos'', et renvoyer un code TeX valide.
+def tex_depends(lang, infos):
+# On souhaite un format adapté à l'anglais ou au français, les
+# deux seules langues des documentations.
+    if lang == "en":
+        fdate = "yyyy-MM-dd"
+    else:
+        fdate = "dd/MM/yyyy"
+
+# Nous créons d'abord le contenu "intérieur" ligne par la ligne.
     texcode = []
 
+# La documentation du système d'interception nous permet de savoir
+# que pour ''<<DEPENDS>>'', la variable ''infos'', qui est fournie
+# par TeXfacto, est un liste de couples ''(n, d)'' du type suivant.
+#
+#     * ''n'' est le nom du classe ou d'un package LaTeX avec son
+#       extension ''cls'' ou ''sty''.
+#
+#     * ''d'' est une date au format ''(année, mois, jour)'' un
+#       triplet de trois naturels.
     for n, d in infos:
         d = format_date(
             date   = date(*d),
-            format = "dd/MM/yyyy",
-            locale = lang
+            format = fdate
         )
 
         texcode.append(
@@ -34,7 +40,11 @@ def tex_depends(
             fr"    \hfill {{\small ({d})}}\kern10pt"
         )
 
+# On colle les lignes ensemble avec des retours à la ligne.
     texcode = "\n\n".join(texcode)
+
+# Le code intérieur est inséré dans le corps de l'environnement
+# LaTeX souhaité.
     texcode = fr"""
 %
 \begin{{tasks}}[style=itemize](2)"
@@ -42,13 +52,6 @@ def tex_depends(
 \end{{tasks}}
     """.strip()
 
+# Nous renvoyons le code TeX final qu'utilisera TeXfacto lors de
+# la fabrication des documentations.
     return texcode
-
-
-print(
-    tex_depends(
-        "en",
-        [("XXX", (2024, 12, 30)),
-        ("XXX", (2024, 12, 30))]
-    )
-)

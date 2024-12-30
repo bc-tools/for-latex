@@ -2,11 +2,11 @@
 
 
 ==
-??  (0.0.0-alpha.3)
+31  (0.0.0-alpha.3)
 ==
 
 -----
-:new:  ??
+:new:
 -----
 
 \Doc: the section about writing the manual look good.

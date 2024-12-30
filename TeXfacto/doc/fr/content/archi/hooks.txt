@@ -7,3 +7,7 @@ XXX
 =========
 
 YYY
+
+
+content::
+    \content/placeholders.txt

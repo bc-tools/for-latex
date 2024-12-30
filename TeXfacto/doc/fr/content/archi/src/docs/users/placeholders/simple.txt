@@ -1,10 +1,10 @@
 this::
-    date = 2024-12-29
+    date = 2024-12-30
 
 
-====================
-Les textes "simples"
-====================
+=====================================
+Les textes "simples" prêts à l'emploi
+=====================================
 
 Commençons par l'exemple simple ci-après où est utilisé la \var de substitution latex::''<<AUTHOR>>'' afin d'utiliser le nom de l'auteur du \proj, avec éventuellement son email, tel qu'il a été renseigné dans le fichier path::''about.yaml'' du projet
 ((
@@ -31,11 +31,10 @@ latex::
     ---
 
 
-Il faut retenir que tout contenu tapé dans le fichier path::''about.yaml'' du projet donne naissance à un texte par défaut produit par \thisproj
+Il faut retenir que tout contenu tapé dans le fichier path::''about.yaml'' du projet donne naissance à un texte par défaut produit par \thisproj, et utilisable via une \var de substitution nommée en respectant les étapes suivantes
 ((
     La section qui suit montre comment modifier les textes de remplacement.
-)),
-et utilisable via une \var de substitution nommée en respectant les étapes suivantes.
+)).
 
     1) Il faut construire le chemin virtuel relatif sous la clé yaml::''project'' du contenu souhaité.
     Par exemple, yaml::''author'' et yaml::''langs/manual'' sont deux chemins virtuels valides.

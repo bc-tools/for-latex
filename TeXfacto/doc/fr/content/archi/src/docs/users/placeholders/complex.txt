@@ -1,10 +1,14 @@
 this::
-    date = 2024-12-30   ????
+    date = 2024-12-30
 
 
-======================
-Les textes "complexes"
-======================
+=========================================
+Les textes "complexes" sûrement à adapter
+=========================================
+
+caution::
+    Nous donnons ici un exemple simplifié qui est améliorable. Pour faire correctement usage de "complexes", il faut se reporter à cf::''?/hooks/placeholders.txt''.
+
 
 En plus des contenus présents dans le fichier path::''about.yaml'' du projet, \texfacto donne accès à d'autres \infos découvertes automatiquement comme la liste des \clss et des \packs utilisés, la date et le \numver en cours...
 Dans l'exemple suivant, latex::''<<DEPENDS>>'' fait justement \ref à la liste des \clss et des \packs utilisés.
@@ -38,11 +42,15 @@ latex::
     ---
 
 
-?????
-
+\thisproj propose un système d'interception du cycle de \prod
+((
+    En anglais, on emploie le terme "hooks" qui signifie "crochets".
+)).
+Ceci nécessite de coder des fonctions accessibles depuis le script \python path::''hooks/placeholders.py''.
+Dans notre cas, le code suivant fait le travail. Bien lire les commentaires qui expliquent le pourquoi du comment.
 
 python::
     ---
-    path  = ?/examples/archi/tutodoc/depends-extract-hook.py
+    path  = ?/examples/archi/tutodoc/depends-hook.py
     title = Un fichier path::''hook/placeholders.py'' simplifié
     ---

@@ -1,11 +1,14 @@
 this::
-    date = 2024-12-28 ???
+    date = 2024-12-31
 
 
 =================================
 \cls \latex utilisée pour la \doc
 =================================
 
-???
+\texfacto repère la classe utilisée, avec d'éventuelles options, dans les fichiers ext::''tex'' de la \doc. Ceci implique de \tjrs utiliser la même classe avec les mêmes options.
 
-OK: détecté auto dans les tex et on doit utiliser la même classe avec les memes réglages, ceci permet au passage de ne pas avoir un rendu non conforme au proj fial
+
+note::
+    Il est autorisé d'employer comme classe celle en cours de \dev.
+    Par exemple, le projet \tutodoc utilise, hors du dossier path::''main'', le réglage latex::''\documentclass{../main/main}'' dans les fichiers ext::''tex'' du code \src, tandis que latex::''\documentclass{main}'' apparait dans le dossier path::''main''.

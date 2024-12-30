@@ -1,17 +1,10 @@
 this::
-    date = 2023-10-31
+    date = 2024-12-31
 
 
 ================
 Style de la \doc
 ================
 
-La \doc ne suit pas les méthodologies dominantes proposées par \latex
-((
-    L'auteur ne lancera pas ici de polémique sur l'utilité de la \prog littéraire, ou de la rédaction d'une \doc qui parle plus à des codeurs qu'à de simples utilisateurs.
-)).
-Les choix retenus et assumés sont les suivants.
-
-    * Les fonctionnalités sont présentées sous forme d'exemples d'utilisation.
-
-    * Le code \src n'apparaît jamais dans la \doc destinée à l'utilisateur : les codeurs affûtés sauront analyser le code \src en s'appuyant sur la \doc \tech : voir cf::''?/for-hackers.txt'' et cf::''?/hackers-vs-users.txt''.
+L'esprit du projet \thisproj est de proposer uen alternative aux méthodologies dominantes proposées par \latex.
+Concrètement, \la doc "utilisateur" présentera les fonctionnalités sous forme d'exemples d'utilisation plus ou moins complexes, et ceci sans contenir le code \src.

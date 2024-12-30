@@ -15,5 +15,5 @@ Pour faciliter la \redac de la \doc, \texfacto propose un \syst de \vars de subs
 
 content::
     \content/simple.txt
-    \content/complex.txt        ????
-    \content/full-list.txt      ??
+    \content/complex.txt
+    \content/full-list.txt

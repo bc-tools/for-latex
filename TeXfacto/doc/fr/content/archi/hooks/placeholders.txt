@@ -1,0 +1,40 @@
+this::
+    date = 2024-12-25  ??
+
+
+=========
+XXX
+=========
+
+???
+
+
+ création auto mais besoin de mettre où contenu existe, où s'il est construit, comment cela est fait
+
+    --> non var
+
+    --> type de contenu
+
+    --> type de donnés de la var infos
+
+
++
+
+placeholders
+
+    --> texfacto fournit repr des vars, donc par exemple pour les langs, on aura une liste de vals séparés par des virgules
+
+    --> dans le dossier hook, on peut redéfinir dans le fichier placeholders.py de nom imposé
+
++
+
+# on fr-ournit de type alias du type TXF_..._Type ce qui permet de faire au passage de l'introspection et sera facile d'mploi
+#
+#
+#  Il vaut mieux employer le typage à la Python. Ici nous devons indiquer un type
+# >>> from typing import TypeAlias
+# >>> Vector: TypeAlias =List[Tuple[str, Tuple[int, int, int]]]
+# >>> print(get_args(Vector))
+# (typing.Tuple[str, typing.Tuple[int, int, int]],)
+# >>> print(get_origin(Vector))
+# <class 'list'>

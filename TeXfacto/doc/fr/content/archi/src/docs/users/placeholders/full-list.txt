@@ -1,16 +1,9 @@
 this::
-    date = 2024-12-30   ????
+    date = 2024-12-31
 
 
-==============
-XXX
-==============
+=============
+Mode d'emploi
+=============
 
-YYY
- création auto mais besoin de mettre où contenu existe, où s'il est construit, comment cela est fait
-
-    --> non var
-
-    --> type de contenu
-
-    --> type de donnés de la var infos
+L'emploi de \vars de substitution est complétement documenté dans cf::''?/hooks/placeholders.txt''.
