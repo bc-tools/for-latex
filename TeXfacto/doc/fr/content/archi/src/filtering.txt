@@ -11,6 +11,9 @@ Trier et filtrer avant d'assembler
 ==================================
 
 
+????
+
+
 parler de ignore de about qui permet de tjrs ignorer tmpl-, debug- ...etc
 
 
