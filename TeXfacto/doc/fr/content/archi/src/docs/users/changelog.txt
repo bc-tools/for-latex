@@ -1,16 +1,13 @@
 this::
-    date = 2024-12-28
+    date = 2024-12-31
 
 
 =====================
 Le journal des \chgts
 =====================
 
-Le \proj dispose d'un dossier path::''change'' où indiquer, \tjrs en anglais, les \chgts des versions en \dev, et aussi ceux importants uniquement pour les versions stables publiées : voir cf::''?/archi/changes.txt''.
-
-
 caution::
-    \thisproj lèvera une erreur en cas de non cohérence entre les \chgts stables côté path::''change'', et ceux rédigés dans path::''src/changelog''.
+    Tout \proj doit utiliser un dossier path::''change'' où indiquer les \chgts liés au code \src. Dès lors, \thisproj lèvera une erreur en cas de non cohérence entre les \chgts stables côté path::''change'', et ceux rédigés dans path::''src/changelog'' qui sont présentés dans cette section.
 
 
 Pour la \doc "utilisateur", les \chgts "stables" doivent être renseignés via une \orga similaire à la suivante.
@@ -23,7 +20,7 @@ dirtree::
     ---
 
 
-Expliquons un peu la scène du crime en commençant par les fichiers path::''test_one_date.tex'' et path::''next.tex'' qui s'obtiennent via \thisproj.
+Expliquons un peu la scène du crime en commençant par les fichiers path::''test_one_date.tex'' et path::''next.tex'' qui se construisent via \thisproj.
 Le fichier path::''next.tex'' est initialement vide, tandis que le contenu du fichier path::''test_one_date.tex'' produit par \thisproj est le suivant.
 
 latex::

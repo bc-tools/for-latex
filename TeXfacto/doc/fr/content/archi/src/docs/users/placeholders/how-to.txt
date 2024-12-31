@@ -1,0 +1,9 @@
+this::
+    date = 2024-12-31
+
+
+=============
+Mode d'emploi
+=============
+
+L'emploi de \vars de substitution et la création de textes "complexes" sont documentés en détails dans cf::''?/hooks/placeholders.txt''.

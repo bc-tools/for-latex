@@ -7,3 +7,9 @@ XXX
 =========
 
 YYY
+
+    Tout \proj doit utiliser un dossier path::''change'' où indiquer, \tjrs en anglais, les \chgts des versions en \dev, et aussi ceux importants uniquement pour les versions stables publiées : voir cf::''?/archi/changes.txt''.
+
+
+::
+    \thisproj lèvera une erreur en cas de non cohérence entre les \chgts stables côté path::''change'', et ceux rédigés dans path::''src/changelog''.

@@ -1,0 +1,12 @@
+// ---------- //
+
+
+==
+XX  (0.0.0-alpha.4)
+==
+
+-----
+:new:
+-----
+
+\Doc: the section about resources look good.

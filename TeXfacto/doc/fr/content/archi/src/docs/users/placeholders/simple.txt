@@ -1,14 +1,14 @@
 this::
-    date = 2024-12-30
+    date = 2024-12-31
 
 
 =====================================
 Les textes "simples" prêts à l'emploi
 =====================================
 
-Commençons par l'exemple simple ci-après où est utilisé la \var de substitution latex::''<<AUTHOR>>'' afin d'utiliser le nom de l'auteur du \proj, avec éventuellement son email, tel qu'il a été renseigné dans le fichier path::''about.yaml'' du projet
+Dans l'exemple ci-après, la \var de substitution latex::''<<AUTHOR>>'' demande d'utiliser le nom de l'auteur du \proj, avec éventuellement son email, tel que cela a été renseigné dans le fichier path::''about.yaml'' du projet
 ((
-    Voir cf::''?/metadata.txt'' pour des \infos sur ce ficheir.
+    Voir cf::''?/metadata.txt'' pour des \infos sur ce fichier.
 )).
 
 latex::
@@ -20,7 +20,7 @@ latex::
     ---
 
 
-Lors de la \fabric de la \doc finale, les lignes précédentes étaient transformées comme suit, car yaml::''author : Christophe, BAL'' était employé dans le fichier path::''about.yaml'' du projet.
+Lors de la \fabric de la \doc finale à la date du \tutodoc_date, les lignes précédentes étaient transformées comme suit, car yaml::''author : Christophe, BAL'' était employé dans le fichier path::''about.yaml'' du projet.
 
 latex::
     ---
@@ -33,7 +33,7 @@ latex::
 
 Il faut retenir que tout contenu tapé dans le fichier path::''about.yaml'' du projet donne naissance à un texte par défaut produit par \thisproj, et utilisable via une \var de substitution nommée en respectant les étapes suivantes
 ((
-    La section qui suit montre comment modifier les textes de remplacement.
+    La section qui suit montre comment modifier à sa guise les textes de remplacement.
 )).
 
     1) Il faut construire le chemin virtuel relatif sous la clé yaml::''project'' du contenu souhaité.
