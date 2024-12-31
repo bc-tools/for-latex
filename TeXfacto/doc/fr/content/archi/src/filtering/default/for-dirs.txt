@@ -11,7 +11,14 @@ Pour les dossiers
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/dirtree/src/filtering/dirs-default.txt
+    path  = ?/examples/archi/tutodoc/dirtree/filtering/src/dirs-no-about.txt
+    title = Une vue simplifiée du dossier path::''src'' de \tutodoc
+    date    = \tutodoc_date
+    ---
+
+dirtree::
+    ---
+    path  = ?/examples/archi/tutodoc/dirtree/filtering/src/dirs-default.txt
     title = Une vue simplifiée du dossier path::''src'' de \tutodoc
     date    = \tutodoc_date
     ---
