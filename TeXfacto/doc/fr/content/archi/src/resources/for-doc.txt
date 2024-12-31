@@ -1,0 +1,27 @@
+this::
+    date = 2024-12-31
+
+
+abrev::
+    content = :this.name:
+
+
+==========================
+Pour la \doc "utilisateur"
+==========================
+
+warning::
+    Comme indiqué dans cf::''?/docs/users.txt'', la \doc doit être compilable librement. C'est une contrainte très forte qui va contraindre les types de ressources utilisables.
+
+
+content::
+    \content/XXX.txt      ??
+    \content/XXX.txt      ??
+    \content/XXX.txt      ??
+    \content/XXX.txt      ??
+    \content/XXX.txt      ??
+    \content/XXX.txt      ??
+    \content/XXX.txt      ??
+    \content/XXX.txt      ??
+    \content/XXX.txt      ??
+    \content/XXX.txt      ??

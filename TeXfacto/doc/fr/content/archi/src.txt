@@ -10,5 +10,5 @@ content::
     \content/general.txt
     \content/pack-vs-class.txt
     \content/docs.txt
-    \content/resources.txt              ????
-    \content/sorting.txt                ??
+    \content/filtering.txt              ????
+    \content/resources.txt              ??

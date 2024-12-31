@@ -1,0 +1,24 @@
++ src
+    * about.yaml
+    * preamble.cfg.sty
+
+    + admonitions
+        * about.yaml
+        * admonitions.cls.sty
+        * admonitions.tex
+        * debug-admo-break.tex
+        * debug-admo-bw.tex
+        * debug-admo-color.tex
+        * debug-admo-dark.tex
+        * debug-admo-draft.tex
+        * debug-exa-rmk-counter.tex
+        * example.tex
+        * remark.tex
+        + css [...]
+        + examples [...]
+
+    + theme
+        * about.yaml
+        * theme.tex
+        * tmpl-theme-annex-page.tex
+        * tmpl-theme-showcase-color.tex

@@ -1,5 +1,5 @@
 this::
-    date = 2025-01-XX ???
+    date = 2024-12-31
 
 
 abrev::
@@ -10,16 +10,16 @@ abrev::
 Utiliser des ressources
 =======================
 
+Nos explications vont s'appuyer sur le cas d'utilisation réel suivant (nous n'avons gardé que les parties pertinentes de la \struct de dossier).
 
-
-????
-
-
-
-note::
-    Pour les exemples, nous considérons un \pack mais bien entendu ce qui suit s'applique au \dev d'une classe, mais aussi d'un \pack et d'une classe de même nom.
+dirtree::
+    ---
+    path  = ?/examples/archi/tutodoc/dirtree-src-resources.txt
+    title = Une vue simplifiée du dossier path::''src'' de \tutodoc
+    date    = \tutodoc_date
+    ---
 
 
 content::
-    \content/general.txt            ????
-    \content/good-practice.txt      ??
+    \content/for-doc.txt        ????
+    \content/for-code.txt       ??

@@ -22,6 +22,15 @@ Il faut aussi retenir que la \lang utilisée par le codeur est connue de \thispr
 Par exemple, le \tutodoc_date, le projet \tutodoc proposait les fichiers path::''tutodoc-en.pdf'' et path::''tutodoc-fr.pdf'' comme \docs "utilisateur".
 
 
+warning::
+    Les règles du monde numérique libre sont drastiques : par exemple, la \distrib \linux \debian impose qu'un projet libre fournisse une \doc compilable librement. Il faut donc veiller à cela lorsque l'on rédige sa \doc. Ceci est important pour les resources employés par une \doc : voir cf::''?/resources.txt''.
+
+
+tip::
+    Le plus simple est de garder les explications s'appuyant sur des images pour des \demos accessibles via le \web.
+
+
+
 note::
     Nous commençons par des exemples laissant \thisproj ordonner les morceaux à coller dans la \doc de façon "naturelle", mais en commençant \tjrs par le contenu du dossier path::''main''.
     De plus, nous ne parlons pas ici de l'usage de ressources.
