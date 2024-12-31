@@ -14,7 +14,7 @@ note::
 
     dirtree::
         ---
-        path  = ?/examples/archi/tutodoc/dirtree-contrib-changelog.txt
+        path  = ?/examples/archi/tutodoc/dirtree/contrib/changelog.txt
         title = Le dossier path::''changelog'' pour les traductions de \tutodoc
         date  = 2023-12-28
         ---

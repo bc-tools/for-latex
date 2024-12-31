@@ -14,7 +14,7 @@ Nos explications vont s'appuyer sur le cas d'utilisation réel suivant (nous n'a
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/dirtree-src-resources.txt
+    path  = ?/examples/archi/tutodoc/dirtree/src/resources.txt
     title = Une vue simplifiée du dossier path::''src'' de \tutodoc
     date    = \tutodoc_date
     ---

@@ -11,23 +11,16 @@ Trier et filtrer avant d'assembler
 ==================================
 
 
+content::
+    \content/default.txt        ??
+
+
+
 ????
 
 
 parler de ignore de about qui permet de tjrs ignorer tmpl-, debug- ...etc
 
-
-note::
-    Pour les exemples, nous considérons un \pack mais bien entendu ce qui suit s'applique au \dev d'une classe, mais aussi d'un \pack et d'une classe de même nom.
-
-
-
-dirtree::
-    ---
-    path  = ?/examples/archi/tutodoc/dirtree-src-resources.txt
-    title = Une vue simplifiée du dossier path::''src'' de \tutodoc
-    date    = \tutodoc_date
-    ---
 
 
 content::

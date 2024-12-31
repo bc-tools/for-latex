@@ -14,7 +14,7 @@ Pour la \doc "utilisateur", les \chgts "stables" doivent être renseignés via u
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/dirtree-changelog.txt
+    path  = ?/examples/archi/tutodoc/dirtree/changelog.txt
     title = Le dossier path::''src/changelog'' de \tutodoc
     date  = 2023-12-28
     ---

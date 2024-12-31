@@ -1,0 +1,12 @@
+abrev::
+    content = :this.name:
+
+
+=======================
+L'assemblage par défaut
+=======================
+
+content::
+    \content/for-dirs.txt           ??????
+    \content/for-files.txt          ????
+    \content/for-both.txt           ??

@@ -1,0 +1,17 @@
+this::
+    date = 2024-12-31    ????
+
+
+=================
+Pour les dossiers
+=================
+
+??
+
+
+dirtree::
+    ---
+    path  = ?/examples/archi/tutodoc/dirtree/src/filtering/dirs-default.txt
+    title = Une vue simplifiée du dossier path::''src'' de \tutodoc
+    date    = \tutodoc_date
+    ---

@@ -1,7 +1,4 @@
 + src
-    * about.yaml
-    * preamble.cfg.sty
-
     + admonitions
         * about.yaml
         * admonitions.cls.sty
@@ -16,9 +13,3 @@
         * remark.tex
         + css [...]
         + examples [...]
-
-    + theme
-        * about.yaml
-        * theme.tex
-        * tmpl-theme-annex-page.tex
-        * tmpl-theme-showcase-color.tex

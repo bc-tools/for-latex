@@ -10,7 +10,7 @@ Tout \pack \etou classe doit **obligatoirement** indiquer un certain \nbre d'\in
 
 yaml::
     ---
-    path  = ?/examples/archi/tutodoc/about.yaml
+    path  = ?/examples/archi/tutodoc/about/project.yaml
     title = Le fichier path::''about.yaml'' du projet \tutodoc
     date  = \tutodoc_date
     ---
