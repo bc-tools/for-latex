@@ -1,5 +1,5 @@
 this::
-    date = 2024-12-27  ??
+    date = 2024-12-31
 
 
 abrev::
@@ -10,19 +10,13 @@ abrev::
 Trier et filtrer avant d'assembler
 ==================================
 
-
-content::
-    \content/default.txt        ??
+Nous allons expliquer le comportement de \thisproj lorsqu'il doit assembler les morceaux de \docs, et ceux du code \src.
 
 
-
-????
-
-
-parler de ignore de about qui permet de tjrs ignorer tmpl-, debug- ...etc
-
+note::
+    Rappelons que dans le fichier path::''about.yaml'' du projet, via la clé yaml::''ignore'', il est possible d'indiquer des dossiers et des fichiers à ignorer lors de la fabrication du \proj final. Voir cf::''?/metadata.txt'' à ce sujet.
 
 
 content::
     \content/default.txt
-    \content/about-src.txt
+    \content/with-about.txt

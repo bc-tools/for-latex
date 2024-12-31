@@ -1,12 +1,11 @@
 toc:
-  - main/
-  - inenglish/
-  - theme/
-  - admonitions/
-  - macroenv/
-  - showcase/
-  - listing-latex/
-  - listing-full/
-  - version-n-change/
-  - deco/
-  - contrib-how-to/
+  - inenglish
+  - theme
+  - admonitions
+  - macroenv
+  - showcase
+  - listing-latex
+  - listing-full
+  - version-n-change
+  - deco
+  - contrib-how-to

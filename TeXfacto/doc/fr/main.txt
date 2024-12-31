@@ -13,6 +13,9 @@ this::
 abrev::
     content = /content
 
+    pyglob = cf::''glob;
+                   https://docs.python.org/3/library/glob.html''
+
 
 content::
     \content/intro.txt

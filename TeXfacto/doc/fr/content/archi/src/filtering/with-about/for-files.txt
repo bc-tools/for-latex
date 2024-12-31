@@ -1,0 +1,25 @@
+this::
+    date = 2024-12-31
+
+
+===================
+Le cas des fichiers
+===================
+
+Dans la \struct suivante, on note la présence d'un fichier path::''about.yaml'' qui permet d'aiguiller \thisproj lors de l'assemblage des fichiers.
+
+dirtree::
+    ---
+    path  = ?/examples/archi/tutodoc/dirtree/filtering/src/files.txt
+    title = Le sous-dossier path::''src/admonitions'' de \tutodoc - Une version simplifiée
+    date    = \tutodoc_date
+    ---
+
+Le contenu du fichier ce limite à ce qui suit où est de nouveau employé la clé yaml::''toc'' où l'on indique tous les fichiers ext::''tex'', ext::''sty'' et ext::''cls'' à prendre en compte dans l'ordre indiqué.
+
+yaml::
+    ---
+    path  = ?/examples/archi/tutodoc/about/admo.yaml
+    title = Le fichier path::''about.yaml'' du dossier path::''src/admonitions''
+    date    = \tutodoc_date
+    ---

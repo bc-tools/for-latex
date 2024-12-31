@@ -1,0 +1,29 @@
+this::
+    date = 2024-12-31
+
+
+===================
+Le cas des dossiers
+===================
+
+Dans la \struct suivante, on note la présence d'un fichier path::''about.yaml'' qui permet d'aiguiller \thisproj lors de l'assemblage des dossiers.
+
+dirtree::
+    ---
+    path  = ?/examples/archi/tutodoc/dirtree/filtering/src/dirs.txt
+    title = Le dossier path::''src'' de \tutodoc - Une version simplifiée
+    date    = \tutodoc_date
+    ---
+
+Le contenu du fichier ce limite à ce qui suit où la clé yaml::''toc''
+((
+    yaml::''toc'' vient de accro::"[t]able [o]f [c]ontents", soit "table des matières" en français.
+))
+attend la liste ordonnée des dossiers à traiter excepté les très particuliers dossiers path::''abstract'' pour le résumé rapide en page de garde de la \doc, path::''changelog'' pour le journal des \chgts "stables" importants en fin de \doc, et path::''main'' le point d'entrée du \proj.
+
+yaml::
+    ---
+    path  = ?/examples/archi/tutodoc/about/src.yaml
+    title = Le fichier path::''about.yaml'' du dossier path::''src''
+    date    = \tutodoc_date
+    ---

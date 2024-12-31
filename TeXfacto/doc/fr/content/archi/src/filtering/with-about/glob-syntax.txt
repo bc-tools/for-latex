@@ -1,0 +1,30 @@
+this::
+    date = 2024-12-31
+
+
+=========================
+Motifs à la sauce \pyglob
+=========================
+
+Dans les fichiers path::''about.yaml'' pour personnaliser l'assemblage des dossiers, ou de fichiers, il est possible d'utiliser la syntaxe \pyglob enrichi de l'opérateur de négation verb::''!''.
+Ceci permet par exemple d'imposer certains dossiers, ou fichiers aux premières places, puis ensuite de gérér ce qui reste via l'ordre naturel.
+À titre d'illustration, reprenons la \struct suivante.
+
+dirtree::
+    ---
+    path  = ?/examples/archi/tutodoc/dirtree/filtering/src/files.txt
+    title = Le sous-dossier path::''src/admonitions'' de \tutodoc - Une version simplifiée
+    date    = \tutodoc_date
+    ---
+
+
+Imaginons que nous souhaitions mettre le contenu de path::''remark.tex'' en premier dans la \doc, les autres contenus devant être insérés de façon naturelle, tout en ignoriant les fichiers path::''debug-*.tex''. Tout ceci se fait simplement via le fichier path::''about.yaml'' ci-après où les guillemets sont rendus obligatoires par les règles syntaxiques de \yaml.
+
+yaml::
+    ---
+    path  = ?/examples/archi/tutodoc/about/admo-fake-glob.yaml
+    ---
+
+
+important::
+    \thisproj repère que yaml::''"! debug-*"'' est la négation d'un motif \pyglob. Il construit alors la liste des fichiers attendus parmis ceux restants, puis il ordonne alors naturellement cette liste. Ceci permet d'obtenir un \proj identique quelque soit le \syst d'exploitation et la version de \python utilisés.
