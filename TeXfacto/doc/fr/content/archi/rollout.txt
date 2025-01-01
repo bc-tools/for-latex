@@ -6,8 +6,8 @@ abrev::
     content = :this.name:
 
 
-=========
-XXX
-=========
+=======================================
+Fabriquer et publier le \proj finalisée
+=======================================
 
 YYY

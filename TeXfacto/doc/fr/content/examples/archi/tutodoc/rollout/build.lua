@@ -1,7 +1,7 @@
 module = "tutodoc"
 
 sourcefiledir = "code"
-sourcefiles   = {"*.cls", "*.cls.sty", "DEPENDS.yaml"}
+sourcefiles   = {"*.cls", "*.cls.sty"}
 
 flatten    = false
 flattentds = false

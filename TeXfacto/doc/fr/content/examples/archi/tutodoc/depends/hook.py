@@ -6,11 +6,13 @@ from babel.dates import format_date
 # La fonction codée est nommée en utilisant le préfixe ''tex_''
 # suivi de la version minuscule du nom de la variable de
 # substitution, sans les chevrons bien entendu.
-# De plus, ce type de fonction doit toujours utiliser les deux
-# variables ''lang'' et ''infos'', et renvoyer un code TeX valide.
+#
+# IMPORTANT ! Les fonctions de la famille ''tex_...'' doit toujours
+# utiliser les deux variables ''lang'' et ''infos'', et renvoyer
+# un code TeX valide.
 def tex_depends(lang, infos):
 # On souhaite un format adapté à l'anglais ou au français, les
-# deux seules langues des documentations.
+# deux seules langues de la documentation.
     if lang == "en":
         fdate = "yyyy-MM-dd"
     else:
@@ -21,12 +23,12 @@ def tex_depends(lang, infos):
 
 # La documentation du système d'interception nous permet de savoir
 # que pour ''<<DEPENDS>>'', la variable ''infos'', qui est fournie
-# par TeXfacto, est un liste de couples ''(n, d)'' du type suivant.
+# par TeXfacto, est une liste de couples ''(n, d)'' du type suivant.
 #
-#     * ''n'' est le nom du classe ou d'un package LaTeX avec son
-#       extension ''cls'' ou ''sty''.
+#     + ''n'' est le nom d'une classe ou d'un package LaTeX avec
+#       son extension ''cls'' ou ''sty''.
 #
-#     * ''d'' est une date au format ''(année, mois, jour)'' un
+#     + ''d'' est une date au format ''(année, mois, jour)'' un
 #       triplet de trois naturels.
     for n, d in infos:
         d = format_date(
@@ -53,5 +55,5 @@ def tex_depends(lang, infos):
     """.strip()
 
 # Nous renvoyons le code TeX final qu'utilisera TeXfacto lors de
-# la fabrication des documentations.
+# la fabrication de chaque documentation.
     return texcode

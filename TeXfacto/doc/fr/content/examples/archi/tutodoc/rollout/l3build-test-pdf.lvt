@@ -1,6 +1,8 @@
 \documentclass{tutodoc}
+
 \geometry{showframe}
 
+% Pour faire des tests via l3build.
 \input{regression-test}
 
 \newcommand\extraONE{a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a }
@@ -14,6 +16,7 @@
 
 \extraTWO\tdocenv{env}
 
+% Pour obtenir le rendu.
 \showoutput
 
 \end{document}

@@ -20,6 +20,11 @@ XXX
 
 +
 
+possibilité de juste yaml pour des chgt basique faciement !
+
+
++
+
 placeholders
 
     --> texfacto fournit repr des vars, donc par exemple pour les langs, on aura une liste de vals séparés par des virgules
