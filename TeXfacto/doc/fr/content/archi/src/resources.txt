@@ -1,5 +1,5 @@
 this::
-    date = 2024-12-31
+    date = 2025-01-01
 
 
 abrev::
@@ -10,7 +10,11 @@ abrev::
 Utiliser des ressources
 =======================
 
-Nos explications vont s'appuyer sur le cas d'utilisation réel suivant (nous n'avons gardé que les parties pertinentes de la \struct de dossier).
+Un \proj \latex nécessite souvent de faire appel à des fichiers ressources : fichiers de \conf pour localiser du texte, fichiers de style pour la \mef, images, graphiques \tikz... \etc.
+Ceci se fait très naturellement lors du codage à condition de savoir comment seront utilisés les différents morceaux lors de l'assemblage pour fabriquer le \proj final, et ceci afin d'éviter certaines déconvenues.
+
+
+Nos explications vont s'appuyer sur le cas d'utilisation réel suivant (nous n'avons gardé que les parties pertinentes du contenu dossier path::''src'').
 
 dirtree::
     ---
@@ -21,5 +25,11 @@ dirtree::
 
 
 content::
-    \content/for-doc.txt        ????
-    \content/for-code.txt       ??
+    \content/the-place-to-be.txt    ??
+    \content/for-doc.txt            ??
+    \content/import.txt             ??
+    \content/XXX.txt      ??
+    \content/XXX.txt      ??
+    \content/XXX.txt      ??
+    \content/XXX.txt      ??
+    \content/XXX.txt      ??

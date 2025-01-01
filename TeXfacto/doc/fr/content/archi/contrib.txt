@@ -7,3 +7,6 @@ XXX
 =========
 
 YYY
+
+
+rexfacto gère la doc uniquement, pour e reste, passer par tools et non hooks !!!

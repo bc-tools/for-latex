@@ -7,3 +7,5 @@ XXX
 =========
 
 YYY
+
+pour des démos non distribués mais accessibel via le web

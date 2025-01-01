@@ -10,4 +10,5 @@ YYY
 
 
 content::
-    \content/placeholders.txt
+    \content/placeholders.txt       ??
+    \content/resources.txt          ??

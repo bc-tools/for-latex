@@ -9,6 +9,15 @@ NOW
 
 > ---------------------------- <
 
+src/about.yaml
+
+    --> faire ref à src2prod quand celui-ce sera à jour et documentera sa spéc
+
+    --> ne pas créer une nelle clé texfacto car entre hooks et tools, on devrait y arriver... OU PAS !
+
+
+> ---------------------------- <
+
 note::
     Dans le dossier des \trads de la \doc, les changements sont organisés différement comme suit où chaque fichier path::''tex'' est directement compilable par le traducteur.
 

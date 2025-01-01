@@ -1,9 +1,0 @@
-this::
-    date = 2023-11-09
-
-
-======================
-Pour la \doc "humaine"
-======================
-
-Comme nous n'avons pas de contrainte structurelle, il faut passer via des dossiers faisant \ref au type de ressources, puis au bout de code implémenté.

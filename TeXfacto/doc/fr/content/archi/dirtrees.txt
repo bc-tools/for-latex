@@ -1,5 +1,5 @@
 this::
-    date = 2024-12-27
+    date = 2025-01-01
 
 
 ===================
@@ -16,11 +16,11 @@ dirtree::
 
 
 note::
-    L'absence de dossier path::''doc'' pour la \doc "utilisateur" vient du processus de rédaction spécifique à \thisproj de celle-ci : voir cf::''docs.txt''.
+    L'absence de dossier path::''doc'' pour la \doc "utilisateur" vient du processus de rédaction spécifique à \thisproj : voir cf::''src/docs.txt''.
     Il n'y a pas non plus de classique dossier path::''tests'', car les tests se feront via l'usage de \l3build dans le dossier path::''rollout'' : voir cf::''rollout.txt''.
 
 
-À l'opposé, un \proj peut utiliser la \struct minimaliste ci-après où les dossiers obligatoires sont les seuls utilisés.
+À l'opposé, un \proj peut utiliser la \struct minimaliste ci-après où les dossiers utilisés sont les seuls obligatoires.
 
 dirtree::
     ---
@@ -45,6 +45,6 @@ Les sections à venir expliquent en détails comment employer chacun des dossier
 
     1) Le dossier path::''tools'' accueille des scripts pour aider au \dev. Aucun \lang de \prog n'est imposé.
 
-    1) Le dossier path::''rollout'' sera celui employé pour lancer les tests, ou distribuer le projet final sur \ctan via \l3build.
+    1) Le dossier path::''rollout'' sera celui employé pour lancer les tests, et distribuer le projet final sur \ctan via \l3build.
 
-    1) Le dossier path::''hook'' permet de compléter le processus d'automatisation de \thisproj en fournissant des mécanismes d'interception codés en \python.
+    1) Le dossier path::''hooks'' permet de compléter le processus d'automatisation de \thisproj en fournissant des mécanismes d'interception codés en \python.
