@@ -1,5 +1,9 @@
 this::
-    date = 2024-12-25  ??
+    date = 2025-01-01    ??
+
+
+abrev::
+    content = :this.name:
 
 
 =========

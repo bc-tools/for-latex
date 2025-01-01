@@ -35,7 +35,7 @@ uploadconfig = {
     summary      = 'This class proposes tools for writing "human friendly" documentations of LaTeX packages.',
     topic        = {"doc-tool"},
     ctanPath     = "/macros/latex/contrib/tutodoc",
-    repository   = "https://github.com/bc-tools/for-latex",
+    repository   = "https://github.com/bc-tools/for-latex/tree/main/tutodoc",
     bugtracker   = "https://github.com/bc-tools/for-latex/issues",
     note         = [[Uploaded automatically by l3build...]]
 }

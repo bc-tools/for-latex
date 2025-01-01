@@ -9,6 +9,11 @@ NOW
 
 > ---------------------------- <
 
+urls.issues dans about proj à ajouetr et documenter !!!
+
+
+> ---------------------------- <
+
 src/about.yaml
 
     --> faire ref à src2prod quand celui-ce sera à jour et documentera sa spéc
