@@ -1,21 +1,44 @@
 this::
-    date = 2025-01-01       ??
+    date = 2025-01-01
 
 
 ===============
 Pour la \mandoc
 ===============
 
-
-    1) Dans path::''example.tex'', le code \tex de la \mandoc emploie latex::''\input{../admonitions/examples
-           + admonitions
-                * caution.tex
-                * exa-leavevmode.tex}'', et non ''\input{css/bw.cls.sty}''.
+warning::
+    Comme indiqué dans cf::''?/docs/users.txt'', la \doc doit être compilable librement. C'est une contrainte très forte qui limite les types de ressources utilisables.
+    Ceci se traduit pas une prise en charge limitée aux ressources importables via l'\env \std latex::''filecontents*''.
 
 
+Comme les fichiers ext::''tex'' pour la \mandoc sont pour un usage "isolé", il faut employer une importation relative au sous-dossier développé.
+Ainsi, dans path::''example.tex'', le code \tex utilise latex::''\input{examples/admonitions/exa-leavevmode.tex}'', et non latex::''\input{../admonitions/examples/admonitions/exa-leavevmode.tex}''.
 
 
-doc-final-hook.txt
+caution::
+    Bien retenir que les importations dans la \mandoc et celles dans le code \src ont des comportements opposés !
 
 
-Comme indiqué dans cf::''?/docs/users.txt'', la \doc doit être compilable librement. C'est une contrainte très forte qui va limiter les types de ressources utilisables.
+L'assemblage final aboutit au dossier suivant avec un unique fichier ext::''tex'' pour la version française de la \mandoc. Nous allons voir comment une telle sorcellerie peut opérer.
+
+dirtree::
+    ---
+    path    = ?/examples/archi/tutodoc/dirtree/resources/doc-final.txt
+    title   = Une vue simplifiée du dossier publiable de la \doc de \tutodoc
+    date    = \tutodoc_date
+    ---
+
+
+Lors de l'assemblage de la \doc finale, afin de produire un unique fichier ext::''tex'' compilable, \thisproj ajoute \ts les contenus des ressources via des \envs latex::''filecontents*'' avant l'emploi de la \cmd latex::''\documentclass'' comme dans l'extrait de code suivant.
+
+latex::
+    ---
+    path    = ?/examples/archi/tutodoc/rollout/doc-filecontents.tex
+    extract = yes
+    title   = Un extrait du fichier path::''tutodoc-fr.tex'' de la \doc finale de \tutodoc
+    date    = \tutodoc_date
+    ---
+
+
+tip::
+    En plaçant les ressources dans le dossier path::''examples/admonitions'', on rend impossible les collisisons de noms dans la \mandoc avec d'autres sous-dossiers de \dev. Par exemple, path::''src/listing-full'' utilise path::''examples/listing-full'' pour ses ressources.

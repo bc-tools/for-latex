@@ -18,10 +18,11 @@ Nos explications vont s'appuyer sur le cas d'utilisation réel suivant (nous n'a
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/dirtree/src/resources.txt
+    path  = ?/examples/archi/tutodoc/dirtree/resources/src.txt
     title = Une vue simplifiée du dossier path::''src'' de \tutodoc
     date    = \tutodoc_date
     ---
+
 
 warning::
     Le très particulier dossier path::''changelog'' ne peut pas utiliser de ressources.
@@ -29,5 +30,5 @@ warning::
 
 content::
     \content/the-place-to-be.txt
-    \content/for-code.txt               ????
-    \content/for-doc.txt                ??
+    \content/for-code.txt
+    \content/for-doc.txt

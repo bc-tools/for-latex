@@ -2,7 +2,7 @@
 
 
 ==
-01  (0.0.0-alpha.4)   ???  [Doc for resources looks good]
+01  (0.0.0-alpha.4)
 ==
 
 -----

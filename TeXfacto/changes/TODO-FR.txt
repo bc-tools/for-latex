@@ -15,6 +15,12 @@ src/about.yaml
 
     --> ne pas créer une nelle clé texfacto car entre hooks et tools, on devrait y arriver... OU PAS !
 
+> ---------------------------- <
+
+archi/changes
+
+    --> maj quand tnschges existe
+
 
 > ---------------------------- <
 
