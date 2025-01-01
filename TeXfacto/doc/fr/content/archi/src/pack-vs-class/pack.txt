@@ -20,7 +20,7 @@ dirtree::
 
 Voici ce qu'il faut faire pour coder un package \latex.
 
-    1) Le dossir path::''src/changelog'', le fichier path::''src/preamble.cfg.sty'', et les fichiers ext::''tex'' directement dans les sous-dossiers sont destinées à la \doc "utilisateur" : ce sujet est abordé dans cf::''?/docs.txt''.
+    1) Le dossir path::''src/changelog'', le fichier path::''src/preamble.cfg.sty'', et les fichiers ext::''tex'' directement dans les sous-dossiers sont destinées à la \mandoc : ce sujet est abordé dans cf::''?/docs.txt''.
 
     1) Le \dev "morceau par morceau" se fait directement dans le sous-dossier path::''src''. Il est interdit de passer via des "sous-sous-dossiers".
 

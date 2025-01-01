@@ -23,13 +23,11 @@ dirtree::
     date    = \tutodoc_date
     ---
 
+warning::
+    Le très particulier dossier path::''changelog'' ne peut pas utiliser de ressources.
+
 
 content::
-    \content/the-place-to-be.txt    ??
-    \content/for-doc.txt            ??
-    \content/import.txt             ??
-    \content/XXX.txt      ??
-    \content/XXX.txt      ??
-    \content/XXX.txt      ??
-    \content/XXX.txt      ??
-    \content/XXX.txt      ??
+    \content/the-place-to-be.txt
+    \content/for-code.txt               ????
+    \content/for-doc.txt                ??

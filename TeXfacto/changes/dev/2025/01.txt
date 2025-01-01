@@ -2,11 +2,11 @@
 
 
 ==
-XX  (0.0.0-alpha.4)
+01  (0.0.0-alpha.4)   ???  [Doc for resources looks good]
 ==
 
 -----
 :new:
 -----
 
-\Doc: the section about resources look good.
+\Doc: the section about resources look good. This acheives the section about the \archi of the \src code.

@@ -2,8 +2,20 @@ this::
     date = 2025-01-01       ??
 
 
-==================================
-Conseils pour la doc "utilisateur"
-==================================
+===============
+Pour la \mandoc
+===============
+
+
+    1) Dans path::''example.tex'', le code \tex de la \mandoc emploie latex::''\input{../admonitions/examples
+           + admonitions
+                * caution.tex
+                * exa-leavevmode.tex}'', et non ''\input{css/bw.cls.sty}''.
+
+
+
+
+doc-final-hook.txt
+
 
 Comme indiqué dans cf::''?/docs/users.txt'', la \doc doit être compilable librement. C'est une contrainte très forte qui va limiter les types de ressources utilisables.

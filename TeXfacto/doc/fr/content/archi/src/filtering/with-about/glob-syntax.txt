@@ -1,5 +1,5 @@
 this::
-    date = 2024-12-31
+    date = 2025-01-01
 
 
 =========================
@@ -27,4 +27,4 @@ yaml::
 
 
 important::
-    \thisproj repère que yaml::''"! debug-*"'' est la négation d'un motif \pyglob. Il construit alors la liste des fichiers attendus parmis ceux restants, puis il ordonne alors naturellement cette liste. Ceci permet d'obtenir un \proj identique quelque soit le \syst d'exploitation et la version de \python utilisés.
+    Dans le code ci-dessus, \thisproj repère que yaml::''"! debug-*"'' est la négation d'un motif \pyglob. Il construira donc la liste des fichiers attendus parmis ceux non encore traités, puis il ordonnera naturellement cette liste. Ce processus permet d'obtenir un \proj identique quelque soit le \syst d'exploitation et la version de \python utilisés.

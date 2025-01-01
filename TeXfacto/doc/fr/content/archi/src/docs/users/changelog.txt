@@ -10,7 +10,7 @@ caution::
     Tout \proj doit utiliser un dossier path::''change'' où indiquer les \chgts liés au code \src. Dès lors, \thisproj lèvera une erreur en cas de non cohérence entre les \chgts stables côté path::''change'', et ceux rédigés dans path::''src/changelog'' qui sont présentés dans cette section.
 
 
-Pour la \doc "utilisateur", les \chgts "stables" doivent être renseignés via une \orga similaire à la suivante.
+Pour la \mandoc, les \chgts "stables" doivent être renseignés via une \orga similaire à la suivante.
 
 dirtree::
     ---
@@ -48,4 +48,4 @@ Les autres fichiers servent à indiquer les \chgts pour un jour donné à l'int�
     )),
     il faudra suffixer le numéro du jour avec path::''-a'', path::''-b'', path::''-c''...
 
-    1) Comme \thisproj connaît les \chgts indiqués dans path::''change'', les numéros de version n'ont pas à être indiqués lors de la \redac de la \doc "utilisateur".
+    1) Comme \thisproj connaît les \chgts indiqués dans path::''change'', les numéros de version n'ont pas à être indiqués lors de la \redac de la \mandoc.

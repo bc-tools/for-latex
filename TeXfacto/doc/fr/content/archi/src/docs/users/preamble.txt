@@ -6,7 +6,7 @@ this::
 Un préambule \tech
 ==================
 
-La \doc "utilisateur" nécessite des \packs, et éventuellement des \envs et \cmds "maison".
+La \mandoc nécessite des \packs, et éventuellement des \envs et \cmds "maison".
 Tout ceci se codera dans le fichier path::''src/preamble.cfg.sty'' qui sera employé via latex::''\usepackage{../preamble.cfg}'' dans les morceaux de \doc
 ((
     Rappelons que la \doc se tape dans des fichiers ext::''tex'' au même niveau que le code \src.

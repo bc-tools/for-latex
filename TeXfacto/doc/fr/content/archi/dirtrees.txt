@@ -16,7 +16,7 @@ dirtree::
 
 
 note::
-    L'absence de dossier path::''doc'' pour la \doc "utilisateur" vient du processus de rédaction spécifique à \thisproj : voir cf::''src/docs.txt''.
+    L'absence de dossier path::''doc'' pour la \mandoc vient du processus de rédaction spécifique à \thisproj : voir cf::''src/docs.txt''.
     Il n'y a pas non plus de classique dossier path::''tests'', car les tests se feront via l'usage de \l3build dans le dossier path::''rollout'' : voir cf::''rollout.txt''.
 
 
@@ -41,7 +41,7 @@ Les sections à venir expliquent en détails comment employer chacun des dossier
 
     1) Le dossier path::''demos'' est dédié aux \demos non destinées à être distribuées via \ctan.
 
-    1) Le dossier path::''src'' contient le code \src, mais aussi la \doc "utilisateur".
+    1) Le dossier path::''src'' contient le code \src, mais aussi la \mandoc.
 
     1) Le dossier path::''tools'' accueille des scripts pour aider au \dev. Aucun \lang de \prog n'est imposé.
 

@@ -7,7 +7,7 @@ abrev::
 
 
 =============================================
-Une \doc "utilisateur" sans haine, ni violence
+Une \mandoc sans haine, ni violence
 =============================================
 
 L'esprit du projet \thisproj est de proposer uen alternative aux méthodologies dominantes proposées par \latex : concrètement, \la doc "utilisateur" présentera les fonctionnalités sous forme d'exemples d'utilisation plus ou moins complexes, et ceci sans contenir le code \src.

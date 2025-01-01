@@ -10,4 +10,4 @@ Une \doc \tech, et une autre pour l'utilisateur
 
     1) Une \doc très \tech est écrite directement dans le code \src. Sa mise en forme devra être gérée par un autre outil que \thisproj.
 
-    1) Une \doc "utilisateur", au format \latex, s'attarde sur des cas d'utilisation pertinents et éclairants. Sa mise en forme finale est prise en charge par \thisproj.
+    1) Une \mandoc, au format \latex, s'attarde sur des cas d'utilisation pertinents et éclairants. Sa mise en forme finale est prise en charge par \thisproj.

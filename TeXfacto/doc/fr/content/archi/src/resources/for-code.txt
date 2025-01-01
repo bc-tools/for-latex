@@ -1,0 +1,31 @@
+this::
+    date = 2025-01-01       ??
+
+
+============
+Pour le code
+============
+
+Pour autoriser l'usage d'un dossier en cours de \dev par un autre, les importations se feront via des chemins relatifs au dossier path::''src'' depuis celui en cours de \dev. Concrètement, voici ce que cela signifie que dans path::''admonitions.cls.sty'', le code \src utilise latex::''\input{../admonitions/css/bw.cls.sty}'', et non ''\input{css/bw.cls.sty}''.
+
+
+Par défaut, \thisproj va aplanir
+
+??
+
+code-final-default.txt
+code-final-hook.txt
+
+
+
+hooks pour passer ici des
+
+
+
+note::
+    Dans le code final, on retrouvera juste ''\input{fict-proj-speval.cfg.sty}''
+    ((
+        Comme \tex utilise une \struct virtuelle plane, l'emploi de ''..'' dans un ''\input'' ouvre une brèche de \secu.
+        En effet, le ''..'' est relatif au processus lançant \tex sur la machine de l'utilisateur final. Aïe !
+    ))
+    qui sera pleinement fonctionnel.
