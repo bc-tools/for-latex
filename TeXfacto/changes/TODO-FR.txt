@@ -9,6 +9,15 @@ NOW
 
 > ---------------------------- <
 
+l3build-xtras PUBLIER AVANT car citer !!!!
+
+    ---> juste ettre versin perso actuelle dans main de for-latex
+
+    ---> REDALME indique que mini projs mais contribs bienvenus !
+
+
+> ---------------------------- <
+
 note::
     Dans le dossier des \trads de la \doc, les changements sont organisés différement comme suit où chaque fichier path::''tex'' est directement compilable par le traducteur.
 
@@ -16,7 +25,7 @@ note::
         ---
         path  = ?/examples/archi/tutodoc/dirtree/contrib/changelog.txt
         title = Le dossier path::''changelog'' pour les traductions de \tutodoc
-        date  = 2023-12-28
+        date  = \tutodoc_date_OLD
         ---
 
 +

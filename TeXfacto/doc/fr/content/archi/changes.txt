@@ -1,15 +1,51 @@
 this::
-    date = 2025-01-01    ??
+    date = 2025-01-02    ??
 
 
-=========
-XXX
-=========
+===================
+Indiquer les \chgts
+===================
 
-YYY
+\thisproj attend l'usage du dossier path::''src/changes'' pour indiquer les évolutions stables, ou non, du \proj via un processus contraint qui permet d'automatiser la gestion du \numver et de la date du \proj final.
+Pour expliquer la démarche à suivre, nous allons considérer le cas de \tutodoc au début de son \dev.
 
-    Tout \proj doit utiliser un dossier path::''change'' où indiquer, \tjrs en anglais, les \chgts des versions en \dev, et aussi ceux importants uniquement pour les versions stables publiées : voir cf::''?/archi/changes.txt''.
+dirtree::
+    ---
+    path  = ?/examples/archi/tutodoc/chges/old/changes.txt
+    title = Le dossier path::''src/changes'' de \tutodoc
+    date  = \tutodoc_date_OLD
+    ---
+
+
+Voici les règles à suivre.
+
+
+
+???
+
+
+
+tnschges::
+    ---
+    path  = ?/examples/archi/tutodoc/chges/old/dev-chges-fake.txt
+    title = \Struct attendue pour un fichier des \chgts côté \dev
+    ---
+
+
+tnschges::
+    ---
+    path  = ?/examples/archi/tutodoc/chges/old/stable-chges-fake.txt
+    title = \Struct attendue pour un fichier des \chgts pour une version stabilisée
+    ---
+
+
+
+    Tout \proj doit utiliser un  où indiquer, \tjrs en anglais, les \chgts des versions en \dev, et aussi ceux importants uniquement pour les versions stables publiées : voir cf::''?/archi/changes.txt''.
 
 
 ::
     \thisproj lèvera une erreur en cas de non cohérence entre les \chgts stables côté path::''change'', et ceux rédigés dans path::''src/changelog''.
+
+
+
+cf::''?/changelog.txt''

@@ -2,13 +2,13 @@ abrev::
     content = :this.name:
 
 
-======================================
-Fabriquer et publier le \proj finalisé
-======================================
+===========================
+Fabriquer le \proj finalisé
+===========================
 
 content::
     \content/init.txt
     \content/debug.txt
-    \content/unit-tests.txt             ??????
-    \content/build.txt                  ????
-    \content/publish.txt                ??
+    \content/unit-tests.txt
+    \content/build.txt
+    \content/publish.txt

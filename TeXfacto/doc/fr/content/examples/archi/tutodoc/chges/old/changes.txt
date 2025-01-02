@@ -1,0 +1,16 @@
++ changes
+    + dev
+        + 2021
+            * 07.txt
+            * 09.txt
+        + 2023
+            * 04.txt
+            * 09.txt
+            * 10.txt
+            * 11.txt
+            * 12.txt
+    + stable
+        + next.txt
+        + 2023
+            * 11.txt
+            * 12.txt

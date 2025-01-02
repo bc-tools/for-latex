@@ -1,13 +1,13 @@
 this::
-    date = 2025-01-02   ??
+    date = 2025-01-02
 
 
 =======================
 Tests de non régression
 =======================
 
-
-??
+Grâce à \l3build, il est aisé de tester de façon automatisée la non régression d'un \proj \tex. Ces tests sont à placer dans le dossier path::''tests''.
+Nous renvoyons le lecteur intéressé à la \doc de \l3build pour apprendre à coder des fichiers tests comme les suivants.
 
 
 latex::
@@ -19,7 +19,6 @@ latex::
     ---
 
 
-
 latex::
     ---
     path    = ?/examples/archi/tutodoc/rollout/l3build-test-no-pdf.lvt
@@ -27,3 +26,8 @@ latex::
     title   = Un autre fichier de test utilisé par \tutodoc
     date    = \tutodoc_date
     ---
+
+
+note::
+    L'auteur de \thisproj a mis en ligne quelques fonctions \lua pouvant faciliter la gestion des tests de non régression.
+    Par exemple, une fonction \lua est proposée pour faciliter l'enquête si le fichier de tests précédent échoue : voir le dossier path::''src/cmd-options/unit-test/showbox'' du dépôt \l3buildxtras.
