@@ -28,4 +28,4 @@ Two things added.
 :new:
 -----
 
-\Doc: the section on resources looks good. This acheives the section about the \archi of the \src code.
+\Doc: the section on resources looks good. This acheives the section about the \archi of the folder path::''src''.
