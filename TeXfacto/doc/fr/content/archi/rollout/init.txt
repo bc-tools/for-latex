@@ -1,9 +1,32 @@
 this::
-    date = 2025-01-01    ??
+    date = 2025-01-02
 
 
 ============================
 Le dossier path::''rollout''
 ============================
 
-??
+Le produit fini est géré dans le dossier path::''src/rollout'' qui sera construit par \thisproj si besoin. Ce dossier doit avoir le contenu minimal suivant.
+
+dirtree::
+    ---
+    path  = ?/examples/archi/tutodoc/dirtree/rollout.txt
+    title = Le dossier path::''src/rollout''
+    ---
+
+
+Décrivons cette \struct.
+
+    1) Les dossiers path::''code'' et path::''doc'' vont contenir \resp^t le code \src et les fichiers ext::''tex'' des \mandocs finalisés.
+
+    1) Le dossier path::''debug'' contient à la fois le code \src et les fichiers ext::''tex'' des \mandocs finalisés.
+    Ceci permet de déboguer facilment une \doc ne compilant pas.
+
+    1) Le dossier path::''tests'' accueille de tests à la sauce \l3build.
+
+    1) Le fichier path::''build.lua'' est le fichier employé par \l3build pour tester, puis ensuite construire et publier sur \ctan.
+
+    1) Le dossier path::''build'' est réservé à \l3build.
+
+
+Les sections suivantes vont expliquer comment ces \elts du dossier path::''rollout'' sont utilisés par le processus de \fabric et de publication du \proj final.
