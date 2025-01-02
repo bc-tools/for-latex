@@ -42,7 +42,7 @@ latex::
     ---
 
 
-Pour permettre d'obtenir ce qui précède, \thisproj propose un système d'interception du cycle de \prod
+Pour permettre d'obtenir ce qui précède, \thisproj propose un \syst d'interception du cycle de \prod
 ((
     En anglais, on emploie le terme "hooks" qui signifie "crochets".
 )).
@@ -56,4 +56,4 @@ python::
     ---
 
 
-Nous avons ainsi accès à un système simple et puissant.
+Nous avons ainsi accès à un \syst simple et puissant.

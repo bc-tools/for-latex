@@ -10,7 +10,7 @@ abrev::
 \thisproj, quésaco ?
 ====================
 
-Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu'un écosystème de \dev soit proposé par \latex, \thisproj propose une autre façon de coder plus proche de ce qui fait dans les \langs de \prog plus \stds comme \python. Dans les \gdes lignes, voici quelques fonctionnalités proposées par \thisproj pour fabriquer un \pack, ou une \cls.
+Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu'un éco\syst de \dev soit proposé par \latex, \thisproj propose une autre façon de coder plus proche de ce qui fait dans les \langs de \prog plus \stds comme \python. Dans les \gdes lignes, voici quelques fonctionnalités proposées par \thisproj pour fabriquer un \pack, ou une \cls.
 
     1) Le codage se fait de façon modulaire, et non d'un seul tenant. Ceci facilite grandement la phase de \dev initial, puis ensuite la maintenance.
 

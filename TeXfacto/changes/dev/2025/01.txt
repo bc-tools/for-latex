@@ -16,6 +16,7 @@ Two things added.
         * path::''changes''
         * path::''readme''
         * path::''rollout''
+        * path::''tools''
 
     1) \Api: the file path::''src/about.yaml'' has a new key yaml::''issues'' for an url to report issues, or make suggestions.
 

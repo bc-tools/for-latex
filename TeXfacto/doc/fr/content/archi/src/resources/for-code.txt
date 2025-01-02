@@ -33,4 +33,4 @@ dirtree::
     ---
 
 
-Ce type d'assemblage ne peut s'obtenir que via le système d'interception du cycle de \prod proposé par \thisproj : se reporter à cf::''?/hooks/resources.txt'' pour en savoir plus. Vous apprendez aussi à ajouter de \nelles \cmds d'importation en plus de latex::''\input'' qui est gérée par défaut.
+Ce type d'assemblage ne peut s'obtenir que via le \syst d'interception du cycle de \prod proposé par \thisproj : se reporter à cf::''?/hooks/resources.txt'' pour en savoir plus. Vous apprendez aussi à ajouter de \nelles \cmds d'importation en plus de latex::''\input'' qui est gérée par défaut.
