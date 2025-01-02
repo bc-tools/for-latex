@@ -9,26 +9,6 @@ NOW
 
 > ---------------------------- <
 
-urls.issues dans about proj à ajouetr et documenter !!!
-
-
-> ---------------------------- <
-
-src/about.yaml
-
-    --> faire ref à src2prod quand celui-ce sera à jour et documentera sa spéc
-
-    --> ne pas créer une nelle clé texfacto car entre hooks et tools, on devrait y arriver... OU PAS !
-
-> ---------------------------- <
-
-archi/changes
-
-    --> maj quand tnschges existe
-
-
-> ---------------------------- <
-
 note::
     Dans le dossier des \trads de la \doc, les changements sont organisés différement comme suit où chaque fichier path::''tex'' est directement compilable par le traducteur.
 
@@ -434,7 +414,17 @@ LATER
 
 > ---------------------------- <
 
-on doit aussi prendre en compte les classes
+src/about.yaml
+
+    --> faire ref à src2prod quand celui-ce sera à jour et documentera sa spéc
+
+    --> ne pas créer une nelle clé texfacto car entre hooks et tools, on devrait y arriver... OU PAS !
+
+> ---------------------------- <
+
+archi/changes
+
+    --> maj quand tnschges existe
 
 
 > ---------------------------- <

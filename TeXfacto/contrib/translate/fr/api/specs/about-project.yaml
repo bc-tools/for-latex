@@ -43,14 +43,17 @@ authors: >
 urls: >
   Un dictionnaire pour renseigner certains urls.
 
-urls::repo: >
-  L'url du site dépôt du projet.
+urls::doc: >
+  L'url de la documentention du projet.
 
 urls::home: >
   L'url du site web du projet.
 
-urls::doc: >
-  L'url de la documentention du projet.
+urls::issues: >
+  L'url pour signaler des bogues, ou faire des suggestions.
+
+urls::repo: >
+  L'url du site dépôt du projet.
 
 
 # -------------- #

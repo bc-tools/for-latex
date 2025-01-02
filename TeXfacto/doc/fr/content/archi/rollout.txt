@@ -1,13 +1,14 @@
-this::
-    date = 2025-01-01    ??
-
-
 abrev::
     content = :this.name:
 
 
-=======================================
-Fabriquer et publier le \proj finalisée
-=======================================
+======================================
+Fabriquer et publier le \proj finalisé
+======================================
 
-YYY
+content::
+    \content/XX.txt         ??
+    \content/XX.txt         ??
+    \content/XX.txt         ??
+    \content/XX.txt         ??
+    \content/XX.txt         ??

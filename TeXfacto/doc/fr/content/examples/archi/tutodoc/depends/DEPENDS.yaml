@@ -1,0 +1,20 @@
+class:
+  - scrartcl
+
+package:
+  - clrstrip
+  - csquotes
+  - fontawesome5
+  - geometry
+  - hyperref
+  - inputenc
+  - keytheorems
+  - marginnote
+  - minted
+  - tcolorbox
+
+library:
+  tcolorbox:
+    - breakable
+    - minted
+    - skins

@@ -2,14 +2,14 @@
 
 
 ==
-????  (0.0.0-alpha.5)
+02  (0.0.0-alpha.5)
 ==
 
 -----
 :new:
 -----
 
-\Doc: ???
+\Api: the file path::''src/about.yaml'' has a key to indicate an url to report issues, or make suggestions.
 
 
 // ---------- //

@@ -74,13 +74,15 @@ project:
   urls*:
 ###
 # prototype::
-#     repo : The url of the project's repository site.
+#     doc    : The url of the project manual.
 #
-#     home : The url of the project website.
+#     home   : The url of the project website.
 #
-#     doc  : The url of the project manual.
+#     issues : The url to report issues, or make suggestions.
+#
+#     repo   : The url of the project's repository site.
 ###
-    KIND* | in("repo", "home", "doc"): >
+    KIND* | in("doc", "home", "issues", "repo"): >
       url
 
 
