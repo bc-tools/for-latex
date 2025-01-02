@@ -10,9 +10,9 @@ Dans la \struct suivante, on note la présence d'un fichier path::''about.yaml''
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/filtering/src/dirs.txt
+    path  = ?/examples/archi/tutodoc/filtering/dirtree/src/project.txt
     title = Le dossier path::''src'' de \tutodoc - Une version simplifiée
-    date    = \tutodoc_date
+    date  = \tutodoc_date
     ---
 
 Le contenu du fichier ce limite à ce qui suit où la clé yaml::''toc''

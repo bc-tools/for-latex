@@ -14,13 +14,13 @@ Un \proj \latex nécessite souvent de faire appel à des fichiers ressources : f
 Ceci se fait très naturellement lors du codage à condition de savoir comment seront utilisés les différents morceaux lors de l'assemblage pour fabriquer le \proj final, et ceci afin d'éviter certaines déconvenues.
 
 
-Nos explications vont s'appuyer sur le cas d'utilisation réel suivant (nous n'avons gardé que les parties pertinentes du contenu dossier path::''src'').
+Nos explications vont s'appuyer sur le cas d'utilisation réel suivant.
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/resources/src.txt
-    title = Une vue simplifiée du dossier path::''src'' de \tutodoc
-    date    = \tutodoc_date
+    path  = ?/examples/archi/tutodoc/resources/dirtree/admonitions.txt
+    title = Une vue simplifiée du dossier path::''src/admonitions'' de \tutodoc
+    date  = \tutodoc_date
     ---
 
 

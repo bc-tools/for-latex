@@ -10,9 +10,9 @@ Dans la \struct suivante, on note la présence d'un fichier path::''about.yaml''
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/filtering/src/files.txt
+    path  = ?/examples/archi/tutodoc/filtering/dirtree/admo/project.txt
     title = Le sous-dossier path::''src/admonitions'' de \tutodoc - Une version simplifiée
-    date    = \tutodoc_date
+    date  = \tutodoc_date
     ---
 
 Le contenu du fichier ce limite à ce qui suit où est de nouveau employé la clé yaml::''toc'' où l'on indique tous les fichiers ext::''tex'', ext::''sty'' et ext::''cls'' à prendre en compte dans l'ordre indiqué.

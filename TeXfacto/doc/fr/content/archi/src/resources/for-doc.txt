@@ -23,9 +23,9 @@ L'assemblage final aboutit au dossier suivant avec un unique fichier ext::''tex'
 
 dirtree::
     ---
-    path    = ?/examples/archi/tutodoc/resources/doc-final.txt
-    title   = Une vue simplifiée du dossier publiable de la \doc de \tutodoc
-    date    = \tutodoc_date
+    path  = ?/examples/archi/tutodoc/resources/dirtree/final/doc.txt
+    title = Une vue simplifiée du dossier publiable de la \doc de \tutodoc
+    date  = \tutodoc_date
     ---
 
 

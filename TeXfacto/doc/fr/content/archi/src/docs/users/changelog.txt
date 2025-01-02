@@ -14,7 +14,7 @@ Pour la \mandoc, les \chgts "stables" doivent être renseignés via une \orga si
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/chges/old/changelog.txt
+    path  = ?/examples/archi/tutodoc/changes/old/dirtree/changelog.txt
     title = Le dossier path::''src/changelog'' de \tutodoc
     date  = \tutodoc_date_OLD
     ---

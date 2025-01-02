@@ -11,7 +11,7 @@ Pour expliquer la démarche à suivre, nous allons considérer le cas de \tutodo
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/chges/old/changes.txt
+    path  = ?/examples/archi/tutodoc/changes/old/dirtree/changes.txt
     title = Le dossier path::''changes'' de \tutodoc
     date  = \tutodoc_date_OLD
     ---
@@ -34,7 +34,7 @@ Voici les règles à suivre.
 
     tnschges::
         ---
-        path  = ?/examples/archi/tutodoc/chges/old/dev-chges-fake.txt
+        path  = ?/examples/archi/tutodoc/changes/old/dev-chges-fake.txt
         title = \Struct attendue pour un fichier des \chgts côté \dev
         ---
 
@@ -44,7 +44,7 @@ Voici les règles à suivre.
 
     tnschges::
         ---
-        path  = ?/examples/archi/tutodoc/chges/old/stable-chges-fake.txt
+        path  = ?/examples/archi/tutodoc/changes/old/stable-chges-fake.txt
         title = \Struct attendue pour un fichier des \chgts pour une version stabilisée
         ---
 

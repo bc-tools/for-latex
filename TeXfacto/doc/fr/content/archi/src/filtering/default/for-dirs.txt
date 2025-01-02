@@ -1,5 +1,5 @@
 this::
-    date = 2024-12-31
+    date = 2025-01-02
 
 
 =================
@@ -10,9 +10,9 @@ Considérons le dossier de \dev ci-après (nous parlerons de l'usage d'un fichie
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/filtering/src/dirs-no-about.txt
+    path  = ?/examples/archi/tutodoc/filtering/dirtree/src/no-about.txt
     title = Le dossier path::''src'' de \tutodoc sans fichier path::''about.yaml'' - Une version simplifiée
-    date    = \tutodoc_date
+    date  = \tutodoc_date
     ---
 
 
@@ -24,6 +24,6 @@ Dans notre cas, c'est comme si nous avions la \struct ordonnée suivante.
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/filtering/src/dirs-default.txt
-    title = Visualiser lo'rdre par défaut du dossier path::''src'' de \tutodoc sans fichier path::''about.yaml''
+    path  = ?/examples/archi/tutodoc/filtering/dirtree/src/default.txt
+    title = Visualiser l'ordre par défaut du dossier path::''src'' de \tutodoc sans fichier path::''about.yaml''
     ---

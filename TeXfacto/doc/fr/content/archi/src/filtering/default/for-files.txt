@@ -1,5 +1,5 @@
 this::
-    date = 2024-12-31
+    date = 2025-01-02
 
 
 =================
@@ -10,13 +10,13 @@ Considérons le dossier de \dev ci-après (nous parlerons de l'usage d'un fichie
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/filtering/src/files-no-about.txt
+    path  = ?/examples/archi/tutodoc/filtering/dirtree/admo/no-about.txt
     title = Le sous-dossier path::''src/admonitions'' de \tutodoc sans fichier path::''about.yaml'' - Une version simplifiée
-    date    = \tutodoc_date
+    date  = \tutodoc_date
     ---
 
 
-Dans ce type de situtation, \thisproj tient compte de tous les fichiers directement dans le dossier path::''src/admonitions'' en les classant de façon naturelle, et il considère les dossiers juste utiles pour des ressources du code \src ou de la \doc : voir cf::''?/resources.txt''.
+Dans ce type de situation, \thisproj tient compte de tous les fichiers directement dans le dossier path::''src/admonitions'' en les classant de façon naturelle, et il considère les dossiers juste utiles pour des ressources du code \src ou de la \doc : voir cf::''?/resources.txt''.
 
 
 note::
