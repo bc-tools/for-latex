@@ -13,7 +13,8 @@ this::
 abrev::
     content = /content
 
-    mandoc = \doc "utilisateur"
+    mandoc[s] = \doc "utilisateur"
+              | \docs "utilisateur"
 
     pyglob = cf::''glob;
                    https://docs.python.org/3/library/glob.html''

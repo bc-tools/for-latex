@@ -1,0 +1,18 @@
+this::
+    date = 2025-01-01    ??
+
+
+=======================================
+Construire le code \src et les \mandocs
+=======================================
+
+??
+
+
+safe par défaut : par de construction auto , on ne fait que code doc et debug
+
+options pour
+
+    + reconstruire build.lua
+
+    + reconstruire les depends.yaml du src

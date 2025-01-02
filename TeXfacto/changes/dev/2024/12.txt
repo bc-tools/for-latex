@@ -9,7 +9,7 @@
 :new:
 -----
 
-\Doc: the section about writing the manual look good.
+\Doc: the section on writing the manual looks good.
 
 
 // ---------- //
@@ -23,7 +23,7 @@
 :new:
 -----
 
-\Doc: the sections about coding ext::''sty'' \andor ext::''cls'' files look good.
+\Doc: the sections on coding ext::''sty'' \andor ext::''cls'' files look good.
 
 
 // ---------- //
@@ -37,7 +37,7 @@
 :new:
 -----
 
-\Doc: the section for the main path::''about.yaml'' file looks good.
+\Doc: the section on the file path::''src/about.yaml'' looks good.
 
 
 // ---------- //

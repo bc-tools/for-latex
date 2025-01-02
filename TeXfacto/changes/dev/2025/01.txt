@@ -2,6 +2,20 @@
 
 
 ==
+??  (0.0.0-alpha.6)
+==
+
+-----
+:new:
+-----
+
+\Doc: the section on the deployment process looks good.
+
+
+// ---------- //
+
+
+==
 02  (0.0.0-alpha.5)
 ==
 
@@ -9,7 +23,7 @@
 :new:
 -----
 
-\Api: the file path::''src/about.yaml'' has a key to indicate an url to report issues, or make suggestions.
+\Api: the file path::''src/about.yaml'' has a new key yaml::''issues'' for an url to report issues, or make suggestions.
 
 
 // ---------- //
@@ -23,4 +37,4 @@
 :new:
 -----
 
-\Doc: the section about resources look good. This acheives the section about the \archi of the \src code.
+\Doc: the section on resources looks good. This acheives the section about the \archi of the \src code.

@@ -7,8 +7,7 @@ Fabriquer et publier le \proj finalisé
 ======================================
 
 content::
-    \content/XX.txt         ??
-    \content/XX.txt         ??
-    \content/XX.txt         ??
-    \content/XX.txt         ??
-    \content/XX.txt         ??
+    \content/init.txt                   ????????
+    \content/build.txt                  ??????
+    \content/test-n-debug.txt           ????
+    \content/publish.txt                ??
