@@ -11,7 +11,7 @@
 
 Two things added.
 
-    1) \Doc: the sections on the following folder look good.
+    1) \Doc before code: the sections on the following folder look good.
 
         * path::''changes''
         * path::''readme''
@@ -32,4 +32,4 @@ Two things added.
 :new:
 -----
 
-\Doc: the section on resources looks good. This acheives the section about the \archi of the folder path::''src''.
+\Doc before code: the section on resources looks good. This acheives the section about the \archi of the folder path::''src''.
