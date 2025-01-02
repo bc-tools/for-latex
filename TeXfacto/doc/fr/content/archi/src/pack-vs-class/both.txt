@@ -11,7 +11,7 @@ C'est le cas dans le dossier path::''src'' fictif basique ci-dessous où vous no
 
 dirtree::
     ---
-    path  = ?/examples/archi/coding/dirtree-both.txt
+    path  = ?/examples/archi/coding/dirtree/both.txt
     title = Un dossier path::''src'' fictif.
     ---
 

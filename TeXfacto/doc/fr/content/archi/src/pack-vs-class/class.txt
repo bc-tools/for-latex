@@ -10,7 +10,7 @@ Voici dossier path::''src'' fictif basique similaire à celui présenté pour co
 
 dirtree::
     ---
-    path  = ?/examples/archi/coding/dirtree-class.txt
+    path  = ?/examples/archi/coding/dirtree/class.txt
     title = Un dossier path::''src'' fictif.
     ---
 

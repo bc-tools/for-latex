@@ -10,7 +10,7 @@ Un code utilisant \ttes les fonctionnalités proposées par \thisproj aura un do
 
 dirtree::
     ---
-    path  = ?/examples/archi/project/dirtree-full-start.txt
+    path  = ?/examples/archi/project/dirtree/full-start.txt
     title = Structure maximale
     ---
 
@@ -24,7 +24,7 @@ note::
 
 dirtree::
     ---
-    path  = ?/examples/archi/project/dirtree-minimal-start.txt
+    path  = ?/examples/archi/project/dirtree/minimal-start.txt
     title = Structure minimale
     ---
 
@@ -38,8 +38,6 @@ Les sections à venir expliquent en détails comment employer chacun des dossier
     1) Le dossier path::''changes'' est dédié au journal complet des \chgts \techs.
 
     1) Le dossier path::''contrib'' accueille les \contribs éventuelles.
-
-    1) Le dossier path::''demos'' est dédié aux \demos non destinées à être distribuées via \ctan.
 
     1) Le dossier path::''src'' contient le code \src, mais aussi la \mandoc.
 

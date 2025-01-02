@@ -1,9 +1,8 @@
+* about.yaml
 + changes
 + contrib
-+ demos
 + hooks
 + readme
 + rollout
 + src
 + tools
-* about.yaml

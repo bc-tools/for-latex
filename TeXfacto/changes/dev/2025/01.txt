@@ -11,11 +11,11 @@
 
 Two things added.
 
-    1) \Doc.
+    1) \Doc: the sections on the following folder look good.
 
-        * The section on the folder path::''rollout'' looks good.
-
-        * The section on the folder path::''changes'' looks good.
+        * path::''changes''
+        * path::''readme''
+        * path::''rollout''
 
     1) \Api: the file path::''src/about.yaml'' has a new key yaml::''issues'' for an url to report issues, or make suggestions.
 

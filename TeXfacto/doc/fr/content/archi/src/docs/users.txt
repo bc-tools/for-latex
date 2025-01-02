@@ -41,7 +41,7 @@ Pour comprendre les explications, il faut avoir en tête la \struct simple suiva
 
 dirtree::
     ---
-    path  = ?/examples/archi/coding/dirtree-pack.txt
+    path  = ?/examples/archi/coding/dirtree/pack.txt
     title = Le path::''src'' d'un \pack fictif.
     ---
 

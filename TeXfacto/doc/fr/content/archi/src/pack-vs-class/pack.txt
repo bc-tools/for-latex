@@ -13,7 +13,7 @@ Considérons le dossier path::''src'' fictif basique suivant
 
 dirtree::
     ---
-    path  = ?/examples/archi/coding/dirtree-pack.txt
+    path  = ?/examples/archi/coding/dirtree/pack.txt
     title = Un dossier path::''src'' fictif.
     ---
 

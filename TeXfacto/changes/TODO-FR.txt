@@ -134,7 +134,7 @@ où le fichier de \cfg path::''build.lua'' est fourni clés en main.
 
 dirtree::
     ---
-    path = ?/example/pack/dirtree-final-basic.txt
+    path = ?/example/pack/dirtree/final-basic.txt
     ---
 
 
