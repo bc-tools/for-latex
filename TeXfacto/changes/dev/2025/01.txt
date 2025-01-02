@@ -12,7 +12,7 @@ Two things added.
 
         * The section on the folder path::''rollout'' looks good.
 
-        * The section on the folder path::''changes'' looks good.     ????
+        * The section on the folder path::''changes'' looks good.
 
     1) \Api: the file path::''src/about.yaml'' has a new key yaml::''issues'' for an url to report issues, or make suggestions.
 

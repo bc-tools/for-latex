@@ -1,51 +1,60 @@
 this::
-    date = 2025-01-02    ??
+    date = 2025-01-02
 
 
 ===================
 Indiquer les \chgts
 ===================
 
-\thisproj attend l'usage du dossier path::''src/changes'' pour indiquer les évolutions stables, ou non, du \proj via un processus contraint qui permet d'automatiser la gestion du \numver et de la date du \proj final.
+\thisproj attend l'usage du dossier path::''changes'' pour indiquer les évolutions stables, ou non, du \proj via un processus contraint qui permet d'automatiser la gestion du \numver et de la date du \proj final.
 Pour expliquer la démarche à suivre, nous allons considérer le cas de \tutodoc au début de son \dev.
 
 dirtree::
     ---
     path  = ?/examples/archi/tutodoc/chges/old/changes.txt
-    title = Le dossier path::''src/changes'' de \tutodoc
+    title = Le dossier path::''changes'' de \tutodoc
     date  = \tutodoc_date_OLD
     ---
 
 
 Voici les règles à suivre.
 
+    1) Les \chgts sont séparés en deux catégories.
+
+        * Dans le dossier path::''dev'' sont indiqués les \chgts lors du \dev, y compris ceux qui sont sans intérêts pour le futur utilisateur
+        ((
+            Par utilisateur, on entend quelqu'un ne participant au codage du \proj, à une personne qui sera consommatrice du \proj finalisé.
+        )).
+
+        * Dans le dossier path::''stable'' ne doivent être indiquées que les annonces des versions stabililsées avec les \chgts importants à communiquer aux utilisateurs.
+
+    1) Les \chgts sont organisés en utilisant un dossier par année, puis des fichiers ext::''txt'' par numéro de mois.
+
+    1) Le contenu d'un fichier ext::''txt'' pour un mois donné doit respecter la \struct suivante. Cette contrainte et l'\orga des dossiers path::''dev'' et path::''stable'' permettent à \thisproj d'associer une date à un \numver.
+
+    tnschges::
+        ---
+        path  = ?/examples/archi/tutodoc/chges/old/dev-chges-fake.txt
+        title = \Struct attendue pour un fichier des \chgts côté \dev
+        ---
+
+    1) Dans le fichier précédent, on note une syntaxe imposée pour indiquer un numéro de jours, avec des répétitions possibles, ainsi qu'un \numver, qui lui est unique. L'usage de suffixes comme numver::''beta'' et numver::''rc'' n'est pas obligatoire, mais cela semble être une bonne pratique qui devrait s'imposer d'elle-même.
+
+    1) Côté version stable, il semble préférable de n'employer aucun suffixe comme dans l'exemple ci-dessous.
+
+    tnschges::
+        ---
+        path  = ?/examples/archi/tutodoc/chges/old/stable-chges-fake.txt
+        title = \Struct attendue pour un fichier des \chgts pour une version stabilisée
+        ---
 
 
-???
+note::
+    Il est conseillé de n'employer que l'anglais pour des \chgts \techs.
 
 
-
-tnschges::
-    ---
-    path  = ?/examples/archi/tutodoc/chges/old/dev-chges-fake.txt
-    title = \Struct attendue pour un fichier des \chgts côté \dev
-    ---
-
-
-tnschges::
-    ---
-    path  = ?/examples/archi/tutodoc/chges/old/stable-chges-fake.txt
-    title = \Struct attendue pour un fichier des \chgts pour une version stabilisée
-    ---
-
-
-
-    Tout \proj doit utiliser un  où indiquer, \tjrs en anglais, les \chgts des versions en \dev, et aussi ceux importants uniquement pour les versions stables publiées : voir cf::''?/archi/changes.txt''.
-
-
-::
-    \thisproj lèvera une erreur en cas de non cohérence entre les \chgts stables côté path::''change'', et ceux rédigés dans path::''src/changelog''.
-
-
-
-cf::''?/changelog.txt''
+warning::
+    \thisproj lèvera une erreur en cas de non cohérence entre les \chgts stables côté path::''change'', et ceux rédigés dans path::''src/changelog'' pour la \mandoc
+    ((
+        Si besoin, concernant path::''src/changelog'' se reporter à cf::''?/changelog.txt''.
+    )).
