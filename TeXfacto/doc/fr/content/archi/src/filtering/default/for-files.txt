@@ -10,7 +10,7 @@ Considérons le dossier de \dev ci-après (nous parlerons de l'usage d'un fichie
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/dirtree/filtering/src/files-no-about.txt
+    path  = ?/examples/archi/tutodoc/filtering/src/files-no-about.txt
     title = Le sous-dossier path::''src/admonitions'' de \tutodoc sans fichier path::''about.yaml'' - Une version simplifiée
     date    = \tutodoc_date
     ---

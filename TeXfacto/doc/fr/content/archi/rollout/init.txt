@@ -10,12 +10,12 @@ Le produit fini est géré dans le dossier path::''rollout'' qui sera construit 
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/dirtree/rollout.txt
-    title = Le dossier path::''rollout''
+    path  = ?/examples/archi/tutodoc/rollout/dirtree-minimal-start.txt
+    title = \Struct minimale du dossier path::''rollout''
     ---
 
 
-Décrivons cette \struct.
+Décrivons cette \orga du dossier path::''rollout''.
 
     1) Les dossiers path::''code'' et path::''doc'' vont contenir \resp^t le code \src et les fichiers ext::''tex'' des \mandocs finalisés.
 

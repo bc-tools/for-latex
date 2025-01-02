@@ -7,9 +7,9 @@ from babel.dates import format_date
 # suivi de la version minuscule du nom de la variable de
 # substitution, sans les chevrons bien entendu.
 #
-# IMPORTANT ! Les fonctions de la famille ''tex_...'' doit toujours
-# utiliser les deux variables ''lang'' et ''infos'', et renvoyer
-# un code TeX valide.
+# IMPORTANT ! Les fonctions de la famille ''tex_...'' doivent
+# proposer les deux variables ''lang'' et ''infos'', et renvoyer
+# un code TeX valide là où se fera la substitution.
 def tex_depends(lang, infos):
 # On souhaite un format adapté à l'anglais ou au français, les
 # deux seules langues de la documentation.

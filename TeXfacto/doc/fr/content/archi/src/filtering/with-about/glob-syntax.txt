@@ -12,7 +12,7 @@ Ceci permet par exemple d'imposer certains dossiers, ou fichiers aux premières 
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/dirtree/filtering/src/files.txt
+    path  = ?/examples/archi/tutodoc/filtering/src/files.txt
     title = Le sous-dossier path::''src/admonitions'' de \tutodoc - Une version simplifiée
     date    = \tutodoc_date
     ---
