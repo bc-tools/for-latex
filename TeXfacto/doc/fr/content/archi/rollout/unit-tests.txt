@@ -1,0 +1,29 @@
+this::
+    date = 2025-01-02   ??
+
+
+=======================
+Tests de non régression
+=======================
+
+
+??
+
+
+latex::
+    ---
+    path    = ?/examples/archi/tutodoc/rollout/l3build-test-pdf.lvt
+    extract = start
+    title   = Un fichier de test utilisé par \tutodoc
+    date    = \tutodoc_date
+    ---
+
+
+
+latex::
+    ---
+    path    = ?/examples/archi/tutodoc/rollout/l3build-test-no-pdf.lvt
+    extract = start
+    title   = Un autre fichier de test utilisé par \tutodoc
+    date    = \tutodoc_date
+    ---

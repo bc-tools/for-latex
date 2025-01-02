@@ -1,0 +1,13 @@
+this::
+    date = 2025-01-02
+
+
+=====================
+Déboguer les \mandocs
+=====================
+
+Le processus de \redac de la \mandoc permet d'effectuer indirectement des tests d'utilisation
+((
+    Voir cf::''?/docs/users.txt''.
+)).
+Ces tests peuvent ne plus fonctionner lorsque l'on intègre l'\ens du code \src et de la \doc. Pour aider à déboguer à la main ce type de \pbs, \thisproj met dans le dossier path::''debug'' le code \src et les fichiers ext::''tex'' des \mandocs finalisés.

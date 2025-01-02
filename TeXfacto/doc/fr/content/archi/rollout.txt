@@ -8,6 +8,7 @@ Fabriquer et publier le \proj finalisé
 
 content::
     \content/init.txt
-    \content/test-n-debug.txt           ??????
+    \content/debug.txt
+    \content/unit-tests.txt             ??????
     \content/build.txt                  ????
     \content/publish.txt                ??
