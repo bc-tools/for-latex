@@ -10,3 +10,50 @@ YYY
 
 
 rexfacto gère la doc uniquement, pour e reste, passer par tools et non hooks !!!
+
+
+
+
+
+
+
+
+dirtree::
+    ---
+    path    = ?/examples/archi/tutodoc/contrib/dirtree/changelog.txt
+    extract = yes
+    title   = Le dossier path::''changelog'' pour les \contribs de \tutodoc
+    date    = \tutodoc_date
+    ---
+
+
+
+
+dirtree::
+    ---
+    path    = ?/examples/archi/tutodoc/contrib/dirtree/translate.txt
+    extract = yes
+    title   = XXX
+    date    = \tutodoc_date
+    ---
+
+
+dirtree::
+    ---
+    path    = ?/examples/archi/tutodoc/contrib/dirtree/en.txt
+    extract = yes
+    title   = XXX
+    date    = \tutodoc_date
+    ---
+
+
+contrib/translate/en/doc/manual
+
+
+dirtree::
+    ---
+    path    = ?/examples/archi/tutodoc/contrib/dirtree/manual.txt
+    extract = yes
+    title   = XXX
+    date    = \tutodoc_date
+    ---
