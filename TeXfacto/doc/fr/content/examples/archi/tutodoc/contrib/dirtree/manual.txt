@@ -1,17 +1,17 @@
-preamble.cfg.sty
+* preamble.cfg.sty
 
-abstract:
-    abstract.tex
++ abstract
+    * abstract.tex
 
-admonitions:
-    example.tex
-    remark.tex
-    admonitions.tex
-    examples
++ admonitions
+    * example.tex
+    * remark.tex
+    * admonitions.tex
+    * examples
 
-changelog
-    2023
-        11-29.tex
-        12-08.tex
++ changelog
+    + 2023
+        * 11-29.tex
+        * 12-08.tex
 
-    2024 [...]
+    + 2024 [...]

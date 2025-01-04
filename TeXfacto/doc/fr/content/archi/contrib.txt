@@ -1,10 +1,15 @@
 this::
-    date = 2025-01-02    ??
+    date = 2025-01-04    ??
 
 
-=========
-XXX
-=========
+=====================
+\Contribs extérieures
+=====================
+
+\thisproj gère des \mandocs traduites dans diverses \langs à condition de les placer dans le dossier path::''contrib/translate'', et de suivre le procédé expliqué ci-après.
+
+
+
 
 YYY
 
