@@ -6,7 +6,14 @@ this::
 \Contribs extérieures
 =====================
 
-\thisproj gère des \mandocs traduites dans diverses \langs à condition de les placer dans le dossier path::''contrib/translate'', et de suivre le procédé expliqué ci-après.
+\thisproj gère des \mandocs traduites dans diverses \langs à condition de les placer dans le dossier path::''contrib/translate'', et de suivre le procédé expliqué ci-après qui va s'appuyer sur la cas pratique réel suivant.
+
+dirtree::
+    ---
+    path  = ?/examples/archi/tutodoc/contrib/dirtree/translate.txt
+    title = Le sous-dossier path::''contrib/translate'' de \tutodoc
+    date  = \tutodoc_date
+    ---
 
 
 
@@ -14,51 +21,42 @@ this::
 YYY
 
 
-rexfacto gère la doc uniquement, pour e reste, passer par tools et non hooks !!!
+rexfacto gère la doc uniquement, pour e reste, passer par tools et hooks si ttol lancer chque fois que texfacto l'est  !!!
 
 
 
 
 
-
-
-
-dirtree::
-    ---
-    path    = ?/examples/archi/tutodoc/contrib/dirtree/changelog.txt
-    extract = yes
-    title   = Le dossier path::''changelog'' pour les \contribs de \tutodoc
-    date    = \tutodoc_date
-    ---
-
-
-
-
-dirtree::
-    ---
-    path    = ?/examples/archi/tutodoc/contrib/dirtree/translate.txt
-    extract = yes
-    title   = XXX
-    date    = \tutodoc_date
-    ---
-
-
-dirtree::
-    ---
-    path    = ?/examples/archi/tutodoc/contrib/dirtree/en.txt
-    extract = yes
-    title   = XXX
-    date    = \tutodoc_date
-    ---
-
-
-contrib/translate/en/doc/manual
-
+parker de fichiers cmompilabes avec classe de dev, parler aussi de la version du dev créee : ici celle en frgit a permt alorsde voir si un chgt coté manuel dev nécessite de chger statut d'autres docs
 
 dirtree::
     ---
     path    = ?/examples/archi/tutodoc/contrib/dirtree/manual.txt
     extract = yes
-    title   = XXX
+    title   = XXX  contrib/translate/en/manual
     date    = \tutodoc_date
     ---
+
+
+status géré par thisproj qui si ko stpe le processus de construction !
+
+
+yaml::
+    ---
+    path    = ?/examples/archi/tutodoc/contrib/status/manual-en.yaml
+    title   = XXX   contrib/translate/status/en/manual.yaml
+    date    = \tutodoc_date
+    ---
+
+
+
+note::
+    en note, on aprle de l'orga diff pour a doc : ici pragmatique mais on a plus la logique coté dev par contre !
+
+    dirtree::
+        ---
+        path    = ?/examples/archi/tutodoc/contrib/dirtree/changelog.txt
+        extract = yes
+        title   = Le dossier path::''changelog'' pour les \contribs de \tutodoc
+        date    = \tutodoc_date
+        ---

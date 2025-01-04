@@ -1,18 +1,18 @@
-+ changes [...]
++ changes
 + en
-    + api [...]
-    + manual [...]
+    + api
+    + manual
 + es
-    + api [...]
+    + api
 + fr
-    + api [...]
-    + manual [...]
+    + api
+    + manual
 + status
     + en
-        + api.yaml
-        + manual.yaml
+        * api.yaml
+        * manual.yaml
     + es
-        + api.yaml
+        * api.yaml
     + fr
-        + api.yaml
-        + manual.yaml
+        * api.yaml
+        * manual.yaml
