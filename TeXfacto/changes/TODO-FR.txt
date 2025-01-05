@@ -9,6 +9,11 @@ NOW
 
 > ---------------------------- <
 
+contrib status géré en fait via src2prod !!!
+
+
+> ---------------------------- <
+
 l3build-xtras PUBLIER AVANT car citer !!!!
 
     ---> juste ettre versin perso actuelle dans main de for-latex
@@ -420,6 +425,14 @@ migration depuis specs générales vers ici de nouveau MAIS en grardant juste pa
 -----
 LATER
 -----
+
+
+> ---------------------------- <
+
+faire syst via yaml sas danger car thisproj gère en interne
+
+    yaml : comme thisproj gère, rien à faire car ce sera fait au bon moment Prévori cas de liste classe/projet en mode non basique via regex par exemple
+
 
 > ---------------------------- <
 

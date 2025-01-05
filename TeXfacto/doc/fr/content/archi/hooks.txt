@@ -9,6 +9,9 @@ XXX
 YYY
 
 
+comment savoir si c'est prehook ou posthook ?
+
+
 content::
     \content/placeholders.txt       ??
     \content/resources.txt          ??

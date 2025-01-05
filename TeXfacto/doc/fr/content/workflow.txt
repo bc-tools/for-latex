@@ -13,3 +13,6 @@ abrev::
 
 content::
     \content/the-docs.txt       ??
+
+
+parkler que si git utilisé alors git a non fait bloquera logiquement le process !!!
