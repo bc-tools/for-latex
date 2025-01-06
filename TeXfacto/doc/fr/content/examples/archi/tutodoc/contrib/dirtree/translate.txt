@@ -1,18 +1,20 @@
-+ changes
-+ en
-    + api
-    + manual
-+ es
-    + api
-+ fr
-    + api
-    + manual
-+ status
-    + en
-        * api.yaml
-        * manual.yaml
-    + es
-        * api.yaml
-    + fr
-        * api.yaml
-        * manual.yaml
++ contrib
+    + translate
+        + changes
+        + en
+            + api
+            + manual
+        + es
+            + api
+        + fr
+            + api
+            + manual
+        + status
+            + en
+                * api.yaml
+                * manual.yaml
+            + es
+                * api.yaml
+            + fr
+                * api.yaml
+                * manual.yaml
