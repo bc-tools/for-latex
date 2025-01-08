@@ -12,7 +12,7 @@
 \Doc before code: the sections on the following folder look good.
 
     * path::''contrib''
-    * path::''hook'' (it remains to explain how to write hooks concretly).
+    * path::''hook''
 
 
 // ---------- //

@@ -9,284 +9,6 @@ NOW
 
 > ---------------------------- <
 
-contrib status géré en fait via src2prod !!!
-
-
-> ---------------------------- <
-
-l3build-xtras PUBLIER AVANT car citer !!!!
-
-    ---> juste ettre versin perso actuelle dans main de for-latex
-
-    ---> REDALME indique que mini projs mais contribs bienvenus !
-
-
-> ---------------------------- <
-
-note::
-    Dans le dossier des \trads de la \doc, les changements sont organisés différement comme suit où chaque fichier path::''tex'' est directement compilable par le traducteur.
-
-    dirtree::
-        ---
-        path  = ?/examples/archi/tutodoc/dirtree/contrib/changelog.txt
-        title = Le dossier path::''changelog'' pour les traductions de \tutodoc
-        date  = \tutodoc_date_OLD
-        ---
-
-+
-
-    texfacto:
-      doc:
-        pack:
-          class   : scrartcl, a4paper
-          preamble: preamble.cfg.tex
-
-    texfacto:
-      doc:
-        pack:
-          options : french, color=no
-          preamble:
-            ...
-
-
-> ---------------------------- <
-
-attention : templ besoin d'outils maison non présnet dans le pramble.cgf.sty
-
-
-> ---------------------------- <
-
-hook = ??? propo de chatgpt
-
-    - Point d'accroche
-    - Crochet
-    - Mécanisme d'interception
-    - Accroche d'événement
-    - Crochet du cycle de vie
-
-
-> ---------------------------- <
-
-Dans le fichier path::``about.yaml``, en plus des informations générales propres à tout package, il faut indiquer les noms de chaque package importé dans le bloc yaml::``agregate`` sous forme d'une liste.
-
-yaml::
-    agregate:
-      - tnsfictive_1
-      - tnsfictive_3
-      - tnsfictive_2
-
-
-info::
-    L'ordre utilisé dans le bloc yaml::``agregate`` sera celui retenu pour produire ¨auto^t la ¨doc.
-
-
-warning::
-    La recherche des packages se fait, si besoin, de façon récursive dans le dossier path::``typensee-latex`` en s'arrêtant au ¨1er dossier trouvé.
-
-
-> ---------------------------- <
-
-    1) Il est possible de rédiger des fichiers path::''TEX'' pour documenter des fonctionnalités.
-    Dans ce cas, il faut aussi respecter une profondeur de '1' comme pour les fichiers path::''STY''.
-    Dans notre exemple fictif, path::''intro/intro.tex'' est considéré comme étant une \doc écrite dans la langue indiquée dans le fichier path:''src/about.yaml'', voir cf::''?../metainfos/allpacks.txt'' à ce propos.
-
-    1) Des fichiers ressources peuvent être utilisés : voir cf::'':?../resource.txt'' pour en savoir plus.
-
-
-> ---------------------------- <
-
-===========================================================
-\Docs différenciées pour un \pack et une classe de même nom
-===========================================================
-
-Dans le cas d'un \dev en parallèle d'une classe et d'un \pack ayant le même nom, \texfacto va produire par défaut une unique \doc sauf si l'on utilise les préfixes verb::''-sty'' et verb::''-cls'' pour cibler les parties de la \doc pour le \pack et celles pour la classe \resp comme dans l'exemple suivant.
-
-dirtree::
-    ---
-    path = ?/example/class-n-pack/dirtree.txt
-    ---
-
-
-tip::
-    Il est possibile de produire une \doc commune et deux séparées. Ceci peut permettre de présenter rapidement le \pack et la classe pour ensuite se concentrer sur les particularités de chacun.
-
-+
-
-tip::
-    Via la \pyglob et un bloc yaml::''ignore'' mis dans le fichier path::''src/about.yaml'', il est possible d'indiquer des dossiers et des fichiers à ignorer en plus de ceux indiqués à \git via un fichier \gitignore.
-    Par défaut, \texfacto ignore les dossiers et fichiers ayant un nom commençant par path::''test'', path::''tests'', path::''tool'' ou path::''tools'', ce préfixe devant être suivi a minima d'un caractère autre qu'une lettre. Ceci se ferait à la main comme suit.
-
-    yaml::
-        ---
-        extract = yes
-        title   = Le fichier path::''src/about.yaml''
-        ---
-        ignore: |
-          test[!a-zA-Z]*
-          tests[!a-zA-Z]*
-
-          tool[!a-zA-Z]*
-          tools[!a-zA-Z]*
-
-
-> ---------------------------- <
-
-Dans le cas le plus basique, on obtiendra un dossier comme le suivant
-((
-    Si besoin, un \chgt de nom du projet pourra être fait afin d'obtenir un nom acceptable pour un \pack \latex.
-))
-où le fichier de \cfg path::''build.lua'' est fourni clés en main.
-
-dirtree::
-    ---
-    path = ?/example/pack/dirtree/final-basic.txt
-    ---
-
-
-> ---------------------------- <
-
-reprendre contrib des  specs
-
-
-> ---------------------------- <
-
-tool python pour passer de about-project.vs.yaml à une version utile pour la doc !!!
-
-
-> ---------------------------- <
-
-
-tip::
-    Via la \pyglob et un bloc yaml::''ignore'' mis dans le fichier path::''src/about.yaml'', il est possible d'indiquer des dossiers et des fichiers à ignorer en plus de ceux indiqués à \git via un fichier \gitignore.
-    Par défaut, \texfacto ignore les dossiers et fichiers ayant un nom commençant par path::''test'', path::''tests'', path::''tool'' ou path::''tools'', ce préfixe devant être suivi a minima d'un caractère autre qu'une lettre. Ceci se ferait à la main comme suit.
-
-    yaml::
-        ---
-        extract = yes
-        title   = Le fichier path::''src/about.yaml''
-        ---
-        ignore: |
-          test[!a-zA-Z]*
-          tests[!a-zA-Z]*
-
-          tool[!a-zA-Z]*
-          tools[!a-zA-Z]*
-
-
-> ---------------------------- <
-
-
-Le sous-dossier path::''rollout'' est destiné à \l3build avec le choix de \struct suivant.
-
-dirtree::
-    + rollout
-        * build.lua
-        * README.md
-        + code
-        + doc
-        + testfiles
-
-
-Expliquons rapidement le rôle des \elts indiqués.
-
-    1) Le fichier path::''build.lua'' est un fichier de \config destiné à \l3build ; il est personnalisable via le \lang de \prog \lua.
-
-    1) Le fichier path::''README.md'' est destiné au site \ctan.
-
-    1) Le dossier path::''doc'' doit contenir la \doc du \proj.
-
-    1) Le dossier path::''code'' sert à accueillir le code \src du \proj.
-
-    1) Le dossier path::''tests'' permet de produire des fichiers ext::''lvt'' de tests.
-
-note::
-    Le \proj \texfacto est capable de produire automatiquement tout le contenu du sous-dossier path::''rollout'' excepté bien entendu le dossier des tests.
-
-
-> ---------------------------- <
-
-
-==
-??  (0.0.0-alpha.0)
-==
-
-???
-
-
-> ---------------------------- <
-
-main pour les imports !!!
-
-
-> ---------------------------- <
-
-ne plus utiiser commentaire magique dans les cls ou les sty car c'est inutile !!!
-
-> ---------------------------- <
-
-CLASS : on passe de cls.sty à juste cls et on utilise des imports sauf pour le main car les autres ne gèrent plus les options
-
-
-> ---------------------------- <
-
-extra cfg like
-
-    ---> type-de-fichier/*.ext.cls ou type-de-fichier/*.ext.sty ou les deux
-
-        css/onetheme.cls
-        locale/admo.cls
-
-    ---> on les importe via des input
-
-    ---> on les colle dans un seul au finale
-
-        nom-proj-onetheme.css.cls
-        nom-proj-en.loc.cls
-
-
-> ---------------------------- <
-
-on commence par analyse des require pour les listere et si besoin ordonne en porduisant un yaml modifiabel car ectaines situations ne sont pas automatisables
-
-    ---> coéherence des versions et des options si doublons
-    ---> possibilité de mise en commentaire de la vesrion minimale souhaitée
-    ---> gestion des tikzlibrray et similaiere : anticiper de nouveaux cas propres à de nouveaux package
-
-
-> ---------------------------- <
-
---------
-:fordev:
---------
-
-[[:doc:]]  ??
-\Doc before the code: software \archi constraints explained.
-
-
-> ---------------------------- <
-
-draft mode : on ignore git a pour tester vite fait tout en avertissant!
-
-
-> ---------------------------- <
-
-besoin de chnager about.yaml au ofmrat suivant
-
-
-texfacto:
-  doc:
-    preamble: preamble.cfg.tex
-
-    toc: pour les agregate
-
-    src:
-        Pour les sty et co
-
-    hooks:
-        cf galleire de tutodoc
-
-> ---------------------------- <
-
 workflow
 
     ---> build.lua construit auto et/ou mis à jour
@@ -322,38 +44,190 @@ prendre en compte certain prefixe de fichier
 
 > ---------------------------- <
 
-pack et/ou class
+hook = ??? propo de chatgpt
 
-    ---> CLASSE: on doit passer via un main.cls et des *.cls.sty
-         Ici le main.cls va prendre en main ce qui n'est pas séquable, mais du coup certaines choses vont s'imposer : par exemple, la langue doit être régalble via une macro , laquelle macro sera appelle par main.cls via \AtBeginDocument{...} pour utiliser le \BCPdata{language} valant en, fr, ...
+    - Point d'accroche
+    - Crochet
+    - Mécanisme d'interception
+    - Accroche d'événement
+    - Crochet du cycle de vie
 
 
-    ---> du coup, le main.sty devient une bonne pratique mais pas obligé !!!
+> ---------------------------- <
+
+ne plus utiiser commentaire magique dans les cls ou les sty car c'est inutile !!!
+
+
+> ---------------------------- <
+
+extra cfg like
+
+    ---> type-de-fichier/*.ext.cls ou type-de-fichier/*.ext.sty ou les deux
+
+        css/onetheme.cls
+        locale/admo.cls
+
+    ---> on les importe via des input
+
+    ---> on les colle dans un seul au finale
+
+        nom-proj-onetheme.css.cls
+        nom-proj-en.loc.cls
+
+
+> ---------------------------- <
+
+on commence par analyse des require pour les listere et si besoin ordonne en porduisant un yaml modifiabel car ectaines situations ne sont pas automatisables
+
+    ---> possibilité de mise en commentaire de la vesrion minimale souhaitée
+
+    ---> gestion des tikzlibrray et similaiere : anticiper de nouveaux cas propres à de nouveaux package
+
+
+> ---------------------------- <
+
+Le sous-dossier path::''rollout'' est destiné à \l3build avec le choix de \struct suivant.
+
+dirtree::
+    + rollout
+        * build.lua
+        * README.md
+        + code
+        + doc
+        + testfiles
+
+
+Expliquons rapidement le rôle des \elts indiqués.
+
+    1) Le fichier path::''build.lua'' est un fichier de \config destiné à \l3build ; il est personnalisable via le \lang de \prog \lua.
+
+    1) Le fichier path::''README.md'' est destiné au site \ctan.
+
+    1) Le dossier path::''doc'' doit contenir la \doc du \proj.
+
+    1) Le dossier path::''code'' sert à accueillir le code \src du \proj.
+
+    1) Le dossier path::''tests'' permet de produire des fichiers ext::''lvt'' de tests.
+
+note::
+    Le \proj \texfacto est capable de produire automatiquement tout le contenu du sous-dossier path::''rollout'' excepté bien entendu le dossier des tests.
+
+
+> ---------------------------- <
+
+reprendre contrib des  specs
+
++
+
+tool python pour passer de about-project.vs.yaml à une version utile pour la doc !!!
+
+
+> ---------------------------- <
+
+tip::
+    Via la \pyglob et un bloc yaml::''ignore'' mis dans le fichier path::''src/about.yaml'', il est possible d'indiquer des dossiers et des fichiers à ignorer en plus de ceux indiqués à \git via un fichier \gitignore.
+    Par défaut, \texfacto ignore les dossiers et fichiers ayant un nom commençant par path::''test'', path::''tests'', path::''tool'' ou path::''tools'', ce préfixe devant être suivi a minima d'un caractère autre qu'une lettre. Ceci se ferait à la main comme suit.
+
+    yaml::
+        ---
+        extract = yes
+        title   = Le fichier path::''src/about.yaml''
+        ---
+        ignore: |
+          test[!a-zA-Z]*
+          tests[!a-zA-Z]*
+
+          tool[!a-zA-Z]*
+          tools[!a-zA-Z]*
+
+
+> ---------------------------- <
+
+contrib status géré en fait via src2prod !!!
+
+
+> ---------------------------- <
+
+l3build-xtras PUBLIER AVANT car citer !!!!
+
+    ---> juste ettre versin perso actuelle dans main de for-latex
+
+    ---> REDALME indique que mini projs mais contribs bienvenus !
+
+
+> ---------------------------- <
+
+attention : templ besoin d'outils maison non présnet dans le pramble.cgf.sty
+
+
+> ---------------------------- <
+
+monorepo !!!!
+
+Dans le fichier path::``about.yaml``, en plus des informations générales propres à tout package, il faut indiquer les noms de chaque package importé dans le bloc yaml::``agregate`` sous forme d'une liste.
+
+yaml::
+    agregate:
+      - tnsfictive_1
+      - tnsfictive_3
+      - tnsfictive_2
+
+
+info::
+    L'ordre utilisé dans le bloc yaml::``agregate`` sera celui retenu pour produire ¨auto^t la ¨doc.
+
+
+warning::
+    La recherche des packages se fait, si besoin, de façon récursive dans le dossier path::``typensee-latex`` en s'arrêtant au ¨1er dossier trouvé.
+
+
+> ---------------------------- <
+
+???
+
+\Docs différenciées pour un \pack et une classe de même nom
+
+
+Dans le cas d'un \dev en parallèle d'une classe et d'un \pack ayant le même nom, \texfacto va produire par défaut une unique \doc sauf si l'on utilise les préfixes verb::''-sty'' et verb::''-cls'' pour cibler les parties de la \doc pour le \pack et celles pour la classe \resp comme dans l'exemple suivant.
+
+dirtree::
+    ---
+    path = ?/example/class-n-pack/dirtree.txt
+    ---
+
+
+tip::
+    Il est possibile de produire une \doc commune et deux séparées. Ceci peut permettre de présenter rapidement le \pack et la classe pour ensuite se concentrer sur les particularités de chacun.
+
+
+> ---------------------------- <
+
+
+tip::
+    Via la \pyglob et un bloc yaml::''ignore'' mis dans le fichier path::''src/about.yaml'', il est possible d'indiquer des dossiers et des fichiers à ignorer en plus de ceux indiqués à \git via un fichier \gitignore.
+    Par défaut, \texfacto ignore les dossiers et fichiers ayant un nom commençant par path::''test'', path::''tests'', path::''tool'' ou path::''tools'', ce préfixe devant être suivi a minima d'un caractère autre qu'une lettre. Ceci se ferait à la main comme suit.
+
+    yaml::
+        ---
+        extract = yes
+        title   = Le fichier path::''src/about.yaml''
+        ---
+        ignore: |
+          test[!a-zA-Z]*
+          tests[!a-zA-Z]*
+
+          tool[!a-zA-Z]*
+          tools[!a-zA-Z]*
+
+
+> ---------------------------- <
+
+draft mode : on ignore git a pour tester vite fait tout en avertissant!
 
 
 > ---------------------------- <
 
 proposer un mode compile petit bout avec diagnostique de ce quie ne marche même pas en local
-
-
-> ---------------------------- <
-
-pour gestion plus fine si besoin
-
-toc:
-  - config.*
-
-alias de
-
-toc:
-  - config.{sty|tex}
-
-
-> ---------------------------- <
-
-texfacto-poc
-
-    ---> besoin de régeler bug du au chemin via fichier importé !!! voir si faisable sans hook sinon on se la joue brutale en attendnat de passer al amin a texfacto
 
 
 > ---------------------------- <
@@ -380,11 +254,6 @@ texfacto-poc
     ---> package avec els options non gérés pour le moment, le faire : pour la gestion de l'ordre des packages, si pb, on passe voia about.yaml dans le source
 
     ---> besoin de régeler bug du au chemin via fichier importé !!! voir si faisable sans hook sinon on se la joue brutale en attendnat de passer al amin a texfacto
-
-
-> ---------------------------- <
-
-If the body of your code is in L3 syntax you may prefer to use \ProvidesExplClass rather than \ProvideClass at the start of the file as this will take care of switching to L3 syntax and save explicit use of \ExplSyntaxOn.
 
 
 > ---------------------------- <
