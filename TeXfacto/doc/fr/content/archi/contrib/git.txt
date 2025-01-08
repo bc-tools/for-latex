@@ -1,9 +1,0 @@
-this::
-    date = 2025-01-06
-
-
-===========================
-\git comme chef d'orchestre
-===========================
-
-En versionnant votre \proj via \git, vous donnez le pouvoir à \thisproj de savoir que les dossiers utilisés pour la construction du \prod finale contiennent des \modifs npn validées via term::''git a'' et term::''git commit -m "..."''. Ceci évite des publications prématurées.

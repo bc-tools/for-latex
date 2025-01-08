@@ -2,6 +2,23 @@
 
 
 ==
+08  (0.0.0-alpha.6)
+==
+
+-----
+:new:
+-----
+
+\Doc before code: the sections on the following folder look good.
+
+    * path::''contrib''
+    * path::''hook'' (it remains to explain how to write hooks concretly).
+
+
+// ---------- //
+
+
+==
 02  (0.0.0-alpha.5)
 ==
 

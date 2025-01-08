@@ -1,0 +1,49 @@
+this::
+    date = 2025-01-08
+
+
+==========================================
+La \trad de la \mandoc, un cas particulier
+==========================================
+
+Comme \thisproj impose une \methodo de \redac de la \mandoc côté code \src
+((
+    Voir cf::''?/docs/users.txt''.
+)),
+avec une unique \lang possible, \thisproj permet la \trad de cette \doc dans d'autres langues.
+Pour présenter la méthode à suivre, nous allons considérer le projet \tutodoc qui propose la \mandoc en français et en anglais en les maintenant via le dossier path::''contrib'' organisé comme suit.
+
+dirtree::
+    ---
+    path  = ?/examples/archi/tutodoc/contrib/dirtree/contrib.txt
+    title = Le dossier path::''contrib'' de \tutodoc
+    date  = \tutodoc_date
+    ---
+
+
+Ce sont les sous-dossiers path::''translate/en/manual'' et path::''translate/fr/manual'' qui accueillent les \mandocs
+((
+    L'absence de sous-dossier path::''translate/es/manual'' montre que la \mandoc n'existe pas en espagnol.
+)).
+Ils sont organisés comme suit de façon similaire à ce qui est fait dans le code \src.
+
+dirtree::
+    ---
+    path    = ?/examples/archi/tutodoc/contrib/dirtree/manual.txt
+    extract = yes
+    title   = Les dossiers path::''manual'' pour les \trads
+    date    = \tutodoc_date
+    ---
+
+
+Il existe tout de même des différences importantes que voici.
+
+    1) Le dossier path::''changelog'' utilise une \orga moins profonde avec par exemple path::''2023/11-29.tex'' au lieu de path::''2023/11/29.tex'' côte code \src. Ceci facilite la tâche des traducteurs.
+
+    1) Chaque fichier est compilable directement avec un préambule réduit au strict minimum, tout étant pérsent dans le fichier path::''manual/preamble.cfg.sty''.
+
+    1) Pour finir, comme la \mandoc dans le code \src de \tutodoc est rédigée en français
+    ((
+        Cette \info est connue de \thisproj via le fichier path::''about.yaml'' du \proj : se reporter à cf::''?/metadata.txt''.
+    )),
+    le dossier path::''translate/fr/manual'' est mis à jour \auto^t par \thisproj pour refléter ce qui est utilisé dans le code.

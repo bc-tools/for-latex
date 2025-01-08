@@ -1,0 +1,14 @@
+this::
+    date = 2025-01-07    ??
+
+
+========================================
+\Syst d'interception du cycle de \fabric
+========================================
+
+
+
+YYY
+
+
+cf::''?/hooks/placeholders.txt''.

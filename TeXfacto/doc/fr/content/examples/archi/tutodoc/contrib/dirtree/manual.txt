@@ -7,7 +7,7 @@
     * example.tex
     * remark.tex
     * admonitions.tex
-    * examples
+    + examples
 
 + changelog
     + 2023

@@ -1,17 +1,10 @@
 this::
-    date = 2025-01-02    ??
+    date = 2025-01-08
 
 
-=========
-XXX
-=========
+=======================
+Agir lors de la \fabric
+=======================
 
-YYY
-
-
-comment savoir si c'est prehook ou posthook ?
-
-
-content::
-    \content/placeholders.txt       ??
-    \content/resources.txt          ??
+Le dossier path::''hooks'' sert à accueillir les outils destinés à modifier le cycle de \fabric du \prod final.
+La méthode à suivre est expliquée en détails dans cf::''?/workflow/hooks.txt''.

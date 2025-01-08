@@ -1,7 +1,3 @@
-this::
-    date = 2025-01-06
-
-
 abrev::
     content = :this.name:
 
@@ -10,65 +6,7 @@ abrev::
 \Contribs extérieures
 =====================
 
-\thisproj dispose d'un \syst de validation de \contribs extérieures simples et avancées.
-
 content::
-    \content/git.txt
-    \content/status.txt         ????
-    \content/translate.txt      ??
-
-
-
-
-
-
-???
-
-
-
-
-
-
-
-YYY
-
-
-rexfacto gère la doc uniquement, pour e reste, passer par tools et hooks si ttol lancer chque fois que texfacto l'est  !!!
-
-
-
-
-
-parker de fichiers cmompilabes avec classe de dev, parler aussi de la version du dev créee : ici celle en frgit a permt alorsde voir si un chgt coté manuel dev nécessite de chger statut d'autres docs
-
-dirtree::
-    ---
-    path    = ?/examples/archi/tutodoc/contrib/dirtree/manual.txt
-    extract = yes
-    title   = XXX  contrib/translate/en/manual
-    date    = \tutodoc_date
-    ---
-
-
-status géré par thisproj qui si ko stpe le processus de construction !
-
-
-yaml::
-    ---
-    path    = ?/examples/archi/tutodoc/contrib/status/manual-en.yaml
-    title   = XXX   contrib/translate/status/en/manual.yaml
-    date    = \tutodoc_date
-    ---
-
-
-
-note::
-    en note, on aprle de l'orga diff pour a doc : ici pragmatique mais on a plus la logique coté dev par contre !
-
-    dirtree::
-        ---
-        path    = ?/examples/archi/tutodoc/contrib/dirtree/changelog.txt
-        extract = yes
-        title   = Le dossier path::''changelog'' pour les \contribs de \tutodoc
-        date    = \tutodoc_date
-        ---
+    \content/purpose.txt
+    \content/status.txt
+    \content/mandoc.txt

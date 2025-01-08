@@ -7,10 +7,10 @@ author: Christophe, BAL, [projetmbc@gmail.com]
 #    + update
 status: ok
 
-# Comments for translators.
-#    + [on hold]  New translation not yet analysed.
+# Comments for drawers.
+#    + [on hold]  New SVG graphics not yet analysed.
 #                 Changes to do: ...
-#    + [ko]       Translation rejected because ...
-#    + [ok]       Translation accepted.
+#    + [ko]       SVG graphics rejected because ...
+#    + [ok]       SVG graphics accepted.
 #    + [update]   Working on...
-comment: Translation accepted.
+comment: SVG graphics accepted.
