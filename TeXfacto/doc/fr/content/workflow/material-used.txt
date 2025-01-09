@@ -1,0 +1,12 @@
+abrev::
+    content = :this.name:
+
+
+========================================
+Les briques élementaires de construction
+========================================
+
+content::
+    \content/git.txt            ??????????
+    \content/src.txt            ????????
+    \content/contrib.txt        ??????
