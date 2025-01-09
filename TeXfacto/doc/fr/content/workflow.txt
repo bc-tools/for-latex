@@ -1,18 +1,18 @@
 this::
-    date = 2024-12-??
+    date = 2025-01-09
 
 
 abrev::
     content = :this.name:
 
 
-==================
-???
-==================
+===================
+Le cycle de \fabric
+===================
 
+\thisproj ne se limite pas à la \fabric d'un produit final distribuable sur \ctan. Il est en effet possible d'intercepter certains moments du cycle de \dev pour compléter le comportement par défaut de \thisproj. Cette section vous explique tout ce qu'il est permis de faire.
 
 content::
-    \content/the-docs.txt       ??
-
-
-parkler que si git utilisé alors git a non fait bloquera logiquement le process !!!
+    \content/build-update.txt       ????????????
+    \content/hooks.txt              ??????????
+    \content/contrib.txt            ????????

@@ -1,5 +1,5 @@
-this::
-    date = 2025-01-07    ??
+abrev::
+    content = :this.name:
 
 
 ========================================
@@ -10,5 +10,10 @@ this::
 
 YYY
 
+ajout de commande autre que input
 
-cf::''?/hooks/placeholders.txt''.
+
+
+content::
+    \content/resources.txt          ????????
+    \content/placeholders.txt       ??????

@@ -9,6 +9,17 @@ NOW
 
 > ---------------------------- <
 
+rasionner en etrem de cycle : ce qui est mis à jour, ce qui bloque (git a manquant, stutus ko...)
+
+incister sur le pouvori que donne git !!!
+
+hooks, bien mains comment !!!
+
+placeholder : la spec est à faire coté code src au passage
+
+
+> ---------------------------- <
+
 workflow
 
     ---> build.lua construit auto et/ou mis à jour

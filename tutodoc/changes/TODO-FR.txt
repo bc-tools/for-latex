@@ -9,6 +9,17 @@ NOW
 
 > ---------------------------- <
 
+faire script pour proposer contribs juste sur les thèmes
+
+    --> mettre un tremplate complet autonome
+
+    --> le thème passe via des renewcommand et aussi redfe des l3 seq et proplist utilisé
+
+    --> faire en sorte que cela soit facilement portable !
+
+
+> ---------------------------- <
+
 chgt preamble à intégrer dans les contribs EN en validant la mise à jour aut de FR par texfacto
 
 
