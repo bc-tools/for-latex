@@ -1,13 +1,17 @@
 this::
-    date = 2025-01-XXXX     ????
+    date = 2025-01-11
 
 
 ===========================
 \git comme chef d'orchestre
 ===========================
 
-En versionnant votre \proj via \git, vous donnez le pouvoir à \thisproj de savoir que des dossiers utilisés pour la construction du \prod finale contiennent des \modifs non validées via term::''git a'' et term::''git commit -m "..."''. Ceci évitera des publications prématurées.
+caution::
+    Bien que l'usage de \git ne soit pas obligatoire, il est très vivement conseillé de l'employer.
+
+
+En versionnant votre \proj via \git, vous donnez le pouvoir à \thisproj de savoir que des dossiers contiennent des \modifs non validées via term::''git a'' et term::''git commit -m "..."'' rendent impossible la \fabric du \prod final.
 
 
 note::
-    L'usage de \git n'est pas obligatoire.
+    \thisproj tient compte de règles \gitignore éventuellement utilisées.

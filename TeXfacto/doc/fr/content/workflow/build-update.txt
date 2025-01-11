@@ -2,11 +2,10 @@ abrev::
     content = :this.name:
 
 
-=========================
-Construire, mettre à jour
-=========================
+===========================
+Construire ou mettre à jour
+===========================
 
 content::
-    \content/git.txt            ??????????
     \content/build.txt          ????????
     \content/update.txt         ??????

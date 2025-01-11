@@ -1,5 +1,5 @@
 this::
-    date = 2025-01-10
+    date = 2025-01-11
 
 
 abrev::
@@ -10,11 +10,10 @@ abrev::
 Le cycle de \fabric
 ===================
 
-\thisproj ne se limite pas à la \fabric d'un produit final distribuable sur \ctansuivant un procédé rigide. Il est en effet possible d'intercepter certains moments du cycle de \dev pour assouplir le comportement par défaut. Cette section vous explique l'\ens des possibles.
+La \fabric du \prod final distribuable n'est pas un processus monolithique : il est possible d'intercepter certains moments du cycle de \dev pour assouplir le comportement par défaut. Cette section vous explique l'\ens des possibles.
 
 
 content::
-    \content/material-used.txt      ????????????
-    \content/build-update.txt       ??????????
-    \content/hooks.txt              ????????
-    \content/contrib.txt            ??????
+    \content/material-used.txt
+    \content/build-update.txt       ????
+    \content/hooks.txt              ??

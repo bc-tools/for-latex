@@ -1,9 +1,17 @@
 this::
-    date = 2025-01-XXXX     ????
+    date = 2025-01-11
 
 
-===========================
-???
-===========================
+=============
+Les \contribs
+=============
 
-???
+Le processus de \contrib est détaillé dans la section cf::''?/archi/contrib.txt'' : vous y apprendrez comment traduire la \mandoc, mais aussi comment indiquer à \thisproj que certaines \contribs ne sont pas à jour
+((
+    Se reporter à la présentation des fichiers path::''status.yaml''.
+)),
+ceci empêchant la \fabric du \prod final.
+
+
+important::
+    L'intégration des \contribs autres que la \trad de la \mandoc est de la responsabilité du \dev du \proj qui pourra utiliser, suivant les besoins, soit des outils d'usage ponctuel, voir cf::''?/archi/tools.txt'' si besoin, ou bien en interceptant le cycle de \fabric de \thisproj comme expliqué dans cf::''hooks.txt''.
