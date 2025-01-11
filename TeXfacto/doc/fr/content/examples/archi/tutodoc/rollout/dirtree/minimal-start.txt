@@ -1,7 +1,0 @@
-+ rollout
-    * build.lua
-    + build
-    + code
-    + debug
-    + doc
-    + tests

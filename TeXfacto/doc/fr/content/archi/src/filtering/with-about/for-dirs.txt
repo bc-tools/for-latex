@@ -10,7 +10,7 @@ Dans la \struct suivante, on note la présence d'un fichier path::''about.yaml''
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/filtering/dirtree/src/project.txt
+    path  = ?/examples/tutodoc/filtering/dirtree/src/project.txt
     title = Le dossier path::''src'' de \tutodoc - Une version simplifiée
     date  = \tutodoc_date
     ---
@@ -23,7 +23,7 @@ attend la liste ordonnée des dossiers à traiter excepté les très particulier
 
 yaml::
     ---
-    path  = ?/examples/archi/tutodoc/about/src.yaml
+    path  = ?/examples/tutodoc/about/src.yaml
     title = Le fichier path::''about.yaml'' du dossier path::''src''
     date    = \tutodoc_date
     ---

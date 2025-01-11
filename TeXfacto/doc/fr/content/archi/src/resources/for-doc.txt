@@ -23,7 +23,7 @@ L'assemblage final aboutit au dossier suivant avec un unique fichier ext::''tex'
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/resources/dirtree/final/doc.txt
+    path  = ?/examples/tutodoc/resources/dirtree/final/doc.txt
     title = Une vue simplifiée du dossier publiable de la \doc de \tutodoc
     date  = \tutodoc_date
     ---
@@ -33,7 +33,7 @@ Lors de l'assemblage de la \doc finale, afin de produire un unique fichier ext::
 
 latex::
     ---
-    path    = ?/examples/archi/tutodoc/rollout/doc-filecontents.tex
+    path    = ?/examples/tutodoc/rollout/doc-filecontents.tex
     extract = yes
     title   = Un extrait du fichier path::''tutodoc-fr.tex'' de la \doc finale de \tutodoc
     date    = \tutodoc_date

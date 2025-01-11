@@ -12,7 +12,7 @@ Ceci permet par exemple d'imposer certains dossiers, ou fichiers aux premières 
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/filtering/dirtree/admo/project.txt
+    path  = ?/examples/tutodoc/filtering/dirtree/admo/project.txt
     title = Le sous-dossier path::''src/admonitions'' de \tutodoc - Une version simplifiée
     date  = \tutodoc_date
     ---
@@ -22,7 +22,7 @@ Imaginons que nous souhaitions mettre le contenu de path::''remark.tex'' en prem
 
 yaml::
     ---
-    path  = ?/examples/archi/tutodoc/about/admo-fake-glob.yaml
+    path  = ?/examples/tutodoc/about/admo-fake-glob.yaml
     ---
 
 

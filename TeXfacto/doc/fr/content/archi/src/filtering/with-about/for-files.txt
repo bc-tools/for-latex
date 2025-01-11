@@ -10,7 +10,7 @@ Dans la \struct suivante, on note la présence d'un fichier path::''about.yaml''
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/filtering/dirtree/admo/project.txt
+    path  = ?/examples/tutodoc/filtering/dirtree/admo/project.txt
     title = Le sous-dossier path::''src/admonitions'' de \tutodoc - Une version simplifiée
     date  = \tutodoc_date
     ---
@@ -19,7 +19,7 @@ Le contenu du fichier ce limite à ce qui suit où est de nouveau employé la cl
 
 yaml::
     ---
-    path  = ?/examples/archi/tutodoc/about/admo.yaml
+    path  = ?/examples/tutodoc/about/admo.yaml
     title = Le fichier path::''about.yaml'' du dossier path::''src/admonitions''
     date    = \tutodoc_date
     ---

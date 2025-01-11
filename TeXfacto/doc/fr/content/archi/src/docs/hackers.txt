@@ -15,7 +15,7 @@ Par exemple, l'auteur de \thisproj utilise une syntaxe très intuitive, et lisib
 
 latex::
     ---
-    path    = ?/examples/archi/tutodoc/showcase/extract.sty
+    path    = ?/examples/tutodoc/showcase/extract.sty
     extract = yes
     title   = Un extrait du fichier path::''tutodoc.cls'' du projet \tutodoc
     date    = \tutodoc_date

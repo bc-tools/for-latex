@@ -15,7 +15,7 @@ Voici un exemple d'utilisation réel où les \contribs proposés sont de "simple
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/contrib/dirtree/contrib.txt
+    path  = ?/examples/tutodoc/contrib/dirtree/contrib.txt
     title = Le dossier path::''contrib'' de \tutodoc
     date  = \tutodoc_date
     ---

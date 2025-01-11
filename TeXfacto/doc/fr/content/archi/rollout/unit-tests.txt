@@ -12,7 +12,7 @@ Nous renvoyons le lecteur intéressé à la \doc de \l3build pour apprendre à c
 
 latex::
     ---
-    path    = ?/examples/archi/tutodoc/rollout/l3build-test-pdf.lvt
+    path    = ?/examples/tutodoc/rollout/l3build-test-pdf.lvt
     extract = start
     title   = Un fichier de test utilisé par \tutodoc
     date    = \tutodoc_date
@@ -21,7 +21,7 @@ latex::
 
 latex::
     ---
-    path    = ?/examples/archi/tutodoc/rollout/l3build-test-no-pdf.lvt
+    path    = ?/examples/tutodoc/rollout/l3build-test-no-pdf.lvt
     extract = start
     title   = Un autre fichier de test utilisé par \tutodoc
     date    = \tutodoc_date

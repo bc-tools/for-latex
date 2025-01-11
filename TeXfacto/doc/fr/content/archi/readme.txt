@@ -12,7 +12,7 @@ Via \thisproj, on peut √©clater le contenu en petits fichiers \ext::''md'' plac√
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/readme/dirtree/small.txt
+    path  = ?/examples/tutodoc/readme/dirtree/small.txt
     title = Le tout petit \readme de \tutodoc
     date  = \tutodoc_date
     ---
@@ -22,7 +22,7 @@ Le fichier path::''about.yaml'' nous permet ici d'ordonner l'assemblage dans le 
 
 yaml::
     ---
-    path  = ?/examples/archi/tutodoc/readme/about.yaml
+    path  = ?/examples/tutodoc/readme/about.yaml
     title = Un fichier pour ordonner l'ordre d'assemblage
     date  = \tutodoc_date
     ---

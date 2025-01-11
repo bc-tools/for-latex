@@ -15,7 +15,7 @@ Pour présenter la méthode à suivre, nous allons considérer le projet \tutodo
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/contrib/dirtree/contrib.txt
+    path  = ?/examples/tutodoc/contrib/dirtree/contrib.txt
     title = Le dossier path::''contrib'' de \tutodoc
     date  = \tutodoc_date
     ---
@@ -29,7 +29,7 @@ Ils sont organisés comme suit de façon similaire à ce qui est fait dans le co
 
 dirtree::
     ---
-    path    = ?/examples/archi/tutodoc/contrib/dirtree/manual.txt
+    path    = ?/examples/tutodoc/contrib/dirtree/manual.txt
     extract = yes
     title   = Les dossiers path::''manual'' pour les \trads
     date    = \tutodoc_date

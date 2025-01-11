@@ -1,5 +1,5 @@
 this::
-    date = 2025-01-11     ????
+    date = 2025-01-12    ????
 
 
 ===========================
@@ -8,6 +8,17 @@ Construire ou mettre à jour
 
 XXX
 
+dirtree::
+    ---
+    path  = ?/examples/tutodoc/rollout/dirtree/initial.txt
+    title = \Struct initiale du dossier path::''rollout''
+    ---
+
+dirtree::
+    ---
+    path  = ?/examples/tutodoc/rollout/dirtree/final.txt
+    title = \Struct ????? du dossier path::''rollout''
+    ---
 
 note::
     Dans cf::''?/options.txt'', des cas d'utilisation permettent de faire connaissance avec l'\ens des possibilités offertes par la \cmd term::''texfacto''.

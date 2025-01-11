@@ -13,7 +13,7 @@ Dans l'exemple ci-après, la \var de substitution latex::''<<AUTHOR>>'' demande 
 
 latex::
     ---
-    path    = ?/examples/archi/tutodoc/abstract/extract.tex
+    path    = ?/examples/tutodoc/abstract/extract.tex
     extract = yes
     title   = Un extrait du fichier path::''abstract.tex'' du code \src du projet \tutodoc
     date    = \tutodoc_date
@@ -24,7 +24,7 @@ Lors de la \fabric de la \doc finale à la date du \tutodoc_date, les lignes pr�
 
 latex::
     ---
-    path    = ?/examples/archi/tutodoc/abstract/extract-final.tex
+    path    = ?/examples/tutodoc/abstract/extract-final.tex
     extract = yes
     title   = Un extrait du fichier path::''tutodoc-fr.tex'' du projet \tutodoc
     date    = \tutodoc_date

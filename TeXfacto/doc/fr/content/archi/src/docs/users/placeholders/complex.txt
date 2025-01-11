@@ -15,7 +15,7 @@ Dans l'exemple suivant, latex::''<<DEPENDS>>'' fait justement \ref à la liste d
 
 latex::
     ---
-    path    = ?/examples/archi/tutodoc/depends/extract.tex
+    path    = ?/examples/tutodoc/depends/extract.tex
     extract = yes
     title   = Un extrait du fichier path::''depends.tex'' du code \src du projet \tutodoc
     date    = \tutodoc_date
@@ -26,7 +26,7 @@ Ce cas est intéressant, car le contenu proposé par défaut est peu pertinent. 
 
 latex::
     ---
-    path  = ?/examples/archi/tutodoc/depends/extract-default.tex
+    path  = ?/examples/tutodoc/depends/extract-default.tex
     title = Le rendu par défaut
     ---
 
@@ -35,7 +35,7 @@ Voyons donc comment obtenir le contenu plus utile ci-après via quelques lignes 
 
 latex::
     ---
-    path    = ?/examples/archi/tutodoc/depends/extract-final.tex
+    path    = ?/examples/tutodoc/depends/extract-final.tex
     extract = yes
     title   = Un extrait du fichier path::''tutodoc-fr.tex'' du projet \tutodoc
     date    = \tutodoc_date
@@ -51,7 +51,7 @@ Dans notre cas, le code suivant fait le travail. Bien lire les commentaires qui 
 
 python::
     ---
-    path  = ?/examples/archi/tutodoc/depends/hook.py
+    path  = ?/examples/tutodoc/depends/hook.py
     title = Un fichier path::''hook/placeholders.py'' simplifié
     ---
 

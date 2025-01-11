@@ -18,7 +18,7 @@ Lors de la \fabric du code publiable, \thisproj cherche bêtement l'emploi de la
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/resources/dirtree/final/code/default.txt
+    path  = ?/examples/tutodoc/resources/dirtree/final/code/default.txt
     title = Le dossier par défaut du code prêt à être publié
     ---
 
@@ -27,7 +27,7 @@ Il se trouve que ce choix par défaut n'est pas adapté aux exigences de \ctan q
 
 dirtree::
     ---
-    path  = ?/examples/archi/tutodoc/resources/dirtree/final/code/hook.txt
+    path  = ?/examples/tutodoc/resources/dirtree/final/code/hook.txt
     title = Une vue simplifiée du dossier publié du code de \tutodoc
     date  = \tutodoc_date
     ---
