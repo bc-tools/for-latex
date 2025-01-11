@@ -1,0 +1,21 @@
+this::
+    date = 2025-01-11     ????
+
+
+===========================
+Construire ou mettre à jour
+===========================
+
+XXX
+
+
+note::
+    Dans cf::''?/options.txt'', des cas d'utilisation permettent de faire connaissance avec l'\ens des possibilités offertes par la \cmd term::''texfacto''.
+
+
+content::
+    \content/XXX.txt        ??????????
+    \content/XXX.txt        ????????
+    \content/XXX.txt        ??????
+    \content/XXX.txt        ????
+    \content/XXX.txt        ??

@@ -6,14 +6,6 @@ abrev::
 \Syst d'interception du cycle de \fabric
 ========================================
 
-
-
-YYY
-
-ajout de commande autre que input
-
-
-
 content::
-    \content/resources.txt          ????????
-    \content/placeholders.txt       ??????
+    \content/resources.txt          ????
+    \content/placeholders.txt       ??

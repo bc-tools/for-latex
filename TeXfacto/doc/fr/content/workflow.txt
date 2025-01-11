@@ -10,10 +10,11 @@ abrev::
 Le cycle de \fabric
 ===================
 
-La \fabric du \prod final distribuable n'est pas un processus monolithique : il est possible d'intercepter certains moments du cycle de \dev pour assouplir le comportement par défaut. Cette section vous explique l'\ens des possibles.
+La \fabric du \prod final n'est pas un processus monolithique : il est possible d'intercepter certains moments du cycle de \dev pour assouplir le comportement par défaut. Cette section vous explique l'\ens des possibles.
 
 
 content::
-    \content/material-used.txt
-    \content/build-update.txt       ????
-    \content/hooks.txt              ??
+    \content/material.txt
+    \content/build-it.txt           ??????
+    \content/hooks.txt              ????
+    \content/options.txt            ??

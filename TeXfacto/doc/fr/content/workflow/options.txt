@@ -1,0 +1,20 @@
+this::
+    date = 2025-01-11
+
+
+abrev::
+    content = :this.name:
+
+
+===================================
+Usage de la \cmd term::''texfacto''
+===================================
+
+Cette section présente, sous forme de cas d'utilisation, l'\ens des options disponibles.
+
+content::
+    \content/XXX.txt        ??????????
+    \content/XXX.txt        ????????
+    \content/XXX.txt        ??????
+    \content/XXX.txt        ????
+    \content/XXX.txt        ??

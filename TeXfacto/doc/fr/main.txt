@@ -1,5 +1,5 @@
 this::
-    title  = Coder des projest \latex via \thisproj
+    title  = Coder des \projs \latex via \thisproj
     author = Christophe, BAL
     mail   = projetmbc@gmail.com
     lang   = fr
@@ -29,4 +29,4 @@ abrev::
 content::
     \content/intro.txt
     \content/archi.txt
-    \content/workflow.txt   ????
+    \content/workflow.txt       ????
