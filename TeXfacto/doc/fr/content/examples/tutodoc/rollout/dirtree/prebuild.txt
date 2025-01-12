@@ -1,14 +1,5 @@
 + rollout
     * build.lua
-    + build
-        + distrib
-            + ctan
-            + tds
-        + doc
-        + local
-        + result
-        + unpacked
-        + test
     + code
         * tutodoc.cls
         * tutodoc-bw.css.cls

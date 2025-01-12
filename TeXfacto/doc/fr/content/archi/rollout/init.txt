@@ -1,12 +1,12 @@
 this::
-    date = 2025-01-02
+    date = 2025-01-13
 
 
 ============================
 Le dossier path::''rollout''
 ============================
 
-Le produit fini est géré dans le dossier path::''rollout'' qui sera construit par \thisproj si besoin. Ce dossier doit avoir le contenu minimal suivant.
+Le produit fini est géré dans le dossier path::''rollout'' qui sera construit par \thisproj si besoin. Ce dossier est construit, ou mis à jour, par \thisproj à la demande. Il aura le contenu minimal suivant.
 
 dirtree::
     ---
