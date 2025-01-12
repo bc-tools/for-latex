@@ -10,5 +10,5 @@
     * debug-exa-rmk-counter.tex
     * example.tex
     * remark.tex
-    + css [...]
-    + examples [...]
+    + css
+    + examples

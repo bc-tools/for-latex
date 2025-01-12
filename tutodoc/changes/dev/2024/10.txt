@@ -390,7 +390,7 @@ Dates untranslated: the \args was not correctly sent to ''\tutodoc@new@change@ma
 --------
 
 [[:doc:]]
-Manual: examples like ''''\mymacro[...]{...}}'' have been added to show the power of the macro ''\tdocinlatex''.
+Manual: examples like ''''\mymacro{...}}'' have been added to show the power of the macro ''\tdocinlatex''.
 
 
 --------

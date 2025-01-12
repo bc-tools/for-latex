@@ -5,7 +5,7 @@
         * omega3.sty
         * alpha.tex
         * omega3.tex
-    + changelog [...]
+    + changelog
     + main
         * main.sty
         * main.tex

@@ -659,7 +659,7 @@ POUR LA DOC COMPLÈTE
     + src
         * about.yaml
         * doc-header.tex
-        + changelog [...]
+        + changelog
         + intro
             * intro.tex
         + other-tools

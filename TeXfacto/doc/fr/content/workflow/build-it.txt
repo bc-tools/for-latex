@@ -16,6 +16,12 @@ dirtree::
 
 dirtree::
     ---
+    path  = ?/examples/tutodoc/rollout/dirtree/initial.txt
+    title = \Struct initiale du dossier path::''rollout''
+    ---
+
+dirtree::
+    ---
     path  = ?/examples/tutodoc/rollout/dirtree/final.txt
     title = \Struct ????? du dossier path::''rollout''
     ---
