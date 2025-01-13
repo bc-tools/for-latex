@@ -1,3 +1,8 @@
+
+
+
+
+
 Le processus de construction se fait via une ligne de \cmd. Par exemple, l'instruction suivante, sans option, va construire le \proj final, puis lancer les tests éventuels
 ((
     Concernant les tests unitaires pris en compte par \thisproj, se reporter à la section cf::''?/archi/rollout/unit-tests.txt''.

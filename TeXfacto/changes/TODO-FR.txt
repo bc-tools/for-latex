@@ -9,6 +9,15 @@ NOW
 
 > ---------------------------- <
 
+\NewDocumentCommand{\tutodoc@trans@exa@title}{}{...}
+
+devient
+
+\newcommand{\tutodoc@trans@exa@title}{...}
+
+
+> ---------------------------- <
+
 rasionner en etrem de cycle : ce qui est mis à jour, ce qui bloque (git a manquant, stutus ko...)
 
 incister sur le pouvori que donne git !!!
