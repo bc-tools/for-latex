@@ -31,3 +31,7 @@ options pour
     + reconstruire build.lua
 
     + reconstruire les depends.yaml du src
+
+
+
+Les cas d'utilisation présentés dans les \mandocs doivent fonctionner. En utilisalnt l'option --manual, ou sa version raccourci -m, comme dans, \thisprojs clancera \latex pour compiler les \mandocs, et en cas d'erreur, il ouvrira le fichier "défectueux".

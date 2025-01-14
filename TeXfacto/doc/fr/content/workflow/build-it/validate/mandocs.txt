@@ -1,0 +1,11 @@
+this::
+    date = 2025-01-15
+
+
+========================
+Des \mandocs compilables
+========================
+
+Les cas d'utilisation présentés dans les \mandocs doivent fonctionner ; ceci se vérifie en utilisant l'option term::''--manual'', ou sa version raccourcie term::''-m''.
+Par exemple, term::''texfacto --manual chemin/vers/le/dossier/du/projet'' lancera la compilation des \mandocs dans le dossier path::''debug''.
+En cas de souci, \thisproj ouvrira le fichier "défectueux" pour permettre au codeur de mener l'enquête à la main.
