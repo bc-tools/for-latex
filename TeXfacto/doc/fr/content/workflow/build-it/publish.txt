@@ -1,5 +1,5 @@
 this::
-    date = 2025-01-11     ????
+    date = 2025-01-14    ????
 
 
 =================
@@ -7,3 +7,9 @@ Publier sur \ctan
 =================
 
 ???
+
+dirtree::
+    ---
+    path  = ?/examples/tutodoc/rollout/dirtree/final.txt
+    title = \Struct finale du dossier path::''rollout''
+    ---

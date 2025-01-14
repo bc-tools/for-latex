@@ -1,9 +1,9 @@
 this::
-    date = 2025-01-11     ????
+    date = 2025-01-14
 
 
 ============================
 Mettre à jour le \proj final
 ============================
 
-???
+La \cmd term::''texfacto chemin/vers/le/dossier/du/projet'' s'utilise aussi lors d'une \maj du code \src : le fonctionnement est similaire à ce qui a été expliqué dans la section précédente.

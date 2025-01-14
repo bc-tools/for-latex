@@ -1,9 +1,18 @@
 this::
-    date = 2025-01-11     ????
+    date = 2025-01-14    ????
 
 
 ======================
 Valider le \proj final
 ======================
 
-???
+La validation du \proj passe par deux étapes importantes.
+
+    1) XXX
+
+    1) XXX
+
+
+
+
+Concernant les tests unitaires pris en compte par \thisproj, se reporter à la section cf::''?/archi/rollout/unit-tests.txt''.

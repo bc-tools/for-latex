@@ -1,9 +1,37 @@
 this::
-    date = 2025-01-11     ????
+    date = 2025-01-14
 
 
 ===============================
 Première version du \proj final
 ===============================
 
-???
+Imaginons qu'aucun dossier path::''rollout'' n'ait été créé par le \dev. Dans ce cas, la \cmd term::''texfacto chemin/vers/le/dossier/du/projet'', \thisproj commencera par initialiser le contenu du dossier path::''rollout'' comme suit.
+
+dirtree::
+    ---
+    path  = ?/examples/tutodoc/rollout/dirtree/initial.txt
+    title = \Struct du dossier path::''rollout'' avant \fabric du \proj final
+    ---
+
+
+Expliquons succinctement l'utilité de ces différents contenus.
+
+    1) Le fichier path::''build.lua'' et le dossier path::''build'' seront utilisés par \l3build pour fabriquer la version destinée à \ctan comme nous le verrons dans cf::''publish.txt''.
+
+    1) Les dossiers path::''code'', path::''debug'' et path::''doc'' sont de la responsabilité de \thisproj. Nous allons revenir là-dessus juste après.
+
+    1) Le dossier path::''tests'' est destiné au \dev pour y écrire des tests unitaires à la sauce \l3build. Nous reviendrons sur ce sujet dans cf::''validate.txt''.
+
+
+Une fois le dossier path::''rollout'' initialisé, \thisproj construit le code finalisé avec ces fichiers auxiliaires dans le dossier path::''code'', des fichiers "autonomes" pour les \mandocs dans le dossier path::''doc'', et enfin réunit ces matériaux dans le dossier path::''debug'' afin de premttre au \dev de déboguer à la main d'éventuels \pbs de compilation des \mandocs. Dans le cas de \tutodoc, nous obtenons ce qui suit.
+
+dirtree::
+    ---
+    path  = ?/examples/tutodoc/rollout/dirtree/prebuild.txt
+    title = Contenu du dossier path::''rollout'' avant les tests et la publication
+    ---
+
+
+note::
+    Une \cmd du type term::''texfacto chemin/vers/le/dossier/du/projet'' a pour but de prépare le code pour débogeur éventuellement les \mandocs, mais aussi lancer des tests unitaires avant publication sur \ctan.

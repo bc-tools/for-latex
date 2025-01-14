@@ -18,3 +18,16 @@ content::
     \content/XXX.txt        ??????
     \content/XXX.txt        ????
     \content/XXX.txt        ??
+
+
+
+????
+
+
+safe par défaut : par de construction auto , on ne fait que code doc et debug
+
+options pour
+
+    + reconstruire build.lua
+
+    + reconstruire les depends.yaml du src

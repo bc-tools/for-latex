@@ -16,11 +16,11 @@ checkopts   = "-interaction=nonstopmode --shell-escape"
 typesetopts = checkopts
 
 uploadconfig = {
-    version      = "?",
-    announcement = "TODO",
+    version      = "",
+    announcement = "",
     author       = "Christophe BAL",
     uploader     = "Christophe BAL",
-    email        = "?",
+    email        = "",
     license      = "gpl3",
     pkg          = "tutodoc",
     -- update       = false,
@@ -29,5 +29,5 @@ uploadconfig = {
     ctanPath     = "/macros/latex/contrib/tutodoc",
     repository   = "https://github.com/bc-tools/for-latex/tree/main/tutodoc",
     -- bugtracker   = "",
-    note         = [[Uploaded automatically by l3build...]]
+    note         = "Uploaded automatically by l3build..."
 }

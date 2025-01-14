@@ -7,7 +7,7 @@ Construire pour publier
 =======================
 
 content::
-    \content/init.txt           ??????????
-    \content/update.txt         ????????
+    \content/init.txt
+    \content/update.txt
     \content/validate.txt       ??????
     \content/publish.txt        ????
