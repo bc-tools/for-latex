@@ -1,5 +1,5 @@
 this::
-    date = 2024-12-27
+    date = 2025-04-23
 
 
 ==============
@@ -10,5 +10,5 @@ Voici la \spec complète, commentée en français, du fichier principal path::''
 
 yaml::
     ---
-    path = ?/examples/archi/specs/about-project.yaml
+    path = ?/examples/specs/about-project.yaml
     ---

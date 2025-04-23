@@ -6,7 +6,7 @@ this::
 Un petit exemple instructif
 ===========================
 
-Tout \pack \etou classe doit **obligatoirement** indiquer un certain \nbre d'\infos générales via un fichier path::''about.yaml'' placé à la racine du dossier. Voici un exemple.
+Tout \pack \etou \cls doit **obligatoirement** indiquer un certain \nbre d'\infos générales via un fichier path::''about.yaml'' placé à la racine du dossier. Voici un exemple.
 
 yaml::
     ---

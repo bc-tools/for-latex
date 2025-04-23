@@ -1,5 +1,5 @@
 this::
-    date = 2025-01-01
+    date = 2025-04-23
 
 
 ===============
@@ -8,7 +8,7 @@ Pour la \mandoc
 
 warning::
     Comme indiqué dans cf::''?/docs/users.txt'', la \doc doit être compilable librement. C'est une contrainte très forte qui limite les types de ressources utilisables.
-    Ceci se traduit pas une prise en charge limitée aux ressources importables via l'\env \std latex::''filecontents*''.
+    Ceci se traduit par une prise en charge limitée aux ressources importables via l'\env \std latex::''filecontents*''.
 
 
 Comme les fichiers ext::''tex'' pour la \mandoc sont pour un usage "isolé", il faut employer une importation relative au sous-dossier développé.
