@@ -9,9 +9,32 @@ NOW
 
 > ---------------------------- <
 
+tenir compte de
+https://koppor.github.io/explcheck-issues/texmf-dist/tex/latex/tutodoc/tutodoc.cls/#e300,w100,w101,w200,w202,w302,w303
+
+
+> ---------------------------- <
+
+espacement dnas le code
+
+
+> ---------------------------- <
+
+icone à gaiche dans marge pour le codes via un argument boolean icon, te si pa ionce on met ext stylisé, la commande de deco doit etre facile à modifier pour un usage maison.
+
+
+> ---------------------------- <
+
+tdocpack et co
+
+    --> associé à un thème via une couleur subtile
+
+> ---------------------------- <
+
 prefixe and co
 
     --> besin d'un truc plus puissant / cf tns = type and see
+
 
 > ---------------------------- <
 

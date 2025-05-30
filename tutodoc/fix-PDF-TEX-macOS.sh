@@ -1,8 +1,14 @@
+# Version: 2025-05-04.tns-functable
+
+
 # --------------- #
 # -- CONSTANTS -- #
 # --------------- #
 
-CHANGELOG_NEXT="changelog/next.tex"
+CHANGELOGNEXT="changelog/next.tex"
+
+THISDIR=$(dirname "$0")
+WORKINGDIR=$(pwd)
 
 
 # ----------------------- #
@@ -25,20 +31,18 @@ TARGET=$1
 
 if [ ! -d "$TARGET" ]
 then
-    echo "CRITICAL - Missing absolute target folder: ''$TARGET''."
+    echo "CRITICAL - Missing folder: ''$TARGET''."
     exit 1
 fi
 
 
-# ----------------------------------------- #
-# -- COMPILATION OF ALL DEV. LATEX FILES -- #
-# ----------------------------------------- #
+# --------------------- #
+# -- LISTED PROJECTS -- #
+# --------------------- #
 
 function nocompile {
-    echo "LaTeX compilation failed with\n$1"
     open "$1"
 }
-
 
 cd "$TARGET"
 
@@ -46,13 +50,18 @@ for f in */*.tex
 do
     fdir=$(dirname "$f")
 
-    if [ "$f" != "$CHANGELOG_NEXT" ]
+    if [ "$f" != "$CHANGELOGNEXT" ]
     then
-        cd "$TARGET/$fdir"
+        if [[ $(basename "$f") != debug-*-BAD.tex ]]; then
+            echo "-- NEW TEX FILE --"
+            echo "$f"
+            echo ""
 
-        echo "-- NEW TEX FILE --"
-        echo "$f"
-        echo ""
-        SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -quiet -pdf -pdflatex="pdflatex --interaction=nonstopmode --halt-on-error --shell-escape  %O %S" "$TARGET/$f" || nocompile "$TARGET/$f"
+            cd "$TARGET/$fdir"
+
+            SOURCE_DATE_EPOCH=0 FORCE_SOURCE_DATE=1 latexmk -quiet -pdf -pdflatex="pdflatex --interaction=nonstopmode --halt-on-error --shell-escape  %O %S" "$TARGET/$f" || nocompile "$TARGET/$f"
+
+            # latexmk -c "$TARGET/$f"
+        fi
     fi
 done # for f in */*.tex;
