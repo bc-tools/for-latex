@@ -1,9 +1,0 @@
-this::
-    date = 2025-01-11
-
-
-========================
-Le dossier path::''src''
-========================
-
-La section cf::''?/archi/src.txt'' explique comment \thisproj analyse le dossier de \dev du code \src.

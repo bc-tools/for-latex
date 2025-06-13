@@ -9,17 +9,6 @@ NOW
 
 > ---------------------------- <
 
-cké pour option minted et tcolorbox car options délimités pséciales fausse bonne idée!!!
-
-
-> ---------------------------- <
-
-tenir compte de
-https://koppor.github.io/explcheck-issues/texmf-dist/tex/latex/tutodoc/tutodoc.cls/#e300,w100,w101,w200,w202,w302,w303
-
-
-> ---------------------------- <
-
 espacement dnas le code
 
 
