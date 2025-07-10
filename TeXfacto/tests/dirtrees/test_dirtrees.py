@@ -10,6 +10,5 @@ from yaml    import safe_load
 
 THIS_DIR = Path(__file__).parent
 
-
 def test_OK():
     print("OK")

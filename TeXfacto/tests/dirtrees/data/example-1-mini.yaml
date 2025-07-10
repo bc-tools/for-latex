@@ -27,7 +27,6 @@
     - test-3.lvt
 
 - src:
-  - about.yaml
   - preamble.cfg.sty
   - abstract:
     - abstract.tex

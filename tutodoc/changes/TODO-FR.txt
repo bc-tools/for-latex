@@ -2,6 +2,7 @@
 tutodoc - TODO
 =======
 
+
 ---
 NOW
 ---
@@ -9,12 +10,18 @@ NOW
 
 > ---------------------------- <
 
-espacement dnas le code
+gitignore ne tient plus compte fonalemnt des PDFS des sources qui ne sont aps utile sur github !
 
 
 > ---------------------------- <
 
-icone à gaiche dans marge pour le codes via un argument boolean icon, te si pa ionce on met ext stylisé, la commande de deco doit etre facile à modifier pour un usage maison.
+tutodoc devient généraliste donc plus de pack ou macro, par contre on cérer un autre package qui se charge de géré cela en lien avec prototype d'usage perso !!!
+
+> ---------------------------- <
+
+\IfPackageLoadedTF {⟨package-name⟩} {⟨true code⟩} {⟨false code⟩}
+\IfClassLoadedTF {⟨class-name⟩} {⟨true code⟩} {⟨false code⟩}
+\IfFileLoadedTF {⟨file-name⟩} {⟨true code⟩} {⟨false code⟩}
 
 
 > ---------------------------- <
@@ -28,6 +35,21 @@ tdocpack et co
 prefixe and co
 
     --> besin d'un truc plus puissant / cf tns = type and see
+
+
+> ---------------------------- <
+
+les CSS s'appuient maintenant sur lttemplate car au final ici c'est jouable
+
+
+> ---------------------------- <
+
+espacement dnas le code ???
+
+
+> ---------------------------- <
+
+icone à gaiche dans marge pour le codes via un argument boolean icon, te si pa ionce on met ext stylisé, la commande de deco doit etre facile à modifier pour un usage maison.
 
 
 > ---------------------------- <

@@ -12,6 +12,8 @@
 x-*-x.*
 x-*-x/
 
+src/**/*.pdf
+
 *.unq
 *.unq
 *.config.minted
