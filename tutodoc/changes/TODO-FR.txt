@@ -10,12 +10,66 @@ NOW
 
 > ---------------------------- <
 
-gitignore ne tient plus compte fonalemnt des PDFS des sources qui ne sont aps utile sur github !
+admo
+
+    ---> GGGG
 
 
 > ---------------------------- <
 
-tutodoc devient généraliste donc plus de pack ou macro, par contre on cérer un autre package qui se charge de géré cela en lien avec prototype d'usage perso !!!
+what chnage
+
+    ---> un blox exp(erimental) via l'icone font awesome flask-vial
+    ---> technic : chgt d'icone pour passser via microscope
+
+
+> ---------------------------- <
+
+font awesome
+
+    ---> passer à la version 7 ou plus
+
+
+> ---------------------------- <
+
+utiliser marginalia en mode lua???
+
+
+> ---------------------------- <
+
+contrib transalte : plusd email
+
++
+
+titre en police normale!!!
+
+> ---------------------------- <
+
+tutodoc devient généraliste avec plugins
+
+    ---> pack/macro dans le plugin latex
+    ---> ajouter d'un plugin prototype
+
+
+> ---------------------------- <
+
+les CSS s'appuient maintenant sur lttemplate car au final ici c'est jouable
+
+
+> ---------------------------- <
+
+ajout de l'hitorique texlive des version
+
+    ---> https:www.tug.org/svn/texlive/trunk/Master/texmf-dist/tex/latex/tutodoc/tutodoc.cls
+
+
+
+> ---------------------------- <
+
+gitignore
+
+   --> Ignorer tous les PDFs inutiles sur github : ajouter u lien vers CTAN qui conteint au passage la doc au complet !
+
 
 > ---------------------------- <
 
@@ -30,16 +84,12 @@ tdocpack et co
 
     --> associé à un thème via une couleur subtile
 
+
 > ---------------------------- <
 
 prefixe and co
 
     --> besin d'un truc plus puissant / cf tns = type and see
-
-
-> ---------------------------- <
-
-les CSS s'appuient maintenant sur lttemplate car au final ici c'est jouable
 
 
 > ---------------------------- <
