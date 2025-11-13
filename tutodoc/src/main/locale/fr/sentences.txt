@@ -15,5 +15,6 @@ chges_todo   = À faire
 chges_prob   = Problème
 chges_break  = Bifurcation
 chges_fix    = Réparation
+chges_exp    = Expérimental
 chges_new    = Nouveau
 chges_update = Mise à jour

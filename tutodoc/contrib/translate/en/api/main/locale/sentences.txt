@@ -14,6 +14,7 @@ chges_tech   = Technical information
 chges_todo   = Todo
 chges_prob   = Problem
 chges_break  = Break
+chges_exp    = Experimental
 chges_fix    = Fix
 chges_new    = New
 chges_update = Update

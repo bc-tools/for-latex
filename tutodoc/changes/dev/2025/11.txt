@@ -1,3 +1,10 @@
+// ---------- //
+
+
+==
+14
+==
+
 -------
 :break:
 -------
@@ -12,11 +19,3 @@ Version and changes: the icon for technical \infos has moved from ''\faFlask'' t
 
 [[:format:]]
 Version and changes: added ''tdocexp'' \env.
-
-
---------
-:update:
---------
-
-[[:doc:]]
-Manual: the English version indicates the use of English rules inside quoted content build by the macro ''\tdocinEN''.
