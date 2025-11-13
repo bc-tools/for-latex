@@ -1,9 +1,0 @@
-+ fict-proj
-    + contrib
-        + doc
-            + manual
-                + changes  [...]
-                + fr       [...]
-            + [...]
-        + [...]
-    + [...]

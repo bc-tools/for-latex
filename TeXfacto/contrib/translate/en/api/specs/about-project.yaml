@@ -1,0 +1,119 @@
+# -------------- #
+# -- THE WHAT -- #
+# -------------- #
+
+name: >
+  A name replacing the one automatically generated from the name of the main folder.
+
+acronym: >
+  A possible naming scheme for the project. For example, typing yaml::''acronym: "[MY] [H]idden [A]cronym"'' will clearly explain the product name ''myha''.
+
+desc: >
+  A brief description of the product.
+
+
+# ------------- #
+# -- THE WHO -- #
+# ------------- #
+
+author: >
+  Identification of a single author using one of the following formats.
+
+      + verb:''<name>''
+      + verb:''<name> [<mails>]''
+      + verb:''<first names>, <last name>''
+      + verb:''<first names>, <last name> [<mails>]''
+
+  Here's what each part means.
+
+      1) verb:''<first names>'' can be a comma-separated list of first names.
+
+      1) verb:''<name>'' is the author's name.
+
+      1) verb::''<mails>'' can be a comma-separated list of emails.
+
+authors: >
+  Identification of several authors indicated via a list à la "\yaml. See above for available input formats.
+
+
+# --------------- #
+# -- THE WHERE -- #
+# --------------- #
+
+urls: >
+  A dictionary for filling in certain urls.
+
+urls::doc: >
+  The url of the project manual.
+
+urls::home: >
+  The url of the project website.
+
+urls::issues: >
+  The url to report issues, or make suggestions.
+
+urls::repo: >
+  The url of the project's repository site.
+
+
+# -------------- #
+# -- LICENCES -- #
+# -------------- #
+
+licences: >
+  A dictionary to give the licences used using one of the following methods.
+
+      1) Use of a short identifier.
+
+      2) Indication of the path, relative or absolute, to a file containing the full text of the licence, and also the name of the licence as in ''path/to/my/licence.txt [My special licence]''. Both pieces of information must be provided.
+
+licences::code: >
+  The code licence.
+
+licences::manual: >
+  The manual licence.
+
+
+# ----------- #
+# -- LANGS -- #
+# ----------- #
+
+langs: >
+  A dictionary for the languages used, the default language being English. To indicate a language, use a short standard identifier: see cf:''https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes''. For example ''fr" and “”es’ identify French and Spanish respectively.
+
+langs::readme: >
+  The language of the ''README'' files.
+
+langs::manual: >
+  The language of the manual.
+
+langs::code: >
+  The language of the technical documentation typed into the source code.
+
+
+# ------------------ #
+# -- CODING LANGS -- #
+# ------------------ #
+
+require: >
+  The programming languages required to run the project.
+
+optional: >
+  Optional programming languages to enhance the operation of the project.
+
+
+# -------------------- #
+# -- FILES ANALYSED -- #
+# -------------------- #
+
+ignore: >
+  Rules of type \gitignore to exclude files from the final product. The list provided here complements that used by \git if the latter is used.
+
+  tip::
+      The vertical bar is used to define one rule per line, as in the following fictitious example.
+
+      yaml::
+          ignore: |
+            rule_1
+            rule_2
+            ...

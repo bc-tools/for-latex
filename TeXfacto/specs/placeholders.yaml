@@ -1,0 +1,29 @@
+###
+# this::
+#     date = 2025-06-XXX
+###
+
+###
+# prototype::
+#     XXX : yyyy
+###
+AUTHOR: author(required = False)
+
+###
+# prototype::
+#     XXX : yyyy
+###
+DATE-N-VERSION: datenversion(required = False)
+
+###
+# prototype::
+#     XXX : yyyy
+###
+DOC-LANGS: lang(required = False)
+API-LANGS: lang(required = False)
+
+###
+# prototype::
+#     XXX : yyyy
+###
+DEPENDS: list(str())

@@ -1,0 +1,52 @@
+// ---------- //
+
+
+==
+08  (0.0.0-alpha.6)
+==
+
+-----
+:new:
+-----
+
+\Doc before code: the sections on the following folder look good.
+
+    * path::''contrib''
+    * path::''hook''
+
+
+// ---------- //
+
+
+==
+02  (0.0.0-alpha.5)
+==
+
+-----
+:new:
+-----
+
+Two things added.
+
+    1) \Doc before code: the sections on the following folder look good.
+
+        * path::''changes''
+        * path::''readme''
+        * path::''rollout''
+        * path::''tools''
+
+    1) \Api: the file path::''src/about.yaml'' has a new key yaml::''issues'' for an url to report issues, or make suggestions.
+
+
+// ---------- //
+
+
+==
+01  (0.0.0-alpha.4)
+==
+
+-----
+:new:
+-----
+
+\Doc before code: the section on resources looks good. This acheives the section about the \archi of the folder path::''src''.

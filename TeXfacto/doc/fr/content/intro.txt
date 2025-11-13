@@ -1,0 +1,27 @@
+this::
+    date = 2025-06-13
+
+
+====================
+\thisproj, quésaco ?
+====================
+
+Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu'un éco\syst de \dev soit proposé par \latex, \thisproj propose une autre façon de coder plus proche de ce qui se fait dans les \langs de \prog plus \stds comme \python. Dans les \gdes lignes, voici quelques fonctionnalités proposées pour fabriquer un \pack, ou une \cls.
+
+    1) Le codage se fait de façon modulaire, et non d'un seul tenant. Ceci facilite grandement la phase de \dev initial, puis ensuite la maintenance.
+
+    1) La \doc destinée aux utilisateurs est écrite parallèlement au code, et non dans le code lui-même
+    ((
+        L'auteur de \thisproj garde la \doc dans le code uniquement à destination d'autres codeurs contributeurs.
+    )).
+    Ce choix évite de produire une \doc austère, et peu utile à de "simples" utilisateurs en proposant, par exemple, des cas d'utilisation complexes. De plus, documenter dans le code rend la tache de maintenance très vite pénible.
+
+    1) La proposition de \trads pour l'\api ou la \doc se fait de façon automatisée.
+
+
+note::
+    \thisproj utilisant activement \src2prod, les fonctionnalités venant de cet autre \proj seront présentées succinctement, charge au lecteur de consulter la \doc de \src2prod pour plus de détails.
+
+
+caution::
+    \thisproj impose un certain \nbre de règles: style de codage, \orga "commune" des dossiers et des fichiers, cycle de \dev fixé... Ces contraintes permettent d'automatiser beaucoup de choses, et par conséquent d'économiser du \tmps.

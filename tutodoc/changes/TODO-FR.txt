@@ -2,9 +2,120 @@
 tutodoc - TODO
 =======
 
+
 ---
 NOW
 ---
+
+
+> ---------------------------- <
+
+admo
+
+    ---> GGGG
+
+
+> ---------------------------- <
+
+what chnage
+
+    ---> un blox exp(erimental) via l'icone font awesome flask-vial
+    ---> technic : chgt d'icone pour passser via microscope
+
+
+> ---------------------------- <
+
+font awesome
+
+    ---> passer à la version 7 ou plus
+
+
+> ---------------------------- <
+
+utiliser marginalia en mode lua???
+
+
+> ---------------------------- <
+
+contrib transalte : plusd email
+
++
+
+titre en police normale!!!
+
+> ---------------------------- <
+
+tutodoc devient généraliste avec plugins
+
+    ---> pack/macro dans le plugin latex
+    ---> ajouter d'un plugin prototype
+
+
+> ---------------------------- <
+
+les CSS s'appuient maintenant sur lttemplate car au final ici c'est jouable
+
+
+> ---------------------------- <
+
+ajout de l'hitorique texlive des version
+
+    ---> https:www.tug.org/svn/texlive/trunk/Master/texmf-dist/tex/latex/tutodoc/tutodoc.cls
+
+
+
+> ---------------------------- <
+
+gitignore
+
+   --> Ignorer tous les PDFs inutiles sur github : ajouter u lien vers CTAN qui conteint au passage la doc au complet !
+
+
+> ---------------------------- <
+
+\IfPackageLoadedTF {⟨package-name⟩} {⟨true code⟩} {⟨false code⟩}
+\IfClassLoadedTF {⟨class-name⟩} {⟨true code⟩} {⟨false code⟩}
+\IfFileLoadedTF {⟨file-name⟩} {⟨true code⟩} {⟨false code⟩}
+
+
+> ---------------------------- <
+
+tdocpack et co
+
+    --> associé à un thème via une couleur subtile
+
+
+> ---------------------------- <
+
+prefixe and co
+
+    --> besin d'un truc plus puissant / cf tns = type and see
+
+
+> ---------------------------- <
+
+espacement dnas le code ???
+
+
+> ---------------------------- <
+
+icone à gaiche dans marge pour le codes via un argument boolean icon, te si pa ionce on met ext stylisé, la commande de deco doit etre facile à modifier pour un usage maison.
+
+
+> ---------------------------- <
+
+faire script pour proposer contribs juste sur les thèmes
+
+    --> mettre un tremplate complet autonome
+
+    --> le thème passe via des renewcommand et aussi redfe des l3 seq et proplist utilisé
+
+    --> faire en sorte que cela soit facilement portable !
+
+
+> ---------------------------- <
+
+chgt preamble à intégrer dans les contribs EN en validant la mise à jour aut de FR par texfacto
 
 
 > ---------------------------- <

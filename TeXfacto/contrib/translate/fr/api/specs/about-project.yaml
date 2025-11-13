@@ -1,0 +1,119 @@
+# -------------- #
+# -- THE WHAT -- #
+# -------------- #
+
+name: >
+  Un nom remplaçant celui généré automatiquement à partir du nom du dossier principal.
+
+acronym: >
+  Un éventuel schéma de nommage du projet. Par exemple, en tapant yaml::''acronym: "[M]on [A]cronyme [C]aché"'', on explique clairement le nom du produit ''mac''.
+
+desc: >
+  Une petite description du produit.
+
+
+# ------------- #
+# -- THE WHO -- #
+# ------------- #
+
+author: >
+  Identification d'un auteur unique via l'un des formats suivants.
+
+      + verb:''<nom>''
+      + verb:''<nom> [<mails>]''
+      + verb:''<prénoms>, <nom>''
+      + verb:''<prénoms>, <nom> [<mails>]''
+
+  Voici la signification de chaque partie.
+
+      1) verb::''<prénoms>'' peut être une liste de prénoms séparés par des virgules.
+
+      1) verb::''<nom>'' est le nom de l'auteur.
+
+      1) verb::''<mails>'' peut être une liste de mails séparés par des virgules.
+
+authors: >
+  Identification de plusieurs auteurs indiqués via une liste à la '\yaml. Voir ci-dessus pour les formats de saisie disponibles.
+
+
+# --------------- #
+# -- THE WHERE -- #
+# --------------- #
+
+urls: >
+  Un dictionnaire pour renseigner certains urls.
+
+urls::doc: >
+  L'url de la documentention du projet.
+
+urls::home: >
+  L'url du site web du projet.
+
+urls::issues: >
+  L'url pour signaler des bogues, ou faire des suggestions.
+
+urls::repo: >
+  L'url du site dépôt du projet.
+
+
+# -------------- #
+# -- LICENCES -- #
+# -------------- #
+
+licences: >
+  Un dictionnaire pour donner les licences utilisées via l'une des méthodes suivantes.
+
+      1) Utilisation d'un identifiant court.
+
+      2) Indication du chemin, relatif ou absolu, d’un fichier contenant le texte complet de la licence, et aussi du nom de la licence comme dans ''chemin/vers/ma/licence.txt [Ma licence spéciale]''. Les deux informations doivent être fournies.
+
+licences::code: >
+  La licence du code.
+
+licences::manual: >
+  La licence de la documentation "utilisateur".
+
+
+# ----------- #
+# -- LANGS -- #
+# ----------- #
+
+langs: >
+  Un dictionnaire pour les langues utilisées, la langue par défaut étant l'anglais. Pour indiquer les langues, utilisez une liste de codes courts et standards séparés par des virgules : voir cf::''https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes''. Par exemple, ''manual = "fr, es"'' indique que le manuel est rédigé en français et en espagnol.
+
+langs::readme: >
+  La langue des fichiers ''README''.
+
+langs::manual: >
+  La langue de la documentation "utilisateur".
+
+langs::code: >
+  La langue de la documentation technique tapée dans le code source.
+
+
+# ------------------ #
+# -- CODING LANGS -- #
+# ------------------ #
+
+require: >
+  Les languages de programmation nécessaires au fonctionnement du projet.
+
+optional: >
+  Les languages de programmation optionnels permettant d'enrichir le fonctionnement du projet.
+
+
+# -------------------- #
+# -- FILES ANALYSED -- #
+# -------------------- #
+
+ignore: >
+  Règles de type \gitignore pour exclure des fichiers du produit final. La liste fournie ici complète celle employée par \git si ce dernier est utilisé.
+
+  tip::
+      La barre verticale permet de définir une règle par ligne comme dans l'exemple fictif suivant.
+
+      yaml::
+          ignore: |
+            règle_1
+            règle_2
+            ...

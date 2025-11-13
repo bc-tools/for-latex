@@ -1,0 +1,48 @@
+- about.yaml
+
+- changes:
+  - dev:
+    - 2024:
+      - 01.txt
+      - 06.txt
+    - 2025:
+      - 05.txt
+  - stable:
+    - 2023:
+      - 11.txt
+      - 12.txt
+    - 2024:
+      - 01.txt
+      - 08.txt
+      - 09.txt
+      - 10.txt
+      - 12.txt
+    - next.txt
+
+- rollout:
+  - build.lua
+  - tests:
+    - test-1.lvt
+    - test-2.lvt
+    - test-3.lvt
+
+- src:
+  - preamble.cfg.sty
+  - abstract:
+    - abstract.tex
+  - changelog:
+    - next.tex
+    - test_one_date.tex
+    - 2023:
+      - 11:
+        - 29.tex
+      - 12:
+        - 08.tex
+    - 2024:
+      - 09:
+        - 25.tex
+        - 26.tex
+        - 28.tex
+  - main:
+    - 08.texmain.cls
+    - 08.texmain.tex

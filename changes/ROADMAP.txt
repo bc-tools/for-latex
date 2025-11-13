@@ -5,11 +5,13 @@ for-latex (monorepo) - ROADMAP
 This file is a roadmap, in the short term.
 
 
+
 -----------
 ALWAYS DONE
 -----------
 
     1) Nothing at this time.
+
 
 
 ----------
@@ -21,6 +23,8 @@ NEXT STEPS
         --> tutodoc
               + moving from POC to code : some issues to solve
               + real use case for testing
+
+    1) TeXoptidep
 
     1) macroenvsign
 

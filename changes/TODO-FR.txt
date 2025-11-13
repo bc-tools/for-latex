@@ -3,6 +3,27 @@ Monoreop ''for-dev'' - TODO
 ====================
 
 
+
+> ---------------------------- <
+
+cf clsguide
+
+
+\IfPackageLoadedTF {⟨package-name⟩} {⟨true code⟩} {⟨false code⟩}
+\IfClassLoadedTF {⟨class-name⟩} {⟨true code⟩} {⟨false code⟩}
+\IfFileLoadedTF {⟨file-name⟩} {⟨true code⟩} {⟨false code⟩}
+...etc
+
++
+
+\RecordProperties{⟨label ⟩}{⟨list of properties⟩}
+
++
+
+6
+Configuring the Output routine : pour une image par page pour mes cours !!!
+
+
 > ---------------------------- <
 
 third-party-imports  /cbdevtools
