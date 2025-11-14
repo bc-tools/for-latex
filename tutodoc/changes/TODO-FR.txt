@@ -10,29 +10,9 @@ NOW
 
 > ---------------------------- <
 
-admo
-
-    ---> GGGG
-
-
-> ---------------------------- <
-
 what chnage
 
-    ---> un blox exp(erimental) via l'icone font awesome flask-vial
-    ---> technic : chgt d'icone pour passser via microscope
-
-
-> ---------------------------- <
-
-font awesome
-
-    ---> passer à la version 7 ou plus
-
-
-> ---------------------------- <
-
-utiliser marginalia en mode lua???
+    ---> aligner les titres de la meêm facçon, un peu avant les puces !!
 
 
 > ---------------------------- <
@@ -43,17 +23,41 @@ contrib transalte : plusd email
 
 titre en police normale!!!
 
+
 > ---------------------------- <
 
-tutodoc devient généraliste avec plugins
+CSS
+
+    ---> lttemplate car au final ici c'est jouable
+
+    ---> modes coloré, et gris pour impression papier, et mode coloré par défaut devient mode screen
+
+
+> ---------------------------- <
+
+utiliser marginalia en mode lua???
+
+
+> ---------------------------- <
+
+admo
+
+    ---> GGGG
+
+
+> ---------------------------- <
+
+font awesome
+
+    ---> passer à la version 7 ou plus : attendre car moche !
+
+
+> ---------------------------- <
+
+tutodoc devient généraliste avec plugins ===> version 2.0.0 !
 
     ---> pack/macro dans le plugin latex
     ---> ajouter d'un plugin prototype
-
-
-> ---------------------------- <
-
-les CSS s'appuient maintenant sur lttemplate car au final ici c'est jouable
 
 
 > ---------------------------- <

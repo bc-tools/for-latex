@@ -11,7 +11,7 @@ Version and changes: the icon for technical \infos has moved from ''\faFlask'' t
 -----
 
 [[:format:]]
-Version and changes: added ''tdocexp'' \env.
+Version and changes: added ''tdocexp'' \env for experimental features.
 
 
 --------
@@ -20,3 +20,11 @@ Version and changes: added ''tdocexp'' \env.
 
 [[:doc:]]
 Manual: the English version indicates the use of English rules inside quoted content build by the macro ''\tdocinEN''.
+
+
+--------
+:fordev:
+--------
+
+[[:flow:]]
+Translation: no more email option.

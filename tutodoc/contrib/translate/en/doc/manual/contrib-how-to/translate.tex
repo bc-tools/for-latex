@@ -78,12 +78,12 @@
 \end{tdocnote}
 
 
-\begin{tdoccaut}
+\begin{tdocimp}
     Although we're going to explain how to translate the documentation, it doesn't seem relevant to do so, as English should suffice these days.%
     \footnote{
       The existence of a French version is simply a consequence of the native language of the author of \thisproj.
     }
-\end{tdoccaut}
+\end{tdocimp}
 
 
 \begin{figure}[ht]
@@ -127,7 +127,7 @@ The \texttt{LICENCE.txt} file is aptly named, while the \texttt{README.md} file 
 \begin{tdocimp}
     The \verb#api# folder contains translations relating to the functionalities of \thisproj.
     Here you'll find \verb#TXT# files for editing with a text or code editor, but not with a document processor.
-    The content of these files uses commented lines in English to explain what \thisproj\ will do; these lines begin with \verb#//#\,. Here's an extract from such a file, where translations are made after each \,$=$\ sign, without touching the preceding, as this initial piece is used internally by the \thisproj\ code.
+    The content of these files uses commented lines in English to explain what \thisproj\ will do; these lines begin with \verb#//#\,. Here's an extract from such a file, where translations are made after each \,\fbox{$=$\vphantom{pM}}\ sign, without touching the preceding, as this initial piece is used internally by the \thisproj\ code.
 
     \tdocsep
     \vspace{-10pt}
@@ -160,10 +160,8 @@ The \texttt{LICENCE.txt} file is aptly named, while the \texttt{README.md} file 
 \footnote{
     As mentioned above, there is no real need for the \texttt{doc} folder.
 }
-
-
-\paragraph{Method 1 : use of \git.}
-
+To do this, you must use \git\ as follows.
+%
 \begin{enumerate}
       \item Recover the entire project folder via \thisrepo\,.
     Do not use the \verb#main# branch, which is used to freeze the latest stable versions of projects in the single \thismonorepo\ repository,.
@@ -174,19 +172,6 @@ The \texttt{LICENCE.txt} file is aptly named, while the \texttt{README.md} file 
       from \texttt{Wikipedia}.
 
       \item Once the translation is complete in the \verb#it# folder, share it via \thisrepo\ using a classic \verb#git push#\,.
-\end{enumerate}
-
-
-\paragraph{Method 2 : communicate by e-mail.}
-
-\begin{enumerate}
-      \item By e-mail with the \mailsubject{en FOR italian}, request a version of the English translations (note the use of the English name for the new language).
-    Be sure to respect the subject of the e-mail, as the author of \thisproj\ automates the pre-processing of this type of e-mail.
-
-      \item You will receive a folder named \verb#italian# containing the English version of the latest translations.
-    This folder will be the place for your contribution.
-
-      \item Once the translation is complete, you will need to compress your \verb#italian# file in \verb#zip# or \verb#rar# format before sending it by e-mail with the \mailsubject{italian}\,.
 \end{enumerate}
 
 \end{document}

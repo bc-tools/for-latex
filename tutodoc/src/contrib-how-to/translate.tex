@@ -19,12 +19,12 @@
 \end{tdocnote}
 
 
-\begin{tdoccaut}
+\begin{tdocimp}
     Même si nous allons expliquer comment traduire les documentations, il semble peu pertinent de le faire, car l'anglais devrait suffire de nos jours.%
     \footnote{
         L'existence d'une version française est une simple conséquence de la langue maternelle de l'auteur de \thisproj.
     }
-\end{tdoccaut}
+\end{tdocimp}
 
 \begin{figure}[ht]
     \centering
@@ -70,7 +70,7 @@ Le fichier \texttt{LICENCE.txt} est bien nommé, tandis que le fichier \texttt{R
 \begin{tdocimp}
     Le dossier \verb#api# contient les traductions relatives aux fonctionnalités de \thisproj.
     Vous y trouverez des fichiers de type \verb#TXT# à modifier via un éditeur de texte, ou de code, mais non via un traitement de texte.
-    Les contenus de ces fichiers utilisent des lignes commentées en anglais pour expliquer ce que fera \thisproj\ ; ces lignes commencent par \verb#//#\,. Voici un extrait de ce type de fichier où \textbf{les traductions se font après chaque signe \,$=$\, sans toucher à ce qui se trouve avant}, car ce morceau initial est utilisé en interne par le code de \thisproj..
+    Les contenus de ces fichiers utilisent des lignes commentées en anglais pour expliquer ce que fera \thisproj\ ; ces lignes commencent par \verb#//#\,. Voici un extrait de ce type de fichier où \textbf{les traductions se font après chaque signe \,\fbox{$=$\vphantom{pM}}\ sans toucher à ce qui se trouve avant}, car ce morceau initial est utilisé en interne par le code de \thisproj..
 
     \tdocsep
     \vspace{-10pt}
@@ -103,10 +103,8 @@ Le fichier \texttt{LICENCE.txt} est bien nommé, tandis que le fichier \texttt{R
 \footnote{
     Comme indiqué plus haut, il n'y a pas de besoin réel du côté du dossier \texttt{doc}.
 }
-
-
-\paragraph{Méthode 1 : utilisation de \git.}
-
+Voici ce qu'il faut faire via \git.
+%
 \begin{enumerate}
     \item Récupérer le dossier du projet via \thisrepo\,.
     Ne pas passer via la branche \verb#main# qui sert à figer les dernières versions stables des projets du dépôt unique \thismonorepo\,.
@@ -117,19 +115,6 @@ Le fichier \texttt{LICENCE.txt} est bien nommé, tandis que le fichier \texttt{R
     de \texttt{Wikipédia}.
 
     \item Une fois la traduction achevée dans le dossier \verb#it#, partager la via \thisrepo\ en usant d'un classique \verb#git push#\,.
-\end{enumerate}
-
-
-\paragraph{Méthode 2 : communiquer par courriels.}
-
-\begin{enumerate}
-    \item Via un courriel de \mailsubject{en FOR italian}\,, demander une version des traductions anglaises (noter l'emploi du nom anglais de la nouvelle langue).
-    Bien respecter le sujet du courriel, car l'auteur de \thisproj\ automatise le pré-traitement de ce type de courriels.
-
-    \item Vous recevrez un dossier nommé \verb#italian# contenant la version anglaise des dernières traductions.
-    Ce dossier sera le lieu de votre contribution.
-
-    \item Une fois la traduction achevée, il faudra compresser votre dossier \verb#italian# au format \verb#zip# ou \verb#rar# avant de l'envoyer par courriel avec le \mailsubject{italian}\,.
 \end{enumerate}
 
 \end{document}
