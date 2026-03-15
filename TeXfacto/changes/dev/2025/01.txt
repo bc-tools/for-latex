@@ -9,6 +9,7 @@
 :new:
 -----
 
+[[:doc:]]
 \Doc before code: the sections on the following folder look good.
 
     * path::''contrib''
@@ -26,6 +27,7 @@
 :new:
 -----
 
+[[:doc:]]
 Two things added.
 
     1) \Doc before code: the sections on the following folder look good.
@@ -49,4 +51,5 @@ Two things added.
 :new:
 -----
 
+[[:doc:]]
 \Doc before code: the section on resources looks good. This acheives the section about the \archi of the folder path::''src''.

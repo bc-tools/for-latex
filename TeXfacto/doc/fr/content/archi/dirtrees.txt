@@ -1,5 +1,5 @@
 this::
-    date = 2025-06-13
+    date = 2026-03-15
 
 
 ===================
@@ -29,7 +29,7 @@ dirtree::
     ---
 
 
-Les sections à venir expliquent en détails comment employer chacun des dossiers et fichiers spéciaux. Voyons rapidement l'utilité de ceux-ci.
+Les sections suivantes détaillent le rôle de chaque dossier et fichier. En voici d'abord une vue d'ensemble pour vous orienter rapidement.
 
     1) Le fichier path::''about.yaml'' sert à donner des \infos générales sur le \proj.
 

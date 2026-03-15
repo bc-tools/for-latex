@@ -1,27 +1,28 @@
 this::
-    date = 2025-06-13
+    date = 2026-03-15
 
 
 ====================
 \thisproj, quésaco ?
 ====================
 
-Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu'un éco\syst de \dev soit proposé par \latex, \thisproj propose une autre façon de coder plus proche de ce qui se fait dans les \langs de \prog plus \stds comme \python. Dans les \gdes lignes, voici quelques fonctionnalités proposées pour fabriquer un \pack, ou une \cls.
+Coder pour \latex, c'est entrer dans un monde à part, voire parallèle. Bien qu'un écosystème de \dev existe déjà, \thisproj propose une approche disruptive, plus proche des \stds de \prog^os modernes comme \python.
+Voici les piliers de cette méthode pour concevoir vos packages et classes.
 
-    1) Le codage se fait de façon modulaire, et non d'un seul tenant. Ceci facilite grandement la phase de \dev initial, puis ensuite la maintenance.
+    1) **Architecture modulaire:** le code n'est plus un bloc monolithique. Cette modularité simplifie radicalement le développement initial et garantit une maintenance pérenne.
 
-    1) La \doc destinée aux utilisateurs est écrite parallèlement au code, et non dans le code lui-même
+    1) **\Doc découplée:** la \doc utilisateur est rédigée parallèlement au code, et non en son sein
     ((
-        L'auteur de \thisproj garde la \doc dans le code uniquement à destination d'autres codeurs contributeurs.
+        L'auteur réserve la \doc intégrée au code aux seuls contributeurs techniques.
     )).
-    Ce choix évite de produire une \doc austère, et peu utile à de "simples" utilisateurs en proposant, par exemple, des cas d'utilisation complexes. De plus, documenter dans le code rend la tache de maintenance très vite pénible.
+    Ce choix permet d'éviter les manuels austères et indigestes. Il facilite l'intégration d'exemples d'utilisation complexes tout en allégeant la charge de maintenance.
 
-    1) La proposition de \trads pour l'\api ou la \doc se fait de façon automatisée.
+    1) **Localisation automatisée:** la \trad de l'\api et de la \doc est semi-automatisée, facilitant l'accès au \projet pour une communauté internationale.
 
 
 note::
-    \thisproj utilisant activement \src2prod, les fonctionnalités venant de cet autre \proj seront présentées succinctement, charge au lecteur de consulter la \doc de \src2prod pour plus de détails.
+    \thisproj s'appuyant nativement sur \src2prod, les fonctionnalités issues de ce dernier seront présentées de manière synthétique. Le lecteur est invité à consulter la \doc de \src2prod pour un approfondissement technique.
 
 
 caution::
-    \thisproj impose un certain \nbre de règles: style de codage, \orga "commune" des dossiers et des fichiers, cycle de \dev fixé... Ces contraintes permettent d'automatiser beaucoup de choses, et par conséquent d'économiser du \tmps.
+    \thisproj repose sur un \ens de \stds structurants: style de codage harmonisé, \orga commune des répertoires et cycle de \dev prédéfini. Loin d'être arbitraires, ces conventions permettent une automatisation poussée de la chaîne de \prod^o, garantissant ainsi un gain de \tmps substantiel.

@@ -9,6 +9,7 @@
 :new:
 -----
 
+[[:doc:]]
 \Doc before code: the section on writing the manual looks good.
 
 
@@ -23,6 +24,7 @@
 :new:
 -----
 
+[[:doc:]]
 \Doc before code: the sections on coding ext::''sty'' \andor ext::''cls'' files look good.
 
 
@@ -37,6 +39,7 @@
 :new:
 -----
 
+[[:doc:]]
 \Doc before code: the section on the file path::''src/about.yaml'' looks good.
 
 
