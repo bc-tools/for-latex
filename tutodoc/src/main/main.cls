@@ -102,9 +102,6 @@
 % warning::
 %     We must load ''inputenc'' before ''csquotes''
 %%%
-\RequirePackage[utf8]
-               {inputenc}
-
 \RequirePackage{csquotes}
 
 

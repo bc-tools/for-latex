@@ -10,9 +10,46 @@ NOW
 
 > ---------------------------- <
 
+intégrgre pack persoo basé sur @prism avec ajout des admonitions manquants !!!
+
+palette sémantques sur 4 niveaux
+
+    Niv1 : texte
+    Niv2 : couleur de fond
+    Niv3 : bord de cadre
+    Niv4 : ombre
+
+passer maintenant via une tablette sur 4 niveaux pour les couleurs annexes au lieu de les cacluler; pénible au début mais au final liberté totale !!!!
+
+
+> ---------------------------- <
+
+macros pour agir suivant le type de thème utilisé : utile pour personnaliser certaines ocuelurs maison hors themem (cf. @prism par exemple)
+
+
+> ---------------------------- <
+
+nvx thèmes
+
+    ---> tableau noir avec craie
+
+    ---> fond jaune doux
+
+
+> ---------------------------- <
+
 what chnage
 
     ---> aligner les titres de la meêm facçon, un peu avant les puces !!
+
+
+> ---------------------------- <
+
+code mef
+
+    ---> titre et aussi icone en plus
+
+    ---> icone à gaiche dans marge pour le codes via un argument boolean icon, te si pa ionce on met ext stylisé, la commande de deco doit etre facile à modifier pour un usage maison.
 
 
 > ---------------------------- <
@@ -40,13 +77,6 @@ utiliser marginalia en mode lua???
 
 > ---------------------------- <
 
-admo
-
-    ---> GGGG
-
-
-> ---------------------------- <
-
 font awesome
 
     ---> passer à la version 7 ou plus : attendre car moche !
@@ -57,6 +87,7 @@ font awesome
 tutodoc devient généraliste avec plugins ===> version 2.0.0 !
 
     ---> pack/macro dans le plugin latex
+
     ---> ajouter d'un plugin prototype
 
 
@@ -99,11 +130,6 @@ prefixe and co
 > ---------------------------- <
 
 espacement dnas le code ???
-
-
-> ---------------------------- <
-
-icone à gaiche dans marge pour le codes via un argument boolean icon, te si pa ionce on met ext stylisé, la commande de deco doit etre facile à modifier pour un usage maison.
 
 
 > ---------------------------- <

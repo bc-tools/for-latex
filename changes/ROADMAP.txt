@@ -24,6 +24,8 @@ NEXT STEPS
               + moving from POC to code : some issues to solve
               + real use case for testing
 
+        --> si tutodocvalide alors on push sur main en virant temporairement les projet en cours !
+
     1) TeXoptidep
 
     1) macroenvsign

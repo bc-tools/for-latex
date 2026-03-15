@@ -11,6 +11,7 @@ NOW
 
 prendre en compte le cas plus simple de doc comme @prims, ou l'on develeoppe les trads de façon fichier autonome, et on compile la doc dans un dossier de typ pre-doc, et aufinal on livre juste le  pdf
 
+
 > ---------------------------- <
 
 \NewDocumentCommand{\tutodoc@trans@exa@title}{}{...}
