@@ -1,0 +1,30 @@
+this::
+    title  = Coder des \projs \latex via \thisproj
+    author = Christophe, BAL
+    mail   = projetmbc@gmail.com
+    lang   = fr
+
+    licence = cc by-nc-sa 4.0
+    out     = html | pdf
+
+    lexic = python
+
+
+abrev::
+    content = /content
+
+    l3buildxtras = cf::''l3build-xtras;
+                         https://github.com/bc-tools/for-latex/tree/main/l3build-xtras''
+
+    mandoc[s] = \doc "utilisateur"
+              | \docs "utilisateur"
+
+    pyglob = cf::''glob;
+                   https://docs.python.org/3/library/glob.html''
+
+    tutodoc_date     = date::''2024-12-18''
+    tutodoc_date_OLD = date::''2023-12-08''
+
+
+content::
+    \content/intro.txt    ????
