@@ -1,11 +1,11 @@
 this::
-    title  = XXX
+    title  = Délocaliser sa \prod^o \tex
     author = Christophe, BAL
     mail   = projetmbc@gmail.com
     lang   = fr
 
     licence = cc by-nc-sa 4.0
-    out     = html | pdf
+    out     = html, pdf
 
     lexic = python
 

@@ -3,7 +3,54 @@ this::
 
 
 ====================
-???
+\thisproj, quésaco ?
 ====================
 
-???
+
+
+
+????
+
+on tape autonome et produit au choix un pdf seul (cf dioc claqissque), ou bien un tex compilable tout-en un (cf exigence pour certains ditro debian)
+
+
+
+
+
+        --> à partir de tex autonome produit un tex ou pdf final gloabl : du coup cela gère la doc à la sauce tutodic, mais aussi celled e projets autres comme @prism non axé tex dev
+
+        ceci permet aussi au passage la gestionn conjointe des trads de doc, et celle faite par le dev principal
+
+
+
+
+\thisproj est né d'une méthodologie éfficcae de rédaction de \docs logiciel. L'idée est de produire des ficheirs \tex autonomes compilables pour une valdiation partie par partie de travail accompli.
+
+
+
+    1)
+
+
+
+
+\thisproj a été conço pour réosudre deux problématiques connexes.
+
+    1) rédaction de documnetation dans divers langues en laissant la possibilité au rédacteur de compiler directement son document.
+
+    1) rédaction de la documnetation d'un projet \latex en parallèle du code déveleoppé de façon modulaire.
+
+    1) Dans cahcque des cas, obtenir evneutiellmenet un tex autonome égrageant tour car certaines distribution \linux exige ce type de document, et de plus ceci évite de polluer une instal prdouite via ctan.
+
+    1)Obtenir aussi des PDFs agréganeant tous.
+
+
+    \thisproj n’est pas un outil de confort, mais une réponse à l'entropie croissante de la documentation technique. Il a été bâti pour résoudre la fracture entre la pensée multilingue et l'intégrité du code.
+Les Piliers du Projet
+
+    Souveraineté du Rédacteur : Permettre la production de documentation en langues multiples tout en garantissant au rédacteur l'autonomie totale de compilation. L'outil s'efface devant le document.
+
+    Documentation Symbiotique : Briser la séparation entre le développement et son explication. \thisproj permet de forger une documentation LATE​X modulaire, progressant au même rythme que les structures de code qu'elle décrit.
+
+    L’Unicité du Source (Standalone) : La nécessité de produire, à terme, un fichier .tex monolithique et autonome. Cette approche répond à l'exigence de certaines distributions Linux et préserve l'utilisateur des pollutions environnementales lors d'installations via CTAN.
+
+    Synthèse Finale : L'agrégation systématique en documents PDF globaux, offrant une vision totale là où le code est fragmenté.

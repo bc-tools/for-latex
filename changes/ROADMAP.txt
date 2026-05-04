@@ -18,11 +18,9 @@ ALWAYS DONE
 NEXT STEPS
 ----------
 
+    1) multiTeX
+
     1) TeXfactory
-
-        --> multiTeX : besoin d'un tout nouveau projet qui à partir de tex autonome produit un tex ou pdf final gloabl : du coup cela gère la doc à la sauce tutodic, mais aussi celled e projets autres comme @prism non axé tex dev
-
-        ceci permet aussi au passage la gestionn conjointe des trads de doc, et celle faite par le dev principal
 
         --> tutodoc
 

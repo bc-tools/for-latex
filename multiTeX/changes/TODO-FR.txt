@@ -3,6 +3,20 @@ multiTeX - TODO
 ========
 
 
+mypy . --html-report typing_report
+
+
+// ---------- //
+
+GARDER POUR CHGTS DE NOMS DE FICHEIR AVEC PRISE EN COMPTE DE LA CASSE
+
+Bien commiter avant !
+
+git rm -r --cached .
+git a
+git cm "..."
+
+
 > ---------------------------- <
 
 TODO
